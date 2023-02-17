@@ -521,8 +521,8 @@ to: %2$s"</string>
     <string name="AppIconPremium">Premium</string>
     <string name="AppIconTurbo">Turbo</string>
     <string name="AppIconVintage">Vintage</string>
-    <string name="AppName">iMe</string>
-    <string name="AppNameBeta">iMe</string>
+    <string name="AppName">Telegram</string>
+    <string name="AppNameBeta">Telegram Beta</string>
     <string name="AppUpdate">Update Telegram</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
 
