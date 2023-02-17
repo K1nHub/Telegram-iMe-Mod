@@ -1,0 +1,67 @@
+.class public final synthetic Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lorg/telegram/messenger/Utilities$Callback3;
+
+
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/Fetcher;
+
+.field public final synthetic f$1:Landroid/util/Pair;
+
+.field public final synthetic f$2:Ljava/lang/Object;
+
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:Ljava/lang/Object;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lorg/telegram/messenger/Fetcher;Landroid/util/Pair;Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/Fetcher;
+
+    iput-object p2, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$1:Landroid/util/Pair;
+
+    iput-object p3, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$2:Ljava/lang/Object;
+
+    iput p4, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$3:I
+
+    iput-object p5, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$4:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 8
+
+    iget-object v0, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/messenger/Fetcher;
+
+    iget-object v1, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$1:Landroid/util/Pair;
+
+    iget-object v2, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$2:Ljava/lang/Object;
+
+    iget v3, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$3:I
+
+    iget-object v4, p0, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda2;->f$4:Ljava/lang/Object;
+
+    move-object v5, p1
+
+    check-cast v5, Ljava/lang/Boolean;
+
+    move-object v7, p3
+
+    check-cast v7, Ljava/lang/Long;
+
+    move-object v6, p2
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/Fetcher;->$r8$lambda$gxvGBPf4sQekmTuiX8gs2iEj58U(Lorg/telegram/messenger/Fetcher;Landroid/util/Pair;Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Boolean;Ljava/lang/Object;Ljava/lang/Long;)V
+
+    return-void
+.end method

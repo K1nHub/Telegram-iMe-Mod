@@ -1,0 +1,219 @@
+.class Lorg/fork/ui/view/PinnedPlayerView$6;
+.super Ljava/lang/Object;
+.source "PinnedPlayerView.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/fork/ui/view/PinnedPlayerView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/INavigationLayout;Lorg/telegram/ui/LaunchActivity;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lorg/fork/ui/view/PinnedPlayerView;
+
+
+# direct methods
+.method constructor <init>(Lorg/fork/ui/view/PinnedPlayerView;)V
+    .locals 0
+
+    .line 261
+    iput-object p1, p0, Lorg/fork/ui/view/PinnedPlayerView$6;->this$0:Lorg/fork/ui/view/PinnedPlayerView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getContentDescription()Ljava/lang/CharSequence;
+    .locals 8
+
+    .line 280
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lorg/fork/ui/view/PinnedPlayerView$6;->this$0:Lorg/fork/ui/view/PinnedPlayerView;
+
+    invoke-static {v1}, Lorg/fork/ui/view/PinnedPlayerView;->access$800(Lorg/fork/ui/view/PinnedPlayerView;)I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x3c
+
+    const/4 v2, 0x0
+
+    new-array v3, v2, [Ljava/lang/Object;
+
+    const-string v4, "Minutes"
+
+    invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x20
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lorg/fork/ui/view/PinnedPlayerView$6;->this$0:Lorg/fork/ui/view/PinnedPlayerView;
+
+    invoke-static {v3}, Lorg/fork/ui/view/PinnedPlayerView;->access$800(Lorg/fork/ui/view/PinnedPlayerView;)I
+
+    move-result v3
+
+    rem-int/lit8 v3, v3, 0x3c
+
+    new-array v5, v2, [Ljava/lang/Object;
+
+    const-string v6, "Seconds"
+
+    invoke-static {v6, v3, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 281
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v5, p0, Lorg/fork/ui/view/PinnedPlayerView$6;->this$0:Lorg/fork/ui/view/PinnedPlayerView;
+
+    invoke-static {v5}, Lorg/fork/ui/view/PinnedPlayerView;->access$900(Lorg/fork/ui/view/PinnedPlayerView;)I
+
+    move-result v5
+
+    div-int/lit8 v5, v5, 0x3c
+
+    new-array v7, v2, [Ljava/lang/Object;
+
+    invoke-static {v4, v5, v7}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lorg/fork/ui/view/PinnedPlayerView$6;->this$0:Lorg/fork/ui/view/PinnedPlayerView;
+
+    invoke-static {v1}, Lorg/fork/ui/view/PinnedPlayerView;->access$900(Lorg/fork/ui/view/PinnedPlayerView;)I
+
+    move-result v1
+
+    rem-int/lit8 v1, v1, 0x3c
+
+    new-array v4, v2, [Ljava/lang/Object;
+
+    invoke-static {v6, v1, v4}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 282
+    sget v3, Lorg/telegram/messenger/R$string;->AccDescrPlayerDuration:I
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    aput-object v0, v4, v2
+
+    const/4 v0, 0x1
+
+    aput-object v1, v4, v0
+
+    const-string v0, "AccDescrPlayerDuration"
+
+    invoke-static {v0, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic getStepsCount()I
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate$-CC;->$default$getStepsCount(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public onSeekBarDrag(ZF)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    .line 265
+    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
+
+    move-result-object p1
+
+    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, p2}, Lorg/telegram/messenger/MediaController;->seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
+
+    .line 267
+    :cond_0
+    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 268
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    .line 269
+    iget-object p2, p0, Lorg/fork/ui/view/PinnedPlayerView$6;->this$0:Lorg/fork/ui/view/PinnedPlayerView;
+
+    invoke-static {p2, p1}, Lorg/fork/ui/view/PinnedPlayerView;->access$400(Lorg/fork/ui/view/PinnedPlayerView;Lorg/telegram/messenger/MessageObject;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public onSeekBarPressed(Z)V
+    .locals 0
+
+    return-void
+.end method

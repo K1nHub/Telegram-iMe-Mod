@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binance_opensdk_download">Binance Uygulamasını İndir</string>
+    <string name="binance_opensdk_login_failed_tips">"Binance uygulaması ile oturum açma başarısız
+Lütfen uygulamayı güncelleyin veya tarayıcı üzerinden oturum açın."</string>
+    <string name="binance_opensdk_login_to_connect">Bağlanmak için Binance hesabınıza giriş yapın</string>
+    <string name="binance_opensdk_login_with_mail_or_phone">E-posta veya telefon ile giriş yapın</string>
+    <string name="binance_opensdk_upgrade">Binance Uygulamasını Yükselt</string>
+</resources>

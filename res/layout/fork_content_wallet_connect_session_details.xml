@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:id="@id/linear_root" android:layout_width="fill_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.smedialink.ui.custom.ImageHeaderView android:id="@id/view_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal" />
+    <com.smedialink.ui.custom.DetailsIconCellView android:id="@id/view_connected_cell" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.smedialink.ui.custom.DetailsIconCellView android:id="@id/view_address_cell" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.smedialink.ui.custom.DetailsIconCellView android:id="@id/view_network_cell" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.smedialink.ui.custom.BigActionButton android:id="@id/button_disconnect" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_big" android:layout_marginRight="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_big" />
+</androidx.appcompat.widget.LinearLayoutCompat>

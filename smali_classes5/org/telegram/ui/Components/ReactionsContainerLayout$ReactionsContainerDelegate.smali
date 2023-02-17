@@ -1,0 +1,19 @@
+.class public interface abstract Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
+.super Ljava/lang/Object;
+.source "ReactionsContainerLayout.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/ui/Components/ReactionsContainerLayout;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "ReactionsContainerDelegate"
+.end annotation
+
+
+# virtual methods
+.method public abstract onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
+.end method

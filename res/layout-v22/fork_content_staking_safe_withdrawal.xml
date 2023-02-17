@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.LinearLayoutCompat android:gravity="center_vertical" android:id="@id/linear_safe_withdrawal" android:paddingTop="@dimen/padding_small" android:paddingBottom="@dimen/padding_small" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingVertical="@dimen/padding_small">
+        <org.telegram.ui.Components.CheckBoxSquare android:gravity="center" android:id="@id/checkbox_safe_withdrawal" android:layout_width="@dimen/square_checkbox_size" android:layout_height="@dimen/square_checkbox_size" />
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal" android:id="@id/text_safe_withdrawal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:layout_marginStart="@dimen/margin_under_normal" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/image_help" android:padding="@dimen/padding_tiny" android:layout_width="@dimen/icon_size_default" android:layout_height="@dimen/icon_size_default" android:layout_marginStart="@dimen/margin_small" app:srcCompat="@drawable/msg_info" />
+</androidx.appcompat.widget.LinearLayoutCompat>

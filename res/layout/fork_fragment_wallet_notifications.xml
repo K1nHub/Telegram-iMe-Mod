@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.smedialink.ui.custom.state.GlobalStateLayout android:id="@id/global_state_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recycle_notifications" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+    </com.smedialink.ui.custom.state.GlobalStateLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

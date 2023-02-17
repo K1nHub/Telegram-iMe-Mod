@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView android:id="@id/recycle_categories" android:paddingLeft="@dimen/padding_normal" android:paddingRight="@dimen/padding_normal" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_small_upper" android:overScrollMode="never" android:paddingHorizontal="@dimen/padding_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

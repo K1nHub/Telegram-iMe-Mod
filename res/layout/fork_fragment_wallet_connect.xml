@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fillViewport="true" android:overScrollMode="never"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/linear_root" android:layout_width="fill_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/linear_add_session" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/wallet_card_elevation">
+            <org.telegram.ui.Components.RLottieImageView android:id="@id/image_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+            <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_upper" android:gravity="center" android:id="@id/text_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_big" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_big" android:layout_marginBottom="@dimen/margin_normal" />
+            <com.smedialink.ui.custom.BigActionButton android:gravity="center" android:id="@id/button_connect" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_big" android:layout_marginRight="@dimen/margin_big" android:layout_marginBottom="@dimen/margin_normal" app:iconGravity="textStart" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/linear_sessions" android:paddingTop="@dimen/margin_normal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_under_normal" android:elevation="@dimen/wallet_card_elevation">
+            <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal_upper" android:gravity="start" android:id="@id/text_sessions_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_tiny" android:layout_marginRight="@dimen/margin_normal" />
+            <androidx.recyclerview.widget.RecyclerView android:textSize="@dimen/text_size_upper" android:gravity="start" android:id="@id/recycle_sessions" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_under_normal" android:overScrollMode="never" />
+            <org.telegram.ui.Cells.TextCell android:id="@id/button_disconnect_all" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

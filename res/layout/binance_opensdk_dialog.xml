@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/binance_opensdk_background_dialog" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="284.0dip" android:minHeight="299.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:orientation="vertical" android:id="@id/llContent" android:background="#2648515d" android:layout_width="fill_parent" android:layout_height="108.0dip">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="26.0dip" android:layout_marginBottom="24.0dip" android:src="@drawable/binance_opensdk_logo" />
+        <TextView android:layout_gravity="center|right|top" android:id="@id/tvClose" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginRight="16.0dip" android:foreground="?android:selectableItemBackground" android:drawableStart="@drawable/binance_opensdk_close" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tvContent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/binance_opensdk_login_to_connect" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff212833" android:gravity="center" android:id="@id/tvDownloadApp" android:background="@drawable/binance_opensdk_background_btn" android:paddingTop="11.0dip" android:paddingBottom="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:foreground="?android:selectableItemBackground" />
+        <TextView android:textSize="14.0sp" android:textColor="#fff0b90b" android:gravity="center" android:id="@id/tvLoginWeb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="32.0dip" android:text="@string/binance_opensdk_login_with_mail_or_phone" />
+    </LinearLayout>
+</LinearLayout>

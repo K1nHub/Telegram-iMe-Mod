@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/frame_root" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:id="@id/card_account_balance" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_extra_small" android:layout_marginBottom="@dimen/margin_extra_small" android:layout_marginStart="@dimen/margin_normal" android:layout_marginEnd="@dimen/margin_normal" app:cardCornerRadius="@dimen/margin_small" app:cardElevation="@dimen/wallet_card_elevation">
+        <include layout="@layout/fork_recycle_item_wallet_token_balance" />
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

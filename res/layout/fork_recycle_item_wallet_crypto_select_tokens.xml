@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:gravity="center" android:id="@id/select_tokens_text" android:paddingTop="@dimen/padding_paranormal" android:paddingBottom="@dimen/padding_paranormal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wallet_home_crypto_select_tokens"
+  xmlns:android="http://schemas.android.com/apk/res/android" />
