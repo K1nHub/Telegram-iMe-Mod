@@ -24,13 +24,13 @@
 .method public constructor <init>(Landroid/os/Handler;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1007
+    .line 1036
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1008
+    .line 1037
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;->handler:Landroid/os/Handler;
 
-    .line 1009
+    .line 1038
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;->runnable:Ljava/lang/Runnable;
 
     return-void
@@ -41,7 +41,7 @@
 .method public dispatch()V
     .locals 2
 
-    .line 1013
+    .line 1042
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;->handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;->runnable:Ljava/lang/Runnable;

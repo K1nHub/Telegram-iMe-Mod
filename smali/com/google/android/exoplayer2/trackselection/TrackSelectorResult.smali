@@ -10,33 +10,53 @@
 
 .field public final rendererConfigurations:[Lcom/google/android/exoplayer2/RendererConfiguration;
 
-.field public final selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+.field public final selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
+
+.field public final tracks:Lcom/google/android/exoplayer2/Tracks;
 
 
 # direct methods
-.method public constructor <init>([Lcom/google/android/exoplayer2/RendererConfiguration;[Lcom/google/android/exoplayer2/trackselection/TrackSelection;Ljava/lang/Object;)V
-    .locals 1
+.method public constructor <init>([Lcom/google/android/exoplayer2/RendererConfiguration;[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;Lcom/google/android/exoplayer2/Tracks;Ljava/lang/Object;)V
+    .locals 0
 
-    .line 55
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
+    .line 76
     iput-object p1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->rendererConfigurations:[Lcom/google/android/exoplayer2/RendererConfiguration;
 
-    .line 57
-    new-instance v0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    .line 77
+    invoke-virtual {p2}, [Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;->clone()Ljava/lang/Object;
 
-    invoke-direct {v0, p2}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;-><init>([Lcom/google/android/exoplayer2/trackselection/TrackSelection;)V
+    move-result-object p2
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    check-cast p2, [Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    .line 58
-    iput-object p3, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->info:Ljava/lang/Object;
+    iput-object p2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    .line 59
+    .line 78
+    iput-object p3, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->tracks:Lcom/google/android/exoplayer2/Tracks;
+
+    .line 79
+    iput-object p4, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->info:Ljava/lang/Object;
+
+    .line 80
     array-length p1, p1
 
     iput p1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->length:I
+
+    return-void
+.end method
+
+.method public constructor <init>([Lcom/google/android/exoplayer2/RendererConfiguration;[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;Ljava/lang/Object;)V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 59
+    sget-object v0, Lcom/google/android/exoplayer2/Tracks;->EMPTY:Lcom/google/android/exoplayer2/Tracks;
+
+    invoke-direct {p0, p1, p2, v0, p3}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;-><init>([Lcom/google/android/exoplayer2/RendererConfiguration;[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;Lcom/google/android/exoplayer2/Tracks;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -50,14 +70,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 75
-    iget-object v1, p1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    .line 96
+    iget-object v1, p1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    iget v1, v1, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->length:I
+    array-length v1, v1
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    iget v2, v2, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->length:I
+    array-length v2, v2
 
     if-eq v1, v2, :cond_0
 
@@ -66,15 +86,15 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 78
+    .line 99
     :goto_0
-    iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    iget v2, v2, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->length:I
+    array-length v2, v2
 
     if-ge v1, v2, :cond_2
 
-    .line 79
+    .line 100
     invoke-virtual {p0, p1, v1}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->isEquivalent(Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;I)Z
 
     move-result v2
@@ -107,7 +127,7 @@
 
     return v0
 
-    .line 101
+    .line 122
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->rendererConfigurations:[Lcom/google/android/exoplayer2/RendererConfiguration;
 
@@ -123,19 +143,15 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    .line 102
-    invoke-virtual {v1, p2}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->get(I)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
+    aget-object v1, v1, p2
 
-    move-result-object v1
+    iget-object p1, p1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    aget-object p1, p1, p2
 
-    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->get(I)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
-
-    move-result-object p1
-
+    .line 123
     invoke-static {v1, p1}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -151,7 +167,7 @@
 .method public isRendererEnabled(I)Z
     .locals 1
 
-    .line 64
+    .line 85
     iget-object v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->rendererConfigurations:[Lcom/google/android/exoplayer2/RendererConfiguration;
 
     aget-object p1, v0, p1

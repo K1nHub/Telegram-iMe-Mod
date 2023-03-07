@@ -7,7 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;,
-        Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$DummyMediaSource;,
+        Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$FakeMediaSource;,
         Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;,
         Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;,
         Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
@@ -36,6 +36,8 @@
 
 .field private static final MSG_UPDATE_TIMELINE:I = 0x4
 
+.field private static final PLACEHOLDER_MEDIA_ITEM:Lcom/google/android/exoplayer2/MediaItem;
+
 
 # instance fields
 .field private final enabledMediaSourceHolders:Ljava/util/Set;
@@ -50,10 +52,10 @@
 
 .field private final isAtomic:Z
 
-.field private final mediaSourceByMediaPeriod:Ljava/util/Map;
+.field private final mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Map<",
+            "Ljava/util/IdentityHashMap<",
             "Lcom/google/android/exoplayer2/source/MediaPeriod;",
             "Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;",
             ">;"
@@ -132,12 +134,36 @@
     return p0
 .end method
 
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 62
+    new-instance v0, Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/MediaItem$Builder;-><init>()V
+
+    sget-object v1, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    .line 63
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setUri(Landroid/net/Uri;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaItem$Builder;->build()Lcom/google/android/exoplayer2/MediaItem;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->PLACEHOLDER_MEDIA_ITEM:Lcom/google/android/exoplayer2/MediaItem;
+
+    return-void
+.end method
+
 .method public varargs constructor <init>(ZLcom/google/android/exoplayer2/source/ShuffleOrder;[Lcom/google/android/exoplayer2/source/MediaSource;)V
     .locals 1
 
     const/4 v0, 0x0
 
-    .line 107
+    .line 115
     invoke-direct {p0, p1, v0, p2, p3}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;-><init>(ZZLcom/google/android/exoplayer2/source/ShuffleOrder;[Lcom/google/android/exoplayer2/source/MediaSource;)V
 
     return-void
@@ -146,10 +172,10 @@
 .method public varargs constructor <init>(ZZLcom/google/android/exoplayer2/source/ShuffleOrder;[Lcom/google/android/exoplayer2/source/MediaSource;)V
     .locals 3
 
-    .line 125
+    .line 133
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;-><init>()V
 
-    .line 126
+    .line 134
     array-length v0, p4
 
     const/4 v1, 0x0
@@ -159,14 +185,14 @@
 
     aget-object v2, p4, v1
 
-    .line 127
+    .line 135
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 129
+    .line 137
     :cond_0
     invoke-interface {p3}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->getLength()I
 
@@ -181,62 +207,62 @@
     :cond_1
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
-    .line 130
+    .line 138
     new-instance p3, Ljava/util/IdentityHashMap;
 
     invoke-direct {p3}, Ljava/util/IdentityHashMap;-><init>()V
 
-    iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/Map;
+    iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
 
-    .line 131
+    .line 139
     new-instance p3, Ljava/util/HashMap;
 
     invoke-direct {p3}, Ljava/util/HashMap;-><init>()V
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByUid:Ljava/util/Map;
 
-    .line 132
+    .line 140
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
-    .line 133
+    .line 141
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
-    .line 134
+    .line 142
     new-instance p3, Ljava/util/HashSet;
 
     invoke-direct {p3}, Ljava/util/HashSet;-><init>()V
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->nextTimelineUpdateOnCompletionActions:Ljava/util/Set;
 
-    .line 135
+    .line 143
     new-instance p3, Ljava/util/HashSet;
 
     invoke-direct {p3}, Ljava/util/HashSet;-><init>()V
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->pendingOnCompletionActions:Ljava/util/Set;
 
-    .line 136
+    .line 144
     new-instance p3, Ljava/util/HashSet;
 
     invoke-direct {p3}, Ljava/util/HashSet;-><init>()V
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
-    .line 137
+    .line 145
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->isAtomic:Z
 
-    .line 138
+    .line 146
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->useLazyPreparation:Z
 
-    .line 139
+    .line 147
     invoke-static {p4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -249,7 +275,7 @@
 .method public varargs constructor <init>(Z[Lcom/google/android/exoplayer2/source/MediaSource;)V
     .locals 2
 
-    .line 95
+    .line 103
     new-instance v0, Lcom/google/android/exoplayer2/source/ShuffleOrder$DefaultShuffleOrder;
 
     const/4 v1, 0x0
@@ -266,10 +292,19 @@
 
     const/4 v0, 0x0
 
-    .line 85
+    .line 93
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;-><init>(Z[Lcom/google/android/exoplayer2/source/MediaSource;)V
 
     return-void
+.end method
+
+.method static synthetic access$100()Lcom/google/android/exoplayer2/MediaItem;
+    .locals 1
+
+    .line 53
+    sget-object v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->PLACEHOLDER_MEDIA_ITEM:Lcom/google/android/exoplayer2/MediaItem;
+
+    return-object v0
 .end method
 
 .method private addMediaSourceInternal(ILcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;)V
@@ -277,7 +312,7 @@
 
     if-lez p1, :cond_0
 
-    .line 737
+    .line 770
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     add-int/lit8 v1, p1, -0x1
@@ -288,24 +323,24 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 738
+    .line 771
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/source/MaskingMediaSource;->getTimeline()Lcom/google/android/exoplayer2/Timeline;
 
     move-result-object v1
 
-    .line 739
+    .line 772
     iget v0, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->firstWindowIndexInChild:I
 
-    .line 740
+    .line 773
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/Timeline;->getWindowCount()I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 739
+    .line 772
     invoke-virtual {p2, p1, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->reset(II)V
 
     goto :goto_0
@@ -313,10 +348,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 742
+    .line 775
     invoke-virtual {p2, p1, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->reset(II)V
 
-    .line 744
+    .line 777
     :goto_0
     iget-object v0, p2, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
@@ -324,7 +359,7 @@
 
     move-result-object v0
 
-    .line 745
+    .line 778
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/Timeline;->getWindowCount()I
 
     move-result v0
@@ -333,46 +368,46 @@
 
     invoke-direct {p0, p1, v1, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->correctOffsets(III)V
 
-    .line 746
+    .line 779
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 747
+    .line 780
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByUid:Ljava/util/Map;
 
     iget-object v0, p2, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->uid:Ljava/lang/Object;
 
     invoke-interface {p1, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 748
+    .line 781
     iget-object p1, p2, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
     invoke-virtual {p0, p2, p1}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->prepareChildSource(Ljava/lang/Object;Lcom/google/android/exoplayer2/source/MediaSource;)V
 
-    .line 749
+    .line 782
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/BaseMediaSource;->isEnabled()Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/Map;
+    iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
 
-    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
+    invoke-virtual {p1}, Ljava/util/IdentityHashMap;->isEmpty()Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 750
+    .line 783
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
     invoke-interface {p1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 752
+    .line 785
     :cond_1
     invoke-virtual {p0, p2}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->disableChildSource(Ljava/lang/Object;)V
 
@@ -391,7 +426,7 @@
         }
     .end annotation
 
-    .line 730
+    .line 763
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -411,7 +446,7 @@
 
     add-int/lit8 v1, p1, 0x1
 
-    .line 731
+    .line 764
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addMediaSourceInternal(ILcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;)V
 
     move p1, v1
@@ -467,14 +502,14 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 539
+    .line 568
     :goto_2
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 540
+    .line 569
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
-    .line 541
+    .line 570
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -492,12 +527,12 @@
 
     check-cast v3, Lcom/google/android/exoplayer2/source/MediaSource;
 
-    .line 542
+    .line 571
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
 
-    .line 544
+    .line 573
     :cond_3
     new-instance v2, Ljava/util/ArrayList;
 
@@ -507,7 +542,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 545
+    .line 574
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -525,7 +560,7 @@
 
     check-cast v4, Lcom/google/android/exoplayer2/source/MediaSource;
 
-    .line 546
+    .line 575
     new-instance v5, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
     iget-boolean v6, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->useLazyPreparation:Z
@@ -536,7 +571,7 @@
 
     goto :goto_4
 
-    .line 548
+    .line 577
     :cond_4
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
@@ -544,29 +579,29 @@
 
     if-eqz v0, :cond_5
 
-    .line 549
+    .line 578
     invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
 
     move-result p2
 
     if-nez p2, :cond_5
 
-    .line 550
+    .line 580
     invoke-direct {p0, p3, p4}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     move-result-object p2
 
-    .line 551
+    .line 581
     new-instance p3, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
     invoke-direct {p3, p1, v2, p2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;-><init>(ILjava/lang/Object;Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
-    .line 552
+    .line 582
     invoke-virtual {v0, v1, p3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
-    .line 553
+    .line 583
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_5
@@ -576,7 +611,7 @@
 
     if-eqz p3, :cond_6
 
-    .line 555
+    .line 585
     invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_6
@@ -587,7 +622,7 @@
 .method private correctOffsets(III)V
     .locals 2
 
-    .line 798
+    .line 828
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
@@ -597,7 +632,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 799
+    .line 829
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -606,14 +641,14 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 800
+    .line 830
     iget v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
 
     add-int/2addr v1, p2
 
     iput v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
 
-    .line 801
+    .line 831
     iget v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->firstWindowIndexInChild:I
 
     add-int/2addr v1, p3
@@ -637,13 +672,13 @@
 
     goto :goto_0
 
-    .line 632
+    .line 665
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     invoke-direct {v0, p1, p2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;-><init>(Landroid/os/Handler;Ljava/lang/Runnable;)V
 
-    .line 633
+    .line 666
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->pendingOnCompletionActions:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -660,14 +695,14 @@
 .method private disableUnusedMediaSources()V
     .locals 3
 
-    .line 819
+    .line 849
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 820
+    .line 850
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -676,14 +711,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 821
+    .line 851
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 822
+    .line 852
     iget-object v2, v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
@@ -692,10 +727,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 823
+    .line 853
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->disableChildSource(Ljava/lang/Object;)V
 
-    .line 824
+    .line 854
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
@@ -717,7 +752,7 @@
 
     monitor-enter p0
 
-    .line 722
+    .line 755
     :try_start_0
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -736,12 +771,12 @@
 
     check-cast v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
-    .line 723
+    .line 756
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;->dispatch()V
 
     goto :goto_0
 
-    .line 725
+    .line 758
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->pendingOnCompletionActions:Ljava/util/Set;
 
@@ -749,7 +784,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 726
+    .line 759
     monitor-exit p0
 
     return-void
@@ -765,12 +800,12 @@
 .method private enableMediaSource(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;)V
     .locals 1
 
-    .line 814
+    .line 844
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 815
+    .line 845
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->enableChildSource(Ljava/lang/Object;)V
 
     return-void
@@ -779,8 +814,8 @@
 .method private static getChildPeriodUid(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 836
-    invoke-static {p0}, Lcom/google/android/exoplayer2/source/AbstractConcatenatedTimeline;->getChildPeriodUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 866
+    invoke-static {p0}, Lcom/google/android/exoplayer2/AbstractConcatenatedTimeline;->getChildPeriodUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -790,8 +825,8 @@
 .method private static getMediaSourceHolderUid(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 831
-    invoke-static {p0}, Lcom/google/android/exoplayer2/source/AbstractConcatenatedTimeline;->getChildTimelineUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 861
+    invoke-static {p0}, Lcom/google/android/exoplayer2/AbstractConcatenatedTimeline;->getChildTimelineUidFromConcatenatedUid(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -801,10 +836,10 @@
 .method private static getPeriodUid(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 840
+    .line 870
     iget-object p0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->uid:Ljava/lang/Object;
 
-    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/source/AbstractConcatenatedTimeline;->getConcatenatedUid(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/AbstractConcatenatedTimeline;->getConcatenatedUid(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -814,7 +849,7 @@
 .method private getPlaybackThreadHandlerOnPlaybackThread()Landroid/os/Handler;
     .locals 1
 
-    .line 717
+    .line 750
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -829,7 +864,7 @@
 .method private handleMessage(Landroid/os/Message;)Z
     .locals 4
 
-    .line 641
+    .line 674
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -854,7 +889,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 680
+    .line 713
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -863,12 +898,12 @@
 
     check-cast p1, Ljava/util/Set;
 
-    .line 681
+    .line 714
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->dispatchOnCompletionActions(Ljava/util/Set;)V
 
     goto/16 :goto_2
 
-    .line 684
+    .line 717
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -876,38 +911,38 @@
 
     throw p1
 
-    .line 677
+    .line 710
     :cond_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->updateTimelineAndScheduleOnCompletionActions()V
 
     goto/16 :goto_2
 
-    .line 671
+    .line 704
     :cond_2
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 672
+    .line 705
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
-    .line 673
+    .line 706
     iget-object v0, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->customData:Ljava/lang/Object;
 
     check-cast v0, Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
-    .line 674
+    .line 707
     iget-object p1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->onCompletionAction:Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
     goto/16 :goto_2
 
-    .line 664
+    .line 697
     :cond_3
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -917,7 +952,7 @@
 
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
-    .line 665
+    .line 698
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     iget v2, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->index:I
@@ -930,7 +965,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
-    .line 666
+    .line 699
     iget-object v2, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->customData:Ljava/lang/Object;
 
     check-cast v2, Ljava/lang/Integer;
@@ -945,7 +980,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
-    .line 667
+    .line 700
     iget v0, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->index:I
 
     iget-object v2, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->customData:Ljava/lang/Object;
@@ -958,14 +993,14 @@
 
     invoke-direct {p0, v0, v2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->moveMediaSourceInternal(II)V
 
-    .line 668
+    .line 701
     iget-object p1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->onCompletionAction:Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
     goto :goto_2
 
-    .line 650
+    .line 683
     :cond_4
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -975,10 +1010,10 @@
 
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
-    .line 651
+    .line 684
     iget v0, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->index:I
 
-    .line 652
+    .line 685
     iget-object v2, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->customData:Ljava/lang/Object;
 
     check-cast v2, Ljava/lang/Integer;
@@ -989,7 +1024,7 @@
 
     if-nez v0, :cond_5
 
-    .line 653
+    .line 686
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     invoke-interface {v3}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->getLength()I
@@ -998,7 +1033,7 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 654
+    .line 687
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     invoke-interface {v3}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->cloneAndClear()Lcom/google/android/exoplayer2/source/ShuffleOrder;
@@ -1009,7 +1044,7 @@
 
     goto :goto_0
 
-    .line 656
+    .line 689
     :cond_5
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
@@ -1025,14 +1060,14 @@
     :goto_1
     if-lt v2, v0, :cond_6
 
-    .line 659
+    .line 692
     invoke-direct {p0, v2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->removeMediaSourceInternal(I)V
 
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_1
 
-    .line 661
+    .line 694
     :cond_6
     iget-object p1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->onCompletionAction:Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
@@ -1040,18 +1075,18 @@
 
     goto :goto_2
 
-    .line 643
+    .line 676
     :cond_7
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 644
+    .line 677
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
-    .line 645
+    .line 678
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     iget v2, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->index:I
@@ -1070,7 +1105,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
-    .line 646
+    .line 679
     iget v0, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->index:I
 
     iget-object v2, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->customData:Ljava/lang/Object;
@@ -1079,7 +1114,7 @@
 
     invoke-direct {p0, v0, v2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addMediaSourcesInternal(ILjava/util/Collection;)V
 
-    .line 647
+    .line 680
     iget-object p1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;->onCompletionAction:Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
@@ -1091,7 +1126,7 @@
 .method private maybeReleaseChildSource(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;)V
     .locals 1
 
-    .line 807
+    .line 837
     iget-boolean v0, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->isRemoved:Z
 
     if-eqz v0, :cond_0
@@ -1104,12 +1139,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 808
+    .line 838
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 809
+    .line 839
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->releaseChildSource(Ljava/lang/Object;)V
 
     :cond_0
@@ -1119,17 +1154,17 @@
 .method private moveMediaSourceInternal(II)V
     .locals 4
 
-    .line 783
+    .line 813
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 784
+    .line 814
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 785
+    .line 815
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1140,7 +1175,7 @@
 
     iget v2, v2, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->firstWindowIndexInChild:I
 
-    .line 786
+    .line 816
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     invoke-interface {v3, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
@@ -1154,7 +1189,7 @@
     :goto_0
     if-gt v0, v1, :cond_0
 
-    .line 788
+    .line 818
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1163,13 +1198,13 @@
 
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 789
+    .line 819
     iput v0, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
 
-    .line 790
+    .line 820
     iput v2, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->firstWindowIndexInChild:I
 
-    .line 791
+    .line 821
     iget-object p1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/source/MaskingMediaSource;->getTimeline()Lcom/google/android/exoplayer2/Timeline;
@@ -1224,14 +1259,14 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 584
+    .line 615
     :goto_2
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 585
+    .line 616
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
-    .line 586
+    .line 617
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
@@ -1244,17 +1279,17 @@
 
     if-eqz v0, :cond_3
 
-    .line 588
+    .line 620
     invoke-direct {p0, p3, p4}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     move-result-object p3
 
     const/4 p4, 0x2
 
-    .line 589
+    .line 621
     new-instance v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
-    .line 590
+    .line 622
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1265,7 +1300,7 @@
 
     move-result-object p1
 
-    .line 591
+    .line 623
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_3
@@ -1275,7 +1310,7 @@
 
     if-eqz p3, :cond_4
 
-    .line 593
+    .line 625
     invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_4
@@ -1286,7 +1321,7 @@
 .method private removeMediaSourceInternal(I)V
     .locals 3
 
-    .line 774
+    .line 804
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
@@ -1295,21 +1330,21 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 775
+    .line 805
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByUid:Ljava/util/Map;
 
     iget-object v2, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->uid:Ljava/lang/Object;
 
     invoke-interface {v1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 776
+    .line 806
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/source/MaskingMediaSource;->getTimeline()Lcom/google/android/exoplayer2/Timeline;
 
     move-result-object v1
 
-    .line 777
+    .line 807
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/Timeline;->getWindowCount()I
 
     move-result v1
@@ -1322,10 +1357,10 @@
 
     const/4 p1, 0x1
 
-    .line 778
+    .line 808
     iput-boolean p1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->isRemoved:Z
 
-    .line 779
+    .line 809
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->maybeReleaseChildSource(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;)V
 
     return-void
@@ -1362,29 +1397,29 @@
 
     const/4 v0, 0x1
 
-    .line 565
+    .line 595
     :cond_2
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 566
+    .line 596
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
-    .line 567
+    .line 597
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-static {v2, p1, p2}, Lcom/google/android/exoplayer2/util/Util;->removeRange(Ljava/util/List;II)V
 
     if-eqz v0, :cond_3
 
-    .line 569
+    .line 600
     invoke-direct {p0, p3, p4}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
     move-result-object p3
 
-    .line 570
+    .line 601
     new-instance p4, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
-    .line 571
+    .line 602
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -1395,7 +1430,7 @@
 
     move-result-object p1
 
-    .line 572
+    .line 603
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_2
@@ -1405,7 +1440,7 @@
 
     if-eqz p3, :cond_4
 
-    .line 574
+    .line 605
     invoke-virtual {p3, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_4
@@ -1418,7 +1453,7 @@
 
     const/4 v0, 0x0
 
-    .line 690
+    .line 723
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->scheduleTimelineUpdate(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
     return-void
@@ -1427,12 +1462,12 @@
 .method private scheduleTimelineUpdate(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
     .locals 2
 
-    .line 694
+    .line 727
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->timelineUpdateScheduled:Z
 
     if-nez v0, :cond_0
 
-    .line 695
+    .line 728
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getPlaybackThreadHandlerOnPlaybackThread()Landroid/os/Handler;
 
     move-result-object v0
@@ -1447,13 +1482,13 @@
 
     const/4 v0, 0x1
 
-    .line 696
+    .line 729
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->timelineUpdateScheduled:Z
 
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 699
+    .line 732
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->nextTimelineUpdateOnCompletionActions:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
@@ -1496,38 +1531,38 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 600
+    .line 632
     :goto_2
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 601
+    .line 633
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_4
 
-    .line 603
+    .line 635
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getSize()I
 
     move-result v2
 
-    .line 604
+    .line 636
     invoke-interface {p1}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->getLength()I
 
     move-result v3
 
     if-eq v3, v2, :cond_3
 
-    .line 607
+    .line 639
     invoke-interface {p1}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->cloneAndClear()Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     move-result-object p1
 
-    .line 608
+    .line 640
     invoke-interface {p1, v1, v2}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->cloneAndInsert(II)Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     move-result-object p1
 
-    .line 610
+    .line 643
     :cond_3
     invoke-direct {p0, p2, p3}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->createOnCompletionAction(Landroid/os/Handler;Ljava/lang/Runnable;)Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;
 
@@ -1535,22 +1570,22 @@
 
     const/4 p3, 0x3
 
-    .line 611
+    .line 644
     new-instance v2, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;
 
     invoke-direct {v2, v1, p1, p2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MessageData;-><init>(ILjava/lang/Object;Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$HandlerAndRunnable;)V
 
-    .line 612
+    .line 645
     invoke-virtual {v0, p3, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
-    .line 615
+    .line 648
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_3
 
-    .line 618
+    .line 651
     :cond_4
     invoke-interface {p1}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->getLength()I
 
@@ -1569,7 +1604,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 620
+    .line 653
     invoke-virtual {p2, p3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_6
@@ -1580,9 +1615,7 @@
 .method private updateMediaSourceInternal(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Lcom/google/android/exoplayer2/Timeline;)V
     .locals 2
 
-    if-eqz p1, :cond_1
-
-    .line 760
+    .line 790
     iget v0, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
 
     add-int/lit8 v0, v0, 0x1
@@ -1595,7 +1628,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 761
+    .line 791
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     iget v1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
@@ -1608,7 +1641,7 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 763
+    .line 793
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/Timeline;->getWindowCount()I
 
     move-result p2
@@ -1623,7 +1656,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 766
+    .line 796
     iget p1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->childIndex:I
 
     add-int/lit8 p1, p1, 0x1
@@ -1632,19 +1665,11 @@
 
     invoke-direct {p0, p1, v0, p2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->correctOffsets(III)V
 
-    .line 770
+    .line 800
     :cond_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->scheduleTimelineUpdate()V
 
     return-void
-
-    .line 758
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw p1
 .end method
 
 .method private updateTimelineAndScheduleOnCompletionActions()V
@@ -1652,20 +1677,20 @@
 
     const/4 v0, 0x0
 
-    .line 704
+    .line 737
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->timelineUpdateScheduled:Z
 
-    .line 705
+    .line 738
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->nextTimelineUpdateOnCompletionActions:Ljava/util/Set;
 
-    .line 706
+    .line 739
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->nextTimelineUpdateOnCompletionActions:Ljava/util/Set;
 
-    .line 707
+    .line 740
     new-instance v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
@@ -1678,19 +1703,19 @@
 
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/source/BaseMediaSource;->refreshSourceInfo(Lcom/google/android/exoplayer2/Timeline;)V
 
-    .line 708
+    .line 741
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getPlaybackThreadHandlerOnPlaybackThread()Landroid/os/Handler;
 
     move-result-object v1
 
     const/4 v2, 0x5
 
-    .line 709
+    .line 742
     invoke-virtual {v1, v2, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 710
+    .line 743
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
@@ -1703,7 +1728,7 @@
 
     monitor-enter p0
 
-    .line 174
+    .line 199
     :try_start_0
     invoke-static {p2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
@@ -1711,12 +1736,12 @@
 
     const/4 v0, 0x0
 
-    .line 172
+    .line 197
     invoke-direct {p0, p1, p2, v0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 177
+    .line 202
     monitor-exit p0
 
     return-void
@@ -1734,18 +1759,18 @@
 
     monitor-enter p0
 
-    .line 192
+    .line 217
     :try_start_0
     invoke-static {p2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 191
+    .line 216
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 193
+    .line 218
     monitor-exit p0
 
     return-void
@@ -1763,7 +1788,7 @@
 
     monitor-enter p0
 
-    .line 148
+    .line 173
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
@@ -1775,7 +1800,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 149
+    .line 174
     monitor-exit p0
 
     return-void
@@ -1793,7 +1818,7 @@
 
     monitor-enter p0
 
-    .line 161
+    .line 186
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
@@ -1805,7 +1830,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 162
+    .line 187
     monitor-exit p0
 
     return-void
@@ -1833,13 +1858,13 @@
 
     const/4 v0, 0x0
 
-    .line 233
+    .line 258
     :try_start_0
     invoke-direct {p0, p1, p2, v0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 234
+    .line 259
     monitor-exit p0
 
     return-void
@@ -1868,13 +1893,13 @@
 
     monitor-enter p0
 
-    .line 252
+    .line 277
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 253
+    .line 278
     monitor-exit p0
 
     return-void
@@ -1900,23 +1925,23 @@
 
     monitor-enter p0
 
-    .line 202
+    .line 227
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
-    .line 203
+    .line 228
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    .line 202
+    .line 227
     invoke-direct {p0, v0, p1, v1, v1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addPublicMediaSources(ILjava/util/Collection;Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 207
+    .line 232
     monitor-exit p0
 
     return-void
@@ -1945,7 +1970,7 @@
 
     monitor-enter p0
 
-    .line 221
+    .line 246
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
@@ -1957,7 +1982,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 222
+    .line 247
     monitor-exit p0
 
     return-void
@@ -1977,7 +2002,7 @@
 
     const/4 v0, 0x0
 
-    .line 370
+    .line 395
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getSize()I
 
@@ -1987,7 +2012,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 371
+    .line 396
     monitor-exit p0
 
     return-void
@@ -2007,7 +2032,7 @@
 
     const/4 v0, 0x0
 
-    .line 381
+    .line 406
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getSize()I
 
@@ -2017,7 +2042,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 382
+    .line 407
     monitor-exit p0
 
     return-void
@@ -2033,15 +2058,15 @@
 .method public createPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/upstream/Allocator;J)Lcom/google/android/exoplayer2/source/MediaPeriod;
     .locals 3
 
-    .line 451
-    iget-object v0, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    .line 477
+    iget-object v0, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getMediaSourceHolderUid(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 452
-    iget-object v1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    .line 478
+    iget-object v1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getChildPeriodUid(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2051,7 +2076,7 @@
 
     move-result-object p1
 
-    .line 453
+    .line 479
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByUid:Ljava/util/Map;
 
     invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2062,14 +2087,14 @@
 
     if-nez v0, :cond_0
 
-    .line 456
+    .line 482
     new-instance v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    new-instance v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$DummyMediaSource;
+    new-instance v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$FakeMediaSource;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$DummyMediaSource;-><init>(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$1;)V
+    invoke-direct {v1, v2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$FakeMediaSource;-><init>(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$1;)V
 
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->useLazyPreparation:Z
 
@@ -2077,37 +2102,37 @@
 
     const/4 v1, 0x1
 
-    .line 457
+    .line 483
     iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->isRemoved:Z
 
-    .line 458
+    .line 484
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->prepareChildSource(Ljava/lang/Object;Lcom/google/android/exoplayer2/source/MediaSource;)V
 
-    .line 460
+    .line 486
     :cond_0
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enableMediaSource(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;)V
 
-    .line 461
+    .line 487
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 462
+    .line 488
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
-    .line 463
+    .line 489
     invoke-virtual {v1, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/MaskingMediaSource;->createPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/upstream/Allocator;J)Lcom/google/android/exoplayer2/source/MaskingMediaPeriod;
 
     move-result-object p1
 
-    .line 464
-    iget-object p2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/Map;
+    .line 490
+    iget-object p2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
 
-    invoke-interface {p2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2, p1, v0}, Ljava/util/IdentityHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 465
+    .line 491
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->disableUnusedMediaSources()V
 
     return-object p1
@@ -2116,10 +2141,10 @@
 .method protected disableInternal()V
     .locals 1
 
-    .line 483
+    .line 509
     invoke-super {p0}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->disableInternal()V
 
-    .line 484
+    .line 510
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
@@ -2133,12 +2158,94 @@
     return-void
 .end method
 
+.method public declared-synchronized getInitialTimeline()Lcom/google/android/exoplayer2/Timeline;
+    .locals 4
+
+    monitor-enter p0
+
+    .line 153
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
+
+    invoke-interface {v0}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->getLength()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-eq v0, v1, :cond_0
+
+    .line 156
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
+
+    .line 155
+    invoke-interface {v0}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->cloneAndClear()Lcom/google/android/exoplayer2/source/ShuffleOrder;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
+
+    .line 157
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    .line 156
+    invoke-interface {v0, v1, v2}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->cloneAndInsert(II)Lcom/google/android/exoplayer2/source/ShuffleOrder;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 158
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
+
+    .line 159
+    :goto_0
+    new-instance v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;
+
+    iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
+
+    iget-boolean v3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->isAtomic:Z
+
+    invoke-direct {v1, v2, v0, v3}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;-><init>(Ljava/util/Collection;Lcom/google/android/exoplayer2/source/ShuffleOrder;Z)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public getMediaItem()Lcom/google/android/exoplayer2/MediaItem;
+    .locals 1
+
+    .line 452
+    sget-object v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->PLACEHOLDER_MEDIA_ITEM:Lcom/google/android/exoplayer2/MediaItem;
+
+    return-object v0
+.end method
+
 .method protected getMediaPeriodIdForChildMediaPeriodId(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
     .locals 6
 
     const/4 v0, 0x0
 
-    .line 513
+    .line 541
     :goto_0
     iget-object v1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
 
@@ -2148,7 +2255,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 516
+    .line 544
     iget-object v1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2157,22 +2264,22 @@
 
     check-cast v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v1, v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide v1, v1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    iget-wide v3, p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide v3, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     cmp-long v5, v1, v3
 
     if-nez v5, :cond_0
 
-    .line 518
-    iget-object v0, p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    .line 546
+    iget-object v0, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-static {p1, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getPeriodUid(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 519
+    .line 547
     invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->copyWithPeriodUid(Ljava/lang/Object;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     move-result-object p1
@@ -2193,7 +2300,7 @@
 .method protected bridge synthetic getMediaPeriodIdForChildMediaPeriodId(Ljava/lang/Object;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
     .locals 0
 
-    .line 48
+    .line 53
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getMediaPeriodIdForChildMediaPeriodId(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
@@ -2208,7 +2315,7 @@
 
     monitor-enter p0
 
-    .line 396
+    .line 421
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
@@ -2239,7 +2346,7 @@
 
     monitor-enter p0
 
-    .line 386
+    .line 411
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
@@ -2261,18 +2368,10 @@
     throw v0
 .end method
 
-.method public getTag()Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
 .method protected getWindowIndexForChildWindowIndex(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;I)I
     .locals 0
 
-    .line 528
+    .line 557
     iget p1, p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->firstWindowIndexInChild:I
 
     add-int/2addr p2, p1
@@ -2283,7 +2382,7 @@
 .method protected bridge synthetic getWindowIndexForChildWindowIndex(Ljava/lang/Object;I)I
     .locals 0
 
-    .line 48
+    .line 53
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getWindowIndexForChildWindowIndex(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;I)I
@@ -2293,6 +2392,14 @@
     return p1
 .end method
 
+.method public isSingleWindow()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public declared-synchronized moveMediaSource(II)V
     .locals 1
 
@@ -2300,13 +2407,13 @@
 
     const/4 v0, 0x0
 
-    .line 347
+    .line 372
     :try_start_0
     invoke-direct {p0, p1, p2, v0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->movePublicMediaSource(IILandroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 349
+    .line 374
     monitor-exit p0
 
     return-void
@@ -2324,13 +2431,13 @@
 
     monitor-enter p0
 
-    .line 365
+    .line 390
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->movePublicMediaSource(IILandroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 366
+    .line 391
     monitor-exit p0
 
     return-void
@@ -2346,7 +2453,7 @@
 .method protected onChildSourceInfoRefreshed(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/Timeline;)V
     .locals 0
 
-    .line 506
+    .line 533
     invoke-direct {p0, p1, p3}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->updateMediaSourceInternal(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Lcom/google/android/exoplayer2/Timeline;)V
 
     return-void
@@ -2355,7 +2462,7 @@
 .method protected bridge synthetic onChildSourceInfoRefreshed(Ljava/lang/Object;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/Timeline;)V
     .locals 0
 
-    .line 48
+    .line 53
     check-cast p1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->onChildSourceInfoRefreshed(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/Timeline;)V
@@ -2368,11 +2475,11 @@
 
     monitor-enter p0
 
-    .line 432
+    .line 458
     :try_start_0
     invoke-super {p0, p1}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->prepareSourceInternal(Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 433
+    .line 459
     new-instance p1, Landroid/os/Handler;
 
     new-instance v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$$ExternalSyntheticLambda0;
@@ -2383,7 +2490,7 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
-    .line 434
+    .line 460
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -2392,12 +2499,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 435
+    .line 461
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->updateTimelineAndScheduleOnCompletionActions()V
 
     goto :goto_0
 
-    .line 437
+    .line 463
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
@@ -2415,17 +2522,17 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
-    .line 438
+    .line 464
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourcesPublic:Ljava/util/List;
 
     invoke-direct {p0, v1, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->addMediaSourcesInternal(ILjava/util/Collection;)V
 
-    .line 439
+    .line 465
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->scheduleTimelineUpdate()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 441
+    .line 467
     :goto_0
     monitor-exit p0
 
@@ -2442,11 +2549,11 @@
 .method public releasePeriod(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
     .locals 2
 
-    .line 471
-    iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/Map;
+    .line 497
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
 
-    .line 472
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 498
+    invoke-virtual {v0, p1}, Ljava/util/IdentityHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2458,12 +2565,12 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 473
+    .line 499
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
 
     invoke-virtual {v1, p1}, Lcom/google/android/exoplayer2/source/MaskingMediaSource;->releasePeriod(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
 
-    .line 474
+    .line 500
     iget-object v1, v0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->activeMediaPeriodIds:Ljava/util/List;
 
     check-cast p1, Lcom/google/android/exoplayer2/source/MaskingMediaPeriod;
@@ -2472,19 +2579,19 @@
 
     invoke-interface {v1, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 475
-    iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/Map;
+    .line 501
+    iget-object p1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByMediaPeriod:Ljava/util/IdentityHashMap;
 
-    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
+    invoke-virtual {p1}, Ljava/util/IdentityHashMap;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 476
+    .line 502
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->disableUnusedMediaSources()V
 
-    .line 478
+    .line 504
     :cond_0
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->maybeReleaseChildSource(Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;)V
 
@@ -2496,26 +2603,26 @@
 
     monitor-enter p0
 
-    .line 489
+    .line 515
     :try_start_0
     invoke-super {p0}, Lcom/google/android/exoplayer2/source/CompositeMediaSource;->releaseSourceInternal()V
 
-    .line 490
+    .line 516
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceHolders:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 491
+    .line 517
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->enabledMediaSourceHolders:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 492
+    .line 518
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->mediaSourceByUid:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 493
+    .line 519
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/source/ShuffleOrder;->cloneAndClear()Lcom/google/android/exoplayer2/source/ShuffleOrder;
@@ -2524,38 +2631,38 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->shuffleOrder:Lcom/google/android/exoplayer2/source/ShuffleOrder;
 
-    .line 494
+    .line 520
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 495
+    .line 521
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 496
+    .line 522
     iput-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->playbackThreadHandler:Landroid/os/Handler;
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 498
+    .line 524
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->timelineUpdateScheduled:Z
 
-    .line 499
+    .line 525
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->nextTimelineUpdateOnCompletionActions:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 500
+    .line 526
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->pendingOnCompletionActions:Ljava/util/Set;
 
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->dispatchOnCompletionActions(Ljava/util/Set;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 501
+    .line 527
     monitor-exit p0
 
     return-void
@@ -2573,7 +2680,7 @@
 
     monitor-enter p0
 
-    .line 269
+    .line 294
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getMediaSource(I)Lcom/google/android/exoplayer2/source/MediaSource;
 
@@ -2583,12 +2690,12 @@
 
     const/4 v2, 0x0
 
-    .line 270
+    .line 295
     invoke-direct {p0, p1, v1, v2, v2}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 271
+    .line 296
     monitor-exit p0
 
     return-object v0
@@ -2606,7 +2713,7 @@
 
     monitor-enter p0
 
-    .line 292
+    .line 317
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->getMediaSource(I)Lcom/google/android/exoplayer2/source/MediaSource;
 
@@ -2614,12 +2721,12 @@
 
     add-int/lit8 v1, p1, 0x1
 
-    .line 293
+    .line 318
     invoke-direct {p0, p1, v1, p2, p3}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 294
+    .line 319
     monitor-exit p0
 
     return-object v0
@@ -2639,13 +2746,13 @@
 
     const/4 v0, 0x0
 
-    .line 312
+    .line 337
     :try_start_0
     invoke-direct {p0, p1, p2, v0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 314
+    .line 339
     monitor-exit p0
 
     return-void
@@ -2663,13 +2770,13 @@
 
     monitor-enter p0
 
-    .line 335
+    .line 360
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->removePublicMediaSources(IILandroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 336
+    .line 361
     monitor-exit p0
 
     return-void
@@ -2689,13 +2796,13 @@
 
     const/4 v0, 0x0
 
-    .line 405
+    .line 430
     :try_start_0
     invoke-direct {p0, p1, v0, v0}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->setPublicShuffleOrder(Lcom/google/android/exoplayer2/source/ShuffleOrder;Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 406
+    .line 431
     monitor-exit p0
 
     return-void
@@ -2713,13 +2820,13 @@
 
     monitor-enter p0
 
-    .line 418
+    .line 443
     :try_start_0
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource;->setPublicShuffleOrder(Lcom/google/android/exoplayer2/source/ShuffleOrder;Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 419
+    .line 444
     monitor-exit p0
 
     return-void

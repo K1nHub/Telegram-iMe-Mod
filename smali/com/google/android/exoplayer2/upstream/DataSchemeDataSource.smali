@@ -8,11 +8,11 @@
 
 
 # instance fields
+.field private bytesRemaining:I
+
 .field private data:[B
 
 .field private dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
-
-.field private endPosition:I
 
 .field private readPosition:I
 
@@ -23,7 +23,7 @@
 
     const/4 v0, 0x0
 
-    .line 42
+    .line 44
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;-><init>(Z)V
 
     return-void
@@ -34,20 +34,20 @@
 .method public close()V
     .locals 2
 
-    .line 104
+    .line 108
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 105
+    .line 109
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
 
-    .line 106
+    .line 110
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferEnded()V
 
-    .line 108
+    .line 112
     :cond_0
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
@@ -57,7 +57,7 @@
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 99
+    .line 103
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     if-eqz v0, :cond_0
@@ -74,44 +74,51 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 47
+    .line 49
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferInitializing(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    .line 48
+    .line 50
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    .line 49
-    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
-
-    long-to-int v1, v0
-
-    iput v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
-
-    .line 50
+    .line 51
     iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    .line 51
+    .line 52
     invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v1
 
     const-string v2, "data"
 
-    .line 52
+    .line 53
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    .line 55
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Unsupported scheme: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
+
+    .line 54
     invoke-virtual {v0}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v1
@@ -122,12 +129,14 @@
 
     move-result-object v1
 
-    .line 56
+    .line 55
     array-length v2, v1
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
-    if-ne v2, v3, :cond_3
+    const/4 v4, 0x2
+
+    if-ne v2, v4, :cond_4
 
     const/4 v0, 0x1
 
@@ -139,9 +148,9 @@
     .line 60
     aget-object v1, v1, v2
 
-    const-string v3, ";base64"
+    const-string v4, ";base64"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
@@ -163,30 +172,34 @@
     move-exception p1
 
     .line 64
-    new-instance v1, Lcom/google/android/exoplayer2/ParserException;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "Error while parsing Base64 encoded string: "
 
-    const-string v3, "Error while parsing Base64 encoded string: "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {v1, v0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedDataOfUnknownType(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    throw v1
+    move-result-object p1
 
+    throw p1
+
+    .line 69
     :cond_0
-    const-string v1, "US-ASCII"
+    sget-object v1, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
 
-    .line 68
+    invoke-virtual {v1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
+
+    move-result-object v1
+
     invoke-static {v0, v1}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -199,111 +212,103 @@
 
     .line 71
     :goto_0
-    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    const-wide/16 v3, -0x1
+    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
 
-    cmp-long v5, v0, v3
+    array-length v4, v2
 
-    if-eqz v5, :cond_1
+    int-to-long v4, v4
+
+    cmp-long v6, v0, v4
+
+    if-gtz v6, :cond_3
 
     long-to-int v1, v0
 
-    iget v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
+    .line 75
+    iput v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
 
-    add-int/2addr v1, v0
+    .line 76
+    array-length v0, v2
+
+    sub-int/2addr v0, v1
+
+    iput v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
+
+    .line 77
+    iget-wide v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    const-wide/16 v3, -0x1
+
+    cmp-long v5, v1, v3
+
+    if-eqz v5, :cond_1
+
+    int-to-long v5, v0
+
+    .line 78
+    invoke-static {v5, v6, v1, v2}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v0
+
+    long-to-int v1, v0
+
+    iput v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
+
+    .line 80
+    :cond_1
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+
+    .line 81
+    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    cmp-long p1, v0, v3
+
+    if-eqz p1, :cond_2
 
     goto :goto_1
 
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
-
-    array-length v1, v0
-
-    :goto_1
-    iput v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->endPosition:I
-
-    .line 72
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
-
-    array-length v0, v0
-
-    if-gt v1, v0, :cond_2
-
-    iget v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
-
-    if-gt v0, v1, :cond_2
-
-    .line 76
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
-
-    .line 77
-    iget p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->endPosition:I
+    :cond_2
+    iget p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
 
     int-to-long v0, p1
 
-    iget p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
-
-    int-to-long v2, p1
-
-    sub-long/2addr v0, v2
-
+    :goto_1
     return-wide v0
 
-    :cond_2
-    const/4 p1, 0x0
+    .line 72
+    :cond_3
+    iput-object v3, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
 
     .line 73
-    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
-
-    .line 74
     new-instance p1, Lcom/google/android/exoplayer2/upstream/DataSourceException;
 
-    invoke-direct {p1, v2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
+    const/16 v0, 0x7d8
+
+    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
 
     throw p1
 
-    .line 57
-    :cond_3
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected URI format: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 53
+    .line 56
     :cond_4
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "Unexpected URI format: "
 
-    const-string v2, "Unsupported scheme: "
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v0
+    invoke-static {p1, v3}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedDataOfUnknownType(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object p1
 
     throw p1
 .end method
@@ -317,13 +322,9 @@
 
     return p1
 
-    .line 85
+    .line 89
     :cond_0
-    iget v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->endPosition:I
-
-    iget v1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
-
-    sub-int/2addr v0, v1
+    iget v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
 
     if-nez v0, :cond_1
 
@@ -331,13 +332,13 @@
 
     return p1
 
-    .line 89
+    .line 92
     :cond_1
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p3
 
-    .line 90
+    .line 93
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->data:[B
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -348,14 +349,21 @@
 
     invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 91
+    .line 94
     iget p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
 
     add-int/2addr p1, p3
 
     iput p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->readPosition:I
 
-    .line 92
+    .line 95
+    iget p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
+
+    sub-int/2addr p1, p3
+
+    iput p1, p0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;->bytesRemaining:I
+
+    .line 96
     invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
 
     return p3

@@ -23,13 +23,11 @@
 
 .field private bufferForPlaybackMs:I
 
-.field private createDefaultLoadControlCalled:Z
+.field private buildCalled:Z
 
 .field private maxBufferMs:I
 
-.field private minBufferAudioMs:I
-
-.field private minBufferVideoMs:I
+.field private minBufferMs:I
 
 .field private prioritizeTimeOverSizeThresholds:Z
 
@@ -42,48 +40,41 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 105
+    .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/16 v0, 0x3a98
-
-    .line 106
-    iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferAudioMs:I
 
     const v0, 0xc350
 
-    .line 107
-    iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferVideoMs:I
+    .line 117
+    iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferMs:I
 
-    .line 108
+    .line 118
     iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->maxBufferMs:I
 
     const/16 v0, 0x9c4
 
-    .line 109
+    .line 119
     iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackMs:I
 
     const/16 v0, 0x1388
 
-    .line 110
+    .line 120
     iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackAfterRebufferMs:I
 
     const/4 v0, -0x1
 
-    .line 111
+    .line 121
     iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->targetBufferBytes:I
-
-    const/4 v0, 0x1
-
-    .line 112
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->prioritizeTimeOverSizeThresholds:Z
 
     const/4 v0, 0x0
 
-    .line 113
+    .line 122
+    iput-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->prioritizeTimeOverSizeThresholds:Z
+
+    .line 123
     iput v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->backBufferDurationMs:I
 
-    .line 114
+    .line 124
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->retainBackBufferFromKeyframe:Z
 
     return-void
@@ -91,11 +82,11 @@
 
 
 # virtual methods
-.method public createDefaultLoadControl()Lcom/google/android/exoplayer2/DefaultLoadControl;
-    .locals 14
+.method public build()Lcom/google/android/exoplayer2/DefaultLoadControl;
+    .locals 13
 
-    .line 218
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->createDefaultLoadControlCalled:Z
+    .line 240
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->buildCalled:Z
 
     const/4 v1, 0x1
 
@@ -103,15 +94,15 @@
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 219
-    iput-boolean v1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->createDefaultLoadControlCalled:Z
+    .line 241
+    iput-boolean v1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->buildCalled:Z
 
-    .line 220
+    .line 242
     iget-object v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->allocator:Lcom/google/android/exoplayer2/upstream/DefaultAllocator;
 
     if-nez v0, :cond_0
 
-    .line 221
+    .line 243
     new-instance v0, Lcom/google/android/exoplayer2/upstream/DefaultAllocator;
 
     const/high16 v2, 0x10000
@@ -120,33 +111,44 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->allocator:Lcom/google/android/exoplayer2/upstream/DefaultAllocator;
 
-    .line 223
+    .line 245
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/DefaultLoadControl;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->allocator:Lcom/google/android/exoplayer2/upstream/DefaultAllocator;
 
-    iget v5, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferAudioMs:I
+    iget v5, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferMs:I
 
-    iget v6, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferVideoMs:I
+    iget v6, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->maxBufferMs:I
 
-    iget v7, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->maxBufferMs:I
+    iget v7, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackMs:I
 
-    iget v8, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackMs:I
+    iget v8, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackAfterRebufferMs:I
 
-    iget v9, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackAfterRebufferMs:I
+    iget v9, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->targetBufferBytes:I
 
-    iget v10, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->targetBufferBytes:I
+    iget-boolean v10, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->prioritizeTimeOverSizeThresholds:Z
 
-    iget-boolean v11, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->prioritizeTimeOverSizeThresholds:Z
+    iget v11, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->backBufferDurationMs:I
 
-    iget v12, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->backBufferDurationMs:I
-
-    iget-boolean v13, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->retainBackBufferFromKeyframe:Z
+    iget-boolean v12, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->retainBackBufferFromKeyframe:Z
 
     move-object v3, v0
 
-    invoke-direct/range {v3 .. v13}, Lcom/google/android/exoplayer2/DefaultLoadControl;-><init>(Lcom/google/android/exoplayer2/upstream/DefaultAllocator;IIIIIIZIZ)V
+    invoke-direct/range {v3 .. v12}, Lcom/google/android/exoplayer2/DefaultLoadControl;-><init>(Lcom/google/android/exoplayer2/upstream/DefaultAllocator;IIIIIZIZ)V
+
+    return-object v0
+.end method
+
+.method public createDefaultLoadControl()Lcom/google/android/exoplayer2/DefaultLoadControl;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 235
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->build()Lcom/google/android/exoplayer2/DefaultLoadControl;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -154,14 +156,14 @@
 .method public setAllocator(Lcom/google/android/exoplayer2/upstream/DefaultAllocator;)Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;
     .locals 1
 
-    .line 125
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->createDefaultLoadControlCalled:Z
+    .line 136
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->buildCalled:Z
 
     xor-int/lit8 v0, v0, 0x1
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 126
+    .line 137
     iput-object p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->allocator:Lcom/google/android/exoplayer2/upstream/DefaultAllocator;
 
     return-object p0
@@ -170,8 +172,8 @@
 .method public setBackBuffer(IZ)Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;
     .locals 3
 
-    .line 209
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->createDefaultLoadControlCalled:Z
+    .line 223
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->buildCalled:Z
 
     xor-int/lit8 v0, v0, 0x1
 
@@ -183,13 +185,13 @@
 
     const-string v2, "0"
 
-    .line 210
+    .line 224
     invoke-static {p1, v0, v1, v2}, Lcom/google/android/exoplayer2/DefaultLoadControl;->access$000(IILjava/lang/String;Ljava/lang/String;)V
 
-    .line 211
+    .line 225
     iput p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->backBufferDurationMs:I
 
-    .line 212
+    .line 226
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->retainBackBufferFromKeyframe:Z
 
     return-object p0
@@ -198,8 +200,8 @@
 .method public setBufferDurationsMs(IIII)Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;
     .locals 4
 
-    .line 150
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->createDefaultLoadControlCalled:Z
+    .line 162
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->buildCalled:Z
 
     xor-int/lit8 v0, v0, 0x1
 
@@ -211,40 +213,37 @@
 
     const-string v2, "0"
 
-    .line 151
+    .line 163
     invoke-static {p3, v0, v1, v2}, Lcom/google/android/exoplayer2/DefaultLoadControl;->access$000(IILjava/lang/String;Ljava/lang/String;)V
 
     const-string v3, "bufferForPlaybackAfterRebufferMs"
 
-    .line 152
+    .line 164
     invoke-static {p4, v0, v3, v2}, Lcom/google/android/exoplayer2/DefaultLoadControl;->access$000(IILjava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "minBufferMs"
 
-    .line 154
+    .line 166
     invoke-static {p1, p3, v0, v1}, Lcom/google/android/exoplayer2/DefaultLoadControl;->access$000(IILjava/lang/String;Ljava/lang/String;)V
 
-    .line 155
+    .line 167
     invoke-static {p1, p4, v0, v3}, Lcom/google/android/exoplayer2/DefaultLoadControl;->access$000(IILjava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "maxBufferMs"
 
-    .line 160
+    .line 172
     invoke-static {p2, p1, v1, v0}, Lcom/google/android/exoplayer2/DefaultLoadControl;->access$000(IILjava/lang/String;Ljava/lang/String;)V
 
-    .line 161
-    iput p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferAudioMs:I
+    .line 173
+    iput p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferMs:I
 
-    .line 162
-    iput p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->minBufferVideoMs:I
-
-    .line 163
+    .line 174
     iput p2, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->maxBufferMs:I
 
-    .line 164
+    .line 175
     iput p3, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackMs:I
 
-    .line 165
+    .line 176
     iput p4, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->bufferForPlaybackAfterRebufferMs:I
 
     return-object p0
@@ -253,14 +252,14 @@
 .method public setPrioritizeTimeOverSizeThresholds(Z)Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;
     .locals 1
 
-    .line 193
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->createDefaultLoadControlCalled:Z
+    .line 206
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->buildCalled:Z
 
     xor-int/lit8 v0, v0, 0x1
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 194
+    .line 207
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->prioritizeTimeOverSizeThresholds:Z
 
     return-object p0
@@ -269,14 +268,14 @@
 .method public setTargetBufferBytes(I)Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;
     .locals 1
 
-    .line 178
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->createDefaultLoadControlCalled:Z
+    .line 190
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->buildCalled:Z
 
     xor-int/lit8 v0, v0, 0x1
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 179
+    .line 191
     iput p1, p0, Lcom/google/android/exoplayer2/DefaultLoadControl$Builder;->targetBufferBytes:I
 
     return-object p0

@@ -7,17 +7,9 @@
 
 
 # static fields
-.field private static final CLOSE_THRESHOLD:F = 0.01f
+.field private static final CLOSE_THRESHOLD:F = 1.0E-4f
 
-.field public static final MAXIMUM_PITCH:F = 8.0f
-
-.field public static final MAXIMUM_SPEED:F = 8.0f
-
-.field public static final MINIMUM_PITCH:F = 0.1f
-
-.field public static final MINIMUM_SPEED:F = 0.1f
-
-.field private static final MIN_BYTES_FOR_SPEEDUP_CALCULATION:I = 0x400
+.field private static final MIN_BYTES_FOR_DURATION_SCALING_CALCULATION:I = 0x400
 
 .field public static final SAMPLE_RATE_NO_CHANGE:I = -0x1
 
@@ -58,49 +50,49 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 85
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 86
+    .line 66
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->speed:F
 
-    .line 87
+    .line 67
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pitch:F
 
-    .line 88
+    .line 68
     sget-object v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->NOT_SET:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingInputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 89
+    .line 69
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 90
+    .line 70
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 91
+    .line 71
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 92
+    .line 72
     sget-object v0, Lcom/google/android/exoplayer2/audio/AudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
 
-    .line 93
+    .line 73
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
 
-    .line 94
+    .line 74
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
 
     const/4 v0, -0x1
 
-    .line 95
+    .line 75
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputSampleRate:I
 
     return-void
@@ -116,28 +108,28 @@
         }
     .end annotation
 
-    .line 167
+    .line 146
     iget v0, p1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->encoding:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 171
+    .line 150
     iget v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputSampleRate:I
 
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_0
 
-    .line 172
+    .line 151
     iget v0, p1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
 
-    .line 174
+    .line 153
     :cond_0
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingInputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 175
+    .line 154
     new-instance v2, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iget p1, p1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->channelCount:I
@@ -148,12 +140,12 @@
 
     const/4 p1, 0x1
 
-    .line 177
+    .line 156
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
     return-object v2
 
-    .line 168
+    .line 147
     :cond_1
     new-instance v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;
 
@@ -165,29 +157,29 @@
 .method public flush()V
     .locals 9
 
-    .line 237
+    .line 221
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->isActive()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 238
+    .line 222
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingInputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 239
+    .line 223
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 240
+    .line 224
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
     if-eqz v2, :cond_0
 
-    .line 241
+    .line 225
     new-instance v2, Lcom/google/android/exoplayer2/audio/Sonic;
 
     iget v4, v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
@@ -208,16 +200,16 @@
 
     goto :goto_0
 
-    .line 248
+    .line 232
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->sonic:Lcom/google/android/exoplayer2/audio/Sonic;
 
     if-eqz v0, :cond_1
 
-    .line 249
+    .line 233
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/Sonic;->flush()V
 
-    .line 252
+    .line 236
     :cond_1
     :goto_0
     sget-object v0, Lcom/google/android/exoplayer2/audio/AudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
@@ -226,27 +218,202 @@
 
     const-wide/16 v0, 0x0
 
-    .line 253
+    .line 237
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
 
-    .line 254
+    .line 238
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
 
     const/4 v0, 0x0
 
-    .line 255
+    .line 239
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputEnded:Z
 
     return-void
 .end method
 
-.method public getOutput()Ljava/nio/ByteBuffer;
-    .locals 2
+.method public getMediaDuration(J)J
+    .locals 15
 
-    .line 225
+    move-object v0, p0
+
+    .line 130
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
+
+    const-wide/16 v3, 0x400
+
+    cmp-long v5, v1, v3
+
+    if-ltz v5, :cond_1
+
+    .line 131
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
+
+    iget-object v3, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->sonic:Lcom/google/android/exoplayer2/audio/Sonic;
+
+    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/android/exoplayer2/audio/Sonic;
+
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/audio/Sonic;->getPendingInputBytes()I
+
+    move-result v3
+
+    int-to-long v3, v3
+
+    sub-long v7, v1, v3
+
+    .line 132
+    iget-object v1, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
+
+    iget v1, v1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
+
+    iget-object v2, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
+
+    iget v2, v2, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
+
+    if-ne v1, v2, :cond_0
+
+    .line 133
+    iget-wide v9, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
+
+    move-wide/from16 v5, p1
+
+    invoke-static/range {v5 .. v10}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
+
+    move-result-wide v1
+
+    goto :goto_0
+
+    :cond_0
+    int-to-long v3, v1
+
+    mul-long v11, v7, v3
+
+    .line 134
+    iget-wide v3, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
+
+    int-to-long v1, v2
+
+    mul-long v13, v3, v1
+
+    move-wide/from16 v9, p1
+
+    invoke-static/range {v9 .. v14}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
+
+    move-result-wide v1
+
+    :goto_0
+    return-wide v1
+
+    .line 139
+    :cond_1
+    iget v1, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->speed:F
+
+    float-to-double v1, v1
+
+    move-wide/from16 v3, p1
+
+    long-to-double v3, v3
+
+    mul-double v1, v1, v3
+
+    double-to-long v1, v1
+
+    return-wide v1
+.end method
+
+.method public getOutput()Ljava/nio/ByteBuffer;
+    .locals 6
+
+    .line 192
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->sonic:Lcom/google/android/exoplayer2/audio/Sonic;
+
+    if-eqz v0, :cond_1
+
+    .line 194
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/Sonic;->getOutputSize()I
+
+    move-result v1
+
+    if-lez v1, :cond_1
+
+    .line 196
+    iget-object v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->capacity()I
+
+    move-result v2
+
+    if-ge v2, v1, :cond_0
+
+    .line 197
+    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
+
+    .line 198
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
+
+    goto :goto_0
+
+    .line 200
+    :cond_0
+    iget-object v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
+
+    .line 201
+    iget-object v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
+
+    invoke-virtual {v2}, Ljava/nio/ShortBuffer;->clear()Ljava/nio/Buffer;
+
+    .line 203
+    :goto_0
+    iget-object v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/audio/Sonic;->getOutput(Ljava/nio/ShortBuffer;)V
+
+    .line 204
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
+
+    int-to-long v4, v1
+
+    add-long/2addr v2, v4
+
+    iput-wide v2, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
+
+    .line 205
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+
+    .line 206
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
+
+    iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
+
+    .line 209
+    :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
 
-    .line 226
+    .line 210
     sget-object v1, Lcom/google/android/exoplayer2/audio/AudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
@@ -257,7 +424,7 @@
 .method public isActive()Z
     .locals 3
 
-    .line 183
+    .line 162
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iget v0, v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
@@ -272,12 +439,12 @@
 
     sub-float/2addr v0, v1
 
-    .line 184
+    .line 163
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    const v2, 0x3c23d70a    # 0.01f
+    const v2, 0x38d1b717    # 1.0E-4f
 
     cmpl-float v0, v0, v2
 
@@ -287,7 +454,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 185
+    .line 164
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -321,7 +488,7 @@
 .method public isEnded()Z
     .locals 1
 
-    .line 232
+    .line 216
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputEnded:Z
 
     if-eqz v0, :cond_1
@@ -351,18 +518,18 @@
 .method public queueEndOfStream()V
     .locals 1
 
-    .line 217
+    .line 184
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->sonic:Lcom/google/android/exoplayer2/audio/Sonic;
 
     if-eqz v0, :cond_0
 
-    .line 218
+    .line 185
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/Sonic;->queueEndOfStream()V
 
     :cond_0
     const/4 v0, 0x1
 
-    .line 220
+    .line 187
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputEnded:Z
 
     return-void
@@ -371,7 +538,17 @@
 .method public queueInput(Ljava/nio/ByteBuffer;)V
     .locals 7
 
-    .line 191
+    .line 170
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 173
+    :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->sonic:Lcom/google/android/exoplayer2/audio/Sonic;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -380,24 +557,17 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/audio/Sonic;
 
-    .line 192
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 193
+    .line 174
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
 
     move-result-object v1
 
-    .line 194
+    .line 175
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v2
 
-    .line 195
+    .line 176
     iget-wide v3, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
 
     int-to-long v5, v2
@@ -406,96 +576,18 @@
 
     iput-wide v3, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
 
-    .line 196
+    .line 177
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/audio/Sonic;->queueInput(Ljava/nio/ShortBuffer;)V
 
-    .line 197
+    .line 178
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
-    move-result v1
+    move-result v0
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v2
 
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 199
-    :cond_0
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/Sonic;->getOutputSize()I
-
-    move-result p1
-
-    if-lez p1, :cond_2
-
-    .line 201
-    iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->capacity()I
-
-    move-result v1
-
-    if-ge v1, p1, :cond_1
-
-    .line 202
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
-
-    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
-
-    .line 203
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
-
-    goto :goto_0
-
-    .line 205
-    :cond_1
-    iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
-
-    .line 206
-    iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/ShortBuffer;->clear()Ljava/nio/Buffer;
-
-    .line 208
-    :goto_0
-    iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/audio/Sonic;->getOutput(Ljava/nio/ShortBuffer;)V
-
-    .line 209
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
-
-    int-to-long v2, p1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
-
-    .line 210
-    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    .line 211
-    iget-object p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
-
-    :cond_2
     return-void
 .end method
 
@@ -504,211 +596,119 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 260
+    .line 244
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->speed:F
 
-    .line 261
+    .line 245
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pitch:F
 
-    .line 262
+    .line 246
     sget-object v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->NOT_SET:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingInputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 263
+    .line 247
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 264
+    .line 248
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 265
+    .line 249
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
-    .line 266
+    .line 250
     sget-object v0, Lcom/google/android/exoplayer2/audio/AudioProcessor;->EMPTY_BUFFER:Ljava/nio/ByteBuffer;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->buffer:Ljava/nio/ByteBuffer;
 
-    .line 267
+    .line 251
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->shortBuffer:Ljava/nio/ShortBuffer;
 
-    .line 268
+    .line 252
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBuffer:Ljava/nio/ByteBuffer;
 
     const/4 v0, -0x1
 
-    .line 269
+    .line 253
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputSampleRate:I
 
     const/4 v0, 0x0
 
-    .line 270
+    .line 254
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
     const/4 v1, 0x0
 
-    .line 271
+    .line 255
     iput-object v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->sonic:Lcom/google/android/exoplayer2/audio/Sonic;
 
     const-wide/16 v1, 0x0
 
-    .line 272
+    .line 256
     iput-wide v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
 
-    .line 273
+    .line 257
     iput-wide v1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
 
-    .line 274
+    .line 258
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputEnded:Z
 
     return-void
 .end method
 
-.method public scaleDurationForSpeedup(J)J
-    .locals 15
-
-    move-object v0, p0
-
-    .line 153
-    iget-wide v5, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputBytes:J
-
-    const-wide/16 v1, 0x400
-
-    cmp-long v3, v5, v1
-
-    if-ltz v3, :cond_1
-
-    .line 154
-    iget-object v1, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->outputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
-
-    iget v1, v1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
-
-    iget-object v2, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
-
-    iget v2, v2, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
-
-    if-ne v1, v2, :cond_0
-
-    .line 155
-    iget-wide v3, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
-
-    move-wide/from16 v1, p1
-
-    invoke-static/range {v1 .. v6}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
-
-    move-result-wide v1
-
-    goto :goto_0
-
-    .line 156
-    :cond_0
-    iget-wide v3, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->inputBytes:J
-
-    int-to-long v7, v1
-
-    mul-long v11, v3, v7
-
-    int-to-long v1, v2
-
-    mul-long v13, v5, v1
-
-    move-wide/from16 v9, p1
-
-    invoke-static/range {v9 .. v14}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
-
-    move-result-wide v1
-
-    :goto_0
-    return-wide v1
-
-    .line 161
-    :cond_1
-    iget v1, v0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->speed:F
-
-    float-to-double v1, v1
-
-    move-wide/from16 v3, p1
-
-    long-to-double v3, v3
-
-    mul-double v1, v1, v3
-
-    double-to-long v1, v1
-
-    return-wide v1
-.end method
-
 .method public setOutputSampleRateHz(I)V
     .locals 0
 
-    .line 141
+    .line 115
     iput p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingOutputSampleRate:I
 
     return-void
 .end method
 
-.method public setPitch(F)F
-    .locals 2
+.method public setPitch(F)V
+    .locals 1
 
-    const v0, 0x3dcccccd    # 0.1f
-
-    const/high16 v1, 0x41000000    # 8.0f
-
-    .line 124
-    invoke-static {p1, v0, v1}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(FFF)F
-
-    move-result p1
-
-    .line 125
+    .line 100
     iget v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pitch:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 126
+    .line 101
     iput p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pitch:F
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    .line 127
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
+    .line 102
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
     :cond_0
-    return p1
+    return-void
 .end method
 
-.method public setSpeed(F)F
-    .locals 2
+.method public setSpeed(F)V
+    .locals 1
 
-    const v0, 0x3dcccccd    # 0.1f
-
-    const/high16 v1, 0x41000000    # 8.0f
-
-    .line 107
-    invoke-static {p1, v0, v1}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(FFF)F
-
-    move-result p1
-
-    .line 108
+    .line 86
     iget v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->speed:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 109
+    .line 87
     iput p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->speed:F
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    .line 110
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
+    .line 88
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->pendingSonicRecreation:Z
 
     :cond_0
-    return p1
+    return-void
 .end method

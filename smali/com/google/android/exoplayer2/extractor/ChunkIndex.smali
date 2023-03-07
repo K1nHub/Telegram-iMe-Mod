@@ -24,22 +24,22 @@
 .method public constructor <init>([I[J[J[J)V
     .locals 2
 
-    .line 59
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 48
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->sizes:[I
 
-    .line 61
+    .line 49
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->offsets:[J
 
-    .line 62
+    .line 50
     iput-object p3, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->durationsUs:[J
 
-    .line 63
+    .line 51
     iput-object p4, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->timesUs:[J
 
-    .line 64
+    .line 52
     array-length p1, p1
 
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->length:I
@@ -48,7 +48,7 @@
 
     add-int/lit8 p2, p1, -0x1
 
-    .line 66
+    .line 54
     aget-wide p2, p3, p2
 
     add-int/lit8 p1, p1, -0x1
@@ -64,7 +64,7 @@
     :cond_0
     const-wide/16 p1, 0x0
 
-    .line 68
+    .line 56
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->durationUs:J
 
     :goto_0
@@ -76,7 +76,7 @@
 .method public getChunkIndex(J)I
     .locals 2
 
-    .line 79
+    .line 67
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->timesUs:[J
 
     const/4 v1, 0x1
@@ -91,7 +91,7 @@
 .method public getDurationUs()J
     .locals 2
 
-    .line 91
+    .line 79
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->durationUs:J
 
     return-wide v0
@@ -100,12 +100,12 @@
 .method public getSeekPoints(J)Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
     .locals 7
 
-    .line 96
+    .line 84
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->getChunkIndex(J)I
 
     move-result v0
 
-    .line 97
+    .line 85
     new-instance v1, Lcom/google/android/exoplayer2/extractor/SeekPoint;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->timesUs:[J
@@ -118,7 +118,7 @@
 
     invoke-direct {v1, v3, v4, v5, v6}, Lcom/google/android/exoplayer2/extractor/SeekPoint;-><init>(JJ)V
 
-    .line 98
+    .line 86
     iget-wide v2, v1, Lcom/google/android/exoplayer2/extractor/SeekPoint;->timeUs:J
 
     cmp-long v4, v2, p1
@@ -133,7 +133,7 @@
 
     goto :goto_0
 
-    .line 101
+    .line 89
     :cond_0
     new-instance p1, Lcom/google/android/exoplayer2/extractor/SeekPoint;
 
@@ -149,14 +149,14 @@
 
     invoke-direct {p1, v2, v3, v4, v5}, Lcom/google/android/exoplayer2/extractor/SeekPoint;-><init>(JJ)V
 
-    .line 102
+    .line 90
     new-instance p2, Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
 
     invoke-direct {p2, v1, p1}, Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;-><init>(Lcom/google/android/exoplayer2/extractor/SeekPoint;Lcom/google/android/exoplayer2/extractor/SeekPoint;)V
 
     return-object p2
 
-    .line 99
+    .line 87
     :cond_1
     :goto_0
     new-instance p1, Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
@@ -177,7 +177,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 108
+    .line 96
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -196,7 +196,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->sizes:[I
 
-    .line 112
+    .line 100
     invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
     move-result-object v1
@@ -209,7 +209,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->offsets:[J
 
-    .line 114
+    .line 102
     invoke-static {v1}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
 
     move-result-object v1
@@ -222,7 +222,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->timesUs:[J
 
-    .line 116
+    .line 104
     invoke-static {v1}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
 
     move-result-object v1
@@ -235,7 +235,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->durationsUs:[J
 
-    .line 118
+    .line 106
     invoke-static {v1}, Ljava/util/Arrays;->toString([J)Ljava/lang/String;
 
     move-result-object v1

@@ -30,17 +30,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 70
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
+    .line 72
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->editedValues:Ljava/util/Map;
 
-    .line 72
+    .line 73
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -53,7 +53,7 @@
 .method private checkAndSet(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
     .locals 2
 
-    .line 141
+    .line 145
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->editedValues:Ljava/util/Map;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -68,7 +68,7 @@
 
     invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 142
+    .line 146
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->removedValues:Ljava/util/List;
 
     invoke-interface {p2, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
@@ -81,7 +81,7 @@
 
     const-string v0, "exo_len"
 
-    .line 46
+    .line 47
     invoke-virtual {p0, v0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->set(Ljava/lang/String;J)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
 
     move-result-object p0
@@ -96,14 +96,14 @@
 
     if-nez p1, :cond_0
 
-    .line 60
+    .line 61
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->remove(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
 
     move-result-object p0
 
     return-object p0
 
-    .line 62
+    .line 63
     :cond_0
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -130,14 +130,14 @@
         }
     .end annotation
 
-    .line 129
+    .line 132
     new-instance v0, Ljava/util/HashMap;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->editedValues:Ljava/util/Map;
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    .line 130
+    .line 133
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -160,20 +160,20 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 131
+    .line 134
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 132
+    .line 135
     instance-of v4, v3, [B
 
     if-eqz v4, :cond_0
 
-    .line 133
+    .line 136
     check-cast v3, [B
 
-    .line 134
+    .line 137
     array-length v4, v3
 
     invoke-static {v3, v4}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -184,7 +184,7 @@
 
     goto :goto_0
 
-    .line 137
+    .line 140
     :cond_1
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -204,7 +204,7 @@
         }
     .end annotation
 
-    .line 124
+    .line 127
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->removedValues:Ljava/util/List;
@@ -221,12 +221,12 @@
 .method public remove(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
     .locals 1
 
-    .line 117
+    .line 120
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->removedValues:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 118
+    .line 121
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->editedValues:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -237,7 +237,7 @@
 .method public set(Ljava/lang/String;J)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
     .locals 0
 
-    .line 95
+    .line 97
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
@@ -252,7 +252,7 @@
 .method public set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
     .locals 0
 
-    .line 84
+    .line 85
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->checkAndSet(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
 
     move-result-object p1
@@ -263,7 +263,7 @@
 .method public set(Ljava/lang/String;[B)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;
     .locals 1
 
-    .line 107
+    .line 109
     array-length v0, p2
 
     invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([BI)[B

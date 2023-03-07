@@ -44,6 +44,8 @@
 
 .field public final publishTimeMs:J
 
+.field public final serviceDescription:Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;
+
 .field public final suggestedPresentationDelayMs:J
 
 .field public final timeShiftBufferDepthMs:J
@@ -52,13 +54,14 @@
 
 
 # direct methods
-.method public constructor <init>(JJJZJJJJLcom/google/android/exoplayer2/source/dash/manifest/ProgramInformation;Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;Landroid/net/Uri;Ljava/util/List;)V
+.method public constructor <init>(JJJZJJJJLcom/google/android/exoplayer2/source/dash/manifest/ProgramInformation;Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;Landroid/net/Uri;Ljava/util/List;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJJZJJJJ",
             "Lcom/google/android/exoplayer2/source/dash/manifest/ProgramInformation;",
             "Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;",
+            "Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;",
             "Landroid/net/Uri;",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/source/dash/manifest/Period;",
@@ -68,67 +71,72 @@
 
     move-object v0, p0
 
-    .line 137
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     move-wide v1, p1
 
-    .line 138
+    .line 106
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->availabilityStartTimeMs:J
 
     move-wide v1, p3
 
-    .line 139
+    .line 107
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->durationMs:J
 
     move-wide v1, p5
 
-    .line 140
+    .line 108
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->minBufferTimeMs:J
 
     move v1, p7
 
-    .line 141
+    .line 109
     iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->dynamic:Z
 
     move-wide v1, p8
 
-    .line 142
+    .line 110
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->minUpdatePeriodMs:J
 
     move-wide v1, p10
 
-    .line 143
+    .line 111
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->timeShiftBufferDepthMs:J
 
     move-wide v1, p12
 
-    .line 144
+    .line 112
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->suggestedPresentationDelayMs:J
 
     move-wide/from16 v1, p14
 
-    .line 145
+    .line 113
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->publishTimeMs:J
 
     move-object/from16 v1, p16
 
-    .line 146
+    .line 114
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->programInformation:Lcom/google/android/exoplayer2/source/dash/manifest/ProgramInformation;
 
     move-object/from16 v1, p17
 
-    .line 147
+    .line 115
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->utcTiming:Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;
+
+    move-object/from16 v1, p19
+
+    .line 116
+    iput-object v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->location:Landroid/net/Uri;
 
     move-object/from16 v1, p18
 
-    .line 148
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->location:Landroid/net/Uri;
+    .line 117
+    iput-object v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->serviceDescription:Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;
 
-    if-nez p19, :cond_0
+    if-nez p20, :cond_0
 
-    .line 149
+    .line 118
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v1
@@ -136,58 +144,10 @@
     goto :goto_0
 
     :cond_0
-    move-object/from16 v1, p19
+    move-object/from16 v1, p20
 
     :goto_0
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->periods:Ljava/util/List;
-
-    return-void
-.end method
-
-.method public constructor <init>(JJJZJJJJLcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;Landroid/net/Uri;Ljava/util/List;)V
-    .locals 20
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(JJJZJJJJ",
-            "Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;",
-            "Landroid/net/Uri;",
-            "Ljava/util/List<",
-            "Lcom/google/android/exoplayer2/source/dash/manifest/Period;",
-            ">;)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    move-object/from16 v0, p0
-
-    move-wide/from16 v1, p1
-
-    move-wide/from16 v3, p3
-
-    move-wide/from16 v5, p5
-
-    move/from16 v7, p7
-
-    move-wide/from16 v8, p8
-
-    move-wide/from16 v10, p10
-
-    move-wide/from16 v12, p12
-
-    move-wide/from16 v14, p14
-
-    move-object/from16 v17, p16
-
-    move-object/from16 v18, p17
-
-    move-object/from16 v19, p18
-
-    const/16 v16, 0x0
-
-    .line 110
-    invoke-direct/range {v0 .. v19}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;-><init>(JJJZJJJJLcom/google/android/exoplayer2/source/dash/manifest/ProgramInformation;Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;Landroid/net/Uri;Ljava/util/List;)V
 
     return-void
 .end method
@@ -209,43 +169,43 @@
         }
     .end annotation
 
-    .line 212
+    .line 183
     invoke-virtual {p1}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/exoplayer2/offline/StreamKey;
 
-    .line 213
+    .line 184
     iget v1, v0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
-    .line 214
+    .line 185
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 216
+    .line 187
     :cond_0
     iget v3, v0, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
 
-    .line 217
+    .line 188
     invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/google/android/exoplayer2/source/dash/manifest/AdaptationSet;
 
-    .line 219
+    .line 190
     iget-object v5, v4, Lcom/google/android/exoplayer2/source/dash/manifest/AdaptationSet;->representations:Ljava/util/List;
 
-    .line 220
+    .line 191
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 222
+    .line 193
     :cond_1
-    iget v0, v0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    iget v0, v0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
     invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -253,17 +213,17 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/source/dash/manifest/Representation;
 
-    .line 223
+    .line 194
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 224
+    .line 195
     invoke-virtual {p1}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/exoplayer2/offline/StreamKey;
 
-    .line 225
+    .line 196
     iget v6, v0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
     if-ne v6, v1, :cond_2
@@ -272,7 +232,7 @@
 
     if-eq v6, v3, :cond_1
 
-    .line 227
+    .line 198
     :cond_2
     new-instance v3, Lcom/google/android/exoplayer2/source/dash/manifest/AdaptationSet;
 
@@ -292,12 +252,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 235
+    .line 206
     iget v3, v0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
     if-eq v3, v1, :cond_0
 
-    .line 237
+    .line 208
     invoke-virtual {p1, v0}, Ljava/util/LinkedList;->addFirst(Ljava/lang/Object;)V
 
     return-object v2
@@ -306,7 +266,7 @@
 
 # virtual methods
 .method public final copy(Ljava/util/List;)Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;
-    .locals 24
+    .locals 25
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -319,17 +279,17 @@
 
     move-object/from16 v0, p0
 
-    .line 172
+    .line 141
     new-instance v1, Ljava/util/LinkedList;
 
     move-object/from16 v2, p1
 
     invoke-direct {v1, v2}, Ljava/util/LinkedList;-><init>(Ljava/util/Collection;)V
 
-    .line 173
+    .line 142
     invoke-static {v1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 174
+    .line 143
     new-instance v2, Lcom/google/android/exoplayer2/offline/StreamKey;
 
     const/4 v3, -0x1
@@ -338,7 +298,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 176
+    .line 145
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -347,7 +307,7 @@
 
     const/4 v5, 0x0
 
-    .line 178
+    .line 147
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->getPeriodCount()I
 
@@ -357,7 +317,7 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 179
+    .line 148
     invoke-virtual {v1}, Ljava/util/LinkedList;->peek()Ljava/lang/Object;
 
     move-result-object v6
@@ -368,7 +328,7 @@
 
     if-eq v6, v5, :cond_0
 
-    .line 181
+    .line 150
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->getPeriodDurationMs(I)J
 
     move-result-wide v9
@@ -381,21 +341,21 @@
 
     goto :goto_1
 
-    .line 186
+    .line 155
     :cond_0
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->getPeriod(I)Lcom/google/android/exoplayer2/source/dash/manifest/Period;
 
     move-result-object v6
 
-    .line 187
+    .line 156
     iget-object v7, v6, Lcom/google/android/exoplayer2/source/dash/manifest/Period;->adaptationSets:Ljava/util/List;
 
-    .line 188
+    .line 157
     invoke-static {v7, v1}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->copyAdaptationSets(Ljava/util/List;Ljava/util/LinkedList;)Ljava/util/ArrayList;
 
     move-result-object v12
 
-    .line 189
+    .line 158
     new-instance v7, Lcom/google/android/exoplayer2/source/dash/manifest/Period;
 
     iget-object v9, v6, Lcom/google/android/exoplayer2/source/dash/manifest/Period;->id:Ljava/lang/String;
@@ -410,7 +370,7 @@
 
     invoke-direct/range {v8 .. v13}, Lcom/google/android/exoplayer2/source/dash/manifest/Period;-><init>(Ljava/lang/String;JLjava/util/List;Ljava/util/List;)V
 
-    .line 191
+    .line 161
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
@@ -419,7 +379,7 @@
 
     goto :goto_0
 
-    .line 194
+    .line 164
     :cond_2
     iget-wide v5, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->durationMs:J
 
@@ -431,7 +391,7 @@
 
     move-wide v7, v5
 
-    .line 195
+    .line 165
     :cond_3
     new-instance v1, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;
 
@@ -465,15 +425,19 @@
 
     move-object/from16 v21, v3
 
-    iget-object v3, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->location:Landroid/net/Uri;
+    iget-object v3, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->serviceDescription:Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;
 
     move-object/from16 v22, v3
 
-    move-object/from16 v23, v2
+    iget-object v3, v0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->location:Landroid/net/Uri;
+
+    move-object/from16 v23, v3
+
+    move-object/from16 v24, v2
 
     move-object/from16 v4, p1
 
-    invoke-direct/range {v4 .. v23}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;-><init>(JJJZJJJJLcom/google/android/exoplayer2/source/dash/manifest/ProgramInformation;Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;Landroid/net/Uri;Ljava/util/List;)V
+    invoke-direct/range {v4 .. v24}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;-><init>(JJJZJJJJLcom/google/android/exoplayer2/source/dash/manifest/ProgramInformation;Lcom/google/android/exoplayer2/source/dash/manifest/UtcTimingElement;Lcom/google/android/exoplayer2/source/dash/manifest/ServiceDescriptionElement;Landroid/net/Uri;Ljava/util/List;)V
 
     return-object v1
 .end method
@@ -481,7 +445,7 @@
 .method public bridge synthetic copy(Ljava/util/List;)Ljava/lang/Object;
     .locals 0
 
-    .line 32
+    .line 33
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->copy(Ljava/util/List;)Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;
 
     move-result-object p1
@@ -492,7 +456,7 @@
 .method public final getPeriod(I)Lcom/google/android/exoplayer2/source/dash/manifest/Period;
     .locals 1
 
-    .line 157
+    .line 126
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->periods:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -507,7 +471,7 @@
 .method public final getPeriodCount()I
     .locals 1
 
-    .line 153
+    .line 122
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->periods:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -520,7 +484,7 @@
 .method public final getPeriodDurationMs(I)J
     .locals 5
 
-    .line 161
+    .line 130
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->periods:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -533,7 +497,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 162
+    .line 131
     iget-wide v3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->durationMs:J
 
     cmp-long v0, v3, v1
@@ -557,7 +521,7 @@
 
     goto :goto_0
 
-    .line 163
+    .line 132
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->periods:Ljava/util/List;
 
@@ -590,12 +554,12 @@
 .method public final getPeriodDurationUs(I)J
     .locals 2
 
-    .line 167
+    .line 136
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;->getPeriodDurationMs(I)J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/C;->msToUs(J)J
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
 
     move-result-wide v0
 

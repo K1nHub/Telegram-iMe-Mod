@@ -24,21 +24,26 @@
 
 .field private final pcrTimestampAdjuster:Lcom/google/android/exoplayer2/util/TimestampAdjuster;
 
+.field private final timestampSearchBytes:I
+
 
 # direct methods
-.method public constructor <init>(ILcom/google/android/exoplayer2/util/TimestampAdjuster;)V
+.method public constructor <init>(ILcom/google/android/exoplayer2/util/TimestampAdjuster;I)V
     .locals 0
 
-    .line 69
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
+    .line 77
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->pcrPid:I
 
-    .line 71
+    .line 78
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->pcrTimestampAdjuster:Lcom/google/android/exoplayer2/util/TimestampAdjuster;
 
-    .line 72
+    .line 79
+    iput p3, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->timestampSearchBytes:I
+
+    .line 80
     new-instance p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
@@ -57,7 +62,7 @@
 
     move-wide/from16 v2, p4
 
-    .line 89
+    .line 97
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v4
@@ -70,7 +75,7 @@
 
     move-wide v11, v7
 
-    .line 95
+    .line 103
     :goto_0
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
@@ -80,10 +85,11 @@
 
     if-lt v13, v14, :cond_5
 
-    .line 96
-    iget-object v13, v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 105
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    .line 97
+    move-result-object v13
+
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v14
@@ -98,7 +104,7 @@
 
     goto :goto_1
 
-    .line 102
+    .line 110
     :cond_0
     iget v5, v0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->pcrPid:I
 
@@ -110,7 +116,7 @@
 
     if-eqz v15, :cond_4
 
-    .line 104
+    .line 112
     iget-object v15, v0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->pcrTimestampAdjuster:Lcom/google/android/exoplayer2/util/TimestampAdjuster;
 
     invoke-virtual {v15, v5, v6}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->adjustTsTimestamp(J)J
@@ -125,7 +131,7 @@
 
     if-nez v1, :cond_1
 
-    .line 108
+    .line 116
     invoke-static {v5, v6, v2, v3}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->overestimatedResult(JJ)Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     move-result-object v1
@@ -135,7 +141,7 @@
     :cond_1
     add-long v1, v2, v9
 
-    .line 111
+    .line 119
     invoke-static {v1, v2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->targetFoundResult(J)Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     move-result-object v1
@@ -155,7 +161,7 @@
 
     add-long v1, v2, v4
 
-    .line 116
+    .line 124
     invoke-static {v1, v2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->targetFoundResult(J)Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     move-result-object v1
@@ -167,7 +173,7 @@
 
     move-wide v11, v5
 
-    .line 122
+    .line 130
     :cond_4
     invoke-virtual {v1, v14}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
@@ -183,14 +189,14 @@
 
     add-long v1, v2, v5
 
-    .line 128
+    .line 136
     invoke-static {v11, v12, v1, v2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->underestimatedResult(JJ)Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     move-result-object v1
 
     return-object v1
 
-    .line 131
+    .line 139
     :cond_6
     sget-object v1, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->NO_TIMESTAMP_IN_RANGE_RESULT:Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
@@ -202,7 +208,7 @@
 .method public onSeekFinished()V
     .locals 2
 
-    .line 137
+    .line 145
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     sget-object v1, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
@@ -216,46 +222,49 @@
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 78
+    .line 86
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v4
 
-    .line 79
+    .line 87
+    iget v0, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->timestampSearchBytes:I
+
+    int-to-long v0, v0
+
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    sub-long/2addr v0, v4
+    sub-long/2addr v2, v4
 
-    const-wide/32 v2, 0x1b8a0
-
-    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
     long-to-int v1, v0
 
-    .line 81
+    .line 89
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
 
-    .line 82
+    .line 90
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v2, 0x0
 
     invoke-interface {p1, v0, v2, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 84
+    .line 92
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;->packetBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     move-object v0, p0

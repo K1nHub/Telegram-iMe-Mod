@@ -57,6 +57,10 @@
 
 .method static zzax(Ljava/lang/String;)Z
     .locals 0
+    .param p0    # Ljava/lang/String;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     if-eqz p0, :cond_1
 

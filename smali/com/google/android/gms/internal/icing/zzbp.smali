@@ -6,6 +6,10 @@
 # direct methods
 .method public static zza(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

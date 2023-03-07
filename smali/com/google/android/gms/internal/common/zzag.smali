@@ -669,10 +669,6 @@
 
 .method public final zzd()Lcom/google/android/gms/internal/common/zzag;
     .locals 0
-    .annotation build Lcom/google/errorprone/annotations/InlineMe;
-        replacement = "this"
-    .end annotation
-
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

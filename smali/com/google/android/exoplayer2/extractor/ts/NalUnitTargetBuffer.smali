@@ -47,7 +47,7 @@
 .method public appendToNalUnit([BII)V
     .locals 4
 
-    .line 81
+    .line 77
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
     if-nez v0, :cond_0
@@ -57,7 +57,7 @@
     :cond_0
     sub-int/2addr p3, p2
 
-    .line 85
+    .line 81
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
     array-length v1, v0
@@ -72,14 +72,14 @@
 
     mul-int/lit8 v2, v2, 0x2
 
-    .line 86
+    .line 82
     invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
-    .line 88
+    .line 84
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
@@ -87,7 +87,7 @@
 
     invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 89
+    .line 85
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalLength:I
 
     add-int/2addr p1, p3
@@ -100,7 +100,7 @@
 .method public endNalUnit(I)Z
     .locals 2
 
-    .line 100
+    .line 96
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
     const/4 v1, 0x0
@@ -109,7 +109,7 @@
 
     return v1
 
-    .line 103
+    .line 99
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalLength:I
 
@@ -117,12 +117,12 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalLength:I
 
-    .line 104
+    .line 100
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
     const/4 p1, 0x1
 
-    .line 105
+    .line 101
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isCompleted:Z
 
     return p1
@@ -131,7 +131,7 @@
 .method public isCompleted()Z
     .locals 1
 
-    .line 55
+    .line 51
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isCompleted:Z
 
     return v0
@@ -142,10 +142,10 @@
 
     const/4 v0, 0x0
 
-    .line 47
+    .line 45
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
-    .line 48
+    .line 46
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isCompleted:Z
 
     return-void
@@ -154,7 +154,7 @@
 .method public startNalUnit(I)V
     .locals 3
 
-    .line 64
+    .line 60
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isFilling:Z
 
     const/4 v1, 0x1
@@ -163,7 +163,7 @@
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 65
+    .line 61
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->targetType:I
 
     const/4 v2, 0x0
@@ -182,10 +182,10 @@
 
     const/4 p1, 0x3
 
-    .line 68
+    .line 64
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalLength:I
 
-    .line 69
+    .line 65
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->isCompleted:Z
 
     :cond_1

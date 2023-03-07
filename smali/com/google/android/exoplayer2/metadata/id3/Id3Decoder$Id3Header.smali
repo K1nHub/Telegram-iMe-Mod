@@ -26,16 +26,16 @@
 .method public constructor <init>(IZI)V
     .locals 0
 
-    .line 834
+    .line 883
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 835
+    .line 884
     iput p1, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->majorVersion:I
 
-    .line 836
+    .line 885
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->isUnsynchronized:Z
 
-    .line 837
+    .line 886
     iput p3, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->framesSize:I
 
     return-void
@@ -44,7 +44,7 @@
 .method static synthetic access$000(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
     .locals 0
 
-    .line 828
+    .line 877
     iget p0, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->majorVersion:I
 
     return p0
@@ -53,7 +53,7 @@
 .method static synthetic access$100(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
     .locals 0
 
-    .line 828
+    .line 877
     iget p0, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->framesSize:I
 
     return p0
@@ -62,7 +62,7 @@
 .method static synthetic access$200(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)Z
     .locals 0
 
-    .line 828
+    .line 877
     iget-boolean p0, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->isUnsynchronized:Z
 
     return p0

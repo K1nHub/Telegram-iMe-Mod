@@ -31,6 +31,8 @@
 
 
 # instance fields
+.field public final bitrate:I
+
 .field public final channelCount:I
 
 .field public final frameSize:I
@@ -45,7 +47,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;IIIII)V
+.method private constructor <init>(Ljava/lang/String;IIIIII)V
     .locals 0
 
     .line 91
@@ -69,14 +71,17 @@
     .line 97
     iput p6, p0, Lcom/google/android/exoplayer2/audio/Ac3Util$SyncFrameInfo;->sampleCount:I
 
+    .line 98
+    iput p7, p0, Lcom/google/android/exoplayer2/audio/Ac3Util$SyncFrameInfo;->bitrate:I
+
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/lang/String;IIIIILcom/google/android/exoplayer2/audio/Ac3Util$1;)V
+.method synthetic constructor <init>(Ljava/lang/String;IIIIIILcom/google/android/exoplayer2/audio/Ac3Util$1;)V
     .locals 0
 
-    .line 39
-    invoke-direct/range {p0 .. p6}, Lcom/google/android/exoplayer2/audio/Ac3Util$SyncFrameInfo;-><init>(Ljava/lang/String;IIIII)V
+    .line 43
+    invoke-direct/range {p0 .. p7}, Lcom/google/android/exoplayer2/audio/Ac3Util$SyncFrameInfo;-><init>(Ljava/lang/String;IIIIII)V
 
     return-void
 .end method

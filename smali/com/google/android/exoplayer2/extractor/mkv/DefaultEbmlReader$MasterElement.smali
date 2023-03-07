@@ -24,13 +24,13 @@
 .method private constructor <init>(IJ)V
     .locals 0
 
-    .line 253
+    .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 254
+    .line 255
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$MasterElement;->elementId:I
 
-    .line 255
+    .line 256
     iput-wide p2, p0, Lcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$MasterElement;->elementEndPosition:J
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(IJLcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$1;)V
     .locals 0
 
-    .line 248
+    .line 249
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$MasterElement;-><init>(IJ)V
 
     return-void
@@ -48,7 +48,7 @@
 .method static synthetic access$000(Lcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$MasterElement;)J
     .locals 2
 
-    .line 248
+    .line 249
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$MasterElement;->elementEndPosition:J
 
     return-wide v0
@@ -57,7 +57,7 @@
 .method static synthetic access$100(Lcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$MasterElement;)I
     .locals 0
 
-    .line 248
+    .line 249
     iget p0, p0, Lcom/google/android/exoplayer2/extractor/mkv/DefaultEbmlReader$MasterElement;->elementId:I
 
     return p0

@@ -36,7 +36,7 @@
 
     move-object v0, p0
 
-    .line 95
+    .line 97
     invoke-direct/range {v0 .. v9}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$SingleSegmentBase;-><init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;JJJJ)V
 
     return-void
@@ -45,13 +45,13 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;JJJJ)V
     .locals 0
 
-    .line 89
+    .line 91
     invoke-direct/range {p0 .. p5}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;-><init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;JJ)V
 
-    .line 90
+    .line 92
     iput-wide p6, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$SingleSegmentBase;->indexStart:J
 
-    .line 91
+    .line 93
     iput-wide p8, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$SingleSegmentBase;->indexLength:J
 
     return-void
@@ -62,7 +62,7 @@
 .method public getIndex()Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
     .locals 7
 
-    .line 105
+    .line 107
     iget-wide v4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$SingleSegmentBase;->indexLength:J
 
     const-wide/16 v0, 0x0
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 107
+    .line 109
     :cond_0
     new-instance v6, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 

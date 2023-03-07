@@ -3,7 +3,7 @@
 .source "SegmentDownloader.java"
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/upstream/cache/CacheUtil$ProgressListener;
+.implements Lcom/google/android/exoplayer2/upstream/cache/CacheWriter$ProgressListener;
 
 
 # annotations
@@ -33,22 +33,22 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/offline/Downloader$ProgressListener;JIJI)V
     .locals 0
 
-    .line 250
+    .line 505
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 251
+    .line 506
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->progressListener:Lcom/google/android/exoplayer2/offline/Downloader$ProgressListener;
 
-    .line 252
+    .line 507
     iput-wide p2, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->contentLength:J
 
-    .line 253
+    .line 508
     iput p4, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->totalSegments:I
 
-    .line 254
+    .line 509
     iput-wide p5, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
 
-    .line 255
+    .line 510
     iput p7, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->segmentsDownloaded:I
 
     return-void
@@ -57,7 +57,7 @@
 .method private getPercentDownloaded()F
     .locals 6
 
-    .line 270
+    .line 525
     iget-wide v0, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->contentLength:J
 
     const/high16 v2, 0x42c80000    # 100.0f
@@ -74,7 +74,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 271
+    .line 526
     iget-wide v3, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
 
     long-to-float v3, v3
@@ -87,13 +87,13 @@
 
     return v3
 
-    .line 272
+    .line 527
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->totalSegments:I
 
     if-eqz v0, :cond_1
 
-    .line 273
+    .line 528
     iget v1, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->segmentsDownloaded:I
 
     int-to-float v1, v1
@@ -117,14 +117,14 @@
 .method public onProgress(JJJ)V
     .locals 6
 
-    .line 260
+    .line 515
     iget-wide p1, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
 
     add-long v3, p1, p5
 
     iput-wide v3, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->bytesDownloaded:J
 
-    .line 261
+    .line 516
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->progressListener:Lcom/google/android/exoplayer2/offline/Downloader$ProgressListener;
 
     iget-wide v1, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->contentLength:J
@@ -141,14 +141,14 @@
 .method public onSegmentDownloaded()V
     .locals 7
 
-    .line 265
+    .line 520
     iget v0, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->segmentsDownloaded:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->segmentsDownloaded:I
 
-    .line 266
+    .line 521
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->progressListener:Lcom/google/android/exoplayer2/offline/Downloader$ProgressListener;
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$ProgressNotifier;->contentLength:J

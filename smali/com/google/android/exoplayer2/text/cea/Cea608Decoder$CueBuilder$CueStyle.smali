@@ -26,16 +26,16 @@
 .method public constructor <init>(IZI)V
     .locals 0
 
-    .line 1004
+    .line 1139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1005
+    .line 1140
     iput p1, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder$CueBuilder$CueStyle;->style:I
 
-    .line 1006
+    .line 1141
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder$CueBuilder$CueStyle;->underline:Z
 
-    .line 1007
+    .line 1142
     iput p3, p0, Lcom/google/android/exoplayer2/text/cea/Cea608Decoder$CueBuilder$CueStyle;->start:I
 
     return-void

@@ -9,19 +9,11 @@
         Lcom/google/android/exoplayer2/drm/ExoMediaDrm$ProvisionRequest;,
         Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;,
         Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyStatus;,
+        Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;,
         Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;,
         Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener;,
         Lcom/google/android/exoplayer2/drm/ExoMediaDrm$AppManagedProvider;,
         Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;
-    }
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-        ">",
-        "Ljava/lang/Object;"
     }
 .end annotation
 
@@ -47,13 +39,7 @@
 .method public abstract closeSession([B)V
 .end method
 
-.method public abstract createMediaCrypto([B)Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([B)TT;"
-        }
-    .end annotation
-
+.method public abstract createCryptoConfig([B)Lcom/google/android/exoplayer2/decoder/CryptoConfig;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/media/MediaCryptoException;
@@ -61,14 +47,7 @@
     .end annotation
 .end method
 
-.method public abstract getExoMediaCryptoType()Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class<",
-            "TT;>;"
-        }
-    .end annotation
+.method public abstract getCryptoType()I
 .end method
 
 .method public abstract getKeyRequest([BLjava/util/List;ILjava/util/HashMap;)Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;
@@ -145,27 +124,22 @@
 .method public abstract release()V
 .end method
 
+.method public abstract requiresSecureDecoder([BLjava/lang/String;)Z
+.end method
+
 .method public abstract restoreKeys([B[B)V
 .end method
 
 .method public abstract setOnEventListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener<",
-            "-TT;>;)V"
-        }
-    .end annotation
+.end method
+
+.method public abstract setOnExpirationUpdateListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;)V
 .end method
 
 .method public abstract setOnKeyStatusChangeListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener<",
-            "-TT;>;)V"
-        }
-    .end annotation
+.end method
+
+.method public abstract setPlayerIdForSession([BLcom/google/android/exoplayer2/analytics/PlayerId;)V
 .end method
 
 .method public abstract setPropertyByteArray(Ljava/lang/String;[B)V

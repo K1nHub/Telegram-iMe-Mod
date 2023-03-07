@@ -66,7 +66,7 @@
 
     move-object v1, p1
 
-    .line 126
+    .line 133
     invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;-><init>(Lcom/google/android/exoplayer2/database/DatabaseProvider;Ljava/io/File;[BZZ)V
 
     return-void
@@ -75,7 +75,7 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/database/DatabaseProvider;Ljava/io/File;[BZZ)V
     .locals 3
 
-    .line 154
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-nez p1, :cond_1
@@ -93,32 +93,32 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 155
+    .line 162
     :goto_1
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 156
+    .line 163
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
-    .line 157
+    .line 164
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
-    .line 158
+    .line 165
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->removedIds:Landroid/util/SparseBooleanArray;
 
-    .line 159
+    .line 166
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
@@ -129,7 +129,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 161
+    .line 169
     new-instance v1, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;
 
     invoke-direct {v1, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;-><init>(Lcom/google/android/exoplayer2/database/DatabaseProvider;)V
@@ -142,7 +142,7 @@
     :goto_2
     if-eqz p2, :cond_3
 
-    .line 164
+    .line 173
     new-instance v0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$LegacyStorage;
 
     new-instance p1, Ljava/io/File;
@@ -162,21 +162,27 @@
 
     goto :goto_3
 
-    .line 173
+    .line 182
     :cond_4
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
-    .line 174
+    .line 183
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->previousStorage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     goto :goto_4
 
-    .line 170
+    .line 179
     :cond_5
     :goto_3
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 171
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
+
+    .line 180
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->previousStorage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     :goto_4
@@ -192,7 +198,7 @@
         }
     .end annotation
 
-    .line 63
+    .line 70
     invoke-static {}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->getCipher()Ljavax/crypto/Cipher;
 
     move-result-object v0
@@ -208,7 +214,7 @@
         }
     .end annotation
 
-    .line 63
+    .line 70
     invoke-static {p0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->readContentMetadata(Ljava/io/DataInputStream;)Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     move-result-object p0
@@ -224,7 +230,7 @@
         }
     .end annotation
 
-    .line 63
+    .line 70
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->writeContentMetadata(Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;Ljava/io/DataOutputStream;)V
 
     return-void
@@ -233,36 +239,36 @@
 .method private addNew(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
     .locals 3
 
-    .line 320
+    .line 338
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->getNewId(Landroid/util/SparseArray;)I
 
     move-result v0
 
-    .line 321
+    .line 339
     new-instance v1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
     invoke-direct {v1, v0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;-><init>(ILjava/lang/String;)V
 
-    .line 322
+    .line 340
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 323
+    .line 341
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 324
+    .line 342
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->newIds:Landroid/util/SparseBooleanArray;
 
     const/4 v2, 0x1
 
     invoke-virtual {p1, v0, v2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 325
+    .line 343
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     invoke-interface {p1, v1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->onUpdate(Lcom/google/android/exoplayer2/upstream/cache/CachedContent;)V
@@ -278,7 +284,7 @@
         }
     .end annotation
 
-    .line 117
+    .line 124
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->delete(Lcom/google/android/exoplayer2/database/DatabaseProvider;J)V
 
     return-void
@@ -293,7 +299,7 @@
         }
     .end annotation
 
-    .line 332
+    .line 350
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const-string v1, "AES/CBC/PKCS5PADDING"
@@ -305,7 +311,7 @@
     :try_start_0
     const-string v0, "BC"
 
-    .line 334
+    .line 352
     invoke-static {v1, v0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     move-result-object v0
@@ -314,7 +320,7 @@
 
     return-object v0
 
-    .line 339
+    .line 357
     :catchall_0
     :cond_0
     invoke-static {v1}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
@@ -335,7 +341,7 @@
         }
     .end annotation
 
-    .line 349
+    .line 367
     invoke-virtual {p0}, Landroid/util/SparseArray;->size()I
 
     move-result v0
@@ -351,7 +357,7 @@
     :cond_0
     add-int/lit8 v2, v0, -0x1
 
-    .line 350
+    .line 368
     invoke-virtual {p0, v2}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
@@ -364,7 +370,7 @@
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 354
+    .line 372
     invoke-virtual {p0, v1}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
@@ -391,7 +397,7 @@
 
     const-string v0, "cached_content_index.exi"
 
-    .line 102
+    .line 109
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
@@ -407,12 +413,12 @@
         }
     .end annotation
 
-    .line 371
+    .line 389
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v0
 
-    .line 372
+    .line 390
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
@@ -424,12 +430,12 @@
     :goto_0
     if-ge v3, v0, :cond_2
 
-    .line 374
+    .line 392
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 375
+    .line 393
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v5
@@ -438,12 +444,12 @@
 
     const/high16 v6, 0xa00000
 
-    .line 383
+    .line 401
     invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
 
     move-result v7
 
-    .line 384
+    .line 402
     sget-object v8, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     const/4 v9, 0x0
@@ -453,17 +459,17 @@
 
     add-int v10, v9, v7
 
-    .line 386
+    .line 404
     invoke-static {v8, v10}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object v8
 
-    .line 387
+    .line 405
     invoke-virtual {p0, v8, v9, v7}, Ljava/io/DataInputStream;->readFully([BII)V
 
     sub-int v7, v5, v10
 
-    .line 389
+    .line 407
     invoke-static {v7, v6}, Ljava/lang/Math;->min(II)I
 
     move-result v7
@@ -472,7 +478,7 @@
 
     goto :goto_1
 
-    .line 391
+    .line 409
     :cond_0
     invoke-virtual {v1, v4, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -480,7 +486,7 @@
 
     goto :goto_0
 
-    .line 377
+    .line 395
     :cond_1
     new-instance p0, Ljava/io/IOException;
 
@@ -502,7 +508,7 @@
 
     throw p0
 
-    .line 393
+    .line 411
     :cond_2
     new-instance p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
@@ -519,19 +525,19 @@
         }
     .end annotation
 
-    .line 404
+    .line 422
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->entrySet()Ljava/util/Set;
 
     move-result-object p0
 
-    .line 405
+    .line 423
     invoke-interface {p0}, Ljava/util/Set;->size()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 406
+    .line 424
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -549,7 +555,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 407
+    .line 425
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -558,19 +564,19 @@
 
     invoke-virtual {p1, v1}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
-    .line 408
+    .line 426
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [B
 
-    .line 409
+    .line 427
     array-length v1, v0
 
     invoke-virtual {p1, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 410
+    .line 428
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->write([B)V
 
     goto :goto_0
@@ -584,19 +590,19 @@
 .method public applyContentMetadataMutations(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;)V
     .locals 0
 
-    .line 307
+    .line 325
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->getOrAdd(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
     move-result-object p1
 
-    .line 308
+    .line 326
     invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->applyMetadataMutations(Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
-    .line 309
+    .line 327
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     invoke-interface {p2, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->onUpdate(Lcom/google/android/exoplayer2/upstream/cache/CachedContent;)V
@@ -608,7 +614,7 @@
 .method public assignIdForKey(Ljava/lang/String;)I
     .locals 0
 
-    .line 254
+    .line 268
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->getOrAdd(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
     move-result-object p1
@@ -621,7 +627,7 @@
 .method public get(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
     .locals 1
 
-    .line 238
+    .line 253
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -644,10 +650,14 @@
         }
     .end annotation
 
-    .line 249
+    .line 263
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
 
@@ -657,14 +667,14 @@
 .method public getContentMetadata(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/ContentMetadata;
     .locals 0
 
-    .line 315
+    .line 333
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->get(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 316
+    .line 334
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->getMetadata()Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     move-result-object p1
@@ -681,7 +691,7 @@
 .method public getKeyForId(I)Ljava/lang/String;
     .locals 1
 
-    .line 259
+    .line 274
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -704,7 +714,7 @@
         }
     .end annotation
 
-    .line 299
+    .line 317
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -717,7 +727,7 @@
 .method public getOrAdd(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
     .locals 1
 
-    .line 232
+    .line 241
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -728,7 +738,7 @@
 
     if-nez v0, :cond_0
 
-    .line 233
+    .line 242
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->addNew(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
     move-result-object v0
@@ -745,20 +755,20 @@
         }
     .end annotation
 
-    .line 188
+    .line 197
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->initialize(J)V
 
-    .line 189
+    .line 198
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->previousStorage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     if-eqz v0, :cond_0
 
-    .line 190
+    .line 199
     invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->initialize(J)V
 
-    .line 192
+    .line 201
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
@@ -778,7 +788,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 194
+    .line 203
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->previousStorage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -787,7 +797,7 @@
 
     invoke-interface {p1, p2, v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->load(Ljava/util/HashMap;Landroid/util/SparseArray;)V
 
-    .line 195
+    .line 204
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
@@ -796,7 +806,7 @@
 
     goto :goto_0
 
-    .line 198
+    .line 207
     :cond_1
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
@@ -806,18 +816,18 @@
 
     invoke-interface {p1, p2, v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->load(Ljava/util/HashMap;Landroid/util/SparseArray;)V
 
-    .line 200
+    .line 209
     :goto_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->previousStorage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     if-eqz p1, :cond_2
 
-    .line 201
+    .line 210
     invoke-interface {p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->delete()V
 
     const/4 p1, 0x0
 
-    .line 202
+    .line 211
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->previousStorage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     :cond_2
@@ -827,7 +837,7 @@
 .method public maybeRemove(Ljava/lang/String;)V
     .locals 3
 
-    .line 264
+    .line 283
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -838,54 +848,54 @@
 
     if-eqz v0, :cond_1
 
-    .line 265
+    .line 284
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->isLocked()Z
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->isFullyUnlocked()Z
 
     move-result v1
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_1
 
-    .line 266
+    .line 285
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 267
+    .line 286
     iget p1, v0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
 
-    .line 268
+    .line 287
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->newIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseBooleanArray;->get(I)Z
 
     move-result v1
 
-    .line 269
+    .line 288
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     invoke-interface {v2, v0, v1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->onRemove(Lcom/google/android/exoplayer2/upstream/cache/CachedContent;Z)V
 
     if-eqz v1, :cond_0
 
-    .line 272
+    .line 291
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 273
+    .line 292
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->newIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->delete(I)V
 
     goto :goto_0
 
-    .line 277
+    .line 296
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
@@ -893,7 +903,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 278
+    .line 297
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->removedIds:Landroid/util/SparseBooleanArray;
 
     const/4 v1, 0x1
@@ -906,38 +916,38 @@
 .end method
 
 .method public removeEmpty()V
-    .locals 4
+    .locals 2
 
-    .line 285
+    .line 305
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
-    move-result v0
+    move-result-object v0
 
-    new-array v1, v0, [Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/common/collect/ImmutableSet;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableSet;
 
-    .line 286
-    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
-    move-result-object v2
-
-    invoke-interface {v2, v1}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    const/4 v2, 0x0
+    move-result-object v0
 
     :goto_0
-    if-ge v2, v0, :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 287
-    aget-object v3, v1, v2
+    move-result v1
 
-    .line 288
-    invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->maybeRemove(Ljava/lang/String;)V
+    if-eqz v1, :cond_0
 
-    add-int/lit8 v2, v2, 0x1
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 306
+    invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->maybeRemove(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -953,14 +963,14 @@
         }
     .end annotation
 
-    .line 215
+    .line 224
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->storage:Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->keyToContent:Ljava/util/HashMap;
 
     invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$Storage;->storeIncremental(Ljava/util/HashMap;)V
 
-    .line 217
+    .line 226
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->removedIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->size()I
@@ -972,7 +982,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 219
+    .line 228
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->idToKey:Landroid/util/SparseArray;
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->removedIds:Landroid/util/SparseBooleanArray;
@@ -987,13 +997,13 @@
 
     goto :goto_0
 
-    .line 221
+    .line 230
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->removedIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 222
+    .line 231
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->newIds:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->clear()V

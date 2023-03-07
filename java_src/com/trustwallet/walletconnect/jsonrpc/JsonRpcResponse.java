@@ -1,0 +1,46 @@
+package com.trustwallet.walletconnect.jsonrpc;
+
+import com.iMe.i_staking.request.StakingApprovalPrepareRequest$$ExternalSyntheticBackport0;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: JsonRpcResponse.kt */
+/* loaded from: classes3.dex */
+public final class JsonRpcResponse<T> {
+
+    /* renamed from: id */
+    private final long f380id;
+    private final String jsonrpc;
+    private final T result;
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof JsonRpcResponse) {
+            JsonRpcResponse jsonRpcResponse = (JsonRpcResponse) obj;
+            return Intrinsics.areEqual(this.jsonrpc, jsonRpcResponse.jsonrpc) && this.f380id == jsonRpcResponse.f380id && Intrinsics.areEqual(this.result, jsonRpcResponse.result);
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        int hashCode = ((this.jsonrpc.hashCode() * 31) + StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f380id)) * 31;
+        T t = this.result;
+        return hashCode + (t == null ? 0 : t.hashCode());
+    }
+
+    public String toString() {
+        return "JsonRpcResponse(jsonrpc=" + this.jsonrpc + ", id=" + this.f380id + ", result=" + this.result + ')';
+    }
+
+    public JsonRpcResponse(String jsonrpc, long j, T t) {
+        Intrinsics.checkNotNullParameter(jsonrpc, "jsonrpc");
+        this.jsonrpc = jsonrpc;
+        this.f380id = j;
+        this.result = t;
+    }
+
+    public /* synthetic */ JsonRpcResponse(String str, long j, Object obj, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? "2.0" : str, j, obj);
+    }
+}

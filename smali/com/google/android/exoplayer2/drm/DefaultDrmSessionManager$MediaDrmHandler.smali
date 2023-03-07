@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;Landroid/os/Looper;)V
     .locals 0
 
-    .line 628
+    .line 846
     iput-object p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$MediaDrmHandler;->this$0:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
-    .line 629
+    .line 847
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -36,7 +36,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
 
-    .line 634
+    .line 852
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [B
@@ -45,7 +45,7 @@
 
     return-void
 
-    .line 639
+    .line 857
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$MediaDrmHandler;->this$0:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
@@ -70,14 +70,14 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/drm/DefaultDrmSession;
 
-    .line 640
+    .line 858
     invoke-virtual {v2, v0}, Lcom/google/android/exoplayer2/drm/DefaultDrmSession;->hasSessionId([B)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 641
+    .line 859
     iget p1, p1, Landroid/os/Message;->what:I
 
     invoke-virtual {v2, p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSession;->onMediaDrmEvent(I)V

@@ -38,7 +38,7 @@
 
     const-string v0, "Protection"
 
-    .line 413
+    .line 421
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;-><init>(Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -51,10 +51,10 @@
 
     new-array v0, v0, [Lcom/google/android/exoplayer2/extractor/mp4/TrackEncryptionBox;
 
-    .line 452
+    .line 460
     new-instance v9, Lcom/google/android/exoplayer2/extractor/mp4/TrackEncryptionBox;
 
-    .line 457
+    .line 465
     invoke-static {p0}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->getProtectionElementKeyId([B)[B
 
     move-result-object v5
@@ -85,7 +85,7 @@
 .method private static getProtectionElementKeyId([B)[B
     .locals 4
 
-    .line 465
+    .line 473
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -94,13 +94,13 @@
 
     const/4 v2, 0x0
 
-    .line 466
+    .line 474
     :goto_0
     array-length v3, p0
 
     if-ge v2, v3, :cond_0
 
-    .line 467
+    .line 475
     aget-byte v3, p0, v2
 
     int-to-char v3, v3
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 469
+    .line 477
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -119,7 +119,7 @@
 
     const-string v0, "<KID>"
 
-    .line 472
+    .line 480
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
@@ -134,38 +134,38 @@
 
     move-result v3
 
-    .line 471
+    .line 479
     invoke-virtual {p0, v0, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 473
+    .line 481
     invoke-static {p0, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
     move-result-object p0
 
     const/4 v0, 0x3
 
-    .line 474
+    .line 482
     invoke-static {p0, v1, v0}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->swap([BII)V
 
     const/4 v0, 0x1
 
     const/4 v1, 0x2
 
-    .line 475
+    .line 483
     invoke-static {p0, v0, v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->swap([BII)V
 
     const/4 v0, 0x4
 
-    .line 476
+    .line 484
     invoke-static {p0, v0, v2}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->swap([BII)V
 
     const/4 v0, 0x6
 
     const/4 v1, 0x7
 
-    .line 477
+    .line 485
     invoke-static {p0, v0, v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->swap([BII)V
 
     return-object p0
@@ -176,7 +176,7 @@
 
     const/4 v0, 0x0
 
-    .line 488
+    .line 496
     invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
@@ -201,7 +201,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 489
+    .line 497
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -219,15 +219,15 @@
 .method private static swap([BII)V
     .locals 2
 
-    .line 482
+    .line 490
     aget-byte v0, p0, p1
 
-    .line 483
+    .line 491
     aget-byte v1, p0, p2
 
     aput-byte v1, p0, p1
 
-    .line 484
+    .line 492
     aput-byte v0, p0, p2
 
     return-void
@@ -238,14 +238,14 @@
 .method public build()Ljava/lang/Object;
     .locals 4
 
-    .line 447
+    .line 455
     new-instance v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$ProtectionElement;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->uuid:Ljava/util/UUID;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->initData:[B
 
-    .line 448
+    .line 456
     invoke-static {v1, v2}, Lcom/google/android/exoplayer2/extractor/mp4/PsshAtomUtil;->buildPsshAtom(Ljava/util/UUID;[B)[B
 
     move-result-object v2
@@ -266,7 +266,7 @@
 
     const-string v0, "ProtectionHeader"
 
-    .line 418
+    .line 426
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -277,7 +277,7 @@
 .method public parseEndTag(Lorg/xmlpull/v1/XmlPullParser;)V
     .locals 1
 
-    .line 440
+    .line 448
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object p1
@@ -292,7 +292,7 @@
 
     const/4 p1, 0x0
 
-    .line 441
+    .line 449
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->inProtectionHeader:Z
 
     :cond_0
@@ -302,7 +302,7 @@
 .method public parseStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
     .locals 2
 
-    .line 423
+    .line 431
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -317,24 +317,24 @@
 
     const/4 v0, 0x1
 
-    .line 424
+    .line 432
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->inProtectionHeader:Z
 
     const/4 v0, 0x0
 
     const-string v1, "SystemID"
 
-    .line 425
+    .line 433
     invoke-interface {p1, v0, v1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 426
+    .line 434
     invoke-static {p1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->stripCurlyBraces(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 427
+    .line 435
     invoke-static {p1}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
 
     move-result-object p1
@@ -348,12 +348,12 @@
 .method public parseText(Lorg/xmlpull/v1/XmlPullParser;)V
     .locals 1
 
-    .line 433
+    .line 441
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ProtectionParser;->inProtectionHeader:Z
 
     if-eqz v0, :cond_0
 
-    .line 434
+    .line 442
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getText()Ljava/lang/String;
 
     move-result-object p1

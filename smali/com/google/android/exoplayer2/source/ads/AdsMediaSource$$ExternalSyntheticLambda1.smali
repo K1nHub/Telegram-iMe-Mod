@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$$ExternalSyntheticLambda1;->f$1:Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;
 
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;->$r8$lambda$1-m7XF1umsWz9SdpDX3nvldjhmE(Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;)V
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;->$r8$lambda$AgVPpigbCJhxxQjVVqQPnZy0Xkc(Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;)V
 
     return-void
 .end method

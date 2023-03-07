@@ -52,32 +52,20 @@
 
     const/4 v0, 0x0
 
-    .line 103
+    .line 109
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;-><init>(I)V
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
-    .locals 3
+    .locals 1
 
-    const/4 v0, 0x0
-
-    const-string v1, "application/cea-608"
-
-    const/4 v2, 0x0
-
-    .line 114
-    invoke-static {v0, v1, v2, v0}, Lcom/google/android/exoplayer2/Format;->createTextSampleFormat(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
+    .line 117
+    invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
-    .line 113
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 111
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;-><init>(ILjava/util/List;)V
 
     return-void
@@ -94,13 +82,13 @@
         }
     .end annotation
 
-    .line 127
+    .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 128
+    .line 131
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->flags:I
 
-    .line 129
+    .line 132
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->closedCaptionFormats:Ljava/util/List;
 
     return-void
@@ -109,7 +97,7 @@
 .method private buildSeiReader(Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Lcom/google/android/exoplayer2/extractor/ts/SeiReader;
     .locals 1
 
-    .line 192
+    .line 207
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/SeiReader;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->getClosedCaptionFormats(Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Ljava/util/List;
@@ -124,7 +112,7 @@
 .method private buildUserDataReader(Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
     .locals 1
 
-    .line 205
+    .line 220
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->getClosedCaptionFormats(Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Ljava/util/List;
@@ -137,7 +125,7 @@
 .end method
 
 .method private getClosedCaptionFormats(Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Ljava/util/List;
-    .locals 19
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -149,204 +137,200 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    const/16 v0, 0x20
 
-    const/16 v1, 0x20
+    .line 233
+    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
-    .line 218
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 234
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->closedCaptionFormats:Ljava/util/List;
+
+    return-object p1
+
+    .line 236
+    :cond_0
+    new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->descriptorBytes:[B
+
+    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([B)V
+
+    .line 237
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->closedCaptionFormats:Ljava/util/List;
+
+    .line 238
+    :goto_0
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-lez v1, :cond_6
 
-    .line 219
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->closedCaptionFormats:Ljava/util/List;
+    .line 239
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    return-object v1
+    move-result v1
 
-    .line 221
-    :cond_0
-    new-instance v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 240
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-object/from16 v2, p1
+    move-result v2
 
-    iget-object v2, v2, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->descriptorBytes:[B
-
-    invoke-direct {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([B)V
-
-    .line 222
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->closedCaptionFormats:Ljava/util/List;
-
-    .line 223
-    :goto_0
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
+    .line 241
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v3
 
-    if-lez v3, :cond_6
+    add-int/2addr v3, v2
 
-    .line 224
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    const/16 v2, 0x86
 
-    move-result v3
+    if-ne v1, v2, :cond_5
 
-    .line 225
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    .line 244
+    new-instance p1, Ljava/util/ArrayList;
 
-    move-result v4
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 226
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
+    .line 245
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v5
+    move-result v1
 
-    add-int/2addr v5, v4
+    and-int/lit8 v1, v1, 0x1f
 
-    const/16 v4, 0x86
-
-    if-ne v3, v4, :cond_5
-
-    .line 229
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    .line 230
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
-
-    move-result v3
-
-    and-int/lit8 v3, v3, 0x1f
+    const/4 v2, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v6, 0x0
-
     :goto_1
-    if-ge v6, v3, :cond_5
+    if-ge v4, v1, :cond_5
 
-    const/4 v7, 0x3
+    const/4 v5, 0x3
 
-    .line 232
-    invoke-virtual {v1, v7}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(I)Ljava/lang/String;
+    .line 247
+    invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v5
 
-    .line 233
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    .line 248
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v7
+    move-result v6
 
-    and-int/lit16 v8, v7, 0x80
-
-    const/4 v9, 0x1
-
-    if-eqz v8, :cond_1
+    and-int/lit16 v7, v6, 0x80
 
     const/4 v8, 0x1
+
+    if-eqz v7, :cond_1
+
+    const/4 v7, 0x1
 
     goto :goto_2
 
     :cond_1
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     :goto_2
-    if-eqz v8, :cond_2
+    if-eqz v7, :cond_2
 
-    and-int/lit8 v7, v7, 0x3f
+    and-int/lit8 v6, v6, 0x3f
 
-    const-string v10, "application/cea-708"
-
-    move v14, v7
-
-    move-object v7, v10
+    const-string v9, "application/cea-708"
 
     goto :goto_3
 
     :cond_2
-    const-string v7, "application/cea-608"
+    const-string v9, "application/cea-608"
 
-    const/4 v14, 0x1
+    const/4 v6, 0x1
 
-    .line 246
+    .line 261
     :goto_3
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v10
 
     int-to-byte v10, v10
 
-    .line 248
-    invoke-virtual {v1, v9}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
+    .line 263
+    invoke-virtual {v0, v8}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
     const/4 v11, 0x0
 
-    if-eqz v8, :cond_4
+    if-eqz v7, :cond_4
 
-    and-int/lit8 v8, v10, 0x40
+    and-int/lit8 v7, v10, 0x40
 
-    if-eqz v8, :cond_3
+    if-eqz v7, :cond_3
 
     goto :goto_4
 
     :cond_3
-    const/4 v9, 0x0
-
-    .line 254
-    :goto_4
-    invoke-static {v9}, Lcom/google/android/exoplayer2/text/cea/Cea708InitializationData;->buildData(Z)Ljava/util/List;
-
-    move-result-object v8
-
-    move-object/from16 v18, v8
-
-    goto :goto_5
-
-    :cond_4
-    move-object/from16 v18, v11
-
-    :goto_5
     const/4 v8, 0x0
 
-    const/4 v10, 0x0
+    .line 270
+    :goto_4
+    invoke-static {v8}, Lcom/google/android/exoplayer2/util/CodecSpecificDataUtil;->buildCea708InitializationData(Z)Ljava/util/List;
 
-    const/4 v11, -0x1
+    move-result-object v11
 
-    const/4 v12, 0x0
+    .line 273
+    :cond_4
+    new-instance v7, Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v15, 0x0
+    invoke-direct {v7}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
-    const-wide v16, 0x7fffffffffffffffL
-
-    move-object v9, v7
-
-    .line 258
-    invoke-static/range {v8 .. v18}, Lcom/google/android/exoplayer2/Format;->createTextSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ILcom/google/android/exoplayer2/drm/DrmInitData;JLjava/util/List;)Lcom/google/android/exoplayer2/Format;
+    .line 275
+    invoke-virtual {v7, v9}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object v7
 
-    .line 257
-    invoke-interface {v2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    .line 276
+    invoke-virtual {v7, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setLanguage(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    add-int/lit8 v6, v6, 0x1
+    move-result-object v5
+
+    .line 277
+    invoke-virtual {v5, v6}, Lcom/google/android/exoplayer2/Format$Builder;->setAccessibilityChannel(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v5
+
+    .line 278
+    invoke-virtual {v5, v11}, Lcom/google/android/exoplayer2/Format$Builder;->setInitializationData(Ljava/util/List;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v5
+
+    .line 279
+    invoke-virtual {v5}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v5
+
+    .line 273
+    invoke-interface {p1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 273
+    .line 284
     :cond_5
-    invoke-virtual {v1, v5}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    invoke-virtual {v0, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     goto :goto_0
 
     :cond_6
-    return-object v2
+    return-object p1
 .end method
 
 .method private isSet(I)Z
     .locals 1
 
-    .line 280
+    .line 291
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->flags:I
 
     and-int/2addr p1, v0
@@ -377,7 +361,7 @@
         }
     .end annotation
 
-    .line 134
+    .line 137
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -390,107 +374,143 @@
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_10
+    if-eq p1, v0, :cond_e
 
     const/4 v1, 0x3
 
-    if-eq p1, v1, :cond_f
+    if-eq p1, v1, :cond_d
 
     const/4 v1, 0x4
 
-    if-eq p1, v1, :cond_f
+    if-eq p1, v1, :cond_d
 
-    const/16 v2, 0xf
+    const/16 v2, 0x15
+
+    if-eq p1, v2, :cond_c
+
+    const/16 v2, 0x1b
 
     const/4 v3, 0x0
 
-    if-eq p1, v2, :cond_d
+    if-eq p1, v2, :cond_a
 
-    const/16 v2, 0x11
+    const/16 v1, 0x24
 
-    if-eq p1, v2, :cond_b
+    if-eq p1, v1, :cond_9
 
-    const/16 v0, 0x15
+    const/16 v1, 0x59
 
-    if-eq p1, v0, :cond_a
+    if-eq p1, v1, :cond_8
 
-    const/16 v0, 0x1b
+    const/16 v1, 0x8a
 
-    if-eq p1, v0, :cond_8
+    if-eq p1, v1, :cond_7
 
-    const/16 v0, 0x24
+    const/16 v1, 0xac
 
-    if-eq p1, v0, :cond_7
+    if-eq p1, v1, :cond_6
 
-    const/16 v0, 0x59
+    const/16 v1, 0x101
 
-    if-eq p1, v0, :cond_6
+    if-eq p1, v1, :cond_5
 
-    const/16 v0, 0x8a
+    const/16 v1, 0x86
 
-    if-eq p1, v0, :cond_5
+    if-eq p1, v1, :cond_3
 
-    const/16 v0, 0xac
+    const/16 v1, 0x87
 
-    if-eq p1, v0, :cond_4
+    if-eq p1, v1, :cond_2
 
-    const/16 v0, 0x81
+    packed-switch p1, :pswitch_data_0
 
-    if-eq p1, v0, :cond_3
-
-    const/16 v0, 0x82
-
-    if-eq p1, v0, :cond_2
-
-    const/16 v0, 0x86
-
-    if-eq p1, v0, :cond_0
-
-    const/16 v0, 0x87
-
-    if-eq p1, v0, :cond_3
+    packed-switch p1, :pswitch_data_1
 
     return-object v3
 
-    :cond_0
-    const/16 p1, 0x10
+    :pswitch_0
+    const/16 p1, 0x40
 
-    .line 170
+    .line 161
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
+
+    move-result p1
+
+    if-nez p1, :cond_7
+
+    return-object v3
+
+    .line 152
+    :pswitch_1
+    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    .line 154
+    :cond_0
+    new-instance v3, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
+
+    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/LatmReader;
+
+    iget-object p2, p2, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->language:Ljava/lang/String;
+
+    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/extractor/ts/LatmReader;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v3, p1}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/ElementaryStreamReader;)V
+
+    :goto_0
+    return-object v3
+
+    .line 171
+    :pswitch_2
+    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
+
+    new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/H263Reader;
+
+    invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->buildUserDataReader(Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
+
+    move-result-object p2
+
+    invoke-direct {v0, p2}, Lcom/google/android/exoplayer2/extractor/ts/H263Reader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;)V
+
+    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/ElementaryStreamReader;)V
+
+    return-object p1
+
+    .line 148
+    :pswitch_3
+    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 171
+    .line 150
     :cond_1
-    new-instance v3, Lcom/google/android/exoplayer2/extractor/ts/SectionReader;
+    new-instance v3, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
-    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/SpliceInfoSectionReader;
+    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/AdtsReader;
 
-    invoke-direct {p1}, Lcom/google/android/exoplayer2/extractor/ts/SpliceInfoSectionReader;-><init>()V
+    const/4 v0, 0x0
 
-    invoke-direct {v3, p1}, Lcom/google/android/exoplayer2/extractor/ts/SectionReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/SectionPayloadReader;)V
+    iget-object p2, p2, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->language:Ljava/lang/String;
 
-    :goto_0
+    invoke-direct {p1, v0, p2}, Lcom/google/android/exoplayer2/extractor/ts/AdtsReader;-><init>(ZLjava/lang/String;)V
+
+    invoke-direct {v3, p1}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/ElementaryStreamReader;)V
+
+    :goto_1
     return-object v3
 
+    .line 157
     :cond_2
-    const/16 p1, 0x40
-
-    .line 155
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
-
-    move-result p1
-
-    if-nez p1, :cond_5
-
-    return-object v3
-
-    .line 151
-    :cond_3
+    :pswitch_4
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/Ac3Reader;
@@ -503,8 +523,49 @@
 
     return-object p1
 
-    .line 153
+    :cond_3
+    const/16 p1, 0x10
+
+    .line 183
+    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_4
+
+    goto :goto_2
+
+    .line 185
     :cond_4
+    new-instance v3, Lcom/google/android/exoplayer2/extractor/ts/SectionReader;
+
+    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PassthroughSectionPayloadReader;
+
+    const-string p2, "application/x-scte35"
+
+    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/extractor/ts/PassthroughSectionPayloadReader;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v3, p1}, Lcom/google/android/exoplayer2/extractor/ts/SectionReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/SectionPayloadReader;)V
+
+    :goto_2
+    return-object v3
+
+    .line 191
+    :cond_5
+    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/SectionReader;
+
+    new-instance p2, Lcom/google/android/exoplayer2/extractor/ts/PassthroughSectionPayloadReader;
+
+    const-string v0, "application/vnd.dvb.ait"
+
+    invoke-direct {p2, v0}, Lcom/google/android/exoplayer2/extractor/ts/PassthroughSectionPayloadReader;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/extractor/ts/SectionReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/SectionPayloadReader;)V
+
+    return-object p1
+
+    .line 159
+    :cond_6
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/Ac4Reader;
@@ -517,8 +578,8 @@
 
     return-object p1
 
-    .line 160
-    :cond_5
+    .line 166
+    :cond_7
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/DtsReader;
@@ -531,8 +592,8 @@
 
     return-object p1
 
-    .line 175
-    :cond_6
+    .line 189
+    :cond_8
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/DvbSubtitleReader;
@@ -545,8 +606,8 @@
 
     return-object p1
 
-    .line 168
-    :cond_7
+    .line 181
+    :cond_9
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader;
@@ -561,35 +622,37 @@
 
     return-object p1
 
-    .line 164
-    :cond_8
+    .line 173
+    :cond_a
     invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_b
 
-    goto :goto_1
+    goto :goto_3
 
-    .line 165
-    :cond_9
+    .line 175
+    :cond_b
     new-instance v3, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/H264Reader;
 
+    .line 177
     invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->buildSeiReader(Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Lcom/google/android/exoplayer2/extractor/ts/SeiReader;
 
     move-result-object p2
 
     const/4 v0, 0x1
 
-    .line 166
+    .line 178
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
     move-result v0
 
     const/16 v1, 0x8
 
+    .line 179
     invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
 
     move-result v1
@@ -598,11 +661,11 @@
 
     invoke-direct {v3, p1}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/ElementaryStreamReader;)V
 
-    :goto_1
+    :goto_3
     return-object v3
 
-    .line 173
-    :cond_a
+    .line 187
+    :cond_c
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance p2, Lcom/google/android/exoplayer2/extractor/ts/Id3Reader;
@@ -613,60 +676,8 @@
 
     return-object p1
 
-    .line 147
-    :cond_b
-    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_c
-
-    goto :goto_2
-
-    .line 148
-    :cond_c
-    new-instance v3, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
-
-    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/LatmReader;
-
-    iget-object p2, p2, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->language:Ljava/lang/String;
-
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/extractor/ts/LatmReader;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v3, p1}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/ElementaryStreamReader;)V
-
-    :goto_2
-    return-object v3
-
-    .line 144
+    .line 146
     :cond_d
-    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/DefaultTsPayloadReaderFactory;->isSet(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_e
-
-    goto :goto_3
-
-    .line 145
-    :cond_e
-    new-instance v3, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
-
-    new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/AdtsReader;
-
-    const/4 v0, 0x0
-
-    iget-object p2, p2, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->language:Ljava/lang/String;
-
-    invoke-direct {p1, v0, p2}, Lcom/google/android/exoplayer2/extractor/ts/AdtsReader;-><init>(ZLjava/lang/String;)V
-
-    invoke-direct {v3, p1}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/ElementaryStreamReader;)V
-
-    :goto_3
-    return-object v3
-
-    .line 142
-    :cond_f
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;
@@ -679,8 +690,9 @@
 
     return-object p1
 
-    .line 162
-    :cond_10
+    .line 169
+    :cond_e
+    :pswitch_5
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/PesReader;
 
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;
@@ -694,4 +706,18 @@
     invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/extractor/ts/PesReader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/ElementaryStreamReader;)V
 
     return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0xf
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x80
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+    .end packed-switch
 .end method

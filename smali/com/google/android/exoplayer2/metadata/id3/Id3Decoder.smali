@@ -1,9 +1,6 @@
 .class public final Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;
-.super Ljava/lang/Object;
+.super Lcom/google/android/exoplayer2/metadata/SimpleMetadataDecoder;
 .source "Id3Decoder.java"
-
-# interfaces
-.implements Lcom/google/android/exoplayer2/metadata/MetadataDecoder;
 
 
 # annotations
@@ -67,7 +64,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 60
+    .line 57
     sget-object v0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$$ExternalSyntheticLambda0;
 
     sput-object v0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->NO_FRAMES_PREDICATE:Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;
@@ -80,7 +77,7 @@
 
     const/4 v0, 0x0
 
-    .line 89
+    .line 84
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;-><init>(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)V
 
     return-void
@@ -89,10 +86,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)V
     .locals 0
 
-    .line 95
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 90
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/metadata/SimpleMetadataDecoder;-><init>()V
 
-    .line 96
+    .line 91
     iput-object p1, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->framePredicate:Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;
 
     return-void
@@ -103,12 +100,12 @@
 
     if-gt p2, p1, :cond_0
 
-    .line 804
+    .line 855
     sget-object p0, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     return-object p0
 
-    .line 806
+    .line 857
     :cond_0
     invoke-static {p0, p1, p2}, Ljava/util/Arrays;->copyOfRange([BII)[B
 
@@ -119,41 +116,34 @@
 
 .method private static decodeApicFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;II)Lcom/google/android/exoplayer2/metadata/id3/ApicFrame;
     .locals 7
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
-    .line 530
+    .line 576
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
-    .line 531
-    invoke-static {v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharsetName(I)Ljava/lang/String;
+    .line 577
+    invoke-static {v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharset(I)Ljava/nio/charset/Charset;
 
     move-result-object v1
 
     add-int/lit8 p1, p1, -0x1
 
-    .line 533
+    .line 579
     new-array v2, p1, [B
 
     const/4 v3, 0x0
 
-    .line 534
+    .line 580
     invoke-virtual {p0, v2, v3, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
     const-string p0, "image/"
 
-    const-string v4, "ISO-8859-1"
+    const/4 v4, 0x2
 
-    const/4 v5, 0x2
+    if-ne p2, v4, :cond_1
 
-    if-ne p2, v5, :cond_1
-
-    .line 540
+    .line 586
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -162,11 +152,13 @@
 
     new-instance p0, Ljava/lang/String;
 
-    const/4 v6, 0x3
+    const/4 v5, 0x3
 
-    invoke-direct {p0, v2, v3, v6, v4}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    sget-object v6, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v2, v3, v5, v6}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+
+    invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -178,7 +170,7 @@
 
     const-string p2, "image/jpg"
 
-    .line 541
+    .line 587
     invoke-virtual {p2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -192,42 +184,44 @@
 
     goto :goto_0
 
-    .line 545
+    .line 591
     :cond_1
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result p2
 
-    .line 546
-    new-instance v6, Ljava/lang/String;
+    .line 592
+    new-instance v5, Ljava/lang/String;
 
-    invoke-direct {v6, v2, v3, p2, v4}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    sget-object v6, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    invoke-static {v6}, Lcom/google/android/exoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v5, v2, v3, p2, v6}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+
+    invoke-static {v5}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    const/16 v4, 0x2f
+    const/16 v5, 0x2f
 
-    .line 547
-    invoke-virtual {v3, v4}, Ljava/lang/String;->indexOf(I)I
+    .line 593
+    invoke-virtual {v3, v5}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v4
+    move-result v5
 
     const/4 v6, -0x1
 
-    if-ne v4, v6, :cond_2
+    if-ne v5, v6, :cond_2
 
-    .line 548
-    new-instance v4, Ljava/lang/StringBuilder;
+    .line 594
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -239,38 +233,38 @@
     :goto_0
     add-int/lit8 v3, p2, 0x1
 
-    .line 552
+    .line 598
     aget-byte v3, v2, v3
 
     and-int/lit16 v3, v3, 0xff
 
-    add-int/2addr p2, v5
+    add-int/2addr p2, v4
 
-    .line 555
-    invoke-static {v2, p2, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 601
+    invoke-static {v2, p2, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
 
     move-result v4
 
-    .line 556
+    .line 602
     new-instance v5, Ljava/lang/String;
 
     sub-int v6, v4, p2
 
-    invoke-direct {v5, v2, p2, v6, v1}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v5, v2, p2, v6, v1}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 559
+    .line 606
     invoke-static {v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
     move-result p2
 
     add-int/2addr v4, p2
 
-    .line 560
+    .line 607
     invoke-static {v2, v4, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
 
     move-result-object p1
 
-    .line 562
+    .line 609
     new-instance p2, Lcom/google/android/exoplayer2/metadata/id3/ApicFrame;
 
     invoke-direct {p2, p0, v5, v3, p1}, Lcom/google/android/exoplayer2/metadata/id3/ApicFrame;-><init>(Ljava/lang/String;Ljava/lang/String;I[B)V
@@ -281,15 +275,15 @@
 .method private static decodeBinaryFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/exoplayer2/metadata/id3/BinaryFrame;
     .locals 2
 
-    .line 707
+    .line 761
     new-array v0, p1, [B
 
     const/4 v1, 0x0
 
-    .line 708
+    .line 762
     invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 710
+    .line 764
     new-instance p0, Lcom/google/android/exoplayer2/metadata/id3/BinaryFrame;
 
     invoke-direct {p0, p2, v0}, Lcom/google/android/exoplayer2/metadata/id3/BinaryFrame;-><init>(Ljava/lang/String;[B)V
@@ -299,53 +293,53 @@
 
 .method private static decodeChapterFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;IIZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;
     .locals 15
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
     move-object v0, p0
 
-    .line 601
+    .line 646
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v1
 
-    .line 602
-    iget-object v2, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 647
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v2
 
     invoke-static {v2, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result v2
 
-    .line 603
+    .line 648
     new-instance v4, Ljava/lang/String;
 
-    iget-object v3, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 650
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v3
 
     sub-int v5, v2, v1
 
-    const-string v6, "ISO-8859-1"
+    sget-object v6, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    invoke-direct {v4, v3, v1, v5, v6}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v4, v3, v1, v5, v6}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 605
+    .line 654
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 607
+    .line 656
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v5
 
-    .line 608
+    .line 657
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v6
 
-    .line 609
+    .line 658
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v2
@@ -365,7 +359,7 @@
     :cond_0
     move-wide v11, v2
 
-    .line 613
+    .line 662
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
@@ -382,7 +376,7 @@
     :cond_1
     move-wide v9, v2
 
-    .line 618
+    .line 667
     :goto_1
     new-instance v2, Ljava/util/ArrayList;
 
@@ -390,7 +384,7 @@
 
     add-int v1, v1, p1
 
-    .line 620
+    .line 669
     :cond_2
     :goto_2
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
@@ -407,30 +401,31 @@
 
     move-object/from16 v13, p5
 
-    .line 621
+    .line 671
     invoke-static {v3, p0, v7, v8, v13}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeFrame(ILcom/google/android/exoplayer2/util/ParsableByteArray;ZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     move-result-object v14
 
     if-eqz v14, :cond_2
 
-    .line 624
+    .line 674
     invoke-virtual {v2, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 628
     :cond_3
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
+    const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
-    .line 629
+    .line 678
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 630
+    move-result-object v0
+
+    check-cast v0, [Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
+
+    .line 679
     new-instance v1, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;
 
     move-object v3, v1
@@ -445,53 +440,53 @@
 .end method
 
 .method private static decodeChapterTOCFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;IIZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/ChapterTocFrame;
-    .locals 15
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
+    .locals 16
 
-    move-object v0, p0
+    move-object/from16 v0, p0
 
-    .line 641
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
+    .line 689
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v1
 
-    .line 642
-    iget-object v2, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 690
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v2
 
     invoke-static {v2, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result v2
 
-    .line 643
+    .line 691
     new-instance v3, Ljava/lang/String;
 
-    iget-object v4, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 693
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v4
 
     sub-int v5, v2, v1
 
-    const-string v6, "ISO-8859-1"
+    sget-object v6, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    invoke-direct {v3, v4, v1, v5, v6}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v3, v4, v1, v5, v6}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     const/4 v4, 0x1
 
     add-int/2addr v2, v4
 
-    .line 645
-    invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    .line 697
+    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 647
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    .line 699
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v2
 
     and-int/lit8 v5, v2, 0x2
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     if-eqz v5, :cond_0
 
@@ -514,51 +509,60 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 651
+    .line 703
     :goto_1
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v8
+    move-result v7
 
-    .line 652
-    new-array v9, v8, [Ljava/lang/String;
+    .line 704
+    new-array v8, v7, [Ljava/lang/String;
+
+    const/4 v9, 0x0
 
     :goto_2
-    if-ge v7, v8, :cond_2
+    if-ge v9, v7, :cond_2
 
-    .line 654
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
+    .line 706
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v10
 
-    .line 655
-    iget-object v11, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 707
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v11
 
     invoke-static {v11, v10}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result v11
 
-    .line 656
+    .line 708
     new-instance v12, Ljava/lang/String;
 
-    iget-object v13, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 709
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v13
 
     sub-int v14, v11, v10
 
-    invoke-direct {v12, v13, v10, v14, v6}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    sget-object v15, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    aput-object v12, v9, v7
+    invoke-direct {v12, v13, v10, v14, v15}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+
+    aput-object v12, v8, v9
 
     add-int/2addr v11, v4
 
-    .line 657
-    invoke-virtual {p0, v11}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    .line 710
+    invoke-virtual {v0, v11}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v9, v9, 0x1
 
     goto :goto_2
 
-    .line 660
+    .line 713
     :cond_2
     new-instance v4, Ljava/util/ArrayList;
 
@@ -566,50 +570,49 @@
 
     add-int v1, v1, p1
 
-    .line 662
+    .line 715
     :cond_3
     :goto_3
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
-    move-result v6
+    move-result v7
 
-    if-ge v6, v1, :cond_4
+    if-ge v7, v1, :cond_4
 
-    move/from16 v6, p2
+    move/from16 v7, p2
 
-    move/from16 v7, p3
+    move/from16 v9, p3
 
-    move/from16 v8, p4
+    move/from16 v10, p4
 
-    move-object/from16 v10, p5
+    move-object/from16 v11, p5
 
-    .line 663
-    invoke-static {v6, p0, v7, v8, v10}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeFrame(ILcom/google/android/exoplayer2/util/ParsableByteArray;ZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
+    .line 718
+    invoke-static {v7, v0, v9, v10, v11}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeFrame(ILcom/google/android/exoplayer2/util/ParsableByteArray;ZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
-    move-result-object v11
+    move-result-object v12
 
-    if-eqz v11, :cond_3
+    if-eqz v12, :cond_3
 
-    .line 666
-    invoke-virtual {v4, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 721
+    invoke-virtual {v4, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 670
     :cond_4
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    new-array v0, v6, [Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
-    move-result v0
-
-    new-array v0, v0, [Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
-
-    .line 671
+    .line 725
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 672
+    move-result-object v0
+
+    check-cast v0, [Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
+
+    .line 726
     new-instance v1, Lcom/google/android/exoplayer2/metadata/id3/ChapterTocFrame;
 
-    move-object p0, v1
+    move-object/from16 p0, v1
 
     move-object/from16 p1, v3
 
@@ -617,7 +620,7 @@
 
     move/from16 p3, v2
 
-    move-object/from16 p4, v9
+    move-object/from16 p4, v8
 
     move-object/from16 p5, v0
 
@@ -628,11 +631,6 @@
 
 .method private static decodeCommentFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/CommentFrame;
     .locals 7
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
     const/4 v0, 0x4
 
@@ -642,14 +640,14 @@
 
     return-object p0
 
-    .line 573
+    .line 619
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
 
-    .line 574
-    invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharsetName(I)Ljava/lang/String;
+    .line 620
+    invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharset(I)Ljava/nio/charset/Charset;
 
     move-result-object v2
 
@@ -659,50 +657,50 @@
 
     const/4 v5, 0x0
 
-    .line 577
+    .line 623
     invoke-virtual {p0, v4, v5, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 578
+    .line 624
     new-instance v6, Ljava/lang/String;
 
     invoke-direct {v6, v4, v5, v3}, Ljava/lang/String;-><init>([BII)V
 
     sub-int/2addr p1, v0
 
-    .line 580
+    .line 626
     new-array v0, p1, [B
 
-    .line 581
+    .line 627
     invoke-virtual {p0, v0, v5, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 583
-    invoke-static {v0, v5, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 629
+    invoke-static {v0, v5, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
 
     move-result p0
 
-    .line 584
+    .line 630
     new-instance p1, Ljava/lang/String;
 
-    invoke-direct {p1, v0, v5, p0, v2}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {p1, v0, v5, p0, v2}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 586
+    .line 632
     invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
     move-result v3
 
     add-int/2addr p0, v3
 
-    .line 587
-    invoke-static {v0, p0, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 633
+    invoke-static {v0, p0, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
 
     move-result v1
 
-    .line 588
-    invoke-static {v0, p0, v1, v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+    .line 634
+    invoke-static {v0, p0, v1, v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 590
+    .line 636
     new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/CommentFrame;
 
     invoke-direct {v0, v6, p1, p0}, Lcom/google/android/exoplayer2/metadata/id3/CommentFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -717,17 +715,17 @@
 
     move-object/from16 v7, p1
 
-    .line 280
+    .line 286
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v8
 
-    .line 281
+    .line 287
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v9
 
-    .line 282
+    .line 288
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v10
@@ -736,7 +734,7 @@
 
     if-lt v0, v11, :cond_0
 
-    .line 283
+    .line 289
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
@@ -753,7 +751,7 @@
 
     if-ne v0, v14, :cond_2
 
-    .line 287
+    .line 293
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedIntToInt()I
 
     move-result v1
@@ -795,14 +793,14 @@
     :cond_2
     if-ne v0, v11, :cond_3
 
-    .line 293
+    .line 302
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedIntToInt()I
 
     move-result v1
 
     goto :goto_1
 
-    .line 295
+    .line 304
     :cond_3
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
 
@@ -813,7 +811,7 @@
     :goto_2
     if-lt v0, v11, :cond_4
 
-    .line 298
+    .line 307
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v1
@@ -840,7 +838,7 @@
 
     if-nez v6, :cond_5
 
-    .line 302
+    .line 315
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v0
@@ -849,7 +847,7 @@
 
     return-object v16
 
-    .line 306
+    .line 319
     :cond_5
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
@@ -857,7 +855,7 @@
 
     add-int v5, v1, v15
 
-    .line 307
+    .line 320
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v1
@@ -868,10 +866,10 @@
 
     const-string v0, "Frame size exceeds remaining tag data"
 
-    .line 308
+    .line 321
     invoke-static {v4, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 309
+    .line 322
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v0
@@ -901,14 +899,14 @@
 
     move v6, v13
 
-    .line 314
+    .line 327
     invoke-interface/range {v1 .. v6}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;->evaluate(IIIII)Z
 
     move-result v1
 
     if-nez v1, :cond_8
 
-    .line 316
+    .line 329
     invoke-virtual {v7, v14}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return-object v16
@@ -1069,7 +1067,7 @@
 
     add-int/lit8 v15, v15, -0x1
 
-    .line 348
+    .line 361
     invoke-virtual {v7, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
     :cond_14
@@ -1079,13 +1077,13 @@
 
     const/4 v1, 0x4
 
-    .line 352
+    .line 365
     invoke-virtual {v7, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
     :cond_15
     if-eqz v6, :cond_16
 
-    .line 355
+    .line 368
     invoke-static {v7, v15}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->removeUnsynchronization(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)I
 
     move-result v15
@@ -1107,7 +1105,7 @@
 
     if-ne v13, v3, :cond_18
 
-    .line 362
+    .line 377
     :cond_17
     :try_start_0
     invoke-static {v7, v15}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeTxxxFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;
@@ -1119,12 +1117,12 @@
     :cond_18
     if-ne v8, v1, :cond_19
 
-    .line 364
+    .line 379
     invoke-static {v0, v8, v9, v10, v13}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getFrameId(IIIII)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 365
+    .line 380
     invoke-static {v7, v15, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeTextInformationFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;
 
     move-result-object v1
@@ -1149,7 +1147,7 @@
 
     if-ne v13, v3, :cond_1b
 
-    .line 368
+    .line 385
     :cond_1a
     invoke-static {v7, v15}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeWxxxFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
 
@@ -1160,12 +1158,12 @@
     :cond_1b
     if-ne v8, v4, :cond_1c
 
-    .line 370
+    .line 387
     invoke-static {v0, v8, v9, v10, v13}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getFrameId(IIIII)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 371
+    .line 388
     invoke-static {v7, v15, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeUrlLinkFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
 
     move-result-object v1
@@ -1189,7 +1187,7 @@
 
     if-ne v13, v5, :cond_1d
 
-    .line 373
+    .line 390
     invoke-static {v7, v15}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodePrivFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/PrivFrame;
 
     move-result-object v1
@@ -1215,7 +1213,7 @@
 
     if-ne v0, v2, :cond_1f
 
-    .line 376
+    .line 395
     :cond_1e
     invoke-static {v7, v15}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeGeobFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;
 
@@ -1247,7 +1245,7 @@
 
     if-ne v13, v11, :cond_21
 
-    .line 379
+    .line 399
     :goto_d
     invoke-static {v7, v15, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeApicFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;II)Lcom/google/android/exoplayer2/metadata/id3/ApicFrame;
 
@@ -1268,7 +1266,7 @@
 
     if-ne v0, v2, :cond_23
 
-    .line 382
+    .line 404
     :cond_22
     invoke-static {v7, v15}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeCommentFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/CommentFrame;
 
@@ -1299,7 +1297,7 @@
 
     move-object/from16 v6, p4
 
-    .line 384
+    .line 407
     invoke-static/range {v1 .. v6}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeChapterFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;IIZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;
 
     move-result-object v1
@@ -1327,7 +1325,7 @@
 
     move-object/from16 v6, p4
 
-    .line 387
+    .line 416
     invoke-static/range {v1 .. v6}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeChapterTOCFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;IIZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/ChapterTocFrame;
 
     move-result-object v1
@@ -1345,20 +1343,20 @@
 
     if-ne v13, v1, :cond_26
 
-    .line 390
+    .line 424
     invoke-static {v7, v15}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeMlltFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;
 
     move-result-object v1
 
     goto :goto_e
 
-    .line 392
+    .line 426
     :cond_26
     invoke-static {v0, v8, v9, v10, v13}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getFrameId(IIIII)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 393
+    .line 427
     invoke-static {v7, v15, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeBinaryFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/exoplayer2/metadata/id3/BinaryFrame;
 
     move-result-object v1
@@ -1366,7 +1364,7 @@
     :goto_e
     if-nez v1, :cond_27
 
-    .line 396
+    .line 430
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1375,7 +1373,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 397
+    .line 433
     invoke-static {v0, v8, v9, v10, v13}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getFrameId(IIIII)Ljava/lang/String;
 
     move-result-object v0
@@ -1392,46 +1390,31 @@
 
     move-result-object v0
 
-    .line 396
+    .line 430
     invoke-static {v12, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 405
+    .line 439
     :cond_27
     invoke-virtual {v7, v14}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return-object v1
 
-    :catch_0
-    :try_start_1
-    const-string v0, "Unsupported character encoding"
-
-    .line 402
-    invoke-static {v12, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 405
-    invoke-virtual {v7, v14}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
-
-    return-object v16
-
     :goto_f
     invoke-virtual {v7, v14}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 406
+    .line 440
     throw v0
 
     :cond_28
     :goto_10
     const-string v0, "Skipping unsupported compressed or encrypted frame"
 
-    .line 341
+    .line 354
     invoke-static {v12, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 342
+    .line 355
     invoke-virtual {v7, v14}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return-object v16
@@ -1439,86 +1422,81 @@
 
 .method private static decodeGeobFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;
     .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
-    .line 504
+    .line 550
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
-    .line 505
-    invoke-static {v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharsetName(I)Ljava/lang/String;
+    .line 551
+    invoke-static {v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharset(I)Ljava/nio/charset/Charset;
 
     move-result-object v1
 
     add-int/lit8 p1, p1, -0x1
 
-    .line 507
+    .line 553
     new-array v2, p1, [B
 
     const/4 v3, 0x0
 
-    .line 508
+    .line 554
     invoke-virtual {p0, v2, v3, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 510
+    .line 556
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result p0
 
-    .line 511
+    .line 557
     new-instance v4, Ljava/lang/String;
 
-    const-string v5, "ISO-8859-1"
+    sget-object v5, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    invoke-direct {v4, v2, v3, p0, v5}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v4, v2, v3, p0, v5}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     add-int/lit8 p0, p0, 0x1
 
-    .line 514
-    invoke-static {v2, p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 560
+    invoke-static {v2, p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
 
     move-result v3
 
-    .line 515
-    invoke-static {v2, p0, v3, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+    .line 561
+    invoke-static {v2, p0, v3, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 517
+    .line 563
     invoke-static {v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
     move-result v5
 
     add-int/2addr v3, v5
 
-    .line 518
-    invoke-static {v2, v3, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 564
+    invoke-static {v2, v3, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
 
     move-result v5
 
-    .line 520
-    invoke-static {v2, v3, v5, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+    .line 566
+    invoke-static {v2, v3, v5, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 522
+    .line 568
     invoke-static {v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
     move-result v0
 
     add-int/2addr v5, v0
 
-    .line 523
+    .line 569
     invoke-static {v2, v5, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
 
     move-result-object p1
 
-    .line 525
+    .line 571
     new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;
 
     invoke-direct {v0, v4, p0, v1, p1}, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[B)V
@@ -1763,37 +1741,37 @@
 .method private static decodeMlltFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;
     .locals 10
 
-    .line 677
+    .line 731
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v1
 
-    .line 678
+    .line 732
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
 
     move-result v2
 
-    .line 679
+    .line 733
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
 
     move-result v3
 
-    .line 680
+    .line 734
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
-    .line 681
+    .line 735
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v4
 
-    .line 683
+    .line 737
     new-instance v5, Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     invoke-direct {v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;-><init>()V
 
-    .line 684
+    .line 738
     invoke-virtual {v5, p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->reset(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
     add-int/lit8 p1, p1, -0xa
@@ -1802,13 +1780,13 @@
 
     add-int p0, v0, v4
 
-    .line 687
+    .line 741
     div-int/2addr p1, p0
 
-    .line 688
+    .line 742
     new-array p0, p1, [I
 
-    .line 689
+    .line 743
     new-array v6, p1, [I
 
     const/4 v7, 0x0
@@ -1816,27 +1794,27 @@
     :goto_0
     if-ge v7, p1, :cond_0
 
-    .line 691
+    .line 745
     invoke-virtual {v5, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v8
 
-    .line 692
+    .line 746
     invoke-virtual {v5, v4}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v9
 
-    .line 693
+    .line 747
     aput v8, p0, v7
 
-    .line 694
+    .line 748
     aput v9, v6, v7
 
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 697
+    .line 751
     :cond_0
     new-instance p1, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;
 
@@ -1853,40 +1831,35 @@
 
 .method private static decodePrivFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/PrivFrame;
     .locals 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
-    .line 490
+    .line 537
     new-array v0, p1, [B
 
     const/4 v1, 0x0
 
-    .line 491
+    .line 538
     invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 493
+    .line 540
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result p0
 
-    .line 494
+    .line 541
     new-instance v2, Ljava/lang/String;
 
-    const-string v3, "ISO-8859-1"
+    sget-object v3, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    invoke-direct {v2, v0, v1, p0, v3}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v2, v0, v1, p0, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     add-int/lit8 p0, p0, 0x1
 
-    .line 497
+    .line 544
     invoke-static {v0, p0, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->copyOfRangeIfValid([BII)[B
 
     move-result-object p0
 
-    .line 499
+    .line 546
     new-instance p1, Lcom/google/android/exoplayer2/metadata/id3/PrivFrame;
 
     invoke-direct {p1, v2, p0}, Lcom/google/android/exoplayer2/metadata/id3/PrivFrame;-><init>(Ljava/lang/String;[B)V
@@ -1894,30 +1867,25 @@
     return-object p1
 .end method
 
-.method private static decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+.method private static decodeStringIfValid([BIILjava/nio/charset/Charset;)Ljava/lang/String;
     .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
     if-le p2, p1, :cond_1
 
-    .line 822
+    .line 871
     array-length v0, p0
 
     if-le p2, v0, :cond_0
 
     goto :goto_0
 
-    .line 825
+    .line 874
     :cond_0
     new-instance v0, Ljava/lang/String;
 
     sub-int/2addr p2, p1
 
-    invoke-direct {v0, p0, p1, p2, p3}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     return-object v0
 
@@ -1929,12 +1897,7 @@
 .end method
 
 .method private static decodeTextInformationFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;
-    .locals 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -1944,52 +1907,126 @@
 
     return-object v0
 
-    .line 441
+    .line 472
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v2
 
-    .line 442
-    invoke-static {v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharsetName(I)Ljava/lang/String;
-
-    move-result-object v3
-
     sub-int/2addr p1, v1
 
-    .line 444
+    .line 474
     new-array v1, p1, [B
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    .line 445
-    invoke-virtual {p0, v1, v4, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
+    .line 475
+    invoke-virtual {p0, v1, v3, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 447
-    invoke-static {v1, v4, v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 477
+    invoke-static {v1, v2, v3}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeTextInformationFrameValues([BII)Lcom/google/common/collect/ImmutableList;
 
-    move-result p0
+    move-result-object p0
 
-    .line 448
-    new-instance p1, Ljava/lang/String;
+    .line 478
+    new-instance p1, Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;
 
-    invoke-direct {p1, v1, v4, p0, v3}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {p1, p2, v0, p0}, Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
-    .line 450
-    new-instance p0, Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;
+    return-object p1
+.end method
 
-    invoke-direct {p0, p2, v0, p1}, Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private static decodeTextInformationFrameValues([BII)Lcom/google/common/collect/ImmutableList;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([BII)",
+            "Lcom/google/common/collect/ImmutableList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
+    .line 483
+    array-length v0, p0
+
+    const-string v1, ""
+
+    if-lt p2, v0, :cond_0
+
+    .line 484
+    invoke-static {v1}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 487
+    :cond_0
+    invoke-static {}, Lcom/google/common/collect/ImmutableList;->builder()Lcom/google/common/collect/ImmutableList$Builder;
+
+    move-result-object v0
+
+    .line 489
+    invoke-static {p0, p2, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
+
+    move-result v2
+
+    :goto_0
+    if-ge p2, v2, :cond_1
+
+    .line 491
+    new-instance v3, Ljava/lang/String;
+
+    sub-int v4, v2, p2
+
+    .line 492
+    invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharset(I)Ljava/nio/charset/Charset;
+
+    move-result-object v5
+
+    invoke-direct {v3, p0, p2, v4, v5}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+
+    .line 493
+    invoke-virtual {v0, v3}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+
+    .line 495
+    invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
+
+    move-result p2
+
+    add-int/2addr p2, v2
+
+    .line 496
+    invoke-static {p0, p2, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
+
+    move-result v2
+
+    goto :goto_0
+
+    .line 499
+    :cond_1
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object p0
+
+    .line 500
+    invoke-virtual {p0}, Ljava/util/AbstractCollection;->isEmpty()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    invoke-static {v1}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
+
+    move-result-object p0
+
+    :cond_2
     return-object p0
 .end method
 
 .method private static decodeTxxxFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;
     .locals 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
     const/4 v0, 0x1
 
@@ -1999,93 +2036,82 @@
 
     return-object p0
 
-    .line 417
+    .line 450
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
 
-    .line 418
-    invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharsetName(I)Ljava/lang/String;
-
-    move-result-object v2
-
     sub-int/2addr p1, v0
 
-    .line 420
+    .line 452
     new-array v0, p1, [B
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 421
-    invoke-virtual {p0, v0, v3, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
+    .line 453
+    invoke-virtual {p0, v0, v2, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 423
-    invoke-static {v0, v3, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 455
+    invoke-static {v0, v2, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
 
     move-result p0
 
-    .line 424
+    .line 456
     new-instance p1, Ljava/lang/String;
 
-    invoke-direct {p1, v0, v3, p0, v2}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharset(I)Ljava/nio/charset/Charset;
 
-    .line 426
+    move-result-object v3
+
+    invoke-direct {p1, v0, v2, p0, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+
+    .line 460
     invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
-    move-result v3
+    move-result v2
 
-    add-int/2addr p0, v3
+    add-int/2addr p0, v2
 
-    .line 427
-    invoke-static {v0, p0, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
-
-    move-result v1
-
-    .line 428
-    invoke-static {v0, p0, v1, v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+    .line 459
+    invoke-static {v0, v1, p0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeTextInformationFrameValues([BII)Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
 
-    .line 430
+    .line 461
     new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;
 
     const-string v1, "TXXX"
 
-    invoke-direct {v0, v1, p1, p0}, Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, p1, p0}, Lcom/google/android/exoplayer2/metadata/id3/TextInformationFrame;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
     return-object v0
 .end method
 
 .method private static decodeUrlLinkFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;ILjava/lang/String;)Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
     .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
-    .line 479
+    .line 527
     new-array v0, p1, [B
 
     const/4 v1, 0x0
 
-    .line 480
+    .line 528
     invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 482
+    .line 530
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result p0
 
-    .line 483
+    .line 531
     new-instance p1, Ljava/lang/String;
 
-    const-string v2, "ISO-8859-1"
+    sget-object v2, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    invoke-direct {p1, v0, v1, p0, v2}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {p1, v0, v1, p0, v2}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
-    .line 485
+    .line 533
     new-instance p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
 
     const/4 v0, 0x0
@@ -2097,11 +2123,6 @@
 
 .method private static decodeWxxxFrame(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
     .locals 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
     const/4 v0, 0x1
 
@@ -2111,57 +2132,56 @@
 
     return-object p0
 
-    .line 461
+    .line 510
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
 
-    .line 462
-    invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharsetName(I)Ljava/lang/String;
-
-    move-result-object v2
-
     sub-int/2addr p1, v0
 
-    .line 464
+    .line 512
     new-array v0, p1, [B
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 465
-    invoke-virtual {p0, v0, v3, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
+    .line 513
+    invoke-virtual {p0, v0, v2, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 467
-    invoke-static {v0, v3, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfEos([BII)I
+    .line 515
+    invoke-static {v0, v2, v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfTerminator([BII)I
 
     move-result p0
 
-    .line 468
+    .line 516
     new-instance p1, Ljava/lang/String;
 
-    invoke-direct {p1, v0, v3, p0, v2}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->getCharset(I)Ljava/nio/charset/Charset;
 
-    .line 470
+    move-result-object v3
+
+    invoke-direct {p1, v0, v2, p0, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
+
+    .line 518
     invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->delimiterLength(I)I
 
     move-result v1
 
     add-int/2addr p0, v1
 
-    .line 471
+    .line 519
     invoke-static {v0, p0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
     move-result v1
 
-    const-string v2, "ISO-8859-1"
+    .line 520
+    sget-object v2, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    .line 472
-    invoke-static {v0, p0, v1, v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1, v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeStringIfValid([BIILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 474
+    .line 522
     new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
 
     const-string v1, "WXXX"
@@ -2195,7 +2215,7 @@
     return p0
 .end method
 
-.method private static getCharsetName(I)Ljava/lang/String;
+.method private static getCharset(I)Ljava/nio/charset/Charset;
     .locals 1
 
     const/4 v0, 0x1
@@ -2210,22 +2230,26 @@
 
     if-eq p0, v0, :cond_0
 
-    const-string p0, "ISO-8859-1"
+    .line 799
+    sget-object p0, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
     return-object p0
 
+    .line 796
     :cond_0
-    const-string p0, "UTF-8"
+    sget-object p0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     return-object p0
 
+    .line 794
     :cond_1
-    const-string p0, "UTF-16BE"
+    sget-object p0, Lcom/google/common/base/Charsets;->UTF_16BE:Ljava/nio/charset/Charset;
 
     return-object p0
 
+    .line 792
     :cond_2
-    const-string p0, "UTF-16"
+    sget-object p0, Lcom/google/common/base/Charsets;->UTF_16:Ljava/nio/charset/Charset;
 
     return-object p0
 .end method
@@ -2243,7 +2267,7 @@
 
     if-ne p0, v3, :cond_0
 
-    .line 756
+    .line 806
     sget-object p0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array p4, v0, [Ljava/lang/Object;
@@ -2274,7 +2298,7 @@
 
     goto :goto_0
 
-    .line 757
+    .line 807
     :cond_0
     sget-object p0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
@@ -2316,55 +2340,57 @@
     return-object p0
 .end method
 
-.method private static indexOfEos([BII)I
-    .locals 1
+.method private static indexOfTerminator([BII)I
+    .locals 2
 
-    .line 761
+    .line 811
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
-    move-result p1
+    move-result v0
 
     if-eqz p2, :cond_3
 
-    const/4 v0, 0x3
+    const/4 v1, 0x3
 
-    if-ne p2, v0, :cond_0
+    if-ne p2, v1, :cond_0
 
     goto :goto_1
 
-    .line 769
+    .line 819
     :cond_0
     :goto_0
     array-length p2, p0
 
     add-int/lit8 p2, p2, -0x1
 
-    if-ge p1, p2, :cond_2
+    if-ge v0, p2, :cond_2
 
-    .line 770
-    rem-int/lit8 p2, p1, 0x2
+    sub-int p2, v0, p1
+
+    .line 820
+    rem-int/lit8 p2, p2, 0x2
 
     if-nez p2, :cond_1
 
-    add-int/lit8 p2, p1, 0x1
+    add-int/lit8 p2, v0, 0x1
 
     aget-byte p2, p0, p2
 
     if-nez p2, :cond_1
 
-    return p1
+    return v0
 
     :cond_1
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    .line 773
-    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
+    .line 823
+    invoke-static {p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->indexOfZeroByte([BI)I
 
-    move-result p1
+    move-result v0
 
     goto :goto_0
 
-    .line 776
+    .line 826
     :cond_2
     array-length p0, p0
 
@@ -2372,19 +2398,19 @@
 
     :cond_3
     :goto_1
-    return p1
+    return v0
 .end method
 
 .method private static indexOfZeroByte([BI)I
     .locals 1
 
-    .line 780
+    .line 830
     :goto_0
     array-length v0, p0
 
     if-ge p1, v0, :cond_1
 
-    .line 781
+    .line 831
     aget-byte v0, p0, p1
 
     if-nez v0, :cond_0
@@ -2396,7 +2422,7 @@
 
     goto :goto_0
 
-    .line 785
+    .line 835
     :cond_1
     array-length p0, p0
 
@@ -2414,10 +2440,12 @@
 .method private static removeUnsynchronization(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)I
     .locals 5
 
-    .line 722
-    iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 776
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    .line 723
+    move-result-object v0
+
+    .line 777
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result p0
@@ -2431,7 +2459,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 725
+    .line 779
     aget-byte v3, v0, v1
 
     const/16 v4, 0xff
@@ -2452,7 +2480,7 @@
 
     add-int/lit8 v3, v3, -0x2
 
-    .line 727
+    .line 781
     invoke-static {v0, v1, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/lit8 p1, p1, -0x1
@@ -2473,12 +2501,12 @@
 
     move/from16 v0, p1
 
-    .line 212
+    .line 215
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v2
 
-    .line 214
+    .line 217
     :goto_0
     :try_start_0
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
@@ -2497,30 +2525,30 @@
 
     if-lt v0, v3, :cond_0
 
-    .line 220
+    .line 223
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v7
 
-    .line 221
+    .line 224
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v8
 
-    .line 222
+    .line 225
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v10
 
     goto :goto_1
 
-    .line 224
+    .line 227
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
 
     move-result v7
 
-    .line 225
+    .line 228
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
 
     move-result v8
@@ -2542,7 +2570,7 @@
 
     if-nez v10, :cond_1
 
-    .line 269
+    .line 275
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return v4
@@ -2676,7 +2704,7 @@
 
     return v6
 
-    .line 261
+    .line 267
     :cond_a
     :try_start_1
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
@@ -2691,7 +2719,7 @@
 
     if-gez v7, :cond_b
 
-    .line 269
+    .line 275
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return v6
@@ -2699,7 +2727,7 @@
     :cond_b
     long-to-int v3, v8
 
-    .line 264
+    .line 270
     :try_start_2
     invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
     :try_end_2
@@ -2707,7 +2735,7 @@
 
     goto/16 :goto_0
 
-    .line 269
+    .line 275
     :cond_c
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
@@ -2718,34 +2746,25 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 270
+    .line 276
     throw v0
 .end method
 
 
 # virtual methods
-.method public decode(Lcom/google/android/exoplayer2/metadata/MetadataInputBuffer;)Lcom/google/android/exoplayer2/metadata/Metadata;
-    .locals 1
+.method protected decode(Lcom/google/android/exoplayer2/metadata/MetadataInputBuffer;Ljava/nio/ByteBuffer;)Lcom/google/android/exoplayer2/metadata/Metadata;
+    .locals 0
 
-    .line 103
-    iget-object p1, p1, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
-
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 98
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object p1
 
-    check-cast p1, Ljava/nio/ByteBuffer;
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->limit()I
 
-    .line 104
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
+    move-result p2
 
-    move-result-object v0
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result p1
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decode([BI)Lcom/google/android/exoplayer2/metadata/Metadata;
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decode([BI)Lcom/google/android/exoplayer2/metadata/Metadata;
 
     move-result-object p1
 
@@ -2755,17 +2774,17 @@
 .method public decode([BI)Lcom/google/android/exoplayer2/metadata/Metadata;
     .locals 6
 
-    .line 117
+    .line 111
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 118
+    .line 112
     new-instance v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v1, p1, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([BI)V
 
-    .line 120
+    .line 114
     invoke-static {v1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;
 
     move-result-object p1
@@ -2776,13 +2795,13 @@
 
     return-object p2
 
-    .line 125
+    .line 119
     :cond_0
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v2
 
-    .line 126
+    .line 120
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->access$000(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
 
     move-result v3
@@ -2798,20 +2817,20 @@
     :cond_1
     const/16 v3, 0xa
 
-    .line 127
+    .line 121
     :goto_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->access$100(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
 
     move-result v4
 
-    .line 128
+    .line 122
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->access$200(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 129
+    .line 123
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->access$100(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
 
     move-result v4
@@ -2823,10 +2842,10 @@
     :cond_2
     add-int/2addr v2, v4
 
-    .line 131
+    .line 125
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setLimit(I)V
 
-    .line 134
+    .line 128
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->access$000(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
 
     move-result v2
@@ -2841,7 +2860,7 @@
 
     if-nez v2, :cond_4
 
-    .line 135
+    .line 129
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->access$000(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
 
     move-result v2
@@ -2860,7 +2879,7 @@
 
     goto :goto_1
 
-    .line 138
+    .line 132
     :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2886,7 +2905,7 @@
 
     return-object p2
 
-    .line 143
+    .line 137
     :cond_4
     :goto_1
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
@@ -2895,13 +2914,14 @@
 
     if-lt p2, v3, :cond_5
 
-    .line 144
+    .line 141
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;->access$000(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$Id3Header;)I
 
     move-result p2
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->framePredicate:Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;
 
+    .line 140
     invoke-static {p2, v1, v4, v3, v2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;->decodeFrame(ILcom/google/android/exoplayer2/util/ParsableByteArray;ZILcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     move-result-object p2

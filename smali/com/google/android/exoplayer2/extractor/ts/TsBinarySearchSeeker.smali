@@ -16,14 +16,12 @@
 
 .field private static final SEEK_TOLERANCE_US:J = 0x186a0L
 
-.field private static final TIMESTAMP_SEARCH_BYTES:I = 0x1b8a0
-
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/exoplayer2/util/TimestampAdjuster;JJI)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/util/TimestampAdjuster;JJII)V
     .locals 16
 
-    .line 42
+    .line 47
     new-instance v1, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$DefaultSeekTimestampConverter;
 
     invoke-direct {v1}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$DefaultSeekTimestampConverter;-><init>()V
@@ -34,7 +32,9 @@
 
     move/from16 v3, p6
 
-    invoke-direct {v2, v3, v0}, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;-><init>(ILcom/google/android/exoplayer2/util/TimestampAdjuster;)V
+    move/from16 v4, p7
+
+    invoke-direct {v2, v3, v0, v4}, Lcom/google/android/exoplayer2/extractor/ts/TsBinarySearchSeeker$TsPcrSeeker;-><init>(ILcom/google/android/exoplayer2/util/TimestampAdjuster;I)V
 
     const-wide/16 v3, 0x1
 

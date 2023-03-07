@@ -42,12 +42,12 @@
 
     move-wide/from16 v0, p10
 
-    .line 70
+    .line 77
     iput-wide v0, v12, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunk;->clippedStartTimeUs:J
 
     move-wide/from16 v0, p12
 
-    .line 71
+    .line 78
     iput-wide v0, v12, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunk;->clippedEndTimeUs:J
 
     return-void
@@ -58,8 +58,14 @@
 .method public final getFirstSampleIndex(I)I
     .locals 1
 
-    .line 90
+    .line 97
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunk;->firstSampleIndices:[I
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [I
 
     aget p1, v0, p1
 
@@ -69,8 +75,14 @@
 .method protected final getOutput()Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkOutput;
     .locals 1
 
-    .line 97
+    .line 102
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunk;->output:Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkOutput;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkOutput;
 
     return-object v0
 .end method
@@ -78,10 +90,10 @@
 .method public init(Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkOutput;)V
     .locals 0
 
-    .line 81
+    .line 88
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunk;->output:Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkOutput;
 
-    .line 82
+    .line 89
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkOutput;->getWriteIndices()[I
 
     move-result-object p1

@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field public final bitrateMax:I
+.field public final bitrateMaximum:I
 
-.field public final bitrateMin:I
+.field public final bitrateMinimum:I
 
 .field public final bitrateNominal:I
 
@@ -31,69 +31,47 @@
 
 .field public final framingFlag:Z
 
-.field public final sampleRate:J
+.field public final sampleRate:I
 
-.field public final version:J
+.field public final version:I
 
 
 # direct methods
-.method public constructor <init>(JIJIIIIIZ[B)V
+.method public constructor <init>(IIIIIIIIZ[B)V
     .locals 0
 
-    .line 64
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->version:J
+    .line 102
+    iput p1, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->version:I
 
-    .line 66
-    iput p3, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->channels:I
+    .line 103
+    iput p2, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->channels:I
 
-    .line 67
-    iput-wide p4, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->sampleRate:J
+    .line 104
+    iput p3, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->sampleRate:I
 
-    .line 68
-    iput p6, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateMax:I
+    .line 105
+    iput p4, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateMaximum:I
 
-    .line 69
-    iput p7, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateNominal:I
+    .line 106
+    iput p5, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateNominal:I
 
-    .line 70
-    iput p8, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateMin:I
+    .line 107
+    iput p6, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateMinimum:I
 
-    .line 71
-    iput p9, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->blockSize0:I
+    .line 108
+    iput p7, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->blockSize0:I
 
-    .line 72
-    iput p10, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->blockSize1:I
+    .line 109
+    iput p8, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->blockSize1:I
 
-    .line 73
-    iput-boolean p11, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->framingFlag:Z
+    .line 110
+    iput-boolean p9, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->framingFlag:Z
 
-    .line 74
-    iput-object p12, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->data:[B
+    .line 111
+    iput-object p10, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->data:[B
 
     return-void
-.end method
-
-
-# virtual methods
-.method public getApproximateBitrate()I
-    .locals 2
-
-    .line 78
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateNominal:I
-
-    if-nez v0, :cond_0
-
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateMin:I
-
-    iget v1, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateMax:I
-
-    add-int/2addr v0, v1
-
-    div-int/lit8 v0, v0, 0x2
-
-    :cond_0
-    return v0
 .end method

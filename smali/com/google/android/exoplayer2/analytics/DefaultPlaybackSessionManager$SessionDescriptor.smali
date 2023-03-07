@@ -34,15 +34,15 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;Ljava/lang/String;ILcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)V
     .locals 0
 
-    .line 260
+    .line 332
     iput-object p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 261
+    .line 333
     iput-object p2, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->sessionId:Ljava/lang/String;
 
-    .line 262
+    .line 334
     iput p3, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
     if-nez p4, :cond_0
@@ -51,23 +51,23 @@
 
     goto :goto_0
 
-    .line 264
+    .line 336
     :cond_0
-    iget-wide p1, p4, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide p1, p4, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     :goto_0
     iput-wide p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
     if-eqz p4, :cond_1
 
-    .line 265
-    invoke-virtual {p4}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
+    .line 337
+    invoke-virtual {p4}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 266
+    .line 338
     iput-object p4, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     :cond_1
@@ -77,7 +77,7 @@
 .method static synthetic access$000(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Ljava/lang/String;
     .locals 0
 
-    .line 248
+    .line 320
     iget-object p0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->sessionId:Ljava/lang/String;
 
     return-object p0
@@ -86,7 +86,7 @@
 .method static synthetic access$100(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)J
     .locals 2
 
-    .line 248
+    .line 320
     iget-wide v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
     return-wide v0
@@ -95,7 +95,7 @@
 .method static synthetic access$200(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)I
     .locals 0
 
-    .line 248
+    .line 320
     iget p0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
     return p0
@@ -104,7 +104,7 @@
 .method static synthetic access$300(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Z
     .locals 0
 
-    .line 248
+    .line 320
     iget-boolean p0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isCreated:Z
 
     return p0
@@ -113,7 +113,7 @@
 .method static synthetic access$302(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;Z)Z
     .locals 0
 
-    .line 248
+    .line 320
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isCreated:Z
 
     return p1
@@ -122,7 +122,7 @@
 .method static synthetic access$400(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Z
     .locals 0
 
-    .line 248
+    .line 320
     iget-boolean p0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isActive:Z
 
     return p0
@@ -131,7 +131,7 @@
 .method static synthetic access$402(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;Z)Z
     .locals 0
 
-    .line 248
+    .line 320
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->isActive:Z
 
     return p1
@@ -140,7 +140,7 @@
 .method static synthetic access$500(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
     .locals 0
 
-    .line 248
+    .line 320
     iget-object p0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     return-object p0
@@ -149,7 +149,7 @@
 .method private resolveWindowIndexToNewTimeline(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/Timeline;I)I
     .locals 2
 
-    .line 355
+    .line 427
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/Timeline;->getWindowCount()I
 
     move-result v0
@@ -158,7 +158,7 @@
 
     if-lt p3, v0, :cond_1
 
-    .line 356
+    .line 428
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/Timeline;->getWindowCount()I
 
     move-result p1
@@ -173,7 +173,7 @@
     :goto_0
     return p3
 
-    .line 358
+    .line 430
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {p1, p3, v0}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
 
-    .line 359
+    .line 431
     iget-object p3, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;
 
     invoke-static {p3}, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;->access$600(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;)Lcom/google/android/exoplayer2/Timeline$Window;
@@ -192,7 +192,7 @@
 
     iget p3, p3, Lcom/google/android/exoplayer2/Timeline$Window;->firstPeriodIndex:I
 
-    .line 360
+    .line 432
     :goto_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;
 
@@ -204,19 +204,19 @@
 
     if-gt p3, v0, :cond_3
 
-    .line 362
+    .line 434
     invoke-virtual {p1, p3}, Lcom/google/android/exoplayer2/Timeline;->getUidOfPeriod(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 363
+    .line 435
     invoke-virtual {p2, v0}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 
     move-result v0
 
     if-eq v0, v1, :cond_2
 
-    .line 365
+    .line 437
     iget-object p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->this$0:Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;->access$700(Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager;)Lcom/google/android/exoplayer2/Timeline$Period;
@@ -251,7 +251,7 @@
 
     if-nez p2, :cond_1
 
-    .line 286
+    .line 358
     iget p2, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
     if-ne p1, p2, :cond_0
@@ -264,20 +264,20 @@
     :goto_0
     return v0
 
-    .line 288
+    .line 360
     :cond_1
     iget-object p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     if-nez p1, :cond_3
 
-    .line 291
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
+    .line 363
+    invoke-virtual {p2}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
 
     move-result p1
 
     if-nez p1, :cond_2
 
-    iget-wide p1, p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide p1, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
@@ -293,25 +293,25 @@
     :goto_1
     return v0
 
-    .line 295
+    .line 367
     :cond_3
-    iget-wide v2, p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide v2, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    iget-wide v4, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide v4, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     cmp-long v6, v2, v4
 
     if-nez v6, :cond_4
 
-    iget v2, p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    iget v2, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    iget v3, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    iget v3, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
     if-ne v2, v3, :cond_4
 
-    iget p2, p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    iget p2, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
 
-    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
 
     if-ne p2, p1, :cond_4
 
@@ -327,163 +327,175 @@
 .method public isFinishedAtEventTime(Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;)Z
     .locals 10
 
-    .line 311
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
+    .line 383
+    iget-object v0, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    const-wide/16 v3, -0x1
+    if-nez v0, :cond_1
 
-    cmp-long v5, v0, v3
-
-    if-nez v5, :cond_0
-
-    return v2
-
-    .line 315
-    :cond_0
-    iget-object v3, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    const/4 v4, 0x1
-
-    if-nez v3, :cond_2
-
-    .line 318
+    .line 386
     iget v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
     iget p1, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->windowIndex:I
 
-    if-eq v0, p1, :cond_1
-
-    const/4 v2, 0x1
-
-    :cond_1
-    return v2
-
-    .line 320
-    :cond_2
-    iget-wide v5, v3, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    cmp-long v7, v5, v0
-
-    if-lez v7, :cond_3
-
-    return v4
-
-    .line 324
-    :cond_3
-    iget-object v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    if-nez v0, :cond_4
-
-    return v2
-
-    .line 328
-    :cond_4
-    iget-object v0, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v1, v3, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
-
-    move-result v0
-
-    .line 329
-    iget-object v1, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v3, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-object v3, v3, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
-
-    move-result v1
-
-    .line 330
-    iget-object v3, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v5, v3, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    iget-object v7, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v7, v7, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    cmp-long v9, v5, v7
-
-    if-ltz v9, :cond_b
-
-    if-ge v0, v1, :cond_5
+    if-eq v0, p1, :cond_0
 
     goto :goto_0
 
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    return v1
+
+    .line 388
+    :cond_1
+    iget-wide v3, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
+
+    const-wide/16 v5, -0x1
+
+    cmp-long v7, v3, v5
+
+    if-nez v7, :cond_2
+
+    return v2
+
+    .line 392
+    :cond_2
+    iget-wide v5, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    cmp-long v7, v5, v3
+
+    if-lez v7, :cond_3
+
+    return v1
+
+    .line 396
+    :cond_3
+    iget-object v3, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    if-nez v3, :cond_4
+
+    return v2
+
+    .line 400
+    :cond_4
+    iget-object v3, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->timeline:Lcom/google/android/exoplayer2/Timeline;
+
+    iget-object v0, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    invoke-virtual {v3, v0}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+
+    move-result v0
+
+    .line 401
+    iget-object v3, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->timeline:Lcom/google/android/exoplayer2/Timeline;
+
+    iget-object v4, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-object v4, v4, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    invoke-virtual {v3, v4}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+
+    move-result v3
+
+    .line 402
+    iget-object v4, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v5, v4, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    iget-object v7, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v7, v7, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    cmp-long v9, v5, v7
+
+    if-ltz v9, :cond_c
+
+    if-ge v0, v3, :cond_5
+
+    goto :goto_3
+
     :cond_5
-    if-le v0, v1, :cond_6
+    if-le v0, v3, :cond_6
 
-    return v4
+    return v1
 
-    .line 339
+    .line 411
     :cond_6
-    invoke-virtual {v3}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
+    invoke-virtual {v4}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 340
+    .line 412
     iget-object p1, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget v0, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    iget v0, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    .line 341
-    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    .line 413
+    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
 
-    .line 343
-    iget-object v1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    .line 415
+    iget-object v3, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget v3, v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    iget v4, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    if-gt v0, v3, :cond_7
+    if-gt v0, v4, :cond_8
 
-    if-ne v0, v3, :cond_8
+    if-ne v0, v4, :cond_7
 
-    iget v0, v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    iget v0, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
 
-    if-le p1, v0, :cond_8
+    if-le p1, v0, :cond_7
+
+    goto :goto_1
 
     :cond_7
-    const/4 v2, 0x1
+    const/4 v1, 0x0
 
     :cond_8
-    return v2
+    :goto_1
+    return v1
 
-    .line 348
+    .line 420
     :cond_9
     iget-object p1, p1, Lcom/google/android/exoplayer2/analytics/AnalyticsListener$EventTime;->mediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->nextAdGroupIndex:I
+    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_a
+    if-eq p1, v0, :cond_b
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget v0, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    iget v0, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    if-le p1, v0, :cond_b
+    if-le p1, v0, :cond_a
+
+    goto :goto_2
 
     :cond_a
-    const/4 v2, 0x1
+    const/4 v1, 0x0
 
     :cond_b
-    :goto_0
+    :goto_2
+    return v1
+
+    :cond_c
+    :goto_3
     return v2
 .end method
 
 .method public maybeSetWindowSequenceNumber(ILcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)V
     .locals 5
 
-    .line 302
+    .line 374
     iget-wide v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
     const-wide/16 v2, -0x1
@@ -498,8 +510,8 @@
 
     if-eqz p2, :cond_0
 
-    .line 306
-    iget-wide p1, p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    .line 378
+    iget-wide p1, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowSequenceNumber:J
 
@@ -510,7 +522,7 @@
 .method public tryResolvingToNewTimeline(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/Timeline;)Z
     .locals 3
 
-    .line 271
+    .line 343
     iget v0, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->windowIndex:I
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->resolveWindowIndexToNewTimeline(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/Timeline;I)I
@@ -527,7 +539,7 @@
 
     return v0
 
-    .line 275
+    .line 347
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/analytics/DefaultPlaybackSessionManager$SessionDescriptor;->adMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
@@ -537,9 +549,9 @@
 
     return v2
 
-    .line 278
+    .line 350
     :cond_1
-    iget-object p1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    iget-object p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 

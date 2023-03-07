@@ -2,34 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.field public final synthetic f$0:Lcom/google/common/util/concurrent/SettableFuture;
+
+.field public final synthetic f$1:Ljava/lang/Runnable;
+
+.field public final synthetic f$2:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lcom/google/common/util/concurrent/SettableFuture;Ljava/lang/Runnable;Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$0:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$0:Lcom/google/common/util/concurrent/SettableFuture;
+
+    iput-object p2, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$1:Ljava/lang/Runnable;
+
+    iput-object p3, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$2:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$0:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$0:Lcom/google/common/util/concurrent/SettableFuture;
 
-    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/util/Util;->$r8$lambda$LsFSSGqWIg35Q7Hq-LRlCkVPQ9Y(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$1:Ljava/lang/Runnable;
 
-    move-result-object p1
+    iget-object v2, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda2;->f$2:Ljava/lang/Object;
 
-    return-object p1
+    invoke-static {v0, v1, v2}, Lcom/google/android/exoplayer2/util/Util;->$r8$lambda$ZfnFpleg-wixrRMpxSt_dFcCTgo(Lcom/google/common/util/concurrent/SettableFuture;Ljava/lang/Runnable;Ljava/lang/Object;)V
+
+    return-void
 .end method

@@ -25,10 +25,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 54
+    .line 58
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 55
+    .line 59
     iput p1, p0, Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;->reason:I
 
     return-void
@@ -37,10 +37,10 @@
 .method public constructor <init>(ILjava/lang/Exception;)V
     .locals 0
 
-    .line 63
+    .line 67
     invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
 
-    .line 64
+    .line 68
     iput p1, p0, Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;->reason:I
 
     return-void

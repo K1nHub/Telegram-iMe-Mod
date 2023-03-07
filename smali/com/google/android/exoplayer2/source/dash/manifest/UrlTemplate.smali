@@ -39,19 +39,19 @@
 .method private constructor <init>([Ljava/lang/String;[I[Ljava/lang/String;I)V
     .locals 0
 
-    .line 65
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 64
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->urlPieces:[Ljava/lang/String;
 
-    .line 67
+    .line 65
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifiers:[I
 
-    .line 68
+    .line 66
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifierFormatTags:[Ljava/lang/String;
 
-    .line 69
+    .line 67
     iput p4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifierCount:I
 
     return-void
@@ -90,14 +90,14 @@
 
     const-string v1, ""
 
-    .line 118
+    .line 116
     aput-object v1, p1, v0
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    .line 121
+    .line 119
     :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -107,7 +107,7 @@
 
     const-string v4, "$"
 
-    .line 122
+    .line 120
     invoke-virtual {p0, v4, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
     move-result v5
@@ -116,7 +116,7 @@
 
     if-ne v5, v6, :cond_0
 
-    .line 124
+    .line 122
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -137,7 +137,7 @@
 
     aput-object v2, p1, v3
 
-    .line 125
+    .line 123
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -147,7 +147,7 @@
     :cond_0
     if-eq v5, v2, :cond_1
 
-    .line 127
+    .line 125
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -175,14 +175,14 @@
     :cond_1
     const-string v5, "$$"
 
-    .line 129
+    .line 127
     invoke-virtual {p0, v5, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;I)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 130
+    .line 128
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -206,19 +206,19 @@
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    .line 133
+    .line 131
     invoke-virtual {p0, v4, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
     move-result v4
 
-    .line 134
+    .line 132
     invoke-virtual {p0, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
     const-string v5, "RepresentationID"
 
-    .line 135
+    .line 133
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
@@ -227,7 +227,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 136
+    .line 134
     aput v7, p2, v3
 
     goto/16 :goto_4
@@ -235,21 +235,21 @@
     :cond_3
     const-string v5, "%0"
 
-    .line 138
+    .line 136
     invoke-virtual {v2, v5}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v5
 
     if-eq v5, v6, :cond_5
 
-    .line 141
+    .line 139
     invoke-virtual {v2, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v8
 
     const-string v9, "d"
 
-    .line 145
+    .line 143
     invoke-virtual {v8, v9}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v10
@@ -264,7 +264,15 @@
 
     if-nez v10, :cond_4
 
-    .line 146
+    const-string v10, "X"
+
+    invoke-virtual {v8, v10}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_4
+
+    .line 144
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -277,7 +285,7 @@
 
     move-result-object v8
 
-    .line 148
+    .line 146
     :cond_4
     invoke-virtual {v2, v0, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -288,7 +296,7 @@
     :cond_5
     const-string v8, "%01d"
 
-    .line 150
+    .line 148
     :goto_1
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
@@ -351,7 +359,7 @@
     :goto_2
     packed-switch v6, :pswitch_data_0
 
-    .line 161
+    .line 159
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -375,7 +383,7 @@
     :pswitch_0
     const/4 v2, 0x3
 
-    .line 155
+    .line 153
     aput v2, p2, v3
 
     goto :goto_3
@@ -383,23 +391,23 @@
     :pswitch_1
     const/4 v2, 0x4
 
-    .line 158
+    .line 156
     aput v2, p2, v3
 
     goto :goto_3
 
-    .line 152
+    .line 150
     :pswitch_2
     aput v9, p2, v3
 
-    .line 163
+    .line 161
     :goto_3
     aput-object v8, p3, v3
 
     :goto_4
     add-int/lit8 v3, v3, 0x1
 
-    .line 166
+    .line 164
     aput-object v1, p1, v3
 
     add-int/lit8 v4, v4, 0x1
@@ -431,7 +439,7 @@
 .method public buildUri(Ljava/lang/String;JIJ)Ljava/lang/String;
     .locals 7
 
-    .line 84
+    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -440,20 +448,20 @@
 
     const/4 v2, 0x0
 
-    .line 85
+    .line 83
     :goto_0
     iget v3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifierCount:I
 
     if-ge v2, v3, :cond_4
 
-    .line 86
+    .line 84
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->urlPieces:[Ljava/lang/String;
 
     aget-object v3, v3, v2
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 87
+    .line 85
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifiers:[I
 
     aget v4, v3, v2
@@ -462,12 +470,12 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 88
+    .line 86
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
-    .line 89
+    .line 87
     :cond_0
     aget v4, v3, v2
 
@@ -475,7 +483,7 @@
 
     if-ne v4, v6, :cond_1
 
-    .line 90
+    .line 88
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifierFormatTags:[Ljava/lang/String;
@@ -498,7 +506,7 @@
 
     goto :goto_1
 
-    .line 91
+    .line 89
     :cond_1
     aget v4, v3, v2
 
@@ -506,7 +514,7 @@
 
     if-ne v4, v6, :cond_2
 
-    .line 92
+    .line 90
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifierFormatTags:[Ljava/lang/String;
@@ -529,7 +537,7 @@
 
     goto :goto_1
 
-    .line 93
+    .line 91
     :cond_2
     aget v3, v3, v2
 
@@ -537,7 +545,7 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 94
+    .line 92
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->identifierFormatTags:[Ljava/lang/String;
@@ -564,7 +572,7 @@
 
     goto :goto_0
 
-    .line 97
+    .line 95
     :cond_4
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/UrlTemplate;->urlPieces:[Ljava/lang/String;
 
@@ -572,7 +580,7 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 98
+    .line 96
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1

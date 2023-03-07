@@ -56,9 +56,6 @@
 .field private final zas:Ljava/util/Set;
 
 .field private final zat:Landroid/os/Handler;
-    .annotation runtime Lorg/checkerframework/checker/initialization/qual/NotOnlyInitialized;
-    .end annotation
-.end field
 
 .field private volatile zau:Z
 

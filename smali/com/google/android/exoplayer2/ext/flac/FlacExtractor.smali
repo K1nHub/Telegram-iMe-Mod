@@ -36,7 +36,7 @@
 
 .field private outputFrameHolder:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;
 
-.field private streamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+.field private streamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
 .field private streamMetadataDecoded:Z
 
@@ -70,7 +70,7 @@
 
     const/4 v0, 0x0
 
-    .line 89
+    .line 95
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;-><init>(I)V
 
     return-void
@@ -79,10 +79,10 @@
 .method public constructor <init>(I)V
     .locals 1
 
-    .line 98
+    .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 99
+    .line 105
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
@@ -100,7 +100,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 100
+    .line 106
     :goto_0
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->id3MetadataDisabled:Z
 
@@ -111,40 +111,24 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/InterruptedException;,
             Ljava/io/IOException;
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "streamMetadata",
-            "outputFrameHolder"
-        }
-    .end annotation
-
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
-        value = {
-            "decoderJni",
-            "extractorOutput",
-            "trackOutput"
-        }
-    .end annotation
-
-    .line 189
+    .line 194
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->streamMetadataDecoded:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 193
+    .line 198
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->decoderJni:Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
-    .line 196
+    .line 201
     :try_start_0
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->decodeStreamMetadata()Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->decodeStreamMetadata()Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
     move-result-object v0
     :try_end_0
@@ -152,32 +136,34 @@
 
     const/4 v2, 0x1
 
-    .line 203
+    .line 208
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->streamMetadataDecoded:Z
 
-    .line 204
-    iget-object v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->streamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    .line 209
+    iget-object v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->streamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
     if-nez v2, :cond_1
 
-    .line 205
-    iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->streamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    .line 210
+    iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->streamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
-    .line 206
+    .line 211
     iget-object v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->getMaxDecodedFrameSize()I
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getMaxDecodedFrameSize()I
 
     move-result v3
 
     invoke-virtual {v2, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
 
-    .line 207
+    .line 212
     new-instance v2, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v3, v3, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v3
 
     invoke-static {v3}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
@@ -187,7 +173,7 @@
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputFrameHolder:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;
 
-    .line 212
+    .line 217
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v3
@@ -198,24 +184,24 @@
 
     move-object v2, v0
 
-    .line 209
-    invoke-static/range {v1 .. v6}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputSeekMap(Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;Lcom/google/android/exoplayer2/util/FlacStreamMetadata;JLcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;)Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
+    .line 214
+    invoke-static/range {v1 .. v6}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputSeekMap(Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;JLcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;)Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->binarySearchSeeker:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
 
-    .line 216
+    .line 221
     iget-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->id3Metadata:Lcom/google/android/exoplayer2/metadata/Metadata;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->getMetadataCopyWithAppendedEntriesFrom(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/metadata/Metadata;
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getMetadataCopyWithAppendedEntriesFrom(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/metadata/Metadata;
 
     move-result-object p1
 
-    .line 217
+    .line 222
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    invoke-static {v0, p1, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputFormat(Lcom/google/android/exoplayer2/util/FlacStreamMetadata;Lcom/google/android/exoplayer2/metadata/Metadata;Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
+    invoke-static {v0, p1, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputFormat(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;Lcom/google/android/exoplayer2/metadata/Metadata;Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
 
     :cond_1
     return-void
@@ -225,13 +211,13 @@
 
     const-wide/16 v2, 0x0
 
-    .line 198
+    .line 203
     invoke-virtual {v1, v2, v3}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->reset(J)V
 
-    .line 199
+    .line 204
     invoke-interface {p1, v2, v3, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->setRetryPosition(JLjava/lang/Throwable;)V
 
-    .line 200
+    .line 205
     throw v0
 .end method
 
@@ -239,37 +225,30 @@
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/InterruptedException;,
             Ljava/io/IOException;
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
-        value = {
-            "binarySearchSeeker"
-        }
-    .end annotation
-
-    .line 229
+    .line 234
     iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->binarySearchSeeker:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->handlePendingSeek(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/extractor/PositionHolder;)I
 
     move-result p1
 
-    .line 230
+    .line 235
     iget-object p2, p4, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;->byteBuffer:Ljava/nio/ByteBuffer;
 
     if-nez p1, :cond_0
 
-    .line 231
+    .line 236
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 232
+    .line 237
     invoke-virtual {p2}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result p2
@@ -284,15 +263,8 @@
 
 .method private initDecoderJni(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
     .locals 1
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "decoderJni",
-            "extractorOutput",
-            "trackOutput"
-        }
-    .end annotation
 
-    .line 180
+    .line 185
     iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->decoderJni:Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -301,7 +273,7 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
-    .line 181
+    .line 186
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->setData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)V
 
     return-object v0
@@ -326,61 +298,85 @@
     return-object v0
 .end method
 
-.method private static outputFormat(Lcom/google/android/exoplayer2/util/FlacStreamMetadata;Lcom/google/android/exoplayer2/metadata/Metadata;Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
-    .locals 15
-
-    move-object v0, p0
+.method private static outputFormat(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;Lcom/google/android/exoplayer2/metadata/Metadata;Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
+    .locals 2
 
     .line 273
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->getBitRate()I
+    new-instance v0, Lcom/google/android/exoplayer2/Format$Builder;
 
-    move-result v3
-
-    .line 274
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->getMaxDecodedFrameSize()I
-
-    move-result v4
-
-    iget v5, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->channels:I
-
-    iget v6, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->sampleRate:I
-
-    iget v0, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->bitsPerSample:I
-
-    .line 277
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->getPcmEncoding(I)I
-
-    move-result v7
-
-    const/4 v0, 0x0
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
     const-string v1, "audio/raw"
 
-    const/4 v2, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    move-object/from16 v14, p1
-
-    .line 269
-    invoke-static/range {v0 .. v14}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format;
+    .line 275
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object v0
 
-    move-object/from16 v1, p2
+    .line 276
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getDecodedBitrate()I
 
-    .line 285
-    invoke-interface {v1, v0}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setAverageBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    .line 277
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getDecodedBitrate()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setPeakBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    .line 278
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getMaxDecodedFrameSize()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setMaxInputSize(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->channels:I
+
+    .line 279
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->sampleRate:I
+
+    .line 280
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    iget p0, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->bitsPerSample:I
+
+    .line 281
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->getPcmEncoding(I)I
+
+    move-result p0
+
+    invoke-virtual {v0, p0}, Lcom/google/android/exoplayer2/Format$Builder;->setPcmEncoding(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p0
+
+    .line 282
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/Format$Builder;->setMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p0
+
+    .line 283
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p0
+
+    .line 284
+    invoke-interface {p2, p0}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
 
     return-void
 .end method
@@ -390,10 +386,10 @@
 
     const/4 v0, 0x0
 
-    .line 290
+    .line 289
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 291
+    .line 290
     invoke-interface {p4, p0, p1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     const/4 v4, 0x1
@@ -408,96 +404,107 @@
 
     move v5, p1
 
-    .line 292
+    .line 291
     invoke-interface/range {v1 .. v7}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
     return-void
 .end method
 
-.method private static outputSeekMap(Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;Lcom/google/android/exoplayer2/util/FlacStreamMetadata;JLcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;)Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
-    .locals 10
+.method private static outputSeekMap(Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;JLcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;)Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
+    .locals 9
 
     const-wide/16 v0, 0x0
 
-    .line 248
+    .line 253
     invoke-virtual {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->getSeekPoints(J)Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    .line 252
-    new-instance p2, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;
+    .line 257
+    new-instance v0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;
 
-    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->getDurationUs()J
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getDurationUs()J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    invoke-direct {p2, v2, v3, p0}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;-><init>(JLcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;)V
+    invoke-direct {v0, v1, v2, p0}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;-><init>(JLcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;)V
 
     goto :goto_1
 
     :cond_1
-    const-wide/16 v2, -0x1
+    const-wide/16 v4, -0x1
 
-    cmp-long v0, p2, v2
+    cmp-long v2, p2, v4
 
-    if-eqz v0, :cond_2
-
-    .line 254
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->getDecodePosition()J
-
-    move-result-wide v4
-
-    .line 255
-    new-instance v1, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
-
-    move-object v2, v1
-
-    move-object v3, p1
-
-    move-wide v6, p2
-
-    move-object v8, p0
-
-    move-object v9, p5
-
-    invoke-direct/range {v2 .. v9}, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;-><init>(Lcom/google/android/exoplayer2/util/FlacStreamMetadata;JJLcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;)V
+    if-eqz v2, :cond_2
 
     .line 258
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->getSeekMap()Lcom/google/android/exoplayer2/extractor/SeekMap;
+    iget-wide v4, p1, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->totalSamples:J
 
-    move-result-object p2
+    cmp-long v7, v4, v0
+
+    if-lez v7, :cond_2
+
+    .line 259
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->getDecodePosition()J
+
+    move-result-wide v3
+
+    .line 260
+    new-instance v8, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
+
+    move-object v0, v8
+
+    move-object v1, p1
+
+    move-wide v2, v3
+
+    move-wide v4, p2
+
+    move-object v6, p0
+
+    move-object v7, p5
+
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;-><init>(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;JJLcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;)V
+
+    .line 263
+    invoke-virtual {v8}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->getSeekMap()Lcom/google/android/exoplayer2/extractor/SeekMap;
+
+    move-result-object v0
+
+    move-object v3, v8
 
     goto :goto_1
 
-    .line 260
+    .line 265
     :cond_2
-    new-instance p2, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;
+    new-instance v0, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;
 
-    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->getDurationUs()J
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getDurationUs()J
 
-    move-result-wide p0
+    move-result-wide v1
 
-    invoke-direct {p2, p0, p1}, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;-><init>(J)V
+    invoke-direct {v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;-><init>(J)V
 
-    .line 262
+    .line 267
     :goto_1
-    invoke-interface {p4, p2}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->seekMap(Lcom/google/android/exoplayer2/extractor/SeekMap;)V
+    invoke-interface {p4, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->seekMap(Lcom/google/android/exoplayer2/extractor/SeekMap;)V
 
-    return-object v1
+    return-object v3
 .end method
 
 
@@ -505,26 +512,26 @@
 .method public init(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;)V
     .locals 2
 
-    .line 105
+    .line 111
     iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 106
+    .line 112
     invoke-interface {p1, v0, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->track(II)Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    .line 107
+    .line 113
     iget-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->endTracks()V
 
-    .line 109
+    .line 115
     :try_start_0
     new-instance p1, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
@@ -539,7 +546,7 @@
     :catch_0
     move-exception p1
 
-    .line 111
+    .line 117
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -551,12 +558,11 @@
     .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 124
+    .line 129
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v0
@@ -577,24 +583,24 @@
 
     const/4 v0, 0x1
 
-    .line 125
+    .line 130
     invoke-static {p1, v0}, Lcom/google/android/exoplayer2/extractor/FlacMetadataReader;->peekId3Metadata(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Z)Lcom/google/android/exoplayer2/metadata/Metadata;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->id3Metadata:Lcom/google/android/exoplayer2/metadata/Metadata;
 
-    .line 128
+    .line 133
     :cond_0
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->initDecoderJni(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
     move-result-object v0
 
-    .line 130
+    .line 135
     :try_start_0
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->decodeStreamMetadata(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)V
 
-    .line 132
+    .line 137
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->binarySearchSeeker:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
 
     if-eqz v1, :cond_1
@@ -605,7 +611,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 133
+    .line 138
     iget-object v5, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     iget-object v6, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputFrameHolder:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;
@@ -624,33 +630,33 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 151
+    .line 156
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->clearData()V
 
     return p1
 
-    .line 136
+    .line 141
     :cond_1
     :try_start_1
     iget-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputFrameHolder:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$OutputFrameHolder;->byteBuffer:Ljava/nio/ByteBuffer;
 
-    .line 137
+    .line 142
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->getDecodePosition()J
 
     move-result-wide v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 139
+    .line 144
     :try_start_2
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->decodeSampleWithBacktrackPosition(Ljava/nio/ByteBuffer;J)V
     :try_end_2
     .catch Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni$FlacFrameDecodeException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 143
+    .line 148
     :try_start_3
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
@@ -662,12 +668,12 @@
 
     if-nez p1, :cond_2
 
-    .line 151
+    .line 156
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->clearData()V
 
     return p2
 
-    .line 148
+    .line 153
     :cond_2
     :try_start_4
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -680,7 +686,7 @@
 
     invoke-static {v1, p1, v2, v3, v4}, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->outputSample(Lcom/google/android/exoplayer2/util/ParsableByteArray;IJLcom/google/android/exoplayer2/extractor/TrackOutput;)V
 
-    .line 149
+    .line 154
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->isEndOfData()Z
 
     move-result p1
@@ -694,7 +700,7 @@
     :cond_3
     const/4 p2, 0x0
 
-    .line 151
+    .line 156
     :goto_0
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->clearData()V
 
@@ -703,7 +709,7 @@
     :catch_0
     move-exception p1
 
-    .line 141
+    .line 146
     :try_start_5
     new-instance p2, Ljava/io/IOException;
 
@@ -730,10 +736,10 @@
     :catchall_0
     move-exception p1
 
-    .line 151
+    .line 156
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->clearData()V
 
-    .line 152
+    .line 157
     throw p1
 .end method
 
@@ -742,18 +748,18 @@
 
     const/4 v0, 0x0
 
-    .line 170
+    .line 175
     iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->binarySearchSeeker:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
 
-    .line 171
+    .line 176
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->decoderJni:Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
     if-eqz v1, :cond_0
 
-    .line 172
+    .line 177
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->release()V
 
-    .line 173
+    .line 178
     iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->decoderJni:Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
     :cond_0
@@ -771,25 +777,25 @@
 
     const/4 v0, 0x0
 
-    .line 158
+    .line 163
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->streamMetadataDecoded:Z
 
-    .line 160
+    .line 165
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->decoderJni:Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
     if-eqz v0, :cond_1
 
-    .line 161
+    .line 166
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->reset(J)V
 
-    .line 163
+    .line 168
     :cond_1
     iget-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->binarySearchSeeker:Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker;
 
     if-eqz p1, :cond_2
 
-    .line 164
+    .line 169
     invoke-virtual {p1, p3, p4}, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker;->setSeekTargetUs(J)V
 
     :cond_2
@@ -800,12 +806,11 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 117
+    .line 123
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->id3MetadataDisabled:Z
 
     xor-int/lit8 v0, v0, 0x1
@@ -816,7 +821,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor;->id3Metadata:Lcom/google/android/exoplayer2/metadata/Metadata;
 
-    .line 118
+    .line 124
     invoke-static {p1}, Lcom/google/android/exoplayer2/extractor/FlacMetadataReader;->checkAndPeekStreamMarker(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 
     move-result p1

@@ -7,7 +7,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 35
+    .line 37
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;-><init>()V
 
     return-void
@@ -23,7 +23,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 43
     iget v0, p1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->encoding:I
 
     const/4 v1, 0x2
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 47
+    .line 50
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;
 
@@ -64,7 +64,7 @@
     :goto_0
     if-eq v0, v1, :cond_2
 
-    .line 50
+    .line 53
     new-instance v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iget v2, p1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
@@ -75,7 +75,7 @@
 
     goto :goto_1
 
-    .line 52
+    .line 55
     :cond_2
     sget-object v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->NOT_SET:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
@@ -86,19 +86,19 @@
 .method public queueInput(Ljava/nio/ByteBuffer;)V
     .locals 9
 
-    .line 58
+    .line 61
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
 
-    .line 59
+    .line 62
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v1
 
     sub-int v2, v1, v0
 
-    .line 62
+    .line 65
     iget-object v3, p0, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iget v3, v3, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->encoding:I
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 80
+    .line 83
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -133,13 +133,13 @@
 
     throw p1
 
-    .line 70
+    .line 73
     :cond_1
     div-int/lit8 v2, v2, 0x3
 
     goto :goto_1
 
-    .line 74
+    .line 77
     :cond_2
     :goto_0
     div-int/lit8 v2, v2, 0x2
@@ -150,14 +150,14 @@
     :goto_1
     mul-int/lit8 v2, v2, 0x2
 
-    .line 84
+    .line 87
     :cond_4
     :goto_2
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
-    .line 85
+    .line 88
     iget-object v3, p0, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iget v3, v3, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->encoding:I
@@ -177,7 +177,7 @@
 
     add-int/lit8 v3, v0, 0x2
 
-    .line 110
+    .line 113
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v3
@@ -186,7 +186,7 @@
 
     add-int/lit8 v3, v0, 0x3
 
-    .line 111
+    .line 114
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v3
@@ -197,7 +197,7 @@
 
     goto :goto_3
 
-    .line 128
+    .line 135
     :cond_5
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -211,7 +211,7 @@
 
     add-int/lit8 v3, v0, 0x1
 
-    .line 103
+    .line 106
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v3
@@ -220,7 +220,7 @@
 
     add-int/lit8 v3, v0, 0x2
 
-    .line 104
+    .line 107
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v3
@@ -237,14 +237,14 @@
 
     add-int/lit8 v3, v0, 0x1
 
-    .line 96
+    .line 99
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v3
 
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 97
+    .line 100
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v3
@@ -259,8 +259,16 @@
     :goto_6
     if-ge v0, v1, :cond_a
 
-    .line 118
+    .line 124
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->getFloat(I)F
+
+    move-result v3
+
+    const/high16 v4, -0x40800000    # -1.0f
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    invoke-static {v3, v4, v5}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(FFF)F
 
     move-result v3
 
@@ -276,7 +284,7 @@
 
     int-to-byte v4, v4
 
-    .line 119
+    .line 126
     invoke-virtual {v2, v4}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     shr-int/lit8 v3, v3, 0x8
@@ -285,7 +293,7 @@
 
     int-to-byte v3, v3
 
-    .line 120
+    .line 127
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     add-int/lit8 v0, v0, 0x4
@@ -298,10 +306,10 @@
 
     const/4 v3, 0x0
 
-    .line 89
+    .line 92
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
-    .line 90
+    .line 93
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get(I)B
 
     move-result v3
@@ -318,7 +326,7 @@
 
     goto :goto_7
 
-    .line 130
+    .line 137
     :cond_a
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
@@ -326,7 +334,7 @@
 
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 131
+    .line 138
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
     return-void

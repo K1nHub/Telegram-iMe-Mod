@@ -26,16 +26,16 @@
 .method public constructor <init>(Ljava/lang/String;[Ljava/lang/String;I)V
     .locals 0
 
-    .line 33
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
+    .line 44
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;->vendor:Ljava/lang/String;
 
-    .line 35
+    .line 45
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;->comments:[Ljava/lang/String;
 
-    .line 36
+    .line 46
     iput p3, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;->length:I
 
     return-void

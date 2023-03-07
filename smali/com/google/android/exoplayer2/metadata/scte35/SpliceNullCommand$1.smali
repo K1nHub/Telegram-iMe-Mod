@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 33
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand;
     .locals 0
 
-    .line 37
+    .line 35
     new-instance p1, Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand;-><init>()V
@@ -52,7 +52,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 33
+    .line 31
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand;
 
     move-result-object p1
@@ -63,7 +63,7 @@
 .method public newArray(I)[Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand;
     .locals 0
 
-    .line 42
+    .line 40
     new-array p1, p1, [Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand;
 
     return-object p1
@@ -72,7 +72,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 33
+    .line 31
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand$1;->newArray(I)[Lcom/google/android/exoplayer2/metadata/scte35/SpliceNullCommand;
 
     move-result-object p1

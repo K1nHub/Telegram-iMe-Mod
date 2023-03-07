@@ -11,15 +11,6 @@
     }
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
 
 # static fields
 .field public static final STATE_ERROR:I = 0x1
@@ -34,21 +25,19 @@
 
 
 # virtual methods
-.method public abstract acquire()V
+.method public abstract acquire(Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
+.end method
+
+.method public abstract getCryptoConfig()Lcom/google/android/exoplayer2/decoder/CryptoConfig;
 .end method
 
 .method public abstract getError()Lcom/google/android/exoplayer2/drm/DrmSession$DrmSessionException;
 .end method
 
-.method public abstract getMediaCrypto()Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
+.method public abstract getOfflineLicenseKeySetId()[B
 .end method
 
-.method public abstract getOfflineLicenseKeySetId()[B
+.method public abstract getSchemeUuid()Ljava/util/UUID;
 .end method
 
 .method public abstract getState()I
@@ -69,5 +58,8 @@
     .end annotation
 .end method
 
-.method public abstract release()V
+.method public abstract release(Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
+.end method
+
+.method public abstract requiresSecureDecoder(Ljava/lang/String;)Z
 .end method

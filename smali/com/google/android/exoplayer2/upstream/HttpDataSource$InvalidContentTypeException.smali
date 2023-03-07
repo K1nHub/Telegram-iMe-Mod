@@ -20,9 +20,9 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
-    .locals 2
+    .locals 3
 
-    .line 285
+    .line 385
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -37,11 +37,13 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/16 v1, 0x7d3
 
-    invoke-direct {p0, v0, p2, v1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;I)V
+    const/4 v2, 0x1
 
-    .line 286
+    invoke-direct {p0, v0, p2, v1, v2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
+
+    .line 390
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidContentTypeException;->contentType:Ljava/lang/String;
 
     return-void

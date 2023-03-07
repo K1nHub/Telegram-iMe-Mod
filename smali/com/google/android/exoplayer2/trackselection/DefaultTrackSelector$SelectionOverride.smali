@@ -3,7 +3,7 @@
 .source "DefaultTrackSelector.java"
 
 # interfaces
-.implements Landroid/os/Parcelable;
+.implements Lcom/google/android/exoplayer2/Bundleable;
 
 
 # annotations
@@ -18,66 +18,103 @@
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.field public static final CREATOR:Lcom/google/android/exoplayer2/Bundleable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Landroid/os/Parcelable$Creator<",
+            "Lcom/google/android/exoplayer2/Bundleable$Creator<",
             "Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;",
             ">;"
         }
     .end annotation
 .end field
 
+.field private static final FIELD_GROUP_INDEX:Ljava/lang/String;
+
+.field private static final FIELD_TRACKS:Ljava/lang/String;
+
+.field private static final FIELD_TRACK_TYPE:Ljava/lang/String;
+
 
 # instance fields
-.field public final data:I
-
 .field public final groupIndex:I
 
 .field public final length:I
 
-.field public final reason:I
-
 .field public final tracks:[I
+
+.field public final type:I
 
 
 # direct methods
+.method public static synthetic $r8$lambda$NvZ4OweqBCNRql1Yy7vv2wiHdEU(Landroid/os/Bundle;)Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
+    .locals 0
+
+    invoke-static {p0}, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->lambda$static$0(Landroid/os/Bundle;)Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1430
-    new-instance v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride$1;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride$1;-><init>()V
+    .line 2103
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->intToStringMaxRadix(I)Ljava/lang/String;
 
-    sput-object v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->CREATOR:Landroid/os/Parcelable$Creator;
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_GROUP_INDEX:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    .line 2104
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->intToStringMaxRadix(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_TRACKS:Ljava/lang/String;
+
+    const/4 v0, 0x2
+
+    .line 2105
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->intToStringMaxRadix(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_TRACK_TYPE:Ljava/lang/String;
+
+    .line 2117
+    sget-object v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride$$ExternalSyntheticLambda0;
+
+    sput-object v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->CREATOR:Lcom/google/android/exoplayer2/Bundleable$Creator;
 
     return-void
 .end method
 
 .method public varargs constructor <init>(I[I)V
-    .locals 2
+    .locals 1
 
-    const/4 v0, 0x2
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    .line 1355
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;-><init>(I[III)V
+    .line 2053
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;-><init>(I[II)V
 
     return-void
 .end method
 
-.method public constructor <init>(I[III)V
+.method public constructor <init>(I[II)V
     .locals 0
 
-    .line 1364
+    .line 2063
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1365
+    .line 2064
     iput p1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
 
-    .line 1366
+    .line 2065
     array-length p1, p2
 
     invoke-static {p2, p1}, Ljava/util/Arrays;->copyOf([II)[I
@@ -86,66 +123,70 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
 
-    .line 1367
+    .line 2066
     array-length p2, p2
 
     iput p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->length:I
 
-    .line 1368
-    iput p3, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->reason:I
+    .line 2067
+    iput p3, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->type:I
 
-    .line 1369
-    iput p4, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->data:I
-
-    .line 1370
+    .line 2068
     invoke-static {p1}, Ljava/util/Arrays;->sort([I)V
 
     return-void
 .end method
 
-.method constructor <init>(Landroid/os/Parcel;)V
-    .locals 1
+.method private static synthetic lambda$static$0(Landroid/os/Bundle;)Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
+    .locals 4
 
-    .line 1373
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2119
+    sget-object v0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_GROUP_INDEX:Ljava/lang/String;
 
-    .line 1374
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    const/4 v1, -0x1
 
-    move-result v0
-
-    iput v0, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
-
-    .line 1375
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    iput v0, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->length:I
+    .line 2120
+    sget-object v2, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_TRACKS:Ljava/lang/String;
 
-    .line 1376
-    new-array v0, v0, [I
+    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getIntArray(Ljava/lang/String;)[I
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
+    move-result-object v2
 
-    .line 1377
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readIntArray([I)V
+    .line 2121
+    sget-object v3, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_TRACK_TYPE:Ljava/lang/String;
 
-    .line 1378
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p0, v3, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p0
 
-    iput v0, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->reason:I
+    if-ltz v0, :cond_0
 
-    .line 1379
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    if-ltz p0, :cond_0
 
-    move-result p1
+    const/4 v1, 0x1
 
-    iput p1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->data:I
+    goto :goto_0
 
-    return-void
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 2122
+    :goto_0
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+
+    .line 2123
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2124
+    new-instance v1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
+
+    invoke-direct {v1, v0, v2, p0}, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;-><init>(I[II)V
+
+    return-object v1
 .end method
 
 
@@ -153,7 +194,7 @@
 .method public containsTrack(I)Z
     .locals 5
 
-    .line 1384
+    .line 2073
     iget-object v0, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
 
     array-length v1, v0
@@ -182,14 +223,6 @@
     return v2
 .end method
 
-.method public describeContents()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -204,7 +237,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1404
+    .line 2092
     const-class v2, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -215,11 +248,11 @@
 
     goto :goto_1
 
-    .line 1407
+    .line 2095
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;
 
-    .line 1408
+    .line 2096
     iget v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
 
     iget v3, p1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
@@ -230,22 +263,16 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
 
-    .line 1409
+    .line 2097
     invoke-static {v2, v3}, Ljava/util/Arrays;->equals([I[I)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    iget v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->reason:I
+    iget v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->type:I
 
-    iget v3, p1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->reason:I
-
-    if-ne v2, v3, :cond_2
-
-    iget v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->data:I
-
-    iget p1, p1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->data:I
+    iget p1, p1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->type:I
 
     if-ne v2, p1, :cond_2
 
@@ -265,7 +292,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1394
+    .line 2083
     iget v0, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
 
     mul-int/lit8 v0, v0, 0x1f
@@ -280,50 +307,42 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 1395
-    iget v1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->reason:I
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 1396
-    iget v1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->data:I
+    .line 2084
+    iget v1, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->type:I
 
     add-int/2addr v0, v1
 
     return v0
 .end method
 
-.method public writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+.method public toBundle()Landroid/os/Bundle;
+    .locals 3
 
-    .line 1423
-    iget p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
+    .line 2109
+    new-instance v0, Landroid/os/Bundle;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1424
-    iget-object p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
+    .line 2110
+    sget-object v1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_GROUP_INDEX:Ljava/lang/String;
 
-    array-length p2, p2
+    iget v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->groupIndex:I
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1425
-    iget-object p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
+    .line 2111
+    sget-object v1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_TRACKS:Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V
+    iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->tracks:[I
 
-    .line 1426
-    iget p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->reason:I
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putIntArray(Ljava/lang/String;[I)V
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    .line 2112
+    sget-object v1, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->FIELD_TRACK_TYPE:Ljava/lang/String;
 
-    .line 1427
-    iget p2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->data:I
+    iget v2, p0, Lcom/google/android/exoplayer2/trackselection/DefaultTrackSelector$SelectionOverride;->type:I
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    return-void
+    return-object v0
 .end method

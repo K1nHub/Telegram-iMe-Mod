@@ -15,13 +15,13 @@
 .method public varargs constructor <init>([Lcom/google/android/exoplayer2/trackselection/TrackSelection;)V
     .locals 0
 
-    .line 34
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 37
     iput-object p1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->trackSelections:[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
 
-    .line 36
+    .line 38
     array-length p1, p1
 
     iput p1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->length:I
@@ -43,7 +43,7 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 70
+    .line 72
     const-class v0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -54,11 +54,11 @@
 
     goto :goto_0
 
-    .line 73
+    .line 75
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
 
-    .line 74
+    .line 76
     iget-object v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->trackSelections:[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->trackSelections:[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
@@ -79,7 +79,7 @@
 .method public get(I)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
     .locals 1
 
-    .line 47
+    .line 49
     iget-object v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->trackSelections:[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
 
     aget-object p1, v0, p1
@@ -90,7 +90,7 @@
 .method public getAll()[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
     .locals 1
 
-    .line 52
+    .line 54
     iget-object v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->trackSelections:[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
 
     invoke-virtual {v0}, [Lcom/google/android/exoplayer2/trackselection/TrackSelection;->clone()Ljava/lang/Object;
@@ -105,14 +105,14 @@
 .method public hashCode()I
     .locals 2
 
-    .line 57
+    .line 59
     iget v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->hashCode:I
 
     if-nez v0, :cond_0
 
     const/16 v0, 0x20f
 
-    .line 59
+    .line 61
     iget-object v1, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->trackSelections:[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
 
     invoke-static {v1}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
@@ -121,10 +121,10 @@
 
     add-int/2addr v0, v1
 
-    .line 60
+    .line 62
     iput v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->hashCode:I
 
-    .line 62
+    .line 64
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->hashCode:I
 

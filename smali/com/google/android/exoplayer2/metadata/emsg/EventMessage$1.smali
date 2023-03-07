@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 188
+    .line 178
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
     .locals 1
 
-    .line 192
+    .line 182
     new-instance v0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;-><init>(Landroid/os/Parcel;)V
@@ -52,7 +52,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 188
+    .line 178
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
 
     move-result-object p1
@@ -63,7 +63,7 @@
 .method public newArray(I)[Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
     .locals 0
 
-    .line 197
+    .line 187
     new-array p1, p1, [Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
 
     return-object p1
@@ -72,7 +72,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 188
+    .line 178
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage$1;->newArray(I)[Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
 
     move-result-object p1

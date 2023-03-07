@@ -77,16 +77,16 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/offline/DownloadHelper;)V
     .locals 1
 
-    .line 964
+    .line 992
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 965
+    .line 993
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
 
-    .line 966
+    .line 994
     iput-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelper:Lcom/google/android/exoplayer2/offline/DownloadHelper;
 
-    .line 967
+    .line 995
     new-instance p1, Lcom/google/android/exoplayer2/upstream/DefaultAllocator;
 
     const/4 p2, 0x1
@@ -97,38 +97,39 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->allocator:Lcom/google/android/exoplayer2/upstream/Allocator;
 
-    .line 968
+    .line 996
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
 
-    .line 970
+    .line 998
     new-instance p1, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;)V
 
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->createHandler(Landroid/os/Handler$Callback;)Landroid/os/Handler;
+    .line 999
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->createHandlerForCurrentOrMainLooper(Landroid/os/Handler$Callback;)Landroid/os/Handler;
 
     move-result-object p1
 
-    .line 971
+    .line 1000
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelperHandler:Landroid/os/Handler;
 
-    .line 972
+    .line 1001
     new-instance p1, Landroid/os/HandlerThread;
 
-    const-string p2, "DownloadHelper"
+    const-string p2, "ExoPlayer:DownloadHelper"
 
     invoke-direct {p1, p2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceThread:Landroid/os/HandlerThread;
 
-    .line 973
+    .line 1002
     invoke-virtual {p1}, Landroid/os/HandlerThread;->start()V
 
-    .line 974
+    .line 1003
     invoke-virtual {p1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object p1
@@ -141,7 +142,7 @@
 
     const/4 p2, 0x0
 
-    .line 975
+    .line 1004
     invoke-virtual {p1, p2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
@@ -150,7 +151,7 @@
 .method private handleDownloadHelperCallbackMessage(Landroid/os/Message;)Z
     .locals 3
 
-    .line 1084
+    .line 1114
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->released:Z
 
     const/4 v1, 0x0
@@ -159,7 +160,7 @@
 
     return v1
 
-    .line 1088
+    .line 1118
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -171,11 +172,11 @@
 
     return v1
 
-    .line 1093
+    .line 1130
     :cond_1
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->release()V
 
-    .line 1094
+    .line 1131
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelper:Lcom/google/android/exoplayer2/offline/DownloadHelper;
 
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -190,12 +191,36 @@
 
     return v2
 
-    .line 1090
+    .line 1121
     :cond_2
+    :try_start_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelper:Lcom/google/android/exoplayer2/offline/DownloadHelper;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/offline/DownloadHelper;->access$200(Lcom/google/android/exoplayer2/offline/DownloadHelper;)V
+    :try_end_0
+    .catch Lcom/google/android/exoplayer2/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
 
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    .line 1123
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelperHandler:Landroid/os/Handler;
+
+    new-instance v1, Ljava/io/IOException;
+
+    invoke-direct {v1, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    .line 1124
+    invoke-virtual {v0, v2, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object p1
+
+    .line 1126
+    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
+
+    :goto_0
     return v2
 .end method
 
@@ -204,7 +229,7 @@
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 6
 
-    .line 990
+    .line 1019
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -227,13 +252,13 @@
 
     return v3
 
-    .line 1019
+    .line 1049
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     if-eqz p1, :cond_1
 
-    .line 1020
+    .line 1050
     array-length v0, p1
 
     :goto_0
@@ -241,7 +266,7 @@
 
     aget-object v4, p1, v3
 
-    .line 1021
+    .line 1051
     iget-object v5, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
 
     invoke-interface {v5, v4}, Lcom/google/android/exoplayer2/source/MediaSource;->releasePeriod(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
@@ -250,31 +275,31 @@
 
     goto :goto_0
 
-    .line 1024
+    .line 1054
     :cond_1
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
 
     invoke-interface {p1, p0}, Lcom/google/android/exoplayer2/source/MediaSource;->releaseSource(Lcom/google/android/exoplayer2/source/MediaSource$MediaSourceCaller;)V
 
-    .line 1025
+    .line 1055
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceHandler:Landroid/os/Handler;
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 1026
+    .line 1056
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceThread:Landroid/os/HandlerThread;
 
     invoke-virtual {p1}, Landroid/os/HandlerThread;->quit()Z
 
     return v2
 
-    .line 1013
+    .line 1043
     :cond_2
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    .line 1014
+    .line 1044
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -285,27 +310,27 @@
 
     const-wide/16 v0, 0x0
 
-    .line 1015
+    .line 1045
     invoke-interface {p1, v0, v1}, Lcom/google/android/exoplayer2/source/MediaPeriod;->continueLoading(J)Z
 
     :cond_3
     return v2
 
-    .line 997
+    .line 1027
     :cond_4
     :try_start_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     if-nez p1, :cond_5
 
-    .line 998
+    .line 1028
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/source/MediaSource;->maybeThrowSourceInfoRefreshError()V
 
     goto :goto_2
 
-    .line 1000
+    .line 1030
     :cond_5
     :goto_1
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
@@ -316,7 +341,7 @@
 
     if-ge v3, p1, :cond_6
 
-    .line 1001
+    .line 1031
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -331,7 +356,7 @@
 
     goto :goto_1
 
-    .line 1004
+    .line 1034
     :cond_6
     :goto_2
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceHandler:Landroid/os/Handler;
@@ -347,27 +372,29 @@
     :catch_0
     move-exception p1
 
-    .line 1007
+    .line 1037
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelperHandler:Landroid/os/Handler;
 
-    .line 1008
+    .line 1038
     invoke-virtual {v0, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
-    .line 1009
+    .line 1039
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     :goto_3
     return v2
 
-    .line 992
+    .line 1021
     :cond_7
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
 
-    invoke-interface {p1, p0, v1}, Lcom/google/android/exoplayer2/source/MediaSource;->prepareSource(Lcom/google/android/exoplayer2/source/MediaSource$MediaSourceCaller;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
+    sget-object v0, Lcom/google/android/exoplayer2/analytics/PlayerId;->UNSET:Lcom/google/android/exoplayer2/analytics/PlayerId;
 
-    .line 993
+    invoke-interface {p1, p0, v1, v0}, Lcom/google/android/exoplayer2/source/MediaSource;->prepareSource(Lcom/google/android/exoplayer2/source/MediaSource$MediaSourceCaller;Lcom/google/android/exoplayer2/upstream/TransferListener;Lcom/google/android/exoplayer2/analytics/PlayerId;)V
+
+    .line 1023
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceHandler:Landroid/os/Handler;
 
     invoke-virtual {p1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
@@ -378,7 +405,7 @@
 .method public onContinueLoadingRequested(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
     .locals 2
 
-    .line 1078
+    .line 1108
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -387,7 +414,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1079
+    .line 1109
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceHandler:Landroid/os/Handler;
 
     const/4 v1, 0x2
@@ -405,7 +432,7 @@
 .method public bridge synthetic onContinueLoadingRequested(Lcom/google/android/exoplayer2/source/SequenceableLoader;)V
     .locals 0
 
-    .line 940
+    .line 968
     check-cast p1, Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->onContinueLoadingRequested(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
@@ -416,12 +443,12 @@
 .method public onPrepared(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
     .locals 1
 
-    .line 1069
+    .line 1099
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1070
+    .line 1100
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -430,14 +457,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 1071
+    .line 1101
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceHandler:Landroid/os/Handler;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1072
+    .line 1102
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelperHandler:Landroid/os/Handler;
 
     const/4 v0, 0x0
@@ -451,14 +478,14 @@
 .method public onSourceInfoRefreshed(Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/Timeline;)V
     .locals 6
 
-    .line 1037
+    .line 1067
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
     if-eqz p1, :cond_0
 
     return-void
 
-    .line 1041
+    .line 1071
     :cond_0
     new-instance p1, Lcom/google/android/exoplayer2/Timeline$Window;
 
@@ -470,11 +497,13 @@
 
     move-result-object p1
 
-    iget-boolean p1, p1, Lcom/google/android/exoplayer2/Timeline$Window;->isLive:Z
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Timeline$Window;->isLive()Z
+
+    move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 1042
+    .line 1072
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->downloadHelperHandler:Landroid/os/Handler;
 
     new-instance p2, Lcom/google/android/exoplayer2/offline/DownloadHelper$LiveContentUnsupportedException;
@@ -483,21 +512,21 @@
 
     const/4 v0, 0x1
 
-    .line 1043
+    .line 1073
     invoke-virtual {p1, v0, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
-    .line 1046
+    .line 1076
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
     return-void
 
-    .line 1049
+    .line 1079
     :cond_1
     iput-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
-    .line 1050
+    .line 1080
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/Timeline;->getPeriodCount()I
 
     move-result p1
@@ -508,7 +537,7 @@
 
     const/4 p1, 0x0
 
-    .line 1051
+    .line 1081
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
@@ -518,12 +547,12 @@
 
     if-ge p1, v2, :cond_2
 
-    .line 1052
+    .line 1082
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
 
     new-instance v2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    .line 1054
+    .line 1084
     invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/Timeline;->getUidOfPeriod(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -532,17 +561,17 @@
 
     iget-object v5, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->allocator:Lcom/google/android/exoplayer2/upstream/Allocator;
 
-    .line 1053
+    .line 1083
     invoke-interface {v1, v2, v5, v3, v4}, Lcom/google/android/exoplayer2/source/MediaSource;->createPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/upstream/Allocator;J)Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     move-result-object v1
 
-    .line 1057
+    .line 1087
     iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     aput-object v1, v2, p1
 
-    .line 1058
+    .line 1088
     iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->pendingMediaPeriods:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -551,7 +580,7 @@
 
     goto :goto_0
 
-    .line 1060
+    .line 1090
     :cond_2
     array-length p1, v1
 
@@ -560,7 +589,7 @@
 
     aget-object p2, v1, v0
 
-    .line 1061
+    .line 1091
     invoke-interface {p2, p0, v3, v4}, Lcom/google/android/exoplayer2/source/MediaPeriod;->prepare(Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;J)V
 
     add-int/lit8 v0, v0, 0x1
@@ -574,7 +603,7 @@
 .method public release()V
     .locals 2
 
-    .line 979
+    .line 1008
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->released:Z
 
     if-eqz v0, :cond_0
@@ -584,10 +613,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 982
+    .line 1011
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->released:Z
 
-    .line 983
+    .line 1012
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$MediaPreparer;->mediaSourceHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3

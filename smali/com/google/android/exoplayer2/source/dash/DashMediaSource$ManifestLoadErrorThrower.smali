@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)V
     .locals 0
 
-    .line 1431
+    .line 1415
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestLoadErrorThrower;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
         }
     .end annotation
 
-    .line 1446
+    .line 1430
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestLoadErrorThrower;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$600(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Ljava/io/IOException;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$800(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Ljava/io/IOException;
 
     move-result-object v0
 
@@ -52,11 +52,11 @@
 
     return-void
 
-    .line 1447
+    .line 1431
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestLoadErrorThrower;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$600(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Ljava/io/IOException;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$800(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Ljava/io/IOException;
 
     move-result-object v0
 
@@ -73,16 +73,16 @@
         }
     .end annotation
 
-    .line 1435
+    .line 1419
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestLoadErrorThrower;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$500(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Lcom/google/android/exoplayer2/upstream/Loader;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$700(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Lcom/google/android/exoplayer2/upstream/Loader;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/Loader;->maybeThrowError()V
 
-    .line 1436
+    .line 1420
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestLoadErrorThrower;->maybeThrowManifestError()V
 
     return-void
@@ -96,16 +96,16 @@
         }
     .end annotation
 
-    .line 1441
+    .line 1425
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestLoadErrorThrower;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$500(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Lcom/google/android/exoplayer2/upstream/Loader;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->access$700(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)Lcom/google/android/exoplayer2/upstream/Loader;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/upstream/Loader;->maybeThrowError(I)V
 
-    .line 1442
+    .line 1426
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestLoadErrorThrower;->maybeThrowManifestError()V
 
     return-void

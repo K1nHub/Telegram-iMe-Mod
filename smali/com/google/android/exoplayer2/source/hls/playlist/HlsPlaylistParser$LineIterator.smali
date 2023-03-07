@@ -44,13 +44,13 @@
         }
     .end annotation
 
-    .line 971
+    .line 1292
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 972
+    .line 1293
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->extraLines:Ljava/util/Queue;
 
-    .line 973
+    .line 1294
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->reader:Ljava/io/BufferedReader;
 
     return-void
@@ -66,14 +66,7 @@
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
-        expression = {
-            "next"
-        }
-        result = true
-    .end annotation
-
-    .line 978
+    .line 1299
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next:Ljava/lang/String;
 
     const/4 v1, 0x1
@@ -82,7 +75,7 @@
 
     return v1
 
-    .line 981
+    .line 1302
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->extraLines:Ljava/util/Queue;
 
@@ -92,7 +85,7 @@
 
     if-nez v0, :cond_1
 
-    .line 982
+    .line 1303
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->extraLines:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
@@ -111,7 +104,7 @@
 
     return v1
 
-    .line 985
+    .line 1306
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->reader:Ljava/io/BufferedReader;
 
@@ -123,14 +116,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 986
+    .line 1307
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next:Ljava/lang/String;
 
-    .line 987
+    .line 1308
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
@@ -153,24 +146,24 @@
         }
     .end annotation
 
-    .line 996
+    .line 1317
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 997
+    .line 1318
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    .line 998
+    .line 1319
     iput-object v1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next:Ljava/lang/String;
 
     return-object v0
 
-    .line 1001
+    .line 1322
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 

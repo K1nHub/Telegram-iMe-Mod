@@ -4,9 +4,6 @@
 
 
 # virtual methods
-.method public abstract onRenderedFirstFrame()V
-.end method
-
 .method public abstract onSurfaceDestroyed(Landroid/graphics/SurfaceTexture;)Z
 .end method
 
@@ -14,7 +11,4 @@
 .end method
 
 .method public abstract onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-.end method
-
-.method public abstract onVideoSizeChanged(IIIF)V
 .end method

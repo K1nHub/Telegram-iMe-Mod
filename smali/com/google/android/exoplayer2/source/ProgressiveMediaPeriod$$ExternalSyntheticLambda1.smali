@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod$$ExternalSyntheticLambda1;->f$0:Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod;->$r8$lambda$zYW0OV-Fynku26QldoAc-IygyX0(Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod;)V
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod;->$r8$lambda$DoTcjDDrboxsJ7o5SQLDx6KLo0g(Lcom/google/android/exoplayer2/source/ProgressiveMediaPeriod;)V
 
     return-void
 .end method

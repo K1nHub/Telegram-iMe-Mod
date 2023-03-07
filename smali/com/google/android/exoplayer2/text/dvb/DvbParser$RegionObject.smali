@@ -32,25 +32,25 @@
 .method public constructor <init>(IIIIII)V
     .locals 0
 
-    .line 1004
+    .line 1081
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1005
+    .line 1082
     iput p1, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;->type:I
 
-    .line 1006
+    .line 1083
     iput p2, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;->provider:I
 
-    .line 1007
+    .line 1084
     iput p3, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;->horizontalPosition:I
 
-    .line 1008
+    .line 1085
     iput p4, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;->verticalPosition:I
 
-    .line 1009
+    .line 1086
     iput p5, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;->foregroundPixelCode:I
 
-    .line 1010
+    .line 1087
     iput p6, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;->backgroundPixelCode:I
 
     return-void

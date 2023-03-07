@@ -10,7 +10,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 23
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,10 +46,18 @@
     return-object v0
 .end method
 
+.method public synthetic populateMediaMetadata(Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/metadata/Metadata$Entry$-CC;->$default$populateMediaMetadata(Lcom/google/android/exoplayer2/metadata/Metadata$Entry;Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 27
+    .line 25
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

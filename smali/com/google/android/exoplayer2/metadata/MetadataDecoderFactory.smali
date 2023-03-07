@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 61
+    .line 60
     new-instance v0, Lcom/google/android/exoplayer2/metadata/MetadataDecoderFactory$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/MetadataDecoderFactory$1;-><init>()V

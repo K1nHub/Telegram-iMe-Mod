@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "DataSource.java"
 
+# interfaces
+.implements Lcom/google/android/exoplayer2/upstream/DataReader;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -40,14 +43,6 @@
 .end method
 
 .method public abstract open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
-
-.method public abstract read([BII)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

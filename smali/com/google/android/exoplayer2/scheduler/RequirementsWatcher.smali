@@ -50,13 +50,9 @@
     iput-object p3, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     .line 75
-    new-instance p1, Landroid/os/Handler;
+    invoke-static {}, Lcom/google/android/exoplayer2/util/Util;->createHandlerForCurrentOrMainLooper()Landroid/os/Handler;
 
-    invoke-static {}, Lcom/google/android/exoplayer2/util/Util;->getLooper()Landroid/os/Looper;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->handler:Landroid/os/Handler;
 
@@ -102,7 +98,7 @@
 .method private checkRequirements()V
     .locals 2
 
-    .line 146
+    .line 148
     iget-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
@@ -111,15 +107,15 @@
 
     move-result v0
 
-    .line 147
+    .line 149
     iget v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->notMetRequirements:I
 
     if-eq v1, v0, :cond_0
 
-    .line 148
+    .line 150
     iput v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->notMetRequirements:I
 
-    .line 149
+    .line 151
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->listener:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$Listener;
 
     invoke-interface {v1, p0, v0}, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$Listener;->onRequirementsStateChanged(Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;I)V
@@ -131,7 +127,7 @@
 .method private recheckNotMetNetworkRequirements()V
     .locals 1
 
-    .line 163
+    .line 165
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->notMetRequirements:I
 
     and-int/lit8 v0, v0, 0x3
@@ -140,7 +136,7 @@
 
     return-void
 
-    .line 167
+    .line 169
     :cond_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->checkRequirements()V
 
@@ -150,26 +146,25 @@
 .method private registerNetworkCallbackV24()V
     .locals 3
 
-    .line 129
+    .line 132
     iget-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
 
     const-string v1, "connectivity"
 
-    .line 131
+    .line 133
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 130
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 132
+    .line 134
     new-instance v1, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$NetworkCallback;
 
     const/4 v2, 0x0
@@ -178,7 +173,7 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->networkCallback:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$NetworkCallback;
 
-    .line 133
+    .line 135
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->registerDefaultNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
     return-void
@@ -187,19 +182,25 @@
 .method private unregisterNetworkCallbackV24()V
     .locals 2
 
-    .line 138
+    .line 140
     iget-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
 
     const-string v1, "connectivity"
 
-    .line 139
+    .line 141
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 140
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/ConnectivityManager;
+
+    .line 142
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->networkCallback:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$NetworkCallback;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -212,7 +213,7 @@
 
     const/4 v0, 0x0
 
-    .line 141
+    .line 143
     iput-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->networkCallback:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$NetworkCallback;
 
     return-void
@@ -223,16 +224,16 @@
 .method public getRequirements()Lcom/google/android/exoplayer2/scheduler/Requirements;
     .locals 1
 
-    .line 124
+    .line 127
     iget-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     return-object v0
 .end method
 
 .method public start()I
-    .locals 5
+    .locals 4
 
-    .line 86
+    .line 85
     iget-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
@@ -243,12 +244,12 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->notMetRequirements:I
 
-    .line 88
+    .line 87
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 89
+    .line 88
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isNetworkRequired()Z
@@ -257,14 +258,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 90
+    .line 89
     sget v1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v2, 0x18
 
     if-lt v1, v2, :cond_0
 
-    .line 91
+    .line 90
     invoke-direct {p0}, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->registerNetworkCallbackV24()V
 
     goto :goto_0
@@ -272,10 +273,10 @@
     :cond_0
     const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"
 
-    .line 93
+    .line 92
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 96
+    .line 95
     :cond_1
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
@@ -288,15 +289,15 @@
 
     const-string v1, "android.intent.action.ACTION_POWER_CONNECTED"
 
-    .line 97
+    .line 96
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string v1, "android.intent.action.ACTION_POWER_DISCONNECTED"
 
-    .line 98
+    .line 97
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 100
+    .line 99
     :cond_2
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
 
@@ -306,7 +307,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 101
+    .line 100
     sget v1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v2, 0x17
@@ -315,7 +316,7 @@
 
     const-string v1, "android.os.action.DEVICE_IDLE_MODE_CHANGED"
 
-    .line 102
+    .line 101
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     goto :goto_1
@@ -323,17 +324,37 @@
     :cond_3
     const-string v1, "android.intent.action.SCREEN_ON"
 
-    .line 104
+    .line 103
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     const-string v1, "android.intent.action.SCREEN_OFF"
 
-    .line 105
+    .line 104
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 108
+    .line 107
     :cond_4
     :goto_1
+    iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->requirements:Lcom/google/android/exoplayer2/scheduler/Requirements;
+
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isStorageNotLowRequired()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    const-string v1, "android.intent.action.DEVICE_STORAGE_LOW"
+
+    .line 108
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v1, "android.intent.action.DEVICE_STORAGE_OK"
+
+    .line 109
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 111
+    :cond_5
     new-instance v1, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
 
     const/4 v2, 0x0
@@ -342,14 +363,14 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->receiver:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
 
-    .line 109
-    iget-object v3, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
+    .line 112
+    iget-object v2, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
 
-    iget-object v4, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->handler:Landroid/os/Handler;
+    iget-object v3, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->handler:Landroid/os/Handler;
 
-    invoke-virtual {v3, v1, v0, v2, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    invoke-static {v2, v1, v0, v3}, Lcom/google/android/exoplayer2/util/Util;->registerReceiverNotExported(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 110
+    .line 113
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->notMetRequirements:I
 
     return v0
@@ -358,7 +379,7 @@
 .method public stop()V
     .locals 2
 
-    .line 115
+    .line 118
     iget-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->receiver:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
@@ -373,10 +394,10 @@
 
     const/4 v0, 0x0
 
-    .line 116
+    .line 119
     iput-object v0, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->receiver:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;
 
-    .line 117
+    .line 120
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x18
@@ -387,7 +408,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 118
+    .line 121
     invoke-direct {p0}, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->unregisterNetworkCallbackV24()V
 
     :cond_0

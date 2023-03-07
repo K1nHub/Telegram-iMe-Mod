@@ -35,9 +35,6 @@
 .field private final zam:Lcom/google/android/gms/common/api/internal/zabh;
 
 .field private volatile zan:Lcom/google/android/gms/common/api/internal/zabf;
-    .annotation runtime Lorg/checkerframework/checker/initialization/qual/NotOnlyInitialized;
-    .end annotation
-.end field
 
 .field private zao:Lcom/google/android/gms/common/ConnectionResult;
 

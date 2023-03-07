@@ -27,7 +27,7 @@
 
 .field private hasOutputFormat:Z
 
-.field private final header:Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;
+.field private final header:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
 
 .field private final headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -48,7 +48,7 @@
 
     const/4 v0, 0x0
 
-    .line 59
+    .line 63
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -57,15 +57,15 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 3
 
-    .line 62
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 63
+    .line 67
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
 
-    .line 65
+    .line 69
     new-instance v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     const/4 v2, 0x4
@@ -74,21 +74,28 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 66
-    iget-object v1, v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 70
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v1
 
     const/4 v2, -0x1
 
     aput-byte v2, v1, v0
 
-    .line 67
-    new-instance v0, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;
+    .line 71
+    new-instance v0, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
 
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;
+    iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
 
-    .line 68
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    .line 72
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->timeUs:J
+
+    .line 73
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->language:Ljava/lang/String;
 
     return-void
@@ -97,15 +104,17 @@
 .method private findHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 8
 
-    .line 127
-    iget-object v0, p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 136
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    .line 128
+    move-result-object v0
+
+    .line 137
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v1
 
-    .line 129
+    .line 138
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v2
@@ -113,7 +122,7 @@
     :goto_0
     if-ge v1, v2, :cond_3
 
-    .line 131
+    .line 140
     aget-byte v3, v0, v1
 
     const/16 v4, 0xff
@@ -133,7 +142,7 @@
     :cond_0
     const/4 v3, 0x0
 
-    .line 132
+    .line 141
     :goto_1
     iget-boolean v4, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->lastByteWasFF:Z
 
@@ -154,7 +163,7 @@
     :cond_1
     const/4 v4, 0x0
 
-    .line 133
+    .line 142
     :goto_2
     iput-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->lastByteWasFF:Z
 
@@ -162,16 +171,18 @@
 
     add-int/lit8 v2, v1, 0x1
 
-    .line 135
+    .line 144
     invoke-virtual {p1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 137
+    .line 146
     iput-boolean v5, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->lastByteWasFF:Z
 
-    .line 138
+    .line 147
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object p1
 
     aget-byte v0, v0, v1
 
@@ -179,10 +190,10 @@
 
     const/4 p1, 0x2
 
-    .line 139
+    .line 148
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 140
+    .line 149
     iput v6, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
 
     return-void
@@ -192,7 +203,7 @@
 
     goto :goto_0
 
-    .line 144
+    .line 153
     :cond_3
     invoke-virtual {p1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
@@ -202,7 +213,7 @@
 .method private readFrameRemainder(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 7
 
-    .line 209
+    .line 226
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
@@ -217,30 +228,37 @@
 
     move-result v0
 
-    .line 210
+    .line 227
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     invoke-interface {v1, p1, v0}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
-    .line 211
+    .line 228
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
     add-int/2addr p1, v0
 
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 212
+    .line 229
     iget v4, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameSize:I
 
     if-ge p1, v4, :cond_0
 
     return-void
 
-    .line 217
+    .line 234
     :cond_0
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
-
     iget-wide v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->timeUs:J
+
+    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long p1, v1, v5
+
+    if-eqz p1, :cond_1
+
+    .line 235
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     const/4 v3, 0x1
 
@@ -250,7 +268,7 @@
 
     invoke-interface/range {v0 .. v6}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
-    .line 218
+    .line 236
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->timeUs:J
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameDurationUs:J
@@ -259,174 +277,204 @@
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->timeUs:J
 
+    :cond_1
     const/4 p1, 0x0
 
-    .line 219
+    .line 238
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 220
+    .line 239
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
 
     return-void
 .end method
 
 .method private readHeaderRemainder(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
-    .locals 20
+    .locals 7
 
-    move-object/from16 v0, p0
+    .line 174
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
-    .line 164
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
+    move-result v0
 
-    move-result v1
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    iget v2, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
+    const/4 v2, 0x4
 
-    const/4 v3, 0x4
+    rsub-int/lit8 v1, v1, 0x4
 
-    rsub-int/lit8 v2, v2, 0x4
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+    move-result v0
 
-    move-result v1
+    .line 175
+    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 165
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    iget-object v2, v2, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    move-result-object v1
 
-    iget v4, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
+    iget v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    move-object/from16 v5, p1
+    invoke-virtual {p1, v1, v3, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    invoke-virtual {v5, v2, v4, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
+    .line 176
+    iget p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 166
-    iget v2, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
+    add-int/2addr p1, v0
 
-    add-int/2addr v2, v1
+    iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    iput v2, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
-
-    if-ge v2, v3, :cond_0
+    if-ge p1, v2, :cond_0
 
     return-void
 
-    .line 172
+    .line 182
     :cond_0
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 173
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 183
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v1
 
-    iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;
+    invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->setForHeaderData(I)Z
 
-    invoke-static {v1, v4}, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;->populateHeader(ILcom/google/android/exoplayer2/extractor/MpegAudioHeader;)Z
+    move-result p1
 
-    move-result v1
+    const/4 v1, 0x1
 
-    const/4 v4, 0x1
+    if-nez p1, :cond_1
 
-    if-nez v1, :cond_1
+    .line 186
+    iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 176
-    iput v2, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
-
-    .line 177
-    iput v4, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
+    .line 187
+    iput v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
 
     return-void
 
-    .line 181
-    :cond_1
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;
-
-    iget v5, v1, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;->frameSize:I
-
-    iput v5, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameSize:I
-
-    .line 182
-    iget-boolean v5, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->hasOutputFormat:Z
-
-    if-nez v5, :cond_2
-
-    const-wide/32 v5, 0xf4240
-
-    .line 183
-    iget v7, v1, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;->samplesPerFrame:I
-
-    int-to-long v7, v7
-
-    mul-long v7, v7, v5
-
-    iget v15, v1, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;->sampleRate:I
-
-    int-to-long v5, v15
-
-    div-long/2addr v7, v5
-
-    iput-wide v7, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameDurationUs:J
-
-    .line 184
-    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->formatId:Ljava/lang/String;
-
-    iget-object v10, v1, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;->mimeType:Ljava/lang/String;
-
-    const/4 v11, 0x0
-
-    const/4 v12, -0x1
-
-    const/16 v13, 0x1000
-
-    iget v14, v1, Lcom/google/android/exoplayer2/extractor/MpegAudioHeader;->channels:I
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
-
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->language:Ljava/lang/String;
-
-    move-object/from16 v19, v1
-
-    invoke-static/range {v9 .. v19}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    .line 187
-    iget-object v5, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
-
-    invoke-interface {v5, v1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
-
-    .line 188
-    iput-boolean v4, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->hasOutputFormat:Z
-
     .line 191
-    :cond_2
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    :cond_1
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+    iget v3, p1, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->frameSize:I
+
+    iput v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameSize:I
 
     .line 192
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    iget-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->hasOutputFormat:Z
 
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    if-nez v3, :cond_2
 
-    invoke-interface {v1, v2, v3}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
-
-    const/4 v1, 0x2
+    const-wide/32 v3, 0xf4240
 
     .line 193
-    iput v1, v0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
+    iget v5, p1, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->samplesPerFrame:I
+
+    int-to-long v5, v5
+
+    mul-long v5, v5, v3
+
+    iget p1, p1, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->sampleRate:I
+
+    int-to-long v3, p1
+
+    div-long/2addr v5, v3
+
+    iput-wide v5, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameDurationUs:J
+
+    .line 194
+    new-instance p1, Lcom/google/android/exoplayer2/Format$Builder;
+
+    invoke-direct {p1}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
+
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->formatId:Ljava/lang/String;
+
+    .line 196
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setId(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
+
+    iget-object v3, v3, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->mimeType:Ljava/lang/String;
+
+    .line 197
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    const/16 v3, 0x1000
+
+    .line 198
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setMaxInputSize(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
+
+    iget v3, v3, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->channels:I
+
+    .line 199
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->header:Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;
+
+    iget v3, v3, Lcom/google/android/exoplayer2/audio/MpegAudioUtil$Header;->sampleRate:I
+
+    .line 200
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->language:Ljava/lang/String;
+
+    .line 201
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setLanguage(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    .line 202
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    .line 203
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    invoke-interface {v3, p1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
+
+    .line 204
+    iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->hasOutputFormat:Z
+
+    .line 207
+    :cond_2
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+
+    .line 208
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->headerScratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    invoke-interface {p1, v0, v2}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
+
+    const/4 p1, 0x2
+
+    .line 209
+    iput p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
 
     return-void
 .end method
@@ -436,7 +484,12 @@
 .method public consume(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 2
 
-    .line 92
+    .line 100
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 101
     :goto_0
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
@@ -444,7 +497,7 @@
 
     if-lez v0, :cond_3
 
-    .line 93
+    .line 102
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
 
     if-eqz v0, :cond_2
@@ -457,12 +510,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 101
+    .line 110
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->readFrameRemainder(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
     goto :goto_0
 
-    .line 104
+    .line 113
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -470,13 +523,13 @@
 
     throw p1
 
-    .line 98
+    .line 107
     :cond_1
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->readHeaderRemainder(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
     goto :goto_0
 
-    .line 95
+    .line 104
     :cond_2
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->findHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
@@ -489,17 +542,17 @@
 .method public createTracks(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
     .locals 1
 
-    .line 80
+    .line 86
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
 
-    .line 81
+    .line 87
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->getFormatId()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->formatId:Ljava/lang/String;
 
-    .line 82
+    .line 88
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->getTrackId()I
 
     move-result p2
@@ -522,27 +575,39 @@
 .end method
 
 .method public packetStarted(JI)V
-    .locals 0
+    .locals 2
 
-    .line 87
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long p3, p1, v0
+
+    if-eqz p3, :cond_0
+
+    .line 94
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->timeUs:J
 
+    :cond_0
     return-void
 .end method
 
 .method public seek()V
-    .locals 1
+    .locals 2
 
     const/4 v0, 0x0
 
-    .line 73
+    .line 78
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->state:I
 
-    .line 74
+    .line 79
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->frameBytesRead:I
 
-    .line 75
+    .line 80
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->lastByteWasFF:Z
+
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    .line 81
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/MpegAudioReader;->timeUs:J
 
     return-void
 .end method

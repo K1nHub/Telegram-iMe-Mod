@@ -22,13 +22,13 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/util/Clock;)V
     .locals 0
 
-    .line 39
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 39
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->clock:Lcom/google/android/exoplayer2/util/Clock;
 
-    .line 41
+    .line 40
     sget-object p1, Lcom/google/android/exoplayer2/PlaybackParameters;->DEFAULT:Lcom/google/android/exoplayer2/PlaybackParameters;
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
@@ -41,7 +41,7 @@
 .method public getPlaybackParameters()Lcom/google/android/exoplayer2/PlaybackParameters;
     .locals 1
 
-    .line 101
+    .line 98
     iget-object v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
     return-object v0
@@ -50,15 +50,15 @@
 .method public getPositionUs()J
     .locals 7
 
-    .line 78
+    .line 73
     iget-wide v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->baseUs:J
 
-    .line 79
+    .line 74
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->started:Z
 
     if-eqz v2, :cond_1
 
-    .line 80
+    .line 75
     iget-object v2, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->clock:Lcom/google/android/exoplayer2/util/Clock;
 
     invoke-interface {v2}, Lcom/google/android/exoplayer2/util/Clock;->elapsedRealtime()J
@@ -69,7 +69,7 @@
 
     sub-long/2addr v2, v4
 
-    .line 81
+    .line 76
     iget-object v4, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
     iget v5, v4, Lcom/google/android/exoplayer2/PlaybackParameters;->speed:F
@@ -80,14 +80,14 @@
 
     if-nez v5, :cond_0
 
-    .line 82
-    invoke-static {v2, v3}, Lcom/google/android/exoplayer2/C;->msToUs(J)J
+    .line 77
+    invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
 
     move-result-wide v2
 
     goto :goto_0
 
-    .line 84
+    .line 81
     :cond_0
     invoke-virtual {v4, v2, v3}, Lcom/google/android/exoplayer2/PlaybackParameters;->getMediaTimeUsForPlayoutTimeMs(J)J
 
@@ -103,15 +103,15 @@
 .method public resetPosition(J)V
     .locals 0
 
-    .line 70
+    .line 65
     iput-wide p1, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->baseUs:J
 
-    .line 71
+    .line 66
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->started:Z
 
     if-eqz p1, :cond_0
 
-    .line 72
+    .line 67
     iget-object p1, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->clock:Lcom/google/android/exoplayer2/util/Clock;
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/util/Clock;->elapsedRealtime()J
@@ -127,19 +127,19 @@
 .method public setPlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;)V
     .locals 2
 
-    .line 93
+    .line 90
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->started:Z
 
     if-eqz v0, :cond_0
 
-    .line 94
+    .line 91
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->getPositionUs()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->resetPosition(J)V
 
-    .line 96
+    .line 93
     :cond_0
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
@@ -149,12 +149,12 @@
 .method public start()V
     .locals 2
 
-    .line 48
+    .line 45
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->started:Z
 
     if-nez v0, :cond_0
 
-    .line 49
+    .line 46
     iget-object v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->clock:Lcom/google/android/exoplayer2/util/Clock;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/util/Clock;->elapsedRealtime()J
@@ -165,7 +165,7 @@
 
     const/4 v0, 0x1
 
-    .line 50
+    .line 47
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->started:Z
 
     :cond_0
@@ -175,12 +175,12 @@
 .method public stop()V
     .locals 2
 
-    .line 58
+    .line 53
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->started:Z
 
     if-eqz v0, :cond_0
 
-    .line 59
+    .line 54
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->getPositionUs()J
 
     move-result-wide v0
@@ -189,7 +189,7 @@
 
     const/4 v0, 0x0
 
-    .line 60
+    .line 55
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/util/StandaloneMediaClock;->started:Z
 
     :cond_0

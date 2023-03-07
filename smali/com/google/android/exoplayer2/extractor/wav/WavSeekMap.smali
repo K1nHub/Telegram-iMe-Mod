@@ -15,18 +15,18 @@
 
 .field private final framesPerBlock:I
 
-.field private final wavHeader:Lcom/google/android/exoplayer2/extractor/wav/WavHeader;
+.field private final wavFormat:Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/exoplayer2/extractor/wav/WavHeader;IJJ)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/extractor/wav/WavFormat;IJJ)V
     .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
-    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavHeader:Lcom/google/android/exoplayer2/extractor/wav/WavHeader;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavFormat:Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
 
     .line 34
     iput p2, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->framesPerBlock:I
@@ -37,7 +37,7 @@
     sub-long/2addr p5, p3
 
     .line 36
-    iget p1, p1, Lcom/google/android/exoplayer2/extractor/wav/WavHeader;->blockSize:I
+    iget p1, p1, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;->blockSize:I
 
     int-to-long p1, p1
 
@@ -65,9 +65,9 @@
 
     mul-long v2, p1, v0
 
-    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavHeader:Lcom/google/android/exoplayer2/extractor/wav/WavHeader;
+    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavFormat:Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
 
-    iget p1, p1, Lcom/google/android/exoplayer2/extractor/wav/WavHeader;->frameRateHz:I
+    iget p1, p1, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;->frameRateHz:I
 
     int-to-long v6, p1
 
@@ -95,9 +95,9 @@
     .locals 10
 
     .line 53
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavHeader:Lcom/google/android/exoplayer2/extractor/wav/WavHeader;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavFormat:Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
 
-    iget v0, v0, Lcom/google/android/exoplayer2/extractor/wav/WavHeader;->frameRateHz:I
+    iget v0, v0, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;->frameRateHz:I
 
     int-to-long v0, v0
 
@@ -129,9 +129,9 @@
     .line 56
     iget-wide v4, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->firstBlockPosition:J
 
-    iget-object v6, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavHeader:Lcom/google/android/exoplayer2/extractor/wav/WavHeader;
+    iget-object v6, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavFormat:Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
 
-    iget v6, v6, Lcom/google/android/exoplayer2/extractor/wav/WavHeader;->blockSize:I
+    iget v6, v6, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;->blockSize:I
 
     int-to-long v6, v6
 
@@ -170,9 +170,9 @@
     .line 63
     iget-wide p1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->firstBlockPosition:J
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavHeader:Lcom/google/android/exoplayer2/extractor/wav/WavHeader;
+    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/wav/WavSeekMap;->wavFormat:Lcom/google/android/exoplayer2/extractor/wav/WavFormat;
 
-    iget v2, v2, Lcom/google/android/exoplayer2/extractor/wav/WavHeader;->blockSize:I
+    iget v2, v2, Lcom/google/android/exoplayer2/extractor/wav/WavFormat;->blockSize:I
 
     int-to-long v2, v2
 

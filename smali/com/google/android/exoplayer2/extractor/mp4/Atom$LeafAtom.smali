@@ -22,10 +22,10 @@
 .method public constructor <init>(ILcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 0
 
-    .line 411
+    .line 441
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/mp4/Atom;-><init>(I)V
 
-    .line 412
+    .line 442
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;->data:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     return-void

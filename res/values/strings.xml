@@ -23,6 +23,8 @@
     <string name="AccActionRecordVideo">Record video</string>
     <string name="AccActionTakePicture">Take a picture</string>
     <string name="AccAutoDeleteTimer">Auto-delete timer</string>
+    <string name="AccDescrArchivedChatsHidden">Archived chats hidden</string>
+    <string name="AccDescrArchivedChatsShown">Archived chats shown</string>
     <string name="AccDescrAspectRatio">Aspect ratio</string>
     <string name="AccDescrAttachButton">Attach media</string>
     <string name="AccDescrBackspace">Backspace</string>
@@ -47,6 +49,7 @@
     <string name="AccDescrCollapsePanel">Collapse panel</string>
     <string name="AccDescrContactSorting">Change sorting</string>
     <string name="AccDescrCustomEmoji">Custom emoji</string>
+    <string name="AccDescrDocumentType">%s file,</string>
     <string name="AccDescrDownloadProgress">Downloaded %1$s of %2$s</string>
     <string name="AccDescrEditing">Editing</string>
     <string name="AccDescrEmojiButton">Emoji, stickers, and GIFs</string>
@@ -80,6 +83,7 @@
     <string name="AccDescrMusicInfo">%2$s by %1$s</string>
     <string name="AccDescrMuteMic">Mute microphone</string>
     <string name="AccDescrMyLocation">My location</string>
+    <string name="AccDescrNotificationsMuted">Muted</string>
     <string name="AccDescrNumberOfPeopleReactions_few">%1$d people reacted with %2$s</string>
     <string name="AccDescrNumberOfPeopleReactions_many">%1$d people reacted with %2$s</string>
     <string name="AccDescrNumberOfPeopleReactions_one">%1$d person reacted with %2$s</string>
@@ -171,6 +175,7 @@
     <string name="AccDescrUnreadCount_other">%1$d unread chats</string>
     <string name="AccDescrUnreadCount_two">%1$d unread chats</string>
     <string name="AccDescrUploadProgress">Uploaded %1$s of %2$s</string>
+    <string name="AccDescrUserOnline">Online</string>
     <string name="AccDescrUserOptions">User options</string>
     <string name="AccDescrVerified">Verified</string>
     <string name="AccDescrVideoCompressHigh">Higher quality</string>
@@ -522,7 +527,7 @@ to: %2$s"</string>
     <string name="AppIconTurbo">Turbo</string>
     <string name="AppIconVintage">Vintage</string>
     <string name="AppName">Telegram</string>
-    <string name="AppNameBeta">Telegram Beta</string>
+    <string name="AppNameBeta">iMe</string>
     <string name="AppUpdate">Update Telegram</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
 
@@ -691,6 +696,7 @@ Please take a look at the &lt;a href=\"https://telegram.org/faq#general-question
     <string name="AudioAutodownload">Voice messages</string>
     <string name="AudioSavedHint">File saved to music</string>
     <string name="AudioSpeedFast">Audio will play two times faster.</string>
+    <string name="AudioSpeedMedium">Audio will play at 1.5x speed.</string>
     <string name="AudioSpeedNormal">Audio will play at normal speed.</string>
     <string name="AudioTitle">Shared Music</string>
     <string name="AudioUnknownArtist">Unknown artist</string>
@@ -707,7 +713,7 @@ Please take a look at the &lt;a href=\"https://telegram.org/faq#general-question
     <string name="AuthAnotherClientInfo1">Download Telegram on your computer from *getdesktop.telegram.org*.</string>
     <string name="AuthAnotherClientInfo2">Run Telegram Desktop to get the QR code.</string>
     <string name="AuthAnotherClientInfo3">Scan the QR code to connect your account.</string>
-    <string name="AuthAnotherClientInfo4">Link *Telegram Desktop* or *Telegram Web* by scanning the QR.</string>
+    <string name="AuthAnotherClientInfo4">You can login iMe apps for *iOS*, *Android* and *Desktop* with the QR-code.</string>
     <string name="AuthAnotherClientInfo5">Go to *imem.app/desktop* to get the QR-code</string>
     <string name="AuthAnotherClientNotFound">No auth token found</string>
     <string name="AuthAnotherClientOk">Auth successfull</string>
@@ -1836,7 +1842,7 @@ You can always switch back to the default Telegram theme here."</string>
 
 Your remaining options are to try another number or to contact Telegram Support. Tap **Help** to send us the technical details so that we can identify the problem."</string>
     <string name="DidNotGetTheCodePhone">Get code on this phone</string>
-    <string name="DidNotGetTheCodeSms">Send the code as an SMS</string>
+    <string name="DidNotGetTheCodeSms">Open Telegram</string>
     <string name="DirectShare">Direct Share</string>
     <string name="DirectShareInfo">Show recent chats in Android share menu</string>
     <string name="Directions">Directions</string>
@@ -1913,6 +1919,8 @@ Anyone from the channel will be able to see messages in this group."</string>
     <string name="Downloading">Downloading</string>
     <string name="DownloadsTabs">Downloads</string>
     <string name="Draft">Draft</string>
+    <string name="DynamicPackOrder">Dynamic Pack Order</string>
+    <string name="DynamicPackOrderInfo">Automatically place recently used sticker packs at the front of the panel.</string>
     <string name="Edit">Edit</string>
     <string name="EditAdmin">Admin Rights</string>
     <string name="EditAdminAddAdmins">Add New Admins</string>
@@ -3041,6 +3049,24 @@ This link will only work for members of this chat."</string>
     <string name="Links_two">%1$d links</string>
     <string name="Links_zero">%1$d links</string>
     <string name="Listening">listening</string>
+    <string name="LiteOptionsAutoplayChat">Autoplay in chat</string>
+    <string name="LiteOptionsAutoplayGifs">Autoplay GIFs</string>
+    <string name="LiteOptionsAutoplayKeyboard">Autoplay in keyboard</string>
+    <string name="LiteOptionsAutoplayReactions">Autoplay in reactions menu</string>
+    <string name="LiteOptionsAutoplayVideo">Autoplay Videos</string>
+    <string name="LiteOptionsBackground">Background rotation</string>
+    <string name="LiteOptionsBlur">Night theme blur</string>
+    <string name="LiteOptionsCalls">Animations in Calls</string>
+    <string name="LiteOptionsChat">Animations in Chats</string>
+    <string name="LiteOptionsSpoiler">Animated spoiler effect</string>
+    <string name="LiteOptionsTitle">Power saving options</string>
+    <string name="LiteOptionsTopics">Side menu in topics</string>
+    <string name="LitePowerSaver">Save Power on Low Battery</string>
+    <string name="LitePowerSaverInfo">Automatically switch to low power usage when your devices is in Battery Saving Mode.</string>
+    <string name="LitePresetInfo">You can switch to low power mode to increase battery life. Recommended for weak devices.</string>
+    <string name="LitePresetTitle">Power usage</string>
+    <string name="LiteSmoothTransitions">Enable Smooth Transitions</string>
+    <string name="LiteSmoothTransitionsInfo">You can disable animated transitions between different sections of the apps.</string>
     <string name="LiveLocationAlertGroup">Choose for how long people in this chat will see your live location.</string>
     <string name="LiveLocationAlertPrivate">Choose for how long %1$s will see your accurate location.</string>
     <string name="LiveLocationContext">Live Location</string>
@@ -4326,6 +4352,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PopupEnabled">Enabled</string>
     <string name="PopupNotification">Popup Notifications</string>
     <string name="PostingMembers">Posting Members</string>
+    <string name="PowerUsage">Power Usage</string>
     <string name="PremiumMore">More</string>
     <string name="PremiumPreviewAdvancedChatManagement">Advanced Chat Management</string>
     <string name="PremiumPreviewAdvancedChatManagementDescription">Tools to set the default folder, auto-archive and hide new chats from non-contacts.</string>
@@ -5316,8 +5343,11 @@ Slow Mode is enabled. You can't send more than one message at once."</string>
     <string name="SpeakingWithVolume">%1$d%% speaking</string>
     <string name="Speed">Speed</string>
     <string name="SpeedFast">Fast</string>
+    <string name="SpeedHint">Long tap for more speed values.</string>
+    <string name="SpeedMedium">Medium</string>
     <string name="SpeedNormal">Normal</string>
     <string name="SpeedSlow">Slow</string>
+    <string name="SpeedSuperFast">Super Fast</string>
     <string name="SpeedVeryFast">Very fast</string>
     <string name="SpeedVerySlow">Very slow</string>
     <string name="Spoiler">Spoiler</string>
@@ -6816,7 +6846,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">bb170e92eb334935abc9a074273358a9</string>
+    <string name="com.crashlytics.android.build_id">ab25464acaf0465991a25f93624b5323</string>
     <string name="combine_messages_alert_message">"You send messages in a row and this can annoy other users.
 
 Enable the option so that your messages sent in a row within 30 seconds will be combined into one message?"</string>
@@ -6993,6 +7023,8 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_pre_site">https://www.presearch.io/</string>
     <string name="currency_prq">PARSIQ</string>
     <string name="currency_prq_site">https://parsiq.net/en/</string>
+    <string name="currency_punkpanda">PUNKPANDA</string>
+    <string name="currency_punkpanda_site">https://www.punkpandafarm.com/</string>
     <string name="currency_quick">QuickSwap</string>
     <string name="currency_quick_site">https://quickswap.exchange/</string>
     <string name="currency_roya">Royale Finance</string>
@@ -7053,6 +7085,7 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_short_pcnt">PCNT</string>
     <string name="currency_short_pre">PRE</string>
     <string name="currency_short_prq">PRQ</string>
+    <string name="currency_short_punkpanda">PPM</string>
     <string name="currency_short_quick">QUICK</string>
     <string name="currency_short_roya">ROYA</string>
     <string name="currency_short_saito">SAITO</string>
@@ -7060,6 +7093,7 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_short_shiba">SHIB</string>
     <string name="currency_short_shr">SHR</string>
     <string name="currency_short_sig">SIG</string>
+    <string name="currency_short_sinverse">SIN</string>
     <string name="currency_short_skill">SKILL</string>
     <string name="currency_short_tara">TARA</string>
     <string name="currency_short_tomoe">TOMOE</string>
@@ -7080,6 +7114,8 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_shr_site">https://sharering.network/</string>
     <string name="currency_sig">xSigma</string>
     <string name="currency_sig_site">https://xsigma.fi/</string>
+    <string name="currency_sinverse">Sinverse</string>
+    <string name="currency_sinverse_site">https://sinverse.com/</string>
     <string name="currency_skill">CryptoBlades</string>
     <string name="currency_skill_site">https://www.cryptoblades.io/</string>
     <string name="currency_tara">Taraxa</string>
@@ -7319,6 +7355,7 @@ and we will try to find his Telegram account"</string>
     <string name="loading_messages_error">Loading messages error, try again later</string>
     <string name="loading_participants">Loading participants… Received: %d</string>
     <string name="loading_participants_error">Loading participants error, try again later</string>
+    <string name="login_token_help">Scan QR code from another device to log in</string>
     <string name="main_camera_popup_text">Rear camera</string>
     <string name="main_list">Main list</string>
     <string name="management">Management</string>
@@ -7483,6 +7520,8 @@ Add music to the Playlist"</string>
     <string name="neurobots_store_tab_free">Free</string>
     <string name="neurobots_store_tab_my">My</string>
     <string name="neurobots_store_tab_popular">Popular</string>
+    <string name="new_telegram_authorization_rules_alert">From February 18, 2023, new Telegram authorization rules have come into effect, according to which the alternative clients users can receive the SMS code only from the official Telegram client. Please install Telegram app and log into your account there if you need the SMS code, after which you can re-request the code in iMe (it will come in the Telegram service chat).</string>
+    <string name="new_telegram_authorization_rules_info">Please read the *new authorization rules* in Telegram</string>
     <string name="nft_collection_size">Number of NFT: %d</string>
     <string name="nft_preview_copy_token_id">Copy token ID</string>
     <string name="nft_preview_open_contract">Contract address</string>
@@ -7696,6 +7735,8 @@ You need to be in their Telegram contacts to add them back, otherwise they will 
     <string name="settings_revoke_by_default">Delete from another side</string>
     <string name="settings_section_passcode_archive">Passcode in Archive</string>
     <string name="settings_section_passcode_cloud">Passcode in Cloud</string>
+    <string name="settings_speed_mega_fast">Mega fast</string>
+    <string name="settings_speed_super_fast">Super fast</string>
     <string name="settings_tools">Tools</string>
     <string name="settings_tools_base_toolbar">Basic Toolbar</string>
     <string name="settings_tools_bot_help_translate">Translation of greeting in bots</string>
@@ -7845,6 +7886,15 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="staking_programme_level_required_title">Level required</string>
     <string name="staking_programmes_count">Stakings (%d)</string>
     <string name="staking_programmes_empty_state_description">There are no available staking programs.</string>
+    <string name="staking_programmes_filter_active">ACTIVE</string>
+    <string name="staking_programmes_filter_archive">ARCHIVE</string>
+    <string name="staking_programmes_filter_completed">EXPIRED</string>
+    <string name="staking_programmes_filters_info_description">"Active - staking programs in which you participate and in which the end date has not yet arrived.
+
+Expired - staking programs that have already reached their end date, but still have your tokens left to withdraw
+
+Archive - expired staking programs in which you have participated and in which there are no tokens left for withdrawal"</string>
+    <string name="staking_programmes_filters_info_title">Staking filters</string>
     <string name="staking_replenishment_already_finished">Staking program is already expired</string>
     <string name="staking_replenishment_confirm_description">Are you sure you want to deposit %1$s %2$s?</string>
     <string name="staking_replenishment_confirm_title">Deposit Confirmation</string>

@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static $default$setOperatingRate(Lcom/google/android/exoplayer2/Renderer;F)V
+.method public static $default$setPlaybackSpeed(Lcom/google/android/exoplayer2/Renderer;FF)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {

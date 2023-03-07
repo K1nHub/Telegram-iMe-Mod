@@ -21,7 +21,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1017
+    .line 1033
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
 .method synthetic constructor <init>(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$1;)V
     .locals 0
 
-    .line 1017
+    .line 1033
     invoke-direct {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV16;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public getCodecCount()I
     .locals 1
 
-    .line 1021
+    .line 1037
     invoke-static {}, Landroid/media/MediaCodecList;->getCodecCount()I
 
     move-result v0
@@ -52,7 +52,7 @@
 .method public getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
     .locals 0
 
-    .line 1026
+    .line 1042
     invoke-static {p1}, Landroid/media/MediaCodecList;->getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
 
     move-result-object p1
@@ -73,7 +73,7 @@
 
     const-string p3, "secure-playback"
 
-    .line 1039
+    .line 1055
     invoke-virtual {p3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -82,7 +82,7 @@
 
     const-string p1, "video/avc"
 
-    .line 1040
+    .line 1056
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1

@@ -30,7 +30,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 94
+    .line 102
     new-instance v0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo$1;-><init>()V
@@ -43,10 +43,10 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    .line 49
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 51
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object v0
@@ -59,14 +59,14 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->rawMetadata:[B
 
-    .line 51
+    .line 52
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->title:Ljava/lang/String;
 
-    .line 52
+    .line 53
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object p1
@@ -79,16 +79,16 @@
 .method public constructor <init>([BLjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 43
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
+    .line 45
     iput-object p1, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->rawMetadata:[B
 
-    .line 45
+    .line 46
     iput-object p2, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->title:Ljava/lang/String;
 
-    .line 46
+    .line 47
     iput-object p3, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->url:Ljava/lang/String;
 
     return-void
@@ -116,7 +116,7 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 60
+    .line 68
     const-class v0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -127,11 +127,11 @@
 
     goto :goto_0
 
-    .line 63
+    .line 71
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;
 
-    .line 65
+    .line 73
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->rawMetadata:[B
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->rawMetadata:[B
@@ -172,7 +172,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 71
+    .line 79
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->rawMetadata:[B
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([B)I
@@ -182,6 +182,21 @@
     return v0
 .end method
 
+.method public populateMediaMetadata(Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+    .locals 1
+
+    .line 58
+    iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->title:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    .line 59
+    invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/MediaMetadata$Builder;->setTitle(Ljava/lang/CharSequence;)Lcom/google/android/exoplayer2/MediaMetadata$Builder;
+
+    :cond_0
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 3
 
@@ -189,7 +204,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 76
+    .line 84
     iget-object v1, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->title:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -206,7 +221,7 @@
 
     array-length v1, v1
 
-    .line 77
+    .line 85
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -217,7 +232,7 @@
 
     const-string v1, "ICY: title=\"%s\", url=\"%s\", rawMetadata.length=\"%s\""
 
-    .line 76
+    .line 84
     invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -228,17 +243,17 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 84
+    .line 92
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->rawMetadata:[B
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 85
+    .line 93
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->title:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 86
+    .line 94
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;->url:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V

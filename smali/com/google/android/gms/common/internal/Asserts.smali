@@ -193,12 +193,6 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
-
     if-eqz p0, :cond_0
 
     return-void
@@ -217,12 +211,6 @@
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
-    .end annotation
-
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
     .end annotation
 
     if-eqz p0, :cond_0

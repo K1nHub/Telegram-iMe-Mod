@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "DefaultAudioSink.java"
 
+# interfaces
+.implements Lcom/google/android/exoplayer2/audio/AudioProcessorChain;
+
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -13,16 +16,5 @@
     name = "AudioProcessorChain"
 .end annotation
 
-
-# virtual methods
-.method public abstract applyPlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;)Lcom/google/android/exoplayer2/PlaybackParameters;
-.end method
-
-.method public abstract getAudioProcessors()[Lcom/google/android/exoplayer2/audio/AudioProcessor;
-.end method
-
-.method public abstract getMediaDuration(J)J
-.end method
-
-.method public abstract getSkippedOutputFrameCount()J
-.end method
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation

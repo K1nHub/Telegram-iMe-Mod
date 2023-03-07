@@ -40,18 +40,18 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/offline/DownloadService;IJ)V
     .locals 0
 
-    .line 865
+    .line 901
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Lcom/google/android/exoplayer2/offline/DownloadService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 866
+    .line 902
     iput p2, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->notificationId:I
 
-    .line 867
+    .line 903
     iput-wide p3, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->updateInterval:J
 
-    .line 868
+    .line 904
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -68,10 +68,11 @@
 .method private update()V
     .locals 4
 
-    .line 894
+    .line 930
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Lcom/google/android/exoplayer2/offline/DownloadService;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/offline/DownloadService;->access$200(Lcom/google/android/exoplayer2/offline/DownloadService;)Lcom/google/android/exoplayer2/offline/DownloadManager;
+    .line 931
+    invoke-static {v0}, Lcom/google/android/exoplayer2/offline/DownloadService;->access$200(Lcom/google/android/exoplayer2/offline/DownloadService;)Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
     move-result-object v0
 
@@ -79,41 +80,79 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/exoplayer2/offline/DownloadManager;
+    check-cast v0, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadManager;->getCurrentDownloads()Ljava/util/List;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;->access$100(Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;)Lcom/google/android/exoplayer2/offline/DownloadManager;
 
     move-result-object v0
 
-    .line 895
+    .line 932
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadManager;->getCurrentDownloads()Ljava/util/List;
+
+    move-result-object v1
+
+    .line 933
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadManager;->getNotMetRequirements()I
+
+    move-result v0
+
+    .line 934
+    iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Lcom/google/android/exoplayer2/offline/DownloadService;
+
+    invoke-virtual {v2, v1, v0}, Lcom/google/android/exoplayer2/offline/DownloadService;->getForegroundNotification(Ljava/util/List;I)Landroid/app/Notification;
+
+    move-result-object v0
+
+    .line 935
+    iget-boolean v1, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
+
+    if-nez v1, :cond_0
+
+    .line 936
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Lcom/google/android/exoplayer2/offline/DownloadService;
 
     iget v2, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->notificationId:I
-
-    invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/offline/DownloadService;->getForegroundNotification(Ljava/util/List;)Landroid/app/Notification;
-
-    move-result-object v0
 
     invoke-virtual {v1, v2, v0}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
 
     const/4 v0, 0x1
 
-    .line 896
+    .line 937
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
 
-    .line 897
+    goto :goto_0
+
+    .line 941
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->this$0:Lcom/google/android/exoplayer2/offline/DownloadService;
+
+    const-string v2, "notification"
+
+    invoke-virtual {v1, v2}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/NotificationManager;
+
+    iget v2, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->notificationId:I
+
+    .line 942
+    invoke-virtual {v1, v2, v0}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    .line 944
+    :goto_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->periodicUpdatesStarted:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 898
+    .line 945
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->handler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 899
+    .line 946
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->handler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater$$ExternalSyntheticLambda0;
@@ -124,7 +163,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -133,12 +172,12 @@
 .method public invalidate()V
     .locals 1
 
-    .line 888
+    .line 924
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
 
     if-eqz v0, :cond_0
 
-    .line 889
+    .line 925
     invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->update()V
 
     :cond_0
@@ -148,12 +187,12 @@
 .method public showNotificationIfNotAlready()V
     .locals 1
 
-    .line 882
+    .line 918
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->notificationDisplayed:Z
 
     if-nez v0, :cond_0
 
-    .line 883
+    .line 919
     invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->update()V
 
     :cond_0
@@ -165,10 +204,10 @@
 
     const/4 v0, 0x1
 
-    .line 872
+    .line 908
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->periodicUpdatesStarted:Z
 
-    .line 873
+    .line 909
     invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->update()V
 
     return-void
@@ -179,10 +218,10 @@
 
     const/4 v0, 0x0
 
-    .line 877
+    .line 913
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->periodicUpdatesStarted:Z
 
-    .line 878
+    .line 914
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->handler:Landroid/os/Handler;
 
     const/4 v1, 0x0

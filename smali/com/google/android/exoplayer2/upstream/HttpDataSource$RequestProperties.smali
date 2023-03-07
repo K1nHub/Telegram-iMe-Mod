@@ -42,10 +42,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 94
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
+    .line 75
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -64,18 +64,18 @@
 
     const/4 v0, 0x0
 
-    .line 147
+    .line 125
     :try_start_0
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
 
-    .line 148
+    .line 126
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestProperties:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 149
+    .line 127
     monitor-exit p0
 
     return-void
@@ -104,23 +104,23 @@
 
     const/4 v0, 0x0
 
-    .line 128
+    .line 108
     :try_start_0
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
 
-    .line 129
+    .line 109
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestProperties:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 130
+    .line 110
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestProperties:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 131
+    .line 111
     monitor-exit p0
 
     return-void
@@ -147,13 +147,13 @@
 
     monitor-enter p0
 
-    .line 157
+    .line 135
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
 
     if-nez v0, :cond_0
 
-    .line 158
+    .line 136
     new-instance v0, Ljava/util/HashMap;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestProperties:Ljava/util/Map;
@@ -166,7 +166,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
 
-    .line 160
+    .line 138
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
     :try_end_0
@@ -191,18 +191,18 @@
 
     const/4 v0, 0x0
 
-    .line 139
+    .line 119
     :try_start_0
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
 
-    .line 140
+    .line 120
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestProperties:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 141
+    .line 121
     monitor-exit p0
 
     return-void
@@ -222,18 +222,18 @@
 
     const/4 v0, 0x0
 
-    .line 106
+    .line 86
     :try_start_0
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
 
-    .line 107
+    .line 87
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestProperties:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 108
+    .line 88
     monitor-exit p0
 
     return-void
@@ -262,18 +262,18 @@
 
     const/4 v0, 0x0
 
-    .line 118
+    .line 98
     :try_start_0
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestPropertiesSnapshot:Ljava/util/Map;
 
-    .line 119
+    .line 99
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->requestProperties:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 120
+    .line 100
     monitor-exit p0
 
     return-void

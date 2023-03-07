@@ -30,22 +30,22 @@
 .method public constructor <init>(II[JIZ)V
     .locals 0
 
-    .line 513
+    .line 612
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 514
+    .line 613
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;->dimensions:I
 
-    .line 515
+    .line 614
     iput p2, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;->entries:I
 
-    .line 516
+    .line 615
     iput-object p3, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;->lengthMap:[J
 
-    .line 517
+    .line 616
     iput p4, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;->lookupType:I
 
-    .line 518
+    .line 617
     iput-boolean p5, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;->isOrdered:Z
 
     return-void

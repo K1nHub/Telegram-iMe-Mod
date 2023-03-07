@@ -44,7 +44,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 418
+    .line 420
     new-instance v6, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     const/4 v1, -0x3
@@ -65,16 +65,16 @@
 .method private constructor <init>(IJJ)V
     .locals 0
 
-    .line 440
+    .line 442
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 441
+    .line 443
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->type:I
 
-    .line 442
+    .line 444
     iput-wide p2, p0, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->timestampToUpdate:J
 
-    .line 443
+    .line 445
     iput-wide p4, p0, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->bytePositionToUpdate:J
 
     return-void
@@ -83,7 +83,7 @@
 .method static synthetic access$500(Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;)I
     .locals 0
 
-    .line 397
+    .line 398
     iget p0, p0, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->type:I
 
     return p0
@@ -92,7 +92,7 @@
 .method static synthetic access$600(Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;)J
     .locals 2
 
-    .line 397
+    .line 398
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->timestampToUpdate:J
 
     return-wide v0
@@ -101,7 +101,7 @@
 .method static synthetic access$700(Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;)J
     .locals 2
 
-    .line 397
+    .line 398
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;->bytePositionToUpdate:J
 
     return-wide v0
@@ -110,7 +110,7 @@
 .method public static overestimatedResult(JJ)Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
     .locals 7
 
-    .line 453
+    .line 455
     new-instance v6, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     const/4 v1, -0x1
@@ -129,7 +129,7 @@
 .method public static targetFoundResult(J)Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
     .locals 7
 
-    .line 473
+    .line 475
     new-instance v6, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     const/4 v1, 0x0
@@ -148,7 +148,7 @@
 .method public static underestimatedResult(JJ)Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
     .locals 7
 
-    .line 464
+    .line 466
     new-instance v6, Lcom/google/android/exoplayer2/extractor/BinarySearchSeeker$TimestampSearchResult;
 
     const/4 v1, -0x2

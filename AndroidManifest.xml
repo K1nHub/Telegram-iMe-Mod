@@ -17,6 +17,9 @@
         <package android:name="com.whatsapp"/>
         <package android:name="com.whatsapp.w4b"/>
         <package android:name="com.viber.voip"/>
+        <package android:name="org.telegram.messenger"/>
+        <package android:name="org.telegram.messenger.web"/>
+        <package android:name="org.telegram.messenger.beta"/>
         <package android:name="com.google.android.apps.maps"/>
         <intent>
             <action android:name="android.intent.action.VIEW"/>
@@ -34,6 +37,7 @@
     <uses-feature android:name="android.hardware.microphone" android:required="false"/>
     <uses-feature android:name="android.hardware.camera" android:required="false"/>
     <uses-feature android:name="android.hardware.camera2" android:required="false"/>
+    <uses-feature android:name="android.hardware.sensor.proximity" android:required="false"/>
     <uses-permission android:name="android.permission.READ_CLIPBOARD"/>
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -655,10 +659,5 @@
             <meta-data android:name="com.google.android.play.core.assetpacks.versionCode" android:value="11002"/>
         </service>
         <service android:enabled="false" android:exported="false" android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"/>
-        <meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="base"/>
-        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
-        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_STANDALONE_APK"/>
-        <meta-data android:name="com.android.vending.splits" android:value="@xml/splits0"/>
-        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
     </application>
 </manifest>

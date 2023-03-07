@@ -24,13 +24,13 @@
 .method constructor <init>(II)V
     .locals 0
 
-    .line 740
+    .line 876
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 741
+    .line 877
     iput p1, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder$CellResolution;->columns:I
 
-    .line 742
+    .line 878
     iput p2, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder$CellResolution;->rows:I
 
     return-void

@@ -69,7 +69,7 @@
 
 .field private final channelNameResourceId:I
 
-.field private downloadManager:Lcom/google/android/exoplayer2/offline/DownloadManager;
+.field private downloadManagerHelper:Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
 .field private final foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
@@ -88,7 +88,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 174
+    .line 188
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -103,7 +103,7 @@
 
     const-wide/16 v0, 0x3e8
 
-    .line 203
+    .line 216
     invoke-direct {p0, p1, v0, v1}, Lcom/google/android/exoplayer2/offline/DownloadService;-><init>(IJ)V
 
     return-void
@@ -124,7 +124,7 @@
 
     move-wide v2, p2
 
-    .line 217
+    .line 230
     invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/offline/DownloadService;-><init>(IJLjava/lang/String;II)V
 
     return-void
@@ -147,7 +147,7 @@
 
     move v5, p5
 
-    .line 232
+    .line 247
     invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/offline/DownloadService;-><init>(IJLjava/lang/String;II)V
 
     return-void
@@ -156,30 +156,30 @@
 .method protected constructor <init>(IJLjava/lang/String;II)V
     .locals 1
 
-    .line 267
+    .line 282
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
     if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 269
+    .line 284
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
-    .line 270
+    .line 285
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelId:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 271
+    .line 286
     iput p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelNameResourceId:I
 
-    .line 272
+    .line 287
     iput p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelDescriptionResourceId:I
 
     goto :goto_0
 
-    .line 274
+    .line 289
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
@@ -187,24 +187,24 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
-    .line 277
+    .line 292
     iput-object p4, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelId:Ljava/lang/String;
 
-    .line 278
+    .line 293
     iput p5, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelNameResourceId:I
 
-    .line 279
+    .line 294
     iput p6, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelDescriptionResourceId:I
 
     :goto_0
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/google/android/exoplayer2/offline/DownloadService;)Lcom/google/android/exoplayer2/offline/DownloadManager;
+.method static synthetic access$200(Lcom/google/android/exoplayer2/offline/DownloadService;)Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
     .locals 0
 
-    .line 40
-    iget-object p0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/exoplayer2/offline/DownloadManager;
+    .line 52
+    iget-object p0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelper:Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
     return-object p0
 .end method
@@ -212,7 +212,7 @@
 .method static synthetic access$300(Lcom/google/android/exoplayer2/offline/DownloadService;Ljava/util/List;)V
     .locals 0
 
-    .line 40
+    .line 52
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/offline/DownloadService;->notifyDownloads(Ljava/util/List;)V
 
     return-void
@@ -221,7 +221,7 @@
 .method static synthetic access$400(Lcom/google/android/exoplayer2/offline/DownloadService;Lcom/google/android/exoplayer2/offline/Download;)V
     .locals 0
 
-    .line 40
+    .line 52
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/offline/DownloadService;->notifyDownloadChanged(Lcom/google/android/exoplayer2/offline/Download;)V
 
     return-void
@@ -230,7 +230,7 @@
 .method static synthetic access$500(I)Z
     .locals 0
 
-    .line 40
+    .line 52
     invoke-static {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->needsStartedService(I)Z
 
     move-result p0
@@ -238,11 +238,11 @@
     return p0
 .end method
 
-.method static synthetic access$600(Lcom/google/android/exoplayer2/offline/DownloadService;Lcom/google/android/exoplayer2/offline/Download;)V
+.method static synthetic access$600(Lcom/google/android/exoplayer2/offline/DownloadService;)V
     .locals 0
 
-    .line 40
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/offline/DownloadService;->notifyDownloadRemoved(Lcom/google/android/exoplayer2/offline/Download;)V
+    .line 52
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->notifyDownloadRemoved()V
 
     return-void
 .end method
@@ -250,8 +250,8 @@
 .method static synthetic access$700(Lcom/google/android/exoplayer2/offline/DownloadService;)V
     .locals 0
 
-    .line 40
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->stop()V
+    .line 52
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->onIdle()V
 
     return-void
 .end method
@@ -259,7 +259,7 @@
 .method static synthetic access$800(Lcom/google/android/exoplayer2/offline/DownloadService;)Z
     .locals 0
 
-    .line 40
+    .line 52
     invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped()Z
 
     move-result p0
@@ -270,7 +270,7 @@
 .method static synthetic access$900(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroid/content/Intent;
     .locals 0
 
-    .line 40
+    .line 52
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p0
@@ -296,21 +296,21 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.ADD_DOWNLOAD"
 
-    .line 317
+    .line 332
     invoke-static {p0, p1, v0, p4}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p0
 
     const-string p1, "download_request"
 
-    .line 318
+    .line 333
     invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     move-result-object p0
 
     const-string p1, "stop_reason"
 
-    .line 319
+    .line 334
     invoke-virtual {p0, p1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object p0
@@ -336,7 +336,7 @@
 
     const/4 v0, 0x0
 
-    .line 297
+    .line 312
     invoke-static {p0, p1, p2, v0, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildAddDownloadIntent(Landroid/content/Context;Ljava/lang/Class;Lcom/google/android/exoplayer2/offline/DownloadRequest;IZ)Landroid/content/Intent;
 
     move-result-object p0
@@ -360,7 +360,7 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.PAUSE_DOWNLOADS"
 
-    .line 373
+    .line 388
     invoke-static {p0, p1, v0, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p0
@@ -384,7 +384,7 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.REMOVE_ALL_DOWNLOADS"
 
-    .line 347
+    .line 362
     invoke-static {p0, p1, v0, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p0
@@ -410,14 +410,14 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.REMOVE_DOWNLOAD"
 
-    .line 333
+    .line 348
     invoke-static {p0, p1, v0, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p0
 
     const-string p1, "content_id"
 
-    .line 334
+    .line 349
     invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p0
@@ -441,7 +441,7 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.RESUME_DOWNLOADS"
 
-    .line 360
+    .line 375
     invoke-static {p0, p1, v0, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p0
@@ -467,14 +467,14 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.SET_REQUIREMENTS"
 
-    .line 413
+    .line 428
     invoke-static {p0, p1, v0, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p0
 
     const-string p1, "requirements"
 
-    .line 414
+    .line 429
     invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     move-result-object p0
@@ -500,26 +500,37 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.SET_STOP_REASON"
 
-    .line 393
+    .line 408
     invoke-static {p0, p1, v0, p4}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p0
 
     const-string p1, "content_id"
 
-    .line 394
+    .line 409
     invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p0
 
     const-string p1, "stop_reason"
 
-    .line 395
+    .line 410
     invoke-virtual {p0, p1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public static clearDownloadManagerHelpers()V
+    .locals 1
+
+    .line 593
+    sget-object v0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelpers:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    return-void
 .end method
 
 .method private static getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroid/content/Intent;
@@ -538,7 +549,7 @@
         }
     .end annotation
 
-    .line 845
+    .line 881
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p0, p1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
@@ -566,7 +577,7 @@
         }
     .end annotation
 
-    .line 840
+    .line 876
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p0
@@ -583,7 +594,7 @@
 .method private isStopped()Z
     .locals 1
 
-    .line 817
+    .line 842
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
 
     return v0
@@ -622,15 +633,12 @@
 .method private notifyDownloadChanged(Lcom/google/android/exoplayer2/offline/Download;)V
     .locals 1
 
-    .line 792
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/offline/DownloadService;->onDownloadChanged(Lcom/google/android/exoplayer2/offline/Download;)V
-
-    .line 793
+    .line 824
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
     if-eqz v0, :cond_1
 
-    .line 794
+    .line 825
     iget p1, p1, Lcom/google/android/exoplayer2/offline/Download;->state:I
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/offline/DownloadService;->needsStartedService(I)Z
@@ -639,14 +647,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 795
+    .line 826
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->startPeriodicUpdates()V
 
     goto :goto_0
 
-    .line 797
+    .line 828
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
@@ -657,19 +665,16 @@
     return-void
 .end method
 
-.method private notifyDownloadRemoved(Lcom/google/android/exoplayer2/offline/Download;)V
-    .locals 0
+.method private notifyDownloadRemoved()V
+    .locals 1
 
-    .line 809
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/offline/DownloadService;->onDownloadRemoved(Lcom/google/android/exoplayer2/offline/Download;)V
+    .line 835
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
-    .line 810
-    iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
+    if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_0
-
-    .line 811
-    invoke-virtual {p1}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->invalidate()V
+    .line 836
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->invalidate()V
 
     :cond_0
     return-void
@@ -686,14 +691,14 @@
         }
     .end annotation
 
-    .line 775
+    .line 808
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 776
+    .line 809
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -701,7 +706,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 777
+    .line 810
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -716,7 +721,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 778
+    .line 811
     iget-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->startPeriodicUpdates()V
@@ -730,6 +735,75 @@
 
     :cond_1
     :goto_1
+    return-void
+.end method
+
+.method private onIdle()V
+    .locals 2
+
+    .line 846
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
+
+    if-eqz v0, :cond_0
+
+    .line 849
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->stopPeriodicUpdates()V
+
+    .line 852
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelper:Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;->updateScheduler()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    return-void
+
+    .line 860
+    :cond_1
+    sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
+
+    const/16 v1, 0x1c
+
+    if-ge v0, v1, :cond_2
+
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->taskRemoved:Z
+
+    if-eqz v0, :cond_2
+
+    .line 861
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
+
+    const/4 v0, 0x1
+
+    .line 862
+    iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
+
+    goto :goto_0
+
+    .line 864
+    :cond_2
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
+
+    iget v1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->lastStartId:I
+
+    invoke-virtual {p0, v1}, Landroid/app/Service;->stopSelfResult(I)Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
+
+    :goto_0
     return-void
 .end method
 
@@ -748,12 +822,12 @@
         }
     .end annotation
 
-    .line 450
+    .line 465
     invoke-static {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildAddDownloadIntent(Landroid/content/Context;Ljava/lang/Class;Lcom/google/android/exoplayer2/offline/DownloadRequest;IZ)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 451
+    .line 466
     invoke-static {p0, p1, p4}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -774,12 +848,12 @@
         }
     .end annotation
 
-    .line 430
+    .line 445
     invoke-static {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildAddDownloadIntent(Landroid/content/Context;Ljava/lang/Class;Lcom/google/android/exoplayer2/offline/DownloadRequest;Z)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 431
+    .line 446
     invoke-static {p0, p1, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -798,12 +872,12 @@
         }
     .end annotation
 
-    .line 503
+    .line 518
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildPauseDownloadsIntent(Landroid/content/Context;Ljava/lang/Class;Z)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 504
+    .line 519
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -822,12 +896,12 @@
         }
     .end annotation
 
-    .line 477
+    .line 492
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildRemoveAllDownloadsIntent(Landroid/content/Context;Ljava/lang/Class;Z)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 478
+    .line 493
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -848,12 +922,12 @@
         }
     .end annotation
 
-    .line 464
+    .line 479
     invoke-static {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildRemoveDownloadIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 465
+    .line 480
     invoke-static {p0, p1, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -872,12 +946,12 @@
         }
     .end annotation
 
-    .line 490
+    .line 505
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildResumeDownloadsIntent(Landroid/content/Context;Ljava/lang/Class;Z)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 491
+    .line 506
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -898,12 +972,12 @@
         }
     .end annotation
 
-    .line 541
+    .line 556
     invoke-static {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildSetRequirementsIntent(Landroid/content/Context;Ljava/lang/Class;Lcom/google/android/exoplayer2/scheduler/Requirements;Z)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 542
+    .line 557
     invoke-static {p0, p1, p3}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -924,12 +998,12 @@
         }
     .end annotation
 
-    .line 523
+    .line 538
     invoke-static {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/offline/DownloadService;->buildSetStopReasonIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;IZ)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 524
+    .line 539
     invoke-static {p0, p1, p4}, Lcom/google/android/exoplayer2/offline/DownloadService;->startService(Landroid/content/Context;Landroid/content/Intent;Z)V
 
     return-void
@@ -950,7 +1024,7 @@
 
     const-string v0, "com.google.android.exoplayer.downloadService.action.INIT"
 
-    .line 553
+    .line 568
     invoke-static {p0, p1, v0}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object p1
@@ -977,12 +1051,12 @@
 
     const/4 v1, 0x1
 
-    .line 566
+    .line 581
     invoke-static {p0, p1, v0, v1}, Lcom/google/android/exoplayer2/offline/DownloadService;->getIntent(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object p1
 
-    .line 567
+    .line 582
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->startForegroundService(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
 
     return-void
@@ -993,65 +1067,14 @@
 
     if-eqz p2, :cond_0
 
-    .line 850
+    .line 886
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->startForegroundService(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
 
     goto :goto_0
 
-    .line 852
+    .line 888
     :cond_0
     invoke-virtual {p0, p1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    :goto_0
-    return-void
-.end method
-
-.method private stop()V
-    .locals 2
-
-    .line 821
-    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
-
-    if-eqz v0, :cond_0
-
-    .line 822
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->stopPeriodicUpdates()V
-
-    .line 824
-    :cond_0
-    sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
-
-    const/16 v1, 0x1c
-
-    if-ge v0, v1, :cond_1
-
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->taskRemoved:Z
-
-    if-eqz v0, :cond_1
-
-    .line 825
-    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
-
-    const/4 v0, 0x1
-
-    .line 826
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
-
-    goto :goto_0
-
-    .line 828
-    :cond_1
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
-
-    iget v1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->lastStartId:I
-
-    invoke-virtual {p0, v1}, Landroid/app/Service;->stopSelfResult(I)Z
-
-    move-result v1
-
-    or-int/2addr v0, v1
-
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
 
     :goto_0
     return-void
@@ -1062,13 +1085,13 @@
 .method protected abstract getDownloadManager()Lcom/google/android/exoplayer2/offline/DownloadManager;
 .end method
 
-.method protected abstract getForegroundNotification(Ljava/util/List;)Landroid/app/Notification;
+.method protected abstract getForegroundNotification(Ljava/util/List;I)Landroid/app/Notification;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/offline/Download;",
-            ">;)",
+            ">;I)",
             "Landroid/app/Notification;"
         }
     .end annotation
@@ -1080,7 +1103,7 @@
 .method protected final invalidateForegroundNotification()V
     .locals 2
 
-    .line 743
+    .line 797
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
     if-eqz v0, :cond_0
@@ -1089,7 +1112,7 @@
 
     if-nez v1, :cond_0
 
-    .line 744
+    .line 798
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->invalidate()V
 
     :cond_0
@@ -1099,7 +1122,7 @@
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 0
 
-    .line 703
+    .line 731
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -1110,12 +1133,12 @@
 .method public onCreate()V
     .locals 11
 
-    .line 572
+    .line 598
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelId:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 573
+    .line 599
     iget v1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelNameResourceId:I
 
     iget v2, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->channelDescriptionResourceId:I
@@ -1124,13 +1147,13 @@
 
     invoke-static {p0, v0, v1, v2, v3}, Lcom/google/android/exoplayer2/util/NotificationUtil;->createNotificationChannel(Landroid/content/Context;Ljava/lang/String;III)V
 
-    .line 580
+    .line 606
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 581
+    .line 607
     sget-object v1, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelpers:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1139,59 +1162,70 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_4
 
-    .line 583
+    .line 609
     iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
-    if-eqz v2, :cond_1
+    const/4 v3, 0x1
 
-    const/4 v2, 0x1
+    const/4 v4, 0x0
+
+    if-eqz v2, :cond_1
 
     const/4 v7, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
-
     const/4 v7, 0x0
 
+    .line 611
     :goto_0
-    if-eqz v7, :cond_2
+    sget v2, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
-    .line 584
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->getScheduler()Lcom/google/android/exoplayer2/scheduler/Scheduler;
+    const/16 v5, 0x1f
 
-    move-result-object v2
+    if-ge v2, v5, :cond_2
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_1
-    move-object v8, v2
+    if-eqz v7, :cond_3
 
-    .line 585
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->getDownloadManager()Lcom/google/android/exoplayer2/offline/DownloadManager;
+    if-eqz v3, :cond_3
+
+    .line 614
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->getScheduler()Lcom/google/android/exoplayer2/scheduler/Scheduler;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/exoplayer2/offline/DownloadManager;
+    goto :goto_2
 
-    .line 586
-    invoke-virtual {v2}, Lcom/google/android/exoplayer2/offline/DownloadManager;->resumeDownloads()V
+    :cond_3
+    const/4 v2, 0x0
 
-    .line 587
+    :goto_2
+    move-object v8, v2
+
+    .line 615
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->getDownloadManager()Lcom/google/android/exoplayer2/offline/DownloadManager;
+
+    move-result-object v6
+
+    .line 616
+    invoke-virtual {v6}, Lcom/google/android/exoplayer2/offline/DownloadManager;->resumeDownloads()V
+
+    .line 617
     new-instance v2, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
-    .line 589
+    .line 619
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v5
-
-    iget-object v6, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/exoplayer2/offline/DownloadManager;
 
     const/4 v10, 0x0
 
@@ -1201,47 +1235,29 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/offline/DownloadManager;ZLcom/google/android/exoplayer2/scheduler/Scheduler;Ljava/lang/Class;Lcom/google/android/exoplayer2/offline/DownloadService$1;)V
 
-    .line 590
+    .line 620
     invoke-virtual {v1, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2
+    .line 622
+    :cond_4
+    iput-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelper:Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
-    .line 592
-    :cond_3
-    invoke-static {v2}, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;->access$100(Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;)Lcom/google/android/exoplayer2/offline/DownloadManager;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/exoplayer2/offline/DownloadManager;
-
-    .line 594
-    :goto_2
+    .line 623
     invoke-virtual {v2, p0}, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;->attachService(Lcom/google/android/exoplayer2/offline/DownloadService;)V
 
     return-void
 .end method
 
 .method public onDestroy()V
-    .locals 2
+    .locals 1
 
     const/4 v0, 0x1
 
-    .line 688
+    .line 718
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isDestroyed:Z
 
-    .line 689
-    sget-object v0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelpers:Ljava/util/HashMap;
-
-    .line 690
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
+    .line 719
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelper:Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1249,46 +1265,29 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
-    .line 691
     invoke-virtual {v0, p0}, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;->detachService(Lcom/google/android/exoplayer2/offline/DownloadService;)V
 
-    .line 692
+    .line 720
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->foregroundNotificationUpdater:Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;
 
     if-eqz v0, :cond_0
 
-    .line 693
+    .line 721
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->stopPeriodicUpdates()V
 
     :cond_0
     return-void
 .end method
 
-.method protected onDownloadChanged(Lcom/google/android/exoplayer2/offline/Download;)V
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    return-void
-.end method
-
-.method protected onDownloadRemoved(Lcom/google/android/exoplayer2/offline/Download;)V
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    return-void
-.end method
-
 .method public onStartCommand(Landroid/content/Intent;II)I
     .locals 7
 
-    .line 599
+    .line 628
     iput p3, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->lastStartId:I
 
     const/4 p2, 0x0
 
-    .line 600
+    .line 629
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->taskRemoved:Z
 
     const-string p3, "com.google.android.exoplayer.downloadService.action.RESTART"
@@ -1299,24 +1298,24 @@
 
     if-eqz p1, :cond_2
 
-    .line 604
+    .line 633
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
     const-string v2, "content_id"
 
-    .line 605
+    .line 634
     invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 606
+    .line 635
     iget-boolean v3, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->startedInForeground:Z
 
     const-string v4, "foreground"
 
-    .line 607
+    .line 636
     invoke-virtual {p1, v4, p2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v4
@@ -1357,19 +1356,24 @@
 
     move-object v0, v3
 
-    .line 613
+    .line 642
     :cond_3
-    iget-object v4, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManager:Lcom/google/android/exoplayer2/offline/DownloadManager;
+    iget-object v4, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->downloadManagerHelper:Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
 
+    .line 643
     invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lcom/google/android/exoplayer2/offline/DownloadManager;
+    check-cast v4, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;
+
+    invoke-static {v4}, Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;->access$100(Lcom/google/android/exoplayer2/offline/DownloadService$DownloadManagerHelper;)Lcom/google/android/exoplayer2/offline/DownloadManager;
+
+    move-result-object v4
 
     const/4 v5, -0x1
 
-    .line 614
+    .line 644
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v6
@@ -1523,7 +1527,7 @@
 
     packed-switch v5, :pswitch_data_0
 
-    .line 665
+    .line 695
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1547,18 +1551,18 @@
 
     const-string p1, "Ignored REMOVE_DOWNLOAD: Missing content_id extra"
 
-    .line 632
+    .line 662
     invoke-static {v3, p1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_4
 
-    .line 634
+    .line 664
     :cond_d
     invoke-virtual {v4, v2}, Lcom/google/android/exoplayer2/offline/DownloadManager;->removeDownload(Ljava/lang/String;)V
 
     goto :goto_4
 
-    .line 647
+    .line 677
     :pswitch_1
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1574,29 +1578,29 @@
 
     const-string p1, "Ignored SET_STOP_REASON: Missing stop_reason extra"
 
-    .line 648
+    .line 678
     invoke-static {v3, p1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_4
 
-    .line 650
+    .line 680
     :cond_e
     invoke-virtual {p1, p3, p2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result p1
 
-    .line 651
+    .line 681
     invoke-virtual {v4, v2, p1}, Lcom/google/android/exoplayer2/offline/DownloadManager;->setStopReason(Ljava/lang/String;I)V
 
     goto :goto_4
 
-    .line 644
+    .line 674
     :pswitch_2
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/offline/DownloadManager;->pauseDownloads()V
 
     goto :goto_4
 
-    .line 657
+    .line 687
     :pswitch_3
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1616,30 +1620,30 @@
 
     const-string p1, "Ignored SET_REQUIREMENTS: Missing requirements extra"
 
-    .line 659
+    .line 689
     invoke-static {v3, p1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_4
 
-    .line 661
+    .line 691
     :cond_f
     invoke-virtual {v4, p1}, Lcom/google/android/exoplayer2/offline/DownloadManager;->setRequirements(Lcom/google/android/exoplayer2/scheduler/Requirements;)V
 
     goto :goto_4
 
-    .line 638
+    .line 668
     :pswitch_4
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/offline/DownloadManager;->removeAllDownloads()V
 
     goto :goto_4
 
-    .line 641
+    .line 671
     :pswitch_5
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/offline/DownloadManager;->resumeDownloads()V
 
     goto :goto_4
 
-    .line 622
+    .line 652
     :pswitch_6
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1659,21 +1663,21 @@
 
     const-string p1, "Ignored ADD_DOWNLOAD: Missing download_request extra"
 
-    .line 624
+    .line 654
     invoke-static {v3, p1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_4
 
-    .line 626
+    .line 656
     :cond_10
     invoke-virtual {p1, p3, p2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result p1
 
-    .line 627
+    .line 657
     invoke-virtual {v4, v0, p1}, Lcom/google/android/exoplayer2/offline/DownloadManager;->addDownload(Lcom/google/android/exoplayer2/offline/DownloadRequest;I)V
 
-    .line 669
+    .line 699
     :goto_4
     :pswitch_7
     sget p1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
@@ -1690,22 +1694,22 @@
 
     if-eqz p1, :cond_11
 
-    .line 671
+    .line 701
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/offline/DownloadService$ForegroundNotificationUpdater;->showNotificationIfNotAlready()V
 
-    .line 674
+    .line 704
     :cond_11
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->isStopped:Z
 
-    .line 675
+    .line 705
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/offline/DownloadManager;->isIdle()Z
 
     move-result p1
 
     if-eqz p1, :cond_12
 
-    .line 676
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->stop()V
+    .line 706
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/offline/DownloadService;->onIdle()V
 
     :cond_12
     return v1
@@ -1742,7 +1746,7 @@
 
     const/4 p1, 0x1
 
-    .line 683
+    .line 713
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/offline/DownloadService;->taskRemoved:Z
 
     return-void

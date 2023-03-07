@@ -11,6 +11,7 @@
     value = {
         Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidResponseCodeException;,
         Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidContentTypeException;,
+        Lcom/google/android/exoplayer2/upstream/HttpDataSource$CleartextNotPermittedException;,
         Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;,
         Lcom/google/android/exoplayer2/upstream/HttpDataSource$BaseFactory;,
         Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;,
@@ -20,10 +21,10 @@
 
 
 # static fields
-.field public static final REJECT_PAYWALL_TYPES:Lcom/google/android/exoplayer2/util/Predicate;
+.field public static final REJECT_PAYWALL_TYPES:Lcom/google/common/base/Predicate;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/exoplayer2/util/Predicate<",
+            "Lcom/google/common/base/Predicate<",
             "Ljava/lang/String;",
             ">;"
         }
@@ -35,10 +36,10 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 220
+    .line 175
     sget-object v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/upstream/HttpDataSource$$ExternalSyntheticLambda0;
 
-    sput-object v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource;->REJECT_PAYWALL_TYPES:Lcom/google/android/exoplayer2/util/Predicate;
+    sput-object v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource;->REJECT_PAYWALL_TYPES:Lcom/google/common/base/Predicate;
 
     return-void
 .end method

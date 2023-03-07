@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 216
+    .line 264
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/scheduler/Requirements;
     .locals 1
 
-    .line 220
+    .line 268
     new-instance v0, Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -56,7 +56,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 216
+    .line 264
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/scheduler/Requirements$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     move-result-object p1
@@ -67,7 +67,7 @@
 .method public newArray(I)[Lcom/google/android/exoplayer2/scheduler/Requirements;
     .locals 0
 
-    .line 225
+    .line 273
     new-array p1, p1, [Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     return-object p1
@@ -76,7 +76,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 216
+    .line 264
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/scheduler/Requirements$1;->newArray(I)[Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     move-result-object p1

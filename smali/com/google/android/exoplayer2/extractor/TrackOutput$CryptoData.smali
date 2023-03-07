@@ -28,19 +28,19 @@
 .method public constructor <init>(I[BII)V
     .locals 0
 
-    .line 65
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 65
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->cryptoMode:I
 
-    .line 67
+    .line 66
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->encryptionKey:[B
 
-    .line 68
+    .line 67
     iput p3, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->encryptedBlocks:I
 
-    .line 69
+    .line 68
     iput p4, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->clearBlocks:I
 
     return-void
@@ -62,7 +62,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 77
+    .line 76
     const-class v2, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -73,11 +73,11 @@
 
     goto :goto_1
 
-    .line 80
+    .line 79
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;
 
-    .line 81
+    .line 80
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->cryptoMode:I
 
     iget v3, p1, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->cryptoMode:I
@@ -100,7 +100,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->encryptionKey:[B
 
-    .line 82
+    .line 83
     invoke-static {v2, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result p1
@@ -123,12 +123,12 @@
 .method public hashCode()I
     .locals 2
 
-    .line 87
+    .line 88
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->cryptoMode:I
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 88
+    .line 89
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->encryptionKey:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
@@ -139,14 +139,14 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 89
+    .line 90
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->encryptedBlocks:I
 
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 90
+    .line 91
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;->clearBlocks:I
 
     add-int/2addr v0, v1

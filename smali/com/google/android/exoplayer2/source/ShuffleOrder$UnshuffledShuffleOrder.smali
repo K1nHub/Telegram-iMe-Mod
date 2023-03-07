@@ -25,10 +25,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 182
+    .line 180
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 183
+    .line 181
     iput p1, p0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
     return-void
@@ -39,7 +39,7 @@
 .method public cloneAndClear()Lcom/google/android/exoplayer2/source/ShuffleOrder;
     .locals 2
 
-    .line 223
+    .line 221
     new-instance v0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;
 
     const/4 v1, 0x0
@@ -52,7 +52,7 @@
 .method public cloneAndInsert(II)Lcom/google/android/exoplayer2/source/ShuffleOrder;
     .locals 1
 
-    .line 213
+    .line 211
     new-instance p1, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;
 
     iget v0, p0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
@@ -67,7 +67,7 @@
 .method public cloneAndRemove(II)Lcom/google/android/exoplayer2/source/ShuffleOrder;
     .locals 2
 
-    .line 218
+    .line 216
     new-instance v0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
@@ -84,7 +84,7 @@
 .method public getFirstIndex()I
     .locals 1
 
-    .line 208
+    .line 206
     iget v0, p0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
     if-lez v0, :cond_0
@@ -103,7 +103,7 @@
 .method public getLastIndex()I
     .locals 1
 
-    .line 203
+    .line 201
     iget v0, p0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
     if-lez v0, :cond_0
@@ -122,7 +122,7 @@
 .method public getLength()I
     .locals 1
 
-    .line 188
+    .line 186
     iget v0, p0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
     return v0
@@ -133,7 +133,7 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    .line 193
+    .line 191
     iget v0, p0, Lcom/google/android/exoplayer2/source/ShuffleOrder$UnshuffledShuffleOrder;->length:I
 
     if-ge p1, v0, :cond_0

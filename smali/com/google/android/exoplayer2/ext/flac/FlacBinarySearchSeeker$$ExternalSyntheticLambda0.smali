@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+.field public final synthetic f$0:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/util/FlacStreamMetadata;)V
+.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$$ExternalSyntheticLambda0;->f$0:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$$ExternalSyntheticLambda0;->f$0:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final timeUsToTargetTime(J)J
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$$ExternalSyntheticLambda0;->f$0:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacBinarySearchSeeker$$ExternalSyntheticLambda0;->f$0:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->getSampleNumber(J)J
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->getSampleNumber(J)J
 
     move-result-wide p1
 

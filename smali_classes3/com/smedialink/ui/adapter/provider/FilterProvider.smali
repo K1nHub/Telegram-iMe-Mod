@@ -1,0 +1,277 @@
+.class public final Lcom/smedialink/ui/adapter/provider/FilterProvider;
+.super Lcom/chad/library/adapter/base/provider/BaseNodeProvider;
+.source "FilterProvider.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/chad/library/adapter/base/provider/BaseNodeProvider<",
+        "Lcom/smedialink/model/common/FiltersListItem;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final filtersDiffCallback:Lcom/smedialink/ui/adapter/diff/FiltersDiffCallback;
+
+.field private final filtersRecycleAdapter:Lcom/smedialink/ui/adapter/FiltersRecycleAdapter;
+
+.field private filtersScrollState:Landroid/os/Parcelable;
+
+.field private final itemViewType:I
+
+.field private final layoutId:I
+
+.field private onFilterClickListener:Lcom/chad/library/adapter/base/listener/OnItemClickListener;
+
+
+# direct methods
+.method public constructor <init>(Lcom/smedialink/ui/adapter/FiltersRecycleAdapter;)V
+    .locals 1
+
+    const-string v0, "filtersRecycleAdapter"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 19
+    invoke-direct {p0}, Lcom/chad/library/adapter/base/provider/BaseNodeProvider;-><init>()V
+
+    .line 18
+    iput-object p1, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->filtersRecycleAdapter:Lcom/smedialink/ui/adapter/FiltersRecycleAdapter;
+
+    .line 25
+    sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->FILTERS_LIST:I
+
+    iput p1, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->itemViewType:I
+
+    .line 26
+    sget p1, Lorg/telegram/messenger/R$layout;->fork_recycle_item_filters_list:I
+
+    iput p1, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->layoutId:I
+
+    .line 29
+    new-instance p1, Lcom/smedialink/ui/adapter/diff/FiltersDiffCallback;
+
+    invoke-direct {p1}, Lcom/smedialink/ui/adapter/diff/FiltersDiffCallback;-><init>()V
+
+    iput-object p1, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->filtersDiffCallback:Lcom/smedialink/ui/adapter/diff/FiltersDiffCallback;
+
+    return-void
+.end method
+
+.method public static final synthetic access$getFiltersDiffCallback$p(Lcom/smedialink/ui/adapter/provider/FilterProvider;)Lcom/smedialink/ui/adapter/diff/FiltersDiffCallback;
+    .locals 0
+
+    .line 17
+    iget-object p0, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->filtersDiffCallback:Lcom/smedialink/ui/adapter/diff/FiltersDiffCallback;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getFiltersScrollState$p(Lcom/smedialink/ui/adapter/provider/FilterProvider;)Landroid/os/Parcelable;
+    .locals 0
+
+    .line 17
+    iget-object p0, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->filtersScrollState:Landroid/os/Parcelable;
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/smedialink/model/common/FiltersListItem;)V
+    .locals 2
+
+    const-string v0, "helper"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "item"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 46
+    sget v0, Lorg/telegram/messenger/R$id;->image_staking_filters_info:I
+
+    const-string v1, "chats_actionBackground"
+
+    invoke-static {p1, v0, v1}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedImageColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 47
+    invoke-static {p1, v0}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->setCircleRippleBackground(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 48
+    sget v0, Lorg/telegram/messenger/R$id;->recycle_filters:I
+
+    new-instance v1, Lcom/smedialink/ui/adapter/provider/FilterProvider$convert$1;
+
+    invoke-direct {v1, p0, p2}, Lcom/smedialink/ui/adapter/provider/FilterProvider$convert$1;-><init>(Lcom/smedialink/ui/adapter/provider/FilterProvider;Lcom/smedialink/model/common/FiltersListItem;)V
+
+    invoke-static {p1, v0, v1}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->applyForView(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILkotlin/jvm/functions/Function1;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    return-void
+.end method
+
+.method public convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/smedialink/model/common/FiltersListItem;Ljava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;",
+            "Lcom/smedialink/model/common/FiltersListItem;",
+            "Ljava/util/List<",
+            "+",
+            "Ljava/lang/Object;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-string v0, "helper"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p1, "item"
+
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p1, "payloads"
+
+    invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 63
+    iget-object p1, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->filtersRecycleAdapter:Lcom/smedialink/ui/adapter/FiltersRecycleAdapter;
+
+    invoke-virtual {p2}, Lcom/smedialink/model/common/FiltersListItem;->getFilters()Ljava/util/List;
+
+    move-result-object p2
+
+    const/4 p3, 0x0
+
+    const/4 v0, 0x2
+
+    invoke-static {p1, p2, p3, v0, p3}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffNewData$default(Lcom/chad/library/adapter/base/BaseQuickAdapter;Ljava/util/List;Ljava/lang/Runnable;ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 17
+    check-cast p2, Lcom/smedialink/model/common/FiltersListItem;
+
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/ui/adapter/provider/FilterProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/smedialink/model/common/FiltersListItem;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/Object;Ljava/util/List;)V
+    .locals 0
+
+    .line 17
+    check-cast p2, Lcom/smedialink/model/common/FiltersListItem;
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/smedialink/ui/adapter/provider/FilterProvider;->convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/smedialink/model/common/FiltersListItem;Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final getFiltersRecycleAdapter()Lcom/smedialink/ui/adapter/FiltersRecycleAdapter;
+    .locals 1
+
+    .line 18
+    iget-object v0, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->filtersRecycleAdapter:Lcom/smedialink/ui/adapter/FiltersRecycleAdapter;
+
+    return-object v0
+.end method
+
+.method public getItemViewType()I
+    .locals 1
+
+    .line 25
+    iget v0, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->itemViewType:I
+
+    return v0
+.end method
+
+.method public getLayoutId()I
+    .locals 1
+
+    .line 26
+    iget v0, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->layoutId:I
+
+    return v0
+.end method
+
+.method public final getOnFilterClickListener()Lcom/chad/library/adapter/base/listener/OnItemClickListener;
+    .locals 1
+
+    .line 22
+    iget-object v0, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->onFilterClickListener:Lcom/chad/library/adapter/base/listener/OnItemClickListener;
+
+    return-object v0
+.end method
+
+.method public final onViewRecycled(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
+    .locals 1
+
+    const-string v0, "holder"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 35
+    invoke-virtual {p0}, Lcom/smedialink/ui/adapter/provider/FilterProvider;->getItemViewType()I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Lcom/smedialink/utils/extentions/common/BaseQuickAdapterExtKt;->isViewType(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 36
+    sget v0, Lorg/telegram/messenger/R$id;->recycle_filters:I
+
+    invoke-virtual {p1, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->getView(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onSaveInstanceState()Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    :goto_0
+    iput-object p1, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->filtersScrollState:Landroid/os/Parcelable;
+
+    :cond_1
+    return-void
+.end method
+
+.method public final setOnFilterClickListener(Lcom/chad/library/adapter/base/listener/OnItemClickListener;)V
+    .locals 0
+
+    .line 22
+    iput-object p1, p0, Lcom/smedialink/ui/adapter/provider/FilterProvider;->onFilterClickListener:Lcom/chad/library/adapter/base/listener/OnItemClickListener;
+
+    return-void
+.end method

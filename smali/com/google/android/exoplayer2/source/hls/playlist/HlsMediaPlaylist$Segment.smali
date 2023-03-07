@@ -1,9 +1,6 @@
 .class public final Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
-.super Ljava/lang/Object;
+.super Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;
 .source "HlsMediaPlaylist.java"
-
-# interfaces
-.implements Ljava/lang/Comparable;
 
 
 # annotations
@@ -16,45 +13,24 @@
     name = "Segment"
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/lang/Comparable<",
-        "Ljava/lang/Long;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
-.field public final byterangeLength:J
-
-.field public final byterangeOffset:J
-
-.field public final drmInitData:Lcom/google/android/exoplayer2/drm/DrmInitData;
-
-.field public final durationUs:J
-
-.field public final encryptionIV:Ljava/lang/String;
-
-.field public final fullSegmentEncryptionKeyUri:Ljava/lang/String;
-
-.field public final hasGapTag:Z
-
-.field public final initializationSegment:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
-
-.field public final relativeDiscontinuitySequence:I
-
-.field public final relativeStartTimeUs:J
+.field public final parts:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final title:Ljava/lang/String;
-
-.field public final url:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JJLjava/lang/String;Ljava/lang/String;)V
-    .locals 17
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -67,6 +43,11 @@
     move-object/from16 v10, p6
 
     move-object/from16 v11, p7
+
+    .line 127
+    invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v17
 
     const/4 v2, 0x0
 
@@ -82,135 +63,171 @@
 
     const/16 v16, 0x0
 
-    .line 99
-    invoke-direct/range {v0 .. v16}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZ)V
+    .line 114
+    invoke-direct/range {v0 .. v17}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZ)V
-    .locals 3
+.method public constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
+    .locals 17
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;",
+            "Ljava/lang/String;",
+            "JIJ",
+            "Lcom/google/android/exoplayer2/drm/DrmInitData;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "JJZ",
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;",
+            ">;)V"
+        }
+    .end annotation
 
-    move-object v0, p0
+    move-object/from16 v15, p0
 
-    .line 140
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object/from16 v0, p0
 
-    move-object v1, p1
+    move-object/from16 v1, p1
 
-    .line 141
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->url:Ljava/lang/String;
+    move-object/from16 v2, p2
 
-    move-object v1, p2
+    move-wide/from16 v3, p4
 
-    .line 142
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->initializationSegment:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+    move/from16 v5, p6
 
-    move-object v1, p3
+    move-wide/from16 v6, p7
 
-    .line 143
+    move-object/from16 v8, p9
+
+    move-object/from16 v9, p10
+
+    move-object/from16 v10, p11
+
+    move-wide/from16 v11, p12
+
+    move-wide/from16 v13, p14
+
+    move/from16 v15, p16
+
+    const/16 v16, 0x0
+
+    .line 161
+    invoke-direct/range {v0 .. v16}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZLcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$1;)V
+
+    move-object/from16 v1, p3
+
+    .line 173
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->title:Ljava/lang/String;
 
-    move-wide v1, p4
+    .line 174
+    invoke-static/range {p17 .. p17}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
-    .line 144
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->durationUs:J
+    move-result-object v1
 
-    move v1, p6
-
-    .line 145
-    iput v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->relativeDiscontinuitySequence:I
-
-    move-wide v1, p7
-
-    .line 146
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->relativeStartTimeUs:J
-
-    move-object v1, p9
-
-    .line 147
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->drmInitData:Lcom/google/android/exoplayer2/drm/DrmInitData;
-
-    move-object v1, p10
-
-    .line 148
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->fullSegmentEncryptionKeyUri:Ljava/lang/String;
-
-    move-object v1, p11
-
-    .line 149
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->encryptionIV:Ljava/lang/String;
-
-    move-wide v1, p12
-
-    .line 150
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->byterangeOffset:J
-
-    move-wide/from16 v1, p14
-
-    .line 151
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->byterangeLength:J
-
-    move/from16 v1, p16
-
-    .line 152
-    iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->hasGapTag:Z
+    iput-object v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->parts:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public compareTo(Ljava/lang/Long;)I
-    .locals 5
+.method public copyWith(JI)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+    .locals 20
 
-    .line 157
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->relativeStartTimeUs:J
+    move-object/from16 v0, p0
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    .line 178
+    new-instance v8, Ljava/util/ArrayList;
 
-    move-result-wide v2
+    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    cmp-long v4, v0, v2
+    const/4 v1, 0x0
 
-    if-lez v4, :cond_0
+    move-wide/from16 v2, p1
 
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    .line 158
-    :cond_0
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->relativeStartTimeUs:J
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    cmp-long p1, v0, v2
-
-    if-gez p1, :cond_1
-
-    const/4 p1, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, 0x0
-
+    .line 180
     :goto_0
-    return p1
-.end method
+    iget-object v4, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->parts:Ljava/util/List;
 
-.method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 0
+    invoke-interface {v4}, Ljava/util/List;->size()I
 
-    .line 33
-    check-cast p1, Ljava/lang/Long;
+    move-result v4
 
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->compareTo(Ljava/lang/Long;)I
+    if-ge v1, v4, :cond_0
 
-    move-result p1
+    .line 181
+    iget-object v4, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->parts:Ljava/util/List;
 
-    return p1
+    invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;
+
+    move/from16 v7, p3
+
+    .line 182
+    invoke-virtual {v4, v2, v3, v7}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;->copyWith(JI)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;
+
+    move-result-object v5
+
+    invoke-interface {v8, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 183
+    iget-wide v4, v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->durationUs:J
+
+    add-long/2addr v2, v4
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move/from16 v7, p3
+
+    .line 185
+    new-instance v19, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    move-object/from16 v1, v19
+
+    iget-object v2, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->url:Ljava/lang/String;
+
+    iget-object v3, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->initializationSegment:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    iget-object v4, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->title:Ljava/lang/String;
+
+    iget-wide v5, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->durationUs:J
+
+    iget-object v10, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->drmInitData:Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    iget-object v11, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->fullSegmentEncryptionKeyUri:Ljava/lang/String;
+
+    iget-object v12, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->encryptionIV:Ljava/lang/String;
+
+    iget-wide v13, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->byteRangeOffset:J
+
+    move-object v9, v8
+
+    iget-wide v7, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->byteRangeLength:J
+
+    move-wide v15, v7
+
+    iget-boolean v7, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->hasGapTag:Z
+
+    move/from16 v17, v7
+
+    move/from16 v7, p3
+
+    move-object/from16 v18, v9
+
+    move-wide/from16 v8, p1
+
+    invoke-direct/range {v1 .. v18}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
+
+    return-object v19
 .end method

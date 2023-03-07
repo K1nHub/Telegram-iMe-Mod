@@ -52,7 +52,7 @@
 
     const-string v0, "QualityLevel"
 
-    .line 661
+    .line 685
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;-><init>(Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -70,36 +70,36 @@
         }
     .end annotation
 
-    .line 764
+    .line 757
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 765
+    .line 758
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 766
+    .line 759
     invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->getBytesFromHexString(Ljava/lang/String;)[B
 
     move-result-object p0
 
-    .line 767
+    .line 760
     invoke-static {p0}, Lcom/google/android/exoplayer2/util/CodecSpecificDataUtil;->splitNalUnits([B)[[B
 
     move-result-object v1
 
     if-nez v1, :cond_0
 
-    .line 769
+    .line 762
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 771
+    .line 764
     :cond_0
     invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
@@ -113,7 +113,7 @@
 
     const-string v0, "H264"
 
-    .line 778
+    .line 772
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -122,6 +122,7 @@
 
     const-string v0, "X264"
 
+    .line 773
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -130,7 +131,7 @@
 
     const-string v0, "AVC1"
 
-    .line 779
+    .line 774
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -139,6 +140,7 @@
 
     const-string v0, "DAVC"
 
+    .line 775
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -150,7 +152,7 @@
     :cond_0
     const-string v0, "AAC"
 
-    .line 781
+    .line 777
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -159,6 +161,7 @@
 
     const-string v0, "AACL"
 
+    .line 778
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -167,7 +170,7 @@
 
     const-string v0, "AACH"
 
-    .line 782
+    .line 779
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -176,6 +179,7 @@
 
     const-string v0, "AACP"
 
+    .line 780
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -187,7 +191,7 @@
     :cond_1
     const-string v0, "TTML"
 
-    .line 784
+    .line 782
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -207,7 +211,7 @@
     :cond_2
     const-string v0, "ac-3"
 
-    .line 786
+    .line 784
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -227,7 +231,7 @@
     :cond_3
     const-string v0, "ec-3"
 
-    .line 788
+    .line 786
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -247,7 +251,7 @@
     :cond_4
     const-string v0, "dtsc"
 
-    .line 790
+    .line 788
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -261,7 +265,7 @@
     :cond_5
     const-string v0, "dtsh"
 
-    .line 792
+    .line 790
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -281,7 +285,7 @@
     :cond_6
     const-string v0, "dtse"
 
-    .line 794
+    .line 792
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -295,7 +299,7 @@
     :cond_7
     const-string v0, "opus"
 
-    .line 796
+    .line 794
     invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p0
@@ -353,28 +357,40 @@
 .method public build()Ljava/lang/Object;
     .locals 1
 
-    .line 760
+    .line 753
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->format:Lcom/google/android/exoplayer2/Format;
 
     return-object v0
 .end method
 
 .method public parseStartTag(Lorg/xmlpull/v1/XmlPullParser;)V
-    .locals 18
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    .line 690
+    new-instance v0, Lcom/google/android/exoplayer2/Format$Builder;
 
-    move-object/from16 v1, p1
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
+
+    const-string v1, "FourCC"
+
+    .line 692
+    invoke-virtual {p0, p1, v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredString(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->fourCCToMimeType(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
 
     const-string v2, "Type"
 
-    .line 666
-    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    .line 693
+    invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -384,289 +400,260 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    const-string v3, "CodecPrivateData"
 
-    const-string v4, "Index"
+    const/4 v4, 0x0
 
-    .line 667
-    invoke-interface {v1, v3, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const/4 v5, 0x2
 
-    move-result-object v5
+    if-ne v2, v5, :cond_0
 
-    const-string v4, "Name"
+    .line 696
+    invoke-interface {p1, v4, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 668
-    invoke-virtual {v0, v4}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v4
+    invoke-static {v2}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->buildCodecSpecificData(Ljava/lang/String;)Ljava/util/List;
 
-    move-object v6, v4
+    move-result-object v2
 
-    check-cast v6, Ljava/lang/String;
+    const-string v3, "video/mp4"
 
-    const-string v4, "Bitrate"
+    .line 698
+    invoke-virtual {v0, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    .line 669
-    invoke-virtual {v0, v1, v4}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
+    move-result-object v3
 
-    move-result v4
+    const-string v5, "MaxWidth"
 
-    const-string v7, "FourCC"
+    .line 699
+    invoke-virtual {p0, p1, v5}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
 
-    .line 670
-    invoke-virtual {v0, v1, v7}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredString(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Ljava/lang/String;
+    move-result v5
 
-    move-result-object v7
+    invoke-virtual {v3, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setWidth(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    invoke-static {v7}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->fourCCToMimeType(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v8
+    const-string v5, "MaxHeight"
 
-    const-string v7, "CodecPrivateData"
+    .line 700
+    invoke-virtual {p0, p1, v5}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
 
-    const/4 v9, 0x2
+    move-result v5
 
-    if-ne v2, v9, :cond_0
+    invoke-virtual {v3, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setHeight(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const-string v2, "MaxWidth"
+    move-result-object v3
 
-    .line 673
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
-
-    move-result v12
-
-    const-string v2, "MaxHeight"
-
-    .line 674
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
-
-    move-result v13
-
-    .line 676
-    invoke-interface {v1, v3, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 675
-    invoke-static {v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->buildCodecSpecificData(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object v15
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/high16 v14, -0x40800000    # -1.0f
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const-string v7, "video/mp4"
-
-    move v11, v4
-
-    .line 678
-    invoke-static/range {v5 .. v17}, Lcom/google/android/exoplayer2/Format;->createVideoContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/exoplayer2/metadata/Metadata;IIIFLjava/util/List;II)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->format:Lcom/google/android/exoplayer2/Format;
+    .line 701
+    invoke-virtual {v3, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setInitializationData(Ljava/util/List;)Lcom/google/android/exoplayer2/Format$Builder;
 
     goto/16 :goto_1
 
     :cond_0
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    const-string v10, "Language"
-
-    if-ne v2, v9, :cond_3
+    if-ne v2, v5, :cond_3
 
     const-string v2, "audio/mp4a-latm"
 
-    if-nez v8, :cond_1
+    if-nez v1, :cond_1
 
-    move-object v8, v2
+    move-object v1, v2
 
     :cond_1
-    const-string v9, "Channels"
+    const-string v5, "Channels"
 
-    .line 694
-    invoke-virtual {v0, v1, v9}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
+    .line 707
+    invoke-virtual {p0, p1, v5}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
 
-    move-result v12
+    move-result v5
 
-    const-string v9, "SamplingRate"
+    const-string v6, "SamplingRate"
 
-    .line 695
-    invoke-virtual {v0, v1, v9}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
+    .line 708
+    invoke-virtual {p0, p1, v6}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
 
-    move-result v13
+    move-result v6
 
-    .line 697
-    invoke-interface {v1, v3, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 710
+    invoke-interface {p1, v4, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    .line 696
-    invoke-static {v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->buildCodecSpecificData(Ljava/lang/String;)Ljava/util/List;
+    invoke-static {v3}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->buildCodecSpecificData(Ljava/lang/String;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v3
 
-    .line 698
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    .line 711
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
-    move-result v3
+    move-result v7
 
-    if-eqz v3, :cond_2
+    if-eqz v7, :cond_2
 
-    invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 700
-    invoke-static {v13, v12}, Lcom/google/android/exoplayer2/util/CodecSpecificDataUtil;->buildAacLcAudioSpecificConfig(II)[B
+    .line 714
+    invoke-static {v6, v5}, Lcom/google/android/exoplayer2/audio/AacUtil;->buildAacLcAudioSpecificConfig(II)[B
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 699
-    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    .line 713
+    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v3
 
     :cond_2
-    move-object v14, v1
+    const-string v2, "audio/mp4"
 
-    .line 702
-    invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    .line 717
+    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    move-result-object v1
+    move-result-object v2
 
-    move-object/from16 v17, v1
+    .line 718
+    invoke-virtual {v2, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    check-cast v17, Ljava/lang/String;
+    move-result-object v2
 
-    const/4 v9, 0x0
+    .line 719
+    invoke-virtual {v2, v6}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v10, 0x0
+    move-result-object v2
 
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const-string v7, "audio/mp4"
-
-    move v11, v4
-
-    .line 704
-    invoke-static/range {v5 .. v17}, Lcom/google/android/exoplayer2/Format;->createAudioContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/exoplayer2/metadata/Metadata;IIILjava/util/List;IILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->format:Lcom/google/android/exoplayer2/Format;
+    .line 720
+    invoke-virtual {v2, v3}, Lcom/google/android/exoplayer2/Format$Builder;->setInitializationData(Ljava/util/List;)Lcom/google/android/exoplayer2/Format$Builder;
 
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x3
+    const/4 v3, 0x3
 
-    if-ne v2, v1, :cond_6
+    const-string v5, "application/mp4"
 
-    const-string v1, "Subtype"
-
-    .line 719
-    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
+    if-ne v2, v3, :cond_7
 
     const/4 v2, 0x0
 
-    .line 721
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    const-string v3, "Subtype"
 
-    const-string v3, "CAPT"
+    .line 723
+    invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    if-eqz v3, :cond_6
+
+    const-string v6, "CAPT"
+
+    .line 725
+    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_5
+
+    const-string v6, "DESC"
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_5
-
-    const-string v3, "DESC"
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    const/4 v12, 0x0
+    if-nez v3, :cond_4
 
     goto :goto_0
 
     :cond_4
-    const/16 v1, 0x400
-
-    const/16 v12, 0x400
+    const/16 v2, 0x400
 
     goto :goto_0
 
     :cond_5
-    const/16 v1, 0x40
+    const/16 v2, 0x40
 
-    const/16 v12, 0x40
-
-    .line 731
+    .line 736
+    :cond_6
     :goto_0
-    invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    move-result-object v1
+    move-result-object v3
 
-    move-object v13, v1
-
-    check-cast v13, Ljava/lang/String;
-
-    const/4 v9, 0x0
-
-    const/4 v11, 0x0
-
-    const-string v7, "application/mp4"
-
-    move v10, v4
-
-    .line 733
-    invoke-static/range {v5 .. v13}, Lcom/google/android/exoplayer2/Format;->createTextContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->format:Lcom/google/android/exoplayer2/Format;
+    invoke-virtual {v3, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setRoleFlags(I)Lcom/google/android/exoplayer2/Format$Builder;
 
     goto :goto_1
 
-    :cond_6
-    const/4 v9, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const-string v7, "application/mp4"
-
-    move v10, v4
-
-    .line 745
-    invoke-static/range {v5 .. v13}, Lcom/google/android/exoplayer2/Format;->createContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->format:Lcom/google/android/exoplayer2/Format;
+    .line 738
+    :cond_7
+    invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
     :goto_1
+    const-string v2, "Index"
+
+    .line 743
+    invoke-interface {p1, v4, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setId(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    const-string v2, "Name"
+
+    .line 744
+    invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setLabel(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    .line 745
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    const-string v1, "Bitrate"
+
+    .line 746
+    invoke-virtual {p0, p1, v1}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->parseRequiredInt(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)I
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/Format$Builder;->setAverageBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    const-string v0, "Language"
+
+    .line 747
+    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$ElementParser;->getNormalizedAttribute(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/Format$Builder;->setLanguage(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    .line 748
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifestParser$QualityLevelParser;->format:Lcom/google/android/exoplayer2/Format;
+
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class public final Lcom/google/android/exoplayer2/util/LibraryLoader;
+.class public abstract Lcom/google/android/exoplayer2/util/LibraryLoader;
 .super Ljava/lang/Object;
 .source "LibraryLoader.java"
 
@@ -19,10 +19,10 @@
 .method public varargs constructor <init>([Ljava/lang/String;)V
     .locals 0
 
-    .line 34
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 33
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->nativeLibraries:[Ljava/lang/String;
 
     return-void
@@ -35,13 +35,13 @@
 
     monitor-enter p0
 
-    .line 51
+    .line 47
     :try_start_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->loadAttempted:Z
 
     if-eqz v0, :cond_0
 
-    .line 52
+    .line 48
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->isAvailable:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -53,13 +53,13 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 54
+    .line 50
     :try_start_1
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->loadAttempted:Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 56
+    .line 52
     :try_start_2
     iget-object v1, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->nativeLibraries:[Ljava/lang/String;
 
@@ -72,14 +72,14 @@
 
     aget-object v4, v1, v3
 
-    .line 57
-    invoke-static {v4}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    .line 53
+    invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/util/LibraryLoader;->loadLibrary(Ljava/lang/String;)V
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 59
+    .line 55
     :cond_1
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->isAvailable:Z
     :try_end_2
@@ -92,7 +92,7 @@
     :try_start_3
     const-string v0, "LibraryLoader"
 
-    .line 63
+    .line 59
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -115,7 +115,7 @@
 
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 65
+    .line 61
     :goto_1
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->isAvailable:Z
     :try_end_3
@@ -133,12 +133,15 @@
     throw v0
 .end method
 
+.method protected abstract loadLibrary(Ljava/lang/String;)V
+.end method
+
 .method public varargs declared-synchronized setLibraries([Ljava/lang/String;)V
     .locals 2
 
     monitor-enter p0
 
-    .line 43
+    .line 41
     :try_start_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->loadAttempted:Z
 
@@ -156,12 +159,12 @@
 
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(ZLjava/lang/Object;)V
 
-    .line 44
+    .line 42
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/LibraryLoader;->nativeLibraries:[Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 45
+    .line 43
     monitor-exit p0
 
     return-void

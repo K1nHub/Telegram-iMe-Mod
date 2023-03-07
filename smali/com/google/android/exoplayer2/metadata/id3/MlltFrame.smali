@@ -33,7 +33,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 101
+    .line 100
     new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame$1;-><init>()V
@@ -74,31 +74,31 @@
 
     const-string v0, "MLLT"
 
-    .line 50
+    .line 49
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;-><init>(Ljava/lang/String;)V
 
-    .line 51
+    .line 50
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->mpegFramesBetweenReference:I
 
-    .line 52
+    .line 51
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesBetweenReference:I
 
-    .line 53
+    .line 52
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsBetweenReference:I
 
-    .line 54
+    .line 53
     invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
 
     move-result-object v0
@@ -111,7 +111,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesDeviations:[I
 
-    .line 55
+    .line 54
     invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
 
     move-result-object p1
@@ -151,7 +151,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 63
+    .line 62
     const-class v2, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -162,11 +162,11 @@
 
     goto :goto_1
 
-    .line 66
+    .line 65
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;
 
-    .line 67
+    .line 66
     iget v2, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->mpegFramesBetweenReference:I
 
     iget v3, p1, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->mpegFramesBetweenReference:I
@@ -189,7 +189,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesDeviations:[I
 
-    .line 70
+    .line 69
     invoke-static {v2, v3}, Ljava/util/Arrays;->equals([I[I)Z
 
     move-result v2
@@ -200,7 +200,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsDeviations:[I
 
-    .line 71
+    .line 70
     invoke-static {v2, p1}, Ljava/util/Arrays;->equals([I[I)Z
 
     move-result p1
@@ -223,7 +223,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 77
+    .line 76
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->mpegFramesBetweenReference:I
 
     const/16 v1, 0x20f
@@ -232,21 +232,21 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 78
+    .line 77
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesBetweenReference:I
 
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 79
+    .line 78
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsBetweenReference:I
 
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 80
+    .line 79
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesDeviations:[I
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([I)I
@@ -257,7 +257,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 81
+    .line 80
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsDeviations:[I
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([I)I
@@ -272,27 +272,27 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 89
+    .line 88
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->mpegFramesBetweenReference:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 90
+    .line 89
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesBetweenReference:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 91
+    .line 90
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsBetweenReference:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 92
+    .line 91
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesDeviations:[I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 93
+    .line 92
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsDeviations:[I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V

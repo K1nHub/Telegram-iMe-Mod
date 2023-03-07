@@ -93,7 +93,7 @@
 
     new-array v0, v0, [B
 
-    .line 75
+    .line 74
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultMap2To8:[B
@@ -102,7 +102,7 @@
 
     new-array v0, v0, [B
 
-    .line 77
+    .line 75
     fill-array-data v0, :array_2
 
     sput-object v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultMap4To8:[B
@@ -151,22 +151,22 @@
 .method public constructor <init>(II)V
     .locals 8
 
-    .line 98
+    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 99
+    .line 98
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultPaint:Landroid/graphics/Paint;
 
-    .line 100
+    .line 99
     sget-object v1, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 101
+    .line 100
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC:Landroid/graphics/PorterDuff$Mode;
@@ -177,22 +177,22 @@
 
     const/4 v1, 0x0
 
-    .line 102
+    .line 101
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 103
+    .line 102
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->fillRegionPaint:Landroid/graphics/Paint;
 
-    .line 104
+    .line 103
     sget-object v2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 105
+    .line 104
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->DST_OVER:Landroid/graphics/PorterDuff$Mode;
@@ -201,17 +201,17 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 106
+    .line 105
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 107
+    .line 106
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
 
-    .line 108
+    .line 107
     new-instance v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;
 
     const/16 v2, 0x2cf
@@ -232,18 +232,20 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultDisplayDefinition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;
 
-    .line 109
+    .line 108
     new-instance v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;
 
+    .line 111
     invoke-static {}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->generateDefault2BitClutEntries()[I
 
     move-result-object v1
 
-    .line 110
+    .line 112
     invoke-static {}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->generateDefault4BitClutEntries()[I
 
     move-result-object v2
 
+    .line 113
     invoke-static {}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->generateDefault8BitClutEntries()[I
 
     move-result-object v3
@@ -252,7 +254,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultClutDefinition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;
 
-    .line 111
+    .line 114
     new-instance v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     invoke-direct {v0, p1, p2}, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;-><init>(II)V
@@ -265,7 +267,7 @@
 .method private static buildClutMapTable(IILcom/google/android/exoplayer2/util/ParsableBitArray;)[B
     .locals 3
 
-    .line 831
+    .line 896
     new-array v0, p0, [B
 
     const/4 v1, 0x0
@@ -273,7 +275,7 @@
     :goto_0
     if-ge v1, p0, :cond_0
 
-    .line 833
+    .line 898
     invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
@@ -297,7 +299,7 @@
 
     new-array v0, v0, [I
 
-    .line 506
+    .line 550
     fill-array-data v0, :array_0
 
     return-object v0
@@ -370,7 +372,7 @@
     :cond_2
     const/4 v7, 0x0
 
-    .line 519
+    .line 564
     :goto_3
     invoke-static {v5, v4, v6, v7}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
@@ -416,7 +418,7 @@
     :cond_6
     const/4 v6, 0x0
 
-    .line 525
+    .line 571
     :goto_6
     invoke-static {v5, v4, v7, v6}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
@@ -490,7 +492,7 @@
     :cond_2
     const/4 v5, 0x0
 
-    .line 540
+    .line 587
     :goto_3
     invoke-static {v4, v6, v7, v5}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
@@ -600,7 +602,7 @@
     :goto_9
     add-int/2addr v7, v8
 
-    .line 569
+    .line 620
     invoke-static {v5, v4, v6, v7}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
     move-result v4
@@ -690,7 +692,7 @@
     :goto_f
     add-int/2addr v7, v8
 
-    .line 562
+    .line 612
     invoke-static {v5, v4, v6, v7}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
     move-result v4
@@ -774,7 +776,7 @@
     :goto_15
     add-int/2addr v8, v7
 
-    .line 555
+    .line 604
     invoke-static {v9, v4, v5, v8}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
     move-result v4
@@ -858,7 +860,7 @@
     :goto_1b
     add-int/2addr v8, v7
 
-    .line 548
+    .line 596
     invoke-static {v5, v4, v6, v8}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
     move-result v4
@@ -910,7 +912,7 @@
     :goto_0
     const/4 v3, 0x2
 
-    .line 691
+    .line 756
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -926,7 +928,7 @@
 
     goto :goto_4
 
-    .line 695
+    .line 760
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
@@ -936,14 +938,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 696
+    .line 761
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
     add-int/2addr v4, v6
 
-    .line 697
+    .line 762
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
@@ -957,7 +959,7 @@
 
     goto :goto_4
 
-    .line 698
+    .line 763
     :cond_1
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
@@ -971,7 +973,7 @@
 
     goto :goto_1
 
-    .line 701
+    .line 766
     :cond_2
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
@@ -997,14 +999,14 @@
     :cond_3
     const/16 v4, 0x8
 
-    .line 713
+    .line 778
     invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
     add-int/lit8 v4, v4, 0x1d
 
-    .line 714
+    .line 779
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
@@ -1014,14 +1016,14 @@
     :cond_4
     const/4 v4, 0x4
 
-    .line 709
+    .line 774
     invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
     add-int/lit8 v4, v4, 0xc
 
-    .line 710
+    .line 775
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
@@ -1051,7 +1053,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 720
+    .line 785
     aget-byte v4, p2, v4
 
     :cond_7
@@ -1079,7 +1081,7 @@
 
     move-object/from16 v7, p5
 
-    .line 721
+    .line 786
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     :cond_8
@@ -1113,7 +1115,7 @@
     :goto_0
     const/4 v3, 0x4
 
-    .line 743
+    .line 808
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -1131,7 +1133,7 @@
 
     goto/16 :goto_4
 
-    .line 747
+    .line 812
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
@@ -1141,7 +1143,7 @@
 
     if-nez v4, :cond_2
 
-    .line 748
+    .line 813
     invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
@@ -1165,7 +1167,7 @@
 
     goto :goto_3
 
-    .line 755
+    .line 820
     :cond_2
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
@@ -1173,14 +1175,14 @@
 
     if-nez v4, :cond_3
 
-    .line 756
+    .line 821
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
     add-int/lit8 v5, v4, 0x4
 
-    .line 757
+    .line 822
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -1192,7 +1194,7 @@
 
     goto :goto_4
 
-    .line 759
+    .line 824
     :cond_3
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
@@ -1218,21 +1220,21 @@
     :cond_4
     const/16 v4, 0x8
 
-    .line 771
+    .line 836
     invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
     add-int/lit8 v5, v4, 0x19
 
-    .line 772
+    .line 837
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
     goto :goto_2
 
-    .line 767
+    .line 832
     :cond_5
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
@@ -1240,7 +1242,7 @@
 
     add-int/lit8 v5, v4, 0x9
 
-    .line 768
+    .line 833
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -1270,7 +1272,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 778
+    .line 843
     aget-byte v4, p2, v4
 
     :cond_8
@@ -1294,7 +1296,7 @@
 
     move-object/from16 v7, p5
 
-    .line 779
+    .line 844
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     :cond_9
@@ -1328,7 +1330,7 @@
     :goto_0
     const/16 v3, 0x8
 
-    .line 801
+    .line 866
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -1343,7 +1345,7 @@
 
     goto :goto_1
 
-    .line 806
+    .line 871
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
@@ -1353,7 +1355,7 @@
 
     if-nez v4, :cond_2
 
-    .line 807
+    .line 872
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
@@ -1377,13 +1379,13 @@
 
     goto :goto_1
 
-    .line 815
+    .line 880
     :cond_2
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
-    .line 816
+    .line 881
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
@@ -1401,7 +1403,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 821
+    .line 886
     aget-byte v4, p2, v4
 
     :cond_3
@@ -1429,7 +1431,7 @@
 
     move-object/from16 v7, p5
 
-    .line 822
+    .line 887
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     :cond_4
@@ -1450,7 +1452,7 @@
 
     move/from16 v0, p2
 
-    .line 619
+    .line 682
     new-instance v8, Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     move-object v1, p0
@@ -1469,7 +1471,7 @@
 
     move-object v13, v12
 
-    .line 626
+    .line 689
     :goto_0
     invoke-virtual {v8}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitsLeft()I
 
@@ -1479,7 +1481,7 @@
 
     const/16 v1, 0x8
 
-    .line 627
+    .line 690
     invoke-virtual {v8, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
@@ -1501,14 +1503,14 @@
     :pswitch_0
     const/16 v2, 0x10
 
-    .line 665
+    .line 730
     invoke-static {v2, v1, v8}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->buildClutMapTable(IILcom/google/android/exoplayer2/util/ParsableBitArray;)[B
 
     move-result-object v12
 
     goto :goto_0
 
-    .line 662
+    .line 727
     :pswitch_1
     invoke-static {v3, v1, v8}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->buildClutMapTable(IILcom/google/android/exoplayer2/util/ParsableBitArray;)[B
 
@@ -1516,7 +1518,7 @@
 
     goto :goto_0
 
-    .line 659
+    .line 724
     :pswitch_2
     invoke-static {v3, v3, v8}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->buildClutMapTable(IILcom/google/android/exoplayer2/util/ParsableBitArray;)[B
 
@@ -1537,7 +1539,7 @@
 
     move-object/from16 v7, p6
 
-    .line 655
+    .line 720
     invoke-static/range {v1 .. v7}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->paint8BitPixelCodeString(Lcom/google/android/exoplayer2/util/ParsableBitArray;[I[BIILandroid/graphics/Paint;Landroid/graphics/Canvas;)I
 
     move-result v4
@@ -1549,7 +1551,7 @@
 
     if-nez v12, :cond_0
 
-    .line 645
+    .line 709
     sget-object v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultMap4To8:[B
 
     goto :goto_1
@@ -1576,12 +1578,12 @@
 
     move-object/from16 v7, p6
 
-    .line 649
+    .line 714
     invoke-static/range {v1 .. v7}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->paint4BitPixelCodeString(Lcom/google/android/exoplayer2/util/ParsableBitArray;[I[BIILandroid/graphics/Paint;Landroid/graphics/Canvas;)I
 
     move-result v4
 
-    .line 651
+    .line 716
     invoke-virtual {v8}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteAlign()V
 
     goto :goto_0
@@ -1591,7 +1593,7 @@
 
     if-nez v11, :cond_2
 
-    .line 632
+    .line 695
     sget-object v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultMap2To8:[B
 
     goto :goto_3
@@ -1611,7 +1613,7 @@
 
     if-nez v13, :cond_4
 
-    .line 634
+    .line 697
     sget-object v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultMap2To4:[B
 
     goto :goto_3
@@ -1635,12 +1637,12 @@
 
     move-object/from16 v7, p6
 
-    .line 638
+    .line 702
     invoke-static/range {v1 .. v7}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->paint2BitPixelCodeString(Lcom/google/android/exoplayer2/util/ParsableBitArray;[I[BIILandroid/graphics/Paint;Landroid/graphics/Canvas;)I
 
     move-result v4
 
-    .line 640
+    .line 704
     invoke-virtual {v8}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteAlign()V
 
     goto :goto_0
@@ -1679,7 +1681,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 598
+    .line 649
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->clutEntries8Bit:[I
 
     goto :goto_0
@@ -1689,16 +1691,16 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 600
+    .line 651
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->clutEntries4Bit:[I
 
     goto :goto_0
 
-    .line 602
+    .line 653
     :cond_1
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->clutEntries2Bit:[I
 
-    .line 604
+    .line 655
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;->topFieldData:[B
 
@@ -1716,7 +1718,7 @@
 
     invoke-static/range {v0 .. v6}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->paintPixelDataSubBlock([B[IIIILandroid/graphics/Paint;Landroid/graphics/Canvas;)V
 
-    .line 606
+    .line 663
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;->bottomFieldData:[B
 
     add-int/lit8 v4, p4, 0x1
@@ -1733,29 +1735,29 @@
 
     const/16 v1, 0x8
 
-    .line 411
+    .line 451
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
-    .line 412
+    .line 452
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     const/4 v3, 0x2
 
     add-int/lit8 v4, p1, -0x2
 
-    .line 415
+    .line 455
     invoke-static {}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->generateDefault2BitClutEntries()[I
 
     move-result-object v5
 
-    .line 416
+    .line 456
     invoke-static {}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->generateDefault4BitClutEntries()[I
 
     move-result-object v6
 
-    .line 417
+    .line 457
     invoke-static {}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->generateDefault8BitClutEntries()[I
 
     move-result-object v7
@@ -1763,12 +1765,12 @@
     :goto_0
     if-lez v4, :cond_4
 
-    .line 420
+    .line 460
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v8
 
-    .line 421
+    .line 461
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v9
@@ -1800,22 +1802,22 @@
 
     if-eqz v9, :cond_2
 
-    .line 438
+    .line 478
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v9
 
-    .line 439
+    .line 479
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v11
 
-    .line 440
+    .line 480
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v12
 
-    .line 441
+    .line 481
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v13
@@ -1827,7 +1829,7 @@
     :cond_2
     const/4 v9, 0x6
 
-    .line 444
+    .line 484
     invoke-virtual {v0, v9}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v11
@@ -1836,21 +1838,21 @@
 
     const/4 v12, 0x4
 
-    .line 445
+    .line 485
     invoke-virtual {v0, v12}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v13
 
     shl-int/2addr v13, v12
 
-    .line 446
+    .line 486
     invoke-virtual {v0, v12}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v14
 
     shl-int/lit8 v12, v14, 0x4
 
-    .line 447
+    .line 487
     invoke-virtual {v0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v14
@@ -1935,21 +1937,22 @@
 
     const/16 v4, 0xff
 
-    .line 461
+    .line 504
     invoke-static {v9, v3, v4}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
     move-result v9
 
-    .line 462
+    .line 505
     invoke-static {v1, v3, v4}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
     move-result v1
 
+    .line 506
     invoke-static {v2, v3, v4}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
     move-result v2
 
-    .line 461
+    .line 502
     invoke-static {v13, v9, v1, v2}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->getColor(IIII)I
 
     move-result v1
@@ -1969,7 +1972,7 @@
     :cond_4
     move/from16 v18, v2
 
-    .line 465
+    .line 509
     new-instance v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;
 
     move/from16 v1, v18
@@ -1984,27 +1987,27 @@
 
     const/4 v0, 0x4
 
-    .line 311
+    .line 336
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 312
+    .line 337
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
     move-result v0
 
     const/4 v1, 0x3
 
-    .line 313
+    .line 338
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     const/16 v1, 0x10
 
-    .line 314
+    .line 339
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
-    .line 315
+    .line 340
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
@@ -2013,22 +2016,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 322
+    .line 347
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v0
 
-    .line 323
+    .line 348
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
-    .line 324
+    .line 349
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v5
 
-    .line 325
+    .line 350
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result p0
@@ -2052,7 +2055,7 @@
 
     const/4 v7, 0x0
 
-    .line 333
+    .line 358
     :goto_0
     new-instance p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;
 
@@ -2068,47 +2071,48 @@
 
     const/16 v0, 0x10
 
-    .line 474
+    .line 518
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v1
 
     const/4 v2, 0x4
 
-    .line 475
+    .line 519
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     const/4 v2, 0x2
 
-    .line 476
+    .line 520
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
-    .line 477
+    .line 521
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
     move-result v3
 
     const/4 v4, 0x1
 
-    .line 478
+    .line 522
     invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    const/4 v5, 0x0
+    .line 524
+    sget-object v5, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     if-ne v2, v4, :cond_0
 
     const/16 v2, 0x8
 
-    .line 484
+    .line 528
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
     mul-int/lit8 v2, v2, 0x10
 
-    .line 486
+    .line 530
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     goto :goto_0
@@ -2116,12 +2120,12 @@
     :cond_0
     if-nez v2, :cond_2
 
-    .line 488
+    .line 532
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
-    .line 489
+    .line 533
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v0
@@ -2130,19 +2134,19 @@
 
     if-lez v2, :cond_1
 
-    .line 491
+    .line 535
     new-array v5, v2, [B
 
-    .line 492
+    .line 536
     invoke-virtual {p0, v5, v4, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBytes([BII)V
 
     :cond_1
     if-lez v0, :cond_2
 
-    .line 495
+    .line 539
     new-array v2, v0, [B
 
-    .line 496
+    .line 540
     invoke-virtual {p0, v2, v4, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBytes([BII)V
 
     goto :goto_1
@@ -2151,7 +2155,7 @@
     :goto_0
     move-object v2, v5
 
-    .line 502
+    .line 546
     :goto_1
     new-instance p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;
 
@@ -2165,31 +2169,31 @@
 
     const/16 v0, 0x8
 
-    .line 341
+    .line 369
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v1
 
     const/4 v2, 0x4
 
-    .line 342
+    .line 370
     invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
     const/4 v3, 0x2
 
-    .line 343
+    .line 371
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v4
 
-    .line 344
+    .line 372
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     sub-int/2addr p1, v3
 
-    .line 347
+    .line 375
     new-instance v3, Landroid/util/SparseArray;
 
     invoke-direct {v3}, Landroid/util/SparseArray;-><init>()V
@@ -2197,29 +2201,29 @@
     :goto_0
     if-lez p1, :cond_0
 
-    .line 349
+    .line 377
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v5
 
-    .line 350
+    .line 378
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     const/16 v6, 0x10
 
-    .line 351
+    .line 379
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v7
 
-    .line 352
+    .line 380
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v6
 
     add-int/lit8 p1, p1, -0x6
 
-    .line 354
+    .line 382
     new-instance v8, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageRegion;
 
     invoke-direct {v8, v7, v6}, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageRegion;-><init>(II)V
@@ -2228,7 +2232,7 @@
 
     goto :goto_0
 
-    .line 357
+    .line 385
     :cond_0
     new-instance p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;
 
@@ -2244,79 +2248,79 @@
 
     const/16 v1, 0x8
 
-    .line 364
+    .line 390
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v3
 
     const/4 v2, 0x4
 
-    .line 365
+    .line 391
     invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 366
+    .line 392
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBit()Z
 
     move-result v4
 
     const/4 v5, 0x3
 
-    .line 367
+    .line 393
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     const/16 v6, 0x10
 
-    .line 368
+    .line 394
     invoke-virtual {v0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v7
 
-    .line 369
+    .line 395
     invoke-virtual {v0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v8
 
-    .line 370
+    .line 396
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v9
 
-    .line 371
+    .line 397
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v10
 
     const/4 v5, 0x2
 
-    .line 372
+    .line 398
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 373
+    .line 399
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v11
 
-    .line 374
+    .line 400
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v12
 
-    .line 375
+    .line 401
     invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v13
 
-    .line 376
+    .line 402
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v14
 
-    .line 377
+    .line 403
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
     add-int/lit8 v15, p1, -0xa
 
-    .line 380
+    .line 406
     new-instance v1, Landroid/util/SparseArray;
 
     invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
@@ -2324,24 +2328,24 @@
     :goto_0
     if-lez v15, :cond_2
 
-    .line 382
+    .line 408
     invoke-virtual {v0, v6}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
-    .line 383
+    .line 409
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v6
 
-    .line 384
+    .line 410
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v20
 
     const/16 v5, 0xc
 
-    .line 385
+    .line 411
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v21
@@ -2350,10 +2354,10 @@
 
     const/4 v14, 0x4
 
-    .line 386
+    .line 412
     invoke-virtual {v0, v14}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 387
+    .line 413
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v22
@@ -2383,12 +2387,12 @@
     :goto_1
     const/16 v5, 0x8
 
-    .line 393
+    .line 419
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v16
 
-    .line 394
+    .line 420
     invoke-virtual {v0, v5}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v17
@@ -2399,7 +2403,7 @@
 
     move/from16 v24, v17
 
-    .line 398
+    .line 424
     :goto_2
     new-instance v5, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;
 
@@ -2424,7 +2428,7 @@
     :cond_2
     move/from16 v25, v14
 
-    .line 403
+    .line 435
     new-instance v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;
 
     move-object v2, v0
@@ -2457,24 +2461,24 @@
 
     const/16 v0, 0x8
 
-    .line 234
+    .line 261
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v0
 
     const/16 v1, 0x10
 
-    .line 235
+    .line 262
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
-    .line 236
+    .line 263
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v1
 
-    .line 237
+    .line 264
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->getBytePosition()I
 
     move-result v3
@@ -2483,7 +2487,7 @@
 
     mul-int/lit8 v4, v1, 0x8
 
-    .line 239
+    .line 266
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitsLeft()I
 
     move-result v5
@@ -2494,10 +2498,10 @@
 
     const-string v0, "Data field length exceeds limit"
 
-    .line 240
+    .line 267
     invoke-static {p1, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 242
+    .line 269
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitsLeft()I
 
     move-result p1
@@ -2511,13 +2515,13 @@
 
     goto/16 :goto_0
 
-    .line 248
+    .line 275
     :pswitch_0
     iget v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
     if-ne v2, v0, :cond_5
 
-    .line 249
+    .line 276
     invoke-static {p0}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parseDisplayDefinition(Lcom/google/android/exoplayer2/util/ParsableBitArray;)Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;
 
     move-result-object v0
@@ -2526,18 +2530,18 @@
 
     goto/16 :goto_0
 
-    .line 290
+    .line 317
     :pswitch_1
     iget v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
     if-ne v2, v0, :cond_1
 
-    .line 291
+    .line 318
     invoke-static {p0}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parseObjectData(Lcom/google/android/exoplayer2/util/ParsableBitArray;)Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;
 
     move-result-object v0
 
-    .line 292
+    .line 319
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->objects:Landroid/util/SparseArray;
 
     iget v1, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;->id:I
@@ -2546,18 +2550,18 @@
 
     goto/16 :goto_0
 
-    .line 293
+    .line 320
     :cond_1
     iget v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->ancillaryPageId:I
 
     if-ne v2, v0, :cond_5
 
-    .line 294
+    .line 321
     invoke-static {p0}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parseObjectData(Lcom/google/android/exoplayer2/util/ParsableBitArray;)Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;
 
     move-result-object v0
 
-    .line 295
+    .line 322
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->ancillaryObjects:Landroid/util/SparseArray;
 
     iget v1, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;->id:I
@@ -2566,18 +2570,18 @@
 
     goto/16 :goto_0
 
-    .line 281
+    .line 308
     :pswitch_2
     iget v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
     if-ne v2, v0, :cond_2
 
-    .line 282
+    .line 309
     invoke-static {p0, v1}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parseClutDefinition(Lcom/google/android/exoplayer2/util/ParsableBitArray;I)Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;
 
     move-result-object v0
 
-    .line 283
+    .line 310
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->cluts:Landroid/util/SparseArray;
 
     iget v1, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->id:I
@@ -2586,18 +2590,18 @@
 
     goto :goto_0
 
-    .line 284
+    .line 311
     :cond_2
     iget v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->ancillaryPageId:I
 
     if-ne v2, v0, :cond_5
 
-    .line 285
+    .line 312
     invoke-static {p0, v1}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parseClutDefinition(Lcom/google/android/exoplayer2/util/ParsableBitArray;I)Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;
 
     move-result-object v0
 
-    .line 286
+    .line 313
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->ancillaryCluts:Landroid/util/SparseArray;
 
     iget v1, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->id:I
@@ -2606,28 +2610,28 @@
 
     goto :goto_0
 
-    .line 267
+    .line 294
     :pswitch_3
     iget-object v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->pageComposition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;
 
-    .line 268
+    .line 295
     iget v4, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
     if-ne v2, v4, :cond_5
 
     if-eqz v0, :cond_5
 
-    .line 269
+    .line 296
     invoke-static {p0, v1}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parseRegionComposition(Lcom/google/android/exoplayer2/util/ParsableBitArray;I)Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;
 
     move-result-object v1
 
-    .line 270
+    .line 297
     iget v0, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->state:I
 
     if-nez v0, :cond_3
 
-    .line 272
+    .line 299
     iget-object v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->regions:Landroid/util/SparseArray;
 
     iget v2, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->id:I
@@ -2640,10 +2644,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 274
+    .line 301
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->mergeFrom(Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;)V
 
-    .line 277
+    .line 304
     :cond_3
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->regions:Landroid/util/SparseArray;
 
@@ -2653,39 +2657,39 @@
 
     goto :goto_0
 
-    .line 253
+    .line 280
     :pswitch_4
     iget v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->subtitlePageId:I
 
     if-ne v2, v0, :cond_5
 
-    .line 254
+    .line 281
     iget-object v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->pageComposition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;
 
-    .line 255
+    .line 282
     invoke-static {p0, v1}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parsePageComposition(Lcom/google/android/exoplayer2/util/ParsableBitArray;I)Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;
 
     move-result-object v1
 
-    .line 256
+    .line 283
     iget v2, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->state:I
 
     if-eqz v2, :cond_4
 
-    .line 257
+    .line 284
     iput-object v1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->pageComposition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;
 
-    .line 258
+    .line 285
     iget-object v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->regions:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 259
+    .line 286
     iget-object v0, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->cluts:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 260
+    .line 287
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->objects:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->clear()V
@@ -2695,17 +2699,17 @@
     :cond_4
     if-eqz v0, :cond_5
 
-    .line 261
+    .line 288
     iget v0, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->version:I
 
     iget v2, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->version:I
 
     if-eq v0, v2, :cond_5
 
-    .line 262
+    .line 289
     iput-object v1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->pageComposition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;
 
-    .line 304
+    .line 331
     :cond_5
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->getBytePosition()I
@@ -2745,7 +2749,7 @@
 
     move-object/from16 v0, p0
 
-    .line 130
+    .line 131
     new-instance v1, Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     move-object/from16 v2, p1
@@ -2754,7 +2758,7 @@
 
     invoke-direct {v1, v2, v3}, Lcom/google/android/exoplayer2/util/ParsableBitArray;-><init>([BI)V
 
-    .line 131
+    .line 132
     :goto_0
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitsLeft()I
 
@@ -2766,7 +2770,7 @@
 
     const/16 v2, 0x8
 
-    .line 132
+    .line 133
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
@@ -2775,14 +2779,14 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 133
+    .line 134
     iget-object v2, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     invoke-static {v1, v2}, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->parseSubtitlingSegment(Lcom/google/android/exoplayer2/util/ParsableBitArray;Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;)V
 
     goto :goto_0
 
-    .line 136
+    .line 137
     :cond_0
     iget-object v1, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
@@ -2790,14 +2794,14 @@
 
     if-nez v2, :cond_1
 
-    .line 138
+    .line 139
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 
-    .line 142
+    .line 144
     :cond_1
     iget-object v1, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->displayDefinition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;
 
@@ -2805,11 +2809,11 @@
 
     goto :goto_1
 
-    .line 143
+    .line 146
     :cond_2
     iget-object v1, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultDisplayDefinition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;
 
-    .line 144
+    .line 147
     :goto_1
     iget-object v3, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->bitmap:Landroid/graphics/Bitmap;
 
@@ -2819,6 +2823,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
+    .line 148
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -2831,14 +2836,14 @@
 
     iget-object v4, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 145
+    .line 149
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
 
     if-eq v3, v4, :cond_4
 
-    .line 146
+    .line 150
     :cond_3
     iget v3, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->width:I
 
@@ -2850,31 +2855,32 @@
 
     sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
+    .line 151
     invoke-static {v3, v4, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
     iput-object v3, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 148
+    .line 153
     iget-object v4, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v4, v3}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 152
+    .line 157
     :cond_4
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 153
+    .line 158
     iget-object v2, v2, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->regions:Landroid/util/SparseArray;
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    .line 154
+    .line 159
     :goto_2
     invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
 
@@ -2882,24 +2888,24 @@
 
     if-ge v5, v6, :cond_d
 
-    .line 156
+    .line 161
     iget-object v6, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v6}, Landroid/graphics/Canvas;->save()I
 
-    .line 157
+    .line 162
     invoke-virtual {v2, v5}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageRegion;
 
-    .line 158
+    .line 163
     invoke-virtual {v2, v5}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v7
 
-    .line 159
+    .line 164
     iget-object v8, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     iget-object v8, v8, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->regions:Landroid/util/SparseArray;
@@ -2910,48 +2916,50 @@
 
     check-cast v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;
 
-    .line 162
+    .line 167
     iget v8, v6, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageRegion;->horizontalAddress:I
 
     iget v9, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->horizontalPositionMinimum:I
 
     add-int/2addr v8, v9
 
-    .line 164
+    .line 169
     iget v6, v6, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageRegion;->verticalAddress:I
 
     iget v9, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->verticalPositionMinimum:I
 
     add-int/2addr v6, v9
 
-    .line 166
+    .line 171
     iget v9, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->width:I
 
     add-int/2addr v9, v8
 
     iget v10, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->horizontalPositionMaximum:I
 
+    .line 172
     invoke-static {v9, v10}, Ljava/lang/Math;->min(II)I
 
     move-result v9
 
-    .line 168
+    .line 175
     iget v10, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->height:I
 
     add-int/2addr v10, v6
 
     iget v11, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->verticalPositionMaximum:I
 
+    .line 176
     invoke-static {v10, v11}, Ljava/lang/Math;->min(II)I
 
     move-result v10
 
-    .line 170
+    .line 179
     iget-object v11, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v11, v8, v6, v9, v10}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 171
+    .line 180
     iget-object v9, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     iget-object v9, v9, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->cluts:Landroid/util/SparseArray;
@@ -2966,7 +2974,7 @@
 
     if-nez v9, :cond_5
 
-    .line 173
+    .line 182
     iget-object v9, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     iget-object v9, v9, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->ancillaryCluts:Landroid/util/SparseArray;
@@ -2981,16 +2989,16 @@
 
     if-nez v9, :cond_5
 
-    .line 175
+    .line 184
     iget-object v9, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->defaultClutDefinition:Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;
 
-    .line 179
+    .line 188
     :cond_5
     iget-object v15, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
 
     const/4 v14, 0x0
 
-    .line 180
+    .line 189
     :goto_3
     invoke-virtual {v15}, Landroid/util/SparseArray;->size()I
 
@@ -2998,19 +3006,19 @@
 
     if-ge v14, v10, :cond_9
 
-    .line 181
+    .line 190
     invoke-virtual {v15, v14}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v10
 
-    .line 182
+    .line 191
     invoke-virtual {v15, v14}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v11
 
     check-cast v11, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;
 
-    .line 183
+    .line 192
     iget-object v12, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     iget-object v12, v12, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->objects:Landroid/util/SparseArray;
@@ -3023,7 +3031,7 @@
 
     if-nez v12, :cond_6
 
-    .line 185
+    .line 194
     iget-object v12, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     iget-object v12, v12, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->ancillaryObjects:Landroid/util/SparseArray;
@@ -3042,7 +3050,7 @@
     :goto_4
     if-eqz v10, :cond_8
 
-    .line 188
+    .line 197
     iget-boolean v12, v10, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ObjectData;->nonModifyingColorFlag:Z
 
     if-eqz v12, :cond_7
@@ -3057,7 +3065,7 @@
     :goto_5
     move-object/from16 v16, v12
 
-    .line 189
+    .line 198
     iget v12, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->depth:I
 
     iget v13, v11, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionObject;->horizontalPosition:I
@@ -3100,20 +3108,20 @@
 
     goto :goto_3
 
-    .line 195
+    .line 209
     :cond_9
     iget-boolean v10, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->fillFlag:Z
 
     if-eqz v10, :cond_c
 
-    .line 197
+    .line 211
     iget v10, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->depth:I
 
     const/4 v11, 0x3
 
     if-ne v10, v11, :cond_a
 
-    .line 198
+    .line 212
     iget-object v9, v9, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->clutEntries8Bit:[I
 
     iget v10, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->pixelCode8Bit:I
@@ -3127,7 +3135,7 @@
 
     if-ne v10, v11, :cond_b
 
-    .line 200
+    .line 214
     iget-object v9, v9, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->clutEntries4Bit:[I
 
     iget v10, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->pixelCode4Bit:I
@@ -3136,7 +3144,7 @@
 
     goto :goto_7
 
-    .line 202
+    .line 216
     :cond_b
     iget-object v9, v9, Lcom/google/android/exoplayer2/text/dvb/DvbParser$ClutDefinition;->clutEntries2Bit:[I
 
@@ -3144,13 +3152,13 @@
 
     aget v9, v9, v10
 
-    .line 204
+    .line 218
     :goto_7
     iget-object v10, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->fillRegionPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v10, v9}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 205
+    .line 219
     iget-object v11, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
 
     int-to-float v12, v8
@@ -3175,71 +3183,110 @@
 
     invoke-virtual/range {v11 .. v16}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 211
+    .line 227
     :cond_c
-    iget-object v9, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->bitmap:Landroid/graphics/Bitmap;
+    new-instance v9, Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    iget v10, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->width:I
+    invoke-direct {v9}, Lcom/google/android/exoplayer2/text/Cue$Builder;-><init>()V
 
-    iget v11, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->height:I
+    iget-object v10, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->bitmap:Landroid/graphics/Bitmap;
 
-    invoke-static {v9, v8, v6, v10, v11}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+    iget v11, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->width:I
 
-    move-result-object v13
+    iget v12, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->height:I
 
-    .line 213
-    new-instance v9, Lcom/google/android/exoplayer2/text/Cue;
+    .line 230
+    invoke-static {v10, v8, v6, v11, v12}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v10
+
+    .line 229
+    invoke-virtual {v9, v10}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setBitmap(Landroid/graphics/Bitmap;)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v9
 
     int-to-float v8, v8
 
     iget v10, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->width:I
 
-    int-to-float v11, v10
+    int-to-float v10, v10
 
-    div-float v14, v8, v11
+    div-float/2addr v8, v10
 
-    const/4 v15, 0x0
+    .line 236
+    invoke-virtual {v9, v8}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPosition(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v8
+
+    .line 237
+    invoke-virtual {v8, v4}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPositionAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v8
 
     int-to-float v6, v6
+
+    iget v9, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->height:I
+
+    int-to-float v9, v9
+
+    div-float/2addr v6, v9
+
+    .line 238
+    invoke-virtual {v8, v6, v4}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLine(FI)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v6
+
+    .line 240
+    invoke-virtual {v6, v4}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLineAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v6
+
+    iget v8, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->width:I
+
+    int-to-float v8, v8
+
+    iget v9, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->width:I
+
+    int-to-float v9, v9
+
+    div-float/2addr v8, v9
+
+    .line 241
+    invoke-virtual {v6, v8}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setSize(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v6
+
+    iget v7, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->height:I
+
+    int-to-float v7, v7
 
     iget v8, v1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$DisplayDefinition;->height:I
 
-    int-to-float v11, v8
+    int-to-float v8, v8
 
-    div-float v16, v6, v11
+    div-float/2addr v7, v8
 
-    const/16 v17, 0x0
+    .line 242
+    invoke-virtual {v6, v7}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setBitmapHeight(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    iget v6, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->width:I
+    move-result-object v6
 
-    int-to-float v6, v6
+    .line 243
+    invoke-virtual {v6}, Lcom/google/android/exoplayer2/text/Cue$Builder;->build()Lcom/google/android/exoplayer2/text/Cue;
 
-    int-to-float v10, v10
+    move-result-object v6
 
-    div-float v18, v6, v10
+    .line 227
+    invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget v6, v7, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->height:I
-
-    int-to-float v6, v6
-
-    int-to-float v7, v8
-
-    div-float v19, v6, v7
-
-    move-object v12, v9
-
-    invoke-direct/range {v12 .. v19}, Lcom/google/android/exoplayer2/text/Cue;-><init>(Landroid/graphics/Bitmap;FIFIFF)V
-
-    invoke-interface {v3, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 218
+    .line 245
     iget-object v6, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v6, v4, v7}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 220
+    .line 247
     iget-object v6, v0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->canvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v6}, Landroid/graphics/Canvas;->restore()V
@@ -3248,7 +3295,7 @@
 
     goto/16 :goto_2
 
-    .line 223
+    .line 250
     :cond_d
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
@@ -3260,7 +3307,7 @@
 .method public reset()V
     .locals 1
 
-    .line 118
+    .line 119
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser;->subtitleService:Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/text/dvb/DvbParser$SubtitleService;->reset()V

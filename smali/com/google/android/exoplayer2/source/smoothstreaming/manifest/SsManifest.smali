@@ -50,31 +50,31 @@
 .method private constructor <init>(IIJJIZLcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$ProtectionElement;[Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;)V
     .locals 0
 
-    .line 301
+    .line 314
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 302
+    .line 315
     iput p1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->majorVersion:I
 
-    .line 303
+    .line 316
     iput p2, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->minorVersion:I
 
-    .line 304
+    .line 317
     iput-wide p3, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->durationUs:J
 
-    .line 305
+    .line 318
     iput-wide p5, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->dvrWindowLengthUs:J
 
-    .line 306
+    .line 319
     iput p7, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->lookAheadCount:I
 
-    .line 307
+    .line 320
     iput-boolean p8, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->isLive:Z
 
-    .line 308
+    .line 321
     iput-object p9, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->protectionElement:Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$ProtectionElement;
 
-    .line 309
+    .line 322
     iput-object p10, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->streamElements:[Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
     return-void
@@ -102,7 +102,7 @@
 
     move-wide/from16 v8, p3
 
-    .line 283
+    .line 296
     invoke-static/range {v4 .. v9}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
 
     move-result-wide v4
@@ -123,7 +123,7 @@
 
     move-wide/from16 v15, p3
 
-    .line 286
+    .line 299
     invoke-static/range {v11 .. v16}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
 
     move-result-wide v0
@@ -145,7 +145,7 @@
 
     move-object/from16 v16, p12
 
-    .line 278
+    .line 291
     invoke-direct/range {v6 .. v16}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;-><init>(IIJJIZLcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$ProtectionElement;[Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;)V
 
     return-void
@@ -165,20 +165,20 @@
         }
     .end annotation
 
-    .line 314
+    .line 327
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 315
+    .line 328
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 318
+    .line 331
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 319
+    .line 332
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -189,7 +189,7 @@
 
     const/4 v4, 0x0
 
-    .line 320
+    .line 333
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -197,14 +197,14 @@
 
     if-ge v4, v5, :cond_1
 
-    .line 321
+    .line 334
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/google/android/exoplayer2/offline/StreamKey;
 
-    .line 322
+    .line 335
     iget-object v6, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->streamElements:[Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
     iget v7, v5, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
@@ -217,7 +217,7 @@
 
     new-array v7, v2, [Lcom/google/android/exoplayer2/Format;
 
-    .line 325
+    .line 338
     invoke-interface {v1, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v7
@@ -230,14 +230,14 @@
 
     invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 326
+    .line 339
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 329
+    .line 342
     :cond_0
     iget-object v3, v6, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Lcom/google/android/exoplayer2/Format;
 
-    iget v5, v5, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    iget v5, v5, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
     aget-object v3, v3, v5
 
@@ -254,7 +254,7 @@
 
     new-array v0, v2, [Lcom/google/android/exoplayer2/Format;
 
-    .line 333
+    .line 346
     invoke-interface {v1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -270,7 +270,7 @@
     :cond_2
     new-array v0, v2, [Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
-    .line 336
+    .line 349
     invoke-interface {p1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
@@ -279,7 +279,7 @@
 
     check-cast v10, [Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
-    .line 337
+    .line 350
     new-instance p1, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;->majorVersion:I

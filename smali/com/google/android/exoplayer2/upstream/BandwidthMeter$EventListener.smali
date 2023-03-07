@@ -13,6 +13,12 @@
     name = "EventListener"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/exoplayer2/upstream/BandwidthMeter$EventListener$EventDispatcher;
+    }
+.end annotation
+
 
 # virtual methods
 .method public abstract onBandwidthSample(IJJ)V

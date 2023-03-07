@@ -18,16 +18,11 @@
 .method public abstract download(Lcom/google/android/exoplayer2/offline/Downloader$ProgressListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/InterruptedException;,
-            Ljava/io/IOException;
+            Ljava/io/IOException;,
+            Ljava/lang/InterruptedException;
         }
     .end annotation
 .end method
 
 .method public abstract remove()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/InterruptedException;
-        }
-    .end annotation
 .end method

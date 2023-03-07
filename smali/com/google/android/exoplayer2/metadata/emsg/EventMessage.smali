@@ -44,31 +44,45 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 2
 
-    const/4 v0, 0x0
+    .line 52
+    new-instance v0, Lcom/google/android/exoplayer2/Format$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
     const-string v1, "application/id3"
 
-    const-wide v2, 0x7fffffffffffffffL
-
     .line 53
-    invoke-static {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/Format;->createSampleFormat(Ljava/lang/String;Ljava/lang/String;J)Lcom/google/android/exoplayer2/Format;
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->ID3_FORMAT:Lcom/google/android/exoplayer2/Format;
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->ID3_FORMAT:Lcom/google/android/exoplayer2/Format;
+
+    .line 54
+    new-instance v0, Lcom/google/android/exoplayer2/Format$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
     const-string v1, "application/x-scte35"
 
-    .line 56
-    invoke-static {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/Format;->createSampleFormat(Ljava/lang/String;Ljava/lang/String;J)Lcom/google/android/exoplayer2/Format;
+    .line 55
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->SCTE35_FORMAT:Lcom/google/android/exoplayer2/Format;
 
-    .line 187
+    .line 177
     new-instance v0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage$1;-><init>()V
@@ -81,10 +95,10 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 2
 
-    .line 101
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
+    .line 92
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -97,7 +111,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
-    .line 103
+    .line 93
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -110,21 +124,21 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
-    .line 104
+    .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
 
-    .line 105
+    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->id:J
 
-    .line 106
+    .line 96
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object p1
@@ -143,22 +157,22 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJ[B)V
     .locals 0
 
-    .line 93
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
+    .line 84
     iput-object p1, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
-    .line 95
+    .line 85
     iput-object p2, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
-    .line 96
+    .line 86
     iput-wide p3, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
 
-    .line 97
+    .line 87
     iput-wide p5, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->id:J
 
-    .line 98
+    .line 88
     iput-object p7, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->messageData:[B
 
     return-void
@@ -188,7 +202,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 148
+    .line 138
     const-class v2, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -199,11 +213,11 @@
 
     goto :goto_1
 
-    .line 151
+    .line 141
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;
 
-    .line 152
+    .line 142
     iget-wide v2, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
@@ -224,7 +238,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
-    .line 154
+    .line 144
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -235,7 +249,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
-    .line 155
+    .line 145
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -246,7 +260,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->messageData:[B
 
-    .line 156
+    .line 146
     invoke-static {v2, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result p1
@@ -269,7 +283,7 @@
 .method public getWrappedMetadataBytes()[B
     .locals 1
 
-    .line 126
+    .line 116
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->getWrappedMetadataFormat()Lcom/google/android/exoplayer2/Format;
 
     move-result-object v0
@@ -290,7 +304,7 @@
 .method public getWrappedMetadataFormat()Lcom/google/android/exoplayer2/Format;
     .locals 3
 
-    .line 112
+    .line 102
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -358,13 +372,13 @@
 
     return-object v0
 
-    .line 115
+    .line 105
     :pswitch_0
     sget-object v0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->ID3_FORMAT:Lcom/google/android/exoplayer2/Format;
 
     return-object v0
 
-    .line 117
+    .line 107
     :pswitch_1
     sget-object v0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->SCTE35_FORMAT:Lcom/google/android/exoplayer2/Format;
 
@@ -390,14 +404,14 @@
 .method public hashCode()I
     .locals 6
 
-    .line 131
+    .line 121
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->hashCode:I
 
     if-nez v0, :cond_2
 
     const/16 v0, 0x20f
 
-    .line 133
+    .line 123
     iget-object v1, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -418,7 +432,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 134
+    .line 124
     iget-object v1, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
     if-eqz v1, :cond_1
@@ -432,7 +446,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 135
+    .line 125
     iget-wide v1, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
 
     const/16 v3, 0x20
@@ -447,7 +461,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 136
+    .line 126
     iget-wide v1, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->id:J
 
     ushr-long v3, v1, v3
@@ -460,7 +474,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 137
+    .line 127
     iget-object v1, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->messageData:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
@@ -469,20 +483,28 @@
 
     add-int/2addr v0, v1
 
-    .line 138
+    .line 128
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->hashCode:I
 
-    .line 140
+    .line 130
     :cond_2
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->hashCode:I
 
     return v0
 .end method
 
+.method public synthetic populateMediaMetadata(Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/metadata/Metadata$Entry$-CC;->$default$populateMediaMetadata(Lcom/google/android/exoplayer2/metadata/Metadata$Entry;Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 161
+    .line 151
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -529,27 +551,27 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    .line 180
+    .line 170
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->schemeIdUri:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 181
+    .line 171
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->value:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 182
+    .line 172
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 183
+    .line 173
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->id:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 184
+    .line 174
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->messageData:[B
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V

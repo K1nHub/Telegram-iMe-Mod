@@ -235,12 +235,6 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
-
     .line 1
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -264,12 +258,6 @@
 .method public static checkNotEmpty(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
-    .end annotation
-
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
     .end annotation
 
     .line 3
@@ -343,12 +331,6 @@
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
-
     const-string v0, "null reference"
 
     .line 1
@@ -369,12 +351,6 @@
             ">(TT;",
             "Ljava/lang/Object;",
             ")TT;"
-        }
-    .end annotation
-
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
         }
     .end annotation
 

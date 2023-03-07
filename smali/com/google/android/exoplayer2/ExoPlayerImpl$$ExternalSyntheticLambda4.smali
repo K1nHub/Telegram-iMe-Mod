@@ -2,70 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/BasePlayer$ListenerInvocation;
+.implements Lcom/google/android/exoplayer2/util/ListenerSet$Event;
 
 
 # instance fields
-.field public final synthetic f$0:Z
+.field public final synthetic f$0:I
 
-.field public final synthetic f$1:Z
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:Z
-
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:Z
-
-.field public final synthetic f$6:Z
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(ZZIZIZZ)V
+.method public synthetic constructor <init>(II)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$0:Z
+    iput p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$0:I
 
-    iput-boolean p2, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$1:Z
-
-    iput p3, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$2:I
-
-    iput-boolean p4, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$3:Z
-
-    iput p5, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$4:I
-
-    iput-boolean p6, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$5:Z
-
-    iput-boolean p7, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$6:Z
+    iput p2, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeListener(Lcom/google/android/exoplayer2/Player$EventListener;)V
-    .locals 8
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$0:Z
+    iget v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$0:I
 
-    iget-boolean v1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$1:Z
+    iget v1, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$1:I
 
-    iget v2, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$2:I
+    check-cast p1, Lcom/google/android/exoplayer2/Player$Listener;
 
-    iget-boolean v3, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$3:Z
-
-    iget v4, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$4:I
-
-    iget-boolean v5, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$5:Z
-
-    iget-boolean v6, p0, Lcom/google/android/exoplayer2/ExoPlayerImpl$$ExternalSyntheticLambda4;->f$6:Z
-
-    move-object v7, p1
-
-    invoke-static/range {v0 .. v7}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$Anl4wgLYsC6plFqgFnquoglVB8k(ZZIZIZZLcom/google/android/exoplayer2/Player$EventListener;)V
+    invoke-static {v0, v1, p1}, Lcom/google/android/exoplayer2/ExoPlayerImpl;->$r8$lambda$LEzBBscn-_l3k3Wp16Yiv1NbVFo(IILcom/google/android/exoplayer2/Player$Listener;)V
 
     return-void
 .end method

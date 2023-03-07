@@ -24,13 +24,13 @@
 .method private constructor <init>(IJ)V
     .locals 0
 
-    .line 196
+    .line 187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 197
+    .line 188
     iput p1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->type:I
 
-    .line 198
+    .line 189
     iput-wide p2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->retryDelayMillis:J
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(IJLcom/google/android/exoplayer2/upstream/Loader$1;)V
     .locals 0
 
-    .line 191
+    .line 182
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;-><init>(IJ)V
 
     return-void
@@ -48,7 +48,7 @@
 .method static synthetic access$300(Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;)I
     .locals 0
 
-    .line 191
+    .line 182
     iget p0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->type:I
 
     return p0
@@ -57,7 +57,7 @@
 .method static synthetic access$400(Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;)J
     .locals 2
 
-    .line 191
+    .line 182
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->retryDelayMillis:J
 
     return-wide v0
@@ -68,7 +68,7 @@
 .method public isRetry()Z
     .locals 2
 
-    .line 203
+    .line 194
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->type:I
 
     const/4 v1, 0x1

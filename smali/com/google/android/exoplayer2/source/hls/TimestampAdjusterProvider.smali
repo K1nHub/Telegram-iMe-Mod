@@ -19,10 +19,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 32
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -37,7 +37,7 @@
 .method public getAdjuster(I)Lcom/google/android/exoplayer2/util/TimestampAdjuster;
     .locals 3
 
-    .line 42
+    .line 43
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/TimestampAdjusterProvider;->timestampAdjusters:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -48,14 +48,14 @@
 
     if-nez v0, :cond_0
 
-    .line 44
+    .line 45
     new-instance v0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;
 
-    const-wide v1, 0x7fffffffffffffffL
+    const-wide v1, 0x7ffffffffffffffeL
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;-><init>(J)V
 
-    .line 45
+    .line 46
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/TimestampAdjusterProvider;->timestampAdjusters:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
@@ -67,7 +67,7 @@
 .method public reset()V
     .locals 1
 
-    .line 54
+    .line 53
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/TimestampAdjusterProvider;->timestampAdjusters:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V

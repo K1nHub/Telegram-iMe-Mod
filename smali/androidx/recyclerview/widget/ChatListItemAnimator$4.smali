@@ -29,7 +29,7 @@
 .method constructor <init>(Landroidx/recyclerview/widget/ChatListItemAnimator;Lorg/telegram/ui/Cells/BotHelpCell;F)V
     .locals 0
 
-    .line 690
+    .line 684
     iput-object p1, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$4;->this$0:Landroidx/recyclerview/widget/ChatListItemAnimator;
 
     iput-object p2, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$4;->val$botCell:Lorg/telegram/ui/Cells/BotHelpCell;
@@ -46,7 +46,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 693
+    .line 687
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -57,7 +57,7 @@
 
     move-result p1
 
-    .line 694
+    .line 688
     iget-object v0, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$4;->this$0:Landroidx/recyclerview/widget/ChatListItemAnimator;
 
     invoke-static {v0}, Landroidx/recyclerview/widget/ChatListItemAnimator;->access$000(Landroidx/recyclerview/widget/ChatListItemAnimator;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -122,7 +122,7 @@
 
     add-float/2addr v0, v1
 
-    .line 696
+    .line 690
     iget-object v1, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$4;->val$botCell:Lorg/telegram/ui/Cells/BotHelpCell;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
@@ -135,7 +135,7 @@
 
     if-lez v1, :cond_0
 
-    .line 697
+    .line 691
     iget-object v1, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$4;->val$botCell:Lorg/telegram/ui/Cells/BotHelpCell;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
@@ -151,7 +151,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 699
+    .line 693
     :goto_0
     iget-object v1, p0, Landroidx/recyclerview/widget/ChatListItemAnimator$4;->val$botCell:Lorg/telegram/ui/Cells/BotHelpCell;
 

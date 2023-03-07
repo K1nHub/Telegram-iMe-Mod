@@ -6,17 +6,15 @@
 # static fields
 .field public static final ASSERTIONS_ENABLED:Z = true
 
-.field public static final GL_ASSERTIONS_ENABLED:Z = false
-
-.field public static final TAG:Ljava/lang/String; = "ExoPlayer"
+.field public static final TAG:Ljava/lang/String; = "ExoPlayerLib"
 
 .field public static final TRACE_ENABLED:Z = true
 
-.field public static final VERSION:Ljava/lang/String; = "2.11.7"
+.field public static final VERSION:Ljava/lang/String; = "2.18.3"
 
-.field public static final VERSION_INT:I = 0x1eaf7f
+.field public static final VERSION_INT:I = 0x1ecad3
 
-.field public static final VERSION_SLASHY:Ljava/lang/String; = "ExoPlayerLib/2.11.7"
+.field public static final VERSION_SLASHY:Ljava/lang/String; = "ExoPlayerLib/2.18.3"
 
 .field private static final registeredModules:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
@@ -35,7 +33,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 63
+    .line 52
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -44,7 +42,7 @@
 
     const-string v0, "goog.exo.core"
 
-    .line 64
+    .line 53
     sput-object v0, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registeredModulesString:Ljava/lang/String;
 
     return-void
@@ -53,7 +51,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 66
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -66,7 +64,7 @@
 
     monitor-enter v0
 
-    .line 81
+    .line 68
     :try_start_0
     sget-object v1, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registeredModules:Ljava/util/HashSet;
 
@@ -76,7 +74,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 82
+    .line 69
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -99,7 +97,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 84
+    .line 71
     :cond_0
     monitor-exit v0
 
@@ -120,7 +118,7 @@
 
     monitor-enter v0
 
-    .line 72
+    .line 59
     :try_start_0
     sget-object v1, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registeredModulesString:Ljava/lang/String;
     :try_end_0

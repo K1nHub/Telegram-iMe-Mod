@@ -3,137 +3,143 @@
 .source "OfflineLicenseHelper.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
 # static fields
-.field private static final DUMMY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/drm/DrmInitData;
+.field private static final FORMAT_WITH_EMPTY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/Format;
 
 
 # instance fields
 .field private final conditionVariable:Landroid/os/ConditionVariable;
 
 .field private final drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager<",
-            "TT;>;"
-        }
-    .end annotation
-.end field
+
+.field private final eventDispatcher:Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
 
 .field private final handlerThread:Landroid/os/HandlerThread;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
-    .line 41
-    new-instance v0, Lcom/google/android/exoplayer2/drm/DrmInitData;
+    .line 39
+    new-instance v0, Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
-    new-array v1, v1, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+    new-instance v1, Lcom/google/android/exoplayer2/drm/DrmInitData;
 
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>([Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
+    const/4 v2, 0x0
 
-    sput-object v0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->DUMMY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/drm/DrmInitData;
+    new-array v2, v2, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    invoke-direct {v1, v2}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>([Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
+
+    .line 40
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setDrmInitData(Lcom/google/android/exoplayer2/drm/DrmInitData;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->FORMAT_WITH_EMPTY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/Format;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/UUID;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;Lcom/google/android/exoplayer2/drm/MediaDrmCallback;Ljava/util/Map;)V
-    .locals 3
+.method public constructor <init>(Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
+    .locals 2
+
+    .line 150
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 151
+    iput-object p1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
+
+    .line 152
+    iput-object p2, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->eventDispatcher:Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
+
+    .line 153
+    new-instance p1, Landroid/os/HandlerThread;
+
+    const-string v0, "ExoPlayer:OfflineLicenseHelper"
+
+    invoke-direct {p1, v0}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->handlerThread:Landroid/os/HandlerThread;
+
+    .line 154
+    invoke-virtual {p1}, Landroid/os/HandlerThread;->start()V
+
+    .line 155
+    new-instance v0, Landroid/os/ConditionVariable;
+
+    invoke-direct {v0}, Landroid/os/ConditionVariable;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->conditionVariable:Landroid/os/ConditionVariable;
+
+    .line 156
+    new-instance v0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper$1;
+
+    invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper$1;-><init>(Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;)V
+
+    .line 179
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-virtual {p1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object p1
+
+    invoke-direct {v1, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    invoke-virtual {p2, v1, v0}, Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;->addEventListener(Landroid/os/Handler;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/UUID;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;Lcom/google/android/exoplayer2/drm/MediaDrmCallback;Ljava/util/Map;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/UUID;",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider<",
-            "TT;>;",
+            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;",
             "Lcom/google/android/exoplayer2/drm/MediaDrmCallback;",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            ">;)V"
+            ">;",
+            "Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;",
+            ")V"
         }
     .end annotation
 
-    .line 127
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    .line 128
-    new-instance v0, Landroid/os/HandlerThread;
+    .line 133
+    new-instance v0, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
 
-    const-string v1, "OfflineLicenseHelper"
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;-><init>()V
 
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->handlerThread:Landroid/os/HandlerThread;
-
-    .line 129
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
-
-    .line 130
-    new-instance v1, Landroid/os/ConditionVariable;
-
-    invoke-direct {v1}, Landroid/os/ConditionVariable;-><init>()V
-
-    iput-object v1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->conditionVariable:Landroid/os/ConditionVariable;
-
-    .line 131
-    new-instance v1, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper$1;
-
-    invoke-direct {v1, p0}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper$1;-><init>(Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;)V
-
-    if-nez p4, :cond_0
-
-    .line 154
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object p4
-
-    .line 156
-    :cond_0
-    new-instance v2, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
-
-    invoke-direct {v2}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;-><init>()V
-
-    .line 159
-    invoke-virtual {v2, p1, p2}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;->setUuidAndExoMediaDrmProvider(Ljava/util/UUID;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;)Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
+    .line 135
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;->setUuidAndExoMediaDrmProvider(Ljava/util/UUID;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;)Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
 
     move-result-object p1
 
-    .line 160
+    .line 136
     invoke-virtual {p1, p4}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;->setKeyRequestParameters(Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
 
     move-result-object p1
 
-    .line 161
+    .line 137
     invoke-virtual {p1, p3}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;->build(Lcom/google/android/exoplayer2/drm/MediaDrmCallback;)Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
-
-    .line 162
-    new-instance p2, Landroid/os/Handler;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object p3
-
-    invoke-direct {p2, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    invoke-virtual {p1, p2, v1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->addListener(Landroid/os/Handler;Lcom/google/android/exoplayer2/drm/DefaultDrmSessionEventListener;)V
+    .line 133
+    invoke-direct {p0, p1, p5}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;-><init>(Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
 
     return-void
 .end method
@@ -141,51 +147,66 @@
 .method static synthetic access$000(Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;)Landroid/os/ConditionVariable;
     .locals 0
 
-    .line 39
+    .line 37
     iget-object p0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->conditionVariable:Landroid/os/ConditionVariable;
 
     return-object p0
 .end method
 
-.method private blockingKeyRequest(I[BLcom/google/android/exoplayer2/drm/DrmInitData;)[B
-    .locals 1
+.method private blockingKeyRequest(I[BLcom/google/android/exoplayer2/Format;)[B
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/drm/DrmSession$DrmSessionException;
         }
     .end annotation
 
-    .line 242
+    .line 265
+    iget-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->handlerThread:Landroid/os/HandlerThread;
+
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/android/exoplayer2/analytics/PlayerId;->UNSET:Lcom/google/android/exoplayer2/analytics/PlayerId;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->setPlayer(Landroid/os/Looper;Lcom/google/android/exoplayer2/analytics/PlayerId;)V
+
+    .line 266
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->prepare()V
 
-    .line 243
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->openBlockingKeyRequest(I[BLcom/google/android/exoplayer2/drm/DrmInitData;)Lcom/google/android/exoplayer2/drm/DrmSession;
+    .line 267
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->openBlockingKeyRequest(I[BLcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/drm/DrmSession;
 
     move-result-object p1
 
-    .line 245
+    .line 268
     invoke-interface {p1}, Lcom/google/android/exoplayer2/drm/DrmSession;->getError()Lcom/google/android/exoplayer2/drm/DrmSession$DrmSessionException;
 
     move-result-object p2
 
-    .line 246
+    .line 269
     invoke-interface {p1}, Lcom/google/android/exoplayer2/drm/DrmSession;->getOfflineLicenseKeySetId()[B
 
     move-result-object p3
 
-    .line 247
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/drm/DrmSession;->release()V
+    .line 270
+    iget-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->eventDispatcher:Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
 
-    .line 248
+    invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/drm/DrmSession;->release(Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
+
+    .line 271
     iget-object p1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->release()V
 
     if-nez p2, :cond_0
 
-    .line 252
+    .line 275
     invoke-static {p3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -194,160 +215,126 @@
 
     return-object p1
 
-    .line 250
+    .line 273
     :cond_0
     throw p2
 .end method
 
-.method public static newWidevineInstance(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
+.method public static newWidevineInstance(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSource$Factory;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 62
+    invoke-static {p0, v0, p1, p2}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/DataSource$Factory;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/DataSource$Factory;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 84
+    invoke-static {p0, p1, p2, v0, p3}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/DataSource$Factory;Ljava/util/Map;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/DataSource$Factory;Ljava/util/Map;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;",
-            ")",
-            "Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    .line 61
-    invoke-static {p0, v0, p1, v1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
             "Z",
-            "Lcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;",
-            ")",
-            "Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;
-        }
-    .end annotation
-
-    const/4 v0, 0x0
-
-    .line 80
-    invoke-static {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static newWidevineInstance(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Z",
-            "Lcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;",
+            "Lcom/google/android/exoplayer2/upstream/DataSource$Factory;",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
-            ">;)",
-            "Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;"
+            ">;",
+            "Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;",
+            ")",
+            "Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;"
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;
-        }
-    .end annotation
-
-    .line 105
+    .line 113
     new-instance v0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;
 
-    sget-object v1, Lcom/google/android/exoplayer2/C;->WIDEVINE_UUID:Ljava/util/UUID;
+    new-instance v1, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
 
-    sget-object v2, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->DEFAULT_PROVIDER:Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;
+    invoke-direct {v1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;-><init>()V
 
-    new-instance v3, Lcom/google/android/exoplayer2/drm/HttpMediaDrmCallback;
+    .line 115
+    invoke-virtual {v1, p3}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;->setKeyRequestParameters(Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;
 
-    invoke-direct {v3, p0, p1, p2}, Lcom/google/android/exoplayer2/drm/HttpMediaDrmCallback;-><init>(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/HttpDataSource$Factory;)V
+    move-result-object p3
 
-    invoke-direct {v0, v1, v2, v3, p3}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;-><init>(Ljava/util/UUID;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;Lcom/google/android/exoplayer2/drm/MediaDrmCallback;Ljava/util/Map;)V
+    new-instance v1, Lcom/google/android/exoplayer2/drm/HttpMediaDrmCallback;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/google/android/exoplayer2/drm/HttpMediaDrmCallback;-><init>(Ljava/lang/String;ZLcom/google/android/exoplayer2/upstream/DataSource$Factory;)V
+
+    .line 116
+    invoke-virtual {p3, v1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$Builder;->build(Lcom/google/android/exoplayer2/drm/MediaDrmCallback;)Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0, p4}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;-><init>(Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
 
     return-object v0
 .end method
 
-.method private openBlockingKeyRequest(I[BLcom/google/android/exoplayer2/drm/DrmInitData;)Lcom/google/android/exoplayer2/drm/DrmSession;
+.method private openBlockingKeyRequest(I[BLcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/drm/DrmSession;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I[B",
-            "Lcom/google/android/exoplayer2/drm/DrmInitData;",
-            ")",
-            "Lcom/google/android/exoplayer2/drm/DrmSession<",
-            "TT;>;"
-        }
-    .end annotation
 
-    .line 257
+    .line 280
+    iget-object v0, p3, Lcom/google/android/exoplayer2/Format;->drmInitData:Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 281
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->setMode(I[B)V
 
-    .line 258
+    .line 282
     iget-object p1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->conditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {p1}, Landroid/os/ConditionVariable;->close()V
 
-    .line 259
+    .line 283
     iget-object p1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
-    iget-object p2, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->handlerThread:Landroid/os/HandlerThread;
+    iget-object p2, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->eventDispatcher:Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
 
-    invoke-virtual {p2}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2, p3}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->acquireSession(Landroid/os/Looper;Lcom/google/android/exoplayer2/drm/DrmInitData;)Lcom/google/android/exoplayer2/drm/DrmSession;
+    invoke-virtual {p1, p2, p3}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->acquireSession(Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/drm/DrmSession;
 
     move-result-object p1
 
-    .line 262
+    .line 285
     iget-object p2, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->conditionVariable:Landroid/os/ConditionVariable;
 
     invoke-virtual {p2}, Landroid/os/ConditionVariable;->block()V
+
+    .line 286
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/exoplayer2/drm/DrmSession;
 
     return-object p1
 .end method
 
 
 # virtual methods
-.method public declared-synchronized downloadLicense(Lcom/google/android/exoplayer2/drm/DrmInitData;)[B
+.method public declared-synchronized downloadLicense(Lcom/google/android/exoplayer2/Format;)[B
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -357,7 +344,11 @@
 
     monitor-enter p0
 
-    if-eqz p1, :cond_0
+    .line 191
+    :try_start_0
+    iget-object v0, p1, Lcom/google/android/exoplayer2/Format;->drmInitData:Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -366,17 +357,15 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 173
     :goto_0
-    :try_start_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
     const/4 v0, 0x2
 
     const/4 v1, 0x0
 
-    .line 174
-    invoke-direct {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->blockingKeyRequest(I[BLcom/google/android/exoplayer2/drm/DrmInitData;)[B
+    .line 192
+    invoke-direct {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->blockingKeyRequest(I[BLcom/google/android/exoplayer2/Format;)[B
 
     move-result-object p1
     :try_end_0
@@ -395,7 +384,7 @@
 .end method
 
 .method public declared-synchronized getLicenseDurationRemainingSec([B)Landroid/util/Pair;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -414,46 +403,61 @@
 
     monitor-enter p0
 
-    .line 213
+    .line 235
     :try_start_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 214
+    .line 236
+    iget-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->handlerThread:Landroid/os/HandlerThread;
+
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/android/exoplayer2/analytics/PlayerId;->UNSET:Lcom/google/android/exoplayer2/analytics/PlayerId;
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->setPlayer(Landroid/os/Looper;Lcom/google/android/exoplayer2/analytics/PlayerId;)V
+
+    .line 237
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->prepare()V
 
     const/4 v0, 0x1
 
-    .line 215
-    sget-object v1, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->DUMMY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/drm/DrmInitData;
+    .line 238
+    sget-object v1, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->FORMAT_WITH_EMPTY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/Format;
 
-    .line 216
-    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->openBlockingKeyRequest(I[BLcom/google/android/exoplayer2/drm/DrmInitData;)Lcom/google/android/exoplayer2/drm/DrmSession;
+    .line 239
+    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->openBlockingKeyRequest(I[BLcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/drm/DrmSession;
 
     move-result-object p1
 
-    .line 218
+    .line 243
     invoke-interface {p1}, Lcom/google/android/exoplayer2/drm/DrmSession;->getError()Lcom/google/android/exoplayer2/drm/DrmSession$DrmSessionException;
 
     move-result-object v0
 
-    .line 220
+    .line 245
     invoke-static {p1}, Lcom/google/android/exoplayer2/drm/WidevineUtil;->getLicenseDurationRemainingSec(Lcom/google/android/exoplayer2/drm/DrmSession;)Landroid/util/Pair;
 
     move-result-object v1
 
-    .line 221
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/drm/DrmSession;->release()V
+    .line 246
+    iget-object v2, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->eventDispatcher:Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
 
-    .line 222
+    invoke-interface {p1, v2}, Lcom/google/android/exoplayer2/drm/DrmSession;->release(Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
+
+    .line 247
     iget-object p1, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->release()V
 
     if-eqz v0, :cond_1
 
-    .line 224
+    .line 249
     invoke-virtual {v0}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
 
     move-result-object p1
@@ -464,7 +468,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 225
+    .line 250
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -483,12 +487,12 @@
 
     return-object p1
 
-    .line 227
+    .line 252
     :cond_0
     :try_start_1
     throw v0
 
-    .line 229
+    .line 254
     :cond_1
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -513,7 +517,7 @@
 .method public release()V
     .locals 1
 
-    .line 236
+    .line 259
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->handlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quit()Z
@@ -531,20 +535,20 @@
 
     monitor-enter p0
 
-    .line 199
+    .line 219
     :try_start_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x3
 
-    .line 200
-    sget-object v1, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->DUMMY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/drm/DrmInitData;
+    .line 220
+    sget-object v1, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->FORMAT_WITH_EMPTY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/Format;
 
-    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->blockingKeyRequest(I[BLcom/google/android/exoplayer2/drm/DrmInitData;)[B
+    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->blockingKeyRequest(I[BLcom/google/android/exoplayer2/Format;)[B
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 202
+    .line 224
     monitor-exit p0
 
     return-void
@@ -567,16 +571,16 @@
 
     monitor-enter p0
 
-    .line 186
+    .line 204
     :try_start_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x2
 
-    .line 187
-    sget-object v1, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->DUMMY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/drm/DrmInitData;
+    .line 205
+    sget-object v1, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->FORMAT_WITH_EMPTY_DRM_INIT_DATA:Lcom/google/android/exoplayer2/Format;
 
-    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->blockingKeyRequest(I[BLcom/google/android/exoplayer2/drm/DrmInitData;)[B
+    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/exoplayer2/drm/OfflineLicenseHelper;->blockingKeyRequest(I[BLcom/google/android/exoplayer2/Format;)[B
 
     move-result-object p1
     :try_end_0

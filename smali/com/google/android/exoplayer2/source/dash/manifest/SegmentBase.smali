@@ -27,16 +27,16 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;JJ)V
     .locals 0
 
-    .line 41
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 48
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->initialization:Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
-    .line 43
+    .line 49
     iput-wide p2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->timescale:J
 
-    .line 44
+    .line 50
     iput-wide p4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->presentationTimeOffset:J
 
     return-void
@@ -47,7 +47,7 @@
 .method public getInitialization(Lcom/google/android/exoplayer2/source/dash/manifest/Representation;)Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
     .locals 0
 
-    .line 56
+    .line 62
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->initialization:Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
     return-object p1
@@ -56,7 +56,7 @@
 .method public getPresentationTimeOffsetUs()J
     .locals 6
 
-    .line 63
+    .line 67
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->presentationTimeOffset:J
 
     iget-wide v4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->timescale:J

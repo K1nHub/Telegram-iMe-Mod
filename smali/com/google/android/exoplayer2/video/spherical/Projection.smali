@@ -1,4 +1,4 @@
-.class public final Lcom/google/android/exoplayer2/video/spherical/Projection;
+.class final Lcom/google/android/exoplayer2/video/spherical/Projection;
 .super Ljava/lang/Object;
 .source "Projection.java"
 
@@ -39,7 +39,7 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;I)V
     .locals 0
 
-    .line 170
+    .line 174
     invoke-direct {p0, p1, p1, p2}, Lcom/google/android/exoplayer2/video/spherical/Projection;-><init>(Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;I)V
 
     return-void
@@ -48,16 +48,16 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;I)V
     .locals 0
 
-    .line 181
+    .line 185
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 182
+    .line 186
     iput-object p1, p0, Lcom/google/android/exoplayer2/video/spherical/Projection;->leftMesh:Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;
 
-    .line 183
+    .line 187
     iput-object p2, p0, Lcom/google/android/exoplayer2/video/spherical/Projection;->rightMesh:Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;
 
-    .line 184
+    .line 188
     iput p3, p0, Lcom/google/android/exoplayer2/video/spherical/Projection;->stereoMode:I
 
     if-ne p1, p2, :cond_0
@@ -69,7 +69,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 185
+    .line 189
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/video/spherical/Projection;->singleMesh:Z
 
@@ -104,7 +104,7 @@
     :cond_0
     const/4 v8, 0x0
 
-    .line 81
+    .line 85
     :goto_0
     invoke-static {v8}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
@@ -117,7 +117,7 @@
     :cond_1
     const/4 v8, 0x0
 
-    .line 82
+    .line 86
     :goto_1
     invoke-static {v8}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
@@ -130,7 +130,7 @@
     :cond_2
     const/4 v8, 0x0
 
-    .line 83
+    .line 87
     :goto_2
     invoke-static {v8}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
@@ -151,7 +151,7 @@
     :cond_3
     const/4 v8, 0x0
 
-    .line 84
+    .line 88
     :goto_3
     invoke-static {v8}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
@@ -172,13 +172,13 @@
     :cond_4
     const/4 v5, 0x0
 
-    .line 85
+    .line 89
     :goto_4
     invoke-static {v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
     float-to-double v8, v3
 
-    .line 88
+    .line 92
     invoke-static {v8, v9}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v8
@@ -187,7 +187,7 @@
 
     float-to-double v4, v4
 
-    .line 89
+    .line 93
     invoke-static {v4, v5}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v4
@@ -214,12 +214,12 @@
 
     mul-int/lit8 v12, v10, 0x3
 
-    .line 96
+    .line 100
     new-array v12, v12, [F
 
     mul-int/lit8 v10, v10, 0x2
 
-    .line 97
+    .line 101
     new-array v10, v10, [F
 
     const/4 v13, 0x0
@@ -305,7 +305,7 @@
 
     float-to-double v5, v8
 
-    .line 117
+    .line 121
     invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v24
@@ -332,7 +332,7 @@
 
     add-int/lit8 v10, v19, 0x1
 
-    .line 118
+    .line 122
     invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v24
@@ -347,7 +347,7 @@
 
     add-int/lit8 v13, v10, 0x1
 
-    .line 119
+    .line 123
     invoke-static {v5, v6}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v5
@@ -368,7 +368,7 @@
 
     div-float/2addr v9, v4
 
-    .line 121
+    .line 125
     aput v9, v28, v15
 
     add-int/lit8 v2, v1, 0x1
@@ -381,7 +381,7 @@
 
     div-float/2addr v5, v3
 
-    .line 122
+    .line 126
     aput v5, v28, v1
 
     if-nez v20, :cond_7
@@ -418,7 +418,7 @@
 
     const/4 v8, 0x3
 
-    .line 126
+    .line 130
     invoke-static {v12, v7, v12, v13, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/lit8 v13, v13, 0x3
@@ -429,7 +429,7 @@
 
     const/4 v9, 0x2
 
-    .line 133
+    .line 137
     invoke-static {v8, v7, v8, v2, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/lit8 v2, v2, 0x2
@@ -523,7 +523,7 @@
     :cond_b
     move-object v8, v10
 
-    .line 146
+    .line 150
     new-instance v0, Lcom/google/android/exoplayer2/video/spherical/Projection$SubMesh;
 
     const/4 v1, 0x0
@@ -532,7 +532,7 @@
 
     invoke-direct {v0, v1, v12, v8, v2}, Lcom/google/android/exoplayer2/video/spherical/Projection$SubMesh;-><init>(I[F[FI)V
 
-    .line 148
+    .line 152
     new-instance v3, Lcom/google/android/exoplayer2/video/spherical/Projection;
 
     new-instance v4, Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;
@@ -565,7 +565,7 @@
 
     move v5, p0
 
-    .line 52
+    .line 56
     invoke-static/range {v0 .. v5}, Lcom/google/android/exoplayer2/video/spherical/Projection;->createEquirectangular(FIIFFI)Lcom/google/android/exoplayer2/video/spherical/Projection;
 
     move-result-object p0

@@ -22,7 +22,7 @@
 
     const/4 v0, 0x0
 
-    .line 46
+    .line 45
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;-><init>([BLcom/google/android/exoplayer2/upstream/DataSink;[B)V
 
     return-void
@@ -31,16 +31,16 @@
 .method public constructor <init>([BLcom/google/android/exoplayer2/upstream/DataSink;[B)V
     .locals 0
 
-    .line 61
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
+    .line 61
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->wrappedDataSink:Lcom/google/android/exoplayer2/upstream/DataSink;
 
-    .line 63
+    .line 62
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->secretKey:[B
 
-    .line 64
+    .line 63
     iput-object p3, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->scratch:[B
 
     return-void
@@ -58,10 +58,10 @@
 
     const/4 v0, 0x0
 
-    .line 96
+    .line 98
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->cipher:Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;
 
-    .line 97
+    .line 99
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->wrappedDataSink:Lcom/google/android/exoplayer2/upstream/DataSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSink;->close()V
@@ -70,37 +70,36 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 69
+    .line 68
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->wrappedDataSink:Lcom/google/android/exoplayer2/upstream/DataSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/upstream/DataSink;->open(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    .line 70
-    iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/crypto/CryptoUtil;->getFNV64Hash(Ljava/lang/String;)J
-
-    move-result-wide v4
-
-    .line 71
+    .line 69
     new-instance v0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->secretKey:[B
 
-    iget-wide v6, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
+    iget-object v4, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+
+    iget-wide v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uriPositionOffset:J
+
+    iget-wide v5, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+
+    add-long/2addr v5, v1
 
     const/4 v2, 0x1
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v7}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;-><init>(I[BJJ)V
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;-><init>(I[BLjava/lang/String;J)V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->cipher:Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;
 
@@ -115,12 +114,12 @@
         }
     .end annotation
 
-    .line 77
+    .line 79
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->scratch:[B
 
     if-nez v0, :cond_0
 
-    .line 79
+    .line 81
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->cipher:Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -131,7 +130,7 @@
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->updateInPlace([BII)V
 
-    .line 80
+    .line 82
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->wrappedDataSink:Lcom/google/android/exoplayer2/upstream/DataSink;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataSink;->write([BII)V
@@ -148,7 +147,7 @@
 
     sub-int v2, p3, v1
 
-    .line 85
+    .line 87
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->scratch:[B
 
     array-length v3, v3
@@ -157,7 +156,7 @@
 
     move-result v2
 
-    .line 86
+    .line 88
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->cipher:Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;
 
     invoke-static {v3}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -178,10 +177,10 @@
 
     move v7, v2
 
-    .line 87
+    .line 89
     invoke-virtual/range {v4 .. v9}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->update([BII[BI)V
 
-    .line 88
+    .line 90
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->wrappedDataSink:Lcom/google/android/exoplayer2/upstream/DataSink;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesCipherDataSink;->scratch:[B

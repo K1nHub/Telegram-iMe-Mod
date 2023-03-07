@@ -17,12 +17,6 @@
 
 
 # static fields
-.field private static final AV1_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-.field private static final AVC_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-.field private static final AVC_PROFILE_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
 .field private static final CODEC_ID_AV01:Ljava/lang/String; = "av01"
 
 .field private static final CODEC_ID_AVC1:Ljava/lang/String; = "avc1"
@@ -37,48 +31,9 @@
 
 .field private static final CODEC_ID_VP09:Ljava/lang/String; = "vp09"
 
-.field private static final DOLBY_VISION_STRING_TO_LEVEL:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final DOLBY_VISION_STRING_TO_PROFILE:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final HEVC_CODEC_STRING_TO_PROFILE_LEVEL:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final MP4A_AUDIO_OBJECT_TYPE_TO_PROFILE:Landroid/util/SparseIntArray;
-
 .field private static final PROFILE_PATTERN:Ljava/util/regex/Pattern;
 
 .field private static final TAG:Ljava/lang/String; = "MediaCodecUtil"
-
-.field private static final VP9_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-.field private static final VP9_PROFILE_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
 
 .field private static final decoderInfosCache:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -137,7 +92,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 16
+    .locals 1
 
     const-string v0, "^\\D?(\\d+)$"
 
@@ -148,7 +103,7 @@
 
     sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->PROFILE_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 67
+    .line 68
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -157,916 +112,8 @@
 
     const/4 v0, -0x1
 
-    .line 94
+    .line 85
     sput v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->maxH264DecodableFrameSize:I
-
-    .line 1090
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->AVC_PROFILE_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/16 v1, 0x42
-
-    const/4 v2, 0x1
-
-    .line 1139
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    .line 1091
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x4d
-
-    const/4 v4, 0x2
-
-    .line 1153
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    .line 1092
-    invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x58
-
-    const/4 v6, 0x4
-
-    .line 1140
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    .line 1093
-    invoke-virtual {v0, v1, v6}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x64
-
-    const/16 v8, 0x8
-
-    .line 1154
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    .line 1094
-    invoke-virtual {v0, v1, v8}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x6e
-
-    const/16 v10, 0x10
-
-    .line 1141
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v11
-
-    .line 1095
-    invoke-virtual {v0, v1, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x7a
-
-    const/16 v12, 0x20
-
-    .line 1155
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    .line 1096
-    invoke-virtual {v0, v1, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xf4
-
-    const/16 v14, 0x40
-
-    .line 1142
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v15
-
-    .line 1097
-    invoke-virtual {v0, v1, v14}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1099
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->AVC_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/16 v1, 0xa
-
-    .line 1100
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xb
-
-    .line 1102
-    invoke-virtual {v0, v1, v6}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xc
-
-    .line 1103
-    invoke-virtual {v0, v1, v8}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xd
-
-    .line 1104
-    invoke-virtual {v0, v1, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x14
-
-    .line 1105
-    invoke-virtual {v0, v1, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x15
-
-    .line 1106
-    invoke-virtual {v0, v10, v14}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x16
-
-    const/16 v10, 0x80
-
-    .line 1156
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    .line 1107
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x1e
-
-    const/16 v10, 0x100
-
-    .line 1143
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    .line 1108
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x1f
-
-    const/16 v10, 0x200
-
-    .line 1157
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    .line 1109
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x400
-
-    .line 1110
-    invoke-virtual {v0, v12, v14}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x28
-
-    const/16 v10, 0x800
-
-    .line 1111
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x29
-
-    const/16 v10, 0x1000
-
-    .line 1112
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x2a
-
-    const/16 v10, 0x2000
-
-    .line 1113
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x32
-
-    const/16 v10, 0x4000
-
-    .line 1114
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x33
-
-    const v10, 0x8000
-
-    .line 1115
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x34
-
-    const/high16 v10, 0x10000
-
-    .line 1116
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1118
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->VP9_PROFILE_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/4 v10, 0x0
-
-    .line 1119
-    invoke-virtual {v0, v10, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1120
-    invoke-virtual {v0, v2, v4}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v10, 0x4
-
-    .line 1121
-    invoke-virtual {v0, v4, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v14, 0x3
-
-    const/16 v12, 0x8
-
-    .line 1122
-    invoke-virtual {v0, v14, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1123
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->VP9_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/16 v14, 0xa
-
-    .line 1124
-    invoke-virtual {v0, v14, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0xb
-
-    .line 1125
-    invoke-virtual {v0, v14, v4}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v14, 0x14
-
-    .line 1126
-    invoke-virtual {v0, v14, v10}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x15
-
-    .line 1127
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x1e
-
-    const/16 v12, 0x10
-
-    .line 1128
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x1f
-
-    const/16 v12, 0x20
-
-    .line 1129
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x28
-
-    const/16 v12, 0x40
-
-    .line 1130
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x29
-
-    const/16 v12, 0x80
-
-    .line 1131
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x32
-
-    const/16 v12, 0x100
-
-    .line 1132
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x33
-
-    const/16 v12, 0x200
-
-    .line 1133
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x3c
-
-    const/16 v12, 0x800
-
-    .line 1134
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x3d
-
-    const/16 v12, 0x1000
-
-    .line 1135
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v10, 0x3e
-
-    const/16 v12, 0x2000
-
-    .line 1136
-    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1138
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->HEVC_CODEC_STRING_TO_PROFILE_LEVEL:Ljava/util/Map;
-
-    const-string v10, "L30"
-
-    .line 1139
-    invoke-interface {v0, v10, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "L60"
-
-    .line 1140
-    invoke-interface {v0, v10, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "L63"
-
-    .line 1141
-    invoke-interface {v0, v10, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "L90"
-
-    .line 1142
-    invoke-interface {v0, v10, v15}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "L93"
-
-    .line 1143
-    invoke-interface {v0, v10, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v10, 0x400
-
-    .line 1144
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    const-string v10, "L120"
-
-    invoke-interface {v0, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v10, 0x1000
-
-    .line 1145
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    const-string v10, "L123"
-
-    invoke-interface {v0, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v10, 0x4000
-
-    .line 1146
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    const-string v10, "L150"
-
-    invoke-interface {v0, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x10000
-
-    .line 1147
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "L153"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x40000
-
-    .line 1148
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "L156"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x100000
-
-    .line 1149
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "L180"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x400000
-
-    .line 1150
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "L183"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x1000000
-
-    .line 1151
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "L186"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "H30"
-
-    .line 1153
-    invoke-interface {v0, v10, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "H60"
-
-    .line 1154
-    invoke-interface {v0, v10, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "H63"
-
-    .line 1155
-    invoke-interface {v0, v10, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "H90"
-
-    .line 1156
-    invoke-interface {v0, v10, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "H93"
-
-    .line 1157
-    invoke-interface {v0, v10, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v10, 0x800
-
-    .line 1158
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    const-string v10, "H120"
-
-    invoke-interface {v0, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/16 v10, 0x2000
-
-    .line 1159
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    const-string v10, "H123"
-
-    invoke-interface {v0, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const v10, 0x8000
-
-    .line 1160
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    const-string v10, "H150"
-
-    invoke-interface {v0, v10, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x20000
-
-    .line 1161
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "H153"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x80000
-
-    .line 1162
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "H156"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x200000
-
-    .line 1163
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "H180"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x800000
-
-    .line 1164
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "H183"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/high16 v10, 0x2000000
-
-    .line 1165
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    const-string v12, "H186"
-
-    invoke-interface {v0, v12, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1167
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->DOLBY_VISION_STRING_TO_PROFILE:Ljava/util/Map;
-
-    const-string v10, "00"
-
-    .line 1168
-    invoke-interface {v0, v10, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "01"
-
-    .line 1169
-    invoke-interface {v0, v10, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "02"
-
-    .line 1170
-    invoke-interface {v0, v10, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "03"
-
-    .line 1171
-    invoke-interface {v0, v10, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "04"
-
-    .line 1172
-    invoke-interface {v0, v10, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "05"
-
-    .line 1173
-    invoke-interface {v0, v10, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "06"
-
-    .line 1174
-    invoke-interface {v0, v10, v15}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "07"
-
-    .line 1175
-    invoke-interface {v0, v10, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "08"
-
-    .line 1176
-    invoke-interface {v0, v10, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v10, "09"
-
-    .line 1177
-    invoke-interface {v0, v10, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1179
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->DOLBY_VISION_STRING_TO_LEVEL:Ljava/util/Map;
-
-    const-string v6, "01"
-
-    .line 1180
-    invoke-interface {v0, v6, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "02"
-
-    .line 1181
-    invoke-interface {v0, v3, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "03"
-
-    .line 1182
-    invoke-interface {v0, v3, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "04"
-
-    .line 1183
-    invoke-interface {v0, v3, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "05"
-
-    .line 1184
-    invoke-interface {v0, v3, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "06"
-
-    .line 1185
-    invoke-interface {v0, v3, v13}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "07"
-
-    .line 1186
-    invoke-interface {v0, v3, v15}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v3, "08"
-
-    .line 1187
-    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v1, "09"
-
-    .line 1188
-    invoke-interface {v0, v1, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1192
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->AV1_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/4 v1, 0x0
-
-    .line 1193
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1194
-    invoke-virtual {v0, v2, v4}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x4
-
-    .line 1195
-    invoke-virtual {v0, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v3, 0x3
-
-    const/16 v5, 0x8
-
-    .line 1196
-    invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v3, 0x10
-
-    .line 1197
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x5
-
-    const/16 v3, 0x20
-
-    .line 1198
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x6
-
-    const/16 v3, 0x40
-
-    .line 1199
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x7
-
-    const/16 v3, 0x80
-
-    .line 1200
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x100
-
-    .line 1201
-    invoke-virtual {v0, v5, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x9
-
-    const/16 v3, 0x200
-
-    .line 1202
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x400
-
-    const/16 v3, 0xa
-
-    .line 1203
-    invoke-virtual {v0, v3, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xb
-
-    const/16 v3, 0x800
-
-    .line 1204
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xc
-
-    const/16 v3, 0x1000
-
-    .line 1205
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xd
-
-    const/16 v3, 0x2000
-
-    .line 1206
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xe
-
-    const/16 v3, 0x4000
-
-    .line 1207
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0xf
-
-    const v3, 0x8000
-
-    .line 1208
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/high16 v1, 0x10000
-
-    const/16 v3, 0x10
-
-    .line 1209
-    invoke-virtual {v0, v3, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x11
-
-    const/high16 v3, 0x20000
-
-    .line 1210
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x12
-
-    const/high16 v3, 0x40000
-
-    .line 1211
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x13
-
-    const/high16 v3, 0x80000
-
-    .line 1212
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/high16 v1, 0x100000
-
-    const/16 v3, 0x14
-
-    .line 1213
-    invoke-virtual {v0, v3, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/high16 v1, 0x200000
-
-    const/16 v3, 0x15
-
-    .line 1214
-    invoke-virtual {v0, v3, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x16
-
-    const/high16 v3, 0x400000
-
-    .line 1215
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x17
-
-    const/high16 v3, 0x800000
-
-    .line 1216
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1218
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->MP4A_AUDIO_OBJECT_TYPE_TO_PROFILE:Landroid/util/SparseIntArray;
-
-    .line 1219
-    invoke-virtual {v0, v2, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 1220
-    invoke-virtual {v0, v4, v4}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x3
-
-    .line 1221
-    invoke-virtual {v0, v1, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x4
-
-    .line 1222
-    invoke-virtual {v0, v1, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x5
-
-    const/4 v2, 0x5
-
-    .line 1223
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/4 v1, 0x6
-
-    const/4 v2, 0x6
-
-    .line 1224
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x11
-
-    const/16 v2, 0x11
-
-    .line 1225
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x14
-
-    .line 1226
-    invoke-virtual {v0, v1, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x17
-
-    const/16 v2, 0x17
-
-    .line 1227
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x1d
-
-    const/16 v2, 0x1d
-
-    .line 1228
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x27
-
-    const/16 v2, 0x27
-
-    .line 1229
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/16 v1, 0x2a
-
-    .line 1230
-    invoke-virtual {v0, v1, v1}, Landroid/util/SparseIntArray;->put(II)V
 
     return-void
 .end method
@@ -1074,7 +121,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 96
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -1094,7 +141,7 @@
 
     const-string v0, "audio/raw"
 
-    .line 536
+    .line 564
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -1105,7 +152,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 537
+    .line 565
     sget p0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v2, 0x1a
@@ -1116,21 +163,21 @@
 
     const-string v2, "R9"
 
-    .line 538
+    .line 566
     invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_0
 
-    .line 539
+    .line 567
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p0
 
     if-ne p0, v0, :cond_0
 
-    .line 540
+    .line 568
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -1165,21 +212,21 @@
 
     const-string v4, "audio/raw"
 
-    .line 544
+    .line 572
     invoke-static/range {v2 .. v10}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;ZZZZZ)Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
 
     move-result-object p0
 
-    .line 543
+    .line 571
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 556
+    .line 584
     :cond_0
     sget-object p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda1;->INSTANCE:Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda1;
 
     invoke-static {p1, p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->sortByScore(Ljava/util/List;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$ScoreProvider;)V
 
-    .line 573
+    .line 601
     :cond_1
     sget p0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -1193,7 +240,7 @@
 
     if-le v2, v0, :cond_3
 
-    .line 574
+    .line 602
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1204,7 +251,7 @@
 
     const-string v3, "OMX.SEC.mp3.dec"
 
-    .line 575
+    .line 603
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -1213,7 +260,7 @@
 
     const-string v3, "OMX.SEC.MP3.Decoder"
 
-    .line 576
+    .line 604
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -1222,32 +269,32 @@
 
     const-string v3, "OMX.brcm.audio.mp3.decoder"
 
-    .line 577
+    .line 605
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 582
+    .line 610
     :cond_2
     sget-object v2, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda2;->INSTANCE:Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda2;
 
     invoke-static {p1, v2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->sortByScore(Ljava/util/List;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$ScoreProvider;)V
 
     :cond_3
-    const/16 v2, 0x1e
+    const/16 v2, 0x20
 
     if-ge p0, v2, :cond_4
 
-    .line 586
+    .line 614
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p0
 
     if-le p0, v0, :cond_4
 
-    .line 587
+    .line 615
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -1258,14 +305,14 @@
 
     const-string v0, "OMX.qti.audio.decoder.flac"
 
-    .line 590
+    .line 618
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_4
 
-    .line 591
+    .line 619
     invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -1276,6 +323,300 @@
 
     :cond_4
     return-void
+.end method
+
+.method private static av1LevelNumberToConst(I)I
+    .locals 0
+
+    packed-switch p0, :pswitch_data_0
+
+    const/4 p0, -0x1
+
+    return p0
+
+    :pswitch_0
+    const/high16 p0, 0x800000
+
+    return p0
+
+    :pswitch_1
+    const/high16 p0, 0x400000
+
+    return p0
+
+    :pswitch_2
+    const/high16 p0, 0x200000
+
+    return p0
+
+    :pswitch_3
+    const/high16 p0, 0x100000
+
+    return p0
+
+    :pswitch_4
+    const/high16 p0, 0x80000
+
+    return p0
+
+    :pswitch_5
+    const/high16 p0, 0x40000
+
+    return p0
+
+    :pswitch_6
+    const/high16 p0, 0x20000
+
+    return p0
+
+    :pswitch_7
+    const/high16 p0, 0x10000
+
+    return p0
+
+    :pswitch_8
+    const p0, 0x8000
+
+    return p0
+
+    :pswitch_9
+    const/16 p0, 0x4000
+
+    return p0
+
+    :pswitch_a
+    const/16 p0, 0x2000
+
+    return p0
+
+    :pswitch_b
+    const/16 p0, 0x1000
+
+    return p0
+
+    :pswitch_c
+    const/16 p0, 0x800
+
+    return p0
+
+    :pswitch_d
+    const/16 p0, 0x400
+
+    return p0
+
+    :pswitch_e
+    const/16 p0, 0x200
+
+    return p0
+
+    :pswitch_f
+    const/16 p0, 0x100
+
+    return p0
+
+    :pswitch_10
+    const/16 p0, 0x80
+
+    return p0
+
+    :pswitch_11
+    const/16 p0, 0x40
+
+    return p0
+
+    :pswitch_12
+    const/16 p0, 0x20
+
+    return p0
+
+    :pswitch_13
+    const/16 p0, 0x10
+
+    return p0
+
+    :pswitch_14
+    const/16 p0, 0x8
+
+    return p0
+
+    :pswitch_15
+    const/4 p0, 0x4
+
+    return p0
+
+    :pswitch_16
+    const/4 p0, 0x2
+
+    return p0
+
+    :pswitch_17
+    const/4 p0, 0x1
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method private static avcLevelNumberToConst(I)I
+    .locals 0
+
+    packed-switch p0, :pswitch_data_0
+
+    packed-switch p0, :pswitch_data_1
+
+    packed-switch p0, :pswitch_data_2
+
+    packed-switch p0, :pswitch_data_3
+
+    packed-switch p0, :pswitch_data_4
+
+    const/4 p0, -0x1
+
+    return p0
+
+    :pswitch_0
+    const/high16 p0, 0x10000
+
+    return p0
+
+    :pswitch_1
+    const p0, 0x8000
+
+    return p0
+
+    :pswitch_2
+    const/16 p0, 0x4000
+
+    return p0
+
+    :pswitch_3
+    const/16 p0, 0x2000
+
+    return p0
+
+    :pswitch_4
+    const/16 p0, 0x1000
+
+    return p0
+
+    :pswitch_5
+    const/16 p0, 0x800
+
+    return p0
+
+    :pswitch_6
+    const/16 p0, 0x400
+
+    return p0
+
+    :pswitch_7
+    const/16 p0, 0x200
+
+    return p0
+
+    :pswitch_8
+    const/16 p0, 0x100
+
+    return p0
+
+    :pswitch_9
+    const/16 p0, 0x80
+
+    return p0
+
+    :pswitch_a
+    const/16 p0, 0x40
+
+    return p0
+
+    :pswitch_b
+    const/16 p0, 0x20
+
+    return p0
+
+    :pswitch_c
+    const/16 p0, 0x10
+
+    return p0
+
+    :pswitch_d
+    const/16 p0, 0x8
+
+    return p0
+
+    :pswitch_e
+    const/4 p0, 0x4
+
+    return p0
+
+    :pswitch_f
+    const/4 p0, 0x1
+
+    return p0
+
+    :pswitch_data_0
+    .packed-switch 0xa
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x14
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+    .end packed-switch
+
+    :pswitch_data_2
+    .packed-switch 0x1e
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+    .end packed-switch
+
+    :pswitch_data_3
+    .packed-switch 0x28
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+    .end packed-switch
+
+    :pswitch_data_4
+    .packed-switch 0x32
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method private static avcLevelToMaxFrameSize(I)I
@@ -1296,46 +637,51 @@
     return p0
 
     :sswitch_0
-    const/high16 p0, 0x900000
+    const/high16 p0, 0x2200000
 
     return p0
 
     :sswitch_1
-    const p0, 0x564000
+    const/high16 p0, 0x900000
 
     return p0
 
     :sswitch_2
-    const/high16 p0, 0x220000
+    const p0, 0x564000
 
     return p0
 
     :sswitch_3
-    const/high16 p0, 0x200000
+    const/high16 p0, 0x220000
 
     return p0
 
     :sswitch_4
-    const/high16 p0, 0x140000
+    const/high16 p0, 0x200000
 
     return p0
 
     :sswitch_5
-    const p0, 0xe1000
+    const/high16 p0, 0x140000
 
     return p0
 
     :sswitch_6
-    const p0, 0x65400
+    const p0, 0xe1000
 
     return p0
 
     :sswitch_7
-    const p0, 0x31800
+    const p0, 0x65400
 
     return p0
 
     :sswitch_8
+    const p0, 0x31800
+
+    return p0
+
+    :sswitch_9
     const p0, 0x18c00
 
     return p0
@@ -1345,82 +691,839 @@
 
     return p0
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
-        0x8 -> :sswitch_8
-        0x10 -> :sswitch_8
-        0x20 -> :sswitch_8
-        0x40 -> :sswitch_7
-        0x80 -> :sswitch_6
-        0x100 -> :sswitch_6
-        0x200 -> :sswitch_5
-        0x400 -> :sswitch_4
-        0x800 -> :sswitch_3
-        0x1000 -> :sswitch_3
-        0x2000 -> :sswitch_2
-        0x4000 -> :sswitch_1
-        0x8000 -> :sswitch_0
-        0x10000 -> :sswitch_0
+        0x8 -> :sswitch_9
+        0x10 -> :sswitch_9
+        0x20 -> :sswitch_9
+        0x40 -> :sswitch_8
+        0x80 -> :sswitch_7
+        0x100 -> :sswitch_7
+        0x200 -> :sswitch_6
+        0x400 -> :sswitch_5
+        0x800 -> :sswitch_4
+        0x1000 -> :sswitch_4
+        0x2000 -> :sswitch_3
+        0x4000 -> :sswitch_2
+        0x8000 -> :sswitch_1
+        0x10000 -> :sswitch_1
+        0x20000 -> :sswitch_0
+        0x40000 -> :sswitch_0
+        0x80000 -> :sswitch_0
     .end sparse-switch
 .end method
 
-.method private static codecNeedsDisableAdaptationWorkaround(Ljava/lang/String;)Z
-    .locals 2
+.method private static avcProfileNumberToConst(I)I
+    .locals 1
 
-    .line 676
-    sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
+    const/16 v0, 0x42
 
-    const/16 v1, 0x16
+    if-eq p0, v0, :cond_6
 
-    if-gt v0, v1, :cond_2
+    const/16 v0, 0x4d
 
-    sget-object v0, Lcom/google/android/exoplayer2/util/Util;->MODEL:Ljava/lang/String;
+    if-eq p0, v0, :cond_5
 
-    const-string v1, "ODROID-XU3"
+    const/16 v0, 0x58
 
-    .line 677
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eq p0, v0, :cond_4
 
-    move-result v1
+    const/16 v0, 0x64
 
-    if-nez v1, :cond_0
+    if-eq p0, v0, :cond_3
 
-    const-string v1, "Nexus 10"
+    const/16 v0, 0x6e
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eq p0, v0, :cond_2
 
-    move-result v0
+    const/16 v0, 0x7a
 
-    if-eqz v0, :cond_2
+    if-eq p0, v0, :cond_1
+
+    const/16 v0, 0xf4
+
+    if-eq p0, v0, :cond_0
+
+    const/4 p0, -0x1
+
+    return p0
 
     :cond_0
-    const-string v0, "OMX.Exynos.AVC.Decoder"
+    const/16 p0, 0x40
 
-    .line 678
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    return p0
 
-    move-result v0
+    :cond_1
+    const/16 p0, 0x20
 
-    if-nez v0, :cond_1
+    return p0
 
-    const-string v0, "OMX.Exynos.AVC.Decoder.secure"
+    :cond_2
+    const/16 p0, 0x10
 
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    return p0
+
+    :cond_3
+    const/16 p0, 0x8
+
+    return p0
+
+    :cond_4
+    const/4 p0, 0x4
+
+    return p0
+
+    :cond_5
+    const/4 p0, 0x2
+
+    return p0
+
+    :cond_6
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public static declared-synchronized clearDecoderInfoCache()V
+    .locals 2
+
+    const-class v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;
+
+    monitor-enter v0
+
+    .line 113
+    :try_start_0
+    sget-object v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->decoderInfosCache:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 114
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+
+    throw v1
+.end method
+
+.method private static dolbyVisionStringToLevel(Ljava/lang/String;)Ljava/lang/Integer;
+    .locals 7
+
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const/4 v1, -0x1
+
+    .line 1312
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    const/4 v4, 0x4
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x1
+
+    sparse-switch v2, :sswitch_data_0
+
+    goto/16 :goto_0
+
+    :sswitch_0
+    const-string v2, "13"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    if-nez p0, :cond_1
+
+    goto/16 :goto_0
 
     :cond_1
-    const/4 p0, 0x1
+    const/16 v1, 0xc
+
+    goto/16 :goto_0
+
+    :sswitch_1
+    const-string v2, "12"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    goto/16 :goto_0
+
+    :cond_2
+    const/16 v1, 0xb
+
+    goto/16 :goto_0
+
+    :sswitch_2
+    const-string v2, "11"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    goto/16 :goto_0
+
+    :cond_3
+    const/16 v1, 0xa
+
+    goto/16 :goto_0
+
+    :sswitch_3
+    const-string v2, "10"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    goto/16 :goto_0
+
+    :cond_4
+    const/16 v1, 0x9
+
+    goto/16 :goto_0
+
+    :sswitch_4
+    const-string v2, "09"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    goto/16 :goto_0
+
+    :cond_5
+    const/16 v1, 0x8
+
+    goto/16 :goto_0
+
+    :sswitch_5
+    const-string v2, "08"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_6
 
     goto :goto_0
 
-    :cond_2
-    const/4 p0, 0x0
+    :cond_6
+    const/4 v1, 0x7
+
+    goto :goto_0
+
+    :sswitch_6
+    const-string v2, "07"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    const/4 v1, 0x6
+
+    goto :goto_0
+
+    :sswitch_7
+    const-string v2, "06"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_8
+
+    goto :goto_0
+
+    :cond_8
+    const/4 v1, 0x5
+
+    goto :goto_0
+
+    :sswitch_8
+    const-string v2, "05"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_9
+
+    goto :goto_0
+
+    :cond_9
+    const/4 v1, 0x4
+
+    goto :goto_0
+
+    :sswitch_9
+    const-string v2, "04"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_a
+
+    goto :goto_0
+
+    :cond_a
+    const/4 v1, 0x3
+
+    goto :goto_0
+
+    :sswitch_a
+    const-string v2, "03"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_b
+
+    goto :goto_0
+
+    :cond_b
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :sswitch_b
+    const-string v2, "02"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_c
+
+    goto :goto_0
+
+    :cond_c
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :sswitch_c
+    const-string v2, "01"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_d
+
+    goto :goto_0
+
+    :cond_d
+    const/4 v1, 0x0
 
     :goto_0
-    return p0
+    packed-switch v1, :pswitch_data_0
+
+    return-object v0
+
+    :pswitch_0
+    const/16 p0, 0x1000
+
+    .line 1338
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    const/16 p0, 0x800
+
+    .line 1336
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    const/16 p0, 0x400
+
+    .line 1334
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_3
+    const/16 p0, 0x200
+
+    .line 1332
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_4
+    const/16 p0, 0x100
+
+    .line 1330
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_5
+    const/16 p0, 0x80
+
+    .line 1328
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_6
+    const/16 p0, 0x40
+
+    .line 1326
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_7
+    const/16 p0, 0x20
+
+    .line 1324
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_8
+    const/16 p0, 0x10
+
+    .line 1322
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1320
+    :pswitch_9
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1318
+    :pswitch_a
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1316
+    :pswitch_b
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1314
+    :pswitch_c
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x601 -> :sswitch_c
+        0x602 -> :sswitch_b
+        0x603 -> :sswitch_a
+        0x604 -> :sswitch_9
+        0x605 -> :sswitch_8
+        0x606 -> :sswitch_7
+        0x607 -> :sswitch_6
+        0x608 -> :sswitch_5
+        0x609 -> :sswitch_4
+        0x61f -> :sswitch_3
+        0x620 -> :sswitch_2
+        0x621 -> :sswitch_1
+        0x622 -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method private static dolbyVisionStringToProfile(Ljava/lang/String;)Ljava/lang/Integer;
+    .locals 7
+
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const/4 v1, -0x1
+
+    .line 1280
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    const/4 v4, 0x4
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x1
+
+    packed-switch v2, :pswitch_data_0
+
+    goto/16 :goto_0
+
+    :pswitch_0
+    const-string v2, "09"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_1
+
+    goto/16 :goto_0
+
+    :cond_1
+    const/16 v1, 0x9
+
+    goto/16 :goto_0
+
+    :pswitch_1
+    const-string v2, "08"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    goto/16 :goto_0
+
+    :cond_2
+    const/16 v1, 0x8
+
+    goto/16 :goto_0
+
+    :pswitch_2
+    const-string v2, "07"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v1, 0x7
+
+    goto :goto_0
+
+    :pswitch_3
+    const-string v2, "06"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v1, 0x6
+
+    goto :goto_0
+
+    :pswitch_4
+    const-string v2, "05"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    const/4 v1, 0x5
+
+    goto :goto_0
+
+    :pswitch_5
+    const-string v2, "04"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_6
+
+    goto :goto_0
+
+    :cond_6
+    const/4 v1, 0x4
+
+    goto :goto_0
+
+    :pswitch_6
+    const-string v2, "03"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    const/4 v1, 0x3
+
+    goto :goto_0
+
+    :pswitch_7
+    const-string v2, "02"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_8
+
+    goto :goto_0
+
+    :cond_8
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :pswitch_8
+    const-string v2, "01"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_9
+
+    goto :goto_0
+
+    :cond_9
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :pswitch_9
+    const-string v2, "00"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_a
+
+    goto :goto_0
+
+    :cond_a
+    const/4 v1, 0x0
+
+    :goto_0
+    packed-switch v1, :pswitch_data_1
+
+    return-object v0
+
+    :pswitch_a
+    const/16 p0, 0x200
+
+    .line 1300
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_b
+    const/16 p0, 0x100
+
+    .line 1298
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_c
+    const/16 p0, 0x80
+
+    .line 1296
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_d
+    const/16 p0, 0x40
+
+    .line 1294
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_e
+    const/16 p0, 0x20
+
+    .line 1292
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_f
+    const/16 p0, 0x10
+
+    .line 1290
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1288
+    :pswitch_10
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1286
+    :pswitch_11
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1284
+    :pswitch_12
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1282
+    :pswitch_13
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x600
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+    .end packed-switch
 .end method
 
 .method private static getAacCodecProfileAndLevel(Ljava/lang/String;[Ljava/lang/String;)Landroid/util/Pair;
@@ -1439,7 +1542,7 @@
         }
     .end annotation
 
-    .line 901
+    .line 926
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -1452,7 +1555,7 @@
 
     if-eq v0, v4, :cond_0
 
-    .line 902
+    .line 927
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1472,7 +1575,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 907
+    .line 932
     :try_start_0
     aget-object v0, p1, v0
 
@@ -1482,14 +1585,14 @@
 
     move-result v0
 
-    .line 908
+    .line 933
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/MimeTypes;->getMimeTypeFromMp4ObjectType(I)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v4, "audio/mp4a-latm"
 
-    .line 909
+    .line 934
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1498,25 +1601,23 @@
 
     const/4 v0, 0x2
 
-    .line 911
+    .line 936
     aget-object p1, p1, v0
 
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
 
-    .line 912
-    sget-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->MP4A_AUDIO_OBJECT_TYPE_TO_PROFILE:Landroid/util/SparseIntArray;
-
-    const/4 v4, -0x1
-
-    invoke-virtual {v0, p1, v4}, Landroid/util/SparseIntArray;->get(II)I
+    .line 937
+    invoke-static {p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->mp4aAudioObjectTypeToProfile(I)I
 
     move-result p1
 
-    if-eq p1, v4, :cond_1
+    const/4 v0, -0x1
 
-    .line 915
+    if-eq p1, v0, :cond_1
+
+    .line 940
     new-instance v0, Landroid/util/Pair;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1535,7 +1636,7 @@
 
     return-object v0
 
-    .line 919
+    .line 944
     :catch_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1555,6 +1656,83 @@
     return-object v1
 .end method
 
+.method public static getAlternativeCodecMimeType(Lcom/google/android/exoplayer2/Format;)Ljava/lang/String;
+    .locals 2
+
+    .line 274
+    iget-object v0, p0, Lcom/google/android/exoplayer2/Format;->sampleMimeType:Ljava/lang/String;
+
+    const-string v1, "audio/eac3-joc"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p0, "audio/eac3"
+
+    return-object p0
+
+    .line 278
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/exoplayer2/Format;->sampleMimeType:Ljava/lang/String;
+
+    const-string v1, "video/dolby-vision"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 284
+    invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getCodecProfileAndLevel(Lcom/google/android/exoplayer2/Format;)Landroid/util/Pair;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3
+
+    .line 286
+    iget-object p0, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast p0, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    const/16 v0, 0x10
+
+    if-eq p0, v0, :cond_2
+
+    const/16 v0, 0x100
+
+    if-ne p0, v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/16 v0, 0x200
+
+    if-ne p0, v0, :cond_3
+
+    const-string p0, "video/avc"
+
+    return-object p0
+
+    :cond_2
+    :goto_0
+    const-string p0, "video/hevc"
+
+    return-object p0
+
+    :cond_3
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
 .method private static getAv1ProfileAndLevel(Ljava/lang/String;[Ljava/lang/String;Lcom/google/android/exoplayer2/video/ColorInfo;)Landroid/util/Pair;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
@@ -1572,7 +1750,7 @@
         }
     .end annotation
 
-    .line 815
+    .line 836
     array-length v0, p1
 
     const-string v1, "Ignoring malformed AV1 codec string: "
@@ -1585,7 +1763,7 @@
 
     if-ge v0, v4, :cond_0
 
-    .line 816
+    .line 837
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1605,7 +1783,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 823
+    .line 844
     :try_start_0
     aget-object v4, p1, v0
 
@@ -1615,7 +1793,7 @@
 
     const/4 v5, 0x2
 
-    .line 824
+    .line 845
     aget-object v6, p1, v5
 
     const/4 v7, 0x0
@@ -1630,7 +1808,7 @@
 
     const/4 v7, 0x3
 
-    .line 825
+    .line 846
     aget-object p1, p1, v7
 
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1641,7 +1819,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 832
+    .line 853
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1669,7 +1847,7 @@
 
     if-eq p0, v1, :cond_2
 
-    .line 836
+    .line 857
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1696,7 +1874,7 @@
     :cond_3
     if-eqz p2, :cond_5
 
-    .line 842
+    .line 863
     iget-object p0, p2, Lcom/google/android/exoplayer2/video/ColorInfo;->hdrStaticInfo:[B
 
     if-nez p0, :cond_4
@@ -1719,19 +1897,17 @@
     :cond_5
     const/4 v0, 0x2
 
-    .line 851
+    .line 872
     :goto_0
-    sget-object p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->AV1_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/4 p1, -0x1
-
-    invoke-virtual {p0, v6, p1}, Landroid/util/SparseIntArray;->get(II)I
+    invoke-static {v6}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->av1LevelNumberToConst(I)I
 
     move-result p0
 
+    const/4 p1, -0x1
+
     if-ne p0, p1, :cond_6
 
-    .line 853
+    .line 874
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1750,7 +1926,7 @@
 
     return-object v2
 
-    .line 856
+    .line 877
     :cond_6
     new-instance p1, Landroid/util/Pair;
 
@@ -1766,7 +1942,7 @@
 
     return-object p1
 
-    .line 827
+    .line 848
     :catch_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1801,7 +1977,7 @@
         }
     .end annotation
 
-    .line 744
+    .line 765
     array-length v0, p1
 
     const-string v1, "Ignoring malformed AVC codec string: "
@@ -1814,7 +1990,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 746
+    .line 767
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1834,7 +2010,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 752
+    .line 773
     :try_start_0
     aget-object v5, p1, v0
 
@@ -1846,7 +2022,7 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 754
+    .line 775
     aget-object v5, p1, v0
 
     const/4 v6, 0x0
@@ -1861,7 +2037,7 @@
 
     move-result v2
 
-    .line 755
+    .line 776
     aget-object p1, p1, v0
 
     const/4 v0, 0x4
@@ -1876,7 +2052,7 @@
 
     goto :goto_0
 
-    .line 756
+    .line 777
     :cond_1
     array-length v5, p1
 
@@ -1884,14 +2060,14 @@
 
     if-lt v5, v6, :cond_4
 
-    .line 758
+    .line 779
     aget-object v0, p1, v0
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 759
+    .line 780
     aget-object p1, p1, v2
 
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1902,19 +2078,17 @@
 
     move v2, v0
 
-    .line 770
+    .line 791
     :goto_0
-    sget-object p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->AVC_PROFILE_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p1, v2, v0}, Landroid/util/SparseIntArray;->get(II)I
+    invoke-static {v2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->avcProfileNumberToConst(I)I
 
     move-result p1
 
+    const/4 v0, -0x1
+
     if-ne p1, v0, :cond_2
 
-    .line 772
+    .line 793
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1933,17 +2107,15 @@
 
     return-object v3
 
-    .line 775
+    .line 796
     :cond_2
-    sget-object v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->AVC_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    invoke-virtual {v1, p0, v0}, Landroid/util/SparseIntArray;->get(II)I
+    invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->avcLevelNumberToConst(I)I
 
     move-result v1
 
     if-ne v1, v0, :cond_3
 
-    .line 777
+    .line 798
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1962,7 +2134,7 @@
 
     return-object v3
 
-    .line 780
+    .line 801
     :cond_3
     new-instance p0, Landroid/util/Pair;
 
@@ -1978,7 +2150,7 @@
 
     return-object p0
 
-    .line 762
+    .line 783
     :cond_4
     :try_start_1
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1999,7 +2171,7 @@
 
     return-object v3
 
-    .line 766
+    .line 787
     :catch_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -2021,12 +2193,12 @@
 .method private static getCodecMimeType(Landroid/media/MediaCodecInfo;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
-    .line 394
+    .line 417
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->getSupportedTypes()[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 395
+    .line 418
     array-length v0, p0
 
     const/4 v1, 0x0
@@ -2036,7 +2208,7 @@
 
     aget-object v2, p0, v1
 
-    .line 396
+    .line 419
     invoke-virtual {v2, p2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v3
@@ -2053,7 +2225,7 @@
     :cond_1
     const-string p0, "video/dolby-vision"
 
-    .line 401
+    .line 424
     invoke-virtual {p2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -2062,7 +2234,7 @@
 
     const-string p0, "OMX.MS.HEVCDV.Decoder"
 
-    .line 404
+    .line 427
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -2076,7 +2248,7 @@
     :cond_2
     const-string p0, "OMX.RTK.video.decoder"
 
-    .line 406
+    .line 429
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -2085,12 +2257,12 @@
 
     const-string p0, "OMX.realtek.video.decoder.tunneled"
 
-    .line 407
+    .line 430
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_7
 
     :cond_3
     const-string p0, "video/dv_hevc"
@@ -2100,7 +2272,7 @@
     :cond_4
     const-string p0, "audio/alac"
 
-    .line 410
+    .line 433
     invoke-virtual {p2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -2122,7 +2294,7 @@
     :cond_5
     const-string p0, "audio/flac"
 
-    .line 412
+    .line 435
     invoke-virtual {p2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -2142,6 +2314,28 @@
     return-object p0
 
     :cond_6
+    const-string p0, "audio/ac3"
+
+    .line 437
+    invoke-virtual {p2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_7
+
+    const-string p0, "OMX.lge.ac3.decoder"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_7
+
+    const-string p0, "audio/lg-ac3"
+
+    return-object p0
+
+    :cond_7
     const/4 p0, 0x0
 
     return-object p0
@@ -2161,7 +2355,7 @@
         }
     .end annotation
 
-    .line 246
+    .line 237
     iget-object v0, p0, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -2173,12 +2367,12 @@
     :cond_0
     const-string v2, "\\."
 
-    .line 249
+    .line 240
     invoke-virtual {v0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 251
+    .line 242
     iget-object v2, p0, Lcom/google/android/exoplayer2/Format;->sampleMimeType:Ljava/lang/String;
 
     const-string v3, "video/dolby-vision"
@@ -2189,7 +2383,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 252
+    .line 243
     iget-object p0, p0, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
     invoke-static {p0, v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDolbyVisionProfileAndLevel(Ljava/lang/String;[Ljava/lang/String;)Landroid/util/Pair;
@@ -2201,7 +2395,7 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 254
+    .line 245
     aget-object v3, v0, v2
 
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
@@ -2332,7 +2526,7 @@
 
     return-object v1
 
-    .line 259
+    .line 250
     :pswitch_0
     iget-object p0, p0, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
@@ -2342,7 +2536,7 @@
 
     return-object p0
 
-    .line 266
+    .line 257
     :pswitch_1
     iget-object p0, p0, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
@@ -2352,7 +2546,7 @@
 
     return-object p0
 
-    .line 262
+    .line 253
     :pswitch_2
     iget-object p0, p0, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
@@ -2362,7 +2556,7 @@
 
     return-object p0
 
-    .line 257
+    .line 248
     :pswitch_3
     iget-object p0, p0, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
@@ -2372,7 +2566,7 @@
 
     return-object p0
 
-    .line 264
+    .line 255
     :pswitch_4
     iget-object v1, p0, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
@@ -2417,12 +2611,12 @@
         }
     .end annotation
 
-    .line 147
+    .line 141
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfos(Ljava/lang/String;ZZ)Ljava/util/List;
 
     move-result-object p0
 
-    .line 148
+    .line 142
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
@@ -2469,13 +2663,13 @@
 
     monitor-enter v0
 
-    .line 166
+    .line 160
     :try_start_0
     new-instance v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;-><init>(Ljava/lang/String;ZZ)V
 
-    .line 167
+    .line 161
     sget-object v2, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->decoderInfosCache:Ljava/util/HashMap;
 
     invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2488,12 +2682,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 169
+    .line 163
     monitor-exit v0
 
     return-object v3
 
-    .line 172
+    .line 166
     :cond_0
     :try_start_1
     sget v3, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
@@ -2504,20 +2698,20 @@
 
     if-lt v3, v5, :cond_1
 
-    .line 173
+    .line 167
     new-instance v6, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;
 
     invoke-direct {v6, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;-><init>(ZZ)V
 
     goto :goto_0
 
-    .line 174
+    .line 168
     :cond_1
     new-instance v6, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV16;
 
     invoke-direct {v6, v4}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV16;-><init>(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$1;)V
 
-    .line 175
+    .line 169
     :goto_0
     invoke-static {v1, v6}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfosInternal(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;)Ljava/util/ArrayList;
 
@@ -2525,7 +2719,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 176
+    .line 170
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
@@ -2538,17 +2732,17 @@
 
     if-gt v3, p1, :cond_2
 
-    .line 179
+    .line 173
     new-instance p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV16;
 
     invoke-direct {p1, v4}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV16;-><init>(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$1;)V
 
-    .line 180
+    .line 174
     invoke-static {v1, p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfosInternal(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;)Ljava/util/ArrayList;
 
     move-result-object p2
 
-    .line 181
+    .line 175
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
@@ -2557,7 +2751,7 @@
 
     const-string p1, "MediaCodecUtil"
 
-    .line 182
+    .line 176
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2574,7 +2768,7 @@
 
     const/4 v4, 0x0
 
-    .line 183
+    .line 181
     invoke-virtual {p2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -2589,24 +2783,24 @@
 
     move-result-object v3
 
-    .line 182
+    .line 176
     invoke-static {p1, v3}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 186
+    .line 184
     :cond_2
     invoke-static {p0, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->applyWorkarounds(Ljava/lang/String;Ljava/util/List;)V
 
-    .line 187
-    invoke-static {p2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+    .line 185
+    invoke-static {p2}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object p0
 
-    .line 188
+    .line 186
     invoke-virtual {v2, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 189
+    .line 187
     monitor-exit v0
 
     return-object p0
@@ -2620,7 +2814,7 @@
 .end method
 
 .method private static getDecoderInfosInternal(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;)Ljava/util/ArrayList;
-    .locals 25
+    .locals 24
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2647,21 +2841,21 @@
 
     const-string v4, "tunneled-playback"
 
-    .line 286
+    .line 312
     :try_start_0
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 287
+    .line 313
     iget-object v15, v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->mimeType:Ljava/lang/String;
 
-    .line 288
+    .line 314
     invoke-interface/range {p1 .. p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;->getCodecCount()I
 
     move-result v14
 
-    .line 289
+    .line 315
     invoke-interface/range {p1 .. p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;->secureDecodersExplicit()Z
 
     move-result v13
@@ -2673,12 +2867,12 @@
     :goto_0
     if-ge v12, v14, :cond_d
 
-    .line 292
+    .line 318
     invoke-interface {v2, v12}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;->getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
 
     move-result-object v0
 
-    .line 293
+    .line 319
     invoke-static {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isAlias(Landroid/media/MediaCodecInfo;)Z
 
     move-result v6
@@ -2691,17 +2885,17 @@
 
     move/from16 v23, v13
 
-    move/from16 v24, v14
+    move/from16 v18, v14
 
     goto/16 :goto_3
 
-    .line 298
+    .line 324
     :cond_1
     invoke-virtual {v0}, Landroid/media/MediaCodecInfo;->getName()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 299
+    .line 325
     invoke-static {v0, v11, v13, v15}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isCodecUsableDecoder(Landroid/media/MediaCodecInfo;Ljava/lang/String;ZLjava/lang/String;)Z
 
     move-result v6
@@ -2710,7 +2904,7 @@
 
     goto :goto_1
 
-    .line 302
+    .line 328
     :cond_2
     invoke-static {v0, v11, v15}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getCodecMimeType(Landroid/media/MediaCodecInfo;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -2722,24 +2916,24 @@
 
     goto :goto_1
 
-    .line 307
+    .line 333
     :cond_3
     :try_start_1
     invoke-virtual {v0, v10}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     move-result-object v9
 
-    .line 309
+    .line 335
     invoke-interface {v2, v4, v10, v9}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;->isFeatureSupported(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result v6
 
-    .line 312
+    .line 338
     invoke-interface {v2, v4, v10, v9}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;->isFeatureRequired(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result v7
 
-    .line 314
+    .line 340
     iget-boolean v8, v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->tunneling:Z
 
     if-nez v8, :cond_4
@@ -2753,18 +2947,18 @@
 
     goto :goto_1
 
-    .line 318
+    .line 344
     :cond_5
     invoke-interface {v2, v3, v10, v9}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;->isFeatureSupported(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result v6
 
-    .line 321
+    .line 347
     invoke-interface {v2, v3, v10, v9}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompat;->isFeatureRequired(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
 
     move-result v7
 
-    .line 323
+    .line 349
     iget-boolean v8, v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->secure:Z
 
     if-nez v8, :cond_6
@@ -2778,30 +2972,25 @@
 
     goto :goto_1
 
-    .line 326
+    .line 352
     :cond_7
-    invoke-static {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isHardwareAccelerated(Landroid/media/MediaCodecInfo;)Z
+    invoke-static {v0, v15}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isHardwareAccelerated(Landroid/media/MediaCodecInfo;Ljava/lang/String;)Z
 
     move-result v16
 
-    .line 327
-    invoke-static {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isSoftwareOnly(Landroid/media/MediaCodecInfo;)Z
+    .line 353
+    invoke-static {v0, v15}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isSoftwareOnly(Landroid/media/MediaCodecInfo;Ljava/lang/String;)Z
 
     move-result v17
 
-    .line 328
+    .line 354
     invoke-static {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isVendor(Landroid/media/MediaCodecInfo;)Z
 
     move-result v0
 
-    .line 329
-    invoke-static {v11}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->codecNeedsDisableAdaptationWorkaround(Ljava/lang/String;)Z
-
-    move-result v18
-
     if-eqz v13, :cond_8
 
-    .line 330
+    .line 355
     iget-boolean v7, v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->secure:Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
@@ -2819,6 +3008,8 @@
     if-nez v7, :cond_a
 
     :cond_9
+    const/16 v18, 0x0
+
     const/16 v19, 0x0
 
     move-object v6, v11
@@ -2843,17 +3034,17 @@
 
     move/from16 v13, v18
 
-    move/from16 v24, v14
+    move/from16 v18, v14
 
     move/from16 v14, v19
 
-    .line 333
+    .line 358
     :try_start_3
     invoke-static/range {v6 .. v14}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;ZZZZZ)Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
 
     move-result-object v0
 
-    .line 332
+    .line 357
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_3
@@ -2874,7 +3065,7 @@
 
     move/from16 v23, v13
 
-    move/from16 v24, v14
+    move/from16 v18, v14
 
     move-object v1, v11
 
@@ -2889,13 +3080,13 @@
 
     move/from16 v23, v13
 
-    move/from16 v24, v14
+    move/from16 v18, v14
 
     if-nez v23, :cond_b
 
     if-eqz v6, :cond_b
 
-    .line 344
+    .line 369
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -2917,6 +3108,8 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
 
+    const/4 v13, 0x0
+
     const/16 v19, 0x1
 
     move-object v7, v15
@@ -2929,19 +3122,17 @@
 
     move v12, v0
 
-    move/from16 v13, v18
-
     move-object v1, v14
 
     move/from16 v14, v19
 
-    .line 345
+    .line 370
     :try_start_5
     invoke-static/range {v6 .. v14}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->newInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;ZZZZZ)Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
 
     move-result-object v0
 
-    .line 344
+    .line 369
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
@@ -2971,9 +3162,9 @@
 
     move/from16 v23, v13
 
-    move/from16 v24, v14
+    move/from16 v18, v14
 
-    .line 359
+    .line 384
     :goto_2
     :try_start_6
     sget v6, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
@@ -2993,7 +3184,7 @@
 
     if-nez v6, :cond_c
 
-    .line 361
+    .line 386
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3020,13 +3211,13 @@
 
     move-object/from16 v1, p0
 
-    move/from16 v13, v23
+    move/from16 v14, v18
 
-    move/from16 v14, v24
+    move/from16 v13, v23
 
     goto/16 :goto_0
 
-    .line 365
+    .line 390
     :cond_c
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3056,7 +3247,7 @@
 
     invoke-static {v8, v1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 366
+    .line 391
     throw v0
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_5
@@ -3067,7 +3258,7 @@
     :catch_5
     move-exception v0
 
-    .line 374
+    .line 399
     new-instance v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
 
     const/4 v2, 0x0
@@ -3093,17 +3284,37 @@
         }
     .end annotation
 
-    .line 199
+    .line 197
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 200
+    .line 198
     new-instance p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda0;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/exoplayer2/Format;)V
 
     invoke-static {v0, p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->sortByScore(Ljava/util/List;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$ScoreProvider;)V
+
+    return-object v0
+.end method
+
+.method public static getDecryptOnlyDecoderInfo()Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
+        }
+    .end annotation
+
+    const-string v0, "audio/raw"
+
+    const/4 v1, 0x0
+
+    .line 124
+    invoke-static {v0, v1, v1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfo(Ljava/lang/String;ZZ)Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -3124,7 +3335,7 @@
         }
     .end annotation
 
-    .line 684
+    .line 705
     array-length v0, p1
 
     const-string v1, "Ignoring malformed Dolby Vision codec string: "
@@ -3137,7 +3348,7 @@
 
     if-ge v0, v4, :cond_0
 
-    .line 686
+    .line 707
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3154,7 +3365,7 @@
 
     return-object v2
 
-    .line 690
+    .line 711
     :cond_0
     sget-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->PROFILE_PATTERN:Ljava/util/regex/Pattern;
 
@@ -3166,14 +3377,14 @@
 
     move-result-object v0
 
-    .line 691
+    .line 712
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v5
 
     if-nez v5, :cond_1
 
-    .line 692
+    .line 713
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3190,24 +3401,20 @@
 
     return-object v2
 
-    .line 695
+    .line 716
     :cond_1
     invoke-virtual {v0, v4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 696
-    sget-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->DOLBY_VISION_STRING_TO_PROFILE:Ljava/util/Map;
-
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 717
+    invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->dolbyVisionStringToProfile(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
-
     if-nez v0, :cond_2
 
-    .line 698
+    .line 719
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3229,21 +3436,17 @@
     :cond_2
     const/4 p0, 0x2
 
-    .line 701
+    .line 722
     aget-object p0, p1, p0
 
-    .line 702
-    sget-object p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->DOLBY_VISION_STRING_TO_LEVEL:Ljava/util/Map;
-
-    invoke-interface {p1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 723
+    invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->dolbyVisionStringToLevel(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object p1
 
-    check-cast p1, Ljava/lang/Integer;
-
     if-nez p1, :cond_3
 
-    .line 704
+    .line 725
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3262,7 +3465,7 @@
 
     return-object v2
 
-    .line 707
+    .line 728
     :cond_3
     new-instance p0, Landroid/util/Pair;
 
@@ -3287,7 +3490,7 @@
         }
     .end annotation
 
-    .line 712
+    .line 733
     array-length v0, p1
 
     const-string v1, "Ignoring malformed HEVC codec string: "
@@ -3300,7 +3503,7 @@
 
     if-ge v0, v4, :cond_0
 
-    .line 714
+    .line 735
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3317,7 +3520,7 @@
 
     return-object v2
 
-    .line 718
+    .line 739
     :cond_0
     sget-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->PROFILE_PATTERN:Ljava/util/regex/Pattern;
 
@@ -3329,14 +3532,14 @@
 
     move-result-object v0
 
-    .line 719
+    .line 740
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v5
 
     if-nez v5, :cond_1
 
-    .line 720
+    .line 741
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3353,7 +3556,7 @@
 
     return-object v2
 
-    .line 723
+    .line 744
     :cond_1
     invoke-virtual {v0, v4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
@@ -3361,7 +3564,7 @@
 
     const-string v0, "1"
 
-    .line 725
+    .line 746
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -3373,7 +3576,7 @@
     :cond_2
     const-string v0, "2"
 
-    .line 727
+    .line 748
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -3385,21 +3588,17 @@
     :goto_0
     const/4 p0, 0x3
 
-    .line 733
+    .line 754
     aget-object p0, p1, p0
 
-    .line 734
-    sget-object p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->HEVC_CODEC_STRING_TO_PROFILE_LEVEL:Ljava/util/Map;
-
-    invoke-interface {p1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 755
+    invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->hevcCodecStringToProfileLevel(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object p1
 
-    check-cast p1, Ljava/lang/Integer;
-
     if-nez p1, :cond_3
 
-    .line 736
+    .line 757
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3418,7 +3617,7 @@
 
     return-object v2
 
-    .line 739
+    .line 760
     :cond_3
     new-instance p0, Landroid/util/Pair;
 
@@ -3430,7 +3629,7 @@
 
     return-object p0
 
-    .line 730
+    .line 751
     :cond_4
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -3451,41 +3650,6 @@
     return-object v2
 .end method
 
-.method public static getPassthroughDecoderInfo()Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
-        }
-    .end annotation
-
-    const-string v0, "audio/raw"
-
-    const/4 v1, 0x0
-
-    .line 129
-    invoke-static {v0, v1, v1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfo(Ljava/lang/String;ZZ)Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 130
-    :cond_0
-    iget-object v0, v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->newPassthroughInstance(Ljava/lang/String;)Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-.end method
-
 .method private static getVp9ProfileAndLevel(Ljava/lang/String;[Ljava/lang/String;)Landroid/util/Pair;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
@@ -3502,7 +3666,7 @@
         }
     .end annotation
 
-    .line 785
+    .line 806
     array-length v0, p1
 
     const-string v1, "Ignoring malformed VP9 codec string: "
@@ -3515,7 +3679,7 @@
 
     if-ge v0, v4, :cond_0
 
-    .line 786
+    .line 807
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3535,7 +3699,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 792
+    .line 813
     :try_start_0
     aget-object v0, p1, v0
 
@@ -3545,7 +3709,7 @@
 
     const/4 v4, 0x2
 
-    .line 793
+    .line 814
     aget-object p1, p1, v4
 
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -3554,18 +3718,16 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 799
-    sget-object p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->VP9_PROFILE_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    const/4 v1, -0x1
-
-    invoke-virtual {p1, v0, v1}, Landroid/util/SparseIntArray;->get(II)I
+    .line 820
+    invoke-static {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->vp9ProfileNumberToConst(I)I
 
     move-result p1
 
+    const/4 v1, -0x1
+
     if-ne p1, v1, :cond_1
 
-    .line 801
+    .line 822
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3584,17 +3746,15 @@
 
     return-object v2
 
-    .line 804
+    .line 825
     :cond_1
-    sget-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->VP9_LEVEL_NUMBER_TO_CONST:Landroid/util/SparseIntArray;
-
-    invoke-virtual {v0, p0, v1}, Landroid/util/SparseIntArray;->get(II)I
+    invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->vp9LevelNumberToConst(I)I
 
     move-result v0
 
     if-ne v0, v1, :cond_2
 
-    .line 806
+    .line 827
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3613,7 +3773,7 @@
 
     return-object v2
 
-    .line 809
+    .line 830
     :cond_2
     new-instance p0, Landroid/util/Pair;
 
@@ -3629,7 +3789,7 @@
 
     return-object p0
 
-    .line 795
+    .line 816
     :catch_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -3648,10 +3808,773 @@
     return-object v2
 .end method
 
+.method private static hevcCodecStringToProfileLevel(Ljava/lang/String;)Ljava/lang/Integer;
+    .locals 8
+
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const/4 v1, -0x1
+
+    .line 1217
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    const/16 v3, 0x10
+
+    const/16 v4, 0x8
+
+    const/4 v5, 0x4
+
+    const/4 v6, 0x2
+
+    const/4 v7, 0x1
+
+    sparse-switch v2, :sswitch_data_0
+
+    goto/16 :goto_0
+
+    :sswitch_0
+    const-string v2, "L186"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_1
+
+    goto/16 :goto_0
+
+    :cond_1
+    const/16 v1, 0x19
+
+    goto/16 :goto_0
+
+    :sswitch_1
+    const-string v2, "L183"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    goto/16 :goto_0
+
+    :cond_2
+    const/16 v1, 0x18
+
+    goto/16 :goto_0
+
+    :sswitch_2
+    const-string v2, "L180"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    goto/16 :goto_0
+
+    :cond_3
+    const/16 v1, 0x17
+
+    goto/16 :goto_0
+
+    :sswitch_3
+    const-string v2, "L156"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    goto/16 :goto_0
+
+    :cond_4
+    const/16 v1, 0x16
+
+    goto/16 :goto_0
+
+    :sswitch_4
+    const-string v2, "L153"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    goto/16 :goto_0
+
+    :cond_5
+    const/16 v1, 0x15
+
+    goto/16 :goto_0
+
+    :sswitch_5
+    const-string v2, "L150"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_6
+
+    goto/16 :goto_0
+
+    :cond_6
+    const/16 v1, 0x14
+
+    goto/16 :goto_0
+
+    :sswitch_6
+    const-string v2, "L123"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_7
+
+    goto/16 :goto_0
+
+    :cond_7
+    const/16 v1, 0x13
+
+    goto/16 :goto_0
+
+    :sswitch_7
+    const-string v2, "L120"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_8
+
+    goto/16 :goto_0
+
+    :cond_8
+    const/16 v1, 0x12
+
+    goto/16 :goto_0
+
+    :sswitch_8
+    const-string v2, "H186"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_9
+
+    goto/16 :goto_0
+
+    :cond_9
+    const/16 v1, 0x11
+
+    goto/16 :goto_0
+
+    :sswitch_9
+    const-string v2, "H183"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_a
+
+    goto/16 :goto_0
+
+    :cond_a
+    const/16 v1, 0x10
+
+    goto/16 :goto_0
+
+    :sswitch_a
+    const-string v2, "H180"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_b
+
+    goto/16 :goto_0
+
+    :cond_b
+    const/16 v1, 0xf
+
+    goto/16 :goto_0
+
+    :sswitch_b
+    const-string v2, "H156"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_c
+
+    goto/16 :goto_0
+
+    :cond_c
+    const/16 v1, 0xe
+
+    goto/16 :goto_0
+
+    :sswitch_c
+    const-string v2, "H153"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_d
+
+    goto/16 :goto_0
+
+    :cond_d
+    const/16 v1, 0xd
+
+    goto/16 :goto_0
+
+    :sswitch_d
+    const-string v2, "H150"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_e
+
+    goto/16 :goto_0
+
+    :cond_e
+    const/16 v1, 0xc
+
+    goto/16 :goto_0
+
+    :sswitch_e
+    const-string v2, "H123"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_f
+
+    goto/16 :goto_0
+
+    :cond_f
+    const/16 v1, 0xb
+
+    goto/16 :goto_0
+
+    :sswitch_f
+    const-string v2, "H120"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_10
+
+    goto/16 :goto_0
+
+    :cond_10
+    const/16 v1, 0xa
+
+    goto/16 :goto_0
+
+    :sswitch_10
+    const-string v2, "L93"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_11
+
+    goto/16 :goto_0
+
+    :cond_11
+    const/16 v1, 0x9
+
+    goto/16 :goto_0
+
+    :sswitch_11
+    const-string v2, "L90"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_12
+
+    goto/16 :goto_0
+
+    :cond_12
+    const/16 v1, 0x8
+
+    goto/16 :goto_0
+
+    :sswitch_12
+    const-string v2, "L63"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_13
+
+    goto :goto_0
+
+    :cond_13
+    const/4 v1, 0x7
+
+    goto :goto_0
+
+    :sswitch_13
+    const-string v2, "L60"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_14
+
+    goto :goto_0
+
+    :cond_14
+    const/4 v1, 0x6
+
+    goto :goto_0
+
+    :sswitch_14
+    const-string v2, "L30"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_15
+
+    goto :goto_0
+
+    :cond_15
+    const/4 v1, 0x5
+
+    goto :goto_0
+
+    :sswitch_15
+    const-string v2, "H93"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_16
+
+    goto :goto_0
+
+    :cond_16
+    const/4 v1, 0x4
+
+    goto :goto_0
+
+    :sswitch_16
+    const-string v2, "H90"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_17
+
+    goto :goto_0
+
+    :cond_17
+    const/4 v1, 0x3
+
+    goto :goto_0
+
+    :sswitch_17
+    const-string v2, "H63"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_18
+
+    goto :goto_0
+
+    :cond_18
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :sswitch_18
+    const-string v2, "H60"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_19
+
+    goto :goto_0
+
+    :cond_19
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :sswitch_19
+    const-string v2, "H30"
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_1a
+
+    goto :goto_0
+
+    :cond_1a
+    const/4 v1, 0x0
+
+    :goto_0
+    packed-switch v1, :pswitch_data_0
+
+    return-object v0
+
+    :pswitch_0
+    const/high16 p0, 0x1000000
+
+    .line 1243
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    const/high16 p0, 0x400000
+
+    .line 1241
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    const/high16 p0, 0x100000
+
+    .line 1239
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_3
+    const/high16 p0, 0x40000
+
+    .line 1237
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_4
+    const/high16 p0, 0x10000
+
+    .line 1235
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_5
+    const/16 p0, 0x4000
+
+    .line 1233
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_6
+    const/16 p0, 0x1000
+
+    .line 1231
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_7
+    const/16 p0, 0x400
+
+    .line 1229
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_8
+    const/high16 p0, 0x2000000
+
+    .line 1269
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_9
+    const/high16 p0, 0x800000
+
+    .line 1267
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_a
+    const/high16 p0, 0x200000
+
+    .line 1265
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_b
+    const/high16 p0, 0x80000
+
+    .line 1263
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_c
+    const/high16 p0, 0x20000
+
+    .line 1261
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_d
+    const p0, 0x8000
+
+    .line 1259
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_e
+    const/16 p0, 0x2000
+
+    .line 1257
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_f
+    const/16 p0, 0x800
+
+    .line 1255
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_10
+    const/16 p0, 0x100
+
+    .line 1227
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_11
+    const/16 p0, 0x40
+
+    .line 1225
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1223
+    :pswitch_12
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1221
+    :pswitch_13
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1219
+    :pswitch_14
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_15
+    const/16 p0, 0x200
+
+    .line 1253
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_16
+    const/16 p0, 0x80
+
+    .line 1251
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_17
+    const/16 p0, 0x20
+
+    .line 1249
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1247
+    :pswitch_18
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 1245
+    :pswitch_19
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x114a5 -> :sswitch_19
+        0x11502 -> :sswitch_18
+        0x11505 -> :sswitch_17
+        0x1155f -> :sswitch_16
+        0x11562 -> :sswitch_15
+        0x123a9 -> :sswitch_14
+        0x12406 -> :sswitch_13
+        0x12409 -> :sswitch_12
+        0x12463 -> :sswitch_11
+        0x12466 -> :sswitch_10
+        0x2178e7 -> :sswitch_f
+        0x2178ea -> :sswitch_e
+        0x217944 -> :sswitch_d
+        0x217947 -> :sswitch_c
+        0x21794a -> :sswitch_b
+        0x2179a1 -> :sswitch_a
+        0x2179a4 -> :sswitch_9
+        0x2179a7 -> :sswitch_8
+        0x234a63 -> :sswitch_7
+        0x234a66 -> :sswitch_6
+        0x234ac0 -> :sswitch_5
+        0x234ac3 -> :sswitch_4
+        0x234ac6 -> :sswitch_3
+        0x234b1d -> :sswitch_2
+        0x234b20 -> :sswitch_1
+        0x234b23 -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
 .method private static isAlias(Landroid/media/MediaCodecInfo;)Z
     .locals 2
 
-    .line 597
+    .line 625
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
@@ -3678,7 +4601,7 @@
 .method private static isAliasV29(Landroid/media/MediaCodecInfo;)Z
     .locals 0
 
-    .line 602
+    .line 630
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->isAlias()Z
 
     move-result p0
@@ -3689,7 +4612,7 @@
 .method private static isCodecUsableDecoder(Landroid/media/MediaCodecInfo;Ljava/lang/String;ZLjava/lang/String;)Z
     .locals 4
 
-    .line 433
+    .line 458
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->isEncoder()Z
 
     move-result p0
@@ -3710,7 +4633,7 @@
 
     goto/16 :goto_0
 
-    .line 438
+    .line 463
     :cond_0
     sget p0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -3720,7 +4643,7 @@
 
     const-string p2, "CIPAACDecoder"
 
-    .line 439
+    .line 464
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3729,7 +4652,7 @@
 
     const-string p2, "CIPMP3Decoder"
 
-    .line 440
+    .line 465
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3738,7 +4661,7 @@
 
     const-string p2, "CIPVorbisDecoder"
 
-    .line 441
+    .line 466
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3747,7 +4670,7 @@
 
     const-string p2, "CIPAMRNBDecoder"
 
-    .line 442
+    .line 467
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3756,7 +4679,7 @@
 
     const-string p2, "AACDecoder"
 
-    .line 443
+    .line 468
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3765,7 +4688,7 @@
 
     const-string p2, "MP3Decoder"
 
-    .line 444
+    .line 469
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3782,7 +4705,7 @@
 
     const-string p2, "OMX.MTK.AUDIO.DECODER.AAC"
 
-    .line 451
+    .line 476
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3793,7 +4716,7 @@
 
     const-string v1, "a70"
 
-    .line 452
+    .line 477
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3804,7 +4727,7 @@
 
     const-string v2, "Xiaomi"
 
-    .line 453
+    .line 478
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3829,7 +4752,7 @@
 
     const-string v1, "OMX.qcom.audio.decoder.mp3"
 
-    .line 460
+    .line 485
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3840,7 +4763,7 @@
 
     const-string v2, "dlxu"
 
-    .line 461
+    .line 486
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3849,7 +4772,7 @@
 
     const-string v2, "protou"
 
-    .line 462
+    .line 487
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3858,7 +4781,7 @@
 
     const-string v2, "ville"
 
-    .line 463
+    .line 488
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3867,7 +4790,7 @@
 
     const-string v2, "villeplus"
 
-    .line 464
+    .line 489
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3876,7 +4799,7 @@
 
     const-string v2, "villec2"
 
-    .line 465
+    .line 490
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3885,7 +4808,7 @@
 
     const-string v2, "gee"
 
-    .line 466
+    .line 491
     invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -3894,7 +4817,7 @@
 
     const-string v2, "C6602"
 
-    .line 467
+    .line 492
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3903,7 +4826,7 @@
 
     const-string v2, "C6603"
 
-    .line 468
+    .line 493
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3912,7 +4835,7 @@
 
     const-string v2, "C6606"
 
-    .line 469
+    .line 494
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3921,7 +4844,7 @@
 
     const-string v2, "C6616"
 
-    .line 470
+    .line 495
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3930,7 +4853,7 @@
 
     const-string v2, "L36h"
 
-    .line 471
+    .line 496
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -3939,7 +4862,7 @@
 
     const-string v2, "SO-02E"
 
-    .line 472
+    .line 497
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3954,7 +4877,7 @@
 
     const-string p2, "OMX.qcom.audio.decoder.aac"
 
-    .line 478
+    .line 503
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -3965,7 +4888,7 @@
 
     const-string v1, "C1504"
 
-    .line 479
+    .line 504
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3974,7 +4897,7 @@
 
     const-string v1, "C1505"
 
-    .line 480
+    .line 505
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3983,7 +4906,7 @@
 
     const-string v1, "C1604"
 
-    .line 481
+    .line 506
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3992,7 +4915,7 @@
 
     const-string v1, "C1605"
 
-    .line 482
+    .line 507
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -4011,7 +4934,7 @@
 
     const-string p2, "OMX.SEC.aac.dec"
 
-    .line 488
+    .line 513
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -4029,7 +4952,7 @@
     :cond_9
     sget-object p2, Lcom/google/android/exoplayer2/util/Util;->MANUFACTURER:Ljava/lang/String;
 
-    .line 489
+    .line 514
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -4040,7 +4963,7 @@
 
     const-string v2, "zeroflte"
 
-    .line 490
+    .line 515
     invoke-virtual {p2, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -4049,7 +4972,7 @@
 
     const-string v2, "zerolte"
 
-    .line 491
+    .line 516
     invoke-virtual {p2, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -4058,7 +4981,7 @@
 
     const-string v2, "zenlte"
 
-    .line 492
+    .line 517
     invoke-virtual {p2, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -4067,7 +4990,7 @@
 
     const-string v2, "SC-05G"
 
-    .line 493
+    .line 518
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -4076,7 +4999,7 @@
 
     const-string v2, "marinelteatt"
 
-    .line 494
+    .line 519
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -4085,7 +5008,7 @@
 
     const-string v2, "404SC"
 
-    .line 495
+    .line 520
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -4094,7 +5017,7 @@
 
     const-string v2, "SC-04G"
 
-    .line 496
+    .line 521
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -4103,7 +5026,7 @@
 
     const-string v2, "SCV31"
 
-    .line 497
+    .line 522
     invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -4122,7 +5045,7 @@
 
     const-string v3, "OMX.SEC.vp8.dec"
 
-    .line 504
+    .line 529
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -4131,7 +5054,7 @@
 
     sget-object v3, Lcom/google/android/exoplayer2/util/Util;->MANUFACTURER:Ljava/lang/String;
 
-    .line 505
+    .line 530
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -4142,7 +5065,7 @@
 
     const-string v3, "d2"
 
-    .line 506
+    .line 531
     invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
@@ -4151,14 +5074,14 @@
 
     const-string v3, "serrano"
 
-    .line 507
+    .line 532
     invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
 
     if-nez v3, :cond_c
 
-    .line 508
+    .line 533
     invoke-virtual {v1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
@@ -4167,7 +5090,7 @@
 
     const-string v3, "santos"
 
-    .line 509
+    .line 534
     invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
@@ -4176,7 +5099,7 @@
 
     const-string v3, "t0"
 
-    .line 510
+    .line 535
     invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -4189,30 +5112,35 @@
     :cond_d
     if-gt p0, v2, :cond_e
 
-    .line 515
-    sget-object p0, Lcom/google/android/exoplayer2/util/Util;->DEVICE:Ljava/lang/String;
+    .line 540
+    sget-object v1, Lcom/google/android/exoplayer2/util/Util;->DEVICE:Ljava/lang/String;
 
-    invoke-virtual {p0, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 541
+    invoke-virtual {v1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result p0
+    move-result p2
 
-    if-eqz p0, :cond_e
+    if-eqz p2, :cond_e
 
-    const-string p0, "OMX.qcom.video.decoder.vp8"
+    const-string p2, "OMX.qcom.video.decoder.vp8"
 
-    .line 516
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 542
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p0
+    move-result p2
 
-    if-eqz p0, :cond_e
+    if-eqz p2, :cond_e
 
     return v0
 
     :cond_e
+    const/16 p2, 0x17
+
+    if-gt p0, p2, :cond_f
+
     const-string p0, "audio/eac3-joc"
 
-    .line 521
+    .line 548
     invoke-virtual {p0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -4221,6 +5149,7 @@
 
     const-string p0, "OMX.MTK.AUDIO.DECODER.DSPAC3"
 
+    .line 549
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -4239,26 +5168,26 @@
     return v0
 .end method
 
-.method private static isHardwareAccelerated(Landroid/media/MediaCodecInfo;)Z
+.method private static isHardwareAccelerated(Landroid/media/MediaCodecInfo;Ljava/lang/String;)Z
     .locals 2
 
-    .line 610
+    .line 639
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 611
+    .line 640
     invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isHardwareAcceleratedV29(Landroid/media/MediaCodecInfo;)Z
 
     move-result p0
 
     return p0
 
-    .line 615
+    .line 644
     :cond_0
-    invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isSoftwareOnly(Landroid/media/MediaCodecInfo;)Z
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isSoftwareOnly(Landroid/media/MediaCodecInfo;Ljava/lang/String;)Z
 
     move-result p0
 
@@ -4270,7 +5199,7 @@
 .method private static isHardwareAcceleratedV29(Landroid/media/MediaCodecInfo;)Z
     .locals 0
 
-    .line 620
+    .line 649
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->isHardwareAccelerated()Z
 
     move-result p0
@@ -4278,138 +5207,153 @@
     return p0
 .end method
 
-.method private static isSoftwareOnly(Landroid/media/MediaCodecInfo;)Z
+.method private static isSoftwareOnly(Landroid/media/MediaCodecInfo;Ljava/lang/String;)Z
     .locals 2
 
-    .line 628
+    .line 657
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 629
+    .line 658
     invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isSoftwareOnlyV29(Landroid/media/MediaCodecInfo;)Z
 
     move-result p0
 
     return p0
 
-    .line 631
+    .line 660
     :cond_0
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/MimeTypes;->isAudio(Ljava/lang/String;)Z
+
+    move-result p1
+
+    const/4 v0, 0x1
+
+    if-eqz p1, :cond_1
+
+    return v0
+
+    .line 664
+    :cond_1
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->getName()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, "arc."
+    const-string p1, "arc."
 
-    .line 632
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 665
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p1
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_2
 
     return v1
 
-    :cond_1
-    const-string v0, "omx.google."
-
-    .line 635
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    const-string v0, "omx.ffmpeg."
-
-    .line 636
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    const-string v0, "omx.sec."
-
-    .line 637
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const-string v0, ".sw."
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
     :cond_2
-    const-string v0, "omx.qcom.video.decoder.hevcswvdec"
+    const-string p1, "omx.google."
 
-    .line 638
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 669
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_3
+    if-nez p1, :cond_5
 
-    const-string v0, "c2.android."
+    const-string p1, "omx.ffmpeg."
 
-    .line 639
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 670
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_3
+    if-nez p1, :cond_5
 
-    const-string v0, "c2.google."
+    const-string p1, "omx.sec."
 
-    .line 640
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 671
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_3
+    if-eqz p1, :cond_3
 
-    const-string v0, "omx."
+    const-string p1, ".sw."
 
-    .line 641
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_4
+    if-nez p1, :cond_5
 
-    const-string v0, "c2."
+    :cond_3
+    const-string p1, "omx.qcom.video.decoder.hevcswvdec"
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 672
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    const-string p1, "c2.android."
+
+    .line 673
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    const-string p1, "c2.google."
+
+    .line 674
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    const-string p1, "omx."
+
+    .line 675
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    const-string p1, "c2."
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
 
     if-nez p0, :cond_4
 
-    :cond_3
-    const/4 v1, 0x1
+    goto :goto_0
 
     :cond_4
-    return v1
+    const/4 v0, 0x0
+
+    :cond_5
+    :goto_0
+    return v0
 .end method
 
 .method private static isSoftwareOnlyV29(Landroid/media/MediaCodecInfo;)Z
     .locals 0
 
-    .line 646
+    .line 680
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->isSoftwareOnly()Z
 
     move-result p0
@@ -4420,33 +5364,33 @@
 .method private static isVendor(Landroid/media/MediaCodecInfo;)Z
     .locals 2
 
-    .line 654
+    .line 688
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_0
 
-    .line 655
+    .line 689
     invoke-static {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->isVendorV29(Landroid/media/MediaCodecInfo;)Z
 
     move-result p0
 
     return p0
 
-    .line 657
+    .line 691
     :cond_0
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->getName()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     const-string v0, "omx.google."
 
-    .line 658
+    .line 692
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -4455,7 +5399,7 @@
 
     const-string v0, "c2.android."
 
-    .line 659
+    .line 693
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -4464,7 +5408,7 @@
 
     const-string v0, "c2.google."
 
-    .line 660
+    .line 694
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
@@ -4485,7 +5429,7 @@
 .method private static isVendorV29(Landroid/media/MediaCodecInfo;)Z
     .locals 0
 
-    .line 665
+    .line 699
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->isVendor()Z
 
     move-result p0
@@ -4496,12 +5440,12 @@
 .method private static synthetic lambda$applyWorkarounds$1(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;)I
     .locals 2
 
-    .line 559
+    .line 587
     iget-object p0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
 
     const-string v0, "OMX.google"
 
-    .line 560
+    .line 588
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -4518,7 +5462,7 @@
 
     goto :goto_0
 
-    .line 564
+    .line 592
     :cond_0
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -4553,7 +5497,7 @@
 .method private static synthetic lambda$applyWorkarounds$2(Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;)I
     .locals 1
 
-    .line 582
+    .line 610
     iget-object p0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->name:Ljava/lang/String;
 
     const-string v0, "OMX.google"
@@ -4568,18 +5512,10 @@
 .method private static synthetic lambda$getDecoderInfosSortedByFormatSupport$0(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;)I
     .locals 0
 
-    .line 204
-    :try_start_0
-    invoke-virtual {p1, p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->isFormatSupported(Lcom/google/android/exoplayer2/Format;)Z
+    .line 199
+    invoke-virtual {p1, p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->isFormatFunctionallySupported(Lcom/google/android/exoplayer2/Format;)Z
 
     move-result p0
-    :try_end_0
-    .catch Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return p0
-
-    :catch_0
-    const/4 p0, -0x1
 
     return p0
 .end method
@@ -4587,7 +5523,7 @@
 .method private static synthetic lambda$sortByScore$3(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$ScoreProvider;Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 926
+    .line 951
     invoke-interface {p0, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$ScoreProvider;->getScore(Ljava/lang/Object;)I
 
     move-result p2
@@ -4609,7 +5545,7 @@
         }
     .end annotation
 
-    .line 218
+    .line 209
     sget v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->maxH264DecodableFrameSize:I
 
     const/4 v1, -0x1
@@ -4620,14 +5556,14 @@
 
     const/4 v1, 0x0
 
-    .line 222
+    .line 213
     invoke-static {v0, v1, v1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfo(Ljava/lang/String;ZZ)Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 224
+    .line 215
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;->getProfileLevels()[Landroid/media/MediaCodecInfo$CodecProfileLevel;
 
     move-result-object v0
@@ -4641,7 +5577,7 @@
 
     aget-object v4, v0, v1
 
-    .line 225
+    .line 216
     iget v4, v4, Landroid/media/MediaCodecInfo$CodecProfileLevel;->level:I
 
     invoke-static {v4}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->avcLevelToMaxFrameSize(I)I
@@ -4656,7 +5592,7 @@
 
     goto :goto_0
 
-    .line 229
+    .line 220
     :cond_0
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -4676,15 +5612,92 @@
 
     move-result v1
 
-    .line 231
+    .line 222
     :cond_2
     sput v1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->maxH264DecodableFrameSize:I
 
-    .line 233
+    .line 224
     :cond_3
     sget v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->maxH264DecodableFrameSize:I
 
     return v0
+.end method
+
+.method private static mp4aAudioObjectTypeToProfile(I)I
+    .locals 1
+
+    const/16 v0, 0x11
+
+    if-eq p0, v0, :cond_0
+
+    const/16 v0, 0x14
+
+    if-eq p0, v0, :cond_0
+
+    const/16 v0, 0x17
+
+    if-eq p0, v0, :cond_0
+
+    const/16 v0, 0x1d
+
+    if-eq p0, v0, :cond_0
+
+    const/16 v0, 0x27
+
+    if-eq p0, v0, :cond_0
+
+    const/16 v0, 0x2a
+
+    if-eq p0, v0, :cond_0
+
+    packed-switch p0, :pswitch_data_0
+
+    const/4 p0, -0x1
+
+    return p0
+
+    :pswitch_0
+    const/4 p0, 0x6
+
+    return p0
+
+    :pswitch_1
+    const/4 p0, 0x5
+
+    return p0
+
+    :pswitch_2
+    const/4 p0, 0x4
+
+    return p0
+
+    :pswitch_3
+    const/4 p0, 0x3
+
+    return p0
+
+    :pswitch_4
+    const/4 p0, 0x2
+
+    return p0
+
+    :pswitch_5
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    return v0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method private static sortByScore(Ljava/util/List;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$ScoreProvider;)V
@@ -4701,7 +5714,7 @@
         }
     .end annotation
 
-    .line 926
+    .line 951
     new-instance v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$$ExternalSyntheticLambda3;-><init>(Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$ScoreProvider;)V
@@ -4711,10 +5724,172 @@
     return-void
 .end method
 
+.method private static vp9LevelNumberToConst(I)I
+    .locals 1
+
+    const/16 v0, 0xa
+
+    if-eq p0, v0, :cond_9
+
+    const/16 v0, 0xb
+
+    if-eq p0, v0, :cond_8
+
+    const/16 v0, 0x14
+
+    if-eq p0, v0, :cond_7
+
+    const/16 v0, 0x15
+
+    if-eq p0, v0, :cond_6
+
+    const/16 v0, 0x1e
+
+    if-eq p0, v0, :cond_5
+
+    const/16 v0, 0x1f
+
+    if-eq p0, v0, :cond_4
+
+    const/16 v0, 0x28
+
+    if-eq p0, v0, :cond_3
+
+    const/16 v0, 0x29
+
+    if-eq p0, v0, :cond_2
+
+    const/16 v0, 0x32
+
+    if-eq p0, v0, :cond_1
+
+    const/16 v0, 0x33
+
+    if-eq p0, v0, :cond_0
+
+    packed-switch p0, :pswitch_data_0
+
+    const/4 p0, -0x1
+
+    return p0
+
+    :pswitch_0
+    const/16 p0, 0x2000
+
+    return p0
+
+    :pswitch_1
+    const/16 p0, 0x1000
+
+    return p0
+
+    :pswitch_2
+    const/16 p0, 0x800
+
+    return p0
+
+    :cond_0
+    const/16 p0, 0x200
+
+    return p0
+
+    :cond_1
+    const/16 p0, 0x100
+
+    return p0
+
+    :cond_2
+    const/16 p0, 0x80
+
+    return p0
+
+    :cond_3
+    const/16 p0, 0x40
+
+    return p0
+
+    :cond_4
+    const/16 p0, 0x20
+
+    return p0
+
+    :cond_5
+    const/16 p0, 0x10
+
+    return p0
+
+    :cond_6
+    const/16 p0, 0x8
+
+    return p0
+
+    :cond_7
+    const/4 p0, 0x4
+
+    return p0
+
+    :cond_8
+    const/4 p0, 0x2
+
+    return p0
+
+    :cond_9
+    const/4 p0, 0x1
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x3c
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method private static vp9ProfileNumberToConst(I)I
+    .locals 2
+
+    const/4 v0, 0x1
+
+    if-eqz p0, :cond_3
+
+    const/4 v1, 0x2
+
+    if-eq p0, v0, :cond_2
+
+    if-eq p0, v1, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p0, v0, :cond_0
+
+    const/4 p0, -0x1
+
+    return p0
+
+    :cond_0
+    const/16 p0, 0x8
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x4
+
+    return p0
+
+    :cond_2
+    return v1
+
+    :cond_3
+    return v0
+.end method
+
 .method public static warmDecoderInfoCache(Ljava/lang/String;ZZ)V
     .locals 0
 
-    .line 112
+    .line 103
     :try_start_0
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil;->getDecoderInfos(Ljava/lang/String;ZZ)Ljava/util/List;
     :try_end_0
@@ -4729,7 +5904,7 @@
 
     const-string p2, "Codec warming failed"
 
-    .line 115
+    .line 106
     invoke-static {p1, p2, p0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_0

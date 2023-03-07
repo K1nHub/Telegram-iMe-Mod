@@ -2,38 +2,48 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/exoplayer2/text/TextOutput;
 
 
-# instance fields
-.field public final synthetic f$0:Lcom/google/android/exoplayer2/offline/DownloadHelper;
-
-.field public final synthetic f$1:Lcom/google/android/exoplayer2/offline/DownloadHelper$Callback;
+# static fields
+.field public static final synthetic INSTANCE:Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/offline/DownloadHelper;Lcom/google/android/exoplayer2/offline/DownloadHelper$Callback;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;-><init>()V
+
+    sput-object v0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;->INSTANCE:Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;->f$0:Lcom/google/android/exoplayer2/offline/DownloadHelper;
-
-    iput-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;->f$1:Lcom/google/android/exoplayer2/offline/DownloadHelper$Callback;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final onCues(Lcom/google/android/exoplayer2/text/CueGroup;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;->f$0:Lcom/google/android/exoplayer2/offline/DownloadHelper;
+    invoke-static {p1}, Lcom/google/android/exoplayer2/offline/DownloadHelper;->$r8$lambda$ba6-DXsfLkglbkXSOAETQJ40Qmo(Lcom/google/android/exoplayer2/text/CueGroup;)V
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda2;->f$1:Lcom/google/android/exoplayer2/offline/DownloadHelper$Callback;
+    return-void
+.end method
 
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/offline/DownloadHelper;->$r8$lambda$_U3EBENMfS836yP2YTbdm0HnBzk(Lcom/google/android/exoplayer2/offline/DownloadHelper;Lcom/google/android/exoplayer2/offline/DownloadHelper$Callback;)V
+.method public synthetic onCues(Ljava/util/List;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/text/TextOutput$-CC;->$default$onCues(Lcom/google/android/exoplayer2/text/TextOutput;Ljava/util/List;)V
 
     return-void
 .end method

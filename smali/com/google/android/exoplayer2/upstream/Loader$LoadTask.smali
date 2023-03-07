@@ -87,22 +87,22 @@
         }
     .end annotation
 
-    .line 346
+    .line 343
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->this$0:Lcom/google/android/exoplayer2/upstream/Loader;
 
-    .line 347
+    .line 344
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 348
+    .line 345
     iput-object p3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
 
-    .line 349
+    .line 346
     iput-object p4, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->callback:Lcom/google/android/exoplayer2/upstream/Loader$Callback;
 
-    .line 350
+    .line 347
     iput p5, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->defaultMinRetryCount:I
 
-    .line 351
+    .line 348
     iput-wide p6, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->startTimeMs:J
 
     return-void
@@ -113,10 +113,10 @@
 
     const/4 v0, 0x0
 
-    .line 518
+    .line 509
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
 
-    .line 519
+    .line 510
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->this$0:Lcom/google/android/exoplayer2/upstream/Loader;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/Loader;->access$500(Lcom/google/android/exoplayer2/upstream/Loader;)Ljava/util/concurrent/ExecutorService;
@@ -143,7 +143,7 @@
 .method private finish()V
     .locals 2
 
-    .line 523
+    .line 514
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->this$0:Lcom/google/android/exoplayer2/upstream/Loader;
 
     const/4 v1, 0x0
@@ -156,7 +156,7 @@
 .method private getRetryDelayMillis()J
     .locals 2
 
-    .line 527
+    .line 518
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->errorCount:I
 
     add-int/lit8 v0, v0, -0x1
@@ -179,17 +179,17 @@
 .method public cancel(Z)V
     .locals 8
 
-    .line 371
+    .line 368
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
 
     const/4 v0, 0x0
 
-    .line 372
+    .line 369
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
 
     const/4 v1, 0x0
 
-    .line 373
+    .line 370
     invoke-virtual {p0, v1}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v2
@@ -198,41 +198,41 @@
 
     if-eqz v2, :cond_0
 
-    .line 375
+    .line 372
     iput-boolean v3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->canceled:Z
 
-    .line 376
+    .line 373
     invoke-virtual {p0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     if-nez p1, :cond_2
 
-    .line 378
+    .line 375
     invoke-virtual {p0, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     goto :goto_0
 
-    .line 382
+    .line 379
     :cond_0
     monitor-enter p0
 
-    .line 383
+    .line 380
     :try_start_0
     iput-boolean v3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->canceled:Z
 
-    .line 384
+    .line 381
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/upstream/Loader$Loadable;->cancelLoad()V
 
-    .line 385
+    .line 382
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->executorThread:Ljava/lang/Thread;
 
     if-eqz v1, :cond_1
 
-    .line 387
+    .line 384
     invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
 
-    .line 389
+    .line 386
     :cond_1
     monitor-exit p0
     :try_end_0
@@ -242,15 +242,15 @@
     :goto_0
     if-eqz p1, :cond_3
 
-    .line 392
+    .line 389
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->finish()V
 
-    .line 393
+    .line 390
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    .line 394
+    .line 391
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->callback:Lcom/google/android/exoplayer2/upstream/Loader$Callback;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -269,10 +269,10 @@
 
     const/4 v7, 0x1
 
-    .line 395
+    .line 392
     invoke-interface/range {v1 .. v7}, Lcom/google/android/exoplayer2/upstream/Loader$Callback;->onLoadCanceled(Lcom/google/android/exoplayer2/upstream/Loader$Loadable;JJZ)V
 
-    .line 400
+    .line 397
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->callback:Lcom/google/android/exoplayer2/upstream/Loader$Callback;
 
     :cond_3
@@ -281,7 +281,7 @@
     :catchall_0
     move-exception p1
 
-    .line 389
+    .line 386
     :try_start_1
     monitor-exit p0
     :try_end_1
@@ -293,20 +293,20 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 12
 
-    .line 466
+    .line 457
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 469
+    .line 460
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-nez v0, :cond_1
 
-    .line 470
+    .line 461
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->execute()V
 
     return-void
@@ -316,20 +316,20 @@
 
     if-eq v0, v1, :cond_9
 
-    .line 476
+    .line 467
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->finish()V
 
-    .line 477
+    .line 468
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 478
+    .line 469
     iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->startTimeMs:J
 
     sub-long v6, v4, v2
 
-    .line 479
+    .line 470
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->callback:Lcom/google/android/exoplayer2/upstream/Loader$Callback;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -340,12 +340,12 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/upstream/Loader$Callback;
 
-    .line 480
+    .line 471
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->canceled:Z
 
     if-eqz v0, :cond_2
 
-    .line 481
+    .line 472
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
 
     const/4 v8, 0x0
@@ -354,7 +354,7 @@
 
     return-void
 
-    .line 484
+    .line 475
     :cond_2
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -368,7 +368,7 @@
 
     goto :goto_1
 
-    .line 495
+    .line 486
     :cond_3
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -378,29 +378,29 @@
 
     iput-object v8, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
 
-    .line 496
+    .line 487
     iget p1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->errorCount:I
 
     add-int/lit8 v9, p1, 0x1
 
     iput v9, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->errorCount:I
 
-    .line 497
+    .line 488
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
 
-    .line 498
+    .line 489
     invoke-interface/range {v2 .. v9}, Lcom/google/android/exoplayer2/upstream/Loader$Callback;->onLoadError(Lcom/google/android/exoplayer2/upstream/Loader$Loadable;JJLjava/io/IOException;I)Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;
 
     move-result-object p1
 
-    .line 499
+    .line 490
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->access$300(Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;)I
 
     move-result v0
 
     if-ne v0, v1, :cond_4
 
-    .line 500
+    .line 491
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->this$0:Lcom/google/android/exoplayer2/upstream/Loader;
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
@@ -409,7 +409,7 @@
 
     goto :goto_1
 
-    .line 501
+    .line 492
     :cond_4
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->access$300(Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;)I
 
@@ -417,17 +417,17 @@
 
     if-eq v0, v11, :cond_8
 
-    .line 502
+    .line 493
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->access$300(Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;)I
 
     move-result v0
 
     if-ne v0, v10, :cond_5
 
-    .line 503
+    .line 494
     iput v10, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->errorCount:I
 
-    .line 506
+    .line 497
     :cond_5
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->access$400(Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;)J
 
@@ -439,26 +439,26 @@
 
     if-eqz v4, :cond_6
 
-    .line 507
+    .line 498
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;->access$400(Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;)J
 
     move-result-wide v0
 
     goto :goto_0
 
-    .line 508
+    .line 499
     :cond_6
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->getRetryDelayMillis()J
 
     move-result-wide v0
 
-    .line 505
+    .line 496
     :goto_0
     invoke-virtual {p0, v0, v1}, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->start(J)V
 
     goto :goto_1
 
-    .line 487
+    .line 478
     :cond_7
     :try_start_0
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
@@ -476,10 +476,10 @@
 
     const-string v1, "Unexpected exception handling load completed"
 
-    .line 490
+    .line 481
     invoke-static {v0, v1, p1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 491
+    .line 482
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->this$0:Lcom/google/android/exoplayer2/upstream/Loader;
 
     new-instance v1, Lcom/google/android/exoplayer2/upstream/Loader$UnexpectedLoaderException;
@@ -492,7 +492,7 @@
     :goto_1
     return-void
 
-    .line 474
+    .line 465
     :cond_9
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -509,7 +509,7 @@
         }
     .end annotation
 
-    .line 355
+    .line 352
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->currentError:Ljava/io/IOException;
 
     if-eqz v0, :cond_1
@@ -520,7 +520,7 @@
 
     goto :goto_0
 
-    .line 356
+    .line 353
     :cond_0
     throw v0
 
@@ -532,34 +532,33 @@
 .method public run()V
     .locals 4
 
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
-
-    .line 408
+    .line 405
     :try_start_0
     monitor-enter p0
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 409
+    .line 406
     :try_start_1
-    iget-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->canceled:Z
-
-    if-nez v2, :cond_0
+    iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->canceled:Z
 
     const/4 v2, 0x1
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    .line 410
+    .line 407
     :goto_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -567,22 +566,22 @@
 
     iput-object v3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->executorThread:Ljava/lang/Thread;
 
-    .line 411
+    .line 408
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    .line 413
+    .line 410
     :try_start_2
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "load:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
 
@@ -594,78 +593,75 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lcom/google/android/exoplayer2/util/TraceUtil;->beginSection(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/TraceUtil;->beginSection(Ljava/lang/String;)V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_4
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Error; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 415
+    .line 412
     :try_start_3
-    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->loadable:Lcom/google/android/exoplayer2/upstream/Loader$Loadable;
 
-    invoke-interface {v2}, Lcom/google/android/exoplayer2/upstream/Loader$Loadable;->load()V
+    invoke-interface {v1}, Lcom/google/android/exoplayer2/upstream/Loader$Loadable;->load()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 417
+    .line 414
     :try_start_4
     invoke-static {}, Lcom/google/android/exoplayer2/util/TraceUtil;->endSection()V
 
     goto :goto_1
 
     :catchall_0
-    move-exception v2
+    move-exception v1
 
     invoke-static {}, Lcom/google/android/exoplayer2/util/TraceUtil;->endSection()V
 
-    .line 418
-    throw v2
+    .line 415
+    throw v1
 
-    .line 420
+    .line 417
     :cond_1
     :goto_1
     monitor-enter p0
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/lang/Error; {:try_start_4 .. :try_end_4} :catch_0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    .line 421
+    .line 418
     :try_start_5
-    iput-object v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->executorThread:Ljava/lang/Thread;
+    iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->executorThread:Ljava/lang/Thread;
 
-    .line 423
+    .line 420
     invoke-static {}, Ljava/lang/Thread;->interrupted()Z
 
-    .line 424
+    .line 421
     monitor-exit p0
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 425
+    .line 422
     :try_start_6
-    iget-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
+    iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
 
-    if-nez v2, :cond_3
+    if-nez v1, :cond_3
 
-    .line 426
-    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    .line 423
+    invoke-virtual {p0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
-    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_3
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_6 .. :try_end_6} :catch_1
     .catch Ljava/lang/Error; {:try_start_6 .. :try_end_6} :catch_0
@@ -673,37 +669,35 @@
     goto :goto_2
 
     :catchall_1
-    move-exception v2
+    move-exception v1
 
-    .line 424
+    .line 421
     :try_start_7
     monitor-exit p0
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     :try_start_8
-    throw v2
+    throw v1
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
-    .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_3
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_3
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_8 .. :try_end_8} :catch_1
     .catch Ljava/lang/Error; {:try_start_8 .. :try_end_8} :catch_0
 
     :catchall_2
-    move-exception v2
+    move-exception v1
 
-    .line 411
+    .line 408
     :try_start_9
     monitor-exit p0
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
     :try_start_a
-    throw v2
+    throw v1
     :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_4
-    .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_a} :catch_3
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_3
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_a .. :try_end_a} :catch_1
     .catch Ljava/lang/Error; {:try_start_a .. :try_end_a} :catch_0
@@ -711,52 +705,52 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "LoadTask"
-
-    const-string v2, "Unexpected error loading stream"
-
-    .line 456
-    invoke-static {v1, v2, v0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 457
+    .line 447
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
 
     if-nez v1, :cond_2
 
+    const-string v1, "LoadTask"
+
+    const-string v2, "Unexpected error loading stream"
+
+    .line 448
+    invoke-static {v1, v2, v0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
     const/4 v1, 0x3
 
-    .line 458
+    .line 449
     invoke-virtual {p0, v1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 460
+    .line 451
     :cond_2
     throw v0
 
     :catch_1
-    move-exception v0
+    move-exception v1
+
+    .line 439
+    iget-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
+
+    if-nez v2, :cond_3
 
     const-string v2, "LoadTask"
 
     const-string v3, "OutOfMemory error loading stream"
 
-    .line 448
-    invoke-static {v2, v3, v0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 440
+    invoke-static {v2, v3, v1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 449
-    iget-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
-
-    if-nez v2, :cond_3
-
-    .line 450
+    .line 441
     new-instance v2, Lcom/google/android/exoplayer2/upstream/Loader$UnexpectedLoaderException;
 
-    invoke-direct {v2, v0}, Lcom/google/android/exoplayer2/upstream/Loader$UnexpectedLoaderException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v2, v1}, Lcom/google/android/exoplayer2/upstream/Loader$UnexpectedLoaderException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-virtual {p0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v0, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -765,26 +759,26 @@
     goto :goto_2
 
     :catch_2
-    move-exception v0
+    move-exception v1
+
+    .line 431
+    iget-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
+
+    if-nez v2, :cond_3
 
     const-string v2, "LoadTask"
 
     const-string v3, "Unexpected exception loading stream"
 
-    .line 440
-    invoke-static {v2, v3, v0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 432
+    invoke-static {v2, v3, v1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 441
-    iget-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
-
-    if-nez v2, :cond_3
-
-    .line 442
+    .line 433
     new-instance v2, Lcom/google/android/exoplayer2/upstream/Loader$UnexpectedLoaderException;
 
-    invoke-direct {v2, v0}, Lcom/google/android/exoplayer2/upstream/Loader$UnexpectedLoaderException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v2, v1}, Lcom/google/android/exoplayer2/upstream/Loader$UnexpectedLoaderException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-virtual {p0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v0, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -793,33 +787,15 @@
     goto :goto_2
 
     :catch_3
-    nop
+    move-exception v1
 
-    .line 434
-    iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->canceled:Z
-
-    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
-
-    .line 435
-    iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
-
-    if-nez v1, :cond_3
-
-    .line 436
-    invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    goto :goto_2
-
-    :catch_4
-    move-exception v0
-
-    .line 429
+    .line 426
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->released:Z
 
     if-nez v2, :cond_3
 
-    .line 430
-    invoke-virtual {p0, v1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    .line 427
+    invoke-virtual {p0, v0, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -833,7 +809,7 @@
 .method public start(J)V
     .locals 4
 
-    .line 361
+    .line 358
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->this$0:Lcom/google/android/exoplayer2/upstream/Loader;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/Loader;->access$100(Lcom/google/android/exoplayer2/upstream/Loader;)Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;
@@ -854,7 +830,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 362
+    .line 359
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->this$0:Lcom/google/android/exoplayer2/upstream/Loader;
 
     invoke-static {v0, p0}, Lcom/google/android/exoplayer2/upstream/Loader;->access$102(Lcom/google/android/exoplayer2/upstream/Loader;Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;)Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;
@@ -865,12 +841,12 @@
 
     if-lez v0, :cond_1
 
-    .line 364
+    .line 361
     invoke-virtual {p0, v1, p1, p2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_1
 
-    .line 366
+    .line 363
     :cond_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/Loader$LoadTask;->execute()V
 

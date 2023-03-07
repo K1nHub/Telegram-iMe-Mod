@@ -26,7 +26,7 @@
 
     int-to-long v0, p3
 
-    .line 331
+    .line 371
     iget p3, p1, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkCount:I
 
     add-int/lit8 p3, p3, -0x1
@@ -35,10 +35,10 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkIterator;-><init>(JJ)V
 
-    .line 332
+    .line 372
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->streamElement:Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
-    .line 333
+    .line 373
     iput p2, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->trackIndex:I
 
     return-void
@@ -49,12 +49,12 @@
 .method public getChunkEndTimeUs()J
     .locals 5
 
-    .line 351
+    .line 391
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->getChunkStartTimeUs()J
 
     move-result-wide v0
 
-    .line 352
+    .line 392
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->streamElement:Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkIterator;->getCurrentIndex()J
@@ -75,10 +75,10 @@
 .method public getChunkStartTimeUs()J
     .locals 3
 
-    .line 345
+    .line 385
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkIterator;->checkInBounds()V
 
-    .line 346
+    .line 386
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->streamElement:Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkIterator;->getCurrentIndex()J
@@ -97,10 +97,10 @@
 .method public getDataSpec()Lcom/google/android/exoplayer2/upstream/DataSpec;
     .locals 4
 
-    .line 338
+    .line 378
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/chunk/BaseMediaChunkIterator;->checkInBounds()V
 
-    .line 339
+    .line 379
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->streamElement:Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/DefaultSsChunkSource$StreamElementIterator;->trackIndex:I
@@ -115,7 +115,7 @@
 
     move-result-object v0
 
-    .line 340
+    .line 380
     new-instance v1, Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     invoke-direct {v1, v0}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;)V

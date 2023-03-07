@@ -22,10 +22,10 @@
 .method public constructor <init>(Landroid/net/Uri;)V
     .locals 0
 
-    .line 97
+    .line 96
     invoke-direct {p0}, Ljava/io/IOException;-><init>()V
 
-    .line 98
+    .line 97
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistTracker$PlaylistStuckException;->url:Landroid/net/Uri;
 
     return-void

@@ -1,0 +1,152 @@
+package org.fork.p046ui.view;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.appcompat.widget.AppCompatImageView;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.smedialink.utils.extentions.common.ViewExtKt;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p048ui.Components.LayoutHelper;
+import org.telegram.p048ui.Components.RadioButton;
+/* compiled from: ImageRadioCell.kt */
+/* renamed from: org.fork.ui.view.ImageRadioCell */
+/* loaded from: classes4.dex */
+public final class ImageRadioCell extends FrameLayout {
+    private final boolean dialog;
+    private final Lazy imageView$delegate;
+    private boolean needDivider;
+    private final Lazy radioButton$delegate;
+    private final Lazy textView$delegate;
+
+    public /* synthetic */ ImageRadioCell(Context context, boolean z, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i2 & 2) != 0 ? false : z, (i2 & 4) != 0 ? 21 : i);
+    }
+
+    public final boolean getDialog() {
+        return this.dialog;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ImageRadioCell(Context context, boolean z, int i) {
+        super(context);
+        Lazy lazy;
+        Lazy lazy2;
+        Lazy lazy3;
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.dialog = z;
+        lazy = LazyKt__LazyJVMKt.lazy(new ImageRadioCell$imageView$2(this));
+        this.imageView$delegate = lazy;
+        lazy2 = LazyKt__LazyJVMKt.lazy(new ImageRadioCell$textView$2(this));
+        this.textView$delegate = lazy2;
+        lazy3 = LazyKt__LazyJVMKt.lazy(new ImageRadioCell$radioButton$2(this));
+        this.radioButton$delegate = lazy3;
+        addView(getImageView(), LayoutHelper.createFrame(30, 30, 8388627, i, 0, i, 0));
+        addView(getTextView(), LayoutHelper.createFrame(-1, -1, 51, i + 30 + 11, 0, i, 0));
+        addView(getRadioButton(), LayoutHelper.createFrame(22, 22, 53, 0, 14, i + 1, 0));
+    }
+
+    private final AppCompatImageView getImageView() {
+        return (AppCompatImageView) this.imageView$delegate.getValue();
+    }
+
+    private final TextView getTextView() {
+        return (TextView) this.textView$delegate.getValue();
+    }
+
+    private final RadioButton getRadioButton() {
+        return (RadioButton) this.radioButton$delegate.getValue();
+    }
+
+    public final void setText(String str, boolean z, boolean z2) {
+        getTextView().setText(str);
+        getRadioButton().setChecked(z, false);
+        this.needDivider = z2;
+        setWillNotDraw(!z2);
+    }
+
+    public final void setImage(Integer num) {
+        AppCompatImageView imageView = getImageView();
+        Intrinsics.checkNotNull(num);
+        imageView.setImageResource(num.intValue());
+    }
+
+    public final void setTextColor(int i) {
+        getTextView().setTextColor(i);
+    }
+
+    public final boolean isChecked() {
+        return getRadioButton().isChecked();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    protected void onMeasure(int i, int i2) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(50) + (this.needDivider ? 1 : 0));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m50dp(34);
+        getRadioButton().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(22), 1073741824));
+        getImageView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(30), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(30), 1073741824));
+        getTextView().measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
+    }
+
+    @Override // android.view.View
+    protected void onDraw(Canvas canvas) {
+        Intrinsics.checkNotNullParameter(canvas, "canvas");
+        if (this.needDivider) {
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+        }
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
+        Intrinsics.checkNotNullParameter(info, "info");
+        super.onInitializeAccessibilityNodeInfo(info);
+        info.setClassName("android.widget.RadioButton");
+        info.setCheckable(true);
+        info.setChecked(isChecked());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final AppCompatImageView initImageView() {
+        AppCompatImageView appCompatImageView = new AppCompatImageView(getContext());
+        appCompatImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        return appCompatImageView;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final TextView initTextView() {
+        TextView textView = new TextView(getContext());
+        ViewExtKt.singleLine(textView);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        textView.setTextSize(1, 16.0f);
+        if (getDialog()) {
+            textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        } else {
+            textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        }
+        return textView;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final RadioButton initRadioButton() {
+        RadioButton radioButton = new RadioButton(getContext());
+        radioButton.setSize(AndroidUtilities.m50dp(20));
+        if (getDialog()) {
+            radioButton.setColor(Theme.getColor("dialogRadioBackground"), Theme.getColor("dialogRadioBackgroundChecked"));
+        } else {
+            radioButton.setColor(Theme.getColor("radioBackground"), Theme.getColor("radioBackgroundChecked"));
+        }
+        return radioButton;
+    }
+}

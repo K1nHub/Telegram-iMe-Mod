@@ -89,41 +89,34 @@
 
 # virtual methods
 .method public applyPlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;)Lcom/google/android/exoplayer2/PlaybackParameters;
-    .locals 4
+    .locals 2
 
     .line 159
-    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->silenceSkippingAudioProcessor:Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;
 
-    iget-boolean v1, p1, Lcom/google/android/exoplayer2/PlaybackParameters;->skipSilence:Z
+    iget v1, p1, Lcom/google/android/exoplayer2/PlaybackParameters;->speed:F
 
-    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->setEnabled(Z)V
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->setSpeed(F)V
 
     .line 160
-    new-instance v0, Lcom/google/android/exoplayer2/PlaybackParameters;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;
+    iget v1, p1, Lcom/google/android/exoplayer2/PlaybackParameters;->pitch:F
 
-    iget v2, p1, Lcom/google/android/exoplayer2/PlaybackParameters;->speed:F
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->setPitch(F)V
 
-    .line 161
-    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->setSpeed(F)F
+    return-object p1
+.end method
 
-    move-result v1
+.method public applySkipSilenceEnabled(Z)Z
+    .locals 1
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;
+    .line 166
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->silenceSkippingAudioProcessor:Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;
 
-    iget v3, p1, Lcom/google/android/exoplayer2/PlaybackParameters;->pitch:F
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->setEnabled(Z)V
 
-    .line 162
-    invoke-virtual {v2, v3}, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->setPitch(F)F
-
-    move-result v2
-
-    iget-boolean p1, p1, Lcom/google/android/exoplayer2/PlaybackParameters;->skipSilence:Z
-
-    invoke-direct {v0, v1, v2, p1}, Lcom/google/android/exoplayer2/PlaybackParameters;-><init>(FFZ)V
-
-    return-object v0
+    return p1
 .end method
 
 .method public getAudioProcessors()[Lcom/google/android/exoplayer2/audio/AudioProcessor;
@@ -138,10 +131,10 @@
 .method public getMediaDuration(J)J
     .locals 1
 
-    .line 168
+    .line 172
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->sonicAudioProcessor:Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->scaleDurationForSpeedup(J)J
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/audio/SonicAudioProcessor;->getMediaDuration(J)J
 
     move-result-wide p1
 
@@ -151,7 +144,7 @@
 .method public getSkippedOutputFrameCount()J
     .locals 2
 
-    .line 173
+    .line 177
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$DefaultAudioProcessorChain;->silenceSkippingAudioProcessor:Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->getSkippedFrames()J

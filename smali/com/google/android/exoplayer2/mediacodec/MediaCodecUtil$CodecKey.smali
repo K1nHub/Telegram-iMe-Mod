@@ -26,16 +26,16 @@
 .method public constructor <init>(Ljava/lang/String;ZZ)V
     .locals 0
 
-    .line 1057
+    .line 1072
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1058
+    .line 1073
     iput-object p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->mimeType:Ljava/lang/String;
 
-    .line 1059
+    .line 1074
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->secure:Z
 
-    .line 1060
+    .line 1075
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->tunneling:Z
 
     return-void
@@ -57,7 +57,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1078
+    .line 1093
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -68,11 +68,11 @@
 
     goto :goto_1
 
-    .line 1081
+    .line 1096
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;
 
-    .line 1082
+    .line 1097
     iget-object v2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->mimeType:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->mimeType:Ljava/lang/String;
@@ -111,7 +111,7 @@
 .method public hashCode()I
     .locals 5
 
-    .line 1067
+    .line 1082
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->mimeType:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -124,7 +124,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 1068
+    .line 1083
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->secure:Z
 
     const/16 v3, 0x4cf
@@ -145,7 +145,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 1069
+    .line 1084
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$CodecKey;->tunneling:Z
 
     if-eqz v1, :cond_1

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private final dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
+.field private final dataReader:Lcom/google/android/exoplayer2/upstream/DataReader;
 
 .field private peekBuffer:[B
 
@@ -31,33 +31,44 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/exoplayer2/upstream/DataSource;JJ)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "goog.exo.extractor"
+
+    .line 34
+    invoke-static {v0}, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registerModule(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/exoplayer2/upstream/DataReader;JJ)V
     .locals 0
 
-    .line 49
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
-    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
+    .line 56
+    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->dataReader:Lcom/google/android/exoplayer2/upstream/DataReader;
 
-    .line 51
+    .line 57
     iput-wide p2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->position:J
 
-    .line 52
+    .line 58
     iput-wide p4, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->streamLength:J
 
     const/high16 p1, 0x10000
 
     new-array p1, p1, [B
 
-    .line 53
+    .line 59
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     const/16 p1, 0x1000
 
     new-array p1, p1, [B
 
-    .line 54
+    .line 60
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->scratchSpace:[B
 
     return-void
@@ -70,7 +81,7 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 304
+    .line 308
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->position:J
 
     int-to-long v2, p1
@@ -86,19 +97,19 @@
 .method private ensureSpaceForPeek(I)V
     .locals 3
 
-    .line 210
+    .line 211
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
     add-int/2addr v0, p1
 
-    .line 211
+    .line 212
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     array-length v1, p1
 
     if-le v0, v1, :cond_0
 
-    .line 212
+    .line 213
     array-length p1, p1
 
     mul-int/lit8 p1, p1, 0x2
@@ -111,11 +122,12 @@
 
     add-int/2addr v0, v2
 
+    .line 214
     invoke-static {p1, v1, v0}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
     move-result p1
 
-    .line 214
+    .line 218
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -128,30 +140,58 @@
     return-void
 .end method
 
-.method private readFromDataSource([BIIIZ)I
+.method private readFromPeekBuffer([BII)I
+    .locals 2
+
+    .line 243
+    iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferLength:I
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    .line 246
+    :cond_0
+    invoke-static {v0, p3}, Ljava/lang/Math;->min(II)I
+
+    move-result p3
+
+    .line 247
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
+
+    invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 248
+    invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->updatePeekBuffer(I)V
+
+    return p3
+.end method
+
+.method private readFromUpstream([BIIIZ)I
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/InterruptedException;,
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 284
+    .line 288
     invoke-static {}, Ljava/lang/Thread;->interrupted()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 287
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
+    .line 291
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->dataReader:Lcom/google/android/exoplayer2/upstream/DataReader;
 
     add-int/2addr p2, p4
 
     sub-int/2addr p3, p4
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataSource;->read([BII)I
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataReader;->read([BII)I
 
     move-result p1
 
@@ -165,7 +205,7 @@
 
     return p2
 
-    .line 292
+    .line 296
     :cond_0
     new-instance p1, Ljava/io/EOFException;
 
@@ -178,55 +218,26 @@
 
     return p4
 
-    .line 285
+    .line 289
     :cond_2
-    new-instance p1, Ljava/lang/InterruptedException;
+    new-instance p1, Ljava/io/InterruptedIOException;
 
-    invoke-direct {p1}, Ljava/lang/InterruptedException;-><init>()V
+    invoke-direct {p1}, Ljava/io/InterruptedIOException;-><init>()V
 
     throw p1
-.end method
-
-.method private readFromPeekBuffer([BII)I
-    .locals 2
-
-    .line 239
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferLength:I
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    return v1
-
-    .line 242
-    :cond_0
-    invoke-static {v0, p3}, Ljava/lang/Math;->min(II)I
-
-    move-result p3
-
-    .line 243
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
-
-    invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 244
-    invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->updatePeekBuffer(I)V
-
-    return p3
 .end method
 
 .method private skipFromPeekBuffer(I)I
     .locals 1
 
-    .line 225
+    .line 229
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferLength:I
 
     invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
 
     move-result p1
 
-    .line 226
+    .line 230
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->updatePeekBuffer(I)V
 
     return p1
@@ -235,7 +246,7 @@
 .method private updatePeekBuffer(I)V
     .locals 5
 
-    .line 254
+    .line 258
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferLength:I
 
     sub-int/2addr v0, p1
@@ -244,13 +255,13 @@
 
     const/4 v1, 0x0
 
-    .line 255
+    .line 259
     iput v1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
-    .line 256
+    .line 260
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
-    .line 257
+    .line 261
     array-length v3, v2
 
     const/high16 v4, 0x80000
@@ -263,7 +274,7 @@
 
     add-int/2addr v3, v0
 
-    .line 258
+    .line 262
     new-array v3, v3, [B
 
     goto :goto_0
@@ -271,11 +282,11 @@
     :cond_0
     move-object v3, v2
 
-    .line 260
+    .line 264
     :goto_0
     invoke-static {v2, p1, v3, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 261
+    .line 265
     iput-object v3, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     return-void
@@ -287,14 +298,13 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 175
+    .line 176
     invoke-virtual {p0, p1, v0}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->advancePeekPosition(IZ)Z
 
     return-void
@@ -304,15 +314,14 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 159
+    .line 160
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->ensureSpaceForPeek(I)V
 
-    .line 160
+    .line 161
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferLength:I
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
@@ -324,7 +333,7 @@
     :goto_0
     if-ge v5, p1, :cond_1
 
-    .line 162
+    .line 163
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     iget v3, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
@@ -335,7 +344,8 @@
 
     move v6, p2
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromDataSource([BIIIZ)I
+    .line 164
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromUpstream([BIIIZ)I
 
     move-result v5
 
@@ -347,7 +357,7 @@
 
     return p1
 
-    .line 167
+    .line 168
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
@@ -357,7 +367,7 @@
 
     goto :goto_0
 
-    .line 169
+    .line 170
     :cond_1
     iget p2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
@@ -373,7 +383,7 @@
 .method public getLength()J
     .locals 2
 
-    .line 195
+    .line 196
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->streamLength:J
 
     return-wide v0
@@ -382,7 +392,7 @@
 .method public getPeekPosition()J
     .locals 4
 
-    .line 185
+    .line 186
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->position:J
 
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
@@ -397,7 +407,7 @@
 .method public getPosition()J
     .locals 2
 
-    .line 190
+    .line 191
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->position:J
 
     return-wide v0
@@ -407,15 +417,14 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 117
+    .line 120
     invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->ensureSpaceForPeek(I)V
 
-    .line 118
+    .line 121
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferLength:I
 
     iget v3, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
@@ -424,7 +433,7 @@
 
     if-nez v0, :cond_1
 
-    .line 121
+    .line 124
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
     const/4 v5, 0x0
@@ -435,8 +444,8 @@
 
     move v4, p3
 
-    .line 122
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromDataSource([BIIIZ)I
+    .line 125
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromUpstream([BIIIZ)I
 
     move-result p3
 
@@ -446,7 +455,7 @@
 
     return v0
 
-    .line 131
+    .line 134
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferLength:I
 
@@ -456,13 +465,13 @@
 
     goto :goto_0
 
-    .line 133
+    .line 136
     :cond_1
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p3
 
-    .line 135
+    .line 138
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
@@ -470,7 +479,7 @@
 
     invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 136
+    .line 139
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
     add-int/2addr p1, p3
@@ -484,14 +493,13 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 153
+    .line 155
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekFully([BIIZ)Z
 
     return-void
@@ -501,12 +509,11 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 143
+    .line 146
     invoke-virtual {p0, p3, p4}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->advancePeekPosition(IZ)Z
 
     move-result p4
@@ -517,7 +524,7 @@
 
     return p1
 
-    .line 146
+    .line 149
     :cond_0
     iget-object p4, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBuffer:[B
 
@@ -536,12 +543,11 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 59
+    .line 65
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromPeekBuffer([BII)I
 
     move-result v0
@@ -560,12 +566,12 @@
 
     move v4, p3
 
-    .line 62
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromDataSource([BIIIZ)I
+    .line 68
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromUpstream([BIIIZ)I
 
     move-result v0
 
-    .line 65
+    .line 71
     :cond_0
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 
@@ -576,14 +582,13 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 83
+    .line 88
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFully([BIIZ)Z
 
     return-void
@@ -593,12 +598,11 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 72
+    .line 78
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromPeekBuffer([BII)I
 
     move-result v0
@@ -622,14 +626,14 @@
 
     move v6, p4
 
-    .line 74
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromDataSource([BIIIZ)I
+    .line 80
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromUpstream([BIIIZ)I
 
     move-result v5
 
     goto :goto_0
 
-    .line 76
+    .line 82
     :cond_0
     invoke-direct {p0, v5}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 
@@ -651,7 +655,7 @@
 
     const/4 v0, 0x0
 
-    .line 180
+    .line 181
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->peekBufferPosition:I
 
     return-void
@@ -686,14 +690,14 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 200
+    .line 201
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 201
+    .line 202
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->position:J
 
-    .line 202
+    .line 203
     throw p3
 .end method
 
@@ -701,26 +705,24 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 88
+    .line 93
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->skipFromPeekBuffer(I)I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 90
+    .line 95
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->scratchSpace:[B
 
     const/4 v3, 0x0
 
     array-length v0, v2
 
-    .line 91
     invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v4
@@ -731,11 +733,11 @@
 
     move-object v1, p0
 
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromDataSource([BIIIZ)I
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromUpstream([BIIIZ)I
 
     move-result v0
 
-    .line 93
+    .line 97
     :cond_0
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 
@@ -746,14 +748,13 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 112
+    .line 115
     invoke-virtual {p0, p1, v0}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->skipFully(IZ)Z
 
     return-void
@@ -763,12 +764,11 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 100
+    .line 103
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->skipFromPeekBuffer(I)I
 
     move-result v0
@@ -782,7 +782,7 @@
 
     if-eq v5, v0, :cond_0
 
-    .line 102
+    .line 105
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->scratchSpace:[B
 
     array-length v0, v0
@@ -793,7 +793,7 @@
 
     move-result v4
 
-    .line 103
+    .line 106
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->scratchSpace:[B
 
     neg-int v3, v5
@@ -802,14 +802,14 @@
 
     move v6, p2
 
-    .line 104
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromDataSource([BIIIZ)I
+    .line 107
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->readFromUpstream([BIIIZ)I
 
     move-result v5
 
     goto :goto_0
 
-    .line 106
+    .line 109
     :cond_0
     invoke-direct {p0, v5}, Lcom/google/android/exoplayer2/extractor/DefaultExtractorInput;->commitBytesRead(I)V
 

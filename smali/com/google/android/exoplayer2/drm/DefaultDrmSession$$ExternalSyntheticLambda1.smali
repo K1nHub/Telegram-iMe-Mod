@@ -2,42 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/util/EventDispatcher$Event;
+.implements Lcom/google/android/exoplayer2/util/Consumer;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda1;
+# instance fields
+.field public final synthetic f$0:Ljava/lang/Exception;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda1;
-
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda1;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda1;->INSTANCE:Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda1;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Ljava/lang/Exception;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda1;->f$0:Ljava/lang/Exception;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final sendTo(Ljava/lang/Object;)V
-    .locals 0
+.method public final accept(Ljava/lang/Object;)V
+    .locals 1
 
-    check-cast p1, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionEventListener;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda1;->f$0:Ljava/lang/Exception;
 
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionEventListener;->onDrmKeysLoaded()V
+    check-cast p1, Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
+
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSession;->$r8$lambda$0hCnRa6YHjaCNNZgu2TzChKNNEQ(Ljava/lang/Exception;Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
 
     return-void
 .end method

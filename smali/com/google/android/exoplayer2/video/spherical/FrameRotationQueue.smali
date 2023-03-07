@@ -1,4 +1,4 @@
-.class public final Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;
+.class final Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;
 .super Ljava/lang/Object;
 .source "FrameRotationQueue.java"
 
@@ -24,22 +24,22 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0x10
 
     new-array v1, v0, [F
 
-    .line 37
+    .line 38
     iput-object v1, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->recenterMatrix:[F
 
     new-array v0, v0, [F
 
-    .line 38
+    .line 39
     iput-object v0, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->rotationMatrix:[F
 
-    .line 39
+    .line 40
     new-instance v0, Lcom/google/android/exoplayer2/util/TimedValueQueue;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/TimedValueQueue;-><init>()V
@@ -50,136 +50,136 @@
 .end method
 
 .method public static computeRecenterMatrix([F[F)V
-    .locals 6
-
-    const/4 v0, 0x0
-
-    .line 99
-    invoke-static {p0, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
-
-    const/16 v1, 0xa
+    .locals 5
 
     .line 100
-    aget v2, p1, v1
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/GlUtil;->setToIdentity([F)V
 
-    aget v3, p1, v1
+    const/16 v0, 0xa
 
-    mul-float v2, v2, v3
+    .line 101
+    aget v1, p1, v0
 
-    const/16 v3, 0x8
+    aget v2, p1, v0
 
-    aget v4, p1, v3
+    mul-float v1, v1, v2
 
-    aget v5, p1, v3
+    const/16 v2, 0x8
 
-    mul-float v4, v4, v5
+    aget v3, p1, v2
 
-    add-float/2addr v2, v4
+    aget v4, p1, v2
 
-    float-to-double v4, v2
+    mul-float v3, v3, v4
 
-    .line 102
-    invoke-static {v4, v5}, Ljava/lang/Math;->sqrt(D)D
+    add-float/2addr v1, v3
 
-    move-result-wide v4
-
-    double-to-float v2, v4
+    float-to-double v3, v1
 
     .line 103
-    aget v4, p1, v1
+    invoke-static {v3, v4}, Ljava/lang/Math;->sqrt(D)D
 
-    div-float/2addr v4, v2
+    move-result-wide v3
 
-    aput v4, p0, v0
+    double-to-float v1, v3
 
     .line 104
-    aget v0, p1, v3
+    aget v3, p1, v0
 
-    div-float/2addr v0, v2
+    div-float/2addr v3, v1
+
+    const/4 v4, 0x0
+
+    aput v3, p0, v4
+
+    .line 105
+    aget v3, p1, v2
+
+    div-float/2addr v3, v1
 
     const/4 v4, 0x2
 
-    aput v0, p0, v4
-
-    .line 105
-    aget v0, p1, v3
-
-    neg-float v0, v0
-
-    div-float/2addr v0, v2
-
-    aput v0, p0, v3
+    aput v3, p0, v4
 
     .line 106
-    aget p1, p1, v1
+    aget v3, p1, v2
 
-    div-float/2addr p1, v2
+    neg-float v3, v3
 
-    aput p1, p0, v1
+    div-float/2addr v3, v1
+
+    aput v3, p0, v2
+
+    .line 107
+    aget p1, p1, v0
+
+    div-float/2addr p1, v1
+
+    aput p1, p0, v0
 
     return-void
 .end method
 
 .method private static getRotationMatrixFromAngleAxis([F[F)V
-    .locals 12
+    .locals 11
 
     const/4 v0, 0x0
 
-    .line 113
-    aget v1, p1, v0
-
-    const/4 v2, 0x1
-
     .line 114
-    aget v2, p1, v2
+    aget v0, p1, v0
 
-    neg-float v2, v2
-
-    const/4 v3, 0x2
+    const/4 v1, 0x1
 
     .line 115
-    aget p1, p1, v3
+    aget v1, p1, v1
+
+    neg-float v1, v1
+
+    const/4 v2, 0x2
+
+    .line 116
+    aget p1, p1, v2
 
     neg-float p1, p1
 
-    .line 116
-    invoke-static {v1, v2, p1}, Landroid/opengl/Matrix;->length(FFF)F
+    .line 117
+    invoke-static {v0, v1, p1}, Landroid/opengl/Matrix;->length(FFF)F
 
-    move-result v3
+    move-result v2
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    cmpl-float v4, v3, v4
+    cmpl-float v3, v2, v3
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
-    float-to-double v4, v3
-
-    .line 118
-    invoke-static {v4, v5}, Ljava/lang/Math;->toDegrees(D)D
-
-    move-result-wide v4
-
-    double-to-float v8, v4
-
-    const/4 v7, 0x0
-
-    div-float v9, v1, v3
-
-    div-float v10, v2, v3
-
-    div-float v11, p1, v3
-
-    move-object v6, p0
+    float-to-double v3, v2
 
     .line 119
-    invoke-static/range {v6 .. v11}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
+    invoke-static {v3, v4}, Ljava/lang/Math;->toDegrees(D)D
+
+    move-result-wide v3
+
+    double-to-float v7, v3
+
+    const/4 v6, 0x0
+
+    div-float v8, v0, v2
+
+    div-float v9, v1, v2
+
+    div-float v10, p1, v2
+
+    move-object v5, p0
+
+    .line 120
+    invoke-static/range {v5 .. v10}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
     goto :goto_0
 
-    .line 121
+    .line 122
     :cond_0
-    invoke-static {p0, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/GlUtil;->setToIdentity([F)V
 
     :goto_0
     return-void
@@ -190,7 +190,7 @@
 .method public pollRotationMatrix([FJ)Z
     .locals 7
 
-    .line 69
+    .line 70
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->rotations:Lcom/google/android/exoplayer2/util/TimedValueQueue;
 
     invoke-virtual {v0, p2, p3}, Lcom/google/android/exoplayer2/util/TimedValueQueue;->pollFloor(J)Ljava/lang/Object;
@@ -205,33 +205,33 @@
 
     return p1
 
-    .line 74
+    .line 75
     :cond_0
     iget-object p3, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->rotationMatrix:[F
 
     invoke-static {p3, p2}, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->getRotationMatrixFromAngleAxis([F[F)V
 
-    .line 75
+    .line 76
     iget-boolean p2, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->recenterMatrixComputed:Z
 
     const/4 p3, 0x1
 
     if-nez p2, :cond_1
 
-    .line 76
+    .line 77
     iget-object p2, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->recenterMatrix:[F
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->rotationMatrix:[F
 
     invoke-static {p2, v0}, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->computeRecenterMatrix([F[F)V
 
-    .line 77
+    .line 78
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->recenterMatrixComputed:Z
 
     :cond_1
     const/4 v2, 0x0
 
-    .line 79
+    .line 80
     iget-object v3, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->recenterMatrix:[F
 
     const/4 v4, 0x0
@@ -250,14 +250,14 @@
 .method public reset()V
     .locals 1
 
-    .line 55
+    .line 56
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->rotations:Lcom/google/android/exoplayer2/util/TimedValueQueue;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/TimedValueQueue;->clear()V
 
     const/4 v0, 0x0
 
-    .line 56
+    .line 57
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->recenterMatrixComputed:Z
 
     return-void
@@ -266,7 +266,7 @@
 .method public setRotation(J[F)V
     .locals 1
 
-    .line 50
+    .line 51
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/spherical/FrameRotationQueue;->rotations:Lcom/google/android/exoplayer2/util/TimedValueQueue;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/util/TimedValueQueue;->add(JLjava/lang/Object;)V

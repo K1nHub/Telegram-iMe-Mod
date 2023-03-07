@@ -38,10 +38,10 @@
 .method private constructor <init>(ILjava/lang/Exception;)V
     .locals 0
 
-    .line 108
+    .line 113
     invoke-direct {p0, p2}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
-    .line 109
+    .line 114
     iput p1, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;->type:I
 
     return-void
@@ -50,7 +50,7 @@
 .method public static createForAd(Ljava/lang/Exception;)Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
     .locals 2
 
-    .line 85
+    .line 90
     new-instance v0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
 
     const/4 v1, 0x0
@@ -63,7 +63,7 @@
 .method public static createForAdGroup(Ljava/lang/Exception;I)Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
     .locals 4
 
-    .line 90
+    .line 95
     new-instance v0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
 
     new-instance v1, Ljava/io/IOException;
@@ -94,7 +94,7 @@
 .method public static createForAllAds(Ljava/lang/Exception;)Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
     .locals 2
 
-    .line 96
+    .line 101
     new-instance v0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
 
     const/4 v1, 0x2
@@ -107,7 +107,7 @@
 .method public static createForUnexpected(Ljava/lang/RuntimeException;)Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
     .locals 2
 
-    .line 101
+    .line 106
     new-instance v0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;
 
     const/4 v1, 0x3
@@ -122,7 +122,7 @@
 .method public getRuntimeExceptionForUnexpected()Ljava/lang/RuntimeException;
     .locals 2
 
-    .line 117
+    .line 122
     iget v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;->type:I
 
     const/4 v1, 0x3
@@ -139,7 +139,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 118
+    .line 123
     invoke-virtual {p0}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0

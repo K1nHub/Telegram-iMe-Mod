@@ -7,12 +7,9 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaDrm<",
-        "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-        ">;"
+        Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$Api31;
     }
 .end annotation
 
@@ -21,14 +18,6 @@
 .field private static final CENC_SCHEME_MIME_TYPE:Ljava/lang/String; = "cenc"
 
 .field public static final DEFAULT_PROVIDER:Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 .field private static final MOCK_LA_URL:Ljava/lang/String; = "<LA_URL>https://x</LA_URL>"
 
@@ -74,11 +63,19 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$prIkSJ3aPqJCpyWNDn6Q71fn9w0(Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;Landroid/media/MediaDrm;[BJ)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p5}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->lambda$setOnExpirationUpdateListener$3(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;Landroid/media/MediaDrm;[BJ)V
+
+    return-void
+.end method
+
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 59
-    sget-object v0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda2;->INSTANCE:Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda2;
+    .line 63
+    sget-object v0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda3;->INSTANCE:Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda3;
 
     sput-object v0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->DEFAULT_PROVIDER:Lcom/google/android/exoplayer2/drm/ExoMediaDrm$Provider;
 
@@ -93,13 +90,13 @@
         }
     .end annotation
 
-    .line 96
+    .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
+    .line 110
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 98
+    .line 111
     sget-object v0, Lcom/google/android/exoplayer2/C;->COMMON_PSSH_UUID:Ljava/util/UUID;
 
     invoke-virtual {v0, p1}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
@@ -114,10 +111,10 @@
 
     invoke-static {v0, v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 99
+    .line 112
     iput-object p1, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
-    .line 100
+    .line 113
     new-instance v0, Landroid/media/MediaDrm;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->adjustUuid(Ljava/util/UUID;)Ljava/util/UUID;
@@ -128,10 +125,10 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
-    .line 102
+    .line 115
     iput v1, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->referenceCount:I
 
-    .line 103
+    .line 116
     sget-object v1, Lcom/google/android/exoplayer2/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
     invoke-virtual {v1, p1}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
@@ -146,7 +143,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 104
+    .line 117
     invoke-static {v0}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->forceWidevineL3(Landroid/media/MediaDrm;)V
 
     :cond_0
@@ -154,24 +151,24 @@
 .end method
 
 .method private static addLaUrlAttributeIfMissing([B)[B
-    .locals 8
+    .locals 7
 
-    .line 405
+    .line 489
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([B)V
 
-    .line 408
+    .line 492
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianInt()I
 
     move-result v1
 
-    .line 409
+    .line 493
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianShort()S
 
     move-result v2
 
-    .line 410
+    .line 494
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianShort()S
 
     move-result v3
@@ -186,26 +183,22 @@
 
     goto :goto_0
 
-    .line 415
+    .line 499
     :cond_0
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianShort()S
 
     move-result v5
 
-    const-string v6, "UTF-16LE"
+    .line 500
+    sget-object v6, Lcom/google/common/base/Charsets;->UTF_16LE:Ljava/nio/charset/Charset;
 
-    .line 416
-    invoke-static {v6}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v7
-
-    invoke-virtual {v0, v5, v7}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(ILjava/nio/charset/Charset;)Ljava/lang/String;
+    invoke-virtual {v0, v5, v6}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(ILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v5, "<LA_URL>"
 
-    .line 417
+    .line 501
     invoke-virtual {v0, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v5
@@ -217,7 +210,7 @@
     :cond_1
     const-string p0, "</DATA>"
 
-    .line 422
+    .line 506
     invoke-virtual {v0, p0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result p0
@@ -228,10 +221,10 @@
 
     const-string v5, "Could not find the </DATA> tag. Skipping LA_URL workaround."
 
-    .line 424
+    .line 508
     invoke-static {v4, v5}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 426
+    .line 510
     :cond_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -239,7 +232,7 @@
 
     const/4 v5, 0x0
 
-    .line 427
+    .line 511
     invoke-virtual {v0, v5, p0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v5
@@ -250,7 +243,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 429
+    .line 513
     invoke-virtual {v0, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p0
@@ -263,30 +256,30 @@
 
     add-int/lit8 v1, v1, 0x34
 
-    .line 431
+    .line 515
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 432
+    .line 516
     sget-object v4, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v0, v4}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 433
+    .line 517
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     int-to-short v1, v2
 
-    .line 434
+    .line 518
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
     int-to-short v1, v3
 
-    .line 435
+    .line 519
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    .line 436
+    .line 520
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -297,18 +290,14 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    .line 437
-    invoke-static {v6}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    .line 521
+    invoke-virtual {p0, v6}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     move-result-object p0
 
     invoke-virtual {v0, p0}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 438
+    .line 522
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object p0
@@ -319,16 +308,54 @@
     :goto_0
     const-string v0, "Unexpected record count or type. Skipping LA_URL workaround."
 
-    .line 412
+    .line 496
     invoke-static {v4, v0}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
+    return-object p0
+.end method
+
+.method private static adjustLicenseServerUrl(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    const-string v0, "<LA_URL>https://x</LA_URL>"
+
+    .line 236
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const-string v1, ""
+
+    if-eqz v0, :cond_0
+
+    return-object v1
+
+    .line 238
+    :cond_0
+    sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
+
+    const/16 v2, 0x21
+
+    if-ne v0, v2, :cond_1
+
+    const-string v0, "https://default.url"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    return-object v1
+
+    :cond_1
     return-object p0
 .end method
 
 .method private static adjustRequestData(Ljava/util/UUID;[B)[B
     .locals 1
 
-    .line 378
+    .line 463
     sget-object v0, Lcom/google/android/exoplayer2/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
     invoke-virtual {v0, p0}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
@@ -337,7 +364,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 379
+    .line 464
     invoke-static {p1}, Lcom/google/android/exoplayer2/drm/ClearKeyUtil;->adjustRequestData([B)[B
 
     move-result-object p0
@@ -351,7 +378,7 @@
 .method private static adjustRequestInitData(Ljava/util/UUID;[B)[B
     .locals 3
 
-    .line 333
+    .line 418
     sget-object v0, Lcom/google/android/exoplayer2/C;->PLAYREADY_UUID:Ljava/util/UUID;
 
     invoke-virtual {v0, p0}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
@@ -360,7 +387,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 334
+    .line 419
     invoke-static {p1, p0}, Lcom/google/android/exoplayer2/extractor/mp4/PsshAtomUtil;->parseSchemeSpecificData([BLjava/util/UUID;)[B
 
     move-result-object v1
@@ -372,18 +399,18 @@
     :cond_0
     move-object p1, v1
 
-    .line 341
+    .line 426
     :goto_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->addLaUrlAttributeIfMissing([B)[B
 
     move-result-object p1
 
-    .line 340
+    .line 425
     invoke-static {v0, p1}, Lcom/google/android/exoplayer2/extractor/mp4/PsshAtomUtil;->buildPsshAtom(Ljava/util/UUID;[B)[B
 
     move-result-object p1
 
-    .line 351
+    .line 436
     :cond_1
     sget v1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -399,7 +426,7 @@
 
     if-nez v1, :cond_3
 
-    .line 352
+    .line 437
     :cond_2
     invoke-virtual {v0, p0}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
@@ -411,7 +438,7 @@
 
     const-string v1, "Amazon"
 
-    .line 353
+    .line 438
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -422,7 +449,7 @@
 
     const-string v1, "AFTB"
 
-    .line 354
+    .line 439
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -431,7 +458,7 @@
 
     const-string v1, "AFTS"
 
-    .line 355
+    .line 440
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -440,7 +467,7 @@
 
     const-string v1, "AFTM"
 
-    .line 356
+    .line 441
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -449,14 +476,14 @@
 
     const-string v1, "AFTT"
 
-    .line 357
+    .line 442
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
-    .line 358
+    .line 443
     :cond_3
     invoke-static {p1, p0}, Lcom/google/android/exoplayer2/extractor/mp4/PsshAtomUtil;->parseSchemeSpecificData([BLjava/util/UUID;)[B
 
@@ -473,7 +500,7 @@
 .method private static adjustRequestMimeType(Ljava/util/UUID;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 369
+    .line 454
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1a
@@ -482,7 +509,7 @@
 
     sget-object v0, Lcom/google/android/exoplayer2/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
-    .line 370
+    .line 455
     invoke-virtual {v0, p0}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -491,7 +518,7 @@
 
     const-string p0, "video/mp4"
 
-    .line 371
+    .line 456
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -518,7 +545,7 @@
 .method private static adjustUuid(Ljava/util/UUID;)Ljava/util/UUID;
     .locals 2
 
-    .line 328
+    .line 413
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1b
@@ -546,7 +573,7 @@
 
     const-string v1, "L3"
 
-    .line 386
+    .line 470
     invoke-virtual {p0, v0, v1}, Landroid/media/MediaDrm;->setPropertyString(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -565,7 +592,7 @@
         }
     .end annotation
 
-    .line 273
+    .line 358
     sget-object v0, Lcom/google/android/exoplayer2/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
     invoke-virtual {v0, p0}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
@@ -576,7 +603,7 @@
 
     if-nez p0, :cond_0
 
-    .line 275
+    .line 360
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -585,7 +612,7 @@
 
     return-object p0
 
-    .line 278
+    .line 363
     :cond_0
     sget p0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -601,7 +628,7 @@
 
     if-le p0, v2, :cond_4
 
-    .line 280
+    .line 365
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -612,7 +639,7 @@
 
     const/4 v3, 0x0
 
-    .line 283
+    .line 368
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -620,23 +647,23 @@
 
     if-ge v1, v4, :cond_2
 
-    .line 284
+    .line 369
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
-    .line 285
+    .line 370
     iget-object v5, v4, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->data:[B
 
-    invoke-static {v5}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, [B
 
-    .line 286
+    .line 371
     iget-object v6, v4, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->mimeType:Ljava/lang/String;
 
     iget-object v7, p0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->mimeType:Ljava/lang/String;
@@ -651,21 +678,21 @@
 
     iget-object v6, p0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
 
-    .line 287
+    .line 372
     invoke-static {v4, v6}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 288
+    .line 373
     invoke-static {v5}, Lcom/google/android/exoplayer2/extractor/mp4/PsshAtomUtil;->isPsshAtom([B)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 289
+    .line 374
     array-length v4, v5
 
     add-int/2addr v3, v4
@@ -685,14 +712,14 @@
     :goto_1
     if-eqz v1, :cond_4
 
-    .line 296
+    .line 381
     new-array v1, v3, [B
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    .line 298
+    .line 383
     :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -700,26 +727,26 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 299
+    .line 384
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
-    .line 300
+    .line 385
     iget-object v4, v4, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->data:[B
 
-    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, [B
 
-    .line 301
+    .line 386
     array-length v5, v4
 
-    .line 302
+    .line 387
     invoke-static {v4, v0, v1, v3, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     add-int/2addr v3, v5
@@ -728,7 +755,7 @@
 
     goto :goto_2
 
-    .line 306
+    .line 391
     :cond_3
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->copyWithData([B)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
@@ -739,7 +766,7 @@
     :cond_4
     const/4 p0, 0x0
 
-    .line 312
+    .line 397
     :goto_3
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -747,17 +774,17 @@
 
     if-ge p0, v1, :cond_7
 
-    .line 313
+    .line 398
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
-    .line 314
+    .line 399
     iget-object v3, v1, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->data:[B
 
-    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -767,7 +794,7 @@
 
     move-result v3
 
-    .line 315
+    .line 400
     sget v4, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v5, 0x17
@@ -790,7 +817,7 @@
 
     goto :goto_3
 
-    .line 323
+    .line 408
     :cond_7
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -799,6 +826,21 @@
     check-cast p0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
     return-object p0
+.end method
+
+.method public static isCryptoSchemeSupported(Ljava/util/UUID;)Z
+    .locals 0
+
+    .line 88
+    invoke-static {p0}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->adjustUuid(Ljava/util/UUID;)Ljava/util/UUID;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroid/media/MediaDrm;->isCryptoSchemeSupported(Ljava/util/UUID;)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method private synthetic lambda$setOnEventListener$1(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener;Landroid/media/MediaDrm;[BII[B)V
@@ -816,8 +858,17 @@
 
     move-object v5, p6
 
-    .line 115
+    .line 127
     invoke-interface/range {v0 .. v5}, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener;->onEvent(Lcom/google/android/exoplayer2/drm/ExoMediaDrm;[BII[B)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$setOnExpirationUpdateListener$3(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;Landroid/media/MediaDrm;[BJ)V
+    .locals 0
+
+    .line 175
+    invoke-interface {p1, p0, p3, p4, p5}, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;->onExpirationUpdate(Lcom/google/android/exoplayer2/drm/ExoMediaDrm;[BJ)V
 
     return-void
 .end method
@@ -825,12 +876,12 @@
 .method private synthetic lambda$setOnKeyStatusChangeListener$2(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;Landroid/media/MediaDrm;[BLjava/util/List;Z)V
     .locals 3
 
-    .line 129
+    .line 148
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 130
+    .line 149
     invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p4
@@ -848,7 +899,7 @@
 
     check-cast v0, Landroid/media/MediaDrm$KeyStatus;
 
-    .line 131
+    .line 150
     new-instance v1, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyStatus;
 
     invoke-virtual {v0}, Landroid/media/MediaDrm$KeyStatus;->getStatusCode()I
@@ -865,7 +916,7 @@
 
     goto :goto_0
 
-    .line 133
+    .line 152
     :cond_0
     invoke-interface {p1, p0, p3, p2, p5}, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;->onKeyStatusChange(Lcom/google/android/exoplayer2/drm/ExoMediaDrm;[BLjava/util/List;Z)V
 
@@ -875,7 +926,7 @@
 .method private static synthetic lambda$static$0(Ljava/util/UUID;)Lcom/google/android/exoplayer2/drm/ExoMediaDrm;
     .locals 2
 
-    .line 62
+    .line 66
     :try_start_0
     invoke-static {p0}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->newInstance(Ljava/util/UUID;)Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;
 
@@ -885,7 +936,7 @@
 
     return-object p0
 
-    .line 64
+    .line 68
     :catch_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -909,7 +960,7 @@
 
     invoke-static {v0, p0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 65
+    .line 69
     new-instance p0, Lcom/google/android/exoplayer2/drm/DummyExoMediaDrm;
 
     invoke-direct {p0}, Lcom/google/android/exoplayer2/drm/DummyExoMediaDrm;-><init>()V
@@ -920,7 +971,7 @@
 .method private static needsForceWidevineL3Workaround()Z
     .locals 2
 
-    .line 395
+    .line 479
     sget-object v0, Lcom/google/android/exoplayer2/util/Util;->MODEL:Ljava/lang/String;
 
     const-string v1, "ASUS_Z00AD"
@@ -940,7 +991,7 @@
         }
     .end annotation
 
-    .line 88
+    .line 101
     :try_start_0
     new-instance v0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;
 
@@ -954,7 +1005,7 @@
     :catch_0
     move-exception p0
 
-    .line 92
+    .line 105
     new-instance v0, Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;
 
     const/4 v1, 0x2
@@ -966,7 +1017,7 @@
     :catch_1
     move-exception p0
 
-    .line 90
+    .line 103
     new-instance v0, Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;
 
     const/4 v1, 0x1
@@ -983,7 +1034,7 @@
 
     monitor-enter p0
 
-    .line 211
+    .line 295
     :try_start_0
     iget v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->referenceCount:I
 
@@ -1001,7 +1052,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 212
+    .line 296
     iget v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->referenceCount:I
 
     add-int/2addr v0, v1
@@ -1010,7 +1061,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 213
+    .line 297
     monitor-exit p0
 
     return-void
@@ -1026,7 +1077,7 @@
 .method public closeSession([B)V
     .locals 1
 
-    .line 146
+    .line 186
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaDrm;->closeSession([B)V
@@ -1034,7 +1085,7 @@
     return-void
 .end method
 
-.method public bridge synthetic createMediaCrypto([B)Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;
+.method public bridge synthetic createCryptoConfig([B)Lcom/google/android/exoplayer2/decoder/CryptoConfig;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1042,15 +1093,15 @@
         }
     .end annotation
 
-    .line 48
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->createMediaCrypto([B)Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;
+    .line 53
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->createCryptoConfig([B)Lcom/google/android/exoplayer2/drm/FrameworkCryptoConfig;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public createMediaCrypto([B)Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;
+.method public createCryptoConfig([B)Lcom/google/android/exoplayer2/drm/FrameworkCryptoConfig;
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1058,7 +1109,7 @@
         }
     .end annotation
 
-    .line 261
+    .line 344
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -1069,7 +1120,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
-    .line 262
+    .line 346
     invoke-virtual {v0, v1}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1078,6 +1129,7 @@
 
     const-string v0, "securityLevel"
 
+    .line 347
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->getPropertyString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1097,37 +1149,28 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 263
+    .line 348
     :goto_0
-    new-instance v1, Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;
+    new-instance v1, Lcom/google/android/exoplayer2/drm/FrameworkCryptoConfig;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
-    .line 264
+    .line 349
     invoke-static {v2}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->adjustUuid(Ljava/util/UUID;)Ljava/util/UUID;
 
     move-result-object v2
 
-    invoke-direct {v1, v2, p1, v0}, Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;-><init>(Ljava/util/UUID;[BZ)V
+    invoke-direct {v1, v2, p1, v0}, Lcom/google/android/exoplayer2/drm/FrameworkCryptoConfig;-><init>(Ljava/util/UUID;[BZ)V
 
     return-object v1
 .end method
 
-.method public getExoMediaCryptoType()Ljava/lang/Class;
+.method public getCryptoType()I
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;"
-        }
-    .end annotation
 
-    .line 269
-    const-class v0, Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;
+    const/4 v0, 0x2
 
-    return-object v0
+    return v0
 .end method
 
 .method public getKeyRequest([BLjava/util/List;ILjava/util/HashMap;)Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;
@@ -1156,14 +1199,14 @@
 
     if-eqz p2, :cond_0
 
-    .line 160
+    .line 213
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
     invoke-static {v0, p2}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->getSchemeData(Ljava/util/UUID;Ljava/util/List;)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
     move-result-object v0
 
-    .line 161
+    .line 214
     iget-object p2, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
     iget-object v1, v0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->data:[B
@@ -1178,7 +1221,7 @@
 
     move-result-object p2
 
-    .line 162
+    .line 215
     iget-object v1, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
     iget-object v2, v0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->mimeType:Ljava/lang/String;
@@ -1198,7 +1241,7 @@
 
     move-object v5, v4
 
-    .line 164
+    .line 217
     :goto_0
     iget-object v2, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
@@ -1208,12 +1251,12 @@
 
     move-object v7, p4
 
-    .line 165
+    .line 218
     invoke-virtual/range {v2 .. v7}, Landroid/media/MediaDrm;->getKeyRequest([B[BLjava/lang/String;ILjava/util/HashMap;)Landroid/media/MediaDrm$KeyRequest;
 
     move-result-object p1
 
-    .line 167
+    .line 220
     iget-object p2, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
 
     invoke-virtual {p1}, Landroid/media/MediaDrm$KeyRequest;->getData()[B
@@ -1224,57 +1267,66 @@
 
     move-result-object p2
 
-    .line 169
+    .line 221
     invoke-virtual {p1}, Landroid/media/MediaDrm$KeyRequest;->getDefaultUrl()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p3
 
-    const-string p3, "https://x"
+    invoke-static {p3}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->adjustLicenseServerUrl(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 170
-    invoke-virtual {p3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object p3
 
-    move-result p3
-
-    if-eqz p3, :cond_1
-
-    const-string p1, ""
-
-    .line 173
-    :cond_1
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_2
-
-    if-eqz v0, :cond_2
-
-    iget-object p3, v0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
-
-    .line 175
+    .line 222
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result p3
+    move-result p4
 
-    if-nez p3, :cond_2
+    if-eqz p4, :cond_1
 
-    .line 176
-    iget-object p1, v0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
+    if-eqz v0, :cond_1
 
-    .line 179
+    iget-object p4, v0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
+
+    .line 224
+    invoke-static {p4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p4
+
+    if-nez p4, :cond_1
+
+    .line 225
+    iget-object p3, v0, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->licenseServerUrl:Ljava/lang/String;
+
+    .line 230
+    :cond_1
+    sget p4, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
+
+    const/16 v0, 0x17
+
+    if-lt p4, v0, :cond_2
+
+    invoke-virtual {p1}, Landroid/media/MediaDrm$KeyRequest;->getRequestType()I
+
+    move-result p1
+
+    goto :goto_1
+
     :cond_2
-    new-instance p3, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;
+    const/high16 p1, -0x80000000
 
-    invoke-direct {p3, p2, p1}, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;-><init>([BLjava/lang/String;)V
+    .line 232
+    :goto_1
+    new-instance p4, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;
 
-    return-object p3
+    invoke-direct {p4, p2, p3, p1}, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;-><init>([BLjava/lang/String;I)V
+
+    return-object p4
 .end method
 
 .method public getMetrics()Landroid/os/PersistableBundle;
     .locals 2
 
-    .line 231
+    .line 314
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x1c
@@ -1285,7 +1337,7 @@
 
     return-object v0
 
-    .line 234
+    .line 317
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
@@ -1299,7 +1351,7 @@
 .method public getPropertyByteArray(Ljava/lang/String;)[B
     .locals 1
 
-    .line 244
+    .line 327
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaDrm;->getPropertyByteArray(Ljava/lang/String;)[B
@@ -1312,7 +1364,7 @@
 .method public getPropertyString(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 239
+    .line 322
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaDrm;->getPropertyString(Ljava/lang/String;)Ljava/lang/String;
@@ -1325,14 +1377,14 @@
 .method public getProvisionRequest()Lcom/google/android/exoplayer2/drm/ExoMediaDrm$ProvisionRequest;
     .locals 3
 
-    .line 195
+    .line 259
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0}, Landroid/media/MediaDrm;->getProvisionRequest()Landroid/media/MediaDrm$ProvisionRequest;
 
     move-result-object v0
 
-    .line 196
+    .line 260
     new-instance v1, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$ProvisionRequest;
 
     invoke-virtual {v0}, Landroid/media/MediaDrm$ProvisionRequest;->getData()[B
@@ -1356,7 +1408,7 @@
         }
     .end annotation
 
-    .line 141
+    .line 181
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0}, Landroid/media/MediaDrm;->openSession()[B
@@ -1375,7 +1427,7 @@
         }
     .end annotation
 
-    .line 186
+    .line 250
     sget-object v0, Lcom/google/android/exoplayer2/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
@@ -1386,12 +1438,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 187
+    .line 251
     invoke-static {p2}, Lcom/google/android/exoplayer2/drm/ClearKeyUtil;->adjustResponseData([B)[B
 
     move-result-object p2
 
-    .line 190
+    .line 254
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
@@ -1410,7 +1462,7 @@
         }
     .end annotation
 
-    .line 201
+    .line 265
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaDrm;->provideProvisionResponse([B)V
@@ -1430,7 +1482,7 @@
         }
     .end annotation
 
-    .line 206
+    .line 270
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaDrm;->queryKeyStatus([B)Ljava/util/HashMap;
@@ -1445,7 +1497,7 @@
 
     monitor-enter p0
 
-    .line 217
+    .line 301
     :try_start_0
     iget v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->referenceCount:I
 
@@ -1455,14 +1507,14 @@
 
     if-nez v0, :cond_0
 
-    .line 218
+    .line 302
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0}, Landroid/media/MediaDrm;->release()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 220
+    .line 304
     :cond_0
     monitor-exit p0
 
@@ -1476,10 +1528,67 @@
     throw v0
 .end method
 
+.method public requiresSecureDecoder([BLjava/lang/String;)Z
+    .locals 2
+
+    .line 275
+    sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
+
+    const/16 v1, 0x1f
+
+    if-lt v0, v1, :cond_0
+
+    .line 276
+    iget-object p1, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
+
+    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$Api31;->requiresSecureDecoder(Landroid/media/MediaDrm;Ljava/lang/String;)Z
+
+    move-result p1
+
+    return p1
+
+    .line 281
+    :cond_0
+    :try_start_0
+    new-instance v0, Landroid/media/MediaCrypto;
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->uuid:Ljava/util/UUID;
+
+    invoke-direct {v0, v1, p1}, Landroid/media/MediaCrypto;-><init>(Ljava/util/UUID;[B)V
+    :try_end_0
+    .catch Landroid/media/MediaCryptoException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 287
+    :try_start_1
+    invoke-virtual {v0, p2}, Landroid/media/MediaCrypto;->requiresSecureDecoderComponent(Ljava/lang/String;)Z
+
+    move-result p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 289
+    invoke-virtual {v0}, Landroid/media/MediaCrypto;->release()V
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    invoke-virtual {v0}, Landroid/media/MediaCrypto;->release()V
+
+    .line 290
+    throw p1
+
+    :catch_0
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
 .method public restoreKeys([B[B)V
     .locals 1
 
-    .line 224
+    .line 308
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/MediaDrm;->restoreKeys([B[B)V
@@ -1489,17 +1598,8 @@
 
 .method public setOnEventListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener;)V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener<",
-            "-",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;)V"
-        }
-    .end annotation
 
-    .line 111
+    .line 123
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     if-nez p1, :cond_0
@@ -1508,7 +1608,7 @@
 
     goto :goto_0
 
-    .line 114
+    .line 126
     :cond_0
     new-instance v1, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda0;
 
@@ -1516,33 +1616,24 @@
 
     move-object p1, v1
 
-    .line 111
+    .line 123
     :goto_0
     invoke-virtual {v0, p1}, Landroid/media/MediaDrm;->setOnEventListener(Landroid/media/MediaDrm$OnEventListener;)V
 
     return-void
 .end method
 
-.method public setOnKeyStatusChangeListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
+.method public setOnExpirationUpdateListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;)V
     .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener<",
-            "-",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;)V"
-        }
-    .end annotation
 
-    .line 121
+    .line 167
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_1
 
-    .line 125
+    .line 171
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     const/4 v1, 0x0
@@ -1553,19 +1644,19 @@
 
     goto :goto_0
 
-    .line 128
+    .line 174
     :cond_0
     new-instance v2, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0, p1}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda1;-><init>(Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
+    invoke-direct {v2, p0, p1}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda1;-><init>(Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;)V
 
-    .line 125
+    .line 171
     :goto_0
-    invoke-virtual {v0, v2, v1}, Landroid/media/MediaDrm;->setOnKeyStatusChangeListener(Landroid/media/MediaDrm$OnKeyStatusChangeListener;Landroid/os/Handler;)V
+    invoke-virtual {v0, v2, v1}, Landroid/media/MediaDrm;->setOnExpirationUpdateListener(Landroid/media/MediaDrm$OnExpirationUpdateListener;Landroid/os/Handler;)V
 
     return-void
 
-    .line 122
+    .line 168
     :cond_1
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
@@ -1574,10 +1665,85 @@
     throw p1
 .end method
 
+.method public setOnKeyStatusChangeListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
+    .locals 3
+
+    .line 140
+    sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_1
+
+    .line 144
+    iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
+
+    const/4 v1, 0x0
+
+    if-nez p1, :cond_0
+
+    move-object v2, v1
+
+    goto :goto_0
+
+    .line 147
+    :cond_0
+    new-instance v2, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda2;
+
+    invoke-direct {v2, p0, p1}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$$ExternalSyntheticLambda2;-><init>(Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
+
+    .line 144
+    :goto_0
+    invoke-virtual {v0, v2, v1}, Landroid/media/MediaDrm;->setOnKeyStatusChangeListener(Landroid/media/MediaDrm$OnKeyStatusChangeListener;Landroid/os/Handler;)V
+
+    return-void
+
+    .line 141
+    :cond_1
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public setPlayerIdForSession([BLcom/google/android/exoplayer2/analytics/PlayerId;)V
+    .locals 2
+
+    .line 191
+    sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
+
+    const/16 v1, 0x1f
+
+    if-lt v0, v1, :cond_0
+
+    .line 193
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
+
+    invoke-static {v0, p1, p2}, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm$Api31;->setLogSessionIdOnMediaDrmSession(Landroid/media/MediaDrm;[BLcom/google/android/exoplayer2/analytics/PlayerId;)V
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    const-string p1, "FrameworkMediaDrm"
+
+    const-string p2, "setLogSessionId failed."
+
+    .line 195
+    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    return-void
+.end method
+
 .method public setPropertyByteArray(Ljava/lang/String;[B)V
     .locals 1
 
-    .line 254
+    .line 337
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/MediaDrm;->setPropertyByteArray(Ljava/lang/String;[B)V
@@ -1588,7 +1754,7 @@
 .method public setPropertyString(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 249
+    .line 332
     iget-object v0, p0, Lcom/google/android/exoplayer2/drm/FrameworkMediaDrm;->mediaDrm:Landroid/media/MediaDrm;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/MediaDrm;->setPropertyString(Ljava/lang/String;Ljava/lang/String;)V

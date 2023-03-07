@@ -280,6 +280,7 @@
     <item type="id" name="image_service_logo" />
     <item type="id" name="image_settings" />
     <item type="id" name="image_share" />
+    <item type="id" name="image_staking_filters_info" />
     <item type="id" name="image_staking_icon" />
     <item type="id" name="image_staking_info" />
     <item type="id" name="image_state_animation" />
@@ -486,6 +487,7 @@
     <item type="id" name="recycle_categories" />
     <item type="id" name="recycle_channels" />
     <item type="id" name="recycle_crypto_buy" />
+    <item type="id" name="recycle_filters" />
     <item type="id" name="recycle_history" />
     <item type="id" name="recycle_notifications" />
     <item type="id" name="recycle_sessions" />
@@ -771,6 +773,7 @@
     <item type="id" name="view_diagram" />
     <item type="id" name="view_divider" />
     <item type="id" name="view_empty" />
+    <item type="id" name="view_filter" />
     <item type="id" name="view_finished_cell" />
     <item type="id" name="view_finished_fee_cell" />
     <item type="id" name="view_header" />

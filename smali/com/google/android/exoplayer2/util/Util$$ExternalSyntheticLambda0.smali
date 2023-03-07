@@ -2,40 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/metadata/MetadataOutput;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;
+# instance fields
+.field public final synthetic f$0:Lcom/google/common/util/concurrent/ListenableFuture;
+
+.field public final synthetic f$1:Lcom/google/common/util/concurrent/SettableFuture;
+
+.field public final synthetic f$2:Lcom/google/common/util/concurrent/AsyncFunction;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/util/concurrent/SettableFuture;Lcom/google/common/util/concurrent/AsyncFunction;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;->f$0:Lcom/google/common/util/concurrent/ListenableFuture;
+
+    iput-object p2, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;->f$1:Lcom/google/common/util/concurrent/SettableFuture;
+
+    iput-object p3, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;->f$2:Lcom/google/common/util/concurrent/AsyncFunction;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)V
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->$r8$lambda$ItSVTa70CL8Kpw_NtKniGT4N0lc(Lcom/google/android/exoplayer2/metadata/Metadata;)V
+    iget-object v0, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;->f$0:Lcom/google/common/util/concurrent/ListenableFuture;
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;->f$1:Lcom/google/common/util/concurrent/SettableFuture;
+
+    iget-object v2, p0, Lcom/google/android/exoplayer2/util/Util$$ExternalSyntheticLambda0;->f$2:Lcom/google/common/util/concurrent/AsyncFunction;
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/exoplayer2/util/Util;->$r8$lambda$DSdcFhMZFeNvai4CKemAhlKDeCY(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/util/concurrent/SettableFuture;Lcom/google/common/util/concurrent/AsyncFunction;)V
 
     return-void
 .end method

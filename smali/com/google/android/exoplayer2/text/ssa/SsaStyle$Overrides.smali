@@ -40,7 +40,7 @@
 
     const-string v0, "\\{([^}]*)\\}"
 
-    .line 201
+    .line 437
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 
     const-string v4, "\\\\pos\\((%1$s),(%1$s)\\)"
 
-    .line 207
+    .line 443
     invoke-static {v4, v1}, Lcom/google/android/exoplayer2/util/Util;->formatInvariant(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -76,12 +76,12 @@
 
     const-string v1, "\\\\move\\(%1$s,%1$s,(%1$s),(%1$s)(?:,%1$s,%1$s)?\\)"
 
-    .line 211
+    .line 447
     invoke-static {v1, v0}, Lcom/google/android/exoplayer2/util/Util;->formatInvariant(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 210
+    .line 446
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 
     const-string v0, "\\\\an(\\d+)"
 
-    .line 215
+    .line 451
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -103,13 +103,13 @@
 .method private constructor <init>(ILandroid/graphics/PointF;)V
     .locals 0
 
-    .line 220
+    .line 456
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 221
+    .line 457
     iput p1, p0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->alignment:I
 
-    .line 222
+    .line 458
     iput-object p2, p0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->position:Landroid/graphics/PointF;
 
     return-void
@@ -118,14 +118,14 @@
 .method private static parseAlignmentOverride(Ljava/lang/String;)I
     .locals 1
 
-    .line 297
+    .line 532
     sget-object v0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->ALIGNMENT_OVERRIDE_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p0
 
-    .line 298
+    .line 533
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v0
@@ -134,9 +134,16 @@
 
     const/4 v0, 0x1
 
+    .line 534
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
 
     invoke-static {p0}, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->access$000(Ljava/lang/String;)I
 
@@ -154,7 +161,7 @@
 .method public static parseFromDialogue(Ljava/lang/String;)Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;
     .locals 5
 
-    .line 228
+    .line 464
     sget-object v0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->BRACES_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -167,7 +174,7 @@
 
     const/4 v2, -0x1
 
-    .line 229
+    .line 465
     :cond_0
     :goto_0
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
@@ -178,12 +185,18 @@
 
     const/4 v3, 0x1
 
-    .line 230
+    .line 466
     invoke-virtual {p0, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 232
+    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    .line 468
     :try_start_0
     invoke-static {v3}, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->parsePosition(Ljava/lang/String;)Landroid/graphics/PointF;
 
@@ -195,7 +208,7 @@
 
     move-object v1, v4
 
-    .line 240
+    .line 476
     :catch_0
     :cond_1
     :try_start_1
@@ -216,7 +229,7 @@
 
     goto :goto_0
 
-    .line 248
+    .line 484
     :cond_2
     new-instance p0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;
 
@@ -228,26 +241,26 @@
 .method private static parsePosition(Ljava/lang/String;)Landroid/graphics/PointF;
     .locals 6
 
-    .line 267
+    .line 503
     sget-object v0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->POSITION_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
-    .line 268
+    .line 504
     sget-object v1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->MOVE_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 269
+    .line 505
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v2
 
-    .line 270
+    .line 506
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
@@ -260,7 +273,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 276
+    .line 512
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -283,13 +296,13 @@
 
     invoke-static {v1, p0}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 282
+    .line 518
     :cond_0
     invoke-virtual {v0, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 283
+    .line 519
     invoke-virtual {v0, v4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -299,21 +312,21 @@
     :cond_1
     if-eqz v3, :cond_2
 
-    .line 285
+    .line 521
     invoke-virtual {v1, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 286
+    .line 522
     invoke-virtual {v1, v4}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 290
+    .line 526
     :goto_0
     new-instance v1, Landroid/graphics/PointF;
 
-    .line 291
+    .line 527
     invoke-static {p0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -328,7 +341,7 @@
 
     move-result p0
 
-    .line 292
+    .line 528
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -356,7 +369,7 @@
 .method public static stripStyleOverrides(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 252
+    .line 488
     sget-object v0, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->BRACES_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;

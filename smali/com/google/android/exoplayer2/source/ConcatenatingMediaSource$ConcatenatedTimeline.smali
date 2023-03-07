@@ -1,5 +1,5 @@
 .class final Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;
-.super Lcom/google/android/exoplayer2/source/AbstractConcatenatedTimeline;
+.super Lcom/google/android/exoplayer2/AbstractConcatenatedTimeline;
 .source "ConcatenatingMediaSource.java"
 
 
@@ -53,42 +53,42 @@
         }
     .end annotation
 
-    .line 897
-    invoke-direct {p0, p3, p2}, Lcom/google/android/exoplayer2/source/AbstractConcatenatedTimeline;-><init>(ZLcom/google/android/exoplayer2/source/ShuffleOrder;)V
+    .line 927
+    invoke-direct {p0, p3, p2}, Lcom/google/android/exoplayer2/AbstractConcatenatedTimeline;-><init>(ZLcom/google/android/exoplayer2/source/ShuffleOrder;)V
 
-    .line 898
+    .line 928
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
     move-result p2
 
-    .line 899
+    .line 929
     new-array p3, p2, [I
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstPeriodInChildIndices:[I
 
-    .line 900
+    .line 930
     new-array p3, p2, [I
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstWindowInChildIndices:[I
 
-    .line 901
+    .line 931
     new-array p3, p2, [Lcom/google/android/exoplayer2/Timeline;
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->timelines:[Lcom/google/android/exoplayer2/Timeline;
 
-    .line 902
+    .line 932
     new-array p2, p2, [Ljava/lang/Object;
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->uids:[Ljava/lang/Object;
 
-    .line 903
+    .line 933
     new-instance p2, Ljava/util/HashMap;
 
     invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->childIndexByUid:Ljava/util/HashMap;
 
-    .line 907
+    .line 937
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -112,7 +112,7 @@
 
     check-cast v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;
 
-    .line 908
+    .line 938
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->timelines:[Lcom/google/android/exoplayer2/Timeline;
 
     iget-object v3, v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MaskingMediaSource;
@@ -123,17 +123,17 @@
 
     aput-object v3, v2, v0
 
-    .line 909
+    .line 939
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstWindowInChildIndices:[I
 
     aput p2, v2, v0
 
-    .line 910
+    .line 940
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstPeriodInChildIndices:[I
 
     aput p3, v2, v0
 
-    .line 911
+    .line 941
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->timelines:[Lcom/google/android/exoplayer2/Timeline;
 
     aget-object v2, v2, v0
@@ -144,7 +144,7 @@
 
     add-int/2addr p2, v2
 
-    .line 912
+    .line 942
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->timelines:[Lcom/google/android/exoplayer2/Timeline;
 
     aget-object v2, v2, v0
@@ -155,14 +155,14 @@
 
     add-int/2addr p3, v2
 
-    .line 913
+    .line 943
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->uids:[Ljava/lang/Object;
 
     iget-object v1, v1, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$MediaSourceHolder;->uid:Ljava/lang/Object;
 
     aput-object v1, v2, v0
 
-    .line 914
+    .line 944
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->childIndexByUid:Ljava/util/HashMap;
 
     aget-object v2, v2, v0
@@ -179,11 +179,11 @@
 
     goto :goto_0
 
-    .line 916
+    .line 946
     :cond_0
     iput p2, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->windowCount:I
 
-    .line 917
+    .line 947
     iput p3, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->periodCount:I
 
     return-void
@@ -194,7 +194,7 @@
 .method protected getChildIndexByChildUid(Ljava/lang/Object;)I
     .locals 1
 
-    .line 932
+    .line 962
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->childIndexByUid:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -209,7 +209,7 @@
 
     goto :goto_0
 
-    .line 933
+    .line 963
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -222,7 +222,7 @@
 .method protected getChildIndexByPeriodIndex(I)I
     .locals 2
 
-    .line 922
+    .line 952
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstPeriodInChildIndices:[I
 
     add-int/lit8 p1, p1, 0x1
@@ -239,7 +239,7 @@
 .method protected getChildIndexByWindowIndex(I)I
     .locals 2
 
-    .line 927
+    .line 957
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstWindowInChildIndices:[I
 
     add-int/lit8 p1, p1, 0x1
@@ -256,7 +256,7 @@
 .method protected getChildUidByChildIndex(I)Ljava/lang/Object;
     .locals 1
 
-    .line 953
+    .line 983
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->uids:[Ljava/lang/Object;
 
     aget-object p1, v0, p1
@@ -267,7 +267,7 @@
 .method protected getFirstPeriodIndexByChildIndex(I)I
     .locals 1
 
-    .line 943
+    .line 973
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstPeriodInChildIndices:[I
 
     aget p1, v0, p1
@@ -278,7 +278,7 @@
 .method protected getFirstWindowIndexByChildIndex(I)I
     .locals 1
 
-    .line 948
+    .line 978
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->firstWindowInChildIndices:[I
 
     aget p1, v0, p1
@@ -289,7 +289,7 @@
 .method public getPeriodCount()I
     .locals 1
 
-    .line 963
+    .line 993
     iget v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->periodCount:I
 
     return v0
@@ -298,7 +298,7 @@
 .method protected getTimelineByChildIndex(I)Lcom/google/android/exoplayer2/Timeline;
     .locals 1
 
-    .line 938
+    .line 968
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->timelines:[Lcom/google/android/exoplayer2/Timeline;
 
     aget-object p1, v0, p1
@@ -309,7 +309,7 @@
 .method public getWindowCount()I
     .locals 1
 
-    .line 958
+    .line 988
     iget v0, p0, Lcom/google/android/exoplayer2/source/ConcatenatingMediaSource$ConcatenatedTimeline;->windowCount:I
 
     return v0

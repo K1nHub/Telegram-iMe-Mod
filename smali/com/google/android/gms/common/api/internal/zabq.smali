@@ -14,9 +14,6 @@
 .field private final zab:Ljava/util/Queue;
 
 .field private final zac:Lcom/google/android/gms/common/api/Api$Client;
-    .annotation runtime Lorg/checkerframework/checker/initialization/qual/NotOnlyInitialized;
-    .end annotation
-.end field
 
 .field private final zad:Lcom/google/android/gms/common/api/internal/ApiKey;
 

@@ -13,23 +13,7 @@
     name = "OnEventListener"
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
 
 # virtual methods
 .method public abstract onEvent(Lcom/google/android/exoplayer2/drm/ExoMediaDrm;[BII[B)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm<",
-            "+TT;>;[BII[B)V"
-        }
-    .end annotation
 .end method

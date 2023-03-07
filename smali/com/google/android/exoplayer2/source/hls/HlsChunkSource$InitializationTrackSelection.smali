@@ -20,14 +20,16 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
-    .locals 0
+    .locals 1
 
-    .line 551
+    .line 883
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
 
-    const/4 p2, 0x0
+    const/4 v0, 0x0
 
-    .line 552
+    .line 886
+    aget p2, p2, v0
+
     invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/source/TrackGroup;->getFormat(I)Lcom/google/android/exoplayer2/Format;
 
     move-result-object p1
@@ -46,7 +48,7 @@
 .method public getSelectedIndex()I
     .locals 1
 
-    .line 579
+    .line 913
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsChunkSource$InitializationTrackSelection;->selectedIndex:I
 
     return v0
@@ -82,12 +84,12 @@
         }
     .end annotation
 
-    .line 562
+    .line 896
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
 
-    .line 563
+    .line 897
     iget p3, p0, Lcom/google/android/exoplayer2/source/hls/HlsChunkSource$InitializationTrackSelection;->selectedIndex:I
 
     invoke-virtual {p0, p3, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->isBlacklisted(IJ)Z
@@ -98,7 +100,7 @@
 
     return-void
 
-    .line 567
+    .line 901
     :cond_0
     iget p3, p0, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->length:I
 
@@ -107,14 +109,14 @@
     :goto_0
     if-ltz p3, :cond_2
 
-    .line 568
+    .line 902
     invoke-virtual {p0, p3, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->isBlacklisted(IJ)Z
 
     move-result p4
 
     if-nez p4, :cond_1
 
-    .line 569
+    .line 903
     iput p3, p0, Lcom/google/android/exoplayer2/source/hls/HlsChunkSource$InitializationTrackSelection;->selectedIndex:I
 
     return-void
@@ -124,7 +126,7 @@
 
     goto :goto_0
 
-    .line 574
+    .line 908
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 

@@ -14,21 +14,31 @@
 .end annotation
 
 
+# instance fields
+.field public final format:Lcom/google/android/exoplayer2/Format;
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/Format;)V
     .locals 0
 
-    .line 104
+    .line 149
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    .line 150
+    iput-object p2, p0, Lcom/google/android/exoplayer2/audio/AudioSink$ConfigurationException;->format:Lcom/google/android/exoplayer2/Format;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
+.method public constructor <init>(Ljava/lang/Throwable;Lcom/google/android/exoplayer2/Format;)V
     .locals 0
 
-    .line 97
+    .line 143
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
+
+    .line 144
+    iput-object p2, p0, Lcom/google/android/exoplayer2/audio/AudioSink$ConfigurationException;->format:Lcom/google/android/exoplayer2/Format;
 
     return-void
 .end method

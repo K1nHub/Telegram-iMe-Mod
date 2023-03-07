@@ -685,6 +685,8 @@
 
 .method public final value()Ljava/lang/String;
     .locals 1
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
 
     .line 5
     iget-object v0, p0, Lcom/google/android/gms/internal/firebase_ml/zzla;->key:Ljava/lang/String;

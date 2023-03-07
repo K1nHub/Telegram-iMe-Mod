@@ -6,9 +6,16 @@
 .implements Lcom/google/android/exoplayer2/upstream/HttpDataSource;
 
 
-# static fields
-.field private static final CONTENT_RANGE_HEADER:Ljava/util/regex/Pattern;
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$NullFilteringHeadersMap;,
+        Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;
+    }
+.end annotation
 
+
+# static fields
 .field public static final DEFAULT_CONNECT_TIMEOUT_MILLIS:I = 0x1f40
 
 .field public static final DEFAULT_READ_TIMEOUT_MILLIS:I = 0x1f40
@@ -23,35 +30,22 @@
 
 .field private static final TAG:Ljava/lang/String; = "DefaultHttpDataSource"
 
-.field private static final skipBufferReference:Ljava/util/concurrent/atomic/AtomicReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/atomic/AtomicReference<",
-            "[B>;"
-        }
-    .end annotation
-.end field
-
 
 # instance fields
 .field private final allowCrossProtocolRedirects:Z
 
 .field private bytesRead:J
 
-.field private bytesSkipped:J
-
 .field private bytesToRead:J
-
-.field private bytesToSkip:J
 
 .field private final connectTimeoutMillis:I
 
 .field private connection:Ljava/net/HttpURLConnection;
 
-.field private contentTypePredicate:Lcom/google/android/exoplayer2/util/Predicate;
+.field private contentTypePredicate:Lcom/google/common/base/Predicate;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/google/android/exoplayer2/util/Predicate<",
+            "Lcom/google/common/base/Predicate<",
             "Ljava/lang/String;",
             ">;"
         }
@@ -63,6 +57,8 @@
 .field private final defaultRequestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
 .field private inputStream:Ljava/io/InputStream;
+
+.field private final keepPostFor302Redirects:Z
 
 .field private opened:Z
 
@@ -76,34 +72,29 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    const-string v0, "^bytes (\\d+)-(\\d+)/(\\d+)$"
+    const/4 v0, 0x0
 
-    .line 74
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const/16 v1, 0x1f40
 
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->CONTENT_RANGE_HEADER:Ljava/util/regex/Pattern;
-
-    .line 75
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->skipBufferReference:Ljava/util/concurrent/atomic/AtomicReference;
+    .line 245
+    invoke-direct {p0, v0, v1, v1}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;II)V
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/16 v0, 0x1f40
 
-    .line 99
+    .line 254
     invoke-direct {p0, p1, v0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;II)V
 
     return-void
@@ -111,6 +102,8 @@
 
 .method public constructor <init>(Ljava/lang/String;II)V
     .locals 6
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v4, 0x0
 
@@ -124,157 +117,94 @@
 
     move v3, p3
 
-    .line 110
+    .line 264
     invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    .line 136
-    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;-><init>(Z)V
-
-    .line 137
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotEmpty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->userAgent:Ljava/lang/String;
-
-    .line 138
-    new-instance p1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
-
-    invoke-direct {p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->requestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
-
-    .line 139
-    iput p2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connectTimeoutMillis:I
-
-    .line 140
-    iput p3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->readTimeoutMillis:I
-
-    .line 141
-    iput-boolean p4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
-
-    .line 142
-    iput-object p5, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->defaultRequestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/util/Predicate;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Lcom/google/android/exoplayer2/util/Predicate<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
-
+    .locals 8
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
-
-    const/16 v0, 0x1f40
-
-    .line 155
-    invoke-direct {p0, p1, p2, v0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/util/Predicate;II)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/util/Predicate;II)V
-    .locals 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Lcom/google/android/exoplayer2/util/Predicate<",
-            "Ljava/lang/String;",
-            ">;II)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    const/4 v5, 0x0
 
     const/4 v6, 0x0
+
+    const/4 v7, 0x0
 
     move-object v0, p0
 
     move-object v1, p1
 
-    move-object v2, p2
+    move v2, p2
 
     move v3, p3
 
     move v4, p4
 
-    .line 181
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/util/Predicate;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;)V
+    move-object v5, p5
+
+    .line 282
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;Lcom/google/common/base/Predicate;Z)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/util/Predicate;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;)V
+.method private constructor <init>(Ljava/lang/String;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;Lcom/google/common/base/Predicate;Z)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lcom/google/android/exoplayer2/util/Predicate<",
-            "Ljava/lang/String;",
-            ">;IIZ",
+            "IIZ",
             "Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;",
-            ")V"
+            "Lcom/google/common/base/Predicate<",
+            "Ljava/lang/String;",
+            ">;Z)V"
         }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     const/4 v0, 0x1
 
-    .line 215
+    .line 300
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;-><init>(Z)V
 
-    .line 216
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotEmpty(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
+    .line 301
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->userAgent:Ljava/lang/String;
 
-    .line 217
-    iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->contentTypePredicate:Lcom/google/android/exoplayer2/util/Predicate;
+    .line 302
+    iput p2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connectTimeoutMillis:I
 
-    .line 218
+    .line 303
+    iput p3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->readTimeoutMillis:I
+
+    .line 304
+    iput-boolean p4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
+
+    .line 305
+    iput-object p5, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->defaultRequestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
+
+    .line 306
+    iput-object p6, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->contentTypePredicate:Lcom/google/common/base/Predicate;
+
+    .line 307
     new-instance p1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->requestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
-    .line 219
-    iput p3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connectTimeoutMillis:I
+    .line 308
+    iput-boolean p7, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->keepPostFor302Redirects:Z
 
-    .line 220
-    iput p4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->readTimeoutMillis:I
+    return-void
+.end method
 
-    .line 221
-    iput-boolean p5, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
+.method synthetic constructor <init>(Ljava/lang/String;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;Lcom/google/common/base/Predicate;ZLcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$1;)V
+    .locals 0
 
-    .line 222
-    iput-object p6, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->defaultRequestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
+    .line 63
+    invoke-direct/range {p0 .. p7}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;Lcom/google/common/base/Predicate;Z)V
 
     return-void
 .end method
@@ -282,12 +212,12 @@
 .method private closeConnectionQuietly()V
     .locals 3
 
-    .line 759
+    .line 835
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_0
 
-    .line 761
+    .line 837
     :try_start_0
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_0
@@ -302,280 +232,166 @@
 
     const-string v2, "Unexpected error while disconnecting"
 
-    .line 763
+    .line 839
     invoke-static {v1, v2, v0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_0
     const/4 v0, 0x0
 
-    .line 765
+    .line 841
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
     :cond_0
     return-void
 .end method
 
-.method private static getContentLength(Ljava/net/HttpURLConnection;)J
-    .locals 10
-
-    const-string v0, "Content-Length"
-
-    .line 598
-    invoke-virtual {p0, v0}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 599
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    const-string v2, "]"
-
-    const-string v3, "DefaultHttpDataSource"
-
-    if-nez v1, :cond_0
-
-    .line 601
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v4
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 603
-    :catch_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Unexpected Content-Length ["
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    const-wide/16 v4, -0x1
-
-    :goto_0
-    const-string v1, "Content-Range"
-
-    .line 606
-    invoke-virtual {p0, v1}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 607
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    .line 608
-    sget-object v1, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->CONTENT_RANGE_HEADER:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v1
-
-    .line 609
-    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    const/4 v6, 0x2
-
-    .line 612
-    :try_start_1
-    invoke-virtual {v1, v6}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    const/4 v8, 0x1
-
-    invoke-virtual {v1, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v8
-
-    sub-long/2addr v6, v8
-
-    const-wide/16 v8, 0x1
-
-    add-long/2addr v6, v8
-
-    const-wide/16 v8, 0x0
-
-    cmp-long v1, v4, v8
-
-    if-gez v1, :cond_1
-
-    move-wide v4, v6
-
-    goto :goto_1
-
-    :cond_1
-    cmp-long v1, v4, v6
-
-    if-eqz v1, :cond_2
-
-    .line 622
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Inconsistent headers ["
-
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "] ["
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v3, v0}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 624
-    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v0
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-wide v4, v0
-
-    goto :goto_1
-
-    .line 627
-    :catch_1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Unexpected Content-Range ["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v3, p0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_2
-    :goto_1
-    return-wide v4
-.end method
-
-.method private static handleRedirect(Ljava/net/URL;Ljava/lang/String;)Ljava/net/URL;
-    .locals 2
+.method private handleRedirect(Ljava/net/URL;Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;)Ljava/net/URL;
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;
+            Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
         }
     .end annotation
 
-    if-eqz p1, :cond_2
+    const/4 v0, 0x1
 
-    .line 574
-    new-instance v0, Ljava/net/URL;
+    const/16 v1, 0x7d1
 
-    invoke-direct {v0, p0, p1}, Ljava/net/URL;-><init>(Ljava/net/URL;Ljava/lang/String;)V
+    if-eqz p2, :cond_4
 
-    .line 576
-    invoke-virtual {v0}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+    .line 685
+    :try_start_0
+    new-instance v2, Ljava/net/URL;
 
-    move-result-object p0
+    invoke-direct {v2, p1, p2}, Ljava/net/URL;-><init>(Ljava/net/URL;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/net/MalformedURLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string p1, "https"
+    .line 695
+    invoke-virtual {v2}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
 
-    .line 577
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object p2
 
-    move-result p1
+    const-string v3, "https"
 
-    if-nez p1, :cond_1
+    .line 696
+    invoke-virtual {v3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string p1, "http"
+    move-result v3
 
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-nez v3, :cond_1
 
-    move-result p1
+    const-string v3, "http"
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
-    .line 578
+    .line 697
     :cond_0
-    new-instance p1, Ljava/net/ProtocolException;
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Unsupported protocol redirect: "
+    const-string v3, "Unsupported protocol redirect: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object p2
 
-    invoke-direct {p1, p0}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2, p3, v1, v0}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
 
     throw p1
 
+    .line 703
     :cond_1
     :goto_0
-    return-object v0
+    iget-boolean v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
 
-    .line 571
+    if-nez v3, :cond_3
+
+    invoke-virtual {p1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    goto :goto_1
+
+    .line 704
     :cond_2
-    new-instance p0, Ljava/net/ProtocolException;
+    new-instance v2, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
-    const-string p1, "Null location redirect"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {p0, p1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    throw p0
+    const-string v4, "Disallowed cross-protocol redirect ("
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 706
+    invoke-virtual {p1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, " to "
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, ")"
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v2, p1, p3, v1, v0}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
+
+    throw v2
+
+    :cond_3
+    :goto_1
+    return-object v2
+
+    :catch_0
+    move-exception p1
+
+    .line 687
+    new-instance p2, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+
+    invoke-direct {p2, p1, p3, v1, v0}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
+
+    throw p2
+
+    .line 676
+    :cond_4
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+
+    const-string p2, "Null location redirect"
+
+    invoke-direct {p1, p2, p3, v1, v0}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
+
+    throw p1
 .end method
 
 .method private static isCompressed(Ljava/net/HttpURLConnection;)Z
@@ -583,14 +399,14 @@
 
     const-string v0, "Content-Encoding"
 
-    .line 770
+    .line 846
     invoke-virtual {p0, v0}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     const-string v0, "gzip"
 
-    .line 771
+    .line 847
     invoke-virtual {v0, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p0
@@ -599,64 +415,72 @@
 .end method
 
 .method private makeConnection(Lcom/google/android/exoplayer2/upstream/DataSpec;)Ljava/net/HttpURLConnection;
-    .locals 24
+    .locals 25
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    move-object/from16 v0, p1
+    move-object/from16 v11, p0
 
-    .line 429
+    move-object/from16 v12, p1
+
+    .line 524
     new-instance v1, Ljava/net/URL;
 
-    iget-object v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
+    iget-object v0, v12, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    .line 430
-    iget v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
+    .line 525
+    iget v2, v12, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
 
-    .line 431
-    iget-object v3, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
+    .line 526
+    iget-object v3, v12, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
 
-    .line 432
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+    .line 527
+    iget-wide v13, v12, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    .line 433
-    iget-wide v12, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    .line 528
+    iget-wide v9, v12, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    const/4 v10, 0x1
+    const/4 v15, 0x1
 
-    .line 434
-    invoke-virtual {v0, v10}, Lcom/google/android/exoplayer2/upstream/DataSpec;->isFlagSet(I)Z
+    .line 529
+    invoke-virtual {v12, v15}, Lcom/google/android/exoplayer2/upstream/DataSpec;->isFlagSet(I)Z
 
     move-result v16
 
-    move-object/from16 v11, p0
+    .line 531
+    iget-boolean v0, v11, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
 
-    .line 436
-    iget-boolean v4, v11, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->allowCrossProtocolRedirects:Z
+    if-nez v0, :cond_0
 
-    if-nez v4, :cond_0
+    iget-boolean v0, v11, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->keepPostFor302Redirects:Z
 
-    const/4 v9, 0x1
+    if-nez v0, :cond_0
 
-    .line 439
-    iget-object v10, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
+    const/4 v15, 0x1
+
+    .line 534
+    iget-object v12, v12, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
 
     move-object/from16 v0, p0
 
-    move-wide v4, v14
+    move-wide v4, v13
 
-    move-wide v6, v12
+    move-wide v6, v9
 
     move/from16 v8, v16
+
+    move v9, v15
+
+    move-object v10, v12
 
     invoke-direct/range {v0 .. v10}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->makeConnection(Ljava/net/URL;I[BJJZZLjava/util/Map;)Ljava/net/HttpURLConnection;
 
@@ -665,164 +489,197 @@
     return-object v0
 
     :cond_0
-    const/4 v4, 0x0
-
-    :goto_0
-    add-int/lit8 v8, v4, 0x1
-
-    const/16 v5, 0x14
-
-    if-gt v4, v5, :cond_6
-
     const/16 v17, 0x0
 
-    .line 453
-    iget-object v9, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
-
-    move-object/from16 v4, p0
-
-    move-object v5, v1
+    move-object v8, v1
 
     move v6, v2
 
-    move-object v7, v3
+    move-object/from16 v18, v3
 
-    move v0, v8
+    const/4 v0, 0x0
 
-    move-object/from16 v18, v9
+    :goto_0
+    add-int/lit8 v7, v0, 0x1
 
-    move-wide v8, v14
+    const/16 v1, 0x14
 
-    move-object/from16 v19, v3
+    if-gt v0, v1, :cond_8
 
-    const/4 v3, 0x1
+    const/16 v19, 0x0
 
-    move-wide v10, v12
+    .line 549
+    iget-object v4, v12, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
 
-    move-wide/from16 v20, v12
+    move-object/from16 v0, p0
 
-    move/from16 v12, v16
+    move-object v1, v8
 
-    move/from16 v13, v17
+    move v2, v6
 
-    move-wide/from16 v22, v14
+    move-object/from16 v3, v18
 
-    move-object/from16 v14, v18
+    move-object/from16 v20, v4
 
-    .line 454
-    invoke-direct/range {v4 .. v14}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->makeConnection(Ljava/net/URL;I[BJJZZLjava/util/Map;)Ljava/net/HttpURLConnection;
+    move-wide v4, v13
 
-    move-result-object v4
+    move v15, v6
 
-    .line 463
-    invoke-virtual {v4}, Ljava/net/HttpURLConnection;->getResponseCode()I
+    move-wide/from16 v21, v13
 
-    move-result v5
+    move v13, v7
 
-    const-string v6, "Location"
+    move-wide v6, v9
 
-    .line 464
-    invoke-virtual {v4, v6}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+    move-object v14, v8
 
-    move-result-object v6
+    move/from16 v8, v16
 
-    const/16 v7, 0x12f
+    move-wide/from16 v23, v9
 
-    const/16 v8, 0x12e
+    move/from16 v9, v19
 
-    const/16 v9, 0x12d
+    move-object/from16 v10, v20
 
-    const/16 v10, 0x12c
+    .line 550
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->makeConnection(Ljava/net/URL;I[BJJZZLjava/util/Map;)Ljava/net/HttpURLConnection;
 
-    if-eq v2, v3, :cond_1
+    move-result-object v0
 
-    const/4 v11, 0x3
+    .line 559
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
-    if-ne v2, v11, :cond_2
+    move-result v1
+
+    const-string v2, "Location"
+
+    .line 560
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/16 v3, 0x12f
+
+    const/16 v4, 0x12d
+
+    const/16 v5, 0x12c
+
+    const/16 v6, 0x12e
+
+    const/4 v7, 0x1
+
+    if-eq v15, v7, :cond_1
+
+    const/4 v7, 0x3
+
+    if-ne v15, v7, :cond_2
 
     :cond_1
-    if-eq v5, v10, :cond_5
+    if-eq v1, v5, :cond_7
 
-    if-eq v5, v9, :cond_5
+    if-eq v1, v4, :cond_7
 
-    if-eq v5, v8, :cond_5
+    if-eq v1, v6, :cond_7
 
-    if-eq v5, v7, :cond_5
+    if-eq v1, v3, :cond_7
 
-    const/16 v11, 0x133
+    const/16 v7, 0x133
 
-    if-eq v5, v11, :cond_5
+    if-eq v1, v7, :cond_7
 
-    const/16 v11, 0x134
+    const/16 v7, 0x134
 
-    if-ne v5, v11, :cond_2
+    if-ne v1, v7, :cond_2
+
+    goto :goto_3
+
+    :cond_2
+    const/4 v7, 0x2
+
+    if-ne v15, v7, :cond_6
+
+    if-eq v1, v5, :cond_3
+
+    if-eq v1, v4, :cond_3
+
+    if-eq v1, v6, :cond_3
+
+    if-ne v1, v3, :cond_6
+
+    .line 575
+    :cond_3
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    .line 576
+    iget-boolean v0, v11, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->keepPostFor302Redirects:Z
+
+    if-eqz v0, :cond_4
+
+    if-ne v1, v6, :cond_4
+
+    const/4 v7, 0x1
 
     goto :goto_1
 
-    :cond_2
-    const/4 v11, 0x2
+    :cond_4
+    const/4 v7, 0x0
 
-    if-ne v2, v11, :cond_4
+    :goto_1
+    if-nez v7, :cond_5
 
-    if-eq v5, v10, :cond_3
+    const/16 v18, 0x0
 
-    if-eq v5, v9, :cond_3
-
-    if-eq v5, v8, :cond_3
-
-    if-ne v5, v7, :cond_4
-
-    .line 480
-    :cond_3
-    invoke-virtual {v4}, Ljava/net/HttpURLConnection;->disconnect()V
-
-    const/4 v2, 0x0
-
-    .line 483
-    invoke-static {v1, v6}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->handleRedirect(Ljava/net/URL;Ljava/lang/String;)Ljava/net/URL;
-
-    move-result-object v1
-
-    move-object/from16 v19, v2
-
-    const/4 v2, 0x1
+    const/4 v6, 0x1
 
     goto :goto_2
 
-    :cond_4
-    return-object v4
-
-    .line 472
     :cond_5
-    :goto_1
-    invoke-virtual {v4}, Ljava/net/HttpURLConnection;->disconnect()V
+    move v6, v15
 
-    .line 473
-    invoke-static {v1, v6}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->handleRedirect(Ljava/net/URL;Ljava/lang/String;)Ljava/net/URL;
-
-    move-result-object v1
-
+    .line 583
     :goto_2
-    move-object/from16 v11, p0
+    invoke-direct {v11, v14, v2, v12}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->handleRedirect(Ljava/net/URL;Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;)Ljava/net/URL;
 
-    move v4, v0
+    move-result-object v0
 
-    move-object/from16 v3, v19
+    move-object v8, v0
 
-    move-wide/from16 v12, v20
-
-    move-wide/from16 v14, v22
-
-    const/4 v10, 0x1
-
-    move-object/from16 v0, p1
-
-    goto :goto_0
+    goto :goto_4
 
     :cond_6
-    move v0, v8
+    return-object v0
 
-    .line 490
+    .line 568
+    :cond_7
+    :goto_3
+    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    .line 569
+    invoke-direct {v11, v14, v2, v12}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->handleRedirect(Ljava/net/URL;Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;)Ljava/net/URL;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    move v6, v15
+
+    :goto_4
+    move v0, v13
+
+    move-wide/from16 v13, v21
+
+    move-wide/from16 v9, v23
+
+    const/4 v15, 0x1
+
+    goto/16 :goto_0
+
+    :cond_8
+    move v13, v7
+
+    .line 590
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+
     new-instance v1, Ljava/net/NoRouteToHostException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -833,19 +690,25 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-direct {v1, v0}, Ljava/net/NoRouteToHostException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/net/NoRouteToHostException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    const/16 v2, 0x7d1
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v12, v2, v3}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
+
+    throw v0
 .end method
 
 .method private makeConnection(Ljava/net/URL;I[BJJZZLjava/util/Map;)Ljava/net/HttpURLConnection;
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -865,39 +728,39 @@
         }
     .end annotation
 
-    .line 515
+    .line 619
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->openConnection(Ljava/net/URL;)Ljava/net/HttpURLConnection;
 
     move-result-object p1
 
-    .line 516
+    .line 620
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connectTimeoutMillis:I
 
     invoke-virtual {p1, v0}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
-    .line 517
+    .line 621
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->readTimeoutMillis:I
 
     invoke-virtual {p1, v0}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
-    .line 519
+    .line 623
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 520
+    .line 624
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->defaultRequestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
     if-eqz v1, :cond_0
 
-    .line 521
+    .line 625
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->getSnapshot()Ljava/util/Map;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 523
+    .line 627
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->requestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
@@ -907,10 +770,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 524
+    .line 628
     invoke-interface {v0, p10}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 526
+    .line 630
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p10
@@ -932,7 +795,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 527
+    .line 631
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -949,139 +812,94 @@
 
     goto :goto_0
 
+    .line 634
     :cond_1
-    const-wide/16 v0, 0x0
+    invoke-static {p4, p5, p6, p7}, Lcom/google/android/exoplayer2/upstream/HttpUtil;->buildRangeRequestHeader(JJ)Ljava/lang/String;
 
-    const-wide/16 v2, -0x1
+    move-result-object p4
 
-    cmp-long p10, p4, v0
+    if-eqz p4, :cond_2
 
-    if-nez p10, :cond_2
+    const-string p5, "Range"
 
-    cmp-long p10, p6, v2
+    .line 636
+    invoke-virtual {p1, p5, p4}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz p10, :cond_4
-
-    .line 531
+    .line 638
     :cond_2
-    new-instance p10, Ljava/lang/StringBuilder;
-
-    invoke-direct {p10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "bytes="
-
-    invoke-virtual {p10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p10, p4, p5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, "-"
-
-    invoke-virtual {p10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p10
-
-    cmp-long v0, p6, v2
-
-    if-eqz v0, :cond_3
-
-    .line 533
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-long/2addr p4, p6
-
-    const-wide/16 p6, 0x1
-
-    sub-long/2addr p4, p6
-
-    invoke-virtual {v0, p4, p5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p10
-
-    :cond_3
-    const-string p4, "Range"
-
-    .line 535
-    invoke-virtual {p1, p4, p10}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 537
-    :cond_4
     iget-object p4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->userAgent:Ljava/lang/String;
+
+    if-eqz p4, :cond_3
 
     const-string p5, "User-Agent"
 
+    .line 639
     invoke-virtual {p1, p5, p4}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz p8, :cond_5
+    :cond_3
+    if-eqz p8, :cond_4
 
     const-string p4, "gzip"
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     const-string p4, "identity"
 
     :goto_1
     const-string p5, "Accept-Encoding"
 
-    .line 538
+    .line 641
     invoke-virtual {p1, p5, p4}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 539
+    .line 642
     invoke-virtual {p1, p9}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_5
 
     const/4 p4, 0x1
 
     goto :goto_2
 
-    :cond_6
+    :cond_5
     const/4 p4, 0x0
 
-    .line 540
+    .line 643
     :goto_2
     invoke-virtual {p1, p4}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
-    .line 541
+    .line 644
     invoke-static {p2}, Lcom/google/android/exoplayer2/upstream/DataSpec;->getStringForHttpMethod(I)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_6
 
-    .line 544
+    .line 647
     array-length p2, p3
 
     invoke-virtual {p1, p2}, Ljava/net/HttpURLConnection;->setFixedLengthStreamingMode(I)V
 
-    .line 545
+    .line 648
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->connect()V
 
-    .line 546
+    .line 649
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object p2
 
-    .line 547
+    .line 650
     invoke-virtual {p2, p3}, Ljava/io/OutputStream;->write([B)V
 
-    .line 548
+    .line 651
     invoke-virtual {p2}, Ljava/io/OutputStream;->close()V
 
     goto :goto_3
 
-    .line 550
-    :cond_7
+    .line 653
+    :cond_6
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->connect()V
 
     :goto_3
@@ -1091,20 +909,22 @@
 .method private static maybeTerminateInputStream(Ljava/net/HttpURLConnection;J)V
     .locals 3
 
-    .line 722
+    if-eqz p0, :cond_4
+
+    .line 800
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x13
 
-    if-eq v0, v1, :cond_0
+    if-lt v0, v1, :cond_4
 
     const/16 v1, 0x14
 
-    if-eq v0, v1, :cond_0
+    if-le v0, v1, :cond_0
 
-    return-void
+    goto :goto_0
 
-    .line 727
+    .line 805
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
@@ -1117,7 +937,7 @@
 
     if-nez v2, :cond_1
 
-    .line 730
+    .line 808
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
 
     move-result p1
@@ -1137,7 +957,7 @@
 
     return-void
 
-    .line 738
+    .line 816
     :cond_2
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1149,7 +969,7 @@
 
     const-string p2, "com.android.okhttp.internal.http.HttpTransport$ChunkedInputStream"
 
-    .line 739
+    .line 817
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p2
@@ -1158,14 +978,14 @@
 
     const-string p2, "com.android.okhttp.internal.http.HttpTransport$FixedLengthInputStream"
 
-    .line 741
+    .line 819
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_4
 
-    .line 742
+    .line 820
     :cond_3
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1175,36 +995,43 @@
 
     move-result-object p1
 
+    .line 822
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Class;
+
     const-string p2, "unexpectedEndOfInput"
 
     const/4 v0, 0x0
 
     new-array v1, v0, [Ljava/lang/Class;
 
-    .line 743
     invoke-virtual {p1, p2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object p1
 
     const/4 p2, 0x1
 
-    .line 744
+    .line 823
     invoke-virtual {p1, p2}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     new-array p2, v0, [Ljava/lang/Object;
 
-    .line 745
+    .line 824
     invoke-virtual {p1, p0, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
     :cond_4
+    :goto_0
     return-void
 .end method
 
 .method private readInternal([BII)I
-    .locals 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1217,7 +1044,7 @@
 
     return p1
 
-    .line 688
+    .line 769
     :cond_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
 
@@ -1229,58 +1056,49 @@
 
     if-eqz v5, :cond_2
 
-    .line 689
-    iget-wide v5, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
+    .line 770
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
 
-    sub-long/2addr v0, v5
+    sub-long/2addr v0, v2
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v7, v0, v5
+    cmp-long v5, v0, v2
 
-    if-nez v7, :cond_1
+    if-nez v5, :cond_1
 
     return v4
 
     :cond_1
-    int-to-long v5, p3
+    int-to-long v2, p3
 
-    .line 693
-    invoke-static {v5, v6, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    .line 774
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
     long-to-int p3, v0
 
-    .line 696
+    .line 777
     :cond_2
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/io/InputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result p1
 
-    if-ne p1, v4, :cond_4
-
-    .line 698
-    iget-wide p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
-
-    cmp-long p3, p1, v2
-
-    if-nez p3, :cond_3
+    if-ne p1, v4, :cond_3
 
     return v4
 
-    .line 700
+    .line 782
     :cond_3
-    new-instance p1, Ljava/io/EOFException;
-
-    invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
-
-    throw p1
-
-    .line 705
-    :cond_4
     iget-wide p2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
 
     int-to-long v0, p1
@@ -1289,183 +1107,122 @@
 
     iput-wide p2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
 
-    .line 706
+    .line 783
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
 
     return p1
 .end method
 
-.method private skipInternal()V
-    .locals 6
+.method private skipFully(JLcom/google/android/exoplayer2/upstream/DataSpec;)V
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 643
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesSkipped:J
+    const-wide/16 v0, 0x0
 
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToSkip:J
+    cmp-long v2, p1, v0
 
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     return-void
 
-    .line 648
     :cond_0
-    sget-object v0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->skipBufferReference:Ljava/util/concurrent/atomic/AtomicReference;
+    const/16 v2, 0x1000
 
-    const/4 v1, 0x0
+    new-array v3, v2, [B
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [B
-
-    if-nez v0, :cond_1
-
-    const/16 v0, 0x1000
-
-    new-array v0, v0, [B
-
-    .line 653
-    :cond_1
     :goto_0
-    iget-wide v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesSkipped:J
+    cmp-long v4, p1, v0
 
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToSkip:J
+    if-lez v4, :cond_3
 
-    cmp-long v5, v1, v3
+    int-to-long v4, v2
 
-    if-eqz v5, :cond_4
+    .line 731
+    invoke-static {p1, p2, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
-    sub-long/2addr v3, v1
+    move-result-wide v4
 
-    .line 654
-    array-length v1, v0
+    long-to-int v5, v4
 
-    int-to-long v1, v1
+    .line 732
+    iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
-    invoke-static {v3, v4, v1, v2}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-wide v1
+    move-result-object v4
 
-    long-to-int v2, v1
+    check-cast v4, Ljava/io/InputStream;
 
-    .line 655
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
+    const/4 v6, 0x0
 
-    const/4 v3, 0x0
+    invoke-virtual {v4, v3, v6, v5}, Ljava/io/InputStream;->read([BII)I
 
-    invoke-virtual {v1, v0, v3, v2}, Ljava/io/InputStream;->read([BII)I
+    move-result v4
 
-    move-result v1
-
-    .line 656
+    .line 733
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v2}, Ljava/lang/Thread;->isInterrupted()Z
+    invoke-virtual {v5}, Ljava/lang/Thread;->isInterrupted()Z
 
-    move-result v2
+    move-result v5
 
-    if-nez v2, :cond_3
+    const/4 v6, 0x1
 
-    const/4 v2, -0x1
+    if-nez v5, :cond_2
 
-    if-eq v1, v2, :cond_2
+    const/4 v5, -0x1
 
-    .line 662
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesSkipped:J
+    if-eq v4, v5, :cond_1
 
-    int-to-long v4, v1
+    int-to-long v5, v4
 
-    add-long/2addr v2, v4
+    sub-long/2addr p1, v5
 
-    iput-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesSkipped:J
-
-    .line 663
-    invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
+    .line 747
+    invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
 
     goto :goto_0
 
-    .line 660
+    .line 741
+    :cond_1
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+
+    const/16 p2, 0x7d8
+
+    invoke-direct {p1, p3, p2, v6}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
+
+    throw p1
+
+    .line 734
     :cond_2
-    new-instance v0, Ljava/io/EOFException;
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
-    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
+    new-instance p2, Ljava/io/InterruptedIOException;
 
-    throw v0
+    invoke-direct {p2}, Ljava/io/InterruptedIOException;-><init>()V
 
-    .line 657
+    const/16 v0, 0x7d0
+
+    invoke-direct {p1, p2, p3, v0, v6}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
+
+    throw p1
+
     :cond_3
-    new-instance v0, Ljava/io/InterruptedIOException;
-
-    invoke-direct {v0}, Ljava/io/InterruptedIOException;-><init>()V
-
-    throw v0
-
-    .line 667
-    :cond_4
-    sget-object v1, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->skipBufferReference:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bytesRead()J
-    .locals 2
-
-    .line 410
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
-
-    return-wide v0
-.end method
-
-.method protected final bytesRemaining()J
-    .locals 5
-
-    .line 422
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
-
-    sub-long/2addr v0, v2
-
-    :goto_0
-    return-wide v0
-.end method
-
-.method protected final bytesSkipped()J
-    .locals 2
-
-    .line 400
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesSkipped:J
-
-    return-wide v0
-.end method
-
 .method public clearAllRequestProperties()V
     .locals 1
 
-    .line 267
+    .line 362
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->requestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->clear()V
@@ -1476,10 +1233,10 @@
 .method public clearRequestProperty(Ljava/lang/String;)V
     .locals 1
 
-    .line 261
+    .line 356
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 262
+    .line 357
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->requestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->remove(Ljava/lang/String;)V
@@ -1488,7 +1245,7 @@
 .end method
 
 .method public close()V
-    .locals 6
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
@@ -1499,111 +1256,122 @@
 
     const/4 v1, 0x0
 
-    .line 366
+    .line 497
     :try_start_0
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
-    .line 367
-    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
+    .line 500
+    iget-wide v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
 
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRemaining()J
+    const-wide/16 v5, -0x1
 
-    move-result-wide v3
+    cmp-long v7, v3, v5
 
-    invoke-static {v2, v3, v4}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->maybeTerminateInputStream(Ljava/net/HttpURLConnection;J)V
+    if-nez v7, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-wide v5, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
+
+    sub-long v5, v3, v5
+
+    .line 501
+    :goto_0
+    iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
+
+    invoke-static {v3, v5, v6}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->maybeTerminateInputStream(Ljava/net/HttpURLConnection;J)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 369
+    .line 503
     :try_start_1
-    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
-
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_0
+    goto :goto_1
 
     :catch_0
     move-exception v2
 
-    .line 371
+    .line 505
     :try_start_2
     new-instance v3, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    const/4 v5, 0x3
+    .line 507
+    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v3, v2, v4, v5}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;I)V
+    move-result-object v4
+
+    check-cast v4, Lcom/google/android/exoplayer2/upstream/DataSpec;
+
+    const/16 v5, 0x7d0
+
+    const/4 v6, 0x3
+
+    invoke-direct {v3, v2, v4, v5, v6}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
 
     throw v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 375
-    :cond_0
-    :goto_0
+    .line 513
+    :cond_1
+    :goto_1
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
-    .line 376
+    .line 514
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->closeConnectionQuietly()V
 
-    .line 377
+    .line 515
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 378
+    .line 516
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z
 
-    .line 379
+    .line 517
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferEnded()V
 
-    :cond_1
+    :cond_2
     return-void
 
     :catchall_0
     move-exception v2
 
-    .line 375
+    .line 513
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
 
-    .line 376
+    .line 514
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->closeConnectionQuietly()V
 
-    .line 377
+    .line 515
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 378
+    .line 516
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z
 
-    .line 379
+    .line 517
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferEnded()V
 
-    .line 381
-    :cond_2
+    .line 519
+    :cond_3
     throw v2
-.end method
-
-.method protected final getConnection()Ljava/net/HttpURLConnection;
-    .locals 1
-
-    .line 390
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
-
-    return-object v0
 .end method
 
 .method public getResponseCode()I
     .locals 1
 
-    .line 244
+    .line 328
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_0
@@ -1620,7 +1388,7 @@
 .end method
 
 .method public getResponseHeaders()Ljava/util/Map;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1632,30 +1400,35 @@
         }
     .end annotation
 
-    .line 249
+    .line 333
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+    .line 334
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
-    goto :goto_0
+    return-object v0
 
+    .line 344
     :cond_0
+    new-instance v1, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$NullFilteringHeadersMap;
+
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
 
     move-result-object v0
 
-    :goto_0
-    return-object v0
+    invoke-direct {v1, v0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$NullFilteringHeadersMap;-><init>(Ljava/util/Map;)V
+
+    return-object v1
 .end method
 
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 239
+    .line 323
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
     if-nez v0, :cond_0
@@ -1682,205 +1455,207 @@
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 7
+    .locals 14
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
         }
     .end annotation
 
-    const-string v0, "Unable to connect"
-
-    .line 275
+    .line 368
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    const-wide/16 v1, 0x0
+    const-wide/16 v0, 0x0
 
-    .line 276
-    iput-wide v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
+    .line 369
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesRead:J
 
-    .line 277
-    iput-wide v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesSkipped:J
+    .line 370
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
 
-    .line 278
+    .line 371
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferInitializing(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    .line 280
+    .line 376
     :try_start_0
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->makeConnection(Lcom/google/android/exoplayer2/upstream/DataSpec;)Ljava/net/HttpURLConnection;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    iput-object v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
 
-    .line 288
-    :try_start_1
-    invoke-virtual {v4}, Ljava/net/HttpURLConnection;->getResponseCode()I
+    .line 378
+    invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v4
 
     iput v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
 
-    .line 289
-    iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
+    .line 379
+    invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getResponseMessage()Ljava/lang/String;
 
-    invoke-virtual {v4}, Ljava/net/HttpURLConnection;->getResponseMessage()Ljava/lang/String;
+    move-result-object v7
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
 
-    move-result-object v0
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 297
+    .line 387
     iget v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
 
-    const/16 v5, 0xc8
+    const-string v5, "Content-Range"
 
-    if-lt v4, v5, :cond_8
+    const/16 v6, 0xc8
 
-    const/16 v6, 0x12b
+    const-wide/16 v8, -0x1
 
-    if-le v4, v6, :cond_0
+    if-lt v4, v6, :cond_9
+
+    const/16 v10, 0x12b
+
+    if-le v4, v10, :cond_0
 
     goto/16 :goto_2
 
-    .line 309
+    .line 418
     :cond_0
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
+    invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getContentType()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->getContentType()Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v0
+    .line 419
+    iget-object v7, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->contentTypePredicate:Lcom/google/common/base/Predicate;
 
-    .line 310
-    iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->contentTypePredicate:Lcom/google/android/exoplayer2/util/Predicate;
+    if-eqz v7, :cond_2
 
-    if-eqz v4, :cond_2
+    invoke-interface {v7, v4}, Lcom/google/common/base/Predicate;->apply(Ljava/lang/Object;)Z
 
-    invoke-interface {v4, v0}, Lcom/google/android/exoplayer2/util/Predicate;->evaluate(Ljava/lang/Object;)Z
+    move-result v7
 
-    move-result v4
-
-    if-eqz v4, :cond_1
+    if-eqz v7, :cond_1
 
     goto :goto_0
 
-    .line 311
+    .line 420
     :cond_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->closeConnectionQuietly()V
 
-    .line 312
-    new-instance v1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidContentTypeException;
+    .line 421
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidContentTypeException;
 
-    invoke-direct {v1, v0, p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidContentTypeException;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+    invoke-direct {v0, v4, p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidContentTypeException;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    throw v1
+    throw v0
 
-    .line 318
+    .line 427
     :cond_2
     :goto_0
-    iget v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
+    iget v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
 
-    if-ne v0, v5, :cond_3
+    if-ne v4, v6, :cond_3
 
-    iget-wide v4, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+    iget-wide v6, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    cmp-long v0, v4, v1
+    cmp-long v4, v6, v0
 
-    if-eqz v0, :cond_3
+    if-eqz v4, :cond_3
 
-    move-wide v1, v4
+    move-wide v0, v6
 
+    .line 430
     :cond_3
-    iput-wide v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToSkip:J
+    invoke-static {v3}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->isCompressed(Ljava/net/HttpURLConnection;)Z
 
-    .line 321
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
+    move-result v4
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->isCompressed(Ljava/net/HttpURLConnection;)Z
+    if-nez v4, :cond_6
 
-    move-result v0
+    .line 432
+    iget-wide v6, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    if-nez v0, :cond_6
+    cmp-long v10, v6, v8
 
-    .line 323
-    iget-wide v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    if-eqz v10, :cond_4
 
-    const-wide/16 v4, -0x1
-
-    cmp-long v6, v1, v4
-
-    if-eqz v6, :cond_4
-
-    .line 324
-    iput-wide v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
+    .line 433
+    iput-wide v6, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
 
     goto :goto_1
 
-    .line 326
     :cond_4
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
+    const-string v6, "Content-Length"
 
-    invoke-static {v1}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->getContentLength(Ljava/net/HttpURLConnection;)J
+    .line 437
+    invoke-virtual {v3, v6}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-wide v1
+    move-result-object v6
 
-    cmp-long v6, v1, v4
+    .line 438
+    invoke-virtual {v3, v5}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
 
-    if-eqz v6, :cond_5
+    move-result-object v5
 
-    .line 327
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToSkip:J
+    .line 436
+    invoke-static {v6, v5}, Lcom/google/android/exoplayer2/upstream/HttpUtil;->getContentLength(Ljava/lang/String;Ljava/lang/String;)J
 
-    sub-long v4, v1, v4
+    move-result-wide v5
 
-    .line 328
+    cmp-long v7, v5, v8
+
+    if-eqz v7, :cond_5
+
+    sub-long v8, v5, v0
+
+    .line 440
     :cond_5
-    iput-wide v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
+    iput-wide v8, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
 
     goto :goto_1
 
-    .line 334
+    .line 446
     :cond_6
-    iget-wide v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    iget-wide v5, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    iput-wide v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
+    iput-wide v5, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
 
-    .line 338
     :goto_1
+    const/16 v5, 0x7d0
+
+    .line 450
+    :try_start_1
+    invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
+
+    if-eqz v4, :cond_7
+
+    .line 452
+    new-instance v3, Ljava/util/zip/GZIPInputStream;
+
+    iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
+
+    invoke-direct {v3, v4}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
+
+    iput-object v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 463
+    :cond_7
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z
+
+    .line 464
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+
+    .line 467
     :try_start_2
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
-
-    if-eqz v0, :cond_7
-
-    .line 340
-    new-instance v0, Ljava/util/zip/GZIPInputStream;
-
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
-
-    invoke-direct {v0, v1}, Ljava/util/zip/GZIPInputStream;-><init>(Ljava/io/InputStream;)V
-
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->inputStream:Ljava/io/InputStream;
+    invoke-direct {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->skipFully(JLcom/google/android/exoplayer2/upstream/DataSpec;)V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 347
-    :cond_7
-    iput-boolean v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z
-
-    .line 348
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
-
-    .line 350
+    .line 481
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->bytesToRead:J
 
     return-wide v0
@@ -1888,77 +1663,171 @@
     :catch_0
     move-exception v0
 
-    .line 343
+    .line 469
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->closeConnectionQuietly()V
 
-    .line 344
+    .line 471
+    instance-of v1, v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+
+    if-eqz v1, :cond_8
+
+    .line 472
+    check-cast v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+
+    throw v0
+
+    .line 474
+    :cond_8
     new-instance v1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
-    invoke-direct {v1, v0, p1, v3}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;I)V
+    invoke-direct {v1, v0, p1, v5, v2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
 
     throw v1
 
-    .line 298
-    :cond_8
-    :goto_2
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->connection:Ljava/net/HttpURLConnection;
+    :catch_1
+    move-exception v0
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
-
-    move-result-object v1
-
-    .line 299
+    .line 455
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->closeConnectionQuietly()V
 
-    .line 300
-    new-instance v2, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidResponseCodeException;
+    .line 456
+    new-instance v1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
-    iget v3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
+    invoke-direct {v1, v0, p1, v5, v2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;II)V
 
-    invoke-direct {v2, v3, v0, v1, p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidResponseCodeException;-><init>(ILjava/lang/String;Ljava/util/Map;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+    throw v1
 
-    .line 302
-    iget p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
+    .line 388
+    :cond_9
+    :goto_2
+    invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getHeaderFields()Ljava/util/Map;
 
-    const/16 v0, 0x1a0
+    move-result-object v4
 
-    if-ne p1, v0, :cond_9
+    .line 389
+    iget v6, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
 
-    .line 303
-    new-instance p1, Lcom/google/android/exoplayer2/upstream/DataSourceException;
+    const/16 v10, 0x1a0
 
+    if-ne v6, v10, :cond_b
+
+    .line 391
+    invoke-virtual {v3, v5}, Ljava/net/HttpURLConnection;->getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/google/android/exoplayer2/upstream/HttpUtil;->getDocumentSize(Ljava/lang/String;)J
+
+    move-result-wide v5
+
+    .line 392
+    iget-wide v11, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+
+    cmp-long v13, v11, v5
+
+    if-nez v13, :cond_b
+
+    .line 393
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->opened:Z
+
+    .line 394
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+
+    .line 395
+    iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    cmp-long p1, v2, v8
+
+    if-eqz p1, :cond_a
+
+    move-wide v0, v2
+
+    :cond_a
+    return-wide v0
+
+    .line 399
+    :cond_b
+    invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getErrorStream()Ljava/io/InputStream;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_c
+
+    .line 403
+    :try_start_3
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->toByteArray(Ljava/io/InputStream;)[B
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_c
+    sget-object v0, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+
+    :goto_3
+    move-object v11, v0
+
+    goto :goto_4
+
+    .line 405
+    :catch_2
+    sget-object v0, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
+
+    goto :goto_3
+
+    .line 407
+    :goto_4
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->closeConnectionQuietly()V
+
+    .line 410
+    iget v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
+
+    if-ne v0, v10, :cond_d
+
+    .line 411
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/DataSourceException;
+
+    const/16 v1, 0x7d8
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
+
+    goto :goto_5
+
+    :cond_d
     const/4 v0, 0x0
 
-    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
+    :goto_5
+    move-object v8, v0
 
-    invoke-virtual {v2, p1}, Ljava/io/IOException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    .line 413
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidResponseCodeException;
 
-    .line 305
-    :cond_9
-    throw v2
+    iget v6, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->responseCode:I
 
-    :catch_1
-    move-exception v1
+    move-object v5, v0
 
-    .line 291
+    move-object v9, v4
+
+    move-object v10, p1
+
+    invoke-direct/range {v5 .. v11}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidResponseCodeException;-><init>(ILjava/lang/String;Ljava/io/IOException;Ljava/util/Map;Lcom/google/android/exoplayer2/upstream/DataSpec;[B)V
+
+    throw v0
+
+    :catch_3
+    move-exception v0
+
+    .line 381
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->closeConnectionQuietly()V
 
-    .line 292
-    new-instance v2, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+    .line 382
+    invoke-static {v0, p1, v2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;->createForIOException(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;I)Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
-    invoke-direct {v2, v0, v1, p1, v3}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;I)V
+    move-result-object p1
 
-    throw v2
-
-    :catch_2
-    move-exception v1
-
-    .line 282
-    new-instance v2, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
-
-    invoke-direct {v2, v0, v1, p1, v3}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;I)V
-
-    throw v2
+    throw p1
 .end method
 
 .method openConnection(Ljava/net/URL;)Ljava/net/HttpURLConnection;
@@ -1969,7 +1838,7 @@
         }
     .end annotation
 
-    .line 558
+    .line 661
     invoke-virtual {p1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object p1
@@ -1980,18 +1849,15 @@
 .end method
 
 .method public read([BII)I
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
         }
     .end annotation
 
-    .line 356
+    .line 487
     :try_start_0
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->skipInternal()V
-
-    .line 357
     invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->readInternal([BII)I
 
     move-result p1
@@ -2003,31 +1869,42 @@
     :catch_0
     move-exception p1
 
-    .line 359
-    new-instance p2, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+    .line 489
+    iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    iget-object p3, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
+    .line 490
+    invoke-static {p2}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v0, 0x2
+    move-result-object p2
 
-    invoke-direct {p2, p1, p3, v0}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;I)V
+    check-cast p2, Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    throw p2
+    const/4 p3, 0x2
+
+    .line 489
+    invoke-static {p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;->createForIOException(Ljava/io/IOException;Lcom/google/android/exoplayer2/upstream/DataSpec;I)Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+
+    move-result-object p1
+
+    throw p1
 .end method
 
-.method public setContentTypePredicate(Lcom/google/android/exoplayer2/util/Predicate;)V
+.method public setContentTypePredicate(Lcom/google/common/base/Predicate;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/exoplayer2/util/Predicate<",
+            "Lcom/google/common/base/Predicate<",
             "Ljava/lang/String;",
             ">;)V"
         }
     .end annotation
 
-    .line 233
-    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->contentTypePredicate:Lcom/google/android/exoplayer2/util/Predicate;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 317
+    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->contentTypePredicate:Lcom/google/common/base/Predicate;
 
     return-void
 .end method
@@ -2035,13 +1912,13 @@
 .method public setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 254
+    .line 349
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 255
+    .line 350
     invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 256
+    .line 351
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;->requestProperties:Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;->set(Ljava/lang/String;Ljava/lang/String;)V

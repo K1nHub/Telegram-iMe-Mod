@@ -1,0 +1,82 @@
+package com.smedialink.utils.extentions.model.filter;
+
+import com.smedialink.storage.domain.model.filters.FilterFab;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.jvm.internal.Intrinsics;
+import org.telegram.messenger.C3158R;
+/* compiled from: FilterFabExt.kt */
+/* loaded from: classes3.dex */
+public final class FilterFabExtKt {
+
+    /* compiled from: FilterFabExt.kt */
+    /* loaded from: classes3.dex */
+    public /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+        static {
+            int[] iArr = new int[FilterFab.values().length];
+            iArr[FilterFab.CREATE_CHAT.ordinal()] = 1;
+            iArr[FilterFab.ARCHIVE.ordinal()] = 2;
+            iArr[FilterFab.CLOUD.ordinal()] = 3;
+            iArr[FilterFab.MARK_ALL_READ.ordinal()] = 4;
+            iArr[FilterFab.WALLET.ordinal()] = 5;
+            iArr[FilterFab.CONTACTS.ordinal()] = 6;
+            iArr[FilterFab.MUSIC.ordinal()] = 7;
+            iArr[FilterFab.ALBUMS.ordinal()] = 8;
+            iArr[FilterFab.CREATE_ALBUM.ordinal()] = 9;
+            $EnumSwitchMapping$0 = iArr;
+        }
+    }
+
+    public static final int iconResId(FilterFab filterFab, boolean z) {
+        Intrinsics.checkNotNullParameter(filterFab, "<this>");
+        switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
+            case 1:
+                return z ? C3158R.C3160drawable.fork_fab_create_chat : C3158R.C3160drawable.fork_mini_fab_create_chat;
+            case 2:
+                return z ? C3158R.C3160drawable.fork_fab_archive : C3158R.C3160drawable.fork_mini_fab_archive;
+            case 3:
+                return z ? C3158R.C3160drawable.fork_fab_cloud : C3158R.C3160drawable.fork_mini_fab_cloud;
+            case 4:
+                return z ? C3158R.C3160drawable.fork_fab_mark_all_read : C3158R.C3160drawable.fork_mini_fab_mark_all_read;
+            case 5:
+                return z ? C3158R.C3160drawable.fork_fab_wallet : C3158R.C3160drawable.fork_mini_fab_wallet;
+            case 6:
+                return z ? C3158R.C3160drawable.fork_fab_contacts : C3158R.C3160drawable.fork_mini_fab_contacts;
+            case 7:
+                return z ? C3158R.C3160drawable.fork_fab_music : C3158R.C3160drawable.fork_mini_fab_music;
+            case 8:
+                return z ? C3158R.C3160drawable.fork_fab_albums : C3158R.C3160drawable.fork_mini_fab_albums;
+            case 9:
+                return C3158R.C3160drawable.fork_plus;
+            default:
+                throw new NoWhenBranchMatchedException();
+        }
+    }
+
+    public static final int nameResId(FilterFab filterFab) {
+        Intrinsics.checkNotNullParameter(filterFab, "<this>");
+        switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
+            case 1:
+                return C3158R.string.folder_fab_settings_fab_create_chat;
+            case 2:
+                return C3158R.string.folder_fab_settings_fab_archive;
+            case 3:
+                return C3158R.string.folder_fab_settings_fab_cloud;
+            case 4:
+                return C3158R.string.folder_fab_settings_fab_mark_all_read;
+            case 5:
+                return C3158R.string.folder_fab_settings_fab_wallet;
+            case 6:
+                return C3158R.string.folder_fab_settings_fab_contacts;
+            case 7:
+                return C3158R.string.cloud_filter_music;
+            case 8:
+                return C3158R.string.music_albums_tab;
+            case 9:
+                return C3158R.string.cloud_albums_intro_button;
+            default:
+                throw new NoWhenBranchMatchedException();
+        }
+    }
+}

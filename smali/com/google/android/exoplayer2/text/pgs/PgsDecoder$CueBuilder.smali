@@ -38,10 +38,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 128
+    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 129
+    .line 132
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
@@ -52,7 +52,7 @@
 
     new-array v0, v0, [I
 
-    .line 130
+    .line 133
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->colors:[I
 
     return-void
@@ -61,7 +61,7 @@
 .method static synthetic access$000(Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
     .locals 0
 
-    .line 115
+    .line 118
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->parsePaletteSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     return-void
@@ -70,7 +70,7 @@
 .method static synthetic access$100(Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
     .locals 0
 
-    .line 115
+    .line 118
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->parseBitmapSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     return-void
@@ -79,7 +79,7 @@
 .method static synthetic access$200(Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
     .locals 0
 
-    .line 115
+    .line 118
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->parseIdentifierSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     return-void
@@ -97,10 +97,10 @@
     :cond_0
     const/4 v1, 0x3
 
-    .line 164
+    .line 167
     invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 165
+    .line 168
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
@@ -127,7 +127,7 @@
 
     return-void
 
-    .line 172
+    .line 175
     :cond_2
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
 
@@ -137,7 +137,7 @@
 
     return-void
 
-    .line 176
+    .line 179
     :cond_3
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
@@ -145,14 +145,14 @@
 
     iput v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapWidth:I
 
-    .line 177
+    .line 180
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v2
 
     iput v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapHeight:I
 
-    .line 178
+    .line 181
     iget-object v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     sub-int/2addr v1, v0
@@ -161,7 +161,7 @@
 
     add-int/lit8 p2, p2, -0x7
 
-    .line 182
+    .line 185
     :cond_4
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -169,7 +169,7 @@
 
     move-result v0
 
-    .line 183
+    .line 186
     iget-object v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
@@ -182,19 +182,21 @@
 
     sub-int/2addr v1, v0
 
-    .line 185
+    .line 188
     invoke-static {p2, v1}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 186
+    .line 189
     iget-object v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v1, v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v1
 
     invoke-virtual {p1, v1, v0, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 187
+    .line 190
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     add-int/2addr v0, p2
@@ -214,7 +216,7 @@
 
     return-void
 
-    .line 195
+    .line 198
     :cond_0
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
@@ -222,7 +224,7 @@
 
     iput p2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeWidth:I
 
-    .line 196
+    .line 199
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result p2
@@ -231,17 +233,17 @@
 
     const/16 p2, 0xb
 
-    .line 197
+    .line 200
     invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 198
+    .line 201
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result p2
 
     iput p2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapX:I
 
-    .line 199
+    .line 202
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result p1
@@ -256,7 +258,7 @@
 
     move-object/from16 v0, p0
 
-    .line 134
+    .line 137
     rem-int/lit8 v1, p2, 0x5
 
     const/4 v2, 0x2
@@ -268,17 +270,17 @@
     :cond_0
     move-object/from16 v1, p1
 
-    .line 138
+    .line 141
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 140
+    .line 143
     iget-object v2, v0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->colors:[I
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Ljava/util/Arrays;->fill([II)V
 
-    .line 141
+    .line 144
     div-int/lit8 v2, p2, 0x5
 
     const/4 v4, 0x0
@@ -286,27 +288,27 @@
     :goto_0
     if-ge v4, v2, :cond_1
 
-    .line 143
+    .line 146
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v5
 
-    .line 144
+    .line 147
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v6
 
-    .line 145
+    .line 148
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v7
 
-    .line 146
+    .line 149
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v8
 
-    .line 147
+    .line 150
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v9
@@ -353,7 +355,7 @@
 
     double-to-int v3, v10
 
-    .line 151
+    .line 154
     iget-object v4, v0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->colors:[I
 
     shl-int/lit8 v7, v9, 0x18
@@ -362,7 +364,7 @@
 
     const/4 v9, 0x0
 
-    .line 153
+    .line 156
     invoke-static {v12, v9, v8}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
     move-result v10
@@ -371,7 +373,7 @@
 
     or-int/2addr v7, v10
 
-    .line 154
+    .line 157
     invoke-static {v6, v9, v8}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
     move-result v6
@@ -380,7 +382,7 @@
 
     or-int/2addr v6, v7
 
-    .line 155
+    .line 158
     invoke-static {v3, v9, v8}, Lcom/google/android/exoplayer2/util/Util;->constrainValue(III)I
 
     move-result v3
@@ -398,7 +400,7 @@
     :cond_1
     const/4 v1, 0x1
 
-    .line 157
+    .line 160
     iput-boolean v1, v0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->colorsSet:Z
 
     return-void
@@ -407,9 +409,9 @@
 
 # virtual methods
 .method public build()Lcom/google/android/exoplayer2/text/Cue;
-    .locals 12
+    .locals 7
 
-    .line 204
+    .line 207
     iget v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeWidth:I
 
     if-eqz v0, :cond_6
@@ -428,7 +430,7 @@
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 208
+    .line 211
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v0
@@ -437,7 +439,7 @@
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 209
+    .line 212
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v0
@@ -456,7 +458,7 @@
 
     goto/16 :goto_4
 
-    .line 214
+    .line 217
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -464,7 +466,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 215
+    .line 218
     iget v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapWidth:I
 
     iget v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapHeight:I
@@ -479,7 +481,7 @@
     :goto_0
     if-ge v3, v0, :cond_5
 
-    .line 218
+    .line 221
     iget-object v4, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -490,7 +492,7 @@
 
     add-int/lit8 v5, v3, 0x1
 
-    .line 220
+    .line 223
     iget-object v6, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->colors:[I
 
     aget v4, v6, v4
@@ -502,7 +504,7 @@
 
     goto :goto_0
 
-    .line 222
+    .line 225
     :cond_2
     iget-object v4, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -525,7 +527,7 @@
 
     shl-int/lit8 v5, v5, 0x8
 
-    .line 227
+    .line 230
     iget-object v6, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v6}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -543,7 +545,7 @@
 
     goto :goto_3
 
-    .line 228
+    .line 231
     :cond_4
     iget-object v4, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->colors:[I
 
@@ -558,70 +560,108 @@
     :goto_3
     add-int/2addr v5, v3
 
-    .line 229
+    .line 232
     invoke-static {v2, v3, v5, v4}, Ljava/util/Arrays;->fill([IIII)V
 
     goto :goto_1
 
-    .line 235
+    .line 238
     :cond_5
     iget v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapWidth:I
 
-    iget v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapHeight:I
+    iget v3, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapHeight:I
 
-    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 236
-    invoke-static {v2, v0, v1, v3}, Landroid/graphics/Bitmap;->createBitmap([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .line 239
+    invoke-static {v2, v0, v3, v4}, Landroid/graphics/Bitmap;->createBitmap([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    move-result-object v5
+    move-result-object v0
 
-    .line 238
-    new-instance v0, Lcom/google/android/exoplayer2/text/Cue;
+    .line 241
+    new-instance v2, Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    iget v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapX:I
+    invoke-direct {v2}, Lcom/google/android/exoplayer2/text/Cue$Builder;-><init>()V
 
-    int-to-float v1, v1
+    .line 242
+    invoke-virtual {v2, v0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setBitmap(Landroid/graphics/Bitmap;)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    iget v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeWidth:I
+    move-result-object v0
 
-    int-to-float v3, v2
+    iget v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapX:I
 
-    div-float v6, v1, v3
+    int-to-float v2, v2
 
-    const/4 v7, 0x0
+    iget v3, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeWidth:I
 
-    iget v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapY:I
+    int-to-float v3, v3
 
-    int-to-float v1, v1
+    div-float/2addr v2, v3
+
+    .line 243
+    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPosition(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v0
+
+    .line 244
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPositionAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v0
+
+    iget v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapY:I
+
+    int-to-float v2, v2
 
     iget v3, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeHeight:I
 
-    int-to-float v4, v3
+    int-to-float v3, v3
 
-    div-float v8, v1, v4
+    div-float/2addr v2, v3
 
-    const/4 v9, 0x0
+    .line 245
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLine(FI)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v0
+
+    .line 246
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLineAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v0
 
     iget v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapWidth:I
 
     int-to-float v1, v1
 
+    iget v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeWidth:I
+
     int-to-float v2, v2
 
-    div-float v10, v1, v2
+    div-float/2addr v1, v2
+
+    .line 247
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setSize(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v0
 
     iget v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapHeight:I
 
     int-to-float v1, v1
 
-    int-to-float v2, v3
+    iget v2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeHeight:I
 
-    div-float v11, v1, v2
+    int-to-float v2, v2
 
-    move-object v4, v0
+    div-float/2addr v1, v2
 
-    invoke-direct/range {v4 .. v11}, Lcom/google/android/exoplayer2/text/Cue;-><init>(Landroid/graphics/Bitmap;FIFIFF)V
+    .line 248
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setBitmapHeight(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v0
+
+    .line 249
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->build()Lcom/google/android/exoplayer2/text/Cue;
+
+    move-result-object v0
 
     return-object v0
 
@@ -637,30 +677,30 @@
 
     const/4 v0, 0x0
 
-    .line 249
+    .line 253
     iput v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeWidth:I
 
-    .line 250
+    .line 254
     iput v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->planeHeight:I
 
-    .line 251
+    .line 255
     iput v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapX:I
 
-    .line 252
+    .line 256
     iput v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapY:I
 
-    .line 253
+    .line 257
     iput v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapWidth:I
 
-    .line 254
+    .line 258
     iput v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapHeight:I
 
-    .line 255
+    .line 259
     iget-object v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->bitmapData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
 
-    .line 256
+    .line 260
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->colorsSet:Z
 
     return-void

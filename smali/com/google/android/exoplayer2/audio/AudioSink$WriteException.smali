@@ -17,12 +17,16 @@
 # instance fields
 .field public final errorCode:I
 
+.field public final format:Lcom/google/android/exoplayer2/Format;
+
+.field public final isRecoverable:Z
+
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(ILcom/google/android/exoplayer2/Format;Z)V
     .locals 2
 
-    .line 151
+    .line 219
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -39,8 +43,14 @@
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 152
+    .line 220
+    iput-boolean p3, p0, Lcom/google/android/exoplayer2/audio/AudioSink$WriteException;->isRecoverable:Z
+
+    .line 221
     iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioSink$WriteException;->errorCode:I
+
+    .line 222
+    iput-object p2, p0, Lcom/google/android/exoplayer2/audio/AudioSink$WriteException;->format:Lcom/google/android/exoplayer2/Format;
 
     return-void
 .end method

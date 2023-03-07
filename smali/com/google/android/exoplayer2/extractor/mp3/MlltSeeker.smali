@@ -15,58 +15,68 @@
 
 
 # direct methods
-.method private constructor <init>([J[J)V
-    .locals 0
-
-    .line 55
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 56
-    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->referencePositions:[J
+.method private constructor <init>([J[JJ)V
+    .locals 2
 
     .line 57
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 58
+    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->referencePositions:[J
+
+    .line 59
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->referenceTimesMs:[J
 
-    .line 60
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long p1, p3, v0
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    .line 65
+    :cond_0
     array-length p1, p2
 
     add-int/lit8 p1, p1, -0x1
 
     aget-wide p1, p2, p1
 
-    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/C;->msToUs(J)J
+    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
 
-    move-result-wide p1
+    move-result-wide p3
 
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->durationUs:J
+    :goto_0
+    iput-wide p3, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->durationUs:J
 
     return-void
 .end method
 
-.method public static create(JLcom/google/android/exoplayer2/metadata/id3/MlltFrame;)Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;
+.method public static create(JLcom/google/android/exoplayer2/metadata/id3/MlltFrame;J)Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;
     .locals 9
 
-    .line 35
+    .line 37
     iget-object v0, p2, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesDeviations:[I
 
     array-length v0, v0
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 36
+    .line 38
     new-array v2, v1, [J
 
-    .line 37
+    .line 39
     new-array v1, v1, [J
 
     const/4 v3, 0x0
 
-    .line 38
+    .line 40
     aput-wide p0, v2, v3
 
     const-wide/16 v4, 0x0
 
-    .line 39
+    .line 41
     aput-wide v4, v1, v3
 
     const/4 v3, 0x1
@@ -74,7 +84,7 @@
     :goto_0
     if-gt v3, v0, :cond_0
 
-    .line 43
+    .line 45
     iget v6, p2, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesBetweenReference:I
 
     iget-object v7, p2, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->bytesDeviations:[I
@@ -89,7 +99,7 @@
 
     add-long/2addr p0, v6
 
-    .line 44
+    .line 46
     iget v6, p2, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsBetweenReference:I
 
     iget-object v7, p2, Lcom/google/android/exoplayer2/metadata/id3/MlltFrame;->millisecondsDeviations:[I
@@ -102,21 +112,21 @@
 
     add-long/2addr v4, v6
 
-    .line 45
+    .line 47
     aput-wide p0, v2, v3
 
-    .line 46
+    .line 48
     aput-wide v4, v1, v3
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 48
+    .line 50
     :cond_0
     new-instance p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;
 
-    invoke-direct {p0, v2, v1}, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;-><init>([J[J)V
+    invoke-direct {p0, v2, v1, p3, p4}, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;-><init>([J[JJ)V
 
     return-object p0
 .end method
@@ -135,25 +145,25 @@
 
     const/4 v0, 0x1
 
-    .line 103
+    .line 108
     invoke-static {p2, p0, p1, v0, v0}, Lcom/google/android/exoplayer2/util/Util;->binarySearchFloor([JJZZ)I
 
     move-result v1
 
-    .line 104
+    .line 109
     aget-wide v2, p2, v1
 
-    .line 105
+    .line 110
     aget-wide v4, p3, v1
 
     add-int/2addr v1, v0
 
-    .line 107
+    .line 112
     array-length v0, p2
 
     if-ne v1, v0, :cond_0
 
-    .line 108
+    .line 113
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
@@ -168,11 +178,11 @@
 
     return-object p0
 
-    .line 110
+    .line 115
     :cond_0
     aget-wide v6, p2, v1
 
-    .line 111
+    .line 116
     aget-wide p2, p3, v1
 
     cmp-long v0, v6, v2
@@ -207,7 +217,7 @@
 
     add-long/2addr p2, v4
 
-    .line 117
+    .line 122
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
@@ -236,7 +246,7 @@
 .method public getDurationUs()J
     .locals 2
 
-    .line 87
+    .line 92
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->durationUs:J
 
     return-wide v0
@@ -245,7 +255,7 @@
 .method public getSeekPoints(J)Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
     .locals 6
 
-    .line 70
+    .line 75
     iget-wide v4, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->durationUs:J
 
     const-wide/16 v2, 0x0
@@ -256,8 +266,8 @@
 
     move-result-wide p1
 
-    .line 72
-    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/C;->usToMs(J)J
+    .line 77
+    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/util/Util;->usToMs(J)J
 
     move-result-wide p1
 
@@ -269,7 +279,7 @@
 
     move-result-object p1
 
-    .line 73
+    .line 78
     iget-object p2, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast p2, Ljava/lang/Long;
@@ -278,11 +288,11 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/C;->msToUs(J)J
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
 
     move-result-wide v0
 
-    .line 74
+    .line 79
     iget-object p1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Long;
@@ -291,7 +301,7 @@
 
     move-result-wide p1
 
-    .line 75
+    .line 80
     new-instance v2, Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
 
     new-instance v3, Lcom/google/android/exoplayer2/extractor/SeekPoint;
@@ -306,17 +316,17 @@
 .method public getTimeUs(J)J
     .locals 2
 
-    .line 80
+    .line 85
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->referencePositions:[J
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->referenceTimesMs:[J
 
-    .line 81
+    .line 86
     invoke-static {p1, p2, v0, v1}, Lcom/google/android/exoplayer2/extractor/mp3/MlltSeeker;->linearlyInterpolate(J[J[J)Landroid/util/Pair;
 
     move-result-object p1
 
-    .line 82
+    .line 87
     iget-object p1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Long;
@@ -325,7 +335,7 @@
 
     move-result-wide p1
 
-    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/C;->msToUs(J)J
+    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
 
     move-result-wide p1
 

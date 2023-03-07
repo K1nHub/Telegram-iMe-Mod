@@ -24,13 +24,13 @@
 .method public constructor <init>(JJ)V
     .locals 0
 
-    .line 413
+    .line 394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 414
+    .line 395
     iput-wide p1, p0, Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler$ManifestExpiryEventInfo;->eventTimeUs:J
 
-    .line 415
+    .line 396
     iput-wide p3, p0, Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler$ManifestExpiryEventInfo;->manifestPublishTimeMsInEmsg:J
 
     return-void

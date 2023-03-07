@@ -63,7 +63,7 @@
 
     move-object v0, p0
 
-    .line 93
+    .line 98
     invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;-><init>(JJS)V
 
     return-void
@@ -72,7 +72,7 @@
 .method public constructor <init>(JJS)V
     .locals 1
 
-    .line 110
+    .line 115
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;-><init>()V
 
     cmp-long v0, p3, p1
@@ -86,25 +86,25 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 111
+    .line 116
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 112
+    .line 117
     iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->minimumSilenceDurationUs:J
 
-    .line 113
+    .line 118
     iput-wide p3, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSilenceUs:J
 
-    .line 114
+    .line 119
     iput-short p5, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->silenceThresholdLevel:S
 
-    .line 116
+    .line 121
     sget-object p1, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
-    .line 117
+    .line 122
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
 
     return-void
@@ -113,7 +113,7 @@
 .method private durationUsToFrames(J)I
     .locals 2
 
-    .line 340
+    .line 346
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iget v0, v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->sampleRate:I
@@ -134,40 +134,21 @@
 .method private findNoiseLimit(Ljava/nio/ByteBuffer;)I
     .locals 3
 
-    .line 364
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
-
-    move-result-object v0
-
-    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
-
-    .line 366
+    .line 370
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x2
 
-    :goto_1
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
 
-    if-lt v0, v1, :cond_2
+    if-lt v0, v1, :cond_1
 
-    .line 367
+    .line 371
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->getShort(I)S
 
     move-result v1
@@ -178,9 +159,9 @@
 
     iget-short v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->silenceThresholdLevel:S
 
-    if-le v1, v2, :cond_1
+    if-le v1, v2, :cond_0
 
-    .line 369
+    .line 373
     iget p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
 
     div-int/2addr v0, p1
@@ -191,13 +172,13 @@
 
     return v0
 
-    :cond_1
+    :cond_0
     add-int/lit8 v0, v0, -0x2
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 372
-    :cond_2
+    .line 376
+    :cond_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result p1
@@ -208,38 +189,19 @@
 .method private findNoisePosition(Ljava/nio/ByteBuffer;)I
     .locals 3
 
-    .line 348
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
-
-    move-result-object v0
-
-    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
-
-    .line 350
+    .line 355
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v0
 
-    :goto_1
+    :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_2
+    if-ge v0, v1, :cond_1
 
-    .line 351
+    .line 356
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->getShort(I)S
 
     move-result v1
@@ -250,9 +212,9 @@
 
     iget-short v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->silenceThresholdLevel:S
 
-    if-le v1, v2, :cond_1
+    if-le v1, v2, :cond_0
 
-    .line 353
+    .line 358
     iget p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
 
     div-int/2addr v0, p1
@@ -261,13 +223,13 @@
 
     return p1
 
-    :cond_1
+    :cond_0
     add-int/lit8 v0, v0, 0x2
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 356
-    :cond_2
+    .line 361
+    :cond_1
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result p1
@@ -278,12 +240,12 @@
 .method private output(Ljava/nio/ByteBuffer;)V
     .locals 2
 
-    .line 311
+    .line 317
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
 
-    .line 312
+    .line 318
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
@@ -298,7 +260,7 @@
 
     const/4 p1, 0x1
 
-    .line 314
+    .line 320
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->hasOutputNoise:Z
 
     :cond_0
@@ -308,7 +270,7 @@
 .method private output([BI)V
     .locals 2
 
-    .line 301
+    .line 307
     invoke-virtual {p0, p2}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -325,7 +287,7 @@
 
     const/4 p1, 0x1
 
-    .line 303
+    .line 309
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->hasOutputNoise:Z
 
     :cond_0
@@ -335,24 +297,24 @@
 .method private processMaybeSilence(Ljava/nio/ByteBuffer;)V
     .locals 9
 
-    .line 241
+    .line 247
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
 
-    .line 242
+    .line 248
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->findNoisePosition(Ljava/nio/ByteBuffer;)I
 
     move-result v1
 
-    .line 243
+    .line 249
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v2
 
     sub-int v2, v1, v2
 
-    .line 244
+    .line 250
     iget-object v3, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
     array-length v4, v3
@@ -367,24 +329,24 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 247
+    .line 253
     invoke-direct {p0, v3, v5}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->output([BI)V
 
-    .line 248
+    .line 254
     iput v6, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
 
-    .line 249
+    .line 255
     iput v6, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->state:I
 
     goto :goto_1
 
-    .line 252
+    .line 258
     :cond_0
     invoke-static {v2, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 253
+    .line 259
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v2
@@ -393,40 +355,40 @@
 
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 254
+    .line 260
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
 
     invoke-virtual {p1, v2, v3, v1}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
 
-    .line 255
+    .line 261
     iget v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
 
     add-int/2addr v2, v1
 
     iput v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
 
-    .line 256
+    .line 262
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
     array-length v3, v1
 
     if-ne v2, v3, :cond_2
 
-    .line 259
+    .line 265
     iget-boolean v3, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->hasOutputNoise:Z
 
     const/4 v4, 0x2
 
     if-eqz v3, :cond_1
 
-    .line 260
+    .line 266
     iget v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
 
     invoke-direct {p0, v1, v2}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->output([BI)V
 
-    .line 261
+    .line 267
     iget-wide v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
@@ -449,7 +411,7 @@
 
     goto :goto_0
 
-    .line 263
+    .line 269
     :cond_1
     iget-wide v7, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
@@ -467,7 +429,7 @@
 
     iput-wide v7, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
-    .line 265
+    .line 271
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
@@ -475,13 +437,13 @@
 
     invoke-direct {p0, p1, v1, v2}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->updatePaddingBuffer(Ljava/nio/ByteBuffer;[BI)V
 
-    .line 266
+    .line 272
     iput v6, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
 
-    .line 267
+    .line 273
     iput v4, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->state:I
 
-    .line 271
+    .line 277
     :cond_2
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
@@ -492,12 +454,12 @@
 .method private processNoisy(Ljava/nio/ByteBuffer;)V
     .locals 3
 
-    .line 219
+    .line 225
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
 
-    .line 222
+    .line 228
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v1
@@ -514,12 +476,12 @@
 
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 223
+    .line 229
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->findNoiseLimit(Ljava/nio/ByteBuffer;)I
 
     move-result v1
 
-    .line 224
+    .line 230
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
 
     move-result v2
@@ -528,19 +490,19 @@
 
     const/4 v1, 0x1
 
-    .line 226
+    .line 232
     iput v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->state:I
 
     goto :goto_0
 
-    .line 228
+    .line 234
     :cond_0
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 229
+    .line 235
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->output(Ljava/nio/ByteBuffer;)V
 
-    .line 233
+    .line 239
     :goto_0
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
@@ -550,20 +512,20 @@
 .method private processSilence(Ljava/nio/ByteBuffer;)V
     .locals 6
 
-    .line 280
+    .line 286
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v0
 
-    .line 281
+    .line 287
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->findNoisePosition(Ljava/nio/ByteBuffer;)I
 
     move-result v1
 
-    .line 282
+    .line 288
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 283
+    .line 289
     iget-wide v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
@@ -580,7 +542,7 @@
 
     iput-wide v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
-    .line 284
+    .line 290
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
@@ -589,7 +551,7 @@
 
     if-ge v1, v0, :cond_0
 
-    .line 288
+    .line 294
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
@@ -598,10 +560,10 @@
 
     const/4 v1, 0x0
 
-    .line 289
+    .line 295
     iput v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->state:I
 
-    .line 292
+    .line 298
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     :cond_0
@@ -611,7 +573,7 @@
 .method private updatePaddingBuffer(Ljava/nio/ByteBuffer;[BI)V
     .locals 4
 
-    .line 324
+    .line 330
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -622,21 +584,21 @@
 
     move-result v0
 
-    .line 325
+    .line 331
     iget v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
 
     sub-int/2addr v1, v0
 
     sub-int/2addr p3, v1
 
-    .line 326
+    .line 332
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
 
     const/4 v3, 0x0
 
     invoke-static {p2, p3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 332
+    .line 338
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result p2
@@ -645,7 +607,7 @@
 
     invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 333
+    .line 339
     iget-object p2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
 
     invoke-virtual {p1, p2, v1, v0}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
@@ -658,7 +620,7 @@
 .method public getSkippedFrames()J
     .locals 2
 
-    .line 136
+    .line 141
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
     return-wide v0
@@ -667,7 +629,7 @@
 .method public isActive()Z
     .locals 1
 
-    .line 152
+    .line 158
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->enabled:Z
 
     return v0
@@ -681,14 +643,14 @@
         }
     .end annotation
 
-    .line 144
+    .line 150
     iget v0, p1, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->encoding:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 147
+    .line 153
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->enabled:Z
 
     if-eqz v0, :cond_0
@@ -701,7 +663,7 @@
     :goto_0
     return-object p1
 
-    .line 145
+    .line 151
     :cond_1
     new-instance v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;
 
@@ -713,19 +675,19 @@
 .method protected onFlush()V
     .locals 3
 
-    .line 187
+    .line 193
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->enabled:Z
 
     if-eqz v0, :cond_1
 
-    .line 188
+    .line 194
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
 
     iget v0, v0, Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;->bytesPerFrame:I
 
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->bytesPerFrame:I
 
-    .line 189
+    .line 195
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->minimumSilenceDurationUs:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->durationUsToFrames(J)I
@@ -736,19 +698,19 @@
 
     mul-int v0, v0, v1
 
-    .line 190
+    .line 196
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
     array-length v1, v1
 
     if-eq v1, v0, :cond_0
 
-    .line 191
+    .line 197
     new-array v0, v0, [B
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
-    .line 193
+    .line 199
     :cond_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSilenceUs:J
 
@@ -762,14 +724,14 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
 
-    .line 194
+    .line 200
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
 
     array-length v1, v1
 
     if-eq v1, v0, :cond_1
 
-    .line 195
+    .line 201
     new-array v0, v0, [B
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
@@ -777,18 +739,18 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 198
+    .line 204
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->state:I
 
     const-wide/16 v1, 0x0
 
-    .line 199
+    .line 205
     iput-wide v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
-    .line 200
+    .line 206
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
 
-    .line 201
+    .line 207
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->hasOutputNoise:Z
 
     return-void
@@ -797,23 +759,23 @@
 .method protected onQueueEndOfStream()V
     .locals 4
 
-    .line 176
+    .line 182
     iget v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBufferSize:I
 
     if-lez v0, :cond_0
 
-    .line 178
+    .line 184
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
     invoke-direct {p0, v1, v0}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->output([BI)V
 
-    .line 180
+    .line 186
     :cond_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->hasOutputNoise:Z
 
     if-nez v0, :cond_1
 
-    .line 181
+    .line 187
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->skippedFrames:J
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
@@ -837,18 +799,18 @@
 
     const/4 v0, 0x0
 
-    .line 206
+    .line 212
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->enabled:Z
 
-    .line 207
+    .line 213
     iput v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingSize:I
 
-    .line 208
+    .line 214
     sget-object v0, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->maybeSilenceBuffer:[B
 
-    .line 209
+    .line 215
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->paddingBuffer:[B
 
     return-void
@@ -857,7 +819,7 @@
 .method public queueInput(Ljava/nio/ByteBuffer;)V
     .locals 2
 
-    .line 157
+    .line 163
     :goto_0
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
@@ -871,7 +833,7 @@
 
     if-nez v0, :cond_3
 
-    .line 158
+    .line 164
     iget v0, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->state:I
 
     if-eqz v0, :cond_2
@@ -884,12 +846,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 166
+    .line 172
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->processSilence(Ljava/nio/ByteBuffer;)V
 
     goto :goto_0
 
-    .line 169
+    .line 175
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -897,13 +859,13 @@
 
     throw p1
 
-    .line 163
+    .line 169
     :cond_1
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->processMaybeSilence(Ljava/nio/ByteBuffer;)V
 
     goto :goto_0
 
-    .line 160
+    .line 166
     :cond_2
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->processNoisy(Ljava/nio/ByteBuffer;)V
 
@@ -916,7 +878,7 @@
 .method public setEnabled(Z)V
     .locals 0
 
-    .line 128
+    .line 133
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/SilenceSkippingAudioProcessor;->enabled:Z
 
     return-void

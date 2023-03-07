@@ -6,6 +6,11 @@
 .implements Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
 
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
 # instance fields
 .field private final priority:I
 
@@ -18,16 +23,16 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/upstream/DataSource$Factory;Lcom/google/android/exoplayer2/util/PriorityTaskManager;I)V
     .locals 0
 
-    .line 37
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
+    .line 39
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/PriorityDataSourceFactory;->upstreamFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
-    .line 39
+    .line 40
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/PriorityDataSourceFactory;->priorityTaskManager:Lcom/google/android/exoplayer2/util/PriorityTaskManager;
 
-    .line 40
+    .line 41
     iput p3, p0, Lcom/google/android/exoplayer2/upstream/PriorityDataSourceFactory;->priority:I
 
     return-void
@@ -49,11 +54,12 @@
 .method public createDataSource()Lcom/google/android/exoplayer2/upstream/PriorityDataSource;
     .locals 4
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/google/android/exoplayer2/upstream/PriorityDataSource;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/PriorityDataSourceFactory;->upstreamFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
+    .line 47
     invoke-interface {v1}, Lcom/google/android/exoplayer2/upstream/DataSource$Factory;->createDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v1

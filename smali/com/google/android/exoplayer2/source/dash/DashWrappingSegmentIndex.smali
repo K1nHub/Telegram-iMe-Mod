@@ -16,13 +16,13 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/extractor/ChunkIndex;J)V
     .locals 0
 
-    .line 34
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 36
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->chunkIndex:Lcom/google/android/exoplayer2/extractor/ChunkIndex;
 
-    .line 36
+    .line 37
     iput-wide p2, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->timeOffsetUs:J
 
     return-void
@@ -30,10 +30,23 @@
 
 
 # virtual methods
+.method public getAvailableSegmentCount(JJ)J
+    .locals 0
+
+    .line 57
+    iget-object p1, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->chunkIndex:Lcom/google/android/exoplayer2/extractor/ChunkIndex;
+
+    iget p1, p1, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->length:I
+
+    int-to-long p1, p1
+
+    return-wide p1
+.end method
+
 .method public getDurationUs(JJ)J
     .locals 0
 
-    .line 56
+    .line 72
     iget-object p3, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->chunkIndex:Lcom/google/android/exoplayer2/extractor/ChunkIndex;
 
     iget-object p3, p3, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->durationsUs:[J
@@ -41,6 +54,14 @@
     long-to-int p2, p1
 
     aget-wide p1, p3, p2
+
+    return-wide p1
+.end method
+
+.method public getFirstAvailableSegmentNum(JJ)J
+    .locals 0
+
+    const-wide/16 p1, 0x0
 
     return-wide p1
 .end method
@@ -53,21 +74,31 @@
     return-wide v0
 .end method
 
-.method public getSegmentCount(J)I
+.method public getNextSegmentAvailableTimeUs(JJ)J
     .locals 0
 
-    .line 46
+    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
+
+    return-wide p1
+.end method
+
+.method public getSegmentCount(J)J
+    .locals 0
+
+    .line 52
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->chunkIndex:Lcom/google/android/exoplayer2/extractor/ChunkIndex;
 
     iget p1, p1, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->length:I
 
-    return p1
+    int-to-long p1, p1
+
+    return-wide p1
 .end method
 
 .method public getSegmentNum(JJ)J
     .locals 2
 
-    .line 67
+    .line 83
     iget-object p3, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->chunkIndex:Lcom/google/android/exoplayer2/extractor/ChunkIndex;
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->timeOffsetUs:J
@@ -86,7 +117,7 @@
 .method public getSegmentUrl(J)Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
     .locals 7
 
-    .line 61
+    .line 77
     new-instance v6, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->chunkIndex:Lcom/google/android/exoplayer2/extractor/ChunkIndex;
@@ -115,7 +146,7 @@
 .method public getTimeUs(J)J
     .locals 2
 
-    .line 51
+    .line 67
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashWrappingSegmentIndex;->chunkIndex:Lcom/google/android/exoplayer2/extractor/ChunkIndex;
 
     iget-object v0, v0, Lcom/google/android/exoplayer2/extractor/ChunkIndex;->timesUs:[J

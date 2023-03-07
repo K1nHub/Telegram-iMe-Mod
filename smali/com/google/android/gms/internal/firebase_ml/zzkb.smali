@@ -29,6 +29,9 @@
             "TT;"
         }
     .end annotation
+
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
 .end field
 
 
@@ -191,6 +194,9 @@
         value = {
             "()TT;"
         }
+    .end annotation
+
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
     .end annotation
 
     .line 4

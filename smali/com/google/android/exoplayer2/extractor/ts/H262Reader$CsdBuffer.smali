@@ -36,7 +36,7 @@
 
     new-array v0, v0, [B
 
-    .line 265
+    .line 284
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->START_CODE:[B
@@ -56,10 +56,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 273
+    .line 292
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 274
+    .line 293
     new-array p1, p1, [B
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->data:[B
@@ -72,7 +72,7 @@
 .method public onData([BII)V
     .locals 4
 
-    .line 320
+    .line 337
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
     if-nez v0, :cond_0
@@ -82,7 +82,7 @@
     :cond_0
     sub-int/2addr p3, p2
 
-    .line 324
+    .line 341
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->data:[B
 
     array-length v1, v0
@@ -97,14 +97,14 @@
 
     mul-int/lit8 v2, v2, 0x2
 
-    .line 325
+    .line 342
     invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->data:[B
 
-    .line 327
+    .line 344
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->data:[B
 
@@ -112,7 +112,7 @@
 
     invoke-static {p1, p2, v0, v1, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 328
+    .line 345
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->length:I
 
     add-int/2addr p1, p3
@@ -125,7 +125,7 @@
 .method public onStartCode(II)Z
     .locals 3
 
-    .line 297
+    .line 314
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
     const/4 v1, 0x1
@@ -134,14 +134,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 298
+    .line 315
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->length:I
 
     sub-int/2addr v0, p2
 
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->length:I
 
-    .line 299
+    .line 316
     iget p2, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
 
     if-nez p2, :cond_0
@@ -150,12 +150,12 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 300
+    .line 317
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
 
     goto :goto_0
 
-    .line 302
+    .line 319
     :cond_0
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
@@ -166,10 +166,10 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 306
+    .line 323
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
-    .line 308
+    .line 325
     :cond_2
     :goto_0
     sget-object p1, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->START_CODE:[B
@@ -186,13 +186,13 @@
 
     const/4 v0, 0x0
 
-    .line 281
+    .line 298
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->isFilling:Z
 
-    .line 282
+    .line 299
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->length:I
 
-    .line 283
+    .line 300
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
 
     return-void

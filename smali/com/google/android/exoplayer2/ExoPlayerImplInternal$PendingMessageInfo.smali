@@ -40,10 +40,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/PlayerMessage;)V
     .locals 0
 
-    .line 1977
+    .line 3037
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1978
+    .line 3038
     iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->message:Lcom/google/android/exoplayer2/PlayerMessage;
 
     return-void
@@ -54,7 +54,7 @@
 .method public compareTo(Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;)I
     .locals 5
 
-    .line 1989
+    .line 3049
     iget-object v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodUid:Ljava/lang/Object;
 
     const/4 v1, 0x1
@@ -97,7 +97,7 @@
 
     return v2
 
-    .line 1998
+    .line 3058
     :cond_4
     iget v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodIndex:I
 
@@ -109,7 +109,7 @@
 
     return v0
 
-    .line 2002
+    .line 3062
     :cond_5
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodTimeUs:J
 
@@ -125,7 +125,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 1969
+    .line 3029
     check-cast p1, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;
 
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->compareTo(Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;)I
@@ -138,13 +138,13 @@
 .method public setResolvedPosition(IJLjava/lang/Object;)V
     .locals 0
 
-    .line 1982
+    .line 3042
     iput p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodIndex:I
 
-    .line 1983
+    .line 3043
     iput-wide p2, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodTimeUs:J
 
-    .line 1984
+    .line 3044
     iput-object p4, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$PendingMessageInfo;->resolvedPeriodUid:Ljava/lang/Object;
 
     return-void

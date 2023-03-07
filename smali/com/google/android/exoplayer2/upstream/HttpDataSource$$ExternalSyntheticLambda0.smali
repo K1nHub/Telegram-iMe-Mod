@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/util/Predicate;
+.implements Lcom/google/common/base/Predicate;
 
 
 # static fields
@@ -32,12 +32,12 @@
 
 
 # virtual methods
-.method public final evaluate(Ljava/lang/Object;)Z
+.method public final apply(Ljava/lang/Object;)Z
     .locals 0
 
     check-cast p1, Ljava/lang/String;
 
-    invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$-CC;->$r8$lambda$NMCfiObMjsKeeR0kvDqPaKN3yak(Ljava/lang/String;)Z
+    invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$-CC;->$r8$lambda$o2aZq1U3VuZMiJMBGf5bdq5nNDk(Ljava/lang/String;)Z
 
     move-result p1
 

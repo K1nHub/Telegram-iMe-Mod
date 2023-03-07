@@ -36,13 +36,13 @@
 .method public constructor <init>(JLcom/google/android/exoplayer2/upstream/DataSpec;)V
     .locals 0
 
-    .line 53
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
+    .line 65
     iput-wide p1, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;->startTimeUs:J
 
-    .line 55
+    .line 66
     iput-object p3, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     return-void
@@ -53,7 +53,7 @@
 .method public compareTo(Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;)I
     .locals 4
 
-    .line 60
+    .line 71
     iget-wide v0, p0, Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;->startTimeUs:J
 
     iget-wide v2, p1, Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;->startTimeUs:J
@@ -68,7 +68,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 44
+    .line 55
     check-cast p1, Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;
 
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;->compareTo(Lcom/google/android/exoplayer2/offline/SegmentDownloader$Segment;)I

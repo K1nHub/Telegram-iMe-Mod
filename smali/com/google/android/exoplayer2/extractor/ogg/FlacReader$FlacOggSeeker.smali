@@ -1,4 +1,4 @@
-.class Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;
+.class final Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;
 .super Ljava/lang/Object;
 .source "FlacReader.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x1a
     name = "FlacOggSeeker"
 .end annotation
 
@@ -22,25 +22,31 @@
 
 .field private pendingSeekGranule:J
 
-.field final synthetic this$0:Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;
+.field private seekTable:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata$SeekTable;
+
+.field private streamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;)V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata$SeekTable;)V
+    .locals 0
 
-    .line 108
-    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->this$0:Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;
-
+    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v0, -0x1
+    .line 126
+    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->streamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
-    .line 109
-    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
+    .line 127
+    iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->seekTable:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata$SeekTable;
 
-    .line 110
-    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->pendingSeekGranule:J
+    const-wide/16 p1, -0x1
+
+    .line 128
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
+
+    .line 129
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->pendingSeekGranule:J
 
     return-void
 .end method
@@ -50,7 +56,7 @@
 .method public createSeekMap()Lcom/google/android/exoplayer2/extractor/SeekMap;
     .locals 5
 
-    .line 137
+    .line 157
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
 
     const-wide/16 v2, -0x1
@@ -69,32 +75,22 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 138
+    .line 158
     new-instance v0, Lcom/google/android/exoplayer2/extractor/FlacSeekTableSeekMap;
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->this$0:Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;
-
-    invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;->access$000(Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;)Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->streamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/extractor/FlacSeekTableSeekMap;-><init>(Lcom/google/android/exoplayer2/util/FlacStreamMetadata;J)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/extractor/FlacSeekTableSeekMap;-><init>(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;J)V
 
     return-object v0
 .end method
 
 .method public read(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)J
     .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
-        }
-    .end annotation
 
-    .line 119
+    .line 138
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->pendingSeekGranule:J
 
     const-wide/16 v2, -0x1
@@ -111,7 +107,7 @@
 
     neg-long v0, v0
 
-    .line 121
+    .line 140
     iput-wide v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->pendingSeekGranule:J
 
     return-wide v0
@@ -123,7 +119,7 @@
 .method public setFirstFrameOffset(J)V
     .locals 0
 
-    .line 114
+    .line 133
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->firstFrameOffset:J
 
     return-void
@@ -132,36 +128,19 @@
 .method public startSeek(J)V
     .locals 2
 
-    .line 129
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->this$0:Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;
+    .line 148
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->seekTable:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata$SeekTable;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;->access$000(Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;)Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->seekTable:Lcom/google/android/exoplayer2/util/FlacStreamMetadata$SeekTable;
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 130
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->this$0:Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;->access$000(Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;)Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->seekTable:Lcom/google/android/exoplayer2/util/FlacStreamMetadata$SeekTable;
-
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata$SeekTable;->pointSampleNumbers:[J
+    iget-object v0, v0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata$SeekTable;->pointSampleNumbers:[J
 
     const/4 v1, 0x1
 
-    .line 131
+    .line 150
     invoke-static {v0, p1, p2, v1, v1}, Lcom/google/android/exoplayer2/util/Util;->binarySearchFloor([JJZZ)I
 
     move-result p1
 
-    .line 132
+    .line 152
     aget-wide p1, v0, p1
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader$FlacOggSeeker;->pendingSeekGranule:J

@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
-.field public final synthetic f$1:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
+.field public final synthetic f$1:Lcom/google/android/exoplayer2/video/VideoSize;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;Lcom/google/android/exoplayer2/decoder/DecoderCounters;)V
+.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;Lcom/google/android/exoplayer2/video/VideoSize;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;->f$0:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
-    iput-object p2, p0, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;->f$1:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
+    iput-object p2, p0, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;->f$1:Lcom/google/android/exoplayer2/video/VideoSize;
 
     return-void
 .end method
@@ -31,9 +31,9 @@
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;->f$0:Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;->f$1:Lcom/google/android/exoplayer2/decoder/DecoderCounters;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher$$ExternalSyntheticLambda5;->f$1:Lcom/google/android/exoplayer2/video/VideoSize;
 
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->$r8$lambda$gGxMZQ0TZK-KSL4tXLV0_uA06sQ(Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;Lcom/google/android/exoplayer2/decoder/DecoderCounters;)V
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;->$r8$lambda$i04wPF7sqeF517haiQJIb2PRkco(Lcom/google/android/exoplayer2/video/VideoRendererEventListener$EventDispatcher;Lcom/google/android/exoplayer2/video/VideoSize;)V
 
     return-void
 .end method

@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;)V
     .locals 0
 
-    .line 170
+    .line 172
     iput-object p1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;->this$0:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$1;)V
     .locals 0
 
-    .line 170
+    .line 172
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;-><init>(Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;)V
 
     return-void
@@ -44,14 +44,14 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
 
-    .line 173
+    .line 175
     invoke-virtual {p0}, Landroid/content/BroadcastReceiver;->isInitialStickyBroadcast()Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 174
+    .line 176
     iget-object p1, p0, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher$DeviceStatusChangeReceiver;->this$0:Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;->access$200(Lcom/google/android/exoplayer2/scheduler/RequirementsWatcher;)V

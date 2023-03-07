@@ -46,10 +46,10 @@
 
     const-string v0, "GEOB"
 
-    .line 47
+    .line 45
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;-><init>(Ljava/lang/String;)V
 
-    .line 48
+    .line 46
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -62,7 +62,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->mimeType:Ljava/lang/String;
 
-    .line 49
+    .line 47
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->filename:Ljava/lang/String;
 
-    .line 50
+    .line 48
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -88,7 +88,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->description:Ljava/lang/String;
 
-    .line 51
+    .line 49
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object p1
@@ -109,19 +109,19 @@
 
     const-string v0, "GEOB"
 
-    .line 39
+    .line 37
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;-><init>(Ljava/lang/String;)V
 
-    .line 40
+    .line 38
     iput-object p1, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->mimeType:Ljava/lang/String;
 
-    .line 41
+    .line 39
     iput-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->filename:Ljava/lang/String;
 
-    .line 42
+    .line 40
     iput-object p3, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->description:Ljava/lang/String;
 
-    .line 43
+    .line 41
     iput-object p4, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->data:[B
 
     return-void
@@ -143,7 +143,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 59
+    .line 57
     const-class v2, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -154,11 +154,11 @@
 
     goto :goto_1
 
-    .line 62
+    .line 60
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;
 
-    .line 63
+    .line 61
     iget-object v2, p0, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->mimeType:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->mimeType:Ljava/lang/String;
@@ -173,6 +173,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->filename:Ljava/lang/String;
 
+    .line 62
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -183,7 +184,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->description:Ljava/lang/String;
 
-    .line 64
+    .line 63
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -194,6 +195,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/metadata/id3/GeobFrame;->data:[B
 
+    .line 64
     invoke-static {v2, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result p1

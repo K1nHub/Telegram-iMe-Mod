@@ -15,10 +15,10 @@
 
 
 # virtual methods
-.method public abstract getSampleCount()I
+.method public abstract getFixedSampleSize()I
 .end method
 
-.method public abstract isFixedSampleSize()Z
+.method public abstract getSampleCount()I
 .end method
 
 .method public abstract readNextSampleSize()I

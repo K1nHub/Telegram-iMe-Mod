@@ -23,7 +23,7 @@
 
 .field public static final EXTENSION_RENDERER_MODE_PREFER:I = 0x2
 
-.field protected static final MAX_DROPPED_VIDEO_FRAME_COUNT_TO_NOTIFY:I = 0x32
+.field public static final MAX_DROPPED_VIDEO_FRAME_COUNT_TO_NOTIFY:I = 0x32
 
 .field private static final TAG:Ljava/lang/String; = "DefaultRenderersFactory"
 
@@ -31,174 +31,51 @@
 # instance fields
 .field private allowedVideoJoiningTimeMs:J
 
+.field private final codecAdapterFactory:Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
 .field private final context:Landroid/content/Context;
 
-.field private drmSessionManager:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private enableAudioTrackPlaybackParams:Z
 
 .field private enableDecoderFallback:Z
+
+.field private enableFloatOutput:Z
+
+.field private enableOffload:Z
 
 .field private extensionRendererMode:I
 
 .field private mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
-
-.field private playClearSamplesWithoutKeys:Z
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    .line 98
+    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 99
+    .line 109
     iput-object p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
+
+    .line 110
+    new-instance p1, Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
+    invoke-direct {p1}, Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->codecAdapterFactory:Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
 
     const/4 p1, 0x0
 
-    .line 100
+    .line 111
     iput p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
 
     const-wide/16 v0, 0x1388
 
-    .line 101
+    .line 112
     iput-wide v0, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->allowedVideoJoiningTimeMs:J
 
-    .line 102
-    sget-object p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;->DEFAULT:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;I)V
-    .locals 2
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    const-wide/16 v0, 0x1388
-
-    .line 124
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;-><init>(Landroid/content/Context;IJ)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;IJ)V
-    .locals 6
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    const/4 v2, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v3, p2
-
-    move-wide v4, p3
-
-    .line 151
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/drm/DrmSessionManager;IJ)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/exoplayer2/drm/DrmSessionManager;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    const/4 v0, 0x0
-
     .line 113
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/drm/DrmSessionManager;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/exoplayer2/drm/DrmSessionManager;I)V
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;I)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    const-wide/16 v4, 0x1388
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move v3, p3
-
-    .line 138
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/drm/DrmSessionManager;IJ)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/exoplayer2/drm/DrmSessionManager;IJ)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;IJ)V"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 164
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 165
-    iput-object p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
-
-    .line 166
-    iput p3, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
-
-    .line 167
-    iput-wide p4, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->allowedVideoJoiningTimeMs:J
-
-    .line 168
-    iput-object p2, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
-
-    .line 169
     sget-object p1, Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;->DEFAULT:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
@@ -208,28 +85,16 @@
 
 
 # virtual methods
-.method protected buildAudioProcessors()[Lcom/google/android/exoplayer2/audio/AudioProcessor;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Lcom/google/android/exoplayer2/audio/AudioProcessor;
-
-    return-object v0
-.end method
-
-.method protected buildAudioRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;Lcom/google/android/exoplayer2/drm/DrmSessionManager;ZZ[Lcom/google/android/exoplayer2/audio/AudioProcessor;Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Ljava/util/ArrayList;)V
-    .locals 16
+.method protected buildAudioRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;ZLcom/google/android/exoplayer2/audio/AudioSink;Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Ljava/util/ArrayList;)V
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
             "I",
             "Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;",
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;ZZ[",
-            "Lcom/google/android/exoplayer2/audio/AudioProcessor;",
+            "Z",
+            "Lcom/google/android/exoplayer2/audio/AudioSink;",
             "Landroid/os/Handler;",
             "Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;",
             "Ljava/util/ArrayList<",
@@ -240,120 +105,97 @@
 
     move/from16 v0, p2
 
-    move-object/from16 v1, p7
+    move-object/from16 v9, p8
 
-    move-object/from16 v11, p10
+    .line 452
+    const-class v10, Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    const-class v11, Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;
 
     const-string v12, "DefaultRenderersFactory"
 
-    .line 428
-    const-class v13, [Lcom/google/android/exoplayer2/audio/AudioProcessor;
+    new-instance v13, Lcom/google/android/exoplayer2/audio/MediaCodecAudioRenderer;
 
-    const-class v14, Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;
+    .line 455
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->getCodecAdapterFactory()Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$Factory;
 
-    new-instance v15, Lcom/google/android/exoplayer2/audio/MediaCodecAudioRenderer;
+    move-result-object v3
 
-    new-instance v10, Lcom/google/android/exoplayer2/audio/DefaultAudioSink;
+    move-object v1, v13
 
-    .line 437
-    invoke-static/range {p1 .. p1}, Lcom/google/android/exoplayer2/audio/AudioCapabilities;->getCapabilities(Landroid/content/Context;)Lcom/google/android/exoplayer2/audio/AudioCapabilities;
-
-    move-result-object v2
-
-    invoke-direct {v10, v2, v1}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink;-><init>(Lcom/google/android/exoplayer2/audio/AudioCapabilities;[Lcom/google/android/exoplayer2/audio/AudioProcessor;)V
-
-    move-object v2, v15
-
-    move-object/from16 v3, p1
+    move-object v2, p1
 
     move-object/from16 v4, p3
 
-    move-object/from16 v5, p4
+    move/from16 v5, p4
 
-    move/from16 v6, p5
+    move-object/from16 v6, p6
 
-    move/from16 v7, p6
+    move-object/from16 v7, p7
 
-    move-object/from16 v8, p8
+    move-object/from16 v8, p5
 
-    move-object/from16 v9, p9
+    invoke-direct/range {v1 .. v8}, Lcom/google/android/exoplayer2/audio/MediaCodecAudioRenderer;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$Factory;Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;ZLandroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Lcom/google/android/exoplayer2/audio/AudioSink;)V
 
-    invoke-direct/range {v2 .. v10}, Lcom/google/android/exoplayer2/audio/MediaCodecAudioRenderer;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;Lcom/google/android/exoplayer2/drm/DrmSessionManager;ZZLandroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Lcom/google/android/exoplayer2/audio/AudioSink;)V
-
-    .line 428
-    invoke-virtual {v11, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 461
+    invoke-virtual {v9, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 442
+    .line 466
     :cond_0
-    invoke-virtual/range {p10 .. p10}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {p8 .. p8}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v1
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    if-ne v0, v3, :cond_1
+    if-ne v0, v2, :cond_1
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v1, -0x1
 
     :cond_1
     const/4 v0, 0x0
 
-    const/4 v4, 0x3
-
-    const/4 v5, 0x1
-
-    .line 450
     :try_start_0
-    const-class v6, Lcom/google/android/exoplayer2/ext/opus/LibopusAudioRenderer;
+    const-string v3, "com.google.android.exoplayer2.decoder.midi.MidiRenderer"
 
-    new-array v7, v4, [Ljava/lang/Class;
+    .line 472
+    invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    .line 451
-    const-class v8, Landroid/os/Handler;
+    move-result-object v3
 
-    aput-object v8, v7, v0
+    new-array v4, v0, [Ljava/lang/Class;
 
-    aput-object v14, v7, v5
+    .line 473
+    invoke-virtual {v3, v4}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    aput-object v13, v7, v3
+    move-result-object v3
 
-    .line 452
-    invoke-virtual {v6, v7}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    new-array v4, v0, [Ljava/lang/Object;
 
-    move-result-object v6
+    .line 474
+    invoke-virtual {v3, v4}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-array v7, v4, [Ljava/lang/Object;
+    move-result-object v3
 
-    aput-object p8, v7, v0
-
-    aput-object p9, v7, v5
-
-    aput-object v1, v7, v3
-
-    .line 458
-    invoke-virtual {v6, v7}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/google/android/exoplayer2/Renderer;
+    check-cast v3, Lcom/google/android/exoplayer2/Renderer;
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    add-int/lit8 v7, v2, 0x1
+    add-int/lit8 v4, v1, 0x1
 
-    .line 459
+    .line 475
     :try_start_1
-    invoke-virtual {v11, v2, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v9, v1, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    const-string v2, "Loaded LibopusAudioRenderer."
+    const-string v1, "Loaded MidiRenderer."
 
-    .line 460
-    invoke-static {v12, v2}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+    .line 476
+    invoke-static {v12, v1}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -361,14 +203,94 @@
     goto :goto_1
 
     :catch_0
-    move v2, v7
+    move v1, v4
 
     goto :goto_0
 
     :catch_1
     move-exception v0
 
-    .line 465
+    .line 481
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "Error instantiating MIDI extension"
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :catch_2
+    :goto_0
+    move v4, v1
+
+    :goto_1
+    const/4 v1, 0x3
+
+    const/4 v3, 0x1
+
+    .line 486
+    :try_start_2
+    const-class v5, Lcom/google/android/exoplayer2/ext/opus/LibopusAudioRenderer;
+
+    new-array v6, v1, [Ljava/lang/Class;
+
+    .line 487
+    const-class v7, Landroid/os/Handler;
+
+    aput-object v7, v6, v0
+
+    aput-object v11, v6, v3
+
+    aput-object v10, v6, v2
+
+    .line 488
+    invoke-virtual {v5, v6}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v5
+
+    new-array v6, v1, [Ljava/lang/Object;
+
+    aput-object p6, v6, v0
+
+    aput-object p7, v6, v3
+
+    aput-object p5, v6, v2
+
+    .line 493
+    invoke-virtual {v5, v6}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/exoplayer2/Renderer;
+    :try_end_2
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
+
+    add-int/lit8 v6, v4, 0x1
+
+    .line 494
+    :try_start_3
+    invoke-virtual {v9, v4, v5}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
+    const-string v4, "Loaded LibopusAudioRenderer."
+
+    .line 495
+    invoke-static {v12, v4}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_3
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_4
+
+    goto :goto_3
+
+    :catch_3
+    move v4, v6
+
+    goto :goto_2
+
+    :catch_4
+    move-exception v0
+
+    .line 500
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Error instantiating Opus extension"
@@ -377,74 +299,74 @@
 
     throw v1
 
-    :catch_2
-    :goto_0
-    move v7, v2
+    :catch_5
+    :goto_2
+    move v6, v4
 
-    .line 471
-    :goto_1
-    :try_start_2
-    const-class v2, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;
+    .line 505
+    :goto_3
+    :try_start_4
+    const-class v4, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;
 
-    new-array v6, v4, [Ljava/lang/Class;
+    new-array v5, v1, [Ljava/lang/Class;
 
-    .line 472
-    const-class v8, Landroid/os/Handler;
+    .line 506
+    const-class v7, Landroid/os/Handler;
 
-    aput-object v8, v6, v0
+    aput-object v7, v5, v0
 
-    aput-object v14, v6, v5
+    aput-object v11, v5, v3
 
-    aput-object v13, v6, v3
+    aput-object v10, v5, v2
 
-    .line 473
-    invoke-virtual {v2, v6}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    .line 507
+    invoke-virtual {v4, v5}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v2
+    move-result-object v4
 
-    new-array v6, v4, [Ljava/lang/Object;
+    new-array v5, v1, [Ljava/lang/Object;
 
-    aput-object p8, v6, v0
+    aput-object p6, v5, v0
 
-    aput-object p9, v6, v5
+    aput-object p7, v5, v3
 
-    aput-object v1, v6, v3
+    aput-object p5, v5, v2
 
-    .line 479
-    invoke-virtual {v2, v6}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    .line 512
+    invoke-virtual {v4, v5}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Lcom/google/android/exoplayer2/Renderer;
-    :try_end_2
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_5
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
+    check-cast v4, Lcom/google/android/exoplayer2/Renderer;
+    :try_end_4
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_8
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_7
 
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v5, v6, 0x1
 
-    .line 480
-    :try_start_3
-    invoke-virtual {v11, v7, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    .line 513
+    :try_start_5
+    invoke-virtual {v9, v6, v4}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    const-string v2, "Loaded LibflacAudioRenderer."
+    const-string v4, "Loaded LibflacAudioRenderer."
 
-    .line 481
-    invoke-static {v12, v2}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_3
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_4
+    .line 514
+    invoke-static {v12, v4}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_5
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_5 .. :try_end_5} :catch_6
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_7
 
-    goto :goto_3
+    goto :goto_5
 
-    :catch_3
-    move v7, v6
+    :catch_6
+    move v6, v5
 
-    goto :goto_2
+    goto :goto_4
 
-    :catch_4
+    :catch_7
     move-exception v0
 
-    .line 486
+    .line 519
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Error instantiating FLAC extension"
@@ -453,63 +375,63 @@
 
     throw v1
 
-    :catch_5
-    :goto_2
-    move v6, v7
+    :catch_8
+    :goto_4
+    move v5, v6
 
-    .line 493
-    :goto_3
-    :try_start_4
-    const-class v2, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegAudioRenderer;
+    .line 525
+    :goto_5
+    :try_start_6
+    const-class v4, Lcom/google/android/exoplayer2/ext/ffmpeg/FfmpegAudioRenderer;
 
-    new-array v7, v4, [Ljava/lang/Class;
+    new-array v6, v1, [Ljava/lang/Class;
 
-    .line 494
-    const-class v8, Landroid/os/Handler;
+    .line 526
+    const-class v7, Landroid/os/Handler;
 
-    aput-object v8, v7, v0
+    aput-object v7, v6, v0
 
-    aput-object v14, v7, v5
+    aput-object v11, v6, v3
 
-    aput-object v13, v7, v3
+    aput-object v10, v6, v2
 
-    .line 495
-    invoke-virtual {v2, v7}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    .line 527
+    invoke-virtual {v4, v6}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v2
+    move-result-object v4
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    aput-object p8, v4, v0
+    aput-object p6, v1, v0
 
-    aput-object p9, v4, v5
+    aput-object p7, v1, v3
 
-    aput-object v1, v4, v3
+    aput-object p5, v1, v2
 
-    .line 501
-    invoke-virtual {v2, v4}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    .line 532
+    invoke-virtual {v4, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/exoplayer2/Renderer;
 
-    .line 502
-    invoke-virtual {v11, v6, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    .line 533
+    invoke-virtual {v9, v5, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v0, "Loaded FfmpegAudioRenderer."
 
-    .line 503
+    .line 534
     invoke-static {v12, v0}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_4
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_7
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_6
+    :try_end_6
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_6 .. :try_end_6} :catch_a
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_9
 
-    goto :goto_4
+    goto :goto_6
 
-    :catch_6
+    :catch_9
     move-exception v0
 
-    .line 508
+    .line 539
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Error instantiating FFmpeg extension"
@@ -518,9 +440,49 @@
 
     throw v1
 
-    :catch_7
-    :goto_4
+    :catch_a
+    :goto_6
     return-void
+.end method
+
+.method protected buildAudioSink(Landroid/content/Context;ZZZ)Lcom/google/android/exoplayer2/audio/AudioSink;
+    .locals 1
+
+    .line 626
+    new-instance v0, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;-><init>()V
+
+    .line 627
+    invoke-static {p1}, Lcom/google/android/exoplayer2/audio/AudioCapabilities;->getCapabilities(Landroid/content/Context;)Lcom/google/android/exoplayer2/audio/AudioCapabilities;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setAudioCapabilities(Lcom/google/android/exoplayer2/audio/AudioCapabilities;)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
+
+    move-result-object p1
+
+    .line 628
+    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setEnableFloatOutput(Z)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
+
+    move-result-object p1
+
+    .line 629
+    invoke-virtual {p1, p3}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setEnableAudioTrackPlaybackParams(Z)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
+
+    move-result-object p1
+
+    .line 630
+    invoke-virtual {p1, p4}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->setOffloadMode(I)Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;
+
+    move-result-object p1
+
+    .line 634
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$Builder;->build()Lcom/google/android/exoplayer2/audio/DefaultAudioSink;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method protected buildCameraMotionRenderers(Landroid/content/Context;ILjava/util/ArrayList;)V
@@ -536,7 +498,7 @@
         }
     .end annotation
 
-    .line 557
+    .line 588
     new-instance p1, Lcom/google/android/exoplayer2/video/spherical/CameraMotionRenderer;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/video/spherical/CameraMotionRenderer;-><init>()V
@@ -561,7 +523,7 @@
         }
     .end annotation
 
-    .line 545
+    .line 576
     new-instance p1, Lcom/google/android/exoplayer2/metadata/MetadataRenderer;
 
     invoke-direct {p1, p2, p3}, Lcom/google/android/exoplayer2/metadata/MetadataRenderer;-><init>(Lcom/google/android/exoplayer2/metadata/MetadataOutput;Landroid/os/Looper;)V
@@ -603,7 +565,7 @@
         }
     .end annotation
 
-    .line 527
+    .line 558
     new-instance p1, Lcom/google/android/exoplayer2/text/TextRenderer;
 
     invoke-direct {p1, p2, p3}, Lcom/google/android/exoplayer2/text/TextRenderer;-><init>(Lcom/google/android/exoplayer2/text/TextOutput;Landroid/os/Looper;)V
@@ -613,17 +575,15 @@
     return-void
 .end method
 
-.method protected buildVideoRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;Lcom/google/android/exoplayer2/drm/DrmSessionManager;ZZLandroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;JLjava/util/ArrayList;)V
-    .locals 16
+.method protected buildVideoRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;ZLandroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;JLjava/util/ArrayList;)V
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/content/Context;",
             "I",
             "Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;",
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;ZZ",
+            "Z",
             "Landroid/os/Handler;",
             "Lcom/google/android/exoplayer2/video/VideoRendererEventListener;",
             "J",
@@ -635,46 +595,48 @@
 
     move/from16 v0, p2
 
-    move-object/from16 v12, p11
+    move-object/from16 v11, p9
 
-    const-string v13, "DefaultRenderersFactory"
+    const-string v12, "DefaultRenderersFactory"
 
-    .line 322
-    const-class v14, Lcom/google/android/exoplayer2/video/VideoRendererEventListener;
+    .line 358
+    const-class v13, Lcom/google/android/exoplayer2/video/VideoRendererEventListener;
 
-    new-instance v15, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
+    new-instance v14, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;
 
-    const/16 v11, 0x32
+    .line 361
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->getCodecAdapterFactory()Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$Factory;
 
-    move-object v1, v15
+    move-result-object v3
+
+    const/16 v10, 0x32
+
+    move-object v1, v14
 
     move-object/from16 v2, p1
 
-    move-object/from16 v3, p3
+    move-object/from16 v4, p3
 
-    move-wide/from16 v4, p9
+    move-wide/from16 v5, p7
 
-    move-object/from16 v6, p4
+    move/from16 v7, p4
 
-    move/from16 v7, p5
+    move-object/from16 v8, p5
 
-    move/from16 v8, p6
+    move-object/from16 v9, p6
 
-    move-object/from16 v9, p7
+    invoke-direct/range {v1 .. v10}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$Factory;Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;JZLandroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;I)V
 
-    move-object/from16 v10, p8
-
-    invoke-direct/range {v1 .. v11}, Lcom/google/android/exoplayer2/video/MediaCodecVideoRenderer;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;JLcom/google/android/exoplayer2/drm/DrmSessionManager;ZZLandroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;I)V
-
-    invoke-virtual {v12, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 368
+    invoke-virtual {v11, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 337
+    .line 373
     :cond_0
-    invoke-virtual/range {p11 .. p11}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {p9 .. p9}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -698,14 +660,14 @@
     :try_start_0
     const-string v7, "com.google.android.exoplayer2.ext.vp9.LibvpxVideoRenderer"
 
-    .line 345
+    .line 380
     invoke-static {v7}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v7
 
     new-array v8, v5, [Ljava/lang/Class;
 
-    .line 346
+    .line 381
     sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v8, v4
@@ -714,38 +676,38 @@
 
     aput-object v9, v8, v6
 
-    aput-object v14, v8, v2
+    aput-object v13, v8, v2
 
     sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v8, v3
 
-    .line 347
+    .line 382
     invoke-virtual {v7, v8}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v7
 
     new-array v8, v5, [Ljava/lang/Object;
 
-    .line 356
-    invoke-static/range {p9 .. p10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 390
+    invoke-static/range {p7 .. p8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v9
 
     aput-object v9, v8, v4
 
-    aput-object p7, v8, v6
+    aput-object p5, v8, v6
 
-    aput-object p8, v8, v2
+    aput-object p6, v8, v2
 
-    .line 359
+    .line 393
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
     aput-object v9, v8, v3
 
-    .line 355
+    .line 389
     invoke-virtual {v7, v8}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
@@ -757,14 +719,14 @@
 
     add-int/lit8 v8, v1, 0x1
 
-    .line 360
+    .line 394
     :try_start_1
-    invoke-virtual {v12, v1, v7}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v11, v1, v7}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v1, "Loaded LibvpxVideoRenderer."
 
-    .line 361
-    invoke-static {v13, v1}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+    .line 395
+    invoke-static {v12, v1}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -779,7 +741,7 @@
     :catch_1
     move-exception v0
 
-    .line 366
+    .line 400
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Error instantiating VP9 extension"
@@ -796,14 +758,14 @@
     :try_start_2
     const-string v1, "com.google.android.exoplayer2.ext.av1.Libgav1VideoRenderer"
 
-    .line 372
+    .line 405
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v1
 
     new-array v7, v5, [Ljava/lang/Class;
 
-    .line 373
+    .line 406
     sget-object v9, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v7, v4
@@ -812,51 +774,51 @@
 
     aput-object v9, v7, v6
 
-    aput-object v14, v7, v2
+    aput-object v13, v7, v2
 
     sget-object v9, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     aput-object v9, v7, v3
 
-    .line 374
+    .line 407
     invoke-virtual {v1, v7}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v1
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    .line 383
-    invoke-static/range {p9 .. p10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 415
+    invoke-static/range {p7 .. p8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
 
     aput-object v7, v5, v4
 
-    aput-object p7, v5, v6
+    aput-object p5, v5, v6
 
-    aput-object p8, v5, v2
+    aput-object p6, v5, v2
 
-    .line 386
+    .line 418
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     aput-object v0, v5, v3
 
-    .line 382
+    .line 414
     invoke-virtual {v1, v5}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/exoplayer2/Renderer;
 
-    .line 387
-    invoke-virtual {v12, v8, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    .line 419
+    invoke-virtual {v11, v8, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     const-string v0, "Loaded Libgav1VideoRenderer."
 
-    .line 388
-    invoke-static {v13, v0}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+    .line 420
+    invoke-static {v12, v0}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_4
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
@@ -866,7 +828,7 @@
     :catch_3
     move-exception v0
 
-    .line 393
+    .line 425
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Error instantiating AV1 extension"
@@ -880,143 +842,129 @@
     return-void
 .end method
 
-.method public createRenderers(Landroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Lcom/google/android/exoplayer2/text/TextOutput;Lcom/google/android/exoplayer2/metadata/MetadataOutput;Lcom/google/android/exoplayer2/drm/DrmSessionManager;)[Lcom/google/android/exoplayer2/Renderer;
-    .locals 15
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/os/Handler;",
-            "Lcom/google/android/exoplayer2/video/VideoRendererEventListener;",
-            "Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;",
-            "Lcom/google/android/exoplayer2/text/TextOutput;",
-            "Lcom/google/android/exoplayer2/metadata/MetadataOutput;",
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/FrameworkMediaCrypto;",
-            ">;)[",
-            "Lcom/google/android/exoplayer2/Renderer;"
-        }
-    .end annotation
+.method public createRenderers(Landroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Lcom/google/android/exoplayer2/text/TextOutput;Lcom/google/android/exoplayer2/metadata/MetadataOutput;)[Lcom/google/android/exoplayer2/Renderer;
+    .locals 12
 
-    move-object v12, p0
+    move-object v10, p0
 
-    if-nez p6, :cond_0
+    .line 293
+    new-instance v11, Ljava/util/ArrayList;
 
-    .line 257
-    iget-object v0, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->drmSessionManager:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
+    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    move-object v13, v0
+    .line 294
+    iget-object v1, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
 
-    goto :goto_0
+    iget v2, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
 
-    :cond_0
-    move-object/from16 v13, p6
+    iget-object v3, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
 
-    .line 259
-    :goto_0
-    new-instance v14, Ljava/util/ArrayList;
+    iget-boolean v4, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableDecoderFallback:Z
 
-    invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
-
-    .line 260
-    iget-object v1, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
-
-    iget v2, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
-
-    iget-object v3, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
-
-    iget-boolean v5, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->playClearSamplesWithoutKeys:Z
-
-    iget-boolean v6, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableDecoderFallback:Z
-
-    iget-wide v9, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->allowedVideoJoiningTimeMs:J
+    iget-wide v7, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->allowedVideoJoiningTimeMs:J
 
     move-object v0, p0
 
-    move-object v4, v13
+    move-object v5, p1
 
-    move-object/from16 v7, p1
+    move-object v6, p2
 
-    move-object/from16 v8, p2
+    move-object v9, v11
 
-    move-object v11, v14
+    invoke-virtual/range {v0 .. v9}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildVideoRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;ZLandroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;JLjava/util/ArrayList;)V
 
-    invoke-virtual/range {v0 .. v11}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildVideoRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;Lcom/google/android/exoplayer2/drm/DrmSessionManager;ZZLandroid/os/Handler;Lcom/google/android/exoplayer2/video/VideoRendererEventListener;JLjava/util/ArrayList;)V
+    .line 304
+    iget-object v0, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
 
-    .line 271
-    iget-object v1, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
+    iget-boolean v1, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableFloatOutput:Z
 
-    iget v2, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
+    iget-boolean v2, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableAudioTrackPlaybackParams:Z
 
-    iget-object v3, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
+    iget-boolean v3, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableOffload:Z
 
-    iget-boolean v5, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->playClearSamplesWithoutKeys:Z
+    .line 305
+    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildAudioSink(Landroid/content/Context;ZZZ)Lcom/google/android/exoplayer2/audio/AudioSink;
 
-    iget-boolean v6, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableDecoderFallback:Z
+    move-result-object v5
 
-    .line 278
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildAudioProcessors()[Lcom/google/android/exoplayer2/audio/AudioProcessor;
+    if-eqz v5, :cond_0
 
-    move-result-object v7
+    .line 307
+    iget-object v1, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
 
-    move-object/from16 v8, p1
+    iget v2, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
 
-    move-object/from16 v9, p3
+    iget-object v3, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
 
-    move-object v10, v14
+    iget-boolean v4, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableDecoderFallback:Z
 
-    .line 271
-    invoke-virtual/range {v0 .. v10}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildAudioRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;Lcom/google/android/exoplayer2/drm/DrmSessionManager;ZZ[Lcom/google/android/exoplayer2/audio/AudioProcessor;Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Ljava/util/ArrayList;)V
+    move-object v0, p0
 
-    .line 282
-    iget-object v1, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
+    move-object v6, p1
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+    move-object v7, p3
+
+    move-object v8, v11
+
+    invoke-virtual/range {v0 .. v8}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildAudioRenderers(Landroid/content/Context;ILcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;ZLcom/google/android/exoplayer2/audio/AudioSink;Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Ljava/util/ArrayList;)V
+
+    .line 317
+    :cond_0
+    iget-object v1, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
+
+    .line 320
+    invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v3
 
-    iget v4, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
+    iget v4, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
+
+    move-object v0, p0
 
     move-object/from16 v2, p4
 
-    move-object v5, v14
+    move-object v5, v11
 
+    .line 317
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildTextRenderers(Landroid/content/Context;Lcom/google/android/exoplayer2/text/TextOutput;Landroid/os/Looper;ILjava/util/ArrayList;)V
 
-    .line 284
-    iget-object v1, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
+    .line 323
+    iget-object v1, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
 
-    invoke-virtual/range {p1 .. p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+    .line 326
+    invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v3
 
-    iget v4, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
+    iget v4, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
 
     move-object/from16 v2, p5
 
+    .line 323
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildMetadataRenderers(Landroid/content/Context;Lcom/google/android/exoplayer2/metadata/MetadataOutput;Landroid/os/Looper;ILjava/util/ArrayList;)V
 
-    .line 286
-    iget-object v0, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
+    .line 329
+    iget-object v0, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
 
-    iget v1, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
+    iget v1, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
 
-    invoke-virtual {p0, v0, v1, v14}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildCameraMotionRenderers(Landroid/content/Context;ILjava/util/ArrayList;)V
+    invoke-virtual {p0, v0, v1, v11}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildCameraMotionRenderers(Landroid/content/Context;ILjava/util/ArrayList;)V
 
-    .line 287
-    iget-object v0, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
+    .line 330
+    iget-object v0, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->context:Landroid/content/Context;
 
-    iget v1, v12, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
+    iget v1, v10, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
 
-    move-object/from16 v2, p1
+    move-object v2, p1
 
-    invoke-virtual {p0, v0, v2, v1, v14}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildMiscellaneousRenderers(Landroid/content/Context;Landroid/os/Handler;ILjava/util/ArrayList;)V
+    invoke-virtual {p0, v0, p1, v1, v11}, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->buildMiscellaneousRenderers(Landroid/content/Context;Landroid/os/Handler;ILjava/util/ArrayList;)V
 
     const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/google/android/exoplayer2/Renderer;
 
-    .line 288
-    invoke-virtual {v14, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .line 331
+    invoke-virtual {v11, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1025,11 +973,80 @@
     return-object v0
 .end method
 
+.method public experimentalSetSynchronizeCodecInteractionsWithQueueingEnabled(Z)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
+    .locals 1
+
+    .line 173
+    iget-object v0, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->codecAdapterFactory:Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;->experimentalSetSynchronizeCodecInteractionsWithQueueingEnabled(Z)V
+
+    return-object p0
+.end method
+
+.method public forceDisableMediaCodecAsynchronousQueueing()Lcom/google/android/exoplayer2/DefaultRenderersFactory;
+    .locals 1
+
+    .line 157
+    iget-object v0, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->codecAdapterFactory:Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;->forceDisableAsynchronous()Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
+    return-object p0
+.end method
+
+.method public forceEnableMediaCodecAsynchronousQueueing()Lcom/google/android/exoplayer2/DefaultRenderersFactory;
+    .locals 1
+
+    .line 144
+    iget-object v0, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->codecAdapterFactory:Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;->forceEnableAsynchronous()Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
+    return-object p0
+.end method
+
+.method protected getCodecAdapterFactory()Lcom/google/android/exoplayer2/mediacodec/MediaCodecAdapter$Factory;
+    .locals 1
+
+    .line 642
+    iget-object v0, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->codecAdapterFactory:Lcom/google/android/exoplayer2/mediacodec/DefaultMediaCodecAdapterFactory;
+
+    return-object v0
+.end method
+
 .method public setAllowedVideoJoiningTimeMs(J)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
     .locals 0
 
-    .line 244
+    .line 282
     iput-wide p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->allowedVideoJoiningTimeMs:J
+
+    return-object p0
+.end method
+
+.method public setEnableAudioFloatOutput(Z)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
+    .locals 0
+
+    .line 218
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableFloatOutput:Z
+
+    return-object p0
+.end method
+
+.method public setEnableAudioOffload(Z)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
+    .locals 0
+
+    .line 241
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableOffload:Z
+
+    return-object p0
+.end method
+
+.method public setEnableAudioTrackPlaybackParams(Z)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
+    .locals 0
+
+    .line 266
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableAudioTrackPlaybackParams:Z
 
     return-object p0
 .end method
@@ -1037,7 +1054,7 @@
 .method public setEnableDecoderFallback(Z)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
     .locals 0
 
-    .line 216
+    .line 187
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->enableDecoderFallback:Z
 
     return-object p0
@@ -1046,7 +1063,7 @@
 .method public setExtensionRendererMode(I)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
     .locals 0
 
-    .line 184
+    .line 129
     iput p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->extensionRendererMode:I
 
     return-object p0
@@ -1055,17 +1072,8 @@
 .method public setMediaCodecSelector(Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
     .locals 0
 
-    .line 229
+    .line 201
     iput-object p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->mediaCodecSelector:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
-
-    return-object p0
-.end method
-
-.method public setPlayClearSamplesWithoutKeys(Z)Lcom/google/android/exoplayer2/DefaultRenderersFactory;
-    .locals 0
-
-    .line 203
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/DefaultRenderersFactory;->playClearSamplesWithoutKeys:Z
 
     return-object p0
 .end method

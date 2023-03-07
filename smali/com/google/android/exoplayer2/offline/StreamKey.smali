@@ -36,14 +36,19 @@
 
 .field public final periodIndex:I
 
+.field public final streamIndex:I
+
 .field public final trackIndex:I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 119
+    .line 139
     new-instance v0, Lcom/google/android/exoplayer2/offline/StreamKey$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/offline/StreamKey$1;-><init>()V
@@ -58,7 +63,7 @@
 
     const/4 v0, 0x0
 
-    .line 43
+    .line 57
     invoke-direct {p0, v0, p1, p2}, Lcom/google/android/exoplayer2/offline/StreamKey;-><init>(III)V
 
     return-void
@@ -67,16 +72,19 @@
 .method public constructor <init>(III)V
     .locals 0
 
-    .line 51
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 69
     iput p1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
-    .line 53
+    .line 70
     iput p2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
 
-    .line 54
+    .line 71
+    iput p3, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
+
+    .line 72
     iput p3, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
 
     return-void
@@ -85,28 +93,31 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    .line 57
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 77
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
-    .line 59
+    .line 78
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
 
-    .line 60
+    .line 79
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result p1
 
+    iput p1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
+
+    .line 80
     iput p1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
 
     return-void
@@ -117,7 +128,7 @@
 .method public compareTo(Lcom/google/android/exoplayer2/offline/StreamKey;)I
     .locals 2
 
-    .line 95
+    .line 115
     iget v0, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
     iget v1, p1, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
@@ -126,7 +137,7 @@
 
     if-nez v0, :cond_0
 
-    .line 97
+    .line 117
     iget v0, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
 
     iget v1, p1, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
@@ -135,10 +146,10 @@
 
     if-nez v0, :cond_0
 
-    .line 99
-    iget v0, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    .line 119
+    iget v0, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
-    iget p1, p1, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    iget p1, p1, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
     sub-int/2addr v0, p1
 
@@ -149,7 +160,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 29
+    .line 36
     check-cast p1, Lcom/google/android/exoplayer2/offline/StreamKey;
 
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/offline/StreamKey;->compareTo(Lcom/google/android/exoplayer2/offline/StreamKey;)I
@@ -181,7 +192,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 73
+    .line 93
     const-class v2, Lcom/google/android/exoplayer2/offline/StreamKey;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -192,11 +203,11 @@
 
     goto :goto_1
 
-    .line 77
+    .line 97
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/offline/StreamKey;
 
-    .line 78
+    .line 98
     iget v2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
     iget v3, p1, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
@@ -209,9 +220,9 @@
 
     if-ne v2, v3, :cond_2
 
-    iget v2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    iget v2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
-    iget p1, p1, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    iget p1, p1, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
     if-ne v2, p1, :cond_2
 
@@ -231,20 +242,20 @@
 .method public hashCode()I
     .locals 2
 
-    .line 85
+    .line 105
     iget v0, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 86
+    .line 106
     iget v1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
 
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 87
-    iget v1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    .line 107
+    iget v1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
     add-int/2addr v0, v1
 
@@ -254,7 +265,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 65
+    .line 85
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -273,7 +284,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    iget v1, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -287,18 +298,18 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 114
+    .line 134
     iget p2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->periodIndex:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 115
+    .line 135
     iget p2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->groupIndex:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 116
-    iget p2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->trackIndex:I
+    .line 136
+    iget p2, p0, Lcom/google/android/exoplayer2/offline/StreamKey;->streamIndex:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 

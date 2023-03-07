@@ -16,6 +16,8 @@
 
 .field public static final DEFAULT_SOCKET_TIMEOUT_MILLIS:I = 0x1f40
 
+.field public static final UDP_PORT_UNSET:I = -0x1
+
 
 # instance fields
 .field private address:Ljava/net/InetAddress;
@@ -32,8 +34,6 @@
 
 .field private socket:Ljava/net/DatagramSocket;
 
-.field private socketAddress:Ljava/net/InetSocketAddress;
-
 .field private final socketTimeoutMillis:I
 
 .field private uri:Landroid/net/Uri;
@@ -45,7 +45,7 @@
 
     const/16 v0, 0x7d0
 
-    .line 65
+    .line 72
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/UdpDataSource;-><init>(I)V
 
     return-void
@@ -56,7 +56,7 @@
 
     const/16 v0, 0x1f40
 
-    .line 74
+    .line 81
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/upstream/UdpDataSource;-><init>(II)V
 
     return-void
@@ -67,18 +67,18 @@
 
     const/4 v0, 0x1
 
-    .line 85
+    .line 92
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;-><init>(Z)V
 
-    .line 86
+    .line 93
     iput p2, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socketTimeoutMillis:I
 
-    .line 87
+    .line 94
     new-array p2, p1, [B
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packetBuffer:[B
 
-    .line 88
+    .line 95
     new-instance v0, Ljava/net/DatagramPacket;
 
     const/4 v1, 0x0
@@ -97,69 +97,93 @@
 
     const/4 v0, 0x0
 
-    .line 154
+    .line 163
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->uri:Landroid/net/Uri;
 
-    .line 155
+    .line 164
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->multicastSocket:Ljava/net/MulticastSocket;
 
     if-eqz v1, :cond_0
 
-    .line 157
+    .line 166
     :try_start_0
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->address:Ljava/net/InetAddress;
+
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/net/InetAddress;
 
     invoke-virtual {v1, v2}, Ljava/net/MulticastSocket;->leaveGroup(Ljava/net/InetAddress;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 161
+    .line 170
     :catch_0
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->multicastSocket:Ljava/net/MulticastSocket;
 
-    .line 163
+    .line 172
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
     if-eqz v1, :cond_1
 
-    .line 164
+    .line 173
     invoke-virtual {v1}, Ljava/net/DatagramSocket;->close()V
 
-    .line 165
+    .line 174
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
-    .line 167
+    .line 176
     :cond_1
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->address:Ljava/net/InetAddress;
 
-    .line 168
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socketAddress:Ljava/net/InetSocketAddress;
-
     const/4 v0, 0x0
 
-    .line 169
+    .line 177
     iput v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packetRemaining:I
 
-    .line 170
+    .line 178
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->opened:Z
 
     if-eqz v1, :cond_2
 
-    .line 171
+    .line 179
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->opened:Z
 
-    .line 172
+    .line 180
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferEnded()V
 
     :cond_2
     return-void
 .end method
 
+.method public getLocalPort()I
+    .locals 1
+
+    .line 189
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, -0x1
+
+    return v0
+
+    .line 192
+    :cond_0
+    invoke-virtual {v0}, Ljava/net/DatagramSocket;->getLocalPort()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 149
+    .line 158
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->uri:Landroid/net/Uri;
 
     return-object v0
@@ -173,27 +197,33 @@
         }
     .end annotation
 
-    .line 93
+    .line 100
     iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->uri:Landroid/net/Uri;
 
-    .line 94
+    .line 101
     invoke-virtual {v0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 95
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 102
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->uri:Landroid/net/Uri;
 
     invoke-virtual {v1}, Landroid/net/Uri;->getPort()I
 
     move-result v1
 
-    .line 96
+    .line 103
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferInitializing(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    .line 98
+    .line 105
     :try_start_0
     invoke-static {v0}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
 
@@ -201,74 +231,66 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->address:Ljava/net/InetAddress;
 
-    .line 99
+    .line 106
     new-instance v0, Ljava/net/InetSocketAddress;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->address:Ljava/net/InetAddress;
 
     invoke-direct {v0, v2, v1}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socketAddress:Ljava/net/InetSocketAddress;
-
-    .line 100
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->address:Ljava/net/InetAddress;
-
-    invoke-virtual {v0}, Ljava/net/InetAddress;->isMulticastAddress()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 101
-    new-instance v0, Ljava/net/MulticastSocket;
-
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socketAddress:Ljava/net/InetSocketAddress;
-
-    invoke-direct {v0, v1}, Ljava/net/MulticastSocket;-><init>(Ljava/net/SocketAddress;)V
-
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->multicastSocket:Ljava/net/MulticastSocket;
-
-    .line 102
+    .line 107
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->address:Ljava/net/InetAddress;
 
-    invoke-virtual {v0, v1}, Ljava/net/MulticastSocket;->joinGroup(Ljava/net/InetAddress;)V
+    invoke-virtual {v1}, Ljava/net/InetAddress;->isMulticastAddress()Z
 
-    .line 103
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 108
+    new-instance v1, Ljava/net/MulticastSocket;
+
+    invoke-direct {v1, v0}, Ljava/net/MulticastSocket;-><init>(Ljava/net/SocketAddress;)V
+
+    iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->multicastSocket:Ljava/net/MulticastSocket;
+
+    .line 109
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->address:Ljava/net/InetAddress;
+
+    invoke-virtual {v1, v0}, Ljava/net/MulticastSocket;->joinGroup(Ljava/net/InetAddress;)V
+
+    .line 110
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->multicastSocket:Ljava/net/MulticastSocket;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
     goto :goto_0
 
-    .line 105
-    :cond_0
-    new-instance v0, Ljava/net/DatagramSocket;
-
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socketAddress:Ljava/net/InetSocketAddress;
-
-    invoke-direct {v0, v1}, Ljava/net/DatagramSocket;-><init>(Ljava/net/SocketAddress;)V
-
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-
     .line 112
+    :cond_0
+    new-instance v1, Ljava/net/DatagramSocket;
+
+    invoke-direct {v1, v0}, Ljava/net/DatagramSocket;-><init>(Ljava/net/SocketAddress;)V
+
+    iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
+
+    .line 114
     :goto_0
-    :try_start_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
 
     iget v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socketTimeoutMillis:I
 
     invoke-virtual {v0, v1}, Ljava/net/DatagramSocket;->setSoTimeout(I)V
-    :try_end_1
-    .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v0, 0x1
 
-    .line 117
+    .line 122
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->opened:Z
 
-    .line 118
+    .line 123
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
     const-wide/16 v0, -0x1
@@ -278,20 +300,24 @@
     :catch_0
     move-exception p1
 
-    .line 114
+    .line 118
     new-instance v0, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;
 
-    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;-><init>(Ljava/io/IOException;)V
+    const/16 v1, 0x7d1
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;-><init>(Ljava/lang/Throwable;I)V
 
     throw v0
 
     :catch_1
     move-exception p1
 
-    .line 108
+    .line 116
     new-instance v0, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;
 
-    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;-><init>(Ljava/io/IOException;)V
+    const/16 v1, 0x7d6
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;-><init>(Ljava/lang/Throwable;I)V
 
     throw v0
 .end method
@@ -310,23 +336,30 @@
 
     return p1
 
-    .line 128
+    .line 133
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packetRemaining:I
 
     if-nez v0, :cond_1
 
-    .line 131
+    .line 136
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->socket:Ljava/net/DatagramSocket;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/DatagramSocket;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packet:Ljava/net/DatagramPacket;
 
     invoke-virtual {v0, v1}, Ljava/net/DatagramSocket;->receive(Ljava/net/DatagramPacket;)V
     :try_end_0
+    .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 135
+    .line 144
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packet:Ljava/net/DatagramPacket;
 
     invoke-virtual {v0}, Ljava/net/DatagramPacket;->getLength()I
@@ -335,7 +368,7 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packetRemaining:I
 
-    .line 136
+    .line 145
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
 
     goto :goto_0
@@ -343,14 +376,28 @@
     :catch_0
     move-exception p1
 
-    .line 133
+    .line 141
     new-instance p2, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;
 
-    invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;-><init>(Ljava/io/IOException;)V
+    const/16 p3, 0x7d1
+
+    invoke-direct {p2, p1, p3}, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;-><init>(Ljava/lang/Throwable;I)V
 
     throw p2
 
-    .line 139
+    :catch_1
+    move-exception p1
+
+    .line 138
+    new-instance p2, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;
+
+    const/16 p3, 0x7d2
+
+    invoke-direct {p2, p1, p3}, Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;-><init>(Ljava/lang/Throwable;I)V
+
+    throw p2
+
+    .line 148
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packet:Ljava/net/DatagramPacket;
@@ -363,17 +410,17 @@
 
     sub-int/2addr v0, v1
 
-    .line 140
+    .line 149
     invoke-static {v1, p3}, Ljava/lang/Math;->min(II)I
 
     move-result p3
 
-    .line 141
+    .line 150
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packetBuffer:[B
 
     invoke-static {v1, v0, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 142
+    .line 151
     iget p1, p0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;->packetRemaining:I
 
     sub-int/2addr p1, p3

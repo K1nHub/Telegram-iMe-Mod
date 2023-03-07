@@ -3,8 +3,10 @@
     <string name="AreYouSureClearHistorySavedMessages">Вы действительно хотите очистить **Облако**?</string>
     <string name="AreYouSureDeleteThisChatSavedMessages">Вы действительно хотите удалить **Облако**?</string>
     <string name="AskAQuestion">Задать вопрос Telegram</string>
+    <string name="AuthAnotherClientInfo4">Вы можете авторизироваться в iMe для *iOS*, *Android* и *Desktop* с помощью QR-кода.</string>
     <string name="AuthAnotherClientInfo5">Перейдите на *imem.app/desktop*, чтобы получить QR-код</string>
     <string name="BackgroundToSavedMessages">Фон сохранен в **Облако**.</string>
+    <string name="DidNotGetTheCodeSms">Открыть Telegram</string>
     <string name="EventLogRestrictedSendStickers">Отправка стикеров</string>
     <string name="FwdMessageToSavedMessages">Сообщение переслано в **Облако**.</string>
     <string name="FwdMessagesToSavedMessages">Сообщения пересланы в **Облако**.</string>
@@ -502,6 +504,12 @@
     <string name="create_chat_template">Создать шаблон</string>
     <string name="create_folder_change_fab_section_description">Выберите тип плавающей кнопки FAB, которую нужно показывать в этой папке.</string>
     <string name="create_folder_change_fab_title">Изменить плавающую кнопку FAB</string>
+    <string name="currency_punkpanda">PUNKPANDA</string>
+    <string name="currency_punkpanda_site">https://www.punkpandafarm.com/</string>
+    <string name="currency_short_punkpanda">PPM</string>
+    <string name="currency_short_sinverse">SIN</string>
+    <string name="currency_sinverse">Sinverse</string>
+    <string name="currency_sinverse_site">https://sinverse.com/</string>
     <string name="custom_avatar_downloading">Загрузка изображения NFT…</string>
     <string name="custom_avatar_processing">В процессе...</string>
     <string name="custom_avatar_set">Установить на аватар</string>
@@ -663,6 +671,7 @@
     <string name="loading_messages_error">Ошибка загрузки сообщений, повторите попытку позже</string>
     <string name="loading_participants">Загрузка участников… Получено: %d</string>
     <string name="loading_participants_error">Ошибка загрузки участников, повторите попытку позже</string>
+    <string name="login_token_help">Отсканируйте QR код из другого устройства для авторизации</string>
     <string name="main_camera_popup_text">Задняя камера</string>
     <string name="main_list">Основной список</string>
     <string name="management">Менеджмент</string>
@@ -809,6 +818,8 @@
     <string name="neurobots_store_tab_free">Бесплатные</string>
     <string name="neurobots_store_tab_my">Мои</string>
     <string name="neurobots_store_tab_popular">Популярные</string>
+    <string name="new_telegram_authorization_rules_alert">С 18.02.2023, вступили новые правила авторизации в Telegram, согласно которым пользователи альтернативных клиентов могут получать код SMS только из официального клиента Telegram. Пожалуйста, установите Telegram и войдите в свой аккаунт там, если вам требуется код SMS, после чего сможете повторно запросить код в iMe (он придет в сервисный чат с Telegram).</string>
+    <string name="new_telegram_authorization_rules_info">Пожалуйста, ознакомьтесь с *новыми правилами авторизации* в Telegram</string>
     <string name="nft_collection_size">Количество NFT: %d</string>
     <string name="nft_preview_copy_token_id">Копировать ID токена</string>
     <string name="nft_preview_open_contract">Адрес контракта</string>
@@ -1116,7 +1127,7 @@
     <string name="staking_details_status_short_of_funds">Ожидание токенов от партнера</string>
     <string name="staking_details_status_withdrawal_available">Доступен вывод</string>
     <string name="staking_details_withdraw">Вывести</string>
-    <string name="staking_info_description">"**Стейкинг это получение пассивного заработка за счет простого хранения криптомонет и токенов.**
+    <string name="staking_info_description">"**Стейкинг - это получение пассивного заработка за счет простого хранения криптомонет и токенов.**
 
 Стейкинг в iMe является бессрочным и децентрализованным, с посуточным начислением процентов, в основе работы которого лежат смарт-контракты для обеспечения безопасности и гарантированности исполнения сделок."</string>
     <string name="staking_info_hint">Что такое стейкинг?</string>
@@ -1153,6 +1164,15 @@
     <string name="staking_programme_level_required_title">Необходим уровень</string>
     <string name="staking_programmes_count">Стейкинги (%d)</string>
     <string name="staking_programmes_empty_state_description">Нет доступных стейкинг программ.</string>
+    <string name="staking_programmes_filter_active">АКТИВНЫЕ</string>
+    <string name="staking_programmes_filter_archive">АРХИВ</string>
+    <string name="staking_programmes_filter_completed">ЗАВЕРШЕННЫЕ</string>
+    <string name="staking_programmes_filters_info_description">"Активные - стейкинг программы, в которых вы участвуете и в которых дата окончания еще не наступила
+
+Завершенные - стейкинг программы, у которых уже наступила дата окончания, но в которых еще остались ваши токены для вывода
+
+Архив - завершенные стейкинг программы, в которых вы участвовали и в которых не осталось ваших токенов для вывода"</string>
+    <string name="staking_programmes_filters_info_title">Фильтры стейкинга</string>
     <string name="staking_replenishment_already_finished">Программа стейкинга уже завершена</string>
     <string name="staking_replenishment_confirm_description">Вы точно хотите внести %1$s %2$s?</string>
     <string name="staking_replenishment_confirm_title">Подтверждение депозита</string>

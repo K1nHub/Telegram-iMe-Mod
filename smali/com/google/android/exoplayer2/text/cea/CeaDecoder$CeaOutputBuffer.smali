@@ -9,32 +9,40 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x12
+    accessFlags = 0x1a
     name = "CeaOutputBuffer"
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/google/android/exoplayer2/text/cea/CeaDecoder;
+.field private owner:Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner<",
+            "Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaOutputBuffer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/android/exoplayer2/text/cea/CeaDecoder;)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner<",
+            "Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaOutputBuffer;",
+            ">;)V"
+        }
+    .end annotation
 
-    .line 197
-    iput-object p1, p0, Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaOutputBuffer;->this$0:Lcom/google/android/exoplayer2/text/cea/CeaDecoder;
-
+    .line 201
     invoke-direct {p0}, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/google/android/exoplayer2/text/cea/CeaDecoder;Lcom/google/android/exoplayer2/text/cea/CeaDecoder$1;)V
-    .locals 0
-
-    .line 197
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaOutputBuffer;-><init>(Lcom/google/android/exoplayer2/text/cea/CeaDecoder;)V
+    .line 202
+    iput-object p1, p0, Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaOutputBuffer;->owner:Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner;
 
     return-void
 .end method
@@ -44,10 +52,10 @@
 .method public final release()V
     .locals 1
 
-    .line 201
-    iget-object v0, p0, Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaOutputBuffer;->this$0:Lcom/google/android/exoplayer2/text/cea/CeaDecoder;
+    .line 207
+    iget-object v0, p0, Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaOutputBuffer;->owner:Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/exoplayer2/text/cea/CeaDecoder;->releaseOutputBuffer(Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;)V
+    invoke-interface {v0, p0}, Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner;->releaseOutputBuffer(Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
 
     return-void
 .end method

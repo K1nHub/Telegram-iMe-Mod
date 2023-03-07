@@ -40,7 +40,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 131
+    .line 168
     new-instance v0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame$1;-><init>()V
@@ -53,31 +53,31 @@
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;IIII[B)V
     .locals 0
 
-    .line 54
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 58
     iput p1, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureType:I
 
-    .line 56
+    .line 59
     iput-object p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->mimeType:Ljava/lang/String;
 
-    .line 57
+    .line 60
     iput-object p3, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->description:Ljava/lang/String;
 
-    .line 58
+    .line 61
     iput p4, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->width:I
 
-    .line 59
+    .line 62
     iput p5, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->height:I
 
-    .line 60
+    .line 63
     iput p6, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->depth:I
 
-    .line 61
+    .line 64
     iput p7, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->colors:I
 
-    .line 62
+    .line 65
     iput-object p8, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureData:[B
 
     return-void
@@ -86,17 +86,17 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    .line 65
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 69
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureType:I
 
-    .line 67
+    .line 70
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -109,7 +109,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->mimeType:Ljava/lang/String;
 
-    .line 68
+    .line 71
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -122,35 +122,35 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->description:Ljava/lang/String;
 
-    .line 69
+    .line 72
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->width:I
 
-    .line 70
+    .line 73
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->height:I
 
-    .line 71
+    .line 74
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->depth:I
 
-    .line 72
+    .line 75
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->colors:I
 
-    .line 73
+    .line 76
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object p1
@@ -164,6 +164,79 @@
     iput-object p1, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureData:[B
 
     return-void
+.end method
+
+.method public static fromPictureBlock(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;
+    .locals 10
+
+    .line 151
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v1
+
+    .line 152
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v0
+
+    .line 153
+    sget-object v2, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v0, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(ILjava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 154
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v0
+
+    .line 155
+    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 156
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v4
+
+    .line 157
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v5
+
+    .line 158
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v6
+
+    .line 159
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v7
+
+    .line 160
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
+
+    move-result v0
+
+    .line 161
+    new-array v8, v0, [B
+
+    const/4 v9, 0x0
+
+    .line 162
+    invoke-virtual {p0, v8, v9, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
+
+    .line 164
+    new-instance p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;-><init>(ILjava/lang/String;Ljava/lang/String;IIII[B)V
+
+    return-object p0
 .end method
 
 
@@ -190,7 +263,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 86
+    .line 94
     const-class v2, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -201,11 +274,11 @@
 
     goto :goto_1
 
-    .line 89
+    .line 97
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;
 
-    .line 90
+    .line 98
     iget v2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureType:I
 
     iget v3, p1, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureType:I
@@ -216,7 +289,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->mimeType:Ljava/lang/String;
 
-    .line 91
+    .line 99
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -227,7 +300,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->description:Ljava/lang/String;
 
-    .line 92
+    .line 100
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -262,7 +335,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureData:[B
 
-    .line 97
+    .line 105
     invoke-static {v2, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result p1
@@ -305,7 +378,7 @@
 .method public hashCode()I
     .locals 2
 
-    .line 103
+    .line 111
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureType:I
 
     const/16 v1, 0x20f
@@ -314,7 +387,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 104
+    .line 112
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->mimeType:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -325,7 +398,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 105
+    .line 113
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->description:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -336,35 +409,35 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 106
+    .line 114
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->width:I
 
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 107
+    .line 115
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->height:I
 
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 108
+    .line 116
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->depth:I
 
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 109
+    .line 117
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->colors:I
 
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 110
+    .line 118
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureData:[B
 
     invoke-static {v0}, Ljava/util/Arrays;->hashCode([B)I
@@ -376,10 +449,23 @@
     return v1
 .end method
 
+.method public populateMediaMetadata(Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+    .locals 2
+
+    .line 81
+    iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureData:[B
+
+    iget v1, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureType:I
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/exoplayer2/MediaMetadata$Builder;->maybeSetArtworkData([BI)Lcom/google/android/exoplayer2/MediaMetadata$Builder;
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 78
+    .line 86
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -410,42 +496,42 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 116
+    .line 124
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureType:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 117
+    .line 125
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->mimeType:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 118
+    .line 126
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->description:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 119
+    .line 127
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->width:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 120
+    .line 128
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->height:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 121
+    .line 129
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->depth:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 122
+    .line 130
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->colors:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 123
+    .line 131
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->pictureData:[B
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V

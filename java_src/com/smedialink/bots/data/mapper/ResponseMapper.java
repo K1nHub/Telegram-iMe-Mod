@@ -1,0 +1,56 @@
+package com.smedialink.bots.data.mapper;
+
+import android.content.Context;
+import com.smedialink.bots.R$drawable;
+import com.smedialink.bots.R$string;
+import com.smedialink.bots.data.model.Response;
+import com.smedialink.bots.data.model.database.BotsDbModel;
+import com.smedialink.bots.data.repository.BotsRepository;
+import com.smedialink.bots.domain.model.SmartBotResponse;
+import java.util.Map;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt__MapsKt;
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: ResponseMapper.kt */
+/* loaded from: classes3.dex */
+public final class ResponseMapper {
+    private final String frequentAnswersTitle;
+    private final Map<String, Integer> holidays;
+    private final BotsRepository repository;
+
+    public ResponseMapper(BotsRepository repository, Context context) {
+        Map<String, Integer> mapOf;
+        Intrinsics.checkNotNullParameter(repository, "repository");
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.repository = repository;
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m100to("23.02", Integer.valueOf(R$drawable.bot_avatar_23_02)), TuplesKt.m100to("08.03", Integer.valueOf(R$drawable.bot_avatar_08_03)), TuplesKt.m100to("01.04", Integer.valueOf(R$drawable.bot_avatar_01_04)), TuplesKt.m100to("12.04", Integer.valueOf(R$drawable.bot_avatar_12_04)), TuplesKt.m100to("28.04", Integer.valueOf(R$drawable.bot_avatar_28_04)), TuplesKt.m100to("01.05", Integer.valueOf(R$drawable.bot_avatar_01_05)), TuplesKt.m100to("09.05", Integer.valueOf(R$drawable.bot_avatar_09_05)));
+        this.holidays = mapOf;
+        String string = context.getString(R$string.bot_title_recent);
+        Intrinsics.checkNotNullExpressionValue(string, "context.getString(R.string.bot_title_recent)");
+        this.frequentAnswersTitle = string;
+    }
+
+    public final SmartBotResponse map(Response from) {
+        String id;
+        String title;
+        int intValue;
+        String avatarOriginal;
+        Intrinsics.checkNotNullParameter(from, "from");
+        BotsDbModel botById = this.repository.getBotById(from.getBotId());
+        if (Intrinsics.areEqual(from.getBotId(), "recent")) {
+            id = from.getBotId();
+            title = this.frequentAnswersTitle;
+            intValue = R$drawable.ic_bots_recent;
+        } else {
+            if (botById == null || (id = botById.getId()) == null) {
+                id = "";
+            }
+            if (botById == null || (title = botById.getTitle()) == null) {
+                title = "";
+            }
+            Integer num = this.holidays.get(from.getTag());
+            intValue = num == null ? 0 : num.intValue();
+        }
+        return new SmartBotResponse(id, title, intValue, (botById == null || (avatarOriginal = botById.getAvatarOriginal()) == null) ? "" : avatarOriginal, from.getTag(), from.getGif(), from.getLink(), from.getAnswers());
+    }
+}

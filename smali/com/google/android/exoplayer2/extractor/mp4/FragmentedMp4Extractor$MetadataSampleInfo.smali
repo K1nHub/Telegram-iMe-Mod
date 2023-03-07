@@ -15,23 +15,28 @@
 
 
 # instance fields
-.field public final presentationTimeDeltaUs:J
+.field public final sampleTimeIsRelative:Z
+
+.field public final sampleTimeUs:J
 
 .field public final size:I
 
 
 # direct methods
-.method public constructor <init>(JI)V
+.method public constructor <init>(JZI)V
     .locals 0
 
-    .line 1472
+    .line 1604
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1473
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$MetadataSampleInfo;->presentationTimeDeltaUs:J
+    .line 1605
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$MetadataSampleInfo;->sampleTimeUs:J
 
-    .line 1474
-    iput p3, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$MetadataSampleInfo;->size:I
+    .line 1606
+    iput-boolean p3, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$MetadataSampleInfo;->sampleTimeIsRelative:Z
+
+    .line 1607
+    iput p4, p0, Lcom/google/android/exoplayer2/extractor/mp4/FragmentedMp4Extractor$MetadataSampleInfo;->size:I
 
     return-void
 .end method

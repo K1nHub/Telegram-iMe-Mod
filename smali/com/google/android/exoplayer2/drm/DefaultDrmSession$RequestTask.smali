@@ -23,22 +23,27 @@
 
 .field public final startTimeMs:J
 
+.field public final taskId:J
+
 
 # direct methods
-.method public constructor <init>(ZJLjava/lang/Object;)V
+.method public constructor <init>(JZJLjava/lang/Object;)V
     .locals 0
 
-    .line 601
+    .line 702
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 602
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$RequestTask;->allowRetry:Z
+    .line 703
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$RequestTask;->taskId:J
 
-    .line 603
-    iput-wide p2, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$RequestTask;->startTimeMs:J
+    .line 704
+    iput-boolean p3, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$RequestTask;->allowRetry:Z
 
-    .line 604
-    iput-object p4, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$RequestTask;->request:Ljava/lang/Object;
+    .line 705
+    iput-wide p4, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$RequestTask;->startTimeMs:J
+
+    .line 706
+    iput-object p6, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$RequestTask;->request:Ljava/lang/Object;
 
     return-void
 .end method

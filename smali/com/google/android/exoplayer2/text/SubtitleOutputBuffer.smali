@@ -1,5 +1,5 @@
 .class public abstract Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
-.super Lcom/google/android/exoplayer2/decoder/OutputBuffer;
+.super Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;
 .source "SubtitleOutputBuffer.java"
 
 # interfaces
@@ -16,8 +16,8 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/decoder/OutputBuffer;-><init>()V
+    .line 25
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;-><init>()V
 
     return-void
 .end method
@@ -27,12 +27,12 @@
 .method public clear()V
     .locals 1
 
-    .line 73
+    .line 68
     invoke-super {p0}, Lcom/google/android/exoplayer2/decoder/Buffer;->clear()V
 
     const/4 v0, 0x0
 
-    .line 74
+    .line 69
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;->subtitle:Lcom/google/android/exoplayer2/text/Subtitle;
 
     return-void
@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    .line 65
+    .line 63
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;->subtitle:Lcom/google/android/exoplayer2/text/Subtitle;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -72,7 +72,7 @@
 .method public getEventTime(I)J
     .locals 4
 
-    .line 55
+    .line 53
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;->subtitle:Lcom/google/android/exoplayer2/text/Subtitle;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -95,7 +95,7 @@
 .method public getEventTimeCount()I
     .locals 1
 
-    .line 50
+    .line 48
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;->subtitle:Lcom/google/android/exoplayer2/text/Subtitle;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -114,7 +114,7 @@
 .method public getNextEventTimeIndex(J)I
     .locals 3
 
-    .line 60
+    .line 58
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;->subtitle:Lcom/google/android/exoplayer2/text/Subtitle;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -134,16 +134,13 @@
     return p1
 .end method
 
-.method public abstract release()V
-.end method
-
 .method public setContent(JLcom/google/android/exoplayer2/text/Subtitle;J)V
     .locals 2
 
-    .line 42
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/decoder/OutputBuffer;->timeUs:J
+    .line 40
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;->timeUs:J
 
-    .line 43
+    .line 41
     iput-object p3, p0, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;->subtitle:Lcom/google/android/exoplayer2/text/Subtitle;
 
     const-wide v0, 0x7fffffffffffffffL
@@ -157,7 +154,7 @@
     :cond_0
     move-wide p1, p4
 
-    .line 45
+    .line 43
     :goto_0
     iput-wide p1, p0, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;->subsampleOffsetUs:J
 

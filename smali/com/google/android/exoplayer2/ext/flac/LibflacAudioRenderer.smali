@@ -1,14 +1,26 @@
 .class public final Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;
-.super Lcom/google/android/exoplayer2/audio/SimpleDecoderAudioRenderer;
+.super Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;
 .source "LibflacAudioRenderer.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer<",
+        "Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;",
+        ">;"
+    }
+.end annotation
+
+
 # static fields
+.field private static final METADATA_BLOCK_HEADER_SIZE:I = 0x4
+
 .field private static final NUM_BUFFERS:I = 0x10
 
+.field private static final STREAM_MARKER_SIZE:I = 0x4
 
-# instance fields
-.field private streamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+.field private static final TAG:Ljava/lang/String; = "LibflacAudioRenderer"
 
 
 # direct methods
@@ -21,29 +33,17 @@
 
     const/4 v1, 0x0
 
-    .line 43
+    .line 41
     invoke-direct {p0, v1, v1, v0}, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;-><init>(Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;[Lcom/google/android/exoplayer2/audio/AudioProcessor;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Lcom/google/android/exoplayer2/audio/AudioSink;)V
-    .locals 6
+    .locals 0
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v5, p3
-
-    .line 69
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/audio/SimpleDecoderAudioRenderer;-><init>(Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Lcom/google/android/exoplayer2/drm/DrmSessionManager;ZLcom/google/android/exoplayer2/audio/AudioSink;)V
+    .line 71
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;-><init>(Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;Lcom/google/android/exoplayer2/audio/AudioSink;)V
 
     return-void
 .end method
@@ -52,30 +52,53 @@
     .locals 0
 
     .line 56
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/audio/SimpleDecoderAudioRenderer;-><init>(Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;[Lcom/google/android/exoplayer2/audio/AudioProcessor;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;-><init>(Landroid/os/Handler;Lcom/google/android/exoplayer2/audio/AudioRendererEventListener;[Lcom/google/android/exoplayer2/audio/AudioProcessor;)V
 
     return-void
 .end method
 
+.method private static getOutputFormat(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;)Lcom/google/android/exoplayer2/Format;
+    .locals 2
+
+    .line 127
+    iget v0, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->bitsPerSample:I
+
+    .line 128
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->getPcmEncoding(I)I
+
+    move-result v0
+
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->channels:I
+
+    iget p0, p0, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;->sampleRate:I
+
+    .line 127
+    invoke-static {v0, v1, p0}, Lcom/google/android/exoplayer2/util/Util;->getPcmFormat(III)Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 
 # virtual methods
-.method protected bridge synthetic createDecoder(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;)Lcom/google/android/exoplayer2/decoder/SimpleDecoder;
+.method protected bridge synthetic createDecoder(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/decoder/CryptoConfig;)Lcom/google/android/exoplayer2/decoder/Decoder;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Lcom/google/android/exoplayer2/audio/AudioDecoderException;
+            Lcom/google/android/exoplayer2/decoder/DecoderException;
         }
     .end annotation
 
-    .line 36
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->createDecoder(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;)Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;
+    .line 33
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->createDecoder(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/decoder/CryptoConfig;)Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method protected createDecoder(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;)Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;
+.method protected createDecoder(Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/decoder/CryptoConfig;)Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -83,7 +106,12 @@
         }
     .end annotation
 
-    .line 111
+    const-string p2, "createFlacDecoder"
+
+    .line 113
+    invoke-static {p2}, Lcom/google/android/exoplayer2/util/TraceUtil;->beginSection(Ljava/lang/String;)V
+
+    .line 114
     new-instance p2, Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;
 
     iget v0, p1, Lcom/google/android/exoplayer2/Format;->maxInputSize:I
@@ -94,95 +122,76 @@
 
     invoke-direct {p2, v1, v1, v0, p1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;-><init>(IIILjava/util/List;)V
 
-    .line 113
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;->getStreamMetadata()Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->streamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    .line 116
+    invoke-static {}, Lcom/google/android/exoplayer2/util/TraceUtil;->endSection()V
 
     return-object p2
 .end method
 
-.method protected getOutputFormat()Lcom/google/android/exoplayer2/Format;
-    .locals 13
+.method public getName()Ljava/lang/String;
+    .locals 1
 
-    .line 119
-    iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->streamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 120
-    iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->streamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
-
-    iget v6, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->channels:I
-
-    iget v7, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->sampleRate:I
-
-    iget v0, v0, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->bitsPerSample:I
-
-    .line 128
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->getPcmEncoding(I)I
-
-    move-result v8
-
-    const/4 v1, 0x0
-
-    const-string v2, "audio/raw"
-
-    const/4 v3, 0x0
-
-    const/4 v4, -0x1
-
-    const/4 v5, -0x1
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    .line 120
-    invoke-static/range {v1 .. v12}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v0
+    const-string v0, "LibflacAudioRenderer"
 
     return-object v0
 .end method
 
-.method protected supportsFormatInternal(Lcom/google/android/exoplayer2/drm/DrmSessionManager;Lcom/google/android/exoplayer2/Format;)I
+.method protected bridge synthetic getOutputFormat(Lcom/google/android/exoplayer2/decoder/Decoder;)Lcom/google/android/exoplayer2/Format;
+    .locals 0
+
+    .line 33
+    check-cast p1, Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->getOutputFormat(Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;)Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected getOutputFormat(Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;)Lcom/google/android/exoplayer2/Format;
+    .locals 0
+
+    .line 123
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoder;->getStreamMetadata()Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->getOutputFormat(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;)Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected supportsFormatInternal(Lcom/google/android/exoplayer2/Format;)I
     .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-            ">;",
-            "Lcom/google/android/exoplayer2/Format;",
-            ")I"
-        }
-    .end annotation
 
     .line 81
-    iget-object v0, p2, Lcom/google/android/exoplayer2/Format;->sampleMimeType:Ljava/lang/String;
-
-    const-string v1, "audio/flac"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-static {}, Lcom/google/android/exoplayer2/ext/flac/FlacLibrary;->isAvailable()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
+    if-eqz v0, :cond_4
+
+    iget-object v0, p1, Lcom/google/android/exoplayer2/Format;->sampleMimeType:Ljava/lang/String;
+
+    const-string v2, "audio/flac"
+
+    .line 82
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
     if-nez v0, :cond_0
 
-    return v1
+    goto :goto_1
 
-    .line 86
+    .line 87
     :cond_0
-    iget-object v0, p2, Lcom/google/android/exoplayer2/Format;->initializationData:Ljava/util/List;
+    iget-object v0, p1, Lcom/google/android/exoplayer2/Format;->initializationData:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -192,39 +201,43 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x2
+    .line 92
+    iget v0, p1, Lcom/google/android/exoplayer2/Format;->channelCount:I
+
+    iget v1, p1, Lcom/google/android/exoplayer2/Format;->sampleRate:I
+
+    .line 93
+    invoke-static {v2, v0, v1}, Lcom/google/android/exoplayer2/util/Util;->getPcmFormat(III)Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_1
     const/16 v0, 0x8
 
-    .line 95
-    new-instance v3, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
-
-    iget-object v4, p2, Lcom/google/android/exoplayer2/Format;->initializationData:Ljava/util/List;
-
     .line 96
+    new-instance v3, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
+
+    iget-object v4, p1, Lcom/google/android/exoplayer2/Format;->initializationData:Ljava/util/List;
+
+    .line 97
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, [B
 
-    invoke-direct {v3, v1, v0}, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;-><init>([BI)V
+    invoke-direct {v3, v1, v0}, Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;-><init>([BI)V
 
-    .line 97
-    iget v0, v3, Lcom/google/android/exoplayer2/util/FlacStreamMetadata;->bitsPerSample:I
+    .line 98
+    invoke-static {v3}, Lcom/google/android/exoplayer2/ext/flac/LibflacAudioRenderer;->getOutputFormat(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;)Lcom/google/android/exoplayer2/Format;
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->getPcmEncoding(I)I
+    move-result-object v0
 
-    move-result v0
-
-    .line 99
+    .line 100
     :goto_0
-    iget v1, p2, Lcom/google/android/exoplayer2/Format;->channelCount:I
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/exoplayer2/audio/SimpleDecoderAudioRenderer;->supportsOutput(II)Z
+    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/audio/DecoderAudioRenderer;->sinkSupportsFormat(Lcom/google/android/exoplayer2/Format;)Z
 
     move-result v0
 
@@ -234,15 +247,11 @@
 
     return p1
 
-    .line 101
+    .line 102
     :cond_2
-    iget-object p2, p2, Lcom/google/android/exoplayer2/Format;->drmInitData:Lcom/google/android/exoplayer2/drm/DrmInitData;
+    iget p1, p1, Lcom/google/android/exoplayer2/Format;->cryptoType:I
 
-    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/BaseRenderer;->supportsFormatDrm(Lcom/google/android/exoplayer2/drm/DrmSessionManager;Lcom/google/android/exoplayer2/drm/DrmInitData;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
+    if-eqz p1, :cond_3
 
     return v2
 
@@ -250,4 +259,8 @@
     const/4 p1, 0x4
 
     return p1
+
+    :cond_4
+    :goto_1
+    return v1
 .end method

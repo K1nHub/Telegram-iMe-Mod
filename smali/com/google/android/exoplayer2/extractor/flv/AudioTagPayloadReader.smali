@@ -35,7 +35,7 @@
 
     new-array v0, v0, [I
 
-    .line 41
+    .line 38
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->AUDIO_SAMPLING_RATE_TABLE:[I
@@ -56,7 +56,7 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
     .locals 0
 
-    .line 49
+    .line 46
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;-><init>(Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
 
     return-void
@@ -65,21 +65,21 @@
 
 # virtual methods
 .method protected parseHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Z
-    .locals 14
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader$UnsupportedFormatException;
         }
     .end annotation
 
-    .line 59
+    .line 56
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasParsedAudioDataHeader:Z
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_5
 
-    .line 60
+    .line 57
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p1
@@ -88,7 +88,7 @@
 
     and-int/lit8 v0, v0, 0xf
 
-    .line 61
+    .line 58
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->audioFormat:I
 
     const/4 v2, 0x2
@@ -99,42 +99,44 @@
 
     and-int/lit8 p1, p1, 0x3
 
-    .line 64
+    .line 61
     sget-object v0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->AUDIO_SAMPLING_RATE_TABLE:[I
 
-    aget v8, v0, p1
+    aget p1, v0, p1
 
-    const/4 v2, 0x0
+    .line 62
+    new-instance v0, Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v4, 0x0
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
-    const/4 v5, -0x1
+    const-string v2, "audio/mpeg"
 
-    const/4 v6, -0x1
+    .line 64
+    invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v7, 0x1
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const-string v3, "audio/mpeg"
+    move-result-object v0
 
     .line 65
-    invoke-static/range {v2 .. v12}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v0
+
+    .line 66
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object p1
 
     .line 67
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    .line 68
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
 
-    .line 68
+    .line 69
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
 
     goto :goto_2
@@ -157,7 +159,7 @@
 
     goto :goto_2
 
-    .line 89
+    .line 82
     :cond_2
     new-instance p1, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader$UnsupportedFormatException;
 
@@ -192,51 +194,49 @@
     :cond_4
     const-string p1, "audio/g711-mlaw"
 
-    :goto_1
-    move-object v3, p1
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, -0x1
-
-    const/4 v6, -0x1
-
-    const/4 v7, 0x1
-
-    const/16 v8, 0x1f40
-
-    const/4 v9, -0x1
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
     .line 73
-    invoke-static/range {v2 .. v13}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
+    :goto_1
+    new-instance v0, Lcom/google/android/exoplayer2/Format$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
+
+    .line 75
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object p1
 
-    .line 86
+    .line 76
+    invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    const/16 v0, 0x1f40
+
+    .line 77
+    invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    .line 78
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    .line 79
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
 
-    .line 87
+    .line 80
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
 
-    .line 91
+    .line 84
     :goto_2
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasParsedAudioDataHeader:Z
 
     goto :goto_3
 
-    .line 94
+    .line 87
     :cond_5
     invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
@@ -245,38 +245,163 @@
 .end method
 
 .method protected parsePayload(Lcom/google/android/exoplayer2/util/ParsableByteArray;J)Z
-    .locals 17
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    .line 94
+    iget v0, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->audioFormat:I
 
-    move-object/from16 v1, p1
+    const/4 v1, 0x1
+
+    const/4 v2, 0x2
+
+    if-ne v0, v2, :cond_0
+
+    .line 95
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
+
+    move-result v7
+
+    .line 96
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    invoke-interface {v0, p1, v7}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
+
+    .line 97
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    const/4 v6, 0x1
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    move-wide v4, p2
+
+    invoke-interface/range {v3 .. v9}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
+
+    return v1
+
+    .line 100
+    :cond_0
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    if-nez v0, :cond_1
 
     .line 101
-    iget v2, v0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->audioFormat:I
+    iget-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
 
-    const/4 v3, 0x1
+    if-nez v3, :cond_1
 
-    const/4 v4, 0x2
+    .line 103
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
-    if-ne v2, v4, :cond_0
+    move-result p2
 
-    .line 102
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
+    new-array p3, p2, [B
+
+    .line 104
+    invoke-virtual {p1, p3, v2, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
+
+    .line 105
+    invoke-static {p3}, Lcom/google/android/exoplayer2/audio/AacUtil;->parseAudioSpecificConfig([B)Lcom/google/android/exoplayer2/audio/AacUtil$Config;
+
+    move-result-object p1
+
+    .line 106
+    new-instance p2, Lcom/google/android/exoplayer2/Format$Builder;
+
+    invoke-direct {p2}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
+
+    const-string v0, "audio/mp4a-latm"
+
+    .line 108
+    invoke-virtual {p2, v0}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p2
+
+    iget-object v0, p1, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->codecs:Ljava/lang/String;
+
+    .line 109
+    invoke-virtual {p2, v0}, Lcom/google/android/exoplayer2/Format$Builder;->setCodecs(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p2
+
+    iget v0, p1, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->channelCount:I
+
+    .line 110
+    invoke-virtual {p2, v0}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p2
+
+    iget p1, p1, Lcom/google/android/exoplayer2/audio/AacUtil$Config;->sampleRateHz:I
+
+    .line 111
+    invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    .line 112
+    invoke-static {p3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/Format$Builder;->setInitializationData(Ljava/util/List;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    .line 113
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    .line 114
+    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    invoke-interface {p2, p1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
+
+    .line 115
+    iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
+
+    return v2
+
+    .line 117
+    :cond_1
+    iget v3, p0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->audioFormat:I
+
+    const/16 v4, 0xa
+
+    if-ne v3, v4, :cond_3
+
+    if-ne v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    return v2
+
+    .line 118
+    :cond_3
+    :goto_0
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v9
 
-    .line 103
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    .line 119
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    invoke-interface {v2, v1, v9}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
+    invoke-interface {v0, p1, v9}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
-    .line 104
-    iget-object v5, v0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    .line 120
+    iget-object v5, p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     const/4 v8, 0x1
 
@@ -284,137 +409,11 @@
 
     const/4 v11, 0x0
 
-    move-wide/from16 v6, p2
+    move-wide v6, p2
 
     invoke-interface/range {v5 .. v11}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
-    return v3
-
-    .line 107
-    :cond_0
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
-
-    move-result v2
-
-    const/4 v4, 0x0
-
-    if-nez v2, :cond_1
-
-    .line 108
-    iget-boolean v5, v0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
-
-    if-nez v5, :cond_1
-
-    .line 110
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
-
-    move-result v2
-
-    new-array v5, v2, [B
-
-    .line 111
-    invoke-virtual {v1, v5, v4, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
-
-    .line 112
-    invoke-static {v5}, Lcom/google/android/exoplayer2/util/CodecSpecificDataUtil;->parseAacAudioSpecificConfig([B)Landroid/util/Pair;
-
-    move-result-object v1
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, -0x1
-
-    const/4 v10, -0x1
-
-    .line 114
-    iget-object v2, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Integer;
-
-    .line 115
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v11
-
-    iget-object v1, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v12
-
-    .line 116
-    invoke-static {v5}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v13
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const-string v7, "audio/mp4a-latm"
-
-    .line 114
-    invoke-static/range {v6 .. v16}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    .line 117
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
-
-    invoke-interface {v2, v1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
-
-    .line 118
-    iput-boolean v3, v0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->hasOutputFormat:Z
-
-    return v4
-
-    .line 120
-    :cond_1
-    iget v5, v0, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;->audioFormat:I
-
-    const/16 v6, 0xa
-
-    if-ne v5, v6, :cond_3
-
-    if-ne v2, v3, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    return v4
-
-    .line 121
-    :cond_3
-    :goto_0
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
-
-    move-result v11
-
-    .line 122
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
-
-    invoke-interface {v2, v1, v11}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
-
-    .line 123
-    iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
-
-    const/4 v10, 0x1
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    move-wide/from16 v8, p2
-
-    invoke-interface/range {v7 .. v13}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
-
-    return v3
+    return v1
 .end method
 
 .method public seek()V

@@ -1,0 +1,230 @@
+package com.smedialink.p031ui.shop.view;
+
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScrollerCustom;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.smedialink.bots.domain.model.BotLanguage;
+import com.smedialink.bots.domain.model.ShopItem;
+import com.smedialink.bots.domain.model.SmartBotCategory;
+import com.smedialink.bots.domain.model.SmartTag;
+import com.smedialink.bots.usecase.AiBotsManager;
+import com.smedialink.p031ui.shop.view.adapter.BotsCategoriesAdapter;
+import com.smedialink.p031ui.shop.view.model.DisplayingBots;
+import com.smedialink.p031ui.shop.view.model.DisplayingBotsCategory;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.BiFunction;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.internal.Intrinsics;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.p048ui.Components.LayoutHelper;
+import org.telegram.p048ui.Components.RecyclerListView;
+/* compiled from: GridBotsPageView.kt */
+/* renamed from: com.smedialink.ui.shop.view.GridBotsPageView */
+/* loaded from: classes3.dex */
+public final class GridBotsPageView extends FrameLayout {
+    private BotLanguage botLanguage;
+    private final CompositeDisposable disposable;
+    private ProgressBar progress;
+    private RecyclerListView recycler;
+    private BotsCategoriesAdapter recyclerAdapter;
+    private LinearLayoutManager recyclerLayoutManager;
+    private Disposable subscribeDisposable;
+
+    public final BotLanguage getBotLanguage() {
+        return this.botLanguage;
+    }
+
+    public final void setBotLanguage(BotLanguage botLanguage) {
+        Intrinsics.checkNotNullParameter(botLanguage, "<set-?>");
+        this.botLanguage = botLanguage;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public GridBotsPageView(CompositeDisposable disposable, Context context, BotLanguage botLanguage, int i) {
+        super(context);
+        Intrinsics.checkNotNullParameter(disposable, "disposable");
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(botLanguage, "botLanguage");
+        this.disposable = disposable;
+        this.botLanguage = botLanguage;
+        this.recycler = new RecyclerListView(context);
+        BotsCategoriesAdapter botsCategoriesAdapter = new BotsCategoriesAdapter(i);
+        botsCategoriesAdapter.setHasStableIds(true);
+        Unit unit = Unit.INSTANCE;
+        this.recyclerAdapter = botsCategoriesAdapter;
+        this.recycler.setClipToPadding(false);
+        this.recycler.setPadding(0, AndroidUtilities.m51dp(14.0f), 0, 0);
+        this.recycler.setVerticalScrollBarEnabled(true);
+        this.recycler.setItemAnimator(null);
+        this.recycler.setInstantClick(true);
+        this.recycler.setLayoutAnimation(null);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context) { // from class: com.smedialink.ui.shop.view.GridBotsPageView.1
+            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+            public boolean supportsPredictiveItemAnimations() {
+                return false;
+            }
+
+            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+            public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i2) {
+                Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
+                Intrinsics.checkNotNullParameter(state, "state");
+                LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(recyclerView.getContext(), 0);
+                linearSmoothScrollerCustom.setTargetPosition(i2);
+                startSmoothScroll(linearSmoothScrollerCustom);
+            }
+        };
+        this.recyclerLayoutManager = linearLayoutManager;
+        linearLayoutManager.setOrientation(1);
+        this.recycler.setLayoutManager(this.recyclerLayoutManager);
+        this.recycler.setAdapter(this.recyclerAdapter);
+        addView(this.recycler, LayoutHelper.createFrame(-1, -1.0f, 17, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED));
+        ProgressBar progressBar = new ProgressBar(context);
+        this.progress = progressBar;
+        progressBar.setIndeterminate(true);
+        this.progress.setVisibility(8);
+        addView(this.progress, LayoutHelper.createFrame(-2, -2, 17));
+        subscribeToContent();
+    }
+
+    public final void subscribeToContent() {
+        Disposable disposable = this.subscribeDisposable;
+        if (disposable != null) {
+            disposable.dispose();
+        }
+        AiBotsManager aiBotsManager = ApplicationLoader.smartBotsManager;
+        BotLanguage botLanguage = this.botLanguage;
+        String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
+        Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
+        Observable<List<ShopItem>> distinctUntilChanged = aiBotsManager.getAllBotsObservable(botLanguage, langCode).distinctUntilChanged();
+        AiBotsManager aiBotsManager2 = ApplicationLoader.smartBotsManager;
+        String langCode2 = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
+        Intrinsics.checkNotNullExpressionValue(langCode2, "getInstance().currentLocaleInfo.langCode");
+        Disposable subscribe = Observable.zip(distinctUntilChanged, aiBotsManager2.getCategories(langCode2), new BiFunction() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.BiFunction
+            public final Object apply(Object obj, Object obj2) {
+                List m1509subscribeToContent$lambda1;
+                m1509subscribeToContent$lambda1 = GridBotsPageView.m1509subscribeToContent$lambda1(GridBotsPageView.this, (List) obj, (List) obj2);
+                return m1509subscribeToContent$lambda1;
+            }
+        }).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda1
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                GridBotsPageView.m1510subscribeToContent$lambda2(GridBotsPageView.this, (Disposable) obj);
+            }
+        }).subscribe(new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda2
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                GridBotsPageView.m1511subscribeToContent$lambda3(GridBotsPageView.this, (List) obj);
+            }
+        }, GridBotsPageView$$ExternalSyntheticLambda3.INSTANCE);
+        this.disposable.add(subscribe);
+        this.subscribeDisposable = subscribe;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: subscribeToContent$lambda-1  reason: not valid java name */
+    public static final List m1509subscribeToContent$lambda1(GridBotsPageView this$0, List bots, List categories) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(bots, "bots");
+        Intrinsics.checkNotNullParameter(categories, "categories");
+        return this$0.buildShopContent(bots, categories);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: subscribeToContent$lambda-2  reason: not valid java name */
+    public static final void m1510subscribeToContent$lambda2(GridBotsPageView this$0, Disposable disposable) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.recycler.setVisibility(8);
+        this$0.progress.setVisibility(0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: subscribeToContent$lambda-3  reason: not valid java name */
+    public static final void m1511subscribeToContent$lambda3(GridBotsPageView this$0, List content) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        if (this$0.progress.getVisibility() != 8) {
+            this$0.progress.setVisibility(8);
+        }
+        if (this$0.recycler.getVisibility() != 0) {
+            this$0.recycler.setVisibility(0);
+        }
+        BotsCategoriesAdapter botsCategoriesAdapter = this$0.recyclerAdapter;
+        Intrinsics.checkNotNullExpressionValue(content, "content");
+        botsCategoriesAdapter.setContent(content);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: subscribeToContent$lambda-4  reason: not valid java name */
+    public static final void m1512subscribeToContent$lambda4(Throwable t) {
+        Intrinsics.checkNotNullParameter(t, "t");
+        t.printStackTrace();
+    }
+
+    private final List<Object> buildShopContent(List<ShopItem> list, List<SmartBotCategory> list2) {
+        List sortedWith;
+        ArrayList arrayList = new ArrayList();
+        for (SmartBotCategory smartBotCategory : list2) {
+            if (!smartBotCategory.getTags().isEmpty()) {
+                sortedWith = CollectionsKt___CollectionsKt.sortedWith(findItemsByTags(smartBotCategory.getTags(), list), new Comparator() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$buildShopContent$lambda-7$$inlined$sortedByDescending$1
+                    @Override // java.util.Comparator
+                    public final int compare(T t, T t2) {
+                        int compareValues;
+                        compareValues = ComparisonsKt__ComparisonsKt.compareValues(Long.valueOf(((ShopItem) t2).getInstalls()), Long.valueOf(((ShopItem) t).getInstalls()));
+                        return compareValues;
+                    }
+                });
+                if (!sortedWith.isEmpty()) {
+                    arrayList.add(new DisplayingBotsCategory(smartBotCategory.getTitle()));
+                    arrayList.add(new DisplayingBots(sortedWith));
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    private final List<ShopItem> findItemsByTags(List<String> list, List<ShopItem> list2) {
+        int collectionSizeOrDefault;
+        ArrayList arrayList = new ArrayList();
+        for (ShopItem shopItem : list2) {
+            List<SmartTag> tags = shopItem.getTags();
+            collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(tags, 10);
+            ArrayList<String> arrayList2 = new ArrayList(collectionSizeOrDefault);
+            for (SmartTag smartTag : tags) {
+                arrayList2.add(smartTag.getId());
+            }
+            for (String str : arrayList2) {
+                if (list.contains(str)) {
+                    arrayList.add(shopItem);
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Disposable disposable = this.subscribeDisposable;
+        if (disposable == null) {
+            return;
+        }
+        disposable.dispose();
+    }
+}

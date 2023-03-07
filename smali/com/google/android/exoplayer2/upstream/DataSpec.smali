@@ -7,7 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/android/exoplayer2/upstream/DataSpec$HttpMethod;,
-        Lcom/google/android/exoplayer2/upstream/DataSpec$Flags;
+        Lcom/google/android/exoplayer2/upstream/DataSpec$Flags;,
+        Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
     }
 .end annotation
 
@@ -19,6 +20,8 @@
 
 .field public static final FLAG_DONT_CACHE_IF_LENGTH_UNKNOWN:I = 0x2
 
+.field public static final FLAG_MIGHT_NOT_USE_FULL_NETWORK_SPEED:I = 0x8
+
 .field public static final HTTP_METHOD_GET:I = 0x1
 
 .field public static final HTTP_METHOD_HEAD:I = 0x3
@@ -28,6 +31,11 @@
 
 # instance fields
 .field public final absoluteStreamPosition:J
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public final customData:Ljava/lang/Object;
 
 .field public final flags:I
 
@@ -54,21 +62,42 @@
 
 .field public final uri:Landroid/net/Uri;
 
+.field public final uriPositionOffset:J
+
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, 0x0
+    const-string v0, "goog.exo.datasource"
 
-    .line 129
-    invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I)V
+    .line 39
+    invoke-static {v0}, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registerModule(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/net/Uri;)V
+    .locals 6
+
+    const-wide/16 v2, 0x0
+
+    const-wide/16 v4, -0x1
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    .line 411
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JJ)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;I)V
     .locals 8
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const-wide/16 v2, 0x0
 
@@ -82,7 +111,7 @@
 
     move v7, p2
 
-    .line 139
+    .line 445
     invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JJLjava/lang/String;I)V
 
     return-void
@@ -90,8 +119,10 @@
 
 .method public constructor <init>(Landroid/net/Uri;I[BJJJLjava/lang/String;I)V
     .locals 13
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    .line 281
+    .line 605
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v12
@@ -114,14 +145,14 @@
 
     move/from16 v11, p11
 
-    .line 272
+    .line 596
     invoke-direct/range {v0 .. v12}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
-    .locals 13
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -136,123 +167,160 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    sub-long v2, p4, p6
+
+    const/4 v13, 0x0
+
     move-object v0, p0
 
-    move-object/from16 v1, p3
+    move-object v1, p1
 
-    move-wide/from16 v2, p4
+    move/from16 v4, p2
 
-    move-wide/from16 v4, p6
+    move-object/from16 v5, p3
 
-    move-wide/from16 v6, p8
+    move-object/from16 v6, p12
 
-    .line 306
+    move-wide/from16 v7, p6
+
+    move-wide/from16 v9, p8
+
+    move-object/from16 v11, p10
+
+    move/from16 v12, p11
+
+    .line 633
+    invoke-direct/range {v0 .. v13}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
+    .locals 15
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/net/Uri;",
+            "JI[B",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;JJ",
+            "Ljava/lang/String;",
+            "I",
+            "Ljava/lang/Object;",
+            ")V"
+        }
+    .end annotation
+
+    move-object v0, p0
+
+    move-wide/from16 v1, p2
+
+    move-object/from16 v3, p5
+
+    move-wide/from16 v4, p7
+
+    move-wide/from16 v6, p9
+
+    .line 657
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v8, 0x1
+    add-long v8, v1, v4
 
-    const/4 v9, 0x0
+    const/4 v10, 0x1
 
-    const-wide/16 v10, 0x0
+    const/4 v11, 0x0
 
-    cmp-long v12, v2, v10
+    const-wide/16 v12, 0x0
 
-    if-ltz v12, :cond_0
+    cmp-long v14, v8, v12
 
-    const/4 v12, 0x1
+    if-ltz v14, :cond_0
+
+    const/4 v14, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v12, 0x0
+    const/4 v14, 0x0
 
-    .line 307
+    .line 660
     :goto_0
-    invoke-static {v12}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v14}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    cmp-long v12, v4, v10
+    cmp-long v14, v4, v12
 
-    if-ltz v12, :cond_1
+    if-ltz v14, :cond_1
 
-    const/4 v12, 0x1
+    const/4 v14, 0x1
 
     goto :goto_1
 
     :cond_1
-    const/4 v12, 0x0
+    const/4 v14, 0x0
 
-    .line 308
+    .line 661
     :goto_1
-    invoke-static {v12}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v14}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    cmp-long v12, v6, v10
+    cmp-long v14, v6, v12
 
-    if-gtz v12, :cond_3
+    if-gtz v14, :cond_3
 
-    const-wide/16 v10, -0x1
+    const-wide/16 v12, -0x1
 
-    cmp-long v12, v6, v10
+    cmp-long v14, v6, v12
 
-    if-nez v12, :cond_2
+    if-nez v14, :cond_2
 
     goto :goto_2
 
     :cond_2
-    const/4 v8, 0x0
+    const/4 v10, 0x0
 
-    .line 309
+    .line 662
     :cond_3
     :goto_2
-    invoke-static {v8}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+    invoke-static {v10}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    move-object v8, p1
+    move-object/from16 v10, p1
 
-    .line 310
-    iput-object v8, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
+    .line 663
+    iput-object v10, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    move v8, p2
+    .line 664
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uriPositionOffset:J
 
-    .line 311
-    iput v8, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
+    move/from16 v1, p4
+
+    .line 665
+    iput v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
+
+    if-eqz v3, :cond_4
+
+    .line 666
+    array-length v1, v3
 
     if-eqz v1, :cond_4
-
-    .line 312
-    array-length v8, v1
-
-    if-eqz v8, :cond_4
 
     goto :goto_3
 
     :cond_4
     const/4 v1, 0x0
 
+    move-object v3, v1
+
     :goto_3
-    iput-object v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
+    iput-object v3, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
 
-    .line 313
-    iput-wide v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
-
-    .line 314
-    iput-wide v4, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
-
-    .line 315
-    iput-wide v6, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
-
-    move-object/from16 v1, p10
-
-    .line 316
-    iput-object v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
-
-    move/from16 v1, p11
-
-    .line 317
-    iput v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
-
-    .line 318
+    .line 667
     new-instance v1, Ljava/util/HashMap;
 
-    move-object/from16 v2, p12
+    move-object/from16 v2, p6
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
@@ -262,11 +330,80 @@
 
     iput-object v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
 
+    .line 668
+    iput-wide v4, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+
+    .line 669
+    iput-wide v8, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
+
+    .line 670
+    iput-wide v6, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    move-object/from16 v1, p11
+
+    .line 671
+    iput-object v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+
+    move/from16 v1, p12
+
+    .line 672
+    iput v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
+
+    move-object/from16 v1, p13
+
+    .line 673
+    iput-object v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->customData:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;Lcom/google/android/exoplayer2/upstream/DataSpec$1;)V
+    .locals 0
+
+    .line 36
+    invoke-direct/range {p0 .. p13}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/net/Uri;JJ)V
+    .locals 14
+
+    .line 427
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object v6
+
+    const-wide/16 v2, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-wide/from16 v7, p2
+
+    move-wide/from16 v9, p4
+
+    .line 422
+    invoke-direct/range {v0 .. v13}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
+
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;JJJLjava/lang/String;I)V
     .locals 11
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v2, 0x0
 
@@ -284,7 +421,7 @@
 
     move/from16 v10, p9
 
-    .line 215
+    .line 531
     invoke-direct/range {v0 .. v10}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;[BJJJLjava/lang/String;I)V
 
     return-void
@@ -292,6 +429,8 @@
 
 .method public constructor <init>(Landroid/net/Uri;JJLjava/lang/String;)V
     .locals 10
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     const/4 v9, 0x0
 
@@ -307,7 +446,7 @@
 
     move-object/from16 v8, p6
 
-    .line 151
+    .line 460
     invoke-direct/range {v0 .. v9}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JJJLjava/lang/String;I)V
 
     return-void
@@ -315,6 +454,8 @@
 
 .method public constructor <init>(Landroid/net/Uri;JJLjava/lang/String;I)V
     .locals 10
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     move-object v0, p0
 
@@ -330,14 +471,14 @@
 
     move/from16 v9, p7
 
-    .line 165
+    .line 476
     invoke-direct/range {v0 .. v9}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JJJLjava/lang/String;I)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;JJLjava/lang/String;ILjava/util/Map;)V
-    .locals 14
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -352,45 +493,54 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    .line 188
-    invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/DataSpec;->inferHttpMethod([B)I
+    const/4 v2, 0x1
 
-    move-result v3
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    move-object v0, p0
 
-    move-object v1, p0
+    move-object v1, p1
 
-    move-object v2, p1
+    move-wide v4, p2
 
-    move-wide/from16 v5, p2
+    move-wide v6, p2
 
-    move-wide/from16 v7, p2
+    move-wide/from16 v8, p4
 
-    move-wide/from16 v9, p4
+    move-object/from16 v10, p6
 
-    move-object/from16 v11, p6
+    move/from16 v11, p7
 
-    move/from16 v12, p7
+    move-object/from16 v12, p8
 
-    move-object/from16 v13, p8
-
-    .line 186
-    invoke-direct/range {v1 .. v13}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
+    .line 499
+    invoke-direct/range {v0 .. v12}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/Uri;[BJJJLjava/lang/String;I)V
     .locals 12
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    .line 242
-    invoke-static {p2}, Lcom/google/android/exoplayer2/upstream/DataSpec;->inferHttpMethod([B)I
+    if-eqz p2, :cond_0
 
-    move-result v2
+    const/4 v0, 0x2
 
+    const/4 v2, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    const/4 v2, 0x1
+
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -407,7 +557,7 @@
 
     move/from16 v11, p10
 
-    .line 240
+    .line 561
     invoke-direct/range {v0 .. v11}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;I)V
 
     return-void
@@ -432,13 +582,13 @@
 
     return-object p0
 
-    .line 372
+    .line 317
     :cond_0
-    new-instance v0, Ljava/lang/AssertionError;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(I)V
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v0
+    throw p0
 
     :cond_1
     const-string p0, "POST"
@@ -451,28 +601,25 @@
     return-object p0
 .end method
 
-.method private static inferHttpMethod([B)I
-    .locals 0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x2
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x1
-
-    :goto_0
-    return p0
-.end method
-
 
 # virtual methods
+.method public buildUpon()Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+    .locals 2
+
+    .line 695
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;-><init>(Lcom/google/android/exoplayer2/upstream/DataSpec;Lcom/google/android/exoplayer2/upstream/DataSpec$1;)V
+
+    return-object v0
+.end method
+
 .method public final getHttpMethodString()Ljava/lang/String;
     .locals 1
 
-    .line 356
+    .line 690
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/DataSpec;->getStringForHttpMethod(I)Ljava/lang/String;
@@ -485,7 +632,7 @@
 .method public isFlagSet(I)Z
     .locals 1
 
-    .line 327
+    .line 682
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
 
     and-int/2addr v0, p1
@@ -506,7 +653,7 @@
 .method public subrange(J)Lcom/google/android/exoplayer2/upstream/DataSpec;
     .locals 5
 
-    .line 384
+    .line 706
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
     const-wide/16 v2, -0x1
@@ -529,7 +676,7 @@
 .end method
 
 .method public subrange(JJ)Lcom/google/android/exoplayer2/upstream/DataSpec;
-    .locals 16
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -539,7 +686,7 @@
 
     if-nez v3, :cond_0
 
-    .line 395
+    .line 717
     iget-wide v1, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
     cmp-long v3, v1, p3
@@ -548,35 +695,37 @@
 
     return-object v0
 
-    .line 398
+    .line 720
     :cond_0
     new-instance v1, Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     iget-object v4, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    iget v5, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
+    iget-wide v5, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uriPositionOffset:J
 
-    iget-object v6, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
+    iget v7, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
 
-    iget-wide v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
+    iget-object v8, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
 
-    add-long v7, v2, p1
+    iget-object v9, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
 
     iget-wide v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    add-long v9, v2, p1
+    add-long v10, v2, p1
 
-    iget-object v13, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+    iget-object v14, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
 
-    iget v14, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
+    iget v15, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
 
-    iget-object v15, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
+    iget-object v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->customData:Ljava/lang/Object;
 
     move-object v3, v1
 
-    move-wide/from16 v11, p3
+    move-wide/from16 v12, p3
 
-    invoke-direct/range {v3 .. v15}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
+    move-object/from16 v16, v2
+
+    invoke-direct/range {v3 .. v16}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
 
     return-object v1
 .end method
@@ -584,7 +733,7 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 332
+    .line 801
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -593,7 +742,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 333
+    .line 802
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/DataSpec;->getHttpMethodString()Ljava/lang/String;
 
     move-result-object v1
@@ -609,23 +758,6 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ", "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
-
-    .line 337
-    invoke-static {v2}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -663,7 +795,7 @@
 .end method
 
 .method public withAdditionalHeaders(Ljava/util/Map;)Lcom/google/android/exoplayer2/upstream/DataSpec;
-    .locals 13
+    .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -675,44 +807,46 @@
         }
     .end annotation
 
-    .line 459
-    new-instance v12, Ljava/util/HashMap;
+    .line 784
+    new-instance v6, Ljava/util/HashMap;
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
 
-    invoke-direct {v12, v0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+    invoke-direct {v6, v0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    .line 460
-    invoke-interface {v12, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+    .line 785
+    invoke-interface {v6, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 462
+    .line 786
     new-instance p1, Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    iget v2, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uriPositionOffset:J
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
+    iget v4, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
 
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
+    iget-object v5, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
 
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+    iget-wide v7, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    iget-wide v8, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    iget-wide v9, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    iget-object v10, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+    iget-object v11, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
 
-    iget v11, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
+    iget v12, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
+
+    iget-object v13, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->customData:Ljava/lang/Object;
 
     move-object v0, p1
 
-    invoke-direct/range {v0 .. v12}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
+    invoke-direct/range {v0 .. v13}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
 
     return-object p1
 .end method
 
 .method public withRequestHeaders(Ljava/util/Map;)Lcom/google/android/exoplayer2/upstream/DataSpec;
-    .locals 14
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -724,61 +858,69 @@
         }
     .end annotation
 
-    .line 437
-    new-instance v13, Lcom/google/android/exoplayer2/upstream/DataSpec;
+    move-object/from16 v0, p0
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
+    .line 762
+    new-instance v15, Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    iget v2, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
+    iget-object v2, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
+    iget-wide v3, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uriPositionOffset:J
 
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
+    iget v5, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
 
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+    iget-object v6, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
 
-    iget-wide v8, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    iget-wide v8, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    iget-object v10, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+    iget-wide v10, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    iget v11, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
+    iget-object v12, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
 
-    move-object v0, v13
+    iget v13, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
 
-    move-object v12, p1
+    iget-object v14, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->customData:Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v12}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
+    move-object v1, v15
 
-    return-object v13
+    move-object/from16 v7, p1
+
+    invoke-direct/range {v1 .. v14}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
+
+    return-object v15
 .end method
 
 .method public withUri(Landroid/net/Uri;)Lcom/google/android/exoplayer2/upstream/DataSpec;
-    .locals 14
+    .locals 16
 
-    .line 418
-    new-instance v13, Lcom/google/android/exoplayer2/upstream/DataSpec;
+    move-object/from16 v0, p0
 
-    iget v2, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
+    .line 741
+    new-instance v15, Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
+    iget-wide v3, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->uriPositionOffset:J
 
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
+    iget v5, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpMethod:I
 
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
+    iget-object v6, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpBody:[B
 
-    iget-wide v8, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    iget-object v7, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
 
-    iget-object v10, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+    iget-wide v8, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    iget v11, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
+    iget-wide v10, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
-    iget-object v12, p0, Lcom/google/android/exoplayer2/upstream/DataSpec;->httpRequestHeaders:Ljava/util/Map;
+    iget-object v12, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
 
-    move-object v0, v13
+    iget v13, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->flags:I
 
-    move-object v1, p1
+    iget-object v14, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->customData:Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v12}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I[BJJJLjava/lang/String;ILjava/util/Map;)V
+    move-object v1, v15
 
-    return-object v13
+    move-object/from16 v2, p1
+
+    invoke-direct/range {v1 .. v14}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;ILjava/lang/Object;)V
+
+    return-object v15
 .end method

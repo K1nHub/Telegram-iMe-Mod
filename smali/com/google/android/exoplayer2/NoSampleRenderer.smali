@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 29
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public final disable()V
     .locals 3
 
-    .line 162
+    .line 143
     iget v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
     const/4 v1, 0x1
@@ -51,33 +51,37 @@
     :goto_0
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 163
+    .line 144
     iput v2, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
     const/4 v0, 0x0
 
-    .line 164
+    .line 145
     iput-object v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->stream:Lcom/google/android/exoplayer2/source/SampleStream;
 
-    .line 165
+    .line 146
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->streamIsFinal:Z
 
-    .line 166
+    .line 147
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onDisabled()V
 
     return-void
 .end method
 
-.method public final enable(Lcom/google/android/exoplayer2/RendererConfiguration;[Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/source/SampleStream;JZJ)V
-    .locals 2
+.method public final enable(Lcom/google/android/exoplayer2/RendererConfiguration;[Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/source/SampleStream;JZZJJ)V
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ExoPlaybackException;
         }
     .end annotation
 
-    .line 82
-    iget v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
+    move-object v7, p0
+
+    move v8, p6
+
+    .line 75
+    iget v0, v7, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
     const/4 v1, 0x1
 
@@ -93,19 +97,33 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 83
-    iput-object p1, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->configuration:Lcom/google/android/exoplayer2/RendererConfiguration;
+    move-object v0, p1
 
-    .line 84
-    iput v1, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
+    .line 76
+    iput-object v0, v7, Lcom/google/android/exoplayer2/NoSampleRenderer;->configuration:Lcom/google/android/exoplayer2/RendererConfiguration;
 
-    .line 85
+    .line 77
+    iput v1, v7, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
+
+    .line 78
     invoke-virtual {p0, p6}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onEnabled(Z)V
 
-    .line 86
-    invoke-virtual {p0, p2, p3, p7, p8}, Lcom/google/android/exoplayer2/NoSampleRenderer;->replaceStream([Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/source/SampleStream;J)V
+    move-object v0, p0
 
-    .line 87
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move-wide/from16 v3, p8
+
+    move-wide/from16 v5, p10
+
+    .line 79
+    invoke-virtual/range {v0 .. v6}, Lcom/google/android/exoplayer2/NoSampleRenderer;->replaceStream([Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/source/SampleStream;JJ)V
+
+    move-wide v0, p4
+
+    .line 80
     invoke-virtual {p0, p4, p5, p6}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onPositionReset(JZ)V
 
     return-void
@@ -120,7 +138,7 @@
 .method protected final getConfiguration()Lcom/google/android/exoplayer2/RendererConfiguration;
     .locals 1
 
-    .line 296
+    .line 274
     iget-object v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->configuration:Lcom/google/android/exoplayer2/RendererConfiguration;
 
     return-object v0
@@ -129,7 +147,7 @@
 .method protected final getIndex()I
     .locals 1
 
-    .line 303
+    .line 279
     iget v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->index:I
 
     return v0
@@ -154,7 +172,7 @@
 .method public final getState()I
     .locals 1
 
-    .line 60
+    .line 61
     iget v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
     return v0
@@ -163,7 +181,7 @@
 .method public final getStream()Lcom/google/android/exoplayer2/source/SampleStream;
     .locals 1
 
-    .line 120
+    .line 102
     iget-object v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->stream:Lcom/google/android/exoplayer2/source/SampleStream;
 
     return-object v0
@@ -172,7 +190,7 @@
 .method public final getTrackType()I
     .locals 1
 
-    const/4 v0, 0x6
+    const/4 v0, -0x2
 
     return v0
 .end method
@@ -196,10 +214,19 @@
     return v0
 .end method
 
+.method public final init(ILcom/google/android/exoplayer2/analytics/PlayerId;)V
+    .locals 0
+
+    .line 50
+    iput p1, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->index:I
+
+    return-void
+.end method
+
 .method public final isCurrentStreamFinal()Z
     .locals 1
 
-    .line 140
+    .line 122
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->streamIsFinal:Z
 
     return v0
@@ -290,16 +317,11 @@
 
 .method protected onStopped()V
     .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/ExoPlaybackException;
-        }
-    .end annotation
 
     return-void
 .end method
 
-.method public final replaceStream([Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/source/SampleStream;J)V
+.method public final replaceStream([Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/source/SampleStream;JJ)V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -307,18 +329,18 @@
         }
     .end annotation
 
-    .line 112
+    .line 94
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->streamIsFinal:Z
 
     xor-int/lit8 p1, p1, 0x1
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 113
+    .line 95
     iput-object p2, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->stream:Lcom/google/android/exoplayer2/source/SampleStream;
 
-    .line 114
-    invoke-virtual {p0, p3, p4}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onRendererOffsetChanged(J)V
+    .line 96
+    invoke-virtual {p0, p5, p6}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onRendererOffsetChanged(J)V
 
     return-void
 .end method
@@ -326,7 +348,7 @@
 .method public final reset()V
     .locals 1
 
-    .line 171
+    .line 152
     iget v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
     if-nez v0, :cond_0
@@ -341,7 +363,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 172
+    .line 153
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onReset()V
 
     return-void
@@ -357,10 +379,10 @@
 
     const/4 v0, 0x0
 
-    .line 149
+    .line 130
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->streamIsFinal:Z
 
-    .line 150
+    .line 131
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onPositionReset(JZ)V
 
     return-void
@@ -371,25 +393,16 @@
 
     const/4 v0, 0x1
 
-    .line 135
+    .line 117
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->streamIsFinal:Z
 
     return-void
 .end method
 
-.method public final setIndex(I)V
+.method public synthetic setPlaybackSpeed(FF)V
     .locals 0
 
-    .line 49
-    iput p1, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->index:I
-
-    return-void
-.end method
-
-.method public synthetic setOperatingRate(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/Renderer$-CC;->$default$setOperatingRate(Lcom/google/android/exoplayer2/Renderer;F)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/Renderer$-CC;->$default$setPlaybackSpeed(Lcom/google/android/exoplayer2/Renderer;FF)V
 
     return-void
 .end method
@@ -402,7 +415,7 @@
         }
     .end annotation
 
-    .line 92
+    .line 85
     iget v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
     const/4 v1, 0x1
@@ -419,10 +432,10 @@
 
     const/4 v0, 0x2
 
-    .line 93
+    .line 86
     iput v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
-    .line 94
+    .line 87
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onStarted()V
 
     return-void
@@ -430,13 +443,8 @@
 
 .method public final stop()V
     .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/ExoPlaybackException;
-        }
-    .end annotation
 
-    .line 155
+    .line 136
     iget v0, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
     const/4 v1, 0x1
@@ -455,10 +463,10 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 156
+    .line 137
     iput v1, p0, Lcom/google/android/exoplayer2/NoSampleRenderer;->state:I
 
-    .line 157
+    .line 138
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/NoSampleRenderer;->onStopped()V
 
     return-void
@@ -474,7 +482,7 @@
 
     const/4 p1, 0x0
 
-    .line 190
+    .line 170
     invoke-static {p1}, Lcom/google/android/exoplayer2/RendererCapabilities$-CC;->create(I)I
 
     move-result p1

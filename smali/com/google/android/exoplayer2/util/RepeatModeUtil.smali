@@ -23,7 +23,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 53
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,10 +41,10 @@
 
     add-int v1, p0, v0
 
-    .line 67
+    .line 69
     rem-int/lit8 v1, v1, 0x3
 
-    .line 68
+    .line 70
     invoke-static {v1, p1}, Lcom/google/android/exoplayer2/util/RepeatModeUtil;->isRepeatModeEnabled(II)Z
 
     move-result v2

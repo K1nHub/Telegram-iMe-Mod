@@ -4,24 +4,18 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/Signature;
+.annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        "<T::",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-        ">",
-        "Ljava/lang/Object;"
+        Lcom/google/android/exoplayer2/drm/DrmSessionManager$DrmSessionReference;
     }
 .end annotation
 
 
 # static fields
+.field public static final DRM_UNSUPPORTED:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
+
 .field public static final DUMMY:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/exoplayer2/drm/DrmSessionManager<",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-            ">;"
-        }
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
@@ -30,11 +24,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 35
+    .line 46
     new-instance v0, Lcom/google/android/exoplayer2/drm/DrmSessionManager$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/drm/DrmSessionManager$1;-><init>()V
 
+    sput-object v0, Lcom/google/android/exoplayer2/drm/DrmSessionManager;->DRM_UNSUPPORTED:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
+
+    .line 77
     sput-object v0, Lcom/google/android/exoplayer2/drm/DrmSessionManager;->DUMMY:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
 
     return-void
@@ -42,50 +39,20 @@
 
 
 # virtual methods
-.method public abstract acquirePlaceholderSession(Landroid/os/Looper;I)Lcom/google/android/exoplayer2/drm/DrmSession;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/os/Looper;",
-            "I)",
-            "Lcom/google/android/exoplayer2/drm/DrmSession<",
-            "TT;>;"
-        }
-    .end annotation
+.method public abstract acquireSession(Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/drm/DrmSession;
 .end method
 
-.method public abstract acquireSession(Landroid/os/Looper;Lcom/google/android/exoplayer2/drm/DrmInitData;)Lcom/google/android/exoplayer2/drm/DrmSession;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/os/Looper;",
-            "Lcom/google/android/exoplayer2/drm/DrmInitData;",
-            ")",
-            "Lcom/google/android/exoplayer2/drm/DrmSession<",
-            "TT;>;"
-        }
-    .end annotation
+.method public abstract getCryptoType(Lcom/google/android/exoplayer2/Format;)I
 .end method
 
-.method public abstract canAcquireSession(Lcom/google/android/exoplayer2/drm/DrmInitData;)Z
-.end method
-
-.method public abstract getExoMediaCryptoType(Lcom/google/android/exoplayer2/drm/DrmInitData;)Ljava/lang/Class;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/DrmInitData;",
-            ")",
-            "Ljava/lang/Class<",
-            "+",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-            ">;"
-        }
-    .end annotation
+.method public abstract preacquireSession(Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/drm/DrmSessionManager$DrmSessionReference;
 .end method
 
 .method public abstract prepare()V
 .end method
 
 .method public abstract release()V
+.end method
+
+.method public abstract setPlayer(Landroid/os/Looper;Lcom/google/android/exoplayer2/analytics/PlayerId;)V
 .end method

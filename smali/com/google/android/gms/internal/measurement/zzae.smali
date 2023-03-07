@@ -1228,11 +1228,6 @@
 
 .method public final zzq(ILcom/google/android/gms/internal/measurement/zzap;)V
     .locals 2
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
-        value = {
-            "elements"
-        }
-    .end annotation
 
     const/16 v0, 0x7ed4
 

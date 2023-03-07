@@ -29,6 +29,8 @@
 
 .field public final dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
+.field public final loadTaskId:J
+
 .field private final parser:Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -51,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/exoplayer2/upstream/DataSource;Landroid/net/Uri;ILcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,14 +65,28 @@
         }
     .end annotation
 
+    .line 110
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;-><init>()V
+
     .line 112
-    new-instance v0, Lcom/google/android/exoplayer2/upstream/DataSpec;
+    invoke-virtual {v0, p2}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setUri(Landroid/net/Uri;)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
 
-    const/4 v1, 0x1
+    move-result-object p2
 
-    invoke-direct {v0, p2, v1}, Lcom/google/android/exoplayer2/upstream/DataSpec;-><init>(Landroid/net/Uri;I)V
+    const/4 v0, 0x1
 
-    invoke-direct {p0, p1, v0, p3, p4}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;ILcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;)V
+    invoke-virtual {p2, v0}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->setFlags(I)Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lcom/google/android/exoplayer2/upstream/DataSpec$Builder;->build()Lcom/google/android/exoplayer2/upstream/DataSpec;
+
+    move-result-object p2
+
+    .line 110
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;ILcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;)V
 
     return-void
 .end method
@@ -88,24 +104,31 @@
         }
     .end annotation
 
-    .line 122
+    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
+    .line 125
     new-instance v0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
-    .line 124
+    .line 126
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
-    .line 125
+    .line 127
     iput p3, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->type:I
 
-    .line 126
+    .line 128
     iput-object p4, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->parser:Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
+
+    .line 129
+    invoke-static {}, Lcom/google/android/exoplayer2/source/LoadEventInfo;->getNewId()J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->loadTaskId:J
 
     return-void
 .end method
@@ -131,15 +154,15 @@
         }
     .end annotation
 
-    .line 67
+    .line 65
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;
 
     invoke-direct {v0, p0, p2, p3, p1}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Landroid/net/Uri;ILcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;)V
 
-    .line 68
+    .line 66
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->load()V
 
-    .line 69
+    .line 67
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->getResult()Ljava/lang/Object;
 
     move-result-object p0
@@ -172,15 +195,15 @@
         }
     .end annotation
 
-    .line 85
+    .line 83
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;
 
     invoke-direct {v0, p0, p2, p3, p1}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;ILcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;)V
 
-    .line 86
+    .line 84
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->load()V
 
-    .line 87
+    .line 85
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->getResult()Ljava/lang/Object;
 
     move-result-object p0
@@ -197,7 +220,7 @@
 .method public bytesLoaded()J
     .locals 2
 
-    .line 140
+    .line 144
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->getBytesRead()J
@@ -226,7 +249,7 @@
         }
     .end annotation
 
-    .line 156
+    .line 160
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->getLastResponseHeaders()Ljava/util/Map;
@@ -244,7 +267,7 @@
         }
     .end annotation
 
-    .line 131
+    .line 135
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->result:Ljava/lang/Object;
 
     return-object v0
@@ -253,7 +276,7 @@
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 148
+    .line 152
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->getLastOpenedUri()Landroid/net/Uri;
@@ -271,12 +294,12 @@
         }
     .end annotation
 
-    .line 167
+    .line 171
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->resetBytesRead()V
 
-    .line 168
+    .line 172
     new-instance v0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
@@ -285,11 +308,11 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    .line 170
+    .line 174
     :try_start_0
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->open()V
 
-    .line 171
+    .line 175
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->dataSource:Lcom/google/android/exoplayer2/upstream/StatsDataSource;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->getUri()Landroid/net/Uri;
@@ -302,7 +325,7 @@
 
     check-cast v1, Landroid/net/Uri;
 
-    .line 172
+    .line 176
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;->parser:Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
 
     invoke-interface {v2, v1, v0}, Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;->parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Object;
@@ -313,7 +336,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 174
+    .line 178
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-void
@@ -323,6 +346,6 @@
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 175
+    .line 179
     throw v1
 .end method

@@ -19,14 +19,14 @@
 .method public abstract onStopped()V
 .end method
 
-.method public abstract onTracksSelected([Lcom/google/android/exoplayer2/Renderer;Lcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;)V
+.method public abstract onTracksSelected([Lcom/google/android/exoplayer2/Renderer;Lcom/google/android/exoplayer2/source/TrackGroupArray;[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;)V
 .end method
 
 .method public abstract retainBackBufferFromKeyframe()Z
 .end method
 
-.method public abstract shouldContinueLoading(JF)Z
+.method public abstract shouldContinueLoading(JJF)Z
 .end method
 
-.method public abstract shouldStartPlayback(JFZ)Z
+.method public abstract shouldStartPlayback(JFZJ)Z
 .end method

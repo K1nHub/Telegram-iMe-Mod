@@ -6,6 +6,3 @@
 # virtual methods
 .method public abstract authorize(Lcom/binance/android/opensdk/api/OAuthParams;Lcom/binance/android/opensdk/api/BinanceListener;)V
 .end method
-
-.method public abstract handleResp(Landroid/content/Intent;)V
-.end method

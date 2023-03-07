@@ -61,13 +61,6 @@
     .annotation build Lcom/google/android/gms/common/annotation/KeepForSdk;
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNullIf;
-        expression = {
-            "#1"
-        }
-        result = false
-    .end annotation
-
     if-eqz p0, :cond_1
 
     .line 1

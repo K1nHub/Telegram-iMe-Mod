@@ -49,7 +49,7 @@
     return-void
 .end method
 
-.method static synthetic access$202(Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaInputBuffer;J)J
+.method static synthetic access$102(Lcom/google/android/exoplayer2/text/cea/CeaDecoder$CeaInputBuffer;J)J
     .locals 0
 
     .line 176

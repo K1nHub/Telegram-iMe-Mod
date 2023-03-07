@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/exoplayer2/C$FormatSupport;,
         Lcom/google/android/exoplayer2/C$RoleFlags;,
         Lcom/google/android/exoplayer2/C$WakeMode;,
         Lcom/google/android/exoplayer2/C$NetworkType;,
@@ -14,20 +15,25 @@
         Lcom/google/android/exoplayer2/C$ColorTransfer;,
         Lcom/google/android/exoplayer2/C$ColorSpace;,
         Lcom/google/android/exoplayer2/C$StereoMode;,
+        Lcom/google/android/exoplayer2/C$SelectionReason;,
+        Lcom/google/android/exoplayer2/C$TrackType;,
+        Lcom/google/android/exoplayer2/C$DataType;,
         Lcom/google/android/exoplayer2/C$ContentType;,
         Lcom/google/android/exoplayer2/C$SelectionFlags;,
+        Lcom/google/android/exoplayer2/C$VideoChangeFrameRateStrategy;,
         Lcom/google/android/exoplayer2/C$VideoScalingMode;,
         Lcom/google/android/exoplayer2/C$VideoOutputMode;,
         Lcom/google/android/exoplayer2/C$BufferFlags;,
-        Lcom/google/android/exoplayer2/C$AudioFocusGain;,
         Lcom/google/android/exoplayer2/C$AudioAllowedCapturePolicy;,
         Lcom/google/android/exoplayer2/C$AudioUsage;,
         Lcom/google/android/exoplayer2/C$AudioFlags;,
         Lcom/google/android/exoplayer2/C$AudioContentType;,
         Lcom/google/android/exoplayer2/C$StreamType;,
+        Lcom/google/android/exoplayer2/C$SpatializationBehavior;,
         Lcom/google/android/exoplayer2/C$PcmEncoding;,
         Lcom/google/android/exoplayer2/C$Encoding;,
-        Lcom/google/android/exoplayer2/C$CryptoMode;
+        Lcom/google/android/exoplayer2/C$CryptoMode;,
+        Lcom/google/android/exoplayer2/C$CryptoType;
     }
 .end annotation
 
@@ -40,16 +46,19 @@
 .field public static final ALLOW_CAPTURE_BY_SYSTEM:I = 0x2
 
 .field public static final ASCII_NAME:Ljava/lang/String; = "US-ASCII"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field public static final AUDIOFOCUS_GAIN:I = 0x1
+.field public static final AUDIO_CONTENT_TYPE_MOVIE:I = 0x3
 
-.field public static final AUDIOFOCUS_GAIN_TRANSIENT:I = 0x2
+.field public static final AUDIO_CONTENT_TYPE_MUSIC:I = 0x2
 
-.field public static final AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE:I = 0x4
+.field public static final AUDIO_CONTENT_TYPE_SONIFICATION:I = 0x4
 
-.field public static final AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK:I = 0x3
+.field public static final AUDIO_CONTENT_TYPE_SPEECH:I = 0x1
 
-.field public static final AUDIOFOCUS_NONE:I = 0x0
+.field public static final AUDIO_CONTENT_TYPE_UNKNOWN:I = 0x0
 
 .field public static final AUDIO_SESSION_ID_UNSET:I = 0x0
 
@@ -60,6 +69,8 @@
 .field public static final BUFFER_FLAG_ENCRYPTED:I = 0x40000000
 
 .field public static final BUFFER_FLAG_END_OF_STREAM:I = 0x4
+
+.field public static final BUFFER_FLAG_FIRST_SAMPLE:I = 0x8000000
 
 .field public static final BUFFER_FLAG_HAS_SUPPLEMENTAL_DATA:I = 0x10000000
 
@@ -97,21 +108,54 @@
 
 .field public static final COMMON_PSSH_UUID:Ljava/util/UUID;
 
+.field public static final CONTENT_TYPE_DASH:I = 0x0
+
+.field public static final CONTENT_TYPE_HLS:I = 0x2
+
 .field public static final CONTENT_TYPE_MOVIE:I = 0x3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final CONTENT_TYPE_MUSIC:I = 0x2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public static final CONTENT_TYPE_OTHER:I = 0x4
+
+.field public static final CONTENT_TYPE_RTSP:I = 0x3
 
 .field public static final CONTENT_TYPE_SONIFICATION:I = 0x4
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final CONTENT_TYPE_SPEECH:I = 0x1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public static final CONTENT_TYPE_SS:I = 0x1
 
 .field public static final CONTENT_TYPE_UNKNOWN:I = 0x0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final CRYPTO_MODE_AES_CBC:I = 0x2
 
 .field public static final CRYPTO_MODE_AES_CTR:I = 0x1
 
 .field public static final CRYPTO_MODE_UNENCRYPTED:I = 0x0
+
+.field public static final CRYPTO_TYPE_CUSTOM_BASE:I = 0x2710
+
+.field public static final CRYPTO_TYPE_FRAMEWORK:I = 0x2
+
+.field public static final CRYPTO_TYPE_NONE:I = 0x0
+
+.field public static final CRYPTO_TYPE_UNSUPPORTED:I = 0x1
 
 .field public static final DATA_TYPE_AD:I = 0x6
 
@@ -133,6 +177,24 @@
 
 .field public static final DEFAULT_BUFFER_SEGMENT_SIZE:I = 0x10000
 
+.field public static final DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS:J = 0xbb8L
+
+.field public static final DEFAULT_SEEK_BACK_INCREMENT_MS:J = 0x1388L
+
+.field public static final DEFAULT_SEEK_FORWARD_INCREMENT_MS:J = 0x3a98L
+
+.field public static final ENCODING_AAC_ELD:I = 0xf
+
+.field public static final ENCODING_AAC_ER_BSAC:I = 0x40000000
+
+.field public static final ENCODING_AAC_HE_V1:I = 0xb
+
+.field public static final ENCODING_AAC_HE_V2:I = 0xc
+
+.field public static final ENCODING_AAC_LC:I = 0xa
+
+.field public static final ENCODING_AAC_XHE:I = 0x10
+
 .field public static final ENCODING_AC3:I = 0x5
 
 .field public static final ENCODING_AC4:I = 0x11
@@ -151,6 +213,8 @@
 
 .field public static final ENCODING_MP3:I = 0x9
 
+.field public static final ENCODING_OPUS:I = 0x14
+
 .field public static final ENCODING_PCM_16BIT:I = 0x2
 
 .field public static final ENCODING_PCM_16BIT_BIG_ENDIAN:I = 0x10000000
@@ -165,9 +229,22 @@
 
 .field public static final FLAG_AUDIBILITY_ENFORCED:I = 0x1
 
+.field public static final FORMAT_EXCEEDS_CAPABILITIES:I = 0x3
+
+.field public static final FORMAT_HANDLED:I = 0x4
+
+.field public static final FORMAT_UNSUPPORTED_DRM:I = 0x2
+
+.field public static final FORMAT_UNSUPPORTED_SUBTYPE:I = 0x1
+
+.field public static final FORMAT_UNSUPPORTED_TYPE:I = 0x0
+
 .field public static final INDEX_UNSET:I = -0x1
 
 .field public static final ISO88591_NAME:Ljava/lang/String; = "ISO-8859-1"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final LANGUAGE_UNDETERMINED:Ljava/lang/String; = "und"
 
@@ -177,24 +254,6 @@
 
 .field public static final MILLIS_PER_SECOND:J = 0x3e8L
 
-.field public static final MSG_CUSTOM_BASE:I = 0x2710
-
-.field public static final MSG_SET_AUDIO_ATTRIBUTES:I = 0x3
-
-.field public static final MSG_SET_AUX_EFFECT_INFO:I = 0x5
-
-.field public static final MSG_SET_CAMERA_MOTION_LISTENER:I = 0x7
-
-.field public static final MSG_SET_SCALING_MODE:I = 0x4
-
-.field public static final MSG_SET_SURFACE:I = 0x1
-
-.field public static final MSG_SET_VIDEO_DECODER_OUTPUT_BUFFER_RENDERER:I = 0x8
-
-.field public static final MSG_SET_VIDEO_FRAME_METADATA_LISTENER:I = 0x6
-
-.field public static final MSG_SET_VOLUME:I = 0x2
-
 .field public static final NANOS_PER_SECOND:J = 0x3b9aca00L
 
 .field public static final NETWORK_TYPE_2G:I = 0x3
@@ -203,7 +262,9 @@
 
 .field public static final NETWORK_TYPE_4G:I = 0x5
 
-.field public static final NETWORK_TYPE_5G:I = 0x9
+.field public static final NETWORK_TYPE_5G_NSA:I = 0xa
+
+.field public static final NETWORK_TYPE_5G_SA:I = 0x9
 
 .field public static final NETWORK_TYPE_CELLULAR_UNKNOWN:I = 0x6
 
@@ -234,6 +295,10 @@
 .field public static final PROJECTION_MESH:I = 0x3
 
 .field public static final PROJECTION_RECTANGULAR:I = 0x0
+
+.field public static final RATE_UNSET:F = -3.4028235E38f
+
+.field public static final RATE_UNSET_INT:I = -0x7fffffff
 
 .field public static final RESULT_BUFFER_READ:I = -0x4
 
@@ -297,6 +362,12 @@
 
 .field public static final SERIF_NAME:Ljava/lang/String; = "serif"
 
+.field public static final SPATIALIZATION_BEHAVIOR_AUTO:I = 0x0
+
+.field public static final SPATIALIZATION_BEHAVIOR_NEVER:I = 0x1
+
+.field public static final SSAI_SCHEME:Ljava/lang/String; = "ssai"
+
 .field public static final STEREO_MODE_LEFT_RIGHT:I = 0x2
 
 .field public static final STEREO_MODE_MONO:I = 0x0
@@ -319,8 +390,6 @@
 
 .field public static final STREAM_TYPE_SYSTEM:I = 0x1
 
-.field public static final STREAM_TYPE_USE_DEFAULT:I = -0x80000000
-
 .field public static final STREAM_TYPE_VOICE_CALL:I = 0x0
 
 .field public static final TIME_END_OF_SOURCE:J = -0x8000000000000000L
@@ -329,15 +398,17 @@
 
 .field public static final TRACK_TYPE_AUDIO:I = 0x1
 
-.field public static final TRACK_TYPE_CAMERA_MOTION:I = 0x5
+.field public static final TRACK_TYPE_CAMERA_MOTION:I = 0x6
 
 .field public static final TRACK_TYPE_CUSTOM_BASE:I = 0x2710
 
 .field public static final TRACK_TYPE_DEFAULT:I = 0x0
 
-.field public static final TRACK_TYPE_METADATA:I = 0x4
+.field public static final TRACK_TYPE_IMAGE:I = 0x4
 
-.field public static final TRACK_TYPE_NONE:I = 0x6
+.field public static final TRACK_TYPE_METADATA:I = 0x5
+
+.field public static final TRACK_TYPE_NONE:I = -0x2
 
 .field public static final TRACK_TYPE_TEXT:I = 0x3
 
@@ -346,12 +417,29 @@
 .field public static final TRACK_TYPE_VIDEO:I = 0x2
 
 .field public static final TYPE_DASH:I = 0x0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final TYPE_HLS:I = 0x2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field public static final TYPE_OTHER:I = 0x3
+.field public static final TYPE_OTHER:I = 0x4
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public static final TYPE_RTSP:I = 0x3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final TYPE_SS:I = 0x1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final USAGE_ALARM:I = 0x4
 
@@ -386,12 +474,25 @@
 .field public static final USAGE_VOICE_COMMUNICATION_SIGNALLING:I = 0x3
 
 .field public static final UTF16LE_NAME:Ljava/lang/String; = "UTF-16LE"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final UTF16_NAME:Ljava/lang/String; = "UTF-16"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final UTF8_NAME:Ljava/lang/String; = "UTF-8"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final UUID_NIL:Ljava/util/UUID;
+
+.field public static final VIDEO_CHANGE_FRAME_RATE_STRATEGY_OFF:I = -0x80000000
+
+.field public static final VIDEO_CHANGE_FRAME_RATE_STRATEGY_ONLY_IF_SEAMLESS:I = 0x0
 
 .field public static final VIDEO_OUTPUT_MODE_NONE:I = -0x1
 
@@ -418,7 +519,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 735
+    .line 971
     new-instance v0, Ljava/util/UUID;
 
     const-wide/16 v1, 0x0
@@ -427,7 +528,7 @@
 
     sput-object v0, Lcom/google/android/exoplayer2/C;->UUID_NIL:Ljava/util/UUID;
 
-    .line 742
+    .line 978
     new-instance v0, Ljava/util/UUID;
 
     const-wide v1, 0x1077efecc0b24d02L
@@ -438,7 +539,7 @@
 
     sput-object v0, Lcom/google/android/exoplayer2/C;->COMMON_PSSH_UUID:Ljava/util/UUID;
 
-    .line 749
+    .line 985
     new-instance v0, Ljava/util/UUID;
 
     const-wide v1, -0x1d8e62a7567a4c37L    # -1.6229728350858627E166
@@ -449,7 +550,7 @@
 
     sput-object v0, Lcom/google/android/exoplayer2/C;->CLEARKEY_UUID:Ljava/util/UUID;
 
-    .line 756
+    .line 992
     new-instance v0, Ljava/util/UUID;
 
     const-wide v1, -0x121074568629b532L    # -3.563403477674908E221
@@ -460,7 +561,7 @@
 
     sput-object v0, Lcom/google/android/exoplayer2/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
-    .line 764
+    .line 1000
     new-instance v0, Ljava/util/UUID;
 
     const-wide v1, -0x65fb0f8667bfbd7aL
@@ -477,83 +578,73 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 45
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static generateAudioSessionIdV21(Landroid/content/Context;)I
-    .locals 1
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    const-string v0, "audio"
-
-    .line 1160
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/media/AudioManager;
-
-    .line 1161
-    invoke-virtual {p0}, Landroid/media/AudioManager;->generateAudioSessionId()I
+    .line 1386
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->generateAudioSessionIdV21(Landroid/content/Context;)I
 
     move-result p0
 
     return p0
 .end method
 
+.method public static getErrorCodeForMediaDrmErrorCode(I)I
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1409
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->getErrorCodeForMediaDrmErrorCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static getFormatSupportString(I)Ljava/lang/String;
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1397
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->getFormatSupportString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static msToUs(J)J
-    .locals 3
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    .line 1374
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
 
-    cmp-long v2, p0, v0
+    move-result-wide p0
 
-    if-eqz v2, :cond_1
-
-    const-wide/high16 v0, -0x8000000000000000L
-
-    cmp-long v2, p0, v0
-
-    if-nez v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-wide/16 v0, 0x3e8
-
-    mul-long p0, p0, v0
-
-    :cond_1
-    :goto_0
     return-wide p0
 .end method
 
 .method public static usToMs(J)J
-    .locals 3
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    .line 1363
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->usToMs(J)J
 
-    cmp-long v2, p0, v0
+    move-result-wide p0
 
-    if-eqz v2, :cond_1
-
-    const-wide/high16 v0, -0x8000000000000000L
-
-    cmp-long v2, p0, v0
-
-    if-nez v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-wide/16 v0, 0x3e8
-
-    .line 1138
-    div-long/2addr p0, v0
-
-    :cond_1
-    :goto_0
     return-wide p0
 .end method

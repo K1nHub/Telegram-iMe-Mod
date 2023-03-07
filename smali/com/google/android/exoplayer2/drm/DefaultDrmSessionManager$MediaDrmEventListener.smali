@@ -16,14 +16,6 @@
     name = "MediaDrmEventListener"
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener<",
-        "TT;>;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
@@ -33,7 +25,7 @@
 .method private constructor <init>(Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;)V
     .locals 0
 
-    .line 679
+    .line 966
     iput-object p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$MediaDrmEventListener;->this$0:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +36,7 @@
 .method synthetic constructor <init>(Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$1;)V
     .locals 0
 
-    .line 679
+    .line 966
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$MediaDrmEventListener;-><init>(Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;)V
 
     return-void
@@ -54,15 +46,8 @@
 # virtual methods
 .method public onEvent(Lcom/google/android/exoplayer2/drm/ExoMediaDrm;[BII[B)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm<",
-            "+TT;>;[BII[B)V"
-        }
-    .end annotation
 
-    .line 688
+    .line 971
     iget-object p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$MediaDrmEventListener;->this$0:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager;->mediaDrmHandler:Lcom/google/android/exoplayer2/drm/DefaultDrmSessionManager$MediaDrmHandler;

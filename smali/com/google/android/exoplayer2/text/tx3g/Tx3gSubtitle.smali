@@ -26,7 +26,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 30
+    .line 28
     new-instance v0, Lcom/google/android/exoplayer2/text/tx3g/Tx3gSubtitle;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/text/tx3g/Tx3gSubtitle;-><init>()V
@@ -39,10 +39,10 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 38
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 37
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -55,10 +55,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/text/Cue;)V
     .locals 0
 
-    .line 34
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 33
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -87,7 +87,7 @@
 
     if-ltz v2, :cond_0
 
-    .line 60
+    .line 58
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/tx3g/Tx3gSubtitle;->cues:Ljava/util/List;
 
     goto :goto_0
@@ -113,7 +113,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 54
+    .line 52
     :goto_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 

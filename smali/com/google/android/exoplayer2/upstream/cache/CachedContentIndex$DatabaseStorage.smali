@@ -69,7 +69,7 @@
 
     const-string v2, "metadata"
 
-    .line 741
+    .line 762
     filled-new-array {v0, v1, v2}, [Ljava/lang/String;
 
     move-result-object v0
@@ -82,13 +82,13 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/database/DatabaseProvider;)V
     .locals 0
 
-    .line 762
+    .line 784
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 763
+    .line 785
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
-    .line 764
+    .line 786
     new-instance p1, Landroid/util/SparseArray;
 
     invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
@@ -106,12 +106,12 @@
         }
     .end annotation
 
-    .line 918
+    .line 944
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 919
+    .line 945
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->getMetadata()Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     move-result-object v1
@@ -122,17 +122,17 @@
 
     invoke-static {v1, v2}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->access$200(Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;Ljava/io/DataOutputStream;)V
 
-    .line 920
+    .line 946
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v0
 
-    .line 922
+    .line 948
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 923
+    .line 949
     iget v2, p2, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -143,7 +143,7 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 924
+    .line 950
     iget-object p2, p2, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
 
     const-string v2, "key"
@@ -152,11 +152,17 @@
 
     const-string p2, "metadata"
 
-    .line 925
+    .line 951
     invoke-virtual {v1, p2, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 926
+    .line 952
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->tableName:Ljava/lang/String;
+
+    invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/String;
 
     const/4 v0, 0x0
 
@@ -173,7 +179,7 @@
         }
     .end annotation
 
-    .line 759
+    .line 780
     invoke-static {p1, p2}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object p1
@@ -191,37 +197,37 @@
         }
     .end annotation
 
-    .line 932
+    .line 958
     :try_start_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->getTableName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 933
+    .line 959
     invoke-interface {p0}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object p0
 
-    .line 934
+    .line 960
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v1, 0x1
 
-    .line 936
+    .line 962
     :try_start_1
     invoke-static {p0, v1, p1}, Lcom/google/android/exoplayer2/database/VersionTable;->removeVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;)V
 
-    .line 938
+    .line 964
     invoke-static {p0, v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->dropTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
-    .line 939
+    .line 965
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 941
+    .line 967
     :try_start_2
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
@@ -232,7 +238,7 @@
 
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 942
+    .line 968
     throw p1
     :try_end_2
     .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_0
@@ -240,7 +246,7 @@
     :catch_0
     move-exception p0
 
-    .line 944
+    .line 970
     new-instance p1, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {p1, p0}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -251,8 +257,15 @@
 .method private deleteRow(Landroid/database/sqlite/SQLiteDatabase;I)V
     .locals 3
 
-    .line 913
+    .line 938
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->tableName:Ljava/lang/String;
+
+    .line 939
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     const/4 v1, 0x1
 
@@ -268,6 +281,7 @@
 
     const-string p2, "id = ?"
 
+    .line 938
     invoke-virtual {p1, v0, p2, v1}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
     return-void
@@ -276,7 +290,7 @@
 .method private static dropTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
     .locals 2
 
-    .line 949
+    .line 975
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -299,15 +313,24 @@
 .method private getCursor()Landroid/database/Cursor;
     .locals 9
 
-    .line 893
+    .line 915
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
-    .line 894
+    .line 916
     invoke-interface {v0}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->tableName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->tableName:Ljava/lang/String;
+
+    .line 918
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Ljava/lang/String;
 
     sget-object v3, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->COLUMNS:[Ljava/lang/String;
 
@@ -321,7 +344,7 @@
 
     const/4 v8, 0x0
 
-    .line 895
+    .line 917
     invoke-virtual/range {v1 .. v8}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
@@ -332,7 +355,7 @@
 .method private static getTableName(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 953
+    .line 979
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -358,19 +381,33 @@
         }
     .end annotation
 
-    .line 906
+    .line 928
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->hexUid:Ljava/lang/String;
+
+    .line 931
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     const/4 v1, 0x1
 
+    .line 928
     invoke-static {p1, v1, v0, v1}, Lcom/google/android/exoplayer2/database/VersionTable;->setVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;I)V
 
-    .line 908
+    .line 933
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->tableName:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     invoke-static {p1, v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->dropTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
-    .line 909
+    .line 934
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -410,10 +447,16 @@
         }
     .end annotation
 
-    .line 784
+    .line 806
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->hexUid:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->delete(Lcom/google/android/exoplayer2/database/DatabaseProvider;Ljava/lang/String;)V
 
@@ -428,19 +471,26 @@
         }
     .end annotation
 
-    .line 775
+    .line 797
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
-    .line 776
+    .line 798
     invoke-interface {v0}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->hexUid:Ljava/lang/String;
 
+    .line 800
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
     const/4 v2, 0x1
 
-    .line 775
+    .line 797
     invoke-static {v0, v2, v1}, Lcom/google/android/exoplayer2/database/VersionTable;->getVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;)I
 
     move-result v0
@@ -461,14 +511,14 @@
 .method public initialize(J)V
     .locals 0
 
-    .line 769
+    .line 791
     invoke-static {p1, p2}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->hexUid:Ljava/lang/String;
 
-    .line 770
+    .line 792
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->getTableName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -499,7 +549,7 @@
         }
     .end annotation
 
-    .line 791
+    .line 813
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
@@ -522,46 +572,53 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 793
+    .line 815
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
-    .line 795
+    .line 817
     invoke-interface {v0}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->hexUid:Ljava/lang/String;
 
-    .line 794
+    .line 819
+    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    .line 816
     invoke-static {v0, v2, v3}, Lcom/google/android/exoplayer2/database/VersionTable;->getVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;)I
 
     move-result v0
 
     if-eq v0, v2, :cond_1
 
-    .line 799
+    .line 821
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 800
+    .line 822
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
     :try_end_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 802
+    .line 824
     :try_start_1
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->initializeTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 803
+    .line 825
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 805
+    .line 827
     :try_start_2
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
@@ -572,10 +629,10 @@
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 806
+    .line 828
     throw v1
 
-    .line 809
+    .line 831
     :cond_1
     :goto_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->getCursor()Landroid/database/Cursor;
@@ -584,7 +641,7 @@
     :try_end_2
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 810
+    .line 832
     :goto_2
     :try_start_3
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
@@ -593,49 +650,55 @@
 
     if-eqz v3, :cond_2
 
-    .line 811
+    .line 833
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
-    .line 812
+    .line 834
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
+    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
     const/4 v5, 0x2
 
-    .line 813
+    .line 835
     invoke-interface {v0, v5}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v5
 
-    .line 815
+    .line 837
     new-instance v6, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v6, v5}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 816
+    .line 838
     new-instance v5, Ljava/io/DataInputStream;
 
     invoke-direct {v5, v6}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 817
+    .line 839
     invoke-static {v5}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex;->access$100(Ljava/io/DataInputStream;)Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     move-result-object v5
 
-    .line 819
+    .line 841
     new-instance v6, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
     invoke-direct {v6, v3, v4, v5}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;-><init>(ILjava/lang/String;Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;)V
 
-    .line 820
+    .line 842
     iget-object v3, v6, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
 
     invoke-virtual {p1, v3, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 821
+    .line 843
     iget v3, v6, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
 
     iget-object v4, v6, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
@@ -646,7 +709,7 @@
 
     goto :goto_2
 
-    .line 823
+    .line 845
     :cond_2
     :try_start_4
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
@@ -660,7 +723,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 809
+    .line 831
     :try_start_5
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
     :try_end_5
@@ -683,13 +746,13 @@
     :catch_0
     move-exception v0
 
-    .line 825
+    .line 847
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
-    .line 826
+    .line 848
     invoke-virtual {p2}, Landroid/util/SparseArray;->clear()V
 
-    .line 827
+    .line 849
     new-instance p1, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -702,7 +765,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 886
+    .line 908
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     iget p1, p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
@@ -711,7 +774,7 @@
 
     goto :goto_0
 
-    .line 888
+    .line 910
     :cond_0
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
@@ -728,7 +791,7 @@
 .method public onUpdate(Lcom/google/android/exoplayer2/upstream/cache/CachedContent;)V
     .locals 2
 
-    .line 880
+    .line 902
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     iget v1, p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
@@ -756,7 +819,7 @@
         }
     .end annotation
 
-    .line 834
+    .line 856
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
@@ -764,16 +827,16 @@
 
     move-result-object v0
 
-    .line 835
+    .line 857
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 837
+    .line 859
     :try_start_1
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->initializeTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 838
+    .line 860
     invoke-virtual {p1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
     move-result-object p1
@@ -795,23 +858,23 @@
 
     check-cast v1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
-    .line 839
+    .line 861
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->addOrUpdateRow(Landroid/database/sqlite/SQLiteDatabase;Lcom/google/android/exoplayer2/upstream/cache/CachedContent;)V
 
     goto :goto_0
 
-    .line 841
+    .line 863
     :cond_0
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    .line 842
+    .line 864
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->clear()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 844
+    .line 866
     :try_start_2
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
@@ -822,7 +885,7 @@
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 845
+    .line 867
     throw p1
     :try_end_2
     .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_0
@@ -830,7 +893,7 @@
     :catch_0
     move-exception p1
 
-    .line 847
+    .line 869
     new-instance v0, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -856,7 +919,7 @@
         }
     .end annotation
 
-    .line 853
+    .line 875
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
@@ -867,7 +930,7 @@
 
     return-void
 
-    .line 857
+    .line 879
     :cond_0
     :try_start_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
@@ -876,14 +939,14 @@
 
     move-result-object p1
 
-    .line 858
+    .line 880
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v0, 0x0
 
-    .line 860
+    .line 882
     :goto_0
     :try_start_1
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
@@ -894,7 +957,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 861
+    .line 883
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -905,7 +968,7 @@
 
     if-nez v1, :cond_1
 
-    .line 863
+    .line 885
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->keyAt(I)I
@@ -916,7 +979,7 @@
 
     goto :goto_1
 
-    .line 865
+    .line 887
     :cond_1
     invoke-direct {p0, p1, v1}, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->addOrUpdateRow(Landroid/database/sqlite/SQLiteDatabase;Lcom/google/android/exoplayer2/upstream/cache/CachedContent;)V
 
@@ -925,18 +988,18 @@
 
     goto :goto_0
 
-    .line 868
+    .line 890
     :cond_2
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
 
-    .line 869
+    .line 891
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContentIndex$DatabaseStorage;->pendingUpdates:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 871
+    .line 893
     :try_start_2
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
@@ -947,7 +1010,7 @@
 
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 872
+    .line 894
     throw v0
     :try_end_2
     .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_0
@@ -955,7 +1018,7 @@
     :catch_0
     move-exception p1
 
-    .line 874
+    .line 896
     new-instance v0, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V

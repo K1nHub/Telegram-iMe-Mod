@@ -18,6 +18,9 @@
 .method public abstract onInvalidLatency(J)V
 .end method
 
+.method public abstract onPositionAdvancing(J)V
+.end method
+
 .method public abstract onPositionFramesMismatch(JJJJ)V
 .end method
 

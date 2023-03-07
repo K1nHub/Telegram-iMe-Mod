@@ -1,4 +1,4 @@
-.class final Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;
+.class public final Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;
 .super Lcom/google/android/exoplayer2/decoder/SimpleDecoder;
 .source "OpusDecoder.java"
 
@@ -8,7 +8,7 @@
     value = {
         "Lcom/google/android/exoplayer2/decoder/SimpleDecoder<",
         "Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;",
-        "Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;",
+        "Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;",
         "Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;",
         ">;"
     }
@@ -22,35 +22,49 @@
 
 .field private static final DRM_ERROR:I = -0x2
 
+.field private static final FULL_CODEC_INITIALIZATION_DATA_BUFFER_COUNT:I = 0x3
+
 .field private static final NO_ERROR:I = 0x0
 
-.field private static final SAMPLE_RATE:I = 0xbb80
+.field static final SAMPLE_RATE:I = 0xbb80
 
 
 # instance fields
-.field private final channelCount:I
+.field public final channelCount:I
 
-.field private final exoMediaCrypto:Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;
+.field private final cryptoConfig:Lcom/google/android/exoplayer2/decoder/CryptoConfig;
 
-.field private final headerSeekPreRollSamples:I
-
-.field private final headerSkipSamples:I
+.field private experimentalDiscardPaddingEnabled:Z
 
 .field private final nativeDecoderContext:J
+
+.field public final outputFloat:Z
+
+.field private final preSkipSamples:I
+
+.field private final seekPreRollSamples:I
 
 .field private skipSamples:I
 
 
 # direct methods
-.method public constructor <init>(IIILjava/util/List;Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;)V
-    .locals 10
+.method public static synthetic $r8$lambda$uJOZ5nBKFmHUUpdChNbY3rvrDPA(Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->releaseOutputBuffer(Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(IIILjava/util/List;Lcom/google/android/exoplayer2/decoder/CryptoConfig;Z)V
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III",
             "Ljava/util/List<",
             "[B>;",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-            ")V"
+            "Lcom/google/android/exoplayer2/decoder/CryptoConfig;",
+            "Z)V"
         }
     .end annotation
 
@@ -60,363 +74,562 @@
         }
     .end annotation
 
-    .line 77
-    new-array p1, p1, [Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;
+    move-object v7, p0
 
-    new-array p2, p2, [Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;
+    move-object/from16 v0, p4
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;-><init>([Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;[Lcom/google/android/exoplayer2/decoder/OutputBuffer;)V
+    move-object/from16 v1, p5
 
-    .line 78
-    iput-object p5, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->exoMediaCrypto:Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;
+    move v2, p1
 
-    if-eqz p5, :cond_1
-
-    .line 79
-    invoke-static {}, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->opusIsSecureDecodeSupported()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    .line 80
-    :cond_0
-    new-instance p1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
-
-    const-string p2, "Opus decoder does not support secure decode."
-
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    .line 82
-    invoke-interface {p4, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, [B
+    move/from16 v8, p6
 
     .line 83
-    array-length p5, p2
+    new-array v2, v2, [Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;
 
-    const-string v0, "Header size is too small."
+    move v3, p2
 
-    const/16 v1, 0x13
+    new-array v3, v3, [Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;
 
-    if-lt p5, v1, :cond_a
+    invoke-direct {p0, v2, v3}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;-><init>([Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;[Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
 
-    const/16 p5, 0x9
-
-    .line 86
-    aget-byte p5, p2, p5
-
-    and-int/lit16 v4, p5, 0xff
-
-    iput v4, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->channelCount:I
-
-    const/16 p5, 0x8
-
-    if-gt v4, p5, :cond_9
-
-    const/16 v2, 0xa
-
-    .line 90
-    invoke-static {p2, v2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->readUnsignedLittleEndian16([BI)I
+    .line 84
+    invoke-static {}, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->isAvailable()Z
 
     move-result v2
 
-    const/16 v3, 0x10
+    if-eqz v2, :cond_e
+
+    .line 87
+    iput-object v1, v7, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->cryptoConfig:Lcom/google/android/exoplayer2/decoder/CryptoConfig;
+
+    if-eqz v1, :cond_1
+
+    .line 88
+    invoke-static {}, Lcom/google/android/exoplayer2/ext/opus/OpusLibrary;->opusIsSecureDecodeSupported()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    .line 89
+    :cond_0
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+
+    const-string v1, "Opus decoder does not support secure decode"
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     .line 91
-    invoke-static {p2, v3}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->readSignedLittleEndian16([BI)I
+    :cond_1
+    :goto_0
+    invoke-interface/range {p4 .. p4}, Ljava/util/List;->size()I
 
-    move-result v7
+    move-result v1
 
-    new-array v8, p5, [B
+    const/4 v2, 0x3
 
-    const/16 v3, 0x12
+    const/4 v3, 0x1
 
-    .line 96
-    aget-byte v3, p2, v3
+    if-eq v1, v3, :cond_3
 
-    const/4 v5, 0x2
-
-    const/4 v6, 0x1
-
-    if-nez v3, :cond_4
-
-    if-gt v4, v5, :cond_3
-
-    if-ne v4, v5, :cond_2
-
-    const/4 p2, 0x1
+    if-ne v1, v2, :cond_2
 
     goto :goto_1
 
+    .line 93
     :cond_2
-    const/4 p2, 0x0
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
+    const-string v1, "Invalid initialization data size"
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_3
     :goto_1
-    aput-byte p1, v8, p1
+    const/4 v4, 0x2
 
-    aput-byte v6, v8, v6
+    const/16 v5, 0x8
 
-    const/4 v0, 0x1
+    if-ne v1, v2, :cond_5
+
+    .line 96
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [B
+
+    array-length v1, v1
+
+    if-ne v1, v5, :cond_4
+
+    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [B
+
+    array-length v1, v1
+
+    if-ne v1, v5, :cond_4
 
     goto :goto_2
 
-    .line 99
-    :cond_3
-    new-instance p1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
-
-    const-string p2, "Invalid Header, missing stream map."
-
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 106
+    .line 97
     :cond_4
-    array-length v3, p2
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
-    add-int/lit8 v9, v4, 0x15
+    const-string v1, "Invalid pre-skip or seek pre-roll"
 
-    if-lt v3, v9, :cond_8
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
 
-    .line 110
-    aget-byte v0, p2, v1
+    throw v0
 
-    and-int/lit16 v0, v0, 0xff
+    .line 99
+    :cond_5
+    :goto_2
+    invoke-static/range {p4 .. p4}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->getPreSkipSamples(Ljava/util/List;)I
 
-    const/16 v1, 0x14
+    move-result v1
+
+    iput v1, v7, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->preSkipSamples:I
+
+    .line 100
+    invoke-static/range {p4 .. p4}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->getSeekPreRollSamples(Ljava/util/List;)I
+
+    move-result v2
+
+    iput v2, v7, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->seekPreRollSamples:I
+
+    .line 101
+    iput v1, v7, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
+
+    const/4 v1, 0x0
+
+    .line 103
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [B
+
+    .line 104
+    array-length v2, v0
+
+    const-string v6, "Invalid header length"
+
+    const/16 v9, 0x13
+
+    if-lt v2, v9, :cond_d
+
+    .line 107
+    invoke-static {v0}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->getChannelCount([B)I
+
+    move-result v2
+
+    iput v2, v7, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->channelCount:I
+
+    if-gt v2, v5, :cond_c
+
+    const/16 v10, 0x10
 
     .line 111
-    aget-byte v1, p2, v1
+    invoke-static {v0, v10}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->readSignedLittleEndian16([BI)I
 
-    and-int/lit16 v1, v1, 0xff
+    move-result v10
 
-    const/16 v3, 0x15
+    new-array v11, v5, [B
 
-    .line 112
-    invoke-static {p2, v3, v8, p1, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    const/16 v5, 0x12
 
-    move p2, v1
+    .line 116
+    aget-byte v5, v0, v5
 
-    .line 114
-    :goto_2
-    invoke-interface {p4}, Ljava/util/List;->size()I
+    if-nez v5, :cond_8
 
-    move-result p1
+    if-gt v2, v4, :cond_7
 
-    const/4 v1, 0x3
+    if-ne v2, v4, :cond_6
 
-    if-ne p1, v1, :cond_6
-
-    .line 115
-    invoke-interface {p4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [B
-
-    array-length p1, p1
-
-    if-ne p1, p5, :cond_5
-
-    invoke-interface {p4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [B
-
-    array-length p1, p1
-
-    if-ne p1, p5, :cond_5
-
-    .line 119
-    invoke-interface {p4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [B
-
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
-
-    move-result-object p5
-
-    invoke-virtual {p1, p5}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getLong()J
-
-    move-result-wide v1
-
-    .line 121
-    invoke-interface {p4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [B
-
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
-
-    move-result-object p4
-
-    invoke-virtual {p1, p4}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getLong()J
-
-    move-result-wide p4
-
-    .line 122
-    invoke-static {v1, v2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nsToSamples(J)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->headerSkipSamples:I
-
-    .line 123
-    invoke-static {p4, p5}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nsToSamples(J)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->headerSeekPreRollSamples:I
+    const/4 v0, 0x1
 
     goto :goto_3
 
-    .line 116
-    :cond_5
-    new-instance p1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
-
-    const-string p2, "Invalid Codec Delay or Seek Preroll"
-
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 125
     :cond_6
-    iput v2, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->headerSkipSamples:I
-
-    const/16 p1, 0xf00
-
-    .line 126
-    iput p1, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->headerSeekPreRollSamples:I
+    const/4 v0, 0x0
 
     :goto_3
-    const v3, 0xbb80
+    aput-byte v1, v11, v1
 
-    move-object v2, p0
+    aput-byte v3, v11, v3
 
-    move v5, v0
+    move v4, v0
 
-    move v6, p2
+    goto :goto_4
 
-    .line 128
-    invoke-direct/range {v2 .. v8}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusInit(IIIII[B)J
+    .line 119
+    :cond_7
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
-    move-result-wide p1
+    const-string v1, "Invalid header, missing stream map"
 
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
 
-    const-wide/16 p4, 0x0
+    throw v0
 
-    cmp-long v0, p1, p4
+    .line 126
+    :cond_8
+    array-length v3, v0
 
-    if-eqz v0, :cond_7
+    add-int/lit8 v4, v2, 0x15
 
-    .line 133
-    invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->setInitialInputBufferSize(I)V
+    if-lt v3, v4, :cond_b
 
-    return-void
+    .line 130
+    aget-byte v3, v0, v9
+
+    and-int/lit16 v3, v3, 0xff
+
+    const/16 v4, 0x14
 
     .line 131
-    :cond_7
-    new-instance p1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+    aget-byte v4, v0, v4
 
-    const-string p2, "Failed to initialize decoder"
+    and-int/lit16 v4, v4, 0xff
 
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+    const/16 v5, 0x15
 
-    throw p1
+    .line 132
+    invoke-static {v0, v5, v11, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 107
-    :cond_8
-    new-instance p1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+    :goto_4
+    const v1, 0xbb80
 
-    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+    move-object v0, p0
 
-    throw p1
+    move v5, v10
 
-    .line 88
+    move-object v6, v11
+
+    .line 135
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusInit(IIIII[B)J
+
+    move-result-wide v0
+
+    iput-wide v0, v7, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_a
+
+    move v0, p3
+
+    .line 139
+    invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->setInitialInputBufferSize(I)V
+
+    .line 141
+    iput-boolean v8, v7, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->outputFloat:Z
+
+    if-eqz v8, :cond_9
+
+    .line 143
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusSetFloatOutput()V
+
     :cond_9
-    new-instance p1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+    return-void
 
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p3, "Invalid channel count: "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 84
+    .line 137
     :cond_a
-    new-instance p1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
-    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+    const-string v1, "Failed to initialize decoder"
 
-    throw p1
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 127
+    :cond_b
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+
+    invoke-direct {v0, v6}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 109
+    :cond_c
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Invalid channel count: "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 105
+    :cond_d
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+
+    invoke-direct {v0, v6}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 85
+    :cond_e
+    new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+
+    const-string v1, "Failed to load decoder native libraries"
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
-.method private static nsToSamples(J)I
-    .locals 2
+.method static getChannelCount([B)I
+    .locals 1
 
-    const-wide/32 v0, 0xbb80
+    const/16 v0, 0x9
 
-    mul-long p0, p0, v0
+    .line 262
+    aget-byte p0, p0, v0
 
-    const-wide/32 v0, 0x3b9aca00
+    and-int/lit16 p0, p0, 0xff
 
-    .line 225
-    div-long/2addr p0, v0
+    return p0
+.end method
 
-    long-to-int p1, p0
+.method static getDiscardPaddingSamples(Ljava/nio/ByteBuffer;)I
+    .locals 5
 
-    return p1
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_2
+
+    .line 310
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    if-eq v1, v2, :cond_0
+
+    goto :goto_0
+
+    .line 313
+    :cond_0
+    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+
+    invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getLong()J
+
+    move-result-wide v1
+
+    const-wide/16 v3, 0x0
+
+    cmp-long p0, v1, v3
+
+    if-gez p0, :cond_1
+
+    return v0
+
+    :cond_1
+    const-wide/32 v3, 0xbb80
+
+    mul-long v1, v1, v3
+
+    const-wide/32 v3, 0x3b9aca00
+
+    .line 317
+    div-long/2addr v1, v3
+
+    long-to-int p0, v1
+
+    return p0
+
+    :cond_2
+    :goto_0
+    return v0
+.end method
+
+.method static getPreSkipSamples(Ljava/util/List;)I
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "[B>;)I"
+        }
+    .end annotation
+
+    .line 273
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 275
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [B
+
+    invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object p0
+
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getLong()J
+
+    move-result-wide v0
+
+    const-wide/32 v2, 0xbb80
+
+    mul-long v0, v0, v2
+
+    const-wide/32 v2, 0x3b9aca00
+
+    .line 276
+    div-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    return p0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 279
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [B
+
+    const/16 v0, 0xb
+
+    .line 280
+    aget-byte v0, p0, v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    shl-int/lit8 v0, v0, 0x8
+
+    const/16 v1, 0xa
+
+    aget-byte p0, p0, v1
+
+    and-int/lit16 p0, p0, 0xff
+
+    or-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method static getSeekPreRollSamples(Ljava/util/List;)I
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "[B>;)I"
+        }
+    .end annotation
+
+    .line 292
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x2
+
+    .line 294
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [B
+
+    invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object p0
+
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getLong()J
+
+    move-result-wide v0
+
+    const-wide/32 v2, 0xbb80
+
+    mul-long v0, v0, v2
+
+    const-wide/32 v2, 0x3b9aca00
+
+    .line 295
+    div-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    return p0
+
+    :cond_0
+    const/16 p0, 0xf00
+
+    return p0
 .end method
 
 .method private native opusClose(J)V
 .end method
 
-.method private native opusDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;)I
+.method private native opusDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;)I
 .end method
 
 .method private native opusGetErrorCode(J)I
@@ -431,33 +644,23 @@
 .method private native opusReset(J)V
 .end method
 
-.method private native opusSecureDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;ILcom/google/android/exoplayer2/drm/ExoMediaCrypto;I[B[BI[I[I)I
+.method private native opusSecureDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;ILcom/google/android/exoplayer2/decoder/CryptoConfig;I[B[BI[I[I)I
+.end method
+
+.method private native opusSetFloatOutput()V
 .end method
 
 .method private static readSignedLittleEndian16([BI)I
-    .locals 0
-
-    .line 235
-    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->readUnsignedLittleEndian16([BI)I
-
-    move-result p0
-
-    int-to-short p0, p0
-
-    return p0
-.end method
-
-.method private static readUnsignedLittleEndian16([BI)I
     .locals 1
 
-    .line 229
+    .line 327
     aget-byte v0, p0, p1
 
     and-int/lit16 v0, v0, 0xff
 
     add-int/lit8 p1, p1, 0x1
 
-    .line 230
+    .line 328
     aget-byte p0, p0, p1
 
     and-int/lit16 p0, p0, 0xff
@@ -465,6 +668,28 @@
     shl-int/lit8 p0, p0, 0x8
 
     or-int/2addr p0, v0
+
+    int-to-short p0, p0
+
+    return p0
+.end method
+
+.method private static samplesToBytes(IIZ)I
+    .locals 0
+
+    if-eqz p2, :cond_0
+
+    const/4 p2, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x2
+
+    :goto_0
+    mul-int p0, p0, p1
+
+    mul-int p0, p0, p2
 
     return p0
 .end method
@@ -474,7 +699,7 @@
 .method protected createInputBuffer()Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;
     .locals 2
 
-    .line 143
+    .line 164
     new-instance v0, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;
 
     const/4 v1, 0x2
@@ -484,32 +709,47 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic createOutputBuffer()Lcom/google/android/exoplayer2/decoder/OutputBuffer;
+.method protected bridge synthetic createOutputBuffer()Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;
     .locals 1
 
-    .line 34
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->createOutputBuffer()Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;
+    .line 36
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->createOutputBuffer()Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected createOutputBuffer()Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;
-    .locals 1
+.method protected createOutputBuffer()Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;
+    .locals 2
 
-    .line 148
-    new-instance v0, Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;
+    .line 169
+    new-instance v0, Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;
 
-    invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;-><init>(Lcom/google/android/exoplayer2/decoder/SimpleDecoder;)V
+    new-instance v1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder$$ExternalSyntheticLambda0;
+
+    invoke-direct {v1, p0}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;)V
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;-><init>(Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer$Owner;)V
 
     return-object v0
+.end method
+
+.method protected bridge synthetic createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/decoder/DecoderException;
+    .locals 0
+
+    .line 36
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method protected createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
     .locals 2
 
-    .line 153
+    .line 174
     new-instance v0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
     const-string v1, "Unexpected decode error"
@@ -519,147 +759,158 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic createUnexpectedDecodeException(Ljava/lang/Throwable;)Ljava/lang/Exception;
+.method protected bridge synthetic decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;Z)Lcom/google/android/exoplayer2/decoder/DecoderException;
     .locals 0
 
-    .line 34
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+    .line 36
+    check-cast p2, Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;Z)Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method protected decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;Z)Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
+.method protected decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;Z)Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
     .locals 19
 
     move-object/from16 v15, p0
 
-    move-object/from16 v0, p1
+    move-object/from16 v14, p1
 
-    move-object/from16 v14, p2
+    move-object/from16 v13, p2
 
     if-eqz p3, :cond_1
 
-    .line 161
-    iget-wide v1, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
+    .line 182
+    iget-wide v0, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
 
-    invoke-direct {v15, v1, v2}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusReset(J)V
+    invoke-direct {v15, v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusReset(J)V
 
-    .line 164
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
+    .line 185
+    iget-wide v0, v14, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v5, v1, v3
+    cmp-long v4, v0, v2
 
-    if-nez v5, :cond_0
+    if-nez v4, :cond_0
 
-    iget v1, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->headerSkipSamples:I
+    iget v0, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->preSkipSamples:I
 
     goto :goto_0
 
     :cond_0
-    iget v1, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->headerSeekPreRollSamples:I
+    iget v0, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->seekPreRollSamples:I
 
     :goto_0
-    iput v1, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
+    iput v0, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
 
-    .line 166
+    .line 187
     :cond_1
-    iget-object v1, v0, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
+    iget-object v0, v14, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
 
-    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    move-object v5, v1
+    move-object v5, v0
 
     check-cast v5, Ljava/nio/ByteBuffer;
 
-    .line 167
-    iget-object v1, v0, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->cryptoInfo:Lcom/google/android/exoplayer2/decoder/CryptoInfo;
+    .line 188
+    iget-object v0, v14, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->cryptoInfo:Lcom/google/android/exoplayer2/decoder/CryptoInfo;
 
-    .line 168
+    .line 190
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->isEncrypted()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    .line 169
-    iget-wide v2, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
+    .line 191
+    iget-wide v1, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
 
-    iget-wide v6, v0, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
+    iget-wide v3, v14, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
 
+    .line 195
     invoke-virtual {v5}, Ljava/nio/ByteBuffer;->limit()I
 
-    move-result v8
+    move-result v6
 
-    const v9, 0xbb80
+    iget-object v9, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->cryptoConfig:Lcom/google/android/exoplayer2/decoder/CryptoConfig;
 
-    iget-object v10, v15, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->exoMediaCrypto:Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;
+    iget v10, v0, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->mode:I
 
-    iget v11, v1, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->mode:I
+    iget-object v7, v0, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->key:[B
 
-    iget-object v12, v1, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->key:[B
+    .line 200
+    invoke-static {v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v13, v1, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->iv:[B
+    move-result-object v7
 
-    iget v4, v1, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->numSubSamples:I
+    move-object v11, v7
 
-    iget-object v0, v1, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->numBytesOfClearData:[I
+    check-cast v11, [B
 
-    iget-object v1, v1, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->numBytesOfEncryptedData:[I
+    iget-object v7, v0, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->iv:[B
+
+    .line 201
+    invoke-static {v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    move-object v12, v7
+
+    check-cast v12, [B
+
+    iget v7, v0, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->numSubSamples:I
+
+    iget-object v8, v0, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->numBytesOfClearData:[I
+
+    iget-object v0, v0, Lcom/google/android/exoplayer2/decoder/CryptoInfo;->numBytesOfEncryptedData:[I
 
     move-object/from16 v16, v0
 
     move-object/from16 v0, p0
 
-    move-object/from16 v17, v1
-
-    move-wide v1, v2
-
-    move/from16 v18, v4
-
-    move-wide v3, v6
-
-    move v6, v8
+    move/from16 v17, v7
 
     move-object/from16 v7, p2
 
-    move v8, v9
+    move-object/from16 v18, v8
 
-    move-object v9, v10
+    const v8, 0xbb80
 
-    move v10, v11
+    move/from16 v13, v17
 
-    move-object v11, v12
+    move-object/from16 v14, v18
 
-    move-object v12, v13
+    move-object/from16 v15, v16
 
-    move/from16 v13, v18
-
-    move-object/from16 v14, v16
-
-    move-object/from16 v15, v17
-
-    invoke-direct/range {v0 .. v15}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusSecureDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;ILcom/google/android/exoplayer2/drm/ExoMediaCrypto;I[B[BI[I[I)I
+    .line 191
+    invoke-direct/range {v0 .. v15}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusSecureDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;ILcom/google/android/exoplayer2/decoder/CryptoConfig;I[B[BI[I[I)I
 
     move-result v0
 
     move-object/from16 v8, p0
+
+    move-object/from16 v9, p1
 
     goto :goto_1
 
     :cond_2
     move-object v8, v15
 
-    .line 173
+    .line 205
     iget-wide v1, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
 
-    iget-wide v3, v0, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
+    move-object/from16 v9, p1
 
+    iget-wide v3, v9, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->timeUs:J
+
+    .line 209
     invoke-virtual {v5}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v6
@@ -668,7 +919,8 @@
 
     move-object/from16 v7, p2
 
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;)I
+    .line 205
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusDecode(JJLjava/nio/ByteBuffer;ILcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;)I
 
     move-result v0
 
@@ -679,7 +931,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 177
+    .line 213
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -700,26 +952,26 @@
 
     move-result-object v0
 
-    .line 178
-    new-instance v1, Lcom/google/android/exoplayer2/drm/DecryptionException;
+    .line 214
+    new-instance v1, Lcom/google/android/exoplayer2/decoder/CryptoException;
 
     iget-wide v2, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
 
-    .line 179
+    .line 215
     invoke-direct {v8, v2, v3}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusGetErrorCode(J)I
 
     move-result v2
 
-    invoke-direct {v1, v2, v0}, Lcom/google/android/exoplayer2/drm/DecryptionException;-><init>(ILjava/lang/String;)V
+    invoke-direct {v1, v2, v0}, Lcom/google/android/exoplayer2/decoder/CryptoException;-><init>(ILjava/lang/String;)V
 
-    .line 180
+    .line 216
     new-instance v2, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
     invoke-direct {v2, v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-object v2
 
-    .line 182
+    .line 218
     :cond_3
     new-instance v1, Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
 
@@ -750,8 +1002,8 @@
     :cond_4
     move-object/from16 v1, p2
 
-    .line 186
-    iget-object v2, v1, Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;->data:Ljava/nio/ByteBuffer;
+    .line 222
+    iget-object v2, v1, Lcom/google/android/exoplayer2/decoder/SimpleDecoderOutputBuffer;->data:Ljava/nio/ByteBuffer;
 
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -761,83 +1013,118 @@
 
     const/4 v3, 0x0
 
-    .line 187
+    .line 223
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 188
+    .line 224
     invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 189
+    .line 225
     iget v4, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
 
     if-lez v4, :cond_6
 
-    .line 190
+    const/4 v4, 0x1
+
+    .line 226
     iget v5, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->channelCount:I
 
-    mul-int/lit8 v5, v5, 0x2
+    iget-boolean v6, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->outputFloat:Z
 
-    mul-int v6, v4, v5
+    invoke-static {v4, v5, v6}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->samplesToBytes(IIZ)I
+
+    move-result v4
+
+    .line 227
+    iget v5, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
+
+    mul-int v6, v5, v4
 
     if-gt v0, v6, :cond_5
 
-    .line 193
-    div-int v3, v0, v5
+    .line 229
+    div-int v3, v0, v4
 
-    sub-int/2addr v4, v3
+    sub-int/2addr v5, v3
 
-    iput v4, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
+    iput v5, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
 
     const/high16 v3, -0x80000000
 
-    .line 194
+    .line 230
     invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/decoder/Buffer;->addFlag(I)V
 
-    .line 195
+    .line 231
     invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     goto :goto_2
 
-    .line 197
+    .line 233
     :cond_5
     iput v3, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->skipSamples:I
 
-    .line 198
+    .line 234
     invoke-virtual {v2, v6}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
+    goto :goto_2
+
+    .line 236
     :cond_6
+    iget-boolean v1, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->experimentalDiscardPaddingEnabled:Z
+
+    if-eqz v1, :cond_7
+
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/decoder/Buffer;->hasSupplementalData()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    .line 237
+    iget-object v1, v9, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->supplementalData:Ljava/nio/ByteBuffer;
+
+    invoke-static {v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->getDiscardPaddingSamples(Ljava/nio/ByteBuffer;)I
+
+    move-result v1
+
+    if-lez v1, :cond_7
+
+    .line 239
+    iget v3, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->channelCount:I
+
+    iget-boolean v4, v8, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->outputFloat:Z
+
+    invoke-static {v1, v3, v4}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->samplesToBytes(IIZ)I
+
+    move-result v1
+
+    if-lt v0, v1, :cond_7
+
+    sub-int/2addr v0, v1
+
+    .line 241
+    invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+
+    :cond_7
     :goto_2
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method protected bridge synthetic decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/OutputBuffer;Z)Ljava/lang/Exception;
+.method public experimentalSetDiscardPaddingEnabled(Z)V
     .locals 0
 
-    .line 34
-    check-cast p2, Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;
+    .line 154
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->experimentalDiscardPaddingEnabled:Z
 
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/SimpleOutputBuffer;Z)Lcom/google/android/exoplayer2/ext/opus/OpusDecoderException;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public getChannelCount()I
-    .locals 1
-
-    .line 214
-    iget v0, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->channelCount:I
-
-    return v0
+    return-void
 .end method
 
 .method public getName()Ljava/lang/String;
     .locals 2
 
-    .line 138
+    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -859,21 +1146,13 @@
     return-object v0
 .end method
 
-.method public getSampleRate()I
-    .locals 1
-
-    const v0, 0xbb80
-
-    return v0
-.end method
-
 .method public release()V
     .locals 2
 
-    .line 206
+    .line 250
     invoke-super {p0}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->release()V
 
-    .line 207
+    .line 251
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/opus/OpusDecoder;->opusClose(J)V

@@ -17,13 +17,13 @@
 .method public constructor <init>([B)V
     .locals 0
 
-    .line 39
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 42
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->data:[B
 
-    .line 41
+    .line 43
     array-length p1, p1
 
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->byteLimit:I
@@ -34,7 +34,7 @@
 .method private assertValidOffset()V
     .locals 2
 
-    .line 125
+    .line 121
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->byteOffset:I
 
     if-ltz v0, :cond_1
@@ -68,7 +68,7 @@
 .method public bitsLeft()I
     .locals 2
 
-    .line 120
+    .line 116
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->byteLimit:I
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->byteOffset:I
@@ -87,7 +87,7 @@
 .method public getPosition()I
     .locals 2
 
-    .line 102
+    .line 100
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->byteOffset:I
 
     mul-int/lit8 v0, v0, 0x8
@@ -225,7 +225,7 @@
 .method public setPosition(I)V
     .locals 1
 
-    .line 111
+    .line 109
     div-int/lit8 v0, p1, 0x8
 
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->byteOffset:I
@@ -234,10 +234,10 @@
 
     sub-int/2addr p1, v0
 
-    .line 112
+    .line 110
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->bitOffset:I
 
-    .line 113
+    .line 111
     invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->assertValidOffset()V
 
     return-void

@@ -17,21 +17,21 @@
 .method public constructor <init>(Ljava/lang/String;JJ)V
     .locals 0
 
-    .line 50
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-nez p1, :cond_0
 
     const-string p1, ""
 
-    .line 51
+    .line 45
     :cond_0
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->referenceUri:Ljava/lang/String;
 
-    .line 52
+    .line 46
     iput-wide p2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->start:J
 
-    .line 53
+    .line 47
     iput-wide p4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->length:J
 
     return-void
@@ -42,7 +42,7 @@
 .method public attemptMerge(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
     .locals 13
 
-    .line 91
+    .line 85
     invoke-virtual {p0, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->resolveUriString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -51,7 +51,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 92
+    .line 86
     invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->resolveUriString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -64,7 +64,7 @@
 
     goto :goto_2
 
-    .line 94
+    .line 88
     :cond_0
     iget-wide v2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->length:J
 
@@ -84,10 +84,10 @@
 
     if-nez p2, :cond_2
 
-    .line 95
+    .line 89
     new-instance p2, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
-    .line 96
+    .line 92
     iget-wide v8, p1, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->length:J
 
     cmp-long p1, v8, v4
@@ -110,7 +110,7 @@
 
     return-object p2
 
-    .line 97
+    .line 93
     :cond_2
     iget-wide v6, p1, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->length:J
 
@@ -128,7 +128,7 @@
 
     if-nez v12, :cond_4
 
-    .line 98
+    .line 94
     new-instance v8, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
     cmp-long v0, v2, v4
@@ -147,7 +147,7 @@
 
     move-wide v2, p1
 
-    .line 99
+    .line 97
     invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;-><init>(Ljava/lang/String;JJ)V
 
     return-object v8
@@ -171,7 +171,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 122
+    .line 120
     const-class v2, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -182,11 +182,11 @@
 
     goto :goto_1
 
-    .line 125
+    .line 123
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
-    .line 126
+    .line 124
     iget-wide v2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->start:J
 
     iget-wide v4, p1, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->start:J
@@ -207,7 +207,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->referenceUri:Ljava/lang/String;
 
-    .line 128
+    .line 126
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -230,14 +230,14 @@
 .method public hashCode()I
     .locals 3
 
-    .line 107
+    .line 105
     iget v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->hashCode:I
 
     if-nez v0, :cond_0
 
     const/16 v0, 0x20f
 
-    .line 109
+    .line 107
     iget-wide v1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->start:J
 
     long-to-int v2, v1
@@ -246,7 +246,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 110
+    .line 108
     iget-wide v1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->length:J
 
     long-to-int v2, v1
@@ -255,7 +255,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 111
+    .line 109
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->referenceUri:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -264,10 +264,10 @@
 
     add-int/2addr v0, v1
 
-    .line 112
+    .line 110
     iput v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->hashCode:I
 
-    .line 114
+    .line 112
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->hashCode:I
 
@@ -277,7 +277,7 @@
 .method public resolveUri(Ljava/lang/String;)Landroid/net/Uri;
     .locals 1
 
-    .line 63
+    .line 57
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->referenceUri:Ljava/lang/String;
 
     invoke-static {p1, v0}, Lcom/google/android/exoplayer2/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
@@ -290,7 +290,7 @@
 .method public resolveUriString(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 73
+    .line 67
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;->referenceUri:Ljava/lang/String;
 
     invoke-static {p1, v0}, Lcom/google/android/exoplayer2/util/UriUtil;->resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -303,7 +303,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 133
+    .line 131
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -11,7 +11,7 @@
         "O:",
         "Ljava/lang/Object;",
         "E:",
-        "Ljava/lang/Exception;",
+        "Lcom/google/android/exoplayer2/decoder/DecoderException;",
         ">",
         "Ljava/lang/Object;"
     }
@@ -28,7 +28,7 @@
 
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/Exception;
+            Lcom/google/android/exoplayer2/decoder/DecoderException;
         }
     .end annotation
 .end method
@@ -42,7 +42,7 @@
 
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/Exception;
+            Lcom/google/android/exoplayer2/decoder/DecoderException;
         }
     .end annotation
 .end method
@@ -62,7 +62,7 @@
 
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/Exception;
+            Lcom/google/android/exoplayer2/decoder/DecoderException;
         }
     .end annotation
 .end method

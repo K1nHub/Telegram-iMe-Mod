@@ -27,7 +27,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 70
+    .line 62
     new-instance v0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand$1;-><init>()V
@@ -40,16 +40,16 @@
 .method private constructor <init>(J[BJ)V
     .locals 0
 
-    .line 41
+    .line 33
     invoke-direct {p0}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceCommand;-><init>()V
 
-    .line 42
+    .line 34
     iput-wide p4, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->ptsAdjustment:J
 
-    .line 43
+    .line 35
     iput-wide p1, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->identifier:J
 
-    .line 44
+    .line 36
     iput-object p3, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->commandBytes:[B
 
     return-void
@@ -58,24 +58,24 @@
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
 
-    .line 47
+    .line 39
     invoke-direct {p0}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceCommand;-><init>()V
 
-    .line 48
+    .line 40
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->ptsAdjustment:J
 
-    .line 49
+    .line 41
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->identifier:J
 
-    .line 50
+    .line 42
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object p1
@@ -94,7 +94,7 @@
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand$1;)V
     .locals 0
 
-    .line 26
+    .line 24
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -103,22 +103,22 @@
 .method static parseFromSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;IJ)Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;
     .locals 6
 
-    .line 55
+    .line 47
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v1
 
     add-int/lit8 p1, p1, -0x4
 
-    .line 56
+    .line 48
     new-array v3, p1, [B
 
     const/4 v0, 0x0
 
-    .line 57
+    .line 49
     invoke-virtual {p0, v3, v0, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 58
+    .line 50
     new-instance p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;
 
     move-object v0, p0
@@ -135,17 +135,17 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    .line 65
+    .line 57
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->ptsAdjustment:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 66
+    .line 58
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->identifier:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 67
+    .line 59
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/scte35/PrivateCommand;->commandBytes:[B
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V
