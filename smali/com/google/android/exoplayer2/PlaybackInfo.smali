@@ -4,13 +4,13 @@
 
 
 # static fields
-.field private static final DUMMY_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+.field private static final PLACEHOLDER_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
 
 # instance fields
 .field public volatile bufferedPositionUs:J
 
-.field public final contentPositionUs:J
+.field public final discontinuityStartPositionUs:J
 
 .field public final isLoading:Z
 
@@ -18,13 +18,31 @@
 
 .field public final periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
+.field public final playWhenReady:Z
+
 .field public final playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
+
+.field public final playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
 .field public final playbackState:I
 
+.field public final playbackSuppressionReason:I
+
 .field public volatile positionUs:J
 
-.field public final startPositionUs:J
+.field public final requestedContentPositionUs:J
+
+.field public final sleepingForOffload:Z
+
+.field public final staticMetadata:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/metadata/Metadata;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final timeline:Lcom/google/android/exoplayer2/Timeline;
 
@@ -39,7 +57,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 33
+    .line 35
     new-instance v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     new-instance v1, Ljava/lang/Object;
@@ -48,112 +66,159 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/exoplayer2/PlaybackInfo;->DUMMY_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    sput-object v0, Lcom/google/android/exoplayer2/PlaybackInfo;->PLACEHOLDER_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/exoplayer2/Timeline;",
+            "Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;",
+            "JJI",
+            "Lcom/google/android/exoplayer2/ExoPlaybackException;",
+            "Z",
+            "Lcom/google/android/exoplayer2/source/TrackGroupArray;",
+            "Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;",
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/metadata/Metadata;",
+            ">;",
+            "Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;",
+            "ZI",
+            "Lcom/google/android/exoplayer2/PlaybackParameters;",
+            "JJJZ)V"
+        }
+    .end annotation
 
     move-object v0, p0
 
-    .line 138
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     move-object v1, p1
 
-    .line 139
+    .line 162
     iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
     move-object v1, p2
 
-    .line 140
+    .line 163
     iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     move-wide v1, p3
 
-    .line 141
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
+    .line 164
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
 
     move-wide v1, p5
 
-    .line 142
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
+    .line 165
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
 
     move v1, p7
 
-    .line 143
+    .line 166
     iput v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
 
     move-object v1, p8
 
-    .line 144
+    .line 167
     iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
 
     move v1, p9
 
-    .line 145
+    .line 168
     iput-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
 
     move-object v1, p10
 
-    .line 146
+    .line 169
     iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     move-object v1, p11
 
-    .line 147
+    .line 170
     iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
     move-object v1, p12
 
-    .line 148
+    .line 171
+    iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
+
+    move-object/from16 v1, p13
+
+    .line 172
     iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    move-wide/from16 v1, p13
+    move/from16 v1, p14
 
-    .line 149
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+    .line 173
+    iput-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
 
-    move-wide/from16 v1, p15
+    move/from16 v1, p15
 
-    .line 150
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+    .line 174
+    iput v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
+
+    move-object/from16 v1, p16
+
+    .line 175
+    iput-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
     move-wide/from16 v1, p17
 
-    .line 151
+    .line 176
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+
+    move-wide/from16 v1, p19
+
+    .line 177
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v1, p21
+
+    .line 178
     iput-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move/from16 v1, p23
+
+    .line 179
+    iput-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
 
     return-void
 .end method
 
-.method public static createDummy(JLcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 20
+.method public static createDummy(Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 25
 
-    move-wide/from16 v3, p0
+    move-object/from16 v11, p0
 
-    move-wide/from16 v13, p0
+    .line 101
+    new-instance v24, Lcom/google/android/exoplayer2/PlaybackInfo;
 
-    move-wide/from16 v17, p0
-
-    move-object/from16 v11, p2
-
-    .line 93
-    new-instance v19, Lcom/google/android/exoplayer2/PlaybackInfo;
-
-    move-object/from16 v0, v19
+    move-object/from16 v0, v24
 
     sget-object v1, Lcom/google/android/exoplayer2/Timeline;->EMPTY:Lcom/google/android/exoplayer2/Timeline;
 
-    sget-object v2, Lcom/google/android/exoplayer2/PlaybackInfo;->DUMMY_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    sget-object v13, Lcom/google/android/exoplayer2/PlaybackInfo;->PLACEHOLDER_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    move-object v12, v2
+    move-object v2, v13
 
     sget-object v10, Lcom/google/android/exoplayer2/source/TrackGroupArray;->EMPTY:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
-    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
+    .line 111
+    invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v12
+
+    sget-object v16, Lcom/google/android/exoplayer2/PlaybackParameters;->DEFAULT:Lcom/google/android/exoplayer2/PlaybackParameters;
+
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide/16 v5, 0x0
 
     const/4 v7, 0x1
 
@@ -161,34 +226,53 @@
 
     const/4 v9, 0x0
 
-    const-wide/16 v15, 0x0
+    const/4 v14, 0x0
 
-    invoke-direct/range {v0 .. v18}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
+    const/4 v15, 0x0
 
-    return-object v19
+    const-wide/16 v17, 0x0
+
+    const-wide/16 v19, 0x0
+
+    const-wide/16 v21, 0x0
+
+    const/16 v23, 0x0
+
+    invoke-direct/range {v0 .. v23}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
+
+    return-object v24
+.end method
+
+.method public static getDummyPeriodForEmptyTimeline()Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    .locals 1
+
+    .line 184
+    sget-object v0, Lcom/google/android/exoplayer2/PlaybackInfo;->PLACEHOLDER_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public copyWithIsLoading(Z)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 22
+    .locals 27
 
     move-object/from16 v0, p0
 
     move/from16 v10, p1
 
-    .line 293
-    new-instance v20, Lcom/google/android/exoplayer2/PlaybackInfo;
+    .line 328
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
 
-    move-object/from16 v1, v20
+    move-object/from16 v1, v25
 
     iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
     iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
 
-    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
 
     iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
 
@@ -198,50 +282,68 @@
 
     iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
 
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
 
     move-object/from16 p1, v1
 
-    move-object/from16 v21, v2
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
 
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+    move/from16 v16, v1
 
-    move-wide/from16 v16, v1
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+    move-object/from16 v17, v1
+
+    move-object/from16 v26, v2
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
 
     move-wide/from16 v18, v1
 
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move-wide/from16 v22, v1
+
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
+
+    move/from16 v24, v1
+
     move-object/from16 v1, p1
 
-    move-object/from16 v2, v21
+    move-object/from16 v2, v26
 
-    invoke-direct/range {v1 .. v19}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
 
-    return-object v20
+    return-object v25
 .end method
 
 .method public copyWithLoadingMediaPeriodId(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 22
+    .locals 27
 
     move-object/from16 v0, p0
 
-    move-object/from16 v13, p1
+    move-object/from16 v14, p1
 
-    .line 343
-    new-instance v20, Lcom/google/android/exoplayer2/PlaybackInfo;
+    .line 357
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
 
-    move-object/from16 v1, v20
+    move-object/from16 v1, v25
 
     iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
     iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
 
-    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
 
     iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
 
@@ -253,208 +355,87 @@
 
     iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
+
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
 
     move-object/from16 p1, v1
 
-    move-object/from16 v21, v2
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
 
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+    move/from16 v16, v1
 
-    move-wide/from16 v16, v1
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+    move-object/from16 v17, v1
+
+    move-object/from16 v26, v2
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
 
     move-wide/from16 v18, v1
 
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move-wide/from16 v22, v1
+
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
+
+    move/from16 v24, v1
+
     move-object/from16 v1, p1
 
-    move-object/from16 v2, v21
+    move-object/from16 v2, v26
 
-    invoke-direct/range {v1 .. v19}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
 
-    return-object v20
+    return-object v25
 .end method
 
-.method public copyWithNewPosition(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 21
+.method public copyWithNewPosition(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJJLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 26
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;",
+            "JJJJ",
+            "Lcom/google/android/exoplayer2/source/TrackGroupArray;",
+            "Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;",
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/metadata/Metadata;",
+            ">;)",
+            "Lcom/google/android/exoplayer2/PlaybackInfo;"
+        }
+    .end annotation
 
     move-object/from16 v0, p0
-
-    .line 197
-    new-instance v20, Lcom/google/android/exoplayer2/PlaybackInfo;
-
-    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    .line 201
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    move-wide/from16 v6, p4
-
-    goto :goto_0
-
-    :cond_0
-    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
-
-    move-wide v6, v3
-
-    :goto_0
-    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
-
-    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
-
-    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
-
-    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
-
-    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
-
-    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
-
-    move-object/from16 v1, v20
 
     move-object/from16 v3, p1
 
-    move-wide/from16 v4, p2
+    move-wide/from16 v22, p2
 
-    move-wide/from16 v16, p6
+    move-wide/from16 v4, p4
 
-    move-wide/from16 v18, p2
+    move-wide/from16 v6, p6
 
-    invoke-direct/range {v1 .. v19}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
+    move-wide/from16 v20, p8
 
-    return-object v20
-.end method
+    move-object/from16 v11, p10
 
-.method public copyWithPlaybackError(Lcom/google/android/exoplayer2/ExoPlaybackException;)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 22
+    move-object/from16 v12, p11
 
-    move-object/from16 v0, p0
+    move-object/from16 v13, p12
 
-    move-object/from16 v9, p1
+    .line 212
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
 
-    .line 269
-    new-instance v20, Lcom/google/android/exoplayer2/PlaybackInfo;
-
-    move-object/from16 v1, v20
+    move-object/from16 v1, v25
 
     iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
-
-    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
-
-    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
-
-    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
-
-    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
-
-    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
-
-    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
-
-    move-object/from16 p1, v1
-
-    move-object/from16 v21, v2
-
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
-
-    move-wide/from16 v16, v1
-
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
-
-    move-wide/from16 v18, v1
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, v21
-
-    invoke-direct/range {v1 .. v19}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
-
-    return-object v20
-.end method
-
-.method public copyWithPlaybackState(I)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 22
-
-    move-object/from16 v0, p0
-
-    move/from16 v8, p1
-
-    .line 245
-    new-instance v20, Lcom/google/android/exoplayer2/PlaybackInfo;
-
-    move-object/from16 v1, v20
-
-    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
-
-    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
-
-    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
-
-    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
-
-    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
-
-    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
-
-    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
-
-    move-object/from16 p1, v1
-
-    move-object/from16 v21, v2
-
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
-
-    move-wide/from16 v16, v1
-
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
-
-    move-wide/from16 v18, v1
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, v21
-
-    invoke-direct/range {v1 .. v19}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
-
-    return-object v20
-.end method
-
-.method public copyWithTimeline(Lcom/google/android/exoplayer2/Timeline;)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v2, p1
-
-    .line 221
-    new-instance v20, Lcom/google/android/exoplayer2/PlaybackInfo;
-
-    move-object/from16 v1, v20
-
-    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
-
-    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
 
     iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
 
@@ -462,164 +443,455 @@
 
     iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
 
-    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
-
-    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
-
-    move-object/from16 v21, v1
-
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
-
-    move-wide/from16 v16, v1
-
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
-
-    move-wide/from16 v18, v1
-
-    move-object/from16 v2, p1
-
-    move-object/from16 v1, v21
-
-    invoke-direct/range {v1 .. v19}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
-
-    return-object v20
-.end method
-
-.method public copyWithTrackInfo(Lcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)Lcom/google/android/exoplayer2/PlaybackInfo;
-    .locals 21
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v11, p1
-
-    move-object/from16 v12, p2
-
-    .line 319
-    new-instance v20, Lcom/google/android/exoplayer2/PlaybackInfo;
-
-    move-object/from16 v1, v20
-
-    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
-
-    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
-
-    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
-
-    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
-
-    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
-
-    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
 
     move-object/from16 p1, v1
+
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
+
+    move/from16 v16, v1
+
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
+
+    move-object/from16 v17, v1
 
     move-object/from16 p2, v2
 
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
-
-    move-wide/from16 v16, v1
-
-    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
 
     move-wide/from16 v18, v1
+
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
+
+    move/from16 v24, v1
 
     move-object/from16 v1, p1
 
     move-object/from16 v2, p2
 
-    invoke-direct/range {v1 .. v19}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJ)V
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
 
-    return-object v20
+    return-object v25
 .end method
 
-.method public getDummyFirstMediaPeriodId(ZLcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-    .locals 4
+.method public copyWithPlayWhenReady(ZI)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 26
 
-    .line 164
-    iget-object v0, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Timeline;->isEmpty()Z
+    move/from16 v15, p1
 
-    move-result v0
+    move/from16 v16, p2
 
-    if-eqz v0, :cond_0
+    .line 390
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
 
-    .line 165
-    sget-object p1, Lcom/google/android/exoplayer2/PlaybackInfo;->DUMMY_MEDIA_PERIOD_ID:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    move-object/from16 v1, v25
 
-    return-object p1
+    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
-    .line 167
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/Timeline;->getFirstWindowIndex(Z)I
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
 
-    move-result p1
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
 
-    .line 168
-    iget-object v0, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
+    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
 
-    move-result-object p2
+    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
 
-    iget p2, p2, Lcom/google/android/exoplayer2/Timeline$Window;->firstPeriodIndex:I
+    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
-    .line 169
-    iget-object v0, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
 
-    iget-object v1, v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+    move-object/from16 p1, v1
 
-    move-result v0
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
 
-    const-wide/16 v1, -0x1
+    move-object/from16 v17, v1
 
-    const/4 v3, -0x1
+    move-object/from16 p2, v2
 
-    if-eq v0, v3, :cond_1
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
 
-    .line 172
-    iget-object v3, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    move-wide/from16 v18, v1
 
-    invoke-virtual {v3, v0, p3}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
 
-    move-result-object p3
+    move-wide/from16 v20, v1
 
-    iget p3, p3, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
-    if-ne p1, p3, :cond_1
+    move-wide/from16 v22, v1
 
-    .line 175
-    iget-object p1, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
 
-    iget-wide v1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    move/from16 v24, v1
 
-    .line 178
-    :cond_1
-    new-instance p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    move-object/from16 v1, p1
 
-    iget-object p3, p0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    move-object/from16 v2, p2
 
-    invoke-virtual {p3, p2}, Lcom/google/android/exoplayer2/Timeline;->getUidOfPeriod(I)Ljava/lang/Object;
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
 
-    move-result-object p2
+    return-object v25
+.end method
 
-    invoke-direct {p1, p2, v1, v2}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;J)V
+.method public copyWithPlaybackError(Lcom/google/android/exoplayer2/ExoPlaybackException;)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 27
 
-    return-object p1
+    move-object/from16 v0, p0
+
+    move-object/from16 v9, p1
+
+    .line 299
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
+
+    move-object/from16 v1, v25
+
+    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+
+    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
+
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
+
+    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
+
+    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
+
+    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
+
+    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
+
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
+
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
+
+    move-object/from16 p1, v1
+
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
+
+    move/from16 v16, v1
+
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
+
+    move-object/from16 v17, v1
+
+    move-object/from16 v26, v2
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+
+    move-wide/from16 v18, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move-wide/from16 v22, v1
+
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
+
+    move/from16 v24, v1
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v26
+
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
+
+    return-object v25
+.end method
+
+.method public copyWithPlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 27
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v17, p1
+
+    .line 419
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
+
+    move-object/from16 v1, v25
+
+    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+
+    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
+
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
+
+    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
+
+    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
+
+    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
+
+    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
+
+    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
+
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
+
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
+
+    move-object/from16 p1, v1
+
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
+
+    move/from16 v16, v1
+
+    move-object/from16 v26, v2
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+
+    move-wide/from16 v18, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move-wide/from16 v22, v1
+
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
+
+    move/from16 v24, v1
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v26
+
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
+
+    return-object v25
+.end method
+
+.method public copyWithPlaybackState(I)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 27
+
+    move-object/from16 v0, p0
+
+    move/from16 v8, p1
+
+    .line 270
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
+
+    move-object/from16 v1, v25
+
+    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+
+    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
+
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
+
+    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
+
+    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
+
+    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
+
+    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
+
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
+
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
+
+    move-object/from16 p1, v1
+
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
+
+    move/from16 v16, v1
+
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
+
+    move-object/from16 v17, v1
+
+    move-object/from16 v26, v2
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+
+    move-wide/from16 v18, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move-wide/from16 v22, v1
+
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
+
+    move/from16 v24, v1
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v26
+
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
+
+    return-object v25
+.end method
+
+.method public copyWithSleepingForOffload(Z)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 27
+
+    move-object/from16 v0, p0
+
+    move/from16 v24, p1
+
+    .line 448
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
+
+    move-object/from16 v1, v25
+
+    iget-object v2, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+
+    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
+
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
+
+    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
+
+    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
+
+    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
+
+    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
+
+    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
+
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
+
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
+
+    move-object/from16 p1, v1
+
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
+
+    move/from16 v16, v1
+
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
+
+    move-object/from16 v17, v1
+
+    move-object/from16 v26, v2
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+
+    move-wide/from16 v18, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move-wide/from16 v22, v1
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v26
+
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
+
+    return-object v25
+.end method
+
+.method public copyWithTimeline(Lcom/google/android/exoplayer2/Timeline;)Lcom/google/android/exoplayer2/PlaybackInfo;
+    .locals 27
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v2, p1
+
+    .line 241
+    new-instance v25, Lcom/google/android/exoplayer2/PlaybackInfo;
+
+    move-object/from16 v1, v25
+
+    iget-object v3, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
+
+    iget-wide v6, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->discontinuityStartPositionUs:J
+
+    iget v8, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackState:I
+
+    iget-object v9, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackError:Lcom/google/android/exoplayer2/ExoPlaybackException;
+
+    iget-boolean v10, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->isLoading:Z
+
+    iget-object v11, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
+
+    iget-object v12, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
+
+    iget-object v13, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->staticMetadata:Ljava/util/List;
+
+    iget-object v14, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->loadingMediaPeriodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playWhenReady:Z
+
+    move-object/from16 p1, v1
+
+    iget v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackSuppressionReason:I
+
+    move/from16 v16, v1
+
+    iget-object v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->playbackParameters:Lcom/google/android/exoplayer2/PlaybackParameters;
+
+    move-object/from16 v17, v1
+
+    move-object/from16 v26, v2
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->bufferedPositionUs:J
+
+    move-wide/from16 v18, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->totalBufferedDurationUs:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
+
+    move-wide/from16 v22, v1
+
+    iget-boolean v1, v0, Lcom/google/android/exoplayer2/PlaybackInfo;->sleepingForOffload:Z
+
+    move/from16 v24, v1
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v26
+
+    invoke-direct/range {v1 .. v24}, Lcom/google/android/exoplayer2/PlaybackInfo;-><init>(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJILcom/google/android/exoplayer2/ExoPlaybackException;ZLcom/google/android/exoplayer2/source/TrackGroupArray;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;ZILcom/google/android/exoplayer2/PlaybackParameters;JJJZ)V
+
+    return-object v25
 .end method

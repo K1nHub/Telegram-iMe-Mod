@@ -70,7 +70,7 @@
 
     new-array v0, v0, [D
 
-    .line 45
+    .line 49
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->FRAME_RATE_VALUES:[D
@@ -95,7 +95,7 @@
 
     const/4 v0, 0x0
 
-    .line 72
+    .line 76
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;-><init>(Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;)V
 
     return-void
@@ -104,20 +104,20 @@
 .method constructor <init>(Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;)V
     .locals 2
 
-    .line 75
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
+    .line 80
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataReader:Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
 
     const/4 v0, 0x4
 
     new-array v0, v0, [Z
 
-    .line 77
+    .line 81
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->prefixFlags:[Z
 
-    .line 78
+    .line 82
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;
 
     const/16 v1, 0x80
@@ -128,7 +128,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 80
+    .line 84
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     const/16 v0, 0xb2
@@ -137,7 +137,7 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    .line 81
+    .line 85
     new-instance p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
@@ -149,18 +149,26 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 83
+    .line 87
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    .line 84
+    .line 88
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataParsable:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     :goto_0
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    .line 90
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->pesTimeUs:J
+
+    .line 91
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
+
     return-void
 .end method
 
 .method private static parseCsdBuffer(Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;Ljava/lang/String;)Landroid/util/Pair;
-    .locals 20
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -174,299 +182,320 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    .line 231
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->data:[B
 
-    .line 218
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->data:[B
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->length:I
 
-    iget v2, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->length:I
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
 
-    invoke-static {v1, v2}, Ljava/util/Arrays;->copyOf([BI)[B
+    move-result-object v0
 
-    move-result-object v1
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    .line 233
+    aget-byte v2, v0, v1
 
-    .line 220
-    aget-byte v3, v1, v2
+    and-int/lit16 v2, v2, 0xff
 
-    and-int/lit16 v3, v3, 0xff
+    const/4 v3, 0x5
 
-    const/4 v4, 0x5
+    .line 234
+    aget-byte v4, v0, v3
 
-    .line 221
-    aget-byte v5, v1, v4
+    and-int/lit16 v4, v4, 0xff
+
+    const/4 v5, 0x6
+
+    .line 235
+    aget-byte v5, v0, v5
 
     and-int/lit16 v5, v5, 0xff
 
-    const/4 v6, 0x6
+    shl-int/2addr v2, v1
 
-    .line 222
-    aget-byte v6, v1, v6
+    shr-int/lit8 v6, v4, 0x4
 
-    and-int/lit16 v6, v6, 0xff
+    or-int/2addr v2, v6
 
-    shl-int/2addr v3, v2
+    and-int/lit8 v4, v4, 0xf
 
-    shr-int/lit8 v7, v5, 0x4
+    shl-int/lit8 v4, v4, 0x8
 
-    or-int v13, v3, v7
+    or-int/2addr v4, v5
 
-    and-int/lit8 v3, v5, 0xf
+    const/4 v5, 0x7
 
-    shl-int/lit8 v3, v3, 0x8
+    .line 240
+    aget-byte v6, v0, v5
 
-    or-int v14, v3, v6
+    and-int/lit16 v6, v6, 0xf0
 
-    const/4 v3, 0x7
+    shr-int/2addr v6, v1
 
-    .line 227
-    aget-byte v5, v1, v3
+    const/4 v7, 0x2
 
-    and-int/lit16 v5, v5, 0xf0
+    if-eq v6, v7, :cond_2
 
-    shr-int/2addr v5, v2
+    const/4 v7, 0x3
 
-    const/4 v6, 0x2
+    if-eq v6, v7, :cond_1
 
-    if-eq v5, v6, :cond_2
+    if-eq v6, v1, :cond_0
 
-    const/4 v6, 0x3
-
-    if-eq v5, v6, :cond_1
-
-    if-eq v5, v2, :cond_0
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    const/high16 v18, 0x3f800000    # 1.0f
+    const/high16 v1, 0x3f800000    # 1.0f
 
     goto :goto_1
 
     :cond_0
-    mul-int/lit8 v2, v14, 0x79
+    mul-int/lit8 v1, v4, 0x79
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    mul-int/lit8 v5, v13, 0x64
+    mul-int/lit8 v6, v2, 0x64
 
     goto :goto_0
 
     :cond_1
-    mul-int/lit8 v2, v14, 0x10
+    mul-int/lit8 v1, v4, 0x10
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    mul-int/lit8 v5, v13, 0x9
+    mul-int/lit8 v6, v2, 0x9
 
     goto :goto_0
 
     :cond_2
-    mul-int/lit8 v2, v14, 0x4
+    mul-int/lit8 v1, v4, 0x4
 
-    int-to-float v2, v2
+    int-to-float v1, v1
 
-    mul-int/lit8 v5, v13, 0x3
+    mul-int/lit8 v6, v2, 0x3
 
     :goto_0
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    div-float/2addr v2, v5
+    div-float/2addr v1, v6
 
-    move/from16 v18, v2
-
+    .line 256
     :goto_1
-    const/4 v10, 0x0
+    new-instance v6, Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v11, -0x1
+    invoke-direct {v6}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
-    const/4 v12, -0x1
+    .line 258
+    invoke-virtual {v6, p1}, Lcom/google/android/exoplayer2/Format$Builder;->setId(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/high16 v15, -0x40800000    # -1.0f
+    move-result-object p1
 
-    .line 245
-    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    const-string v6, "video/mpeg2"
 
-    move-result-object v16
+    .line 259
+    invoke-virtual {p1, v6}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/16 v17, -0x1
+    move-result-object p1
 
-    const/16 v19, 0x0
+    .line 260
+    invoke-virtual {p1, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setWidth(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const-string v9, "video/mpeg2"
+    move-result-object p1
 
-    move-object/from16 v8, p1
+    .line 261
+    invoke-virtual {p1, v4}, Lcom/google/android/exoplayer2/Format$Builder;->setHeight(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    .line 243
-    invoke-static/range {v8 .. v19}, Lcom/google/android/exoplayer2/Format;->createVideoSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIFLjava/util/List;IFLcom/google/android/exoplayer2/drm/DrmInitData;)Lcom/google/android/exoplayer2/Format;
+    move-result-object p1
 
-    move-result-object v2
+    .line 262
+    invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setPixelWidthHeightRatio(F)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const-wide/16 v5, 0x0
+    move-result-object p1
 
-    .line 248
-    aget-byte v3, v1, v3
+    .line 263
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    and-int/lit8 v3, v3, 0xf
+    move-result-object v1
 
-    add-int/lit8 v3, v3, -0x1
+    invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setInitializationData(Ljava/util/List;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    if-ltz v3, :cond_4
+    move-result-object p1
 
-    .line 249
-    sget-object v7, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->FRAME_RATE_VALUES:[D
+    .line 264
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
 
-    array-length v8, v7
+    move-result-object p1
 
-    if-ge v3, v8, :cond_4
+    const-wide/16 v1, 0x0
 
-    .line 250
-    aget-wide v5, v7, v3
+    .line 267
+    aget-byte v4, v0, v5
 
-    .line 251
-    iget v0, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
+    and-int/lit8 v4, v4, 0xf
 
-    add-int/lit8 v0, v0, 0x9
+    add-int/lit8 v4, v4, -0x1
 
-    .line 252
-    aget-byte v3, v1, v0
+    if-ltz v4, :cond_4
 
-    and-int/lit8 v3, v3, 0x60
+    .line 268
+    sget-object v5, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->FRAME_RATE_VALUES:[D
 
-    shr-int/2addr v3, v4
+    array-length v6, v5
 
-    .line 253
-    aget-byte v0, v1, v0
+    if-ge v4, v6, :cond_4
 
-    and-int/lit8 v0, v0, 0x1f
+    .line 269
+    aget-wide v1, v5, v4
 
-    if-eq v3, v0, :cond_3
+    .line 270
+    iget p0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->sequenceExtensionPosition:I
+
+    add-int/lit8 p0, p0, 0x9
+
+    .line 271
+    aget-byte v4, v0, p0
+
+    and-int/lit8 v4, v4, 0x60
+
+    shr-int/lit8 v3, v4, 0x5
+
+    .line 272
+    aget-byte p0, v0, p0
+
+    and-int/lit8 p0, p0, 0x1f
+
+    if-eq v3, p0, :cond_3
 
     int-to-double v3, v3
 
-    const-wide/high16 v7, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
 
-    add-double/2addr v3, v7
+    add-double/2addr v3, v5
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 p0, p0, 0x1
 
-    int-to-double v0, v0
+    int-to-double v5, p0
 
-    div-double/2addr v3, v0
+    div-double/2addr v3, v5
 
-    mul-double v5, v5, v3
+    mul-double v1, v1, v3
 
     :cond_3
-    const-wide v0, 0x412e848000000000L    # 1000000.0
+    const-wide v3, 0x412e848000000000L    # 1000000.0
 
-    div-double/2addr v0, v5
+    div-double/2addr v3, v1
 
-    double-to-long v5, v0
+    double-to-long v1, v3
 
-    .line 260
+    .line 279
     :cond_4
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v2, v0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+    invoke-static {p1, p0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 
 # virtual methods
 .method public consume(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, p1
+    .line 125
+    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    .line 117
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 126
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
+
+    move-result v1
+
+    .line 127
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v2
 
-    .line 118
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
+    .line 128
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    move-result v3
+    move-result-object v3
 
-    .line 119
-    iget-object v4, v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
-
-    .line 122
-    iget-wide v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
-
-    move-result v7
-
-    int-to-long v7, v7
-
-    add-long/2addr v5, v7
-
-    iput-wide v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
-
-    .line 123
-    iget-object v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    .line 131
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v6
 
-    invoke-interface {v5, v1, v6}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
+    int-to-long v6, v6
 
-    .line 126
-    :goto_0
-    iget-object v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->prefixFlags:[Z
+    add-long/2addr v4, v6
 
-    invoke-static {v4, v2, v3, v5}, Lcom/google/android/exoplayer2/util/NalUnitUtil;->findNalUnit([BII[Z)I
+    iput-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
+
+    .line 132
+    iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v5
 
-    if-ne v5, v3, :cond_2
+    move-object/from16 v6, p1
 
-    .line 130
-    iget-boolean v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->hasOutputFormat:Z
+    invoke-interface {v4, v6, v5}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
-    if-nez v1, :cond_0
+    .line 135
+    :goto_0
+    iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->prefixFlags:[Z
 
-    .line 131
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->csdBuffer:Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;
+    invoke-static {v3, v1, v2, v4}, Lcom/google/android/exoplayer2/util/NalUnitUtil;->findNalUnit([BII[Z)I
 
-    invoke-virtual {v1, v4, v2, v3}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->onData([BII)V
+    move-result v4
 
-    .line 133
+    if-ne v4, v2, :cond_2
+
+    .line 139
+    iget-boolean v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->hasOutputFormat:Z
+
+    if-nez v4, :cond_0
+
+    .line 140
+    iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->csdBuffer:Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;
+
+    invoke-virtual {v4, v3, v1, v2}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->onData([BII)V
+
+    .line 142
     :cond_0
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataReader:Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
+    iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    if-eqz v1, :cond_1
+    if-eqz v4, :cond_1
 
-    .line 134
-    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
-
-    invoke-virtual {v1, v4, v2, v3}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
+    .line 143
+    invoke-virtual {v4, v3, v1, v2}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
 
     :cond_1
     return-void
 
-    .line 140
+    .line 149
     :cond_2
-    iget-object v6, v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    add-int/lit8 v7, v5, 0x3
+    move-result-object v5
 
-    aget-byte v6, v6, v7
+    add-int/lit8 v7, v4, 0x3
 
-    and-int/lit16 v6, v6, 0xff
+    aget-byte v5, v5, v7
 
-    sub-int v8, v5, v2
+    and-int/lit16 v5, v5, 0xff
 
-    .line 145
+    sub-int v8, v4, v1
+
+    .line 154
     iget-boolean v9, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->hasOutputFormat:Z
 
     const/4 v10, 0x0
@@ -477,10 +506,10 @@
 
     if-lez v8, :cond_3
 
-    .line 147
+    .line 156
     iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->csdBuffer:Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;
 
-    invoke-virtual {v9, v4, v2, v5}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->onData([BII)V
+    invoke-virtual {v9, v3, v1, v4}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->onData([BII)V
 
     :cond_3
     if-gez v8, :cond_4
@@ -492,26 +521,32 @@
     :cond_4
     const/4 v9, 0x0
 
-    .line 152
+    .line 161
     :goto_1
     iget-object v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->csdBuffer:Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;
 
-    invoke-virtual {v12, v6, v9}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->onStartCode(II)Z
+    invoke-virtual {v12, v5, v9}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->onStartCode(II)Z
 
     move-result v9
 
     if-eqz v9, :cond_5
 
-    .line 154
+    .line 163
     iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->csdBuffer:Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;
 
     iget-object v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->formatId:Ljava/lang/String;
+
+    invoke-static {v12}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljava/lang/String;
 
     invoke-static {v9, v12}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->parseCsdBuffer(Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;Ljava/lang/String;)Landroid/util/Pair;
 
     move-result-object v9
 
-    .line 155
+    .line 164
     iget-object v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     iget-object v13, v9, Landroid/util/Pair;->first:Ljava/lang/Object;
@@ -520,7 +555,7 @@
 
     invoke-interface {v12, v13}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
 
-    .line 156
+    .line 165
     iget-object v9, v9, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v9, Ljava/lang/Long;
@@ -531,218 +566,251 @@
 
     iput-wide v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->frameDurationUs:J
 
-    .line 157
+    .line 166
     iput-boolean v11, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->hasOutputFormat:Z
 
-    .line 160
+    .line 169
     :cond_5
-    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataReader:Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     if-eqz v9, :cond_8
 
     if-lez v8, :cond_6
 
-    .line 163
-    iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
+    .line 172
+    invoke-virtual {v9, v3, v1, v4}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
 
-    invoke-virtual {v8, v4, v2, v5}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->appendToNalUnit([BII)V
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     goto :goto_2
 
     :cond_6
-    neg-int v2, v8
+    neg-int v1, v8
 
-    .line 168
+    .line 177
     :goto_2
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    invoke-virtual {v8, v2}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->endNalUnit(I)Z
+    invoke-virtual {v8, v1}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->endNalUnit(I)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
-    .line 169
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
+    .line 178
+    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
-    iget-object v8, v2, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
+    iget-object v8, v1, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
-    iget v2, v2, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalLength:I
+    iget v1, v1, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalLength:I
 
-    invoke-static {v8, v2}, Lcom/google/android/exoplayer2/util/NalUnitUtil;->unescapeStream([BI)I
+    invoke-static {v8, v1}, Lcom/google/android/exoplayer2/util/NalUnitUtil;->unescapeStream([BI)I
 
-    move-result v2
+    move-result v1
 
-    .line 170
+    .line 179
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataParsable:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    invoke-static {v8}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     iget-object v9, v9, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->nalData:[B
 
-    invoke-virtual {v8, v9, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([BI)V
+    invoke-virtual {v8, v9, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([BI)V
 
-    .line 171
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataReader:Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
+    .line 180
+    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataReader:Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
+
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
 
     iget-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
 
     iget-object v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataParsable:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {v2, v8, v9, v12}, Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;->consume(JLcom/google/android/exoplayer2/util/ParsableByteArray;)V
+    invoke-virtual {v1, v8, v9, v12}, Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;->consume(JLcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
     :cond_7
-    const/16 v2, 0xb2
+    const/16 v1, 0xb2
 
-    if-ne v6, v2, :cond_8
+    if-ne v5, v1, :cond_8
 
-    .line 174
-    iget-object v2, v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 183
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    add-int/lit8 v8, v5, 0x2
+    move-result-object v1
 
-    aget-byte v2, v2, v8
+    add-int/lit8 v8, v4, 0x2
 
-    if-ne v2, v11, :cond_8
+    aget-byte v1, v1, v8
 
-    .line 175
-    iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
+    if-ne v1, v11, :cond_8
 
-    invoke-virtual {v2, v6}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->startNalUnit(I)V
+    .line 184
+    iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
+
+    invoke-virtual {v1, v5}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->startNalUnit(I)V
 
     :cond_8
-    if-eqz v6, :cond_a
+    if-eqz v5, :cond_a
 
-    const/16 v2, 0xb3
+    const/16 v1, 0xb3
 
-    if-ne v6, v2, :cond_9
+    if-ne v5, v1, :cond_9
 
     goto :goto_3
 
     :cond_9
-    const/16 v2, 0xb8
+    const/16 v1, 0xb8
 
-    if-ne v6, v2, :cond_11
+    if-ne v5, v1, :cond_11
 
-    .line 197
+    .line 210
     iput-boolean v11, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleIsKeyframe:Z
 
-    goto :goto_5
+    goto :goto_8
 
     :cond_a
     :goto_3
-    sub-int v2, v3, v5
+    sub-int v1, v2, v4
 
-    .line 180
-    iget-boolean v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->startedFirstSample:Z
+    .line 189
+    iget-boolean v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleHasPicture:Z
 
-    if-eqz v5, :cond_b
+    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
-    iget-boolean v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleHasPicture:Z
+    if-eqz v4, :cond_b
 
-    if-eqz v5, :cond_b
+    iget-boolean v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->hasOutputFormat:Z
 
-    iget-boolean v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->hasOutputFormat:Z
-
-    if-eqz v5, :cond_b
-
-    .line 182
-    iget-boolean v15, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleIsKeyframe:Z
-
-    .line 183
-    iget-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
-
-    iget-wide v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->samplePosition:J
-
-    sub-long/2addr v8, v12
-
-    long-to-int v5, v8
-
-    sub-int v16, v5, v2
-
-    .line 184
-    iget-object v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    if-eqz v4, :cond_b
 
     iget-wide v13, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
 
+    cmp-long v4, v13, v8
+
+    if-eqz v4, :cond_b
+
+    .line 191
+    iget-boolean v15, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleIsKeyframe:Z
+
+    .line 192
+    iget-wide v11, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
+
+    move/from16 v19, v5
+
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->samplePosition:J
+
+    sub-long/2addr v11, v4
+
+    long-to-int v4, v11
+
+    sub-int v16, v4, v1
+
+    .line 193
+    iget-object v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
     const/16 v18, 0x0
 
-    move/from16 v17, v2
+    move/from16 v17, v1
 
     invoke-interface/range {v12 .. v18}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
-    .line 186
+    goto :goto_4
+
     :cond_b
-    iget-boolean v5, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->startedFirstSample:Z
+    move/from16 v19, v5
 
-    if-eqz v5, :cond_c
-
-    iget-boolean v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleHasPicture:Z
-
-    if-eqz v8, :cond_f
-
-    .line 188
-    :cond_c
-    iget-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
-
-    int-to-long v12, v2
-
-    sub-long/2addr v8, v12
-
-    iput-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->samplePosition:J
-
-    .line 189
-    iget-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->pesTimeUs:J
-
-    const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v2, v8, v12
-
-    if-eqz v2, :cond_d
-
-    goto :goto_4
-
-    :cond_d
-    if-eqz v5, :cond_e
-
-    .line 190
-    iget-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
-
-    iget-wide v14, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->frameDurationUs:J
-
-    add-long/2addr v8, v14
-
-    goto :goto_4
-
-    :cond_e
-    const-wide/16 v8, 0x0
-
+    .line 195
     :goto_4
-    iput-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
+    iget-boolean v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->startedFirstSample:Z
 
-    .line 191
-    iput-boolean v10, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleIsKeyframe:Z
+    if-eqz v4, :cond_d
 
-    .line 192
-    iput-wide v12, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->pesTimeUs:J
+    iget-boolean v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleHasPicture:Z
 
-    .line 193
-    iput-boolean v11, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->startedFirstSample:Z
+    if-eqz v4, :cond_c
+
+    goto :goto_5
+
+    :cond_c
+    const/4 v1, 0x1
+
+    goto :goto_7
+
+    .line 197
+    :cond_d
+    :goto_5
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
+
+    int-to-long v11, v1
+
+    sub-long/2addr v4, v11
+
+    iput-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->samplePosition:J
+
+    .line 199
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->pesTimeUs:J
+
+    cmp-long v1, v4, v8
+
+    if-eqz v1, :cond_e
+
+    goto :goto_6
+
+    .line 201
+    :cond_e
+    iget-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
+
+    cmp-long v1, v4, v8
+
+    if-eqz v1, :cond_f
+
+    .line 202
+    iget-wide v11, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->frameDurationUs:J
+
+    add-long/2addr v4, v11
+
+    goto :goto_6
 
     :cond_f
-    if-nez v6, :cond_10
+    move-wide v4, v8
+
+    .line 203
+    :goto_6
+    iput-wide v4, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
+
+    .line 204
+    iput-boolean v10, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleIsKeyframe:Z
+
+    .line 205
+    iput-wide v8, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->pesTimeUs:J
+
+    const/4 v1, 0x1
+
+    .line 206
+    iput-boolean v1, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->startedFirstSample:Z
+
+    :goto_7
+    if-nez v19, :cond_10
 
     const/4 v10, 0x1
 
-    .line 195
+    .line 208
     :cond_10
     iput-boolean v10, v0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleHasPicture:Z
 
     :cond_11
-    :goto_5
-    move v2, v7
+    :goto_8
+    move v1, v7
 
     goto/16 :goto_0
 .end method
@@ -750,17 +818,17 @@
 .method public createTracks(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
     .locals 2
 
-    .line 101
+    .line 109
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->generateNewId()V
 
-    .line 102
+    .line 110
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->getFormatId()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->formatId:Ljava/lang/String;
 
-    .line 103
+    .line 111
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;->getTrackId()I
 
     move-result v0
@@ -773,12 +841,12 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    .line 104
+    .line 112
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataReader:Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
 
     if-eqz v0, :cond_0
 
-    .line 105
+    .line 113
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;->createTracks(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
 
     :cond_0
@@ -794,7 +862,7 @@
 .method public packetStarted(JI)V
     .locals 0
 
-    .line 112
+    .line 120
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->pesTimeUs:J
 
     return-void
@@ -803,36 +871,42 @@
 .method public seek()V
     .locals 2
 
-    .line 90
+    .line 96
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->prefixFlags:[Z
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/NalUnitUtil;->clearPrefixFlags([Z)V
 
-    .line 91
+    .line 97
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->csdBuffer:Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/extractor/ts/H262Reader$CsdBuffer;->reset()V
 
-    .line 92
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userDataReader:Lcom/google/android/exoplayer2/extractor/ts/UserDataReader;
+    .line 98
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
 
     if-eqz v0, :cond_0
 
-    .line 93
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->userData:Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;
-
+    .line 99
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/extractor/ts/NalUnitTargetBuffer;->reset()V
 
     :cond_0
     const-wide/16 v0, 0x0
 
-    .line 95
+    .line 101
     iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->totalBytesWritten:J
 
     const/4 v0, 0x0
 
-    .line 96
+    .line 102
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->startedFirstSample:Z
+
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    .line 103
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->pesTimeUs:J
+
+    .line 104
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H262Reader;->sampleTimeUs:J
 
     return-void
 .end method

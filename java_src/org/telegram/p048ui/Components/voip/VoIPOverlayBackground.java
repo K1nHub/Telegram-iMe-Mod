@@ -1,0 +1,107 @@
+package org.telegram.p048ui.Components.voip;
+
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.widget.ImageView;
+import androidx.core.graphics.ColorUtils;
+import androidx.palette.graphics.Palette;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+/* renamed from: org.telegram.ui.Components.voip.VoIPOverlayBackground */
+/* loaded from: classes6.dex */
+public class VoIPOverlayBackground extends ImageView {
+    float blackoutProgress;
+    boolean showBlackout;
+
+    public VoIPOverlayBackground(Context context) {
+        super(context);
+        ColorUtils.setAlphaComponent(-16777216, 102);
+        setScaleType(ImageView.ScaleType.CENTER_CROP);
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    protected void onDraw(Canvas canvas) {
+        float f = this.blackoutProgress;
+        if (f == 1.0f) {
+            canvas.drawColor(ColorUtils.setAlphaComponent(-16777216, 102));
+        } else if (f == BitmapDescriptorFactory.HUE_RED) {
+            setImageAlpha(255);
+            super.onDraw(canvas);
+        } else {
+            canvas.drawColor(ColorUtils.setAlphaComponent(-16777216, (int) (f * 102.0f)));
+            setImageAlpha((int) ((1.0f - this.blackoutProgress) * 255.0f));
+            super.onDraw(canvas);
+        }
+    }
+
+    public void setBackground(final ImageReceiver.BitmapHolder bitmapHolder) {
+        new Thread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPOverlayBackground$$ExternalSyntheticLambda2
+            @Override // java.lang.Runnable
+            public final void run() {
+                VoIPOverlayBackground.this.lambda$setBackground$1(bitmapHolder);
+            }
+        }).start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setBackground$1(final ImageReceiver.BitmapHolder bitmapHolder) {
+        try {
+            final Bitmap createBitmap = Bitmap.createBitmap(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(createBitmap);
+            canvas.drawBitmap(bitmapHolder.bitmap, (Rect) null, new Rect(0, 0, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION), new Paint(2));
+            Utilities.blurBitmap(createBitmap, 3, 0, createBitmap.getWidth(), createBitmap.getHeight(), createBitmap.getRowBytes());
+            Palette generate = Palette.from(bitmapHolder.bitmap).generate();
+            Paint paint = new Paint();
+            paint.setColor((generate.getDarkMutedColor(-11242343) & 16777215) | 1140850688);
+            canvas.drawColor(637534208);
+            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, canvas.getWidth(), canvas.getHeight(), paint);
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPOverlayBackground$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    VoIPOverlayBackground.this.lambda$setBackground$0(createBitmap, bitmapHolder);
+                }
+            });
+        } catch (Throwable unused) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setBackground$0(Bitmap bitmap, ImageReceiver.BitmapHolder bitmapHolder) {
+        setImageBitmap(bitmap);
+        bitmapHolder.release();
+    }
+
+    public void setShowBlackout(boolean z, boolean z2) {
+        if (this.showBlackout == z) {
+            return;
+        }
+        this.showBlackout = z;
+        if (!z2) {
+            this.blackoutProgress = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+            return;
+        }
+        float[] fArr = new float[2];
+        fArr[0] = this.blackoutProgress;
+        fArr[1] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.VoIPOverlayBackground$$ExternalSyntheticLambda0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                VoIPOverlayBackground.this.lambda$setShowBlackout$2(valueAnimator);
+            }
+        });
+        ofFloat.setDuration(150L).start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setShowBlackout$2(ValueAnimator valueAnimator) {
+        this.blackoutProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        invalidate();
+    }
+}

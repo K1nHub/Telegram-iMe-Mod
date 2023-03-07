@@ -14,12 +14,16 @@
 .end annotation
 
 
-# static fields
-.field private static final NO_CLASSES:[Ljava/lang/String;
-
-
 # instance fields
-.field public final classes:[Ljava/lang/String;
+.field public final classes:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final name:Ljava/lang/String;
 
@@ -29,49 +33,47 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    .line 508
-    sput-object v0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;->NO_CLASSES:[Ljava/lang/String;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;[Ljava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/Set;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "I",
+            "Ljava/lang/String;",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
 
-    .line 515
+    .line 930
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 516
+    .line 931
     iput p2, p0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;->position:I
 
-    .line 517
+    .line 932
     iput-object p1, p0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;->name:Ljava/lang/String;
 
-    .line 518
+    .line 933
     iput-object p3, p0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;->voice:Ljava/lang/String;
 
-    .line 519
-    iput-object p4, p0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;->classes:[Ljava/lang/String;
+    .line 934
+    iput-object p4, p0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;->classes:Ljava/util/Set;
 
     return-void
 .end method
 
 .method public static buildStartTag(Ljava/lang/String;I)Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;
-    .locals 4
+    .locals 5
 
-    .line 523
+    .line 938
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 524
+    .line 939
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v0
@@ -84,7 +86,7 @@
 
     const-string v0, " "
 
-    .line 525
+    .line 940
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
@@ -99,7 +101,7 @@
 
     goto :goto_0
 
-    .line 530
+    .line 945
     :cond_0
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -109,7 +111,7 @@
 
     move-result-object v2
 
-    .line 531
+    .line 946
     invoke-virtual {p0, v3, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
@@ -119,56 +121,59 @@
     :goto_0
     const-string v2, "\\."
 
-    .line 533
+    .line 948
     invoke-static {p0, v2}, Lcom/google/android/exoplayer2/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 534
+    .line 949
     aget-object v2, p0, v3
 
-    .line 536
-    array-length v3, p0
+    .line 950
+    new-instance v3, Ljava/util/HashSet;
 
-    if-le v3, v1, :cond_1
+    invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 537
-    array-length v3, p0
+    .line 951
+    :goto_1
+    array-length v4, p0
 
-    invoke-static {p0, v1, v3}, Lcom/google/android/exoplayer2/util/Util;->nullSafeArrayCopyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
+    if-ge v1, v4, :cond_1
 
-    move-result-object p0
+    .line 952
+    aget-object v4, p0, v1
 
-    check-cast p0, [Ljava/lang/String;
+    invoke-interface {v3, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 539
+    .line 954
     :cond_1
-    sget-object p0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;->NO_CLASSES:[Ljava/lang/String;
+    new-instance p0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;
 
-    .line 541
-    :goto_1
-    new-instance v1, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;
+    invoke-direct {p0, v2, p1, v0, v3}, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/Set;)V
 
-    invoke-direct {v1, v2, p1, v0, p0}, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;-><init>(Ljava/lang/String;ILjava/lang/String;[Ljava/lang/String;)V
-
-    return-object v1
+    return-object p0
 .end method
 
 .method public static buildWholeCueVirtualTag()Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;
     .locals 4
 
-    .line 545
+    .line 958
     new-instance v0, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;
 
-    const/4 v1, 0x0
+    .line 962
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
-    new-array v2, v1, [Ljava/lang/String;
+    move-result-object v1
 
-    const-string v3, ""
+    const-string v2, ""
 
-    invoke-direct {v0, v3, v1, v3, v2}, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;-><init>(Ljava/lang/String;ILjava/lang/String;[Ljava/lang/String;)V
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v2, v3, v2, v1}, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser$StartTag;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/Set;)V
 
     return-object v0
 .end method

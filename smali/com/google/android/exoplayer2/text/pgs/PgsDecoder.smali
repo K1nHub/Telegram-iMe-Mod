@@ -39,24 +39,24 @@
 
     const-string v0, "PgsDecoder"
 
-    .line 48
+    .line 50
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;-><init>(Ljava/lang/String;)V
 
-    .line 49
+    .line 51
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->buffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 50
+    .line 52
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->inflatedBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 51
+    .line 53
     new-instance v0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;-><init>()V
@@ -69,7 +69,7 @@
 .method private maybeInflateData(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 2
 
-    .line 70
+    .line 73
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
@@ -84,19 +84,19 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 71
+    .line 74
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->inflater:Ljava/util/zip/Inflater;
 
     if-nez v0, :cond_0
 
-    .line 72
+    .line 75
     new-instance v0, Ljava/util/zip/Inflater;
 
     invoke-direct {v0}, Ljava/util/zip/Inflater;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->inflater:Ljava/util/zip/Inflater;
 
-    .line 74
+    .line 77
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->inflatedBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -108,16 +108,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 75
+    .line 78
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->inflatedBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v1, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
+    move-result-object v0
 
-    move-result v0
+    iget-object v1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->inflatedBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([BI)V
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([BI)V
 
     :cond_1
     return-void
@@ -126,22 +130,22 @@
 .method private static readNextSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;)Lcom/google/android/exoplayer2/text/Cue;
     .locals 5
 
-    .line 82
+    .line 85
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v0
 
-    .line 83
+    .line 86
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v1
 
-    .line 84
+    .line 87
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v2
 
-    .line 86
+    .line 89
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v3
@@ -152,7 +156,7 @@
 
     if-le v3, v0, :cond_0
 
-    .line 88
+    .line 91
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return-object v4
@@ -166,34 +170,34 @@
 
     goto :goto_0
 
-    .line 101
+    .line 104
     :pswitch_0
     invoke-static {p1, p0, v2}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->access$200(Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     goto :goto_0
 
-    .line 98
+    .line 101
     :pswitch_1
     invoke-static {p1, p0, v2}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->access$100(Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     goto :goto_0
 
-    .line 95
+    .line 98
     :pswitch_2
     invoke-static {p1, p0, v2}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->access$000(Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;Lcom/google/android/exoplayer2/util/ParsableByteArray;I)V
 
     goto :goto_0
 
-    .line 104
+    .line 107
     :cond_1
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->build()Lcom/google/android/exoplayer2/text/Cue;
 
     move-result-object v4
 
-    .line 105
+    .line 108
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->reset()V
 
-    .line 111
+    .line 114
     :goto_0
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
@@ -219,27 +223,27 @@
         }
     .end annotation
 
-    .line 56
+    .line 59
     iget-object p3, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->buffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p3, p1, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([BI)V
 
-    .line 57
+    .line 60
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->buffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->maybeInflateData(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
-    .line 58
+    .line 61
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->cueBuilder:Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;->reset()V
 
-    .line 59
+    .line 62
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 60
+    .line 63
     :cond_0
     :goto_0
     iget-object p2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->buffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -252,7 +256,7 @@
 
     if-lt p2, p3, :cond_1
 
-    .line 61
+    .line 64
     iget-object p2, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->buffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     iget-object p3, p0, Lcom/google/android/exoplayer2/text/pgs/PgsDecoder;->cueBuilder:Lcom/google/android/exoplayer2/text/pgs/PgsDecoder$CueBuilder;
@@ -263,12 +267,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 63
+    .line 66
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 66
+    .line 69
     :cond_1
     new-instance p2, Lcom/google/android/exoplayer2/text/pgs/PgsSubtitle;
 

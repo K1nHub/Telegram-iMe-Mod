@@ -25,10 +25,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/upstream/Loader$ReleaseCallback;)V
     .locals 0
 
-    .line 536
+    .line 526
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 537
+    .line 527
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/Loader$ReleaseTask;->callback:Lcom/google/android/exoplayer2/upstream/Loader$ReleaseCallback;
 
     return-void
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 1
 
-    .line 542
+    .line 532
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/Loader$ReleaseTask;->callback:Lcom/google/android/exoplayer2/upstream/Loader$ReleaseCallback;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/Loader$ReleaseCallback;->onLoaderReleased()V

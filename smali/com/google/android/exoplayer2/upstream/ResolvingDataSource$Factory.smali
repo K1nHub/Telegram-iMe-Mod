@@ -27,13 +27,13 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/upstream/DataSource$Factory;Lcom/google/android/exoplayer2/upstream/ResolvingDataSource$Resolver;)V
     .locals 0
 
-    .line 71
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
+    .line 74
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/ResolvingDataSource$Factory;->upstreamFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
-    .line 73
+    .line 75
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/ResolvingDataSource$Factory;->resolver:Lcom/google/android/exoplayer2/upstream/ResolvingDataSource$Resolver;
 
     return-void
@@ -44,7 +44,7 @@
 .method public bridge synthetic createDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 1
 
-    .line 61
+    .line 63
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/ResolvingDataSource$Factory;->createDataSource()Lcom/google/android/exoplayer2/upstream/ResolvingDataSource;
 
     move-result-object v0
@@ -55,7 +55,7 @@
 .method public createDataSource()Lcom/google/android/exoplayer2/upstream/ResolvingDataSource;
     .locals 3
 
-    .line 78
+    .line 80
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ResolvingDataSource;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/ResolvingDataSource$Factory;->upstreamFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;

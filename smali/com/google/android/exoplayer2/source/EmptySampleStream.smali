@@ -10,7 +10,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,21 +28,16 @@
 
 .method public maybeThrowError()V
     .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     return-void
 .end method
 
-.method public readData(Lcom/google/android/exoplayer2/FormatHolder;Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Z)I
+.method public readData(Lcom/google/android/exoplayer2/FormatHolder;Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;I)I
     .locals 0
 
     const/4 p1, 0x4
 
-    .line 41
+    .line 38
     invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/decoder/Buffer;->setFlags(I)V
 
     const/4 p1, -0x4

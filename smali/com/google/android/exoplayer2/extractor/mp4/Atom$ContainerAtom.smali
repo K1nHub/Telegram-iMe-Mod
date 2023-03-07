@@ -42,20 +42,20 @@
 .method public constructor <init>(IJ)V
     .locals 0
 
-    .line 431
+    .line 458
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/mp4/Atom;-><init>(I)V
 
-    .line 432
+    .line 459
     iput-wide p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->endPosition:J
 
-    .line 433
+    .line 460
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->leafChildren:Ljava/util/List;
 
-    .line 434
+    .line 461
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -70,7 +70,7 @@
 .method public add(Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;)V
     .locals 1
 
-    .line 452
+    .line 479
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -81,7 +81,7 @@
 .method public add(Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;)V
     .locals 1
 
-    .line 443
+    .line 470
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->leafChildren:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -92,7 +92,7 @@
 .method public getChildAtomOfTypeCount(I)I
     .locals 5
 
-    .line 505
+    .line 532
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->leafChildren:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -108,7 +108,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 507
+    .line 534
     iget-object v4, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->leafChildren:Ljava/util/List;
 
     invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -117,7 +117,7 @@
 
     check-cast v4, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;
 
-    .line 508
+    .line 535
     iget v4, v4, Lcom/google/android/exoplayer2/extractor/mp4/Atom;->type:I
 
     if-ne v4, p1, :cond_0
@@ -129,7 +129,7 @@
 
     goto :goto_0
 
-    .line 512
+    .line 539
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
 
@@ -140,7 +140,7 @@
     :goto_1
     if-ge v1, v0, :cond_3
 
-    .line 514
+    .line 541
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -149,7 +149,7 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;
 
-    .line 515
+    .line 542
     iget v2, v2, Lcom/google/android/exoplayer2/extractor/mp4/Atom;->type:I
 
     if-ne v2, p1, :cond_2
@@ -168,7 +168,7 @@
 .method public getContainerAtomOfType(I)Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;
     .locals 4
 
-    .line 487
+    .line 514
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -180,7 +180,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 489
+    .line 516
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -189,7 +189,7 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;
 
-    .line 490
+    .line 517
     iget v3, v2, Lcom/google/android/exoplayer2/extractor/mp4/Atom;->type:I
 
     if-ne v3, p1, :cond_0
@@ -210,7 +210,7 @@
 .method public getLeafAtomOfType(I)Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;
     .locals 4
 
-    .line 466
+    .line 493
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->leafChildren:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -222,7 +222,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 468
+    .line 495
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->leafChildren:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -231,7 +231,7 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;
 
-    .line 469
+    .line 496
     iget v3, v2, Lcom/google/android/exoplayer2/extractor/mp4/Atom;->type:I
 
     if-ne v3, p1, :cond_0
@@ -252,7 +252,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 524
+    .line 551
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -271,7 +271,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->leafChildren:Ljava/util/List;
 
-    .line 525
+    .line 553
     invoke-interface {v1}, Ljava/util/List;->toArray()[Ljava/lang/Object;
 
     move-result-object v1
@@ -288,7 +288,7 @@
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom$ContainerAtom;->containerChildren:Ljava/util/List;
 
-    .line 526
+    .line 555
     invoke-interface {v1}, Ljava/util/List;->toArray()[Ljava/lang/Object;
 
     move-result-object v1

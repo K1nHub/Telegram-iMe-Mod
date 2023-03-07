@@ -33,13 +33,13 @@
         }
     .end annotation
 
-    .line 38
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 40
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/FilteringHlsPlaylistParserFactory;->hlsPlaylistParserFactory:Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParserFactory;
 
-    .line 40
+    .line 41
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/hls/playlist/FilteringHlsPlaylistParserFactory;->streamKeys:Ljava/util/List;
 
     return-void
@@ -58,12 +58,12 @@
         }
     .end annotation
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/google/android/exoplayer2/offline/FilteringManifestParser;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/FilteringHlsPlaylistParserFactory;->hlsPlaylistParserFactory:Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParserFactory;
 
-    .line 46
+    .line 47
     invoke-interface {v1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParserFactory;->createPlaylistParser()Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
 
     move-result-object v1
@@ -75,12 +75,13 @@
     return-object v0
 .end method
 
-.method public createPlaylistParser(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;)Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
+.method public createPlaylistParser(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;)Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;",
             ")",
             "Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser<",
             "Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylist;",
@@ -88,19 +89,19 @@
         }
     .end annotation
 
-    .line 52
+    .line 54
     new-instance v0, Lcom/google/android/exoplayer2/offline/FilteringManifestParser;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/FilteringHlsPlaylistParserFactory;->hlsPlaylistParserFactory:Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParserFactory;
 
-    .line 53
-    invoke-interface {v1, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParserFactory;->createPlaylistParser(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;)Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
+    .line 55
+    invoke-interface {v1, p1, p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParserFactory;->createPlaylistParser(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;)Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;
 
     move-result-object p1
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/FilteringHlsPlaylistParserFactory;->streamKeys:Ljava/util/List;
+    iget-object p2, p0, Lcom/google/android/exoplayer2/source/hls/playlist/FilteringHlsPlaylistParserFactory;->streamKeys:Ljava/util/List;
 
-    invoke-direct {v0, p1, v1}, Lcom/google/android/exoplayer2/offline/FilteringManifestParser;-><init>(Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;Ljava/util/List;)V
+    invoke-direct {v0, p1, p2}, Lcom/google/android/exoplayer2/offline/FilteringManifestParser;-><init>(Lcom/google/android/exoplayer2/upstream/ParsingLoadable$Parser;Ljava/util/List;)V
 
     return-object v0
 .end method

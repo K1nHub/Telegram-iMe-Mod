@@ -1,9 +1,6 @@
 .class public final Lcom/google/android/exoplayer2/metadata/icy/IcyDecoder;
-.super Ljava/lang/Object;
+.super Lcom/google/android/exoplayer2/metadata/SimpleMetadataDecoder;
 .source "IcyDecoder.java"
-
-# interfaces
-.implements Lcom/google/android/exoplayer2/metadata/MetadataDecoder;
 
 
 # static fields
@@ -28,7 +25,7 @@
 
     const/16 v1, 0x20
 
-    .line 35
+    .line 33
     invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -41,15 +38,11 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 40
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/metadata/SimpleMetadataDecoder;-><init>()V
 
-    const-string v0, "UTF-8"
-
-    .line 43
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
+    .line 41
+    sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v0}, Ljava/nio/charset/Charset;->newDecoder()Ljava/nio/charset/CharsetDecoder;
 
@@ -57,12 +50,8 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/icy/IcyDecoder;->utf8Decoder:Ljava/nio/charset/CharsetDecoder;
 
-    const-string v0, "ISO-8859-1"
-
-    .line 44
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
+    .line 42
+    sget-object v0, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
     invoke-virtual {v0}, Ljava/nio/charset/Charset;->newDecoder()Ljava/nio/charset/CharsetDecoder;
 
@@ -179,142 +168,136 @@
 
 
 # virtual methods
-.method public decode(Lcom/google/android/exoplayer2/metadata/MetadataInputBuffer;)Lcom/google/android/exoplayer2/metadata/Metadata;
-    .locals 8
+.method protected decode(Lcom/google/android/exoplayer2/metadata/MetadataInputBuffer;Ljava/nio/ByteBuffer;)Lcom/google/android/exoplayer2/metadata/Metadata;
+    .locals 7
 
-    .line 50
-    iget-object p1, p1, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;->data:Ljava/nio/ByteBuffer;
-
-    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 47
+    invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/metadata/icy/IcyDecoder;->decodeToString(Ljava/nio/ByteBuffer;)Ljava/lang/String;
 
     move-result-object p1
 
-    check-cast p1, Ljava/nio/ByteBuffer;
+    .line 48
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->limit()I
 
-    .line 51
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/metadata/icy/IcyDecoder;->decodeToString(Ljava/nio/ByteBuffer;)Ljava/lang/String;
+    move-result v0
 
-    move-result-object v0
+    new-array v0, v0, [B
 
-    .line 52
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
+    .line 49
+    invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    move-result v1
+    const/4 p2, 0x1
 
-    new-array v1, v1, [B
-
-    .line 53
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    const/4 p1, 0x1
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    if-nez p1, :cond_0
 
-    if-nez v0, :cond_0
+    .line 52
+    new-instance p1, Lcom/google/android/exoplayer2/metadata/Metadata;
 
-    .line 56
-    new-instance v0, Lcom/google/android/exoplayer2/metadata/Metadata;
+    new-array p2, p2, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
 
-    new-array p1, p1, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
+    new-instance v3, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;
 
-    new-instance v4, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;
+    invoke-direct {v3, v0, v2, v2}, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;-><init>([BLjava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v4, v1, v3, v3}, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;-><init>([BLjava/lang/String;Ljava/lang/String;)V
+    aput-object v3, p2, v1
 
-    aput-object v4, p1, v2
+    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
 
-    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
+    return-object p1
 
-    return-object v0
-
-    .line 62
+    .line 58
     :cond_0
-    sget-object v4, Lcom/google/android/exoplayer2/metadata/icy/IcyDecoder;->METADATA_ELEMENT:Ljava/util/regex/Pattern;
+    sget-object v3, Lcom/google/android/exoplayer2/metadata/icy/IcyDecoder;->METADATA_ELEMENT:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v4, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v3, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v0
+    move-result-object p1
 
-    move-object v4, v3
+    move-object v3, v2
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
+
+    .line 59
+    :goto_0
+    invoke-virtual {p1, v4}, Ljava/util/regex/Matcher;->find(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    .line 60
+    invoke-virtual {p1, p2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    const/4 v5, 0x2
+
+    .line 61
+    invoke-virtual {p1, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    if-eqz v4, :cond_3
 
     .line 63
-    :goto_0
-    invoke-virtual {v0, v5}, Ljava/util/regex/Matcher;->find(I)Z
+    invoke-static {v4}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v5
+    move-result-object v4
 
-    if-eqz v5, :cond_3
+    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
-    .line 64
-    invoke-virtual {v0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    const-string v6, "streamurl"
 
-    move-result-object v5
+    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v5}, Lcom/google/android/exoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    move-result v6
 
-    move-result-object v5
+    if-nez v6, :cond_2
 
-    const/4 v6, 0x2
+    const-string v6, "streamtitle"
 
-    .line 65
-    invoke-virtual {v0, v6}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v6
+    move-result v4
 
-    .line 66
-    invoke-virtual {v5}, Ljava/lang/String;->hashCode()I
-
-    const-string v7, "streamurl"
-
-    invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_2
-
-    const-string v7, "streamtitle"
-
-    invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_1
+    if-nez v4, :cond_1
 
     goto :goto_1
 
     :cond_1
-    move-object v3, v6
+    move-object v2, v5
 
     goto :goto_1
 
     :cond_2
-    move-object v4, v6
+    move-object v3, v5
 
     .line 74
+    :cond_3
     :goto_1
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+    invoke-virtual {p1}, Ljava/util/regex/Matcher;->end()I
 
-    move-result v5
+    move-result v4
 
     goto :goto_0
 
     .line 76
-    :cond_3
-    new-instance v0, Lcom/google/android/exoplayer2/metadata/Metadata;
+    :cond_4
+    new-instance p1, Lcom/google/android/exoplayer2/metadata/Metadata;
 
-    new-array p1, p1, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
+    new-array p2, p2, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
 
-    new-instance v5, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;
+    new-instance v4, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;
 
-    invoke-direct {v5, v1, v3, v4}, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;-><init>([BLjava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v4, v0, v2, v3}, Lcom/google/android/exoplayer2/metadata/icy/IcyInfo;-><init>([BLjava/lang/String;Ljava/lang/String;)V
 
-    aput-object v5, p1, v2
+    aput-object v4, p2, v1
 
-    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
+    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
 
-    return-object v0
+    return-object p1
 .end method

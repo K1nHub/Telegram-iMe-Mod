@@ -9,7 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;
+        Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;,
+        Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$DeltaUpdateException;
     }
 .end annotation
 
@@ -38,6 +39,8 @@
 
 .field private static final KEYFORMAT_WIDEVINE_PSSH_JSON:Ljava/lang/String; = "com.widevine"
 
+.field private static final LOG_TAG:Ljava/lang/String; = "HlsPlaylistParser"
+
 .field private static final METHOD_AES_128:Ljava/lang/String; = "AES-128"
 
 .field private static final METHOD_NONE:Ljava/lang/String; = "NONE"
@@ -52,6 +55,8 @@
 
 .field private static final REGEX_ATTR_BYTERANGE:Ljava/util/regex/Pattern;
 
+.field private static final REGEX_ATTR_DURATION:Ljava/util/regex/Pattern;
+
 .field private static final REGEX_AUDIO:Ljava/util/regex/Pattern;
 
 .field private static final REGEX_AUTOSELECT:Ljava/util/regex/Pattern;
@@ -61,6 +66,16 @@
 .field private static final REGEX_BANDWIDTH:Ljava/util/regex/Pattern;
 
 .field private static final REGEX_BYTERANGE:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_BYTERANGE_LENGTH:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_BYTERANGE_START:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_CAN_BLOCK_RELOAD:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_CAN_SKIP_DATE_RANGES:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_CAN_SKIP_UNTIL:Ljava/util/regex/Pattern;
 
 .field private static final REGEX_CHANNELS:Ljava/util/regex/Pattern;
 
@@ -76,9 +91,15 @@
 
 .field private static final REGEX_FRAME_RATE:Ljava/util/regex/Pattern;
 
+.field private static final REGEX_GAP:Ljava/util/regex/Pattern;
+
 .field private static final REGEX_GROUP_ID:Ljava/util/regex/Pattern;
 
+.field private static final REGEX_HOLD_BACK:Ljava/util/regex/Pattern;
+
 .field private static final REGEX_IMPORT:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_INDEPENDENT:Ljava/util/regex/Pattern;
 
 .field private static final REGEX_INSTREAM_ID:Ljava/util/regex/Pattern;
 
@@ -90,6 +111,10 @@
 
 .field private static final REGEX_LANGUAGE:Ljava/util/regex/Pattern;
 
+.field private static final REGEX_LAST_MSN:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_LAST_PART:Ljava/util/regex/Pattern;
+
 .field private static final REGEX_MEDIA_DURATION:Ljava/util/regex/Pattern;
 
 .field private static final REGEX_MEDIA_SEQUENCE:Ljava/util/regex/Pattern;
@@ -100,9 +125,19 @@
 
 .field private static final REGEX_NAME:Ljava/util/regex/Pattern;
 
+.field private static final REGEX_PART_HOLD_BACK:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_PART_TARGET_DURATION:Ljava/util/regex/Pattern;
+
 .field private static final REGEX_PLAYLIST_TYPE:Ljava/util/regex/Pattern;
 
+.field private static final REGEX_PRECISE:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_PRELOAD_HINT_TYPE:Ljava/util/regex/Pattern;
+
 .field private static final REGEX_RESOLUTION:Ljava/util/regex/Pattern;
+
+.field private static final REGEX_SKIPPED_SEGMENTS:Ljava/util/regex/Pattern;
 
 .field private static final REGEX_SUBTITLES:Ljava/util/regex/Pattern;
 
@@ -134,9 +169,13 @@
 
 .field private static final TAG_GAP:Ljava/lang/String; = "#EXT-X-GAP"
 
+.field private static final TAG_IFRAME:Ljava/lang/String; = "#EXT-X-I-FRAMES-ONLY"
+
 .field private static final TAG_INDEPENDENT_SEGMENTS:Ljava/lang/String; = "#EXT-X-INDEPENDENT-SEGMENTS"
 
 .field private static final TAG_INIT_SEGMENT:Ljava/lang/String; = "#EXT-X-MAP"
+
+.field private static final TAG_I_FRAME_STREAM_INF:Ljava/lang/String; = "#EXT-X-I-FRAME-STREAM-INF"
 
 .field private static final TAG_KEY:Ljava/lang/String; = "#EXT-X-KEY"
 
@@ -146,13 +185,25 @@
 
 .field private static final TAG_MEDIA_SEQUENCE:Ljava/lang/String; = "#EXT-X-MEDIA-SEQUENCE"
 
+.field private static final TAG_PART:Ljava/lang/String; = "#EXT-X-PART"
+
+.field private static final TAG_PART_INF:Ljava/lang/String; = "#EXT-X-PART-INF"
+
 .field private static final TAG_PLAYLIST_TYPE:Ljava/lang/String; = "#EXT-X-PLAYLIST-TYPE"
 
 .field private static final TAG_PREFIX:Ljava/lang/String; = "#EXT"
 
+.field private static final TAG_PRELOAD_HINT:Ljava/lang/String; = "#EXT-X-PRELOAD-HINT"
+
 .field private static final TAG_PROGRAM_DATE_TIME:Ljava/lang/String; = "#EXT-X-PROGRAM-DATE-TIME"
 
+.field private static final TAG_RENDITION_REPORT:Ljava/lang/String; = "#EXT-X-RENDITION-REPORT"
+
+.field private static final TAG_SERVER_CONTROL:Ljava/lang/String; = "#EXT-X-SERVER-CONTROL"
+
 .field private static final TAG_SESSION_KEY:Ljava/lang/String; = "#EXT-X-SESSION-KEY"
+
+.field private static final TAG_SKIP:Ljava/lang/String; = "#EXT-X-SKIP"
 
 .field private static final TAG_START:Ljava/lang/String; = "#EXT-X-START"
 
@@ -166,13 +217,19 @@
 
 .field private static final TYPE_CLOSED_CAPTIONS:Ljava/lang/String; = "CLOSED-CAPTIONS"
 
+.field private static final TYPE_MAP:Ljava/lang/String; = "MAP"
+
+.field private static final TYPE_PART:Ljava/lang/String; = "PART"
+
 .field private static final TYPE_SUBTITLES:Ljava/lang/String; = "SUBTITLES"
 
 .field private static final TYPE_VIDEO:Ljava/lang/String; = "VIDEO"
 
 
 # instance fields
-.field private final masterPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
+.field private final multivariantPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
+
+.field private final previousMediaPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
 
 
 # direct methods
@@ -181,7 +238,7 @@
 
     const-string v0, "AVERAGE-BANDWIDTH=(\\d+)\\b"
 
-    .line 111
+    .line 132
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -190,7 +247,7 @@
 
     const-string v0, "VIDEO=\"(.+?)\""
 
-    .line 112
+    .line 133
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -199,7 +256,7 @@
 
     const-string v0, "AUDIO=\"(.+?)\""
 
-    .line 113
+    .line 134
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -208,7 +265,7 @@
 
     const-string v0, "SUBTITLES=\"(.+?)\""
 
-    .line 114
+    .line 135
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -217,7 +274,7 @@
 
     const-string v0, "CLOSED-CAPTIONS=\"(.+?)\""
 
-    .line 115
+    .line 136
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -226,7 +283,7 @@
 
     const-string v0, "[^-]BANDWIDTH=(\\d+)\\b"
 
-    .line 116
+    .line 137
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -235,7 +292,7 @@
 
     const-string v0, "CHANNELS=\"(.+?)\""
 
-    .line 117
+    .line 138
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -244,7 +301,7 @@
 
     const-string v0, "CODECS=\"(.+?)\""
 
-    .line 118
+    .line 139
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -253,7 +310,7 @@
 
     const-string v0, "RESOLUTION=(\\d+x\\d+)"
 
-    .line 119
+    .line 140
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -262,7 +319,7 @@
 
     const-string v0, "FRAME-RATE=([\\d\\.]+)\\b"
 
-    .line 120
+    .line 141
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -271,16 +328,34 @@
 
     const-string v0, "#EXT-X-TARGETDURATION:(\\d+)\\b"
 
-    .line 121
+    .line 143
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TARGET_DURATION:Ljava/util/regex/Pattern;
 
+    const-string v0, "DURATION=([\\d\\.]+)\\b"
+
+    .line 144
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_ATTR_DURATION:Ljava/util/regex/Pattern;
+
+    const-string v0, "PART-TARGET=([\\d\\.]+)\\b"
+
+    .line 146
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PART_TARGET_DURATION:Ljava/util/regex/Pattern;
+
     const-string v0, "#EXT-X-VERSION:(\\d+)\\b"
 
-    .line 123
+    .line 147
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -289,16 +364,70 @@
 
     const-string v0, "#EXT-X-PLAYLIST-TYPE:(.+)\\b"
 
-    .line 124
+    .line 149
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PLAYLIST_TYPE:Ljava/util/regex/Pattern;
 
+    const-string v0, "CAN-SKIP-UNTIL=([\\d\\.]+)\\b"
+
+    .line 151
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CAN_SKIP_UNTIL:Ljava/util/regex/Pattern;
+
+    const-string v0, "CAN-SKIP-DATERANGES"
+
+    .line 153
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CAN_SKIP_DATE_RANGES:Ljava/util/regex/Pattern;
+
+    const-string v0, "SKIPPED-SEGMENTS=(\\d+)\\b"
+
+    .line 155
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_SKIPPED_SEGMENTS:Ljava/util/regex/Pattern;
+
+    const-string v0, "[:|,]HOLD-BACK=([\\d\\.]+)\\b"
+
+    .line 156
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_HOLD_BACK:Ljava/util/regex/Pattern;
+
+    const-string v0, "PART-HOLD-BACK=([\\d\\.]+)\\b"
+
+    .line 158
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PART_HOLD_BACK:Ljava/util/regex/Pattern;
+
+    const-string v0, "CAN-BLOCK-RELOAD"
+
+    .line 160
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CAN_BLOCK_RELOAD:Ljava/util/regex/Pattern;
+
     const-string v0, "#EXT-X-MEDIA-SEQUENCE:(\\d+)\\b"
 
-    .line 126
+    .line 162
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -307,7 +436,7 @@
 
     const-string v0, "#EXTINF:([\\d\\.]+)\\b"
 
-    .line 128
+    .line 164
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -316,16 +445,34 @@
 
     const-string v0, "#EXTINF:[\\d\\.]+\\b,(.+)"
 
-    .line 131
+    .line 166
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_TITLE:Ljava/util/regex/Pattern;
 
+    const-string v0, "LAST-MSN=(\\d+)\\b"
+
+    .line 167
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_LAST_MSN:Ljava/util/regex/Pattern;
+
+    const-string v0, "LAST-PART=(\\d+)\\b"
+
+    .line 168
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_LAST_PART:Ljava/util/regex/Pattern;
+
     const-string v0, "TIME-OFFSET=(-?[\\d\\.]+)\\b"
 
-    .line 132
+    .line 169
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -334,7 +481,7 @@
 
     const-string v0, "#EXT-X-BYTERANGE:(\\d+(?:@\\d+)?)\\b"
 
-    .line 133
+    .line 171
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -343,16 +490,34 @@
 
     const-string v0, "BYTERANGE=\"(\\d+(?:@\\d+)?)\\b\""
 
-    .line 136
+    .line 173
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_ATTR_BYTERANGE:Ljava/util/regex/Pattern;
 
+    const-string v0, "BYTERANGE-START=(\\d+)\\b"
+
+    .line 174
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BYTERANGE_START:Ljava/util/regex/Pattern;
+
+    const-string v0, "BYTERANGE-LENGTH=(\\d+)\\b"
+
+    .line 176
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BYTERANGE_LENGTH:Ljava/util/regex/Pattern;
+
     const-string v0, "METHOD=(NONE|AES-128|SAMPLE-AES|SAMPLE-AES-CENC|SAMPLE-AES-CTR)\\s*(?:,|$)"
 
-    .line 138
+    .line 178
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -361,7 +526,7 @@
 
     const-string v0, "KEYFORMAT=\"(.+?)\""
 
-    .line 151
+    .line 191
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -370,7 +535,7 @@
 
     const-string v0, "KEYFORMATVERSIONS=\"(.+?)\""
 
-    .line 153
+    .line 193
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -379,7 +544,7 @@
 
     const-string v0, "URI=\"(.+?)\""
 
-    .line 154
+    .line 194
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -388,7 +553,7 @@
 
     const-string v0, "IV=([^,.*]+)"
 
-    .line 155
+    .line 195
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -397,16 +562,25 @@
 
     const-string v0, "TYPE=(AUDIO|VIDEO|SUBTITLES|CLOSED-CAPTIONS)"
 
-    .line 156
+    .line 197
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TYPE:Ljava/util/regex/Pattern;
 
+    const-string v0, "TYPE=(PART|MAP)"
+
+    .line 208
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PRELOAD_HINT_TYPE:Ljava/util/regex/Pattern;
+
     const-string v0, "LANGUAGE=\"(.+?)\""
 
-    .line 158
+    .line 209
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -415,7 +589,7 @@
 
     const-string v0, "NAME=\"(.+?)\""
 
-    .line 159
+    .line 210
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -424,7 +598,7 @@
 
     const-string v0, "GROUP-ID=\"(.+?)\""
 
-    .line 160
+    .line 211
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -433,7 +607,7 @@
 
     const-string v0, "CHARACTERISTICS=\"(.+?)\""
 
-    .line 161
+    .line 212
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -442,7 +616,7 @@
 
     const-string v0, "INSTREAM-ID=\"((?:CC|SERVICE)\\d+)\""
 
-    .line 163
+    .line 214
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -451,7 +625,7 @@
 
     const-string v0, "AUTOSELECT"
 
-    .line 164
+    .line 215
     invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -460,7 +634,7 @@
 
     const-string v0, "DEFAULT"
 
-    .line 165
+    .line 216
     invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -469,16 +643,43 @@
 
     const-string v0, "FORCED"
 
-    .line 166
+    .line 217
     invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_FORCED:Ljava/util/regex/Pattern;
 
+    const-string v0, "INDEPENDENT"
+
+    .line 218
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_INDEPENDENT:Ljava/util/regex/Pattern;
+
+    const-string v0, "GAP"
+
+    .line 219
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_GAP:Ljava/util/regex/Pattern;
+
+    const-string v0, "PRECISE"
+
+    .line 220
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PRECISE:Ljava/util/regex/Pattern;
+
     const-string v0, "VALUE=\"(.+?)\""
 
-    .line 167
+    .line 221
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -487,7 +688,7 @@
 
     const-string v0, "IMPORT=\"(.+?)\""
 
-    .line 168
+    .line 222
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -496,7 +697,7 @@
 
     const-string v0, "\\{\\$([a-zA-Z0-9\\-_]+)\\}"
 
-    .line 170
+    .line 224
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -507,24 +708,29 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
-    .line 179
-    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;->EMPTY:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
+    .line 234
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;->EMPTY:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
 
-    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;-><init>(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;-><init>(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;)V
     .locals 0
 
-    .line 188
+    .line 248
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 189
-    iput-object p1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->masterPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
+    .line 249
+    iput-object p1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->multivariantPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
+
+    .line 250
+    iput-object p2, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->previousMediaPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
 
     return-void
 .end method
@@ -537,7 +743,7 @@
         }
     .end annotation
 
-    .line 231
+    .line 296
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
     move-result v0
@@ -548,7 +754,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 233
+    .line 298
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
     move-result v0
@@ -567,7 +773,7 @@
 
     goto :goto_0
 
-    .line 237
+    .line 302
     :cond_0
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
@@ -583,7 +789,7 @@
     :goto_1
     const/4 v2, 0x1
 
-    .line 239
+    .line 304
     invoke-static {p0, v2, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->skipIgnorableWhitespace(Ljava/io/BufferedReader;ZI)I
 
     move-result v0
@@ -597,7 +803,7 @@
 
     const-string v4, "#EXTM3U"
 
-    .line 242
+    .line 307
     invoke-virtual {v4, v3}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
@@ -606,7 +812,7 @@
 
     return v1
 
-    .line 245
+    .line 310
     :cond_3
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
@@ -616,13 +822,13 @@
 
     goto :goto_2
 
-    .line 247
+    .line 312
     :cond_4
     invoke-static {p0, v1, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->skipIgnorableWhitespace(Ljava/io/BufferedReader;ZI)I
 
     move-result p0
 
-    .line 248
+    .line 313
     invoke-static {p0}, Lcom/google/android/exoplayer2/util/Util;->isLinebreak(I)Z
 
     move-result p0
@@ -633,7 +839,7 @@
 .method private static compileBooleanAttrPattern(Ljava/lang/String;)Ljava/util/regex/Pattern;
     .locals 1
 
-    .line 961
+    .line 1282
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -671,23 +877,86 @@
     return-object p0
 .end method
 
-.method private static getVariantWithAudioGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
+.method private static getPlaylistProtectionSchemes(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)Lcom/google/android/exoplayer2/drm/DrmInitData;
+    .locals 4
+
+    .line 1068
+    array-length v0, p1
+
+    new-array v0, v0, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    const/4 v1, 0x0
+
+    .line 1069
+    :goto_0
+    array-length v2, p1
+
+    if-ge v1, v2, :cond_0
+
+    .line 1070
+    aget-object v2, p1, v1
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->copyWithData([B)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 1072
+    :cond_0
+    new-instance p1, Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    invoke-direct {p1, p0, v0}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
+
+    return-object p1
+.end method
+
+.method private static getSegmentEncryptionIV(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+
+    if-nez p2, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    if-eqz p3, :cond_1
+
+    return-object p3
+
+    .line 1085
+    :cond_1
+    invoke-static {p0, p1}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static getVariantWithAudioGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;",
             ">;",
             "Ljava/lang/String;",
             ")",
-            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;"
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;"
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 562
+    .line 600
     :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -695,15 +964,15 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 563
+    .line 601
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
+    check-cast v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
 
-    .line 564
-    iget-object v2, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->audioGroupId:Ljava/lang/String;
+    .line 602
+    iget-object v2, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->audioGroupId:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -724,23 +993,23 @@
     return-object p0
 .end method
 
-.method private static getVariantWithSubtitleGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
+.method private static getVariantWithSubtitleGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;",
             ">;",
             "Ljava/lang/String;",
             ")",
-            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;"
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;"
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 584
+    .line 622
     :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -748,15 +1017,15 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 585
+    .line 623
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
+    check-cast v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
 
-    .line 586
-    iget-object v2, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->subtitleGroupId:Ljava/lang/String;
+    .line 624
+    iget-object v2, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->subtitleGroupId:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -777,23 +1046,23 @@
     return-object p0
 .end method
 
-.method private static getVariantWithVideoGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
+.method private static getVariantWithVideoGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;",
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;",
             ">;",
             "Ljava/lang/String;",
             ")",
-            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;"
+            "Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;"
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 573
+    .line 611
     :goto_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -801,15 +1070,15 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 574
+    .line 612
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
+    check-cast v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
 
-    .line 575
-    iget-object v2, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->videoGroupId:Ljava/lang/String;
+    .line 613
+    iget-object v2, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->videoGroupId:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -838,7 +1107,7 @@
         }
     .end annotation
 
-    .line 902
+    .line 1213
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
@@ -875,19 +1144,19 @@
         }
     .end annotation
 
-    .line 860
+    .line 1130
     sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_KEYFORMATVERSIONS:Ljava/util/regex/Pattern;
 
     const-string v1, "1"
 
-    .line 861
+    .line 1131
     invoke-static {p0, v0, v1, p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v2, "urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed"
 
-    .line 862
+    .line 1132
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -900,19 +1169,19 @@
 
     if-eqz v2, :cond_0
 
-    .line 863
+    .line 1133
     sget-object p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
 
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 864
+    .line 1134
     new-instance p1, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
     sget-object p2, Lcom/google/android/exoplayer2/C;->WIDEVINE_UUID:Ljava/util/UUID;
 
-    .line 867
+    .line 1137
     invoke-virtual {p0, v4}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
@@ -932,14 +1201,14 @@
     :cond_0
     const-string v2, "com.widevine"
 
-    .line 868
+    .line 1138
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 869
+    .line 1139
     new-instance p1, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
     sget-object p2, Lcom/google/android/exoplayer2/C;->WIDEVINE_UUID:Ljava/util/UUID;
@@ -957,7 +1226,7 @@
     :cond_1
     const-string v2, "com.microsoft.playready"
 
-    .line 870
+    .line 1140
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -970,14 +1239,14 @@
 
     if-eqz p1, :cond_2
 
-    .line 871
+    .line 1141
     sget-object p1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
 
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 872
+    .line 1142
     invoke-virtual {p0, v4}, Ljava/lang/String;->indexOf(I)I
 
     move-result p1
@@ -990,14 +1259,14 @@
 
     move-result-object p0
 
-    .line 873
+    .line 1143
     sget-object p1, Lcom/google/android/exoplayer2/C;->PLAYREADY_UUID:Ljava/util/UUID;
 
     invoke-static {p1, p0}, Lcom/google/android/exoplayer2/extractor/mp4/PsshAtomUtil;->buildPsshAtom(Ljava/util/UUID;[B)[B
 
     move-result-object p0
 
-    .line 874
+    .line 1144
     new-instance p2, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
     invoke-direct {p2, p1, v5, p0}, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;-><init>(Ljava/util/UUID;Ljava/lang/String;[B)V
@@ -1015,7 +1284,7 @@
 
     const-string v0, "SAMPLE-AES-CENC"
 
-    .line 880
+    .line 1177
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1053,7 +1322,7 @@
         }
     .end annotation
 
-    .line 886
+    .line 1183
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
@@ -1077,7 +1346,7 @@
         }
     .end annotation
 
-    .line 898
+    .line 1195
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
@@ -1093,8 +1362,2215 @@
     return-wide p0
 .end method
 
-.method private static parseMasterPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
-    .locals 40
+.method private static parseMediaPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
+    .locals 93
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    .line 643
+    iget-boolean v2, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylist;->hasIndependentSegments:Z
+
+    .line 646
+    new-instance v3, Ljava/util/HashMap;
+
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+
+    .line 647
+    new-instance v4, Ljava/util/HashMap;
+
+    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+
+    .line 648
+    new-instance v15, Ljava/util/ArrayList;
+
+    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
+
+    .line 649
+    new-instance v5, Ljava/util/ArrayList;
+
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+
+    .line 651
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    .line 652
+    new-instance v8, Ljava/util/ArrayList;
+
+    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+
+    .line 669
+    new-instance v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;
+
+    const-wide v17, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/16 v19, 0x0
+
+    const-wide v20, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide v22, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/16 v24, 0x0
+
+    move-object/from16 v16, v7
+
+    invoke-direct/range {v16 .. v24}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;-><init>(JZJJZ)V
+
+    .line 680
+    new-instance v9, Ljava/util/TreeMap;
+
+    invoke-direct {v9}, Ljava/util/TreeMap;-><init>()V
+
+    const-string v10, ""
+
+    const-wide/16 v18, 0x0
+
+    const/4 v13, 0x0
+
+    move/from16 v35, v2
+
+    move-object/from16 v56, v7
+
+    move-object/from16 v41, v10
+
+    move-wide/from16 v24, v18
+
+    move-wide/from16 v28, v24
+
+    move-wide/from16 v38, v28
+
+    move-wide/from16 v50, v38
+
+    move-wide/from16 v81, v50
+
+    move-wide/from16 v83, v81
+
+    move-wide/from16 v87, v83
+
+    move-wide/from16 v89, v87
+
+    const/4 v2, 0x0
+
+    const-wide v21, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/16 v23, 0x0
+
+    const/16 v26, 0x0
+
+    const/16 v27, 0x0
+
+    const/16 v30, 0x1
+
+    const-wide v31, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide v33, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/16 v36, 0x0
+
+    const/16 v37, 0x0
+
+    const/16 v40, 0x0
+
+    const/16 v54, 0x0
+
+    const/16 v75, 0x0
+
+    const-wide/16 v76, -0x1
+
+    const/16 v78, 0x0
+
+    const/16 v79, 0x0
+
+    const/16 v80, 0x0
+
+    const/16 v85, 0x0
+
+    const/16 v86, 0x0
+
+    move-object v7, v5
+
+    const/4 v5, 0x0
+
+    .line 685
+    :cond_0
+    :goto_0
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
+
+    move-result v42
+
+    if-eqz v42, :cond_43
+
+    .line 686
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v11, "#EXT"
+
+    .line 688
+    invoke-virtual {v12, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_1
+
+    .line 690
+    invoke-interface {v8, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    const-string v11, "#EXT-X-PLAYLIST-TYPE"
+
+    .line 693
+    invoke-virtual {v12, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_3
+
+    .line 694
+    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PLAYLIST_TYPE:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v11, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v11
+
+    const-string v12, "VOD"
+
+    .line 695
+    invoke-virtual {v12, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_2
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const-string v12, "EVENT"
+
+    .line 697
+    invoke-virtual {v12, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_0
+
+    const/4 v2, 0x2
+
+    goto :goto_0
+
+    :cond_3
+    const-string v11, "#EXT-X-I-FRAMES-ONLY"
+
+    .line 700
+    invoke-virtual {v12, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_4
+
+    const/16 v85, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    const-string v11, "#EXT-X-START"
+
+    .line 702
+    invoke-virtual {v12, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v11
+
+    const-wide v43, 0x412e848000000000L    # 1000000.0
+
+    if-eqz v11, :cond_5
+
+    .line 703
+    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TIME_OFFSET:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)D
+
+    move-result-wide v21
+
+    move-object/from16 v91, v15
+
+    mul-double v14, v21, v43
+
+    double-to-long v14, v14
+
+    .line 704
+    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PRECISE:Ljava/util/regex/Pattern;
+
+    .line 705
+    invoke-static {v12, v11, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
+
+    move-result v23
+
+    move-wide/from16 v21, v14
+
+    :goto_1
+    move-object/from16 v15, v91
+
+    goto :goto_0
+
+    :cond_5
+    move-object/from16 v91, v15
+
+    const-string v11, "#EXT-X-SERVER-CONTROL"
+
+    .line 706
+    invoke-virtual {v12, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_6
+
+    .line 707
+    invoke-static {v12}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseServerControl(Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;
+
+    move-result-object v56
+
+    goto :goto_1
+
+    :cond_6
+    const-string v11, "#EXT-X-PART-INF"
+
+    .line 708
+    invoke-virtual {v12, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_7
+
+    .line 709
+    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PART_TARGET_DURATION:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)D
+
+    move-result-wide v11
+
+    mul-double v11, v11, v43
+
+    double-to-long v11, v11
+
+    move-wide/from16 v33, v11
+
+    goto :goto_1
+
+    :cond_7
+    const-string v11, "#EXT-X-MAP"
+
+    .line 711
+    invoke-virtual {v12, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v11
+
+    const-string v14, "@"
+
+    if-eqz v11, :cond_d
+
+    .line 712
+    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v11, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v43
+
+    .line 713
+    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_ATTR_BYTERANGE:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v11, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v11
+
+    if-eqz v11, :cond_8
+
+    .line 715
+    invoke-static {v11, v14}, Lcom/google/android/exoplayer2/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 716
+    aget-object v12, v11, v13
+
+    invoke-static {v12}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v76
+
+    .line 717
+    array-length v12, v11
+
+    const/4 v14, 0x1
+
+    if-le v12, v14, :cond_8
+
+    .line 718
+    aget-object v12, v11, v14
+
+    invoke-static {v12}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v38
+
+    :cond_8
+    const-wide/16 v14, -0x1
+
+    cmp-long v12, v76, v14
+
+    if-nez v12, :cond_9
+
+    move-wide/from16 v38, v18
+
+    :cond_9
+    move-object/from16 v15, v75
+
+    move-object/from16 v14, v78
+
+    if-eqz v15, :cond_b
+
+    if-eqz v14, :cond_a
+
+    goto :goto_2
+
+    :cond_a
+    const-string v0, "The encryption IV attribute must be present when an initialization segment is encrypted with METHOD=AES-128."
+
+    const/4 v1, 0x0
+
+    .line 727
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object v0
+
+    throw v0
+
+    :cond_b
+    :goto_2
+    const/16 v20, 0x0
+
+    .line 732
+    new-instance v86, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    move-object/from16 v42, v86
+
+    move-wide/from16 v44, v38
+
+    move-wide/from16 v46, v76
+
+    move-object/from16 v48, v15
+
+    move-object/from16 v49, v14
+
+    invoke-direct/range {v42 .. v49}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;JJLjava/lang/String;Ljava/lang/String;)V
+
+    if-eqz v12, :cond_c
+
+    add-long v38, v38, v76
+
+    :cond_c
+    move-object/from16 v78, v14
+
+    move-object/from16 v75, v15
+
+    move-object/from16 v15, v91
+
+    const-wide/16 v76, -0x1
+
+    goto/16 :goto_0
+
+    :cond_d
+    move-object/from16 v15, v75
+
+    move-object/from16 v11, v78
+
+    const/16 v20, 0x0
+
+    const-string v13, "#EXT-X-TARGETDURATION"
+
+    .line 743
+    invoke-virtual {v12, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_e
+
+    .line 744
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TARGET_DURATION:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
+
+    move-result v12
+
+    int-to-long v12, v12
+
+    const-wide/32 v31, 0xf4240
+
+    mul-long v31, v31, v12
+
+    :goto_3
+    move-object/from16 v78, v11
+
+    :goto_4
+    move-object/from16 v75, v15
+
+    :goto_5
+    move-object/from16 v15, v91
+
+    :goto_6
+    const/4 v13, 0x0
+
+    goto/16 :goto_0
+
+    :cond_e
+    const-string v13, "#EXT-X-MEDIA-SEQUENCE"
+
+    .line 745
+    invoke-virtual {v12, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_f
+
+    .line 746
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_SEQUENCE:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)J
+
+    move-result-wide v83
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v75, v15
+
+    move-wide/from16 v28, v83
+
+    goto :goto_5
+
+    :cond_f
+    const-string v13, "#EXT-X-VERSION"
+
+    .line 748
+    invoke-virtual {v12, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_10
+
+    .line 749
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VERSION:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
+
+    move-result v30
+
+    goto :goto_3
+
+    :cond_10
+    const-string v13, "#EXT-X-DEFINE"
+
+    .line 750
+    invoke-virtual {v12, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_13
+
+    .line 751
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_IMPORT:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v13, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v13
+
+    if-eqz v13, :cond_11
+
+    .line 753
+    iget-object v12, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;->variableDefinitions:Ljava/util/Map;
+
+    invoke-interface {v12, v13}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljava/lang/String;
+
+    if-eqz v12, :cond_12
+
+    .line 755
+    invoke-virtual {v3, v13, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_7
+
+    .line 760
+    :cond_11
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
+
+    .line 761
+    invoke-static {v12, v13, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v13
+
+    sget-object v14, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VALUE:Ljava/util/regex/Pattern;
+
+    .line 762
+    invoke-static {v12, v14, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 760
+    invoke-virtual {v3, v13, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_12
+    :goto_7
+    move/from16 v78, v2
+
+    move-object/from16 v59, v3
+
+    move-object v2, v6
+
+    move-object/from16 v92, v10
+
+    move-object/from16 v10, v79
+
+    move-wide/from16 v0, v83
+
+    const/4 v3, 0x0
+
+    move-object/from16 v83, v5
+
+    move-object/from16 v79, v8
+
+    move-object/from16 v8, v91
+
+    goto/16 :goto_18
+
+    :cond_13
+    const-string v13, "#EXTINF"
+
+    .line 764
+    invoke-virtual {v12, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_14
+
+    .line 765
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_DURATION:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseTimeSecondsToUs(Ljava/lang/String;Ljava/util/regex/Pattern;)J
+
+    move-result-wide v87
+
+    .line 766
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_TITLE:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v13, v10, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v41
+
+    goto/16 :goto_3
+
+    :cond_14
+    const-string v13, "#EXT-X-SKIP"
+
+    .line 767
+    invoke-virtual {v12, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v13
+
+    const-wide/16 v46, 0x1
+
+    if-eqz v13, :cond_1c
+
+    .line 768
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_SKIPPED_SEGMENTS:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
+
+    move-result v12
+
+    if-eqz v1, :cond_15
+
+    .line 769
+    invoke-interface/range {v91 .. v91}, Ljava/util/List;->isEmpty()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_15
+
+    const/4 v13, 0x1
+
+    goto :goto_8
+
+    :cond_15
+    const/4 v13, 0x0
+
+    :goto_8
+    invoke-static {v13}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+
+    .line 770
+    invoke-static/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
+
+    iget-wide v13, v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->mediaSequence:J
+
+    sub-long v13, v28, v13
+
+    long-to-int v14, v13
+
+    add-int/2addr v12, v14
+
+    if-ltz v14, :cond_1b
+
+    .line 772
+    iget-object v13, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
+
+    invoke-interface {v13}, Ljava/util/List;->size()I
+
+    move-result v13
+
+    if-gt v12, v13, :cond_1b
+
+    move-object v13, v10
+
+    move-object/from16 v78, v11
+
+    move-wide/from16 v10, v81
+
+    :goto_9
+    if-ge v14, v12, :cond_1a
+
+    .line 777
+    iget-object v15, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->segments:Ljava/util/List;
+
+    invoke-interface {v15, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    move/from16 v42, v12
+
+    move-object/from16 v92, v13
+
+    .line 778
+    iget-wide v12, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->mediaSequence:J
+
+    cmp-long v40, v28, v12
+
+    if-eqz v40, :cond_16
+
+    .line 782
+    iget v12, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;->discontinuitySequence:I
+
+    sub-int v12, v12, v27
+
+    iget v13, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->relativeDiscontinuitySequence:I
+
+    add-int/2addr v12, v13
+
+    .line 786
+    invoke-virtual {v15, v10, v11, v12}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->copyWith(JI)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    move-result-object v15
+
+    :cond_16
+    move-object/from16 v13, v91
+
+    .line 788
+    invoke-interface {v13, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 789
+    iget-wide v0, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->durationUs:J
+
+    add-long/2addr v10, v0
+
+    .line 791
+    iget-wide v0, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->byteRangeLength:J
+
+    const-wide/16 v43, -0x1
+
+    cmp-long v12, v0, v43
+
+    move-wide/from16 v43, v10
+
+    if-eqz v12, :cond_17
+
+    .line 792
+    iget-wide v10, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->byteRangeOffset:J
+
+    add-long/2addr v10, v0
+
+    move-wide/from16 v38, v10
+
+    .line 794
+    :cond_17
+    iget v0, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->relativeDiscontinuitySequence:I
+
+    .line 795
+    iget-object v1, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->initializationSegment:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    .line 796
+    iget-object v10, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->drmInitData:Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    .line 797
+    iget-object v11, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->fullSegmentEncryptionKeyUri:Ljava/lang/String;
+
+    .line 798
+    iget-object v12, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->encryptionIV:Ljava/lang/String;
+
+    move/from16 v40, v0
+
+    if-eqz v12, :cond_18
+
+    .line 799
+    invoke-static/range {v83 .. v84}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v12, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_19
+
+    .line 800
+    :cond_18
+    iget-object v0, v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$SegmentBase;->encryptionIV:Ljava/lang/String;
+
+    move-object/from16 v78, v0
+
+    :cond_19
+    add-long v83, v83, v46
+
+    add-int/lit8 v14, v14, 0x1
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v86, v1
+
+    move-object v15, v11
+
+    move-object/from16 v91, v13
+
+    move/from16 v80, v40
+
+    move/from16 v12, v42
+
+    move-wide/from16 v50, v43
+
+    move-object/from16 v13, v92
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v40, v10
+
+    move-wide/from16 v10, v50
+
+    goto :goto_9
+
+    :cond_1a
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-wide/from16 v81, v10
+
+    move-object v10, v13
+
+    goto/16 :goto_4
+
+    .line 774
+    :cond_1b
+    new-instance v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$DeltaUpdateException;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$DeltaUpdateException;-><init>()V
+
+    throw v0
+
+    :cond_1c
+    move-object/from16 v92, v10
+
+    move-object/from16 v13, v91
+
+    const-string v0, "#EXT-X-KEY"
+
+    .line 804
+    invoke-virtual {v12, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_21
+
+    .line 805
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_METHOD:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v0, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 806
+    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_KEYFORMAT:Ljava/util/regex/Pattern;
+
+    const-string v10, "identity"
+
+    .line 807
+    invoke-static {v12, v1, v10, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v11, "NONE"
+
+    .line 810
+    invoke-virtual {v11, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_1d
+
+    .line 811
+    invoke-virtual {v9}, Ljava/util/TreeMap;->clear()V
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v40, v0
+
+    move-object/from16 v78, v40
+
+    goto :goto_b
+
+    .line 814
+    :cond_1d
+    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_IV:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v11, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v11
+
+    .line 815
+    invoke-virtual {v10, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_1f
+
+    const-string v1, "AES-128"
+
+    .line 816
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1e
+
+    .line 818
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v0, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object/from16 v78, v11
+
+    goto :goto_b
+
+    :cond_1e
+    move-object/from16 v78, v11
+
+    move-object/from16 v0, v20
+
+    goto :goto_b
+
+    :cond_1f
+    move-object/from16 v10, v79
+
+    if-nez v10, :cond_20
+
+    .line 825
+    invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseEncryptionScheme(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object/from16 v79, v0
+
+    goto :goto_a
+
+    :cond_20
+    move-object/from16 v79, v10
+
+    .line 827
+    :goto_a
+    invoke-static {v12, v1, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDrmSchemeData(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1e
+
+    .line 830
+    invoke-virtual {v9, v1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v40, v0
+
+    :goto_b
+    move-object/from16 v1, p1
+
+    move-object/from16 v75, v0
+
+    move-object v15, v13
+
+    move-object/from16 v10, v92
+
+    const/4 v13, 0x0
+
+    move-object/from16 v0, p0
+
+    goto/16 :goto_0
+
+    :cond_21
+    move-object/from16 v10, v79
+
+    const-string v0, "#EXT-X-BYTERANGE"
+
+    .line 834
+    invoke-virtual {v12, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_23
+
+    .line 835
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BYTERANGE:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v0, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 836
+    invoke-static {v0, v14}, Lcom/google/android/exoplayer2/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    .line 837
+    aget-object v12, v0, v1
+
+    invoke-static {v12}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v76
+
+    .line 838
+    array-length v1, v0
+
+    const/4 v12, 0x1
+
+    if-le v1, v12, :cond_22
+
+    .line 839
+    aget-object v0, v0, v12
+
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v38
+
+    :cond_22
+    :goto_c
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v75, v15
+
+    move-object/from16 v10, v92
+
+    goto :goto_d
+
+    :cond_23
+    const/4 v0, 0x1
+
+    const-string v1, "#EXT-X-DISCONTINUITY-SEQUENCE"
+
+    .line 841
+    invoke-virtual {v12, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    const/16 v0, 0x3a
+
+    if-eqz v1, :cond_24
+
+    .line 843
+    invoke-virtual {v12, v0}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {v12, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v27
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v75, v15
+
+    move-object/from16 v10, v92
+
+    const/16 v26, 0x1
+
+    :goto_d
+    move-object v15, v13
+
+    goto/16 :goto_6
+
+    :cond_24
+    const-string v1, "#EXT-X-DISCONTINUITY"
+
+    .line 844
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_25
+
+    add-int/lit8 v80, v80, 0x1
+
+    goto :goto_c
+
+    :cond_25
+    const-string v1, "#EXT-X-PROGRAM-DATE-TIME"
+
+    .line 846
+    invoke-virtual {v12, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_27
+
+    cmp-long v1, v24, v18
+
+    if-nez v1, :cond_26
+
+    .line 849
+    invoke-virtual {v12, v0}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {v12, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->parseXsDateTime(Ljava/lang/String;)J
+
+    move-result-wide v24
+
+    invoke-static/range {v24 .. v25}, Lcom/google/android/exoplayer2/util/Util;->msToUs(J)J
+
+    move-result-wide v24
+
+    sub-long v24, v24, v81
+
+    goto :goto_c
+
+    :cond_26
+    move/from16 v78, v2
+
+    move-object/from16 v59, v3
+
+    move-object v2, v6
+
+    move-object/from16 v79, v8
+
+    move-object v8, v13
+
+    move-wide/from16 v0, v83
+
+    :goto_e
+    const/4 v3, 0x0
+
+    move-object/from16 v83, v5
+
+    goto/16 :goto_18
+
+    :cond_27
+    const-string v0, "#EXT-X-GAP"
+
+    .line 852
+    invoke-virtual {v12, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_28
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v75, v15
+
+    move-object/from16 v10, v92
+
+    const/16 v54, 0x1
+
+    goto :goto_d
+
+    :cond_28
+    const-string v0, "#EXT-X-INDEPENDENT-SEGMENTS"
+
+    .line 854
+    invoke-virtual {v12, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_29
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v75, v15
+
+    move-object/from16 v10, v92
+
+    const/16 v35, 0x1
+
+    goto :goto_d
+
+    :cond_29
+    const-string v0, "#EXT-X-ENDLIST"
+
+    .line 856
+    invoke-virtual {v12, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2a
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v75, v15
+
+    move-object/from16 v10, v92
+
+    const/16 v36, 0x1
+
+    goto/16 :goto_d
+
+    :cond_2a
+    const-string v0, "#EXT-X-RENDITION-REPORT"
+
+    .line 858
+    invoke-virtual {v12, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2b
+
+    .line 859
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_LAST_MSN:Ljava/util/regex/Pattern;
+
+    move/from16 v78, v2
+
+    move-object/from16 v91, v13
+
+    const-wide/16 v1, -0x1
+
+    invoke-static {v12, v0, v1, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;J)J
+
+    move-result-wide v13
+
+    .line 860
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_LAST_PART:Ljava/util/regex/Pattern;
+
+    const/4 v1, -0x1
+
+    invoke-static {v12, v0, v1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;I)I
+
+    move-result v0
+
+    .line 861
+    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v1, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v1
+
+    move-object/from16 v2, p3
+
+    .line 862
+    invoke-static {v2, v1}, Lcom/google/android/exoplayer2/util/UriUtil;->resolve(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    .line 863
+    new-instance v12, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;
+
+    invoke-direct {v12, v1, v13, v14, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;-><init>(Landroid/net/Uri;JI)V
+
+    invoke-interface {v6, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :goto_f
+    move-object/from16 v59, v3
+
+    move-object v2, v6
+
+    move-object/from16 v79, v8
+
+    move-wide/from16 v0, v83
+
+    move-object/from16 v8, v91
+
+    goto/16 :goto_e
+
+    :cond_2b
+    move/from16 v78, v2
+
+    move-object/from16 v91, v13
+
+    move-object/from16 v2, p3
+
+    const-string v0, "#EXT-X-PRELOAD-HINT"
+
+    .line 864
+    invoke-virtual {v12, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_33
+
+    if-eqz v5, :cond_2c
+
+    :goto_10
+    goto :goto_f
+
+    .line 868
+    :cond_2c
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PRELOAD_HINT_TYPE:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v0, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "PART"
+
+    .line 869
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2d
+
+    goto :goto_10
+
+    .line 872
+    :cond_2d
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v0, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v58
+
+    .line 873
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BYTERANGE_START:Ljava/util/regex/Pattern;
+
+    const-wide/16 v13, -0x1
+
+    .line 874
+    invoke-static {v12, v0, v13, v14}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;J)J
+
+    move-result-wide v0
+
+    .line 875
+    sget-object v2, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BYTERANGE_LENGTH:Ljava/util/regex/Pattern;
+
+    .line 876
+    invoke-static {v12, v2, v13, v14}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;J)J
+
+    move-result-wide v70
+
+    move-wide/from16 v12, v83
+
+    .line 879
+    invoke-static {v12, v13, v15, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getSegmentEncryptionIV(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v67
+
+    if-nez v40, :cond_2f
+
+    .line 881
+    invoke-virtual {v9}, Ljava/util/TreeMap;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_2f
+
+    .line 882
+    invoke-virtual {v9}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
+
+    move-result-object v2
+
+    move-wide/from16 v42, v12
+
+    const/4 v14, 0x0
+
+    new-array v12, v14, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    invoke-interface {v2, v12}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    .line 883
+    new-instance v12, Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    invoke-direct {v12, v10, v2}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
+
+    if-nez v37, :cond_2e
+
+    .line 885
+    invoke-static {v10, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getPlaylistProtectionSchemes(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    move-result-object v37
+
+    :cond_2e
+    move-object/from16 v40, v12
+
+    goto :goto_11
+
+    :cond_2f
+    move-wide/from16 v42, v12
+
+    :goto_11
+    const-wide/16 v12, -0x1
+
+    cmp-long v2, v0, v12
+
+    if-eqz v2, :cond_30
+
+    cmp-long v14, v70, v12
+
+    if-eqz v14, :cond_32
+
+    .line 890
+    :cond_30
+    new-instance v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;
+
+    const-wide/16 v60, 0x0
+
+    if-eqz v2, :cond_31
+
+    move-wide/from16 v68, v0
+
+    goto :goto_12
+
+    :cond_31
+    move-wide/from16 v68, v18
+
+    :goto_12
+    const/16 v72, 0x0
+
+    const/16 v73, 0x0
+
+    const/16 v74, 0x1
+
+    move-object/from16 v57, v5
+
+    move-object/from16 v59, v86
+
+    move/from16 v62, v80
+
+    move-wide/from16 v63, v50
+
+    move-object/from16 v65, v40
+
+    move-object/from16 v66, v15
+
+    .line 900
+    invoke-direct/range {v57 .. v74}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZZZ)V
+
+    :cond_32
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v75, v15
+
+    move-wide/from16 v83, v42
+
+    move/from16 v2, v78
+
+    move-object/from16 v15, v91
+
+    move-object/from16 v10, v92
+
+    const/4 v13, 0x0
+
+    move-object/from16 v78, v11
+
+    goto/16 :goto_0
+
+    :cond_33
+    move-wide/from16 v0, v83
+
+    const-string v2, "#EXT-X-PART"
+
+    .line 906
+    invoke-virtual {v12, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3b
+
+    .line 909
+    invoke-static {v0, v1, v15, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getSegmentEncryptionIV(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v67
+
+    .line 911
+    sget-object v2, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v2, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v58
+
+    .line 912
+    sget-object v2, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_ATTR_DURATION:Ljava/util/regex/Pattern;
+
+    .line 913
+    invoke-static {v12, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)D
+
+    move-result-wide v46
+
+    move-object v13, v5
+
+    move-object v2, v6
+
+    mul-double v5, v46, v43
+
+    double-to-long v5, v5
+
+    move-object/from16 v79, v8
+
+    .line 914
+    sget-object v8, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_INDEPENDENT:Ljava/util/regex/Pattern;
+
+    move-object/from16 v83, v13
+
+    const/4 v13, 0x0
+
+    .line 915
+    invoke-static {v12, v8, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
+
+    move-result v8
+
+    if-eqz v35, :cond_34
+
+    .line 917
+    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
+
+    move-result v42
+
+    if-eqz v42, :cond_34
+
+    const/16 v42, 0x1
+
+    goto :goto_13
+
+    :cond_34
+    const/16 v42, 0x0
+
+    :goto_13
+    or-int v73, v8, v42
+
+    .line 918
+    sget-object v8, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_GAP:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v8, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
+
+    move-result v72
+
+    .line 920
+    sget-object v8, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_ATTR_BYTERANGE:Ljava/util/regex/Pattern;
+
+    invoke-static {v12, v8, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_35
+
+    .line 923
+    invoke-static {v8, v14}, Lcom/google/android/exoplayer2/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 924
+    aget-object v12, v8, v13
+
+    invoke-static {v12}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v12
+
+    .line 925
+    array-length v14, v8
+
+    move-wide/from16 v42, v12
+
+    const/4 v12, 0x1
+
+    if-le v14, v12, :cond_36
+
+    .line 926
+    aget-object v8, v8, v12
+
+    invoke-static {v8}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v89
+
+    goto :goto_14
+
+    :cond_35
+    const-wide/16 v42, -0x1
+
+    :cond_36
+    :goto_14
+    const-wide/16 v44, -0x1
+
+    cmp-long v8, v42, v44
+
+    if-nez v8, :cond_37
+
+    move-wide/from16 v89, v18
+
+    :cond_37
+    if-nez v40, :cond_39
+
+    .line 932
+    invoke-virtual {v9}, Ljava/util/TreeMap;->isEmpty()Z
+
+    move-result v12
+
+    if-nez v12, :cond_39
+
+    .line 933
+    invoke-virtual {v9}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
+
+    move-result-object v12
+
+    const/4 v14, 0x0
+
+    new-array v13, v14, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    invoke-interface {v12, v13}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    .line 934
+    new-instance v13, Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    invoke-direct {v13, v10, v12}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
+
+    if-nez v37, :cond_38
+
+    .line 936
+    invoke-static {v10, v12}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getPlaylistProtectionSchemes(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    move-result-object v37
+
+    :cond_38
+    move-object/from16 v40, v13
+
+    .line 939
+    :cond_39
+    new-instance v12, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;
+
+    move-object/from16 v57, v12
+
+    const/16 v74, 0x0
+
+    move-object/from16 v59, v86
+
+    move-wide/from16 v60, v5
+
+    move/from16 v62, v80
+
+    move-wide/from16 v63, v50
+
+    move-object/from16 v65, v40
+
+    move-object/from16 v66, v15
+
+    move-wide/from16 v68, v89
+
+    move-wide/from16 v70, v42
+
+    invoke-direct/range {v57 .. v74}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Part;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZZZ)V
+
+    invoke-interface {v7, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-long v50, v50, v5
+
+    if-eqz v8, :cond_3a
+
+    add-long v89, v89, v42
+
+    :cond_3a
+    move-object v6, v2
+
+    move-object/from16 v75, v15
+
+    move/from16 v2, v78
+
+    move-object/from16 v8, v79
+
+    move-object/from16 v5, v83
+
+    move-object/from16 v15, v91
+
+    const/4 v13, 0x0
+
+    move-wide/from16 v83, v0
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v10, v92
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    goto/16 :goto_0
+
+    :cond_3b
+    move-object/from16 v83, v5
+
+    move-object v2, v6
+
+    move-object/from16 v79, v8
+
+    const-string v5, "#"
+
+    .line 958
+    invoke-virtual {v12, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_42
+
+    .line 961
+    invoke-static {v0, v1, v15, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getSegmentEncryptionIV(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    add-long v0, v0, v46
+
+    .line 964
+    invoke-static {v12, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 965
+    invoke-virtual {v4, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    const-wide/16 v12, -0x1
+
+    cmp-long v14, v76, v12
+
+    if-nez v14, :cond_3c
+
+    move-wide/from16 v12, v18
+
+    goto :goto_15
+
+    :cond_3c
+    if-eqz v85, :cond_3d
+
+    if-nez v86, :cond_3d
+
+    if-nez v8, :cond_3d
+
+    .line 975
+    new-instance v8, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    const-wide/16 v44, 0x0
+
+    const/16 v48, 0x0
+
+    const/16 v49, 0x0
+
+    move-object/from16 v42, v8
+
+    move-object/from16 v43, v6
+
+    move-wide/from16 v46, v38
+
+    invoke-direct/range {v42 .. v49}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;JJLjava/lang/String;Ljava/lang/String;)V
+
+    .line 982
+    invoke-virtual {v4, v6, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3d
+    move-wide/from16 v12, v38
+
+    :goto_15
+    if-nez v40, :cond_3e
+
+    .line 985
+    invoke-virtual {v9}, Ljava/util/TreeMap;->isEmpty()Z
+
+    move-result v38
+
+    if-nez v38, :cond_3e
+
+    move-wide/from16 v57, v0
+
+    .line 986
+    invoke-virtual {v9}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    move-object/from16 v59, v3
+
+    const/4 v1, 0x0
+
+    new-array v3, v1, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    invoke-interface {v0, v3}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+
+    .line 987
+    new-instance v3, Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    invoke-direct {v3, v10, v0}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
+
+    if-nez v37, :cond_3f
+
+    .line 989
+    invoke-static {v10, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getPlaylistProtectionSchemes(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)Lcom/google/android/exoplayer2/drm/DrmInitData;
+
+    move-result-object v37
+
+    goto :goto_16
+
+    :cond_3e
+    move-wide/from16 v57, v0
+
+    move-object/from16 v59, v3
+
+    const/4 v1, 0x0
+
+    move-object/from16 v3, v40
+
+    .line 993
+    :cond_3f
+    :goto_16
+    new-instance v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    if-eqz v86, :cond_40
+
+    move-object/from16 v40, v86
+
+    goto :goto_17
+
+    :cond_40
+    move-object/from16 v40, v8
+
+    :goto_17
+    move-object/from16 v38, v0
+
+    move-object/from16 v39, v6
+
+    move-wide/from16 v42, v87
+
+    move/from16 v44, v80
+
+    move-wide/from16 v45, v81
+
+    move-object/from16 v47, v3
+
+    move-object/from16 v48, v15
+
+    move-object/from16 v49, v5
+
+    move-wide/from16 v50, v12
+
+    move-wide/from16 v52, v76
+
+    move-object/from16 v55, v7
+
+    .line 996
+    invoke-direct/range {v38 .. v55}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
+
+    move-object/from16 v8, v91
+
+    .line 993
+    invoke-interface {v8, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-long v50, v81, v87
+
+    .line 1012
+    new-instance v7, Ljava/util/ArrayList;
+
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+
+    if-eqz v14, :cond_41
+
+    add-long v12, v12, v76
+
+    :cond_41
+    move-wide/from16 v38, v12
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object v6, v2
+
+    move-object/from16 v40, v3
+
+    move-object/from16 v75, v15
+
+    move-wide/from16 v87, v18
+
+    move-wide/from16 v81, v50
+
+    move-object/from16 v3, v59
+
+    move/from16 v2, v78
+
+    move-object/from16 v5, v83
+
+    move-object/from16 v41, v92
+
+    const/4 v13, 0x0
+
+    const/16 v54, 0x0
+
+    const-wide/16 v76, -0x1
+
+    move-object v15, v8
+
+    move-object/from16 v78, v11
+
+    move-wide/from16 v83, v57
+
+    move-object/from16 v8, v79
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v10, v41
+
+    goto/16 :goto_0
+
+    :cond_42
+    move-object/from16 v59, v3
+
+    move-object/from16 v8, v91
+
+    const/4 v3, 0x0
+
+    :goto_18
+    move-object v6, v2
+
+    move-object/from16 v75, v15
+
+    move-object/from16 v3, v59
+
+    move/from16 v2, v78
+
+    move-object/from16 v5, v83
+
+    const/4 v13, 0x0
+
+    move-wide/from16 v83, v0
+
+    move-object v15, v8
+
+    move-object/from16 v78, v11
+
+    move-object/from16 v8, v79
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v79, v10
+
+    move-object/from16 v10, v92
+
+    goto/16 :goto_0
+
+    :cond_43
+    move/from16 v78, v2
+
+    move-object/from16 v83, v5
+
+    move-object v2, v6
+
+    move-object/from16 v79, v8
+
+    move-object v8, v15
+
+    const/4 v3, 0x0
+
+    .line 1021
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    const/4 v1, 0x0
+
+    .line 1022
+    :goto_19
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v1, v4, :cond_47
+
+    .line 1023
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;
+
+    .line 1024
+    iget-wide v5, v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;->lastMediaSequence:J
+
+    const-wide/16 v9, -0x1
+
+    cmp-long v11, v5, v9
+
+    if-nez v11, :cond_44
+
+    .line 1026
+    invoke-interface {v8}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    int-to-long v5, v5
+
+    add-long v5, v28, v5
+
+    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
+
+    move-result v11
+
+    int-to-long v11, v11
+
+    sub-long/2addr v5, v11
+
+    .line 1028
+    :cond_44
+    iget v11, v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;->lastPartIndex:I
+
+    const/4 v12, -0x1
+
+    const-wide v13, -0x7fffffffffffffffL    # -4.9E-324
+
+    if-ne v11, v12, :cond_46
+
+    cmp-long v15, v33, v13
+
+    if-eqz v15, :cond_46
+
+    .line 1031
+    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_45
+
+    invoke-static {v8}, Lcom/google/common/collect/Iterables;->getLast(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
+
+    iget-object v11, v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;->parts:Ljava/util/List;
+
+    goto :goto_1a
+
+    :cond_45
+    move-object v11, v7
+
+    .line 1032
+    :goto_1a
+    invoke-interface {v11}, Ljava/util/List;->size()I
+
+    move-result v11
+
+    const/4 v15, 0x1
+
+    sub-int/2addr v11, v15
+
+    goto :goto_1b
+
+    :cond_46
+    const/4 v15, 0x1
+
+    .line 1034
+    :goto_1b
+    iget-object v4, v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;->playlistUri:Landroid/net/Uri;
+
+    new-instance v3, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;
+
+    invoke-direct {v3, v4, v5, v6, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$RenditionReport;-><init>(Landroid/net/Uri;JI)V
+
+    invoke-interface {v0, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, 0x1
+
+    const/4 v3, 0x0
+
+    goto :goto_19
+
+    :cond_47
+    const/4 v15, 0x1
+
+    if-eqz v83, :cond_48
+
+    move-object/from16 v5, v83
+
+    .line 1040
+    invoke-interface {v7, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 1043
+    :cond_48
+    new-instance v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
+
+    cmp-long v2, v24, v18
+
+    if-eqz v2, :cond_49
+
+    const/16 v75, 0x1
+
+    goto :goto_1c
+
+    :cond_49
+    const/16 v75, 0x0
+
+    :goto_1c
+    move-object v5, v1
+
+    move/from16 v6, v78
+
+    move-object v2, v7
+
+    move-object/from16 v7, p3
+
+    move-object v3, v8
+
+    move-object/from16 v8, v79
+
+    move-wide/from16 v9, v21
+
+    move/from16 v11, v23
+
+    move-wide/from16 v12, v24
+
+    move/from16 v14, v26
+
+    move/from16 v15, v27
+
+    move-wide/from16 v16, v28
+
+    move/from16 v18, v30
+
+    move-wide/from16 v19, v31
+
+    move-wide/from16 v21, v33
+
+    move/from16 v23, v35
+
+    move/from16 v24, v36
+
+    move/from16 v25, v75
+
+    move-object/from16 v26, v37
+
+    move-object/from16 v27, v3
+
+    move-object/from16 v28, v2
+
+    move-object/from16 v29, v56
+
+    move-object/from16 v30, v0
+
+    invoke-direct/range {v5 .. v30}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;-><init>(ILjava/lang/String;Ljava/util/List;JZJZIJIJJZZZLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/util/List;Ljava/util/List;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;Ljava/util/Map;)V
+
+    return-object v1
+.end method
+
+.method private static parseMultivariantPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
+    .locals 36
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1103,1327 +3579,1485 @@
 
     move-object/from16 v1, p1
 
-    .line 261
+    .line 326
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 262
+    .line 327
     new-instance v11, Ljava/util/HashMap;
 
     invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
 
-    .line 263
+    .line 328
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 264
+    .line 329
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 265
+    .line 330
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 266
+    .line 331
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 267
+    .line 332
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 268
+    .line 333
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 269
+    .line 334
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 270
+    .line 335
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
+    const/4 v10, 0x0
+
     const/4 v13, 0x0
 
-    const/4 v14, 0x0
-
-    .line 277
+    .line 342
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
 
-    move-result v15
+    move-result v14
 
-    const/high16 v16, -0x40800000    # -1.0f
+    const-string v15, "application/x-mpegURL"
 
-    if-eqz v15, :cond_d
+    if-eqz v14, :cond_f
 
-    .line 278
+    .line 343
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v14
 
-    const-string v10, "#EXT"
+    const-string v9, "#EXT"
 
-    .line 280
-    invoke-virtual {v15, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 345
+    invoke-virtual {v14, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v10
+    move-result v9
 
-    if-eqz v10, :cond_0
+    if-eqz v9, :cond_0
 
-    .line 282
-    invoke-virtual {v8, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 347
+    invoke-virtual {v8, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
+    const-string v9, "#EXT-X-I-FRAME-STREAM-INF"
+
+    .line 349
+    invoke-virtual {v14, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v9
+
+    move/from16 v19, v10
+
     const-string v10, "#EXT-X-DEFINE"
 
-    .line 285
-    invoke-virtual {v15, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 351
+    invoke-virtual {v14, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_1
 
-    .line 286
-    sget-object v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
+    .line 352
+    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
 
-    .line 287
-    invoke-static {v15, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v10
-
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VALUE:Ljava/util/regex/Pattern;
-
-    .line 288
-    invoke-static {v15, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+    .line 353
+    invoke-static {v14, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 286
-    invoke-virtual {v11, v10, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VALUE:Ljava/util/regex/Pattern;
 
-    :goto_1
-    move-object/from16 v20, v7
+    .line 354
+    invoke-static {v14, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
 
-    move-object/from16 v22, v8
+    move-result-object v10
 
-    move-object/from16 v21, v12
+    .line 352
+    invoke-virtual {v11, v9, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move/from16 v19, v13
-
-    goto/16 :goto_5
+    goto :goto_1
 
     :cond_1
-    const-string v9, "#EXT-X-INDEPENDENT-SEGMENTS"
+    const-string v10, "#EXT-X-INDEPENDENT-SEGMENTS"
 
-    .line 289
-    invoke-virtual {v15, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 355
+    invoke-virtual {v14, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_2
+    if-eqz v10, :cond_2
 
-    const/4 v13, 0x1
+    move-object v1, v0
 
-    goto :goto_0
+    move-object/from16 v34, v3
+
+    move-object/from16 v33, v4
+
+    move-object/from16 v32, v5
+
+    move-object/from16 v31, v6
+
+    move-object/from16 v29, v7
+
+    move-object/from16 v30, v8
+
+    move-object/from16 v28, v12
+
+    const/4 v10, 0x1
+
+    goto/16 :goto_9
 
     :cond_2
-    const-string v9, "#EXT-X-MEDIA"
+    const-string v10, "#EXT-X-MEDIA"
 
-    .line 291
-    invoke-virtual {v15, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 357
+    invoke-virtual {v14, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_3
+    if-eqz v10, :cond_3
 
-    .line 294
-    invoke-virtual {v3, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 360
+    invoke-virtual {v3, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_3
-    const-string v9, "#EXT-X-SESSION-KEY"
+    const-string v10, "#EXT-X-SESSION-KEY"
 
-    .line 295
-    invoke-virtual {v15, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 361
+    invoke-virtual {v14, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_5
+    if-eqz v10, :cond_4
 
-    .line 296
+    .line 362
     sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_KEYFORMAT:Ljava/util/regex/Pattern;
 
     const-string v10, "identity"
 
-    .line 297
-    invoke-static {v15, v9, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+    .line 363
+    invoke-static {v14, v9, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 298
-    invoke-static {v15, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDrmSchemeData(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+    .line 364
+    invoke-static {v14, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDrmSchemeData(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
     move-result-object v9
 
-    if-eqz v9, :cond_4
+    if-eqz v9, :cond_5
 
-    .line 300
+    .line 366
     sget-object v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_METHOD:Ljava/util/regex/Pattern;
 
-    invoke-static {v15, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+    invoke-static {v14, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 301
+    .line 367
     invoke-static {v10}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseEncryptionScheme(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 302
-    new-instance v15, Lcom/google/android/exoplayer2/drm/DrmInitData;
+    .line 368
+    new-instance v14, Lcom/google/android/exoplayer2/drm/DrmInitData;
 
-    move-object/from16 v20, v7
+    const/4 v15, 0x1
 
-    move/from16 v19, v13
+    new-array v15, v15, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
 
-    const/4 v13, 0x1
+    const/16 v16, 0x0
 
-    new-array v7, v13, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
+    aput-object v9, v15, v16
 
-    const/4 v13, 0x0
+    invoke-direct {v14, v10, v15}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
 
-    aput-object v9, v7, v13
+    invoke-virtual {v12, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {v15, v10, v7}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
-
-    invoke-virtual {v12, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_4
+    goto :goto_1
 
     :cond_4
-    move-object/from16 v20, v7
+    const-string v10, "#EXT-X-STREAM-INF"
 
-    move/from16 v19, v13
-
-    goto/16 :goto_4
-
-    :cond_5
-    move-object/from16 v20, v7
-
-    move/from16 v19, v13
-
-    const-string v7, "#EXT-X-STREAM-INF"
-
-    .line 304
-    invoke-virtual {v15, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_c
-
-    const-string v7, "CLOSED-CAPTIONS=NONE"
-
-    .line 305
-    invoke-virtual {v15, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v7
-
-    or-int/2addr v14, v7
-
-    .line 306
-    sget-object v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BANDWIDTH:Ljava/util/regex/Pattern;
-
-    invoke-static {v15, v7}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
-
-    move-result v7
-
-    .line 308
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_AVERAGE_BANDWIDTH:Ljava/util/regex/Pattern;
-
-    const/4 v13, -0x1
-
-    invoke-static {v15, v9, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;I)I
-
-    .line 309
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CODECS:Ljava/util/regex/Pattern;
-
-    invoke-static {v15, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v25
-
-    .line 310
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_RESOLUTION:Ljava/util/regex/Pattern;
-
-    .line 311
-    invoke-static {v15, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_8
-
-    const-string v10, "x"
-
-    .line 315
-    invoke-virtual {v9, v10}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v9
-
-    const/4 v10, 0x0
-
-    .line 316
-    aget-object v18, v9, v10
-
-    invoke-static/range {v18 .. v18}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    .line 370
+    invoke-virtual {v14, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v10
 
+    if-nez v10, :cond_6
+
+    if-eqz v9, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    :goto_1
+    move-object v1, v0
+
+    move-object/from16 v34, v3
+
+    move-object/from16 v33, v4
+
+    move-object/from16 v32, v5
+
+    move-object/from16 v31, v6
+
+    move-object/from16 v29, v7
+
+    move-object/from16 v30, v8
+
+    move-object/from16 v28, v12
+
+    move/from16 v10, v19
+
+    goto/16 :goto_9
+
+    :cond_6
+    :goto_2
+    const-string v10, "CLOSED-CAPTIONS=NONE"
+
+    .line 371
+    invoke-virtual {v14, v10}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v10
+
+    or-int/2addr v13, v10
+
+    if-eqz v9, :cond_7
+
+    const/16 v10, 0x4000
+
+    move/from16 v20, v13
+
+    goto :goto_3
+
+    :cond_7
+    move/from16 v20, v13
+
+    const/4 v10, 0x0
+
+    .line 373
+    :goto_3
+    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BANDWIDTH:Ljava/util/regex/Pattern;
+
+    invoke-static {v14, v13}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
+
+    move-result v13
+
+    move-object/from16 v28, v12
+
+    .line 374
+    sget-object v12, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_AVERAGE_BANDWIDTH:Ljava/util/regex/Pattern;
+
+    move-object/from16 v29, v7
+
+    const/4 v7, -0x1
+
+    invoke-static {v14, v12, v7}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;I)I
+
+    move-result v12
+
+    .line 375
+    sget-object v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CODECS:Ljava/util/regex/Pattern;
+
+    invoke-static {v14, v7, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v7
+
+    move-object/from16 v30, v8
+
+    .line 376
+    sget-object v8, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_RESOLUTION:Ljava/util/regex/Pattern;
+
+    .line 377
+    invoke-static {v14, v8, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_a
+
+    move-object/from16 v31, v6
+
+    const-string v6, "x"
+
+    .line 381
+    invoke-static {v8, v6}, Lcom/google/android/exoplayer2/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v8, 0x0
+
+    .line 382
+    aget-object v21, v6, v8
+
+    invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v8
+
     const/16 v18, 0x1
 
-    .line 317
-    aget-object v9, v9, v18
+    .line 383
+    aget-object v6, v6, v18
+
+    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v6
+
+    if-lez v8, :cond_9
+
+    if-gtz v6, :cond_8
+
+    goto :goto_4
+
+    :cond_8
+    move/from16 v17, v8
+
+    goto :goto_5
+
+    :cond_9
+    :goto_4
+    const/4 v6, -0x1
+
+    const/16 v17, -0x1
+
+    :goto_5
+    move v8, v6
+
+    move/from16 v6, v17
+
+    goto :goto_6
+
+    :cond_a
+    move-object/from16 v31, v6
+
+    const/4 v6, -0x1
+
+    const/4 v8, -0x1
+
+    :goto_6
+    const/high16 v17, -0x40800000    # -1.0f
+
+    move-object/from16 v32, v5
+
+    .line 394
+    sget-object v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_FRAME_RATE:Ljava/util/regex/Pattern;
+
+    .line 395
+    invoke-static {v14, v5, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_b
+
+    .line 397
+    invoke-static {v5}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result v17
+
+    move-object/from16 v33, v4
+
+    move/from16 v5, v17
+
+    goto :goto_7
+
+    :cond_b
+    move-object/from16 v33, v4
+
+    const/high16 v5, -0x40800000    # -1.0f
+
+    .line 399
+    :goto_7
+    sget-object v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VIDEO:Ljava/util/regex/Pattern;
+
+    invoke-static {v14, v4, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v4
+
+    move-object/from16 v34, v3
+
+    .line 400
+    sget-object v3, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_AUDIO:Ljava/util/regex/Pattern;
+
+    invoke-static {v14, v3, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v35, v0
+
+    .line 401
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_SUBTITLES:Ljava/util/regex/Pattern;
+
+    .line 402
+    invoke-static {v14, v0, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object/from16 v17, v0
+
+    .line 403
+    sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CLOSED_CAPTIONS:Ljava/util/regex/Pattern;
+
+    .line 404
+    invoke-static {v14, v0, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v9, :cond_c
+
+    .line 407
+    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
+
+    .line 408
+    invoke-static {v14, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v1, v9}, Lcom/google/android/exoplayer2/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v9
+
+    goto :goto_8
+
+    .line 409
+    :cond_c
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_e
+
+    .line 414
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 415
+    invoke-static {v1, v9}, Lcom/google/android/exoplayer2/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v9
+
+    .line 418
+    :goto_8
+    new-instance v14, Lcom/google/android/exoplayer2/Format$Builder;
+
+    invoke-direct {v14}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
+
+    .line 420
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    invoke-virtual {v14, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setId(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 421
+    invoke-virtual {v1, v15}, Lcom/google/android/exoplayer2/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 422
+    invoke-virtual {v1, v7}, Lcom/google/android/exoplayer2/Format$Builder;->setCodecs(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 423
+    invoke-virtual {v1, v12}, Lcom/google/android/exoplayer2/Format$Builder;->setAverageBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 424
+    invoke-virtual {v1, v13}, Lcom/google/android/exoplayer2/Format$Builder;->setPeakBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 425
+    invoke-virtual {v1, v6}, Lcom/google/android/exoplayer2/Format$Builder;->setWidth(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 426
+    invoke-virtual {v1, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setHeight(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 427
+    invoke-virtual {v1, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setFrameRate(F)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 428
+    invoke-virtual {v1, v10}, Lcom/google/android/exoplayer2/Format$Builder;->setRoleFlags(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    .line 429
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v23
+
+    .line 430
+    new-instance v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
+
+    move-object/from16 v21, v1
+
+    move-object/from16 v22, v9
+
+    move-object/from16 v24, v4
+
+    move-object/from16 v25, v3
+
+    move-object/from16 v26, v17
+
+    move-object/from16 v27, v0
+
+    invoke-direct/range {v21 .. v27}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 433
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v1, v35
+
+    .line 434
+    invoke-virtual {v1, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/util/ArrayList;
+
+    if-nez v5, :cond_d
+
+    .line 436
+    new-instance v5, Ljava/util/ArrayList;
+
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+
+    .line 437
+    invoke-virtual {v1, v9, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 439
+    :cond_d
+    new-instance v6, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry$VariantInfo;
+
+    move-object/from16 v21, v6
+
+    move/from16 v22, v12
+
+    move/from16 v23, v13
+
+    move-object/from16 v24, v4
+
+    move-object/from16 v25, v3
+
+    move-object/from16 v26, v17
+
+    move-object/from16 v27, v0
+
+    invoke-direct/range {v21 .. v27}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry$VariantInfo;-><init>(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move/from16 v10, v19
+
+    move/from16 v13, v20
+
+    :goto_9
+    move-object v0, v1
+
+    move-object/from16 v12, v28
+
+    move-object/from16 v7, v29
+
+    move-object/from16 v8, v30
+
+    move-object/from16 v6, v31
+
+    move-object/from16 v5, v32
+
+    move-object/from16 v4, v33
+
+    move-object/from16 v3, v34
+
+    move-object/from16 v1, p1
+
+    goto/16 :goto_0
+
+    :cond_e
+    const-string v0, "#EXT-X-STREAM-INF must be followed by another line"
+
+    const/4 v1, 0x0
+
+    .line 410
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object v0
+
+    throw v0
+
+    :cond_f
+    move-object v1, v0
+
+    move-object/from16 v34, v3
+
+    move-object/from16 v33, v4
+
+    move-object/from16 v32, v5
+
+    move-object/from16 v31, v6
+
+    move-object/from16 v29, v7
+
+    move-object/from16 v30, v8
+
+    move/from16 v19, v10
+
+    move-object/from16 v28, v12
+
+    .line 451
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    .line 452
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    const/4 v4, 0x0
+
+    .line 453
+    :goto_a
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_12
+
+    .line 454
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
+
+    .line 455
+    iget-object v6, v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->url:Landroid/net/Uri;
+
+    invoke-virtual {v0, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_11
+
+    .line 456
+    iget-object v6, v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
+
+    iget-object v6, v6, Lcom/google/android/exoplayer2/Format;->metadata:Lcom/google/android/exoplayer2/metadata/Metadata;
+
+    if-nez v6, :cond_10
+
+    const/4 v6, 0x1
+
+    goto :goto_b
+
+    :cond_10
+    const/4 v6, 0x0
+
+    :goto_b
+    invoke-static {v6}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+
+    .line 457
+    new-instance v6, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
+
+    iget-object v7, v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->url:Landroid/net/Uri;
+
+    .line 461
+    invoke-virtual {v1, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/util/ArrayList;
+
+    invoke-static {v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/util/List;
+
+    const/4 v8, 0x0
+
+    invoke-direct {v6, v8, v8, v7}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+
+    .line 462
+    new-instance v7, Lcom/google/android/exoplayer2/metadata/Metadata;
+
+    const/4 v9, 0x1
+
+    new-array v10, v9, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
+
+    const/4 v9, 0x0
+
+    aput-object v6, v10, v9
+
+    invoke-direct {v7, v10}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
+
+    .line 463
+    iget-object v6, v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
+
+    invoke-virtual {v6}, Lcom/google/android/exoplayer2/Format;->buildUpon()Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v7}, Lcom/google/android/exoplayer2/Format$Builder;->setMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v6
+
+    .line 464
+    invoke-virtual {v5, v6}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->copyWithFormat(Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_c
+
+    :cond_11
+    const/4 v8, 0x0
+
+    :goto_c
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_a
+
+    :cond_12
+    const/4 v8, 0x0
+
+    move-object v1, v8
+
+    move-object v9, v1
+
+    const/4 v0, 0x0
+
+    .line 468
+    :goto_d
+    invoke-virtual/range {v34 .. v34}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    if-ge v0, v4, :cond_24
+
+    move-object/from16 v4, v34
+
+    .line 469
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
+    .line 470
+    sget-object v6, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_GROUP_ID:Ljava/util/regex/Pattern;
+
+    invoke-static {v5, v6, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 471
+    sget-object v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
+
+    invoke-static {v5, v7, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 472
+    new-instance v10, Lcom/google/android/exoplayer2/Format$Builder;
+
+    invoke-direct {v10}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v12, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v14, ":"
+
+    invoke-virtual {v12, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 474
+    invoke-virtual {v10, v12}, Lcom/google/android/exoplayer2/Format$Builder;->setId(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v10
+
+    .line 475
+    invoke-virtual {v10, v7}, Lcom/google/android/exoplayer2/Format$Builder;->setLabel(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v10
+
+    .line 476
+    invoke-virtual {v10, v15}, Lcom/google/android/exoplayer2/Format$Builder;->setContainerMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v10
+
+    .line 477
+    invoke-static {v5}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseSelectionFlags(Ljava/lang/String;)I
+
+    move-result v12
+
+    invoke-virtual {v10, v12}, Lcom/google/android/exoplayer2/Format$Builder;->setSelectionFlags(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v10
+
+    .line 478
+    invoke-static {v5, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseRoleFlags(Ljava/lang/String;Ljava/util/Map;)I
+
+    move-result v12
+
+    invoke-virtual {v10, v12}, Lcom/google/android/exoplayer2/Format$Builder;->setRoleFlags(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v10
+
+    sget-object v12, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_LANGUAGE:Ljava/util/regex/Pattern;
+
+    .line 479
+    invoke-static {v5, v12, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Lcom/google/android/exoplayer2/Format$Builder;->setLanguage(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v10
+
+    .line 481
+    sget-object v12, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
+
+    invoke-static {v5, v12, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v12
+
+    move-object/from16 v14, p1
+
+    if-nez v12, :cond_13
+
+    move-object v12, v8
+
+    goto :goto_e
+
+    .line 482
+    :cond_13
+    invoke-static {v14, v12}, Lcom/google/android/exoplayer2/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v12
+
+    .line 483
+    :goto_e
+    new-instance v8, Lcom/google/android/exoplayer2/metadata/Metadata;
+
+    move-object/from16 v34, v4
+
+    const/4 v4, 0x1
+
+    new-array v14, v4, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
+
+    new-instance v4, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
+
+    move-object/from16 v20, v15
+
+    .line 484
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v15
+
+    invoke-direct {v4, v6, v7, v15}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+
+    const/4 v15, 0x0
+
+    aput-object v4, v14, v15
+
+    invoke-direct {v8, v14}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
+
+    .line 485
+    sget-object v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TYPE:Ljava/util/regex/Pattern;
+
+    invoke-static {v5, v4, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+
+    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+
+    move-result v14
+
+    const/4 v15, 0x2
+
+    sparse-switch v14, :sswitch_data_0
+
+    :goto_f
+    const/4 v4, -0x1
+
+    goto :goto_10
+
+    :sswitch_0
+    const-string v14, "VIDEO"
+
+    invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_14
+
+    goto :goto_f
+
+    :cond_14
+    const/4 v4, 0x3
+
+    goto :goto_10
+
+    :sswitch_1
+    const-string v14, "AUDIO"
+
+    invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_15
+
+    goto :goto_f
+
+    :cond_15
+    const/4 v4, 0x2
+
+    goto :goto_10
+
+    :sswitch_2
+    const-string v14, "CLOSED-CAPTIONS"
+
+    invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_16
+
+    goto :goto_f
+
+    :cond_16
+    const/4 v4, 0x1
+
+    goto :goto_10
+
+    :sswitch_3
+    const-string v14, "SUBTITLES"
+
+    invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_17
+
+    goto :goto_f
+
+    :cond_17
+    const/4 v4, 0x0
+
+    :goto_10
+    packed-switch v4, :pswitch_data_0
+
+    :goto_11
+    move-object/from16 v21, v9
+
+    move-object/from16 v6, v31
+
+    move-object/from16 v9, v32
+
+    move-object/from16 v14, v33
+
+    :goto_12
+    const/16 v16, 0x0
+
+    goto/16 :goto_18
+
+    .line 487
+    :pswitch_0
+    invoke-static {v2, v6}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getVariantWithVideoGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_18
+
+    .line 489
+    iget-object v4, v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
+
+    .line 491
+    iget-object v5, v4, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
+
+    invoke-static {v5, v15}, Lcom/google/android/exoplayer2/util/Util;->getCodecsOfType(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 493
+    invoke-virtual {v10, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setCodecs(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v14
+
+    .line 494
+    invoke-static {v5}, Lcom/google/android/exoplayer2/util/MimeTypes;->getMediaMimeType(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v14, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v5
+
+    iget v14, v4, Lcom/google/android/exoplayer2/Format;->width:I
+
+    .line 495
+    invoke-virtual {v5, v14}, Lcom/google/android/exoplayer2/Format$Builder;->setWidth(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v5
+
+    iget v14, v4, Lcom/google/android/exoplayer2/Format;->height:I
+
+    .line 496
+    invoke-virtual {v5, v14}, Lcom/google/android/exoplayer2/Format$Builder;->setHeight(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v5
+
+    iget v4, v4, Lcom/google/android/exoplayer2/Format;->frameRate:F
+
+    .line 497
+    invoke-virtual {v5, v4}, Lcom/google/android/exoplayer2/Format$Builder;->setFrameRate(F)Lcom/google/android/exoplayer2/Format$Builder;
+
+    :cond_18
+    if-nez v12, :cond_19
+
+    goto :goto_11
+
+    .line 502
+    :cond_19
+    invoke-virtual {v10, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    .line 503
+    new-instance v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Rendition;
+
+    invoke-virtual {v10}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v5
+
+    invoke-direct {v4, v12, v5, v6, v7}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Rendition;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v14, v33
+
+    invoke-virtual {v14, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move-object/from16 v21, v9
+
+    move-object/from16 v6, v31
+
+    move-object/from16 v9, v32
+
+    goto :goto_12
+
+    :pswitch_1
+    move-object/from16 v14, v33
+
+    .line 508
+    invoke-static {v2, v6}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getVariantWithAudioGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1a
+
+    .line 511
+    iget-object v15, v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
+
+    iget-object v15, v15, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
+
+    move-object/from16 v21, v9
+
+    const/4 v9, 0x1
+
+    invoke-static {v15, v9}, Lcom/google/android/exoplayer2/util/Util;->getCodecsOfType(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v15
+
+    .line 512
+    invoke-virtual {v10, v15}, Lcom/google/android/exoplayer2/Format$Builder;->setCodecs(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    .line 513
+    invoke-static {v15}, Lcom/google/android/exoplayer2/util/MimeTypes;->getMediaMimeType(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    goto :goto_13
+
+    :cond_1a
+    move-object/from16 v21, v9
+
+    const/4 v15, 0x0
+
+    .line 516
+    :goto_13
+    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CHANNELS:Ljava/util/regex/Pattern;
+
+    .line 517
+    invoke-static {v5, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_1b
+
+    const-string v9, "/"
+
+    .line 519
+    invoke-static {v5, v9}, Lcom/google/android/exoplayer2/util/Util;->splitAtFirst(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v9
+
+    const/16 v16, 0x0
+
+    aget-object v9, v9, v16
 
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v9
 
-    if-lez v10, :cond_6
+    .line 520
+    invoke-virtual {v10, v9}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    if-gtz v9, :cond_7
+    const-string v9, "audio/eac3"
 
-    :cond_6
-    const/4 v9, -0x1
-
-    const/4 v10, -0x1
-
-    :cond_7
-    move/from16 v29, v9
-
-    move/from16 v28, v10
-
-    goto :goto_2
-
-    :cond_8
-    const/16 v28, -0x1
-
-    const/16 v29, -0x1
-
-    .line 328
-    :goto_2
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_FRAME_RATE:Ljava/util/regex/Pattern;
-
-    .line 329
-    invoke-static {v15, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_9
-
-    .line 331
-    invoke-static {v9}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
-
-    move-result v16
-
-    move/from16 v30, v16
-
-    goto :goto_3
-
-    :cond_9
-    const/high16 v30, -0x40800000    # -1.0f
-
-    .line 333
-    :goto_3
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VIDEO:Ljava/util/regex/Pattern;
-
-    invoke-static {v15, v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 334
-    sget-object v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_AUDIO:Ljava/util/regex/Pattern;
-
-    invoke-static {v15, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 335
-    sget-object v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_SUBTITLES:Ljava/util/regex/Pattern;
-
-    .line 336
-    invoke-static {v15, v13, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v13
-
-    move/from16 v18, v14
-
-    .line 337
-    sget-object v14, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CLOSED_CAPTIONS:Ljava/util/regex/Pattern;
-
-    .line 338
-    invoke-static {v15, v14, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v14
-
-    .line 339
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
-
-    move-result v15
-
-    if-eqz v15, :cond_b
-
-    .line 344
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 343
-    invoke-static {v15, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 345
-    invoke-static {v1, v15}, Lcom/google/android/exoplayer2/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v15
-
-    .line 348
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v16
-
-    invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v21
-
-    const/16 v22, 0x0
-
-    const/16 v24, 0x0
-
-    const/16 v26, 0x0
-
-    const/16 v31, 0x0
-
-    const/16 v32, 0x0
-
-    const/16 v33, 0x0
-
-    const-string v23, "application/x-mpegURL"
-
-    move/from16 v27, v7
-
-    .line 347
-    invoke-static/range {v21 .. v33}, Lcom/google/android/exoplayer2/Format;->createVideoContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/exoplayer2/metadata/Metadata;IIIFLjava/util/List;II)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v33
-
-    move-object/from16 v21, v12
-
-    .line 361
-    new-instance v12, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
-
-    move-object/from16 v31, v12
-
-    move-object/from16 v32, v15
-
-    move-object/from16 v34, v9
-
-    move-object/from16 v35, v10
-
-    move-object/from16 v36, v13
-
-    move-object/from16 v37, v14
-
-    invoke-direct/range {v31 .. v37}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 364
-    invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 365
-    invoke-virtual {v0, v15}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Ljava/util/ArrayList;
-
-    if-nez v12, :cond_a
-
-    .line 367
-    new-instance v12, Ljava/util/ArrayList;
-
-    invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
-
-    .line 368
-    invoke-virtual {v0, v15, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 370
-    :cond_a
-    new-instance v15, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry$VariantInfo;
-
-    move-object/from16 v22, v8
-
-    int-to-long v7, v7
-
-    move-object/from16 v31, v15
-
-    move-wide/from16 v32, v7
-
-    move-object/from16 v34, v9
-
-    move-object/from16 v35, v10
-
-    move-object/from16 v36, v13
-
-    move-object/from16 v37, v14
-
-    invoke-direct/range {v31 .. v37}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry$VariantInfo;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v12, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    move/from16 v14, v18
-
-    goto :goto_5
-
-    .line 340
-    :cond_b
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
-
-    const-string v1, "#EXT-X-STREAM-INF tag must be followed by another line"
-
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_c
-    :goto_4
-    move-object/from16 v22, v8
-
-    move-object/from16 v21, v12
-
-    :goto_5
-    move/from16 v13, v19
-
-    move-object/from16 v7, v20
-
-    move-object/from16 v12, v21
-
-    move-object/from16 v8, v22
-
-    goto/16 :goto_0
-
-    :cond_d
-    move-object/from16 v20, v7
-
-    move-object/from16 v22, v8
-
-    move-object/from16 v21, v12
-
-    move/from16 v19, v13
-
-    const/4 v13, -0x1
-
-    .line 377
-    new-instance v7, Ljava/util/ArrayList;
-
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
-
-    .line 378
-    new-instance v8, Ljava/util/HashSet;
-
-    invoke-direct {v8}, Ljava/util/HashSet;-><init>()V
-
-    const/4 v9, 0x0
-
-    .line 379
-    :goto_6
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v10
-
-    const/4 v12, 0x0
-
-    if-ge v9, v10, :cond_10
-
-    .line 380
-    invoke-virtual {v2, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
-
-    .line 381
-    iget-object v15, v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->url:Landroid/net/Uri;
-
-    invoke-virtual {v8, v15}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    move-result v15
-
-    if-eqz v15, :cond_f
-
-    .line 382
-    iget-object v15, v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
-
-    iget-object v15, v15, Lcom/google/android/exoplayer2/Format;->metadata:Lcom/google/android/exoplayer2/metadata/Metadata;
-
-    if-nez v15, :cond_e
-
-    const/4 v15, 0x1
-
-    goto :goto_7
-
-    :cond_e
-    const/4 v15, 0x0
-
-    :goto_7
-    invoke-static {v15}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
-
-    .line 383
-    new-instance v15, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
-
-    iget-object v13, v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->url:Landroid/net/Uri;
-
-    .line 387
-    invoke-virtual {v0, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Ljava/util/ArrayList;
-
-    invoke-static {v13}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Ljava/util/List;
-
-    invoke-direct {v15, v12, v12, v13}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
-
-    .line 388
-    iget-object v12, v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
-
-    new-instance v13, Lcom/google/android/exoplayer2/metadata/Metadata;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 p0, v8
-
-    const/4 v0, 0x1
-
-    new-array v8, v0, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
-
-    const/4 v0, 0x0
-
-    aput-object v15, v8, v0
-
-    invoke-direct {v13, v8}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
-
-    .line 390
-    invoke-virtual {v12, v13}, Lcom/google/android/exoplayer2/Format;->copyWithMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v0
-
-    .line 389
-    invoke-virtual {v10, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->copyWithFormat(Lcom/google/android/exoplayer2/Format;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
-
-    move-result-object v0
-
-    .line 388
-    invoke-virtual {v7, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_8
-
-    :cond_f
-    move-object/from16 v23, v0
-
-    move-object/from16 p0, v8
-
-    :goto_8
-    add-int/lit8 v9, v9, 0x1
-
-    move-object/from16 v8, p0
-
-    move-object/from16 v0, v23
-
-    const/4 v13, -0x1
-
-    goto :goto_6
-
-    :cond_10
-    move-object v0, v12
-
-    move-object v8, v0
-
-    const/4 v13, 0x0
-
-    .line 394
-    :goto_9
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    .line 521
+    invoke-virtual {v9, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-ge v13, v9, :cond_22
-
-    .line 395
-    invoke-virtual {v3, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Ljava/lang/String;
-
-    .line 396
-    sget-object v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_GROUP_ID:Ljava/util/regex/Pattern;
-
-    invoke-static {v9, v10, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v10
-
-    .line 397
-    sget-object v15, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
-
-    invoke-static {v9, v15, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 398
-    sget-object v12, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
-
-    invoke-static {v9, v12, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v12
-
-    if-nez v12, :cond_11
-
-    const/4 v12, 0x0
-
-    goto :goto_a
-
-    .line 399
-    :cond_11
-    invoke-static {v1, v12}, Lcom/google/android/exoplayer2/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v12
-
-    .line 400
-    :goto_a
-    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_LANGUAGE:Ljava/util/regex/Pattern;
-
-    invoke-static {v9, v1, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 401
-    invoke-static {v9}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseSelectionFlags(Ljava/lang/String;)I
-
-    move-result v34
-
-    .line 402
-    invoke-static {v9, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseRoleFlags(Ljava/lang/String;Ljava/util/Map;)I
-
-    move-result v35
-
-    move-object/from16 v36, v3
-
-    .line 403
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-object/from16 v37, v8
-
-    const-string v8, ":"
-
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    .line 405
-    new-instance v3, Lcom/google/android/exoplayer2/metadata/Metadata;
-
-    move-object/from16 v38, v7
-
-    const/4 v8, 0x1
-
-    new-array v7, v8, [Lcom/google/android/exoplayer2/metadata/Metadata$Entry;
-
-    new-instance v8, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
-
-    move/from16 v39, v14
-
-    .line 406
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v14
-
-    invoke-direct {v8, v10, v15, v14}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
-
-    const/4 v14, 0x0
-
-    aput-object v8, v7, v14
-
-    invoke-direct {v3, v7}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>([Lcom/google/android/exoplayer2/metadata/Metadata$Entry;)V
-
-    .line 407
-    sget-object v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TYPE:Ljava/util/regex/Pattern;
-
-    invoke-static {v9, v7, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/String;->hashCode()I
-
-    invoke-virtual {v7}, Ljava/lang/String;->hashCode()I
-
-    move-result v8
-
-    const/4 v14, 0x2
-
-    sparse-switch v8, :sswitch_data_0
-
-    :goto_b
-    const/4 v7, -0x1
-
-    goto :goto_c
-
-    :sswitch_0
-    const-string v8, "VIDEO"
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_12
-
-    goto :goto_b
-
-    :cond_12
-    const/4 v7, 0x3
-
-    goto :goto_c
-
-    :sswitch_1
-    const-string v8, "AUDIO"
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_13
-
-    goto :goto_b
-
-    :cond_13
-    const/4 v7, 0x2
-
-    goto :goto_c
-
-    :sswitch_2
-    const-string v8, "CLOSED-CAPTIONS"
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_14
-
-    goto :goto_b
-
-    :cond_14
-    const/4 v7, 0x1
-
-    goto :goto_c
-
-    :sswitch_3
-    const-string v8, "SUBTITLES"
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_15
-
-    goto :goto_b
-
-    :cond_15
-    const/4 v7, 0x0
-
-    :goto_c
-    packed-switch v7, :pswitch_data_0
-
-    :goto_d
-    const/16 v17, 0x0
-
-    goto/16 :goto_16
-
-    .line 409
-    :pswitch_0
-    invoke-static {v2, v10}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getVariantWithVideoGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_16
-
-    .line 415
-    iget-object v1, v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
-
-    .line 416
-    iget-object v7, v1, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
-
-    invoke-static {v7, v14}, Lcom/google/android/exoplayer2/util/Util;->getCodecsOfType(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 417
-    iget v8, v1, Lcom/google/android/exoplayer2/Format;->width:I
-
-    .line 418
-    iget v9, v1, Lcom/google/android/exoplayer2/Format;->height:I
-
-    .line 419
-    iget v1, v1, Lcom/google/android/exoplayer2/Format;->frameRate:F
-
-    move/from16 v32, v1
-
-    move-object/from16 v27, v7
-
-    move/from16 v30, v8
-
-    move/from16 v31, v9
-
-    goto :goto_e
-
-    :cond_16
-    const/16 v27, 0x0
-
-    const/16 v30, -0x1
-
-    const/16 v31, -0x1
-
-    const/high16 v32, -0x40800000    # -1.0f
-
-    :goto_e
-    if-eqz v27, :cond_17
-
-    .line 421
-    invoke-static/range {v27 .. v27}, Lcom/google/android/exoplayer2/util/MimeTypes;->getMediaMimeType(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    move-object/from16 v26, v1
-
-    goto :goto_f
-
-    :cond_17
-    const/16 v26, 0x0
-
-    :goto_f
-    const/16 v28, 0x0
-
-    const/16 v29, -0x1
-
-    const/16 v33, 0x0
-
-    const-string v25, "application/x-mpegURL"
-
-    move-object/from16 v24, v15
-
-    .line 423
-    invoke-static/range {v23 .. v35}, Lcom/google/android/exoplayer2/Format;->createVideoContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/exoplayer2/metadata/Metadata;IIIFLjava/util/List;II)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    .line 437
-    invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/Format;->copyWithMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    if-nez v12, :cond_18
-
-    goto :goto_d
-
-    .line 441
-    :cond_18
-    new-instance v3, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Rendition;
-
-    invoke-direct {v3, v12, v1, v10, v15}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Rendition;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_d
-
-    .line 445
-    :pswitch_1
-    invoke-static {v2, v10}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getVariantWithAudioGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_19
-
-    .line 448
-    iget-object v7, v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
-
-    iget-object v7, v7, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
-
-    const/4 v8, 0x1
-
-    invoke-static {v7, v8}, Lcom/google/android/exoplayer2/util/Util;->getCodecsOfType(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v7
-
-    move-object/from16 v27, v7
-
-    goto :goto_10
-
-    :cond_19
-    const/4 v8, 0x1
-
-    const/16 v27, 0x0
-
-    :goto_10
-    if-eqz v27, :cond_1a
-
-    .line 450
-    invoke-static/range {v27 .. v27}, Lcom/google/android/exoplayer2/util/MimeTypes;->getMediaMimeType(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    goto :goto_11
-
-    :cond_1a
-    const/4 v7, 0x0
-
-    .line 451
-    :goto_11
-    sget-object v14, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CHANNELS:Ljava/util/regex/Pattern;
-
-    .line 452
-    invoke-static {v9, v14, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
     if-eqz v9, :cond_1c
 
-    const-string v14, "/"
+    const-string v9, "/JOC"
 
-    .line 455
-    invoke-static {v9, v14}, Lcom/google/android/exoplayer2/util/Util;->splitAtFirst(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v5, v9}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result-object v14
+    move-result v5
 
-    const/16 v17, 0x0
+    if-eqz v5, :cond_1c
 
-    aget-object v14, v14, v17
+    const-string v5, "ec+3"
 
-    invoke-static {v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    .line 523
+    invoke-virtual {v10, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setCodecs(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    move-result v14
-
-    const-string v8, "audio/eac3"
-
-    .line 456
-    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1b
-
-    const-string v8, "/JOC"
-
-    invoke-virtual {v9, v8}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1b
-
-    const-string v7, "audio/eac3-joc"
-
-    :cond_1b
-    move-object/from16 v26, v7
-
-    move/from16 v30, v14
-
-    goto :goto_12
-
-    :cond_1c
-    const/16 v17, 0x0
-
-    move-object/from16 v26, v7
-
-    const/16 v30, -0x1
-
-    :goto_12
-    const/16 v28, 0x0
-
-    const/16 v29, -0x1
-
-    const/16 v31, -0x1
-
-    const/16 v32, 0x0
-
-    const-string v25, "application/x-mpegURL"
-
-    move-object/from16 v24, v15
-
-    move/from16 v33, v34
-
-    move/from16 v34, v35
-
-    move-object/from16 v35, v1
-
-    .line 461
-    invoke-static/range {v23 .. v35}, Lcom/google/android/exoplayer2/Format;->createAudioContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/exoplayer2/metadata/Metadata;IIILjava/util/List;IILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    if-nez v12, :cond_1d
-
-    move-object v8, v1
-
-    goto/16 :goto_17
-
-    .line 479
-    :cond_1d
-    new-instance v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Rendition;
-
-    invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/Format;->copyWithMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    invoke-direct {v7, v12, v1, v10, v15}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Rendition;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v5, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_16
-
-    :pswitch_2
-    const/16 v17, 0x0
-
-    .line 508
-    sget-object v3, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_INSTREAM_ID:Ljava/util/regex/Pattern;
-
-    invoke-static {v9, v3, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v7, "CC"
-
-    .line 511
-    invoke-virtual {v3, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1e
-
-    .line 513
-    invoke-virtual {v3, v14}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    const-string v7, "application/cea-608"
-
-    goto :goto_13
-
-    :cond_1e
-    const/4 v7, 0x7
-
-    .line 516
-    invoke-virtual {v3, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    const-string v7, "application/cea-708"
-
-    :goto_13
-    move/from16 v32, v3
-
-    move-object/from16 v26, v7
-
-    if-nez v0, :cond_1f
-
-    .line 519
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_1f
-    const/16 v25, 0x0
-
-    const/16 v27, 0x0
-
-    const/16 v28, -0x1
-
-    move-object/from16 v24, v15
-
-    move/from16 v29, v34
-
-    move/from16 v30, v35
-
-    move-object/from16 v31, v1
-
-    .line 522
-    invoke-static/range {v23 .. v32}, Lcom/google/android/exoplayer2/Format;->createTextContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;I)Lcom/google/android/exoplayer2/Format;
-
-    move-result-object v1
-
-    .line 521
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_16
-
-    :pswitch_3
-    const/16 v17, 0x0
-
-    .line 485
-    invoke-static {v2, v10}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getVariantWithSubtitleGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_20
-
-    .line 487
-    iget-object v7, v7, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
-
-    iget-object v7, v7, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
-
-    const/4 v8, 0x3
-
-    invoke-static {v7, v8}, Lcom/google/android/exoplayer2/util/Util;->getCodecsOfType(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 488
-    invoke-static {v7}, Lcom/google/android/exoplayer2/util/MimeTypes;->getMediaMimeType(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v8
-
-    move-object/from16 v27, v7
+    const-string v15, "audio/eac3-joc"
 
     goto :goto_14
 
-    :cond_20
-    const/4 v8, 0x0
+    :cond_1b
+    const/16 v16, 0x0
 
-    const/16 v27, 0x0
-
+    .line 526
+    :cond_1c
     :goto_14
-    if-nez v8, :cond_21
+    invoke-virtual {v10, v15}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const-string v7, "text/vtt"
+    if-eqz v12, :cond_1d
 
-    move-object/from16 v26, v7
+    .line 528
+    invoke-virtual {v10, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    .line 529
+    new-instance v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Rendition;
+
+    invoke-virtual {v10}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v5
+
+    invoke-direct {v4, v12, v5, v6, v7}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Rendition;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v9, v32
+
+    invoke-virtual {v9, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_16
+
+    :cond_1d
+    move-object/from16 v9, v32
+
+    if-eqz v4, :cond_20
+
+    .line 532
+    invoke-virtual {v10}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v4
+
+    move-object/from16 v21, v4
+
+    goto :goto_16
+
+    :pswitch_2
+    move-object/from16 v21, v9
+
+    move-object/from16 v9, v32
+
+    move-object/from16 v14, v33
+
+    const/16 v16, 0x0
+
+    .line 555
+    sget-object v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_INSTREAM_ID:Ljava/util/regex/Pattern;
+
+    invoke-static {v5, v4, v11}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "CC"
+
+    .line 557
+    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1e
+
+    .line 559
+    invoke-virtual {v4, v15}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v4
+
+    const-string v5, "application/cea-608"
 
     goto :goto_15
 
-    :cond_21
-    move-object/from16 v26, v8
+    :cond_1e
+    const/4 v5, 0x7
+
+    .line 562
+    invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v4
+
+    const-string v5, "application/cea-708"
 
     :goto_15
-    const/16 v28, -0x1
+    if-nez v1, :cond_1f
 
-    const-string v25, "application/x-mpegURL"
+    .line 565
+    new-instance v1, Ljava/util/ArrayList;
 
-    move-object/from16 v24, v15
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    move/from16 v29, v34
+    .line 568
+    :cond_1f
+    invoke-virtual {v10, v5}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    move/from16 v30, v35
+    move-result-object v5
 
-    move-object/from16 v31, v1
+    .line 569
+    invoke-virtual {v5, v4}, Lcom/google/android/exoplayer2/Format$Builder;->setAccessibilityChannel(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    .line 494
-    invoke-static/range {v23 .. v31}, Lcom/google/android/exoplayer2/Format;->createTextContainerFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
+    .line 570
+    invoke-virtual {v10}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
 
-    move-result-object v1
+    move-result-object v4
 
-    .line 504
-    invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/Format;->copyWithMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format;
+    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result-object v1
-
-    .line 505
-    new-instance v3, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Rendition;
-
-    invoke-direct {v3, v12, v1, v10, v15}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist$Rendition;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
+    :cond_20
     :goto_16
-    move-object/from16 v8, v37
+    move-object/from16 v6, v31
 
-    :goto_17
-    add-int/lit8 v13, v13, 0x1
+    goto :goto_18
 
-    move-object/from16 v1, p1
+    :pswitch_3
+    move-object/from16 v21, v9
 
-    move-object/from16 v3, v36
+    move-object/from16 v9, v32
 
-    move-object/from16 v7, v38
+    move-object/from16 v14, v33
 
-    move/from16 v14, v39
+    const/16 v16, 0x0
 
-    const/4 v12, 0x0
+    .line 537
+    invoke-static {v2, v6}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->getVariantWithSubtitleGroup(Ljava/util/ArrayList;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;
 
-    goto/16 :goto_9
+    move-result-object v4
 
-    :cond_22
-    move-object/from16 v38, v7
+    if-eqz v4, :cond_21
 
-    move-object/from16 v37, v8
+    .line 540
+    iget-object v4, v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Variant;->format:Lcom/google/android/exoplayer2/Format;
 
-    move/from16 v39, v14
+    iget-object v4, v4, Lcom/google/android/exoplayer2/Format;->codecs:Ljava/lang/String;
 
-    if-eqz v39, :cond_23
+    const/4 v5, 0x3
+
+    invoke-static {v4, v5}, Lcom/google/android/exoplayer2/util/Util;->getCodecsOfType(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 541
+    invoke-virtual {v10, v4}, Lcom/google/android/exoplayer2/Format$Builder;->setCodecs(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
     .line 542
+    invoke-static {v4}, Lcom/google/android/exoplayer2/util/MimeTypes;->getMediaMimeType(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto :goto_17
+
+    :cond_21
+    const/4 v4, 0x0
+
+    :goto_17
+    if-nez v4, :cond_22
+
+    const-string v4, "text/vtt"
+
+    .line 547
+    :cond_22
+    invoke-virtual {v10, v4}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v8}, Lcom/google/android/exoplayer2/Format$Builder;->setMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    if-eqz v12, :cond_23
+
+    .line 549
+    new-instance v4, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Rendition;
+
+    invoke-virtual {v10}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object v5
+
+    invoke-direct {v4, v12, v5, v6, v7}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist$Rendition;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v6, v31
+
+    invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_18
+
+    :cond_23
+    move-object/from16 v6, v31
+
+    const-string v4, "HlsPlaylistParser"
+
+    const-string v5, "EXT-X-MEDIA tag with missing mandatory URI attribute: skipping"
+
+    .line 551
+    invoke-static {v4, v5}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_18
+    add-int/lit8 v0, v0, 0x1
+
+    move-object/from16 v31, v6
+
+    move-object/from16 v32, v9
+
+    move-object/from16 v33, v14
+
+    move-object/from16 v15, v20
+
+    move-object/from16 v9, v21
+
+    const/4 v8, 0x0
+
+    goto/16 :goto_d
+
+    :cond_24
+    move-object/from16 v21, v9
+
+    move-object/from16 v6, v31
+
+    move-object/from16 v9, v32
+
+    move-object/from16 v14, v33
+
+    if-eqz v13, :cond_25
+
+    .line 580
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    :cond_23
-    move-object v9, v0
+    move-object v10, v0
 
-    .line 545
-    new-instance v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
+    goto :goto_19
+
+    :cond_25
+    move-object v10, v1
+
+    .line 583
+    :goto_19
+    new-instance v13, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
 
     move-object v0, v13
 
     move-object/from16 v1, p1
 
-    move-object/from16 v2, v22
+    move-object/from16 v2, v30
 
-    move-object/from16 v3, v38
+    move-object v4, v14
 
-    move-object/from16 v7, v20
+    move-object v5, v9
 
-    move-object/from16 v8, v37
+    move-object/from16 v7, v29
+
+    move-object/from16 v8, v21
+
+    move-object v9, v10
 
     move/from16 v10, v19
 
-    move-object/from16 v12, v21
+    move-object/from16 v12, v28
 
-    invoke-direct/range {v0 .. v12}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;-><init>(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lcom/google/android/exoplayer2/Format;Ljava/util/List;ZLjava/util/Map;Ljava/util/List;)V
+    invoke-direct/range {v0 .. v12}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;-><init>(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lcom/google/android/exoplayer2/Format;Ljava/util/List;ZLjava/util/Map;Ljava/util/List;)V
 
     return-object v13
 
@@ -2444,1047 +5078,15 @@
     .end packed-switch
 .end method
 
-.method private static parseMediaPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
-    .locals 64
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    move-object/from16 v0, p0
-
-    .line 600
-    iget-boolean v1, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylist;->hasIndependentSegments:Z
-
-    .line 603
-    new-instance v2, Ljava/util/HashMap;
-
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
-
-    .line 604
-    new-instance v15, Ljava/util/ArrayList;
-
-    invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
-
-    .line 605
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
-
-    .line 622
-    new-instance v3, Ljava/util/TreeMap;
-
-    invoke-direct {v3}, Ljava/util/TreeMap;-><init>()V
-
-    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
-
-    const-string v7, ""
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    move/from16 v26, v1
-
-    move-wide/from16 v16, v4
-
-    move-wide/from16 v24, v16
-
-    move-object/from16 v37, v7
-
-    const/4 v1, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v12, 0x0
-
-    const-wide/16 v18, 0x0
-
-    const/16 v20, 0x0
-
-    const-wide/16 v21, 0x0
-
-    const/16 v23, 0x1
-
-    const/16 v27, 0x0
-
-    const/16 v28, 0x0
-
-    const-wide/16 v29, 0x0
-
-    const-wide/16 v38, 0x0
-
-    const/16 v40, 0x0
-
-    const/16 v45, 0x0
-
-    const/16 v46, 0x0
-
-    const-wide/16 v47, -0x1
-
-    const/16 v49, 0x0
-
-    const-wide/16 v50, 0x0
-
-    const/16 v52, 0x0
-
-    :goto_0
-    const-wide/16 v53, 0x0
-
-    .line 627
-    :cond_0
-    :goto_1
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->hasNext()Z
-
-    move-result v31
-
-    if-eqz v31, :cond_25
-
-    .line 628
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;->next()Ljava/lang/String;
-
-    move-result-object v8
-
-    const-string v9, "#EXT"
-
-    .line 630
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1
-
-    .line 632
-    invoke-interface {v6, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_1
-    const-string v9, "#EXT-X-PLAYLIST-TYPE"
-
-    .line 635
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_3
-
-    .line 636
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PLAYLIST_TYPE:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v8
-
-    const-string v9, "VOD"
-
-    .line 637
-    invoke-virtual {v9, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_2
-
-    const/4 v4, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const-string v9, "EVENT"
-
-    .line 639
-    invoke-virtual {v9, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_0
-
-    const/4 v4, 0x2
-
-    goto :goto_1
-
-    :cond_3
-    const-string v9, "#EXT-X-START"
-
-    .line 642
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    const-wide v31, 0x412e848000000000L    # 1000000.0
-
-    if-eqz v9, :cond_4
-
-    .line 643
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TIME_OFFSET:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)D
-
-    move-result-wide v8
-
-    mul-double v8, v8, v31
-
-    double-to-long v8, v8
-
-    move-wide/from16 v16, v8
-
-    goto :goto_1
-
-    :cond_4
-    const-string v9, "#EXT-X-MAP"
-
-    .line 644
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    const-string v10, "@"
-
-    if-eqz v9, :cond_9
-
-    .line 645
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 646
-    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_ATTR_BYTERANGE:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v11, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_6
-
-    .line 648
-    invoke-virtual {v8, v10}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 649
-    aget-object v10, v8, v13
-
-    invoke-static {v10}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v10
-
-    .line 650
-    array-length v13, v8
-
-    if-le v13, v14, :cond_5
-
-    .line 651
-    aget-object v8, v8, v14
-
-    invoke-static {v8}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v29
-
-    :cond_5
-    move-wide/from16 v33, v10
-
-    move-wide/from16 v31, v29
-
-    goto :goto_2
-
-    :cond_6
-    move-wide/from16 v31, v29
-
-    move-wide/from16 v33, v47
-
-    :goto_2
-    if-eqz v5, :cond_8
-
-    if-eqz v46, :cond_7
-
-    goto :goto_3
-
-    .line 656
-    :cond_7
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
-
-    const-string v1, "The encryption IV attribute must be present when an initialization segment is encrypted with METHOD=AES-128."
-
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 660
-    :cond_8
-    :goto_3
-    new-instance v52, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
-
-    move-object/from16 v29, v52
-
-    move-object/from16 v30, v9
-
-    move-object/from16 v35, v5
-
-    move-object/from16 v36, v46
-
-    invoke-direct/range {v29 .. v36}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;JJLjava/lang/String;Ljava/lang/String;)V
-
-    const/4 v13, 0x0
-
-    const-wide/16 v29, 0x0
-
-    const-wide/16 v47, -0x1
-
-    goto/16 :goto_1
-
-    :cond_9
-    const-string v9, "#EXT-X-TARGETDURATION"
-
-    .line 669
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_b
-
-    .line 670
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_TARGET_DURATION:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
-
-    move-result v8
-
-    int-to-long v8, v8
-
-    const-wide/32 v10, 0xf4240
-
-    mul-long v24, v8, v10
-
-    :cond_a
-    :goto_4
-    const/4 v13, 0x0
-
-    goto/16 :goto_1
-
-    :cond_b
-    const-string v9, "#EXT-X-MEDIA-SEQUENCE"
-
-    .line 671
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_c
-
-    .line 672
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_SEQUENCE:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)J
-
-    move-result-wide v38
-
-    move-wide/from16 v21, v38
-
-    goto :goto_4
-
-    :cond_c
-    const-string v9, "#EXT-X-VERSION"
-
-    .line 674
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_d
-
-    .line 675
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VERSION:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)I
-
-    move-result v23
-
-    goto :goto_4
-
-    :cond_d
-    const-string v9, "#EXT-X-DEFINE"
-
-    .line 676
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_10
-
-    .line 677
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_IMPORT:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_e
-
-    .line 679
-    iget-object v8, v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;->variableDefinitions:Ljava/util/Map;
-
-    invoke-interface {v8, v9}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/String;
-
-    if-eqz v8, :cond_f
-
-    .line 681
-    invoke-virtual {v2, v9, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_5
-
-    .line 686
-    :cond_e
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_NAME:Ljava/util/regex/Pattern;
-
-    .line 687
-    invoke-static {v8, v9, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
-    sget-object v10, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VALUE:Ljava/util/regex/Pattern;
-
-    .line 688
-    invoke-static {v8, v10, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 686
-    invoke-virtual {v2, v9, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_f
-    :goto_5
-    move-object/from16 v57, v3
-
-    move-object/from16 v61, v7
-
-    const/4 v11, 0x0
-
-    const-wide/16 v55, -0x1
-
-    goto/16 :goto_a
-
-    :cond_10
-    const-string v9, "#EXTINF"
-
-    .line 690
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_11
-
-    .line 691
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_DURATION:Ljava/util/regex/Pattern;
-
-    .line 692
-    invoke-static {v8, v9}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;)D
-
-    move-result-wide v9
-
-    mul-double v9, v9, v31
-
-    double-to-long v9, v9
-
-    .line 693
-    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_MEDIA_TITLE:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v11, v7, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v37
-
-    move-wide/from16 v53, v9
-
-    goto :goto_4
-
-    :cond_11
-    const-string v9, "#EXT-X-KEY"
-
-    .line 694
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_16
-
-    .line 695
-    sget-object v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_METHOD:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v5, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 696
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_KEYFORMAT:Ljava/util/regex/Pattern;
-
-    const-string v10, "identity"
-
-    .line 697
-    invoke-static {v8, v9, v10, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v9
-
-    const-string v11, "NONE"
-
-    .line 700
-    invoke-virtual {v11, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_12
-
-    .line 701
-    invoke-virtual {v3}, Ljava/util/TreeMap;->clear()V
-
-    const/4 v5, 0x0
-
-    const/16 v40, 0x0
-
-    const/16 v46, 0x0
-
-    goto/16 :goto_4
-
-    .line 704
-    :cond_12
-    sget-object v11, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_IV:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v11, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v11
-
-    .line 705
-    invoke-virtual {v10, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_14
-
-    const-string v9, "AES-128"
-
-    .line 706
-    invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_13
-
-    .line 708
-    sget-object v5, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_URI:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v5, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object/from16 v46, v11
-
-    goto/16 :goto_4
-
-    :cond_13
-    move-object/from16 v46, v11
-
-    const/4 v5, 0x0
-
-    goto/16 :goto_4
-
-    :cond_14
-    if-nez v12, :cond_15
-
-    .line 715
-    invoke-static {v5}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseEncryptionScheme(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    move-object v12, v5
-
-    .line 717
-    :cond_15
-    invoke-static {v8, v9, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseDrmSchemeData(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_13
-
-    .line 720
-    invoke-virtual {v3, v9, v5}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-object/from16 v46, v11
-
-    const/4 v5, 0x0
-
-    const/16 v40, 0x0
-
-    goto/16 :goto_4
-
-    :cond_16
-    const-string v9, "#EXT-X-BYTERANGE"
-
-    .line 724
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_17
-
-    .line 725
-    sget-object v9, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_BYTERANGE:Ljava/util/regex/Pattern;
-
-    invoke-static {v8, v9, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 726
-    invoke-virtual {v8, v10}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v8
-
-    const/4 v9, 0x0
-
-    .line 727
-    aget-object v10, v8, v9
-
-    invoke-static {v10}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v47
-
-    .line 728
-    array-length v9, v8
-
-    if-le v9, v14, :cond_a
-
-    .line 729
-    aget-object v8, v8, v14
-
-    invoke-static {v8}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v29
-
-    goto/16 :goto_4
-
-    :cond_17
-    const-string v9, "#EXT-X-DISCONTINUITY-SEQUENCE"
-
-    .line 731
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    const/16 v10, 0x3a
-
-    if-eqz v9, :cond_18
-
-    .line 733
-    invoke-virtual {v8, v10}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v1
-
-    add-int/2addr v1, v14
-
-    invoke-virtual {v8, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v20
-
-    const/4 v1, 0x1
-
-    goto/16 :goto_4
-
-    :cond_18
-    const-string v9, "#EXT-X-DISCONTINUITY"
-
-    .line 734
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_19
-
-    add-int/lit8 v49, v49, 0x1
-
-    goto/16 :goto_4
-
-    :cond_19
-    const-string v9, "#EXT-X-PROGRAM-DATE-TIME"
-
-    .line 736
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1a
-
-    const-wide/16 v31, 0x0
-
-    cmp-long v9, v18, v31
-
-    if-nez v9, :cond_f
-
-    .line 739
-    invoke-virtual {v8, v10}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v9
-
-    add-int/2addr v9, v14
-
-    invoke-virtual {v8, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/google/android/exoplayer2/util/Util;->parseXsDateTime(Ljava/lang/String;)J
-
-    move-result-wide v8
-
-    invoke-static {v8, v9}, Lcom/google/android/exoplayer2/C;->msToUs(J)J
-
-    move-result-wide v8
-
-    sub-long v18, v8, v50
-
-    goto/16 :goto_4
-
-    :cond_1a
-    const-string v9, "#EXT-X-GAP"
-
-    .line 742
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1b
-
-    const/4 v13, 0x0
-
-    const/16 v45, 0x1
-
-    goto/16 :goto_1
-
-    :cond_1b
-    const-string v9, "#EXT-X-INDEPENDENT-SEGMENTS"
-
-    .line 744
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1c
-
-    const/4 v13, 0x0
-
-    const/16 v26, 0x1
-
-    goto/16 :goto_1
-
-    :cond_1c
-    const-string v9, "#EXT-X-ENDLIST"
-
-    .line 746
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1d
-
-    const/4 v13, 0x0
-
-    const/16 v27, 0x1
-
-    goto/16 :goto_1
-
-    :cond_1d
-    const-string v9, "#"
-
-    .line 748
-    invoke-virtual {v8, v9}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-nez v9, :cond_f
-
-    if-nez v5, :cond_1e
-
-    const/4 v9, 0x0
-
-    goto :goto_6
-
-    :cond_1e
-    if-eqz v46, :cond_1f
-
-    move-object/from16 v9, v46
-
-    goto :goto_6
-
-    .line 755
-    :cond_1f
-    invoke-static/range {v38 .. v39}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
-
-    move-result-object v9
-
-    :goto_6
-    const-wide/16 v10, 0x1
-
-    add-long v10, v38, v10
-
-    const-wide/16 v55, -0x1
-
-    cmp-long v13, v47, v55
-
-    if-nez v13, :cond_20
-
-    const-wide/16 v58, 0x0
-
-    goto :goto_7
-
-    :cond_20
-    move-wide/from16 v58, v29
-
-    :goto_7
-    if-nez v40, :cond_23
-
-    .line 763
-    invoke-virtual {v3}, Ljava/util/TreeMap;->isEmpty()Z
-
-    move-result v29
-
-    if-nez v29, :cond_23
-
-    .line 764
-    invoke-virtual {v3}, Ljava/util/TreeMap;->values()Ljava/util/Collection;
-
-    move-result-object v14
-
-    move-object/from16 v57, v3
-
-    const/4 v0, 0x0
-
-    new-array v3, v0, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
-
-    invoke-interface {v14, v3}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
-
-    .line 765
-    new-instance v14, Lcom/google/android/exoplayer2/drm/DrmInitData;
-
-    invoke-direct {v14, v12, v3}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
-
-    if-nez v28, :cond_22
-
-    .line 767
-    array-length v0, v3
-
-    new-array v0, v0, [Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
-
-    move-object/from16 v61, v7
-
-    move-wide/from16 v62, v10
-
-    const/4 v7, 0x0
-
-    .line 768
-    :goto_8
-    array-length v10, v3
-
-    if-ge v7, v10, :cond_21
-
-    .line 769
-    aget-object v10, v3, v7
-
-    const/4 v11, 0x0
-
-    invoke-virtual {v10, v11}, Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;->copyWithData([B)Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;
-
-    move-result-object v10
-
-    aput-object v10, v0, v7
-
-    add-int/lit8 v7, v7, 0x1
-
-    goto :goto_8
-
-    :cond_21
-    const/4 v11, 0x0
-
-    .line 771
-    new-instance v3, Lcom/google/android/exoplayer2/drm/DrmInitData;
-
-    invoke-direct {v3, v12, v0}, Lcom/google/android/exoplayer2/drm/DrmInitData;-><init>(Ljava/lang/String;[Lcom/google/android/exoplayer2/drm/DrmInitData$SchemeData;)V
-
-    move-object/from16 v28, v3
-
-    goto :goto_9
-
-    :cond_22
-    move-object/from16 v61, v7
-
-    move-wide/from16 v62, v10
-
-    const/4 v11, 0x0
-
-    goto :goto_9
-
-    :cond_23
-    move-object/from16 v57, v3
-
-    move-object/from16 v61, v7
-
-    move-wide/from16 v62, v10
-
-    const/4 v11, 0x0
-
-    move-object/from16 v14, v40
-
-    .line 775
-    :goto_9
-    new-instance v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;
-
-    move-object/from16 v29, v0
-
-    .line 777
-    invoke-static {v8, v2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v30
-
-    move-object/from16 v31, v52
-
-    move-object/from16 v32, v37
-
-    move-wide/from16 v33, v53
-
-    move/from16 v35, v49
-
-    move-wide/from16 v36, v50
-
-    move-object/from16 v38, v14
-
-    move-object/from16 v39, v5
-
-    move-object/from16 v40, v9
-
-    move-wide/from16 v41, v58
-
-    move-wide/from16 v43, v47
-
-    invoke-direct/range {v29 .. v45}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$Segment;Ljava/lang/String;JIJLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/lang/String;Ljava/lang/String;JJZ)V
-
-    .line 775
-    invoke-interface {v15, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-long v50, v50, v53
-
-    if-eqz v13, :cond_24
-
-    add-long v58, v58, v47
-
-    :cond_24
-    move-wide/from16 v29, v58
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v40, v14
-
-    move-wide/from16 v47, v55
-
-    move-object/from16 v3, v57
-
-    move-object/from16 v7, v61
-
-    move-object/from16 v37, v7
-
-    move-wide/from16 v38, v62
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    const/16 v45, 0x0
-
-    goto/16 :goto_0
-
-    :goto_a
-    move-object/from16 v0, p0
-
-    move-object/from16 v3, v57
-
-    move-object/from16 v7, v61
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    goto/16 :goto_1
-
-    .line 799
-    :cond_25
-    new-instance v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v5, v18, v2
-
-    if-eqz v5, :cond_26
-
-    const/16 v60, 0x1
-
-    goto :goto_b
-
-    :cond_26
-    const/16 v60, 0x0
-
-    :goto_b
-    move-object v3, v0
-
-    move-object/from16 v5, p2
-
-    move-wide/from16 v7, v16
-
-    move-wide/from16 v9, v18
-
-    move v11, v1
-
-    move/from16 v12, v20
-
-    move-wide/from16 v13, v21
-
-    move-object v1, v15
-
-    move/from16 v15, v23
-
-    move-wide/from16 v16, v24
-
-    move/from16 v18, v26
-
-    move/from16 v19, v27
-
-    move/from16 v20, v60
-
-    move-object/from16 v21, v28
-
-    move-object/from16 v22, v1
-
-    invoke-direct/range {v3 .. v22}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;-><init>(ILjava/lang/String;Ljava/util/List;JJZIJIJZZZLcom/google/android/exoplayer2/drm/DrmInitData;Ljava/util/List;)V
-
-    return-object v0
-.end method
-
 .method private static parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
     .locals 0
 
-    .line 953
+    .line 1274
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p0
 
-    .line 954
+    .line 1275
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result p1
@@ -3493,14 +5095,14 @@
 
     const/4 p1, 0x1
 
-    .line 955
+    .line 1276
     invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
 
     const-string p1, "YES"
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -3510,15 +5112,15 @@
     return p2
 .end method
 
-.method private static parseOptionalIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;I)I
+.method private static parseOptionalDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;D)D
     .locals 0
 
-    .line 890
+    .line 1247
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p0
 
-    .line 891
+    .line 1248
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result p1
@@ -3527,10 +5129,54 @@
 
     const/4 p1, 0x1
 
-    .line 892
+    .line 1249
     invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide p0
+
+    return-wide p0
+
+    :cond_0
+    return-wide p2
+.end method
+
+.method private static parseOptionalIntAttr(Ljava/lang/String;Ljava/util/regex/Pattern;I)I
+    .locals 0
+
+    .line 1187
+    invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object p0
+
+    .line 1188
+    invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    .line 1189
+    invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -3540,6 +5186,44 @@
 
     :cond_0
     return p2
+.end method
+
+.method private static parseOptionalLongAttr(Ljava/lang/String;Ljava/util/regex/Pattern;J)J
+    .locals 0
+
+    .line 1199
+    invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object p0
+
+    .line 1200
+    invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    .line 1201
+    invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide p0
+
+    return-wide p0
+
+    :cond_0
+    return-wide p2
 .end method
 
 .method private static parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
@@ -3558,12 +5242,12 @@
         }
     .end annotation
 
-    .line 926
+    .line 1239
     invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p0
 
-    .line 927
+    .line 1240
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result p1
@@ -3574,9 +5258,17 @@
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p0
 
-    .line 928
+    invoke-static {p0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    move-object p2, p0
+
+    check-cast p2, Ljava/lang/String;
+
+    .line 1241
     :cond_0
     invoke-interface {p3}, Ljava/util/Map;->isEmpty()Z
 
@@ -3588,7 +5280,7 @@
 
     goto :goto_0
 
-    .line 930
+    .line 1243
     :cond_1
     invoke-static {p2, p3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
 
@@ -3616,7 +5308,7 @@
 
     const/4 v0, 0x0
 
-    .line 918
+    .line 1231
     invoke-static {p0, p1, v0, p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object p0
@@ -3637,15 +5329,15 @@
         }
     .end annotation
 
-    .line 834
+    .line 1104
     sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CHARACTERISTICS:Ljava/util/regex/Pattern;
 
-    .line 835
+    .line 1105
     invoke-static {p0, v0, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 836
+    .line 1106
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -3659,14 +5351,14 @@
     :cond_0
     const-string p1, ","
 
-    .line 839
+    .line 1109
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
     const-string p1, "public.accessibility.describes-video"
 
-    .line 841
+    .line 1111
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -3678,7 +5370,7 @@
     :cond_1
     const-string p1, "public.accessibility.transcribes-spoken-dialog"
 
-    .line 844
+    .line 1114
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -3690,7 +5382,7 @@
     :cond_2
     const-string p1, "public.accessibility.describes-music-and-sound"
 
-    .line 847
+    .line 1117
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -3702,7 +5394,7 @@
     :cond_3
     const-string p1, "public.easy-to-read"
 
-    .line 850
+    .line 1120
     invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/Util;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
@@ -3718,7 +5410,7 @@
 .method private static parseSelectionFlags(Ljava/lang/String;)I
     .locals 3
 
-    .line 820
+    .line 1090
     sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_DEFAULT:Ljava/util/regex/Pattern;
 
     const/4 v1, 0x0
@@ -3727,7 +5419,7 @@
 
     move-result v0
 
-    .line 823
+    .line 1093
     sget-object v2, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_FORCED:Ljava/util/regex/Pattern;
 
     invoke-static {p0, v2, v1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
@@ -3738,7 +5430,7 @@
 
     or-int/lit8 v0, v0, 0x2
 
-    .line 826
+    .line 1096
     :cond_0
     sget-object v2, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_AUTOSELECT:Ljava/util/regex/Pattern;
 
@@ -3754,8 +5446,114 @@
     return v0
 .end method
 
+.method private static parseServerControl(Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;
+    .locals 19
+
+    move-object/from16 v0, p0
+
+    .line 1150
+    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CAN_SKIP_UNTIL:Ljava/util/regex/Pattern;
+
+    const-wide/high16 v2, -0x3c20000000000000L    # -9.223372036854776E18
+
+    .line 1151
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;D)D
+
+    move-result-wide v4
+
+    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide v8, 0x412e848000000000L    # 1000000.0
+
+    cmpl-double v1, v4, v2
+
+    if-nez v1, :cond_0
+
+    move-wide v11, v6
+
+    goto :goto_0
+
+    :cond_0
+    mul-double v4, v4, v8
+
+    double-to-long v4, v4
+
+    move-wide v11, v4
+
+    .line 1156
+    :goto_0
+    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CAN_SKIP_DATE_RANGES:Ljava/util/regex/Pattern;
+
+    const/4 v4, 0x0
+
+    .line 1157
+    invoke-static {v0, v1, v4}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
+
+    move-result v13
+
+    .line 1158
+    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_HOLD_BACK:Ljava/util/regex/Pattern;
+
+    .line 1159
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;D)D
+
+    move-result-wide v14
+
+    cmpl-double v1, v14, v2
+
+    if-nez v1, :cond_1
+
+    move-wide v14, v6
+
+    goto :goto_1
+
+    :cond_1
+    mul-double v14, v14, v8
+
+    double-to-long v14, v14
+
+    .line 1164
+    :goto_1
+    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_PART_HOLD_BACK:Ljava/util/regex/Pattern;
+
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalDoubleAttr(Ljava/lang/String;Ljava/util/regex/Pattern;D)D
+
+    move-result-wide v16
+
+    cmpl-double v1, v16, v2
+
+    if-nez v1, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    mul-double v1, v16, v8
+
+    double-to-long v6, v1
+
+    :goto_2
+    move-wide/from16 v16, v6
+
+    .line 1169
+    sget-object v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_CAN_BLOCK_RELOAD:Ljava/util/regex/Pattern;
+
+    .line 1170
+    invoke-static {v0, v1, v4}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalBooleanAttribute(Ljava/lang/String;Ljava/util/regex/Pattern;Z)Z
+
+    move-result v18
+
+    .line 1172
+    new-instance v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;
+
+    move-object v10, v0
+
+    invoke-direct/range {v10 .. v18}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist$ServerControl;-><init>(JZJJZ)V
+
+    return-object v0
+.end method
+
 .method private static parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3775,7 +5573,7 @@
         }
     .end annotation
 
-    .line 908
+    .line 1219
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseOptionalStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object p2
@@ -3784,37 +5582,81 @@
 
     return-object p2
 
-    .line 912
+    .line 1223
     :cond_0
-    new-instance p2, Lcom/google/android/exoplayer2/ParserException;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "Couldn\'t match "
 
-    const-string v1, "Couldn\'t match "
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    .line 1224
     invoke-virtual {p1}, Ljava/util/regex/Pattern;->pattern()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p1, " in "
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {p2, p0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    const/4 p1, 0x0
 
-    throw p2
+    .line 1223
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method private static parseTimeSecondsToUs(Ljava/lang/String;Ljava/util/regex/Pattern;)J
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/android/exoplayer2/ParserException;
+        }
+    .end annotation
+
+    .line 1207
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseStringAttr(Ljava/lang/String;Ljava/util/regex/Pattern;Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 1208
+    new-instance p1, Ljava/math/BigDecimal;
+
+    invoke-direct {p1, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+
+    .line 1209
+    new-instance p0, Ljava/math/BigDecimal;
+
+    const-wide/32 v0, 0xf4240
+
+    invoke-direct {p0, v0, v1}, Ljava/math/BigDecimal;-><init>(J)V
+
+    invoke-virtual {p1, p0}, Ljava/math/BigDecimal;->multiply(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/math/BigDecimal;->longValue()J
+
+    move-result-wide p0
+
+    return-wide p0
 .end method
 
 .method private static replaceVariableReferences(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
@@ -3831,19 +5673,19 @@
         }
     .end annotation
 
-    .line 935
+    .line 1256
     sget-object v0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->REGEX_VARIABLE_REFERENCE:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p0
 
-    .line 937
+    .line 1258
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 938
+    .line 1259
     :cond_0
     :goto_0
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
@@ -3854,19 +5696,19 @@
 
     const/4 v1, 0x1
 
-    .line 939
+    .line 1260
     invoke-virtual {p0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 940
+    .line 1261
     invoke-interface {p1, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 942
+    .line 1263
     invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -3877,16 +5719,16 @@
 
     move-result-object v1
 
-    .line 941
+    .line 1262
     invoke-virtual {p0, v0, v1}, Ljava/util/regex/Matcher;->appendReplacement(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/util/regex/Matcher;
 
     goto :goto_0
 
-    .line 947
+    .line 1268
     :cond_1
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->appendTail(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;
 
-    .line 948
+    .line 1269
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -3907,7 +5749,7 @@
 
     if-eq p2, v0, :cond_1
 
-    .line 253
+    .line 318
     invoke-static {p2}, Ljava/lang/Character;->isWhitespace(I)Z
 
     move-result v0
@@ -3922,7 +5764,7 @@
 
     if-nez v0, :cond_1
 
-    .line 254
+    .line 319
     :cond_0
     invoke-virtual {p0}, Ljava/io/BufferedReader;->read()I
 
@@ -3937,14 +5779,14 @@
 
 # virtual methods
 .method public parse(Landroid/net/Uri;Ljava/io/InputStream;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylist;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 194
+    .line 255
     new-instance v0, Ljava/io/BufferedReader;
 
     new-instance v1, Ljava/io/InputStreamReader;
@@ -3953,20 +5795,22 @@
 
     invoke-direct {v0, v1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 195
+    .line 256
     new-instance p2, Ljava/util/ArrayDeque;
 
     invoke-direct {p2}, Ljava/util/ArrayDeque;-><init>()V
 
-    .line 198
+    .line 259
     :try_start_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->checkPlaylistHeader(Ljava/io/BufferedReader;)Z
 
     move-result v1
 
+    const/4 v2, 0x0
+
     if-eqz v1, :cond_5
 
-    .line 202
+    .line 263
     :goto_0
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
@@ -3974,34 +5818,34 @@
 
     if-eqz v1, :cond_4
 
-    .line 203
+    .line 264
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 204
+    .line 265
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_0
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const-string v2, "#EXT-X-STREAM-INF"
+    const-string v3, "#EXT-X-STREAM-INF"
 
-    .line 206
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 267
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
-    .line 207
+    .line 268
     invoke-interface {p2, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 208
+    .line 269
     new-instance v1, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;
 
     invoke-direct {v1, p2, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;-><init>(Ljava/util/Queue;Ljava/io/BufferedReader;)V
@@ -4010,124 +5854,126 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseMasterPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
+    invoke-static {v1, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseMultivariantPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
 
     move-result-object p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 225
+    .line 289
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-object p1
 
     :cond_1
     :try_start_1
-    const-string v2, "#EXT-X-TARGETDURATION"
+    const-string v3, "#EXT-X-TARGETDURATION"
 
-    .line 209
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 270
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_3
 
-    const-string v2, "#EXT-X-MEDIA-SEQUENCE"
+    const-string v3, "#EXT-X-MEDIA-SEQUENCE"
 
-    .line 210
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 271
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_3
 
-    const-string v2, "#EXTINF"
+    const-string v3, "#EXTINF"
 
-    .line 211
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 272
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_3
 
-    const-string v2, "#EXT-X-KEY"
+    const-string v3, "#EXT-X-KEY"
 
-    .line 212
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 273
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_3
 
-    const-string v2, "#EXT-X-BYTERANGE"
+    const-string v3, "#EXT-X-BYTERANGE"
 
-    .line 213
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 274
+    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_3
 
-    const-string v2, "#EXT-X-DISCONTINUITY"
+    const-string v3, "#EXT-X-DISCONTINUITY"
 
-    .line 214
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 275
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_3
 
-    const-string v2, "#EXT-X-DISCONTINUITY-SEQUENCE"
+    const-string v3, "#EXT-X-DISCONTINUITY-SEQUENCE"
 
-    .line 215
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 276
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_3
+    if-nez v3, :cond_3
 
-    const-string v2, "#EXT-X-ENDLIST"
+    const-string v3, "#EXT-X-ENDLIST"
 
-    .line 216
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 277
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
     goto :goto_1
 
-    .line 221
+    .line 285
     :cond_2
     invoke-interface {p2, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 217
+    .line 278
     :cond_3
     :goto_1
     invoke-interface {p2, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 218
-    iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->masterPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
+    .line 279
+    iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->multivariantPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
 
-    new-instance v2, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;
+    iget-object v2, p0, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->previousMediaPlaylist:Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
 
-    invoke-direct {v2, p2, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;-><init>(Ljava/util/Queue;Ljava/io/BufferedReader;)V
+    new-instance v3, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;
 
-    .line 219
+    invoke-direct {v3, p2, v0}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;-><init>(Ljava/util/Queue;Ljava/io/BufferedReader;)V
+
+    .line 283
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 218
-    invoke-static {v1, v2, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseMediaPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
+    .line 279
+    invoke-static {v1, v2, v3, p1}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parseMediaPlaylist(Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser$LineIterator;Ljava/lang/String;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;
 
     move-result-object p1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 225
+    .line 289
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
     return-object p1
@@ -4135,35 +5981,35 @@
     :cond_4
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 227
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
+    const-string p1, "Failed to parse the playlist, could not identify any tags."
 
-    const-string p2, "Failed to parse the playlist, could not identify any tags."
+    .line 291
+    invoke-static {p1, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object p1
 
     throw p1
 
-    .line 199
     :cond_5
     :try_start_2
-    new-instance p2, Lcom/google/android/exoplayer2/source/UnrecognizedInputFormatException;
+    const-string p1, "Input does not start with the #EXTM3U header."
 
-    const-string v1, "Input does not start with the #EXTM3U header."
+    .line 260
+    invoke-static {p1, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p2, v1, p1}, Lcom/google/android/exoplayer2/source/UnrecognizedInputFormatException;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+    move-result-object p1
 
-    throw p2
+    throw p1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :catchall_0
     move-exception p1
 
-    .line 225
+    .line 289
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 226
+    .line 290
     throw p1
 .end method
 
@@ -4175,7 +6021,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 68
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistParser;->parse(Landroid/net/Uri;Ljava/io/InputStream;)Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylist;
 
     move-result-object p1

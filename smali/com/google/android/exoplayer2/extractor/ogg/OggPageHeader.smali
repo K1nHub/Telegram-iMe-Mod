@@ -4,6 +4,10 @@
 
 
 # static fields
+.field private static final CAPTURE_PATTERN:I = 0x4f676753
+
+.field private static final CAPTURE_PATTERN_SIZE:I = 0x4
+
 .field public static final EMPTY_PAGE_HEADER_SIZE:I = 0x1b
 
 .field public static final MAX_PAGE_PAYLOAD:I = 0xfe01
@@ -11,8 +15,6 @@
 .field public static final MAX_PAGE_SIZE:I = 0xff1b
 
 .field public static final MAX_SEGMENT_COUNT:I = 0xff
-
-.field private static final TYPE_OGGS:I = 0x4f676753
 
 
 # instance fields
@@ -50,10 +52,10 @@
 
     new-array v1, v0, [I
 
-    .line 57
+    .line 58
     iput-object v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->laces:[I
 
-    .line 59
+    .line 60
     new-instance v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>(I)V
@@ -66,113 +68,55 @@
 
 # virtual methods
 .method public populate(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Z)Z
-    .locals 8
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 89
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
-
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset()V
-
-    .line 90
+    .line 132
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->reset()V
 
-    .line 91
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
-
-    move-result-wide v0
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const-wide/16 v4, -0x1
-
-    cmp-long v6, v0, v4
-
-    if-eqz v6, :cond_1
-
-    .line 92
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
-
-    move-result-wide v0
-
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPeekPosition()J
-
-    move-result-wide v4
-
-    sub-long/2addr v0, v4
-
-    const-wide/16 v4, 0x1b
-
-    cmp-long v6, v0, v4
-
-    if-ltz v6, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    if-eqz v0, :cond_8
-
-    .line 93
+    .line 133
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
-
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
 
     const/16 v1, 0x1b
 
-    invoke-interface {p1, v0, v3, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BIIZ)Z
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
+
+    .line 134
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v0, v2, v1, p2}, Lcom/google/android/exoplayer2/extractor/ExtractorUtil;->peekFullyQuietly(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[BIIZ)Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_5
 
-    goto/16 :goto_3
-
-    .line 100
-    :cond_2
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
+    .line 135
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    const-wide/32 v6, 0x4f676753
+    const-wide/32 v3, 0x4f676753
 
-    cmp-long v0, v4, v6
+    cmp-long v5, v0, v3
 
-    if-eqz v0, :cond_4
+    if-eqz v5, :cond_0
 
-    if-eqz p2, :cond_3
+    goto/16 :goto_1
 
-    return v3
-
-    .line 104
-    :cond_3
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
-
-    const-string p2, "expected OggS capture pattern at begin of page"
-
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 108
-    :cond_4
+    .line 139
+    :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -181,103 +125,112 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->revision:I
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_2
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_1
 
-    return v3
+    return v2
 
-    .line 113
-    :cond_5
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
+    :cond_1
+    const-string p1, "unsupported bit stream revision"
 
-    const-string p2, "unsupported bit stream revision"
+    .line 144
+    invoke-static {p1}, Lcom/google/android/exoplayer2/ParserException;->createForUnsupportedContainerFeature(Ljava/lang/String;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object p1
 
     throw p1
 
-    .line 116
-    :cond_6
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 148
+    :cond_2
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->type:I
+    iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->type:I
 
-    .line 118
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 150
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianLong()J
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianLong()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    iput-wide v4, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->granulePosition:J
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->granulePosition:J
 
-    .line 119
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 151
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    iput-wide v4, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->streamSerialNumber:J
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->streamSerialNumber:J
 
-    .line 120
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 152
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    iput-wide v4, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSequenceNumber:J
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSequenceNumber:J
 
-    .line 121
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 153
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    iput-wide v4, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageChecksum:J
+    iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageChecksum:J
 
-    .line 122
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 154
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSegmentCount:I
+    iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSegmentCount:I
 
-    add-int/2addr p2, v1
+    add-int/lit8 v1, v0, 0x1b
 
-    .line 123
-    iput p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->headerSize:I
+    .line 155
+    iput v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->headerSize:I
 
-    .line 126
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 158
+    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset()V
+    invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
 
-    .line 127
-    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+    .line 159
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object p2, p2, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSegmentCount:I
+    move-result-object v0
 
-    invoke-interface {p1, p2, v3, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSegmentCount:I
 
-    .line 128
-    :goto_2
+    invoke-static {p1, v0, v2, v1, p2}, Lcom/google/android/exoplayer2/extractor/ExtractorUtil;->peekFullyQuietly(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[BIIZ)Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    return v2
+
+    .line 162
+    :cond_3
+    :goto_0
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSegmentCount:I
 
-    if-ge v3, p1, :cond_7
+    if-ge v2, p1, :cond_4
 
-    .line 129
+    .line 163
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->laces:[I
 
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -286,39 +239,31 @@
 
     move-result p2
 
-    aput p2, p1, v3
+    aput p2, p1, v2
 
-    .line 130
+    .line 164
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->bodySize:I
 
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->laces:[I
 
-    aget p2, p2, v3
+    aget p2, p2, v2
 
     add-int/2addr p1, p2
 
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->bodySize:I
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    :cond_7
+    :cond_4
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_5
+    :goto_1
     return v2
-
-    :cond_8
-    :goto_3
-    if-eqz p2, :cond_9
-
-    return v3
-
-    .line 97
-    :cond_9
-    new-instance p1, Ljava/io/EOFException;
-
-    invoke-direct {p1}, Ljava/io/EOFException;-><init>()V
-
-    throw p1
 .end method
 
 .method public reset()V
@@ -326,34 +271,187 @@
 
     const/4 v0, 0x0
 
-    .line 65
+    .line 64
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->revision:I
 
-    .line 66
+    .line 65
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->type:I
 
     const-wide/16 v1, 0x0
 
-    .line 67
+    .line 66
     iput-wide v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->granulePosition:J
 
-    .line 68
+    .line 67
     iput-wide v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->streamSerialNumber:J
 
-    .line 69
+    .line 68
     iput-wide v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSequenceNumber:J
 
-    .line 70
+    .line 69
     iput-wide v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageChecksum:J
 
-    .line 71
+    .line 70
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->pageSegmentCount:I
 
-    .line 72
+    .line 71
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->headerSize:I
 
-    .line 73
+    .line 72
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->bodySize:I
 
     return-void
+.end method
+
+.method public skipToNextPage(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    const-wide/16 v0, -0x1
+
+    .line 82
+    invoke-virtual {p0, p1, v0, v1}, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->skipToNextPage(Lcom/google/android/exoplayer2/extractor/ExtractorInput;J)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public skipToNextPage(Lcom/google/android/exoplayer2/extractor/ExtractorInput;J)Z
+    .locals 8
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 103
+    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
+
+    move-result-wide v0
+
+    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPeekPosition()J
+
+    move-result-wide v2
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    cmp-long v6, v0, v2
+
+    if-nez v6, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
+
+    .line 104
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset(I)V
+
+    :goto_1
+    const-wide/16 v2, -0x1
+
+    cmp-long v0, p2, v2
+
+    if-eqz v0, :cond_1
+
+    .line 105
+    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
+
+    move-result-wide v2
+
+    const-wide/16 v6, 0x4
+
+    add-long/2addr v2, v6
+
+    cmp-long v6, v2, p2
+
+    if-gez v6, :cond_3
+
+    :cond_1
+    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    .line 107
+    invoke-virtual {v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v2
+
+    .line 106
+    invoke-static {p1, v2, v4, v1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorUtil;->peekFullyQuietly(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[BIIZ)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 108
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    invoke-virtual {v0, v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
+
+    .line 109
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
+
+    move-result-wide v2
+
+    const-wide/32 v6, 0x4f676753
+
+    cmp-long v0, v2, v6
+
+    if-nez v0, :cond_2
+
+    .line 110
+    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
+
+    return v5
+
+    .line 114
+    :cond_2
+    invoke-interface {p1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
+
+    goto :goto_1
+
+    :cond_3
+    :goto_2
+    if-eqz v0, :cond_4
+
+    .line 117
+    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
+
+    move-result-wide v1
+
+    cmp-long v3, v1, p2
+
+    if-gez v3, :cond_5
+
+    .line 118
+    :cond_4
+    invoke-interface {p1, v5}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skip(I)I
+
+    move-result v1
+
+    const/4 v2, -0x1
+
+    if-eq v1, v2, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    return v4
 .end method

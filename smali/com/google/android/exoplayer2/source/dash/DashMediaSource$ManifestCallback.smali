@@ -35,7 +35,7 @@
 .method private constructor <init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)V
     .locals 0
 
-    .line 1325
+    .line 1307
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .method synthetic constructor <init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;Lcom/google/android/exoplayer2/source/dash/DashMediaSource$1;)V
     .locals 0
 
-    .line 1325
+    .line 1307
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;-><init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)V
 
     return-void
@@ -57,7 +57,7 @@
 .method public bridge synthetic onLoadCanceled(Lcom/google/android/exoplayer2/upstream/Loader$Loadable;JJZ)V
     .locals 0
 
-    .line 1325
+    .line 1307
     check-cast p1, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;
 
     invoke-virtual/range {p0 .. p6}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;->onLoadCanceled(Lcom/google/android/exoplayer2/upstream/ParsingLoadable;JJZ)V
@@ -76,7 +76,7 @@
         }
     .end annotation
 
-    .line 1336
+    .line 1321
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     move-object v1, p1
@@ -93,7 +93,7 @@
 .method public bridge synthetic onLoadCompleted(Lcom/google/android/exoplayer2/upstream/Loader$Loadable;JJ)V
     .locals 0
 
-    .line 1325
+    .line 1307
     check-cast p1, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;
 
     invoke-virtual/range {p0 .. p5}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;->onLoadCompleted(Lcom/google/android/exoplayer2/upstream/ParsingLoadable;JJ)V
@@ -112,7 +112,7 @@
         }
     .end annotation
 
-    .line 1330
+    .line 1312
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     move-object v1, p1
@@ -129,7 +129,7 @@
 .method public bridge synthetic onLoadError(Lcom/google/android/exoplayer2/upstream/Loader$Loadable;JJLjava/io/IOException;I)Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;
     .locals 0
 
-    .line 1325
+    .line 1307
     check-cast p1, Lcom/google/android/exoplayer2/upstream/ParsingLoadable;
 
     invoke-virtual/range {p0 .. p7}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;->onLoadError(Lcom/google/android/exoplayer2/upstream/ParsingLoadable;JJLjava/io/IOException;I)Lcom/google/android/exoplayer2/upstream/Loader$LoadErrorAction;
@@ -153,7 +153,7 @@
         }
     .end annotation
 
-    .line 1346
+    .line 1331
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$ManifestCallback;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     move-object v1, p1

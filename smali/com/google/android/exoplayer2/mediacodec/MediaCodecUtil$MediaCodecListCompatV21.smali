@@ -27,7 +27,7 @@
 .method public constructor <init>(ZZ)V
     .locals 0
 
-    .line 970
+    .line 989
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-nez p1, :cond_1
@@ -45,7 +45,7 @@
     :goto_0
     const/4 p1, 0x1
 
-    .line 974
+    .line 993
     :goto_1
     iput p1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;->codecKind:I
 
@@ -54,18 +54,13 @@
 
 .method private ensureMediaCodecInfosInitialized()V
     .locals 2
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "mediaCodecInfos"
-        }
-    .end annotation
 
-    .line 1010
+    .line 1027
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;->mediaCodecInfos:[Landroid/media/MediaCodecInfo;
 
     if-nez v0, :cond_0
 
-    .line 1011
+    .line 1028
     new-instance v0, Landroid/media/MediaCodecList;
 
     iget v1, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;->codecKind:I
@@ -87,10 +82,10 @@
 .method public getCodecCount()I
     .locals 1
 
-    .line 979
+    .line 998
     invoke-direct {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;->ensureMediaCodecInfosInitialized()V
 
-    .line 980
+    .line 999
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;->mediaCodecInfos:[Landroid/media/MediaCodecInfo;
 
     array-length v0, v0
@@ -101,10 +96,10 @@
 .method public getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
     .locals 1
 
-    .line 987
+    .line 1004
     invoke-direct {p0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;->ensureMediaCodecInfosInitialized()V
 
-    .line 988
+    .line 1005
     iget-object v0, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$MediaCodecListCompatV21;->mediaCodecInfos:[Landroid/media/MediaCodecInfo;
 
     aget-object p1, v0, p1
@@ -115,7 +110,7 @@
 .method public isFeatureRequired(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 0
 
-    .line 1005
+    .line 1022
     invoke-virtual {p3, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureRequired(Ljava/lang/String;)Z
 
     move-result p1
@@ -126,7 +121,7 @@
 .method public isFeatureSupported(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 0
 
-    .line 999
+    .line 1016
     invoke-virtual {p3, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureSupported(Ljava/lang/String;)Z
 
     move-result p1

@@ -26,16 +26,16 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/Timeline;IJ)V
     .locals 0
 
-    .line 1962
+    .line 2998
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1963
+    .line 2999
     iput-object p1, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
-    .line 1964
+    .line 3000
     iput p2, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;->windowIndex:I
 
-    .line 1965
+    .line 3001
     iput-wide p3, p0, Lcom/google/android/exoplayer2/ExoPlayerImplInternal$SeekPosition;->windowPositionUs:J
 
     return-void

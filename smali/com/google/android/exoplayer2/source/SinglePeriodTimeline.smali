@@ -4,23 +4,29 @@
 
 
 # static fields
+.field private static final MEDIA_ITEM:Lcom/google/android/exoplayer2/MediaItem;
+
 .field private static final UID:Ljava/lang/Object;
 
 
 # instance fields
-.field private final isDynamic:Z
+.field private final elapsedRealtimeEpochOffsetMs:J
 
-.field private final isLive:Z
+.field private final isDynamic:Z
 
 .field private final isSeekable:Z
 
+.field private final liveConfiguration:Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;
+
 .field private final manifest:Ljava/lang/Object;
+
+.field private final mediaItem:Lcom/google/android/exoplayer2/MediaItem;
 
 .field private final periodDurationUs:J
 
 .field private final presentationStartTimeMs:J
 
-.field private final tag:Ljava/lang/Object;
+.field private final suppressPositionProjection:Z
 
 .field private final windowDefaultStartPositionUs:J
 
@@ -33,141 +39,315 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    .line 28
+    .line 30
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->UID:Ljava/lang/Object;
 
+    .line 31
+    new-instance v0, Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/MediaItem$Builder;-><init>()V
+
+    const-string v1, "SinglePeriodTimeline"
+
+    .line 32
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setMediaId(Ljava/lang/String;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    sget-object v1, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setUri(Landroid/net/Uri;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaItem$Builder;->build()Lcom/google/android/exoplayer2/MediaItem;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->MEDIA_ITEM:Lcom/google/android/exoplayer2/MediaItem;
+
     return-void
 .end method
 
-.method public constructor <init>(JJJJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
+.method public constructor <init>(JJJJJJJZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;)V
+    .locals 21
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    move-wide/from16 v1, p1
+
+    move-wide/from16 v3, p3
+
+    move-wide/from16 v5, p5
+
+    move-wide/from16 v7, p7
+
+    move-wide/from16 v9, p9
+
+    move-wide/from16 v11, p11
+
+    move-wide/from16 v13, p13
+
+    move/from16 v15, p15
+
+    move/from16 v16, p16
+
+    move-object/from16 v18, p17
+
+    move-object/from16 v19, p18
+
+    move-object/from16 v20, p19
+
+    const/16 v17, 0x0
+
+    .line 231
+    invoke-direct/range {v0 .. v20}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(JJJJJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;)V
     .locals 3
 
     move-object v0, p0
 
-    .line 154
+    .line 287
     invoke-direct {p0}, Lcom/google/android/exoplayer2/Timeline;-><init>()V
 
     move-wide v1, p1
 
-    .line 155
+    .line 288
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->presentationStartTimeMs:J
 
     move-wide v1, p3
 
-    .line 156
+    .line 289
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowStartTimeMs:J
 
     move-wide v1, p5
 
-    .line 157
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->periodDurationUs:J
+    .line 290
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->elapsedRealtimeEpochOffsetMs:J
 
     move-wide v1, p7
 
-    .line 158
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowDurationUs:J
+    .line 291
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->periodDurationUs:J
 
     move-wide v1, p9
 
-    .line 159
-    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowPositionInPeriodUs:J
+    .line 292
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowDurationUs:J
 
     move-wide v1, p11
 
-    .line 160
+    .line 293
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowPositionInPeriodUs:J
+
+    move-wide/from16 v1, p13
+
+    .line 294
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowDefaultStartPositionUs:J
-
-    move/from16 v1, p13
-
-    .line 161
-    iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isSeekable:Z
-
-    move/from16 v1, p14
-
-    .line 162
-    iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isDynamic:Z
 
     move/from16 v1, p15
 
-    .line 163
-    iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isLive:Z
+    .line 295
+    iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isSeekable:Z
 
-    move-object/from16 v1, p16
+    move/from16 v1, p16
 
-    .line 164
+    .line 296
+    iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isDynamic:Z
+
+    move/from16 v1, p17
+
+    .line 297
+    iput-boolean v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->suppressPositionProjection:Z
+
+    move-object/from16 v1, p18
+
+    .line 298
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->manifest:Ljava/lang/Object;
 
-    move-object/from16 v1, p17
+    .line 299
+    invoke-static/range {p19 .. p19}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 165
-    iput-object v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->tag:Ljava/lang/Object;
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/exoplayer2/MediaItem;
+
+    iput-object v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->mediaItem:Lcom/google/android/exoplayer2/MediaItem;
+
+    move-object/from16 v1, p20
+
+    .line 300
+    iput-object v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->liveConfiguration:Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;
 
     return-void
 .end method
 
-.method public constructor <init>(JJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
-    .locals 18
+.method public constructor <init>(JJJJJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
+    .locals 23
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    move-object/from16 v0, p0
+    .line 197
+    sget-object v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->MEDIA_ITEM:Lcom/google/android/exoplayer2/MediaItem;
 
-    move-wide/from16 v5, p1
+    .line 209
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaItem;->buildUpon()Lcom/google/android/exoplayer2/MediaItem$Builder;
 
-    move-wide/from16 v7, p3
+    move-result-object v1
 
-    move-wide/from16 v9, p5
+    move-object/from16 v2, p19
 
-    move-wide/from16 v11, p7
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setTag(Ljava/lang/Object;)Lcom/google/android/exoplayer2/MediaItem$Builder;
 
-    move/from16 v13, p9
+    move-result-object v1
 
-    move/from16 v14, p10
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->build()Lcom/google/android/exoplayer2/MediaItem;
 
-    move/from16 v15, p11
+    move-result-object v21
 
-    move-object/from16 v16, p12
+    if-eqz p17, :cond_0
 
-    move-object/from16 v17, p13
+    .line 210
+    iget-object v0, v0, Lcom/google/android/exoplayer2/MediaItem;->liveConfiguration:Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    move-object/from16 v22, v0
+
+    const/16 v19, 0x0
+
+    move-object/from16 v2, p0
+
+    move-wide/from16 v3, p1
+
+    move-wide/from16 v5, p3
+
+    move-wide/from16 v7, p5
+
+    move-wide/from16 v9, p7
+
+    move-wide/from16 v11, p9
+
+    move-wide/from16 v13, p11
+
+    move-wide/from16 v15, p13
+
+    move/from16 v17, p15
+
+    move/from16 v18, p16
+
+    move-object/from16 v20, p18
+
+    .line 197
+    invoke-direct/range {v2 .. v22}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(JJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;)V
+    .locals 21
+
+    move-object/from16 v15, p13
+
+    if-eqz p11, :cond_0
+
+    .line 176
+    iget-object v0, v15, Lcom/google/android/exoplayer2/MediaItem;->liveConfiguration:Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    move-object/from16 v20, v0
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    .line 110
-    invoke-direct/range {v0 .. v17}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
+    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/16 v17, 0x0
+
+    move-object/from16 v0, p0
+
+    move-wide/from16 v7, p1
+
+    move-wide/from16 v9, p3
+
+    move-wide/from16 v11, p5
+
+    move-wide/from16 v13, p7
+
+    move/from16 v15, p9
+
+    move/from16 v16, p10
+
+    move-object/from16 v18, p12
+
+    move-object/from16 v19, p13
+
+    .line 163
+    invoke-direct/range {v0 .. v20}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;)V
 
     return-void
 .end method
 
-.method public constructor <init>(JZZZ)V
-    .locals 8
+.method public constructor <init>(JJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
+    .locals 20
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    const/4 v6, 0x0
+    move-object/from16 v0, p0
 
-    const/4 v7, 0x0
+    move-wide/from16 v7, p1
 
-    move-object v0, p0
+    move-wide/from16 v9, p3
 
-    move-wide v1, p1
+    move-wide/from16 v11, p5
 
-    move v3, p3
+    move-wide/from16 v13, p7
 
-    move v4, p4
+    move/from16 v15, p9
 
-    move v5, p5
+    move/from16 v16, p10
 
-    .line 52
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JZZZLjava/lang/Object;Ljava/lang/Object;)V
+    move/from16 v17, p11
+
+    move-object/from16 v18, p12
+
+    move-object/from16 v19, p13
+
+    const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
+
+    .line 121
+    invoke-direct/range {v0 .. v19}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public constructor <init>(JZZZLjava/lang/Object;Ljava/lang/Object;)V
+.method public constructor <init>(JZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;)V
     .locals 14
 
     const-wide/16 v5, 0x0
@@ -190,7 +370,38 @@
 
     move-object/from16 v13, p7
 
-    .line 72
+    .line 92
+    invoke-direct/range {v0 .. v13}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJZZZLjava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(JZZZLjava/lang/Object;Ljava/lang/Object;)V
+    .locals 14
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const-wide/16 v5, 0x0
+
+    const-wide/16 v7, 0x0
+
+    move-object v0, p0
+
+    move-wide v1, p1
+
+    move-wide v3, p1
+
+    move/from16 v9, p3
+
+    move/from16 v10, p4
+
+    move/from16 v11, p5
+
+    move-object/from16 v12, p6
+
+    move-object/from16 v13, p7
+
+    .line 62
     invoke-direct/range {v0 .. v13}, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;-><init>(JJJJZZZLjava/lang/Object;Ljava/lang/Object;)V
 
     return-void
@@ -201,7 +412,7 @@
 .method public getIndexOfPeriod(Ljava/lang/Object;)I
     .locals 1
 
-    .line 219
+    .line 356
     sget-object v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->UID:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -228,12 +439,12 @@
 
     const/4 v1, 0x1
 
-    .line 212
+    .line 349
     invoke-static {p1, v0, v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkIndex(III)I
 
     if-eqz p3, :cond_0
 
-    .line 213
+    .line 350
     sget-object p1, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->UID:Ljava/lang/Object;
 
     goto :goto_0
@@ -248,7 +459,7 @@
 
     const/4 v3, 0x0
 
-    .line 214
+    .line 351
     iget-wide v4, p0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->periodDurationUs:J
 
     iget-wide v6, p0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowPositionInPeriodUs:J
@@ -279,17 +490,17 @@
 
     const/4 v1, 0x1
 
-    .line 224
+    .line 361
     invoke-static {p1, v0, v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkIndex(III)I
 
-    .line 225
+    .line 362
     sget-object p1, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->UID:Ljava/lang/Object;
 
     return-object p1
 .end method
 
 .method public getWindow(ILcom/google/android/exoplayer2/Timeline$Window;J)Lcom/google/android/exoplayer2/Timeline$Window;
-    .locals 22
+    .locals 24
 
     move-object/from16 v0, p0
 
@@ -299,18 +510,22 @@
 
     move/from16 v3, p1
 
-    .line 175
+    .line 311
     invoke-static {v3, v1, v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkIndex(III)I
 
-    .line 176
+    .line 312
     iget-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowDefaultStartPositionUs:J
 
-    .line 177
-    iget-boolean v12, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isDynamic:Z
+    .line 313
+    iget-boolean v14, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isDynamic:Z
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-eqz v12, :cond_1
+    if-eqz v14, :cond_1
+
+    iget-boolean v5, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->suppressPositionProjection:Z
+
+    if-nez v5, :cond_1
 
     const-wide/16 v5, 0x0
 
@@ -318,7 +533,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 178
+    .line 314
     iget-wide v5, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowDurationUs:J
 
     cmp-long v7, v5, v3
@@ -326,7 +541,7 @@
     if-nez v7, :cond_0
 
     :goto_0
-    move-wide v14, v3
+    move-wide/from16 v16, v3
 
     goto :goto_1
 
@@ -340,13 +555,13 @@
     goto :goto_0
 
     :cond_1
-    move-wide v14, v1
+    move-wide/from16 v16, v1
 
-    .line 189
+    .line 325
     :goto_1
     sget-object v4, Lcom/google/android/exoplayer2/Timeline$Window;->SINGLE_WINDOW_UID:Ljava/lang/Object;
 
-    iget-object v5, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->tag:Ljava/lang/Object;
+    iget-object v5, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->mediaItem:Lcom/google/android/exoplayer2/MediaItem;
 
     iget-object v6, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->manifest:Ljava/lang/Object;
 
@@ -354,25 +569,27 @@
 
     iget-wide v9, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowStartTimeMs:J
 
-    iget-boolean v11, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isSeekable:Z
+    iget-wide v11, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->elapsedRealtimeEpochOffsetMs:J
 
-    iget-boolean v13, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isLive:Z
+    iget-boolean v13, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->isSeekable:Z
+
+    iget-object v15, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->liveConfiguration:Lcom/google/android/exoplayer2/MediaItem$LiveConfiguration;
 
     iget-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowDurationUs:J
 
-    move-wide/from16 v16, v1
+    move-wide/from16 v18, v1
 
-    const/16 v18, 0x0
+    const/16 v20, 0x0
 
-    const/16 v19, 0x0
+    const/16 v21, 0x0
 
     iget-wide v1, v0, Lcom/google/android/exoplayer2/source/SinglePeriodTimeline;->windowPositionInPeriodUs:J
 
-    move-wide/from16 v20, v1
+    move-wide/from16 v22, v1
 
     move-object/from16 v3, p2
 
-    invoke-virtual/range {v3 .. v21}, Lcom/google/android/exoplayer2/Timeline$Window;->set(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;JJZZZJJIIJ)Lcom/google/android/exoplayer2/Timeline$Window;
+    invoke-virtual/range {v3 .. v23}, Lcom/google/android/exoplayer2/Timeline$Window;->set(Ljava/lang/Object;Lcom/google/android/exoplayer2/MediaItem;Ljava/lang/Object;JJJZZLcom/google/android/exoplayer2/MediaItem$LiveConfiguration;JJIIJ)Lcom/google/android/exoplayer2/Timeline$Window;
 
     move-result-object v1
 

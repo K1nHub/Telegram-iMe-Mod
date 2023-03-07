@@ -7,7 +7,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 25
+    .line 27
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -16,7 +16,7 @@
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
 
-    .line 30
+    .line 34
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
     return-void

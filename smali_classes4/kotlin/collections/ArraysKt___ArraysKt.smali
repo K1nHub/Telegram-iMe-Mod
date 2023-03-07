@@ -248,6 +248,40 @@
     return p0
 .end method
 
+.method public static getOrNull([Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">([TT;I)TT;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-ltz p1, :cond_0
+
+    .line 1421
+    invoke-static {p0}, Lkotlin/collections/ArraysKt;->getLastIndex([Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-gt p1, v0, :cond_0
+
+    aget-object p0, p0, p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return-object p0
+.end method
+
 .method public static final indexOf([CC)I
     .locals 3
 

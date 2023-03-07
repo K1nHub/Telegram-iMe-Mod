@@ -1291,7 +1291,6 @@
     <string name="DiceEmojiInfo">أرسل الرمز %1$s لتجربة حظك.</string>
     <string name="DiceInfo2">أرسل الرمز التعبيري **🎲** لرمي حجر النرد.</string>
     <string name="DidNotGetTheCode">لم يصلك الرمز؟</string>
-    <string name="DidNotGetTheCodeSms">إرسال الرمز برسالة SMS قصيرة</string>
     <string name="DirectShare">مشاركة مباشرة</string>
     <string name="DirectShareInfo">إظهار آخر المحادثات في قائمة المشاركة</string>
     <string name="Directions">الاتجاهات</string>

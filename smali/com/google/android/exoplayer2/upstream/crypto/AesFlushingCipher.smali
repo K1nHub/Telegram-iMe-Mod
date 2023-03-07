@@ -19,52 +19,52 @@
 .method public constructor <init>(I[BJJ)V
     .locals 6
 
-    .line 45
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     :try_start_0
     const-string v0, "AES/CTR/NoPadding"
 
-    .line 47
+    .line 52
     invoke-static {v0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->cipher:Ljavax/crypto/Cipher;
 
-    .line 48
+    .line 53
     invoke-virtual {v0}, Ljavax/crypto/Cipher;->getBlockSize()I
 
     move-result v1
 
     iput v1, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->blockSize:I
 
-    .line 49
+    .line 54
     new-array v2, v1, [B
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->zerosBlock:[B
 
-    .line 50
+    .line 55
     new-array v2, v1, [B
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->flushedBlock:[B
 
     int-to-long v2, v1
 
-    .line 51
+    .line 56
     div-long v2, p5, v2
 
     int-to-long v4, v1
 
-    .line 52
+    .line 57
     rem-long/2addr p5, v4
 
     long-to-int p6, p5
 
-    .line 53
+    .line 58
     new-instance p5, Ljavax/crypto/spec/SecretKeySpec;
 
-    .line 55
+    .line 60
     invoke-virtual {v0}, Ljavax/crypto/Cipher;->getAlgorithm()Ljava/lang/String;
 
     move-result-object v1
@@ -83,19 +83,19 @@
 
     new-instance p2, Ljavax/crypto/spec/IvParameterSpec;
 
-    .line 56
+    .line 61
     invoke-direct {p0, p3, p4, v2, v3}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->getInitializationVector(JJ)[B
 
     move-result-object p3
 
     invoke-direct {p2, p3}, Ljavax/crypto/spec/IvParameterSpec;-><init>([B)V
 
-    .line 53
+    .line 58
     invoke-virtual {v0, p1, p5, p2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
     if-eqz p6, :cond_0
 
-    .line 58
+    .line 63
     new-array p1, p6, [B
 
     invoke-virtual {p0, p1, v4, p6}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->updateInPlace([BII)V
@@ -126,7 +126,7 @@
     :catch_3
     move-exception p1
 
-    .line 63
+    .line 70
     :goto_0
     new-instance p2, Ljava/lang/RuntimeException;
 
@@ -135,12 +135,106 @@
     throw p2
 .end method
 
+.method public constructor <init>(I[BLjava/lang/String;J)V
+    .locals 7
+
+    .line 47
+    invoke-static {p3}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->getFNV64Hash(Ljava/lang/String;)J
+
+    move-result-wide v3
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move-object v2, p2
+
+    move-wide v5, p4
+
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;-><init>(I[BJJ)V
+
+    return-void
+.end method
+
+.method private static getFNV64Hash(Ljava/lang/String;)J
+    .locals 7
+
+    const-wide/16 v0, 0x0
+
+    if-nez p0, :cond_0
+
+    return-wide v0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    .line 141
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_1
+
+    .line 142
+    invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v3
+
+    int-to-long v3, v3
+
+    xor-long/2addr v0, v3
+
+    const/4 v3, 0x1
+
+    shl-long v3, v0, v3
+
+    const/4 v5, 0x4
+
+    shl-long v5, v0, v5
+
+    add-long/2addr v3, v5
+
+    const/4 v5, 0x5
+
+    shl-long v5, v0, v5
+
+    add-long/2addr v3, v5
+
+    const/4 v5, 0x7
+
+    shl-long v5, v0, v5
+
+    add-long/2addr v3, v5
+
+    const/16 v5, 0x8
+
+    shl-long v5, v0, v5
+
+    add-long/2addr v3, v5
+
+    const/16 v5, 0x28
+
+    shl-long v5, v0, v5
+
+    add-long/2addr v3, v5
+
+    add-long/2addr v0, v3
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-wide v0
+.end method
+
 .method private getInitializationVector(JJ)[B
     .locals 1
 
     const/16 v0, 0x10
 
-    .line 120
+    .line 127
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -163,7 +257,7 @@
 .method private nonFlushingUpdate([BII[BI)I
     .locals 6
 
-    .line 112
+    .line 119
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->cipher:Ljavax/crypto/Cipher;
 
@@ -188,7 +282,7 @@
     :catch_0
     move-exception p1
 
-    .line 115
+    .line 122
     new-instance p2, Ljava/lang/RuntimeException;
 
     invoke-direct {p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -203,13 +297,13 @@
 
     move v2, p2
 
-    .line 75
+    .line 82
     :cond_0
     iget p2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->pendingXorBytes:I
 
     if-lez p2, :cond_1
 
-    .line 76
+    .line 83
     aget-byte v0, p1, v2
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->flushedBlock:[B
@@ -232,7 +326,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 79
+    .line 86
     iput p2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->pendingXorBytes:I
 
     add-int/lit8 p3, p3, -0x1
@@ -252,7 +346,7 @@
 
     move v5, p5
 
-    .line 87
+    .line 94
     invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->nonFlushingUpdate([BII[BI)I
 
     move-result p1
@@ -264,7 +358,7 @@
     :cond_2
     sub-int/2addr p3, p1
 
-    .line 98
+    .line 105
     iget p2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->blockSize:I
 
     const/4 v0, 0x0
@@ -285,14 +379,14 @@
 
     add-int/2addr p5, p1
 
-    .line 100
+    .line 107
     iget p1, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->blockSize:I
 
     sub-int v5, p1, p3
 
     iput v5, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->pendingXorBytes:I
 
-    .line 101
+    .line 108
     iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->zerosBlock:[B
 
     const/4 v4, 0x0
@@ -307,7 +401,7 @@
 
     move-result p1
 
-    .line 102
+    .line 109
     iget p2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->blockSize:I
 
     if-ne p1, p2, :cond_4
@@ -325,7 +419,7 @@
 
     add-int/lit8 p1, p5, 0x1
 
-    .line 106
+    .line 113
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->flushedBlock:[B
 
     aget-byte p2, p2, v0
@@ -357,7 +451,7 @@
 
     move v5, p2
 
-    .line 68
+    .line 75
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/crypto/AesFlushingCipher;->update([BII[BI)V
 
     return-void

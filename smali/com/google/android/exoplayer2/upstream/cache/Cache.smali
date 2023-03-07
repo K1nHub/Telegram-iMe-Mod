@@ -50,6 +50,9 @@
 .method public abstract getCacheSpace()J
 .end method
 
+.method public abstract getCachedBytes(Ljava/lang/String;JJ)J
+.end method
+
 .method public abstract getCachedLength(Ljava/lang/String;JJ)J
 .end method
 
@@ -95,12 +98,10 @@
 .method public abstract removeListener(Ljava/lang/String;Lcom/google/android/exoplayer2/upstream/cache/Cache$Listener;)V
 .end method
 
+.method public abstract removeResource(Ljava/lang/String;)V
+.end method
+
 .method public abstract removeSpan(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/upstream/cache/Cache$CacheException;
-        }
-    .end annotation
 .end method
 
 .method public abstract startFile(Ljava/lang/String;JJ)Ljava/io/File;
@@ -111,7 +112,7 @@
     .end annotation
 .end method
 
-.method public abstract startReadWrite(Ljava/lang/String;J)Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;
+.method public abstract startReadWrite(Ljava/lang/String;JJ)Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;,
@@ -120,7 +121,7 @@
     .end annotation
 .end method
 
-.method public abstract startReadWriteNonBlocking(Ljava/lang/String;J)Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;
+.method public abstract startReadWriteNonBlocking(Ljava/lang/String;JJ)Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/cache/Cache$CacheException;

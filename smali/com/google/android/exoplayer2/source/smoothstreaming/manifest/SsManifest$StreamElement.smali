@@ -124,7 +124,7 @@
 
     move-wide/from16 v2, p5
 
-    .line 113
+    .line 111
     invoke-static {v15, v0, v1, v2, v3}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamps(Ljava/util/List;JJ)[J
 
     move-result-object v15
@@ -135,7 +135,7 @@
 
     move-wide/from16 p11, p5
 
-    .line 114
+    .line 112
     invoke-static/range {p7 .. p12}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
 
     move-result-wide v16
@@ -148,7 +148,7 @@
 
     move-object/from16 v0, v18
 
-    .line 99
+    .line 97
     invoke-direct/range {v0 .. v17}, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;JLjava/lang/String;IIIILjava/lang/String;[Lcom/google/android/exoplayer2/Format;Ljava/util/List;[JJ)V
 
     return-void
@@ -177,85 +177,85 @@
 
     move-object v0, p0
 
-    .line 132
+    .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     move-object v1, p1
 
-    .line 133
+    .line 131
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->baseUri:Ljava/lang/String;
 
     move-object v1, p2
 
-    .line 134
+    .line 132
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkTemplate:Ljava/lang/String;
 
     move v1, p3
 
-    .line 135
+    .line 133
     iput v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->type:I
 
     move-object v1, p4
 
-    .line 136
+    .line 134
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->subType:Ljava/lang/String;
 
     move-wide v1, p5
 
-    .line 137
+    .line 135
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->timescale:J
 
     move-object v1, p7
 
-    .line 138
+    .line 136
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->name:Ljava/lang/String;
 
     move v1, p8
 
-    .line 139
+    .line 137
     iput v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->maxWidth:I
 
     move v1, p9
 
-    .line 140
+    .line 138
     iput v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->maxHeight:I
 
     move v1, p10
 
-    .line 141
+    .line 139
     iput v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->displayWidth:I
 
     move v1, p11
 
-    .line 142
+    .line 140
     iput v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->displayHeight:I
 
     move-object/from16 v1, p12
 
-    .line 143
+    .line 141
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->language:Ljava/lang/String;
 
     move-object/from16 v1, p13
 
-    .line 144
+    .line 142
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Lcom/google/android/exoplayer2/Format;
 
     move-object/from16 v1, p14
 
-    .line 145
+    .line 143
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimes:Ljava/util/List;
 
     move-object/from16 v2, p15
 
-    .line 146
+    .line 144
     iput-object v2, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimesUs:[J
 
     move-wide/from16 v2, p16
 
-    .line 147
+    .line 145
     iput-wide v2, v0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->lastChunkDurationUs:J
 
-    .line 148
+    .line 146
     invoke-interface/range {p14 .. p14}, Ljava/util/List;->size()I
 
     move-result v1
@@ -270,7 +270,7 @@
 .method public buildRequestUri(II)Landroid/net/Uri;
     .locals 3
 
-    .line 203
+    .line 215
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Lcom/google/android/exoplayer2/Format;
 
     const/4 v1, 0x1
@@ -289,7 +289,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 204
+    .line 216
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimes:Ljava/util/List;
 
     if-eqz v0, :cond_1
@@ -304,7 +304,7 @@
     :goto_1
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 205
+    .line 217
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -321,7 +321,7 @@
     :goto_2
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 206
+    .line 218
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->formats:[Lcom/google/android/exoplayer2/Format;
 
     aget-object p1, v0, p1
@@ -332,7 +332,7 @@
 
     move-result-object p1
 
-    .line 207
+    .line 219
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimes:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -345,38 +345,38 @@
 
     move-result-object p2
 
-    .line 208
+    .line 220
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkTemplate:Ljava/lang/String;
 
     const-string v1, "{bitrate}"
 
-    .line 209
+    .line 222
     invoke-virtual {v0, v1, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v1, "{Bitrate}"
 
-    .line 210
+    .line 223
     invoke-virtual {v0, v1, p1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
 
     const-string v0, "{start time}"
 
-    .line 211
+    .line 224
     invoke-virtual {p1, v0, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
 
     const-string v0, "{start_time}"
 
-    .line 212
+    .line 225
     invoke-virtual {p1, v0, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 213
+    .line 226
     iget-object p2, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->baseUri:Ljava/lang/String;
 
     invoke-static {p2, p1}, Lcom/google/android/exoplayer2/util/UriUtil;->resolveToUri(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
@@ -393,7 +393,7 @@
 
     move-object/from16 v14, p1
 
-    .line 159
+    .line 157
     new-instance v19, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;
 
     move-object/from16 v1, v19
@@ -446,18 +446,19 @@
 .method public getChunkDurationUs(I)J
     .locals 5
 
-    .line 191
+    .line 202
     iget v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     if-ne p1, v0, :cond_0
 
+    .line 203
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->lastChunkDurationUs:J
 
     goto :goto_0
 
-    .line 192
+    .line 204
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimesUs:[J
 
@@ -476,7 +477,7 @@
 .method public getChunkIndex(J)I
     .locals 2
 
-    .line 171
+    .line 182
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimesUs:[J
 
     const/4 v1, 0x1
@@ -491,7 +492,7 @@
 .method public getStartTimeUs(I)J
     .locals 3
 
-    .line 181
+    .line 192
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest$StreamElement;->chunkStartTimesUs:[J
 
     aget-wide v1, v0, p1

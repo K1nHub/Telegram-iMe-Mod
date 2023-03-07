@@ -25,7 +25,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 81
+    .line 80
     new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame$1;-><init>()V
@@ -38,7 +38,7 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    .line 40
+    .line 38
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -51,14 +51,14 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;-><init>(Ljava/lang/String;)V
 
-    .line 41
+    .line 39
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->description:Ljava/lang/String;
 
-    .line 42
+    .line 40
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object p1
@@ -77,13 +77,13 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 34
+    .line 32
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;-><init>(Ljava/lang/String;)V
 
-    .line 35
+    .line 33
     iput-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->description:Ljava/lang/String;
 
-    .line 36
+    .line 34
     iput-object p3, p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->url:Ljava/lang/String;
 
     return-void
@@ -105,7 +105,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 50
+    .line 48
     const-class v2, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -116,11 +116,11 @@
 
     goto :goto_1
 
-    .line 53
+    .line 51
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;
 
-    .line 54
+    .line 52
     iget-object v2, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;->id:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;->id:Ljava/lang/String;
@@ -135,6 +135,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->description:Ljava/lang/String;
 
+    .line 53
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -145,7 +146,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->url:Ljava/lang/String;
 
-    .line 55
+    .line 54
     invoke-static {v2, p1}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -168,7 +169,7 @@
 .method public hashCode()I
     .locals 3
 
-    .line 61
+    .line 60
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;->id:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -181,7 +182,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 62
+    .line 61
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->description:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -202,7 +203,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 63
+    .line 62
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->url:Ljava/lang/String;
 
     if-eqz v0, :cond_1
@@ -220,7 +221,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 69
+    .line 68
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -247,17 +248,17 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 76
+    .line 75
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;->id:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 77
+    .line 76
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->description:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 78
+    .line 77
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/UrlLinkFrame;->url:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V

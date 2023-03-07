@@ -92,7 +92,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -204,7 +204,9 @@
 
     if-eq v5, v1, :cond_5
 
-    .line 80
+    if-eq v7, v1, :cond_5
+
+    .line 82
     new-instance v0, Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;
 
     array-length v8, p0

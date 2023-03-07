@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract setOutputBuffer(Lcom/google/android/exoplayer2/video/VideoDecoderOutputBuffer;)V
+.method public abstract setOutputBuffer(Lcom/google/android/exoplayer2/decoder/VideoDecoderOutputBuffer;)V
 .end method

@@ -18,57 +18,19 @@
 
 
 # direct methods
-.method public varargs constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;[IILjava/util/Random;)V
     .locals 0
 
-    .line 71
-    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
+    .line 75
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[II)V
 
-    .line 72
-    new-instance p1, Ljava/util/Random;
+    .line 76
+    iput-object p4, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->random:Ljava/util/Random;
 
-    invoke-direct {p1}, Ljava/util/Random;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->random:Ljava/util/Random;
-
-    .line 73
-    iget p2, p0, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->length:I
-
-    invoke-virtual {p1, p2}, Ljava/util/Random;->nextInt(I)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->selectedIndex:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;[IJ)V
-    .locals 1
-
-    .line 83
-    new-instance v0, Ljava/util/Random;
-
-    invoke-direct {v0, p3, p4}, Ljava/util/Random;-><init>(J)V
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[ILjava/util/Random;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;[ILjava/util/Random;)V
-    .locals 0
-
-    .line 93
-    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
-
-    .line 94
-    iput-object p3, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->random:Ljava/util/Random;
-
-    .line 95
+    .line 77
     iget p1, p0, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->length:I
 
-    invoke-virtual {p3, p1}, Ljava/util/Random;->nextInt(I)I
+    invoke-virtual {p4, p1}, Ljava/util/Random;->nextInt(I)I
 
     move-result p1
 
@@ -82,7 +44,7 @@
 .method public getSelectedIndex()I
     .locals 1
 
-    .line 129
+    .line 111
     iget v0, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->selectedIndex:I
 
     return v0
@@ -118,7 +80,7 @@
         }
     .end annotation
 
-    .line 106
+    .line 88
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
@@ -129,13 +91,13 @@
 
     const/4 p5, 0x0
 
-    .line 108
+    .line 90
     :goto_0
     iget p6, p0, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->length:I
 
     if-ge p4, p6, :cond_1
 
-    .line 109
+    .line 91
     invoke-virtual {p0, p4, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->isBlacklisted(IJ)Z
 
     move-result p6
@@ -149,7 +111,7 @@
 
     goto :goto_0
 
-    .line 114
+    .line 96
     :cond_1
     iget-object p4, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->random:Ljava/util/Random;
 
@@ -159,20 +121,20 @@
 
     iput p4, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->selectedIndex:I
 
-    .line 115
+    .line 97
     iget p4, p0, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->length:I
 
     if-eq p5, p4, :cond_4
 
     const/4 p4, 0x0
 
-    .line 118
+    .line 100
     :goto_1
     iget p5, p0, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->length:I
 
     if-ge p3, p5, :cond_4
 
-    .line 119
+    .line 101
     invoke-virtual {p0, p3, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;->isBlacklisted(IJ)Z
 
     move-result p5
@@ -185,7 +147,7 @@
 
     if-ne p5, p4, :cond_2
 
-    .line 120
+    .line 102
     iput p3, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;->selectedIndex:I
 
     return-void

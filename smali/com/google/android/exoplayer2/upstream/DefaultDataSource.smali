@@ -6,10 +6,22 @@
 .implements Lcom/google/android/exoplayer2/upstream/DataSource;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/exoplayer2/upstream/DefaultDataSource$Factory;
+    }
+.end annotation
+
+
 # static fields
+.field private static final SCHEME_ANDROID_RESOURCE:Ljava/lang/String; = "android.resource"
+
 .field private static final SCHEME_ASSET:Ljava/lang/String; = "asset"
 
 .field private static final SCHEME_CONTENT:Ljava/lang/String; = "content"
+
+.field private static final SCHEME_DATA:Ljava/lang/String; = "data"
 
 .field private static final SCHEME_RAW:Ljava/lang/String; = "rawresource"
 
@@ -56,17 +68,17 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/google/android/exoplayer2/upstream/DataSource;)V
     .locals 0
 
-    .line 130
+    .line 214
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 131
+    .line 215
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->context:Landroid/content/Context;
 
-    .line 132
+    .line 216
     invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -75,7 +87,7 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->baseDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 133
+    .line 217
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -86,26 +98,40 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
-    .locals 7
+    .locals 1
 
-    .line 112
-    new-instance v6, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;
+    .line 196
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;
 
-    const/4 v5, 0x0
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;-><init>()V
 
-    move-object v0, v6
+    .line 199
+    invoke-virtual {v0, p2}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;->setUserAgent(Ljava/lang/String;)Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;
 
-    move-object v1, p2
+    move-result-object p2
 
-    move v2, p3
+    .line 200
+    invoke-virtual {p2, p3}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;->setConnectTimeoutMs(I)Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;
 
-    move v3, p4
+    move-result-object p2
 
-    move v4, p5
+    .line 201
+    invoke-virtual {p2, p4}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;->setReadTimeoutMs(I)Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;-><init>(Ljava/lang/String;IIZLcom/google/android/exoplayer2/upstream/HttpDataSource$RequestProperties;)V
+    move-result-object p2
 
-    invoke-direct {p0, p1, v6}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/upstream/DataSource;)V
+    .line 202
+    invoke-virtual {p2, p5}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;->setAllowCrossProtocolRedirects(Z)Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;
+
+    move-result-object p2
+
+    .line 203
+    invoke-virtual {p2}, Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource$Factory;->createDataSource()Lcom/google/android/exoplayer2/upstream/DefaultHttpDataSource;
+
+    move-result-object p2
+
+    .line 196
+    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;-><init>(Landroid/content/Context;Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
     return-void
 .end method
@@ -125,7 +151,28 @@
 
     move v5, p3
 
-    .line 86
+    .line 169
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;-><init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Z)V
+    .locals 6
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x1f40
+
+    const/16 v4, 0x1f40
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v5, p2
+
+    .line 150
     invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;-><init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
 
     return-void
@@ -136,7 +183,7 @@
 
     const/4 v0, 0x0
 
-    .line 278
+    .line 361
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->transferListeners:Ljava/util/List;
 
@@ -146,7 +193,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 279
+    .line 362
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->transferListeners:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -168,12 +215,12 @@
 .method private getAssetDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 2
 
-    .line 224
+    .line 309
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->assetDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
 
-    .line 225
+    .line 310
     new-instance v0, Lcom/google/android/exoplayer2/upstream/AssetDataSource;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->context:Landroid/content/Context;
@@ -182,10 +229,10 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->assetDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 226
+    .line 311
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->addListenersToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
-    .line 228
+    .line 313
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->assetDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -195,12 +242,12 @@
 .method private getContentDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 2
 
-    .line 232
+    .line 317
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->contentDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
 
-    .line 233
+    .line 318
     new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->context:Landroid/content/Context;
@@ -209,10 +256,10 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->contentDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 234
+    .line 319
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->addListenersToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
-    .line 236
+    .line 321
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->contentDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -222,22 +269,22 @@
 .method private getDataSchemeDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 1
 
-    .line 262
+    .line 345
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSchemeDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
 
-    .line 263
+    .line 346
     new-instance v0, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/upstream/DataSchemeDataSource;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSchemeDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 264
+    .line 347
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->addListenersToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
-    .line 266
+    .line 349
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSchemeDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -247,22 +294,22 @@
 .method private getFileDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 1
 
-    .line 216
+    .line 301
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->fileDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
 
-    .line 217
+    .line 302
     new-instance v0, Lcom/google/android/exoplayer2/upstream/FileDataSource;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/upstream/FileDataSource;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->fileDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 218
+    .line 303
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->addListenersToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
-    .line 220
+    .line 305
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->fileDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -272,12 +319,12 @@
 .method private getRawResourceDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 2
 
-    .line 270
+    .line 353
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rawResourceDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
 
-    .line 271
+    .line 354
     new-instance v0, Lcom/google/android/exoplayer2/upstream/RawResourceDataSource;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->context:Landroid/content/Context;
@@ -286,10 +333,10 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rawResourceDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 272
+    .line 355
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->addListenersToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
-    .line 274
+    .line 357
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rawResourceDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -299,7 +346,7 @@
 .method private getRtmpDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 3
 
-    .line 240
+    .line 325
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rtmpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
@@ -307,7 +354,7 @@
     :try_start_0
     const-string v0, "com.google.android.exoplayer2.ext.rtmp.RtmpDataSource"
 
-    .line 243
+    .line 327
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
@@ -316,7 +363,7 @@
 
     new-array v2, v1, [Ljava/lang/Class;
 
-    .line 244
+    .line 328
     invoke-virtual {v0, v2}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v0
@@ -331,7 +378,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rtmpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 246
+    .line 329
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->addListenersToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;)V
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
@@ -342,7 +389,7 @@
     :catch_0
     move-exception v0
 
-    .line 252
+    .line 335
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Error instantiating RTMP extension"
@@ -356,21 +403,21 @@
 
     const-string v1, "Attempting to play RTMP stream without depending on the RTMP extension"
 
-    .line 249
+    .line 332
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 254
+    .line 337
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rtmpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
 
-    .line 255
+    .line 338
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->baseDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rtmpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 258
+    .line 341
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rtmpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -380,22 +427,22 @@
 .method private getUdpDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
     .locals 1
 
-    .line 208
+    .line 293
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->udpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
 
-    .line 209
+    .line 294
     new-instance v0, Lcom/google/android/exoplayer2/upstream/UdpDataSource;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/upstream/UdpDataSource;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->udpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 210
+    .line 295
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->addListenersToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;)V
 
-    .line 212
+    .line 297
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->udpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -407,7 +454,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 286
+    .line 369
     invoke-interface {p1, p2}, Lcom/google/android/exoplayer2/upstream/DataSource;->addTransferListener(Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
     :cond_0
@@ -419,47 +466,50 @@
 .method public addTransferListener(Lcom/google/android/exoplayer2/upstream/TransferListener;)V
     .locals 1
 
-    .line 138
+    .line 222
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 223
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->baseDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/upstream/DataSource;->addTransferListener(Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 139
+    .line 224
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->transferListeners:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 140
+    .line 225
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->fileDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->maybeAddListenerToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 141
+    .line 226
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->assetDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->maybeAddListenerToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 142
+    .line 227
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->contentDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->maybeAddListenerToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 143
+    .line 228
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rtmpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->maybeAddListenerToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 144
+    .line 229
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->udpDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->maybeAddListenerToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 145
+    .line 230
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSchemeDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->maybeAddListenerToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
 
-    .line 146
+    .line 231
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->rawResourceDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {p0, v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->maybeAddListenerToDataSource(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/TransferListener;)V
@@ -475,20 +525,20 @@
         }
     .end annotation
 
-    .line 198
+    .line 283
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 200
+    .line 285
     :try_start_0
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 202
+    .line 287
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     goto :goto_0
@@ -498,7 +548,7 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 203
+    .line 288
     throw v0
 
     :cond_0
@@ -519,7 +569,7 @@
         }
     .end annotation
 
-    .line 193
+    .line 278
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
@@ -542,7 +592,7 @@
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 188
+    .line 273
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
@@ -568,7 +618,7 @@
         }
     .end annotation
 
-    .line 151
+    .line 236
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     if-nez v0, :cond_0
@@ -583,14 +633,14 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 153
+    .line 238
     iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 154
+    .line 239
     iget-object v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Util;->isLocalFileUri(Landroid/net/Uri;)Z
@@ -599,7 +649,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 155
+    .line 240
     iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
@@ -610,23 +660,23 @@
 
     const-string v1, "/android_asset/"
 
-    .line 156
+    .line 241
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 157
+    .line 242
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getAssetDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
+    goto/16 :goto_2
 
-    .line 159
+    .line 244
     :cond_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getFileDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
@@ -634,130 +684,142 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_2
     const-string v1, "asset"
 
-    .line 161
+    .line 246
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 162
+    .line 247
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getAssetDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     const-string v1, "content"
 
-    .line 163
+    .line 248
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    .line 164
+    .line 249
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getContentDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_4
     const-string v1, "rtmp"
 
-    .line 165
+    .line 250
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    .line 166
+    .line 251
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getRtmpDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     const-string v1, "udp"
 
-    .line 167
+    .line 252
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_6
 
-    .line 168
+    .line 253
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getUdpDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_6
     const-string v1, "data"
 
-    .line 169
+    .line 254
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_7
 
-    .line 170
+    .line 255
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getDataSchemeDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_7
     const-string v1, "rawresource"
 
-    .line 171
+    .line 256
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_9
+
+    const-string v1, "android.resource"
+
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 172
+    goto :goto_1
+
+    .line 259
+    :cond_8
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->baseDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
+
+    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
+
+    goto :goto_2
+
+    .line 257
+    :cond_9
+    :goto_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->getRawResourceDataSource()Lcom/google/android/exoplayer2/upstream/DataSource;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    goto :goto_1
-
-    .line 174
-    :cond_8
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->baseDataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
-
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
-
-    .line 177
-    :goto_1
+    .line 262
+    :goto_2
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/upstream/DataSource;->open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
@@ -775,7 +837,7 @@
         }
     .end annotation
 
-    .line 182
+    .line 267
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DefaultDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -784,7 +846,7 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataSource;->read([BII)I
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataReader;->read([BII)I
 
     move-result p1
 

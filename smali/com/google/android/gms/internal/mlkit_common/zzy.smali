@@ -111,12 +111,19 @@
 
 .method public static zza(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NonNullDecl;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(TT;)TT;"
         }
+    .end annotation
+
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NonNullDecl;
     .end annotation
 
     .line 5
@@ -127,6 +134,10 @@
 
 .method private static zza(IILjava/lang/String;)Ljava/lang/String;
     .locals 4
+    .param p2    # Ljava/lang/String;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     const/4 v0, 0x1
 
@@ -297,6 +308,10 @@
 
 .method public static zza(ZLjava/lang/Object;)V
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     if-eqz p0, :cond_0
 

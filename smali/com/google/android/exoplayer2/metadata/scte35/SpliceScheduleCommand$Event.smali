@@ -58,44 +58,44 @@
         }
     .end annotation
 
-    .line 91
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
+    .line 86
     iput-wide p1, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventId:J
 
-    .line 93
+    .line 87
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventCancelIndicator:Z
 
-    .line 94
+    .line 88
     iput-boolean p4, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->outOfNetworkIndicator:Z
 
-    .line 95
+    .line 89
     iput-boolean p5, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->programSpliceFlag:Z
 
-    .line 96
+    .line 90
     invoke-static {p6}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->componentSpliceList:Ljava/util/List;
 
-    .line 97
+    .line 91
     iput-wide p7, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->utcSpliceTime:J
 
-    .line 98
+    .line 92
     iput-boolean p9, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->autoReturn:Z
 
-    .line 99
+    .line 93
     iput-wide p10, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->breakDurationUs:J
 
-    .line 100
+    .line 94
     iput p12, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->uniqueProgramId:I
 
-    .line 101
+    .line 95
     iput p13, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->availNum:I
 
-    .line 102
+    .line 96
     iput p14, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->availsExpected:I
 
     return-void
@@ -104,17 +104,17 @@
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 6
 
-    .line 105
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 106
+    .line 100
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventId:J
 
-    .line 107
+    .line 101
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -135,7 +135,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventCancelIndicator:Z
 
-    .line 108
+    .line 102
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -152,7 +152,7 @@
     :goto_1
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->outOfNetworkIndicator:Z
 
-    .line 109
+    .line 103
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -169,12 +169,12 @@
     :goto_2
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->programSpliceFlag:Z
 
-    .line 110
+    .line 104
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 111
+    .line 105
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
@@ -184,7 +184,7 @@
     :goto_3
     if-ge v4, v0, :cond_3
 
-    .line 113
+    .line 107
     invoke-static {p1}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$ComponentSplice;->access$000(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
 
     move-result-object v5
@@ -195,7 +195,7 @@
 
     goto :goto_3
 
-    .line 115
+    .line 109
     :cond_3
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
@@ -203,14 +203,14 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->componentSpliceList:Ljava/util/List;
 
-    .line 116
+    .line 110
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->utcSpliceTime:J
 
-    .line 117
+    .line 111
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v0
@@ -222,28 +222,28 @@
     :cond_4
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->autoReturn:Z
 
-    .line 118
+    .line 112
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->breakDurationUs:J
 
-    .line 119
+    .line 113
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->uniqueProgramId:I
 
-    .line 120
+    .line 114
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->availNum:I
 
-    .line 121
+    .line 115
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result p1
@@ -256,7 +256,7 @@
 .method static synthetic access$300(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
     .locals 0
 
-    .line 34
+    .line 30
     invoke-static {p0}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
 
     move-result-object p0
@@ -267,7 +267,7 @@
 .method static synthetic access$400(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
     .locals 0
 
-    .line 34
+    .line 30
     invoke-static {p0}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->parseFromSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
 
     move-result-object p0
@@ -278,7 +278,7 @@
 .method static synthetic access$500(Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;Landroid/os/Parcel;)V
     .locals 0
 
-    .line 34
+    .line 30
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->writeToParcel(Landroid/os/Parcel;)V
 
     return-void
@@ -287,7 +287,7 @@
 .method private static createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
     .locals 1
 
-    .line 188
+    .line 191
     new-instance v0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
 
     invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;-><init>(Landroid/os/Parcel;)V
@@ -298,12 +298,12 @@
 .method private static parseFromSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
     .locals 21
 
-    .line 125
+    .line 119
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v1
 
-    .line 127
+    .line 121
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
@@ -319,7 +319,7 @@
     :cond_0
     const/4 v5, 0x0
 
-    .line 131
+    .line 125
     :goto_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -327,7 +327,7 @@
 
     if-nez v5, :cond_9
 
-    .line 138
+    .line 132
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v8
@@ -372,7 +372,7 @@
     :goto_3
     if-eqz v10, :cond_4
 
-    .line 143
+    .line 137
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v12
@@ -385,12 +385,12 @@
     :goto_4
     if-nez v10, :cond_6
 
-    .line 146
+    .line 140
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
-    .line 147
+    .line 141
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14, v0}, Ljava/util/ArrayList;-><init>(I)V
@@ -400,17 +400,17 @@
     :goto_5
     if-ge v15, v0, :cond_5
 
-    .line 149
+    .line 143
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v3
 
-    .line 150
+    .line 144
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v6
 
-    .line 151
+    .line 145
     new-instance v4, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$ComponentSplice;
 
     const/4 v11, 0x0
@@ -431,7 +431,7 @@
     :cond_6
     if-eqz v8, :cond_8
 
-    .line 155
+    .line 149
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v3
@@ -464,7 +464,7 @@
 
     shl-long/2addr v3, v6
 
-    .line 157
+    .line 151
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v6
@@ -477,7 +477,7 @@
 
     const-wide/16 v6, 0x5a
 
-    .line 158
+    .line 152
     div-long v6, v3, v6
 
     move/from16 v4, v16
@@ -489,18 +489,18 @@
 
     const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
 
-    .line 160
+    .line 154
     :goto_7
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v3
 
-    .line 161
+    .line 155
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v8
 
-    .line 162
+    .line 156
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v11
@@ -548,7 +548,7 @@
 
     const/16 v17, 0x0
 
-    .line 164
+    .line 158
     :goto_8
     new-instance v15, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;
 
@@ -566,40 +566,40 @@
 .method private writeToParcel(Landroid/os/Parcel;)V
     .locals 3
 
-    .line 170
+    .line 173
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 171
+    .line 174
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->spliceEventCancelIndicator:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 172
+    .line 175
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->outOfNetworkIndicator:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 173
+    .line 176
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->programSpliceFlag:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 174
+    .line 177
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->componentSpliceList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 175
+    .line 178
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     const/4 v1, 0x0
@@ -607,7 +607,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 177
+    .line 180
     iget-object v2, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->componentSpliceList:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -622,35 +622,35 @@
 
     goto :goto_0
 
-    .line 179
+    .line 182
     :cond_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->utcSpliceTime:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 180
+    .line 183
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->autoReturn:Z
 
     int-to-byte v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 181
+    .line 184
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->breakDurationUs:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 182
+    .line 185
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->uniqueProgramId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 183
+    .line 186
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->availNum:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 184
+    .line 187
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/SpliceScheduleCommand$Event;->availsExpected:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V

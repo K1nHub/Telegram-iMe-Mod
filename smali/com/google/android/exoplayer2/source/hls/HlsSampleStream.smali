@@ -18,18 +18,18 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;I)V
     .locals 0
 
-    .line 34
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 33
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
-    .line 36
+    .line 34
     iput p2, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->trackGroupIndex:I
 
     const/4 p1, -0x1
 
-    .line 37
+    .line 35
     iput p1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     return-void
@@ -38,7 +38,7 @@
 .method private hasValidSampleQueueIndex()Z
     .locals 2
 
-    .line 93
+    .line 92
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     const/4 v1, -0x1
@@ -69,7 +69,7 @@
 .method public bindSampleQueue()V
     .locals 2
 
-    .line 41
+    .line 39
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     const/4 v1, -0x1
@@ -86,7 +86,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 42
+    .line 40
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->trackGroupIndex:I
@@ -103,14 +103,14 @@
 .method public isReady()Z
     .locals 2
 
-    .line 56
+    .line 54
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     const/4 v1, -0x3
 
     if-eq v0, v1, :cond_1
 
-    .line 57
+    .line 55
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->hasValidSampleQueueIndex()Z
 
     move-result v0
@@ -150,7 +150,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 60
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     const/4 v1, -0x2
@@ -161,7 +161,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 66
+    .line 64
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->maybeThrowError()V
@@ -173,7 +173,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 68
+    .line 66
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->maybeThrowError(I)V
@@ -182,13 +182,13 @@
     :goto_0
     return-void
 
-    .line 63
+    .line 61
     :cond_2
     new-instance v0, Lcom/google/android/exoplayer2/source/hls/SampleQueueMappingException;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
-    .line 64
+    .line 62
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     move-result-object v1
@@ -212,10 +212,10 @@
     throw v0
 .end method
 
-.method public readData(Lcom/google/android/exoplayer2/FormatHolder;Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Z)I
+.method public readData(Lcom/google/android/exoplayer2/FormatHolder;Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;I)I
     .locals 2
 
-    .line 74
+    .line 73
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     const/4 v1, -0x3
@@ -224,14 +224,14 @@
 
     const/4 p1, 0x4
 
-    .line 75
+    .line 74
     invoke-virtual {p2, p1}, Lcom/google/android/exoplayer2/decoder/Buffer;->addFlag(I)V
 
     const/4 p1, -0x4
 
     return p1
 
-    .line 78
+    .line 77
     :cond_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->hasValidSampleQueueIndex()Z
 
@@ -239,12 +239,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 79
+    .line 78
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
-    invoke-virtual {v0, v1, p1, p2, p3}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->readData(ILcom/google/android/exoplayer2/FormatHolder;Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Z)I
+    invoke-virtual {v0, v1, p1, p2, p3}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->readData(ILcom/google/android/exoplayer2/FormatHolder;Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;I)I
 
     move-result v1
 
@@ -255,14 +255,14 @@
 .method public skipData(J)I
     .locals 2
 
-    .line 85
+    .line 84
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->hasValidSampleQueueIndex()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 86
+    .line 85
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
@@ -283,21 +283,21 @@
 .method public unbindSampleQueue()V
     .locals 3
 
-    .line 46
+    .line 44
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 47
+    .line 45
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleStreamWrapper:Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;
 
     iget v2, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->trackGroupIndex:I
 
     invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/source/hls/HlsSampleStreamWrapper;->unbindSampleQueue(I)V
 
-    .line 48
+    .line 46
     iput v1, p0, Lcom/google/android/exoplayer2/source/hls/HlsSampleStream;->sampleQueueIndex:I
 
     :cond_0

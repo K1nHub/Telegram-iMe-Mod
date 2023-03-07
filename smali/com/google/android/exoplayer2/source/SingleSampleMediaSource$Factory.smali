@@ -17,11 +17,11 @@
 # instance fields
 .field private final dataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
-.field private isCreateCalled:Z
-
 .field private loadErrorHandlingPolicy:Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;
 
 .field private tag:Ljava/lang/Object;
+
+.field private trackId:Ljava/lang/String;
 
 .field private treatLoadErrorsAsEndOfStream:Z
 
@@ -30,10 +30,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/upstream/DataSource$Factory;)V
     .locals 0
 
-    .line 71
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
+    .line 58
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -42,133 +42,95 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->dataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
-    .line 73
+    .line 59
     new-instance p1, Lcom/google/android/exoplayer2/upstream/DefaultLoadErrorHandlingPolicy;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/upstream/DefaultLoadErrorHandlingPolicy;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->loadErrorHandlingPolicy:Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;
 
+    const/4 p1, 0x1
+
+    .line 60
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->treatLoadErrorsAsEndOfStream:Z
+
     return-void
 .end method
 
 
 # virtual methods
-.method public createMediaSource(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;J)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;
+.method public createMediaSource(Lcom/google/android/exoplayer2/MediaItem$SubtitleConfiguration;J)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;
     .locals 11
 
-    const/4 v0, 0x1
+    .line 130
+    new-instance v10, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;
 
-    .line 149
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->isCreateCalled:Z
-
-    .line 150
-    new-instance v0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->trackId:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->dataSourceFactory:Lcom/google/android/exoplayer2/upstream/DataSource$Factory;
 
-    iget-object v7, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->loadErrorHandlingPolicy:Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;
+    iget-object v6, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->loadErrorHandlingPolicy:Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;
 
-    iget-boolean v8, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->treatLoadErrorsAsEndOfStream:Z
+    iget-boolean v7, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->treatLoadErrorsAsEndOfStream:Z
 
-    iget-object v9, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->tag:Ljava/lang/Object;
+    iget-object v8, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->tag:Ljava/lang/Object;
 
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
-    move-object v1, v0
+    move-object v0, v10
 
     move-object v2, p1
 
-    move-object v4, p2
+    move-wide v4, p2
 
-    move-wide v5, p3
+    invoke-direct/range {v0 .. v9}, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;-><init>(Ljava/lang/String;Lcom/google/android/exoplayer2/MediaItem$SubtitleConfiguration;Lcom/google/android/exoplayer2/upstream/DataSource$Factory;JLcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;ZLjava/lang/Object;Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$1;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;-><init>(Landroid/net/Uri;Lcom/google/android/exoplayer2/upstream/DataSource$Factory;Lcom/google/android/exoplayer2/Format;JLcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;ZLjava/lang/Object;Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$1;)V
-
-    return-object v0
-.end method
-
-.method public createMediaSource(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;JLandroid/os/Handler;Lcom/google/android/exoplayer2/source/MediaSourceEventListener;)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 171
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->createMediaSource(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;J)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource;
-
-    move-result-object p1
-
-    if-eqz p5, :cond_0
-
-    if-eqz p6, :cond_0
-
-    .line 173
-    invoke-virtual {p1, p5, p6}, Lcom/google/android/exoplayer2/source/BaseMediaSource;->addEventListener(Landroid/os/Handler;Lcom/google/android/exoplayer2/source/MediaSourceEventListener;)V
-
-    :cond_0
-    return-object p1
+    return-object v10
 .end method
 
 .method public setLoadErrorHandlingPolicy(Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;
-    .locals 1
+    .locals 0
 
-    .line 119
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->isCreateCalled:Z
+    if-eqz p1, :cond_0
 
-    xor-int/lit8 v0, v0, 0x1
+    goto :goto_0
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    .line 102
+    :cond_0
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/DefaultLoadErrorHandlingPolicy;
 
-    .line 120
+    invoke-direct {p1}, Lcom/google/android/exoplayer2/upstream/DefaultLoadErrorHandlingPolicy;-><init>()V
+
+    :goto_0
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->loadErrorHandlingPolicy:Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;
 
     return-object p0
 .end method
 
-.method public setMinLoadableRetryCount(I)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .line 105
-    new-instance v0, Lcom/google/android/exoplayer2/upstream/DefaultLoadErrorHandlingPolicy;
-
-    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/upstream/DefaultLoadErrorHandlingPolicy;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->setLoadErrorHandlingPolicy(Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method public setTag(Ljava/lang/Object;)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;
-    .locals 1
+    .locals 0
 
-    .line 85
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->isCreateCalled:Z
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
-
-    .line 86
+    .line 72
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->tag:Ljava/lang/Object;
 
     return-object p0
 .end method
 
+.method public setTrackId(Ljava/lang/String;)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 85
+    iput-object p1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->trackId:Ljava/lang/String;
+
+    return-object p0
+.end method
+
 .method public setTreatLoadErrorsAsEndOfStream(Z)Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;
-    .locals 1
+    .locals 0
 
-    .line 135
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->isCreateCalled:Z
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
-
-    .line 136
+    .line 117
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/source/SingleSampleMediaSource$Factory;->treatLoadErrorsAsEndOfStream:Z
 
     return-object p0

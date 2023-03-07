@@ -41,6 +41,9 @@
     .locals 1
 
     .line 69
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 70
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->upstream:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/upstream/DataSource;->addTransferListener(Lcom/google/android/exoplayer2/upstream/TransferListener;)V
@@ -56,17 +59,17 @@
         }
     .end annotation
 
-    .line 120
+    .line 121
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->cipherInputStream:Ljavax/crypto/CipherInputStream;
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 121
+    .line 122
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->cipherInputStream:Ljavax/crypto/CipherInputStream;
 
-    .line 122
+    .line 123
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->upstream:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->close()V
@@ -86,7 +89,7 @@
 
     const-string v0, "AES/CBC/PKCS7Padding"
 
-    .line 127
+    .line 128
     invoke-static {v0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     move-result-object v0
@@ -107,7 +110,7 @@
         }
     .end annotation
 
-    .line 115
+    .line 116
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->upstream:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->getResponseHeaders()Ljava/util/Map;
@@ -120,7 +123,7 @@
 .method public final getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 110
+    .line 111
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->upstream:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->getUri()Landroid/net/Uri;
@@ -138,7 +141,7 @@
         }
     .end annotation
 
-    .line 76
+    .line 77
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->getCipherInstance()Ljavax/crypto/Cipher;
 
@@ -147,7 +150,7 @@
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 81
+    .line 82
     new-instance v1, Ljavax/crypto/spec/SecretKeySpec;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->encryptionKey:[B
@@ -156,7 +159,7 @@
 
     invoke-direct {v1, v2, v3}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
-    .line 82
+    .line 83
     new-instance v2, Ljavax/crypto/spec/IvParameterSpec;
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->encryptionIv:[B
@@ -165,28 +168,28 @@
 
     const/4 v3, 0x2
 
-    .line 85
+    .line 86
     :try_start_1
     invoke-virtual {v0, v3, v1, v2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
     :try_end_1
     .catch Ljava/security/InvalidKeyException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/security/InvalidAlgorithmParameterException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 90
+    .line 91
     new-instance v1, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->upstream:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-direct {v1, v2, p1}, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    .line 91
+    .line 92
     new-instance p1, Ljavax/crypto/CipherInputStream;
 
     invoke-direct {p1, v1, v0}, Ljavax/crypto/CipherInputStream;-><init>(Ljava/io/InputStream;Ljavax/crypto/Cipher;)V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->cipherInputStream:Ljavax/crypto/CipherInputStream;
 
-    .line 92
+    .line 93
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->open()V
 
     const-wide/16 v0, -0x1
@@ -201,7 +204,7 @@
     :catch_1
     move-exception p1
 
-    .line 87
+    .line 88
     :goto_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -217,7 +220,7 @@
     :catch_3
     move-exception p1
 
-    .line 78
+    .line 79
     :goto_1
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -234,12 +237,12 @@
         }
     .end annotation
 
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->cipherInputStream:Ljavax/crypto/CipherInputStream;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 100
+    .line 101
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/Aes128DataSource;->cipherInputStream:Ljavax/crypto/CipherInputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljavax/crypto/CipherInputStream;->read([BII)I

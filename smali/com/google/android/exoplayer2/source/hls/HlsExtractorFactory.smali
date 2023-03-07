@@ -3,14 +3,6 @@
 .source "HlsExtractorFactory.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/exoplayer2/source/hls/HlsExtractorFactory$Result;
-    }
-.end annotation
-
-
 # static fields
 .field public static final DEFAULT:Lcom/google/android/exoplayer2/source/hls/HlsExtractorFactory;
 
@@ -19,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 61
+    .line 33
     new-instance v0, Lcom/google/android/exoplayer2/source/hls/DefaultHlsExtractorFactory;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/source/hls/DefaultHlsExtractorFactory;-><init>()V
@@ -31,11 +23,10 @@
 
 
 # virtual methods
-.method public abstract createExtractor(Lcom/google/android/exoplayer2/extractor/Extractor;Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/util/List;Lcom/google/android/exoplayer2/util/TimestampAdjuster;Ljava/util/Map;Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Lcom/google/android/exoplayer2/source/hls/HlsExtractorFactory$Result;
+.method public abstract createExtractor(Landroid/net/Uri;Lcom/google/android/exoplayer2/Format;Ljava/util/List;Lcom/google/android/exoplayer2/util/TimestampAdjuster;Ljava/util/Map;Lcom/google/android/exoplayer2/extractor/ExtractorInput;Lcom/google/android/exoplayer2/analytics/PlayerId;)Lcom/google/android/exoplayer2/source/hls/HlsMediaChunkExtractor;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/exoplayer2/extractor/Extractor;",
             "Landroid/net/Uri;",
             "Lcom/google/android/exoplayer2/Format;",
             "Ljava/util/List<",
@@ -48,14 +39,14 @@
             "Ljava/lang/String;",
             ">;>;",
             "Lcom/google/android/exoplayer2/extractor/ExtractorInput;",
+            "Lcom/google/android/exoplayer2/analytics/PlayerId;",
             ")",
-            "Lcom/google/android/exoplayer2/source/hls/HlsExtractorFactory$Result;"
+            "Lcom/google/android/exoplayer2/source/hls/HlsMediaChunkExtractor;"
         }
     .end annotation
 
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/InterruptedException;,
             Ljava/io/IOException;
         }
     .end annotation

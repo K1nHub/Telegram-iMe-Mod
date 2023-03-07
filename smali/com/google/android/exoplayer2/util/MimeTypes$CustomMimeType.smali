@@ -26,16 +26,16 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 0
 
-    .line 469
+    .line 742
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 470
+    .line 743
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/MimeTypes$CustomMimeType;->mimeType:Ljava/lang/String;
 
-    .line 471
+    .line 744
     iput-object p2, p0, Lcom/google/android/exoplayer2/util/MimeTypes$CustomMimeType;->codecPrefix:Ljava/lang/String;
 
-    .line 472
+    .line 745
     iput p3, p0, Lcom/google/android/exoplayer2/util/MimeTypes$CustomMimeType;->trackType:I
 
     return-void

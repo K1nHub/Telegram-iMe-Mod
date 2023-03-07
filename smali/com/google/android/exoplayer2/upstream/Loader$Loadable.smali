@@ -21,8 +21,7 @@
 .method public abstract load()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

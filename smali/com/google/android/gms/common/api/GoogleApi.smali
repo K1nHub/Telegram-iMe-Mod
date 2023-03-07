@@ -43,9 +43,6 @@
 .field private final zah:I
 
 .field private final zai:Lcom/google/android/gms/common/api/GoogleApiClient;
-    .annotation runtime Lorg/checkerframework/checker/initialization/qual/NotOnlyInitialized;
-    .end annotation
-.end field
 
 .field private final zaj:Lcom/google/android/gms/common/api/internal/StatusExceptionMapper;
 

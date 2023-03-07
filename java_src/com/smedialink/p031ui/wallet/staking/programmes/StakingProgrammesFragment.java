@@ -1,0 +1,288 @@
+package com.smedialink.p031ui.wallet.staking.programmes;
+
+import android.content.Context;
+import android.view.View;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.entity.node.BaseNode;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.chad.library.adapter.base.listener.OnLoadMoreListener;
+import com.chad.library.adapter.base.module.BaseLoadMoreModule;
+import com.smedialink.model.common.ScreenType;
+import com.smedialink.model.staking.StakingDetailsItem;
+import com.smedialink.model.staking.StakingProgrammeItem;
+import com.smedialink.model.wallet.details.TokenDetailsArgs;
+import com.smedialink.p031ui.base.WalletAuthFragment;
+import com.smedialink.p031ui.wallet.home.p032v2.details.WalletTokenDetailsFragment;
+import com.smedialink.p031ui.wallet.staking.programmes.adapter.StakingProgrammesRecycleAdapter;
+import com.smedialink.p031ui.wallet.staking.programmes.adapter.diff.StakingProgrammesDiffCallback;
+import com.smedialink.p031ui.wallet.swap.WalletSwapProtocolsFragment;
+import com.smedialink.storage.domain.model.crypto.level.AccountLevel;
+import com.smedialink.storage.domain.model.staking.StakingTabType;
+import com.smedialink.storage.domain.model.wallet.staking.StakingOrderType;
+import com.smedialink.storage.domain.model.wallet.token.TokenCode;
+import com.smedialink.utils.dialogs.DialogsFactoryKt;
+import com.smedialink.utils.extentions.delegate.ResettableLazy;
+import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
+import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
+import java.util.ArrayList;
+import java.util.List;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.PropertyReference1Impl;
+import kotlin.jvm.internal.Reflection;
+import kotlin.reflect.KProperty;
+import moxy.MvpDelegate;
+import moxy.ktx.MoxyKtxDelegate;
+import org.fork.utils.Callbacks$Callback;
+import org.fork.utils.Callbacks$Callback1;
+import org.koin.p047mp.KoinPlatformTools;
+import org.telegram.messenger.C3158R;
+import org.telegram.messenger.databinding.ForkFragmentStakingProgrammesBinding;
+import org.telegram.p048ui.ActionBar.ThemeDescription;
+import org.telegram.p048ui.ManageLinksActivity;
+/* compiled from: StakingProgrammesFragment.kt */
+/* renamed from: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment */
+/* loaded from: classes3.dex */
+public final class StakingProgrammesFragment extends WalletAuthFragment implements StakingProgrammesView {
+    static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(StakingProgrammesFragment.class, "presenter", "getPresenter()Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(StakingProgrammesFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentStakingProgrammesBinding;", 0))};
+    public static final Companion Companion = new Companion(null);
+    private final ResettableLazy binding$delegate;
+    private final MoxyKtxDelegate presenter$delegate;
+    private final Lazy stakingProgrammesRecycleAdapter$delegate;
+
+    public StakingProgrammesFragment(StakingTabType stakingTabType) {
+        Lazy lazy;
+        Intrinsics.checkNotNullParameter(stakingTabType, "stakingTabType");
+        StakingProgrammesFragment$presenter$2 stakingProgrammesFragment$presenter$2 = new StakingProgrammesFragment$presenter$2(this, stakingTabType);
+        MvpDelegate mvpDelegate = getMvpDelegate();
+        Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, StakingProgrammesPresenter.class.getName() + ".presenter", stakingProgrammesFragment$presenter$2);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new StakingProgrammesFragment$special$$inlined$inject$default$1(this, null, null));
+        this.stakingProgrammesRecycleAdapter$delegate = lazy;
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new StakingProgrammesFragment$binding$2(this), 1, (Object) null);
+    }
+
+    private final StakingProgrammesPresenter getPresenter() {
+        return (StakingProgrammesPresenter) this.presenter$delegate.getValue(this, $$delegatedProperties[0]);
+    }
+
+    private final StakingProgrammesRecycleAdapter getStakingProgrammesRecycleAdapter() {
+        return (StakingProgrammesRecycleAdapter) this.stakingProgrammesRecycleAdapter$delegate.getValue();
+    }
+
+    private final ForkFragmentStakingProgrammesBinding getBinding() {
+        return (ForkFragmentStakingProgrammesBinding) this.binding$delegate.getValue(this, $$delegatedProperties[1]);
+    }
+
+    @Override // com.smedialink.p031ui.base.mvp.MvpFragment
+    public View onCreateView(Context context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        setupListeners();
+        setupRecycleView();
+        RecyclerView root = getBinding().getRoot();
+        Intrinsics.checkNotNullExpressionValue(root, "binding.root");
+        return root;
+    }
+
+    @Override // com.smedialink.p031ui.wallet.staking.programmes.StakingProgrammesView
+    public void renderItems(List<BaseNode> items) {
+        Intrinsics.checkNotNullParameter(items, "items");
+        BaseQuickAdapter.setDiffNewData$default(getStakingProgrammesRecycleAdapter(), items, null, 2, null);
+    }
+
+    @Override // com.smedialink.p031ui.base.mvp.LoadMoreView
+    public void onLoadMoreComplete() {
+        getStakingProgrammesRecycleAdapter().getLoadMoreModule().loadMoreEnd(true);
+    }
+
+    @Override // com.smedialink.p031ui.base.mvp.LoadMoreView
+    public void onLoadMoreError() {
+        getStakingProgrammesRecycleAdapter().getLoadMoreModule().loadMoreFail();
+    }
+
+    @Override // com.smedialink.p031ui.wallet.staking.programmes.StakingProgrammesView
+    public void openStakingDetailsScreen(StakingDetailsItem stakingDetails) {
+        Intrinsics.checkNotNullParameter(stakingDetails, "stakingDetails");
+        presentFragment(WalletTokenDetailsFragment.Companion.newInstance(new TokenDetailsArgs.Staking(stakingDetails)));
+    }
+
+    @Override // com.smedialink.p031ui.wallet.staking.programmes.StakingProgrammesView
+    public void openDepositScreen(StakingDetailsItem stakingDetails) {
+        Intrinsics.checkNotNullParameter(stakingDetails, "stakingDetails");
+        presentFragment(ManageLinksActivity.newInstanceForStakingReplenish(stakingDetails, null));
+    }
+
+    @Override // com.smedialink.p031ui.wallet.staking.programmes.StakingProgrammesView
+    public void showSelectStakingOrderTypeDialog(StakingOrderType orderType) {
+        Intrinsics.checkNotNullParameter(orderType, "orderType");
+        DialogsFactoryKt.showSelectStakingOrderDialog(this, getResourceManager(), orderType, new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda4
+            @Override // org.fork.utils.Callbacks$Callback1
+            public final void invoke(Object obj) {
+                StakingProgrammesFragment.m1744showSelectStakingOrderTypeDialog$lambda1(StakingProgrammesFragment.this, (StakingOrderType) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: showSelectStakingOrderTypeDialog$lambda-1  reason: not valid java name */
+    public static final void m1744showSelectStakingOrderTypeDialog$lambda1(StakingProgrammesFragment this$0, StakingOrderType it) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        StakingProgrammesPresenter presenter = this$0.getPresenter();
+        Intrinsics.checkNotNullExpressionValue(it, "it");
+        presenter.onStakingOrderTypeSelected(it);
+    }
+
+    @Override // com.smedialink.p031ui.wallet.staking.programmes.StakingProgrammesView
+    public void showLevelRequiredDialog(AccountLevel minimalRank) {
+        Intrinsics.checkNotNullParameter(minimalRank, "minimalRank");
+        DialogsFactoryKt.showStakingLevelRequiredDialog(this, getResourceManager(), minimalRank, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda5
+            @Override // org.fork.utils.Callbacks$Callback
+            public final void invoke() {
+                StakingProgrammesFragment.m1743showLevelRequiredDialog$lambda2(StakingProgrammesFragment.this);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: showLevelRequiredDialog$lambda-2  reason: not valid java name */
+    public static final void m1743showLevelRequiredDialog$lambda2(StakingProgrammesFragment this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.presentFragment(WalletSwapProtocolsFragment.Companion.newInstance(ScreenType.FULLSCREEN, TokenCode.LIME));
+    }
+
+    @Override // org.telegram.p048ui.ActionBar.BaseFragment
+    public ArrayList<ThemeDescription> getThemeDescriptions() {
+        ArrayList<ThemeDescription> arrayListOf;
+        RecyclerView root = getBinding().getRoot();
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        final StakingProgrammesRecycleAdapter stakingProgrammesRecycleAdapter = getStakingProgrammesRecycleAdapter();
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(root, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda6
+            @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            public final void didSetColor() {
+                StakingProgrammesRecycleAdapter.this.notifyDataSetChanged();
+            }
+
+            @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            public /* synthetic */ void onAnimationProgress(float f) {
+                ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
+            }
+        }, "windowBackgroundGray"));
+        return arrayListOf;
+    }
+
+    private final void setupRecycleView() {
+        RecyclerView recyclerView = getBinding().recycleStakingProgrammes;
+        final StakingProgrammesRecycleAdapter stakingProgrammesRecycleAdapter = getStakingProgrammesRecycleAdapter();
+        stakingProgrammesRecycleAdapter.getFilterProvider().setOnFilterClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda1
+            @Override // com.chad.library.adapter.base.listener.OnItemClickListener
+            public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                StakingProgrammesFragment.m1742setupRecycleView$lambda5$lambda4$lambda3(StakingProgrammesFragment.this, stakingProgrammesRecycleAdapter, baseQuickAdapter, view, i);
+            }
+        });
+        stakingProgrammesRecycleAdapter.setDiffCallback(new StakingProgrammesDiffCallback());
+        setupLoadMore(stakingProgrammesRecycleAdapter);
+        Unit unit = Unit.INSTANCE;
+        recyclerView.setAdapter(stakingProgrammesRecycleAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setupRecycleView$lambda-5$lambda-4$lambda-3  reason: not valid java name */
+    public static final void m1742setupRecycleView$lambda5$lambda4$lambda3(StakingProgrammesFragment this$0, StakingProgrammesRecycleAdapter this_apply, BaseQuickAdapter noName_0, View noName_1, int i) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
+        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        this$0.getPresenter().onFilterSelected(this_apply.getFilterProvider().getFiltersRecycleAdapter().getItem(i).getId());
+    }
+
+    private final void setupLoadMore(StakingProgrammesRecycleAdapter stakingProgrammesRecycleAdapter) {
+        BaseLoadMoreModule loadMoreModule = stakingProgrammesRecycleAdapter.getLoadMoreModule();
+        loadMoreModule.setPreLoadNumber(5);
+        loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda3
+            @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
+            public final void onLoadMore() {
+                StakingProgrammesFragment.m1741setupLoadMore$lambda8$lambda7$lambda6(StakingProgrammesFragment.this);
+            }
+        });
+        stakingProgrammesRecycleAdapter.setAnimationEnable(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setupLoadMore$lambda-8$lambda-7$lambda-6  reason: not valid java name */
+    public static final void m1741setupLoadMore$lambda8$lambda7$lambda6(StakingProgrammesFragment this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        StakingProgrammesPresenter.loadStakingProgrammes$default(this$0.getPresenter(), false, false, 3, null);
+    }
+
+    private final void setupListeners() {
+        final StakingProgrammesRecycleAdapter stakingProgrammesRecycleAdapter = getStakingProgrammesRecycleAdapter();
+        stakingProgrammesRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda2
+            @Override // com.chad.library.adapter.base.listener.OnItemClickListener
+            public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                StakingProgrammesFragment.m1740setupListeners$lambda11$lambda9(StakingProgrammesRecycleAdapter.this, this, baseQuickAdapter, view, i);
+            }
+        });
+        stakingProgrammesRecycleAdapter.setOnItemChildClickListener(new OnItemChildClickListener() { // from class: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$$ExternalSyntheticLambda0
+            @Override // com.chad.library.adapter.base.listener.OnItemChildClickListener
+            public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                StakingProgrammesFragment.m1739setupListeners$lambda11$lambda10(StakingProgrammesFragment.this, baseQuickAdapter, view, i);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setupListeners$lambda-11$lambda-9  reason: not valid java name */
+    public static final void m1740setupListeners$lambda11$lambda9(StakingProgrammesRecycleAdapter this_with, StakingProgrammesFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+        Intrinsics.checkNotNullParameter(this_with, "$this_with");
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        BaseNode baseNode = (BaseNode) this_with.getItem(i);
+        if (baseNode instanceof StakingProgrammeItem) {
+            this$0.getPresenter().onStakingProgrammeClick((StakingProgrammeItem) baseNode);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setupListeners$lambda-11$lambda-10  reason: not valid java name */
+    public static final void m1739setupListeners$lambda11$lambda10(StakingProgrammesFragment this$0, BaseQuickAdapter noName_0, View view, int i) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+        Intrinsics.checkNotNullParameter(view, "view");
+        int id = view.getId();
+        if (id == C3158R.C3161id.image_header_right_button) {
+            this$0.getPresenter().showSelectStakingOrderTypeDialog();
+        } else if (id == C3158R.C3161id.image_staking_filters_info) {
+            this$0.showStakingFiltersInfoDialog();
+        }
+    }
+
+    private final void showStakingFiltersInfoDialog() {
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, getResourceManager().getString(C3158R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3158R.string.staking_programmes_filters_info_description), getResourceManager().getString(C3158R.string.common_ok), null, 8, null));
+    }
+
+    /* compiled from: StakingProgrammesFragment.kt */
+    /* renamed from: com.smedialink.ui.wallet.staking.programmes.StakingProgrammesFragment$Companion */
+    /* loaded from: classes3.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final StakingProgrammesFragment newInstance(StakingTabType stakingTabType) {
+            Intrinsics.checkNotNullParameter(stakingTabType, "stakingTabType");
+            return new StakingProgrammesFragment(stakingTabType);
+        }
+    }
+}

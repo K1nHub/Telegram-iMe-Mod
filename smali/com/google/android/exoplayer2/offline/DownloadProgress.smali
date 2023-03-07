@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public bytesDownloaded:J
+.field public volatile bytesDownloaded:J
 
-.field public percentDownloaded:F
+.field public volatile percentDownloaded:F
 
 
 # direct methods

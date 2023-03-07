@@ -19,3 +19,9 @@
 
     return-object v0
 .end method
+
+.method public static $default$populateMediaMetadata(Lcom/google/android/exoplayer2/metadata/Metadata$Entry;Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+    .locals 0
+
+    return-void
+.end method

@@ -39,6 +39,8 @@
 
 .field private audioTrack:Landroid/media/AudioTrack;
 
+.field private audioTrackPlaybackSpeed:F
+
 .field private bufferSize:I
 
 .field private bufferSizeUs:J
@@ -73,6 +75,8 @@
 
 .field private nextPlayheadOffsetIndex:I
 
+.field private notifiedPositionIncreasing:Z
+
 .field private outputPcmFrameSize:I
 
 .field private outputSampleRate:I
@@ -100,10 +104,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;)V
     .locals 2
 
-    .line 179
+    .line 201
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 180
+    .line 202
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -112,14 +116,14 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
 
-    .line 181
+    .line 203
     sget p1, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v0, 0x12
 
     if-lt p1, v0, :cond_0
 
-    .line 183
+    .line 205
     :try_start_0
     const-class p1, Landroid/media/AudioTrack;
 
@@ -141,7 +145,7 @@
 
     new-array p1, p1, [J
 
-    .line 188
+    .line 210
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsets:[J
 
     return-void
@@ -150,14 +154,14 @@
 .method private forceHasPendingData()Z
     .locals 5
 
-    .line 501
+    .line 552
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
-    .line 502
+    .line 553
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -172,7 +176,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 503
+    .line 554
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPosition()J
 
     move-result-wide v0
@@ -201,7 +205,7 @@
 
     mul-long p1, p1, v0
 
-    .line 483
+    .line 533
     iget v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->outputSampleRate:I
 
     int-to-long v0, v0
@@ -214,7 +218,7 @@
 .method private getPlaybackHeadPosition()J
     .locals 11
 
-    .line 528
+    .line 579
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -223,7 +227,7 @@
 
     check-cast v0, Landroid/media/AudioTrack;
 
-    .line 529
+    .line 580
     iget-wide v1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopTimestampUs:J
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
@@ -232,7 +236,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 531
+    .line 582
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -245,7 +249,7 @@
 
     sub-long/2addr v0, v2
 
-    .line 532
+    .line 583
     iget v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->outputSampleRate:I
 
     int-to-long v2, v2
@@ -256,7 +260,7 @@
 
     div-long/2addr v0, v2
 
-    .line 533
+    .line 584
     iget-wide v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->endPlaybackHeadPosition:J
 
     iget-wide v4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopPlaybackHeadPosition:J
@@ -269,7 +273,7 @@
 
     return-wide v0
 
-    .line 536
+    .line 587
     :cond_0
     invoke-virtual {v0}, Landroid/media/AudioTrack;->getPlayState()I
 
@@ -286,7 +290,7 @@
     :cond_1
     const-wide v7, 0xffffffffL
 
-    .line 542
+    .line 593
     invoke-virtual {v0}, Landroid/media/AudioTrack;->getPlaybackHeadPosition()I
 
     move-result v0
@@ -295,7 +299,7 @@
 
     and-long/2addr v7, v9
 
-    .line 543
+    .line 594
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z
 
     if-eqz v0, :cond_3
@@ -308,18 +312,18 @@
 
     if-nez v0, :cond_2
 
-    .line 548
+    .line 599
     iget-wide v9, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
 
     iput-wide v9, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->passthroughWorkaroundPauseOffset:J
 
-    .line 550
+    .line 601
     :cond_2
     iget-wide v9, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->passthroughWorkaroundPauseOffset:J
 
     add-long/2addr v7, v9
 
-    .line 553
+    .line 604
     :cond_3
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
@@ -331,7 +335,7 @@
 
     if-nez v0, :cond_5
 
-    .line 554
+    .line 605
     iget-wide v9, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
 
     cmp-long v0, v9, v5
@@ -342,31 +346,31 @@
 
     if-ne v1, v0, :cond_5
 
-    .line 562
+    .line 613
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceResetWorkaroundTimeMs:J
 
     cmp-long v2, v0, v3
 
     if-nez v2, :cond_4
 
-    .line 563
+    .line 614
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceResetWorkaroundTimeMs:J
 
-    .line 565
+    .line 616
     :cond_4
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
 
     return-wide v0
 
-    .line 567
+    .line 618
     :cond_5
     iput-wide v3, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceResetWorkaroundTimeMs:J
 
-    .line 571
+    .line 622
     :cond_6
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
 
@@ -374,7 +378,7 @@
 
     if-lez v2, :cond_7
 
-    .line 573
+    .line 624
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->rawPlaybackHeadWrapCount:J
 
     const-wide/16 v2, 0x1
@@ -383,11 +387,11 @@
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->rawPlaybackHeadWrapCount:J
 
-    .line 575
+    .line 626
     :cond_7
     iput-wide v7, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
 
-    .line 576
+    .line 627
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->rawPlaybackHeadWrapCount:J
 
     const/16 v2, 0x20
@@ -402,7 +406,7 @@
 .method private getPlaybackHeadPositionUs()J
     .locals 2
 
-    .line 516
+    .line 567
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPosition()J
 
     move-result-wide v0
@@ -417,7 +421,7 @@
 .method private maybePollAndCheckTimestamp(JJ)V
     .locals 11
 
-    .line 428
+    .line 478
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -426,7 +430,7 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
-    .line 429
+    .line 479
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->maybePollTimestamp(J)Z
 
     move-result v1
@@ -435,20 +439,20 @@
 
     return-void
 
-    .line 434
+    .line 484
     :cond_0
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->getTimestampSystemTimeUs()J
 
     move-result-wide v5
 
-    .line 435
+    .line 485
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->getTimestampPositionFrames()J
 
     move-result-wide v3
 
     sub-long v1, v5, p1
 
-    .line 436
+    .line 486
     invoke-static {v1, v2}, Ljava/lang/Math;->abs(J)J
 
     move-result-wide v1
@@ -459,7 +463,7 @@
 
     if-lez v9, :cond_1
 
-    .line 437
+    .line 487
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
 
     move-wide v7, p1
@@ -468,12 +472,12 @@
 
     invoke-interface/range {v2 .. v10}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;->onSystemTimeUsMismatch(JJJJ)V
 
-    .line 442
+    .line 492
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->rejectTimestamp()V
 
     goto :goto_0
 
-    .line 443
+    .line 493
     :cond_1
     invoke-direct {p0, v3, v4}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->framesToDurationUs(J)J
 
@@ -489,7 +493,7 @@
 
     if-lez v9, :cond_2
 
-    .line 445
+    .line 495
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
 
     move-wide v7, p1
@@ -498,12 +502,12 @@
 
     invoke-interface/range {v2 .. v10}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;->onPositionFramesMismatch(JJJJ)V
 
-    .line 450
+    .line 500
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->rejectTimestamp()V
 
     goto :goto_0
 
-    .line 452
+    .line 502
     :cond_2
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->acceptTimestamp()V
 
@@ -514,7 +518,7 @@
 .method private maybeSampleSyncParams()V
     .locals 13
 
-    .line 397
+    .line 447
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPositionUs()J
 
     move-result-wide v0
@@ -527,7 +531,7 @@
 
     return-void
 
-    .line 402
+    .line 452
     :cond_0
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
@@ -537,7 +541,7 @@
 
     div-long/2addr v4, v6
 
-    .line 403
+    .line 453
     iget-wide v6, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPlayheadSampleTimeUs:J
 
     sub-long v6, v4, v6
@@ -548,7 +552,7 @@
 
     if-ltz v10, :cond_2
 
-    .line 405
+    .line 455
     iget-object v6, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsets:[J
 
     iget v7, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->nextPlayheadOffsetIndex:I
@@ -561,37 +565,37 @@
 
     const/16 v6, 0xa
 
-    .line 406
+    .line 456
     rem-int/2addr v7, v6
 
     iput v7, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->nextPlayheadOffsetIndex:I
 
-    .line 407
+    .line 457
     iget v7, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsetCount:I
 
     if-ge v7, v6, :cond_1
 
     add-int/lit8 v7, v7, 0x1
 
-    .line 408
+    .line 458
     iput v7, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsetCount:I
 
-    .line 410
+    .line 460
     :cond_1
     iput-wide v4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPlayheadSampleTimeUs:J
 
-    .line 411
+    .line 461
     iput-wide v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->smoothedPlayheadOffsetUs:J
 
     const/4 v2, 0x0
 
-    .line 412
+    .line 462
     :goto_0
     iget v3, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsetCount:I
 
     if-ge v2, v3, :cond_2
 
-    .line 413
+    .line 463
     iget-wide v6, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->smoothedPlayheadOffsetUs:J
 
     iget-object v8, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsets:[J
@@ -610,7 +614,7 @@
 
     goto :goto_0
 
-    .line 417
+    .line 467
     :cond_2
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z
 
@@ -618,11 +622,11 @@
 
     return-void
 
-    .line 423
+    .line 473
     :cond_3
     invoke-direct {p0, v4, v5, v0, v1}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->maybePollAndCheckTimestamp(JJ)V
 
-    .line 424
+    .line 474
     invoke-direct {p0, v4, v5}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->maybeUpdateLatency(J)V
 
     return-void
@@ -631,7 +635,7 @@
 .method private maybeUpdateLatency(J)V
     .locals 7
 
-    .line 457
+    .line 507
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->isOutputPcm:Z
 
     if-eqz v0, :cond_1
@@ -650,11 +654,11 @@
 
     if-ltz v5, :cond_1
 
-    .line 463
+    .line 513
     :try_start_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
-    .line 464
+    .line 514
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -693,7 +697,7 @@
 
     const-wide/16 v2, 0x0
 
-    .line 468
+    .line 518
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
@@ -706,12 +710,12 @@
 
     if-lez v6, :cond_0
 
-    .line 471
+    .line 521
     iget-object v4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
 
     invoke-interface {v4, v0, v1}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;->onInvalidLatency(J)V
 
-    .line 472
+    .line 522
     iput-wide v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->latencyUs:J
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -721,10 +725,10 @@
     :catch_0
     const/4 v0, 0x0
 
-    .line 476
+    .line 526
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getLatencyMethod:Ljava/lang/reflect/Method;
 
-    .line 478
+    .line 528
     :cond_0
     :goto_0
     iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastLatencySampleTimeUs:J
@@ -736,7 +740,7 @@
 .method private static needsPassthroughWorkarounds(I)Z
     .locals 2
 
-    .line 511
+    .line 562
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -768,25 +772,28 @@
 
     const-wide/16 v0, 0x0
 
-    .line 487
+    .line 537
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->smoothedPlayheadOffsetUs:J
 
     const/4 v2, 0x0
 
-    .line 488
+    .line 538
     iput v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsetCount:I
 
-    .line 489
+    .line 539
     iput v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->nextPlayheadOffsetIndex:I
 
-    .line 490
+    .line 540
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPlayheadSampleTimeUs:J
 
-    .line 491
+    .line 541
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSystemTimeUs:J
 
-    .line 492
+    .line 542
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModeSystemTimeUs:J
+
+    .line 543
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->notifiedPositionIncreasing:Z
 
     return-void
 .end method
@@ -796,7 +803,7 @@
 .method public getAvailableBufferSize(J)I
     .locals 4
 
-    .line 334
+    .line 385
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPosition()J
 
     move-result-wide v0
@@ -811,7 +818,7 @@
 
     long-to-int p2, p1
 
-    .line 335
+    .line 386
     iget p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSize:I
 
     sub-int/2addr p1, p2
@@ -820,182 +827,247 @@
 .end method
 
 .method public getCurrentPositionUs(Z)J
-    .locals 14
+    .locals 17
 
-    .line 225
-    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
+    move-object/from16 v0, p0
 
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 259
+    iget-object v1, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
-    move-result-object v0
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Landroid/media/AudioTrack;
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/media/AudioTrack;->getPlayState()I
+    check-cast v1, Landroid/media/AudioTrack;
 
-    move-result v0
+    invoke-virtual {v1}, Landroid/media/AudioTrack;->getPlayState()I
 
-    const/4 v1, 0x3
+    move-result v1
 
-    if-ne v0, v1, :cond_0
+    const/4 v2, 0x3
 
-    .line 226
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->maybeSampleSyncParams()V
+    if-ne v1, v2, :cond_0
 
-    .line 231
+    .line 260
+    invoke-direct/range {p0 .. p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->maybeSampleSyncParams()V
+
+    .line 265
     :cond_0
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    const-wide/16 v2, 0x3e8
+    const-wide/16 v3, 0x3e8
 
-    div-long/2addr v0, v2
+    div-long/2addr v1, v3
 
-    .line 233
-    iget-object v4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
+    .line 267
+    iget-object v5, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
-    invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
+    check-cast v5, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
-    .line 234
-    invoke-virtual {v4}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->hasAdvancingTimestamp()Z
+    .line 268
+    invoke-virtual {v5}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->hasAdvancingTimestamp()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_1
+    if-eqz v6, :cond_1
 
-    .line 237
-    invoke-virtual {v4}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->getTimestampPositionFrames()J
+    .line 271
+    invoke-virtual {v5}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->getTimestampPositionFrames()J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    .line 238
-    invoke-direct {p0, v6, v7}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->framesToDurationUs(J)J
+    .line 272
+    invoke-direct {v0, v7, v8}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->framesToDurationUs(J)J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    .line 239
-    invoke-virtual {v4}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->getTimestampSystemTimeUs()J
+    .line 273
+    invoke-virtual {v5}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->getTimestampSystemTimeUs()J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    sub-long v8, v0, v8
+    sub-long v9, v1, v9
 
-    add-long/2addr v6, v8
+    .line 274
+    iget v5, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrackPlaybackSpeed:F
+
+    .line 275
+    invoke-static {v9, v10, v5}, Lcom/google/android/exoplayer2/util/Util;->getMediaDurationForPlayoutDuration(JF)J
+
+    move-result-wide v9
+
+    add-long/2addr v7, v9
 
     goto :goto_1
 
-    .line 242
+    .line 278
     :cond_1
-    iget v4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsetCount:I
+    iget v5, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->playheadOffsetCount:I
 
-    if-nez v4, :cond_2
+    if-nez v5, :cond_2
 
-    .line 244
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPositionUs()J
+    .line 280
+    invoke-direct/range {p0 .. p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPositionUs()J
 
-    move-result-wide v6
+    move-result-wide v7
 
     goto :goto_0
 
-    .line 249
+    .line 285
     :cond_2
-    iget-wide v6, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->smoothedPlayheadOffsetUs:J
+    iget-wide v7, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->smoothedPlayheadOffsetUs:J
 
-    add-long/2addr v6, v0
+    add-long/2addr v7, v1
 
     :goto_0
     if-nez p1, :cond_3
 
-    const-wide/16 v8, 0x0
+    const-wide/16 v9, 0x0
 
-    .line 252
-    iget-wide v10, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->latencyUs:J
+    .line 288
+    iget-wide v11, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->latencyUs:J
 
-    sub-long/2addr v6, v10
+    sub-long/2addr v7, v11
 
-    invoke-static {v8, v9, v6, v7}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v9, v10, v7, v8}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    .line 256
+    .line 292
     :cond_3
     :goto_1
-    iget-boolean p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSampleUsedGetTimestampMode:Z
+    iget-boolean v5, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSampleUsedGetTimestampMode:Z
 
-    if-eq p1, v5, :cond_4
+    if-eq v5, v6, :cond_4
 
-    .line 258
-    iget-wide v8, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSystemTimeUs:J
+    .line 294
+    iget-wide v9, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSystemTimeUs:J
 
-    iput-wide v8, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModeSystemTimeUs:J
+    iput-wide v9, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModeSystemTimeUs:J
 
-    .line 259
-    iget-wide v8, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPositionUs:J
+    .line 295
+    iget-wide v9, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPositionUs:J
 
-    iput-wide v8, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModePositionUs:J
+    iput-wide v9, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModePositionUs:J
 
-    .line 261
+    .line 297
     :cond_4
-    iget-wide v8, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModeSystemTimeUs:J
+    iget-wide v9, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModeSystemTimeUs:J
 
-    sub-long v8, v0, v8
+    sub-long v9, v1, v9
 
-    const-wide/32 v10, 0xf4240
+    const-wide/32 v11, 0xf4240
 
-    cmp-long p1, v8, v10
+    cmp-long v5, v9, v11
 
-    if-gez p1, :cond_5
+    if-gez v5, :cond_5
 
-    .line 265
-    iget-wide v12, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModePositionUs:J
+    .line 301
+    iget-wide v13, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->previousModePositionUs:J
 
-    add-long/2addr v12, v8
+    iget v5, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrackPlaybackSpeed:F
 
-    mul-long v8, v8, v2
+    .line 303
+    invoke-static {v9, v10, v5}, Lcom/google/android/exoplayer2/util/Util;->getMediaDurationForPlayoutDuration(JF)J
 
-    .line 267
-    div-long/2addr v8, v10
+    move-result-wide v15
 
-    mul-long v6, v6, v8
+    add-long/2addr v13, v15
 
-    sub-long v8, v2, v8
+    mul-long v9, v9, v3
 
-    mul-long v8, v8, v12
+    .line 306
+    div-long/2addr v9, v11
 
-    add-long/2addr v6, v8
+    mul-long v7, v7, v9
 
-    .line 270
-    div-long/2addr v6, v2
+    sub-long v9, v3, v9
 
-    .line 273
+    mul-long v9, v9, v13
+
+    add-long/2addr v7, v9
+
+    .line 309
+    div-long/2addr v7, v3
+
+    .line 312
     :cond_5
-    iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSystemTimeUs:J
+    iget-boolean v3, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->notifiedPositionIncreasing:Z
 
-    .line 274
-    iput-wide v6, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPositionUs:J
+    if-nez v3, :cond_6
 
-    .line 275
-    iput-boolean v5, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSampleUsedGetTimestampMode:Z
+    iget-wide v3, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPositionUs:J
 
-    return-wide v6
+    cmp-long v5, v7, v3
+
+    if-lez v5, :cond_6
+
+    const/4 v5, 0x1
+
+    .line 313
+    iput-boolean v5, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->notifiedPositionIncreasing:Z
+
+    sub-long v3, v7, v3
+
+    .line 314
+    invoke-static {v3, v4}, Lcom/google/android/exoplayer2/util/Util;->usToMs(J)J
+
+    move-result-wide v3
+
+    .line 315
+    iget v5, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrackPlaybackSpeed:F
+
+    .line 316
+    invoke-static {v3, v4, v5}, Lcom/google/android/exoplayer2/util/Util;->getPlayoutDurationForMediaDuration(JF)J
+
+    move-result-wide v3
+
+    .line 319
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v9
+
+    invoke-static {v3, v4}, Lcom/google/android/exoplayer2/util/Util;->usToMs(J)J
+
+    move-result-wide v3
+
+    sub-long/2addr v9, v3
+
+    .line 320
+    iget-object v3, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
+
+    invoke-interface {v3, v9, v10}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;->onPositionAdvancing(J)V
+
+    .line 323
+    :cond_6
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSystemTimeUs:J
+
+    .line 324
+    iput-wide v7, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastPositionUs:J
+
+    .line 325
+    iput-boolean v6, v0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastSampleUsedGetTimestampMode:Z
+
+    return-wide v7
 .end method
 
 .method public handleEndOfStream(J)V
     .locals 4
 
-    .line 353
+    .line 404
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPosition()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopPlaybackHeadPosition:J
 
-    .line 354
+    .line 405
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -1006,7 +1078,7 @@
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopTimestampUs:J
 
-    .line 355
+    .line 406
     iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->endPlaybackHeadPosition:J
 
     return-void
@@ -1015,7 +1087,7 @@
 .method public hasPendingData(J)Z
     .locals 3
 
-    .line 365
+    .line 416
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPosition()J
 
     move-result-wide v0
@@ -1024,7 +1096,6 @@
 
     if-gtz v2, :cond_1
 
-    .line 366
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceHasPendingData()Z
 
     move-result p1
@@ -1049,7 +1120,7 @@
 .method public isPlaying()Z
     .locals 2
 
-    .line 286
+    .line 337
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1080,7 +1151,7 @@
 .method public isStalled(J)Z
     .locals 5
 
-    .line 340
+    .line 391
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceResetWorkaroundTimeMs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
@@ -1095,7 +1166,7 @@
 
     if-lez v2, :cond_0
 
-    .line 342
+    .line 393
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
@@ -1124,7 +1195,7 @@
 .method public mayHandleBuffer(J)Z
     .locals 8
 
-    .line 297
+    .line 348
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1137,7 +1208,7 @@
 
     move-result v0
 
-    .line 298
+    .line 349
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z
 
     const/4 v2, 0x1
@@ -1150,7 +1221,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 303
+    .line 354
     iput-boolean v3, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->hasData:Z
 
     return v3
@@ -1158,7 +1229,7 @@
     :cond_0
     if-ne v0, v2, :cond_1
 
-    .line 310
+    .line 361
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->getPlaybackHeadPosition()J
 
     move-result-wide v4
@@ -1171,11 +1242,11 @@
 
     return v3
 
-    .line 315
+    .line 366
     :cond_1
     iget-boolean v1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->hasData:Z
 
-    .line 316
+    .line 367
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->hasPendingData(J)Z
 
     move-result p1
@@ -1188,17 +1259,14 @@
 
     if-eq v0, v2, :cond_2
 
-    .line 317
+    .line 369
     iget-object p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->listener:Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker$Listener;
 
-    if-eqz p1, :cond_2
-
-    .line 318
     iget p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSize:I
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSizeUs:J
 
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/C;->usToMs(J)J
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Util;->usToMs(J)J
 
     move-result-wide v0
 
@@ -1211,10 +1279,10 @@
 .method public pause()Z
     .locals 5
 
-    .line 375
+    .line 425
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->resetSyncParams()V
 
-    .line 376
+    .line 426
     iget-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopTimestampUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
@@ -1223,7 +1291,7 @@
 
     if-nez v4, :cond_0
 
-    .line 379
+    .line 429
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1247,116 +1315,151 @@
 .method public reset()V
     .locals 1
 
-    .line 391
+    .line 441
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->resetSyncParams()V
 
     const/4 v0, 0x0
 
-    .line 392
+    .line 442
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
-    .line 393
+    .line 443
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
     return-void
 .end method
 
-.method public setAudioTrack(Landroid/media/AudioTrack;III)V
+.method public setAudioTrack(Landroid/media/AudioTrack;ZIII)V
     .locals 2
 
-    .line 206
+    .line 230
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrack:Landroid/media/AudioTrack;
 
-    .line 207
-    iput p3, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->outputPcmFrameSize:I
+    .line 231
+    iput p4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->outputPcmFrameSize:I
 
-    .line 208
-    iput p4, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSize:I
+    .line 232
+    iput p5, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSize:I
 
-    .line 209
+    .line 233
     new-instance v0, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;-><init>(Landroid/media/AudioTrack;)V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
-    .line 210
+    .line 234
     invoke-virtual {p1}, Landroid/media/AudioTrack;->getSampleRate()I
 
     move-result p1
 
     iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->outputSampleRate:I
 
-    .line 211
-    invoke-static {p2}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds(I)Z
+    const/4 p1, 0x0
 
-    move-result p1
+    if-eqz p2, :cond_0
 
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z
+    .line 235
+    invoke-static {p3}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds(I)Z
 
-    .line 212
-    invoke-static {p2}, Lcom/google/android/exoplayer2/util/Util;->isEncodingLinearPcm(I)Z
+    move-result p2
 
-    move-result p1
+    if-eqz p2, :cond_0
 
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->isOutputPcm:Z
-
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
-
-    if-eqz p1, :cond_0
-
-    .line 213
-    div-int/2addr p4, p3
-
-    int-to-long p1, p4
-
-    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->framesToDurationUs(J)J
-
-    move-result-wide p1
+    const/4 p2, 0x1
 
     goto :goto_0
 
     :cond_0
-    move-wide p1, v0
+    const/4 p2, 0x0
 
     :goto_0
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSizeUs:J
+    iput-boolean p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->needsPassthroughWorkarounds:Z
 
-    const-wide/16 p1, 0x0
+    .line 236
+    invoke-static {p3}, Lcom/google/android/exoplayer2/util/Util;->isEncodingLinearPcm(I)Z
 
-    .line 214
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
+    move-result p2
 
-    .line 215
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->rawPlaybackHeadWrapCount:J
+    iput-boolean p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->isOutputPcm:Z
 
-    .line 216
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->passthroughWorkaroundPauseOffset:J
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 p3, 0x0
+    if-eqz p2, :cond_1
 
-    .line 217
-    iput-boolean p3, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->hasData:Z
+    .line 237
+    div-int/2addr p5, p4
 
-    .line 218
+    int-to-long p2, p5
+
+    invoke-direct {p0, p2, p3}, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->framesToDurationUs(J)J
+
+    move-result-wide p2
+
+    goto :goto_1
+
+    :cond_1
+    move-wide p2, v0
+
+    :goto_1
+    iput-wide p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->bufferSizeUs:J
+
+    const-wide/16 p2, 0x0
+
+    .line 238
+    iput-wide p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastRawPlaybackHeadPosition:J
+
+    .line 239
+    iput-wide p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->rawPlaybackHeadWrapCount:J
+
+    .line 240
+    iput-wide p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->passthroughWorkaroundPauseOffset:J
+
+    .line 241
+    iput-boolean p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->hasData:Z
+
+    .line 242
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->stopTimestampUs:J
 
-    .line 219
+    .line 243
     iput-wide v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->forceResetWorkaroundTimeMs:J
 
-    .line 220
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastLatencySampleTimeUs:J
+    .line 244
+    iput-wide p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->lastLatencySampleTimeUs:J
 
-    .line 221
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->latencyUs:J
+    .line 245
+    iput-wide p2, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->latencyUs:J
 
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    .line 246
+    iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrackPlaybackSpeed:F
+
+    return-void
+.end method
+
+.method public setAudioTrackPlaybackSpeed(F)V
+    .locals 0
+
+    .line 250
+    iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTrackPlaybackSpeed:F
+
+    .line 253
+    iget-object p1, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
+
+    if-eqz p1, :cond_0
+
+    .line 254
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;->reset()V
+
+    :cond_0
     return-void
 .end method
 
 .method public start()V
     .locals 1
 
-    .line 281
+    .line 332
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/AudioTrackPositionTracker;->audioTimestampPoller:Lcom/google/android/exoplayer2/audio/AudioTimestampPoller;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;

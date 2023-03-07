@@ -14,43 +14,43 @@
 
 
 # static fields
-.field public static final common_google_play_services_enable_button:I = 0x7f111a4c
+.field public static final common_google_play_services_enable_button:I = 0x7f111a6a
 
-.field public static final common_google_play_services_enable_text:I = 0x7f111a4d
+.field public static final common_google_play_services_enable_text:I = 0x7f111a6b
 
-.field public static final common_google_play_services_enable_title:I = 0x7f111a4e
+.field public static final common_google_play_services_enable_title:I = 0x7f111a6c
 
-.field public static final common_google_play_services_install_button:I = 0x7f111a4f
+.field public static final common_google_play_services_install_button:I = 0x7f111a6d
 
-.field public static final common_google_play_services_install_text:I = 0x7f111a50
+.field public static final common_google_play_services_install_text:I = 0x7f111a6e
 
-.field public static final common_google_play_services_install_title:I = 0x7f111a51
+.field public static final common_google_play_services_install_title:I = 0x7f111a6f
 
-.field public static final common_google_play_services_notification_channel_name:I = 0x7f111a52
+.field public static final common_google_play_services_notification_channel_name:I = 0x7f111a70
 
-.field public static final common_google_play_services_notification_ticker:I = 0x7f111a53
+.field public static final common_google_play_services_notification_ticker:I = 0x7f111a71
 
-.field public static final common_google_play_services_unknown_issue:I = 0x7f111a54
+.field public static final common_google_play_services_unknown_issue:I = 0x7f111a72
 
-.field public static final common_google_play_services_unsupported_text:I = 0x7f111a55
+.field public static final common_google_play_services_unsupported_text:I = 0x7f111a73
 
-.field public static final common_google_play_services_update_button:I = 0x7f111a56
+.field public static final common_google_play_services_update_button:I = 0x7f111a74
 
-.field public static final common_google_play_services_update_text:I = 0x7f111a57
+.field public static final common_google_play_services_update_text:I = 0x7f111a75
 
-.field public static final common_google_play_services_update_title:I = 0x7f111a58
+.field public static final common_google_play_services_update_title:I = 0x7f111a76
 
-.field public static final common_google_play_services_updating_text:I = 0x7f111a59
+.field public static final common_google_play_services_updating_text:I = 0x7f111a77
 
-.field public static final common_google_play_services_wear_update_text:I = 0x7f111a5a
+.field public static final common_google_play_services_wear_update_text:I = 0x7f111a78
 
-.field public static final common_open_on_phone:I = 0x7f111a64
+.field public static final common_open_on_phone:I = 0x7f111a82
 
-.field public static final common_signin_button_text:I = 0x7f111a6a
+.field public static final common_signin_button_text:I = 0x7f111a88
 
-.field public static final common_signin_button_text_long:I = 0x7f111a6b
+.field public static final common_signin_button_text_long:I = 0x7f111a89
 
-.field public static final status_bar_notification_info_overflow:I = 0x7f111e47
+.field public static final status_bar_notification_info_overflow:I = 0x7f111e75
 
 
 # direct methods

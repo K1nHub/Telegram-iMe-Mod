@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/exoplayer2/decoder/SimpleDecoder;-><init>([Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;[Lcom/google/android/exoplayer2/decoder/OutputBuffer;)V
+    value = Lcom/google/android/exoplayer2/decoder/SimpleDecoder;-><init>([Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;[Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,13 +19,13 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/exoplayer2/decoder/SimpleDecoder;)V
+.method constructor <init>(Lcom/google/android/exoplayer2/decoder/SimpleDecoder;Ljava/lang/String;)V
     .locals 0
 
-    .line 65
+    .line 70
     iput-object p1, p0, Lcom/google/android/exoplayer2/decoder/SimpleDecoder$1;->this$0:Lcom/google/android/exoplayer2/decoder/SimpleDecoder;
 
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 .method public run()V
     .locals 1
 
-    .line 68
+    .line 73
     iget-object v0, p0, Lcom/google/android/exoplayer2/decoder/SimpleDecoder$1;->this$0:Lcom/google/android/exoplayer2/decoder/SimpleDecoder;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->access$000(Lcom/google/android/exoplayer2/decoder/SimpleDecoder;)V

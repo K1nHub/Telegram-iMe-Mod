@@ -27,7 +27,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 31
+    .line 37
     invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;-><init>()V
 
     return-void
@@ -36,7 +36,40 @@
 .method static appendNumberOfSamples(Lcom/google/android/exoplayer2/util/ParsableByteArray;J)V
     .locals 6
 
-    .line 155
+    .line 178
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->capacity()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x4
+
+    if-ge v0, v1, :cond_0
+
+    .line 179
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x4
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([B)V
+
+    goto :goto_0
+
+    .line 181
+    :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v0
@@ -45,9 +78,13 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setLimit(I)V
 
-    .line 158
-    iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 185
+    :goto_0
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
+    move-result-object v0
+
+    .line 186
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v1
@@ -64,9 +101,7 @@
 
     aput-byte v4, v0, v1
 
-    .line 159
-    iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
-
+    .line 187
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v1
@@ -85,9 +120,7 @@
 
     aput-byte v4, v0, v1
 
-    .line 160
-    iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
-
+    .line 188
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v1
@@ -106,9 +139,7 @@
 
     aput-byte v4, v0, v1
 
-    .line 161
-    iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
-
+    .line 189
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result p0
@@ -133,7 +164,7 @@
 .method private static decodeBlockSize(BLcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;)I
     .locals 2
 
-    .line 166
+    .line 194
     iget v0, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->iLogModes:I
 
     const/4 v1, 0x1
@@ -142,7 +173,7 @@
 
     move-result p0
 
-    .line 168
+    .line 196
     iget-object v0, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->modes:[Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;
 
     aget-object p0, v0, p0
@@ -151,14 +182,14 @@
 
     if-nez p0, :cond_0
 
-    .line 169
+    .line 197
     iget-object p0, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
     iget p0, p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->blockSize0:I
 
     goto :goto_0
 
-    .line 171
+    .line 199
     :cond_0
     iget-object p0, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
@@ -189,7 +220,7 @@
 
     const/4 v0, 0x1
 
-    .line 42
+    .line 48
     :try_start_0
     invoke-static {v0, p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->verifyVorbisHeaderCapturePattern(ILcom/google/android/exoplayer2/util/ParsableByteArray;Z)Z
 
@@ -210,7 +241,7 @@
 .method protected onSeekEnd(J)V
     .locals 4
 
-    .line 62
+    .line 68
     invoke-super {p0, p1, p2}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->onSeekEnd(J)V
 
     const/4 v0, 0x0
@@ -228,11 +259,11 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 63
+    .line 69
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
 
-    .line 64
+    .line 70
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisIdHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
     if-eqz p1, :cond_1
@@ -246,39 +277,51 @@
 .end method
 
 .method protected preparePayload(Lcom/google/android/exoplayer2/util/ParsableByteArray;)J
-    .locals 4
+    .locals 5
 
-    .line 70
-    iget-object v0, p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 76
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
-    aget-byte v2, v0, v1
+    aget-byte v0, v0, v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    and-int/2addr v2, v3
+    and-int/2addr v0, v2
 
-    if-ne v2, v3, :cond_0
+    if-ne v0, v2, :cond_0
 
     const-wide/16 v0, -0x1
 
     return-wide v0
 
-    .line 75
+    .line 81
     :cond_0
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
+
     aget-byte v0, v0, v1
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisSetup:Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisSetup:Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
 
-    invoke-static {v0, v2}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->decodeBlockSize(BLcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;)I
+    invoke-static {v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
+
+    invoke-static {v0, v3}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->decodeBlockSize(BLcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;)I
 
     move-result v0
 
-    .line 78
-    iget-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
+    .line 85
+    iget-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_1
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->previousPacketBlockSize:I
 
@@ -287,39 +330,43 @@
     div-int/lit8 v1, v1, 0x4
 
     :cond_1
-    int-to-long v1, v1
+    int-to-long v3, v1
 
-    .line 81
-    invoke-static {p1, v1, v2}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->appendNumberOfSamples(Lcom/google/android/exoplayer2/util/ParsableByteArray;J)V
+    .line 87
+    invoke-static {p1, v3, v4}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->appendNumberOfSamples(Lcom/google/android/exoplayer2/util/ParsableByteArray;J)V
 
-    .line 84
-    iput-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
+    .line 90
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
 
-    .line 85
+    .line 91
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->previousPacketBlockSize:I
 
-    return-wide v1
+    return-wide v3
 .end method
 
 .method protected readHeaders(Lcom/google/android/exoplayer2/util/ParsableByteArray;JLcom/google/android/exoplayer2/extractor/ogg/StreamReader$SetupData;)Z
-    .locals 11
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 92
+    .line 99
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisSetup:Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
 
     if-eqz p2, :cond_0
+
+    .line 100
+    iget-object p1, p4, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader$SetupData;->format:Lcom/google/android/exoplayer2/Format;
+
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 p1, 0x0
 
     return p1
 
-    .line 96
+    .line 104
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->readSetupHeaders(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
 
@@ -333,56 +380,91 @@
 
     return p2
 
-    .line 101
+    .line 110
     :cond_1
-    new-instance v7, Ljava/util/ArrayList;
+    iget-object p3, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    .line 112
+    new-instance v0, Ljava/util/ArrayList;
 
-    .line 102
-    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisSetup:Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
+    .line 113
+    iget-object v1, p3, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->data:[B
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->data:[B
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 114
+    iget-object v1, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->setupHeaderData:[B
 
-    .line 103
-    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisSetup:Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->setupHeaderData:[B
+    .line 117
+    iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->commentHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
 
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;->comments:[Ljava/lang/String;
 
-    const/4 v0, 0x0
+    .line 118
+    invoke-static {p1}, Lcom/google/common/collect/ImmutableList;->copyOf([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
-    const/4 v2, 0x0
+    move-result-object p1
 
-    .line 105
-    iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisSetup:Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
+    invoke-static {p1}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->parseVorbisComments(Ljava/util/List;)Lcom/google/android/exoplayer2/metadata/Metadata;
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;->idHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
+    move-result-object p1
 
-    iget v3, p1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateNominal:I
+    .line 120
+    new-instance v1, Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v4, -0x1
+    invoke-direct {v1}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
-    iget v5, p1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->channels:I
+    const-string v2, "audio/vorbis"
 
-    iget-wide v8, p1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->sampleRate:J
+    .line 122
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    long-to-int v6, v8
+    move-result-object v1
 
-    const/4 v8, 0x0
+    iget v2, p3, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateNominal:I
 
-    const/4 v9, 0x0
+    .line 123
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setAverageBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v10, 0x0
+    move-result-object v1
 
-    const-string v1, "audio/vorbis"
+    iget v2, p3, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->bitrateMaximum:I
 
-    invoke-static/range {v0 .. v10}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
+    .line 124
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setPeakBitrate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    iget v2, p3, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->channels:I
+
+    .line 125
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object v1
+
+    iget p3, p3, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->sampleRate:I
+
+    .line 126
+    invoke-virtual {v1, p3}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p3
+
+    .line 127
+    invoke-virtual {p3, v0}, Lcom/google/android/exoplayer2/Format$Builder;->setInitializationData(Ljava/util/List;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p3
+
+    .line 128
+    invoke-virtual {p3, p1}, Lcom/google/android/exoplayer2/Format$Builder;->setMetadata(Lcom/google/android/exoplayer2/metadata/Metadata;)Lcom/google/android/exoplayer2/Format$Builder;
+
+    move-result-object p1
+
+    .line 129
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
 
     move-result-object p1
 
@@ -392,91 +474,87 @@
 .end method
 
 .method readSetupHeaders(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 115
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisIdHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
+    .line 137
+    iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisIdHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    .line 116
+    .line 138
     invoke-static {p1}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readVorbisIdentificationHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisIdHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
-    return-object v1
+    return-object v0
 
-    .line 120
+    .line 142
     :cond_0
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->commentHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
+    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->commentHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
 
-    if-nez v0, :cond_1
+    if-nez v2, :cond_1
 
-    .line 121
+    .line 143
     invoke-static {p1}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readVorbisCommentHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->commentHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
 
-    return-object v1
+    return-object v0
 
-    .line 126
+    .line 150
     :cond_1
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v0
 
-    new-array v4, v0, [B
+    new-array v3, v0, [B
 
-    .line 128
-    iget-object v0, p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 152
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
-    move-result v1
+    move-result v4
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    invoke-static {v0, v2, v4, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v5, v3, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 130
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisIdHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
-
-    iget v0, v0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->channels:I
+    .line 154
+    iget v0, v1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;->channels:I
 
     invoke-static {p1, v0}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readVorbisModes(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)[Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;
 
-    move-result-object v5
+    move-result-object v4
 
-    .line 132
-    array-length p1, v5
+    .line 156
+    array-length p1, v4
 
     add-int/lit8 p1, p1, -0x1
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->iLog(I)I
 
-    move-result v6
+    move-result v5
 
-    .line 134
+    .line 158
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisIdHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
+    move-object v0, p1
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->commentHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
-
-    move-object v1, p1
-
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;-><init>(Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;[B[Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;I)V
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;-><init>(Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;[B[Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;I)V
 
     return-object p1
 .end method
@@ -484,29 +562,29 @@
 .method protected reset(Z)V
     .locals 0
 
-    .line 50
+    .line 56
     invoke-super {p0, p1}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->reset(Z)V
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 52
+    .line 58
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisSetup:Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader$VorbisSetup;
 
-    .line 53
+    .line 59
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->vorbisIdHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
-    .line 54
+    .line 60
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->commentHeader:Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 56
+    .line 62
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->previousPacketBlockSize:I
 
-    .line 57
+    .line 63
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;->seenFirstAudioPacket:Z
 
     return-void

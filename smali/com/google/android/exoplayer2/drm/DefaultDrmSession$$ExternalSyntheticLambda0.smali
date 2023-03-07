@@ -2,34 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/util/EventDispatcher$Event;
+.implements Lcom/google/android/exoplayer2/util/Consumer;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Exception;
+.field public final synthetic f$0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Exception;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Exception;
+    iput p1, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda0;->f$0:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final sendTo(Ljava/lang/Object;)V
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda0;->f$0:Ljava/lang/Exception;
+    iget v0, p0, Lcom/google/android/exoplayer2/drm/DefaultDrmSession$$ExternalSyntheticLambda0;->f$0:I
 
-    check-cast p1, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionEventListener;
+    check-cast p1, Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
 
-    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSession;->$r8$lambda$nx_CrL4sJ7SN7A4COE03qTCMO4o(Ljava/lang/Exception;Lcom/google/android/exoplayer2/drm/DefaultDrmSessionEventListener;)V
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSession;->$r8$lambda$DxYpyadwFcAWqoX__uGLq-0ZR2E(ILcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;)V
 
     return-void
 .end method

@@ -38,15 +38,16 @@
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 93
+    .line 92
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -54,10 +55,12 @@
 
     invoke-interface {p1, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 94
+    .line 93
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     aget-byte v0, v0, v1
 
@@ -90,10 +93,12 @@
 
     and-int/2addr v0, v3
 
-    .line 105
+    .line 104
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v3, v3, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v3
 
     invoke-interface {p1, v3, v2, v4}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
@@ -102,10 +107,12 @@
 
     shl-int/lit8 p1, v0, 0x8
 
-    .line 108
+    .line 107
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     add-int/lit8 v1, v1, 0x1
 
@@ -117,7 +124,7 @@
 
     goto :goto_1
 
-    .line 110
+    .line 109
     :cond_2
     iget p1, p0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->peekLength:I
 
@@ -138,8 +145,7 @@
     .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -147,7 +153,7 @@
 
     move-object/from16 v1, p1
 
-    .line 46
+    .line 44
     invoke-interface/range {p1 .. p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v2
@@ -173,10 +179,12 @@
     :goto_0
     long-to-int v5, v4
 
-    .line 50
+    .line 51
     iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v4, v4, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v4
 
     const/4 v6, 0x0
 
@@ -184,14 +192,14 @@
 
     invoke-interface {v1, v4, v6, v7}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 51
+    .line 52
     iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v9
 
-    .line 52
+    .line 53
     iput v7, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->peekLength:I
 
     :goto_1
@@ -203,7 +211,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 54
+    .line 55
     iget v7, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->peekLength:I
 
     add-int/2addr v7, v4
@@ -214,11 +222,13 @@
 
     return v6
 
-    .line 57
+    .line 58
     :cond_2
     iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v7, v7, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v7}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v7
 
     invoke-interface {v1, v7, v6, v4}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
@@ -230,10 +240,12 @@
 
     and-long/2addr v9, v11
 
-    .line 59
+    .line 60
     iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v4, v4, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v4}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v4
 
     aget-byte v4, v4, v6
 
@@ -245,13 +257,13 @@
 
     goto :goto_1
 
-    .line 63
+    .line 64
     :cond_3
     invoke-direct/range {p0 .. p1}, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->readUint(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)J
 
     move-result-wide v9
 
-    .line 64
+    .line 65
     iget v5, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->peekLength:I
 
     int-to-long v11, v5
@@ -272,7 +284,7 @@
 
     goto :goto_4
 
-    .line 71
+    .line 72
     :cond_4
     :goto_2
     iget v2, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->peekLength:I
@@ -285,7 +297,7 @@
 
     if-gez v3, :cond_8
 
-    .line 72
+    .line 73
     invoke-direct/range {p0 .. p1}, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->readUint(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)J
 
     move-result-wide v2
@@ -296,7 +308,7 @@
 
     return v6
 
-    .line 76
+    .line 77
     :cond_5
     invoke-direct/range {p0 .. p1}, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->readUint(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)J
 
@@ -321,10 +333,10 @@
 
     long-to-int v3, v2
 
-    .line 82
+    .line 83
     invoke-interface {v1, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    .line 83
+    .line 84
     iget v2, v0, Lcom/google/android/exoplayer2/extractor/mkv/Sniffer;->peekLength:I
 
     add-int/2addr v2, v3

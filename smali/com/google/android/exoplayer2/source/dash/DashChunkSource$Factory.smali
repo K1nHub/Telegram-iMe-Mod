@@ -15,20 +15,22 @@
 
 
 # virtual methods
-.method public abstract createDashChunkSource(Lcom/google/android/exoplayer2/upstream/LoaderErrorThrower;Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;I[ILcom/google/android/exoplayer2/trackselection/TrackSelection;IJZLjava/util/List;Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;Lcom/google/android/exoplayer2/upstream/TransferListener;)Lcom/google/android/exoplayer2/source/dash/DashChunkSource;
+.method public abstract createDashChunkSource(Lcom/google/android/exoplayer2/upstream/LoaderErrorThrower;Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;Lcom/google/android/exoplayer2/source/dash/BaseUrlExclusionList;I[ILcom/google/android/exoplayer2/trackselection/ExoTrackSelection;IJZLjava/util/List;Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;Lcom/google/android/exoplayer2/upstream/TransferListener;Lcom/google/android/exoplayer2/analytics/PlayerId;)Lcom/google/android/exoplayer2/source/dash/DashChunkSource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/google/android/exoplayer2/upstream/LoaderErrorThrower;",
             "Lcom/google/android/exoplayer2/source/dash/manifest/DashManifest;",
+            "Lcom/google/android/exoplayer2/source/dash/BaseUrlExclusionList;",
             "I[I",
-            "Lcom/google/android/exoplayer2/trackselection/TrackSelection;",
+            "Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;",
             "IJZ",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/Format;",
             ">;",
             "Lcom/google/android/exoplayer2/source/dash/PlayerEmsgHandler$PlayerTrackEmsgHandler;",
             "Lcom/google/android/exoplayer2/upstream/TransferListener;",
+            "Lcom/google/android/exoplayer2/analytics/PlayerId;",
             ")",
             "Lcom/google/android/exoplayer2/source/dash/DashChunkSource;"
         }

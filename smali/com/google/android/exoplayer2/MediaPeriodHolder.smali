@@ -8,6 +8,8 @@
 
 
 # instance fields
+.field public allRenderersInCorrectState:Z
+
 .field public hasEnabledTracks:Z
 
 .field public info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
@@ -16,7 +18,7 @@
 
 .field public final mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-.field private final mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
+.field private final mediaSourceList:Lcom/google/android/exoplayer2/MediaSourceList;
 
 .field private next:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
@@ -38,57 +40,57 @@
 
 
 # direct methods
-.method public constructor <init>([Lcom/google/android/exoplayer2/RendererCapabilities;JLcom/google/android/exoplayer2/trackselection/TrackSelector;Lcom/google/android/exoplayer2/upstream/Allocator;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)V
+.method public constructor <init>([Lcom/google/android/exoplayer2/RendererCapabilities;JLcom/google/android/exoplayer2/trackselection/TrackSelector;Lcom/google/android/exoplayer2/upstream/Allocator;Lcom/google/android/exoplayer2/MediaSourceList;Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)V
     .locals 7
 
-    .line 85
+    .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 86
+    .line 97
     iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererCapabilities:[Lcom/google/android/exoplayer2/RendererCapabilities;
 
-    .line 87
+    .line 98
     iput-wide p2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererPositionOffsetUs:J
 
-    .line 88
+    .line 99
     iput-object p4, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelector:Lcom/google/android/exoplayer2/trackselection/TrackSelector;
 
-    .line 89
-    iput-object p6, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
+    .line 100
+    iput-object p6, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaSourceList:Lcom/google/android/exoplayer2/MediaSourceList;
 
-    .line 90
+    .line 101
     iget-object v0, p7, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-object p2, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    iget-object p2, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
 
-    .line 91
+    .line 102
     iput-object p7, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
-    .line 92
+    .line 103
     sget-object p2, Lcom/google/android/exoplayer2/source/TrackGroupArray;->EMPTY:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
-    .line 93
+    .line 104
     iput-object p8, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    .line 94
+    .line 105
     array-length p2, p1
 
     new-array p2, p2, [Lcom/google/android/exoplayer2/source/SampleStream;
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->sampleStreams:[Lcom/google/android/exoplayer2/source/SampleStream;
 
-    .line 95
+    .line 106
     array-length p1, p1
 
     new-array p1, p1, [Z
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mayRetainStreamFlags:[Z
 
-    .line 96
+    .line 107
     iget-wide v3, p7, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
 
     iget-wide v5, p7, Lcom/google/android/exoplayer2/MediaPeriodInfo;->endPositionUs:J
@@ -97,8 +99,8 @@
 
     move-object v2, p5
 
-    .line 97
-    invoke-static/range {v0 .. v6}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->createMediaPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/upstream/Allocator;JJ)Lcom/google/android/exoplayer2/source/MediaPeriod;
+    .line 108
+    invoke-static/range {v0 .. v6}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->createMediaPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/MediaSourceList;Lcom/google/android/exoplayer2/upstream/Allocator;JJ)Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     move-result-object p1
 
@@ -112,7 +114,7 @@
 
     const/4 v0, 0x0
 
-    .line 390
+    .line 414
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererCapabilities:[Lcom/google/android/exoplayer2/RendererCapabilities;
 
@@ -120,27 +122,27 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 391
+    .line 415
     aget-object v1, v1, v0
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/RendererCapabilities;->getTrackType()I
 
     move-result v1
 
-    const/4 v2, 0x6
+    const/4 v2, -0x2
 
     if-ne v1, v2, :cond_0
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    .line 392
+    .line 416
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->isRendererEnabled(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 393
+    .line 417
     new-instance v1, Lcom/google/android/exoplayer2/source/EmptySampleStream;
 
     invoke-direct {v1}, Lcom/google/android/exoplayer2/source/EmptySampleStream;-><init>()V
@@ -156,11 +158,11 @@
     return-void
 .end method
 
-.method private static createMediaPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/upstream/Allocator;JJ)Lcom/google/android/exoplayer2/source/MediaPeriod;
+.method private static createMediaPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/MediaSourceList;Lcom/google/android/exoplayer2/upstream/Allocator;JJ)Lcom/google/android/exoplayer2/source/MediaPeriod;
     .locals 7
 
-    .line 409
-    invoke-interface {p1, p0, p2, p3, p4}, Lcom/google/android/exoplayer2/source/MediaSource;->createPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/upstream/Allocator;J)Lcom/google/android/exoplayer2/source/MediaPeriod;
+    .line 433
+    invoke-virtual {p1, p0, p2, p3, p4}, Lcom/google/android/exoplayer2/MediaSourceList;->createPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/upstream/Allocator;J)Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     move-result-object v1
 
@@ -170,13 +172,7 @@
 
     if-eqz p2, :cond_0
 
-    const-wide/high16 p0, -0x8000000000000000L
-
-    cmp-long p2, p5, p0
-
-    if-eqz p2, :cond_0
-
-    .line 411
+    .line 435
     new-instance p0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;
 
     const/4 v2, 0x1
@@ -198,7 +194,7 @@
 .method private disableTrackSelectionsInResult()V
     .locals 3
 
-    .line 359
+    .line 383
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->isLoadingMediaPeriod()Z
 
     move-result v0
@@ -210,7 +206,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 362
+    .line 386
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
@@ -218,26 +214,24 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 363
+    .line 387
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->isRendererEnabled(I)Z
 
     move-result v1
 
-    .line 364
+    .line 388
     iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    iget-object v2, v2, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    iget-object v2, v2, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    invoke-virtual {v2, v0}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->get(I)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
-
-    move-result-object v2
+    aget-object v2, v2, v0
 
     if-eqz v1, :cond_1
 
     if-eqz v2, :cond_1
 
-    .line 366
-    invoke-interface {v2}, Lcom/google/android/exoplayer2/trackselection/TrackSelection;->disable()V
+    .line 390
+    invoke-interface {v2}, Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;->disable()V
 
     :cond_1
     add-int/lit8 v0, v0, 0x1
@@ -253,7 +247,7 @@
 
     const/4 v0, 0x0
 
-    .line 377
+    .line 401
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererCapabilities:[Lcom/google/android/exoplayer2/RendererCapabilities;
 
@@ -261,20 +255,20 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 378
+    .line 402
     aget-object v1, v1, v0
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/RendererCapabilities;->getTrackType()I
 
     move-result v1
 
-    const/4 v2, 0x6
+    const/4 v2, -0x2
 
     if-ne v1, v2, :cond_0
 
     const/4 v1, 0x0
 
-    .line 379
+    .line 403
     aput-object v1, p1, v0
 
     :cond_0
@@ -289,7 +283,7 @@
 .method private enableTrackSelectionsInResult()V
     .locals 3
 
-    .line 346
+    .line 370
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->isLoadingMediaPeriod()Z
 
     move-result v0
@@ -301,7 +295,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 349
+    .line 373
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
@@ -309,26 +303,24 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 350
+    .line 374
     invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->isRendererEnabled(I)Z
 
     move-result v1
 
-    .line 351
+    .line 375
     iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    iget-object v2, v2, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
+    iget-object v2, v2, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    invoke-virtual {v2, v0}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->get(I)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
-
-    move-result-object v2
+    aget-object v2, v2, v0
 
     if-eqz v1, :cond_1
 
     if-eqz v2, :cond_1
 
-    .line 353
-    invoke-interface {v2}, Lcom/google/android/exoplayer2/trackselection/TrackSelection;->enable()V
+    .line 377
+    invoke-interface {v2}, Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;->enable()V
 
     :cond_1
     add-int/lit8 v0, v0, 0x1
@@ -342,7 +334,7 @@
 .method private isLoadingMediaPeriod()Z
     .locals 1
 
-    .line 399
+    .line 423
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->next:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-nez v0, :cond_0
@@ -358,34 +350,27 @@
     return v0
 .end method
 
-.method private static releaseMediaPeriod(JLcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/source/MediaPeriod;)V
-    .locals 3
+.method private static releaseMediaPeriod(Lcom/google/android/exoplayer2/MediaSourceList;Lcom/google/android/exoplayer2/source/MediaPeriod;)V
+    .locals 1
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v2, p0, v0
-
-    if-eqz v2, :cond_0
-
-    const-wide/high16 v0, -0x8000000000000000L
-
-    cmp-long v2, p0, v0
-
-    if-eqz v2, :cond_0
-
-    .line 423
+    .line 445
     :try_start_0
-    check-cast p3, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;
+    instance-of v0, p1, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;
 
-    iget-object p0, p3, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
+    if-eqz v0, :cond_0
 
-    invoke-interface {p2, p0}, Lcom/google/android/exoplayer2/source/MediaSource;->releasePeriod(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
+    .line 446
+    check-cast p1, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;
+
+    iget-object p1, p1, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/MediaSourceList;->releasePeriod(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
 
     goto :goto_0
 
-    .line 425
+    .line 448
     :cond_0
-    invoke-interface {p2, p3}, Lcom/google/android/exoplayer2/source/MediaSource;->releasePeriod(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/MediaSourceList;->releasePeriod(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -396,10 +381,10 @@
 
     const-string p1, "MediaPeriodHolder"
 
-    const-string p2, "Period release failed."
+    const-string v0, "Period release failed."
 
-    .line 429
-    invoke-static {p1, p2, p0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 452
+    invoke-static {p1, v0, p0}, Lcom/google/android/exoplayer2/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
@@ -410,7 +395,7 @@
 .method public applyTrackSelection(Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;JZ)J
     .locals 7
 
-    .line 243
+    .line 259
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererCapabilities:[Lcom/google/android/exoplayer2/RendererCapabilities;
 
     array-length v0, v0
@@ -443,7 +428,7 @@
 
     const/4 v3, 0x0
 
-    .line 267
+    .line 283
     :goto_0
     iget v4, v1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->length:I
 
@@ -451,14 +436,14 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 268
+    .line 284
     iget-object v4, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mayRetainStreamFlags:[Z
 
     if-nez p4, :cond_0
 
     iget-object v6, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    .line 269
+    .line 285
     invoke-virtual {p1, v6, v3}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->isEquivalent(Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;I)Z
 
     move-result v6
@@ -477,31 +462,25 @@
 
     goto :goto_0
 
-    .line 274
+    .line 290
     :cond_1
     iget-object v3, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->sampleStreams:[Lcom/google/android/exoplayer2/source/SampleStream;
 
     invoke-direct {p0, v3}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->disassociateNoSampleRenderersWithEmptySampleStream([Lcom/google/android/exoplayer2/source/SampleStream;)V
 
-    .line 275
+    .line 291
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->disableTrackSelectionsInResult()V
 
-    .line 276
+    .line 292
     iput-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
-    .line 277
+    .line 293
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->enableTrackSelectionsInResult()V
 
-    .line 279
-    iget-object v3, v1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
-
-    .line 280
+    .line 295
     iget-object v6, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    .line 282
-    invoke-virtual {v3}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->getAll()[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
-
-    move-result-object v7
+    iget-object v7, v1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
     iget-object v8, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mayRetainStreamFlags:[Z
 
@@ -511,103 +490,103 @@
 
     move-wide v11, p2
 
-    .line 281
-    invoke-interface/range {v6 .. v12}, Lcom/google/android/exoplayer2/source/MediaPeriod;->selectTracks([Lcom/google/android/exoplayer2/trackselection/TrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
+    .line 296
+    invoke-interface/range {v6 .. v12}, Lcom/google/android/exoplayer2/source/MediaPeriod;->selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
 
-    move-result-wide v6
+    move-result-wide v3
 
-    .line 287
-    iget-object v4, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->sampleStreams:[Lcom/google/android/exoplayer2/source/SampleStream;
+    .line 302
+    iget-object v6, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->sampleStreams:[Lcom/google/android/exoplayer2/source/SampleStream;
 
-    invoke-direct {p0, v4}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->associateNoSampleRenderersWithEmptySampleStream([Lcom/google/android/exoplayer2/source/SampleStream;)V
+    invoke-direct {p0, v6}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->associateNoSampleRenderersWithEmptySampleStream([Lcom/google/android/exoplayer2/source/SampleStream;)V
 
-    .line 290
+    .line 305
     iput-boolean v2, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->hasEnabledTracks:Z
 
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
-    .line 291
+    .line 306
     :goto_2
-    iget-object v8, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->sampleStreams:[Lcom/google/android/exoplayer2/source/SampleStream;
+    iget-object v7, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->sampleStreams:[Lcom/google/android/exoplayer2/source/SampleStream;
 
-    array-length v9, v8
+    array-length v8, v7
 
-    if-ge v4, v9, :cond_5
+    if-ge v6, v8, :cond_5
 
-    .line 292
-    aget-object v8, v8, v4
+    .line 307
+    aget-object v7, v7, v6
 
-    if-eqz v8, :cond_2
+    if-eqz v7, :cond_2
 
-    .line 293
-    invoke-virtual {p1, v4}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->isRendererEnabled(I)Z
+    .line 308
+    invoke-virtual {p1, v6}, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->isRendererEnabled(I)Z
 
-    move-result v8
+    move-result v7
 
-    invoke-static {v8}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 295
-    iget-object v8, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererCapabilities:[Lcom/google/android/exoplayer2/RendererCapabilities;
+    .line 310
+    iget-object v7, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererCapabilities:[Lcom/google/android/exoplayer2/RendererCapabilities;
 
-    aget-object v8, v8, v4
+    aget-object v7, v7, v6
 
-    invoke-interface {v8}, Lcom/google/android/exoplayer2/RendererCapabilities;->getTrackType()I
+    invoke-interface {v7}, Lcom/google/android/exoplayer2/RendererCapabilities;->getTrackType()I
 
-    move-result v8
+    move-result v7
 
-    const/4 v9, 0x6
+    const/4 v8, -0x2
 
-    if-eq v8, v9, :cond_4
+    if-eq v7, v8, :cond_4
 
-    .line 296
+    .line 311
     iput-boolean v5, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->hasEnabledTracks:Z
 
     goto :goto_4
 
-    .line 299
+    .line 314
     :cond_2
-    invoke-virtual {v3, v4}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->get(I)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
+    iget-object v7, v1, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    move-result-object v8
+    aget-object v7, v7, v6
 
-    if-nez v8, :cond_3
+    if-nez v7, :cond_3
 
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
     goto :goto_3
 
     :cond_3
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     :goto_3
-    invoke-static {v8}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+    invoke-static {v7}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
     :cond_4
     :goto_4
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
     :cond_5
-    return-wide v6
+    return-wide v3
 .end method
 
 .method public continueLoading(J)V
     .locals 1
 
-    .line 203
+    .line 219
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->isLoadingMediaPeriod()Z
 
     move-result v0
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 204
+    .line 220
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->toPeriodTime(J)J
 
     move-result-wide p1
 
-    .line 205
+    .line 221
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/source/MediaPeriod;->continueLoading(J)Z
@@ -618,19 +597,19 @@
 .method public getBufferedPositionUs()J
     .locals 5
 
-    .line 149
+    .line 160
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->prepared:Z
 
     if-nez v0, :cond_0
 
-    .line 150
+    .line 161
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
 
     return-wide v0
 
-    .line 153
+    .line 164
     :cond_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->hasEnabledTracks:Z
 
@@ -654,7 +633,7 @@
 
     if-nez v0, :cond_2
 
-    .line 154
+    .line 165
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-wide v3, v0, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
@@ -666,7 +645,7 @@
 .method public getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
     .locals 1
 
-    .line 332
+    .line 347
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->next:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     return-object v0
@@ -675,7 +654,7 @@
 .method public getNextLoadPositionUs()J
     .locals 2
 
-    .line 162
+    .line 173
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->prepared:Z
 
     if-nez v0, :cond_0
@@ -698,7 +677,7 @@
 .method public getRendererOffset()J
     .locals 2
 
-    .line 119
+    .line 130
     iget-wide v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererPositionOffsetUs:J
 
     return-wide v0
@@ -707,7 +686,7 @@
 .method public getStartPositionRendererTime()J
     .locals 4
 
-    .line 133
+    .line 144
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
@@ -722,7 +701,7 @@
 .method public getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
     .locals 1
 
-    .line 337
+    .line 352
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     return-object v0
@@ -731,14 +710,14 @@
 .method public getTrackSelectorResult()Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
     .locals 1
 
-    .line 342
+    .line 357
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelectorResult:Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
     return-object v0
 .end method
 
 .method public handlePrepared(FLcom/google/android/exoplayer2/Timeline;)V
-    .locals 5
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ExoPlaybackException;
@@ -747,10 +726,10 @@
 
     const/4 v0, 0x1
 
-    .line 173
+    .line 184
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->prepared:Z
 
-    .line 174
+    .line 185
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/source/MediaPeriod;->getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
@@ -759,24 +738,49 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
-    .line 175
+    .line 186
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->selectTracks(FLcom/google/android/exoplayer2/Timeline;)Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;
 
     move-result-object p1
 
-    .line 176
+    .line 187
     iget-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-wide v0, p2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
 
+    .line 188
+    iget-wide v2, p2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
+
+    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long p2, v2, v4
+
+    if-eqz p2, :cond_0
+
+    cmp-long p2, v0, v2
+
+    if-ltz p2, :cond_0
+
+    const-wide/16 v0, 0x0
+
+    const-wide/16 v4, 0x1
+
+    sub-long/2addr v2, v4
+
+    .line 190
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v0
+
+    :cond_0
     const/4 p2, 0x0
 
-    .line 177
+    .line 193
     invoke-virtual {p0, p1, v0, v1, p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->applyTrackSelection(Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;JZ)J
 
     move-result-wide p1
 
-    .line 179
+    .line 195
     iget-wide v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererPositionOffsetUs:J
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
@@ -789,7 +793,7 @@
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererPositionOffsetUs:J
 
-    .line 180
+    .line 196
     invoke-virtual {v2, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodInfo;->copyWithStartPositionUs(J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     move-result-object p1
@@ -802,7 +806,7 @@
 .method public isFullyBuffered()Z
     .locals 5
 
-    .line 138
+    .line 149
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->prepared:Z
 
     if-eqz v0, :cond_1
@@ -813,7 +817,7 @@
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    .line 139
+    .line 150
     invoke-interface {v0}, Lcom/google/android/exoplayer2/source/MediaPeriod;->getBufferedPositionUs()J
 
     move-result-wide v0
@@ -839,19 +843,19 @@
 .method public reevaluateBuffer(J)V
     .locals 1
 
-    .line 190
+    .line 206
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->isLoadingMediaPeriod()Z
 
     move-result v0
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 191
+    .line 207
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->prepared:Z
 
     if-eqz v0, :cond_0
 
-    .line 192
+    .line 208
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->toPeriodTime(J)J
@@ -865,21 +869,17 @@
 .end method
 
 .method public release()V
-    .locals 4
+    .locals 2
 
-    .line 307
+    .line 322
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->disableTrackSelectionsInResult()V
 
-    .line 308
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .line 323
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaSourceList:Lcom/google/android/exoplayer2/MediaSourceList;
 
-    iget-wide v0, v0, Lcom/google/android/exoplayer2/MediaPeriodInfo;->endPositionUs:J
+    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaSource:Lcom/google/android/exoplayer2/source/MediaSource;
-
-    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
-
-    invoke-static {v0, v1, v2, v3}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->releaseMediaPeriod(JLcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/source/MediaPeriod;)V
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->releaseMediaPeriod(Lcom/google/android/exoplayer2/MediaSourceList;Lcom/google/android/exoplayer2/source/MediaPeriod;)V
 
     return-void
 .end method
@@ -892,12 +892,12 @@
         }
     .end annotation
 
-    .line 221
+    .line 237
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->trackSelector:Lcom/google/android/exoplayer2/trackselection/TrackSelector;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererCapabilities:[Lcom/google/android/exoplayer2/RendererCapabilities;
 
-    .line 222
+    .line 238
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     move-result-object v2
@@ -910,12 +910,8 @@
 
     move-result-object p2
 
-    .line 223
-    iget-object v0, p2, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;
-
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionArray;->getAll()[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
-
-    move-result-object v0
+    .line 239
+    iget-object v0, p2, Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;->selections:[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
     array-length v1, v0
 
@@ -928,8 +924,8 @@
 
     if-eqz v3, :cond_0
 
-    .line 225
-    invoke-interface {v3, p1}, Lcom/google/android/exoplayer2/trackselection/TrackSelection;->onPlaybackSpeed(F)V
+    .line 241
+    invoke-interface {v3, p1}, Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;->onPlaybackSpeed(F)V
 
     :cond_0
     add-int/lit8 v2, v2, 0x1
@@ -943,21 +939,21 @@
 .method public setNext(Lcom/google/android/exoplayer2/MediaPeriodHolder;)V
     .locals 1
 
-    .line 318
+    .line 333
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->next:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 321
+    .line 336
     :cond_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->disableTrackSelectionsInResult()V
 
-    .line 322
+    .line 337
     iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->next:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 323
+    .line 338
     invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->enableTrackSelectionsInResult()V
 
     return-void
@@ -966,7 +962,7 @@
 .method public setRendererOffset(J)V
     .locals 0
 
-    .line 128
+    .line 139
     iput-wide p1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->rendererPositionOffsetUs:J
 
     return-void
@@ -975,7 +971,7 @@
 .method public toPeriodTime(J)J
     .locals 2
 
-    .line 114
+    .line 125
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getRendererOffset()J
 
     move-result-wide v0
@@ -988,7 +984,7 @@
 .method public toRendererTime(J)J
     .locals 2
 
-    .line 106
+    .line 117
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getRendererOffset()J
 
     move-result-wide v0
@@ -996,4 +992,39 @@
     add-long/2addr p1, v0
 
     return-wide p1
+.end method
+
+.method public updateClipping()V
+    .locals 6
+
+    .line 362
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->mediaPeriod:Lcom/google/android/exoplayer2/source/MediaPeriod;
+
+    instance-of v1, v0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;
+
+    if-eqz v1, :cond_1
+
+    .line 364
+    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    iget-wide v1, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->endPositionUs:J
+
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v5, v1, v3
+
+    if-nez v5, :cond_0
+
+    const-wide/high16 v1, -0x8000000000000000L
+
+    .line 365
+    :cond_0
+    check-cast v0, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;
+
+    const-wide/16 v3, 0x0
+
+    invoke-virtual {v0, v3, v4, v1, v2}, Lcom/google/android/exoplayer2/source/ClippingMediaPeriod;->updateClipping(JJ)V
+
+    :cond_1
+    return-void
 .end method

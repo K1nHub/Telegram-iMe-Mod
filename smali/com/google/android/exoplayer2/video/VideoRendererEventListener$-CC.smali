@@ -10,13 +10,25 @@
     return-void
 .end method
 
-.method public static $default$onRenderedFirstFrame(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Landroid/view/Surface;)V
+.method public static $default$onRenderedFirstFrame(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Ljava/lang/Object;J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onVideoCodecError(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Ljava/lang/Exception;)V
     .locals 0
 
     return-void
 .end method
 
 .method public static $default$onVideoDecoderInitialized(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Ljava/lang/String;JJ)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onVideoDecoderReleased(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Ljava/lang/String;)V
     .locals 0
 
     return-void
@@ -34,13 +46,27 @@
     return-void
 .end method
 
-.method public static $default$onVideoInputFormatChanged(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Lcom/google/android/exoplayer2/Format;)V
+.method public static $default$onVideoFrameProcessingOffset(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;JI)V
     .locals 0
 
     return-void
 .end method
 
-.method public static $default$onVideoSizeChanged(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;IIIF)V
+.method public static $default$onVideoInputFormatChanged(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Lcom/google/android/exoplayer2/Format;)V
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    return-void
+.end method
+
+.method public static $default$onVideoInputFormatChanged(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Lcom/google/android/exoplayer2/Format;Lcom/google/android/exoplayer2/decoder/DecoderReuseEvaluation;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$onVideoSizeChanged(Lcom/google/android/exoplayer2/video/VideoRendererEventListener;Lcom/google/android/exoplayer2/video/VideoSize;)V
     .locals 0
 
     return-void

@@ -18,5 +18,5 @@
 .method public abstract updateManifest(Lcom/google/android/exoplayer2/source/smoothstreaming/manifest/SsManifest;)V
 .end method
 
-.method public abstract updateTrackSelection(Lcom/google/android/exoplayer2/trackselection/TrackSelection;)V
+.method public abstract updateTrackSelection(Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;)V
 .end method

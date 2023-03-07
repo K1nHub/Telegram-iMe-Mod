@@ -1,0 +1,46 @@
+package androidx.appcompat;
+/* loaded from: classes.dex */
+public final class R$id {
+    public static final int action_bar = 2131296317;
+    public static final int action_bar_activity_content = 2131296318;
+    public static final int action_bar_container = 2131296319;
+    public static final int action_bar_subtitle = 2131296322;
+    public static final int action_bar_title = 2131296323;
+    public static final int action_context_bar = 2131296325;
+    public static final int action_menu_presenter = 2131296329;
+    public static final int action_mode_bar_stub = 2131296331;
+    public static final int action_mode_close_button = 2131296332;
+    public static final int alertTitle = 2131296340;
+    public static final int buttonPanel = 2131296403;
+    public static final int content = 2131296509;
+    public static final int contentPanel = 2131296510;
+    public static final int custom = 2131296519;
+    public static final int customPanel = 2131296520;
+    public static final int decor_content_parent = 2131296529;
+    public static final int edit_query = 2131296575;
+    public static final int group_divider = 2131296627;
+    public static final int message = 2131296825;
+    public static final int parentPanel = 2131296903;
+    public static final int scrollIndicatorDown = 2131297000;
+    public static final int scrollIndicatorUp = 2131297001;
+    public static final int scrollView = 2131297002;
+    public static final int search_button = 2131297006;
+    public static final int search_close_btn = 2131297007;
+    public static final int search_edit_frame = 2131297008;
+    public static final int search_go_btn = 2131297009;
+    public static final int search_mag_icon = 2131297010;
+    public static final int search_plate = 2131297011;
+    public static final int search_src_text = 2131297012;
+    public static final int search_voice_btn = 2131297013;
+    public static final int shortcut = 2131297025;
+    public static final int spacer = 2131297049;
+    public static final int split_action_bar = 2131297052;
+    public static final int submenuarrow = 2131297082;
+    public static final int submit_area = 2131297083;
+    public static final int textSpacerNoButtons = 2131297116;
+    public static final int textSpacerNoTitle = 2131297117;
+    public static final int title = 2131297274;
+    public static final int titleDividerNoCustom = 2131297275;
+    public static final int title_template = 2131297276;
+    public static final int topPanel = 2131297280;
+}

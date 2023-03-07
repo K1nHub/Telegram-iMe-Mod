@@ -21,7 +21,7 @@
 .method public createHandler(Landroid/os/Looper;Landroid/os/Handler$Callback;)Lcom/google/android/exoplayer2/util/HandlerWrapper;
     .locals 2
 
-    .line 53
+    .line 48
     new-instance v0, Lcom/google/android/exoplayer2/util/SystemHandlerWrapper;
 
     new-instance v1, Landroid/os/Handler;
@@ -55,11 +55,8 @@
     return-wide v0
 .end method
 
-.method public sleep(J)V
+.method public onThreadBlocked()V
     .locals 0
-
-    .line 48
-    invoke-static {p1, p2}, Landroid/os/SystemClock;->sleep(J)V
 
     return-void
 .end method

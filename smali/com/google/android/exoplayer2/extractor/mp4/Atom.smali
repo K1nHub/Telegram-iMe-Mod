@@ -23,9 +23,13 @@
 
 .field public static final LONG_HEADER_SIZE:I = 0x10
 
+.field public static final TYPE_H263:I = 0x48323633
+
 .field public static final TYPE_Opus:I = 0x4f707573
 
 .field public static final TYPE_TTML:I = 0x54544d4c
+
+.field public static final TYPE__mp2:I = 0x2e6d7032
 
 .field public static final TYPE__mp3:I = 0x2e6d7033
 
@@ -51,7 +55,11 @@
 
 .field public static final TYPE_camm:I = 0x63616d6d
 
+.field public static final TYPE_clli:I = 0x636c6c69
+
 .field public static final TYPE_co64:I = 0x636f3634
+
+.field public static final TYPE_colr:I = 0x636f6c72
 
 .field public static final TYPE_ctts:I = 0x63747473
 
@@ -71,6 +79,8 @@
 
 .field public static final TYPE_dfLa:I = 0x64664c61
 
+.field public static final TYPE_dmlp:I = 0x646d6c70
+
 .field public static final TYPE_dtsc:I = 0x64747363
 
 .field public static final TYPE_dtse:I = 0x64747365
@@ -78,6 +88,8 @@
 .field public static final TYPE_dtsh:I = 0x64747368
 
 .field public static final TYPE_dtsl:I = 0x6474736c
+
+.field public static final TYPE_dtsx:I = 0x64747378
 
 .field public static final TYPE_dva1:I = 0x64766131
 
@@ -125,7 +137,11 @@
 
 .field public static final TYPE_lpcm:I = 0x6c70636d
 
+.field public static final TYPE_m1v_:I = 0x6d317620
+
 .field public static final TYPE_mdat:I = 0x6d646174
+
+.field public static final TYPE_mdcv:I = 0x6d646376
 
 .field public static final TYPE_mdhd:I = 0x6d646864
 
@@ -137,7 +153,17 @@
 
 .field public static final TYPE_meta:I = 0x6d657461
 
+.field public static final TYPE_mett:I = 0x6d657474
+
+.field public static final TYPE_mha1:I = 0x6d686131
+
+.field public static final TYPE_mhaC:I = 0x6d686143
+
+.field public static final TYPE_mhm1:I = 0x6d686d31
+
 .field public static final TYPE_minf:I = 0x6d696e66
+
+.field public static final TYPE_mlpa:I = 0x6d6c7061
 
 .field public static final TYPE_moof:I = 0x6d6f6f66
 
@@ -146,6 +172,8 @@
 .field public static final TYPE_mp4a:I = 0x6d703461
 
 .field public static final TYPE_mp4v:I = 0x6d703476
+
+.field public static final TYPE_mpvd:I = 0x6d707664
 
 .field public static final TYPE_mvex:I = 0x6d766578
 
@@ -167,6 +195,8 @@
 
 .field public static final TYPE_samr:I = 0x73616d72
 
+.field public static final TYPE_saut:I = 0x73617574
+
 .field public static final TYPE_sawb:I = 0x73617762
 
 .field public static final TYPE_sbgp:I = 0x73626770
@@ -182,6 +212,8 @@
 .field public static final TYPE_sidx:I = 0x73696478
 
 .field public static final TYPE_sinf:I = 0x73696e66
+
+.field public static final TYPE_smta:I = 0x736d7461
 
 .field public static final TYPE_sowt:I = 0x736f7774
 
@@ -233,8 +265,6 @@
 
 .field public static final TYPE_uuid:I = 0x75756964
 
-.field public static final TYPE_vmhd:I = 0x766d6864
-
 .field public static final TYPE_vp08:I = 0x76703038
 
 .field public static final TYPE_vp09:I = 0x76703039
@@ -254,10 +284,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 387
+    .line 421
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 388
+    .line 422
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom;->type:I
 
     return-void
@@ -266,7 +296,7 @@
 .method public static getAtomTypeString(I)Ljava/lang/String;
     .locals 2
 
-    .line 552
+    .line 576
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -337,7 +367,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 393
+    .line 427
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/Atom;->type:I
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/extractor/mp4/Atom;->getAtomTypeString(I)Ljava/lang/String;

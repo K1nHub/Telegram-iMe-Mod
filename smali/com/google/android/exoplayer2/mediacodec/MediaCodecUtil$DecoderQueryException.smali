@@ -20,7 +20,7 @@
 
     const-string v0, "Failed to query underlying media codecs"
 
-    .line 59
+    .line 60
     invoke-direct {p0, v0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method synthetic constructor <init>(Ljava/lang/Throwable;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$1;)V
     .locals 0
 
-    .line 56
+    .line 57
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;-><init>(Ljava/lang/Throwable;)V
 
     return-void

@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)V
     .locals 0
 
-    .line 1312
+    .line 1294
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$DefaultPlayerEmsgCallback;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;Lcom/google/android/exoplayer2/source/dash/DashMediaSource$1;)V
     .locals 0
 
-    .line 1312
+    .line 1294
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$DefaultPlayerEmsgCallback;-><init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource;)V
 
     return-void
@@ -47,7 +47,7 @@
 .method public onDashManifestPublishTimeExpired(J)V
     .locals 1
 
-    .line 1321
+    .line 1303
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$DefaultPlayerEmsgCallback;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->onDashManifestPublishTimeExpired(J)V
@@ -58,7 +58,7 @@
 .method public onDashManifestRefreshRequested()V
     .locals 1
 
-    .line 1316
+    .line 1298
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$DefaultPlayerEmsgCallback;->this$0:Lcom/google/android/exoplayer2/source/dash/DashMediaSource;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource;->onDashManifestRefreshRequested()V

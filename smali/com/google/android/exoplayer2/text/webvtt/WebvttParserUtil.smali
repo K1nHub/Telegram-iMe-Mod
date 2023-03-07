@@ -15,7 +15,7 @@
 
     const-string v0, "^NOTE([ \t].*)?$"
 
-    .line 30
+    .line 28
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 33
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public static findNextCueHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Ljava/util/regex/Matcher;
     .locals 2
 
-    .line 105
+    .line 104
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
@@ -45,7 +45,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 106
+    .line 105
     sget-object v1, Lcom/google/android/exoplayer2/text/webvtt/WebvttParserUtil;->COMMENT:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -58,7 +58,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 108
+    .line 107
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 110
+    .line 109
     :cond_1
     sget-object v1, Lcom/google/android/exoplayer2/text/webvtt/WebvttCueParser;->CUE_HEADER_PATTERN:Ljava/util/regex/Pattern;
 
@@ -82,7 +82,7 @@
 
     move-result-object v0
 
-    .line 111
+    .line 110
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v1
@@ -100,7 +100,7 @@
 .method public static isWebvttHeaderLine(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Z
     .locals 1
 
-    .line 55
+    .line 54
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
     move-result-object p0
@@ -109,7 +109,7 @@
 
     const-string v0, "WEBVTT"
 
-    .line 56
+    .line 55
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
@@ -137,7 +137,7 @@
 
     const-string v0, "%"
 
-    .line 88
+    .line 87
     invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -146,7 +146,7 @@
 
     const/4 v0, 0x0
 
-    .line 91
+    .line 90
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -167,7 +167,7 @@
 
     return p0
 
-    .line 89
+    .line 88
     :cond_0
     new-instance p0, Ljava/lang/NumberFormatException;
 
@@ -188,14 +188,14 @@
 
     const-string v0, "\\."
 
-    .line 68
+    .line 67
     invoke-static {p0, v0}, Lcom/google/android/exoplayer2/util/Util;->splitAtFirst(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
     const/4 v0, 0x0
 
-    .line 69
+    .line 68
     aget-object v1, p0, v0
 
     const-string v2, ":"
@@ -204,7 +204,7 @@
 
     move-result-object v1
 
-    .line 70
+    .line 69
     array-length v2, v1
 
     const-wide/16 v3, 0x0
@@ -218,7 +218,7 @@
 
     mul-long v3, v3, v6
 
-    .line 71
+    .line 70
     invoke-static {v5}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v5
@@ -234,7 +234,7 @@
 
     mul-long v3, v3, v0
 
-    .line 74
+    .line 73
     array-length v2, p0
 
     const/4 v5, 0x2
@@ -243,7 +243,7 @@
 
     const/4 v2, 0x1
 
-    .line 75
+    .line 74
     aget-object p0, p0, v2
 
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -259,19 +259,19 @@
 .end method
 
 .method public static validateWebvttHeaderLine(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
         }
     .end annotation
 
-    .line 42
+    .line 40
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v0
 
-    .line 43
+    .line 41
     invoke-static {p0}, Lcom/google/android/exoplayer2/text/webvtt/WebvttParserUtil;->isWebvttHeaderLine(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Z
 
     move-result v1
@@ -280,32 +280,36 @@
 
     return-void
 
-    .line 44
+    .line 42
     :cond_0
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 45
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
+    .line 43
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "Expected WEBVTT. Got "
 
-    const-string v2, "Expected WEBVTT. Got "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    .line 44
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    const/4 v0, 0x0
 
-    throw v0
+    .line 43
+    invoke-static {p0, v0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
+
+    throw p0
 .end method

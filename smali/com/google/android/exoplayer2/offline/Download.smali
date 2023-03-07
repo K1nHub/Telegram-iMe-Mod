@@ -56,7 +56,7 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/offline/DownloadRequest;IJJJII)V
     .locals 12
 
-    .line 112
+    .line 125
     new-instance v11, Lcom/google/android/exoplayer2/offline/DownloadProgress;
 
     invoke-direct {v11}, Lcom/google/android/exoplayer2/offline/DownloadProgress;-><init>()V
@@ -85,10 +85,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/offline/DownloadRequest;IJJJIILcom/google/android/exoplayer2/offline/DownloadProgress;)V
     .locals 4
 
-    .line 131
+    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 132
+    .line 145
     invoke-static {p11}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
@@ -126,7 +126,7 @@
     :cond_2
     const/4 v2, 0x0
 
-    .line 133
+    .line 146
     :goto_2
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
@@ -143,33 +143,33 @@
     :cond_3
     const/4 v0, 0x0
 
-    .line 135
+    .line 148
     :goto_3
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 137
+    .line 150
     :cond_4
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/Download;->request:Lcom/google/android/exoplayer2/offline/DownloadRequest;
 
-    .line 138
+    .line 151
     iput p2, p0, Lcom/google/android/exoplayer2/offline/Download;->state:I
 
-    .line 139
+    .line 152
     iput-wide p3, p0, Lcom/google/android/exoplayer2/offline/Download;->startTimeMs:J
 
-    .line 140
+    .line 153
     iput-wide p5, p0, Lcom/google/android/exoplayer2/offline/Download;->updateTimeMs:J
 
-    .line 141
+    .line 154
     iput-wide p7, p0, Lcom/google/android/exoplayer2/offline/Download;->contentLength:J
 
-    .line 142
+    .line 155
     iput p9, p0, Lcom/google/android/exoplayer2/offline/Download;->stopReason:I
 
-    .line 143
+    .line 156
     iput p10, p0, Lcom/google/android/exoplayer2/offline/Download;->failureReason:I
 
-    .line 144
+    .line 157
     iput-object p11, p0, Lcom/google/android/exoplayer2/offline/Download;->progress:Lcom/google/android/exoplayer2/offline/DownloadProgress;
 
     return-void
@@ -180,7 +180,7 @@
 .method public getBytesDownloaded()J
     .locals 2
 
-    .line 154
+    .line 167
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/Download;->progress:Lcom/google/android/exoplayer2/offline/DownloadProgress;
 
     iget-wide v0, v0, Lcom/google/android/exoplayer2/offline/DownloadProgress;->bytesDownloaded:J
@@ -191,7 +191,7 @@
 .method public getPercentDownloaded()F
     .locals 1
 
-    .line 162
+    .line 175
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/Download;->progress:Lcom/google/android/exoplayer2/offline/DownloadProgress;
 
     iget v0, v0, Lcom/google/android/exoplayer2/offline/DownloadProgress;->percentDownloaded:F
@@ -202,7 +202,7 @@
 .method public isTerminalState()Z
     .locals 2
 
-    .line 149
+    .line 162
     iget v0, p0, Lcom/google/android/exoplayer2/offline/Download;->state:I
 
     const/4 v1, 0x3

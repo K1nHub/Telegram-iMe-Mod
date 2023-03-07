@@ -3,14 +3,6 @@
 .source "FixedTrackSelection.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection$Factory;
-    }
-.end annotation
-
-
 # instance fields
 .field private final data:Ljava/lang/Object;
 
@@ -19,19 +11,38 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;I)V
-    .locals 2
+    .locals 1
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    .line 76
-    invoke-direct {p0, p1, p2, v0, v1}, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;IILjava/lang/Object;)V
+    .line 36
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;II)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;IILjava/lang/Object;)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;II)V
+    .locals 6
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    .line 45
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;IIILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;IIILjava/lang/Object;)V
     .locals 2
 
     const/4 v0, 0x1
@@ -42,14 +53,14 @@
 
     aput p2, v0, v1
 
-    .line 86
-    invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
+    .line 61
+    invoke-direct {p0, p1, v0, p3}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[II)V
 
-    .line 87
-    iput p3, p0, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;->reason:I
+    .line 62
+    iput p4, p0, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;->reason:I
 
-    .line 88
-    iput-object p4, p0, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;->data:Ljava/lang/Object;
+    .line 63
+    iput-object p5, p0, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;->data:Ljava/lang/Object;
 
     return-void
 .end method
@@ -67,7 +78,7 @@
 .method public getSelectionData()Ljava/lang/Object;
     .locals 1
 
-    .line 114
+    .line 89
     iget-object v0, p0, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;->data:Ljava/lang/Object;
 
     return-object v0
@@ -76,7 +87,7 @@
 .method public getSelectionReason()I
     .locals 1
 
-    .line 108
+    .line 83
     iget v0, p0, Lcom/google/android/exoplayer2/trackselection/FixedTrackSelection;->reason:I
 
     return v0

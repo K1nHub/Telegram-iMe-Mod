@@ -46,6 +46,10 @@
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
     .locals 1
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 6
     instance-of v0, p1, Lcom/google/android/gms/internal/firebase_ml/zzku;

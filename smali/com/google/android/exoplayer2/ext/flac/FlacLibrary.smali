@@ -3,14 +3,33 @@
 .source "FlacLibrary.java"
 
 
+# static fields
+.field public static final synthetic $r8$clinit:I
+
+.field private static final LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
+
+
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     const-string v0, "goog.exo.flac"
 
-    .line 26
+    .line 25
     invoke-static {v0}, Lcom/google/android/exoplayer2/ExoPlayerLibraryInfo;->registerModule(Ljava/lang/String;)V
+
+    .line 28
+    new-instance v0, Lcom/google/android/exoplayer2/ext/flac/FlacLibrary$1;
+
+    const-string v1, "flacJNI"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacLibrary$1;-><init>([Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/android/exoplayer2/ext/flac/FlacLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
 
     return-void
 .end method
@@ -18,8 +37,32 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 29
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static isAvailable()Z
+    .locals 1
+
+    .line 51
+    sget-object v0, Lcom/google/android/exoplayer2/ext/flac/FlacLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
+
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/LibraryLoader;->isAvailable()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static varargs setLibraries([Ljava/lang/String;)V
+    .locals 1
+
+    .line 46
+    sget-object v0, Lcom/google/android/exoplayer2/ext/flac/FlacLibrary;->LOADER:Lcom/google/android/exoplayer2/util/LibraryLoader;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/exoplayer2/util/LibraryLoader;->setLibraries([Ljava/lang/String;)V
 
     return-void
 .end method

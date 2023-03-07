@@ -1,0 +1,74 @@
+package com.smedialink.p031ui.custom;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.widget.FrameLayout;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.LinearLayoutCompat;
+import com.smedialink.utils.extentions.common.ViewExtKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.fork.utils.Callbacks$Callback;
+import org.fork.utils.Callbacks$Callback1;
+import org.telegram.messenger.C3158R;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.databinding.ForkContentStakingSafeWithdrawalBinding;
+import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p048ui.Components.CheckBoxSquare;
+/* compiled from: StakingSafeWithdrawalView.kt */
+/* renamed from: com.smedialink.ui.custom.StakingSafeWithdrawalView */
+/* loaded from: classes3.dex */
+public final class StakingSafeWithdrawalView extends FrameLayout {
+    private ForkContentStakingSafeWithdrawalBinding binding;
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public StakingSafeWithdrawalView(Context context) {
+        this(context, null, 0, 6, null);
+        Intrinsics.checkNotNullParameter(context, "context");
+    }
+
+    public /* synthetic */ StakingSafeWithdrawalView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public StakingSafeWithdrawalView(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
+        Intrinsics.checkNotNullParameter(context, "context");
+        ForkContentStakingSafeWithdrawalBinding inflate = ForkContentStakingSafeWithdrawalBinding.inflate(LayoutInflater.from(context));
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.from(context))");
+        this.binding = inflate;
+        setupView();
+    }
+
+    public final void setupViewData(boolean z, Callbacks$Callback1<Boolean> onCheckedAction, Callbacks$Callback onInfoClickAction) {
+        Intrinsics.checkNotNullParameter(onCheckedAction, "onCheckedAction");
+        Intrinsics.checkNotNullParameter(onInfoClickAction, "onInfoClickAction");
+        ForkContentStakingSafeWithdrawalBinding forkContentStakingSafeWithdrawalBinding = this.binding;
+        CheckBoxSquare checkBoxSquare = forkContentStakingSafeWithdrawalBinding.checkboxSafeWithdrawal;
+        checkBoxSquare.setChecked(z, false);
+        LinearLayoutCompat linearSafeWithdrawal = forkContentStakingSafeWithdrawalBinding.linearSafeWithdrawal;
+        Intrinsics.checkNotNullExpressionValue(linearSafeWithdrawal, "linearSafeWithdrawal");
+        ViewExtKt.safeThrottledClick$default(linearSafeWithdrawal, 0L, new StakingSafeWithdrawalView$setupViewData$1$1$1(checkBoxSquare, onCheckedAction), 1, null);
+        AppCompatImageView imageHelp = forkContentStakingSafeWithdrawalBinding.imageHelp;
+        Intrinsics.checkNotNullExpressionValue(imageHelp, "imageHelp");
+        ViewExtKt.safeThrottledClick$default(imageHelp, 0L, new StakingSafeWithdrawalView$setupViewData$1$2(onInfoClickAction), 1, null);
+    }
+
+    public final void setupColors() {
+        ForkContentStakingSafeWithdrawalBinding forkContentStakingSafeWithdrawalBinding = this.binding;
+        forkContentStakingSafeWithdrawalBinding.checkboxSafeWithdrawal.setColors("checkboxSquareUnchecked", "checkboxSquareBackground", "checkboxSquareCheck");
+        forkContentStakingSafeWithdrawalBinding.textSafeWithdrawal.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        AppCompatImageView appCompatImageView = forkContentStakingSafeWithdrawalBinding.imageHelp;
+        Intrinsics.checkNotNullExpressionValue(appCompatImageView, "");
+        ViewExtKt.setImageColor(appCompatImageView, Theme.getColor("windowBackgroundWhiteGrayIcon"));
+        ViewExtKt.setBoundedCircleRippleBackground(appCompatImageView);
+    }
+
+    private final void setupView() {
+        setupColors();
+        this.binding.textSafeWithdrawal.setText(LocaleController.getInternalString(C3158R.string.staking_withdraw_safe_withdrawal));
+        addView(this.binding.getRoot());
+    }
+}

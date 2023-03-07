@@ -31,7 +31,7 @@
 .end method
 
 .method public static parse(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/video/DolbyVisionConfig;
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x2
 
@@ -115,6 +115,16 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    const/16 v3, 0xa
+
+    if-ge p0, v3, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    const-string v0, "."
+
+    :goto_2
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;

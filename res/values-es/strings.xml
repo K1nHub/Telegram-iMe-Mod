@@ -1294,7 +1294,6 @@ Siempre puedes volver al tema por defecto de Telegram aquí."</string>
     <string name="DiceEmojiInfo">Envía el emoji %1$s para probar suerte.</string>
     <string name="DiceInfo2">Puedes tirar un :dado: enviando su emoji en cualquier chat.</string>
     <string name="DidNotGetTheCode">¿No recibiste el código?</string>
-    <string name="DidNotGetTheCodeSms">Enviar el código como un SMS</string>
     <string name="DirectShare">Direct Share</string>
     <string name="DirectShareInfo">Chats recientes al compartir en Android</string>
     <string name="Directions">Cómo llegar</string>
@@ -5740,7 +5739,7 @@ Tu saldo se actualizará cuando se haya confirmado la transacción en la cadena 
     <string name="translation_search_language_empty">No hay idiomas coincidentes</string>
     <string name="user_restrictions_send_games">Juegos</string>
     <string name="user_restrictions_send_gifs">GIFs</string>
-    <string name="user_restrictions_send_inline">Mensagens de bot</string>
+    <string name="user_restrictions_send_inline">Mensajes de bot</string>
     <string name="voice_to_text_empty_data_error">Texto no encontrado</string>
     <string name="voice_to_text_settings_messages_in_language_item_title">Saliente</string>
     <string name="voip_call_confirm_alert_message">¿Estás seguro de que quieres llamar a **%1$s**?</string>

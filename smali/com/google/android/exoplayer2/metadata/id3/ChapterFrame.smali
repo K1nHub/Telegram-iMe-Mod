@@ -35,7 +35,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 131
+    .line 127
     new-instance v0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame$1;-><init>()V
@@ -187,7 +187,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 90
+    .line 86
     const-class v2, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -198,11 +198,11 @@
 
     goto :goto_1
 
-    .line 93
+    .line 89
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;
 
-    .line 94
+    .line 90
     iget v2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->startTimeMs:I
 
     iget v3, p1, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->startTimeMs:I
@@ -235,7 +235,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->chapterId:Ljava/lang/String;
 
-    .line 98
+    .line 94
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -246,7 +246,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->subFrames:[Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
-    .line 99
+    .line 95
     invoke-static {v2, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
     move-result p1
@@ -269,7 +269,7 @@
 .method public getSubFrame(I)Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
     .locals 1
 
-    .line 82
+    .line 78
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->subFrames:[Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     aget-object p1, v0, p1
@@ -280,7 +280,7 @@
 .method public getSubFrameCount()I
     .locals 1
 
-    .line 75
+    .line 73
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->subFrames:[Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     array-length v0, v0
@@ -291,7 +291,7 @@
 .method public hashCode()I
     .locals 4
 
-    .line 105
+    .line 101
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->startTimeMs:I
 
     const/16 v1, 0x20f
@@ -300,14 +300,14 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 106
+    .line 102
     iget v0, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->endTimeMs:I
 
     add-int/2addr v1, v0
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 107
+    .line 103
     iget-wide v2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->startOffset:J
 
     long-to-int v0, v2
@@ -316,7 +316,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 108
+    .line 104
     iget-wide v2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->endOffset:J
 
     long-to-int v0, v2
@@ -325,7 +325,7 @@
 
     mul-int/lit8 v1, v1, 0x1f
 
-    .line 109
+    .line 105
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->chapterId:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -348,39 +348,39 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
 
-    .line 115
+    .line 111
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->chapterId:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 116
+    .line 112
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->startTimeMs:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 117
+    .line 113
     iget p2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->endTimeMs:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 118
+    .line 114
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->startOffset:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 119
+    .line 115
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->endOffset:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 120
+    .line 116
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->subFrames:[Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     array-length p2, p2
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 121
+    .line 117
     iget-object p2, p0, Lcom/google/android/exoplayer2/metadata/id3/ChapterFrame;->subFrames:[Lcom/google/android/exoplayer2/metadata/id3/Id3Frame;
 
     array-length v0, p2
@@ -394,7 +394,7 @@
 
     aget-object v3, p2, v2
 
-    .line 122
+    .line 118
     invoke-virtual {p1, v3, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     add-int/lit8 v2, v2, 0x1

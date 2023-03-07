@@ -15,7 +15,11 @@
 
 
 # instance fields
+.field final availabilityTimeOffsetUs:J
+
 .field final duration:J
+
+.field private final periodStartUnixTimeUs:J
 
 .field final segmentTimeline:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -29,10 +33,12 @@
 
 .field final startNumber:J
 
+.field private final timeShiftBufferDepthUs:J
+
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;JJJJLjava/util/List;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;JJJJLjava/util/List;JJJ)V
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,50 +46,222 @@
             "JJJJ",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$SegmentTimelineElement;",
-            ">;)V"
+            ">;JJJ)V"
         }
     .end annotation
 
-    .line 142
+    move-object v0, p0
+
+    .line 160
     invoke-direct/range {p0 .. p5}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;-><init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;JJ)V
 
-    .line 143
-    iput-wide p6, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
+    move-wide v1, p6
 
-    .line 144
-    iput-wide p8, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->duration:J
+    .line 161
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
 
-    .line 145
-    iput-object p10, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
+    move-wide v1, p8
+
+    .line 162
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->duration:J
+
+    move-object v1, p10
+
+    .line 163
+    iput-object v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
+
+    move-wide v1, p11
+
+    .line 164
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->availabilityTimeOffsetUs:J
+
+    move-wide/from16 v1, p13
+
+    .line 165
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->timeShiftBufferDepthUs:J
+
+    move-wide/from16 v1, p15
+
+    .line 166
+    iput-wide v1, v0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->periodStartUnixTimeUs:J
 
     return-void
 .end method
 
 
 # virtual methods
+.method public getAvailableSegmentCount(JJ)J
+    .locals 5
+
+    .line 262
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, -0x1
+
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_0
+
+    return-wide v0
+
+    .line 268
+    :cond_0
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->periodStartUnixTimeUs:J
+
+    sub-long v0, p3, v0
+
+    .line 269
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->availabilityTimeOffsetUs:J
+
+    add-long/2addr v0, v2
+
+    .line 271
+    invoke-virtual {p0, v0, v1, p1, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentNum(JJ)J
+
+    move-result-wide v0
+
+    .line 272
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstAvailableSegmentNum(JJ)J
+
+    move-result-wide p1
+
+    sub-long/2addr v0, p1
+
+    long-to-int p1, v0
+
+    int-to-long p1, p1
+
+    return-wide p1
+.end method
+
+.method public getFirstAvailableSegmentNum(JJ)J
+    .locals 5
+
+    .line 247
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, -0x1
+
+    cmp-long v4, v0, v2
+
+    if-nez v4, :cond_1
+
+    .line 248
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->timeShiftBufferDepthUs:J
+
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v4, v0, v2
+
+    if-nez v4, :cond_0
+
+    goto :goto_0
+
+    .line 253
+    :cond_0
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->periodStartUnixTimeUs:J
+
+    sub-long/2addr p3, v2
+
+    sub-long/2addr p3, v0
+
+    .line 256
+    invoke-virtual {p0, p3, p4, p1, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentNum(JJ)J
+
+    move-result-wide p1
+
+    .line 257
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
+
+    move-result-wide p3
+
+    invoke-static {p3, p4, p1, p2}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide p1
+
+    return-wide p1
+
+    .line 249
+    :cond_1
+    :goto_0
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
+
+    move-result-wide p1
+
+    return-wide p1
+.end method
+
 .method public getFirstSegmentNum()J
     .locals 2
 
-    .line 219
+    .line 242
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
 
     return-wide v0
 .end method
 
-.method public abstract getSegmentCount(J)I
+.method public getNextSegmentAvailableTimeUs(JJ)J
+    .locals 2
+
+    .line 278
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
+
+    if-eqz v0, :cond_0
+
+    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
+
+    return-wide p1
+
+    .line 282
+    :cond_0
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstAvailableSegmentNum(JJ)J
+
+    move-result-wide v0
+
+    .line 283
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getAvailableSegmentCount(JJ)J
+
+    move-result-wide p3
+
+    add-long/2addr v0, p3
+
+    .line 284
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentTimeUs(J)J
+
+    move-result-wide p3
+
+    .line 285
+    invoke-virtual {p0, v0, v1, p1, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentDurationUs(JJ)J
+
+    move-result-wide p1
+
+    add-long/2addr p3, p1
+
+    iget-wide p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->availabilityTimeOffsetUs:J
+
+    sub-long/2addr p3, p1
+
+    return-wide p3
+.end method
+
+.method public abstract getSegmentCount(J)J
 .end method
 
 .method public final getSegmentDurationUs(JJ)J
     .locals 7
 
-    .line 184
+    .line 207
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
     const-wide/32 v1, 0xf4240
 
     if-eqz v0, :cond_0
 
-    .line 185
+    .line 208
     iget-wide p3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
 
     sub-long/2addr p1, p3
@@ -100,41 +278,41 @@
 
     mul-long p1, p1, v1
 
-    .line 186
+    .line 209
     iget-wide p3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->timescale:J
 
     div-long/2addr p1, p3
 
     return-wide p1
 
-    .line 188
+    .line 211
     :cond_0
-    invoke-virtual {p0, p3, p4}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)I
-
-    move-result v0
-
-    const/4 v3, -0x1
-
-    if-eq v0, v3, :cond_1
-
-    .line 190
-    invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
+    invoke-virtual {p0, p3, p4}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)J
 
     move-result-wide v3
 
-    int-to-long v5, v0
+    const-wide/16 v5, -0x1
 
-    add-long/2addr v3, v5
+    cmp-long v0, v3, v5
 
-    const-wide/16 v5, 0x1
+    if-eqz v0, :cond_1
 
-    sub-long/2addr v3, v5
+    .line 213
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
 
-    cmp-long v0, p1, v3
+    move-result-wide v5
+
+    add-long/2addr v5, v3
+
+    const-wide/16 v3, 0x1
+
+    sub-long/2addr v5, v3
+
+    cmp-long v0, p1, v5
 
     if-nez v0, :cond_1
 
-    .line 191
+    .line 214
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentTimeUs(J)J
 
     move-result-wide p1
@@ -143,7 +321,7 @@
 
     goto :goto_0
 
-    .line 192
+    .line 215
     :cond_1
     iget-wide p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->duration:J
 
@@ -160,17 +338,15 @@
 .method public getSegmentNum(JJ)J
     .locals 11
 
-    .line 150
+    .line 171
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getFirstSegmentNum()J
 
     move-result-wide v0
 
-    .line 151
-    invoke-virtual {p0, p3, p4}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)I
+    .line 172
+    invoke-virtual {p0, p3, p4}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentCount(J)J
 
-    move-result p3
-
-    int-to-long p3, p3
+    move-result-wide p3
 
     const-wide/16 v2, 0x0
 
@@ -180,7 +356,7 @@
 
     return-wide v0
 
-    .line 155
+    .line 176
     :cond_0
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
@@ -188,7 +364,7 @@
 
     if-nez v2, :cond_3
 
-    .line 157
+    .line 178
     iget-wide v5, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->duration:J
 
     const-wide/32 v7, 0xf4240
@@ -199,7 +375,7 @@
 
     div-long/2addr v5, v7
 
-    .line 158
+    .line 179
     iget-wide v7, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
 
     div-long/2addr p1, v5
@@ -228,7 +404,7 @@
 
     sub-long/2addr v0, v3
 
-    .line 162
+    .line 185
     invoke-static {v7, v8, v0, v1}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
@@ -252,12 +428,12 @@
 
     const-wide/16 v9, 0x2
 
-    .line 168
+    .line 191
     div-long/2addr v7, v9
 
     add-long/2addr v7, v5
 
-    .line 169
+    .line 192
     invoke-virtual {p0, v7, v8}, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->getSegmentTimeUs(J)J
 
     move-result-wide v9
@@ -296,19 +472,19 @@
 .method public final getSegmentTimeUs(J)J
     .locals 6
 
-    .line 199
+    .line 222
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 223
     iget-wide v1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
 
     sub-long/2addr p1, v1
 
     long-to-int p2, p1
 
-    .line 201
+    .line 224
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -323,7 +499,7 @@
 
     goto :goto_0
 
-    .line 204
+    .line 227
     :cond_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->startNumber:J
 
@@ -338,7 +514,7 @@
 
     const-wide/32 v2, 0xf4240
 
-    .line 206
+    .line 229
     iget-wide v4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;->timescale:J
 
     invoke-static/range {v0 .. v5}, Lcom/google/android/exoplayer2/util/Util;->scaleLargeTimestamp(JJJ)J
@@ -354,7 +530,7 @@
 .method public isExplicit()Z
     .locals 1
 
-    .line 231
+    .line 291
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase$MultiSegmentBase;->segmentTimeline:Ljava/util/List;
 
     if-eqz v0, :cond_0

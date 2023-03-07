@@ -19,7 +19,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 111
+    .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,10 +32,10 @@
 
     const/16 v1, 0x2000
 
-    .line 70
+    .line 71
     div-int v1, v1, p0
 
-    .line 74
+    .line 75
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -49,7 +49,7 @@
 
     aget v6, v0, v4
 
-    .line 75
+    .line 76
     invoke-static {v6, v1}, Lcom/google/android/exoplayer2/util/Util;->ceilDivide(II)I
 
     move-result v6
@@ -60,17 +60,17 @@
 
     goto :goto_0
 
-    .line 78
+    .line 79
     :cond_0
     new-array v7, v5, [J
 
-    .line 79
+    .line 80
     new-array v8, v5, [I
 
-    .line 81
+    .line 82
     new-array v10, v5, [J
 
-    .line 82
+    .line 83
     new-array v11, v5, [I
 
     const/4 v2, 0x0
@@ -79,35 +79,35 @@
 
     const/4 v9, 0x0
 
-    .line 86
+    .line 87
     :goto_1
     array-length v5, v0
 
     if-ge v3, v5, :cond_2
 
-    .line 87
+    .line 88
     aget v5, v0, v3
 
-    .line 88
+    .line 89
     aget-wide v12, p1, v3
 
     :goto_2
     if-lez v5, :cond_1
 
-    .line 91
+    .line 92
     invoke-static {v1, v5}, Ljava/lang/Math;->min(II)I
 
     move-result v6
 
-    .line 93
+    .line 94
     aput-wide v12, v7, v4
 
     mul-int v14, p0, v6
 
-    .line 94
+    .line 95
     aput v14, v8, v4
 
-    .line 95
+    .line 96
     aget v14, v8, v4
 
     invoke-static {v9, v14}, Ljava/lang/Math;->max(II)I
@@ -118,15 +118,15 @@
 
     mul-long v14, v14, p3
 
-    .line 96
+    .line 97
     aput-wide v14, v10, v4
 
     const/4 v14, 0x1
 
-    .line 97
+    .line 98
     aput v14, v11, v4
 
-    .line 99
+    .line 100
     aget v14, v8, v4
 
     int-to-long v14, v14
@@ -151,7 +151,7 @@
 
     mul-long v12, p3, v0
 
-    .line 108
+    .line 109
     new-instance v0, Lcom/google/android/exoplayer2/extractor/mp4/FixedSampleSizeRechunker$Results;
 
     const/4 v14, 0x0

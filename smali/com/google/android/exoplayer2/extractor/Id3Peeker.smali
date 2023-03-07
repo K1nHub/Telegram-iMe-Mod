@@ -32,8 +32,7 @@
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -43,12 +42,14 @@
 
     const/4 v2, 0x0
 
-    .line 56
+    .line 55
     :goto_0
     :try_start_0
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v3, v3, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v3
 
     const/16 v4, 0xa
 
@@ -56,12 +57,12 @@
     :try_end_0
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 61
+    .line 60
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v3, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 62
+    .line 61
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
@@ -74,7 +75,7 @@
 
     goto :goto_2
 
-    .line 66
+    .line 65
     :cond_0
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -82,7 +83,7 @@
 
     invoke-virtual {v3, v5}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 67
+    .line 66
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readSynchSafeInt()I
@@ -93,20 +94,22 @@
 
     if-nez v1, :cond_1
 
-    .line 71
+    .line 70
     new-array v1, v5, [B
 
-    .line 72
+    .line 71
     iget-object v6, p0, Lcom/google/android/exoplayer2/extractor/Id3Peeker;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v6, v6, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v6}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v6
 
     invoke-static {v6, v0, v1, v0, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 73
+    .line 72
     invoke-interface {p1, v1, v4, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 75
+    .line 74
     new-instance v3, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;
 
     invoke-direct {v3, p2}, Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder;-><init>(Lcom/google/android/exoplayer2/metadata/id3/Id3Decoder$FramePredicate;)V
@@ -117,7 +120,7 @@
 
     goto :goto_1
 
-    .line 77
+    .line 76
     :cond_1
     invoke-interface {p1, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
@@ -126,12 +129,12 @@
 
     goto :goto_0
 
-    .line 83
+    .line 82
     :catch_0
     :goto_2
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
-    .line 84
+    .line 83
     invoke-interface {p1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
     return-object v1

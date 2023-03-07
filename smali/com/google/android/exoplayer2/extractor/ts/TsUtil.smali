@@ -7,7 +7,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 93
+    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +19,7 @@
     :goto_0
     if-ge p1, p2, :cond_0
 
-    .line 30
+    .line 62
     aget-byte v0, p0, p1
 
     const/16 v1, 0x47
@@ -34,13 +34,68 @@
     return p1
 .end method
 
+.method public static isStartOfTsPacket([BIII)Z
+    .locals 5
+
+    const/4 v0, 0x0
+
+    const/4 v1, -0x4
+
+    const/4 v2, 0x0
+
+    :goto_0
+    const/4 v3, 0x4
+
+    if-gt v1, v3, :cond_3
+
+    mul-int/lit16 v3, v1, 0xbc
+
+    add-int/2addr v3, p3
+
+    if-lt v3, p1, :cond_1
+
+    if-ge v3, p2, :cond_1
+
+    .line 45
+    aget-byte v3, p0, v3
+
+    const/16 v4, 0x47
+
+    if-eq v3, v4, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v3, 0x1
+
+    add-int/2addr v2, v3
+
+    const/4 v4, 0x5
+
+    if-ne v2, v4, :cond_2
+
+    return v3
+
+    :cond_1
+    :goto_1
+    const/4 v2, 0x0
+
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    return v0
+.end method
+
 .method public static readPcrFromPacket(Lcom/google/android/exoplayer2/util/ParsableByteArray;II)J
     .locals 4
 
-    .line 47
+    .line 79
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 48
+    .line 80
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result p1
@@ -53,7 +108,7 @@
 
     return-wide v0
 
-    .line 53
+    .line 85
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
@@ -99,7 +154,7 @@
 
     return-wide v0
 
-    .line 67
+    .line 99
     :cond_4
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
@@ -109,14 +164,14 @@
 
     if-lt p1, v3, :cond_6
 
-    .line 68
+    .line 100
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result p1
 
     if-lt p1, v3, :cond_6
 
-    .line 69
+    .line 101
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p1
@@ -139,10 +194,10 @@
 
     new-array p2, p1, [B
 
-    .line 73
+    .line 105
     invoke-virtual {p0, p2, v2, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 74
+    .line 106
     invoke-static {p2}, Lcom/google/android/exoplayer2/extractor/ts/TsUtil;->readPcrValueFromPcrBytes([B)J
 
     move-result-wide p0
@@ -158,7 +213,7 @@
 
     const/4 v0, 0x0
 
-    .line 86
+    .line 118
     aget-byte v0, p0, v0
 
     int-to-long v0, v0

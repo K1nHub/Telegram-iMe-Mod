@@ -21,7 +21,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 249
+    .line 283
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
 .method synthetic constructor <init>(Lcom/google/android/exoplayer2/extractor/ogg/StreamReader$1;)V
     .locals 0
 
-    .line 249
+    .line 283
     invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader$UnseekableOggSeeker;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public createSeekMap()Lcom/google/android/exoplayer2/extractor/SeekMap;
     .locals 3
 
-    .line 263
+    .line 297
     new-instance v0, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;
 
     const-wide v1, -0x7fffffffffffffffL    # -4.9E-324

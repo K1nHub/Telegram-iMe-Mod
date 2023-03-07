@@ -26,16 +26,16 @@
 .method constructor <init>(FII)V
     .locals 0
 
-    .line 728
+    .line 864
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 729
+    .line 865
     iput p1, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder$FrameAndTickRate;->effectiveFrameRate:F
 
-    .line 730
+    .line 866
     iput p2, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder$FrameAndTickRate;->subFrameRate:I
 
-    .line 731
+    .line 867
     iput p3, p0, Lcom/google/android/exoplayer2/text/ttml/TtmlDecoder$FrameAndTickRate;->tickRate:I
 
     return-void

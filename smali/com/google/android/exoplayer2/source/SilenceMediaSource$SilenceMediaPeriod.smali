@@ -39,7 +39,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 138
+    .line 164
     new-instance v0, Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     const/4 v1, 0x1
@@ -50,7 +50,7 @@
 
     new-array v1, v1, [Lcom/google/android/exoplayer2/Format;
 
-    invoke-static {}, Lcom/google/android/exoplayer2/source/SilenceMediaSource;->access$100()Lcom/google/android/exoplayer2/Format;
+    invoke-static {}, Lcom/google/android/exoplayer2/source/SilenceMediaSource;->access$200()Lcom/google/android/exoplayer2/Format;
 
     move-result-object v4
 
@@ -72,13 +72,13 @@
 .method public constructor <init>(J)V
     .locals 0
 
-    .line 143
+    .line 169
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 144
+    .line 170
     iput-wide p1, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->durationUs:J
 
-    .line 145
+    .line 171
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -91,7 +91,7 @@
 .method private constrainSeekPosition(J)J
     .locals 6
 
-    .line 231
+    .line 257
     iget-wide v4, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->durationUs:J
 
     const-wide/16 v2, 0x0
@@ -124,7 +124,7 @@
 .method public getAdjustedSeekPositionUs(JLcom/google/android/exoplayer2/SeekParameters;)J
     .locals 0
 
-    .line 204
+    .line 230
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->constrainSeekPosition(J)J
 
     move-result-wide p1
@@ -161,7 +161,7 @@
 .method public getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
     .locals 1
 
-    .line 158
+    .line 184
     sget-object v0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->TRACKS:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     return-object v0
@@ -184,7 +184,7 @@
 .method public prepare(Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;J)V
     .locals 0
 
-    .line 150
+    .line 176
     invoke-interface {p1, p0}, Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;->onPrepared(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
 
     return-void
@@ -207,14 +207,14 @@
 .method public seekToUs(J)J
     .locals 2
 
-    .line 195
+    .line 221
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->constrainSeekPosition(J)J
 
     move-result-wide p1
 
     const/4 v0, 0x0
 
-    .line 196
+    .line 222
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
@@ -224,7 +224,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 197
+    .line 223
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -243,23 +243,23 @@
     return-wide p1
 .end method
 
-.method public selectTracks([Lcom/google/android/exoplayer2/trackselection/TrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
+.method public selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
     .locals 4
 
-    .line 168
+    .line 194
     invoke-direct {p0, p5, p6}, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->constrainSeekPosition(J)J
 
     move-result-wide p5
 
     const/4 v0, 0x0
 
-    .line 169
+    .line 195
     :goto_0
     array-length v1, p1
 
     if-ge v0, v1, :cond_3
 
-    .line 170
+    .line 196
     aget-object v1, p3, v0
 
     if-eqz v1, :cond_1
@@ -272,7 +272,7 @@
 
     if-nez v1, :cond_1
 
-    .line 171
+    .line 197
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
@@ -282,10 +282,10 @@
 
     const/4 v1, 0x0
 
-    .line 172
+    .line 198
     aput-object v1, p3, v0
 
-    .line 174
+    .line 200
     :cond_1
     aget-object v1, p3, v0
 
@@ -295,27 +295,27 @@
 
     if-eqz v1, :cond_2
 
-    .line 175
+    .line 201
     new-instance v1, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceSampleStream;
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->durationUs:J
 
     invoke-direct {v1, v2, v3}, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceSampleStream;-><init>(J)V
 
-    .line 176
+    .line 202
     invoke-virtual {v1, p5, p6}, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceSampleStream;->seekTo(J)V
 
-    .line 177
+    .line 203
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/SilenceMediaSource$SilenceMediaPeriod;->sampleStreams:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 178
+    .line 204
     aput-object v1, p3, v0
 
     const/4 v1, 0x1
 
-    .line 179
+    .line 205
     aput-boolean v1, p4, v0
 
     :cond_2

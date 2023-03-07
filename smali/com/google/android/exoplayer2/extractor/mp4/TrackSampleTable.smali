@@ -25,10 +25,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/extractor/mp4/Track;[J[II[J[IJ)V
     .locals 4
 
-    .line 54
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 50
     array-length v0, p3
 
     array-length v1, p5
@@ -49,7 +49,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 56
+    .line 51
     array-length v0, p2
 
     array-length v1, p5
@@ -66,7 +66,7 @@
     :goto_1
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 57
+    .line 52
     array-length v0, p6
 
     array-length v1, p5
@@ -78,38 +78,38 @@
     :cond_2
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 59
+    .line 54
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->track:Lcom/google/android/exoplayer2/extractor/mp4/Track;
 
-    .line 60
+    .line 55
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->offsets:[J
 
-    .line 61
+    .line 56
     iput-object p3, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->sizes:[I
 
-    .line 62
+    .line 57
     iput p4, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->maximumSize:I
 
-    .line 63
+    .line 58
     iput-object p5, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->timestampsUs:[J
 
-    .line 64
+    .line 59
     iput-object p6, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->flags:[I
 
-    .line 65
+    .line 60
     iput-wide p7, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->durationUs:J
 
-    .line 66
+    .line 61
     array-length p1, p2
 
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->sampleCount:I
 
-    .line 67
+    .line 62
     array-length p1, p6
 
     if-lez p1, :cond_3
 
-    .line 68
+    .line 63
     array-length p1, p6
 
     sub-int/2addr p1, v3
@@ -131,7 +131,7 @@
 .method public getIndexOfEarlierOrEqualSynchronizationSample(J)I
     .locals 3
 
-    .line 82
+    .line 77
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->timestampsUs:[J
 
     const/4 v1, 0x1
@@ -145,7 +145,7 @@
     :goto_0
     if-ltz p1, :cond_1
 
-    .line 84
+    .line 79
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->flags:[I
 
     aget p2, p2, p1
@@ -170,7 +170,7 @@
 .method public getIndexOfLaterOrEqualSynchronizationSample(J)I
     .locals 3
 
-    .line 99
+    .line 94
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->timestampsUs:[J
 
     const/4 v1, 0x1
@@ -181,7 +181,7 @@
 
     move-result p1
 
-    .line 100
+    .line 95
     :goto_0
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->timestampsUs:[J
 
@@ -189,7 +189,7 @@
 
     if-ge p1, p2, :cond_1
 
-    .line 101
+    .line 96
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackSampleTable;->flags:[I
 
     aget p2, p2, p1

@@ -1,0 +1,45 @@
+package com.iMe.i_staking.mapper;
+
+import com.iMe.i_staking.response.StakingDetailedMetadataResponse;
+import com.smedialink.storage.domain.model.crypto.NetworkType;
+import com.smedialink.storage.domain.model.crypto.level.AccountLevel;
+import com.smedialink.storage.domain.model.staking.StakingDetailedMetadata;
+import com.smedialink.storage.domain.model.staking.StakingDetailedStats;
+import com.smedialink.storage.domain.model.staking.StakingRules;
+import com.smedialink.storage.domain.model.staking.StakingToken;
+import java.math.BigDecimal;
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: StakingDetailedMetadataMapper.kt */
+/* loaded from: classes3.dex */
+public final class StakingDetailedMetadataMapperKt {
+    public static final StakingDetailedMetadata mapToDomain(StakingDetailedMetadataResponse stakingDetailedMetadataResponse) {
+        Intrinsics.checkNotNullParameter(stakingDetailedMetadataResponse, "<this>");
+        long id = stakingDetailedMetadataResponse.getId();
+        NetworkType map = NetworkType.Companion.map(stakingDetailedMetadataResponse.getNet());
+        String name = stakingDetailedMetadataResponse.getName();
+        String author = stakingDetailedMetadataResponse.getAuthor();
+        String contract = stakingDetailedMetadataResponse.getContract();
+        String startsAt = stakingDetailedMetadataResponse.getStartsAt();
+        String endsAt = stakingDetailedMetadataResponse.getEndsAt();
+        StakingToken mapToDomain = StakingTokenMapperKt.mapToDomain(stakingDetailedMetadataResponse.getToken());
+        StakingToken mapToDomain2 = StakingTokenMapperKt.mapToDomain(stakingDetailedMetadataResponse.getFeeToken());
+        double apy = stakingDetailedMetadataResponse.getApy();
+        double apr = stakingDetailedMetadataResponse.getApr();
+        long incomePeriod = stakingDetailedMetadataResponse.getIncomePeriod();
+        double incomePercent = stakingDetailedMetadataResponse.getIncomePercent();
+        double prematureWithdrawalFee = stakingDetailedMetadataResponse.getPrematureWithdrawalFee();
+        double immediateWithdrawalFee = stakingDetailedMetadataResponse.getImmediateWithdrawalFee();
+        double safeWithdrawalFee = stakingDetailedMetadataResponse.getSafeWithdrawalFee();
+        long safeWithdrawalDuration = stakingDetailedMetadataResponse.getSafeWithdrawalDuration();
+        BigDecimal compoundAccrualThreshold = stakingDetailedMetadataResponse.getCompoundAccrualThreshold();
+        StakingDetailedStats mapToDomain3 = StakingDetailedStatsMapperKt.mapToDomain(stakingDetailedMetadataResponse.getStats());
+        StakingRules mapToDomain4 = StakingRulesMapperKt.mapToDomain(stakingDetailedMetadataResponse.getRules());
+        boolean hasEnoughFunds = stakingDetailedMetadataResponse.getHasEnoughFunds();
+        AccountLevel.Companion companion = AccountLevel.Companion;
+        String minimalRank = stakingDetailedMetadataResponse.getMinimalRank();
+        if (minimalRank == null) {
+            minimalRank = "";
+        }
+        return new StakingDetailedMetadata(id, map, name, author, contract, startsAt, endsAt, mapToDomain, mapToDomain2, apy, apr, incomePeriod, incomePercent, prematureWithdrawalFee, immediateWithdrawalFee, safeWithdrawalFee, safeWithdrawalDuration, compoundAccrualThreshold, mapToDomain3, mapToDomain4, hasEnoughFunds, companion.map(minimalRank), stakingDetailedMetadataResponse.getWebsite());
+    }
+}

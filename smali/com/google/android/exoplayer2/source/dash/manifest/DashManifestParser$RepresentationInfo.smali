@@ -15,7 +15,15 @@
 
 
 # instance fields
-.field public final baseUrl:Ljava/lang/String;
+.field public final baseUrls:Lcom/google/common/collect/ImmutableList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/common/collect/ImmutableList<",
+            "Lcom/google/android/exoplayer2/source/dash/manifest/BaseUrl;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final drmSchemeDatas:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -28,6 +36,16 @@
 .end field
 
 .field public final drmSchemeType:Ljava/lang/String;
+
+.field public final essentialProperties:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field public final format:Lcom/google/android/exoplayer2/Format;
 
@@ -45,15 +63,27 @@
 
 .field public final segmentBase:Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;
 
+.field public final supplementalProperties:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/exoplayer2/Format;Ljava/lang/String;Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;J)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/Format;Ljava/util/List;Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/List;Ljava/util/List;J)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/google/android/exoplayer2/Format;",
-            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/source/dash/manifest/BaseUrl;",
+            ">;",
             "Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;",
             "Ljava/lang/String;",
             "Ljava/util/ArrayList<",
@@ -61,33 +91,49 @@
             ">;",
             "Ljava/util/ArrayList<",
             "Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;",
+            ">;",
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;",
+            ">;",
+            "Ljava/util/List<",
+            "Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;",
             ">;J)V"
         }
     .end annotation
 
-    .line 1662
+    .line 2082
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1663
+    .line 2083
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->format:Lcom/google/android/exoplayer2/Format;
 
-    .line 1664
-    iput-object p2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->baseUrl:Ljava/lang/String;
+    .line 2084
+    invoke-static {p2}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
-    .line 1665
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->baseUrls:Lcom/google/common/collect/ImmutableList;
+
+    .line 2085
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->segmentBase:Lcom/google/android/exoplayer2/source/dash/manifest/SegmentBase;
 
-    .line 1666
+    .line 2086
     iput-object p4, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->drmSchemeType:Ljava/lang/String;
 
-    .line 1667
+    .line 2087
     iput-object p5, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->drmSchemeDatas:Ljava/util/ArrayList;
 
-    .line 1668
+    .line 2088
     iput-object p6, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->inbandEventStreams:Ljava/util/ArrayList;
 
-    .line 1669
-    iput-wide p7, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->revisionId:J
+    .line 2089
+    iput-object p7, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->essentialProperties:Ljava/util/List;
+
+    .line 2090
+    iput-object p8, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->supplementalProperties:Ljava/util/List;
+
+    .line 2091
+    iput-wide p9, p0, Lcom/google/android/exoplayer2/source/dash/manifest/DashManifestParser$RepresentationInfo;->revisionId:J
 
     return-void
 .end method

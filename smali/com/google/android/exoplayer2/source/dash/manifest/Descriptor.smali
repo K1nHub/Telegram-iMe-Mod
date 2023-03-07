@@ -15,16 +15,16 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 42
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 37
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->schemeIdUri:Ljava/lang/String;
 
-    .line 44
+    .line 38
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->value:Ljava/lang/String;
 
-    .line 45
+    .line 39
     iput-object p3, p0, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->id:Ljava/lang/String;
 
     return-void
@@ -46,7 +46,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 53
+    .line 47
     const-class v2, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -57,11 +57,11 @@
 
     goto :goto_1
 
-    .line 56
+    .line 50
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;
 
-    .line 57
+    .line 51
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->schemeIdUri:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->schemeIdUri:Ljava/lang/String;
@@ -76,6 +76,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->value:Ljava/lang/String;
 
+    .line 52
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -86,7 +87,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->id:Ljava/lang/String;
 
-    .line 58
+    .line 53
     invoke-static {v2, p1}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
@@ -109,7 +110,7 @@
 .method public hashCode()I
     .locals 3
 
-    .line 63
+    .line 58
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->schemeIdUri:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -118,7 +119,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 64
+    .line 59
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->value:Ljava/lang/String;
 
     const/4 v2, 0x0
@@ -139,7 +140,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 65
+    .line 60
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/Descriptor;->id:Ljava/lang/String;
 
     if-eqz v1, :cond_1

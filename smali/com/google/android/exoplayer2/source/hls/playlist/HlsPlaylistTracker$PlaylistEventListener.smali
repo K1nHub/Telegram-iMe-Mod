@@ -18,5 +18,5 @@
 .method public abstract onPlaylistChanged()V
 .end method
 
-.method public abstract onPlaylistError(Landroid/net/Uri;J)Z
+.method public abstract onPlaylistError(Landroid/net/Uri;Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Z)Z
 .end method

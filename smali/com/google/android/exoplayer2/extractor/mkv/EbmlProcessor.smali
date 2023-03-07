@@ -29,8 +29,7 @@
 .method public abstract binaryElement(IILcom/google/android/exoplayer2/extractor/ExtractorInput;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

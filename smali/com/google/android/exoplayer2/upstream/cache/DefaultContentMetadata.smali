@@ -28,10 +28,10 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 34
+    .line 33
     new-instance v0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
-    .line 35
+    .line 34
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v1
@@ -46,7 +46,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 42
+    .line 41
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
@@ -67,10 +67,10 @@
         }
     .end annotation
 
-    .line 46
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
+    .line 48
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p1
@@ -81,7 +81,7 @@
 .end method
 
 .method private static addValues(Ljava/util/HashMap;Ljava/util/Map;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,38 +95,44 @@
         }
     .end annotation
 
-    .line 156
-    invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    .line 157
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object p1
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 158
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 157
-    invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->getBytes(Ljava/lang/Object;)[B
+    invoke-static {v0}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->getBytes(Ljava/lang/Object;)[B
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
@@ -150,19 +156,19 @@
         }
     .end annotation
 
-    .line 143
+    .line 144
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0, p0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    .line 144
+    .line 145
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->getRemovedValues()Ljava/util/List;
 
     move-result-object p0
 
     invoke-static {v0, p0}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->removeValues(Ljava/util/HashMap;Ljava/util/List;)V
 
-    .line 145
+    .line 146
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;->getEditedValues()Ljava/util/Map;
 
     move-result-object p0
@@ -175,14 +181,14 @@
 .method private static getBytes(Ljava/lang/Object;)[B
     .locals 3
 
-    .line 162
+    .line 163
     instance-of v0, p0, Ljava/lang/Long;
 
     if-eqz v0, :cond_0
 
     const/16 v0, 0x8
 
-    .line 163
+    .line 164
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -203,20 +209,16 @@
 
     return-object p0
 
-    .line 164
+    .line 165
     :cond_0
     instance-of v0, p0, Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 165
+    .line 166
     check-cast p0, Ljava/lang/String;
 
-    const-string v0, "UTF-8"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
+    sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
@@ -224,18 +226,18 @@
 
     return-object p0
 
-    .line 166
+    .line 167
     :cond_1
     instance-of v0, p0, [B
 
     if-eqz v0, :cond_2
 
-    .line 167
+    .line 168
     check-cast p0, [B
 
     return-object p0
 
-    .line 169
+    .line 170
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -258,7 +260,7 @@
         }
     .end annotation
 
-    .line 128
+    .line 129
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
     move-result v0
@@ -273,7 +275,7 @@
 
     return v2
 
-    .line 131
+    .line 132
     :cond_0
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -296,14 +298,14 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 132
+    .line 133
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, [B
 
-    .line 133
+    .line 134
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -314,7 +316,7 @@
 
     check-cast v0, [B
 
-    .line 134
+    .line 135
     invoke-static {v1, v0}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v0
@@ -345,7 +347,7 @@
 
     const/4 v0, 0x0
 
-    .line 150
+    .line 151
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -353,7 +355,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 151
+    .line 152
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -373,7 +375,7 @@
 .method public final contains(Ljava/lang/String;)Z
     .locals 1
 
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -386,14 +388,14 @@
 .method public copyWithMutationsApplied(Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;)Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
     .locals 1
 
-    .line 55
+    .line 56
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
     invoke-static {v0, p1}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->applyMutations(Ljava/util/Map;Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;)Ljava/util/Map;
 
     move-result-object p1
 
-    .line 56
+    .line 57
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
     invoke-static {v0, p1}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->isMetadataEqual(Ljava/util/Map;Ljava/util/Map;)Z
@@ -404,7 +406,7 @@
 
     return-object p0
 
-    .line 59
+    .line 60
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
@@ -425,7 +427,7 @@
         }
     .end annotation
 
-    .line 64
+    .line 65
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -447,7 +449,7 @@
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 109
+    .line 110
     const-class v0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -458,7 +460,7 @@
 
     goto :goto_0
 
-    .line 112
+    .line 113
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
@@ -482,25 +484,18 @@
 .method public final get(Ljava/lang/String;J)J
     .locals 1
 
-    .line 91
+    .line 92
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 92
-    iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
-
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, [B
 
-    .line 93
+    if-eqz p1, :cond_0
+
+    .line 94
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -518,32 +513,21 @@
 .method public final get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
-    .line 81
+    .line 82
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 82
-    iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
-
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, [B
 
-    .line 83
+    if-eqz p1, :cond_0
+
+    .line 84
     new-instance p2, Ljava/lang/String;
 
-    const-string v0, "UTF-8"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
+    sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-direct {p2, p1, v0}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
@@ -554,25 +538,18 @@
 .method public final get(Ljava/lang/String;[B)[B
     .locals 1
 
-    .line 70
+    .line 71
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 71
-    iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
-
-    invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, [B
 
-    .line 72
+    if-eqz p1, :cond_0
+
+    .line 73
     array-length p2, p1
 
     invoke-static {p1, p2}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -588,14 +565,14 @@
 .method public hashCode()I
     .locals 4
 
-    .line 117
+    .line 118
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->hashCode:I
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 119
+    .line 120
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->metadata:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -619,7 +596,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 120
+    .line 121
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -646,11 +623,11 @@
 
     goto :goto_0
 
-    .line 122
+    .line 123
     :cond_0
     iput v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->hashCode:I
 
-    .line 124
+    .line 125
     :cond_1
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->hashCode:I
 

@@ -17,10 +17,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 32
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 36
     sget-object v0, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
@@ -31,7 +31,7 @@
 .method public constructor <init>([B)V
     .locals 1
 
-    .line 42
+    .line 45
     array-length v0, p1
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;-><init>([BI)V
@@ -42,13 +42,13 @@
 .method public constructor <init>([BI)V
     .locals 0
 
-    .line 51
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 55
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
-    .line 53
+    .line 56
     iput p2, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteLimit:I
 
     return-void
@@ -57,7 +57,7 @@
 .method private assertValidOffset()V
     .locals 2
 
-    .line 319
+    .line 341
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     if-ltz v0, :cond_1
@@ -91,7 +91,7 @@
 .method public bitsLeft()I
     .locals 2
 
-    .line 93
+    .line 94
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteLimit:I
 
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
@@ -110,7 +110,7 @@
 .method public byteAlign()V
     .locals 1
 
-    .line 243
+    .line 240
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     if-nez v0, :cond_0
@@ -120,17 +120,17 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 246
+    .line 243
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 247
+    .line 244
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 248
+    .line 245
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
     return-void
@@ -139,7 +139,7 @@
 .method public getBytePosition()I
     .locals 1
 
-    .line 109
+    .line 108
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     if-nez v0, :cond_0
@@ -154,7 +154,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 110
+    .line 109
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     return v0
@@ -163,7 +163,7 @@
 .method public getPosition()I
     .locals 2
 
-    .line 100
+    .line 99
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     mul-int/lit8 v0, v0, 0x8
@@ -190,7 +190,7 @@
 
     and-int/2addr p1, v1
 
-    .line 294
+    .line 316
     :cond_0
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
@@ -202,7 +202,7 @@
 
     move-result v1
 
-    .line 295
+    .line 317
     iget v3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     rsub-int/lit8 v4, v3, 0x8
@@ -219,7 +219,7 @@
 
     or-int/2addr v3, v5
 
-    .line 297
+    .line 319
     iget-object v5, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     iget v6, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
@@ -236,7 +236,7 @@
 
     ushr-int v3, p1, v1
 
-    .line 299
+    .line 321
     aget-byte v7, v5, v6
 
     shl-int/2addr v3, v4
@@ -252,7 +252,7 @@
     :goto_0
     if-le v1, v2, :cond_1
 
-    .line 304
+    .line 326
     iget-object v3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     add-int/lit8 v4, v6, 0x1
@@ -274,7 +274,7 @@
     :cond_1
     rsub-int/lit8 v2, v1, 0x8
 
-    .line 308
+    .line 330
     iget-object v3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     aget-byte v4, v3, v6
@@ -295,7 +295,7 @@
 
     and-int/2addr p1, v1
 
-    .line 311
+    .line 333
     aget-byte v0, v3, v6
 
     shl-int/2addr p1, v2
@@ -306,10 +306,10 @@
 
     aput-byte p1, v3, v6
 
-    .line 313
+    .line 335
     invoke-virtual {p0, p2}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 314
+    .line 336
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
     return-void
@@ -318,7 +318,7 @@
 .method public readBit()Z
     .locals 3
 
-    .line 157
+    .line 154
     iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
@@ -342,7 +342,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 158
+    .line 155
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBit()V
 
@@ -358,7 +358,7 @@
 
     return v0
 
-    .line 173
+    .line 170
     :cond_0
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
@@ -368,7 +368,7 @@
 
     const/4 v1, 0x0
 
-    .line 174
+    .line 171
     :goto_0
     iget v2, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
@@ -378,10 +378,10 @@
 
     add-int/lit8 v2, v2, -0x8
 
-    .line 175
+    .line 172
     iput v2, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 176
+    .line 173
     iget-object v3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     iget v4, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
@@ -400,7 +400,7 @@
 
     goto :goto_0
 
-    .line 178
+    .line 175
     :cond_1
     iget-object v4, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
@@ -426,15 +426,15 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 181
+    .line 178
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     add-int/lit8 v5, v5, 0x1
 
-    .line 182
+    .line 179
     iput v5, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 184
+    .line 181
     :cond_2
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
@@ -455,7 +455,7 @@
 
     if-ge p2, v0, :cond_0
 
-    .line 214
+    .line 211
     iget-object v3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     iget v4, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
@@ -474,7 +474,7 @@
 
     aput-byte v4, p1, p2
 
-    .line 215
+    .line 212
     aget-byte v4, p1, p2
 
     aget-byte v3, v3, v5
@@ -502,7 +502,7 @@
 
     return-void
 
-    .line 223
+    .line 220
     :cond_1
     aget-byte p3, p1, v0
 
@@ -514,14 +514,14 @@
 
     aput-byte p3, p1, v0
 
-    .line 224
+    .line 221
     iget p3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     add-int v3, p3, p2
 
     if-le v3, v2, :cond_2
 
-    .line 226
+    .line 223
     aget-byte v3, p1, v0
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
@@ -546,10 +546,10 @@
 
     sub-int/2addr p3, v2
 
-    .line 227
+    .line 224
     iput p3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 229
+    .line 226
     :cond_2
     iget p3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
@@ -557,7 +557,7 @@
 
     iput p3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 230
+    .line 227
     iget-object v3, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     iget v4, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
@@ -570,7 +570,7 @@
 
     shr-int/2addr v1, v3
 
-    .line 231
+    .line 228
     aget-byte v3, p1, v0
 
     rsub-int/lit8 p2, p2, 0x8
@@ -589,15 +589,15 @@
 
     const/4 p1, 0x0
 
-    .line 233
+    .line 230
     iput p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 234
+    .line 231
     iput v4, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 236
+    .line 233
     :cond_3
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
@@ -611,7 +611,7 @@
 
     if-gt p1, v0, :cond_0
 
-    .line 196
+    .line 193
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result p1
@@ -625,7 +625,7 @@
     :cond_0
     sub-int/2addr p1, v0
 
-    .line 198
+    .line 195
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result p1
@@ -644,7 +644,7 @@
 .method public readBytes([BII)V
     .locals 2
 
-    .line 262
+    .line 259
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     if-nez v0, :cond_0
@@ -659,31 +659,65 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 263
+    .line 260
     iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 264
+    .line 261
     iget p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     add-int/2addr p1, p3
 
     iput p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 265
+    .line 262
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
     return-void
 .end method
 
+.method public readBytesAsString(I)Ljava/lang/String;
+    .locals 1
+
+    .line 285
+    sget-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBytesAsString(ILjava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public readBytesAsString(ILjava/nio/charset/Charset;)Ljava/lang/String;
+    .locals 2
+
+    .line 297
+    new-array v0, p1, [B
+
+    const/4 v1, 0x0
+
+    .line 298
+    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBytes([BII)V
+
+    .line 299
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v0, p2}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+
+    return-object p1
+.end method
+
 .method public reset(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 2
 
-    .line 72
-    iget-object v0, p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 75
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
@@ -691,7 +725,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->reset([BI)V
 
-    .line 73
+    .line 76
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result p1
@@ -706,7 +740,7 @@
 .method public reset([B)V
     .locals 1
 
-    .line 62
+    .line 65
     array-length v0, p1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->reset([BI)V
@@ -717,18 +751,18 @@
 .method public reset([BI)V
     .locals 0
 
-    .line 83
+    .line 86
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->data:[B
 
     const/4 p1, 0x0
 
-    .line 84
+    .line 87
     iput p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 85
+    .line 88
     iput p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 86
+    .line 89
     iput p2, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteLimit:I
 
     return-void
@@ -737,7 +771,7 @@
 .method public setPosition(I)V
     .locals 1
 
-    .line 119
+    .line 118
     div-int/lit8 v0, p1, 0x8
 
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
@@ -746,10 +780,10 @@
 
     sub-int/2addr p1, v0
 
-    .line 120
+    .line 119
     iput p1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 121
+    .line 120
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
     return-void
@@ -758,7 +792,7 @@
 .method public skipBit()V
     .locals 2
 
-    .line 128
+    .line 125
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     add-int/lit8 v0, v0, 0x1
@@ -771,17 +805,17 @@
 
     const/4 v0, 0x0
 
-    .line 129
+    .line 126
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 130
+    .line 127
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 132
+    .line 129
     :cond_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
@@ -791,17 +825,17 @@
 .method public skipBits(I)V
     .locals 3
 
-    .line 141
+    .line 138
     div-int/lit8 v0, p1, 0x8
 
-    .line 142
+    .line 139
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     add-int/2addr v1, v0
 
     iput v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 143
+    .line 140
     iget v2, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     mul-int/lit8 v0, v0, 0x8
@@ -818,15 +852,15 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 145
+    .line 142
     iput v1, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     add-int/lit8 v2, v2, -0x8
 
-    .line 146
+    .line 143
     iput v2, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
-    .line 148
+    .line 145
     :cond_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
@@ -836,7 +870,7 @@
 .method public skipBytes(I)V
     .locals 1
 
-    .line 275
+    .line 272
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->bitOffset:I
 
     if-nez v0, :cond_0
@@ -851,14 +885,14 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 276
+    .line 273
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableBitArray;->byteOffset:I
 
-    .line 277
+    .line 274
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->assertValidOffset()V
 
     return-void

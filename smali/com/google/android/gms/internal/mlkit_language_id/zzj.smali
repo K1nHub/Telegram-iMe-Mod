@@ -6,6 +6,10 @@
 # direct methods
 .method private static zza(Ljava/lang/Object;)Ljava/lang/String;
     .locals 7
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     if-nez p0, :cond_0
 
@@ -176,6 +180,14 @@
 
 .method public static varargs zza(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     .locals 6
+    .param p0    # Ljava/lang/String;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .param p1    # [Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

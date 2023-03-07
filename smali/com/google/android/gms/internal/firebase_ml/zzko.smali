@@ -59,6 +59,10 @@
 
 .method private final zzi(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/internal/firebase_ml/zzko;
     .locals 2
+    .param p2    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 29
     new-instance v0, Lcom/google/android/gms/internal/firebase_ml/zzkn;
@@ -247,6 +251,10 @@
 
 .method public final zzh(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/internal/firebase_ml/zzko;
     .locals 0
+    .param p2    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 7
     invoke-direct {p0, p1, p2}, Lcom/google/android/gms/internal/firebase_ml/zzko;->zzi(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/internal/firebase_ml/zzko;

@@ -11,10 +11,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 32
-    new-instance v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector$1;
-
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector$1;-><init>()V
+    .line 29
+    sget-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector$$ExternalSyntheticLambda0;
 
     sput-object v0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;->DEFAULT:Lcom/google/android/exoplayer2/mediacodec/MediaCodecSelector;
 
@@ -35,14 +33,6 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getPassthroughDecoderInfo()Lcom/google/android/exoplayer2/mediacodec/MediaCodecInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;

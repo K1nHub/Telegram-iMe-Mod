@@ -27,13 +27,13 @@
 .method public constructor <init>(JLcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;)V
     .locals 0
 
-    .line 302
+    .line 301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 303
+    .line 302
     iput-wide p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;->durationUs:J
 
-    .line 304
+    .line 303
     iput-object p3, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;->decoderJni:Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
     return-void
@@ -44,7 +44,7 @@
 .method public getDurationUs()J
     .locals 2
 
-    .line 320
+    .line 319
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;->durationUs:J
 
     return-wide v0
@@ -53,7 +53,7 @@
 .method public getSeekPoints(J)Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
     .locals 1
 
-    .line 314
+    .line 313
     iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacExtractor$FlacSeekMap;->decoderJni:Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->getSeekPoints(J)Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
@@ -62,7 +62,7 @@
 
     if-nez p1, :cond_0
 
-    .line 315
+    .line 314
     new-instance p1, Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
 
     sget-object p2, Lcom/google/android/exoplayer2/extractor/SeekPoint;->START:Lcom/google/android/exoplayer2/extractor/SeekPoint;

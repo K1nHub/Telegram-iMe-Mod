@@ -44,5 +44,21 @@
 .method public abstract onChunkLoadCompleted(Lcom/google/android/exoplayer2/source/chunk/Chunk;)V
 .end method
 
-.method public abstract onChunkLoadError(Lcom/google/android/exoplayer2/source/chunk/Chunk;ZLjava/lang/Exception;J)Z
+.method public abstract onChunkLoadError(Lcom/google/android/exoplayer2/source/chunk/Chunk;ZLcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Lcom/google/android/exoplayer2/upstream/LoadErrorHandlingPolicy;)Z
+.end method
+
+.method public abstract release()V
+.end method
+
+.method public abstract shouldCancelLoad(JLcom/google/android/exoplayer2/source/chunk/Chunk;Ljava/util/List;)Z
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lcom/google/android/exoplayer2/source/chunk/Chunk;",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/google/android/exoplayer2/source/chunk/MediaChunk;",
+            ">;)Z"
+        }
+    .end annotation
 .end method

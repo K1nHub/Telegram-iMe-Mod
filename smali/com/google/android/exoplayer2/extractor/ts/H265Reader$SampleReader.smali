@@ -50,10 +50,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
     .locals 0
 
-    .line 416
+    .line 489
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 417
+    .line 490
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     return-void
@@ -114,24 +114,34 @@
 .end method
 
 .method private outputSample(I)V
-    .locals 7
+    .locals 8
 
-    .line 486
+    .line 559
+    iget-wide v1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->sampleTimeUs:J
+
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v0, v1, v3
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 562
+    :cond_0
     iget-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->sampleIsKeyframe:Z
 
-    .line 487
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitPosition:J
+    .line 563
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitPosition:J
 
-    iget-wide v4, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->samplePosition:J
+    iget-wide v6, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->samplePosition:J
 
-    sub-long/2addr v0, v4
+    sub-long/2addr v4, v6
 
-    long-to-int v4, v0
+    long-to-int v4, v4
 
-    .line 488
+    .line 564
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->output:Lcom/google/android/exoplayer2/extractor/TrackOutput;
-
-    iget-wide v1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->sampleTimeUs:J
 
     const/4 v6, 0x0
 
@@ -147,7 +157,7 @@
 .method public endNalUnit(JIZ)V
     .locals 2
 
-    .line 467
+    .line 540
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingPrefix:Z
 
     if-eqz v0, :cond_0
@@ -156,19 +166,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 469
+    .line 542
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitHasKeyframeData:Z
 
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->sampleIsKeyframe:Z
 
     const/4 p1, 0x0
 
-    .line 470
+    .line 543
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingPrefix:Z
 
     goto :goto_0
 
-    .line 471
+    .line 544
     :cond_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstPrefixNalUnit:Z
 
@@ -181,12 +191,12 @@
     :cond_1
     if-eqz p4, :cond_2
 
-    .line 473
+    .line 546
     iget-boolean p4, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingSample:Z
 
     if-eqz p4, :cond_2
 
-    .line 475
+    .line 548
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitPosition:J
 
     sub-long/2addr p1, v0
@@ -195,28 +205,28 @@
 
     add-int/2addr p3, p2
 
-    .line 476
+    .line 549
     invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->outputSample(I)V
 
-    .line 478
+    .line 551
     :cond_2
     iget-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitPosition:J
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->samplePosition:J
 
-    .line 479
+    .line 552
     iget-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitTimeUs:J
 
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->sampleTimeUs:J
 
-    .line 480
+    .line 553
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitHasKeyframeData:Z
 
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->sampleIsKeyframe:Z
 
     const/4 p1, 0x1
 
-    .line 481
+    .line 554
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingSample:Z
 
     :cond_3
@@ -227,21 +237,21 @@
 .method public readNalUnitData([BII)V
     .locals 2
 
-    .line 455
+    .line 528
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->lookingForFirstSliceFlag:Z
 
     if-eqz v0, :cond_2
 
     add-int/lit8 v0, p2, 0x2
 
-    .line 456
+    .line 529
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitBytesRead:I
 
     sub-int/2addr v0, v1
 
     if-ge v0, p3, :cond_1
 
-    .line 458
+    .line 531
     aget-byte p1, p1, v0
 
     and-int/lit16 p1, p1, 0x80
@@ -260,7 +270,7 @@
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstSlice:Z
 
-    .line 459
+    .line 532
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->lookingForFirstSliceFlag:Z
 
     goto :goto_1
@@ -270,7 +280,7 @@
 
     add-int/2addr v1, p3
 
-    .line 461
+    .line 534
     iput v1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitBytesRead:I
 
     :cond_2
@@ -283,19 +293,19 @@
 
     const/4 v0, 0x0
 
-    .line 421
+    .line 494
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->lookingForFirstSliceFlag:Z
 
-    .line 422
+    .line 495
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstSlice:Z
 
-    .line 423
+    .line 496
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstPrefixNalUnit:Z
 
-    .line 424
+    .line 497
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingSample:Z
 
-    .line 425
+    .line 498
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingPrefix:Z
 
     return-void
@@ -306,22 +316,22 @@
 
     const/4 v0, 0x0
 
-    .line 430
+    .line 503
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstSlice:Z
 
-    .line 431
+    .line 504
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstPrefixNalUnit:Z
 
-    .line 432
+    .line 505
     iput-wide p5, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitTimeUs:J
 
-    .line 433
+    .line 506
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitBytesRead:I
 
-    .line 434
+    .line 507
     iput-wide p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitPosition:J
 
-    .line 436
+    .line 509
     invoke-static {p4}, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isVclBodyNalUnit(I)Z
 
     move-result p1
@@ -330,7 +340,7 @@
 
     if-nez p1, :cond_2
 
-    .line 437
+    .line 510
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingSample:Z
 
     if-eqz p1, :cond_1
@@ -341,14 +351,14 @@
 
     if-eqz p7, :cond_0
 
-    .line 439
+    .line 512
     invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->outputSample(I)V
 
-    .line 441
+    .line 514
     :cond_0
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingSample:Z
 
-    .line 443
+    .line 516
     :cond_1
     invoke-static {p4}, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isPrefixNalUnit(I)Z
 
@@ -356,14 +366,14 @@
 
     if-eqz p1, :cond_2
 
-    .line 444
+    .line 517
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingPrefix:Z
 
     xor-int/2addr p1, p2
 
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->isFirstPrefixNalUnit:Z
 
-    .line 445
+    .line 518
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->readingPrefix:Z
 
     :cond_2
@@ -382,7 +392,7 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 450
+    .line 523
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->nalUnitHasKeyframeData:Z
 
@@ -395,7 +405,7 @@
     :cond_4
     const/4 v0, 0x1
 
-    .line 451
+    .line 524
     :cond_5
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ts/H265Reader$SampleReader;->lookingForFirstSliceFlag:Z
 

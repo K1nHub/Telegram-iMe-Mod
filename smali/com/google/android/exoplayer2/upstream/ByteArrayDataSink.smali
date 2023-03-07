@@ -14,7 +14,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
         }
     .end annotation
 
-    .line 46
+    .line 44
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSink;->stream:Ljava/io/ByteArrayOutputStream;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -47,7 +47,7 @@
 .method public getData()[B
     .locals 1
 
-    .line 60
+    .line 58
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSink;->stream:Ljava/io/ByteArrayOutputStream;
 
     if-nez v0, :cond_0
@@ -68,7 +68,7 @@
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
     .locals 5
 
-    .line 36
+    .line 34
     iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
     const-wide/16 v2, -0x1
@@ -77,7 +77,7 @@
 
     if-nez v4, :cond_0
 
-    .line 37
+    .line 35
     new-instance p1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {p1}, Ljava/io/ByteArrayOutputStream;-><init>()V
@@ -100,11 +100,11 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 39
+    .line 37
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 40
+    .line 38
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     iget-wide v1, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
@@ -122,7 +122,7 @@
 .method public write([BII)V
     .locals 1
 
-    .line 51
+    .line 49
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSink;->stream:Ljava/io/ByteArrayOutputStream;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;

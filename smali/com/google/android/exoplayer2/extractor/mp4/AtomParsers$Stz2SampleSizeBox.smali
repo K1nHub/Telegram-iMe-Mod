@@ -33,20 +33,20 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;)V
     .locals 1
 
-    .line 1568
+    .line 2042
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1569
+    .line 2043
     iget-object p1, p1, Lcom/google/android/exoplayer2/extractor/mp4/Atom$LeafAtom;->data:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->data:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     const/16 v0, 0xc
 
-    .line 1570
+    .line 2044
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 1571
+    .line 2045
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedIntToInt()I
 
     move-result v0
@@ -55,7 +55,7 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->fieldSize:I
 
-    .line 1572
+    .line 2046
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedIntToInt()I
 
     move-result p1
@@ -67,19 +67,19 @@
 
 
 # virtual methods
-.method public getSampleCount()I
+.method public getFixedSampleSize()I
     .locals 1
 
-    .line 1577
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->sampleCount:I
+    const/4 v0, -0x1
 
     return v0
 .end method
 
-.method public isFixedSampleSize()Z
+.method public getSampleCount()I
     .locals 1
 
-    const/4 v0, 0x0
+    .line 2051
+    iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->sampleCount:I
 
     return v0
 .end method
@@ -87,14 +87,14 @@
 .method public readNextSampleSize()I
     .locals 2
 
-    .line 1582
+    .line 2061
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->fieldSize:I
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_0
 
-    .line 1583
+    .line 2062
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->data:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -108,7 +108,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1585
+    .line 2064
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->data:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
@@ -117,7 +117,7 @@
 
     return v0
 
-    .line 1588
+    .line 2067
     :cond_1
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->sampleIndex:I
 
@@ -129,7 +129,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1590
+    .line 2069
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->data:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -144,7 +144,7 @@
 
     return v0
 
-    .line 1595
+    .line 2074
     :cond_2
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$Stz2SampleSizeBox;->currentByte:I
 

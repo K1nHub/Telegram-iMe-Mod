@@ -11,7 +11,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/google/android/exoplayer2/trackselection/TrackSelection;",
+            "Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;",
             ">;)",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/offline/StreamKey;",
@@ -19,7 +19,7 @@
         }
     .end annotation
 
-    .line 102
+    .line 104
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object p1

@@ -44,7 +44,7 @@
 
     const-string v0, "(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)"
 
-    .line 44
+    .line 53
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 
     const/4 v0, 0x0
 
-    .line 71
+    .line 80
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;-><init>(Ljava/util/List;)V
 
     return-void
@@ -77,22 +77,22 @@
 
     const-string v0, "SsaDecoder"
 
-    .line 84
+    .line 93
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;-><init>(Ljava/lang/String;)V
 
     const v0, -0x800001
 
-    .line 85
+    .line 94
     iput v0, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->screenWidth:F
 
-    .line 86
+    .line 95
     iput v0, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->screenHeight:F
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
-    .line 88
+    .line 97
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
@@ -101,10 +101,10 @@
 
     const/4 v1, 0x1
 
-    .line 89
+    .line 98
     iput-boolean v1, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->haveInitializationData:Z
 
-    .line 90
+    .line 99
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -117,14 +117,14 @@
 
     const-string v2, "Format:"
 
-    .line 91
+    .line 100
     invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 93
+    .line 102
     invoke-static {v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;->fromFormatLine(Ljava/lang/String;)Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;
 
     move-result-object v0
@@ -137,7 +137,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->dialogueFormatFromInitializationData:Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;
 
-    .line 94
+    .line 103
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -152,13 +152,13 @@
 
     goto :goto_0
 
-    .line 96
+    .line 105
     :cond_0
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->haveInitializationData:Z
 
     const/4 p1, 0x0
 
-    .line 97
+    .line 106
     iput-object p1, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->dialogueFormatFromInitializationData:Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;
 
     :goto_0
@@ -180,7 +180,7 @@
         }
     .end annotation
 
-    .line 429
+    .line 485
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
@@ -190,7 +190,7 @@
     :goto_0
     if-ltz v0, :cond_2
 
-    .line 430
+    .line 486
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -207,7 +207,7 @@
 
     return v0
 
-    .line 434
+    .line 490
     :cond_0
     invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -235,7 +235,7 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 439
+    .line 495
     :goto_1
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -243,7 +243,7 @@
 
     invoke-interface {p2, v0, p0}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 443
+    .line 499
     new-instance p0, Ljava/util/ArrayList;
 
     if-nez v0, :cond_3
@@ -263,7 +263,7 @@
 
     invoke-direct {p0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 441
+    .line 497
     :goto_2
     invoke-interface {p3, v0, p0}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
@@ -304,105 +304,317 @@
 .end method
 
 .method private static createCue(Ljava/lang/String;Lcom/google/android/exoplayer2/text/ssa/SsaStyle;Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;FF)Lcom/google/android/exoplayer2/text/Cue;
-    .locals 10
+    .locals 8
 
-    .line 303
-    iget v0, p2, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->alignment:I
+    .line 312
+    new-instance v0, Landroid/text/SpannableString;
 
-    const/4 v1, -0x1
+    invoke-direct {v0, p0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    if-eq v0, v1, :cond_0
+    .line 313
+    new-instance p0, Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    goto :goto_0
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/text/Cue$Builder;-><init>()V
 
+    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setText(Ljava/lang/CharSequence;)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object p0
+
+    const v1, -0x800001
+
+    const/4 v2, 0x0
+
+    if-eqz p1, :cond_7
+
+    .line 316
+    iget-object v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->primaryColor:Ljava/lang/Integer;
+
+    const/16 v4, 0x21
+
+    if-eqz v3, :cond_0
+
+    .line 317
+    new-instance v3, Landroid/text/style/ForegroundColorSpan;
+
+    iget-object v5, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->primaryColor:Ljava/lang/Integer;
+
+    .line 318
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    invoke-direct {v3, v5}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+
+    .line 320
+    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
+
+    move-result v5
+
+    .line 317
+    invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    .line 323
     :cond_0
-    if-eqz p1, :cond_1
+    iget v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->borderStyle:I
 
-    .line 306
-    iget v0, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->alignment:I
+    const/4 v5, 0x3
 
-    goto :goto_0
+    if-ne v3, v5, :cond_1
 
-    :cond_1
-    const/4 v0, -0x1
+    iget-object v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->outlineColor:Ljava/lang/Integer;
 
-    .line 310
-    :goto_0
-    invoke-static {v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->toPositionAnchor(I)I
+    if-eqz v3, :cond_1
 
-    move-result v8
+    .line 324
+    new-instance v3, Landroid/text/style/BackgroundColorSpan;
 
-    .line 311
-    invoke-static {v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->toLineAnchor(I)I
+    iget-object v6, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->outlineColor:Ljava/lang/Integer;
+
+    .line 325
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
 
-    .line 315
+    invoke-direct {v3, v6}, Landroid/text/style/BackgroundColorSpan;-><init>(I)V
+
+    .line 327
+    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
+
+    move-result v6
+
+    .line 324
+    invoke-virtual {v0, v3, v2, v6, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    .line 330
+    :cond_1
+    iget v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->fontSize:F
+
+    const/4 v6, 0x1
+
+    cmpl-float v7, v3, v1
+
+    if-eqz v7, :cond_2
+
+    cmpl-float v7, p4, v1
+
+    if-eqz v7, :cond_2
+
+    div-float/2addr v3, p4
+
+    .line 331
+    invoke-virtual {p0, v3, v6}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setTextSize(FI)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    .line 334
+    :cond_2
+    iget-boolean v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->bold:Z
+
+    if-eqz v3, :cond_3
+
+    iget-boolean v7, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->italic:Z
+
+    if-eqz v7, :cond_3
+
+    .line 335
+    new-instance v3, Landroid/text/style/StyleSpan;
+
+    invoke-direct {v3, v5}, Landroid/text/style/StyleSpan;-><init>(I)V
+
+    .line 338
+    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
+
+    move-result v5
+
+    .line 335
+    invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    goto :goto_0
+
+    :cond_3
+    if-eqz v3, :cond_4
+
+    .line 341
+    new-instance v3, Landroid/text/style/StyleSpan;
+
+    invoke-direct {v3, v6}, Landroid/text/style/StyleSpan;-><init>(I)V
+
+    .line 344
+    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
+
+    move-result v5
+
+    .line 341
+    invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    goto :goto_0
+
+    .line 346
+    :cond_4
+    iget-boolean v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->italic:Z
+
+    if-eqz v3, :cond_5
+
+    .line 347
+    new-instance v3, Landroid/text/style/StyleSpan;
+
+    const/4 v5, 0x2
+
+    invoke-direct {v3, v5}, Landroid/text/style/StyleSpan;-><init>(I)V
+
+    .line 350
+    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
+
+    move-result v5
+
+    .line 347
+    invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    .line 353
+    :cond_5
+    :goto_0
+    iget-boolean v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->underline:Z
+
+    if-eqz v3, :cond_6
+
+    .line 354
+    new-instance v3, Landroid/text/style/UnderlineSpan;
+
+    invoke-direct {v3}, Landroid/text/style/UnderlineSpan;-><init>()V
+
+    .line 357
+    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
+
+    move-result v5
+
+    .line 354
+    invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    .line 360
+    :cond_6
+    iget-boolean v3, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->strikeout:Z
+
+    if-eqz v3, :cond_7
+
+    .line 361
+    new-instance v3, Landroid/text/style/StrikethroughSpan;
+
+    invoke-direct {v3}, Landroid/text/style/StrikethroughSpan;-><init>()V
+
+    .line 364
+    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
+
+    move-result v5
+
+    .line 361
+    invoke-virtual {v0, v3, v2, v5, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    .line 370
+    :cond_7
+    iget v0, p2, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->alignment:I
+
+    const/4 v3, -0x1
+
+    if-eq v0, v3, :cond_8
+
+    goto :goto_1
+
+    :cond_8
+    if-eqz p1, :cond_9
+
+    .line 373
+    iget v0, p1, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->alignment:I
+
+    goto :goto_1
+
+    :cond_9
+    const/4 v0, -0x1
+
+    .line 377
+    :goto_1
+    invoke-static {v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->toTextAlignment(I)Landroid/text/Layout$Alignment;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setTextAlignment(Landroid/text/Layout$Alignment;)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object p1
+
+    .line 378
+    invoke-static {v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->toPositionAnchor(I)I
+
+    move-result v3
+
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPositionAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object p1
+
+    .line 379
+    invoke-static {v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->toLineAnchor(I)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLineAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    .line 381
     iget-object p1, p2, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->position:Landroid/graphics/PointF;
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_a
 
-    const p2, -0x800001
+    cmpl-float v0, p4, v1
 
-    cmpl-float v1, p4, p2
+    if-eqz v0, :cond_a
 
-    if-eqz v1, :cond_2
+    cmpl-float v0, p3, v1
 
-    cmpl-float p2, p3, p2
+    if-eqz v0, :cond_a
 
-    if-eqz p2, :cond_2
+    .line 384
+    iget p1, p1, Landroid/graphics/PointF;->x:F
 
-    .line 318
-    iget p2, p1, Landroid/graphics/PointF;->x:F
+    div-float/2addr p1, p3
 
-    div-float/2addr p2, p3
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPosition(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    .line 319
+    .line 385
+    iget-object p1, p2, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->position:Landroid/graphics/PointF;
+
     iget p1, p1, Landroid/graphics/PointF;->y:F
 
     div-float/2addr p1, p4
 
-    move v4, p1
+    invoke-virtual {p0, p1, v2}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLine(FI)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    move v7, p2
+    goto :goto_2
 
-    goto :goto_1
-
-    .line 322
-    :cond_2
-    invoke-static {v8}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->computeDefaultLineOrPosition(I)F
+    .line 388
+    :cond_a
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->getPositionAnchor()I
 
     move-result p1
 
-    .line 323
-    invoke-static {v6}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->computeDefaultLineOrPosition(I)F
+    invoke-static {p1}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->computeDefaultLineOrPosition(I)F
 
-    move-result p2
+    move-result p1
 
-    move v7, p1
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPosition(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    move v4, p2
+    .line 389
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->getLineAnchor()I
 
-    .line 326
-    :goto_1
-    new-instance p1, Lcom/google/android/exoplayer2/text/Cue;
+    move-result p1
 
-    .line 328
-    invoke-static {v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->toTextAlignment(I)Landroid/text/Layout$Alignment;
+    invoke-static {p1}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->computeDefaultLineOrPosition(I)F
 
-    move-result-object v3
+    move-result p1
 
-    const/4 v5, 0x0
+    invoke-virtual {p0, p1, v2}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLine(FI)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    const v9, -0x800001
+    .line 392
+    :goto_2
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->build()Lcom/google/android/exoplayer2/text/Cue;
 
-    move-object v1, p1
+    move-result-object p0
 
-    move-object v2, p0
-
-    invoke-direct/range {v1 .. v9}, Lcom/google/android/exoplayer2/text/Cue;-><init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;FIIFIF)V
-
-    return-object p1
+    return-object p0
 .end method
 
 .method private parseDialogueLine(Ljava/lang/String;Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;Ljava/util/List;Ljava/util/List;)V
@@ -424,7 +636,7 @@
 
     const-string v0, "Dialogue:"
 
-    .line 236
+    .line 245
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -433,7 +645,7 @@
 
     const/16 v0, 0x9
 
-    .line 238
+    .line 247
     invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
@@ -446,7 +658,7 @@
 
     move-result-object v0
 
-    .line 239
+    .line 248
     array-length v1, v0
 
     iget v2, p2, Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;->length:I
@@ -455,7 +667,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 240
+    .line 249
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -474,7 +686,7 @@
 
     return-void
 
-    .line 244
+    .line 253
     :cond_0
     iget v1, p2, Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;->startTimeIndex:I
 
@@ -492,7 +704,7 @@
 
     if-nez v7, :cond_1
 
-    .line 246
+    .line 255
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -509,7 +721,7 @@
 
     return-void
 
-    .line 250
+    .line 259
     :cond_1
     iget v7, p2, Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;->endTimeIndex:I
 
@@ -523,7 +735,7 @@
 
     if-nez v9, :cond_2
 
-    .line 252
+    .line 261
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -540,7 +752,7 @@
 
     return-void
 
-    .line 258
+    .line 267
     :cond_2
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->styles:Ljava/util/Map;
 
@@ -552,7 +764,7 @@
 
     if-eq v3, v4, :cond_3
 
-    .line 259
+    .line 268
     aget-object v3, v0, v3
 
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -570,39 +782,48 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 261
+    .line 270
     :goto_0
     iget p2, p2, Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;->textIndex:I
 
     aget-object p2, v0, p2
 
-    .line 262
+    .line 271
     invoke-static {p2}, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->parseFromDialogue(Ljava/lang/String;)Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;
 
     move-result-object v0
 
-    .line 264
+    .line 273
     invoke-static {p2}, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Overrides;->stripStyleOverrides(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    const-string v3, "\\\\N"
+    const-string v3, "\\N"
 
     const-string v4, "\n"
 
-    .line 265
-    invoke-virtual {p2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 274
+    invoke-virtual {p2, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p2
 
-    const-string v3, "\\\\n"
+    const-string v3, "\\n"
 
-    .line 266
-    invoke-virtual {p2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 275
+    invoke-virtual {p2, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 267
+    const-string v3, "\\h"
+
+    const-string v4, "\u00a0"
+
+    .line 276
+    invoke-virtual {p2, v3, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 277
     iget v3, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->screenWidth:F
 
     iget v4, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->screenHeight:F
@@ -611,12 +832,12 @@
 
     move-result-object p1
 
-    .line 269
+    .line 279
     invoke-static {v1, v2, p4, p3}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->addCuePlacerholderByTime(JLjava/util/List;Ljava/util/List;)I
 
     move-result p2
 
-    .line 270
+    .line 280
     invoke-static {v7, v8, p4, p3}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->addCuePlacerholderByTime(JLjava/util/List;Ljava/util/List;)I
 
     move-result p4
@@ -624,7 +845,7 @@
     :goto_1
     if-ge p2, p4, :cond_4
 
-    .line 273
+    .line 283
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -657,7 +878,7 @@
         }
     .end annotation
 
-    .line 211
+    .line 220
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->haveInitializationData:Z
 
     if-eqz v0, :cond_0
@@ -669,7 +890,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 213
+    .line 222
     :cond_1
     :goto_0
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
@@ -680,14 +901,14 @@
 
     const-string v2, "Format:"
 
-    .line 214
+    .line 223
     invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 215
+    .line 224
     invoke-static {v1}, Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;->fromFormatLine(Ljava/lang/String;)Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;
 
     move-result-object v0
@@ -697,7 +918,7 @@
     :cond_2
     const-string v2, "Dialogue:"
 
-    .line 216
+    .line 225
     invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -706,7 +927,7 @@
 
     if-nez v0, :cond_3
 
-    .line 218
+    .line 227
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -727,7 +948,7 @@
 
     goto :goto_0
 
-    .line 221
+    .line 230
     :cond_3
     invoke-direct {p0, v1, v0, p2, p3}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->parseDialogueLine(Ljava/lang/String;Lcom/google/android/exoplayer2/text/ssa/SsaDialogueFormat;Ljava/util/List;Ljava/util/List;)V
 
@@ -740,7 +961,7 @@
 .method private parseHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 2
 
-    .line 121
+    .line 130
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
@@ -751,14 +972,14 @@
 
     const-string v1, "[Script Info]"
 
-    .line 122
+    .line 131
     invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 123
+    .line 132
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->parseScriptInfo(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
     goto :goto_0
@@ -766,14 +987,14 @@
     :cond_1
     const-string v1, "[V4+ Styles]"
 
-    .line 124
+    .line 133
     invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 125
+    .line 134
     invoke-static {p1}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->parseStyles(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Ljava/util/Map;
 
     move-result-object v0
@@ -785,7 +1006,7 @@
     :cond_2
     const-string v1, "[V4 Styles]"
 
-    .line 126
+    .line 135
     invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
@@ -796,7 +1017,7 @@
 
     const-string v1, "[V4 Styles] are not supported"
 
-    .line 127
+    .line 136
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
@@ -804,7 +1025,7 @@
     :cond_3
     const-string v1, "[Events]"
 
-    .line 128
+    .line 137
     invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -818,7 +1039,7 @@
 .method private parseScriptInfo(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
     .locals 4
 
-    .line 146
+    .line 155
     :goto_0
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
@@ -826,7 +1047,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 147
+    .line 156
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v1
@@ -844,12 +1065,12 @@
     :cond_0
     const-string v1, ":"
 
-    .line 148
+    .line 157
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 149
+    .line 158
     array-length v1, v0
 
     const/4 v2, 0x2
@@ -861,14 +1082,14 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 152
+    .line 161
     aget-object v1, v0, v1
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Util;->toLowerInvariant(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -894,7 +1115,7 @@
 
     goto :goto_0
 
-    .line 162
+    .line 171
     :cond_2
     :try_start_0
     aget-object v0, v0, v3
@@ -916,7 +1137,7 @@
 
     goto :goto_0
 
-    .line 155
+    .line 164
     :cond_3
     aget-object v0, v0, v3
 
@@ -952,14 +1173,14 @@
         }
     .end annotation
 
-    .line 181
+    .line 190
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 184
+    .line 193
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
@@ -968,7 +1189,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 185
+    .line 194
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v3
@@ -986,14 +1207,14 @@
     :cond_1
     const-string v3, "Format:"
 
-    .line 186
+    .line 195
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 187
+    .line 196
     invoke-static {v2}, Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Format;->fromFormatLine(Ljava/lang/String;)Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Format;
 
     move-result-object v1
@@ -1003,7 +1224,7 @@
     :cond_2
     const-string v3, "Style:"
 
-    .line 188
+    .line 197
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
@@ -1012,7 +1233,7 @@
 
     if-nez v1, :cond_3
 
-    .line 190
+    .line 199
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1033,7 +1254,7 @@
 
     goto :goto_0
 
-    .line 193
+    .line 202
     :cond_3
     invoke-static {v2, v1}, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->fromStyleLine(Ljava/lang/String;Lcom/google/android/exoplayer2/text/ssa/SsaStyle$Format;)Lcom/google/android/exoplayer2/text/ssa/SsaStyle;
 
@@ -1041,7 +1262,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 195
+    .line 204
     iget-object v3, v2, Lcom/google/android/exoplayer2/text/ssa/SsaStyle;->name:Ljava/lang/String;
 
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1055,7 +1276,7 @@
 .method private static parseTimecodeUs(Ljava/lang/String;)J
     .locals 8
 
-    .line 284
+    .line 294
     sget-object v0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->SSA_TIMECODE_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1066,7 +1287,7 @@
 
     move-result-object p0
 
-    .line 285
+    .line 295
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v0
@@ -1080,7 +1301,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 289
+    .line 299
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1107,7 +1328,7 @@
 
     const/4 v6, 0x2
 
-    .line 290
+    .line 300
     invoke-virtual {p0, v6}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v6
@@ -1130,7 +1351,7 @@
 
     const/4 v2, 0x3
 
-    .line 291
+    .line 301
     invoke-virtual {p0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v2
@@ -1151,7 +1372,7 @@
 
     const/4 v2, 0x4
 
-    .line 292
+    .line 302
     invoke-virtual {p0, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
@@ -1182,7 +1403,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 378
+    .line 435
     :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1247,7 +1468,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 401
+    .line 457
     :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1312,7 +1533,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 355
+    .line 413
     :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1334,19 +1555,19 @@
 
     return-object v0
 
-    .line 351
+    .line 409
     :pswitch_1
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_OPPOSITE:Landroid/text/Layout$Alignment;
 
     return-object p0
 
-    .line 347
+    .line 405
     :pswitch_2
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
     return-object p0
 
-    .line 343
+    .line 401
     :pswitch_3
     sget-object p0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
@@ -1378,34 +1599,34 @@
 .method protected decode([BIZ)Lcom/google/android/exoplayer2/text/Subtitle;
     .locals 2
 
-    .line 103
+    .line 112
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 104
+    .line 113
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 106
+    .line 115
     new-instance v1, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v1, p1, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([BI)V
 
-    .line 107
+    .line 116
     iget-boolean p1, p0, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->haveInitializationData:Z
 
     if-nez p1, :cond_0
 
-    .line 108
+    .line 117
     invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->parseHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
-    .line 110
+    .line 119
     :cond_0
     invoke-direct {p0, v1, p3, v0}, Lcom/google/android/exoplayer2/text/ssa/SsaDecoder;->parseEventBody(Lcom/google/android/exoplayer2/util/ParsableByteArray;Ljava/util/List;Ljava/util/List;)V
 
-    .line 111
+    .line 120
     new-instance p1, Lcom/google/android/exoplayer2/text/ssa/SsaSubtitle;
 
     invoke-direct {p1, p3, v0}, Lcom/google/android/exoplayer2/text/ssa/SsaSubtitle;-><init>(Ljava/util/List;Ljava/util/List;)V

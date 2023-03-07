@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 613
+    .line 951
     invoke-direct {p0}, Lcom/google/android/exoplayer2/Timeline;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Z)Lcom/google/android/exoplayer2/Timeline$Period;
     .locals 0
 
-    .line 632
+    .line 970
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -56,7 +56,7 @@
 .method public getUidOfPeriod(I)Ljava/lang/Object;
     .locals 0
 
-    .line 642
+    .line 980
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
@@ -67,7 +67,7 @@
 .method public getWindow(ILcom/google/android/exoplayer2/Timeline$Window;J)Lcom/google/android/exoplayer2/Timeline$Window;
     .locals 0
 
-    .line 622
+    .line 960
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
     invoke-direct {p1}, Ljava/lang/IndexOutOfBoundsException;-><init>()V

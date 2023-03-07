@@ -85,14 +85,9 @@
 .end method
 
 .method private buildTrackOutput(J)Lcom/google/android/exoplayer2/extractor/TrackOutput;
-    .locals 10
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
-        value = {
-            "output"
-        }
-    .end annotation
+    .locals 3
 
-    .line 188
+    .line 197
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     const/4 v1, 0x0
@@ -103,30 +98,39 @@
 
     move-result-object v0
 
-    .line 189
-    iget-object v6, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->language:Ljava/lang/String;
+    .line 198
+    new-instance v1, Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v1, 0x0
+    invoke-direct {v1}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
     const-string v2, "text/vtt"
 
-    const/4 v3, 0x0
+    .line 200
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v4, -0x1
+    move-result-object v1
 
-    const/4 v5, 0x0
+    iget-object v2, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->language:Ljava/lang/String;
 
-    const/4 v7, 0x0
+    .line 201
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setLanguage(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    move-wide v8, p1
+    move-result-object v1
 
-    invoke-static/range {v1 .. v9}, Lcom/google/android/exoplayer2/Format;->createTextSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Lcom/google/android/exoplayer2/drm/DrmInitData;J)Lcom/google/android/exoplayer2/Format;
+    .line 202
+    invoke-virtual {v1, p1, p2}, Lcom/google/android/exoplayer2/Format$Builder;->setSubsampleOffsetUs(J)Lcom/google/android/exoplayer2/Format$Builder;
 
     move-result-object p1
 
+    .line 203
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
+
+    move-result-object p1
+
+    .line 198
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
 
-    .line 191
+    .line 204
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->endTracks()V
@@ -142,23 +146,17 @@
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/RequiresNonNull;
-        value = {
-            "output"
-        }
-    .end annotation
-
-    .line 139
+    .line 140
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleData:[B
 
     invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([B)V
 
-    .line 142
+    .line 143
     invoke-static {v0}, Lcom/google/android/exoplayer2/text/webvtt/WebvttParserUtil;->validateWebvttHeaderLine(Lcom/google/android/exoplayer2/util/ParsableByteArray;)V
 
-    .line 149
+    .line 150
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
 
     move-result-object v1
@@ -169,7 +167,7 @@
 
     move-wide v6, v4
 
-    .line 150
+    .line 151
     :goto_0
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -181,110 +179,126 @@
 
     const-string v8, "X-TIMESTAMP-MAP"
 
-    .line 152
+    .line 153
     invoke-virtual {v1, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v8
 
     if-eqz v8, :cond_2
 
-    .line 153
+    .line 154
     sget-object v4, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->LOCAL_TIMESTAMP:Ljava/util/regex/Pattern;
 
     invoke-virtual {v4, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v4
 
-    .line 154
+    .line 155
     invoke-virtual {v4}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v5
 
+    const/4 v6, 0x0
+
     if-eqz v5, :cond_1
 
-    .line 157
+    .line 159
     sget-object v5, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->MEDIA_TIMESTAMP:Ljava/util/regex/Pattern;
 
     invoke-virtual {v5, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v5
 
-    .line 158
+    .line 160
     invoke-virtual {v5}, Ljava/util/regex/Matcher;->find()Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_0
+    if-eqz v7, :cond_0
 
-    .line 161
+    .line 166
     invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v1
 
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    .line 165
     invoke-static {v1}, Lcom/google/android/exoplayer2/text/webvtt/WebvttParserUtil;->parseTimestampUs(Ljava/lang/String;)J
 
     move-result-wide v6
 
-    .line 162
+    .line 169
     invoke-virtual {v5, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v1
+
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
 
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v4
 
+    .line 168
     invoke-static {v4, v5}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->ptsToUs(J)J
 
     move-result-wide v4
 
     goto :goto_1
 
-    .line 159
+    .line 161
     :cond_0
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "X-TIMESTAMP-MAP doesn\'t contain media timestamp: "
 
-    const-string v3, "X-TIMESTAMP-MAP doesn\'t contain media timestamp: "
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-static {v0, v6}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     throw v0
 
-    .line 155
+    .line 156
     :cond_1
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "X-TIMESTAMP-MAP doesn\'t contain local timestamp: "
 
-    const-string v3, "X-TIMESTAMP-MAP doesn\'t contain local timestamp: "
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-static {v0, v6}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
     throw v0
 
-    .line 151
+    .line 152
     :cond_2
     :goto_1
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
@@ -293,7 +307,7 @@
 
     goto :goto_0
 
-    .line 167
+    .line 174
     :cond_3
     invoke-static {v0}, Lcom/google/android/exoplayer2/text/webvtt/WebvttParserUtil;->findNextCueHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Ljava/util/regex/Matcher;
 
@@ -301,46 +315,52 @@
 
     if-nez v0, :cond_4
 
-    .line 170
+    .line 177
     invoke-direct {p0, v2, v3}, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->buildTrackOutput(J)Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     return-void
 
-    .line 174
+    .line 182
     :cond_4
     invoke-virtual {v0, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
 
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
     invoke-static {v0}, Lcom/google/android/exoplayer2/text/webvtt/WebvttParserUtil;->parseTimestampUs(Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 175
+    .line 183
     iget-object v2, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->timestampAdjuster:Lcom/google/android/exoplayer2/util/TimestampAdjuster;
 
     add-long/2addr v4, v0
 
     sub-long/2addr v4, v6
 
-    .line 176
-    invoke-static {v4, v5}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->usToPts(J)J
+    .line 185
+    invoke-static {v4, v5}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->usToWrappedPts(J)J
 
     move-result-wide v3
 
-    .line 175
+    .line 184
     invoke-virtual {v2, v3, v4}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->adjustTsTimestamp(J)J
 
     move-result-wide v6
 
     sub-long v0, v6, v0
 
-    .line 179
+    .line 188
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->buildTrackOutput(J)Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     move-result-object v5
 
-    .line 181
+    .line 190
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleDataWrapper:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleData:[B
@@ -349,7 +369,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->reset([BI)V
 
-    .line 182
+    .line 191
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleDataWrapper:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     iget v1, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleSize:I
@@ -358,7 +378,7 @@
 
     const/4 v8, 0x1
 
-    .line 183
+    .line 192
     iget v9, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleSize:I
 
     const/4 v10, 0x0
@@ -394,24 +414,23 @@
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 114
+    .line 113
     iget-object p2, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 115
+    .line 114
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v0
 
     long-to-int p2, v0
 
-    .line 118
+    .line 117
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleSize:I
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleData:[B
@@ -428,7 +447,7 @@
 
     goto :goto_0
 
-    .line 120
+    .line 121
     :cond_0
     array-length v0, v1
 
@@ -444,7 +463,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleData:[B
 
-    .line 124
+    .line 125
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleData:[B
 
@@ -460,7 +479,7 @@
 
     if-eq p1, v3, :cond_3
 
-    .line 126
+    .line 127
     iget v0, p0, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->sampleSize:I
 
     add-int/2addr v0, p1
@@ -476,7 +495,7 @@
 
     return p1
 
-    .line 133
+    .line 134
     :cond_3
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/hls/WebvttExtractor;->processSample()V
 
@@ -504,8 +523,7 @@
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 

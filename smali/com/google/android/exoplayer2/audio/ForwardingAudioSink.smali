@@ -14,10 +14,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/audio/AudioSink;)V
     .locals 0
 
-    .line 27
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 32
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     return-void
@@ -25,32 +25,18 @@
 
 
 # virtual methods
-.method public configure(IIII[III)V
-    .locals 8
+.method public configure(Lcom/google/android/exoplayer2/Format;I[I)V
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/audio/AudioSink$ConfigurationException;
         }
     .end annotation
 
-    .line 56
+    .line 63
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move-object v5, p5
-
-    move v6, p6
-
-    move v7, p7
-
-    invoke-interface/range {v0 .. v7}, Lcom/google/android/exoplayer2/audio/AudioSink;->configure(IIII[III)V
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/audio/AudioSink;->configure(Lcom/google/android/exoplayer2/Format;I[I)V
 
     return-void
 .end method
@@ -58,7 +44,7 @@
 .method public disableTunneling()V
     .locals 1
 
-    .line 129
+    .line 157
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->disableTunneling()V
@@ -66,13 +52,24 @@
     return-void
 .end method
 
-.method public enableTunnelingV21(I)V
+.method public enableTunnelingV21()V
     .locals 1
 
-    .line 124
+    .line 152
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
-    invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->enableTunnelingV21(I)V
+    invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->enableTunnelingV21()V
+
+    return-void
+.end method
+
+.method public experimentalFlushWithoutAudioTrackRelease()V
+    .locals 1
+
+    .line 177
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->experimentalFlushWithoutAudioTrackRelease()V
 
     return-void
 .end method
@@ -80,7 +77,7 @@
 .method public flush()V
     .locals 1
 
-    .line 144
+    .line 172
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->flush()V
@@ -88,10 +85,23 @@
     return-void
 .end method
 
+.method public getAudioAttributes()Lcom/google/android/exoplayer2/audio/AudioAttributes;
+    .locals 1
+
+    .line 126
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->getAudioAttributes()Lcom/google/android/exoplayer2/audio/AudioAttributes;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getCurrentPositionUs(Z)J
     .locals 2
 
-    .line 43
+    .line 57
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->getCurrentPositionUs(Z)J
@@ -101,10 +111,23 @@
     return-wide v0
 .end method
 
+.method public getFormatSupport(Lcom/google/android/exoplayer2/Format;)I
+    .locals 1
+
+    .line 52
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->getFormatSupport(Lcom/google/android/exoplayer2/Format;)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getPlaybackParameters()Lcom/google/android/exoplayer2/PlaybackParameters;
     .locals 1
 
-    .line 104
+    .line 105
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->getPlaybackParameters()Lcom/google/android/exoplayer2/PlaybackParameters;
@@ -114,7 +137,20 @@
     return-object v0
 .end method
 
-.method public handleBuffer(Ljava/nio/ByteBuffer;J)Z
+.method public getSkipSilenceEnabled()Z
+    .locals 1
+
+    .line 115
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->getSkipSilenceEnabled()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public handleBuffer(Ljava/nio/ByteBuffer;JI)Z
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -123,10 +159,10 @@
         }
     .end annotation
 
-    .line 79
+    .line 80
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/audio/AudioSink;->handleBuffer(Ljava/nio/ByteBuffer;J)Z
+    invoke-interface {v0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/audio/AudioSink;->handleBuffer(Ljava/nio/ByteBuffer;JI)Z
 
     move-result p1
 
@@ -147,7 +183,7 @@
 .method public hasPendingData()Z
     .locals 1
 
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->hasPendingData()Z
@@ -160,7 +196,7 @@
 .method public isEnded()Z
     .locals 1
 
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->isEnded()Z
@@ -173,7 +209,7 @@
 .method public pause()V
     .locals 1
 
-    .line 139
+    .line 167
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->pause()V
@@ -200,7 +236,7 @@
         }
     .end annotation
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->playToEndOfStream()V
@@ -211,7 +247,7 @@
 .method public reset()V
     .locals 1
 
-    .line 149
+    .line 182
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/audio/AudioSink;->reset()V
@@ -222,7 +258,7 @@
 .method public setAudioAttributes(Lcom/google/android/exoplayer2/audio/AudioAttributes;)V
     .locals 1
 
-    .line 109
+    .line 120
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setAudioAttributes(Lcom/google/android/exoplayer2/audio/AudioAttributes;)V
@@ -233,7 +269,7 @@
 .method public setAudioSessionId(I)V
     .locals 1
 
-    .line 114
+    .line 131
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setAudioSessionId(I)V
@@ -244,7 +280,7 @@
 .method public setAuxEffectInfo(Lcom/google/android/exoplayer2/audio/AuxEffectInfo;)V
     .locals 1
 
-    .line 119
+    .line 136
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setAuxEffectInfo(Lcom/google/android/exoplayer2/audio/AuxEffectInfo;)V
@@ -255,7 +291,7 @@
 .method public setListener(Lcom/google/android/exoplayer2/audio/AudioSink$Listener;)V
     .locals 1
 
-    .line 33
+    .line 37
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setListener(Lcom/google/android/exoplayer2/audio/AudioSink$Listener;)V
@@ -263,10 +299,21 @@
     return-void
 .end method
 
+.method public setOutputStreamOffsetUs(J)V
+    .locals 1
+
+    .line 147
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/audio/AudioSink;->setOutputStreamOffsetUs(J)V
+
+    return-void
+.end method
+
 .method public setPlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;)V
     .locals 1
 
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setPlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;)V
@@ -274,10 +321,43 @@
     return-void
 .end method
 
+.method public setPlayerId(Lcom/google/android/exoplayer2/analytics/PlayerId;)V
+    .locals 1
+
+    .line 42
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setPlayerId(Lcom/google/android/exoplayer2/analytics/PlayerId;)V
+
+    return-void
+.end method
+
+.method public setPreferredDevice(Landroid/media/AudioDeviceInfo;)V
+    .locals 1
+
+    .line 142
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setPreferredDevice(Landroid/media/AudioDeviceInfo;)V
+
+    return-void
+.end method
+
+.method public setSkipSilenceEnabled(Z)V
+    .locals 1
+
+    .line 110
+    iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
+
+    invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setSkipSilenceEnabled(Z)V
+
+    return-void
+.end method
+
 .method public setVolume(F)V
     .locals 1
 
-    .line 134
+    .line 162
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->setVolume(F)V
@@ -285,13 +365,13 @@
     return-void
 .end method
 
-.method public supportsOutput(II)Z
+.method public supportsFormat(Lcom/google/android/exoplayer2/Format;)Z
     .locals 1
 
-    .line 38
+    .line 47
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/ForwardingAudioSink;->sink:Lcom/google/android/exoplayer2/audio/AudioSink;
 
-    invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/audio/AudioSink;->supportsOutput(II)Z
+    invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/audio/AudioSink;->supportsFormat(Lcom/google/android/exoplayer2/Format;)Z
 
     move-result p1
 

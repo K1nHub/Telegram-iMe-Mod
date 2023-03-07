@@ -34,7 +34,7 @@
     new-array v0, v0, [Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
 
     .line 36
-    invoke-direct {p0, v1, v0}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;-><init>([Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;[Lcom/google/android/exoplayer2/decoder/OutputBuffer;)V
+    invoke-direct {p0, v1, v0}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;-><init>([Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;[Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
 
     .line 37
     iput-object p1, p0, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->name:Ljava/lang/String;
@@ -47,12 +47,21 @@
     return-void
 .end method
 
+.method static synthetic access$000(Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
+    .locals 0
+
+    .line 25
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->releaseOutputBuffer(Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;)V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method protected bridge synthetic createInputBuffer()Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;
     .locals 1
 
-    .line 27
+    .line 25
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->createInputBuffer()Lcom/google/android/exoplayer2/text/SubtitleInputBuffer;
 
     move-result-object v0
@@ -71,10 +80,10 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic createOutputBuffer()Lcom/google/android/exoplayer2/decoder/OutputBuffer;
+.method protected bridge synthetic createOutputBuffer()Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;
     .locals 1
 
-    .line 27
+    .line 25
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->createOutputBuffer()Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
 
     move-result-object v0
@@ -86,17 +95,28 @@
     .locals 1
 
     .line 58
-    new-instance v0, Lcom/google/android/exoplayer2/text/SimpleSubtitleOutputBuffer;
+    new-instance v0, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder$1;
 
-    invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/text/SimpleSubtitleOutputBuffer;-><init>(Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;)V
+    invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder$1;-><init>(Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;)V
 
     return-object v0
+.end method
+
+.method protected bridge synthetic createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/decoder/DecoderException;
+    .locals 0
+
+    .line 25
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/text/SubtitleDecoderException;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method protected final createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/text/SubtitleDecoderException;
     .locals 2
 
-    .line 63
+    .line 68
     new-instance v0, Lcom/google/android/exoplayer2/text/SubtitleDecoderException;
 
     const-string v1, "Unexpected decode error"
@@ -106,11 +126,15 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic createUnexpectedDecodeException(Ljava/lang/Throwable;)Ljava/lang/Exception;
+.method protected bridge synthetic decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/DecoderOutputBuffer;Z)Lcom/google/android/exoplayer2/decoder/DecoderException;
     .locals 0
 
-    .line 27
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->createUnexpectedDecodeException(Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/text/SubtitleDecoderException;
+    .line 25
+    check-cast p1, Lcom/google/android/exoplayer2/text/SubtitleInputBuffer;
+
+    check-cast p2, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->decode(Lcom/google/android/exoplayer2/text/SubtitleInputBuffer;Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;Z)Lcom/google/android/exoplayer2/text/SubtitleDecoderException;
 
     move-result-object p1
 
@@ -177,21 +201,6 @@
     return-object p1
 .end method
 
-.method protected bridge synthetic decode(Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer;Lcom/google/android/exoplayer2/decoder/OutputBuffer;Z)Ljava/lang/Exception;
-    .locals 0
-
-    .line 27
-    check-cast p1, Lcom/google/android/exoplayer2/text/SubtitleInputBuffer;
-
-    check-cast p2, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
-
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->decode(Lcom/google/android/exoplayer2/text/SubtitleInputBuffer;Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;Z)Lcom/google/android/exoplayer2/text/SubtitleDecoderException;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method public final getName()Ljava/lang/String;
     .locals 1
 
@@ -199,26 +208,6 @@
     iget-object v0, p0, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->name:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method protected bridge synthetic releaseOutputBuffer(Lcom/google/android/exoplayer2/decoder/OutputBuffer;)V
-    .locals 0
-
-    .line 27
-    check-cast p1, Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;->releaseOutputBuffer(Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;)V
-
-    return-void
-.end method
-
-.method protected final releaseOutputBuffer(Lcom/google/android/exoplayer2/text/SubtitleOutputBuffer;)V
-    .locals 0
-
-    .line 68
-    invoke-super {p0, p1}, Lcom/google/android/exoplayer2/decoder/SimpleDecoder;->releaseOutputBuffer(Lcom/google/android/exoplayer2/decoder/OutputBuffer;)V
-
-    return-void
 .end method
 
 .method public setPositionUs(J)V

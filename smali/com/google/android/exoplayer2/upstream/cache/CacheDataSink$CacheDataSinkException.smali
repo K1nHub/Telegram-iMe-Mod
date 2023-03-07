@@ -1,4 +1,4 @@
-.class public Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;
+.class public final Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;
 .super Lcom/google/android/exoplayer2/upstream/cache/Cache$CacheException;
 .source "CacheDataSink.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x19
     name = "CacheDataSinkException"
 .end annotation
 
@@ -18,7 +18,7 @@
 .method public constructor <init>(Ljava/io/IOException;)V
     .locals 0
 
-    .line 66
+    .line 117
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/Cache$CacheException;-><init>(Ljava/lang/Throwable;)V
 
     return-void

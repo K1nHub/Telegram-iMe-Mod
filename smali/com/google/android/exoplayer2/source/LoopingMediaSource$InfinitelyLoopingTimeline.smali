@@ -18,7 +18,7 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/Timeline;)V
     .locals 0
 
-    .line 191
+    .line 199
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/ForwardingTimeline;-><init>(Lcom/google/android/exoplayer2/Timeline;)V
 
     return-void
@@ -29,9 +29,10 @@
 .method public getNextWindowIndex(IIZ)I
     .locals 1
 
-    .line 197
+    .line 205
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ForwardingTimeline;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
+    .line 206
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/Timeline;->getNextWindowIndex(IIZ)I
 
     move-result p1
@@ -40,7 +41,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 199
+    .line 208
     invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/source/ForwardingTimeline;->getFirstWindowIndex(Z)I
 
     move-result p1
@@ -52,9 +53,10 @@
 .method public getPreviousWindowIndex(IIZ)I
     .locals 1
 
-    .line 206
+    .line 215
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ForwardingTimeline;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
+    .line 216
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/Timeline;->getPreviousWindowIndex(IIZ)I
 
     move-result p1
@@ -63,7 +65,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 208
+    .line 218
     invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/source/ForwardingTimeline;->getLastWindowIndex(Z)I
 
     move-result p1

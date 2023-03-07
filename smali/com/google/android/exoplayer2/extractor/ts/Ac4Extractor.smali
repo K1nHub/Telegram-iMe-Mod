@@ -127,15 +127,17 @@
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 137
+    .line 136
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/ts/Ac4Extractor;->sampleData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object p2, p2, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 137
+    invoke-virtual {p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object p2
 
     const/4 v0, 0x0
 
@@ -218,8 +220,7 @@
     .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
@@ -236,7 +237,9 @@
 
     .line 76
     :goto_0
-    iget-object v4, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v4
 
     invoke-interface {p1, v4, v2, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
@@ -265,7 +268,9 @@
 
     .line 92
     :goto_2
-    iget-object v5, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v5
 
     const/4 v6, 0x7
 
@@ -319,7 +324,9 @@
 
     .line 106
     :cond_2
-    iget-object v6, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v6
 
     invoke-static {v6, v5}, Lcom/google/android/exoplayer2/audio/Ac4Util;->parseAc4SyncframeSize([BI)I
 

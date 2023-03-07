@@ -1,0 +1,5 @@
+package org.fork.utils;
+/* loaded from: classes4.dex */
+public interface Callbacks$Callback {
+    void invoke();
+}

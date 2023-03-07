@@ -4,10 +4,16 @@
 
 
 # static fields
+.field public static final INITIAL_RENDERER_POSITION_OFFSET_US:J = 0xe8d4a51000L
+
 .field private static final MAXIMUM_BUFFER_AHEAD_PERIODS:I = 0x64
 
 
 # instance fields
+.field private final analyticsCollector:Lcom/google/android/exoplayer2/analytics/AnalyticsCollector;
+
+.field private final analyticsCollectorHandler:Lcom/google/android/exoplayer2/util/HandlerWrapper;
+
 .field private length:I
 
 .field private loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
@@ -28,36 +34,43 @@
 
 .field private shuffleModeEnabled:Z
 
-.field private timeline:Lcom/google/android/exoplayer2/Timeline;
-
 .field private final window:Lcom/google/android/exoplayer2/Timeline$Window;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public static synthetic $r8$lambda$mWNPMcRbVVz2oDENMZzwGKF1Dk8(Lcom/google/android/exoplayer2/MediaPeriodQueue;Lcom/google/common/collect/ImmutableList$Builder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)V
+    .locals 0
 
-    .line 58
+    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->lambda$notifyQueueUpdate$0(Lcom/google/common/collect/ImmutableList$Builder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/exoplayer2/analytics/AnalyticsCollector;Lcom/google/android/exoplayer2/util/HandlerWrapper;)V
+    .locals 0
+
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
-    new-instance v0, Lcom/google/android/exoplayer2/Timeline$Period;
+    .line 94
+    iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->analyticsCollector:Lcom/google/android/exoplayer2/analytics/AnalyticsCollector;
 
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/Timeline$Period;-><init>()V
+    .line 95
+    iput-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->analyticsCollectorHandler:Lcom/google/android/exoplayer2/util/HandlerWrapper;
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    .line 96
+    new-instance p1, Lcom/google/android/exoplayer2/Timeline$Period;
 
-    .line 60
-    new-instance v0, Lcom/google/android/exoplayer2/Timeline$Window;
+    invoke-direct {p1}, Lcom/google/android/exoplayer2/Timeline$Period;-><init>()V
 
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/Timeline$Window;-><init>()V
+    iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+    .line 97
+    new-instance p1, Lcom/google/android/exoplayer2/Timeline$Window;
 
-    .line 61
-    sget-object v0, Lcom/google/android/exoplayer2/Timeline;->EMPTY:Lcom/google/android/exoplayer2/Timeline;
+    invoke-direct {p1}, Lcom/google/android/exoplayer2/Timeline$Window;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
 
     return-void
 .end method
@@ -93,7 +106,7 @@
 .method private canKeepMediaPeriodHolder(Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/MediaPeriodInfo;)Z
     .locals 5
 
-    .line 471
+    .line 601
     iget-wide v0, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
 
     iget-wide v2, p2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
@@ -106,7 +119,7 @@
 
     iget-object p2, p2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -124,742 +137,1086 @@
 .end method
 
 .method private getFirstMediaPeriodInfo(Lcom/google/android/exoplayer2/PlaybackInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-    .locals 6
+    .locals 7
 
-    .line 527
-    iget-object v1, p1, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    .line 660
+    iget-object v1, p1, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
 
-    iget-wide v2, p1, Lcom/google/android/exoplayer2/PlaybackInfo;->contentPositionUs:J
+    iget-object v2, p1, Lcom/google/android/exoplayer2/PlaybackInfo;->periodId:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v4, p1, Lcom/google/android/exoplayer2/PlaybackInfo;->startPositionUs:J
+    iget-wide v3, p1, Lcom/google/android/exoplayer2/PlaybackInfo;->requestedContentPositionUs:J
+
+    iget-wide v5, p1, Lcom/google/android/exoplayer2/PlaybackInfo;->positionUs:J
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfo(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method private getFollowingMediaPeriodInfo(Lcom/google/android/exoplayer2/MediaPeriodHolder;J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-    .locals 20
+.method private getFollowingMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/MediaPeriodHolder;J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .locals 19
 
-    move-object/from16 v8, p0
+    move-object/from16 v9, p0
+
+    move-object/from16 v8, p1
+
+    move-object/from16 v10, p2
+
+    .line 684
+    iget-object v11, v10, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    .line 689
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getRendererOffset()J
+
+    move-result-wide v0
+
+    iget-wide v2, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
+
+    add-long/2addr v0, v2
+
+    sub-long v6, v0, p3
+
+    .line 690
+    iget-boolean v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->isLastInTimelinePeriod:Z
+
+    const/4 v13, -0x1
+
+    const/4 v14, 0x1
+
+    const-wide v15, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/16 v17, 0x0
+
+    if-eqz v0, :cond_7
+
+    .line 691
+    iget-object v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-object v0, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    invoke-virtual {v8, v0}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+
+    move-result v1
+
+    .line 692
+    iget-object v2, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-object v3, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    iget v0, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->repeatMode:I
+
+    iget-boolean v5, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->shuffleModeEnabled:Z
+
+    move v4, v0
 
     move-object/from16 v0, p1
 
-    .line 546
-    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .line 693
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/Timeline;->getNextPeriodIndex(ILcom/google/android/exoplayer2/Timeline$Period;Lcom/google/android/exoplayer2/Timeline$Window;IZ)I
 
-    .line 551
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getRendererOffset()J
+    move-result v0
 
-    move-result-wide v2
+    if-ne v0, v13, :cond_0
 
-    iget-wide v4, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
+    return-object v17
 
-    add-long/2addr v2, v4
-
-    sub-long v2, v2, p2
-
-    .line 552
-    iget-boolean v4, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->isLastInTimelinePeriod:Z
-
-    const/4 v7, -0x1
-
-    const-wide/16 v9, 0x0
-
-    const/4 v11, 0x0
-
-    if-eqz v4, :cond_4
-
-    .line 553
-    iget-object v4, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v12, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-object v12, v12, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    invoke-virtual {v4, v12}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
-
-    move-result v14
-
-    .line 554
-    iget-object v13, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v15, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    iget-object v4, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
-
-    iget v12, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->repeatMode:I
-
-    iget-boolean v5, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->shuffleModeEnabled:Z
-
-    move-object/from16 v16, v4
-
-    move/from16 v17, v12
-
-    move/from16 v18, v5
-
-    .line 555
-    invoke-virtual/range {v13 .. v18}, Lcom/google/android/exoplayer2/Timeline;->getNextPeriodIndex(ILcom/google/android/exoplayer2/Timeline$Period;Lcom/google/android/exoplayer2/Timeline$Window;IZ)I
-
-    move-result v4
-
-    if-ne v4, v7, :cond_0
-
-    return-object v11
-
-    .line 564
+    .line 702
     :cond_0
-    iget-object v5, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget-object v1, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget-object v6, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    const/4 v7, 0x1
-
-    .line 565
-    invoke-virtual {v5, v4, v6, v7}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Z)Lcom/google/android/exoplayer2/Timeline$Period;
-
-    move-result-object v5
-
-    iget v15, v5, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
-
-    .line 566
-    iget-object v5, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    iget-object v5, v5, Lcom/google/android/exoplayer2/Timeline$Period;->uid:Ljava/lang/Object;
-
-    .line 567
-    iget-object v1, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v6, v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    .line 568
-    iget-object v1, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v12, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
-
-    invoke-virtual {v1, v15, v12}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
+    .line 703
+    invoke-virtual {v8, v0, v1, v14}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Z)Lcom/google/android/exoplayer2/Timeline$Period;
 
     move-result-object v1
 
-    iget v1, v1, Lcom/google/android/exoplayer2/Timeline$Window;->firstPeriodIndex:I
+    iget v3, v1, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
 
-    if-ne v1, v4, :cond_3
+    .line 704
+    iget-object v1, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    .line 573
-    iget-object v12, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget-object v1, v1, Lcom/google/android/exoplayer2/Timeline$Period;->uid:Ljava/lang/Object;
 
-    iget-object v13, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
-
-    iget-object v14, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    const-wide v16, -0x7fffffffffffffffL    # -4.9E-324
-
-    .line 579
-    invoke-static {v9, v10, v2, v3}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v18
-
-    .line 574
-    invoke-virtual/range {v12 .. v19}, Lcom/google/android/exoplayer2/Timeline;->getPeriodPosition(Lcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;IJJ)Landroid/util/Pair;
+    invoke-static {v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_1
+    .line 705
+    iget-object v2, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    return-object v11
+    iget-wide v4, v2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    .line 583
+    .line 706
+    iget-object v2, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    invoke-virtual {v8, v3, v2}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
+
+    move-result-object v2
+
+    iget v2, v2, Lcom/google/android/exoplayer2/Timeline$Window;->firstPeriodIndex:I
+
+    if-ne v2, v0, :cond_3
+
+    .line 712
+    iget-object v1, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    iget-object v2, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide/16 v12, 0x0
+
+    .line 718
+    invoke-static {v12, v13, v6, v7}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v6
+
+    move-object/from16 v0, p1
+
+    .line 713
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/exoplayer2/Timeline;->getPeriodPositionUs(Lcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;IJJ)Landroid/util/Pair;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    return-object v17
+
+    .line 722
     :cond_1
-    iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    .line 584
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
+    .line 723
+    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    check-cast v1, Ljava/lang/Long;
+    check-cast v0, Ljava/lang/Long;
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    .line 585
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 724
+    invoke-virtual/range {p2 .. p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 586
-    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
+    .line 725
+    iget-object v2, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    .line 587
+    .line 726
     iget-object v0, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-object v0, v0, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v0, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide v2, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     goto :goto_0
 
-    .line 589
+    .line 728
     :cond_2
-    iget-wide v0, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->nextWindowSequenceNumber:J
+    iget-wide v2, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->nextWindowSequenceNumber:J
 
-    const-wide/16 v5, 0x1
+    const-wide/16 v6, 0x1
 
-    add-long/2addr v5, v0
+    add-long/2addr v6, v2
 
-    iput-wide v5, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->nextWindowSequenceNumber:J
+    iput-wide v6, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->nextWindowSequenceNumber:J
 
     :goto_0
-    move-wide v6, v3
+    move-wide v12, v4
 
-    const-wide v9, -0x7fffffffffffffffL    # -4.9E-324
+    move-wide/from16 v17, v15
 
-    move-wide v4, v0
-
-    move-object v1, v2
+    move-wide v4, v2
 
     goto :goto_1
 
     :cond_3
-    move-object v1, v5
+    const-wide/16 v12, 0x0
 
-    move-wide v4, v6
+    move-wide/from16 v17, v12
 
-    move-wide v6, v9
-
+    .line 733
     :goto_1
-    move-object/from16 v0, p0
+    iget-object v6, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
 
-    move-wide v2, v6
+    iget-object v7, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    .line 597
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolveMediaPeriodIdForAds(Ljava/lang/Object;JJ)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    move-object/from16 v0, p1
 
-    move-result-object v1
+    move-wide v2, v12
 
-    move-wide v2, v9
+    .line 734
+    invoke-static/range {v0 .. v7}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolveMediaPeriodIdForAds(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJLcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    move-wide v4, v6
+    move-result-object v2
 
-    .line 598
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfo(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    cmp-long v0, v17, v15
+
+    if-eqz v0, :cond_6
+
+    .line 736
+    iget-wide v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
+
+    cmp-long v3, v0, v15
+
+    if-eqz v3, :cond_6
+
+    .line 738
+    iget-object v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-object v0, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget-object v1, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 739
+    invoke-virtual {v8, v0, v1}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
     move-result-object v0
 
-    return-object v0
-
-    .line 601
-    :cond_4
-    iget-object v0, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    .line 602
-    iget-object v4, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v5, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    iget-object v6, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v4, v5, v6}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
-
-    .line 603
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_a
-
-    .line 604
-    iget v4, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
-
-    .line 605
-    iget-object v5, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v5, v4}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdCountInAdGroup(I)I
-
-    move-result v5
-
-    if-ne v5, v7, :cond_5
-
-    return-object v11
-
-    .line 609
-    :cond_5
-    iget-object v6, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    iget v7, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
-
-    .line 610
-    invoke-virtual {v6, v4, v7}, Lcom/google/android/exoplayer2/Timeline$Period;->getNextAdIndexToPlay(II)I
-
-    move-result v6
-
-    if-ge v6, v5, :cond_7
-
-    .line 613
-    iget-object v2, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v2, v4, v6}, Lcom/google/android/exoplayer2/Timeline$Period;->isAdAvailable(II)Z
-
-    move-result v2
-
-    if-nez v2, :cond_6
-
-    goto :goto_2
-
-    .line 615
-    :cond_6
-    iget-object v2, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    iget-wide v9, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->contentPositionUs:J
-
-    iget-wide v11, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    move-object/from16 v0, p0
-
-    move-object v1, v2
-
-    move v2, v4
-
-    move v3, v6
-
-    move-wide v4, v9
-
-    move-wide v6, v11
-
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForAd(Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-
-    move-result-object v11
-
-    :goto_2
-    return-object v11
-
-    .line 623
-    :cond_7
-    iget-wide v4, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->contentPositionUs:J
-
-    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v1, v4, v6
-
-    if-nez v1, :cond_9
-
-    .line 627
-    iget-object v12, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v13, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
-
-    iget-object v14, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    iget v15, v14, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
-
-    const-wide v16, -0x7fffffffffffffffL    # -4.9E-324
-
-    .line 633
-    invoke-static {v9, v10, v2, v3}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v18
-
-    .line 628
-    invoke-virtual/range {v12 .. v19}, Lcom/google/android/exoplayer2/Timeline;->getPeriodPosition(Lcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;IJJ)Landroid/util/Pair;
-
-    move-result-object v1
-
-    if-nez v1, :cond_8
-
-    return-object v11
-
-    .line 637
-    :cond_8
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Long;
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v1
-
-    move-wide v2, v1
-
-    goto :goto_3
-
-    :cond_9
-    move-wide v2, v4
-
-    .line 639
-    :goto_3
-    iget-object v1, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    iget-wide v4, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    move-object/from16 v0, p0
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForContent(Ljava/lang/Object;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 644
-    :cond_a
-    iget-object v2, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    iget-wide v3, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->endPositionUs:J
-
-    invoke-virtual {v2, v3, v4}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexForPositionUs(J)I
-
-    move-result v2
-
-    if-ne v2, v7, :cond_b
-
-    .line 647
-    iget-object v2, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    iget-wide v3, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
-
-    iget-wide v5, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    move-object/from16 v0, p0
-
-    move-object v1, v2
-
-    move-wide v2, v3
-
-    move-wide v4, v5
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForContent(Ljava/lang/Object;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 652
-    :cond_b
-    iget-object v3, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v3, v2}, Lcom/google/android/exoplayer2/Timeline$Period;->getFirstAdIndexToPlay(I)I
-
-    move-result v3
-
-    .line 653
-    iget-object v4, v8, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v4, v2, v3}, Lcom/google/android/exoplayer2/Timeline$Period;->isAdAvailable(II)Z
-
-    move-result v4
-
-    if-nez v4, :cond_c
-
-    goto :goto_4
-
-    .line 655
-    :cond_c
-    iget-object v4, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    iget-wide v5, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
-
-    iget-wide v9, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    move-object/from16 v0, p0
-
-    move-object v1, v4
-
-    move-wide v4, v5
-
-    move-wide v6, v9
-
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForAd(Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-
-    move-result-object v11
-
-    :goto_4
-    return-object v11
-.end method
-
-.method private getMediaPeriodInfo(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-    .locals 8
-
-    .line 666
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
-
-    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
-
-    .line 667
-    invoke-virtual {p1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupCount()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-lez v0, :cond_4
 
-    .line 668
-    iget-object p4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    iget-object v0, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget p5, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    .line 740
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Timeline$Period;->getRemovedAdGroupCount()I
 
-    iget v0, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    move-result v1
 
-    invoke-virtual {p4, p5, v0}, Lcom/google/android/exoplayer2/Timeline$Period;->isAdAvailable(II)Z
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
 
-    move-result p4
+    move-result v0
 
-    if-nez p4, :cond_0
+    if-eqz v0, :cond_4
 
-    const/4 p1, 0x0
+    goto :goto_2
 
-    return-object p1
+    :cond_4
+    const/4 v14, 0x0
 
-    .line 671
-    :cond_0
-    iget-object v1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    .line 742
+    :goto_2
+    invoke-virtual {v2}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
 
-    iget v2, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    move-result v0
 
-    iget v3, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    if-eqz v0, :cond_5
 
-    iget-wide v6, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    if-eqz v14, :cond_5
 
-    move-object v0, p0
+    .line 744
+    iget-wide v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
 
-    move-wide v4, p2
+    move-wide v3, v0
 
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForAd(Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    move-wide v5, v12
 
-    move-result-object p1
+    goto :goto_4
 
-    return-object p1
+    :cond_5
+    if-eqz v14, :cond_6
 
-    .line 678
-    :cond_1
-    iget-object v1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    .line 747
+    iget-wide v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
 
-    iget-wide v4, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    move-wide v5, v0
 
-    move-object v0, p0
+    goto :goto_3
 
-    move-wide v2, p4
+    :cond_6
+    move-wide v5, v12
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForContent(Ljava/lang/Object;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    :goto_3
+    move-wide/from16 v3, v17
 
-    move-result-object p1
+    :goto_4
+    move-object/from16 v0, p0
 
-    return-object p1
-.end method
+    move-object/from16 v1, p1
 
-.method private getMediaPeriodInfoForAd(Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-    .locals 16
+    .line 750
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_7
+    const/4 v0, -0x1
+
+    const-wide/16 v12, 0x0
+
+    .line 753
+    iget-object v10, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    .line 754
+    iget-object v1, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget-object v2, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v8, v1, v2}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 755
+    invoke-virtual {v10}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    .line 756
+    iget v3, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
+
+    .line 757
+    iget-object v1, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdCountInAdGroup(I)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_8
+
+    return-object v17
+
+    .line 761
+    :cond_8
+    iget-object v0, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v2, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
+
+    .line 762
+    invoke-virtual {v0, v3, v2}, Lcom/google/android/exoplayer2/Timeline$Period;->getNextAdIndexToPlay(II)I
+
+    move-result v4
+
+    if-ge v4, v1, :cond_9
+
+    .line 765
+    iget-object v2, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget-wide v5, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
+
+    iget-wide v10, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     move-object/from16 v0, p0
 
-    .line 688
+    move-object/from16 v1, p1
+
+    move-wide v7, v10
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForAd(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 774
+    :cond_9
+    iget-wide v0, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
+
+    cmp-long v2, v0, v15
+
+    if-nez v2, :cond_b
+
+    .line 779
+    iget-object v1, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    iget-object v2, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v3, v2, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
+
+    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
+
+    .line 785
+    invoke-static {v12, v13, v6, v7}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v6
+
+    move-object/from16 v0, p1
+
+    .line 780
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/exoplayer2/Timeline;->getPeriodPositionUs(Lcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;IJJ)Landroid/util/Pair;
+
+    move-result-object v0
+
+    if-nez v0, :cond_a
+
+    return-object v17
+
+    .line 789
+    :cond_a
+    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    .line 791
+    :cond_b
+    iget-object v2, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget v3, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
+
+    .line 792
+    invoke-direct {v9, v8, v2, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMinStartPositionAfterAdGroupUs(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;I)J
+
+    move-result-wide v2
+
+    .line 794
+    iget-object v4, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    .line 797
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v5
+
+    iget-wide v11, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
+
+    iget-wide v13, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object v2, v4
+
+    move-wide v3, v5
+
+    move-wide v5, v11
+
+    move-wide v7, v13
+
+    .line 794
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForContent(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 803
+    :cond_c
+    iget-object v0, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v1, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->getFirstAdIndexToPlay(I)I
+
+    move-result v4
+
+    .line 804
+    iget-object v0, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v1, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+
+    .line 805
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    iget-object v0, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v1, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+
+    .line 806
+    invoke-virtual {v0, v1, v4}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdState(II)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_d
+
+    const/4 v12, 0x1
+
+    goto :goto_5
+
+    :cond_d
+    const/4 v12, 0x0
+
+    .line 808
+    :goto_5
+    iget-object v0, v9, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v1, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdCountInAdGroup(I)I
+
+    move-result v0
+
+    if-eq v4, v0, :cond_f
+
+    if-eqz v12, :cond_e
+
+    goto :goto_6
+
+    .line 822
+    :cond_e
+    iget-object v2, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget v3, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+
+    iget-wide v5, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
+
+    iget-wide v10, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-wide v7, v10
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForAd(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 812
+    :cond_f
+    :goto_6
+    iget-object v0, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget v1, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+
+    .line 813
+    invoke-direct {v9, v8, v0, v1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMinStartPositionAfterAdGroupUs(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;I)J
+
+    move-result-wide v3
+
+    .line 815
+    iget-object v2, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget-wide v5, v11, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
+
+    iget-wide v10, v10, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-wide v7, v10
+
+    invoke-direct/range {v0 .. v8}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForContent(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private getMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .locals 12
+
+    move-object v0, p2
+
+    .line 835
+    iget-object v1, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    move-object v11, p0
+
+    iget-object v2, v11, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    move-object v3, p1
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 836
+    invoke-virtual {p2}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 837
+    iget-object v4, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget v5, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
+
+    iget v6, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
+
+    iget-wide v9, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    move-object v2, p0
+
+    move-object v3, p1
+
+    move-wide v7, p3
+
+    invoke-direct/range {v2 .. v10}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForAd(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 845
+    :cond_0
+    iget-object v4, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    iget-wide v9, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    move-object v2, p0
+
+    move-object v3, p1
+
+    move-wide/from16 v5, p5
+
+    move-wide v7, p3
+
+    invoke-direct/range {v2 .. v10}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getMediaPeriodInfoForContent(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private getMediaPeriodInfoForAd(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;IIJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .locals 18
+
+    move-object/from16 v0, p0
+
+    .line 861
     new-instance v7, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     move-object v1, v7
 
-    move-object/from16 v2, p1
+    move-object/from16 v2, p2
 
-    move/from16 v3, p2
+    move/from16 v3, p3
 
-    move/from16 v4, p3
+    move/from16 v4, p4
 
-    move-wide/from16 v5, p6
+    move-wide/from16 v5, p7
 
     invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;IIJ)V
 
-    .line 690
-    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    .line 863
+    iget-object v1, v7, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
-    iget-object v2, v7, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    iget-object v2, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget-object v3, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    move-object/from16 v3, p1
 
-    .line 692
-    invoke-virtual {v1, v2, v3}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    .line 865
+    invoke-virtual {v3, v1, v2}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
     move-result-object v1
 
-    iget v2, v7, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    iget v2, v7, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    iget v3, v7, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    iget v3, v7, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
 
-    .line 693
+    .line 866
     invoke-virtual {v1, v2, v3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdDurationUs(II)J
 
     move-result-wide v9
 
-    .line 695
+    .line 868
     iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    move/from16 v2, p2
+    move/from16 v2, p3
 
     invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/Timeline$Period;->getFirstAdIndexToPlay(I)I
 
     move-result v1
 
-    move/from16 v2, p3
+    const-wide/16 v2, 0x0
 
-    if-ne v2, v1, :cond_0
+    if-ne v4, v1, :cond_0
 
-    .line 696
+    .line 869
     iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdResumePositionUs()J
 
-    move-result-wide v1
+    move-result-wide v4
 
     goto :goto_0
 
     :cond_0
-    const-wide/16 v1, 0x0
+    move-wide v4, v2
 
+    .line 871
     :goto_0
-    move-wide v3, v1
-
-    .line 698
-    new-instance v13, Lcom/google/android/exoplayer2/MediaPeriodInfo;
-
-    const-wide v11, -0x7fffffffffffffffL    # -4.9E-324
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    move-object v1, v13
-
-    move-object v2, v7
-
-    move-wide/from16 v5, p4
-
-    move-wide v7, v11
-
-    move v11, v14
-
-    move v12, v15
-
-    invoke-direct/range {v1 .. v12}, Lcom/google/android/exoplayer2/MediaPeriodInfo;-><init>(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJJZZ)V
-
-    return-object v13
-.end method
-
-.method private getMediaPeriodInfoForContent(Ljava/lang/Object;JJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-    .locals 14
-
-    move-object v0, p0
-
-    .line 710
     iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    move-wide/from16 v4, p2
+    iget v6, v7, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    invoke-virtual {v1, v4, v5}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexAfterPositionUs(J)I
+    .line 872
+    invoke-virtual {v1, v6}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
 
-    move-result v1
+    move-result v11
 
-    .line 711
-    new-instance v3, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
 
-    move-object v2, p1
+    cmp-long v1, v9, v12
 
-    move-wide/from16 v6, p4
+    if-eqz v1, :cond_1
 
-    invoke-direct {v3, p1, v6, v7, v1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;JI)V
+    cmp-long v1, v4, v9
 
-    .line 712
-    invoke-direct {p0, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
+    if-ltz v1, :cond_1
 
-    move-result v12
+    const-wide/16 v4, 0x1
 
-    .line 713
-    invoke-direct {p0, v3, v12}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInTimeline(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Z)Z
+    sub-long v4, v9, v4
 
-    move-result v13
-
-    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
-
-    const/4 v2, -0x1
-
-    if-eq v1, v2, :cond_0
-
-    .line 716
-    iget-object v2, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v2, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupTimeUs(I)J
+    .line 875
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v1
 
-    move-wide v8, v1
-
-    goto :goto_0
-
-    :cond_0
-    move-wide v8, v6
-
-    :goto_0
-    cmp-long v1, v8, v6
-
-    if-eqz v1, :cond_2
-
-    const-wide/high16 v1, -0x8000000000000000L
-
-    cmp-long v6, v8, v1
-
-    if-nez v6, :cond_1
+    move-wide v3, v1
 
     goto :goto_1
 
     :cond_1
-    move-wide v10, v8
+    move-wide v3, v4
+
+    .line 877
+    :goto_1
+    new-instance v15, Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/4 v14, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    move-object v1, v15
+
+    move-object v2, v7
+
+    move-wide/from16 v5, p5
+
+    move-wide v7, v12
+
+    move v12, v14
+
+    move/from16 v13, v16
+
+    move/from16 v14, v17
+
+    invoke-direct/range {v1 .. v14}, Lcom/google/android/exoplayer2/MediaPeriodInfo;-><init>(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJJZZZZ)V
+
+    return-object v15
+.end method
+
+.method private getMediaPeriodInfoForContent(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJJ)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .locals 24
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, p2
+
+    move-wide/from16 v3, p3
+
+    .line 895
+    iget-object v5, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v1, v2, v5}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 896
+    iget-object v5, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v5, v3, v4}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexAfterPositionUs(J)I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    const/4 v7, -0x1
+
+    const/4 v8, 0x0
+
+    if-ne v5, v7, :cond_0
+
+    .line 900
+    iget-object v9, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 901
+    invoke-virtual {v9}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupCount()I
+
+    move-result v9
+
+    if-lez v9, :cond_1
+
+    iget-object v9, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 902
+    invoke-virtual {v9}, Lcom/google/android/exoplayer2/Timeline$Period;->getRemovedAdGroupCount()I
+
+    move-result v10
+
+    invoke-virtual {v9, v10}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
+
+    goto :goto_0
+
+    .line 903
+    :cond_0
+    iget-object v9, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v9, v5}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
+
+    iget-object v9, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 904
+    invoke-virtual {v9, v5}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupTimeUs(I)J
+
+    move-result-wide v9
+
+    iget-object v11, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-wide v12, v11, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+
+    cmp-long v14, v9, v12
+
+    if-nez v14, :cond_1
+
+    .line 905
+    invoke-virtual {v11, v5}, Lcom/google/android/exoplayer2/Timeline$Period;->hasPlayedAdGroup(I)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
+
+    const/4 v5, -0x1
+
+    :goto_0
+    const/4 v9, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v9, 0x0
+
+    .line 911
+    :goto_1
+    new-instance v11, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    move-wide/from16 v12, p7
+
+    invoke-direct {v11, v2, v12, v13, v5}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;JI)V
+
+    .line 912
+    invoke-direct {v0, v11}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
+
+    move-result v2
+
+    .line 913
+    invoke-direct {v0, v1, v11}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInWindow(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
+
+    move-result v22
+
+    .line 914
+    invoke-direct {v0, v1, v11, v2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInTimeline(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Z)Z
+
+    move-result v23
+
+    if-eq v5, v7, :cond_2
+
+    .line 915
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 916
+    invoke-virtual {v1, v5}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v20, 0x1
 
     goto :goto_2
 
-    .line 720
     :cond_2
-    :goto_1
+    const/16 v20, 0x0
+
+    :goto_2
+    const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
+
+    if-eq v5, v7, :cond_3
+
+    .line 919
     iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget-wide v1, v1, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+    invoke-virtual {v1, v5}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupTimeUs(I)J
 
-    move-wide v10, v1
+    move-result-wide v14
 
-    .line 722
-    :goto_2
+    :goto_3
+    move-wide/from16 v16, v14
+
+    goto :goto_4
+
+    :cond_3
+    if-eqz v9, :cond_4
+
+    .line 920
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-wide v14, v1, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+
+    goto :goto_3
+
+    :cond_4
+    move-wide/from16 v16, v12
+
+    :goto_4
+    cmp-long v1, v16, v12
+
+    if-eqz v1, :cond_6
+
+    const-wide/high16 v14, -0x8000000000000000L
+
+    cmp-long v1, v16, v14
+
+    if-nez v1, :cond_5
+
+    goto :goto_5
+
+    :cond_5
+    move-wide/from16 v18, v16
+
+    goto :goto_6
+
+    .line 923
+    :cond_6
+    :goto_5
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-wide v14, v1, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+
+    move-wide/from16 v18, v14
+
+    :goto_6
+    cmp-long v1, v18, v12
+
+    if-eqz v1, :cond_9
+
+    cmp-long v1, v3, v18
+
+    if-ltz v1, :cond_9
+
+    if-nez v23, :cond_8
+
+    if-nez v9, :cond_7
+
+    goto :goto_7
+
+    :cond_7
+    const/4 v6, 0x0
+
+    :cond_8
+    :goto_7
+    const-wide/16 v3, 0x0
+
+    int-to-long v5, v6
+
+    sub-long v5, v18, v5
+
+    .line 928
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v3
+
+    :cond_9
+    move-wide v12, v3
+
+    .line 930
     new-instance v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
-    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
+    move-object v10, v1
 
-    move-object v2, v1
+    move-wide/from16 v14, p5
 
-    move-wide/from16 v4, p2
+    move/from16 v21, v2
 
-    invoke-direct/range {v2 .. v13}, Lcom/google/android/exoplayer2/MediaPeriodInfo;-><init>(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJJZZ)V
+    invoke-direct/range {v10 .. v23}, Lcom/google/android/exoplayer2/MediaPeriodInfo;-><init>(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJJZZZZ)V
 
     return-object v1
+.end method
+
+.method private getMinStartPositionAfterAdGroupUs(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;I)J
+    .locals 3
+
+    .line 966
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {p1, p2, v0}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 967
+    iget-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {p1, p3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupTimeUs(I)J
+
+    move-result-wide p1
+
+    const-wide/high16 v0, -0x8000000000000000L
+
+    cmp-long v2, p1, v0
+
+    if-nez v2, :cond_0
+
+    .line 969
+    iget-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-wide p1, p1, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+
+    return-wide p1
+
+    .line 971
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v0, p3}, Lcom/google/android/exoplayer2/Timeline$Period;->getContentResumeOffsetUs(I)J
+
+    move-result-wide v0
+
+    add-long/2addr p1, v0
+
+    return-wide p1
 .end method
 
 .method private isLastInPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
     .locals 1
 
-    .line 733
-    invoke-virtual {p1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
+    .line 943
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->nextAdGroupIndex:I
+    iget p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
 
     const/4 v0, -0x1
 
@@ -876,60 +1233,54 @@
     return p1
 .end method
 
-.method private isLastInTimeline(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Z)Z
-    .locals 7
+.method private isLastInTimeline(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Z)Z
+    .locals 6
 
-    .line 737
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    .line 957
+    iget-object p2, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 
-    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+    move-result v1
 
-    move-result v2
+    .line 958
+    iget-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    .line 738
-    iget-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    invoke-virtual {p1, v1, p2}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    move-result-object p2
 
-    invoke-virtual {p1, v2, v0}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    iget p2, p2, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
 
-    move-result-object p1
+    .line 959
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
 
-    iget p1, p1, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
+    invoke-virtual {p1, p2, v0}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
 
-    .line 739
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    move-result-object p2
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+    iget-boolean p2, p2, Lcom/google/android/exoplayer2/Timeline$Window;->isDynamic:Z
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
+    if-nez p2, :cond_0
 
-    move-result-object p1
+    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget-boolean p1, p1, Lcom/google/android/exoplayer2/Timeline$Window;->isDynamic:Z
+    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
 
-    if-nez p1, :cond_0
+    iget v4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->repeatMode:I
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget-boolean v5, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->shuffleModeEnabled:Z
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    move-object v0, p1
 
-    iget-object v4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
-
-    iget v5, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->repeatMode:I
-
-    iget-boolean v6, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->shuffleModeEnabled:Z
-
-    .line 740
-    invoke-virtual/range {v1 .. v6}, Lcom/google/android/exoplayer2/Timeline;->isLastPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Lcom/google/android/exoplayer2/Timeline$Window;IZ)Z
+    .line 960
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/exoplayer2/Timeline;->isLastPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Lcom/google/android/exoplayer2/Timeline$Window;IZ)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    if-eqz p2, :cond_0
+    if-eqz p3, :cond_0
 
     const/4 p1, 0x1
 
@@ -942,99 +1293,275 @@
     return p1
 .end method
 
-.method private resolveMediaPeriodIdForAds(Ljava/lang/Object;JJ)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-    .locals 7
+.method private isLastInWindow(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
+    .locals 3
 
-    .line 405
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    .line 947
+    invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    move-result v0
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    const/4 v1, 0x0
 
-    .line 406
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, p2, p3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexForPositionUs(J)I
+    return v1
 
-    move-result v3
-
-    const/4 v0, -0x1
-
-    if-ne v3, v0, :cond_0
-
-    .line 408
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v0, p2, p3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexAfterPositionUs(J)I
-
-    move-result p2
-
-    .line 409
-    new-instance p3, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    invoke-direct {p3, p1, p4, p5, p2}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;JI)V
-
-    return-object p3
-
-    .line 411
+    .line 950
     :cond_0
-    iget-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    iget-object v0, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
-    invoke-virtual {p2, v3}, Lcom/google/android/exoplayer2/Timeline$Period;->getFirstAdIndexToPlay(I)I
+    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    move-result v4
-
-    .line 412
-    new-instance p2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    move-object v1, p2
-
-    move-object v2, p1
-
-    move-wide v5, p4
-
-    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;IIJ)V
-
-    return-object p2
-.end method
-
-.method private resolvePeriodIndexToWindowSequenceNumber(Ljava/lang/Object;)J
-    .locals 6
-
-    .line 425
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    invoke-virtual {p1, v0, v2}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
     move-result-object v0
 
     iget v0, v0, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
 
-    .line 426
+    .line 951
+    iget-object p2, p2, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
+
+    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+
+    move-result p2
+
+    .line 952
+    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    invoke-virtual {p1, v0, v2}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
+
+    move-result-object p1
+
+    iget p1, p1, Lcom/google/android/exoplayer2/Timeline$Window;->lastPeriodIndex:I
+
+    if-ne p1, p2, :cond_1
+
+    const/4 v1, 0x1
+
+    :cond_1
+    return v1
+.end method
+
+.method private synthetic lambda$notifyQueueUpdate$0(Lcom/google/common/collect/ImmutableList$Builder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)V
+    .locals 1
+
+    .line 542
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->analyticsCollector:Lcom/google/android/exoplayer2/analytics/AnalyticsCollector;
+
+    invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/analytics/AnalyticsCollector;->updateMediaPeriodQueueInfo(Ljava/util/List;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)V
+
+    return-void
+.end method
+
+.method private notifyQueueUpdate()V
+    .locals 4
+
+    .line 534
+    invoke-static {}, Lcom/google/common/collect/ImmutableList;->builder()Lcom/google/common/collect/ImmutableList$Builder;
+
+    move-result-object v0
+
+    .line 535
+    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
+    :goto_0
+    if-eqz v1, :cond_0
+
+    .line 537
+    iget-object v2, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    iget-object v2, v2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    invoke-virtual {v0, v2}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+
+    .line 538
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    .line 540
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v1, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    iget-object v1, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    .line 541
+    :goto_1
+    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->analyticsCollectorHandler:Lcom/google/android/exoplayer2/util/HandlerWrapper;
+
+    new-instance v3, Lcom/google/android/exoplayer2/MediaPeriodQueue$$ExternalSyntheticLambda0;
+
+    invoke-direct {v3, p0, v0, v1}, Lcom/google/android/exoplayer2/MediaPeriodQueue$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/exoplayer2/MediaPeriodQueue;Lcom/google/common/collect/ImmutableList$Builder;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)V
+
+    invoke-interface {v2, v3}, Lcom/google/android/exoplayer2/util/HandlerWrapper;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method private static resolveMediaPeriodIdForAds(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJLcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    .locals 7
+
+    .line 473
+    invoke-virtual {p0, p1, p7}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 474
+    iget v0, p7, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
+
+    invoke-virtual {p0, v0, p6}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
+
+    .line 475
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+
+    move-result v0
+
+    move-object v2, p1
+
+    .line 477
+    :goto_0
+    iget-wide v3, p7, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+
+    const/4 p1, -0x1
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v1, v3, v5
+
+    if-nez v1, :cond_0
+
+    .line 478
+    invoke-virtual {p7}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupCount()I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    .line 479
+    invoke-virtual {p7}, Lcom/google/android/exoplayer2/Timeline$Period;->getRemovedAdGroupCount()I
+
+    move-result v1
+
+    invoke-virtual {p7, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 480
+    invoke-virtual {p7, v5, v6}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexForPositionUs(J)I
+
+    move-result v1
+
+    if-ne v1, p1, :cond_0
+
+    add-int/lit8 v1, v0, 0x1
+
+    iget v3, p6, Lcom/google/android/exoplayer2/Timeline$Window;->lastPeriodIndex:I
+
+    if-ge v0, v3, :cond_0
+
+    const/4 p1, 0x1
+
+    .line 482
+    invoke-virtual {p0, v1, p7, p1}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Z)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 483
+    iget-object p1, p7, Lcom/google/android/exoplayer2/Timeline$Period;->uid:Ljava/lang/Object;
+
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    move v0, v1
+
+    goto :goto_0
+
+    .line 485
+    :cond_0
+    invoke-virtual {p0, v2, p7}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 486
+    invoke-virtual {p7, p2, p3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexForPositionUs(J)I
+
+    move-result v3
+
+    if-ne v3, p1, :cond_1
+
+    .line 488
+    invoke-virtual {p7, p2, p3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexAfterPositionUs(J)I
+
+    move-result p0
+
+    .line 489
+    new-instance p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    invoke-direct {p1, v2, p4, p5, p0}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;JI)V
+
+    return-object p1
+
+    .line 491
+    :cond_1
+    invoke-virtual {p7, v3}, Lcom/google/android/exoplayer2/Timeline$Period;->getFirstAdIndexToPlay(I)I
+
+    move-result v4
+
+    .line 492
+    new-instance p0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    move-object v1, p0
+
+    move-wide v5, p4
+
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;-><init>(Ljava/lang/Object;IIJ)V
+
+    return-object p0
+.end method
+
+.method private resolvePeriodIndexToWindowSequenceNumber(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;)J
+    .locals 5
+
+    .line 555
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {p1, p2, v0}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    move-result-object v0
+
+    iget v0, v0, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
+
+    .line 556
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
 
     const/4 v2, -0x1
 
     if-eqz v1, :cond_0
 
-    .line 427
-    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
-    invoke-virtual {v3, v1}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+    .line 557
+    invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 
     move-result v1
 
     if-eq v1, v2, :cond_0
 
-    .line 429
-    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    .line 559
+    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget-object v4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v3, v1, v4}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    invoke-virtual {p1, v1, v3}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
     move-result-object v1
 
@@ -1042,37 +1569,37 @@
 
     if-ne v1, v0, :cond_0
 
-    .line 432
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodWindowSequenceNumber:J
+    .line 562
+    iget-wide p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodWindowSequenceNumber:J
 
-    return-wide v0
+    return-wide p1
 
-    .line 436
+    .line 566
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 438
+    .line 568
     iget-object v3, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
 
-    invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 440
+    .line 570
     iget-object p1, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v0, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    return-wide v0
+    return-wide p1
 
-    .line 442
+    .line 572
     :cond_1
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
@@ -1080,30 +1607,26 @@
 
     goto :goto_0
 
-    .line 444
+    .line 574
     :cond_2
     iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     :goto_1
     if-eqz v1, :cond_4
 
-    .line 446
-    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    .line 576
+    iget-object v3, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
 
-    iget-object v4, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
-
-    invoke-virtual {v3, v4}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+    invoke-virtual {p1, v3}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 
     move-result v3
 
     if-eq v3, v2, :cond_3
 
-    .line 448
-    iget-object v4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    .line 578
+    iget-object v4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget-object v5, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v4, v3, v5}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    invoke-virtual {p1, v3, v4}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
     move-result-object v3
 
@@ -1111,16 +1634,16 @@
 
     if-ne v3, v0, :cond_3
 
-    .line 451
+    .line 581
     iget-object p1, v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v0, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide p1, p1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
-    return-wide v0
+    return-wide p1
 
-    .line 454
+    .line 584
     :cond_3
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
@@ -1128,7 +1651,7 @@
 
     goto :goto_1
 
-    .line 457
+    .line 587
     :cond_4
     iget-wide v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->nextWindowSequenceNumber:J
 
@@ -1138,25 +1661,25 @@
 
     iput-wide v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->nextWindowSequenceNumber:J
 
-    .line 458
-    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 588
+    iget-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    if-nez v2, :cond_5
+    if-nez p1, :cond_5
 
-    .line 460
-    iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
+    .line 590
+    iput-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
 
-    .line 461
+    .line 591
     iput-wide v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodWindowSequenceNumber:J
 
     :cond_5
     return-wide v0
 .end method
 
-.method private updateForPlaybackModeChange()Z
+.method private updateForPlaybackModeChange(Lcom/google/android/exoplayer2/Timeline;)Z
     .locals 8
 
-    .line 487
+    .line 619
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     const/4 v1, 0x1
@@ -1165,22 +1688,18 @@
 
     return v1
 
-    .line 491
+    .line 623
     :cond_0
-    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget-object v2, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
 
-    iget-object v3, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
-
-    invoke-virtual {v2, v3}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+    invoke-virtual {p1, v2}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 
     move-result v2
 
     move v3, v2
 
-    .line 493
+    .line 625
     :goto_0
-    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
-
     iget-object v4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
     iget-object v5, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
@@ -1189,12 +1708,14 @@
 
     iget-boolean v7, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->shuffleModeEnabled:Z
 
-    .line 494
+    move-object v2, p1
+
+    .line 626
     invoke-virtual/range {v2 .. v7}, Lcom/google/android/exoplayer2/Timeline;->getNextPeriodIndex(ILcom/google/android/exoplayer2/Timeline$Period;Lcom/google/android/exoplayer2/Timeline$Window;IZ)I
 
     move-result v3
 
-    .line 496
+    .line 628
     :goto_1
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
@@ -1208,14 +1729,14 @@
 
     if-nez v2, :cond_1
 
-    .line 498
+    .line 630
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     move-result-object v0
 
     goto :goto_1
 
-    .line 501
+    .line 633
     :cond_1
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
@@ -1229,13 +1750,11 @@
 
     goto :goto_2
 
-    .line 505
+    .line 637
     :cond_2
-    iget-object v4, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    iget-object v4, v2, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
 
-    iget-object v5, v2, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
-
-    invoke-virtual {v4, v5}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+    invoke-virtual {p1, v4}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
 
     move-result v4
 
@@ -1248,25 +1767,25 @@
 
     goto :goto_0
 
-    .line 514
+    .line 646
     :cond_4
     :goto_2
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->removeAfter(Lcom/google/android/exoplayer2/MediaPeriodHolder;)Z
 
     move-result v2
 
-    .line 517
+    .line 649
     iget-object v3, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
-    invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getUpdatedMediaPeriodInfo(Lcom/google/android/exoplayer2/MediaPeriodInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    invoke-virtual {p0, p1, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getUpdatedMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/MediaPeriodInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
-    move-result-object v3
+    move-result-object p1
 
-    iput-object v3, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    iput-object p1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
-    xor-int/lit8 v0, v2, 0x1
+    xor-int/lit8 p1, v2, 0x1
 
-    return v0
+    return p1
 .end method
 
 
@@ -1274,7 +1793,7 @@
 .method public advancePlayingPeriod()Lcom/google/android/exoplayer2/MediaPeriodHolder;
     .locals 3
 
-    .line 219
+    .line 256
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     const/4 v1, 0x0
@@ -1283,26 +1802,26 @@
 
     return-object v1
 
-    .line 222
+    .line 259
     :cond_0
     iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-ne v0, v2, :cond_1
 
-    .line 223
+    .line 260
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 225
+    .line 262
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->release()V
 
-    .line 226
+    .line 263
     iget v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
 
     add-int/lit8 v0, v0, -0x1
@@ -1311,26 +1830,26 @@
 
     if-nez v0, :cond_2
 
-    .line 228
+    .line 265
     iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 229
+    .line 266
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
 
-    .line 230
+    .line 267
     iget-object v0, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     iget-object v0, v0, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    iget-wide v0, v0, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
+    iget-wide v0, v0, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodWindowSequenceNumber:J
 
-    .line 232
+    .line 269
     :cond_2
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
@@ -1340,13 +1859,19 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
+    .line 270
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->notifyQueueUpdate()V
+
+    .line 271
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
     return-object v0
 .end method
 
 .method public advanceReadingPeriod()Lcom/google/android/exoplayer2/MediaPeriodHolder;
     .locals 1
 
-    .line 206
+    .line 242
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-eqz v0, :cond_0
@@ -1367,7 +1892,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 207
+    .line 243
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
@@ -1376,112 +1901,103 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
+    .line 244
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->notifyQueueUpdate()V
+
+    .line 245
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
     return-object v0
 .end method
 
-.method public clear(Z)V
-    .locals 4
+.method public clear()V
+    .locals 3
 
-    .line 268
+    .line 305
+    iget v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 308
+    :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
+    .line 309
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
+
+    iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
+
+    .line 310
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    iget-object v1, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    iget-wide v1, v1, Lcom/google/android/exoplayer2/source/MediaPeriodId;->windowSequenceNumber:J
+
+    iput-wide v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodWindowSequenceNumber:J
+
+    :goto_0
     if-eqz v0, :cond_1
 
-    if-eqz p1, :cond_0
+    .line 312
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->release()V
 
-    .line 270
-    iget-object p1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->uid:Ljava/lang/Object;
+    .line 313
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
+    move-result-object v0
 
     goto :goto_0
 
-    :cond_0
-    move-object p1, v1
-
-    :goto_0
-    iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
-
-    .line 271
-    iget-object p1, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
-
-    iget-object p1, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-
-    iget-wide v2, p1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->windowSequenceNumber:J
-
-    iput-wide v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodWindowSequenceNumber:J
-
-    .line 272
-    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->removeAfter(Lcom/google/android/exoplayer2/MediaPeriodHolder;)Z
-
-    .line 273
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->release()V
-
-    goto :goto_1
-
     :cond_1
-    if-nez p1, :cond_2
+    const/4 v0, 0x0
 
-    .line 275
-    iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
+    .line 315
+    iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 277
-    :cond_2
-    :goto_1
-    iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 316
+    iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 278
-    iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 317
+    iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 279
-    iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    .line 318
+    iput v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
 
-    .line 280
-    iput p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
+    .line 319
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->notifyQueueUpdate()V
 
     return-void
 .end method
 
-.method public enqueueNextMediaPeriodHolder([Lcom/google/android/exoplayer2/RendererCapabilities;Lcom/google/android/exoplayer2/trackselection/TrackSelector;Lcom/google/android/exoplayer2/upstream/Allocator;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)Lcom/google/android/exoplayer2/MediaPeriodHolder;
-    .locals 11
+.method public enqueueNextMediaPeriodHolder([Lcom/google/android/exoplayer2/RendererCapabilities;Lcom/google/android/exoplayer2/trackselection/TrackSelector;Lcom/google/android/exoplayer2/upstream/Allocator;Lcom/google/android/exoplayer2/MediaSourceList;Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .locals 12
 
     move-object v0, p0
 
-    move-object/from16 v8, p5
-
-    .line 150
+    .line 187
     iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_0
 
-    .line 151
-    iget-object v1, v8, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    const-wide v1, 0xe8d4a51000L
 
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-wide v1, v8, Lcom/google/android/exoplayer2/MediaPeriodInfo;->contentPositionUs:J
-
-    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v5, v1, v3
-
-    if-eqz v5, :cond_0
+    move-object/from16 v10, p5
 
     goto :goto_0
 
+    .line 189
     :cond_0
-    const-wide/16 v1, 0x0
-
-    goto :goto_0
-
-    .line 154
-    :cond_1
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getRendererOffset()J
 
     move-result-wide v1
@@ -1494,72 +2010,77 @@
 
     add-long/2addr v1, v3
 
-    iget-wide v3, v8, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
+    move-object/from16 v10, p5
+
+    iget-wide v3, v10, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
 
     sub-long/2addr v1, v3
 
     :goto_0
-    move-wide v3, v1
+    move-wide v5, v1
 
-    .line 155
-    new-instance v10, Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 190
+    new-instance v1, Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    move-object v1, v10
+    move-object v3, v1
 
-    move-object v2, p1
+    move-object v4, p1
 
-    move-object v5, p2
+    move-object v7, p2
 
-    move-object v6, p3
+    move-object v8, p3
 
-    move-object v7, p4
+    move-object/from16 v9, p4
 
-    move-object/from16 v8, p5
+    move-object/from16 v10, p5
 
-    move-object/from16 v9, p6
+    move-object/from16 v11, p6
 
-    invoke-direct/range {v1 .. v9}, Lcom/google/android/exoplayer2/MediaPeriodHolder;-><init>([Lcom/google/android/exoplayer2/RendererCapabilities;JLcom/google/android/exoplayer2/trackselection/TrackSelector;Lcom/google/android/exoplayer2/upstream/Allocator;Lcom/google/android/exoplayer2/source/MediaSource;Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)V
+    invoke-direct/range {v3 .. v11}, Lcom/google/android/exoplayer2/MediaPeriodHolder;-><init>([Lcom/google/android/exoplayer2/RendererCapabilities;JLcom/google/android/exoplayer2/trackselection/TrackSelector;Lcom/google/android/exoplayer2/upstream/Allocator;Lcom/google/android/exoplayer2/MediaSourceList;Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/trackselection/TrackSelectorResult;)V
 
-    .line 164
-    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 199
+    iget-object v2, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_1
 
-    .line 165
-    invoke-virtual {v1, v10}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->setNext(Lcom/google/android/exoplayer2/MediaPeriodHolder;)V
+    .line 200
+    invoke-virtual {v2, v1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->setNext(Lcom/google/android/exoplayer2/MediaPeriodHolder;)V
 
     goto :goto_1
 
-    .line 167
-    :cond_2
-    iput-object v10, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 202
+    :cond_1
+    iput-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 168
-    iput-object v10, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 203
+    iput-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     :goto_1
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 170
-    iput-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
+    .line 205
+    iput-object v2, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->oldFrontPeriodUid:Ljava/lang/Object;
 
-    .line 171
-    iput-object v10, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 206
+    iput-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 172
-    iget v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
+    .line 207
+    iget v2, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    iput v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
+    iput v2, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
 
-    return-object v10
+    .line 208
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->notifyQueueUpdate()V
+
+    return-object v1
 .end method
 
 .method public getLoadingPeriod()Lcom/google/android/exoplayer2/MediaPeriodHolder;
     .locals 1
 
-    .line 182
+    .line 218
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     return-object v0
@@ -1568,21 +2089,23 @@
 .method public getNextMediaPeriodInfo(JLcom/google/android/exoplayer2/PlaybackInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
     .locals 1
 
-    .line 125
+    .line 162
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-nez v0, :cond_0
 
-    .line 126
+    .line 163
     invoke-direct {p0, p3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getFirstMediaPeriodInfo(Lcom/google/android/exoplayer2/PlaybackInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 127
+    .line 164
     :cond_0
-    invoke-direct {p0, v0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getFollowingMediaPeriodInfo(Lcom/google/android/exoplayer2/MediaPeriodHolder;J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    iget-object p3, p3, Lcom/google/android/exoplayer2/PlaybackInfo;->timeline:Lcom/google/android/exoplayer2/Timeline;
+
+    invoke-direct {p0, p3, v0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getFollowingMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/MediaPeriodHolder;J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     move-result-object p1
 
@@ -1593,7 +2116,7 @@
 .method public getPlayingPeriod()Lcom/google/android/exoplayer2/MediaPeriodHolder;
     .locals 1
 
-    .line 191
+    .line 227
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     return-object v0
@@ -1602,110 +2125,206 @@
 .method public getReadingPeriod()Lcom/google/android/exoplayer2/MediaPeriodHolder;
     .locals 1
 
-    .line 197
+    .line 233
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     return-object v0
 .end method
 
-.method public getUpdatedMediaPeriodInfo(Lcom/google/android/exoplayer2/MediaPeriodInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
-    .locals 13
+.method public getUpdatedMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/MediaPeriodInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .locals 18
 
-    .line 356
-    iget-object v1, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    move-object/from16 v0, p0
 
-    .line 357
-    invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
+    move-object/from16 v1, p1
 
-    move-result v10
+    move-object/from16 v2, p2
 
-    .line 358
-    invoke-direct {p0, v1, v10}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInTimeline(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Z)Z
+    .line 404
+    iget-object v3, v2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    move-result v11
+    .line 405
+    invoke-direct {v0, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInPeriod(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
 
-    .line 359
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    move-result v12
 
-    iget-object v2, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    .line 406
+    invoke-direct {v0, v1, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInWindow(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Z
 
-    iget-object v2, v2, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->periodUid:Ljava/lang/Object;
+    move-result v13
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    .line 407
+    invoke-direct {v0, v1, v3, v12}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->isLastInTimeline(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Z)Z
 
-    invoke-virtual {v0, v2, v3}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+    move-result v14
 
-    .line 361
-    invoke-virtual {v1}, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->isAd()Z
+    .line 408
+    iget-object v4, v2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->id:Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
-    move-result v0
+    iget-object v4, v4, Lcom/google/android/exoplayer2/source/MediaPeriodId;->periodUid:Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    iget-object v5, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    .line 362
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+    invoke-virtual {v1, v4, v5}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
 
-    iget v2, v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adGroupIndex:I
+    .line 410
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
 
-    iget v3, v1, Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;->adIndexInAdGroup:I
+    move-result v1
 
-    invoke-virtual {v0, v2, v3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdDurationUs(II)J
+    const/4 v4, -0x1
 
-    move-result-wide v2
+    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
 
-    :cond_0
-    :goto_0
-    move-wide v8, v2
+    if-nez v1, :cond_1
 
-    goto :goto_1
+    iget v1, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
 
-    .line 363
-    :cond_1
-    iget-wide v2, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->endPositionUs:J
-
-    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_2
-
-    const-wide/high16 v4, -0x8000000000000000L
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_0
-
-    .line 364
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
-
-    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Timeline$Period;->getDurationUs()J
-
-    move-result-wide v2
+    if-ne v1, v4, :cond_0
 
     goto :goto_0
 
-    .line 366
+    .line 412
+    :cond_0
+    iget-object v7, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v7, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupTimeUs(I)J
+
+    move-result-wide v7
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    move-wide v7, v5
+
+    .line 414
     :goto_1
-    new-instance v12, Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
 
-    iget-wide v2, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
+    move-result v1
 
-    iget-wide v4, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->contentPositionUs:J
+    if-eqz v1, :cond_2
 
-    iget-wide v6, p1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->endPositionUs:J
+    .line 415
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    move-object v0, v12
+    iget v5, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
 
-    invoke-direct/range {v0 .. v11}, Lcom/google/android/exoplayer2/MediaPeriodInfo;-><init>(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJJZZ)V
+    iget v6, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adIndexInAdGroup:I
 
-    return-object v12
+    invoke-virtual {v1, v5, v6}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdDurationUs(II)J
+
+    move-result-wide v5
+
+    :goto_2
+    move-wide v9, v5
+
+    goto :goto_4
+
+    :cond_2
+    cmp-long v1, v7, v5
+
+    if-eqz v1, :cond_4
+
+    const-wide/high16 v5, -0x8000000000000000L
+
+    cmp-long v1, v7, v5
+
+    if-nez v1, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    move-wide v9, v7
+
+    goto :goto_4
+
+    .line 417
+    :cond_4
+    :goto_3
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/Timeline$Period;->getDurationUs()J
+
+    move-result-wide v5
+
+    goto :goto_2
+
+    .line 420
+    :goto_4
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/source/MediaPeriodId;->isAd()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    .line 421
+    iget-object v1, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v4, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->adGroupIndex:I
+
+    invoke-virtual {v1, v4}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+
+    move-result v1
+
+    move v11, v1
+
+    goto :goto_5
+
+    .line 422
+    :cond_5
+    iget v1, v3, Lcom/google/android/exoplayer2/source/MediaPeriodId;->nextAdGroupIndex:I
+
+    if-eq v1, v4, :cond_6
+
+    iget-object v4, v0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 423
+    invoke-virtual {v4, v1}, Lcom/google/android/exoplayer2/Timeline$Period;->isServerSideInsertedAdGroup(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    const/4 v1, 0x1
+
+    const/4 v11, 0x1
+
+    goto :goto_5
+
+    :cond_6
+    const/4 v1, 0x0
+
+    const/4 v11, 0x0
+
+    .line 424
+    :goto_5
+    new-instance v15, Lcom/google/android/exoplayer2/MediaPeriodInfo;
+
+    iget-wide v4, v2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->startPositionUs:J
+
+    iget-wide v1, v2, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
+
+    move-wide/from16 v16, v1
+
+    move-object v1, v15
+
+    move-object v2, v3
+
+    move-wide v3, v4
+
+    move-wide/from16 v5, v16
+
+    invoke-direct/range {v1 .. v14}, Lcom/google/android/exoplayer2/MediaPeriodInfo;-><init>(Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;JJJJZZZZ)V
+
+    return-object v15
 .end method
 
 .method public isLoading(Lcom/google/android/exoplayer2/source/MediaPeriod;)Z
     .locals 1
 
-    .line 92
+    .line 128
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-eqz v0, :cond_0
@@ -1728,12 +2347,12 @@
 .method public reevaluateBuffer(J)V
     .locals 1
 
-    .line 101
+    .line 137
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-eqz v0, :cond_0
 
-    .line 102
+    .line 138
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->reevaluateBuffer(J)V
 
     :cond_0
@@ -1743,9 +2362,9 @@
 .method public removeAfter(Lcom/google/android/exoplayer2/MediaPeriodHolder;)Z
     .locals 3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
@@ -1756,97 +2375,234 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 245
+    .line 283
     :goto_0
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 247
+    .line 284
+    iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    return v1
+
+    .line 288
+    :cond_1
     iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    .line 248
+    .line 289
     :goto_1
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     move-result-object v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
-    .line 249
+    .line 290
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     move-result-object p1
 
-    .line 250
+    .line 291
     iget-object v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    if-ne p1, v2, :cond_1
+    if-ne p1, v2, :cond_2
 
-    .line 251
-    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    .line 292
+    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    iput-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    .line 254
-    :cond_1
+    .line 295
+    :cond_2
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->release()V
 
-    .line 255
+    .line 296
     iget v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
 
-    sub-int/2addr v2, v1
+    sub-int/2addr v2, v0
 
     iput v2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->length:I
 
     goto :goto_1
 
-    .line 257
-    :cond_2
+    .line 298
+    :cond_3
     iget-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->setNext(Lcom/google/android/exoplayer2/MediaPeriodHolder;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->setNext(Lcom/google/android/exoplayer2/MediaPeriodHolder;)V
 
-    return v0
+    .line 299
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->notifyQueueUpdate()V
+
+    return v1
 .end method
 
-.method public resolveMediaPeriodIdForAds(Ljava/lang/Object;J)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
-    .locals 6
+.method public resolveMediaPeriodIdForAds(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;J)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    .locals 8
 
-    .line 386
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolvePeriodIndexToWindowSequenceNumber(Ljava/lang/Object;)J
+    .line 448
+    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolvePeriodIndexToWindowSequenceNumber(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;)J
 
     move-result-wide v4
 
-    move-object v0, p0
+    .line 449
+    iget-object v6, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
 
-    move-object v1, p1
+    iget-object v7, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
 
-    move-wide v2, p2
+    move-object v0, p1
 
-    .line 387
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolveMediaPeriodIdForAds(Ljava/lang/Object;JJ)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    move-object v1, p2
+
+    move-wide v2, p3
+
+    invoke-static/range {v0 .. v7}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolveMediaPeriodIdForAds(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJLcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public setTimeline(Lcom/google/android/exoplayer2/Timeline;)V
-    .locals 0
+.method public resolveMediaPeriodIdForAdsAfterPeriodPositionChange(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;J)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+    .locals 10
 
-    .line 69
-    iput-object p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->timeline:Lcom/google/android/exoplayer2/Timeline;
+    .line 508
+    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolvePeriodIndexToWindowSequenceNumber(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;)J
 
-    return-void
+    move-result-wide v4
+
+    .line 510
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {p1, p2, v0}, Lcom/google/android/exoplayer2/Timeline;->getPeriodByUid(Ljava/lang/Object;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 511
+    iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget v0, v0, Lcom/google/android/exoplayer2/Timeline$Period;->windowIndex:I
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/exoplayer2/Timeline;->getWindow(ILcom/google/android/exoplayer2/Timeline$Window;)Lcom/google/android/exoplayer2/Timeline$Window;
+
+    .line 514
+    invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/Timeline;->getIndexOfPeriod(Ljava/lang/Object;)I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    iget v3, v3, Lcom/google/android/exoplayer2/Timeline$Window;->firstPeriodIndex:I
+
+    if-lt v0, v3, :cond_3
+
+    .line 515
+    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    const/4 v6, 0x1
+
+    invoke-virtual {p1, v0, v3, v6}, Lcom/google/android/exoplayer2/Timeline;->getPeriod(ILcom/google/android/exoplayer2/Timeline$Period;Z)Lcom/google/android/exoplayer2/Timeline$Period;
+
+    .line 516
+    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    invoke-virtual {v3}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupCount()I
+
+    move-result v3
+
+    if-lez v3, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v6, 0x0
+
+    :goto_1
+    or-int/2addr v2, v6
+
+    .line 518
+    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-wide v7, v3, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+
+    invoke-virtual {v3, v7, v8}, Lcom/google/android/exoplayer2/Timeline$Period;->getAdGroupIndexForPositionUs(J)I
+
+    move-result v3
+
+    const/4 v7, -0x1
+
+    if-eq v3, v7, :cond_1
+
+    .line 520
+    iget-object p2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-object p2, p2, Lcom/google/android/exoplayer2/Timeline$Period;->uid:Ljava/lang/Object;
+
+    invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    :cond_1
+    if-eqz v2, :cond_2
+
+    if-eqz v6, :cond_3
+
+    .line 522
+    iget-object v3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    iget-wide v6, v3, Lcom/google/android/exoplayer2/Timeline$Period;->durationUs:J
+
+    const-wide/16 v8, 0x0
+
+    cmp-long v3, v6, v8
+
+    if-eqz v3, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_3
+    :goto_2
+    move-object v1, p2
+
+    .line 527
+    iget-object v6, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->window:Lcom/google/android/exoplayer2/Timeline$Window;
+
+    iget-object v7, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->period:Lcom/google/android/exoplayer2/Timeline$Period;
+
+    move-object v0, p1
+
+    move-wide v2, p3
+
+    invoke-static/range {v0 .. v7}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->resolveMediaPeriodIdForAds(Lcom/google/android/exoplayer2/Timeline;Ljava/lang/Object;JJLcom/google/android/exoplayer2/Timeline$Window;Lcom/google/android/exoplayer2/Timeline$Period;)Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public shouldLoadNextMediaPeriod()Z
     .locals 5
 
-    .line 108
+    .line 144
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->loading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     if-eqz v0, :cond_1
@@ -1857,7 +2613,7 @@
 
     if-nez v1, :cond_0
 
-    .line 110
+    .line 146
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->isFullyBuffered()Z
 
     move-result v0
@@ -1897,10 +2653,10 @@
     return v0
 .end method
 
-.method public updateQueuedPeriods(JJ)Z
+.method public updateQueuedPeriods(Lcom/google/android/exoplayer2/Timeline;JJ)Z
     .locals 8
 
-    .line 300
+    .line 341
     iget-object v0, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->playing:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
     const/4 v1, 0x0
@@ -1910,27 +2666,27 @@
 
     if-eqz v0, :cond_8
 
-    .line 302
+    .line 343
     iget-object v3, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     if-nez v1, :cond_0
 
-    .line 310
-    invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getUpdatedMediaPeriodInfo(Lcom/google/android/exoplayer2/MediaPeriodInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .line 351
+    invoke-virtual {p0, p1, v3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getUpdatedMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/MediaPeriodInfo;)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     move-result-object v1
 
     goto :goto_1
 
-    .line 312
+    .line 354
     :cond_0
-    invoke-direct {p0, v1, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getFollowingMediaPeriodInfo(Lcom/google/android/exoplayer2/MediaPeriodHolder;J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    invoke-direct {p0, p1, v1, p2, p3}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->getFollowingMediaPeriodInfo(Lcom/google/android/exoplayer2/Timeline;Lcom/google/android/exoplayer2/MediaPeriodHolder;J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     move-result-object v4
 
     if-nez v4, :cond_1
 
-    .line 315
+    .line 357
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->removeAfter(Lcom/google/android/exoplayer2/MediaPeriodHolder;)Z
 
     move-result p1
@@ -1939,7 +2695,7 @@
 
     return p1
 
-    .line 317
+    .line 359
     :cond_1
     invoke-direct {p0, v3, v4}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->canKeepMediaPeriodHolder(Lcom/google/android/exoplayer2/MediaPeriodInfo;Lcom/google/android/exoplayer2/MediaPeriodInfo;)Z
 
@@ -1947,7 +2703,7 @@
 
     if-nez v5, :cond_2
 
-    .line 319
+    .line 361
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->removeAfter(Lcom/google/android/exoplayer2/MediaPeriodHolder;)Z
 
     move-result p1
@@ -1959,17 +2715,18 @@
     :cond_2
     move-object v1, v4
 
-    .line 324
+    .line 367
     :goto_1
-    iget-wide v4, v3, Lcom/google/android/exoplayer2/MediaPeriodInfo;->contentPositionUs:J
+    iget-wide v4, v3, Lcom/google/android/exoplayer2/MediaPeriodInfo;->requestedContentPositionUs:J
 
-    invoke-virtual {v1, v4, v5}, Lcom/google/android/exoplayer2/MediaPeriodInfo;->copyWithContentPositionUs(J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
+    .line 368
+    invoke-virtual {v1, v4, v5}, Lcom/google/android/exoplayer2/MediaPeriodInfo;->copyWithRequestedContentPositionUs(J)Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
     move-result-object v4
 
     iput-object v4, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
-    .line 326
+    .line 371
     iget-wide v3, v3, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
 
     iget-wide v5, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
@@ -1980,42 +2737,51 @@
 
     if-nez v3, :cond_7
 
-    .line 330
+    .line 374
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->updateClipping()V
+
+    .line 376
     iget-wide p1, v1, Lcom/google/android/exoplayer2/MediaPeriodInfo;->durationUs:J
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v1, p1, v3
+    cmp-long p3, p1, v3
 
-    if-nez v1, :cond_3
+    if-nez p3, :cond_3
 
     const-wide p1, 0x7fffffffffffffffL
 
     goto :goto_2
 
-    .line 332
+    .line 378
     :cond_3
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->toRendererTime(J)J
 
     move-result-wide p1
 
-    .line 333
+    .line 379
     :goto_2
-    iget-object v1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
+    iget-object p3, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->reading:Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    if-ne v0, v1, :cond_5
+    if-ne v0, p3, :cond_5
 
-    const-wide/high16 v4, -0x8000000000000000L
+    iget-object p3, v0, Lcom/google/android/exoplayer2/MediaPeriodHolder;->info:Lcom/google/android/exoplayer2/MediaPeriodInfo;
 
-    cmp-long v1, p3, v4
+    iget-boolean p3, p3, Lcom/google/android/exoplayer2/MediaPeriodInfo;->isFollowedByTransitionToSameStream:Z
 
-    if-eqz v1, :cond_4
+    if-nez p3, :cond_5
 
-    cmp-long v1, p3, p1
+    const-wide/high16 v3, -0x8000000000000000L
 
-    if-ltz v1, :cond_5
+    cmp-long p3, p4, v3
+
+    if-eqz p3, :cond_4
+
+    cmp-long p3, p4, p1
+
+    if-ltz p3, :cond_5
 
     :cond_4
     const/4 p1, 0x1
@@ -2025,7 +2791,7 @@
     :cond_5
     const/4 p1, 0x0
 
-    .line 337
+    .line 384
     :goto_3
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->removeAfter(Lcom/google/android/exoplayer2/MediaPeriodHolder;)Z
 
@@ -2043,7 +2809,7 @@
     :goto_4
     return v2
 
-    .line 342
+    .line 389
     :cond_7
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaPeriodHolder;->getNext()Lcom/google/android/exoplayer2/MediaPeriodHolder;
 
@@ -2061,28 +2827,28 @@
     return v2
 .end method
 
-.method public updateRepeatMode(I)Z
+.method public updateRepeatMode(Lcom/google/android/exoplayer2/Timeline;I)Z
     .locals 0
 
-    .line 77
-    iput p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->repeatMode:I
+    .line 109
+    iput p2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->repeatMode:I
 
-    .line 78
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->updateForPlaybackModeChange()Z
+    .line 110
+    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->updateForPlaybackModeChange(Lcom/google/android/exoplayer2/Timeline;)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public updateShuffleModeEnabled(Z)Z
+.method public updateShuffleModeEnabled(Lcom/google/android/exoplayer2/Timeline;Z)Z
     .locals 0
 
-    .line 86
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->shuffleModeEnabled:Z
+    .line 122
+    iput-boolean p2, p0, Lcom/google/android/exoplayer2/MediaPeriodQueue;->shuffleModeEnabled:Z
 
-    .line 87
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->updateForPlaybackModeChange()Z
+    .line 123
+    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/MediaPeriodQueue;->updateForPlaybackModeChange(Lcom/google/android/exoplayer2/Timeline;)Z
 
     move-result p1
 

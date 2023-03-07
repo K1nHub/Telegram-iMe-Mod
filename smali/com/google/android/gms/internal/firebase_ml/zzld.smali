@@ -5,6 +5,10 @@
 # direct methods
 .method public static zzay(Ljava/lang/String;)Z
     .locals 0
+    .param p0    # Ljava/lang/String;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 1
     invoke-static {p0}, Lcom/google/android/gms/internal/firebase_ml/zzkr;->zzax(Ljava/lang/String;)Z
@@ -16,6 +20,14 @@
 
 .method public static varargs zzb(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     .locals 6
+    .param p0    # Ljava/lang/String;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .param p1    # [Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 2
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -178,6 +190,10 @@
 
 .method private static zzk(Ljava/lang/Object;)Ljava/lang/String;
     .locals 7
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 27
     :try_start_0

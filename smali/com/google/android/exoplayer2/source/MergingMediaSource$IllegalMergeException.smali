@@ -32,10 +32,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 61
+    .line 67
     invoke-direct {p0}, Ljava/io/IOException;-><init>()V
 
-    .line 62
+    .line 68
     iput p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaSource$IllegalMergeException;->reason:I
 
     return-void

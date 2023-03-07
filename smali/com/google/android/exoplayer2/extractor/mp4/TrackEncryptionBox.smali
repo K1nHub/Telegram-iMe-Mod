@@ -23,7 +23,7 @@
 .method public constructor <init>(ZLjava/lang/String;I[BII[B)V
     .locals 3
 
-    .line 73
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
@@ -50,24 +50,25 @@
     :goto_1
     xor-int/2addr v0, v2
 
-    .line 74
+    .line 70
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 75
+    .line 71
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackEncryptionBox;->isEncrypted:Z
 
-    .line 76
+    .line 72
     iput-object p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackEncryptionBox;->schemeType:Ljava/lang/String;
 
-    .line 77
+    .line 73
     iput p3, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackEncryptionBox;->perSampleIvSize:I
 
-    .line 78
+    .line 74
     iput-object p7, p0, Lcom/google/android/exoplayer2/extractor/mp4/TrackEncryptionBox;->defaultInitializationVector:[B
 
-    .line 79
+    .line 75
     new-instance p1, Lcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;
 
+    .line 77
     invoke-static {p2}, Lcom/google/android/exoplayer2/extractor/mp4/TrackEncryptionBox;->schemeToCryptoMode(Ljava/lang/String;)I
 
     move-result p2
@@ -91,7 +92,7 @@
     :cond_0
     const/4 v1, -0x1
 
-    .line 89
+    .line 85
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result v2
@@ -167,7 +168,7 @@
     :goto_0
     packed-switch v1, :pswitch_data_0
 
-    .line 97
+    .line 93
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

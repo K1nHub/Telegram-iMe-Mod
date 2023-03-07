@@ -35,12 +35,12 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/AudioFocusManager;Landroid/os/Handler;)V
     .locals 0
 
-    .line 388
+    .line 436
     iput-object p1, p0, Lcom/google/android/exoplayer2/AudioFocusManager$AudioFocusListener;->this$0:Lcom/google/android/exoplayer2/AudioFocusManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 389
+    .line 437
     iput-object p2, p0, Lcom/google/android/exoplayer2/AudioFocusManager$AudioFocusListener;->eventHandler:Landroid/os/Handler;
 
     return-void
@@ -49,7 +49,7 @@
 .method private synthetic lambda$onAudioFocusChange$0(I)V
     .locals 1
 
-    .line 394
+    .line 442
     iget-object v0, p0, Lcom/google/android/exoplayer2/AudioFocusManager$AudioFocusListener;->this$0:Lcom/google/android/exoplayer2/AudioFocusManager;
 
     invoke-static {v0, p1}, Lcom/google/android/exoplayer2/AudioFocusManager;->access$000(Lcom/google/android/exoplayer2/AudioFocusManager;I)V
@@ -62,7 +62,7 @@
 .method public onAudioFocusChange(I)V
     .locals 2
 
-    .line 394
+    .line 442
     iget-object v0, p0, Lcom/google/android/exoplayer2/AudioFocusManager$AudioFocusListener;->eventHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/android/exoplayer2/AudioFocusManager$AudioFocusListener$$ExternalSyntheticLambda0;

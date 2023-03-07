@@ -1,4 +1,4 @@
-.class public final Lcom/google/android/exoplayer2/video/spherical/ProjectionDecoder;
+.class final Lcom/google/android/exoplayer2/video/spherical/ProjectionDecoder;
 .super Ljava/lang/Object;
 .source "ProjectionDecoder.java"
 
@@ -36,14 +36,14 @@
 .method public static decode([BI)Lcom/google/android/exoplayer2/video/spherical/Projection;
     .locals 5
 
-    .line 62
+    .line 63
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([B)V
 
     const/4 p0, 0x0
 
-    .line 67
+    .line 68
     :try_start_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/video/spherical/ProjectionDecoder;->isProj(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Z
 
@@ -74,7 +74,7 @@
 
     return-object p0
 
-    .line 74
+    .line 75
     :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -92,7 +92,7 @@
 
     return-object p0
 
-    .line 78
+    .line 79
     :cond_2
     new-instance p0, Lcom/google/android/exoplayer2/video/spherical/Projection;
 
@@ -112,7 +112,7 @@
 
     return-object p0
 
-    .line 76
+    .line 77
     :cond_3
     new-instance p0, Lcom/google/android/exoplayer2/video/spherical/Projection;
 
@@ -146,17 +146,17 @@
 
     const/4 v0, 0x4
 
-    .line 88
+    .line 89
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 89
+    .line 90
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    .line 90
+    .line 91
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     const p0, 0x70726f6a
@@ -172,7 +172,7 @@
 .method private static parseMesh(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;
     .locals 23
 
-    .line 165
+    .line 170
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v0
@@ -185,7 +185,7 @@
 
     return-object v1
 
-    .line 169
+    .line 174
     :cond_0
     new-array v2, v0, [F
 
@@ -194,7 +194,7 @@
     :goto_0
     if-ge v4, v0, :cond_1
 
-    .line 171
+    .line 176
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readFloat()F
 
     move-result v5
@@ -205,7 +205,7 @@
 
     goto :goto_0
 
-    .line 174
+    .line 179
     :cond_1
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
@@ -220,7 +220,7 @@
     :cond_2
     const-wide/high16 v5, 0x4000000000000000L    # 2.0
 
-    .line 179
+    .line 184
     invoke-static {v5, v6}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v7
@@ -229,7 +229,7 @@
 
     mul-double v9, v9, v5
 
-    .line 180
+    .line 185
     invoke-static {v9, v10}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v9
@@ -242,16 +242,16 @@
 
     double-to-int v9, v9
 
-    .line 182
+    .line 187
     new-instance v10, Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
-    move-object/from16 v11, p0
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    iget-object v12, v11, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    move-result-object v11
 
-    invoke-direct {v10, v12}, Lcom/google/android/exoplayer2/util/ParsableBitArray;-><init>([B)V
+    invoke-direct {v10, v11}, Lcom/google/android/exoplayer2/util/ParsableBitArray;-><init>([B)V
 
-    .line 183
+    .line 188
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v11
@@ -264,7 +264,7 @@
 
     mul-int/lit8 v11, v4, 0x5
 
-    .line 184
+    .line 189
     new-array v11, v11, [F
 
     const/4 v13, 0x5
@@ -283,10 +283,10 @@
     :goto_2
     if-ge v3, v13, :cond_5
 
-    .line 189
+    .line 194
     aget v17, v14, v3
 
-    .line 190
+    .line 195
     invoke-virtual {v10, v9}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v18
@@ -306,12 +306,12 @@
     :cond_3
     add-int/lit8 v17, v16, 0x1
 
-    .line 194
+    .line 199
     aget v18, v2, v13
 
     aput v18, v11, v16
 
-    .line 195
+    .line 200
     aput v13, v14, v3
 
     add-int/lit8 v3, v3, 0x1
@@ -333,7 +333,7 @@
 
     goto :goto_1
 
-    .line 200
+    .line 205
     :cond_6
     invoke-virtual {v10}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->getPosition()I
 
@@ -347,12 +347,12 @@
 
     const/16 v0, 0x20
 
-    .line 202
+    .line 207
     invoke-virtual {v10, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v2
 
-    .line 203
+    .line 208
     new-array v3, v2, [Lcom/google/android/exoplayer2/video/spherical/Projection$SubMesh;
 
     const/4 v9, 0x0
@@ -360,17 +360,17 @@
     :goto_4
     if-ge v9, v2, :cond_b
 
-    .line 205
+    .line 210
     invoke-virtual {v10, v12}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v13
 
-    .line 206
+    .line 211
     invoke-virtual {v10, v12}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v14
 
-    .line 207
+    .line 212
     invoke-virtual {v10, v0}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v15
@@ -388,7 +388,7 @@
 
     mul-double v12, v12, v5
 
-    .line 211
+    .line 216
     invoke-static {v12, v13}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v12
@@ -403,12 +403,12 @@
 
     mul-int/lit8 v13, v15, 0x3
 
-    .line 213
+    .line 218
     new-array v13, v13, [F
 
     mul-int/lit8 v0, v15, 0x2
 
-    .line 214
+    .line 219
     new-array v0, v0, [F
 
     const/4 v5, 0x0
@@ -418,7 +418,7 @@
     :goto_5
     if-ge v5, v15, :cond_a
 
-    .line 216
+    .line 221
     invoke-virtual {v10, v12}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v19
@@ -440,7 +440,7 @@
 
     mul-int/lit8 v20, v6, 0x5
 
-    .line 220
+    .line 225
     aget v21, v11, v20
 
     aput v21, v13, v19
@@ -449,7 +449,7 @@
 
     add-int/lit8 v22, v20, 0x1
 
-    .line 221
+    .line 226
     aget v22, v11, v22
 
     aput v22, v13, v21
@@ -458,7 +458,7 @@
 
     add-int/lit8 v21, v20, 0x2
 
-    .line 222
+    .line 227
     aget v21, v11, v21
 
     aput v21, v13, v19
@@ -467,7 +467,7 @@
 
     add-int/lit8 v21, v20, 0x3
 
-    .line 223
+    .line 228
     aget v21, v11, v21
 
     aput v21, v0, v19
@@ -476,7 +476,7 @@
 
     add-int/lit8 v20, v20, 0x4
 
-    .line 224
+    .line 229
     aget v20, v11, v20
 
     aput v20, v0, v19
@@ -489,7 +489,7 @@
     :goto_6
     return-object v1
 
-    .line 226
+    .line 231
     :cond_a
     new-instance v5, Lcom/google/android/exoplayer2/video/spherical/Projection$SubMesh;
 
@@ -509,7 +509,7 @@
 
     goto :goto_4
 
-    .line 228
+    .line 233
     :cond_b
     new-instance v0, Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;
 
@@ -531,7 +531,7 @@
         }
     .end annotation
 
-    .line 116
+    .line 119
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
@@ -545,10 +545,10 @@
     :cond_0
     const/4 v0, 0x7
 
-    .line 120
+    .line 123
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 121
+    .line 124
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v0
@@ -557,19 +557,19 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 123
+    .line 126
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
 
-    .line 124
+    .line 127
     new-instance v2, Ljava/util/zip/Inflater;
 
     const/4 v3, 0x1
 
     invoke-direct {v2, v3}, Ljava/util/zip/Inflater;-><init>(Z)V
 
-    .line 126
+    .line 129
     :try_start_0
     invoke-static {p0, v0, v2}, Lcom/google/android/exoplayer2/util/Util;->inflate(Lcom/google/android/exoplayer2/util/ParsableByteArray;Lcom/google/android/exoplayer2/util/ParsableByteArray;Ljava/util/zip/Inflater;)Z
 
@@ -579,7 +579,7 @@
 
     if-nez p0, :cond_1
 
-    .line 130
+    .line 133
     invoke-virtual {v2}, Ljava/util/zip/Inflater;->end()V
 
     return-object v1
@@ -596,7 +596,7 @@
 
     invoke-virtual {v2}, Ljava/util/zip/Inflater;->end()V
 
-    .line 131
+    .line 134
     throw p0
 
     :cond_2
@@ -606,7 +606,7 @@
 
     return-object v1
 
-    .line 136
+    .line 139
     :cond_3
     :goto_0
     invoke-static {p0}, Lcom/google/android/exoplayer2/video/spherical/ProjectionDecoder;->parseRawMshpData(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Ljava/util/ArrayList;
@@ -631,15 +631,15 @@
 
     const/16 v0, 0x8
 
-    .line 95
+    .line 97
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 96
+    .line 98
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v0
 
-    .line 97
+    .line 99
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v1
@@ -649,7 +649,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 99
+    .line 101
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v3
@@ -662,7 +662,7 @@
 
     goto :goto_2
 
-    .line 103
+    .line 105
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
@@ -678,7 +678,7 @@
 
     goto :goto_1
 
-    .line 110
+    .line 112
     :cond_1
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
@@ -686,12 +686,12 @@
 
     goto :goto_0
 
-    .line 106
+    .line 108
     :cond_2
     :goto_1
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setLimit(I)V
 
-    .line 107
+    .line 109
     invoke-static {p0}, Lcom/google/android/exoplayer2/video/spherical/ProjectionDecoder;->parseMshp(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Ljava/util/ArrayList;
 
     move-result-object p0
@@ -716,17 +716,17 @@
         }
     .end annotation
 
-    .line 141
+    .line 145
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 142
+    .line 146
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v1
 
-    .line 143
+    .line 147
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
     move-result v2
@@ -734,7 +734,7 @@
     :goto_0
     if-ge v1, v2, :cond_4
 
-    .line 145
+    .line 149
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v3
@@ -749,7 +749,7 @@
 
     goto :goto_1
 
-    .line 149
+    .line 153
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
@@ -759,7 +759,7 @@
 
     if-ne v1, v5, :cond_2
 
-    .line 151
+    .line 155
     invoke-static {p0}, Lcom/google/android/exoplayer2/video/spherical/ProjectionDecoder;->parseMesh(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/video/spherical/Projection$Mesh;
 
     move-result-object v1
@@ -768,11 +768,11 @@
 
     return-object v4
 
-    .line 155
+    .line 159
     :cond_1
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 158
+    .line 162
     :cond_2
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 

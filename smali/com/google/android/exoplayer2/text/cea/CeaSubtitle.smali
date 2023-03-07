@@ -30,10 +30,10 @@
         }
     .end annotation
 
-    .line 35
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
+    .line 34
     iput-object p1, p0, Lcom/google/android/exoplayer2/text/cea/CeaSubtitle;->cues:Ljava/util/List;
 
     return-void
@@ -58,7 +58,7 @@
 
     if-ltz v2, :cond_0
 
-    .line 57
+    .line 55
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/cea/CeaSubtitle;->cues:Ljava/util/List;
 
     goto :goto_0
@@ -84,7 +84,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 51
+    .line 49
     :goto_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 

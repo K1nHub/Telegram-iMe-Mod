@@ -29,15 +29,15 @@
 
     move-wide/from16 v9, p8
 
-    .line 52
+    .line 50
     invoke-direct/range {v0 .. v10}, Lcom/google/android/exoplayer2/source/chunk/Chunk;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;ILcom/google/android/exoplayer2/Format;ILjava/lang/Object;JJ)V
 
-    .line 54
+    .line 59
     invoke-static {p3}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-wide/from16 v1, p10
 
-    .line 55
+    .line 60
     iput-wide v1, v0, Lcom/google/android/exoplayer2/source/chunk/MediaChunk;->chunkIndex:J
 
     return-void
@@ -48,7 +48,7 @@
 .method public getNextChunkIndex()J
     .locals 5
 
-    .line 60
+    .line 65
     iget-wide v0, p0, Lcom/google/android/exoplayer2/source/chunk/MediaChunk;->chunkIndex:J
 
     const-wide/16 v2, -0x1

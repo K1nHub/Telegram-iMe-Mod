@@ -28,13 +28,13 @@
 .method private constructor <init>(IJ)V
     .locals 0
 
-    .line 166
+    .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 167
+    .line 201
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;->id:I
 
-    .line 168
+    .line 202
     iput-wide p2, p0, Lcom/google/android/exoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;->size:J
 
     return-void
@@ -44,13 +44,14 @@
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 182
-    iget-object v0, p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 215
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -58,20 +59,20 @@
 
     invoke-interface {p0, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 183
+    .line 216
     invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 185
+    .line 218
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result p0
 
-    .line 186
+    .line 219
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
     move-result-wide v0
 
-    .line 188
+    .line 221
     new-instance p1, Lcom/google/android/exoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;
 
     invoke-direct {p1, p0, v0, v1}, Lcom/google/android/exoplayer2/extractor/wav/WavHeaderReader$ChunkHeader;-><init>(IJ)V

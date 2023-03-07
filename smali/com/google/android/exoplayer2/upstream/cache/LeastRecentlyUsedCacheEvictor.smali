@@ -36,13 +36,13 @@
 .method public constructor <init>(J)V
     .locals 0
 
-    .line 30
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 30
     iput-wide p1, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->maxBytes:J
 
-    .line 32
+    .line 31
     new-instance p1, Ljava/util/TreeSet;
 
     sget-object p2, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor$$ExternalSyntheticLambda0;
@@ -57,7 +57,7 @@
 .method private static compare(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)I
     .locals 9
 
-    .line 82
+    .line 77
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->lastTouchTimestamp:J
 
     iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->lastTouchTimestamp:J
@@ -70,7 +70,7 @@
 
     if-nez v8, :cond_0
 
-    .line 85
+    .line 80
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->compareTo(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)I
 
     move-result p0
@@ -96,7 +96,7 @@
 .method private evictCache(Lcom/google/android/exoplayer2/upstream/cache/Cache;J)V
     .locals 5
 
-    .line 72
+    .line 71
     :goto_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->currentSize:J
 
@@ -116,8 +116,7 @@
 
     if-nez v0, :cond_0
 
-    .line 74
-    :try_start_0
+    .line 72
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
@@ -127,13 +126,6 @@
     check-cast v0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;
 
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/upstream/cache/Cache;->removeSpan(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)V
-    :try_end_0
-    .catch Lcom/google/android/exoplayer2/upstream/cache/Cache$CacheException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    nop
 
     goto :goto_0
 
@@ -152,12 +144,12 @@
 .method public onSpanAdded(Lcom/google/android/exoplayer2/upstream/cache/Cache;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)V
     .locals 4
 
-    .line 54
+    .line 53
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
 
     invoke-virtual {v0, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
-    .line 55
+    .line 54
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->currentSize:J
 
     iget-wide v2, p2, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
@@ -168,7 +160,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 56
+    .line 55
     invoke-direct {p0, p1, v0, v1}, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->evictCache(Lcom/google/android/exoplayer2/upstream/cache/Cache;J)V
 
     return-void
@@ -177,12 +169,12 @@
 .method public onSpanRemoved(Lcom/google/android/exoplayer2/upstream/cache/Cache;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)V
     .locals 2
 
-    .line 61
+    .line 60
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->leastRecentlyUsed:Ljava/util/TreeSet;
 
     invoke-virtual {p1, p2}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
 
-    .line 62
+    .line 61
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->currentSize:J
 
     iget-wide p1, p2, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
@@ -197,10 +189,10 @@
 .method public onSpanTouched(Lcom/google/android/exoplayer2/upstream/cache/Cache;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)V
     .locals 0
 
-    .line 67
+    .line 66
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->onSpanRemoved(Lcom/google/android/exoplayer2/upstream/cache/Cache;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)V
 
-    .line 68
+    .line 67
     invoke-virtual {p0, p1, p3}, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->onSpanAdded(Lcom/google/android/exoplayer2/upstream/cache/Cache;Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)V
 
     return-void
@@ -215,7 +207,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 48
+    .line 47
     invoke-direct {p0, p1, p5, p6}, Lcom/google/android/exoplayer2/upstream/cache/LeastRecentlyUsedCacheEvictor;->evictCache(Lcom/google/android/exoplayer2/upstream/cache/Cache;J)V
 
     :cond_0

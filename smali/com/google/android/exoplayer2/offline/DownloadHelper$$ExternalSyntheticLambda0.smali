@@ -2,40 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/trackselection/TrackSelector$InvalidationListener;
+.implements Lcom/google/android/exoplayer2/drm/DrmSessionManagerProvider;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda0;
+# instance fields
+.field public final synthetic f$0:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0}, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda0;-><init>()V
-
-    sput-object v0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda0;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/drm/DrmSessionManager;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda0;->f$0:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTrackSelectionsInvalidated()V
-    .locals 0
+.method public final get(Lcom/google/android/exoplayer2/MediaItem;)Lcom/google/android/exoplayer2/drm/DrmSessionManager;
+    .locals 1
 
-    invoke-static {}, Lcom/google/android/exoplayer2/offline/DownloadHelper;->$r8$lambda$UPdWfun4-bM6OaYQ1qiimXnvK8w()V
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda0;->f$0:Lcom/google/android/exoplayer2/drm/DrmSessionManager;
 
-    return-void
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/offline/DownloadHelper;->$r8$lambda$f9y5C0K7Fo6iTCuv60unBCuPs2Y(Lcom/google/android/exoplayer2/drm/DrmSessionManager;Lcom/google/android/exoplayer2/MediaItem;)Lcom/google/android/exoplayer2/drm/DrmSessionManager;
+
+    move-result-object p1
+
+    return-object p1
 .end method

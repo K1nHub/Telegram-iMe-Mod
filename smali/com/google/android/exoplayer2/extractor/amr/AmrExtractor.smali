@@ -19,6 +19,8 @@
 
 .field public static final FLAG_ENABLE_CONSTANT_BITRATE_SEEKING:I = 0x1
 
+.field public static final FLAG_ENABLE_CONSTANT_BITRATE_SEEKING_ALWAYS:I = 0x2
+
 .field private static final MAX_FRAME_SIZE_BYTES:I
 
 .field private static final NUM_SAME_SIZE_CONSTANT_BIT_RATE_THRESHOLD:I = 0x14
@@ -84,7 +86,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 49
+    .line 57
     sget-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor$$ExternalSyntheticLambda0;
 
     sput-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->FACTORY:Lcom/google/android/exoplayer2/extractor/ExtractorsFactory;
@@ -93,21 +95,21 @@
 
     new-array v1, v0, [I
 
-    .line 71
+    .line 93
     fill-array-data v1, :array_0
 
     sput-object v1, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->frameSizeBytesByTypeNb:[I
 
     new-array v0, v0, [I
 
-    .line 94
+    .line 116
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->frameSizeBytesByTypeWb:[I
 
     const-string v1, "#!AMR\n"
 
-    .line 113
+    .line 135
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Util;->getUtf8Bytes(Ljava/lang/String;)[B
 
     move-result-object v1
@@ -116,7 +118,7 @@
 
     const-string v1, "#!AMR-WB\n"
 
-    .line 114
+    .line 136
     invoke-static {v1}, Lcom/google/android/exoplayer2/util/Util;->getUtf8Bytes(Ljava/lang/String;)[B
 
     move-result-object v1
@@ -125,7 +127,7 @@
 
     const/16 v1, 0x8
 
-    .line 117
+    .line 139
     aget v0, v0, v1
 
     sput v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->MAX_FRAME_SIZE_BYTES:I
@@ -180,31 +182,38 @@
 
     const/4 v0, 0x0
 
-    .line 147
+    .line 169
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;-><init>(I)V
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
-    .locals 0
+    .locals 1
 
-    .line 151
+    .line 175
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 152
+    and-int/lit8 v0, p1, 0x2
+
+    if-eqz v0, :cond_0
+
+    or-int/lit8 p1, p1, 0x1
+
+    .line 179
+    :cond_0
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->flags:I
 
     const/4 p1, 0x1
 
     new-array p1, p1, [B
 
-    .line 153
+    .line 180
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->scratch:[B
 
     const/4 p1, -0x1
 
-    .line 154
+    .line 181
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSampleSize:I
 
     return-void
@@ -213,7 +222,7 @@
 .method static amrSignatureNb()[B
     .locals 2
 
-    .line 211
+    .line 239
     sget-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->amrSignatureNb:[B
 
     array-length v1, v0
@@ -228,7 +237,7 @@
 .method static amrSignatureWb()[B
     .locals 2
 
-    .line 215
+    .line 243
     sget-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->amrSignatureWb:[B
 
     array-length v1, v0
@@ -240,10 +249,26 @@
     return-object v0
 .end method
 
+.method private assertInitialized()V
+    .locals 1
+
+    .line 403
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 404
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
 .method static frameSizeBytesByTypeNb(I)I
     .locals 1
 
-    .line 203
+    .line 231
     sget-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->frameSizeBytesByTypeNb:[I
 
     aget p0, v0, p0
@@ -254,7 +279,7 @@
 .method static frameSizeBytesByTypeWb(I)I
     .locals 1
 
-    .line 207
+    .line 235
     sget-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->frameSizeBytesByTypeWb:[I
 
     aget p0, v0, p0
@@ -265,15 +290,17 @@
 .method private static getBitrateFromFrameSize(IJ)I
     .locals 4
 
-    mul-int/lit8 p0, p0, 0x8
-
     int-to-long v0, p0
+
+    const-wide/16 v2, 0x8
+
+    mul-long v0, v0, v2
 
     const-wide/32 v2, 0xf4240
 
     mul-long v0, v0, v2
 
-    .line 381
+    .line 415
     div-long/2addr v0, p1
 
     long-to-int p0, v0
@@ -281,10 +308,10 @@
     return p0
 .end method
 
-.method private getConstantBitrateSeekMap(J)Lcom/google/android/exoplayer2/extractor/SeekMap;
-    .locals 10
+.method private getConstantBitrateSeekMap(JZ)Lcom/google/android/exoplayer2/extractor/SeekMap;
+    .locals 11
 
-    .line 369
+    .line 396
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSampleSize:I
 
     const-wide/16 v1, 0x4e20
@@ -293,7 +320,7 @@
 
     move-result v8
 
-    .line 370
+    .line 397
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ConstantBitrateSeekMap;
 
     iget-wide v6, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSamplePosition:J
@@ -304,67 +331,72 @@
 
     move-wide v4, p1
 
-    invoke-direct/range {v3 .. v9}, Lcom/google/android/exoplayer2/extractor/ConstantBitrateSeekMap;-><init>(JJII)V
+    move v10, p3
+
+    invoke-direct/range {v3 .. v10}, Lcom/google/android/exoplayer2/extractor/ConstantBitrateSeekMap;-><init>(JJIIZ)V
 
     return-object v0
 .end method
 
 .method private getFrameSizeInBytes(I)I
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
         }
     .end annotation
 
-    .line 325
+    .line 348
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isValidFrameType(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 326
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
+    .line 349
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "Illegal AMR "
 
-    const-string v2, "Illegal AMR "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 350
+    iget-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
 
-    .line 327
-    iget-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
+    if-eqz v1, :cond_0
 
-    if-eqz v2, :cond_0
-
-    const-string v2, "WB"
+    const-string v1, "WB"
 
     goto :goto_0
 
     :cond_0
-    const-string v2, "NB"
+    const-string v1, "NB"
 
     :goto_0
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, " frame type "
+    const-string v1, " frame type "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    const/4 v0, 0x0
 
-    throw v0
+    .line 349
+    invoke-static {p1, v0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    .line 330
+    move-result-object p1
+
+    throw p1
+
+    .line 354
     :cond_1
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
 
@@ -388,7 +420,7 @@
 .method private isNarrowBandValidFrameType(I)Z
     .locals 1
 
-    .line 346
+    .line 370
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
 
     if-nez v0, :cond_1
@@ -422,7 +454,7 @@
 
     if-gt p1, v0, :cond_1
 
-    .line 336
+    .line 360
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBandValidFrameType(I)Z
 
     move-result v0
@@ -450,7 +482,7 @@
 .method private isWideBandValidFrameType(I)Z
     .locals 1
 
-    .line 341
+    .line 365
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
 
     if-eqz v0, :cond_1
@@ -482,7 +514,7 @@
 
     new-array v0, v0, [Lcom/google/android/exoplayer2/extractor/Extractor;
 
-    .line 49
+    .line 57
     new-instance v1, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;
 
     invoke-direct {v1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;-><init>()V
@@ -495,151 +527,163 @@
 .end method
 
 .method private maybeOutputFormat()V
-    .locals 14
+    .locals 5
 
-    .line 249
+    .line 278
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->hasOutputFormat:Z
 
     if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
-    .line 250
+    .line 279
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->hasOutputFormat:Z
 
-    .line 251
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
+    .line 280
+    iget-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    const-string v1, "audio/amr-wb"
+    const-string v2, "audio/amr-wb"
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "audio/3gpp"
+    const-string v2, "audio/3gpp"
 
     :goto_0
-    move-object v3, v1
+    if-eqz v1, :cond_1
 
-    if-eqz v0, :cond_1
-
-    const/16 v0, 0x3e80
-
-    const/16 v8, 0x3e80
+    const/16 v1, 0x3e80
 
     goto :goto_1
 
     :cond_1
-    const/16 v0, 0x1f40
+    const/16 v1, 0x1f40
 
-    const/16 v8, 0x1f40
-
-    .line 253
+    .line 282
     :goto_1
-    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
+    iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    const/4 v2, 0x0
+    new-instance v4, Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v4, 0x0
+    invoke-direct {v4}, Lcom/google/android/exoplayer2/Format$Builder;-><init>()V
 
-    const/4 v5, -0x1
+    .line 284
+    invoke-virtual {v4, v2}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/Format$Builder;
 
-    sget v6, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->MAX_FRAME_SIZE_BYTES:I
+    move-result-object v2
 
-    const/4 v7, 0x1
+    sget v4, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->MAX_FRAME_SIZE_BYTES:I
 
-    const/4 v9, -0x1
+    .line 285
+    invoke-virtual {v2, v4}, Lcom/google/android/exoplayer2/Format$Builder;->setMaxInputSize(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v10, 0x0
+    move-result-object v2
 
-    const/4 v11, 0x0
+    .line 286
+    invoke-virtual {v2, v0}, Lcom/google/android/exoplayer2/Format$Builder;->setChannelCount(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    const/4 v12, 0x0
+    move-result-object v0
 
-    const/4 v13, 0x0
+    .line 287
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/Format$Builder;->setSampleRate(I)Lcom/google/android/exoplayer2/Format$Builder;
 
-    .line 254
-    invoke-static/range {v2 .. v13}, Lcom/google/android/exoplayer2/Format;->createAudioSampleFormat(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIILjava/util/List;Lcom/google/android/exoplayer2/drm/DrmInitData;ILjava/lang/String;)Lcom/google/android/exoplayer2/Format;
+    move-result-object v0
 
-    move-result-object v1
+    .line 288
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/Format$Builder;->build()Lcom/google/android/exoplayer2/Format;
 
-    .line 253
-    invoke-interface {v0, v1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
+    move-result-object v0
+
+    .line 282
+    invoke-interface {v3, v0}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->format(Lcom/google/android/exoplayer2/Format;)V
 
     :cond_2
     return-void
 .end method
 
 .method private maybeOutputSeekMap(JI)V
-    .locals 4
+    .locals 5
 
-    .line 350
+    .line 375
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->hasOutputSeekMap:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 354
+    .line 379
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->flags:I
 
-    const/4 v1, 0x1
+    and-int/lit8 v1, v0, 0x1
 
-    and-int/2addr v0, v1
+    const/4 v2, 0x1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_4
 
-    const-wide/16 v2, -0x1
+    const-wide/16 v3, -0x1
 
-    cmp-long v0, p1, v2
+    cmp-long v1, p1, v3
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_4
 
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSampleSize:I
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSampleSize:I
 
-    const/4 v2, -0x1
+    const/4 v3, -0x1
 
-    if-eq v0, v2, :cond_1
+    if-eq v1, v3, :cond_1
 
-    iget v3, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleSize:I
+    iget v4, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleSize:I
 
-    if-eq v0, v3, :cond_1
+    if-eq v1, v4, :cond_1
+
+    goto :goto_1
+
+    .line 385
+    :cond_1
+    iget v1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->numSamplesWithSameSize:I
+
+    const/16 v4, 0x14
+
+    if-ge v1, v4, :cond_2
+
+    if-ne p3, v3, :cond_5
+
+    :cond_2
+    and-int/lit8 p3, v0, 0x2
+
+    if-eqz p3, :cond_3
+
+    const/4 p3, 0x1
 
     goto :goto_0
 
-    .line 360
-    :cond_1
-    iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->numSamplesWithSameSize:I
+    :cond_3
+    const/4 p3, 0x0
 
-    const/16 v3, 0x14
-
-    if-ge v0, v3, :cond_2
-
-    if-ne p3, v2, :cond_4
-
-    .line 362
-    :cond_2
-    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->getConstantBitrateSeekMap(J)Lcom/google/android/exoplayer2/extractor/SeekMap;
+    .line 388
+    :goto_0
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->getConstantBitrateSeekMap(JZ)Lcom/google/android/exoplayer2/extractor/SeekMap;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->seekMap:Lcom/google/android/exoplayer2/extractor/SeekMap;
 
-    .line 363
+    .line 390
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-interface {p2, p1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->seekMap(Lcom/google/android/exoplayer2/extractor/SeekMap;)V
 
-    .line 364
-    iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->hasOutputSeekMap:Z
+    .line 391
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->hasOutputSeekMap:Z
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 357
-    :cond_3
-    :goto_0
+    .line 382
+    :cond_4
+    :goto_1
     new-instance p1, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;
 
     const-wide p2, -0x7fffffffffffffffL    # -4.9E-324
@@ -648,64 +692,62 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->seekMap:Lcom/google/android/exoplayer2/extractor/SeekMap;
 
-    .line 358
+    .line 383
     iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-interface {p2, p1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->seekMap(Lcom/google/android/exoplayer2/extractor/SeekMap;)V
 
-    .line 359
-    iput-boolean v1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->hasOutputSeekMap:Z
+    .line 384
+    iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->hasOutputSeekMap:Z
 
-    :cond_4
-    :goto_1
+    :cond_5
+    :goto_2
     return-void
 .end method
 
-.method private peekAmrSignature(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[B)Z
+.method private static peekAmrSignature(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[B)Z
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 242
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
+    .line 270
+    invoke-interface {p0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
-    .line 243
-    array-length v0, p2
+    .line 271
+    array-length v0, p1
 
     new-array v0, v0, [B
 
-    .line 244
-    array-length v1, p2
+    .line 272
+    array-length v1, p1
 
     const/4 v2, 0x0
 
-    invoke-interface {p1, v0, v2, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
+    invoke-interface {p0, v0, v2, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 245
-    invoke-static {v0, p2}, Ljava/util/Arrays;->equals([B[B)Z
+    .line 273
+    invoke-static {v0, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
-    move-result p1
+    move-result p0
 
-    return p1
+    return p0
 .end method
 
 .method private peekNextSampleSize(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)I
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 310
+    .line 332
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
-    .line 311
+    .line 333
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->scratch:[B
 
     const/4 v1, 0x0
@@ -714,7 +756,7 @@
 
     invoke-interface {p1, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 313
+    .line 335
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->scratch:[B
 
     aget-byte p1, p1, v1
@@ -727,49 +769,50 @@
 
     and-int/lit8 p1, p1, 0xf
 
-    .line 321
+    .line 344
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->getFrameSizeInBytes(I)I
 
     move-result p1
 
     return p1
 
-    .line 317
+    .line 339
     :cond_0
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "Invalid padding bits for frame header "
 
-    const-string v2, "Invalid padding bits for frame header "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    const/4 v0, 0x0
 
-    throw v0
+    invoke-static {p1, v0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p1
+
+    throw p1
 .end method
 
 .method private readAmrHeader(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 227
+    .line 255
     sget-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->amrSignatureNb:[B
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->peekAmrSignature(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[B)Z
+    invoke-static {p1, v0}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->peekAmrSignature(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[B)Z
 
     move-result v1
 
@@ -779,30 +822,30 @@
 
     if-eqz v1, :cond_0
 
-    .line 228
+    .line 256
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
 
-    .line 229
+    .line 257
     array-length v0, v0
 
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     return v3
 
-    .line 231
+    .line 259
     :cond_0
     sget-object v0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->amrSignatureWb:[B
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->peekAmrSignature(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[B)Z
+    invoke-static {p1, v0}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->peekAmrSignature(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[B)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 232
+    .line 260
     iput-boolean v3, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->isWideBand:Z
 
-    .line 233
+    .line 261
     array-length v0, v0
 
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
@@ -817,12 +860,11 @@
     .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 271
+    .line 294
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleBytesRemaining:I
 
     const/4 v1, 0x1
@@ -831,7 +873,7 @@
 
     if-nez v0, :cond_1
 
-    .line 273
+    .line 296
     :try_start_0
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->peekNextSampleSize(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)I
 
@@ -841,27 +883,27 @@
     :try_end_0
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 277
+    .line 300
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleBytesRemaining:I
 
-    .line 278
+    .line 301
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSampleSize:I
 
     if-ne v0, v2, :cond_0
 
-    .line 279
+    .line 302
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSamplePosition:J
 
-    .line 280
+    .line 303
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleSize:I
 
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSampleSize:I
 
-    .line 282
+    .line 305
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->firstSampleSize:I
 
@@ -869,7 +911,7 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 283
+    .line 306
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->numSamplesWithSameSize:I
 
     add-int/2addr v0, v1
@@ -881,15 +923,15 @@
     :catch_0
     return v2
 
-    .line 287
+    .line 310
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     iget v3, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleBytesRemaining:I
 
-    .line 288
-    invoke-interface {v0, p1, v3, v1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;IZ)I
+    .line 311
+    invoke-interface {v0, p1, v3, v1}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleData(Lcom/google/android/exoplayer2/upstream/DataReader;IZ)I
 
     move-result p1
 
@@ -897,7 +939,7 @@
 
     return v2
 
-    .line 293
+    .line 316
     :cond_2
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleBytesRemaining:I
 
@@ -911,7 +953,7 @@
 
     return p1
 
-    .line 298
+    .line 321
     :cond_3
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
@@ -931,7 +973,7 @@
 
     invoke-interface/range {v1 .. v7}, Lcom/google/android/exoplayer2/extractor/TrackOutput;->sampleMetadata(JIIILcom/google/android/exoplayer2/extractor/TrackOutput$CryptoData;)V
 
-    .line 304
+    .line 327
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleTimeUs:J
 
     const-wide/16 v2, 0x4e20
@@ -948,21 +990,21 @@
 .method public init(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;)V
     .locals 2
 
-    .line 166
+    .line 193
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 167
+    .line 194
     invoke-interface {p1, v0, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->track(II)Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->trackOutput:Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
-    .line 168
+    .line 195
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->endTracks()V
 
     return-void
@@ -972,12 +1014,14 @@
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 174
+    .line 200
+    invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->assertInitialized()V
+
+    .line 201
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getPosition()J
 
     move-result-wide v0
@@ -988,7 +1032,7 @@
 
     if-nez p2, :cond_1
 
-    .line 175
+    .line 202
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->readAmrHeader(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 
     move-result p2
@@ -997,27 +1041,29 @@
 
     goto :goto_0
 
-    .line 176
     :cond_0
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
+    const/4 p1, 0x0
 
     const-string p2, "Could not find AMR header."
 
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 203
+    invoke-static {p2, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p1
 
     throw p1
 
-    .line 179
+    .line 207
     :cond_1
     :goto_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->maybeOutputFormat()V
 
-    .line 180
+    .line 208
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->readSample(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)I
 
     move-result p2
 
-    .line 181
+    .line 209
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->getLength()J
 
     move-result-wide v0
@@ -1038,29 +1084,29 @@
 
     const-wide/16 p3, 0x0
 
-    .line 187
+    .line 215
     iput-wide p3, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleTimeUs:J
 
     const/4 v0, 0x0
 
-    .line 188
+    .line 216
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleSize:I
 
-    .line 189
+    .line 217
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->currentSampleBytesRemaining:I
 
     cmp-long v0, p1, p3
 
     if-eqz v0, :cond_0
 
-    .line 190
+    .line 218
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->seekMap:Lcom/google/android/exoplayer2/extractor/SeekMap;
 
     instance-of v1, v0, Lcom/google/android/exoplayer2/extractor/ConstantBitrateSeekMap;
 
     if-eqz v1, :cond_0
 
-    .line 191
+    .line 219
     check-cast v0, Lcom/google/android/exoplayer2/extractor/ConstantBitrateSeekMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/exoplayer2/extractor/ConstantBitrateSeekMap;->getTimeUsAtPosition(J)J
@@ -1071,7 +1117,7 @@
 
     goto :goto_0
 
-    .line 193
+    .line 221
     :cond_0
     iput-wide p3, p0, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->timeOffsetUs:J
 
@@ -1083,12 +1129,11 @@
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 161
+    .line 188
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/amr/AmrExtractor;->readAmrHeader(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 
     move-result p1

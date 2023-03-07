@@ -7,8 +7,29 @@
 .implements Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/exoplayer2/source/MergingMediaPeriod$ForwardingTrackSelection;,
+        Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetSampleStream;,
+        Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetMediaPeriod;
+    }
+.end annotation
+
+
 # instance fields
 .field private callback:Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;
+
+.field private final childTrackGroupByMergedTrackGroup:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap<",
+            "Lcom/google/android/exoplayer2/source/TrackGroup;",
+            "Lcom/google/android/exoplayer2/source/TrackGroup;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private final childrenPendingPreparation:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -26,7 +47,7 @@
 
 .field private enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-.field public final periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+.field private final periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
 .field private final streamPeriodIndices:Ljava/util/IdentityHashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -43,48 +64,89 @@
 
 
 # direct methods
-.method public varargs constructor <init>(Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;[Lcom/google/android/exoplayer2/source/MediaPeriod;)V
-    .locals 1
+.method public varargs constructor <init>(Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;[J[Lcom/google/android/exoplayer2/source/MediaPeriod;)V
+    .locals 5
 
-    .line 46
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
+    .line 60
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoaderFactory:Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;
 
-    .line 48
-    iput-object p2, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    .line 61
+    iput-object p3, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    .line 49
-    new-instance p2, Ljava/util/ArrayList;
+    .line 62
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
 
-    const/4 p2, 0x0
+    .line 63
+    new-instance v0, Ljava/util/HashMap;
 
-    new-array v0, p2, [Lcom/google/android/exoplayer2/source/SequenceableLoader;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 51
-    invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;->createCompositeSequenceableLoader([Lcom/google/android/exoplayer2/source/SequenceableLoader;)Lcom/google/android/exoplayer2/source/SequenceableLoader;
+    iput-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childTrackGroupByMergedTrackGroup:Ljava/util/HashMap;
+
+    const/4 v0, 0x0
+
+    new-array v1, v0, [Lcom/google/android/exoplayer2/source/SequenceableLoader;
+
+    .line 65
+    invoke-interface {p1, v1}, Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;->createCompositeSequenceableLoader([Lcom/google/android/exoplayer2/source/SequenceableLoader;)Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoader:Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
-    .line 52
+    .line 66
     new-instance p1, Ljava/util/IdentityHashMap;
 
     invoke-direct {p1}, Ljava/util/IdentityHashMap;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->streamPeriodIndices:Ljava/util/IdentityHashMap;
 
-    new-array p1, p2, [Lcom/google/android/exoplayer2/source/MediaPeriod;
+    new-array p1, v0, [Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    .line 53
+    .line 67
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
+    .line 68
+    :goto_0
+    array-length p1, p3
+
+    if-ge v0, p1, :cond_1
+
+    .line 69
+    aget-wide v1, p2, v0
+
+    const-wide/16 v3, 0x0
+
+    cmp-long p1, v1, v3
+
+    if-eqz p1, :cond_0
+
+    .line 70
+    iget-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+
+    new-instance v1, Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetMediaPeriod;
+
+    aget-object v2, p3, v0
+
+    aget-wide v3, p2, v0
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetMediaPeriod;-><init>(Lcom/google/android/exoplayer2/source/MediaPeriod;J)V
+
+    aput-object v1, p1, v0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 
@@ -93,7 +155,7 @@
 .method public continueLoading(J)Z
     .locals 4
 
-    .line 160
+    .line 196
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -102,7 +164,7 @@
 
     if-nez v0, :cond_1
 
-    .line 162
+    .line 198
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -116,7 +178,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 164
+    .line 200
     iget-object v3, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -134,7 +196,7 @@
     :cond_0
     return v1
 
-    .line 168
+    .line 204
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoader:Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
@@ -148,7 +210,7 @@
 .method public discardBuffer(JZ)V
     .locals 4
 
-    .line 148
+    .line 184
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     array-length v1, v0
@@ -160,7 +222,7 @@
 
     aget-object v3, v0, v2
 
-    .line 149
+    .line 185
     invoke-interface {v3, p1, p2, p3}, Lcom/google/android/exoplayer2/source/MediaPeriod;->discardBuffer(JZ)V
 
     add-int/lit8 v2, v2, 0x1
@@ -174,7 +236,7 @@
 .method public getAdjustedSeekPositionUs(JLcom/google/android/exoplayer2/SeekParameters;)J
     .locals 3
 
-    .line 222
+    .line 267
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     array-length v1, v0
@@ -192,7 +254,7 @@
 
     aget-object v0, v0, v2
 
-    .line 223
+    .line 268
     :goto_0
     invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/source/MediaPeriod;->getAdjustedSeekPositionUs(JLcom/google/android/exoplayer2/SeekParameters;)J
 
@@ -204,7 +266,7 @@
 .method public getBufferedPositionUs()J
     .locals 2
 
-    .line 205
+    .line 250
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoader:Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/source/SequenceableLoader;->getBufferedPositionUs()J
@@ -214,10 +276,41 @@
     return-wide v0
 .end method
 
+.method public getChildPeriod(I)Lcom/google/android/exoplayer2/source/MediaPeriod;
+    .locals 2
+
+    .line 81
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+
+    aget-object v1, v0, p1
+
+    instance-of v1, v1, Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetMediaPeriod;
+
+    if-eqz v1, :cond_0
+
+    .line 82
+    aget-object p1, v0, p1
+
+    check-cast p1, Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetMediaPeriod;
+
+    invoke-static {p1}, Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetMediaPeriod;->access$000(Lcom/google/android/exoplayer2/source/MergingMediaPeriod$TimeOffsetMediaPeriod;)Lcom/google/android/exoplayer2/source/MediaPeriod;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 83
+    :cond_0
+    aget-object p1, v0, p1
+
+    :goto_0
+    return-object p1
+.end method
+
 .method public getNextLoadPositionUs()J
     .locals 2
 
-    .line 179
+    .line 215
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoader:Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/source/SequenceableLoader;->getNextLoadPositionUs()J
@@ -240,7 +333,7 @@
 .method public getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
     .locals 1
 
-    .line 74
+    .line 104
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -255,7 +348,7 @@
 .method public isLoading()Z
     .locals 1
 
-    .line 174
+    .line 210
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoader:Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/source/SequenceableLoader;->isLoading()Z
@@ -273,7 +366,7 @@
         }
     .end annotation
 
-    .line 67
+    .line 97
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     array-length v1, v0
@@ -285,7 +378,7 @@
 
     aget-object v3, v0, v2
 
-    .line 68
+    .line 98
     invoke-interface {v3}, Lcom/google/android/exoplayer2/source/MediaPeriod;->maybeThrowPrepareError()V
 
     add-int/lit8 v2, v2, 0x1
@@ -299,7 +392,7 @@
 .method public onContinueLoadingRequested(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
     .locals 0
 
-    .line 253
+    .line 301
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->callback:Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -316,7 +409,7 @@
 .method public bridge synthetic onContinueLoadingRequested(Lcom/google/android/exoplayer2/source/SequenceableLoader;)V
     .locals 0
 
-    .line 32
+    .line 43
     check-cast p1, Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->onContinueLoadingRequested(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
@@ -325,14 +418,14 @@
 .end method
 
 .method public onPrepared(Lcom/google/android/exoplayer2/source/MediaPeriod;)V
-    .locals 10
+    .locals 9
 
-    .line 230
+    .line 275
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 231
+    .line 276
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -343,7 +436,7 @@
 
     return-void
 
-    .line 235
+    .line 280
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
@@ -360,7 +453,7 @@
 
     aget-object v4, p1, v2
 
-    .line 236
+    .line 281
     invoke-interface {v4}, Lcom/google/android/exoplayer2/source/MediaPeriod;->getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
     move-result-object v4
@@ -373,58 +466,87 @@
 
     goto :goto_0
 
-    .line 238
+    .line 283
     :cond_1
     new-array p1, v3, [Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    .line 240
-    iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    const/4 v0, 0x0
 
-    array-length v2, v0
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
+    .line 285
     :goto_1
-    if-ge v3, v2, :cond_3
+    iget-object v3, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    aget-object v5, v0, v3
+    array-length v4, v3
 
-    .line 241
-    invoke-interface {v5}, Lcom/google/android/exoplayer2/source/MediaPeriod;->getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
+    if-ge v0, v4, :cond_3
 
-    move-result-object v5
+    .line 286
+    aget-object v3, v3, v0
 
-    .line 242
-    iget v6, v5, Lcom/google/android/exoplayer2/source/TrackGroupArray;->length:I
+    invoke-interface {v3}, Lcom/google/android/exoplayer2/source/MediaPeriod;->getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
-    const/4 v7, 0x0
+    move-result-object v3
+
+    .line 287
+    iget v4, v3, Lcom/google/android/exoplayer2/source/TrackGroupArray;->length:I
+
+    const/4 v5, 0x0
 
     :goto_2
-    if-ge v7, v6, :cond_2
+    if-ge v5, v4, :cond_2
 
-    add-int/lit8 v8, v4, 0x1
+    .line 289
+    invoke-virtual {v3, v5}, Lcom/google/android/exoplayer2/source/TrackGroupArray;->get(I)Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    .line 244
-    invoke-virtual {v5, v7}, Lcom/google/android/exoplayer2/source/TrackGroupArray;->get(I)Lcom/google/android/exoplayer2/source/TrackGroup;
+    move-result-object v6
 
-    move-result-object v9
+    .line 290
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    aput-object v9, p1, v4
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    add-int/lit8 v7, v7, 0x1
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move v4, v8
+    const-string v8, ":"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v8, v6, Lcom/google/android/exoplayer2/source/TrackGroup;->id:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Lcom/google/android/exoplayer2/source/TrackGroup;->copyWithId(Ljava/lang/String;)Lcom/google/android/exoplayer2/source/TrackGroup;
+
+    move-result-object v7
+
+    .line 291
+    iget-object v8, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childTrackGroupByMergedTrackGroup:Ljava/util/HashMap;
+
+    invoke-virtual {v8, v7, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v6, v2, 0x1
+
+    .line 292
+    aput-object v7, p1, v2
+
+    add-int/lit8 v5, v5, 0x1
+
+    move v2, v6
 
     goto :goto_2
 
     :cond_2
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 247
+    .line 295
     :cond_3
     new-instance v0, Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
@@ -432,7 +554,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->trackGroups:Lcom/google/android/exoplayer2/source/TrackGroupArray;
 
-    .line 248
+    .line 296
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->callback:Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;
 
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -449,17 +571,17 @@
 .method public prepare(Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;J)V
     .locals 3
 
-    .line 58
+    .line 88
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->callback:Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;
 
-    .line 59
+    .line 89
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childrenPendingPreparation:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     invoke-static {p1, v0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 60
+    .line 90
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     array-length v0, p1
@@ -471,7 +593,7 @@
 
     aget-object v2, p1, v1
 
-    .line 61
+    .line 91
     invoke-interface {v2, p0, p2, p3}, Lcom/google/android/exoplayer2/source/MediaPeriod;->prepare(Lcom/google/android/exoplayer2/source/MediaPeriod$Callback;J)V
 
     add-int/lit8 v1, v1, 0x1
@@ -483,115 +605,142 @@
 .end method
 
 .method public readDiscontinuity()J
-    .locals 9
+    .locals 17
 
-    .line 184
-    iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    move-object/from16 v0, p0
 
-    const/4 v1, 0x0
+    .line 221
+    iget-object v1, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    aget-object v0, v0, v1
+    array-length v2, v1
 
-    invoke-interface {v0}, Lcom/google/android/exoplayer2/source/MediaPeriod;->readDiscontinuity()J
+    const/4 v3, 0x0
 
-    move-result-wide v2
+    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v0, 0x1
+    move-wide v7, v4
 
-    .line 186
+    const/4 v6, 0x0
+
     :goto_0
-    iget-object v4, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    if-ge v6, v2, :cond_8
 
-    array-length v5, v4
+    aget-object v9, v1, v6
 
-    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
+    .line 222
+    invoke-interface {v9}, Lcom/google/android/exoplayer2/source/MediaPeriod;->readDiscontinuity()J
 
-    if-ge v0, v5, :cond_1
+    move-result-wide v10
 
-    .line 187
-    aget-object v4, v4, v0
+    const-string v12, "Unexpected child seekToUs result."
 
-    invoke-interface {v4}, Lcom/google/android/exoplayer2/source/MediaPeriod;->readDiscontinuity()J
+    cmp-long v13, v10, v4
 
-    move-result-wide v4
+    if-eqz v13, :cond_5
 
-    cmp-long v8, v4, v6
+    cmp-long v13, v7, v4
 
-    if-nez v8, :cond_0
+    if-nez v13, :cond_3
 
-    add-int/lit8 v0, v0, 0x1
+    .line 227
+    iget-object v7, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    goto :goto_0
+    array-length v8, v7
 
-    .line 188
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Child reported discontinuity."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    cmp-long v0, v2, v6
-
-    if-eqz v0, :cond_4
-
-    .line 193
-    iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
-
-    array-length v4, v0
-
-    const/4 v5, 0x0
+    const/4 v13, 0x0
 
     :goto_1
-    if-ge v5, v4, :cond_4
+    if-ge v13, v8, :cond_2
 
-    aget-object v6, v0, v5
+    aget-object v14, v7, v13
 
-    .line 194
-    iget-object v7, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
-
-    aget-object v7, v7, v1
-
-    if-eq v6, v7, :cond_3
-
-    .line 195
-    invoke-interface {v6, v2, v3}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
-
-    move-result-wide v6
-
-    cmp-long v8, v6, v2
-
-    if-nez v8, :cond_2
+    if-ne v14, v9, :cond_0
 
     goto :goto_2
 
-    .line 196
-    :cond_2
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 231
+    :cond_0
+    invoke-interface {v14, v10, v11}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
 
-    const-string v1, "Unexpected child seekToUs result."
+    move-result-wide v14
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    cmp-long v16, v14, v10
 
-    throw v0
+    if-nez v16, :cond_1
 
-    :cond_3
-    :goto_2
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v13, v13, 0x1
 
     goto :goto_1
 
+    .line 232
+    :cond_1
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_2
+    :goto_2
+    move-wide v7, v10
+
+    goto :goto_3
+
+    :cond_3
+    cmp-long v9, v10, v7
+
+    if-nez v9, :cond_4
+
+    goto :goto_3
+
+    .line 236
     :cond_4
-    return-wide v2
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "Conflicting discontinuities."
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_5
+    cmp-long v10, v7, v4
+
+    if-eqz v10, :cond_7
+
+    .line 240
+    invoke-interface {v9, v7, v8}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
+
+    move-result-wide v9
+
+    cmp-long v11, v9, v7
+
+    if-nez v11, :cond_6
+
+    goto :goto_3
+
+    .line 241
+    :cond_6
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v12}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_7
+    :goto_3
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_8
+    return-wide v7
 .end method
 
 .method public reevaluateBuffer(J)V
     .locals 1
 
-    .line 155
+    .line 191
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoader:Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
     invoke-interface {v0, p1, p2}, Lcom/google/android/exoplayer2/source/SequenceableLoader;->reevaluateBuffer(J)V
@@ -602,7 +751,7 @@
 .method public seekToUs(J)J
     .locals 4
 
-    .line 210
+    .line 255
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
     const/4 v1, 0x0
@@ -615,7 +764,7 @@
 
     const/4 v0, 0x1
 
-    .line 212
+    .line 257
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
@@ -623,7 +772,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 213
+    .line 258
     aget-object v1, v1, v0
 
     invoke-interface {v1, p1, p2}, Lcom/google/android/exoplayer2/source/MediaPeriod;->seekToUs(J)J
@@ -638,7 +787,7 @@
 
     goto :goto_0
 
-    .line 214
+    .line 259
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -652,8 +801,8 @@
     return-wide p1
 .end method
 
-.method public selectTracks([Lcom/google/android/exoplayer2/trackselection/TrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
-    .locals 19
+.method public selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -661,318 +810,361 @@
 
     move-object/from16 v2, p3
 
-    .line 85
+    .line 115
     array-length v3, v1
 
     new-array v3, v3, [I
 
-    .line 86
+    .line 116
     array-length v4, v1
 
     new-array v4, v4, [I
 
+    const/4 v5, 0x0
+
     const/4 v6, 0x0
 
-    .line 87
+    .line 117
     :goto_0
     array-length v7, v1
 
+    const/4 v8, 0x0
+
     if-ge v6, v7, :cond_3
 
-    .line 88
+    .line 118
     aget-object v7, v2, v6
-
-    const/4 v8, -0x1
 
     if-nez v7, :cond_0
 
-    const/4 v7, -0x1
-
     goto :goto_1
 
-    .line 89
     :cond_0
     iget-object v7, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->streamPeriodIndices:Ljava/util/IdentityHashMap;
 
-    aget-object v9, v2, v6
+    aget-object v8, v2, v6
 
-    invoke-virtual {v7, v9}, Ljava/util/IdentityHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7, v8}, Ljava/util/IdentityHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
 
-    check-cast v7, Ljava/lang/Integer;
+    move-object v8, v7
 
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
-    move-result v7
+    check-cast v8, Ljava/lang/Integer;
 
     :goto_1
-    aput v7, v3, v6
+    const/4 v7, -0x1
 
-    .line 90
-    aput v8, v4, v6
+    if-nez v8, :cond_1
 
-    .line 91
-    aget-object v7, v1, v6
+    const/4 v8, -0x1
 
-    if-eqz v7, :cond_2
+    goto :goto_2
 
-    .line 92
+    .line 119
+    :cond_1
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    :goto_2
+    aput v8, v3, v6
+
+    .line 120
+    aget-object v8, v1, v6
+
+    if-eqz v8, :cond_2
+
+    .line 121
     aget-object v7, v1, v6
 
     invoke-interface {v7}, Lcom/google/android/exoplayer2/trackselection/TrackSelection;->getTrackGroup()Lcom/google/android/exoplayer2/source/TrackGroup;
 
     move-result-object v7
 
-    const/4 v9, 0x0
+    .line 123
+    iget-object v7, v7, Lcom/google/android/exoplayer2/source/TrackGroup;->id:Ljava/lang/String;
 
-    .line 93
-    :goto_2
-    iget-object v10, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    const-string v8, ":"
 
-    array-length v11, v10
+    .line 124
+    invoke-virtual {v7, v8}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    if-ge v9, v11, :cond_2
+    move-result v8
 
-    .line 94
-    aget-object v10, v10, v9
+    invoke-virtual {v7, v5, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    invoke-interface {v10}, Lcom/google/android/exoplayer2/source/MediaPeriod;->getTrackGroups()Lcom/google/android/exoplayer2/source/TrackGroupArray;
+    move-result-object v7
 
-    move-result-object v10
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    invoke-virtual {v10, v7}, Lcom/google/android/exoplayer2/source/TrackGroupArray;->indexOf(Lcom/google/android/exoplayer2/source/TrackGroup;)I
+    move-result v7
 
-    move-result v10
-
-    if-eq v10, v8, :cond_1
-
-    .line 95
-    aput v9, v4, v6
+    aput v7, v4, v6
 
     goto :goto_3
 
-    :cond_1
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_2
-
+    .line 126
     :cond_2
+    aput v7, v4, v6
+
     :goto_3
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 101
+    .line 129
     :cond_3
     iget-object v6, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->streamPeriodIndices:Ljava/util/IdentityHashMap;
 
     invoke-virtual {v6}, Ljava/util/IdentityHashMap;->clear()V
 
-    .line 103
+    .line 131
     array-length v6, v1
 
     new-array v7, v6, [Lcom/google/android/exoplayer2/source/SampleStream;
 
-    .line 104
-    array-length v8, v1
-
-    new-array v8, v8, [Lcom/google/android/exoplayer2/source/SampleStream;
-
-    .line 105
+    .line 132
     array-length v9, v1
 
-    new-array v14, v9, [Lcom/google/android/exoplayer2/trackselection/TrackSelection;
+    new-array v9, v9, [Lcom/google/android/exoplayer2/source/SampleStream;
 
-    .line 106
-    new-instance v15, Ljava/util/ArrayList;
+    .line 133
+    array-length v10, v1
 
-    iget-object v9, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    new-array v15, v10, [Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    array-length v9, v9
+    .line 134
+    new-instance v14, Ljava/util/ArrayList;
 
-    invoke-direct {v15, v9}, Ljava/util/ArrayList;-><init>(I)V
+    iget-object v10, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    move-wide/from16 v16, p5
+    array-length v10, v10
+
+    invoke-direct {v14, v10}, Ljava/util/ArrayList;-><init>(I)V
+
+    move-wide/from16 v17, p5
 
     const/4 v13, 0x0
 
-    .line 107
+    .line 135
     :goto_4
-    iget-object v9, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    iget-object v10, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    array-length v9, v9
+    array-length v10, v10
 
-    if-ge v13, v9, :cond_e
+    if-ge v13, v10, :cond_e
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    .line 108
+    .line 136
     :goto_5
-    array-length v10, v1
+    array-length v11, v1
 
-    if-ge v9, v10, :cond_6
+    if-ge v10, v11, :cond_6
 
-    .line 109
-    aget v10, v3, v9
+    .line 137
+    aget v11, v3, v10
 
-    const/4 v11, 0x0
+    if-ne v11, v13, :cond_4
 
-    if-ne v10, v13, :cond_4
-
-    aget-object v10, v2, v9
+    aget-object v11, v2, v10
 
     goto :goto_6
 
     :cond_4
-    move-object v10, v11
+    move-object v11, v8
 
     :goto_6
-    aput-object v10, v8, v9
+    aput-object v11, v9, v10
 
-    .line 110
-    aget v10, v4, v9
+    .line 138
+    aget v11, v4, v10
 
-    if-ne v10, v13, :cond_5
+    if-ne v11, v13, :cond_5
 
-    aget-object v11, v1, v9
+    .line 139
+    aget-object v11, v1, v10
 
-    :cond_5
-    aput-object v11, v14, v9
+    invoke-static {v11}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 v9, v9, 0x1
+    move-result-object v11
 
-    goto :goto_5
+    check-cast v11, Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
-    .line 112
-    :cond_6
-    iget-object v9, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    .line 140
+    invoke-interface {v11}, Lcom/google/android/exoplayer2/trackselection/TrackSelection;->getTrackGroup()Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    aget-object v9, v9, v13
+    move-result-object v12
 
-    move-object v10, v14
+    .line 141
+    iget-object v5, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->childTrackGroupByMergedTrackGroup:Ljava/util/HashMap;
 
-    move-object/from16 v11, p2
+    .line 142
+    invoke-virtual {v5, v12}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v12, v8
+    move-result-object v5
 
-    move v5, v13
+    check-cast v5, Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    move-object/from16 v13, p4
+    invoke-static {v5}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v18, v14
+    move-result-object v5
 
-    move-object v2, v15
+    check-cast v5, Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    move-wide/from16 v14, v16
+    .line 143
+    new-instance v12, Lcom/google/android/exoplayer2/source/MergingMediaPeriod$ForwardingTrackSelection;
 
-    invoke-interface/range {v9 .. v15}, Lcom/google/android/exoplayer2/source/MediaPeriod;->selectTracks([Lcom/google/android/exoplayer2/trackselection/TrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
+    invoke-direct {v12, v11, v5}, Lcom/google/android/exoplayer2/source/MergingMediaPeriod$ForwardingTrackSelection;-><init>(Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;Lcom/google/android/exoplayer2/source/TrackGroup;)V
 
-    move-result-wide v9
-
-    if-nez v5, :cond_7
-
-    move-wide/from16 v16, v9
+    aput-object v12, v15, v10
 
     goto :goto_7
 
-    :cond_7
-    cmp-long v11, v9, v16
-
-    if-nez v11, :cond_d
+    .line 145
+    :cond_5
+    aput-object v8, v15, v10
 
     :goto_7
-    const/4 v9, 0x0
+    add-int/lit8 v10, v10, 0x1
 
-    const/4 v10, 0x0
+    const/4 v5, 0x0
 
-    .line 120
-    :goto_8
-    array-length v11, v1
+    goto :goto_5
 
-    if-ge v9, v11, :cond_b
+    .line 148
+    :cond_6
+    iget-object v5, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    .line 121
-    aget v11, v4, v9
+    aget-object v10, v5, v13
 
-    const/4 v12, 0x1
+    move-object v11, v15
 
-    if-ne v11, v5, :cond_8
+    move-object/from16 v12, p2
 
-    .line 123
-    aget-object v10, v8, v9
+    move v5, v13
 
-    invoke-static {v10}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v13, v9
 
-    move-result-object v10
+    move-object v8, v14
 
-    check-cast v10, Lcom/google/android/exoplayer2/source/SampleStream;
+    move-object/from16 v14, p4
 
-    .line 124
-    aget-object v11, v8, v9
+    move-object/from16 v19, v15
 
-    aput-object v11, v7, v9
+    move-wide/from16 v15, v17
 
-    .line 126
-    iget-object v11, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->streamPeriodIndices:Ljava/util/IdentityHashMap;
+    .line 149
+    invoke-interface/range {v10 .. v16}, Lcom/google/android/exoplayer2/source/MediaPeriod;->selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-wide v10
 
-    move-result-object v13
+    if-nez v5, :cond_7
 
-    invoke-virtual {v11, v10, v13}, Ljava/util/IdentityHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 v10, 0x1
-
-    goto :goto_a
-
-    .line 127
-    :cond_8
-    aget v11, v3, v9
-
-    if-ne v11, v5, :cond_a
-
-    .line 129
-    aget-object v11, v8, v9
-
-    if-nez v11, :cond_9
-
-    goto :goto_9
-
-    :cond_9
-    const/4 v12, 0x0
-
-    :goto_9
-    invoke-static {v12}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
-
-    :cond_a
-    :goto_a
-    add-int/lit8 v9, v9, 0x1
+    move-wide/from16 v17, v10
 
     goto :goto_8
 
+    :cond_7
+    cmp-long v12, v10, v17
+
+    if-nez v12, :cond_d
+
+    :goto_8
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    .line 157
+    :goto_9
+    array-length v12, v1
+
+    if-ge v10, v12, :cond_b
+
+    .line 158
+    aget v12, v4, v10
+
+    const/4 v13, 0x1
+
+    if-ne v12, v5, :cond_8
+
+    .line 160
+    aget-object v11, v9, v10
+
+    invoke-static {v11}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lcom/google/android/exoplayer2/source/SampleStream;
+
+    .line 161
+    aget-object v12, v9, v10
+
+    aput-object v12, v7, v10
+
+    .line 163
+    iget-object v12, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->streamPeriodIndices:Ljava/util/IdentityHashMap;
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v14
+
+    invoke-virtual {v12, v11, v14}, Ljava/util/IdentityHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v11, 0x1
+
+    goto :goto_b
+
+    .line 164
+    :cond_8
+    aget v12, v3, v10
+
+    if-ne v12, v5, :cond_a
+
+    .line 166
+    aget-object v12, v9, v10
+
+    if-nez v12, :cond_9
+
+    goto :goto_a
+
+    :cond_9
+    const/4 v13, 0x0
+
+    :goto_a
+    invoke-static {v13}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
+
+    :cond_a
+    :goto_b
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_9
+
     :cond_b
-    if-eqz v10, :cond_c
+    if-eqz v11, :cond_c
 
-    .line 133
-    iget-object v9, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
+    .line 170
+    iget-object v10, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->periods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    aget-object v9, v9, v5
+    aget-object v10, v10, v5
 
-    invoke-virtual {v2, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_c
     add-int/lit8 v13, v5, 0x1
 
-    move-object v15, v2
+    move-object v14, v8
 
-    move-object/from16 v14, v18
+    move-object/from16 v15, v19
 
-    move-object/from16 v2, p3
+    const/4 v5, 0x0
 
-    goto :goto_4
+    const/4 v8, 0x0
 
-    .line 117
+    goto/16 :goto_4
+
+    .line 154
     :cond_d
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -983,38 +1175,33 @@
     throw v1
 
     :cond_e
-    move-object v1, v2
+    move-object v8, v14
 
-    move-object v2, v15
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
-
-    .line 137
-    invoke-static {v7, v3, v1, v3, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 139
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
+    .line 174
+    invoke-static {v7, v1, v2, v1, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     new-array v1, v1, [Lcom/google/android/exoplayer2/source/MediaPeriod;
 
+    .line 176
+    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Lcom/google/android/exoplayer2/source/MediaPeriod;
+
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
 
-    .line 140
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .line 177
+    iget-object v2, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoaderFactory:Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;
 
-    .line 141
-    iget-object v1, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoaderFactory:Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;
-
-    iget-object v2, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->enabledPeriods:[Lcom/google/android/exoplayer2/source/MediaPeriod;
-
-    .line 142
-    invoke-interface {v1, v2}, Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;->createCompositeSequenceableLoader([Lcom/google/android/exoplayer2/source/SequenceableLoader;)Lcom/google/android/exoplayer2/source/SequenceableLoader;
+    .line 178
+    invoke-interface {v2, v1}, Lcom/google/android/exoplayer2/source/CompositeSequenceableLoaderFactory;->createCompositeSequenceableLoader([Lcom/google/android/exoplayer2/source/SequenceableLoader;)Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/google/android/exoplayer2/source/MergingMediaPeriod;->compositeSequenceableLoader:Lcom/google/android/exoplayer2/source/SequenceableLoader;
 
-    return-wide v16
+    return-wide v17
 .end method

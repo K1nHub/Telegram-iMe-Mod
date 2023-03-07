@@ -8,13 +8,22 @@
 
 
 # virtual methods
+.method public abstract getAvailableSegmentCount(JJ)J
+.end method
+
 .method public abstract getDurationUs(JJ)J
+.end method
+
+.method public abstract getFirstAvailableSegmentNum(JJ)J
 .end method
 
 .method public abstract getFirstSegmentNum()J
 .end method
 
-.method public abstract getSegmentCount(J)I
+.method public abstract getNextSegmentAvailableTimeUs(JJ)J
+.end method
+
+.method public abstract getSegmentCount(J)J
 .end method
 
 .method public abstract getSegmentNum(JJ)J

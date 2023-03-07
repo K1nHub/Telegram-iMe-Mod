@@ -21,13 +21,13 @@
 
     const/4 v0, 0x0
 
-    .line 38
+    .line 41
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;-><init>(Z)V
 
-    .line 39
+    .line 42
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 40
+    .line 43
     array-length v1, p1
 
     if-lez v1, :cond_0
@@ -37,7 +37,7 @@
     :cond_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 41
+    .line 44
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->data:[B
 
     return-void
@@ -48,23 +48,23 @@
 .method public close()V
     .locals 1
 
-    .line 84
+    .line 88
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->opened:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 85
+    .line 89
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->opened:Z
 
-    .line 86
+    .line 90
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferEnded()V
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 88
+    .line 92
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->uri:Landroid/net/Uri;
 
     return-void
@@ -73,125 +73,110 @@
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 79
+    .line 83
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->uri:Landroid/net/Uri;
 
     return-object v0
 .end method
 
 .method public open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 46
+    .line 49
     iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->uri:Landroid/net/Uri;
 
-    .line 47
+    .line 50
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferInitializing(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
-    .line 48
+    .line 51
     iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
-    long-to-int v2, v0
+    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->data:[B
 
-    iput v2, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->readPosition:I
-
-    .line 49
-    iget-wide v3, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
-
-    const-wide/16 v5, -0x1
-
-    cmp-long v7, v3, v5
-
-    if-nez v7, :cond_0
-
-    .line 50
-    iget-object v3, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->data:[B
-
-    array-length v3, v3
+    array-length v3, v2
 
     int-to-long v3, v3
 
-    sub-long/2addr v3, v0
+    cmp-long v5, v0, v3
 
-    :cond_0
-    long-to-int v0, v3
+    if-gtz v5, :cond_2
 
-    iput v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
+    long-to-int v3, v0
 
-    if-lez v0, :cond_1
-
-    add-int/2addr v2, v0
-
-    .line 51
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->data:[B
-
-    array-length v0, v0
-
-    if-gt v2, v0, :cond_1
-
-    const/4 v0, 0x1
+    .line 54
+    iput v3, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->readPosition:I
 
     .line 55
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->opened:Z
+    array-length v2, v2
+
+    long-to-int v1, v0
+
+    sub-int/2addr v2, v1
+
+    iput v2, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
 
     .line 56
-    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    const-wide/16 v3, -0x1
+
+    cmp-long v5, v0, v3
+
+    if-eqz v5, :cond_0
+
+    int-to-long v5, v2
 
     .line 57
+    invoke-static {v5, v6, v0, v1}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v0
+
+    long-to-int v1, v0
+
+    iput v1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
+
+    :cond_0
+    const/4 v0, 0x1
+
+    .line 59
+    iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->opened:Z
+
+    .line 60
+    invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->transferStarted(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
+
+    .line 61
+    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+
+    cmp-long p1, v0, v3
+
+    if-eqz p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
     iget p1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
 
     int-to-long v0, p1
 
+    :goto_0
     return-wide v0
 
     .line 52
-    :cond_1
-    new-instance v0, Ljava/io/IOException;
+    :cond_2
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/DataSourceException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/16 v0, 0x7d8
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1, v0}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
 
-    const-string v2, "Unsatisfiable range: ["
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->readPosition:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v2, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p1, "], length: "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->data:[B
-
-    array-length p1, p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    throw p1
 .end method
 
 .method public read([BII)I
@@ -203,7 +188,7 @@
 
     return p1
 
-    .line 64
+    .line 68
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
 
@@ -213,34 +198,34 @@
 
     return p1
 
-    .line 68
+    .line 72
     :cond_1
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p3
 
-    .line 69
+    .line 73
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->data:[B
 
     iget v1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->readPosition:I
 
     invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 70
+    .line 74
     iget p1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->readPosition:I
 
     add-int/2addr p1, p3
 
     iput p1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->readPosition:I
 
-    .line 71
+    .line 75
     iget p1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
 
     sub-int/2addr p1, p3
 
     iput p1, p0, Lcom/google/android/exoplayer2/upstream/ByteArrayDataSource;->bytesRemaining:I
 
-    .line 72
+    .line 76
     invoke-virtual {p0, p3}, Lcom/google/android/exoplayer2/upstream/BaseDataSource;->bytesTransferred(I)V
 
     return p3

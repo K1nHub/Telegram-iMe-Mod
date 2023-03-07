@@ -5,10 +5,19 @@
 
 # instance fields
 .field zza:Ljava/lang/String;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 .field zzb:Ljava/lang/Object;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 .field zzc:Lcom/google/android/gms/internal/mlkit_language_id/zze;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 
 # direct methods

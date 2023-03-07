@@ -345,6 +345,10 @@
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 85
     invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/firebase_ml/zzlh;->indexOf(Ljava/lang/Object;)I
@@ -365,6 +369,10 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     .line 107
     invoke-static {p0}, Lcom/google/android/gms/internal/firebase_ml/zzkv;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -531,6 +539,10 @@
 
 .method public indexOf(Ljava/lang/Object;)I
     .locals 4
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     const/4 v0, -0x1
 
@@ -584,6 +596,10 @@
 
 .method public lastIndexOf(Ljava/lang/Object;)I
     .locals 3
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     const/4 v0, -0x1
 

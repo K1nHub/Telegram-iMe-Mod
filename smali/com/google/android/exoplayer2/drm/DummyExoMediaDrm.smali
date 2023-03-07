@@ -6,24 +6,11 @@
 .implements Lcom/google/android/exoplayer2/drm/ExoMediaDrm;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaDrm<",
-        "TT;>;"
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    .line 29
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,17 +18,8 @@
 
 .method public static getInstance()Lcom/google/android/exoplayer2/drm/DummyExoMediaDrm;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-            ">()",
-            "Lcom/google/android/exoplayer2/drm/DummyExoMediaDrm<",
-            "TT;>;"
-        }
-    .end annotation
 
-    .line 34
+    .line 35
     new-instance v0, Lcom/google/android/exoplayer2/drm/DummyExoMediaDrm;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/drm/DummyExoMediaDrm;-><init>()V
@@ -63,15 +41,10 @@
     return-void
 .end method
 
-.method public createMediaCrypto([B)Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;
+.method public createCryptoConfig([B)Lcom/google/android/exoplayer2/decoder/CryptoConfig;
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([B)TT;"
-        }
-    .end annotation
 
-    .line 137
+    .line 149
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -79,19 +52,12 @@
     throw p1
 .end method
 
-.method public getExoMediaCryptoType()Ljava/lang/Class;
+.method public getCryptoType()I
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/Class<",
-            "TT;>;"
-        }
-    .end annotation
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    return-object v0
+    return v0
 .end method
 
 .method public getKeyRequest([BLjava/util/List;ILjava/util/HashMap;)Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyRequest;
@@ -110,7 +76,7 @@
         }
     .end annotation
 
-    .line 64
+    .line 70
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -129,7 +95,7 @@
 .method public getPropertyByteArray(Ljava/lang/String;)[B
     .locals 0
 
-    .line 121
+    .line 133
     sget-object p1, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
 
     return-object p1
@@ -146,7 +112,7 @@
 .method public getProvisionRequest()Lcom/google/android/exoplayer2/drm/ExoMediaDrm$ProvisionRequest;
     .locals 1
 
-    .line 77
+    .line 83
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -162,7 +128,7 @@
         }
     .end annotation
 
-    .line 49
+    .line 55
     new-instance v0, Landroid/media/MediaDrmException;
 
     const-string v1, "Attempting to open a session using a dummy ExoMediaDrm."
@@ -175,7 +141,7 @@
 .method public provideKeyResponse([B[B)[B
     .locals 0
 
-    .line 71
+    .line 77
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -186,7 +152,7 @@
 .method public provideProvisionResponse([B)V
     .locals 0
 
-    .line 83
+    .line 89
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -206,7 +172,7 @@
         }
     .end annotation
 
-    .line 89
+    .line 95
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -220,10 +186,21 @@
     return-void
 .end method
 
+.method public requiresSecureDecoder([BLjava/lang/String;)Z
+    .locals 0
+
+    .line 101
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p1
+.end method
+
 .method public restoreKeys([B[B)V
     .locals 0
 
-    .line 105
+    .line 117
     new-instance p1, Ljava/lang/IllegalStateException;
 
     invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
@@ -233,26 +210,26 @@
 
 .method public setOnEventListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnEventListener<",
-            "-TT;>;)V"
-        }
-    .end annotation
+
+    return-void
+.end method
+
+.method public setOnExpirationUpdateListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnExpirationUpdateListener;)V
+    .locals 0
 
     return-void
 .end method
 
 .method public setOnKeyStatusChangeListener(Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener;)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$OnKeyStatusChangeListener<",
-            "-TT;>;)V"
-        }
-    .end annotation
+
+    return-void
+.end method
+
+.method public synthetic setPlayerIdForSession([BLcom/google/android/exoplayer2/analytics/PlayerId;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/drm/ExoMediaDrm$-CC;->$default$setPlayerIdForSession(Lcom/google/android/exoplayer2/drm/ExoMediaDrm;[BLcom/google/android/exoplayer2/analytics/PlayerId;)V
 
     return-void
 .end method

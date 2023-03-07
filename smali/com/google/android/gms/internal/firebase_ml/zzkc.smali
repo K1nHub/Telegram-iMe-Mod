@@ -53,6 +53,10 @@
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
     .locals 0
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     if-ne p1, p0, :cond_0
 

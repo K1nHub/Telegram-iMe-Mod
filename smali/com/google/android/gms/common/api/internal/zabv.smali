@@ -5,9 +5,6 @@
 
 # instance fields
 .field private final zaa:Lcom/google/android/gms/common/api/GoogleApi;
-    .annotation runtime Lorg/checkerframework/checker/initialization/qual/NotOnlyInitialized;
-    .end annotation
-.end field
 
 
 # direct methods

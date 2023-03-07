@@ -24,13 +24,13 @@
 .method private constructor <init>(Landroid/media/MediaCodec$CryptoInfo;)V
     .locals 1
 
-    .line 134
+    .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 135
+    .line 163
     iput-object p1, p0, Lcom/google/android/exoplayer2/decoder/CryptoInfo$PatternHolderV24;->frameworkCryptoInfo:Landroid/media/MediaCodec$CryptoInfo;
 
-    .line 136
+    .line 164
     new-instance p1, Landroid/media/MediaCodec$CryptoInfo$Pattern;
 
     const/4 v0, 0x0
@@ -45,7 +45,7 @@
 .method synthetic constructor <init>(Landroid/media/MediaCodec$CryptoInfo;Lcom/google/android/exoplayer2/decoder/CryptoInfo$1;)V
     .locals 0
 
-    .line 129
+    .line 157
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/decoder/CryptoInfo$PatternHolderV24;-><init>(Landroid/media/MediaCodec$CryptoInfo;)V
 
     return-void
@@ -54,7 +54,7 @@
 .method static synthetic access$100(Lcom/google/android/exoplayer2/decoder/CryptoInfo$PatternHolderV24;II)V
     .locals 0
 
-    .line 129
+    .line 157
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/decoder/CryptoInfo$PatternHolderV24;->set(II)V
 
     return-void
@@ -63,12 +63,12 @@
 .method private set(II)V
     .locals 1
 
-    .line 140
+    .line 168
     iget-object v0, p0, Lcom/google/android/exoplayer2/decoder/CryptoInfo$PatternHolderV24;->pattern:Landroid/media/MediaCodec$CryptoInfo$Pattern;
 
     invoke-virtual {v0, p1, p2}, Landroid/media/MediaCodec$CryptoInfo$Pattern;->set(II)V
 
-    .line 141
+    .line 169
     iget-object p1, p0, Lcom/google/android/exoplayer2/decoder/CryptoInfo$PatternHolderV24;->frameworkCryptoInfo:Landroid/media/MediaCodec$CryptoInfo;
 
     iget-object p2, p0, Lcom/google/android/exoplayer2/decoder/CryptoInfo$PatternHolderV24;->pattern:Landroid/media/MediaCodec$CryptoInfo$Pattern;

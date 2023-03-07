@@ -2,13 +2,15 @@
 .super Ljava/lang/Object;
 .source "ExtractorInput.java"
 
+# interfaces
+.implements Lcom/google/android/exoplayer2/upstream/DataReader;
+
 
 # virtual methods
 .method public abstract advancePeekPosition(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -16,8 +18,7 @@
 .method public abstract advancePeekPosition(IZ)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -34,8 +35,7 @@
 .method public abstract peek([BII)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -43,8 +43,7 @@
 .method public abstract peekFully([BII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -52,8 +51,7 @@
 .method public abstract peekFully([BIIZ)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -61,8 +59,7 @@
 .method public abstract read([BII)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -70,8 +67,7 @@
 .method public abstract readFully([BII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -79,8 +75,7 @@
 .method public abstract readFully([BIIZ)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -107,8 +102,7 @@
 .method public abstract skip(I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -116,8 +110,7 @@
 .method public abstract skipFully(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -125,8 +118,7 @@
 .method public abstract skipFully(IZ)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method

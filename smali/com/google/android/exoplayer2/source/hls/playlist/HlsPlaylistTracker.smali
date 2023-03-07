@@ -19,10 +19,13 @@
 .method public abstract addListener(Lcom/google/android/exoplayer2/source/hls/playlist/HlsPlaylistTracker$PlaylistEventListener;)V
 .end method
 
+.method public abstract excludeMediaPlaylist(Landroid/net/Uri;J)Z
+.end method
+
 .method public abstract getInitialStartTimeUs()J
 .end method
 
-.method public abstract getMasterPlaylist()Lcom/google/android/exoplayer2/source/hls/playlist/HlsMasterPlaylist;
+.method public abstract getMultivariantPlaylist()Lcom/google/android/exoplayer2/source/hls/playlist/HlsMultivariantPlaylist;
 .end method
 
 .method public abstract getPlaylistSnapshot(Landroid/net/Uri;Z)Lcom/google/android/exoplayer2/source/hls/playlist/HlsMediaPlaylist;

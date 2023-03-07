@@ -14,10 +14,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;)V
     .locals 0
 
-    .line 30
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 30
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SingleSegmentIndex;->uri:Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
     return-void
@@ -25,10 +25,26 @@
 
 
 # virtual methods
+.method public getAvailableSegmentCount(JJ)J
+    .locals 0
+
+    const-wide/16 p1, 0x1
+
+    return-wide p1
+.end method
+
 .method public getDurationUs(JJ)J
     .locals 0
 
     return-wide p3
+.end method
+
+.method public getFirstAvailableSegmentNum(JJ)J
+    .locals 0
+
+    const-wide/16 p1, 0x0
+
+    return-wide p1
 .end method
 
 .method public getFirstSegmentNum()J
@@ -39,12 +55,20 @@
     return-wide v0
 .end method
 
-.method public getSegmentCount(J)I
+.method public getNextSegmentAvailableTimeUs(JJ)J
     .locals 0
 
-    const/4 p1, 0x1
+    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
-    return p1
+    return-wide p1
+.end method
+
+.method public getSegmentCount(J)J
+    .locals 0
+
+    const-wide/16 p1, 0x1
+
+    return-wide p1
 .end method
 
 .method public getSegmentNum(JJ)J
@@ -58,7 +82,7 @@
 .method public getSegmentUrl(J)Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
     .locals 0
 
-    .line 51
+    .line 50
     iget-object p1, p0, Lcom/google/android/exoplayer2/source/dash/manifest/SingleSegmentIndex;->uri:Lcom/google/android/exoplayer2/source/dash/manifest/RangedUri;
 
     return-object p1

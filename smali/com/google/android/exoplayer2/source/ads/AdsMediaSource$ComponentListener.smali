@@ -20,7 +20,7 @@
 # instance fields
 .field private final playerHandler:Landroid/os/Handler;
 
-.field private volatile released:Z
+.field private volatile stopped:Z
 
 .field final synthetic this$0:Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;
 
@@ -37,15 +37,15 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;)V
     .locals 0
 
-    .line 327
+    .line 367
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->this$0:Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 328
-    new-instance p1, Landroid/os/Handler;
+    .line 368
+    invoke-static {}, Lcom/google/android/exoplayer2/util/Util;->createHandlerForCurrentLooper()Landroid/os/Handler;
 
-    invoke-direct {p1}, Landroid/os/Handler;-><init>()V
+    move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->playerHandler:Landroid/os/Handler;
 
@@ -55,14 +55,14 @@
 .method private synthetic lambda$onAdPlaybackState$0(Lcom/google/android/exoplayer2/source/ads/AdPlaybackState;)V
     .locals 1
 
-    .line 344
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->released:Z
+    .line 384
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->stopped:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 347
+    .line 387
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->this$0:Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;
 
@@ -82,55 +82,49 @@
 .end method
 
 .method public onAdLoadError(Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$AdLoadException;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
-    .locals 16
+    .locals 8
 
-    move-object/from16 v0, p0
+    .line 393
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->stopped:Z
 
-    .line 353
-    iget-boolean v1, v0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->released:Z
-
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 
-    .line 356
+    .line 396
     :cond_0
-    iget-object v1, v0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->this$0:Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->this$0:Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v1, v2}, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;->access$000(Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/source/MediaSourceEventListener$EventDispatcher;
+    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;->access$000(Lcom/google/android/exoplayer2/source/ads/AdsMediaSource;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;)Lcom/google/android/exoplayer2/source/MediaSourceEventListener$EventDispatcher;
 
-    move-result-object v3
+    move-result-object v0
 
-    move-object/from16 v1, p2
+    new-instance v7, Lcom/google/android/exoplayer2/source/LoadEventInfo;
 
-    iget-object v5, v1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
+    .line 399
+    invoke-static {}, Lcom/google/android/exoplayer2/source/LoadEventInfo;->getNewId()J
 
-    .line 360
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+    move-result-wide v2
 
-    move-result-object v6
-
-    const/4 v7, 0x6
-
-    .line 362
+    .line 401
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v8
+    move-result-wide v5
 
-    const-wide/16 v10, 0x0
+    move-object v1, v7
 
-    const-wide/16 v12, 0x0
+    move-object v4, p2
 
-    const/4 v15, 0x1
+    invoke-direct/range {v1 .. v6}, Lcom/google/android/exoplayer2/source/LoadEventInfo;-><init>(JLcom/google/android/exoplayer2/upstream/DataSpec;J)V
 
-    move-object/from16 v4, p2
+    const/4 p2, 0x6
 
-    move-object/from16 v14, p1
+    const/4 v1, 0x1
 
-    .line 357
-    invoke-virtual/range {v3 .. v15}, Lcom/google/android/exoplayer2/source/MediaSourceEventListener$EventDispatcher;->loadError(Lcom/google/android/exoplayer2/upstream/DataSpec;Landroid/net/Uri;Ljava/util/Map;IJJJLjava/io/IOException;Z)V
+    .line 397
+    invoke-virtual {v0, v7, p2, p1, v1}, Lcom/google/android/exoplayer2/source/MediaSourceEventListener$EventDispatcher;->loadError(Lcom/google/android/exoplayer2/source/LoadEventInfo;ILjava/io/IOException;Z)V
 
     return-void
 .end method
@@ -138,14 +132,14 @@
 .method public onAdPlaybackState(Lcom/google/android/exoplayer2/source/ads/AdPlaybackState;)V
     .locals 2
 
-    .line 339
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->released:Z
+    .line 379
+    iget-boolean v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->stopped:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 342
+    .line 382
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->playerHandler:Landroid/os/Handler;
 
@@ -166,15 +160,15 @@
     return-void
 .end method
 
-.method public release()V
+.method public stop()V
     .locals 2
 
     const/4 v0, 0x1
 
-    .line 333
-    iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->released:Z
+    .line 373
+    iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->stopped:Z
 
-    .line 334
+    .line 374
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/ads/AdsMediaSource$ComponentListener;->playerHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0

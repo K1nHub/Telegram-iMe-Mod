@@ -11,7 +11,7 @@
 
     const-wide/16 v1, -0x1
 
-    .line 75
+    .line 73
     invoke-interface {p0, v0, v1, v2}, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadata;->get(Ljava/lang/String;J)J
 
     move-result-wide v0
@@ -26,7 +26,7 @@
 
     const/4 v1, 0x0
 
-    .line 84
+    .line 82
     invoke-interface {p0, v0, v1}, Lcom/google/android/exoplayer2/upstream/cache/ContentMetadata;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -35,7 +35,7 @@
 
     goto :goto_0
 
-    .line 85
+    .line 83
     :cond_0
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 

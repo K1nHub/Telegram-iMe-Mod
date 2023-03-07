@@ -9,12 +9,18 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/net/Uri;)V
-    .locals 0
+    .locals 3
 
-    .line 36
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    const/4 v0, 0x0
 
-    .line 37
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    .line 33
+    invoke-direct {p0, p1, v0, v1, v2}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
+
+    .line 34
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/UnrecognizedInputFormatException;->uri:Landroid/net/Uri;
 
     return-void

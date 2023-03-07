@@ -13,7 +13,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 23
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,12 +26,12 @@
 
     const/4 v0, 0x0
 
-    .line 37
+    .line 31
     iput-object v0, p0, Lcom/google/android/exoplayer2/source/chunk/ChunkHolder;->chunk:Lcom/google/android/exoplayer2/source/chunk/Chunk;
 
     const/4 v0, 0x0
 
-    .line 38
+    .line 32
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/source/chunk/ChunkHolder;->endOfStream:Z
 
     return-void

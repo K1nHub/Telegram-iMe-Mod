@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 31
+    .line 29
     new-instance v0, Lcom/google/android/exoplayer2/util/SystemClock;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/SystemClock;-><init>()V
@@ -32,7 +32,7 @@
 .method public abstract elapsedRealtime()J
 .end method
 
-.method public abstract sleep(J)V
+.method public abstract onThreadBlocked()V
 .end method
 
 .method public abstract uptimeMillis()J

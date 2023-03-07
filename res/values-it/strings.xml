@@ -1287,7 +1287,6 @@ Cancella i log"</string>
     <string name="DiceEmojiInfo">"Invia l'emoji %1$s per tentare la fortuna."</string>
     <string name="DiceInfo2">"Invia l'emoji **:dado:** in qualsiasi chat per lanciare un dado."</string>
     <string name="DidNotGetTheCode">Non hai ricevuto il codice?</string>
-    <string name="DidNotGetTheCodeSms">Invia il codice come SMS</string>
     <string name="DirectShare">Condivisione diretta</string>
     <string name="DirectShareInfo">Mostra le chat recenti nel menu di condivisione</string>
     <string name="Directions">Indicazioni</string>

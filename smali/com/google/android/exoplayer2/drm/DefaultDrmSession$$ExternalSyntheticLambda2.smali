@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/util/EventDispatcher$Event;
+.implements Lcom/google/android/exoplayer2/util/Consumer;
 
 
 # static fields
@@ -32,12 +32,12 @@
 
 
 # virtual methods
-.method public final sendTo(Ljava/lang/Object;)V
+.method public final accept(Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionEventListener;
+    check-cast p1, Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;
 
-    invoke-interface {p1}, Lcom/google/android/exoplayer2/drm/DefaultDrmSessionEventListener;->onDrmKeysRestored()V
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/drm/DrmSessionEventListener$EventDispatcher;->drmKeysLoaded()V
 
     return-void
 .end method

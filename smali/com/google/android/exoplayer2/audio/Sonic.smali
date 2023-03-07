@@ -63,19 +63,19 @@
 .method public constructor <init>(IIFFI)V
     .locals 0
 
-    .line 69
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
+    .line 72
     iput p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputSampleRateHz:I
 
-    .line 71
+    .line 73
     iput p2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
-    .line 72
+    .line 74
     iput p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->speed:F
 
-    .line 73
+    .line 75
     iput p4, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitch:F
 
     int-to-float p3, p1
@@ -84,46 +84,46 @@
 
     div-float/2addr p3, p4
 
-    .line 74
+    .line 76
     iput p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->rate:F
 
-    .line 75
+    .line 77
     div-int/lit16 p3, p1, 0x190
 
     iput p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minPeriod:I
 
-    .line 76
+    .line 78
     div-int/lit8 p1, p1, 0x41
 
     iput p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxPeriod:I
 
     mul-int/lit8 p1, p1, 0x2
 
-    .line 77
+    .line 79
     iput p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxRequiredFrameCount:I
 
-    .line 78
+    .line 80
     new-array p3, p1, [S
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->downSampleBuffer:[S
 
     mul-int p3, p1, p2
 
-    .line 79
+    .line 81
     new-array p3, p3, [S
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
     mul-int p3, p1, p2
 
-    .line 80
+    .line 82
     new-array p3, p3, [S
 
     iput-object p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
     mul-int p1, p1, p2
 
-    .line 81
+    .line 83
     new-array p1, p1, [S
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchBuffer:[S
@@ -134,14 +134,14 @@
 .method private adjustRate(FI)V
     .locals 8
 
-    .line 360
+    .line 370
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     if-ne v0, p2, :cond_0
 
     return-void
 
-    .line 363
+    .line 373
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputSampleRateHz:I
 
@@ -160,7 +160,7 @@
 
     goto :goto_5
 
-    .line 370
+    .line 380
     :cond_1
     invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/audio/Sonic;->moveNewSamplesToPitchBuffer(I)V
 
@@ -168,7 +168,7 @@
 
     const/4 v1, 0x0
 
-    .line 372
+    .line 382
     :goto_1
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchFrameCount:I
 
@@ -178,7 +178,7 @@
 
     if-ge v1, v3, :cond_6
 
-    .line 373
+    .line 383
     :goto_2
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->oldRatePosition:I
 
@@ -192,12 +192,12 @@
 
     if-le v3, v6, :cond_3
 
-    .line 374
+    .line 384
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
-    .line 375
+    .line 385
     invoke-direct {p0, v2, v3, v4}, Lcom/google/android/exoplayer2/audio/Sonic;->ensureSpaceForAdditionalFrames([SII)[S
 
     move-result-object v2
@@ -206,13 +206,13 @@
 
     const/4 v2, 0x0
 
-    .line 377
+    .line 387
     :goto_3
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     if-ge v2, v3, :cond_2
 
-    .line 378
+    .line 388
     iget-object v5, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
     iget v6, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
@@ -227,7 +227,7 @@
 
     add-int/2addr v3, v2
 
-    .line 379
+    .line 389
     invoke-direct {p0, v7, v3, v0, p1}, Lcom/google/android/exoplayer2/audio/Sonic;->interpolate([SIII)S
 
     move-result v3
@@ -238,7 +238,7 @@
 
     goto :goto_3
 
-    .line 381
+    .line 391
     :cond_2
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->newRatePosition:I
 
@@ -246,7 +246,7 @@
 
     iput v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->newRatePosition:I
 
-    .line 382
+    .line 392
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     add-int/2addr v2, v4
@@ -258,12 +258,12 @@
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
-    .line 384
+    .line 394
     iput v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->oldRatePosition:I
 
     if-ne v2, v0, :cond_5
 
-    .line 386
+    .line 396
     iput p2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->oldRatePosition:I
 
     if-ne v5, p1, :cond_4
@@ -273,11 +273,11 @@
     :cond_4
     const/4 v4, 0x0
 
-    .line 387
+    .line 397
     :goto_4
     invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 388
+    .line 398
     iput p2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->newRatePosition:I
 
     :cond_5
@@ -288,17 +288,17 @@
     :cond_6
     sub-int/2addr v2, v4
 
-    .line 391
+    .line 401
     invoke-direct {p0, v2}, Lcom/google/android/exoplayer2/audio/Sonic;->removePitchFrames(I)V
 
     return-void
 
-    .line 367
+    .line 377
     :cond_7
     :goto_5
     div-int/lit8 p1, p1, 0x2
 
-    .line 368
+    .line 378
     div-int/lit8 v0, v0, 0x2
 
     goto :goto_0
@@ -307,7 +307,7 @@
 .method private changeSpeed(F)V
     .locals 8
 
-    .line 448
+    .line 458
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxRequiredFrameCount:I
@@ -319,13 +319,13 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 454
+    .line 464
     :cond_1
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->remainingInputToCopyFrameCount:I
 
     if-lez v2, :cond_2
 
-    .line 455
+    .line 465
     invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/audio/Sonic;->copyInputToOutput(I)I
 
     move-result v2
@@ -335,7 +335,7 @@
 
     goto :goto_1
 
-    .line 457
+    .line 467
     :cond_2
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
@@ -351,7 +351,7 @@
 
     if-lez v7, :cond_3
 
-    .line 459
+    .line 469
     iget-object v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
     invoke-direct {p0, v3, v1, p1, v2}, Lcom/google/android/exoplayer2/audio/Sonic;->skipPitchPeriod([SIFI)I
@@ -362,7 +362,7 @@
 
     goto :goto_0
 
-    .line 461
+    .line 471
     :cond_3
     iget-object v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
@@ -372,7 +372,7 @@
 
     goto :goto_0
 
-    .line 464
+    .line 474
     :goto_1
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxRequiredFrameCount:I
 
@@ -380,7 +380,7 @@
 
     if-le v2, v0, :cond_1
 
-    .line 465
+    .line 475
     invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/audio/Sonic;->removeProcessedInputFrames(I)V
 
     return-void
@@ -389,7 +389,7 @@
 .method private copyInputToOutput(I)I
     .locals 2
 
-    .line 208
+    .line 218
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxRequiredFrameCount:I
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->remainingInputToCopyFrameCount:I
@@ -398,12 +398,12 @@
 
     move-result v0
 
-    .line 209
+    .line 219
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
     invoke-direct {p0, v1, p1, v0}, Lcom/google/android/exoplayer2/audio/Sonic;->copyToOutput([SII)V
 
-    .line 210
+    .line 220
     iget p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->remainingInputToCopyFrameCount:I
 
     sub-int/2addr p1, v0
@@ -416,7 +416,7 @@
 .method private copyToOutput([SII)V
     .locals 3
 
-    .line 197
+    .line 207
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
@@ -427,7 +427,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
-    .line 198
+    .line 208
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     mul-int p2, p2, v1
@@ -440,7 +440,7 @@
 
     invoke-static {p1, p2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 204
+    .line 214
     iget p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     add-int/2addr p1, p3
@@ -453,12 +453,12 @@
 .method private downSampleInput([SII)V
     .locals 6
 
-    .line 217
+    .line 227
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxRequiredFrameCount:I
 
     div-int/2addr v0, p3
 
-    .line 218
+    .line 228
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     mul-int p3, p3, v1
@@ -485,7 +485,7 @@
 
     add-int/2addr v5, v3
 
-    .line 223
+    .line 233
     aget-short v5, p1, v5
 
     add-int/2addr v4, v5
@@ -494,11 +494,11 @@
 
     goto :goto_1
 
-    .line 225
+    .line 235
     :cond_0
     div-int/2addr v4, p3
 
-    .line 226
+    .line 236
     iget-object v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->downSampleBuffer:[S
 
     int-to-short v4, v4
@@ -516,7 +516,7 @@
 .method private ensureSpaceForAdditionalFrames([SII)[S
     .locals 2
 
-    .line 180
+    .line 190
     array-length v0, p1
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
@@ -532,14 +532,14 @@
     :cond_0
     mul-int/lit8 v0, v0, 0x3
 
-    .line 184
+    .line 194
     div-int/lit8 v0, v0, 0x2
 
     add-int/2addr v0, p3
 
     mul-int v0, v0, v1
 
-    .line 185
+    .line 195
     invoke-static {p1, v0}, Ljava/util/Arrays;->copyOf([SI)[S
 
     move-result-object p1
@@ -550,7 +550,7 @@
 .method private findPitchPeriod([SI)I
     .locals 6
 
-    .line 288
+    .line 298
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputSampleRateHz:I
 
     const/16 v1, 0xfa0
@@ -566,7 +566,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 289
+    .line 299
     :goto_0
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
@@ -574,7 +574,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 290
+    .line 300
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minPeriod:I
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxPeriod:I
@@ -585,11 +585,11 @@
 
     goto :goto_1
 
-    .line 292
+    .line 302
     :cond_1
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/audio/Sonic;->downSampleInput([SII)V
 
-    .line 293
+    .line 303
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->downSampleBuffer:[S
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minPeriod:I
@@ -616,14 +616,14 @@
 
     add-int/2addr v1, v0
 
-    .line 298
+    .line 308
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minPeriod:I
 
     if-ge v3, v0, :cond_2
 
     move v3, v0
 
-    .line 301
+    .line 311
     :cond_2
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxPeriod:I
 
@@ -631,24 +631,24 @@
 
     move v1, v0
 
-    .line 304
+    .line 314
     :cond_3
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     if-ne v0, v2, :cond_4
 
-    .line 305
+    .line 315
     invoke-direct {p0, p1, p2, v3, v1}, Lcom/google/android/exoplayer2/audio/Sonic;->findPitchPeriodInRange([SIII)I
 
     move-result p1
 
     goto :goto_1
 
-    .line 307
+    .line 317
     :cond_4
     invoke-direct {p0, p1, p2, v2}, Lcom/google/android/exoplayer2/audio/Sonic;->downSampleInput([SII)V
 
-    .line 308
+    .line 318
     iget-object p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->downSampleBuffer:[S
 
     invoke-direct {p0, p1, v5, v3, v1}, Lcom/google/android/exoplayer2/audio/Sonic;->findPitchPeriodInRange([SIII)I
@@ -660,7 +660,7 @@
     :cond_5
     move p1, v1
 
-    .line 312
+    .line 322
     :goto_1
     iget p2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minDiff:I
 
@@ -672,7 +672,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 313
+    .line 323
     iget p2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->prevPeriod:I
 
     goto :goto_2
@@ -680,13 +680,13 @@
     :cond_6
     move p2, p1
 
-    .line 317
+    .line 327
     :goto_2
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minDiff:I
 
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->prevMinDiff:I
 
-    .line 318
+    .line 328
     iput p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->prevPeriod:I
 
     return p2
@@ -695,7 +695,7 @@
 .method private findPitchPeriodInRange([SIII)I
     .locals 9
 
-    .line 237
+    .line 247
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     mul-int p2, p2, v0
@@ -722,19 +722,19 @@
 
     add-int v7, p2, v5
 
-    .line 241
+    .line 251
     aget-short v7, p1, v7
 
     add-int v8, p2, p3
 
     add-int/2addr v8, v5
 
-    .line 242
+    .line 252
     aget-short v8, p1, v8
 
     sub-int/2addr v7, v8
 
-    .line 243
+    .line 253
     invoke-static {v7}, Ljava/lang/Math;->abs(I)I
 
     move-result v7
@@ -772,13 +772,13 @@
 
     goto :goto_0
 
-    .line 257
+    .line 267
     :cond_3
     div-int/2addr v0, v3
 
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minDiff:I
 
-    .line 258
+    .line 268
     div-int/2addr v4, v2
 
     iput v4, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxDiff:I
@@ -826,12 +826,12 @@
 
     float-to-int p3, v1
 
-    .line 424
+    .line 434
     iput p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->remainingInputToCopyFrameCount:I
 
     move p3, p4
 
-    .line 426
+    .line 436
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
@@ -839,14 +839,14 @@
 
     add-int v8, p4, p3
 
-    .line 427
+    .line 437
     invoke-direct {p0, v0, v1, v8}, Lcom/google/android/exoplayer2/audio/Sonic;->ensureSpaceForAdditionalFrames([SII)[S
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
-    .line 428
+    .line 438
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     mul-int v2, p2, v1
@@ -859,7 +859,7 @@
 
     invoke-static {p1, v2, v0, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 434
+    .line 444
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
@@ -880,7 +880,7 @@
 
     invoke-static/range {v0 .. v7}, Lcom/google/android/exoplayer2/audio/Sonic;->overlapAdd(II[SI[SI[SI)V
 
-    .line 443
+    .line 453
     iget p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     add-int/2addr p1, v8
@@ -893,22 +893,22 @@
 .method private interpolate([SIII)S
     .locals 2
 
-    .line 349
+    .line 359
     aget-short v0, p1, p2
 
-    .line 350
+    .line 360
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     add-int/2addr p2, v1
 
     aget-short p1, p1, p2
 
-    .line 351
+    .line 361
     iget p2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->newRatePosition:I
 
     mul-int p2, p2, p3
 
-    .line 352
+    .line 362
     iget p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->oldRatePosition:I
 
     mul-int v1, p3, p4
@@ -929,7 +929,7 @@
 
     add-int/2addr v0, p2
 
-    .line 356
+    .line 366
     div-int/2addr v0, p3
 
     int-to-short p1, v0
@@ -940,12 +940,12 @@
 .method private moveNewSamplesToPitchBuffer(I)V
     .locals 6
 
-    .line 323
+    .line 333
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     sub-int/2addr v0, p1
 
-    .line 324
+    .line 334
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchBuffer:[S
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchFrameCount:I
@@ -956,7 +956,7 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchBuffer:[S
 
-    .line 325
+    .line 335
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
@@ -971,10 +971,10 @@
 
     invoke-static {v2, v4, v1, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 331
+    .line 341
     iput p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
-    .line 332
+    .line 342
     iget p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchFrameCount:I
 
     add-int/2addr p1, v0
@@ -1011,7 +1011,7 @@
     :goto_1
     if-ge v5, p0, :cond_0
 
-    .line 498
+    .line 508
     aget-short v6, p4, v4
 
     sub-int v7, p0, v5
@@ -1056,7 +1056,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 267
+    .line 277
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->prevPeriod:I
 
     if-nez v1, :cond_0
@@ -1073,7 +1073,7 @@
     :cond_1
     mul-int/lit8 p1, p1, 0x2
 
-    .line 274
+    .line 284
     iget p2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->prevMinDiff:I
 
     mul-int/lit8 p2, p2, 0x3
@@ -1095,17 +1095,17 @@
 .method private processStreamInput()V
     .locals 8
 
-    .line 470
+    .line 480
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
-    .line 471
+    .line 481
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->speed:F
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitch:F
 
     div-float/2addr v1, v2
 
-    .line 472
+    .line 482
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->rate:F
 
     mul-float v3, v3, v2
@@ -1126,7 +1126,7 @@
 
     goto :goto_0
 
-    .line 476
+    .line 486
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
@@ -1136,12 +1136,12 @@
 
     invoke-direct {p0, v1, v4, v2}, Lcom/google/android/exoplayer2/audio/Sonic;->copyToOutput([SII)V
 
-    .line 477
+    .line 487
     iput v4, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
     goto :goto_1
 
-    .line 474
+    .line 484
     :cond_1
     :goto_0
     invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/audio/Sonic;->changeSpeed(F)V
@@ -1153,7 +1153,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 480
+    .line 490
     invoke-direct {p0, v3, v0}, Lcom/google/android/exoplayer2/audio/Sonic;->adjustRate(FI)V
 
     :cond_2
@@ -1167,7 +1167,7 @@
 
     return-void
 
-    .line 339
+    .line 349
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchBuffer:[S
 
@@ -1185,7 +1185,7 @@
 
     invoke-static {v0, v2, v0, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 345
+    .line 355
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchFrameCount:I
 
     sub-int/2addr v0, p1
@@ -1198,12 +1198,12 @@
 .method private removeProcessedInputFrames(I)V
     .locals 4
 
-    .line 190
+    .line 200
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
     sub-int/2addr v0, p1
 
-    .line 191
+    .line 201
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
@@ -1216,7 +1216,7 @@
 
     invoke-static {v1, p1, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 193
+    .line 203
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
     return-void
@@ -1256,12 +1256,12 @@
 
     float-to-int p3, v2
 
-    .line 401
+    .line 411
     iput p3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->remainingInputToCopyFrameCount:I
 
     move p3, p4
 
-    .line 403
+    .line 413
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
@@ -1273,7 +1273,7 @@
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
-    .line 404
+    .line 414
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
@@ -1290,7 +1290,7 @@
 
     invoke-static/range {v0 .. v7}, Lcom/google/android/exoplayer2/audio/Sonic;->overlapAdd(II[SI[SI[SI)V
 
-    .line 413
+    .line 423
     iget p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     add-int/2addr p1, p3
@@ -1307,34 +1307,34 @@
 
     const/4 v0, 0x0
 
-    .line 149
+    .line 159
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
-    .line 150
+    .line 160
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
-    .line 151
+    .line 161
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchFrameCount:I
 
-    .line 152
+    .line 162
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->oldRatePosition:I
 
-    .line 153
+    .line 163
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->newRatePosition:I
 
-    .line 154
+    .line 164
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->remainingInputToCopyFrameCount:I
 
-    .line 155
+    .line 165
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->prevPeriod:I
 
-    .line 156
+    .line 166
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->prevMinDiff:I
 
-    .line 157
+    .line 167
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->minDiff:I
 
-    .line 158
+    .line 168
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxDiff:I
 
     return-void
@@ -1343,7 +1343,7 @@
 .method public getOutput(Ljava/nio/ShortBuffer;)V
     .locals 4
 
-    .line 106
+    .line 116
     invoke-virtual {p1}, Ljava/nio/ShortBuffer;->remaining()I
 
     move-result v0
@@ -1358,7 +1358,7 @@
 
     move-result v0
 
-    .line 107
+    .line 117
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
@@ -1369,14 +1369,14 @@
 
     invoke-virtual {p1, v1, v3, v2}, Ljava/nio/ShortBuffer;->put([SII)Ljava/nio/ShortBuffer;
 
-    .line 108
+    .line 118
     iget p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     sub-int/2addr p1, v0
 
     iput p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
-    .line 109
+    .line 119
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputBuffer:[S
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
@@ -1393,8 +1393,23 @@
 .method public getOutputSize()I
     .locals 2
 
-    .line 163
+    .line 173
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
+
+    iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
+
+    mul-int v0, v0, v1
+
+    mul-int/lit8 v0, v0, 0x2
+
+    return v0
+.end method
+
+.method public getPendingInputBytes()I
+    .locals 2
+
+    .line 91
+    iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
 
@@ -1408,22 +1423,22 @@
 .method public queueEndOfStream()V
     .locals 7
 
-    .line 122
+    .line 132
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
-    .line 123
+    .line 133
     iget v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->speed:F
 
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitch:F
 
     div-float/2addr v1, v2
 
-    .line 124
+    .line 134
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->rate:F
 
     mul-float v3, v3, v2
 
-    .line 125
+    .line 135
     iget v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     int-to-float v4, v0
@@ -1446,7 +1461,7 @@
 
     add-int/2addr v2, v1
 
-    .line 129
+    .line 139
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxRequiredFrameCount:I
@@ -1455,7 +1470,7 @@
 
     add-int/2addr v3, v0
 
-    .line 130
+    .line 140
     invoke-direct {p0, v1, v0, v3}, Lcom/google/android/exoplayer2/audio/Sonic;->ensureSpaceForAdditionalFrames([SII)[S
 
     move-result-object v1
@@ -1466,7 +1481,7 @@
 
     const/4 v3, 0x0
 
-    .line 132
+    .line 142
     :goto_0
     iget v4, p0, Lcom/google/android/exoplayer2/audio/Sonic;->maxRequiredFrameCount:I
 
@@ -1478,7 +1493,7 @@
 
     if-ge v3, v5, :cond_0
 
-    .line 133
+    .line 143
     iget-object v4, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
     mul-int v6, v6, v0
@@ -1491,7 +1506,7 @@
 
     goto :goto_0
 
-    .line 135
+    .line 145
     :cond_0
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
@@ -1501,25 +1516,25 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
-    .line 136
+    .line 146
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/Sonic;->processStreamInput()V
 
-    .line 138
+    .line 148
     iget v0, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
     if-le v0, v2, :cond_1
 
-    .line 139
+    .line 149
     iput v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->outputFrameCount:I
 
-    .line 142
+    .line 152
     :cond_1
     iput v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
-    .line 143
+    .line 153
     iput v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->remainingInputToCopyFrameCount:I
 
-    .line 144
+    .line 154
     iput v1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->pitchFrameCount:I
 
     return-void
@@ -1528,7 +1543,7 @@
 .method public queueInput(Ljava/nio/ShortBuffer;)V
     .locals 5
 
-    .line 91
+    .line 101
     invoke-virtual {p1}, Ljava/nio/ShortBuffer;->remaining()I
 
     move-result v0
@@ -1541,7 +1556,7 @@
 
     mul-int/lit8 v1, v1, 0x2
 
-    .line 93
+    .line 103
     iget-object v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
@@ -1552,7 +1567,7 @@
 
     iput-object v2, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputBuffer:[S
 
-    .line 94
+    .line 104
     iget v3, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
     iget v4, p0, Lcom/google/android/exoplayer2/audio/Sonic;->channelCount:I
@@ -1563,14 +1578,14 @@
 
     invoke-virtual {p1, v2, v3, v1}, Ljava/nio/ShortBuffer;->get([SII)Ljava/nio/ShortBuffer;
 
-    .line 95
+    .line 105
     iget p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
     add-int/2addr p1, v0
 
     iput p1, p0, Lcom/google/android/exoplayer2/audio/Sonic;->inputFrameCount:I
 
-    .line 96
+    .line 106
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/Sonic;->processStreamInput()V
 
     return-void

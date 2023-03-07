@@ -6,6 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/exoplayer2/audio/AudioSink$SinkFormatSupport;,
+        Lcom/google/android/exoplayer2/audio/AudioSink$UnexpectedDiscontinuityException;,
         Lcom/google/android/exoplayer2/audio/AudioSink$WriteException;,
         Lcom/google/android/exoplayer2/audio/AudioSink$InitializationException;,
         Lcom/google/android/exoplayer2/audio/AudioSink$ConfigurationException;,
@@ -17,9 +19,15 @@
 # static fields
 .field public static final CURRENT_POSITION_NOT_SET:J = -0x8000000000000000L
 
+.field public static final SINK_FORMAT_SUPPORTED_DIRECTLY:I = 0x2
+
+.field public static final SINK_FORMAT_SUPPORTED_WITH_TRANSCODING:I = 0x1
+
+.field public static final SINK_FORMAT_UNSUPPORTED:I
+
 
 # virtual methods
-.method public abstract configure(IIII[III)V
+.method public abstract configure(Lcom/google/android/exoplayer2/Format;I[I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/audio/AudioSink$ConfigurationException;
@@ -30,19 +38,31 @@
 .method public abstract disableTunneling()V
 .end method
 
-.method public abstract enableTunnelingV21(I)V
+.method public abstract enableTunnelingV21()V
+.end method
+
+.method public abstract experimentalFlushWithoutAudioTrackRelease()V
 .end method
 
 .method public abstract flush()V
 .end method
 
+.method public abstract getAudioAttributes()Lcom/google/android/exoplayer2/audio/AudioAttributes;
+.end method
+
 .method public abstract getCurrentPositionUs(Z)J
+.end method
+
+.method public abstract getFormatSupport(Lcom/google/android/exoplayer2/Format;)I
 .end method
 
 .method public abstract getPlaybackParameters()Lcom/google/android/exoplayer2/PlaybackParameters;
 .end method
 
-.method public abstract handleBuffer(Ljava/nio/ByteBuffer;J)Z
+.method public abstract getSkipSilenceEnabled()Z
+.end method
+
+.method public abstract handleBuffer(Ljava/nio/ByteBuffer;JI)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/audio/AudioSink$InitializationException;,
@@ -89,11 +109,23 @@
 .method public abstract setListener(Lcom/google/android/exoplayer2/audio/AudioSink$Listener;)V
 .end method
 
+.method public abstract setOutputStreamOffsetUs(J)V
+.end method
+
 .method public abstract setPlaybackParameters(Lcom/google/android/exoplayer2/PlaybackParameters;)V
+.end method
+
+.method public abstract setPlayerId(Lcom/google/android/exoplayer2/analytics/PlayerId;)V
+.end method
+
+.method public abstract setPreferredDevice(Landroid/media/AudioDeviceInfo;)V
+.end method
+
+.method public abstract setSkipSilenceEnabled(Z)V
 .end method
 
 .method public abstract setVolume(F)V
 .end method
 
-.method public abstract supportsOutput(II)Z
+.method public abstract supportsFormat(Lcom/google/android/exoplayer2/Format;)Z
 .end method

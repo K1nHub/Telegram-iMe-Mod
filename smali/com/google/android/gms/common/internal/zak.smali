@@ -13,9 +13,6 @@
 .end field
 
 .field private final zab:Lcom/google/android/gms/common/internal/zaj;
-    .annotation runtime Lorg/checkerframework/checker/initialization/qual/NotOnlyInitialized;
-    .end annotation
-.end field
 
 .field private final zac:Ljava/util/ArrayList;
 

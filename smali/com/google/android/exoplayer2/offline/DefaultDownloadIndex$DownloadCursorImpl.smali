@@ -25,10 +25,10 @@
 .method private constructor <init>(Landroid/database/Cursor;)V
     .locals 0
 
-    .line 418
+    .line 548
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 419
+    .line 549
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
 
     return-void
@@ -37,7 +37,7 @@
 .method synthetic constructor <init>(Landroid/database/Cursor;Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$1;)V
     .locals 0
 
-    .line 414
+    .line 544
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;-><init>(Landroid/database/Cursor;)V
 
     return-void
@@ -48,7 +48,7 @@
 .method public close()V
     .locals 1
 
-    .line 444
+    .line 574
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
@@ -59,7 +59,7 @@
 .method public getCount()I
     .locals 1
 
-    .line 429
+    .line 559
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
@@ -72,7 +72,7 @@
 .method public getDownload()Lcom/google/android/exoplayer2/offline/Download;
     .locals 1
 
-    .line 424
+    .line 554
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex;->access$100(Landroid/database/Cursor;)Lcom/google/android/exoplayer2/offline/Download;
@@ -85,7 +85,7 @@
 .method public getPosition()I
     .locals 1
 
-    .line 434
+    .line 564
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->getPosition()I
@@ -118,7 +118,7 @@
 .method public isClosed()Z
     .locals 1
 
-    .line 449
+    .line 579
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->isClosed()Z
@@ -181,7 +181,7 @@
 .method public moveToPosition(I)Z
     .locals 1
 
-    .line 439
+    .line 569
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DefaultDownloadIndex$DownloadCursorImpl;->cursor:Landroid/database/Cursor;
 
     invoke-interface {v0, p1}, Landroid/database/Cursor;->moveToPosition(I)Z

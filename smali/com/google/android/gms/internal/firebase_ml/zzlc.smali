@@ -4,10 +4,19 @@
 
 # static fields
 .field private static final zzacl:Ljava/lang/Object;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 .field private static final zzacm:Ljava/lang/reflect/Method;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 .field private static final zzacn:Ljava/lang/reflect/Method;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -131,6 +140,9 @@
         }
     .end annotation
 
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+
     const/4 v0, 0x0
 
     :try_start_0
@@ -164,6 +176,8 @@
 
 .method private static zzhz()Ljava/lang/Object;
     .locals 5
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
 
     const/4 v0, 0x0
 
@@ -208,6 +222,8 @@
 
 .method private static zzia()Ljava/lang/reflect/Method;
     .locals 6
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
 
     const/4 v0, 0x0
 

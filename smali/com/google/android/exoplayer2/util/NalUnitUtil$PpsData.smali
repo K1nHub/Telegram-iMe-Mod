@@ -26,16 +26,16 @@
 .method public constructor <init>(IIZ)V
     .locals 0
 
-    .line 88
+    .line 143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 144
     iput p1, p0, Lcom/google/android/exoplayer2/util/NalUnitUtil$PpsData;->picParameterSetId:I
 
-    .line 90
+    .line 145
     iput p2, p0, Lcom/google/android/exoplayer2/util/NalUnitUtil$PpsData;->seqParameterSetId:I
 
-    .line 91
+    .line 146
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/util/NalUnitUtil$PpsData;->bottomFieldPicOrderInFramePresentFlag:Z
 
     return-void

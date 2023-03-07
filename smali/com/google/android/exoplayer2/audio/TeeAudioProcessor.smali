@@ -20,10 +20,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/audio/TeeAudioProcessor$AudioBufferSink;)V
     .locals 0
 
-    .line 62
+    .line 64
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;-><init>()V
 
-    .line 63
+    .line 65
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -38,14 +38,14 @@
 .method private flushSinkIfActive()V
     .locals 4
 
-    .line 98
+    .line 100
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->isActive()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 99
+    .line 101
     iget-object v0, p0, Lcom/google/android/exoplayer2/audio/TeeAudioProcessor;->audioBufferSink:Lcom/google/android/exoplayer2/audio/TeeAudioProcessor$AudioBufferSink;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->inputAudioFormat:Lcom/google/android/exoplayer2/audio/AudioProcessor$AudioFormat;
@@ -73,7 +73,7 @@
 .method protected onFlush()V
     .locals 0
 
-    .line 84
+    .line 86
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/TeeAudioProcessor;->flushSinkIfActive()V
 
     return-void
@@ -82,7 +82,7 @@
 .method protected onQueueEndOfStream()V
     .locals 0
 
-    .line 89
+    .line 91
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/TeeAudioProcessor;->flushSinkIfActive()V
 
     return-void
@@ -91,7 +91,7 @@
 .method protected onReset()V
     .locals 0
 
-    .line 94
+    .line 96
     invoke-direct {p0}, Lcom/google/android/exoplayer2/audio/TeeAudioProcessor;->flushSinkIfActive()V
 
     return-void
@@ -100,7 +100,7 @@
 .method public queueInput(Ljava/nio/ByteBuffer;)V
     .locals 3
 
-    .line 74
+    .line 76
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -109,7 +109,7 @@
 
     return-void
 
-    .line 78
+    .line 80
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/audio/TeeAudioProcessor;->audioBufferSink:Lcom/google/android/exoplayer2/audio/TeeAudioProcessor$AudioBufferSink;
 
@@ -119,7 +119,7 @@
 
     invoke-interface {v1, v2}, Lcom/google/android/exoplayer2/audio/TeeAudioProcessor$AudioBufferSink;->handleBuffer(Ljava/nio/ByteBuffer;)V
 
-    .line 79
+    .line 81
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/audio/BaseAudioProcessor;->replaceOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0

@@ -7,7 +7,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 29
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 
     return-void
 
-    .line 53
+    .line 54
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -58,7 +58,7 @@
 
     return p0
 
-    .line 68
+    .line 70
     :cond_0
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -70,7 +70,7 @@
 .method public static checkMainThread()V
     .locals 2
 
-    .line 212
+    .line 223
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -83,7 +83,7 @@
 
     return-void
 
-    .line 213
+    .line 224
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -96,13 +96,8 @@
 
 .method public static checkNotEmpty(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
 
-    .line 181
+    .line 190
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -111,7 +106,7 @@
 
     return-object p0
 
-    .line 182
+    .line 191
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -122,13 +117,8 @@
 
 .method public static checkNotEmpty(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
 
-    .line 199
+    .line 209
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -137,7 +127,7 @@
 
     return-object p0
 
-    .line 200
+    .line 210
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -160,13 +150,7 @@
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
-
-    .line 147
+    .line 154
     invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p0
@@ -184,17 +168,11 @@
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
-
     if-eqz p0, :cond_0
 
     return-object p0
 
-    .line 166
+    .line 174
     :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -214,7 +192,7 @@
 
     return-void
 
-    .line 81
+    .line 84
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -230,7 +208,7 @@
 
     return-void
 
-    .line 95
+    .line 99
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -253,17 +231,11 @@
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
-
     if-eqz p0, :cond_0
 
     return-object p0
 
-    .line 111
+    .line 116
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -284,17 +256,11 @@
         }
     .end annotation
 
-    .annotation runtime Lorg/checkerframework/checker/nullness/qual/EnsuresNonNull;
-        value = {
-            "#1"
-        }
-    .end annotation
-
     if-eqz p0, :cond_0
 
     return-object p0
 
-    .line 130
+    .line 136
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 

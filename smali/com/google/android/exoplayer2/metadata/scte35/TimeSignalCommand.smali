@@ -25,7 +25,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 78
+    .line 72
     new-instance v0, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand$1;-><init>()V
@@ -38,13 +38,13 @@
 .method private constructor <init>(JJ)V
     .locals 0
 
-    .line 37
+    .line 31
     invoke-direct {p0}, Lcom/google/android/exoplayer2/metadata/scte35/SpliceCommand;-><init>()V
 
-    .line 38
+    .line 32
     iput-wide p1, p0, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;->ptsTime:J
 
-    .line 39
+    .line 33
     iput-wide p3, p0, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;->playbackPositionUs:J
 
     return-void
@@ -53,7 +53,7 @@
 .method synthetic constructor <init>(JJLcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand$1;)V
     .locals 0
 
-    .line 26
+    .line 24
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;-><init>(JJ)V
 
     return-void
@@ -62,17 +62,17 @@
 .method static parseFromSection(Lcom/google/android/exoplayer2/util/ParsableByteArray;JLcom/google/android/exoplayer2/util/TimestampAdjuster;)Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;
     .locals 1
 
-    .line 44
+    .line 38
     invoke-static {p0, p1, p2}, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;->parseSpliceTime(Lcom/google/android/exoplayer2/util/ParsableByteArray;J)J
 
     move-result-wide p0
 
-    .line 45
+    .line 39
     invoke-virtual {p3, p0, p1}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->adjustTsTimestamp(J)J
 
     move-result-wide p2
 
-    .line 46
+    .line 40
     new-instance v0, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;-><init>(JJ)V
@@ -83,7 +83,7 @@
 .method static parseSpliceTime(Lcom/google/android/exoplayer2/util/ParsableByteArray;J)J
     .locals 7
 
-    .line 59
+    .line 53
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
@@ -108,7 +108,7 @@
 
     shl-long/2addr v0, v2
 
-    .line 63
+    .line 57
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v2
@@ -135,12 +135,12 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    .line 74
+    .line 68
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;->ptsTime:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 75
+    .line 69
     iget-wide v0, p0, Lcom/google/android/exoplayer2/metadata/scte35/TimeSignalCommand;->playbackPositionUs:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V

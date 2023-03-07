@@ -23,3 +23,6 @@
 
 .method public abstract getWrappedMetadataFormat()Lcom/google/android/exoplayer2/Format;
 .end method
+
+.method public abstract populateMediaMetadata(Lcom/google/android/exoplayer2/MediaMetadata$Builder;)V
+.end method

@@ -14,12 +14,19 @@
 .end annotation
 
 
+# instance fields
+.field public final errorCode:I
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;)V
+.method public constructor <init>(Ljava/lang/Throwable;I)V
     .locals 0
 
-    .line 55
+    .line 69
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    .line 70
+    iput p2, p0, Lcom/google/android/exoplayer2/drm/DrmSession$DrmSessionException;->errorCode:I
 
     return-void
 .end method

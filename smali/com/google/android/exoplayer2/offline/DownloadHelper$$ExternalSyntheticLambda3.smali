@@ -2,38 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/exoplayer2/trackselection/TrackSelector$InvalidationListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lcom/google/android/exoplayer2/offline/DownloadHelper;
-
-.field public final synthetic f$1:Ljava/io/IOException;
+# static fields
+.field public static final synthetic INSTANCE:Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/exoplayer2/offline/DownloadHelper;Ljava/io/IOException;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;-><init>()V
+
+    sput-object v0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;->INSTANCE:Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;->f$0:Lcom/google/android/exoplayer2/offline/DownloadHelper;
-
-    iput-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;->f$1:Ljava/io/IOException;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final onTrackSelectionsInvalidated()V
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;->f$0:Lcom/google/android/exoplayer2/offline/DownloadHelper;
-
-    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadHelper$$ExternalSyntheticLambda3;->f$1:Ljava/io/IOException;
-
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/offline/DownloadHelper;->$r8$lambda$ZtQB7ZNMtMysfIPEcv9Zd5T21rg(Lcom/google/android/exoplayer2/offline/DownloadHelper;Ljava/io/IOException;)V
+    invoke-static {}, Lcom/google/android/exoplayer2/offline/DownloadHelper;->$r8$lambda$No6hHk5oE1HQ-shDhmuOwRKi3BA()V
 
     return-void
 .end method

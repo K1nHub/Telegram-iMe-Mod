@@ -59,7 +59,7 @@
 
     const-string v0, "\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d+))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d+))?)\\s*"
 
-    .line 47
+    .line 48
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     const-string v0, "\\{\\\\.*?\\}"
 
-    .line 50
+    .line 51
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -83,17 +83,17 @@
 
     const-string v0, "SubripDecoder"
 
-    .line 68
+    .line 69
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/text/SimpleSubtitleDecoder;-><init>(Ljava/lang/String;)V
 
-    .line 69
+    .line 70
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
 
-    .line 70
+    .line 71
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -104,28 +104,35 @@
 .end method
 
 .method private buildCue(Landroid/text/Spanned;Ljava/lang/String;)Lcom/google/android/exoplayer2/text/Cue;
-    .locals 18
+    .locals 16
 
     move-object/from16 v0, p2
 
-    if-nez v0, :cond_0
+    .line 186
+    new-instance v1, Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    .line 177
-    new-instance v0, Lcom/google/android/exoplayer2/text/Cue;
+    invoke-direct {v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;-><init>()V
 
     move-object/from16 v2, p1
 
-    invoke-direct {v0, v2}, Lcom/google/android/exoplayer2/text/Cue;-><init>(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setText(Ljava/lang/CharSequence;)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v1
+
+    if-nez v0, :cond_0
+
+    .line 188
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->build()Lcom/google/android/exoplayer2/text/Cue;
+
+    move-result-object v0
 
     return-object v0
 
+    .line 192
     :cond_0
-    move-object/from16 v2, p1
-
-    .line 182
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->hashCode()I
 
-    move-result v1
+    move-result v2
 
     const-string v6, "{\\an9}"
 
@@ -145,8 +152,6 @@
 
     const-string v14, "{\\an1}"
 
-    const/16 v16, 0x0
-
     const/4 v4, 0x4
 
     const/4 v5, 0x3
@@ -155,147 +160,152 @@
 
     const/4 v3, 0x1
 
-    sparse-switch v1, :sswitch_data_0
+    sparse-switch v2, :sswitch_data_0
 
     goto :goto_0
 
     :sswitch_0
     invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x5
+    const/4 v2, 0x5
 
     goto :goto_1
 
     :sswitch_1
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/16 v1, 0x8
+    const/16 v2, 0x8
 
     goto :goto_1
 
     :sswitch_2
     invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
     goto :goto_1
 
     :sswitch_3
     invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
     goto :goto_1
 
     :sswitch_4
     invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x7
+    const/4 v2, 0x7
 
     goto :goto_1
 
     :sswitch_5
     invoke-virtual {v0, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     goto :goto_1
 
     :sswitch_6
     invoke-virtual {v0, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x3
+    const/4 v2, 0x3
 
     goto :goto_1
 
     :sswitch_7
     invoke-virtual {v0, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x6
+    const/4 v2, 0x6
 
     goto :goto_1
 
     :sswitch_8
     invoke-virtual {v0, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v1, -0x1
+    const/4 v2, -0x1
 
     :goto_1
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
-    if-eq v1, v3, :cond_3
+    if-eq v2, v3, :cond_3
 
-    if-eq v1, v15, :cond_3
+    if-eq v2, v15, :cond_3
 
-    if-eq v1, v5, :cond_2
+    if-eq v2, v5, :cond_2
 
-    if-eq v1, v4, :cond_2
+    if-eq v2, v4, :cond_2
 
     const/4 v4, 0x5
 
-    if-eq v1, v4, :cond_2
+    if-eq v2, v4, :cond_2
 
-    const/16 v17, 0x1
+    .line 207
+    invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPositionAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
     goto :goto_2
 
+    .line 201
     :cond_2
-    const/16 v17, 0x2
+    invoke-virtual {v1, v15}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPositionAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
     goto :goto_2
 
     :cond_3
-    const/16 v17, 0x0
+    const/4 v2, 0x0
 
-    .line 203
+    .line 196
+    invoke-virtual {v1, v2}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPositionAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    .line 212
     :goto_2
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->hashCode()I
 
-    move-result v1
+    move-result v2
 
-    sparse-switch v1, :sswitch_data_1
+    sparse-switch v2, :sswitch_data_1
 
     goto :goto_3
 
@@ -411,55 +421,68 @@
 
     if-eq v0, v5, :cond_5
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    if-eq v0, v1, :cond_5
+    if-eq v0, v2, :cond_5
 
-    const/4 v1, 0x5
+    const/4 v2, 0x5
 
-    if-eq v0, v1, :cond_5
+    if-eq v0, v2, :cond_5
 
-    const/4 v6, 0x1
+    .line 227
+    invoke-virtual {v1, v3}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLineAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
     goto :goto_5
 
     :cond_5
-    const/4 v6, 0x0
+    const/4 v0, 0x0
+
+    .line 221
+    invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLineAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
     goto :goto_5
 
+    .line 216
     :cond_6
-    const/4 v6, 0x2
+    invoke-virtual {v1, v15}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLineAnchor(I)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    .line 222
+    .line 231
     :goto_5
-    new-instance v0, Lcom/google/android/exoplayer2/text/Cue;
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->getPositionAnchor()I
 
-    const/4 v3, 0x0
+    move-result v0
 
-    .line 225
-    invoke-static {v6}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->getFractionalPositionForAnchorType(I)F
+    invoke-static {v0}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->getFractionalPositionForAnchorType(I)F
 
-    move-result v4
+    move-result v0
 
-    const/4 v5, 0x0
+    invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setPosition(F)Lcom/google/android/exoplayer2/text/Cue$Builder;
 
-    .line 228
-    invoke-static/range {v17 .. v17}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->getFractionalPositionForAnchorType(I)F
+    move-result-object v0
 
-    move-result v7
+    .line 232
+    invoke-virtual {v1}, Lcom/google/android/exoplayer2/text/Cue$Builder;->getLineAnchor()I
 
-    const v9, -0x800001
+    move-result v1
 
-    move-object v1, v0
+    invoke-static {v1}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->getFractionalPositionForAnchorType(I)F
 
-    move-object/from16 v2, p1
+    move-result v1
 
-    move/from16 v8, v17
+    const/4 v2, 0x0
 
-    invoke-direct/range {v1 .. v9}, Lcom/google/android/exoplayer2/text/Cue;-><init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;FIIFIF)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/exoplayer2/text/Cue$Builder;->setLine(FI)Lcom/google/android/exoplayer2/text/Cue$Builder;
+
+    move-result-object v0
+
+    .line 233
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/text/Cue$Builder;->build()Lcom/google/android/exoplayer2/text/Cue;
+
+    move-result-object v0
 
     return-object v0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -488,6 +511,26 @@
     .end sparse-switch
 .end method
 
+.method private detectUtfCharset(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Ljava/nio/charset/Charset;
+    .locals 0
+
+    .line 149
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUtfCharsetFromBom()Ljava/nio/charset/Charset;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    .line 150
+    :cond_0
+    sget-object p1, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    :goto_0
+    return-object p1
+.end method
+
 .method static getFractionalPositionForAnchorType(I)F
     .locals 1
 
@@ -505,7 +548,7 @@
 
     return p0
 
-    .line 256
+    .line 260
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -529,7 +572,7 @@
 
     add-int/lit8 v0, p1, 0x1
 
-    .line 234
+    .line 237
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
@@ -540,7 +583,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 235
+    .line 238
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v5
@@ -559,10 +602,16 @@
     :goto_0
     add-int/lit8 v0, p1, 0x2
 
-    .line 236
+    .line 240
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
@@ -576,10 +625,16 @@
 
     add-int/lit8 v0, p1, 0x3
 
-    .line 237
+    .line 241
     invoke-virtual {p0, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
@@ -591,14 +646,14 @@
 
     add-int/lit8 p1, p1, 0x4
 
-    .line 238
+    .line 242
     invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object p0
 
     if-eqz p0, :cond_1
 
-    .line 240
+    .line 244
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide p0
@@ -624,17 +679,17 @@
         }
     .end annotation
 
-    .line 151
+    .line 161
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 154
+    .line 164
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 155
+    .line 165
     sget-object v1, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->SUBRIP_TAG_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -643,7 +698,7 @@
 
     const/4 v1, 0x0
 
-    .line 156
+    .line 166
     :goto_0
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
 
@@ -651,22 +706,22 @@
 
     if-eqz v2, :cond_0
 
-    .line 157
+    .line 167
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 158
+    .line 168
     invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 159
+    .line 169
     invoke-virtual {p1}, Ljava/util/regex/Matcher;->start()I
 
     move-result v3
 
     sub-int/2addr v3, v1
 
-    .line 160
+    .line 170
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -675,14 +730,14 @@
 
     const-string v5, ""
 
-    .line 161
+    .line 171
     invoke-virtual {v0, v3, v4, v5}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
     add-int/2addr v1, v2
 
     goto :goto_0
 
-    .line 165
+    .line 175
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -694,281 +749,285 @@
 
 # virtual methods
 .method protected decode([BIZ)Lcom/google/android/exoplayer2/text/Subtitle;
-    .locals 6
+    .locals 7
 
     const-string p3, "SubripDecoder"
 
-    .line 75
+    .line 76
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 76
+    .line 77
     new-instance v1, Lcom/google/android/exoplayer2/util/LongArray;
 
     invoke-direct {v1}, Lcom/google/android/exoplayer2/util/LongArray;-><init>()V
 
-    .line 77
+    .line 78
     new-instance v2, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v2, p1, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([BI)V
 
-    .line 80
-    :goto_0
-    invoke-virtual {v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
+    .line 79
+    invoke-direct {p0, v2}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->detectUtfCharset(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Ljava/nio/charset/Charset;
 
     move-result-object p1
 
-    if-eqz p1, :cond_7
+    .line 82
+    :goto_0
+    invoke-virtual {v2, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine(Ljava/nio/charset/Charset;)Ljava/lang/String;
 
-    .line 81
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    move-result-object p2
 
-    move-result p2
+    const/4 v3, 0x0
 
-    if-nez p2, :cond_0
+    if-eqz p2, :cond_7
+
+    .line 83
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    if-nez v4, :cond_0
 
     goto :goto_0
 
-    .line 88
+    .line 90
     :cond_0
     :try_start_0
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 95
-    invoke-virtual {v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
+    .line 97
+    invoke-virtual {v2, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine(Ljava/nio/charset/Charset;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p2
 
-    if-nez p1, :cond_1
+    if-nez p2, :cond_1
 
     const-string p1, "Unexpected end"
 
-    .line 97
+    .line 99
     invoke-static {p3, p1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_4
 
-    .line 101
-    :cond_1
-    sget-object p2, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->SUBRIP_TIMING_LINE:Ljava/util/regex/Pattern;
-
-    invoke-virtual {p2, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object p2
-
-    .line 102
-    invoke-virtual {p2}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    const/4 p1, 0x1
-
     .line 103
-    invoke-static {p2, p1}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->parseTimecode(Ljava/util/regex/Matcher;I)J
+    :cond_1
+    sget-object v4, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->SUBRIP_TIMING_LINE:Ljava/util/regex/Pattern;
 
-    move-result-wide v3
-
-    invoke-virtual {v1, v3, v4}, Lcom/google/android/exoplayer2/util/LongArray;->add(J)V
-
-    const/4 p1, 0x6
-
-    .line 104
-    invoke-static {p2, p1}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->parseTimecode(Ljava/util/regex/Matcher;I)J
-
-    move-result-wide p1
-
-    invoke-virtual {v1, p1, p2}, Lcom/google/android/exoplayer2/util/LongArray;->add(J)V
-
-    .line 111
-    iget-object p1, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->setLength(I)V
-
-    .line 112
-    iget-object p1, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
-
-    .line 113
-    invoke-virtual {v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 114
-    :goto_1
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    .line 115
-    iget-object v3, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v3
-
-    if-lez v3, :cond_2
-
-    .line 116
-    iget-object v3, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
-
-    const-string v4, "<br>"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 118
-    :cond_2
-    iget-object v3, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
-
-    iget-object v4, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
-
-    invoke-direct {p0, p1, v4}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->processLine(Ljava/lang/String;Ljava/util/ArrayList;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 119
-    invoke-virtual {v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    .line 122
-    :cond_3
-    iget-object p1, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
-
-    move-result-object p1
-
-    const/4 v3, 0x0
-
-    .line 125
-    :goto_2
-    iget-object v4, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    if-ge p2, v4, :cond_5
-
-    .line 126
-    iget-object v4, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v4
 
-    check-cast v4, Ljava/lang/String;
-
-    const-string v5, "\\{\\\\an[1-9]\\}"
-
-    .line 127
-    invoke-virtual {v4, v5}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+    .line 104
+    invoke-virtual {v4}, Ljava/util/regex/Matcher;->matches()Z
 
     move-result v5
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_6
 
-    move-object v3, v4
+    const/4 p2, 0x1
+
+    .line 105
+    invoke-static {v4, p2}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->parseTimecode(Ljava/util/regex/Matcher;I)J
+
+    move-result-wide v5
+
+    invoke-virtual {v1, v5, v6}, Lcom/google/android/exoplayer2/util/LongArray;->add(J)V
+
+    const/4 p2, 0x6
+
+    .line 106
+    invoke-static {v4, p2}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->parseTimecode(Ljava/util/regex/Matcher;I)J
+
+    move-result-wide v4
+
+    invoke-virtual {v1, v4, v5}, Lcom/google/android/exoplayer2/util/LongArray;->add(J)V
+
+    .line 113
+    iget-object p2, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->setLength(I)V
+
+    .line 114
+    iget-object p2, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->clear()V
+
+    .line 115
+    invoke-virtual {v2, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine(Ljava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 116
+    :goto_1
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_3
+
+    .line 117
+    iget-object v4, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v4
+
+    if-lez v4, :cond_2
+
+    .line 118
+    iget-object v4, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
+
+    const-string v5, "<br>"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 120
+    :cond_2
+    iget-object v4, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
+
+    iget-object v5, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
+
+    invoke-direct {p0, p2, v5}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->processLine(Ljava/lang/String;Ljava/util/ArrayList;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 121
+    invoke-virtual {v2, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLine(Ljava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_1
+
+    .line 124
+    :cond_3
+    iget-object p2, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->textBuilder:Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p2}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
+
+    move-result-object p2
+
+    const/4 v4, 0x0
+
+    .line 127
+    :goto_2
+    iget-object v5, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
+
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v5
+
+    if-ge v3, v5, :cond_5
+
+    .line 128
+    iget-object v5, p0, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->tags:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
+    const-string v6, "\\{\\\\an[1-9]\\}"
+
+    .line 129
+    invoke-virtual {v5, v6}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    move-object v4, v5
 
     goto :goto_3
 
     :cond_4
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 133
+    .line 135
     :cond_5
     :goto_3
-    invoke-direct {p0, p1, v3}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->buildCue(Landroid/text/Spanned;Ljava/lang/String;)Lcom/google/android/exoplayer2/text/Cue;
+    invoke-direct {p0, p2, v4}, Lcom/google/android/exoplayer2/text/subrip/SubripDecoder;->buildCue(Landroid/text/Spanned;Ljava/lang/String;)Lcom/google/android/exoplayer2/text/Cue;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 134
-    sget-object p1, Lcom/google/android/exoplayer2/text/Cue;->EMPTY:Lcom/google/android/exoplayer2/text/Cue;
+    .line 136
+    sget-object p2, Lcom/google/android/exoplayer2/text/Cue;->EMPTY:Lcom/google/android/exoplayer2/text/Cue;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
-    .line 106
+    .line 108
     :cond_6
-    new-instance p2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Skipping invalid timing: "
+    const-string v4, "Skipping invalid timing: "
 
-    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-static {p3, p1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p3, p2}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 90
+    .line 92
     :catch_0
-    new-instance p2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "Skipping invalid index: "
+    const-string v4, "Skipping invalid index: "
 
-    invoke-virtual {p2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-static {p3, p1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p3, p2}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 137
     :cond_7
     :goto_4
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    new-array p1, p1, [Lcom/google/android/exoplayer2/text/Cue;
-
-    .line 138
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    new-array p1, v3, [Lcom/google/android/exoplayer2/text/Cue;
 
     .line 139
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Lcom/google/android/exoplayer2/text/Cue;
+
+    .line 140
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/LongArray;->toArray()[J
 
     move-result-object p2
 
-    .line 140
+    .line 141
     new-instance p3, Lcom/google/android/exoplayer2/text/subrip/SubripSubtitle;
 
     invoke-direct {p3, p1, p2}, Lcom/google/android/exoplayer2/text/subrip/SubripSubtitle;-><init>([Lcom/google/android/exoplayer2/text/Cue;[J)V

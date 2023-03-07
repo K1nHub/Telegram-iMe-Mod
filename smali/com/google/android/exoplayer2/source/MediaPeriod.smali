@@ -35,7 +35,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lcom/google/android/exoplayer2/trackselection/TrackSelection;",
+            "Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;",
             ">;)",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/offline/StreamKey;",
@@ -70,5 +70,5 @@
 .method public abstract seekToUs(J)J
 .end method
 
-.method public abstract selectTracks([Lcom/google/android/exoplayer2/trackselection/TrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
+.method public abstract selectTracks([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;[Z[Lcom/google/android/exoplayer2/source/SampleStream;[ZJ)J
 .end method

@@ -30,7 +30,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1377
+    .line 1363
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(Lcom/google/android/exoplayer2/source/dash/DashMediaSource$1;)V
     .locals 0
 
-    .line 1377
+    .line 1363
     invoke-direct {p0}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$XsDateTimeParser;-><init>()V
 
     return-void
@@ -55,7 +55,7 @@
         }
     .end annotation
 
-    .line 1381
+    .line 1367
     new-instance p1, Ljava/io/BufferedReader;
 
     new-instance v0, Ljava/io/InputStreamReader;
@@ -68,7 +68,7 @@
 
     move-result-object p1
 
-    .line 1382
+    .line 1368
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->parseXsDateTime(Ljava/lang/String;)J
 
     move-result-wide p1
@@ -88,7 +88,7 @@
         }
     .end annotation
 
-    .line 1377
+    .line 1363
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/source/dash/DashMediaSource$XsDateTimeParser;->parse(Landroid/net/Uri;Ljava/io/InputStream;)Ljava/lang/Long;
 
     move-result-object p1

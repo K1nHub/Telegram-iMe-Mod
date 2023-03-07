@@ -1,0 +1,84 @@
+package org.bouncycastle.asn1.nist;
+
+import com.google.android.exoplayer2.metadata.icy.IcyHeaders;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
+/* loaded from: classes4.dex */
+public interface NISTObjectIdentifiers {
+    public static final ASN1ObjectIdentifier aes;
+    public static final ASN1ObjectIdentifier hashAlgs;
+    public static final ASN1ObjectIdentifier id_sha224;
+    public static final ASN1ObjectIdentifier id_sha256;
+    public static final ASN1ObjectIdentifier id_sha384;
+    public static final ASN1ObjectIdentifier id_sha512;
+    public static final ASN1ObjectIdentifier id_shake128;
+    public static final ASN1ObjectIdentifier id_shake256;
+    public static final ASN1ObjectIdentifier nistAlgorithm;
+    public static final ASN1ObjectIdentifier sigAlgs;
+
+    static {
+        ASN1ObjectIdentifier aSN1ObjectIdentifier = new ASN1ObjectIdentifier("2.16.840.1.101.3.4");
+        nistAlgorithm = aSN1ObjectIdentifier;
+        ASN1ObjectIdentifier branch = aSN1ObjectIdentifier.branch("2");
+        hashAlgs = branch;
+        id_sha256 = branch.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);
+        id_sha384 = branch.branch("2");
+        id_sha512 = branch.branch("3");
+        id_sha224 = branch.branch("4");
+        branch.branch("5");
+        branch.branch("6");
+        branch.branch("7");
+        branch.branch("8");
+        branch.branch("9");
+        branch.branch("10");
+        id_shake128 = branch.branch("11");
+        id_shake256 = branch.branch("12");
+        branch.branch("13");
+        branch.branch("14");
+        branch.branch("15");
+        branch.branch("16");
+        ASN1ObjectIdentifier branch2 = aSN1ObjectIdentifier.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);
+        aes = branch2;
+        branch2.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);
+        branch2.branch("2");
+        branch2.branch("3");
+        branch2.branch("4");
+        branch2.branch("5");
+        branch2.branch("6");
+        branch2.branch("7");
+        branch2.branch("8");
+        branch2.branch("21");
+        branch2.branch("22");
+        branch2.branch("23");
+        branch2.branch("24");
+        branch2.branch("25");
+        branch2.branch("26");
+        branch2.branch("27");
+        branch2.branch("28");
+        branch2.branch("41");
+        branch2.branch("42");
+        branch2.branch("43");
+        branch2.branch("44");
+        branch2.branch("45");
+        branch2.branch("46");
+        branch2.branch("47");
+        branch2.branch("48");
+        ASN1ObjectIdentifier branch3 = aSN1ObjectIdentifier.branch("3");
+        sigAlgs = branch3;
+        branch3.branch(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE);
+        branch3.branch("2");
+        branch3.branch("3");
+        branch3.branch("4");
+        branch3.branch("5");
+        branch3.branch("6");
+        branch3.branch("7");
+        branch3.branch("8");
+        branch3.branch("9");
+        branch3.branch("10");
+        branch3.branch("11");
+        branch3.branch("12");
+        branch3.branch("13");
+        branch3.branch("14");
+        branch3.branch("15");
+        branch3.branch("16");
+    }
+}

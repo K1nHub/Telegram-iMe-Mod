@@ -36,10 +36,17 @@
         }
     .end annotation
 
-    .line 60
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 55
+    invoke-static {}, Lcom/google/android/exoplayer2/ext/flac/FlacLibrary;->isAvailable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 58
     invoke-direct {p0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacInit()J
 
     move-result-wide v0
@@ -54,7 +61,7 @@
 
     return-void
 
-    .line 63
+    .line 60
     :cond_0
     new-instance v0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderException;
 
@@ -63,13 +70,22 @@
     invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    .line 56
+    :cond_1
+    new-instance v0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderException;
+
+    const-string v1, "Failed to load decoder native libraries."
+
+    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
-.method private native flacDecodeMetadata(J)Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+.method private native flacDecodeMetadata(J)Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -77,8 +93,7 @@
 .method private native flacDecodeToArray(J[B)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -86,8 +101,7 @@
 .method private native flacDecodeToBuffer(JLjava/nio/ByteBuffer;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 .end method
@@ -129,12 +143,11 @@
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 274
+    .line 268
     invoke-interface {p1, p2, p3, p4}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->read([BII)I
 
     move-result p1
@@ -145,7 +158,7 @@
 
     const/4 p1, 0x1
 
-    .line 276
+    .line 270
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->endOfExtractorInput:Z
 
     const/4 p1, 0x0
@@ -161,10 +174,10 @@
 
     const/4 v0, 0x0
 
-    .line 106
+    .line 103
     iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
-    .line 107
+    .line 104
     iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->extractorInput:Lcom/google/android/exoplayer2/extractor/ExtractorInput;
 
     return-void
@@ -175,22 +188,21 @@
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;,
             Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni$FlacFrameDecodeException;
         }
     .end annotation
 
-    .line 185
+    .line 182
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 187
+    .line 184
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 188
+    .line 185
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1, p1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacDecodeToBuffer(JLjava/nio/ByteBuffer;)I
@@ -199,7 +211,7 @@
 
     goto :goto_0
 
-    .line 189
+    .line 186
     :cond_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
@@ -214,7 +226,7 @@
     :goto_0
     if-gez v0, :cond_2
 
-    .line 191
+    .line 188
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->isDecoderAtEndOfInput()Z
 
     move-result v1
@@ -223,12 +235,12 @@
 
     const/4 v0, 0x0
 
-    .line 195
+    .line 192
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     goto :goto_1
 
-    .line 192
+    .line 189
     :cond_1
     new-instance p1, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni$FlacFrameDecodeException;
 
@@ -238,7 +250,7 @@
 
     throw p1
 
-    .line 197
+    .line 194
     :cond_2
     invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
@@ -250,13 +262,12 @@
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/lang/InterruptedException;,
             Ljava/io/IOException;,
             Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni$FlacFrameDecodeException;
         }
     .end annotation
 
-    .line 169
+    .line 167
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->decodeSample(Ljava/nio/ByteBuffer;)V
     :try_end_0
@@ -273,35 +284,34 @@
 
     if-ltz v2, :cond_0
 
-    .line 172
+    .line 170
     invoke-virtual {p0, p2, p3}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->reset(J)V
 
-    .line 173
+    .line 171
     iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->extractorInput:Lcom/google/android/exoplayer2/extractor/ExtractorInput;
 
     if-eqz v0, :cond_0
 
-    .line 174
+    .line 172
     invoke-interface {v0, p2, p3, p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->setRetryPosition(JLjava/lang/Throwable;)V
 
-    .line 177
+    .line 175
     :cond_0
     throw p1
 .end method
 
-.method public decodeStreamMetadata()Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+.method public decodeStreamMetadata()Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 152
+    .line 149
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
-    invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacDecodeMetadata(J)Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacDecodeMetadata(J)Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
     move-result-object v0
 
@@ -309,13 +319,15 @@
 
     return-object v0
 
-    .line 154
     :cond_0
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
+    const/4 v0, 0x0
 
     const-string v1, "Failed to decode stream metadata"
 
-    invoke-direct {v0, v1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 151
+    invoke-static {v1, v0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object v0
 
     throw v0
 .end method
@@ -323,7 +335,7 @@
 .method public flush()V
     .locals 2
 
-    .line 255
+    .line 250
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacFlush(J)V
@@ -334,7 +346,7 @@
 .method public getDecodePosition()J
     .locals 2
 
-    .line 205
+    .line 200
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacGetDecodePosition(J)J
@@ -347,7 +359,7 @@
 .method public getLastFrameFirstSampleIndex()J
     .locals 2
 
-    .line 215
+    .line 210
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacGetLastFrameFirstSampleIndex(J)J
@@ -360,7 +372,7 @@
 .method public getLastFrameTimestamp()J
     .locals 2
 
-    .line 210
+    .line 205
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacGetLastFrameTimestamp(J)J
@@ -373,7 +385,7 @@
 .method public getNextFrameFirstSampleIndex()J
     .locals 2
 
-    .line 220
+    .line 215
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacGetNextFrameFirstSampleIndex(J)J
@@ -390,7 +402,7 @@
 
     new-array v0, v0, [J
 
-    .line 234
+    .line 229
     iget-wide v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     move-object v1, p0
@@ -409,7 +421,7 @@
 
     return-object p1
 
-    .line 237
+    .line 232
     :cond_0
     new-instance p1, Lcom/google/android/exoplayer2/extractor/SeekPoint;
 
@@ -425,7 +437,7 @@
 
     const/4 v1, 0x2
 
-    .line 239
+    .line 234
     aget-wide v2, v0, v1
 
     aget-wide v4, v0, p2
@@ -438,7 +450,7 @@
 
     goto :goto_0
 
-    .line 241
+    .line 236
     :cond_1
     new-instance p2, Lcom/google/android/exoplayer2/extractor/SeekPoint;
 
@@ -450,7 +462,7 @@
 
     invoke-direct {p2, v1, v2, v3, v4}, Lcom/google/android/exoplayer2/extractor/SeekPoint;-><init>(JJ)V
 
-    .line 242
+    .line 237
     :goto_0
     new-instance v0, Lcom/google/android/exoplayer2/extractor/SeekMap$SeekPoints;
 
@@ -462,7 +474,7 @@
 .method public getStateString()Ljava/lang/String;
     .locals 2
 
-    .line 246
+    .line 241
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacGetStateString(J)Ljava/lang/String;
@@ -475,7 +487,7 @@
 .method public isDecoderAtEndOfInput()Z
     .locals 2
 
-    .line 251
+    .line 246
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacIsDecoderAtEndOfStream(J)Z
@@ -488,14 +500,14 @@
 .method public isEndOfData()Z
     .locals 2
 
-    .line 95
+    .line 92
     iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 96
+    .line 93
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -510,13 +522,13 @@
     :goto_0
     return v1
 
-    .line 97
+    .line 94
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->extractorInput:Lcom/google/android/exoplayer2/extractor/ExtractorInput;
 
     if-eqz v0, :cond_2
 
-    .line 98
+    .line 95
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->endOfExtractorInput:Z
 
     return v0
@@ -529,22 +541,21 @@
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 122
+    .line 119
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
 
-    .line 123
+    .line 120
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
     if-eqz v1, :cond_0
 
-    .line 124
+    .line 121
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v1
@@ -553,14 +564,14 @@
 
     move-result v0
 
-    .line 125
+    .line 122
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v1
 
-    .line 126
+    .line 123
     iget-object v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->position()I
@@ -571,25 +582,25 @@
 
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 127
+    .line 124
     iget-object v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    .line 128
+    .line 125
     iget-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     goto :goto_0
 
-    .line 129
+    .line 126
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->extractorInput:Lcom/google/android/exoplayer2/extractor/ExtractorInput;
 
     if-eqz v1, :cond_2
 
-    .line 131
+    .line 128
     iget-object v2, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->tempBuffer:[B
 
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -600,14 +611,14 @@
 
     const/16 v3, 0x2000
 
-    .line 132
+    .line 129
     invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
     const/4 v3, 0x0
 
-    .line 133
+    .line 130
     invoke-direct {p0, v1, v2, v3, v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->readFromExtractorInput(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[BII)I
 
     move-result v4
@@ -618,7 +629,7 @@
 
     sub-int/2addr v0, v4
 
-    .line 139
+    .line 136
     invoke-direct {p0, v1, v2, v4, v0}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->readFromExtractorInput(Lcom/google/android/exoplayer2/extractor/ExtractorInput;[BII)I
 
     move-result v0
@@ -628,7 +639,7 @@
     :cond_1
     move v0, v4
 
-    .line 143
+    .line 140
     invoke-virtual {p1, v2, v3, v0}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     :goto_0
@@ -643,7 +654,7 @@
 .method public release()V
     .locals 2
 
-    .line 268
+    .line 263
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacRelease(J)V
@@ -654,7 +665,7 @@
 .method public reset(J)V
     .locals 2
 
-    .line 264
+    .line 259
     iget-wide v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->nativeDecoderContext:J
 
     invoke-direct {p0, v0, v1, p1, p2}, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->flacReset(JJ)V
@@ -667,18 +678,18 @@
 
     const/4 v0, 0x0
 
-    .line 83
+    .line 80
     iput-object v0, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
-    .line 84
+    .line 81
     iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->extractorInput:Lcom/google/android/exoplayer2/extractor/ExtractorInput;
 
     const/4 p1, 0x0
 
-    .line 85
+    .line 82
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->endOfExtractorInput:Z
 
-    .line 86
+    .line 83
     iget-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->tempBuffer:[B
 
     if-nez p1, :cond_0
@@ -687,7 +698,7 @@
 
     new-array p1, p1, [B
 
-    .line 87
+    .line 84
     iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->tempBuffer:[B
 
     :cond_0
@@ -697,12 +708,12 @@
 .method public setData(Ljava/nio/ByteBuffer;)V
     .locals 0
 
-    .line 73
+    .line 70
     iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->byteBufferData:Ljava/nio/ByteBuffer;
 
     const/4 p1, 0x0
 
-    .line 74
+    .line 71
     iput-object p1, p0, Lcom/google/android/exoplayer2/ext/flac/FlacDecoderJni;->extractorInput:Lcom/google/android/exoplayer2/extractor/ExtractorInput;
 
     return-void

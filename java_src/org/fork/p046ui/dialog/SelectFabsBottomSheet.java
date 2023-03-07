@@ -1,0 +1,329 @@
+package org.fork.p046ui.dialog;
+
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.smedialink.storage.domain.model.filters.FilterFab;
+import com.smedialink.utils.extentions.common.ViewExtKt;
+import com.smedialink.utils.extentions.model.filter.FilterFabExtKt;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import org.fork.p046ui.view.CircleCheckCell;
+import org.fork.utils.Callbacks$Callback1;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3158R;
+import org.telegram.messenger.LocaleController;
+import org.telegram.p048ui.ActionBar.BottomSheet;
+import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p048ui.Components.LayoutHelper;
+import org.telegram.p048ui.Components.RecyclerListView;
+/* compiled from: SelectFabsBottomSheet.kt */
+/* renamed from: org.fork.ui.dialog.SelectFabsBottomSheet */
+/* loaded from: classes4.dex */
+public final class SelectFabsBottomSheet extends BottomSheet {
+    private final Lazy bottomShadow$delegate;
+    private final Lazy fabs$delegate;
+    private int itemWidth;
+    private final Lazy listAdapter$delegate;
+    private final Lazy listView$delegate;
+    private final Callbacks$Callback1<Set<FilterFab>> listener;
+    private final Lazy saveButton$delegate;
+    private final Set<FilterFab> selectedFabs;
+
+    static {
+        new Companion(null);
+    }
+
+    public final Set<FilterFab> getSelectedFabs() {
+        return this.selectedFabs;
+    }
+
+    public final Callbacks$Callback1<Set<FilterFab>> getListener() {
+        return this.listener;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public SelectFabsBottomSheet(Context context, Set<FilterFab> selectedFabs, Callbacks$Callback1<Set<FilterFab>> listener) {
+        super(context, false);
+        Lazy lazy;
+        Lazy lazy2;
+        Lazy lazy3;
+        Lazy lazy4;
+        Lazy lazy5;
+        Intrinsics.checkNotNullParameter(context, "context");
+        Intrinsics.checkNotNullParameter(selectedFabs, "selectedFabs");
+        Intrinsics.checkNotNullParameter(listener, "listener");
+        this.selectedFabs = selectedFabs;
+        this.listener = listener;
+        lazy = LazyKt__LazyJVMKt.lazy(SelectFabsBottomSheet$fabs$2.INSTANCE);
+        this.fabs$delegate = lazy;
+        lazy2 = LazyKt__LazyJVMKt.lazy(new SelectFabsBottomSheet$listView$2(this));
+        this.listView$delegate = lazy2;
+        lazy3 = LazyKt__LazyJVMKt.lazy(new SelectFabsBottomSheet$listAdapter$2(this));
+        this.listAdapter$delegate = lazy3;
+        lazy4 = LazyKt__LazyJVMKt.lazy(new SelectFabsBottomSheet$bottomShadow$2(this));
+        this.bottomShadow$delegate = lazy4;
+        lazy5 = LazyKt__LazyJVMKt.lazy(new SelectFabsBottomSheet$saveButton$2(this));
+        this.saveButton$delegate = lazy5;
+        setTitle(LocaleController.getInternalString(C3158R.string.create_folder_change_fab_title), true);
+        setApplyBottomPadding(false);
+        FrameLayout frameLayout = new FrameLayout(context) { // from class: org.fork.ui.dialog.SelectFabsBottomSheet.1
+            @Override // android.widget.FrameLayout, android.view.View
+            protected void onMeasure(int i, int i2) {
+                SelectFabsBottomSheet.this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(28)) / 4;
+                super.onMeasure(i, i2);
+            }
+        };
+        frameLayout.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, 0, 0, 48));
+        frameLayout.addView(getBottomShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 80, 0, 0, 0, 48));
+        frameLayout.addView(getSaveButton(), LayoutHelper.createFrame(-1, 48, 80));
+        Unit unit = Unit.INSTANCE;
+        frameLayout.post(new Runnable() { // from class: org.fork.ui.dialog.SelectFabsBottomSheet$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                SelectFabsBottomSheet.m1998lambda2$lambda1(SelectFabsBottomSheet.this);
+            }
+        });
+        setCustomView(frameLayout);
+        setupListeners();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<FilterFab> getFabs() {
+        return (List) this.fabs$delegate.getValue();
+    }
+
+    private final RecyclerListView getListView() {
+        return (RecyclerListView) this.listView$delegate.getValue();
+    }
+
+    private final ListAdapter getListAdapter() {
+        return (ListAdapter) this.listAdapter$delegate.getValue();
+    }
+
+    private final View getBottomShadow() {
+        return (View) this.bottomShadow$delegate.getValue();
+    }
+
+    private final TextView getSaveButton() {
+        return (TextView) this.saveButton$delegate.getValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: lambda-2$lambda-1  reason: not valid java name */
+    public static final void m1998lambda2$lambda1(SelectFabsBottomSheet this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.updateLimitsUI();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final RecyclerListView initListView() {
+        RecyclerListView recyclerListView = new RecyclerListView(getContext());
+        recyclerListView.setLayoutManager(new GridLayoutManager(recyclerListView.getContext(), 4));
+        recyclerListView.setAdapter(getListAdapter());
+        recyclerListView.setVerticalScrollBarEnabled(false);
+        recyclerListView.setClipToPadding(false);
+        recyclerListView.setEnabled(true);
+        recyclerListView.setOverScrollMode(2);
+        recyclerListView.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), 0);
+        recyclerListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.fork.ui.dialog.SelectFabsBottomSheet$initListView$1$1
+            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+                Intrinsics.checkNotNullParameter(outRect, "outRect");
+                Intrinsics.checkNotNullParameter(view, "view");
+                Intrinsics.checkNotNullParameter(parent, "parent");
+                Intrinsics.checkNotNullParameter(state, "state");
+                RecyclerView.ViewHolder childViewHolder = parent.getChildViewHolder(view);
+                Objects.requireNonNull(childViewHolder, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder");
+                int adapterPosition = ((RecyclerListView.Holder) childViewHolder).getAdapterPosition() % 4;
+                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m50dp(4);
+                outRect.right = adapterPosition != 3 ? AndroidUtilities.m50dp(4) : 0;
+            }
+        });
+        return recyclerListView;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final View initShadow() {
+        View view = new View(getContext());
+        view.setBackgroundColor(Theme.getColor("dialogShadowLine"));
+        return view;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final TextView initSaveButton() {
+        TextView textView = new TextView(getContext());
+        ViewExtKt.setHorizontalPadding(textView, 18);
+        textView.setAllCaps(true);
+        textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+        textView.setGravity(17);
+        textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("dialogBackground"), Theme.getColor("listSelectorSDK21")));
+        textView.setText(LocaleController.getString("Save", C3158R.string.Save));
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(Theme.getColor("dialogTextBlue2"));
+        return textView;
+    }
+
+    private final void setupListeners() {
+        getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.dialog.SelectFabsBottomSheet$$ExternalSyntheticLambda2
+            @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
+            public final void onItemClick(View view, int i) {
+                SelectFabsBottomSheet.m1999setupListeners$lambda7(SelectFabsBottomSheet.this, view, i);
+            }
+        });
+        getSaveButton().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.SelectFabsBottomSheet$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                SelectFabsBottomSheet.m2000setupListeners$lambda8(SelectFabsBottomSheet.this, view);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setupListeners$lambda-7  reason: not valid java name */
+    public static final void m1999setupListeners$lambda7(SelectFabsBottomSheet this$0, View view, int i) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        FilterFab filterFab = this$0.getFabs().get(i);
+        if (this$0.getSelectedFabs().size() != 5 || this$0.getSelectedFabs().contains(filterFab)) {
+            Objects.requireNonNull(view, "null cannot be cast to non-null type org.fork.ui.view.CircleCheckCell");
+            CircleCheckCell circleCheckCell = (CircleCheckCell) view;
+            circleCheckCell.setChecked(!circleCheckCell.isChecked());
+            this$0.addOrEditSelectedFab(filterFab);
+            this$0.updateLimitsUI();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setupListeners$lambda-8  reason: not valid java name */
+    public static final void m2000setupListeners$lambda8(SelectFabsBottomSheet this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.getListener().invoke(this$0.getSelectedFabs());
+        this$0.dismiss();
+    }
+
+    private final void addOrEditSelectedFab(FilterFab filterFab) {
+        if (this.selectedFabs.contains(filterFab)) {
+            this.selectedFabs.remove(filterFab);
+        } else {
+            this.selectedFabs.add(filterFab);
+        }
+    }
+
+    private final void updateLimitsUI() {
+        TextView saveButton = getSaveButton();
+        if (getSelectedFabs().isEmpty()) {
+            saveButton.setEnabled(false);
+            saveButton.setAlpha(0.5f);
+        } else {
+            saveButton.setEnabled(true);
+            saveButton.setAlpha(1.0f);
+        }
+        RecyclerListView listView = getListView();
+        int childCount = listView.getChildCount();
+        if (childCount <= 0) {
+            return;
+        }
+        int i = 0;
+        while (true) {
+            int i2 = i + 1;
+            View childAt = listView.getChildAt(i);
+            Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(index)");
+            if (getSelectedFabs().size() < 5) {
+                childAt.setEnabled(true);
+                childAt.setAlpha(1.0f);
+            } else if (!getSelectedFabs().contains(getFabs().get(i))) {
+                childAt.setEnabled(false);
+                childAt.setAlpha(0.5f);
+            }
+            if (i2 >= childCount) {
+                return;
+            }
+            i = i2;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: SelectFabsBottomSheet.kt */
+    /* renamed from: org.fork.ui.dialog.SelectFabsBottomSheet$ListAdapter */
+    /* loaded from: classes4.dex */
+    public final class ListAdapter extends RecyclerListView.SelectionAdapter {
+        final /* synthetic */ SelectFabsBottomSheet this$0;
+
+        @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
+        public boolean isEnabled(RecyclerView.ViewHolder holder) {
+            Intrinsics.checkNotNullParameter(holder, "holder");
+            return false;
+        }
+
+        public ListAdapter(SelectFabsBottomSheet this$0) {
+            Intrinsics.checkNotNullParameter(this$0, "this$0");
+            this.this$0 = this$0;
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public int getItemCount() {
+            return this.this$0.getFabs().size();
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
+            Intrinsics.checkNotNullParameter(parent, "parent");
+            final Context context = this.this$0.getContext();
+            final ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+            final SelectFabsBottomSheet selectFabsBottomSheet = this.this$0;
+            return new RecyclerListView.Holder(new CircleCheckCell(context, scaleType) { // from class: org.fork.ui.dialog.SelectFabsBottomSheet$ListAdapter$onCreateViewHolder$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                {
+                    super(context, 36, scaleType);
+                    Intrinsics.checkNotNullExpressionValue(context, "context");
+                }
+
+                @Override // android.widget.FrameLayout, android.view.View
+                protected void onMeasure(int i2, int i3) {
+                    int i4;
+                    i4 = SelectFabsBottomSheet.this.itemWidth;
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(100), 1073741824));
+                }
+            });
+        }
+
+        @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
+            Intrinsics.checkNotNullParameter(holder, "holder");
+            CircleCheckCell circleCheckCell = (CircleCheckCell) holder.itemView;
+            SelectFabsBottomSheet selectFabsBottomSheet = this.this$0;
+            FilterFab filterFab = (FilterFab) selectFabsBottomSheet.getFabs().get(i);
+            int color = Theme.getColor("chats_actionBackground");
+            int iconResId = FilterFabExtKt.iconResId(filterFab, true);
+            String internalString = LocaleController.getInternalString(FilterFabExtKt.nameResId(filterFab));
+            Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(fab.nameResId())");
+            circleCheckCell.setData(color, iconResId, internalString);
+            circleCheckCell.setChecked(selectFabsBottomSheet.getSelectedFabs().contains(filterFab));
+        }
+    }
+
+    /* compiled from: SelectFabsBottomSheet.kt */
+    /* renamed from: org.fork.ui.dialog.SelectFabsBottomSheet$Companion */
+    /* loaded from: classes4.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+    }
+}

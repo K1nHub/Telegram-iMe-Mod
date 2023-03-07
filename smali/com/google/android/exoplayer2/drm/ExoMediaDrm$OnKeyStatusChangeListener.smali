@@ -13,23 +13,14 @@
     name = "OnKeyStatusChangeListener"
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T::",
-        "Lcom/google/android/exoplayer2/drm/ExoMediaCrypto;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
 
 # virtual methods
 .method public abstract onKeyStatusChange(Lcom/google/android/exoplayer2/drm/ExoMediaDrm;[BLjava/util/List;Z)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm<",
-            "+TT;>;[B",
+            "Lcom/google/android/exoplayer2/drm/ExoMediaDrm;",
+            "[B",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/drm/ExoMediaDrm$KeyStatus;",
             ">;Z)V"

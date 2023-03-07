@@ -86,7 +86,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 38
+    .line 44
     sget-object v0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor$$ExternalSyntheticLambda0;
 
     sput-object v0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->FACTORY:Lcom/google/android/exoplayer2/extractor/ExtractorsFactory;
@@ -97,10 +97,10 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 86
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 87
+    .line 94
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     const/4 v1, 0x4
@@ -109,7 +109,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 88
+    .line 95
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     const/16 v1, 0x9
@@ -118,7 +118,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->headerBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 89
+    .line 96
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     const/16 v1, 0xb
@@ -127,14 +127,14 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 90
+    .line 97
     new-instance v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    .line 91
+    .line 98
     new-instance v0, Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;-><init>()V
@@ -143,7 +143,7 @@
 
     const/4 v0, 0x1
 
-    .line 92
+    .line 99
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
 
     return-void
@@ -152,12 +152,12 @@
 .method private ensureReadyForMediaOutput()V
     .locals 4
 
-    .line 297
+    .line 310
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
     if-nez v0, :cond_0
 
-    .line 298
+    .line 311
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     new-instance v1, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;
@@ -170,7 +170,7 @@
 
     const/4 v0, 0x1
 
-    .line 299
+    .line 312
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
     :cond_0
@@ -180,12 +180,12 @@
 .method private getCurrentTimestampUs()J
     .locals 5
 
-    .line 304
+    .line 317
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
     if-eqz v0, :cond_0
 
-    .line 305
+    .line 318
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->mediaTagTimestampOffsetUs:J
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagTimestampUs:J
@@ -194,7 +194,7 @@
 
     goto :goto_0
 
-    .line 306
+    .line 319
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->metadataReader:Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;
 
@@ -226,7 +226,7 @@
 
     new-array v0, v0, [Lcom/google/android/exoplayer2/extractor/Extractor;
 
-    .line 38
+    .line 44
     new-instance v1, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;
 
     invoke-direct {v1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;-><init>()V
@@ -242,12 +242,11 @@
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 286
+    .line 298
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagDataSize:I
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -260,7 +259,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 287
+    .line 299
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->capacity()I
@@ -281,13 +280,13 @@
 
     goto :goto_0
 
-    .line 289
+    .line 301
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0, v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 291
+    .line 303
     :goto_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -295,16 +294,18 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setLimit(I)V
 
-    .line 292
+    .line 304
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     iget v1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagDataSize:I
 
     invoke-interface {p1, v0, v2, v1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->readFully([BII)V
 
-    .line 293
+    .line 305
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagData:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     return-object p1
@@ -314,15 +315,16 @@
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 182
+    .line 193
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->headerBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -338,20 +340,20 @@
 
     return v1
 
-    .line 187
+    .line 198
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->headerBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 188
+    .line 199
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->headerBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     const/4 v0, 0x4
 
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 189
+    .line 200
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->headerBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -379,19 +381,19 @@
     :cond_2
     if-eqz v4, :cond_3
 
-    .line 192
+    .line 203
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->audioReader:Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;
 
     if-nez p1, :cond_3
 
-    .line 193
+    .line 204
     new-instance p1, Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     const/16 v5, 0x8
 
-    .line 194
+    .line 205
     invoke-interface {v4, v5, v3}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->track(II)Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     move-result-object v4
@@ -405,17 +407,17 @@
 
     if-eqz v1, :cond_4
 
-    .line 196
+    .line 207
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->videoReader:Lcom/google/android/exoplayer2/extractor/flv/VideoTagPayloadReader;
 
     if-nez v1, :cond_4
 
-    .line 197
+    .line 208
     new-instance v1, Lcom/google/android/exoplayer2/extractor/flv/VideoTagPayloadReader;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
-    .line 198
+    .line 209
     invoke-interface {v4, v2, p1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->track(II)Lcom/google/android/exoplayer2/extractor/TrackOutput;
 
     move-result-object v4
@@ -424,13 +426,13 @@
 
     iput-object v1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->videoReader:Lcom/google/android/exoplayer2/extractor/flv/VideoTagPayloadReader;
 
-    .line 200
+    .line 211
     :cond_4
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->endTracks()V
 
-    .line 203
+    .line 214
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->headerBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
@@ -443,27 +445,26 @@
 
     iput v1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
 
-    .line 204
+    .line 215
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
 
     return v3
 .end method
 
 .method private readTagData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
-    .locals 8
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 256
+    .line 265
     invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->getCurrentTimestampUs()J
 
     move-result-wide v0
 
-    .line 257
+    .line 266
     iget v2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagType:I
 
     const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
@@ -480,10 +481,10 @@
 
     if-eqz v7, :cond_1
 
-    .line 258
+    .line 267
     invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->ensureReadyForMediaOutput()V
 
-    .line 259
+    .line 268
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->audioReader:Lcom/google/android/exoplayer2/extractor/flv/AudioTagPayloadReader;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->prepareTagData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -505,15 +506,15 @@
 
     if-ne v2, v7, :cond_2
 
-    .line 260
+    .line 269
     iget-object v7, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->videoReader:Lcom/google/android/exoplayer2/extractor/flv/VideoTagPayloadReader;
 
     if-eqz v7, :cond_2
 
-    .line 261
+    .line 270
     invoke-direct {p0}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->ensureReadyForMediaOutput()V
 
-    .line 262
+    .line 271
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->videoReader:Lcom/google/android/exoplayer2/extractor/flv/VideoTagPayloadReader;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->prepareTagData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -531,12 +532,12 @@
 
     if-ne v2, v7, :cond_3
 
-    .line 263
+    .line 272
     iget-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
     if-nez v2, :cond_3
 
-    .line 264
+    .line 273
     iget-object v2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->metadataReader:Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->prepareTagData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Lcom/google/android/exoplayer2/util/ParsableByteArray;
@@ -547,7 +548,7 @@
 
     move-result v5
 
-    .line 265
+    .line 274
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->metadataReader:Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;->getDurationUs()J
@@ -558,21 +559,36 @@
 
     if-eqz p1, :cond_0
 
-    .line 267
+    .line 276
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
-    new-instance v2, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;
+    new-instance v2, Lcom/google/android/exoplayer2/extractor/IndexSeekMap;
 
-    invoke-direct {v2, v0, v1}, Lcom/google/android/exoplayer2/extractor/SeekMap$Unseekable;-><init>(J)V
+    iget-object v7, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->metadataReader:Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;
 
+    .line 278
+    invoke-virtual {v7}, Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;->getKeyFrameTagPositions()[J
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->metadataReader:Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;
+
+    .line 279
+    invoke-virtual {v8}, Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;->getKeyFrameTimesUs()[J
+
+    move-result-object v8
+
+    invoke-direct {v2, v7, v8, v0, v1}, Lcom/google/android/exoplayer2/extractor/IndexSeekMap;-><init>([J[JJ)V
+
+    .line 276
     invoke-interface {p1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->seekMap(Lcom/google/android/exoplayer2/extractor/SeekMap;)V
 
-    .line 268
+    .line 281
     iput-boolean v6, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputSeekMap:Z
 
     goto :goto_0
 
-    .line 271
+    .line 284
     :cond_3
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagDataSize:I
 
@@ -580,7 +596,7 @@
 
     const/4 p1, 0x0
 
-    .line 274
+    .line 287
     :goto_1
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
@@ -588,10 +604,10 @@
 
     if-eqz v5, :cond_5
 
-    .line 275
+    .line 288
     iput-boolean v6, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
-    .line 277
+    .line 290
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->metadataReader:Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/extractor/flv/ScriptTagPayloadReader;->getDurationUs()J
@@ -617,12 +633,12 @@
     :cond_5
     const/4 v0, 0x4
 
-    .line 279
+    .line 292
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
 
     const/4 v0, 0x2
 
-    .line 280
+    .line 293
     iput v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
 
     return p1
@@ -632,15 +648,16 @@
     .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 230
+    .line 239
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -656,13 +673,13 @@
 
     return v1
 
-    .line 235
+    .line 244
     :cond_0
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 236
+    .line 245
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -671,7 +688,7 @@
 
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagType:I
 
-    .line 237
+    .line 246
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
@@ -680,7 +697,7 @@
 
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagDataSize:I
 
-    .line 238
+    .line 247
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
@@ -691,7 +708,7 @@
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagTimestampUs:J
 
-    .line 239
+    .line 248
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
@@ -712,7 +729,7 @@
 
     iput-wide v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagTimestampUs:J
 
-    .line 240
+    .line 249
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->tagHeaderBuffer:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     const/4 v0, 0x3
@@ -721,7 +738,7 @@
 
     const/4 p1, 0x4
 
-    .line 241
+    .line 250
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
 
     return v3
@@ -731,24 +748,23 @@
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 216
+    .line 226
     iget v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
 
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->skipFully(I)V
 
     const/4 p1, 0x0
 
-    .line 217
+    .line 227
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
 
     const/4 p1, 0x3
 
-    .line 218
+    .line 228
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
 
     return-void
@@ -759,7 +775,7 @@
 .method public init(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;)V
     .locals 0
 
-    .line 128
+    .line 135
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     return-void
@@ -769,12 +785,16 @@
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 147
+    .line 156
+    iget-object p2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->extractorOutput:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
+
+    invoke-static {p2}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 158
     :cond_0
     :goto_0
     iget p2, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
@@ -797,7 +817,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 162
+    .line 173
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->readTagData(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 
     move-result p2
@@ -808,7 +828,7 @@
 
     return p1
 
-    .line 168
+    .line 179
     :cond_1
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -816,7 +836,7 @@
 
     throw p1
 
-    .line 157
+    .line 168
     :cond_2
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->readTagHeader(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 
@@ -826,13 +846,13 @@
 
     return v1
 
-    .line 154
+    .line 165
     :cond_3
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->skipToTagHeader(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)V
 
     goto :goto_0
 
-    .line 149
+    .line 160
     :cond_4
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->readFlvHeader(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 
@@ -850,20 +870,35 @@
 .end method
 
 .method public seek(JJ)V
-    .locals 0
+    .locals 2
+
+    const/4 p3, 0x0
+
+    const-wide/16 v0, 0x0
+
+    cmp-long p4, p1, v0
+
+    if-nez p4, :cond_0
 
     const/4 p1, 0x1
 
-    .line 133
+    .line 141
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
 
-    const/4 p1, 0x0
+    .line 142
+    iput-boolean p3, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
 
-    .line 134
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->outputFirstSample:Z
+    goto :goto_0
 
-    .line 135
-    iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
+    :cond_0
+    const/4 p1, 0x3
+
+    .line 144
+    iput p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->state:I
+
+    .line 146
+    :goto_0
+    iput p3, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->bytesToNextTagHeader:I
 
     return-void
 .end method
@@ -872,15 +907,16 @@
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 98
+    .line 105
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -888,12 +924,12 @@
 
     invoke-interface {p1, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 99
+    .line 106
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 100
+    .line 107
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt24()I
@@ -906,22 +942,24 @@
 
     return v1
 
-    .line 105
+    .line 112
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v2, 0x2
 
     invoke-interface {p1, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 106
+    .line 113
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 107
+    .line 114
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
@@ -934,47 +972,51 @@
 
     return v1
 
-    .line 112
+    .line 119
     :cond_1
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     const/4 v2, 0x4
 
     invoke-interface {p1, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 113
+    .line 120
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 114
+    .line 121
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I
 
     move-result v0
 
-    .line 116
+    .line 123
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
-    .line 117
+    .line 124
     invoke-interface {p1, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->advancePeekPosition(I)V
 
-    .line 120
+    .line 127
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
-    iget-object v0, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v0
 
     invoke-interface {p1, v0, v1, v2}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 121
+    .line 128
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1, v1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 123
+    .line 130
     iget-object p1, p0, Lcom/google/android/exoplayer2/extractor/flv/FlvExtractor;->scratch:Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readInt()I

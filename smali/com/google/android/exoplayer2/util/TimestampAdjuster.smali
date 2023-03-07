@@ -4,33 +4,47 @@
 
 
 # static fields
-.field public static final DO_NOT_OFFSET:J = 0x7fffffffffffffffL
-
 .field private static final MAX_PTS_PLUS_ONE:J = 0x200000000L
+
+.field public static final MODE_NO_OFFSET:J = 0x7fffffffffffffffL
+
+.field public static final MODE_SHARED:J = 0x7ffffffffffffffeL
 
 
 # instance fields
 .field private firstSampleTimestampUs:J
 
-.field private volatile lastSampleTimestampUs:J
+.field private lastUnadjustedTimestampUs:J
+
+.field private final nextSampleTimestampUs:Ljava/lang/ThreadLocal;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ThreadLocal<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private timestampOffsetUs:J
 
 
 # direct methods
 .method public constructor <init>(J)V
-    .locals 2
+    .locals 1
 
-    .line 47
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    .line 80
+    new-instance v0, Ljava/lang/ThreadLocal;
 
-    .line 48
-    iput-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
-    .line 49
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->setFirstSampleTimestampUs(J)V
+    iput-object v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->nextSampleTimestampUs:Ljava/lang/ThreadLocal;
+
+    .line 81
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->reset(J)V
 
     return-void
 .end method
@@ -44,13 +58,13 @@
 
     const-wide/32 v0, 0x15f90
 
-    .line 173
+    .line 217
     div-long/2addr p0, v0
 
     return-wide p0
 .end method
 
-.method public static usToPts(J)J
+.method public static usToNonWrappedPts(J)J
     .locals 2
 
     const-wide/32 v0, 0x15f90
@@ -59,16 +73,33 @@
 
     const-wide/32 v0, 0xf4240
 
-    .line 183
+    .line 241
     div-long/2addr p0, v0
+
+    return-wide p0
+.end method
+
+.method public static usToWrappedPts(J)J
+    .locals 2
+
+    .line 228
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->usToNonWrappedPts(J)J
+
+    move-result-wide p0
+
+    const-wide v0, 0x200000000L
+
+    rem-long/2addr p0, v0
 
     return-wide p0
 .end method
 
 
 # virtual methods
-.method public adjustSampleTimestamp(J)J
+.method public declared-synchronized adjustSampleTimestamp(J)J
     .locals 5
+
+    monitor-enter p0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -76,74 +107,84 @@
 
     if-nez v2, :cond_0
 
+    .line 195
+    monitor-exit p0
+
     return-wide v0
 
-    .line 139
+    .line 197
     :cond_0
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
+    :try_start_0
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
 
     cmp-long v4, v2, v0
 
-    if-eqz v4, :cond_1
+    if-nez v4, :cond_2
 
-    .line 140
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
-
-    goto :goto_0
-
-    .line 142
-    :cond_1
+    .line 199
     iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->firstSampleTimestampUs:J
 
-    const-wide v2, 0x7fffffffffffffffL
+    const-wide v2, 0x7ffffffffffffffeL
 
     cmp-long v4, v0, v2
 
-    if-eqz v4, :cond_2
+    if-nez v4, :cond_1
 
+    .line 200
+    iget-object v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->nextSampleTimestampUs:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    :cond_1
     sub-long/2addr v0, p1
 
-    .line 144
+    .line 202
     iput-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
 
-    .line 146
-    :cond_2
-    monitor-enter p0
-
-    .line 147
-    :try_start_0
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
-
-    .line 149
+    .line 204
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 150
-    monitor-exit p0
+    .line 206
+    :cond_2
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastUnadjustedTimestampUs:J
+
+    .line 207
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 152
-    :goto_0
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
-
     add-long/2addr p1, v0
+
+    monitor-exit p0
 
     return-wide p1
 
     :catchall_0
     move-exception p1
 
-    .line 150
-    :try_start_1
     monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p1
 .end method
 
-.method public adjustTsTimestamp(J)J
+.method public declared-synchronized adjustTsTimestamp(J)J
     .locals 8
+
+    monitor-enter p0
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -151,20 +192,22 @@
 
     if-nez v2, :cond_0
 
+    .line 170
+    monitor-exit p0
+
     return-wide v0
 
-    .line 113
+    .line 172
     :cond_0
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
+    :try_start_0
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastUnadjustedTimestampUs:J
 
     cmp-long v4, v2, v0
 
     if-eqz v4, :cond_1
 
-    .line 116
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
-
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->usToPts(J)J
+    .line 175
+    invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->usToNonWrappedPts(J)J
 
     move-result-wide v0
 
@@ -174,7 +217,7 @@
 
     const-wide v4, 0x200000000L
 
-    .line 117
+    .line 176
     div-long/2addr v2, v4
 
     const-wide/16 v6, 0x1
@@ -191,7 +234,7 @@
 
     sub-long v2, v6, v0
 
-    .line 121
+    .line 180
     invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
 
     move-result-wide v2
@@ -208,7 +251,7 @@
 
     move-wide p1, v6
 
-    .line 125
+    .line 184
     :cond_1
     invoke-static {p1, p2}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->ptsToUs(J)J
 
@@ -217,24 +260,68 @@
     invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->adjustSampleTimestamp(J)J
 
     move-result-wide p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-wide p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method
 
-.method public getFirstSampleTimestampUs()J
-    .locals 2
+.method public declared-synchronized getFirstSampleTimestampUs()J
+    .locals 5
 
-    .line 66
+    monitor-enter p0
+
+    .line 126
+    :try_start_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->firstSampleTimestampUs:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const-wide v2, 0x7fffffffffffffffL
+
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_0
+
+    const-wide v2, 0x7ffffffffffffffeL
+
+    cmp-long v4, v0, v2
+
+    if-nez v4, :cond_1
+
+    :cond_0
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    :cond_1
+    monitor-exit p0
 
     return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public getLastAdjustedTimestampUs()J
-    .locals 7
+.method public declared-synchronized getLastAdjustedTimestampUs()J
+    .locals 5
 
-    .line 76
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
+    monitor-enter p0
+
+    .line 136
+    :try_start_0
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastUnadjustedTimestampUs:J
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
@@ -242,88 +329,119 @@
 
     if-eqz v4, :cond_0
 
-    .line 77
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
-
+    .line 137
     iget-wide v2, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
 
-    add-long/2addr v2, v0
+    add-long/2addr v0, v2
 
     goto :goto_0
 
-    .line 78
+    .line 138
     :cond_0
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->firstSampleTimestampUs:J
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->getFirstSampleTimestampUs()J
 
-    const-wide v4, 0x7fffffffffffffffL
+    move-result-wide v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    cmp-long v6, v0, v4
-
-    if-eqz v6, :cond_1
-
-    move-wide v2, v0
-
-    :cond_1
+    .line 136
     :goto_0
-    return-wide v2
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public getTimestampOffsetUs()J
-    .locals 7
-
-    .line 91
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->firstSampleTimestampUs:J
-
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
-
-    const-wide v4, 0x7fffffffffffffffL
-
-    cmp-long v6, v0, v4
-
-    if-nez v6, :cond_0
-
-    const-wide/16 v2, 0x0
-
-    goto :goto_0
-
-    .line 93
-    :cond_0
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    iget-wide v2, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
-
-    :goto_0
-    return-wide v2
-.end method
-
-.method public reset()V
+.method public declared-synchronized getTimestampOffsetUs()J
     .locals 2
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    monitor-enter p0
 
-    .line 100
-    iput-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
+    .line 146
+    :try_start_0
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public declared-synchronized setFirstSampleTimestampUs(J)V
+.method public declared-synchronized reset(J)V
     .locals 5
 
     monitor-enter p0
 
-    .line 60
+    .line 157
     :try_start_0
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->firstSampleTimestampUs:J
+
+    const-wide v0, 0x7fffffffffffffffL
 
     const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v4, p1, v0
+
+    if-nez v4, :cond_0
+
+    const-wide/16 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    move-wide p1, v2
+
+    .line 158
+    :goto_0
+    iput-wide p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
+
+    .line 159
+    iput-wide v2, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastUnadjustedTimestampUs:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 160
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public declared-synchronized sharedInitializeOrWait(ZJ)V
+    .locals 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
+    monitor-enter p0
+
+    .line 107
+    :try_start_0
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->firstSampleTimestampUs:J
+
+    const-wide v2, 0x7ffffffffffffffeL
 
     cmp-long v4, v0, v2
 
@@ -339,12 +457,56 @@
     :goto_0
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 61
-    iput-wide p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->firstSampleTimestampUs:J
+    .line 108
+    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 62
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_1
+
+    .line 110
+    monitor-exit p0
+
+    return-void
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    .line 112
+    :try_start_1
+    iget-object p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->nextSampleTimestampUs:Ljava/lang/ThreadLocal;
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    .line 115
+    :cond_2
+    :goto_1
+    iget-wide p1, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->timestampOffsetUs:J
+
+    cmp-long p3, p1, v2
+
+    if-nez p3, :cond_3
+
+    .line 116
+    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
+
+    .line 119
+    :cond_3
+    :goto_2
     monitor-exit p0
 
     return-void
@@ -355,46 +517,4 @@
     monitor-exit p0
 
     throw p1
-.end method
-
-.method public declared-synchronized waitUntilInitialized()V
-    .locals 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/InterruptedException;
-        }
-    .end annotation
-
-    monitor-enter p0
-
-    .line 161
-    :goto_0
-    :try_start_0
-    iget-wide v0, p0, Lcom/google/android/exoplayer2/util/TimestampAdjuster;->lastSampleTimestampUs:J
-
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    .line 162
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    .line 164
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 234
+    .line 248
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
     .locals 1
 
-    .line 237
+    .line 251
     new-instance v0, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;-><init>(Landroid/os/Parcel;)V
@@ -52,7 +52,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 234
+    .line 248
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
 
     move-result-object p1
@@ -63,7 +63,7 @@
 .method public newArray(I)[Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
     .locals 0
 
-    .line 242
+    .line 256
     new-array p1, p1, [Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
 
     return-object p1
@@ -72,7 +72,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 234
+    .line 248
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry$1;->newArray(I)[Lcom/google/android/exoplayer2/source/hls/HlsTrackMetadataEntry;
 
     move-result-object p1

@@ -1,0 +1,233 @@
+package com.smedialink.p031ui.wallet.home.p032v2.tabs.services;
+
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.entity.node.BaseNode;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.smedialink.model.wallet.home.ServicesBasicItem;
+import com.smedialink.model.wallet.home.ServicesCategory;
+import com.smedialink.p031ui.catalog.CatalogRootFragment;
+import com.smedialink.p031ui.wallet.home.p032v2.adapter.BalancesRecycleAdapter;
+import com.smedialink.p031ui.wallet.home.p032v2.adapter.diff.BalanceDiffCallback;
+import com.smedialink.p031ui.wallet.home.p032v2.tabs.WalletHomeTabFragment;
+import com.smedialink.p031ui.wallet.staking.StakingFragment;
+import com.smedialink.storage.domain.model.crypto.BlockchainType;
+import com.smedialink.utils.dialogs.DialogsFactoryKt;
+import com.smedialink.utils.extentions.common.RecycleViewExtKt;
+import com.smedialink.utils.extentions.delegate.ResettableLazy;
+import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
+import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
+import java.util.ArrayList;
+import java.util.List;
+import kotlin.Lazy;
+import kotlin.LazyKt__LazyJVMKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.PropertyReference1Impl;
+import kotlin.jvm.internal.Reflection;
+import kotlin.reflect.KProperty;
+import moxy.MvpDelegate;
+import moxy.ktx.MoxyKtxDelegate;
+import org.fork.utils.Callbacks$Callback;
+import org.koin.p047mp.KoinPlatformTools;
+import org.telegram.messenger.databinding.ForkFragmentWalletHomeServicesBinding;
+import org.telegram.p048ui.ActionBar.Theme;
+import org.telegram.p048ui.ActionBar.ThemeDescription;
+import org.telegram.p048ui.ActionIntroActivity;
+/* compiled from: WalletHomeServicesFragment.kt */
+/* renamed from: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment */
+/* loaded from: classes3.dex */
+public final class WalletHomeServicesFragment extends WalletHomeTabFragment implements WalletHomeServicesView {
+    static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletHomeServicesFragment.class, "presenter", "getPresenter()Lcom/smedialink/ui/wallet/home/v2/tabs/services/WalletHomeServicesPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletHomeServicesFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeServicesBinding;", 0))};
+    public static final Companion Companion = new Companion(null);
+    private final Lazy balancesRecycleAdapter$delegate;
+    private final ResettableLazy binding$delegate;
+    private final MoxyKtxDelegate presenter$delegate;
+
+    /* compiled from: WalletHomeServicesFragment.kt */
+    /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$WhenMappings */
+    /* loaded from: classes3.dex */
+    public /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+        static {
+            int[] iArr = new int[ServicesCategory.values().length];
+            iArr[ServicesCategory.CHANNELS.ordinal()] = 1;
+            iArr[ServicesCategory.STAKING.ordinal()] = 2;
+            iArr[ServicesCategory.ADS.ordinal()] = 3;
+            iArr[ServicesCategory.NEUROBOTS.ordinal()] = 4;
+            iArr[ServicesCategory.PREMIUM.ordinal()] = 5;
+            $EnumSwitchMapping$0 = iArr;
+        }
+    }
+
+    @Override // com.smedialink.p031ui.wallet.home.p032v2.tabs.WalletHomeTabFragment
+    public void loadBalances() {
+    }
+
+    @Override // com.smedialink.p031ui.wallet.home.p032v2.tabs.WalletHomeTabFragment
+    public void loadTabInfo() {
+    }
+
+    public WalletHomeServicesFragment() {
+        Lazy lazy;
+        WalletHomeServicesFragment$presenter$2 walletHomeServicesFragment$presenter$2 = new WalletHomeServicesFragment$presenter$2(this);
+        MvpDelegate mvpDelegate = getMvpDelegate();
+        Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
+        this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletHomeServicesPresenter.class.getName() + ".presenter", walletHomeServicesFragment$presenter$2);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new WalletHomeServicesFragment$special$$inlined$inject$default$1(this, null, null));
+        this.balancesRecycleAdapter$delegate = lazy;
+        this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletHomeServicesFragment$binding$2(this), 1, (Object) null);
+    }
+
+    private final WalletHomeServicesPresenter getPresenter() {
+        return (WalletHomeServicesPresenter) this.presenter$delegate.getValue(this, $$delegatedProperties[0]);
+    }
+
+    private final BalancesRecycleAdapter getBalancesRecycleAdapter() {
+        return (BalancesRecycleAdapter) this.balancesRecycleAdapter$delegate.getValue();
+    }
+
+    private final ForkFragmentWalletHomeServicesBinding getBinding() {
+        return (ForkFragmentWalletHomeServicesBinding) this.binding$delegate.getValue(this, $$delegatedProperties[1]);
+    }
+
+    @Override // com.smedialink.p031ui.base.mvp.MvpFragment
+    public View onCreateView(Context context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        setupColors();
+        setupListeners();
+        setupWalletRecycleView();
+        FrameLayout root = getBinding().getRoot();
+        Intrinsics.checkNotNullExpressionValue(root, "binding.root");
+        return root;
+    }
+
+    @Override // org.telegram.p048ui.ActionBar.BaseFragment
+    public ArrayList<ThemeDescription> getThemeDescriptions() {
+        ArrayList<ThemeDescription> arrayListOf;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$$ExternalSyntheticLambda2
+            @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            public final void didSetColor() {
+                WalletHomeServicesFragment.m1707getThemeDescriptions$lambda0(WalletHomeServicesFragment.this);
+            }
+
+            @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            public /* synthetic */ void onAnimationProgress(float f) {
+                ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
+            }
+        }, "windowBackgroundGray"));
+        return arrayListOf;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: getThemeDescriptions$lambda-0  reason: not valid java name */
+    public static final void m1707getThemeDescriptions$lambda0(WalletHomeServicesFragment this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.getBalancesRecycleAdapter().notifyDataSetChanged();
+    }
+
+    @Override // com.smedialink.p031ui.wallet.home.p032v2.tabs.services.WalletHomeServicesView
+    public void firstScreenInitWithItems(List<BaseNode> dashboardUiItems) {
+        Intrinsics.checkNotNullParameter(dashboardUiItems, "dashboardUiItems");
+        getBalancesRecycleAdapter().setNewInstance(dashboardUiItems);
+    }
+
+    @Override // com.smedialink.p031ui.wallet.home.p032v2.tabs.WalletHomeTabFragment
+    public void handleBottomPadding(int i) {
+        RecyclerView recyclerView = getBinding().recycleWalletHomeServicesDashboard;
+        recyclerView.setPadding(recyclerView.getPaddingLeft(), recyclerView.getPaddingTop(), recyclerView.getPaddingRight(), i);
+    }
+
+    @Override // com.smedialink.p031ui.wallet.home.p032v2.tabs.services.WalletHomeServicesView
+    public void showRequiredWalletCreatedDialog() {
+        showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(this, BlockchainType.EVM, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$$ExternalSyntheticLambda1
+            @Override // org.fork.utils.Callbacks$Callback
+            public final void invoke() {
+                WalletHomeServicesFragment.m1709showRequiredWalletCreatedDialog$lambda2(WalletHomeServicesFragment.this);
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: showRequiredWalletCreatedDialog$lambda-2  reason: not valid java name */
+    public static final void m1709showRequiredWalletCreatedDialog$lambda2(WalletHomeServicesFragment this$0) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.selectTab(0);
+    }
+
+    @Override // com.smedialink.p031ui.wallet.home.p032v2.tabs.services.WalletHomeServicesView
+    public void openStakingScreen() {
+        presentFragment(StakingFragment.Companion.newInstance());
+    }
+
+    private final void setupColors() {
+        getBinding().getRoot().setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+    }
+
+    private final void setupListeners() {
+        getBalancesRecycleAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$$ExternalSyntheticLambda0
+            @Override // com.chad.library.adapter.base.listener.OnItemClickListener
+            public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                WalletHomeServicesFragment.m1708setupListeners$lambda5$lambda4(WalletHomeServicesFragment.this, baseQuickAdapter, view, i);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: setupListeners$lambda-5$lambda-4  reason: not valid java name */
+    public static final void m1708setupListeners$lambda5$lambda4(WalletHomeServicesFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        BaseNode baseNode = (BaseNode) this$0.getBalancesRecycleAdapter().getItem(i);
+        if (baseNode instanceof ServicesBasicItem) {
+            int i2 = WhenMappings.$EnumSwitchMapping$0[((ServicesBasicItem) baseNode).getCategory().ordinal()];
+            if (i2 == 1) {
+                this$0.presentFragment(CatalogRootFragment.Companion.newInstance());
+            } else if (i2 == 2) {
+                this$0.getPresenter().onStakingClick();
+            } else if (i2 == 3) {
+                this$0.presentFragment(new ActionIntroActivity(106));
+            } else if (i2 == 4) {
+                this$0.presentFragment(new ActionIntroActivity(105));
+            } else if (i2 != 5) {
+            } else {
+                this$0.presentFragment(new ActionIntroActivity(107));
+            }
+        }
+    }
+
+    private final void setupWalletRecycleView() {
+        RecyclerView recyclerView = getBinding().recycleWalletHomeServicesDashboard;
+        BalancesRecycleAdapter balancesRecycleAdapter = getBalancesRecycleAdapter();
+        balancesRecycleAdapter.setDiffCallback(new BalanceDiffCallback());
+        Unit unit = Unit.INSTANCE;
+        recyclerView.setAdapter(balancesRecycleAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
+        Intrinsics.checkNotNullExpressionValue(recyclerView, "");
+        RecycleViewExtKt.disableDefaultAnimation(recyclerView);
+    }
+
+    /* compiled from: WalletHomeServicesFragment.kt */
+    /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$Companion */
+    /* loaded from: classes3.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        public final WalletHomeServicesFragment newInstance() {
+            return new WalletHomeServicesFragment();
+        }
+    }
+}

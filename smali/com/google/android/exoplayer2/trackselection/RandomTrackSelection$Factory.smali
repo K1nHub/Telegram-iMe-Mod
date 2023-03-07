@@ -3,7 +3,7 @@
 .source "RandomTrackSelection.java"
 
 # interfaces
-.implements Lcom/google/android/exoplayer2/trackselection/TrackSelection$Factory;
+.implements Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Factory;
 
 
 # annotations
@@ -22,10 +22,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-wmp-fyrgrpXX5ue2Ip6zuL2aIw(Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory;Lcom/google/android/exoplayer2/trackselection/TrackSelection$Definition;)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
+.method public static synthetic $r8$lambda$daPFkhyilSrce3G1vNzNsPVQBCs(Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory;Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;)Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory;->lambda$createTrackSelections$0(Lcom/google/android/exoplayer2/trackselection/TrackSelection$Definition;)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
+    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory;->lambda$createTrackSelections$0(Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;)Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
     move-result-object p0
 
@@ -35,10 +35,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 41
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 40
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
@@ -51,10 +51,10 @@
 .method public constructor <init>(I)V
     .locals 3
 
-    .line 48
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 47
     new-instance v0, Ljava/util/Random;
 
     int-to-long v1, p1
@@ -66,34 +66,36 @@
     return-void
 .end method
 
-.method private synthetic lambda$createTrackSelections$0(Lcom/google/android/exoplayer2/trackselection/TrackSelection$Definition;)Lcom/google/android/exoplayer2/trackselection/TrackSelection;
-    .locals 3
+.method private synthetic lambda$createTrackSelections$0(Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;)Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
+    .locals 4
 
-    .line 57
+    .line 59
     new-instance v0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;
 
-    iget-object v1, p1, Lcom/google/android/exoplayer2/trackselection/TrackSelection$Definition;->group:Lcom/google/android/exoplayer2/source/TrackGroup;
+    iget-object v1, p1, Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;->group:Lcom/google/android/exoplayer2/source/TrackGroup;
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/trackselection/TrackSelection$Definition;->tracks:[I
+    iget-object v2, p1, Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;->tracks:[I
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory;->random:Ljava/util/Random;
+    iget p1, p1, Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;->type:I
 
-    invoke-direct {v0, v1, p1, v2}, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[ILjava/util/Random;)V
+    iget-object v3, p0, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory;->random:Ljava/util/Random;
+
+    invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[IILjava/util/Random;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public createTrackSelections([Lcom/google/android/exoplayer2/trackselection/TrackSelection$Definition;Lcom/google/android/exoplayer2/upstream/BandwidthMeter;)[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
+.method public createTrackSelections([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;Lcom/google/android/exoplayer2/upstream/BandwidthMeter;Lcom/google/android/exoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/exoplayer2/Timeline;)[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
     .locals 0
 
-    .line 55
+    .line 56
     new-instance p2, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/exoplayer2/trackselection/RandomTrackSelection$Factory;)V
 
-    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionUtil;->createTrackSelectionsForDefinitions([Lcom/google/android/exoplayer2/trackselection/TrackSelection$Definition;Lcom/google/android/exoplayer2/trackselection/TrackSelectionUtil$AdaptiveTrackSelectionFactory;)[Lcom/google/android/exoplayer2/trackselection/TrackSelection;
+    invoke-static {p1, p2}, Lcom/google/android/exoplayer2/trackselection/TrackSelectionUtil;->createTrackSelectionsForDefinitions([Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection$Definition;Lcom/google/android/exoplayer2/trackselection/TrackSelectionUtil$AdaptiveTrackSelectionFactory;)[Lcom/google/android/exoplayer2/trackselection/ExoTrackSelection;
 
     move-result-object p1
 

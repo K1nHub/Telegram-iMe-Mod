@@ -20,6 +20,8 @@
 # static fields
 .field private static final TS_PMT_DESC_AC3:I = 0x6a
 
+.field private static final TS_PMT_DESC_AIT:I = 0x6f
+
 .field private static final TS_PMT_DESC_DTS:I = 0x7b
 
 .field private static final TS_PMT_DESC_DVBSUBS:I = 0x59
@@ -59,12 +61,12 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;I)V
     .locals 1
 
-    .line 513
+    .line 563
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 514
+    .line 564
     new-instance p1, Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     const/4 v0, 0x5
@@ -75,21 +77,21 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
-    .line 515
+    .line 565
     new-instance p1, Landroid/util/SparseArray;
 
     invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToReaderScratch:Landroid/util/SparseArray;
 
-    .line 516
+    .line 566
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
 
-    .line 517
+    .line 567
     iput p2, p0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pid:I
 
     return-void
@@ -98,7 +100,7 @@
 .method private readEsInfo(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;
     .locals 13
 
-    .line 651
+    .line 712
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v0
@@ -113,31 +115,36 @@
 
     const/4 v3, -0x1
 
-    .line 656
+    .line 717
     :goto_0
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v4
 
-    if-ge v4, p2, :cond_b
+    if-ge v4, p2, :cond_d
 
-    .line 657
+    .line 718
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v4
 
-    .line 658
+    .line 719
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v5
 
-    .line 659
+    .line 720
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v6
 
     add-int/2addr v6, v5
 
+    if-le v6, p2, :cond_0
+
+    goto/16 :goto_6
+
+    :cond_0
     const/4 v5, 0x5
 
     const/16 v7, 0x59
@@ -148,9 +155,9 @@
 
     const/16 v10, 0x81
 
-    if-ne v4, v5, :cond_3
+    if-ne v4, v5, :cond_4
 
-    .line 661
+    .line 726
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedInt()J
 
     move-result-wide v4
@@ -159,95 +166,95 @@
 
     cmp-long v7, v4, v11
 
-    if-nez v7, :cond_0
+    if-nez v7, :cond_1
 
     goto :goto_2
 
-    :cond_0
+    :cond_1
     const-wide/32 v10, 0x45414333
 
     cmp-long v7, v4, v10
 
-    if-nez v7, :cond_1
+    if-nez v7, :cond_2
 
     goto :goto_3
 
-    :cond_1
+    :cond_2
     const-wide/32 v9, 0x41432d34
 
     cmp-long v7, v4, v9
 
-    if-nez v7, :cond_2
+    if-nez v7, :cond_3
 
     :goto_1
     const/16 v3, 0xac
 
-    goto :goto_5
+    goto/16 :goto_5
 
-    :cond_2
+    :cond_3
     const-wide/32 v7, 0x48455643
 
     cmp-long v9, v4, v7
 
-    if-nez v9, :cond_a
+    if-nez v9, :cond_c
 
     const/16 v3, 0x24
 
     goto :goto_5
 
-    :cond_3
+    :cond_4
     const/16 v5, 0x6a
 
-    if-ne v4, v5, :cond_4
+    if-ne v4, v5, :cond_5
 
     :goto_2
     const/16 v3, 0x81
 
     goto :goto_5
 
-    :cond_4
+    :cond_5
     const/16 v5, 0x7a
 
-    if-ne v4, v5, :cond_5
+    if-ne v4, v5, :cond_6
 
     :goto_3
     const/16 v3, 0x87
 
     goto :goto_5
 
-    :cond_5
+    :cond_6
     const/16 v5, 0x7f
 
-    if-ne v4, v5, :cond_6
+    if-ne v4, v5, :cond_7
 
-    .line 677
+    .line 742
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v4
 
     const/16 v5, 0x15
 
-    if-ne v4, v5, :cond_a
+    if-ne v4, v5, :cond_c
 
     goto :goto_1
 
-    :cond_6
+    :cond_7
     const/16 v5, 0x7b
 
-    if-ne v4, v5, :cond_7
+    if-ne v4, v5, :cond_8
 
     const/16 v3, 0x8a
 
     goto :goto_5
 
-    :cond_7
+    :cond_8
     const/16 v5, 0xa
 
     const/4 v8, 0x3
 
-    if-ne v4, v5, :cond_8
+    if-ne v4, v5, :cond_9
 
-    .line 685
+    .line 750
     invoke-virtual {p1, v8}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -258,23 +265,23 @@
 
     goto :goto_5
 
-    :cond_8
-    if-ne v4, v7, :cond_a
+    :cond_9
+    if-ne v4, v7, :cond_b
 
-    .line 689
+    .line 754
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 690
+    .line 755
     :goto_4
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result v3
 
-    if-ge v3, v6, :cond_9
+    if-ge v3, v6, :cond_a
 
-    .line 691
+    .line 756
     invoke-virtual {p1, v8}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -283,7 +290,7 @@
 
     move-result-object v3
 
-    .line 692
+    .line 757
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v4
@@ -294,10 +301,10 @@
 
     const/4 v10, 0x0
 
-    .line 694
+    .line 759
     invoke-virtual {p1, v9, v10, v5}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes([BII)V
 
-    .line 695
+    .line 760
     new-instance v5, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$DvbSubtitleInfo;
 
     invoke-direct {v5, v3, v4, v9}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$DvbSubtitleInfo;-><init>(Ljava/lang/String;I[B)V
@@ -306,11 +313,20 @@
 
     goto :goto_4
 
-    :cond_9
+    :cond_a
     const/16 v3, 0x59
 
-    .line 700
-    :cond_a
+    goto :goto_5
+
+    :cond_b
+    const/16 v5, 0x6f
+
+    if-ne v4, v5, :cond_c
+
+    const/16 v3, 0x101
+
+    .line 767
+    :cond_c
     :goto_5
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
@@ -322,16 +338,19 @@
 
     goto/16 :goto_0
 
-    .line 702
-    :cond_b
+    .line 769
+    :cond_d
+    :goto_6
     invoke-virtual {p1, p2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
-    .line 703
+    .line 770
     new-instance v4, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;
 
-    iget-object p1, p1, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 774
+    invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
 
-    .line 704
+    move-result-object p1
+
     invoke-static {p1, v0, p2}, Ljava/util/Arrays;->copyOfRange([BII)[B
 
     move-result-object p1
@@ -350,7 +369,7 @@
 
     move-object/from16 v1, p1
 
-    .line 528
+    .line 580
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v2
@@ -361,7 +380,7 @@
 
     return-void
 
-    .line 535
+    .line 587
     :cond_0
     iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
@@ -393,13 +412,13 @@
 
     goto :goto_0
 
-    .line 538
+    .line 590
     :cond_1
     new-instance v2, Lcom/google/android/exoplayer2/util/TimestampAdjuster;
 
     iget-object v6, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
-    .line 539
+    .line 591
     invoke-static {v6}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$300(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Ljava/util/List;
 
     move-result-object v6
@@ -416,7 +435,7 @@
 
     invoke-direct {v2, v6, v7}, Lcom/google/android/exoplayer2/util/TimestampAdjuster;-><init>(J)V
 
-    .line 540
+    .line 592
     iget-object v6, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v6}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$300(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Ljava/util/List;
@@ -427,7 +446,7 @@
 
     goto :goto_1
 
-    .line 536
+    .line 588
     :cond_2
     :goto_0
     iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
@@ -442,7 +461,7 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/util/TimestampAdjuster;
 
-    .line 544
+    .line 596
     :goto_1
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
@@ -454,31 +473,31 @@
 
     return-void
 
-    .line 550
+    .line 602
     :cond_3
     invoke-virtual {v1, v5}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 551
+    .line 603
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedShort()I
 
     move-result v6
 
     const/4 v7, 0x3
 
-    .line 556
+    .line 608
     invoke-virtual {v1, v7}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 558
+    .line 610
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     invoke-virtual {v1, v8, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes(Lcom/google/android/exoplayer2/util/ParsableBitArray;I)V
 
-    .line 560
+    .line 612
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     invoke-virtual {v8, v7}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 561
+    .line 613
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
@@ -491,19 +510,19 @@
 
     invoke-static {v8, v9}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$402(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;I)I
 
-    .line 564
+    .line 616
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     invoke-virtual {v1, v8, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes(Lcom/google/android/exoplayer2/util/ParsableBitArray;I)V
 
-    .line 565
+    .line 617
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     const/4 v9, 0x4
 
     invoke-virtual {v8, v9}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 566
+    .line 618
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     const/16 v11, 0xc
@@ -512,10 +531,10 @@
 
     move-result v8
 
-    .line 569
+    .line 621
     invoke-virtual {v1, v8}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->skipBytes(I)V
 
-    .line 571
+    .line 623
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v8}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$200(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
@@ -536,7 +555,7 @@
 
     if-nez v8, :cond_4
 
-    .line 574
+    .line 626
     new-instance v8, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;
 
     sget-object v14, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
@@ -545,7 +564,7 @@
 
     invoke-direct {v8, v13, v15, v15, v14}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;-><init>(ILjava/lang/String;Ljava/util/List;[B)V
 
-    .line 575
+    .line 627
     iget-object v14, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v14}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$600(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$Factory;
@@ -558,7 +577,16 @@
 
     invoke-static {v14, v8}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$502(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
 
-    .line 576
+    .line 628
+    iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
+
+    invoke-static {v8}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$500(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_4
+
+    .line 629
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v8}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$500(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
@@ -567,6 +595,7 @@
 
     iget-object v14, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
+    .line 631
     invoke-static {v14}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$700(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     move-result-object v14
@@ -575,101 +604,105 @@
 
     invoke-direct {v15, v6, v13, v12}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;-><init>(III)V
 
+    .line 629
     invoke-interface {v8, v2, v14, v15}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;->init(Lcom/google/android/exoplayer2/util/TimestampAdjuster;Lcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
 
-    .line 580
+    .line 636
     :cond_4
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToReaderScratch:Landroid/util/SparseArray;
 
     invoke-virtual {v8}, Landroid/util/SparseArray;->clear()V
 
-    .line 581
+    .line 637
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
 
     invoke-virtual {v8}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 582
+    .line 638
     invoke-virtual/range {p1 .. p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v8
 
     :goto_2
-    if-lez v8, :cond_b
+    if-lez v8, :cond_c
 
-    .line 584
+    .line 640
     iget-object v14, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     const/4 v15, 0x5
 
     invoke-virtual {v1, v14, v15}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readBytes(Lcom/google/android/exoplayer2/util/ParsableBitArray;I)V
 
-    .line 585
+    .line 641
     iget-object v14, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
-    const/16 v15, 0x8
+    const/16 v4, 0x8
 
-    invoke-virtual {v14, v15}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
+    invoke-virtual {v14, v4}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
+
+    move-result v4
+
+    .line 642
+    iget-object v14, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
+
+    invoke-virtual {v14, v7}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
+
+    .line 643
+    iget-object v14, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
+
+    invoke-virtual {v14, v10}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v14
 
-    .line 586
-    iget-object v15, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
-
-    invoke-virtual {v15, v7}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
-
-    .line 587
-    iget-object v15, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
-
-    invoke-virtual {v15, v10}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
-
-    move-result v15
-
-    .line 588
+    .line 644
     iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     invoke-virtual {v7, v9}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->skipBits(I)V
 
-    .line 589
+    .line 645
     iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pmtScratch:Lcom/google/android/exoplayer2/util/ParsableBitArray;
 
     invoke-virtual {v7, v11}, Lcom/google/android/exoplayer2/util/ParsableBitArray;->readBits(I)I
 
     move-result v7
 
-    .line 590
+    .line 646
     invoke-direct {v0, v1, v7}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->readEsInfo(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;
 
     move-result-object v9
 
     const/4 v10, 0x6
 
-    if-ne v14, v10, :cond_5
+    if-eq v4, v10, :cond_5
 
-    .line 592
-    iget v14, v9, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->streamType:I
+    if-ne v4, v15, :cond_6
 
+    .line 648
     :cond_5
+    iget v4, v9, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;->streamType:I
+
+    :cond_6
     add-int/lit8 v7, v7, 0x5
 
     sub-int/2addr v8, v7
 
-    .line 596
+    .line 652
     iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v7}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$200(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
 
     move-result v7
 
-    if-ne v7, v3, :cond_6
+    if-ne v7, v3, :cond_7
 
-    move v7, v14
+    move v7, v4
 
     goto :goto_3
 
-    :cond_6
-    move v7, v15
+    :cond_7
+    move v7, v14
 
-    .line 597
+    .line 653
     :goto_3
     iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
@@ -681,44 +714,12 @@
 
     move-result v10
 
-    if-eqz v10, :cond_7
+    if-eqz v10, :cond_8
 
     goto :goto_5
 
-    .line 601
-    :cond_7
-    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
-
-    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$200(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
-
-    move-result v10
-
-    if-ne v10, v3, :cond_8
-
-    if-ne v14, v13, :cond_8
-
-    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
-
-    invoke-static {v9}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$500(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
-
-    move-result-object v9
-
-    goto :goto_4
-
-    .line 602
+    .line 659
     :cond_8
-    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
-
-    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$600(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$Factory;
-
-    move-result-object v10
-
-    invoke-interface {v10, v14, v9}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$Factory;->createPayloadReader(ILcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
-
-    move-result-object v9
-
-    .line 603
-    :goto_4
     iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$200(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
@@ -727,28 +728,63 @@
 
     if-ne v10, v3, :cond_9
 
-    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
+    if-ne v4, v13, :cond_9
 
-    .line 604
-    invoke-virtual {v10, v7, v12}, Landroid/util/SparseIntArray;->get(II)I
+    .line 660
+    iget-object v4, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
-    move-result v10
+    invoke-static {v4}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$500(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
 
-    if-ge v15, v10, :cond_a
+    move-result-object v4
 
-    .line 605
+    goto :goto_4
+
+    .line 661
     :cond_9
-    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
+    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
-    invoke-virtual {v10, v7, v15}, Landroid/util/SparseIntArray;->put(II)V
+    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$600(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$Factory;
 
-    .line 606
-    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToReaderScratch:Landroid/util/SparseArray;
+    move-result-object v10
 
-    invoke-virtual {v10, v7, v9}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-interface {v10, v4, v9}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$Factory;->createPayloadReader(ILcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$EsInfo;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
 
+    move-result-object v4
+
+    .line 662
+    :goto_4
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
+
+    invoke-static {v9}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$200(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
+
+    move-result v9
+
+    if-ne v9, v3, :cond_a
+
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
+
+    .line 663
+    invoke-virtual {v9, v7, v12}, Landroid/util/SparseIntArray;->get(II)I
+
+    move-result v9
+
+    if-ge v14, v9, :cond_b
+
+    .line 664
     :cond_a
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v9, v7, v14}, Landroid/util/SparseIntArray;->put(II)V
+
+    .line 665
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToReaderScratch:Landroid/util/SparseArray;
+
+    invoke-virtual {v9, v7, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    :cond_b
     :goto_5
+    const/4 v4, 0x0
+
     const/4 v7, 0x3
 
     const/4 v9, 0x4
@@ -757,119 +793,121 @@
 
     goto/16 :goto_2
 
-    .line 610
-    :cond_b
+    .line 669
+    :cond_c
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1}, Landroid/util/SparseIntArray;->size()I
 
     move-result v1
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
     :goto_6
-    if-ge v7, v1, :cond_e
+    if-ge v4, v1, :cond_f
 
-    .line 612
+    .line 671
+    iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
+
+    invoke-virtual {v7, v4}, Landroid/util/SparseIntArray;->keyAt(I)I
+
+    move-result v7
+
+    .line 672
     iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v8, v7}, Landroid/util/SparseIntArray;->keyAt(I)I
+    invoke-virtual {v8, v4}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v8
 
-    .line 613
-    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToPidScratch:Landroid/util/SparseIntArray;
+    .line 673
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
-    invoke-virtual {v9, v7}, Landroid/util/SparseIntArray;->valueAt(I)I
+    invoke-static {v9}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$800(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Landroid/util/SparseBooleanArray;
 
-    move-result v9
+    move-result-object v9
 
-    .line 614
+    invoke-virtual {v9, v7, v5}, Landroid/util/SparseBooleanArray;->put(IZ)V
+
+    .line 674
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
+
+    invoke-static {v9}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$900(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Landroid/util/SparseBooleanArray;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v8, v5}, Landroid/util/SparseBooleanArray;->put(IZ)V
+
+    .line 675
+    iget-object v9, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToReaderScratch:Landroid/util/SparseArray;
+
+    invoke-virtual {v9, v4}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
+
+    if-eqz v9, :cond_e
+
+    .line 677
     iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
-    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$800(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Landroid/util/SparseBooleanArray;
+    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$500(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
 
     move-result-object v10
 
-    invoke-virtual {v10, v8, v5}, Landroid/util/SparseBooleanArray;->put(IZ)V
+    if-eq v9, v10, :cond_d
 
-    .line 615
+    .line 678
     iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
-    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$900(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Landroid/util/SparseBooleanArray;
+    .line 680
+    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$700(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     move-result-object v10
 
-    invoke-virtual {v10, v9, v5}, Landroid/util/SparseBooleanArray;->put(IZ)V
+    new-instance v11, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;
 
-    .line 616
-    iget-object v10, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->trackIdToReaderScratch:Landroid/util/SparseArray;
+    invoke-direct {v11, v6, v7, v12}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;-><init>(III)V
 
-    invoke-virtual {v10, v7}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    .line 678
+    invoke-interface {v9, v2, v10, v11}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;->init(Lcom/google/android/exoplayer2/util/TimestampAdjuster;Lcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
 
-    move-result-object v10
-
-    check-cast v10, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
-
-    if-eqz v10, :cond_d
-
-    .line 618
-    iget-object v11, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
-
-    invoke-static {v11}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$500(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;
-
-    move-result-object v11
-
-    if-eq v10, v11, :cond_c
-
-    .line 619
-    iget-object v11, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
-
-    invoke-static {v11}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$700(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
-
-    move-result-object v11
-
-    new-instance v13, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;
-
-    invoke-direct {v13, v6, v8, v12}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;-><init>(III)V
-
-    invoke-interface {v10, v2, v11, v13}, Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader;->init(Lcom/google/android/exoplayer2/util/TimestampAdjuster;Lcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/extractor/ts/TsPayloadReader$TrackIdGenerator;)V
-
-    .line 622
-    :cond_c
-    iget-object v8, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
-
-    invoke-static {v8}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$000(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Landroid/util/SparseArray;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v9, v10}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
+    .line 683
     :cond_d
-    add-int/lit8 v7, v7, 0x1
+    iget-object v7, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
+
+    invoke-static {v7}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$000(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Landroid/util/SparseArray;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v8, v9}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    :cond_e
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_6
 
-    .line 626
-    :cond_e
+    .line 687
+    :cond_f
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$200(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
 
     move-result v1
 
-    if-ne v1, v3, :cond_f
+    if-ne v1, v3, :cond_10
 
-    .line 627
+    .line 688
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$1000(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Z
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_12
 
-    .line 628
+    .line 689
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$700(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
@@ -878,42 +916,48 @@
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->endTracks()V
 
-    .line 629
+    .line 690
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
-    invoke-static {v1, v4}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$102(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;I)I
+    const/4 v2, 0x0
 
-    .line 630
+    invoke-static {v1, v2}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$102(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;I)I
+
+    .line 691
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1, v5}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$1002(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;Z)Z
 
     goto :goto_8
 
-    .line 633
-    :cond_f
+    :cond_10
+    const/4 v2, 0x0
+
+    .line 694
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$000(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Landroid/util/SparseArray;
 
     move-result-object v1
 
-    iget v2, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pid:I
+    iget v3, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->pid:I
 
-    invoke-virtual {v1, v2}, Landroid/util/SparseArray;->remove(I)V
+    invoke-virtual {v1, v3}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 634
+    .line 695
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$200(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
 
-    move-result v2
+    move-result v3
 
-    if-ne v2, v5, :cond_10
+    if-ne v3, v5, :cond_11
+
+    const/4 v4, 0x0
 
     goto :goto_7
 
-    :cond_10
+    :cond_11
     iget-object v2, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$100(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
@@ -925,16 +969,16 @@
     :goto_7
     invoke-static {v1, v4}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$102(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;I)I
 
-    .line 635
+    .line 696
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$100(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)I
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_12
 
-    .line 636
+    .line 697
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$700(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;)Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
@@ -943,12 +987,12 @@
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->endTracks()V
 
-    .line 637
+    .line 698
     iget-object v1, v0, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor$PmtReader;->this$0:Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;
 
     invoke-static {v1, v5}, Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;->access$1002(Lcom/google/android/exoplayer2/extractor/ts/TsExtractor;Z)Z
 
-    :cond_11
+    :cond_12
     :goto_8
     return-void
 .end method

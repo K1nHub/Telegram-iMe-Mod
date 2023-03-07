@@ -26,16 +26,16 @@
 .method public constructor <init>(IJI)V
     .locals 0
 
-    .line 1471
+    .line 1929
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1472
+    .line 1930
     iput p1, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;->id:I
 
-    .line 1473
+    .line 1931
     iput-wide p2, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;->duration:J
 
-    .line 1474
+    .line 1932
     iput p4, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;->rotationDegrees:I
 
     return-void
@@ -44,7 +44,7 @@
 .method static synthetic access$000(Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;)J
     .locals 2
 
-    .line 1465
+    .line 1923
     iget-wide v0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;->duration:J
 
     return-wide v0
@@ -53,7 +53,7 @@
 .method static synthetic access$100(Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;)I
     .locals 0
 
-    .line 1465
+    .line 1923
     iget p0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;->id:I
 
     return p0
@@ -62,7 +62,7 @@
 .method static synthetic access$200(Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;)I
     .locals 0
 
-    .line 1465
+    .line 1923
     iget p0, p0, Lcom/google/android/exoplayer2/extractor/mp4/AtomParsers$TkhdData;->rotationDegrees:I
 
     return p0

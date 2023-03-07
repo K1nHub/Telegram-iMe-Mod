@@ -420,11 +420,11 @@
     move-exception p1
 
     .line 266
-    new-instance p2, Lcom/google/android/exoplayer2/ParserException;
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object p1
 
-    throw p2
+    throw p1
 
     :cond_0
     return p3
@@ -461,11 +461,11 @@
     move-exception p1
 
     .line 293
-    new-instance p2, Lcom/google/android/exoplayer2/ParserException;
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object p1
 
-    throw p2
+    throw p1
 
     :cond_0
     return-wide p3
@@ -502,11 +502,11 @@
     move-exception p1
 
     .line 279
-    new-instance p2, Lcom/google/android/exoplayer2/ParserException;
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object p1
 
-    throw p2
+    throw p1
 
     .line 282
     :cond_0
@@ -548,11 +548,11 @@
     move-exception p1
 
     .line 307
-    new-instance p2, Lcom/google/android/exoplayer2/ParserException;
+    invoke-static {v0, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedManifest(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object p1
 
-    throw p2
+    throw p1
 
     .line 310
     :cond_0

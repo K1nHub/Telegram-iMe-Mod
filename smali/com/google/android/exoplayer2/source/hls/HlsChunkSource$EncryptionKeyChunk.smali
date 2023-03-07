@@ -38,7 +38,7 @@
 
     move-object v7, p6
 
-    .line 606
+    .line 939
     invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/source/chunk/DataChunk;-><init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;ILcom/google/android/exoplayer2/Format;ILjava/lang/Object;[B)V
 
     return-void
@@ -49,7 +49,7 @@
 .method protected consume([BI)V
     .locals 0
 
-    .line 612
+    .line 951
     invoke-static {p1, p2}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object p1
@@ -62,7 +62,7 @@
 .method public getResult()[B
     .locals 1
 
-    .line 618
+    .line 957
     iget-object v0, p0, Lcom/google/android/exoplayer2/source/hls/HlsChunkSource$EncryptionKeyChunk;->result:[B
 
     return-object v0

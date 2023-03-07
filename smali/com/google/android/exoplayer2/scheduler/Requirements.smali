@@ -29,6 +29,8 @@
 
 .field public static final DEVICE_IDLE:I = 0x4
 
+.field public static final DEVICE_STORAGE_NOT_LOW:I = 0x10
+
 .field public static final NETWORK:I = 0x1
 
 .field public static final NETWORK_UNMETERED:I = 0x2
@@ -42,7 +44,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 215
+    .line 263
     new-instance v0, Lcom/google/android/exoplayer2/scheduler/Requirements$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/scheduler/Requirements$1;-><init>()V
@@ -55,7 +57,7 @@
 .method public constructor <init>(I)V
     .locals 1
 
-    .line 63
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     and-int/lit8 v0, p1, 0x2
@@ -64,7 +66,7 @@
 
     or-int/lit8 p1, p1, 0x1
 
-    .line 68
+    .line 85
     :cond_0
     iput p1, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
@@ -74,7 +76,7 @@
 .method private getNotMetNetworkRequirements(Landroid/content/Context;)I
     .locals 2
 
-    .line 127
+    .line 161
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isNetworkRequired()Z
 
     move-result v0
@@ -88,7 +90,7 @@
     :cond_0
     const-string v0, "connectivity"
 
-    .line 133
+    .line 167
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
@@ -99,21 +101,21 @@
 
     check-cast p1, Landroid/net/ConnectivityManager;
 
-    .line 134
+    .line 168
     invoke-virtual {p1}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    .line 136
+    .line 170
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 137
+    .line 171
     invoke-static {p1}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isInternetConnectivityValidated(Landroid/net/ConnectivityManager;)Z
 
     move-result v0
@@ -122,7 +124,7 @@
 
     goto :goto_0
 
-    .line 141
+    .line 175
     :cond_1
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isUnmeteredNetworkRequired()Z
 
@@ -143,7 +145,7 @@
     :cond_2
     return v1
 
-    .line 138
+    .line 172
     :cond_3
     :goto_0
     iget p1, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
@@ -156,7 +158,7 @@
 .method private isDeviceCharging(Landroid/content/Context;)Z
     .locals 3
 
-    .line 149
+    .line 184
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.BATTERY_CHANGED"
@@ -165,8 +167,8 @@
 
     const/4 v1, 0x0
 
-    .line 150
-    invoke-virtual {p1, v1, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    .line 185
+    invoke-static {p1, v1, v0}, Lcom/google/android/exoplayer2/util/Util;->registerReceiverNotExported(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     move-result-object p1
 
@@ -181,7 +183,7 @@
 
     const-string v2, "status"
 
-    .line 154
+    .line 190
     invoke-virtual {p1, v2, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result p1
@@ -206,7 +208,7 @@
 
     const-string v0, "power"
 
-    .line 161
+    .line 197
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
@@ -217,7 +219,7 @@
 
     check-cast p1, Landroid/os/PowerManager;
 
-    .line 162
+    .line 198
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -228,7 +230,7 @@
 
     if-lt v0, v3, :cond_0
 
-    .line 163
+    .line 199
     invoke-virtual {p1}, Landroid/os/PowerManager;->isDeviceIdleMode()Z
 
     move-result v1
@@ -240,7 +242,7 @@
 
     if-lt v0, v3, :cond_1
 
-    .line 164
+    .line 200
     invoke-virtual {p1}, Landroid/os/PowerManager;->isInteractive()Z
 
     move-result p1
@@ -268,7 +270,7 @@
 .method private static isInternetConnectivityValidated(Landroid/net/ConnectivityManager;)Z
     .locals 3
 
-    .line 172
+    .line 214
     sget v0, Lcom/google/android/exoplayer2/util/Util;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -279,7 +281,7 @@
 
     return v1
 
-    .line 176
+    .line 218
     :cond_0
     invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
 
@@ -291,8 +293,9 @@
 
     return v2
 
-    .line 182
+    .line 226
     :cond_1
+    :try_start_0
     invoke-virtual {p0, v0}, Landroid/net/ConnectivityManager;->getNetworkCapabilities(Landroid/net/Network;)Landroid/net/NetworkCapabilities;
 
     move-result-object p0
@@ -301,10 +304,12 @@
 
     const/16 v0, 0x10
 
-    .line 184
+    .line 228
     invoke-virtual {p0, v0}, Landroid/net/NetworkCapabilities;->hasCapability(I)Z
 
     move-result p0
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz p0, :cond_2
 
@@ -313,8 +318,38 @@
     :cond_2
     const/4 v1, 0x0
 
+    :catch_0
     :goto_0
     return v1
+.end method
+
+.method private isStorageNotLow(Landroid/content/Context;)Z
+    .locals 2
+
+    .line 204
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string v1, "android.intent.action.DEVICE_STORAGE_LOW"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, v1, v0}, Lcom/google/android/exoplayer2/util/Util;->registerReceiverNotExported(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method
 
 
@@ -322,7 +357,7 @@
 .method public checkRequirements(Landroid/content/Context;)Z
     .locals 0
 
-    .line 104
+    .line 137
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/scheduler/Requirements;->getNotMetRequirements(Landroid/content/Context;)I
 
     move-result p1
@@ -362,7 +397,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 192
+    .line 240
     const-class v2, Lcom/google/android/exoplayer2/scheduler/Requirements;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -373,7 +408,7 @@
 
     goto :goto_1
 
-    .line 195
+    .line 243
     :cond_1
     iget v2, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
@@ -396,15 +431,39 @@
     return v1
 .end method
 
+.method public filterRequirements(I)Lcom/google/android/exoplayer2/scheduler/Requirements;
+    .locals 1
+
+    .line 101
+    iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
+
+    and-int/2addr p1, v0
+
+    if-ne p1, v0, :cond_0
+
+    move-object v0, p0
+
+    goto :goto_0
+
+    .line 102
+    :cond_0
+    new-instance v0, Lcom/google/android/exoplayer2/scheduler/Requirements;
+
+    invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/scheduler/Requirements;-><init>(I)V
+
+    :goto_0
+    return-object v0
+.end method
+
 .method public getNotMetRequirements(Landroid/content/Context;)I
     .locals 2
 
-    .line 115
+    .line 147
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/scheduler/Requirements;->getNotMetNetworkRequirements(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 116
+    .line 148
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isChargingRequired()Z
 
     move-result v1
@@ -419,7 +478,7 @@
 
     or-int/lit8 v0, v0, 0x8
 
-    .line 119
+    .line 151
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isIdleRequired()Z
 
@@ -429,20 +488,36 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isDeviceIdle(Landroid/content/Context;)Z
 
-    move-result p1
+    move-result v1
 
-    if-nez p1, :cond_1
+    if-nez v1, :cond_1
 
     or-int/lit8 v0, v0, 0x4
 
+    .line 154
     :cond_1
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isStorageNotLowRequired()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/scheduler/Requirements;->isStorageNotLow(Landroid/content/Context;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    or-int/lit8 v0, v0, 0x10
+
+    :cond_2
     return v0
 .end method
 
 .method public getRequirements()I
     .locals 1
 
-    .line 74
+    .line 90
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
     return v0
@@ -451,7 +526,7 @@
 .method public hashCode()I
     .locals 1
 
-    .line 200
+    .line 248
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
     return v0
@@ -460,7 +535,7 @@
 .method public isChargingRequired()Z
     .locals 1
 
-    .line 89
+    .line 117
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
     and-int/lit8 v0, v0, 0x8
@@ -481,7 +556,7 @@
 .method public isIdleRequired()Z
     .locals 1
 
-    .line 94
+    .line 122
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
     and-int/lit8 v0, v0, 0x4
@@ -502,7 +577,7 @@
 .method public isNetworkRequired()Z
     .locals 2
 
-    .line 79
+    .line 107
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
     const/4 v1, 0x1
@@ -520,10 +595,31 @@
     return v1
 .end method
 
+.method public isStorageNotLowRequired()Z
+    .locals 1
+
+    .line 127
+    iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
+
+    and-int/lit8 v0, v0, 0x10
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
 .method public isUnmeteredNetworkRequired()Z
     .locals 1
 
-    .line 84
+    .line 112
     iget v0, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
     and-int/lit8 v0, v0, 0x2
@@ -544,7 +640,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    .line 212
+    .line 260
     iget p2, p0, Lcom/google/android/exoplayer2/scheduler/Requirements;->requirements:I
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V

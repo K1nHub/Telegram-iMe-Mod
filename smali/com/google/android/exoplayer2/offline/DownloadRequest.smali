@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/android/exoplayer2/offline/DownloadRequest$Builder;,
         Lcom/google/android/exoplayer2/offline/DownloadRequest$UnsupportedRequestException;
     }
 .end annotation
@@ -25,14 +26,6 @@
     .end annotation
 .end field
 
-.field public static final TYPE_DASH:Ljava/lang/String; = "dash"
-
-.field public static final TYPE_HLS:Ljava/lang/String; = "hls"
-
-.field public static final TYPE_PROGRESSIVE:Ljava/lang/String; = "progressive"
-
-.field public static final TYPE_SS:Ljava/lang/String; = "ss"
-
 
 # instance fields
 .field public final customCacheKey:Ljava/lang/String;
@@ -40,6 +33,10 @@
 .field public final data:[B
 
 .field public final id:Ljava/lang/String;
+
+.field public final keySetId:[B
+
+.field public final mimeType:Ljava/lang/String;
 
 .field public final streamKeys:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -51,8 +48,6 @@
     .end annotation
 .end field
 
-.field public final type:Ljava/lang/String;
-
 .field public final uri:Landroid/net/Uri;
 
 
@@ -60,7 +55,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 199
+    .line 296
     new-instance v0, Lcom/google/android/exoplayer2/offline/DownloadRequest$1;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/offline/DownloadRequest$1;-><init>()V
@@ -73,10 +68,10 @@
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 4
 
-    .line 92
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
+    .line 162
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -89,20 +84,7 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
 
-    .line 94
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
-
-    .line 95
+    .line 163
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -119,12 +101,19 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
-    .line 96
+    .line 164
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
+
+    .line 165
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 97
+    .line 166
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
@@ -134,7 +123,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 99
+    .line 168
     const-class v3, Lcom/google/android/exoplayer2/offline/StreamKey;
 
     invoke-virtual {v3}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -153,7 +142,7 @@
 
     goto :goto_0
 
-    .line 101
+    .line 170
     :cond_0
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
@@ -161,14 +150,21 @@
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
-    .line 102
+    .line 171
+    invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
+
+    .line 172
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
 
-    .line 103
+    .line 173
     invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object p1
@@ -184,122 +180,136 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/util/List;Ljava/lang/String;[B)V
-    .locals 3
+.method private constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[B)V
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Ljava/lang/String;",
             "Landroid/net/Uri;",
+            "Ljava/lang/String;",
             "Ljava/util/List<",
             "Lcom/google/android/exoplayer2/offline/StreamKey;",
-            ">;",
+            ">;[B",
             "Ljava/lang/String;",
             "[B)V"
         }
     .end annotation
 
-    .line 77
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "dash"
-
-    .line 78
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 143
+    invoke-static {p2, p3}, Lcom/google/android/exoplayer2/util/Util;->inferContentTypeForUriAndMimeType(Landroid/net/Uri;Ljava/lang/String;)I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    const/4 v1, 0x1
 
-    const-string v0, "hls"
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/4 v2, 0x2
 
-    move-result v0
+    if-eq v0, v2, :cond_0
 
-    if-nez v0, :cond_0
-
-    const-string v0, "ss"
-
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
+    if-ne v0, v1, :cond_2
 
     :cond_0
-    if-nez p5, :cond_1
-
-    const/4 v0, 0x1
+    if-nez p6, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    .line 79
+    .line 147
     :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "customCacheKey must be null for type: "
+    const-string v3, "customCacheKey must be null for type: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 82
+    .line 150
     :cond_2
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
 
-    .line 83
-    iput-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
+    .line 151
+    iput-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
-    .line 84
-    iput-object p3, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
+    .line 152
+    iput-object p3, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
-    .line 85
+    .line 153
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1, p4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 86
+    .line 154
     invoke-static {p1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 87
+    .line 155
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
-    .line 88
-    iput-object p5, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+    if-eqz p5, :cond_3
 
-    if-eqz p6, :cond_3
+    .line 156
+    array-length p1, p5
 
-    .line 89
-    array-length p1, p6
-
-    invoke-static {p6, p1}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {p5, p1}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object p1
 
     goto :goto_1
 
     :cond_3
-    sget-object p1, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
+    const/4 p1, 0x0
 
     :goto_1
+    iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
+
+    .line 157
+    iput-object p6, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+
+    if-eqz p7, :cond_4
+
+    .line 158
+    array-length p1, p7
+
+    invoke-static {p7, p1}, Ljava/util/Arrays;->copyOf([BI)[B
+
+    move-result-object p1
+
+    goto :goto_2
+
+    :cond_4
+    sget-object p1, Lcom/google/android/exoplayer2/util/Util;->EMPTY_BYTE_ARRAY:[B
+
+    :goto_2
     iput-object p1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[BLcom/google/android/exoplayer2/offline/DownloadRequest$1;)V
+    .locals 0
+
+    .line 37
+    invoke-direct/range {p0 .. p7}, Lcom/google/android/exoplayer2/offline/DownloadRequest;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[B)V
 
     return-void
 .end method
@@ -307,34 +317,63 @@
 
 # virtual methods
 .method public copyWithId(Ljava/lang/String;)Lcom/google/android/exoplayer2/offline/DownloadRequest;
-    .locals 8
+    .locals 9
 
-    .line 113
-    new-instance v7, Lcom/google/android/exoplayer2/offline/DownloadRequest;
+    .line 183
+    new-instance v8, Lcom/google/android/exoplayer2/offline/DownloadRequest;
 
-    iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
+    iget-object v3, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
     iget-object v4, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
-    iget-object v5, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+    iget-object v5, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
 
-    iget-object v6, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
+    iget-object v6, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
 
-    move-object v0, v7
+    iget-object v7, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
+
+    move-object v0, v8
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/offline/DownloadRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/util/List;Ljava/lang/String;[B)V
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/offline/DownloadRequest;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[B)V
 
-    return-object v7
+    return-object v8
+.end method
+
+.method public copyWithKeySetId([B)Lcom/google/android/exoplayer2/offline/DownloadRequest;
+    .locals 9
+
+    .line 193
+    new-instance v8, Lcom/google/android/exoplayer2/offline/DownloadRequest;
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
+
+    iget-object v3, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
+
+    iget-object v4, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
+
+    iget-object v6, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+
+    iget-object v7, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
+
+    move-object v0, v8
+
+    move-object v5, p1
+
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/exoplayer2/offline/DownloadRequest;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[B)V
+
+    return-object v8
 .end method
 
 .method public copyWithMergedRequest(Lcom/google/android/exoplayer2/offline/DownloadRequest;)Lcom/google/android/exoplayer2/offline/DownloadRequest;
-    .locals 8
+    .locals 9
 
-    .line 129
+    .line 208
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
@@ -345,18 +384,7 @@
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 130
-    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
-
-    iget-object v1, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
-
-    .line 132
+    .line 210
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -375,7 +403,7 @@
 
     goto :goto_1
 
-    .line 136
+    .line 214
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -385,7 +413,7 @@
 
     const/4 v1, 0x0
 
-    .line 137
+    .line 215
     :goto_0
     iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
@@ -395,7 +423,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 138
+    .line 216
     iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -404,14 +432,14 @@
 
     check-cast v2, Lcom/google/android/exoplayer2/offline/StreamKey;
 
-    .line 139
+    .line 217
     invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 140
+    .line 218
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_1
@@ -419,7 +447,7 @@
 
     goto :goto_0
 
-    .line 134
+    .line 212
     :cond_2
     :goto_1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -429,22 +457,24 @@
     :cond_3
     move-object v5, v0
 
-    .line 144
+    .line 222
     new-instance v0, Lcom/google/android/exoplayer2/offline/DownloadRequest;
 
     iget-object v2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
+    iget-object v3, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
-    iget-object v4, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
+    iget-object v4, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
-    iget-object v6, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+    iget-object v6, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
 
-    iget-object v7, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
+    iget-object v7, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+
+    iget-object v8, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v7}, Lcom/google/android/exoplayer2/offline/DownloadRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/util/List;Ljava/lang/String;[B)V
+    invoke-direct/range {v1 .. v8}, Lcom/google/android/exoplayer2/offline/DownloadRequest;-><init>(Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/util/List;[BLjava/lang/String;[B)V
 
     return-object v0
 .end method
@@ -460,7 +490,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
 
-    .line 155
+    .line 250
     instance-of v0, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;
 
     const/4 v1, 0x0
@@ -469,11 +499,11 @@
 
     return v1
 
-    .line 158
+    .line 253
     :cond_0
     check-cast p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;
 
-    .line 159
+    .line 254
     iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
 
     iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
@@ -484,23 +514,23 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
-    iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
+    iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
-    .line 160
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 255
+    invoke-virtual {v0, v2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
-    iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
+    iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
-    .line 161
-    invoke-virtual {v0, v2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    .line 256
+    invoke-static {v0, v2}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -510,8 +540,19 @@
 
     iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
-    .line 162
+    .line 257
     invoke-interface {v0, v2}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
+
+    iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
+
+    .line 258
+    invoke-static {v0, v2}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v0
 
@@ -521,7 +562,7 @@
 
     iget-object v2, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
 
-    .line 163
+    .line 259
     invoke-static {v0, v2}, Lcom/google/android/exoplayer2/util/Util;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -532,7 +573,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
 
-    .line 164
+    .line 260
     invoke-static {v0, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result p1
@@ -546,10 +587,10 @@
 .end method
 
 .method public final hashCode()I
-    .locals 2
+    .locals 3
 
-    .line 169
-    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
+    .line 265
+    iget-object v0, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -557,29 +598,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 170
-    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 171
-    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 172
+    .line 266
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
     invoke-virtual {v1}, Landroid/net/Uri;->hashCode()I
@@ -590,19 +611,10 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 173
-    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
+    .line 267
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
-    invoke-interface {v1}, Ljava/util/List;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 174
-    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+    const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
@@ -620,7 +632,43 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 175
+    .line 268
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 269
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
+
+    invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 270
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    :cond_1
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 271
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
@@ -632,15 +680,66 @@
     return v0
 .end method
 
+.method public toMediaItem()Lcom/google/android/exoplayer2/MediaItem;
+    .locals 2
+
+    .line 234
+    new-instance v0, Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    invoke-direct {v0}, Lcom/google/android/exoplayer2/MediaItem$Builder;-><init>()V
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
+
+    .line 235
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setMediaId(Ljava/lang/String;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
+
+    .line 236
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setUri(Landroid/net/Uri;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
+
+    .line 237
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setCustomCacheKey(Ljava/lang/String;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
+
+    .line 238
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setMimeType(Ljava/lang/String;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
+
+    .line 239
+    invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/MediaItem$Builder;->setStreamKeys(Ljava/util/List;)Lcom/google/android/exoplayer2/MediaItem$Builder;
+
+    move-result-object v0
+
+    .line 240
+    invoke-virtual {v0}, Lcom/google/android/exoplayer2/MediaItem$Builder;->build()Lcom/google/android/exoplayer2/MediaItem;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 150
+    .line 245
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -662,17 +761,12 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    .line 188
+    .line 284
     iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->id:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 189
-    iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->type:Ljava/lang/String;
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 190
+    .line 285
     iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->uri:Landroid/net/Uri;
 
     invoke-virtual {p2}, Landroid/net/Uri;->toString()Ljava/lang/String;
@@ -681,7 +775,12 @@
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 191
+    .line 286
+    iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->mimeType:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 287
     iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -694,7 +793,7 @@
 
     const/4 v0, 0x0
 
-    .line 192
+    .line 288
     :goto_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
@@ -704,7 +803,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 193
+    .line 289
     iget-object v1, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->streamKeys:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -719,13 +818,18 @@
 
     goto :goto_0
 
-    .line 195
+    .line 291
     :cond_0
+    iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->keySetId:[B
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V
+
+    .line 292
     iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->customCacheKey:Ljava/lang/String;
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 196
+    .line 293
     iget-object p2, p0, Lcom/google/android/exoplayer2/offline/DownloadRequest;->data:[B
 
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V

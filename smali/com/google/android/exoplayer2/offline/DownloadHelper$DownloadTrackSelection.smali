@@ -24,7 +24,7 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
     .locals 0
 
-    .line 1121
+    .line 1161
     invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/trackselection/BaseTrackSelection;-><init>(Lcom/google/android/exoplayer2/source/TrackGroup;[I)V
 
     return-void

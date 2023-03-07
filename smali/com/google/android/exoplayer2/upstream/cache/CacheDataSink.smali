@@ -9,7 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;
+        Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;,
+        Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$Factory;
     }
 .end annotation
 
@@ -27,7 +28,7 @@
 # instance fields
 .field private final bufferSize:I
 
-.field private bufferedOutputStream:Lcom/google/android/exoplayer2/util/ReusableBufferedOutputStream;
+.field private bufferedOutputStream:Lcom/google/android/exoplayer2/upstream/cache/ReusableBufferedOutputStream;
 
 .field private final cache:Lcom/google/android/exoplayer2/upstream/cache/Cache;
 
@@ -52,7 +53,7 @@
 
     const/16 v0, 0x5000
 
-    .line 82
+    .line 152
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;-><init>(Lcom/google/android/exoplayer2/upstream/cache/Cache;JI)V
 
     return-void
@@ -61,7 +62,7 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/upstream/cache/Cache;JI)V
     .locals 5
 
-    .line 95
+    .line 165
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, -0x1
@@ -90,7 +91,7 @@
     :goto_1
     const-string v3, "fragmentSize must be positive or C.LENGTH_UNSET."
 
-    .line 96
+    .line 166
     invoke-static {v2, v3}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(ZLjava/lang/Object;)V
 
     cmp-long v2, p2, v0
@@ -107,10 +108,10 @@
 
     const-string v1, "fragmentSize is below the minimum recommended value of 2097152. This may cause poor cache performance."
 
-    .line 100
+    .line 170
     invoke-static {v0, v1}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 106
+    .line 176
     :cond_2
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -124,11 +125,11 @@
 
     const-wide p2, 0x7fffffffffffffffL
 
-    .line 107
+    .line 177
     :cond_3
     iput-wide p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->fragmentSize:J
 
-    .line 108
+    .line 178
     iput p4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferSize:I
 
     return-void
@@ -142,7 +143,7 @@
         }
     .end annotation
 
-    .line 189
+    .line 261
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
     if-nez v0, :cond_0
@@ -152,27 +153,33 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 195
+    .line 267
     :try_start_0
     invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 198
+    .line 270
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 199
+    .line 271
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
-    .line 200
+    .line 272
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
 
-    .line 201
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/io/File;
+
+    .line 273
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
 
-    .line 203
+    .line 275
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->cache:Lcom/google/android/exoplayer2/upstream/cache/Cache;
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
@@ -184,28 +191,34 @@
     :catchall_0
     move-exception v0
 
-    .line 198
+    .line 270
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
     invoke-static {v2}, Lcom/google/android/exoplayer2/util/Util;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 199
+    .line 271
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
-    .line 200
+    .line 272
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
 
-    .line 201
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/io/File;
+
+    .line 273
     iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
 
-    .line 205
+    .line 277
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 207
+    .line 279
     throw v0
 .end method
 
-.method private openNextOutputStream()V
+.method private openNextOutputStream(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
     .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -213,10 +226,8 @@
         }
     .end annotation
 
-    .line 167
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
-
-    iget-wide v0, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
+    .line 239
+    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
     const-wide/16 v2, -0x1
 
@@ -226,7 +237,7 @@
 
     goto :goto_0
 
-    .line 169
+    .line 241
     :cond_0
     iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecBytesWritten:J
 
@@ -241,74 +252,81 @@
     :goto_0
     move-wide v8, v2
 
-    .line 170
+    .line 242
     iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->cache:Lcom/google/android/exoplayer2/upstream/cache/Cache;
 
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
+    iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
 
-    iget-object v5, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+    .line 244
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-wide v0, v0, Lcom/google/android/exoplayer2/upstream/DataSpec;->absoluteStreamPosition:J
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Ljava/lang/String;
+
+    iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->position:J
 
     iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecBytesWritten:J
 
     add-long v6, v0, v2
 
-    .line 171
+    .line 243
     invoke-interface/range {v4 .. v9}, Lcom/google/android/exoplayer2/upstream/cache/Cache;->startFile(Ljava/lang/String;JJ)Ljava/io/File;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
 
-    .line 173
-    new-instance v0, Ljava/io/FileOutputStream;
+    .line 245
+    new-instance p1, Ljava/io/FileOutputStream;
 
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->file:Ljava/io/File;
 
-    invoke-direct {v0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {p1, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 174
+    .line 246
+    iget v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferSize:I
+
+    if-lez v0, :cond_2
+
+    .line 247
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferedOutputStream:Lcom/google/android/exoplayer2/upstream/cache/ReusableBufferedOutputStream;
+
+    if-nez v0, :cond_1
+
+    .line 248
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/cache/ReusableBufferedOutputStream;
+
     iget v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferSize:I
 
-    if-lez v1, :cond_2
+    invoke-direct {v0, p1, v1}, Lcom/google/android/exoplayer2/upstream/cache/ReusableBufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
 
-    .line 175
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferedOutputStream:Lcom/google/android/exoplayer2/util/ReusableBufferedOutputStream;
-
-    if-nez v1, :cond_1
-
-    .line 176
-    new-instance v1, Lcom/google/android/exoplayer2/util/ReusableBufferedOutputStream;
-
-    iget v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferSize:I
-
-    invoke-direct {v1, v0, v2}, Lcom/google/android/exoplayer2/util/ReusableBufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
-
-    iput-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferedOutputStream:Lcom/google/android/exoplayer2/util/ReusableBufferedOutputStream;
+    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferedOutputStream:Lcom/google/android/exoplayer2/upstream/cache/ReusableBufferedOutputStream;
 
     goto :goto_1
 
-    .line 179
+    .line 251
     :cond_1
-    invoke-virtual {v1, v0}, Lcom/google/android/exoplayer2/util/ReusableBufferedOutputStream;->reset(Ljava/io/OutputStream;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/upstream/cache/ReusableBufferedOutputStream;->reset(Ljava/io/OutputStream;)V
 
-    .line 181
+    .line 253
     :goto_1
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferedOutputStream:Lcom/google/android/exoplayer2/util/ReusableBufferedOutputStream;
+    iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->bufferedOutputStream:Lcom/google/android/exoplayer2/upstream/cache/ReusableBufferedOutputStream;
 
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
     goto :goto_2
 
-    .line 183
+    .line 255
     :cond_2
-    iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
+    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
     :goto_2
     const-wide/16 v0, 0x0
 
-    .line 185
+    .line 257
     iput-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
 
     return-void
@@ -324,14 +342,14 @@
         }
     .end annotation
 
-    .line 155
+    .line 227
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 159
+    .line 231
     :cond_0
     :try_start_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->closeCurrentOutputStream()V
@@ -343,7 +361,7 @@
     :catch_0
     move-exception v0
 
-    .line 161
+    .line 233
     new-instance v1, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;
 
     invoke-direct {v1, v0}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;-><init>(Ljava/io/IOException;)V
@@ -359,7 +377,12 @@
         }
     .end annotation
 
-    .line 113
+    .line 183
+    iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->key:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 184
     iget-wide v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->length:J
 
     const-wide/16 v2, -0x1
@@ -370,7 +393,7 @@
 
     const/4 v0, 0x2
 
-    .line 114
+    .line 185
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/upstream/DataSpec;->isFlagSet(I)Z
 
     move-result v0
@@ -379,23 +402,23 @@
 
     const/4 p1, 0x0
 
-    .line 115
+    .line 186
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     return-void
 
-    .line 118
+    .line 189
     :cond_0
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     const/4 v0, 0x4
 
-    .line 120
+    .line 191
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/upstream/DataSpec;->isFlagSet(I)Z
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_1
+    if-eqz v0, :cond_1
 
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->fragmentSize:J
 
@@ -409,12 +432,12 @@
 
     const-wide/16 v0, 0x0
 
-    .line 121
+    .line 192
     iput-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecBytesWritten:J
 
-    .line 123
+    .line 194
     :try_start_0
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->openNextOutputStream()V
+    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->openNextOutputStream(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -423,7 +446,7 @@
     :catch_0
     move-exception p1
 
-    .line 125
+    .line 196
     new-instance v0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;-><init>(Ljava/io/IOException;)V
@@ -432,14 +455,14 @@
 .end method
 
 .method public write([BII)V
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;
         }
     .end annotation
 
-    .line 131
+    .line 202
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     if-nez v0, :cond_0
@@ -447,70 +470,76 @@
     return-void
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    if-ge v0, p3, :cond_2
+    if-ge v1, p3, :cond_2
 
-    .line 137
+    .line 209
     :try_start_0
-    iget-wide v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
+    iget-wide v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
 
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecFragmentSize:J
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecFragmentSize:J
 
-    cmp-long v5, v1, v3
+    cmp-long v6, v2, v4
 
-    if-nez v5, :cond_1
+    if-nez v6, :cond_1
 
-    .line 138
+    .line 210
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->closeCurrentOutputStream()V
 
-    .line 139
-    invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->openNextOutputStream()V
+    .line 211
+    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->openNextOutputStream(Lcom/google/android/exoplayer2/upstream/DataSpec;)V
 
     :cond_1
-    sub-int v1, p3, v0
+    sub-int v2, p3, v1
 
-    int-to-long v1, v1
+    int-to-long v2, v2
 
-    .line 141
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecFragmentSize:J
+    .line 213
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecFragmentSize:J
 
-    iget-wide v5, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
+    iget-wide v6, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
 
-    sub-long/2addr v3, v5
+    sub-long/2addr v4, v6
 
-    .line 142
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->min(JJ)J
+    .line 214
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    long-to-int v2, v1
+    long-to-int v3, v2
 
-    .line 143
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
+    .line 215
+    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStream:Ljava/io/OutputStream;
 
-    add-int v3, p2, v0
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Util;->castNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1, p1, v3, v2}, Ljava/io/OutputStream;->write([BII)V
+    move-result-object v2
 
-    add-int/2addr v0, v2
+    check-cast v2, Ljava/io/OutputStream;
 
-    .line 145
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
+    add-int v4, p2, v1
 
-    int-to-long v1, v2
+    invoke-virtual {v2, p1, v4, v3}, Ljava/io/OutputStream;->write([BII)V
 
-    add-long/2addr v3, v1
+    add-int/2addr v1, v3
 
-    iput-wide v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
+    .line 217
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
 
-    .line 146
-    iget-wide v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecBytesWritten:J
+    int-to-long v2, v3
 
-    add-long/2addr v3, v1
+    add-long/2addr v4, v2
 
-    iput-wide v3, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecBytesWritten:J
+    iput-wide v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->outputStreamBytesWritten:J
+
+    .line 218
+    iget-wide v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecBytesWritten:J
+
+    add-long/2addr v4, v2
+
+    iput-wide v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink;->dataSpecBytesWritten:J
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -519,7 +548,7 @@
     :catch_0
     move-exception p1
 
-    .line 149
+    .line 221
     new-instance p2, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;
 
     invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheDataSink$CacheDataSinkException;-><init>(Ljava/io/IOException;)V

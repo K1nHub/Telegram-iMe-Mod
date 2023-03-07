@@ -43,7 +43,7 @@
 
     const-string v2, "last_touch_timestamp"
 
-    .line 48
+    .line 50
     filled-new-array {v0, v1, v2}, [Ljava/lang/String;
 
     move-result-object v0
@@ -56,10 +56,10 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/database/DatabaseProvider;)V
     .locals 0
 
-    .line 96
+    .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
+    .line 101
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
     return-void
@@ -73,42 +73,42 @@
         }
     .end annotation
 
-    .line 77
+    .line 79
     invoke-static {p1, p2}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 79
+    .line 81
     :try_start_0
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->getTableName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 80
+    .line 82
     invoke-interface {p0}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object p0
 
-    .line 81
+    .line 83
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v0, 0x2
 
-    .line 83
+    .line 85
     :try_start_1
     invoke-static {p0, v0, p1}, Lcom/google/android/exoplayer2/database/VersionTable;->removeVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;)V
 
-    .line 85
+    .line 87
     invoke-static {p0, p2}, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->dropTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
-    .line 86
+    .line 88
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 88
+    .line 90
     :try_start_2
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
@@ -119,7 +119,7 @@
 
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 89
+    .line 91
     throw p1
     :try_end_2
     .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_0
@@ -127,7 +127,7 @@
     :catch_0
     move-exception p0
 
-    .line 91
+    .line 93
     new-instance p1, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {p1, p0}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -138,7 +138,7 @@
 .method private static dropTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
     .locals 2
 
-    .line 246
+    .line 250
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -161,15 +161,15 @@
 .method private getCursor()Landroid/database/Cursor;
     .locals 9
 
-    .line 232
+    .line 236
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 233
+    .line 237
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
-    .line 234
+    .line 238
     invoke-interface {v0}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v1
@@ -188,7 +188,7 @@
 
     const/4 v8, 0x0
 
-    .line 235
+    .line 239
     invoke-virtual/range {v1 .. v8}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
 .method private static getTableName(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 250
+    .line 254
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -237,7 +237,7 @@
         }
     .end annotation
 
-    .line 146
+    .line 150
     :try_start_0
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->getCursor()Landroid/database/Cursor;
 
@@ -245,7 +245,7 @@
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 147
+    .line 151
     :try_start_1
     new-instance v1, Ljava/util/HashMap;
 
@@ -255,7 +255,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 148
+    .line 152
     :goto_0
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -265,26 +265,32 @@
 
     const/4 v2, 0x0
 
-    .line 149
+    .line 153
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
+    invoke-static {v2}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
     const/4 v3, 0x1
 
-    .line 150
+    .line 154
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v3
 
     const/4 v5, 0x2
 
-    .line 151
+    .line 155
     invoke-interface {v0, v5}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v5
 
-    .line 152
+    .line 156
     new-instance v7, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadata;
 
     invoke-direct {v7, v3, v4, v5, v6}, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadata;-><init>(JJ)V
@@ -295,7 +301,7 @@
 
     goto :goto_0
 
-    .line 155
+    .line 159
     :cond_0
     :try_start_2
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
@@ -309,7 +315,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 146
+    .line 150
     :try_start_3
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
     :try_end_3
@@ -332,7 +338,7 @@
     :catch_0
     move-exception v0
 
-    .line 156
+    .line 160
     new-instance v1, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {v1, v0}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -348,20 +354,20 @@
         }
     .end annotation
 
-    .line 111
+    .line 115
     :try_start_0
     invoke-static {p1, p2}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 112
+    .line 116
     invoke-static {p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->getTableName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
-    .line 113
+    .line 117
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
     invoke-interface {p2}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -370,7 +376,7 @@
 
     const/4 v0, 0x2
 
-    .line 115
+    .line 119
     invoke-static {p2, v0, p1}, Lcom/google/android/exoplayer2/database/VersionTable;->getVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;)I
 
     move-result p2
@@ -379,28 +385,28 @@
 
     if-eq p2, v1, :cond_0
 
-    .line 118
+    .line 122
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
     invoke-interface {p2}, Lcom/google/android/exoplayer2/database/DatabaseProvider;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object p2
 
-    .line 119
+    .line 123
     invoke-virtual {p2}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 121
+    .line 125
     :try_start_1
     invoke-static {p2, v0, p1, v1}, Lcom/google/android/exoplayer2/database/VersionTable;->setVersion(Landroid/database/sqlite/SQLiteDatabase;ILjava/lang/String;I)V
 
-    .line 123
+    .line 127
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     invoke-static {p2, p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->dropTable(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
 
-    .line 124
+    .line 128
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -427,12 +433,12 @@
 
     invoke-virtual {p2, p1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 125
+    .line 129
     invoke-virtual {p2}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 127
+    .line 131
     :try_start_2
     invoke-virtual {p2}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
@@ -443,7 +449,7 @@
 
     invoke-virtual {p2}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 128
+    .line 132
     throw p1
     :try_end_2
     .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_0
@@ -455,7 +461,7 @@
     :catch_0
     move-exception p1
 
-    .line 131
+    .line 135
     new-instance p2, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -471,12 +477,12 @@
         }
     .end annotation
 
-    .line 195
+    .line 199
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 197
+    .line 201
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
@@ -484,7 +490,7 @@
 
     move-result-object v0
 
-    .line 198
+    .line 202
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     const-string v2, "name = ?"
@@ -506,7 +512,7 @@
     :catch_0
     move-exception p1
 
-    .line 200
+    .line 204
     new-instance v0, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -531,12 +537,12 @@
         }
     .end annotation
 
-    .line 214
+    .line 218
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 216
+    .line 220
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
@@ -544,12 +550,12 @@
 
     move-result-object v0
 
-    .line 217
+    .line 221
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
     :try_end_0
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 219
+    .line 223
     :try_start_1
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -568,7 +574,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 220
+    .line 224
     iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     const-string v3, "name = ?"
@@ -585,13 +591,13 @@
 
     goto :goto_0
 
-    .line 222
+    .line 226
     :cond_0
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 224
+    .line 228
     :try_start_2
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
@@ -602,7 +608,7 @@
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 225
+    .line 229
     throw p1
     :try_end_2
     .catch Landroid/database/SQLException; {:try_start_2 .. :try_end_2} :catch_0
@@ -610,7 +616,7 @@
     :catch_0
     move-exception p1
 
-    .line 227
+    .line 231
     new-instance v0, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {v0, p1}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V
@@ -626,12 +632,12 @@
         }
     .end annotation
 
-    .line 172
+    .line 176
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 174
+    .line 178
     :try_start_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->databaseProvider:Lcom/google/android/exoplayer2/database/DatabaseProvider;
 
@@ -639,19 +645,19 @@
 
     move-result-object v0
 
-    .line 175
+    .line 179
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
     const-string v2, "name"
 
-    .line 176
+    .line 180
     invoke-virtual {v1, v2, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p1, "length"
 
-    .line 177
+    .line 181
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
@@ -660,14 +666,14 @@
 
     const-string p1, "last_touch_timestamp"
 
-    .line 178
+    .line 182
     invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
     invoke-virtual {v1, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 179
+    .line 183
     iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheFileMetadataIndex;->tableName:Ljava/lang/String;
 
     const/4 p2, 0x0
@@ -681,7 +687,7 @@
     :catch_0
     move-exception p1
 
-    .line 181
+    .line 185
     new-instance p2, Lcom/google/android/exoplayer2/database/DatabaseIOException;
 
     invoke-direct {p2, p1}, Lcom/google/android/exoplayer2/database/DatabaseIOException;-><init>(Landroid/database/SQLException;)V

@@ -63,6 +63,9 @@
     .locals 1
 
     .line 75
+    invoke-static {p1}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 76
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/upstream/DataSource;->addTransferListener(Lcom/google/android/exoplayer2/upstream/TransferListener;)V
@@ -78,7 +81,7 @@
         }
     .end annotation
 
-    .line 111
+    .line 112
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->close()V
@@ -136,7 +139,7 @@
         }
     .end annotation
 
-    .line 106
+    .line 107
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->getResponseHeaders()Ljava/util/Map;
@@ -149,7 +152,7 @@
 .method public getUri()Landroid/net/Uri;
     .locals 1
 
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->getUri()Landroid/net/Uri;
@@ -167,26 +170,26 @@
         }
     .end annotation
 
-    .line 81
+    .line 82
     iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/DataSpec;->uri:Landroid/net/Uri;
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->lastOpenedUri:Landroid/net/Uri;
 
-    .line 82
+    .line 83
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->lastResponseHeaders:Ljava/util/Map;
 
-    .line 83
+    .line 84
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0, p1}, Lcom/google/android/exoplayer2/upstream/DataSource;->open(Lcom/google/android/exoplayer2/upstream/DataSpec;)J
 
     move-result-wide v0
 
-    .line 84
+    .line 85
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->getUri()Landroid/net/Uri;
 
     move-result-object p1
@@ -199,7 +202,7 @@
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->lastOpenedUri:Landroid/net/Uri;
 
-    .line 85
+    .line 86
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->getResponseHeaders()Ljava/util/Map;
 
     move-result-object p1
@@ -217,10 +220,10 @@
         }
     .end annotation
 
-    .line 91
+    .line 92
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataSource;->read([BII)I
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataReader;->read([BII)I
 
     move-result p1
 
@@ -228,7 +231,7 @@
 
     if-eq p1, p2, :cond_0
 
-    .line 93
+    .line 94
     iget-wide p2, p0, Lcom/google/android/exoplayer2/upstream/StatsDataSource;->bytesRead:J
 
     int-to-long v0, p1

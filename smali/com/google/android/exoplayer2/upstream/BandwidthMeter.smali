@@ -18,6 +18,9 @@
 .method public abstract getBitrateEstimate()J
 .end method
 
+.method public abstract getTimeToFirstByteEstimateUs()J
+.end method
+
 .method public abstract getTransferListener()Lcom/google/android/exoplayer2/upstream/TransferListener;
 .end method
 

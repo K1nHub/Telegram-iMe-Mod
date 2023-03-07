@@ -47,7 +47,7 @@
 
     move-wide v4, p4
 
-    .line 59
+    .line 50
     invoke-direct/range {v0 .. v8}, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;-><init>(Ljava/lang/String;JJJLjava/io/File;)V
 
     return-void
@@ -56,16 +56,16 @@
 .method public constructor <init>(Ljava/lang/String;JJJLjava/io/File;)V
     .locals 0
 
-    .line 74
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 66
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->key:Ljava/lang/String;
 
-    .line 76
+    .line 67
     iput-wide p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
 
-    .line 77
+    .line 68
     iput-wide p4, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
 
     if-eqz p8, :cond_0
@@ -77,14 +77,14 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 78
+    .line 69
     :goto_0
     iput-boolean p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->isCached:Z
 
-    .line 79
+    .line 70
     iput-object p8, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->file:Ljava/io/File;
 
-    .line 80
+    .line 71
     iput-wide p6, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->lastTouchTimestamp:J
 
     return-void
@@ -95,7 +95,7 @@
 .method public compareTo(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)I
     .locals 4
 
-    .line 99
+    .line 86
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->key:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->key:Ljava/lang/String;
@@ -106,7 +106,7 @@
 
     if-nez v0, :cond_0
 
-    .line 100
+    .line 87
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->key:Ljava/lang/String;
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->key:Ljava/lang/String;
@@ -117,7 +117,7 @@
 
     return p1
 
-    .line 102
+    .line 89
     :cond_0
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
 
@@ -152,7 +152,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 26
+    .line 23
     check-cast p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;
 
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->compareTo(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)I
@@ -165,7 +165,7 @@
 .method public isHoleSpan()Z
     .locals 1
 
-    .line 94
+    .line 81
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->isCached:Z
 
     xor-int/lit8 v0, v0, 0x1
@@ -176,7 +176,7 @@
 .method public isOpenEnded()Z
     .locals 5
 
-    .line 87
+    .line 76
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
 
     const-wide/16 v2, -0x1
@@ -194,4 +194,39 @@
 
     :goto_0
     return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 3
+
+    .line 95
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "["
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

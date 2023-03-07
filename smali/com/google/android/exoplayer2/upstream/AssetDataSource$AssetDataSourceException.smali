@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/exoplayer2/upstream/AssetDataSource$AssetDataSourceException;
-.super Ljava/io/IOException;
+.super Lcom/google/android/exoplayer2/upstream/DataSourceException;
 .source "AssetDataSource.java"
 
 
@@ -16,10 +16,23 @@
 
 # direct methods
 .method public constructor <init>(Ljava/io/IOException;)V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/16 v0, 0x7d0
+
+    .line 43
+    invoke-direct {p0, p1, v0}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Throwable;I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Throwable;I)V
     .locals 0
 
-    .line 39
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+    .line 54
+    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Throwable;I)V
 
     return-void
 .end method

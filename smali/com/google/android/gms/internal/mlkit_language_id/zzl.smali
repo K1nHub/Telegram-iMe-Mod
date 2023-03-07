@@ -316,6 +316,8 @@
 
 .method zzb()[Ljava/lang/Object;
     .locals 1
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
 
     const/4 v0, 0x0
 

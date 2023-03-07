@@ -5,6 +5,14 @@
 # direct methods
 .method public static equal(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
+    .param p0    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Object;
+        .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+        .end annotation
+    .end param
 
     if-eq p0, p1, :cond_1
 

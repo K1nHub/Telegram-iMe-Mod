@@ -54,57 +54,6 @@
     return-void
 .end method
 
-.method private static writeUnsignedInt(Ljava/io/DataOutputStream;J)V
-    .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    const/16 v0, 0x18
-
-    ushr-long v0, p1, v0
-
-    long-to-int v1, v0
-
-    and-int/lit16 v0, v1, 0xff
-
-    .line 67
-    invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
-
-    const/16 v0, 0x10
-
-    ushr-long v0, p1, v0
-
-    long-to-int v1, v0
-
-    and-int/lit16 v0, v1, 0xff
-
-    .line 68
-    invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
-
-    const/16 v0, 0x8
-
-    ushr-long v0, p1, v0
-
-    long-to-int v1, v0
-
-    and-int/lit16 v0, v1, 0xff
-
-    .line 69
-    invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
-
-    long-to-int p2, p1
-
-    and-int/lit16 p1, p2, 0xff
-
-    .line 70
-    invoke-virtual {p0, p1}, Ljava/io/DataOutputStream;->writeByte(I)V
-
-    return-void
-.end method
-
 
 # virtual methods
 .method public encode(Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;)[B
@@ -144,14 +93,14 @@
 
     iget-wide v1, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->durationMs:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/exoplayer2/metadata/emsg/EventMessageEncoder;->writeUnsignedInt(Ljava/io/DataOutputStream;J)V
+    invoke-virtual {v0, v1, v2}, Ljava/io/DataOutputStream;->writeLong(J)V
 
     .line 49
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessageEncoder;->dataOutputStream:Ljava/io/DataOutputStream;
 
     iget-wide v1, p1, Lcom/google/android/exoplayer2/metadata/emsg/EventMessage;->id:J
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/exoplayer2/metadata/emsg/EventMessageEncoder;->writeUnsignedInt(Ljava/io/DataOutputStream;J)V
+    invoke-virtual {v0, v1, v2}, Ljava/io/DataOutputStream;->writeLong(J)V
 
     .line 50
     iget-object v0, p0, Lcom/google/android/exoplayer2/metadata/emsg/EventMessageEncoder;->dataOutputStream:Ljava/io/DataOutputStream;

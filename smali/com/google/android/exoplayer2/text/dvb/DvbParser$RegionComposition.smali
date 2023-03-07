@@ -58,40 +58,40 @@
         }
     .end annotation
 
-    .line 966
+    .line 1039
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 967
+    .line 1040
     iput p1, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->id:I
 
-    .line 968
+    .line 1041
     iput-boolean p2, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->fillFlag:Z
 
-    .line 969
+    .line 1042
     iput p3, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->width:I
 
-    .line 970
+    .line 1043
     iput p4, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->height:I
 
-    .line 971
+    .line 1044
     iput p5, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->levelOfCompatibility:I
 
-    .line 972
+    .line 1045
     iput p6, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->depth:I
 
-    .line 973
+    .line 1046
     iput p7, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->clutId:I
 
-    .line 974
+    .line 1047
     iput p8, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->pixelCode8Bit:I
 
-    .line 975
+    .line 1048
     iput p9, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->pixelCode4Bit:I
 
-    .line 976
+    .line 1049
     iput p10, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->pixelCode2Bit:I
 
-    .line 977
+    .line 1050
     iput-object p11, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
 
     return-void
@@ -102,12 +102,12 @@
 .method public mergeFrom(Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;)V
     .locals 4
 
-    .line 981
+    .line 1054
     iget-object p1, p1, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
 
     const/4 v0, 0x0
 
-    .line 982
+    .line 1055
     :goto_0
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
@@ -115,7 +115,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 983
+    .line 1056
     iget-object v1, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$RegionComposition;->regionObjects:Landroid/util/SparseArray;
 
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->keyAt(I)I

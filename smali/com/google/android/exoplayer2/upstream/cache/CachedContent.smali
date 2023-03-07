@@ -3,6 +3,14 @@
 .source "CachedContent.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;
+    }
+.end annotation
+
+
 # static fields
 .field private static final TAG:Ljava/lang/String; = "CachedContent"
 
@@ -22,7 +30,15 @@
 
 .field public final key:Ljava/lang/String;
 
-.field private locked:Z
+.field private final lockedRanges:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private metadata:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
@@ -31,7 +47,7 @@
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 1
 
-    .line 49
+    .line 55
     sget-object v0, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->EMPTY:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;-><init>(ILjava/lang/String;Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;)V
@@ -42,24 +58,31 @@
 .method public constructor <init>(ILjava/lang/String;Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;)V
     .locals 0
 
-    .line 52
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 59
     iput p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
 
-    .line 54
+    .line 60
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
 
-    .line 55
+    .line 61
     iput-object p3, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->metadata:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
-    .line 56
+    .line 62
     new-instance p1, Ljava/util/TreeSet;
 
     invoke-direct {p1}, Ljava/util/TreeSet;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
+
+    .line 63
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -69,7 +92,7 @@
 .method public addSpan(Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;)V
     .locals 1
 
-    .line 87
+    .line 138
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     invoke-virtual {v0, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
@@ -80,17 +103,17 @@
 .method public applyMetadataMutations(Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;)Z
     .locals 1
 
-    .line 70
+    .line 77
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->metadata:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
-    .line 71
+    .line 78
     invoke-virtual {v0, p1}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->copyWithMutationsApplied(Lcom/google/android/exoplayer2/upstream/cache/ContentMetadataMutations;)Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->metadata:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
-    .line 72
+    .line 79
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -114,7 +137,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 207
+    .line 269
     const-class v2, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -125,11 +148,11 @@
 
     goto :goto_1
 
-    .line 210
+    .line 272
     :cond_1
     check-cast p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;
 
-    .line 211
+    .line 273
     iget v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
 
     iget v3, p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
@@ -140,7 +163,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
 
-    .line 212
+    .line 274
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -151,7 +174,7 @@
 
     iget-object v3, p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
-    .line 213
+    .line 275
     invoke-virtual {v2, v3}, Ljava/util/TreeSet;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -162,7 +185,7 @@
 
     iget-object p1, p1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->metadata:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
-    .line 214
+    .line 276
     invoke-virtual {v2, p1}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -202,7 +225,7 @@
     :cond_0
     const/4 v4, 0x0
 
-    .line 120
+    .line 180
     :goto_0
     invoke-static {v4}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
@@ -215,16 +238,16 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 121
+    .line 181
     :goto_1
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkArgument(Z)V
 
-    .line 122
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->getSpan(J)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
+    .line 182
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->getSpan(JJ)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
 
     move-result-object v0
 
-    .line 123
+    .line 183
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->isHoleSpan()Z
 
     move-result v4
@@ -233,7 +256,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 125
+    .line 185
     invoke-virtual {v0}, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->isOpenEnded()Z
 
     move-result p1
@@ -266,7 +289,7 @@
     :cond_4
     move-wide v5, v7
 
-    .line 132
+    .line 192
     :goto_3
     iget-wide v2, v0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
 
@@ -278,7 +301,7 @@
 
     if-gez v4, :cond_7
 
-    .line 134
+    .line 194
     iget-object v4, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     invoke-virtual {v4, v0, v1}, Ljava/util/TreeSet;->tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -302,7 +325,7 @@
 
     check-cast v1, Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
 
-    .line 135
+    .line 195
     iget-wide v7, v1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
 
     cmp-long v4, v7, v2
@@ -311,7 +334,7 @@
 
     goto :goto_4
 
-    .line 141
+    .line 201
     :cond_6
     iget-wide v9, v1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
 
@@ -329,7 +352,7 @@
     :goto_4
     sub-long/2addr v2, p1
 
-    .line 148
+    .line 208
     invoke-static {v2, v3, p3, p4}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p1
@@ -340,23 +363,23 @@
 .method public getMetadata()Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
     .locals 1
 
-    .line 61
+    .line 68
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->metadata:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     return-object v0
 .end method
 
-.method public getSpan(J)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
+.method public getSpan(JJ)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
     .locals 6
 
-    .line 100
+    .line 155
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
 
     invoke-static {v0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;->createLookup(Ljava/lang/String;J)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
 
     move-result-object v0
 
-    .line 101
+    .line 156
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     invoke-virtual {v1, v0}, Ljava/util/TreeSet;->floor(Ljava/lang/Object;)Ljava/lang/Object;
@@ -367,7 +390,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 102
+    .line 157
     iget-wide v2, v1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
 
     iget-wide v4, v1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->length:J
@@ -380,7 +403,7 @@
 
     return-object v1
 
-    .line 105
+    .line 160
     :cond_0
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
@@ -390,30 +413,38 @@
 
     check-cast v0, Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 106
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
+    .line 162
+    iget-wide v0, v0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
 
-    invoke-static {v0, p1, p2}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;->createOpenHole(Ljava/lang/String;J)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
+    sub-long/2addr v0, p1
 
-    move-result-object p1
+    const-wide/16 v2, -0x1
+
+    cmp-long v4, p3, v2
+
+    if-nez v4, :cond_1
+
+    move-wide p3, v0
 
     goto :goto_0
 
-    .line 107
+    .line 163
     :cond_1
-    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
+    invoke-static {v0, v1, p3, p4}, Ljava/lang/Math;->min(JJ)J
 
-    iget-wide v2, v0, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
+    move-result-wide p3
 
-    sub-long/2addr v2, p1
+    .line 165
+    :cond_2
+    :goto_0
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
 
-    invoke-static {v1, p1, p2, v2, v3}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;->createClosedHole(Ljava/lang/String;JJ)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
+    invoke-static {v0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;->createHole(Ljava/lang/String;JJ)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
 
     move-result-object p1
 
-    :goto_0
     return-object p1
 .end method
 
@@ -428,7 +459,7 @@
         }
     .end annotation
 
-    .line 92
+    .line 143
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     return-object v0
@@ -437,12 +468,12 @@
 .method public hashCode()I
     .locals 2
 
-    .line 196
+    .line 258
     iget v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 197
+    .line 259
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->key:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -453,7 +484,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 198
+    .line 260
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->metadata:Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;
 
     invoke-virtual {v1}, Lcom/google/android/exoplayer2/upstream/cache/DefaultContentMetadata;->hashCode()I
@@ -468,7 +499,7 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 182
+    .line 242
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
@@ -478,37 +509,144 @@
     return v0
 .end method
 
-.method public isLocked()Z
-    .locals 1
+.method public isFullyLocked(JJ)Z
+    .locals 3
 
-    .line 77
-    iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->locked:Z
+    const/4 v0, 0x0
 
-    return v0
-.end method
+    const/4 v1, 0x0
 
-.method public removeSpan(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)Z
-    .locals 1
+    .line 95
+    :goto_0
+    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
 
-    .line 187
-    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v0, p1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
+    move-result v2
 
-    move-result v0
+    if-ge v1, v2, :cond_1
 
-    if-eqz v0, :cond_0
+    .line 96
+    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
 
-    .line 188
-    iget-object p1, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->file:Ljava/io/File;
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;
+
+    invoke-virtual {v2, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->contains(JJ)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v0
+.end method
+
+.method public isFullyUnlocked()Z
+    .locals 1
+
+    .line 84
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public lockRange(JJ)Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    .line 111
+    :goto_0
+    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_1
+
+    .line 112
+    iget-object v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;
+
+    invoke-virtual {v2, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->intersects(JJ)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    return v0
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 116
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
+
+    new-instance v1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;
+
+    invoke-direct {v1, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;-><init>(JJ)V
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
+.method public removeSpan(Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;)Z
+    .locals 1
+
+    .line 247
+    iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
+
+    invoke-virtual {v0, p1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 248
+    iget-object p1, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->file:Ljava/io/File;
+
+    if-eqz p1, :cond_0
+
+    .line 249
+    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+
+    :cond_0
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
     const/4 p1, 0x0
 
     return p1
@@ -517,7 +655,7 @@
 .method public setLastTouchTimestamp(Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;JZ)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
     .locals 7
 
-    .line 162
+    .line 222
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     invoke-virtual {v0, p1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
@@ -526,20 +664,34 @@
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 163
+    .line 223
     iget-object v0, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->file:Ljava/io/File;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/io/File;
 
     if-eqz p4, :cond_1
 
-    .line 165
+    .line 225
     invoke-virtual {v0}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
-    move-result-object v1
+    move-result-object p4
 
-    .line 166
+    invoke-static {p4}, Lcom/google/android/exoplayer2/util/Assertions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p4
+
+    move-object v1, p4
+
+    check-cast v1, Ljava/io/File;
+
+    .line 226
     iget-wide v3, p1, Lcom/google/android/exoplayer2/upstream/cache/CacheSpan;->position:J
 
-    .line 167
+    .line 227
     iget v2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->id:I
 
     move-wide v5, p2
@@ -548,7 +700,7 @@
 
     move-result-object p4
 
-    .line 168
+    .line 228
     invoke-virtual {v0, p4}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     move-result v1
@@ -559,7 +711,7 @@
 
     goto :goto_0
 
-    .line 171
+    .line 231
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -585,14 +737,14 @@
 
     invoke-static {v1, p4}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 175
+    .line 235
     :cond_1
     :goto_0
     invoke-virtual {p1, v0, p2, p3}, Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;->copyWithFileAndLastTouchTimestamp(Ljava/io/File;J)Lcom/google/android/exoplayer2/upstream/cache/SimpleCacheSpan;
 
     move-result-object p1
 
-    .line 176
+    .line 236
     iget-object p2, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->cachedSpans:Ljava/util/TreeSet;
 
     invoke-virtual {p2, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
@@ -600,11 +752,53 @@
     return-object p1
 .end method
 
-.method public setLocked(Z)V
-    .locals 0
+.method public unlockRange(J)V
+    .locals 4
 
-    .line 82
-    iput-boolean p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->locked:Z
+    const/4 v0, 0x0
+
+    .line 127
+    :goto_0
+    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_1
+
+    .line 128
+    iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;
+
+    iget-wide v1, v1, Lcom/google/android/exoplayer2/upstream/cache/CachedContent$Range;->position:J
+
+    cmp-long v3, v1, p1
+
+    if-nez v3, :cond_0
+
+    .line 129
+    iget-object p1, p0, Lcom/google/android/exoplayer2/upstream/cache/CachedContent;->lockedRanges:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     return-void
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 133
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p1
 .end method

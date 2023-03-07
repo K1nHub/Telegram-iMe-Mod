@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 500
+    .line 599
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
 
     div-double/2addr v0, p2
 
-    .line 497
+    .line 596
     invoke-static {p0, p1, v0, v1}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide p0
@@ -71,8 +71,165 @@
     return-wide p0
 .end method
 
+.method public static parseVorbisComments(Ljava/util/List;)Lcom/google/android/exoplayer2/metadata/Metadata;
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Lcom/google/android/exoplayer2/metadata/Metadata;"
+        }
+    .end annotation
+
+    .line 271
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    .line 272
+    :goto_0
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_2
+
+    .line 273
+    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    const-string v4, "="
+
+    .line 274
+    invoke-static {v3, v4}, Lcom/google/android/exoplayer2/util/Util;->splitAtFirst(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 275
+    array-length v5, v4
+
+    const/4 v6, 0x2
+
+    const-string v7, "VorbisUtil"
+
+    if-eq v5, v6, :cond_0
+
+    .line 276
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Failed to parse Vorbis comment: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v7, v3}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 280
+    :cond_0
+    aget-object v3, v4, v1
+
+    const-string v5, "METADATA_BLOCK_PICTURE"
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    const/4 v5, 0x1
+
+    if-eqz v3, :cond_1
+
+    .line 285
+    :try_start_0
+    aget-object v3, v4, v5
+
+    invoke-static {v3, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object v3
+
+    .line 286
+    new-instance v4, Lcom/google/android/exoplayer2/util/ParsableByteArray;
+
+    invoke-direct {v4, v3}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>([B)V
+
+    invoke-static {v4}, Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;->fromPictureBlock(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/metadata/flac/PictureFrame;
+
+    move-result-object v3
+
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v3
+
+    const-string v4, "Failed to parse vorbis picture"
+
+    .line 288
+    invoke-static {v7, v4, v3}, Lcom/google/android/exoplayer2/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    .line 291
+    :cond_1
+    new-instance v3, Lcom/google/android/exoplayer2/metadata/vorbis/VorbisComment;
+
+    aget-object v6, v4, v1
+
+    aget-object v4, v4, v5
+
+    invoke-direct {v3, v6, v4}, Lcom/google/android/exoplayer2/metadata/vorbis/VorbisComment;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 292
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 296
+    :cond_2
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_3
+
+    const/4 p0, 0x0
+
+    goto :goto_2
+
+    :cond_3
+    new-instance p0, Lcom/google/android/exoplayer2/metadata/Metadata;
+
+    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/metadata/Metadata;-><init>(Ljava/util/List;)V
+
+    :goto_2
+    return-object p0
+.end method
+
 .method private static readBook(Lcom/google/android/exoplayer2/extractor/VorbisBitArray;)Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;
-    .locals 14
+    .locals 15
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
@@ -81,271 +238,274 @@
 
     const/16 v0, 0x18
 
-    .line 436
+    .line 533
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v1
 
-    const v2, 0x564342
+    const/4 v2, 0x0
 
-    if-ne v1, v2, :cond_a
+    const v3, 0x564342
+
+    if-ne v1, v3, :cond_a
 
     const/16 v1, 0x10
 
-    .line 440
+    .line 538
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
-
-    move-result v3
-
-    .line 441
-    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v4
 
-    .line 442
-    new-array v5, v4, [J
+    .line 539
+    invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
-    .line 444
+    move-result v5
+
+    .line 540
+    new-array v6, v5, [J
+
+    .line 542
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
-    move-result v7
+    move-result v8
 
     const-wide/16 v0, 0x0
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const/4 v6, 0x5
+    const/4 v7, 0x5
 
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
-    if-nez v7, :cond_2
+    if-nez v8, :cond_2
 
-    .line 446
+    .line 544
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
-    move-result v9
+    move-result v10
 
     :goto_0
-    if-ge v2, v4, :cond_4
+    if-ge v3, v5, :cond_4
 
-    if-eqz v9, :cond_1
+    if-eqz v10, :cond_1
 
-    .line 449
+    .line 547
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
-    move-result v10
+    move-result v11
 
-    if-eqz v10, :cond_0
+    if-eqz v11, :cond_0
 
-    .line 450
-    invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
+    .line 548
+    invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
-    move-result v10
+    move-result v11
 
-    add-int/2addr v10, v8
+    add-int/2addr v11, v9
 
-    int-to-long v10, v10
+    int-to-long v11, v11
 
-    aput-wide v10, v5, v2
+    aput-wide v11, v6, v3
 
     goto :goto_1
 
-    .line 452
+    .line 550
     :cond_0
-    aput-wide v0, v5, v2
+    aput-wide v0, v6, v3
 
     goto :goto_1
 
-    .line 455
+    .line 553
     :cond_1
-    invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
+    invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
-    move-result v10
+    move-result v11
 
-    add-int/2addr v10, v8
+    add-int/2addr v11, v9
 
-    int-to-long v10, v10
+    int-to-long v11, v11
 
-    aput-wide v10, v5, v2
+    aput-wide v11, v6, v3
 
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 459
+    .line 557
     :cond_2
-    invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
+    invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
-    move-result v6
+    move-result v7
 
-    add-int/2addr v6, v8
+    add-int/2addr v7, v9
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     :goto_2
-    if-ge v9, v4, :cond_4
+    if-ge v10, v5, :cond_4
 
-    sub-int v10, v4, v9
+    sub-int v11, v5, v10
 
-    .line 461
-    invoke-static {v10}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->iLog(I)I
+    .line 559
+    invoke-static {v11}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->iLog(I)I
 
-    move-result v10
+    move-result v11
 
-    invoke-virtual {p0, v10}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
+    invoke-virtual {p0, v11}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
-    move-result v10
+    move-result v11
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
     :goto_3
-    if-ge v11, v10, :cond_3
+    if-ge v12, v11, :cond_3
 
-    if-ge v9, v4, :cond_3
+    if-ge v10, v5, :cond_3
 
-    int-to-long v12, v6
+    int-to-long v13, v7
 
-    .line 463
-    aput-wide v12, v5, v9
+    .line 561
+    aput-wide v13, v6, v10
 
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v10, v10, 0x1
 
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v12, v12, 0x1
 
     goto :goto_3
 
     :cond_3
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_2
 
     :cond_4
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
-    .line 469
-    invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
+    .line 567
+    invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
-    move-result v6
+    move-result v7
 
-    const/4 v9, 0x2
+    const/4 v10, 0x2
 
-    if-gt v6, v9, :cond_9
+    if-gt v7, v10, :cond_9
 
-    if-eq v6, v8, :cond_5
+    if-eq v7, v9, :cond_5
 
-    if-ne v6, v9, :cond_8
+    if-ne v7, v10, :cond_8
 
     :cond_5
-    const/16 v9, 0x20
+    const/16 v2, 0x20
 
-    .line 473
-    invoke-virtual {p0, v9}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
+    .line 572
+    invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 474
-    invoke-virtual {p0, v9}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
+    .line 573
+    invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 475
-    invoke-virtual {p0, v2}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
+    .line 574
+    invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v2
 
-    add-int/2addr v2, v8
+    add-int/2addr v2, v9
 
-    .line 476
-    invoke-virtual {p0, v8}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
+    .line 575
+    invoke-virtual {p0, v9}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    if-ne v6, v8, :cond_6
+    if-ne v7, v9, :cond_6
 
-    if-eqz v3, :cond_7
+    if-eqz v4, :cond_7
 
-    int-to-long v0, v4
+    int-to-long v0, v5
 
-    int-to-long v8, v3
+    int-to-long v9, v4
 
-    .line 480
-    invoke-static {v0, v1, v8, v9}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->mapType1QuantValues(JJ)J
+    .line 579
+    invoke-static {v0, v1, v9, v10}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->mapType1QuantValues(JJ)J
 
     move-result-wide v0
 
     goto :goto_4
 
     :cond_6
-    int-to-long v0, v4
+    int-to-long v0, v5
 
-    int-to-long v8, v3
+    int-to-long v9, v4
 
-    mul-long v0, v0, v8
+    mul-long v0, v0, v9
 
     :cond_7
     :goto_4
-    int-to-long v8, v2
+    int-to-long v2, v2
 
-    mul-long v0, v0, v8
+    mul-long v0, v0, v2
 
     long-to-int v1, v0
 
-    .line 488
+    .line 587
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 490
+    .line 589
     :cond_8
     new-instance p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;
 
-    move-object v2, p0
+    move-object v3, p0
 
-    invoke-direct/range {v2 .. v7}, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;-><init>(II[JIZ)V
+    invoke-direct/range {v3 .. v8}, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;-><init>(II[JIZ)V
 
     return-object p0
 
-    .line 471
+    .line 569
     :cond_9
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    new-instance p0, Ljava/lang/StringBuilder;
 
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "lookup type greater than 2 not decodable: "
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
+
+    throw p0
+
+    .line 534
+    :cond_a
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "lookup type greater than 2 not decodable: "
+    const-string v1, "expected code book to start with [0x56, 0x43, 0x42] at "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    .line 437
-    :cond_a
-    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "expected code book to start with [0x56, 0x43, 0x42] at "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 438
+    .line 535
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->getPosition()I
 
     move-result p0
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 534
+    invoke-static {p0, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    throw v0
+    move-result-object p0
+
+    throw p0
 .end method
 
 .method private static readFloors(Lcom/google/android/exoplayer2/extractor/VorbisBitArray;)V
@@ -358,7 +518,7 @@
 
     const/4 v0, 0x6
 
-    .line 382
+    .line 478
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v1
@@ -376,7 +536,7 @@
 
     const/16 v5, 0x10
 
-    .line 384
+    .line 480
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v6
@@ -391,14 +551,14 @@
 
     const/4 v5, 0x5
 
-    .line 398
+    .line 494
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v5
 
     const/4 v6, -0x1
 
-    .line 400
+    .line 496
     new-array v9, v5, [I
 
     const/4 v10, 0x0
@@ -406,19 +566,19 @@
     :goto_1
     if-ge v10, v5, :cond_1
 
-    .line 402
+    .line 498
     invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v11
 
     aput v11, v9, v10
 
-    .line 403
+    .line 499
     aget v11, v9, v10
 
     if-le v11, v6, :cond_0
 
-    .line 404
+    .line 500
     aget v6, v9, v10
 
     :cond_0
@@ -429,7 +589,7 @@
     :cond_1
     add-int/lit8 v6, v6, 0x1
 
-    .line 407
+    .line 503
     new-array v10, v6, [I
 
     const/4 v11, 0x0
@@ -441,7 +601,7 @@
 
     const/4 v13, 0x3
 
-    .line 409
+    .line 505
     invoke-virtual {p0, v13}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v13
@@ -450,14 +610,14 @@
 
     aput v13, v10, v11
 
-    .line 410
+    .line 506
     invoke-virtual {p0, v12}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v12
 
     if-lez v12, :cond_2
 
-    .line 412
+    .line 508
     invoke-virtual {p0, v8}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
     :cond_2
@@ -468,7 +628,7 @@
 
     if-ge v13, v14, :cond_3
 
-    .line 415
+    .line 511
     invoke-virtual {p0, v8}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v13, v13, 0x1
@@ -480,11 +640,11 @@
 
     goto :goto_2
 
-    .line 418
+    .line 514
     :cond_4
     invoke-virtual {p0, v12}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 419
+    .line 515
     invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v6
@@ -498,10 +658,10 @@
     :goto_4
     if-ge v7, v5, :cond_8
 
-    .line 422
+    .line 518
     aget v12, v9, v7
 
-    .line 423
+    .line 519
     aget v12, v10, v12
 
     add-int/2addr v8, v12
@@ -509,7 +669,7 @@
     :goto_5
     if-ge v11, v8, :cond_5
 
-    .line 425
+    .line 521
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v11, v11, 0x1
@@ -521,45 +681,47 @@
 
     goto :goto_4
 
-    .line 430
+    .line 526
     :cond_6
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "floor type greater than 1 not decodable: "
 
-    const-string v1, "floor type greater than 1 not decodable: "
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
 
     throw p0
 
-    .line 387
+    .line 483
     :cond_7
     invoke-virtual {p0, v8}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 388
+    .line 484
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 389
+    .line 485
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 390
+    .line 486
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 391
+    .line 487
     invoke-virtual {p0, v8}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 392
+    .line 488
     invoke-virtual {p0, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v5
@@ -571,7 +733,7 @@
     :goto_6
     if-ge v6, v5, :cond_8
 
-    .line 394
+    .line 490
     invoke-virtual {p0, v8}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v6, v6, 0x1
@@ -597,7 +759,7 @@
 
     const/4 v0, 0x6
 
-    .line 310
+    .line 404
     invoke-virtual {p1, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v0
@@ -615,14 +777,14 @@
 
     const/16 v4, 0x10
 
-    .line 312
+    .line 406
     invoke-virtual {p1, v4}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 314
+    .line 408
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -643,7 +805,7 @@
 
     goto :goto_5
 
-    .line 318
+    .line 412
     :cond_0
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
@@ -653,7 +815,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 319
+    .line 413
     invoke-virtual {p1, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v4
@@ -665,7 +827,7 @@
     :cond_1
     const/4 v4, 0x1
 
-    .line 324
+    .line 418
     :goto_1
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
@@ -675,7 +837,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 325
+    .line 419
     invoke-virtual {p1, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v6
@@ -689,14 +851,14 @@
 
     add-int/lit8 v9, p0, -0x1
 
-    .line 327
+    .line 421
     invoke-static {v9}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->iLog(I)I
 
     move-result v10
 
     invoke-virtual {p1, v10}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 328
+    .line 422
     invoke-static {v9}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->iLog(I)I
 
     move-result v9
@@ -710,7 +872,7 @@
     :cond_2
     const/4 v6, 0x2
 
-    .line 333
+    .line 427
     invoke-virtual {p1, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v6
@@ -724,7 +886,7 @@
     :goto_3
     if-ge v6, p0, :cond_3
 
-    .line 338
+    .line 433
     invoke-virtual {p1, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v6, v6, 0x1
@@ -737,13 +899,13 @@
     :goto_4
     if-ge v5, v4, :cond_4
 
-    .line 342
+    .line 437
     invoke-virtual {p1, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 343
+    .line 438
     invoke-virtual {p1, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 344
+    .line 439
     invoke-virtual {p1, v7}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
     add-int/lit8 v5, v5, 0x1
@@ -756,13 +918,15 @@
 
     goto :goto_0
 
-    .line 334
     :cond_5
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    const/4 p0, 0x0
 
     const-string p1, "to reserved bits must be zero after mapping coupling steps"
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 428
+    invoke-static {p1, p0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
 
     throw p0
 
@@ -775,14 +939,14 @@
 
     const/4 v0, 0x6
 
-    .line 296
+    .line 391
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v0
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 297
+    .line 392
     new-array v1, v0, [Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;
 
     const/4 v2, 0x0
@@ -790,31 +954,31 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 299
+    .line 394
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
     move-result v3
 
     const/16 v4, 0x10
 
-    .line 300
+    .line 395
     invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v5
 
-    .line 301
+    .line 396
     invoke-virtual {p0, v4}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v4
 
     const/16 v6, 0x8
 
-    .line 302
+    .line 397
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v6
 
-    .line 303
+    .line 398
     new-instance v7, Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;
 
     invoke-direct {v7, v3, v5, v4, v6}, Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;-><init>(ZIII)V
@@ -839,7 +1003,7 @@
 
     const/4 v0, 0x6
 
-    .line 350
+    .line 445
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v1
@@ -857,7 +1021,7 @@
 
     const/16 v5, 0x10
 
-    .line 352
+    .line 447
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v5
@@ -868,16 +1032,16 @@
 
     const/16 v5, 0x18
 
-    .line 356
+    .line 452
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 357
+    .line 453
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 358
+    .line 454
     invoke-virtual {p0, v5}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 359
+    .line 455
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v5
@@ -886,10 +1050,10 @@
 
     const/16 v6, 0x8
 
-    .line 360
+    .line 456
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
-    .line 361
+    .line 457
     new-array v7, v5, [I
 
     const/4 v8, 0x0
@@ -899,12 +1063,12 @@
 
     const/4 v9, 0x3
 
-    .line 364
+    .line 460
     invoke-virtual {p0, v9}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v9
 
-    .line 365
+    .line 461
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
     move-result v10
@@ -913,7 +1077,7 @@
 
     const/4 v10, 0x5
 
-    .line 366
+    .line 462
     invoke-virtual {p0, v10}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result v10
@@ -928,7 +1092,7 @@
 
     add-int/2addr v10, v9
 
-    .line 368
+    .line 464
     aput v10, v7, v8
 
     add-int/lit8 v8, v8, 0x1
@@ -946,7 +1110,7 @@
     :goto_4
     if-ge v9, v6, :cond_3
 
-    .line 372
+    .line 468
     aget v10, v7, v8
 
     shl-int v11, v2, v9
@@ -955,7 +1119,7 @@
 
     if-eqz v10, :cond_2
 
-    .line 373
+    .line 469
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->skipBits(I)V
 
     :cond_2
@@ -973,13 +1137,15 @@
 
     goto :goto_0
 
-    .line 354
     :cond_5
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    const/4 p0, 0x0
 
     const-string v0, "residueType greater than 2 is not decodable"
 
-    invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 449
+    invoke-static {v0, p0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
 
     throw p0
 
@@ -997,7 +1163,7 @@
 
     const/4 v0, 0x1
 
-    .line 161
+    .line 211
     invoke-static {p0, v0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readVorbisCommentHeader(Lcom/google/android/exoplayer2/util/ParsableByteArray;ZZ)Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
 
     move-result-object p0
@@ -1019,10 +1185,10 @@
 
     const/4 p1, 0x3
 
-    .line 184
+    .line 234
     invoke-static {p1, p0, v0}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->verifyVorbisHeaderCapturePattern(ILcom/google/android/exoplayer2/util/ParsableByteArray;Z)Z
 
-    .line 188
+    .line 238
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
@@ -1032,26 +1198,26 @@
 
     const/16 v1, 0xb
 
-    .line 190
+    .line 240
     invoke-virtual {p0, p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 191
+    .line 241
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
 
     add-int/2addr v1, v2
 
-    .line 193
+    .line 243
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
     move-result-wide v2
 
     long-to-int v4, v2
 
-    .line 194
+    .line 244
     new-array v4, v4, [Ljava/lang/String;
 
     add-int/lit8 v1, v1, 0x4
@@ -1063,7 +1229,7 @@
 
     if-gez v7, :cond_1
 
-    .line 197
+    .line 247
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
 
     move-result-wide v5
@@ -1072,14 +1238,14 @@
 
     add-int/lit8 v1, v1, 0x4
 
-    .line 199
+    .line 249
     invoke-virtual {p0, v6}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readString(I)Ljava/lang/String;
 
     move-result-object v5
 
     aput-object v5, v4, v0
 
-    .line 200
+    .line 250
     aget-object v5, v4, v0
 
     invoke-virtual {v5}, Ljava/lang/String;->length()I
@@ -1095,7 +1261,7 @@
     :cond_1
     if-eqz p2, :cond_3
 
-    .line 202
+    .line 252
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
@@ -1106,13 +1272,15 @@
 
     goto :goto_1
 
-    .line 203
     :cond_2
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    const/4 p0, 0x0
 
     const-string p1, "framing bit expected to be set"
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 253
+    invoke-static {p1, p0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
 
     throw p0
 
@@ -1120,7 +1288,7 @@
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    .line 206
+    .line 257
     new-instance p0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;
 
     invoke-direct {p0, p1, v4, v1}, Lcom/google/android/exoplayer2/extractor/VorbisUtil$CommentHeader;-><init>(Ljava/lang/String;[Ljava/lang/String;I)V
@@ -1136,114 +1304,139 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move-object/from16 v2, p0
 
-    .line 129
-    invoke-static {v1, v0, v2}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->verifyVorbisHeaderCapturePattern(ILcom/google/android/exoplayer2/util/ParsableByteArray;Z)Z
+    .line 162
+    invoke-static {v0, v2, v1}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->verifyVorbisHeaderCapturePattern(ILcom/google/android/exoplayer2/util/ParsableByteArray;Z)Z
 
-    .line 131
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
+    .line 164
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedIntToInt()I
 
-    move-result-wide v4
+    move-result v3
 
-    .line 132
+    .line 165
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
+
+    move-result v4
+
+    .line 166
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedIntToInt()I
+
+    move-result v5
+
+    .line 167
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianInt()I
 
     move-result v6
 
-    .line 133
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianUnsignedInt()J
+    const/4 v7, -0x1
 
-    move-result-wide v7
+    if-gtz v6, :cond_0
 
-    .line 134
+    const/4 v6, -0x1
+
+    .line 171
+    :cond_0
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianInt()I
+
+    move-result v8
+
+    if-gtz v8, :cond_1
+
+    const/4 v8, -0x1
+
+    .line 175
+    :cond_1
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianInt()I
 
     move-result v9
 
-    .line 135
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianInt()I
+    if-gtz v9, :cond_2
 
-    move-result v10
+    const/4 v9, -0x1
 
-    .line 136
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readLittleEndianInt()I
-
-    move-result v11
-
-    .line 138
+    .line 179
+    :cond_2
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v3
+    move-result v7
 
-    and-int/lit8 v12, v3, 0xf
+    and-int/lit8 v10, v7, 0xf
 
-    int-to-double v12, v12
+    int-to-double v10, v10
 
-    const-wide/high16 v14, 0x4000000000000000L    # 2.0
+    const-wide/high16 v12, 0x4000000000000000L    # 2.0
 
-    .line 139
-    invoke-static {v14, v15, v12, v13}, Ljava/lang/Math;->pow(DD)D
+    .line 180
+    invoke-static {v12, v13, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v12
+    move-result-wide v10
 
-    double-to-int v12, v12
+    double-to-int v10, v10
 
-    and-int/lit16 v3, v3, 0xf0
+    and-int/lit16 v7, v7, 0xf0
 
-    shr-int/lit8 v3, v3, 0x4
+    shr-int/lit8 v7, v7, 0x4
 
-    int-to-double v2, v3
+    int-to-double v14, v7
 
-    .line 140
-    invoke-static {v14, v15, v2, v3}, Ljava/lang/Math;->pow(DD)D
+    .line 181
+    invoke-static {v12, v13, v14, v15}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v2
+    move-result-wide v11
 
-    double-to-int v2, v2
+    double-to-int v11, v11
 
-    .line 142
+    .line 183
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
-    move-result v3
+    move-result v7
 
-    and-int/2addr v3, v1
+    and-int/2addr v7, v0
 
-    if-lez v3, :cond_0
-
-    const/4 v14, 0x1
+    if-lez v7, :cond_3
 
     goto :goto_0
 
-    :cond_0
-    const/4 v14, 0x0
+    :cond_3
+    const/4 v0, 0x0
 
-    .line 144
+    .line 185
     :goto_0
-    iget-object v1, v0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v1
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->limit()I
 
-    move-result v0
+    move-result v2
 
-    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {v1, v2}, Ljava/util/Arrays;->copyOf([BI)[B
 
-    move-result-object v15
+    move-result-object v12
 
-    .line 146
-    new-instance v0, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
+    .line 187
+    new-instance v1, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;
 
-    move-object v3, v0
+    move-object v2, v1
 
-    move v13, v2
+    move v7, v8
 
-    invoke-direct/range {v3 .. v15}, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;-><init>(JIJIIIIIZ[B)V
+    move v8, v9
 
-    return-object v0
+    move v9, v10
+
+    move v10, v11
+
+    move v11, v0
+
+    invoke-direct/range {v2 .. v12}, Lcom/google/android/exoplayer2/extractor/VorbisUtil$VorbisIdHeader;-><init>(IIIIIIIIZ[B)V
+
+    return-object v1
 .end method
 
 .method public static readVorbisModes(Lcom/google/android/exoplayer2/util/ParsableByteArray;I)[Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;
@@ -1258,24 +1451,26 @@
 
     const/4 v1, 0x0
 
-    .line 267
+    .line 360
     invoke-static {v0, p0, v1}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->verifyVorbisHeaderCapturePattern(ILcom/google/android/exoplayer2/util/ParsableByteArray;Z)Z
 
-    .line 269
+    .line 362
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result v0
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 271
+    .line 364
     new-instance v2, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;
 
-    iget-object v3, p0, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v3
 
     invoke-direct {v2, v3}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;-><init>([B)V
 
-    .line 272
+    .line 365
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getPosition()I
 
     move-result p0
@@ -1289,7 +1484,7 @@
     :goto_0
     if-ge p0, v0, :cond_0
 
-    .line 275
+    .line 368
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readBook(Lcom/google/android/exoplayer2/extractor/VorbisBitArray;)Lcom/google/android/exoplayer2/extractor/VorbisUtil$CodeBook;
 
     add-int/lit8 p0, p0, 0x1
@@ -1299,7 +1494,7 @@
     :cond_0
     const/4 p0, 0x6
 
-    .line 278
+    .line 371
     invoke-virtual {v2, p0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
     move-result p0
@@ -1307,47 +1502,49 @@
     add-int/lit8 p0, p0, 0x1
 
     :goto_1
+    const/4 v0, 0x0
+
     if-ge v1, p0, :cond_2
 
-    const/16 v0, 0x10
+    const/16 v3, 0x10
 
-    .line 280
-    invoke-virtual {v2, v0}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
+    .line 373
+    invoke-virtual {v2, v3}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBits(I)I
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_1
+    if-nez v3, :cond_1
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 281
     :cond_1
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    const-string p0, "placeholder of time domain transforms not zeroed out"
 
-    const-string p1, "placeholder of time domain transforms not zeroed out"
+    .line 374
+    invoke-static {p0, v0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object p0
 
     throw p0
 
-    .line 284
+    .line 378
     :cond_2
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readFloors(Lcom/google/android/exoplayer2/extractor/VorbisBitArray;)V
 
-    .line 285
+    .line 379
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readResidues(Lcom/google/android/exoplayer2/extractor/VorbisBitArray;)V
 
-    .line 286
+    .line 380
     invoke-static {p1, v2}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readMappings(ILcom/google/android/exoplayer2/extractor/VorbisBitArray;)V
 
-    .line 288
+    .line 382
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/VorbisUtil;->readModes(Lcom/google/android/exoplayer2/extractor/VorbisBitArray;)[Lcom/google/android/exoplayer2/extractor/VorbisUtil$Mode;
 
     move-result-object p0
 
-    .line 289
+    .line 383
     invoke-virtual {v2}, Lcom/google/android/exoplayer2/extractor/VorbisBitArray;->readBit()Z
 
     move-result p1
@@ -1356,67 +1553,71 @@
 
     return-object p0
 
-    .line 290
     :cond_3
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    const-string p0, "framing bit after modes not set as expected"
 
-    const-string p1, "framing bit after modes not set as expected"
+    .line 384
+    invoke-static {p0, v0}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object p0
 
     throw p0
 .end method
 
 .method public static verifyVorbisHeaderCapturePattern(ILcom/google/android/exoplayer2/util/ParsableByteArray;Z)Z
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/exoplayer2/ParserException;
         }
     .end annotation
 
-    .line 221
+    .line 311
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result v0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x7
+    const/4 v2, 0x0
 
-    if-ge v0, v2, :cond_1
+    const/4 v3, 0x7
+
+    if-ge v0, v3, :cond_1
 
     if-eqz p2, :cond_0
 
     return v1
 
-    .line 225
+    .line 315
     :cond_0
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string p2, "too short header: "
 
-    const-string v0, "too short header: "
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    .line 316
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->bytesLeft()I
 
     move-result p1
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 315
+    invoke-static {p0, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
 
     throw p0
 
-    .line 229
+    .line 320
     :cond_1
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
@@ -1428,33 +1629,35 @@
 
     return v1
 
-    .line 233
+    .line 324
     :cond_2
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string p2, "expected header type "
 
-    const-string v0, "expected header type "
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
+    .line 325
     invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {p1, p0}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 324
+    invoke-static {p0, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    throw p1
+    move-result-object p0
 
-    .line 237
+    throw p0
+
+    .line 329
     :cond_3
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
@@ -1464,7 +1667,7 @@
 
     if-ne p0, v0, :cond_5
 
-    .line 238
+    .line 330
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
@@ -1473,7 +1676,7 @@
 
     if-ne p0, v0, :cond_5
 
-    .line 239
+    .line 331
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
@@ -1482,7 +1685,7 @@
 
     if-ne p0, v0, :cond_5
 
-    .line 240
+    .line 332
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
@@ -1491,7 +1694,7 @@
 
     if-ne p0, v0, :cond_5
 
-    .line 241
+    .line 333
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
@@ -1500,7 +1703,7 @@
 
     if-ne p0, v0, :cond_5
 
-    .line 242
+    .line 334
     invoke-virtual {p1}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->readUnsignedByte()I
 
     move-result p0
@@ -1522,13 +1725,13 @@
 
     return v1
 
-    .line 246
     :cond_6
-    new-instance p0, Lcom/google/android/exoplayer2/ParserException;
+    const-string p0, "expected characters \'vorbis\'"
 
-    const-string p1, "expected characters \'vorbis\'"
+    .line 338
+    invoke-static {p0, v2}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    move-result-object p0
 
     throw p0
 .end method

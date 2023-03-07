@@ -15,18 +15,18 @@
 
 
 # instance fields
-.field public flacStreamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+.field public flacStreamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/exoplayer2/util/FlacStreamMetadata;)V
+.method public constructor <init>(Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;)V
     .locals 0
 
-    .line 46
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
-    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/FlacMetadataReader$FlacStreamMetadataHolder;->flacStreamMetadata:Lcom/google/android/exoplayer2/util/FlacStreamMetadata;
+    .line 44
+    iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/FlacMetadataReader$FlacStreamMetadataHolder;->flacStreamMetadata:Lcom/google/android/exoplayer2/extractor/FlacStreamMetadata;
 
     return-void
 .end method

@@ -4,10 +4,19 @@
 
 # instance fields
 .field name:Ljava/lang/String;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 .field value:Ljava/lang/Object;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 .field zzaaw:Lcom/google/android/gms/internal/firebase_ml/zzkn;
+    .annotation runtime Lorg/checkerframework/checker/nullness/compatqual/NullableDecl;
+    .end annotation
+.end field
 
 
 # direct methods

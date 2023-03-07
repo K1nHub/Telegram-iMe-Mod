@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/exoplayer2/upstream/UdpDataSource$UdpDataSourceException;
-.super Ljava/io/IOException;
+.super Lcom/google/android/exoplayer2/upstream/DataSourceException;
 .source "UdpDataSource.java"
 
 
@@ -15,11 +15,11 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/IOException;)V
+.method public constructor <init>(Ljava/lang/Throwable;I)V
     .locals 0
 
-    .line 38
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+    .line 47
+    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Throwable;I)V
 
     return-void
 .end method

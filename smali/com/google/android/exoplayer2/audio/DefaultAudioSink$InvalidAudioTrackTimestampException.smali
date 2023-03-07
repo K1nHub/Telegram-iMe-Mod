@@ -18,7 +18,7 @@
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 67
+    .line 99
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -27,7 +27,7 @@
 .method synthetic constructor <init>(Ljava/lang/String;Lcom/google/android/exoplayer2/audio/DefaultAudioSink$1;)V
     .locals 0
 
-    .line 59
+    .line 91
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/DefaultAudioSink$InvalidAudioTrackTimestampException;-><init>(Ljava/lang/String;)V
 
     return-void

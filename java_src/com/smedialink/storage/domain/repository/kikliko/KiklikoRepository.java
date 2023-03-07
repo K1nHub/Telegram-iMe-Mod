@@ -1,0 +1,24 @@
+package com.smedialink.storage.domain.repository.kikliko;
+
+import com.smedialink.storage.data.network.model.response.kikliko.SearchResponse;
+import com.smedialink.storage.data.network.model.response.kikliko.TagResponse;
+import com.smedialink.storage.domain.model.Result;
+import io.reactivex.Observable;
+import java.util.List;
+/* compiled from: KiklikoRepository.kt */
+/* loaded from: classes3.dex */
+public interface KiklikoRepository {
+    Observable<Result<List<TagResponse>>> getTags();
+
+    Observable<Result<SearchResponse>> getTrending(int i);
+
+    Observable<Result<Boolean>> report(String str, String str2);
+
+    Observable<Result<SearchResponse>> searchByKeyword(String str, int i);
+
+    Observable<Result<SearchResponse>> searchByTag(String str, int i);
+
+    Observable<Result<Boolean>> share(String str);
+
+    Observable<Result<Boolean>> view(String str);
+}

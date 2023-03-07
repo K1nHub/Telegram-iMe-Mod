@@ -1,0 +1,63 @@
+package com.smedialink.storage.domain.model.wallet;
+
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: PriceRate.kt */
+/* loaded from: classes3.dex */
+public final class PriceRate {
+    private final float ratePercentageChange24h;
+    private final double rateToDollars;
+
+    public static /* synthetic */ PriceRate copy$default(PriceRate priceRate, double d, float f, int i, Object obj) {
+        if ((i & 1) != 0) {
+            d = priceRate.rateToDollars;
+        }
+        if ((i & 2) != 0) {
+            f = priceRate.ratePercentageChange24h;
+        }
+        return priceRate.copy(d, f);
+    }
+
+    public final double component1() {
+        return this.rateToDollars;
+    }
+
+    public final float component2() {
+        return this.ratePercentageChange24h;
+    }
+
+    public final PriceRate copy(double d, float f) {
+        return new PriceRate(d, f);
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof PriceRate) {
+            PriceRate priceRate = (PriceRate) obj;
+            return Intrinsics.areEqual(Double.valueOf(this.rateToDollars), Double.valueOf(priceRate.rateToDollars)) && Intrinsics.areEqual(Float.valueOf(this.ratePercentageChange24h), Float.valueOf(priceRate.ratePercentageChange24h));
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        return (Double.doubleToLongBits(this.rateToDollars) * 31) + Float.floatToIntBits(this.ratePercentageChange24h);
+    }
+
+    public String toString() {
+        return "PriceRate(rateToDollars=" + this.rateToDollars + ", ratePercentageChange24h=" + this.ratePercentageChange24h + ')';
+    }
+
+    public PriceRate(double d, float f) {
+        this.rateToDollars = d;
+        this.ratePercentageChange24h = f;
+    }
+
+    public final double getRateToDollars() {
+        return this.rateToDollars;
+    }
+
+    public final float getRatePercentageChange24h() {
+        return this.ratePercentageChange24h;
+    }
+}

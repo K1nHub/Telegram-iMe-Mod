@@ -21,28 +21,28 @@
 .method public constructor <init>(Lcom/google/android/exoplayer2/upstream/DataSource;Lcom/google/android/exoplayer2/upstream/DataSpec;)V
     .locals 1
 
-    .line 42
+    .line 41
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 34
+    .line 33
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->opened:Z
 
-    .line 35
+    .line 34
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->closed:Z
 
-    .line 43
+    .line 42
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    .line 44
+    .line 43
     iput-object p2, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
 
     const/4 p1, 0x1
 
     new-array p1, p1, [B
 
-    .line 45
+    .line 44
     iput-object p1, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->singleByteArray:[B
 
     return-void
@@ -56,12 +56,12 @@
         }
     .end annotation
 
-    .line 101
+    .line 98
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->opened:Z
 
     if-nez v0, :cond_0
 
-    .line 102
+    .line 99
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     iget-object v1, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->dataSpec:Lcom/google/android/exoplayer2/upstream/DataSpec;
@@ -70,7 +70,7 @@
 
     const/4 v0, 0x1
 
-    .line 103
+    .line 100
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->opened:Z
 
     :cond_0
@@ -82,7 +82,7 @@
 .method public bytesRead()J
     .locals 2
 
-    .line 52
+    .line 49
     iget-wide v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->totalBytesRead:J
 
     return-wide v0
@@ -96,19 +96,19 @@
         }
     .end annotation
 
-    .line 94
+    .line 91
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->closed:Z
 
     if-nez v0, :cond_0
 
-    .line 95
+    .line 92
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
     invoke-interface {v0}, Lcom/google/android/exoplayer2/upstream/DataSource;->close()V
 
     const/4 v0, 0x1
 
-    .line 96
+    .line 93
     iput-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->closed:Z
 
     :cond_0
@@ -123,7 +123,7 @@
         }
     .end annotation
 
-    .line 65
+    .line 62
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->checkOpened()V
 
     return-void
@@ -137,7 +137,7 @@
         }
     .end annotation
 
-    .line 70
+    .line 67
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->singleByteArray:[B
 
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->read([B)I
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 71
+    .line 68
     :cond_0
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->singleByteArray:[B
 
@@ -172,7 +172,7 @@
         }
     .end annotation
 
-    .line 76
+    .line 73
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -192,20 +192,20 @@
         }
     .end annotation
 
-    .line 81
+    .line 78
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->closed:Z
 
     xor-int/lit8 v0, v0, 0x1
 
     invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkState(Z)V
 
-    .line 82
+    .line 79
     invoke-direct {p0}, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->checkOpened()V
 
-    .line 83
+    .line 80
     iget-object v0, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->dataSource:Lcom/google/android/exoplayer2/upstream/DataSource;
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataSource;->read([BII)I
+    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataReader;->read([BII)I
 
     move-result p1
 
@@ -215,7 +215,7 @@
 
     return p2
 
-    .line 87
+    .line 84
     :cond_0
     iget-wide p2, p0, Lcom/google/android/exoplayer2/upstream/DataSourceInputStream;->totalBytesRead:J
 

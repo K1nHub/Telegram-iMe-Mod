@@ -6,7 +6,11 @@
 # static fields
 .field public static final DATA_FOURCC:I = 0x64617461
 
+.field public static final DS64_FOURCC:I = 0x64733634
+
 .field public static final FMT_FOURCC:I = 0x666d7420
+
+.field public static final RF64_FOURCC:I = 0x52463634
 
 .field public static final RIFF_FOURCC:I = 0x52494646
 
@@ -29,7 +33,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 88
+    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,7 +68,7 @@
     :cond_1
     return v1
 
-    .line 80
+    .line 84
     :cond_2
     invoke-static {p1}, Lcom/google/android/exoplayer2/util/Util;->getPcmEncoding(I)I
 
@@ -98,7 +102,7 @@
 
     goto :goto_0
 
-    .line 68
+    .line 72
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 

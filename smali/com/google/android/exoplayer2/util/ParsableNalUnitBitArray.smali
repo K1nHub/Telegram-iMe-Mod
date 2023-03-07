@@ -17,10 +17,10 @@
 .method public constructor <init>([BII)V
     .locals 0
 
-    .line 39
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 41
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->reset([BII)V
 
     return-void
@@ -29,7 +29,7 @@
 .method private assertValidOffset()V
     .locals 2
 
-    .line 207
+    .line 209
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
     if-ltz v0, :cond_1
@@ -65,7 +65,7 @@
 
     const/4 v1, 0x0
 
-    .line 194
+    .line 193
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readBit()Z
 
@@ -86,7 +86,7 @@
 
     if-lez v1, :cond_1
 
-    .line 197
+    .line 196
     invoke-virtual {p0, v1}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readBits(I)I
 
     move-result v0
@@ -106,7 +106,7 @@
 
     if-gt v1, p1, :cond_0
 
-    .line 201
+    .line 200
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteLimit:I
 
     if-ge p1, v1, :cond_0
@@ -145,15 +145,15 @@
 .method public canReadBits(I)Z
     .locals 4
 
-    .line 101
+    .line 100
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 102
+    .line 101
     div-int/lit8 v1, p1, 0x8
 
     add-int v2, v0, v1
 
-    .line 104
+    .line 103
     iget v3, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     add-int/2addr v3, p1
@@ -179,12 +179,12 @@
 
     if-gt v0, v2, :cond_2
 
-    .line 109
+    .line 108
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteLimit:I
 
     if-ge v2, v1, :cond_2
 
-    .line 110
+    .line 109
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->shouldSkipByte(I)Z
 
     move-result v1
@@ -197,7 +197,7 @@
 
     goto :goto_0
 
-    .line 116
+    .line 115
     :cond_2
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteLimit:I
 
@@ -220,17 +220,17 @@
 .method public canReadExpGolombCodedNum()Z
     .locals 7
 
-    .line 161
+    .line 160
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 162
+    .line 161
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    .line 164
+    .line 163
     :goto_0
     iget v4, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
@@ -248,7 +248,7 @@
 
     goto :goto_0
 
-    .line 167
+    .line 166
     :cond_0
     iget v4, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
@@ -265,11 +265,11 @@
     :cond_1
     const/4 v4, 0x0
 
-    .line 168
+    .line 167
     :goto_1
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 169
+    .line 168
     iput v1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     if-nez v4, :cond_2
@@ -278,7 +278,7 @@
 
     add-int/2addr v3, v6
 
-    .line 170
+    .line 169
     invoke-virtual {p0, v3}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->canReadBits(I)Z
 
     move-result v0
@@ -294,7 +294,7 @@
 .method public readBit()Z
     .locals 3
 
-    .line 125
+    .line 124
     iget-object v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->data:[B
 
     iget v1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
@@ -318,7 +318,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 126
+    .line 125
     :goto_0
     invoke-virtual {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->skipBit()V
 
@@ -328,7 +328,7 @@
 .method public readBits(I)I
     .locals 9
 
-    .line 138
+    .line 137
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     add-int/2addr v0, p1
@@ -339,7 +339,7 @@
 
     const/4 v1, 0x0
 
-    .line 139
+    .line 138
     :goto_0
     iget v2, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
@@ -353,10 +353,10 @@
 
     add-int/lit8 v2, v2, -0x8
 
-    .line 140
+    .line 139
     iput v2, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
-    .line 141
+    .line 140
     iget-object v5, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->data:[B
 
     iget v6, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
@@ -371,7 +371,7 @@
 
     add-int/lit8 v2, v6, 0x1
 
-    .line 142
+    .line 141
     invoke-direct {p0, v2}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->shouldSkipByte(I)Z
 
     move-result v2
@@ -390,7 +390,7 @@
 
     goto :goto_0
 
-    .line 144
+    .line 143
     :cond_1
     iget-object v6, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->data:[B
 
@@ -416,12 +416,12 @@
 
     if-ne v2, v5, :cond_3
 
-    .line 147
+    .line 146
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     add-int/lit8 v0, v7, 0x1
 
-    .line 148
+    .line 147
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->shouldSkipByte(I)Z
 
     move-result v0
@@ -438,7 +438,7 @@
 
     iput v7, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 150
+    .line 149
     :cond_3
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->assertValidOffset()V
 
@@ -448,12 +448,12 @@
 .method public readSignedExpGolombCodedInt()I
     .locals 3
 
-    .line 188
+    .line 187
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readExpGolombCodeNum()I
 
     move-result v0
 
-    .line 189
+    .line 188
     rem-int/lit8 v1, v0, 0x2
 
     const/4 v2, 0x1
@@ -480,7 +480,7 @@
 .method public readUnsignedExpGolombCodedInt()I
     .locals 1
 
-    .line 179
+    .line 178
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->readExpGolombCodeNum()I
 
     move-result v0
@@ -491,21 +491,21 @@
 .method public reset([BII)V
     .locals 0
 
-    .line 51
+    .line 52
     iput-object p1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->data:[B
 
-    .line 52
+    .line 53
     iput p2, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 53
+    .line 54
     iput p3, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteLimit:I
 
     const/4 p1, 0x0
 
-    .line 54
+    .line 55
     iput p1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
-    .line 55
+    .line 56
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->assertValidOffset()V
 
     return-void
@@ -514,7 +514,7 @@
 .method public skipBit()V
     .locals 3
 
-    .line 62
+    .line 61
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     const/4 v1, 0x1
@@ -529,10 +529,10 @@
 
     const/4 v0, 0x0
 
-    .line 63
+    .line 62
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
-    .line 64
+    .line 63
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
     add-int/lit8 v2, v0, 0x1
@@ -550,7 +550,7 @@
 
     iput v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 66
+    .line 65
     :cond_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->assertValidOffset()V
 
@@ -560,18 +560,18 @@
 .method public skipBits(I)V
     .locals 4
 
-    .line 75
+    .line 74
     iget v0, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 76
+    .line 75
     div-int/lit8 v1, p1, 0x8
 
     add-int v2, v0, v1
 
-    .line 77
+    .line 76
     iput v2, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
-    .line 78
+    .line 77
     iget v3, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     mul-int/lit8 v1, v1, 0x8
@@ -588,31 +588,31 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 80
+    .line 79
     iput v2, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
     add-int/lit8 v3, v3, -0x8
 
-    .line 81
+    .line 80
     iput v3, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->bitOffset:I
 
     :cond_0
     :goto_0
     add-int/lit8 v0, v0, 0x1
 
-    .line 83
+    .line 82
     iget p1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
     if-gt v0, p1, :cond_1
 
-    .line 84
+    .line 83
     invoke-direct {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->shouldSkipByte(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 86
+    .line 85
     iget p1, p0, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->byteOffset:I
 
     add-int/lit8 p1, p1, 0x1
@@ -623,7 +623,7 @@
 
     goto :goto_0
 
-    .line 90
+    .line 89
     :cond_1
     invoke-direct {p0}, Lcom/google/android/exoplayer2/util/ParsableNalUnitBitArray;->assertValidOffset()V
 

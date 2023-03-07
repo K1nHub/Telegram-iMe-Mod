@@ -15,22 +15,22 @@
 
 
 # instance fields
-.field public final handler:Landroid/os/Handler;
+.field public handler:Landroid/os/Handler;
 
-.field public final listener:Lcom/google/android/exoplayer2/source/MediaSourceEventListener;
+.field public listener:Lcom/google/android/exoplayer2/source/MediaSourceEventListener;
 
 
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;Lcom/google/android/exoplayer2/source/MediaSourceEventListener;)V
     .locals 0
 
-    .line 734
+    .line 485
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 735
+    .line 486
     iput-object p1, p0, Lcom/google/android/exoplayer2/source/MediaSourceEventListener$EventDispatcher$ListenerAndHandler;->handler:Landroid/os/Handler;
 
-    .line 736
+    .line 487
     iput-object p2, p0, Lcom/google/android/exoplayer2/source/MediaSourceEventListener$EventDispatcher$ListenerAndHandler;->listener:Lcom/google/android/exoplayer2/source/MediaSourceEventListener;
 
     return-void

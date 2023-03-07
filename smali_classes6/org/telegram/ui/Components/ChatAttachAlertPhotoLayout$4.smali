@@ -1,0 +1,194 @@
+.class Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
+.source "ChatAttachAlertPhotoLayout.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;-><init>(Lorg/telegram/ui/Components/ChatAttachAlert;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+
+# direct methods
+.method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
+    .locals 0
+
+    .line 645
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
+    .locals 3
+
+    if-nez p2, :cond_1
+
+    const/16 p1, 0xd
+
+    .line 661
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p1
+
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    const/4 v0, 0x0
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p2}, Landroid/widget/FrameLayout;->getAlpha()F
+
+    move-result p2
+
+    const/high16 v1, 0x41d00000    # 26.0f
+
+    mul-float p2, p2, v1
+
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result p2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    :goto_0
+    add-int/2addr p1, p2
+
+    .line 662
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getBackgroundPaddingTop()I
+
+    move-result p2
+
+    .line 663
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->scrollOffsetY:[I
+
+    aget v1, v1, v0
+
+    sub-int/2addr v1, p2
+
+    sub-int/2addr v1, p1
+
+    add-int/2addr v1, p2
+
+    .line 664
+    invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
+
+    move-result p1
+
+    if-ge v1, p1, :cond_1
+
+    .line 665
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
+
+    if-eqz p1, :cond_1
+
+    .line 666
+    iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {p2}, Landroid/view/View;->getTop()I
+
+    move-result p2
+
+    const/4 v1, 0x7
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    if-le p2, v2, :cond_1
+
+    .line 667
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+
+    move-result p1
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    sub-int/2addr p1, v1
+
+    invoke-virtual {p2, v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(II)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .locals 1
+
+    .line 648
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result p1
+
+    if-gtz p1, :cond_0
+
+    return-void
+
+    .line 651
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    iget-object p2, p1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p2, p1, v0, p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->updateLayout(Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;ZI)V
+
+    if-eqz p3, :cond_1
+
+    .line 654
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$4;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
+
+    :cond_1
+    return-void
+.end method

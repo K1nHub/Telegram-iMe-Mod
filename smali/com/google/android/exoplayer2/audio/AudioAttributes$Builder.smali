@@ -21,31 +21,36 @@
 
 .field private flags:I
 
+.field private spatializationBehavior:I
+
 .field private usage:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
-    .line 54
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 55
+    .line 84
     iput v0, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->contentType:I
 
-    .line 56
+    .line 85
     iput v0, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->flags:I
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    .line 57
-    iput v0, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->usage:I
+    .line 86
+    iput v1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->usage:I
 
-    .line 58
-    iput v0, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->allowedCapturePolicy:I
+    .line 87
+    iput v1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->allowedCapturePolicy:I
+
+    .line 88
+    iput v0, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->spatializationBehavior:I
 
     return-void
 .end method
@@ -53,10 +58,10 @@
 
 # virtual methods
 .method public build()Lcom/google/android/exoplayer2/audio/AudioAttributes;
-    .locals 7
+    .locals 8
 
-    .line 93
-    new-instance v6, Lcom/google/android/exoplayer2/audio/AudioAttributes;
+    .line 128
+    new-instance v7, Lcom/google/android/exoplayer2/audio/AudioAttributes;
 
     iget v1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->contentType:I
 
@@ -66,19 +71,21 @@
 
     iget v4, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->allowedCapturePolicy:I
 
-    const/4 v5, 0x0
+    iget v5, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->spatializationBehavior:I
 
-    move-object v0, v6
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/exoplayer2/audio/AudioAttributes;-><init>(IIIILcom/google/android/exoplayer2/audio/AudioAttributes$1;)V
+    move-object v0, v7
 
-    return-object v6
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/exoplayer2/audio/AudioAttributes;-><init>(IIIIILcom/google/android/exoplayer2/audio/AudioAttributes$1;)V
+
+    return-object v7
 .end method
 
 .method public setAllowedCapturePolicy(I)Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
     .locals 0
 
-    .line 87
+    .line 115
     iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->allowedCapturePolicy:I
 
     return-object p0
@@ -87,7 +94,7 @@
 .method public setContentType(I)Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
     .locals 0
 
-    .line 65
+    .line 94
     iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->contentType:I
 
     return-object p0
@@ -96,8 +103,17 @@
 .method public setFlags(I)Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
     .locals 0
 
-    .line 73
+    .line 101
     iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->flags:I
+
+    return-object p0
+.end method
+
+.method public setSpatializationBehavior(I)Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
+    .locals 0
+
+    .line 122
+    iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->spatializationBehavior:I
 
     return-object p0
 .end method
@@ -105,7 +121,7 @@
 .method public setUsage(I)Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;
     .locals 0
 
-    .line 81
+    .line 108
     iput p1, p0, Lcom/google/android/exoplayer2/audio/AudioAttributes$Builder;->usage:I
 
     return-object p0

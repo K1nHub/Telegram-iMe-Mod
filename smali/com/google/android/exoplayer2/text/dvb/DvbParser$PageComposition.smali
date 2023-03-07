@@ -44,19 +44,19 @@
         }
     .end annotation
 
-    .line 919
+    .line 985
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 920
+    .line 986
     iput p1, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->timeOutSecs:I
 
-    .line 921
+    .line 987
     iput p2, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->version:I
 
-    .line 922
+    .line 988
     iput p3, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->state:I
 
-    .line 923
+    .line 989
     iput-object p4, p0, Lcom/google/android/exoplayer2/text/dvb/DvbParser$PageComposition;->regions:Landroid/util/SparseArray;
 
     return-void

@@ -1285,7 +1285,6 @@ a부터 z 사이 글자, 0부터 9 사이 숫자와 밑줄을 사용하실 수 �
     <string name="DiceEmojiInfo">%1$s 이모지를 보내어 운수를 시험해 보세요.</string>
     <string name="DiceInfo2">대화방에 **:dice:**를 보내어 주사위를 굴리세요.</string>
     <string name="DidNotGetTheCode">코드를 받지 못하셨나요?</string>
-    <string name="DidNotGetTheCodeSms">코드를 SMS로 보내기</string>
     <string name="DirectShare">바로 공유</string>
     <string name="DirectShareInfo">공유 메뉴에 최근 대화방 띄우기</string>
     <string name="Directions">가는 길</string>

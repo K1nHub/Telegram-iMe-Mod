@@ -183,6 +183,23 @@
     return p0
 .end method
 
+.method public static bridge synthetic getOrNull([Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">([TT;I)TT;"
+        }
+    .end annotation
+
+    invoke-static {p0, p1}, Lkotlin/collections/ArraysKt___ArraysKt;->getOrNull([Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static bridge synthetic indexOf([Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

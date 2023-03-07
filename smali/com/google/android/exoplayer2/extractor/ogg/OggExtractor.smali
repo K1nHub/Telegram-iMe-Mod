@@ -34,7 +34,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 35
+    .line 38
     sget-object v0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor$$ExternalSyntheticLambda0;
 
     sput-object v0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->FACTORY:Lcom/google/android/exoplayer2/extractor/ExtractorsFactory;
@@ -45,7 +45,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 32
+    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,7 +58,7 @@
 
     new-array v0, v0, [Lcom/google/android/exoplayer2/extractor/Extractor;
 
-    .line 35
+    .line 38
     new-instance v1, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;
 
     invoke-direct {v1}, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;-><init>()V
@@ -75,7 +75,7 @@
 
     const/4 v0, 0x0
 
-    .line 110
+    .line 115
     invoke-virtual {p0, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->setPosition(I)V
 
     return-object p0
@@ -85,19 +85,18 @@
     .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 88
+    .line 93
     new-instance v0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;
 
     invoke-direct {v0}, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 89
+    .line 94
     invoke-virtual {v0, p1, v1}, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->populate(Lcom/google/android/exoplayer2/extractor/ExtractorInput;Z)Z
 
     move-result v2
@@ -116,7 +115,7 @@
 
     goto :goto_1
 
-    .line 93
+    .line 98
     :cond_0
     iget v0, v0, Lcom/google/android/exoplayer2/extractor/ogg/OggPageHeader;->bodySize:I
 
@@ -126,17 +125,19 @@
 
     move-result v0
 
-    .line 94
+    .line 99
     new-instance v2, Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     invoke-direct {v2, v0}, Lcom/google/android/exoplayer2/util/ParsableByteArray;-><init>(I)V
 
-    .line 95
-    iget-object v4, v2, Lcom/google/android/exoplayer2/util/ParsableByteArray;->data:[B
+    .line 100
+    invoke-virtual {v2}, Lcom/google/android/exoplayer2/util/ParsableByteArray;->getData()[B
+
+    move-result-object v4
 
     invoke-interface {p1, v4, v3, v0}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->peekFully([BII)V
 
-    .line 97
+    .line 102
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->resetPosition(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
     move-result-object p1
@@ -147,7 +148,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 98
+    .line 103
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/extractor/ogg/FlacReader;-><init>()V
@@ -156,7 +157,7 @@
 
     goto :goto_0
 
-    .line 99
+    .line 104
     :cond_1
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->resetPosition(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -168,7 +169,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 100
+    .line 105
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/extractor/ogg/VorbisReader;-><init>()V
@@ -177,7 +178,7 @@
 
     goto :goto_0
 
-    .line 101
+    .line 106
     :cond_2
     invoke-static {v2}, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->resetPosition(Lcom/google/android/exoplayer2/util/ParsableByteArray;)Lcom/google/android/exoplayer2/util/ParsableByteArray;
 
@@ -189,7 +190,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 102
+    .line 107
     new-instance p1, Lcom/google/android/exoplayer2/extractor/ogg/OpusReader;
 
     invoke-direct {p1}, Lcom/google/android/exoplayer2/extractor/ogg/OpusReader;-><init>()V
@@ -209,7 +210,7 @@
 .method public init(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;)V
     .locals 0
 
-    .line 54
+    .line 57
     iput-object p1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     return-void
@@ -219,46 +220,52 @@
     .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 72
+    .line 74
+    iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
+
+    invoke-static {v0}, Lcom/google/android/exoplayer2/util/Assertions;->checkStateNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 75
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->streamReader:Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;
 
     if-nez v0, :cond_1
 
-    .line 73
+    .line 76
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->sniffInternal(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 76
+    .line 80
     invoke-interface {p1}, Lcom/google/android/exoplayer2/extractor/ExtractorInput;->resetPeekPosition()V
 
     goto :goto_0
 
-    .line 74
     :cond_0
-    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
+    const/4 p1, 0x0
 
     const-string p2, "Failed to determine bitstream type"
 
-    invoke-direct {p1, p2}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;)V
+    .line 77
+    invoke-static {p2, p1}, Lcom/google/android/exoplayer2/ParserException;->createForMalformedContainer(Ljava/lang/String;Ljava/lang/Throwable;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p1
 
     throw p1
 
-    .line 78
+    .line 82
     :cond_1
     :goto_0
     iget-boolean v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->streamReaderInitialized:Z
 
     if-nez v0, :cond_2
 
-    .line 79
+    .line 83
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     const/4 v1, 0x0
@@ -269,22 +276,22 @@
 
     move-result-object v0
 
-    .line 80
+    .line 84
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-interface {v1}, Lcom/google/android/exoplayer2/extractor/ExtractorOutput;->endTracks()V
 
-    .line 81
+    .line 85
     iget-object v1, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->streamReader:Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;
 
     iget-object v3, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->output:Lcom/google/android/exoplayer2/extractor/ExtractorOutput;
 
     invoke-virtual {v1, v3, v0}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->init(Lcom/google/android/exoplayer2/extractor/ExtractorOutput;Lcom/google/android/exoplayer2/extractor/TrackOutput;)V
 
-    .line 82
+    .line 86
     iput-boolean v2, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->streamReaderInitialized:Z
 
-    .line 84
+    .line 88
     :cond_2
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->streamReader:Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;
 
@@ -304,12 +311,12 @@
 .method public seek(JJ)V
     .locals 1
 
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->streamReader:Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;
 
     if-eqz v0, :cond_0
 
-    .line 60
+    .line 63
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/android/exoplayer2/extractor/ogg/StreamReader;->seek(JJ)V
 
     :cond_0
@@ -320,12 +327,11 @@
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
-            Ljava/io/IOException;,
-            Ljava/lang/InterruptedException;
+            Ljava/io/IOException;
         }
     .end annotation
 
-    .line 46
+    .line 49
     :try_start_0
     invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/ogg/OggExtractor;->sniffInternal(Lcom/google/android/exoplayer2/extractor/ExtractorInput;)Z
 

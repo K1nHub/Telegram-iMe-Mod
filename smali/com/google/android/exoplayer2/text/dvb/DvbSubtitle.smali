@@ -30,10 +30,10 @@
         }
     .end annotation
 
-    .line 30
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 29
     iput-object p1, p0, Lcom/google/android/exoplayer2/text/dvb/DvbSubtitle;->cues:Ljava/util/List;
 
     return-void
@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 51
+    .line 49
     iget-object p1, p0, Lcom/google/android/exoplayer2/text/dvb/DvbSubtitle;->cues:Ljava/util/List;
 
     return-object p1
