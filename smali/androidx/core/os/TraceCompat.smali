@@ -4,6 +4,12 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/os/TraceCompat$Api18Impl;
+    }
+.end annotation
+
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
@@ -12,7 +18,7 @@
 .method static constructor <clinit>()V
     .locals 10
 
-    .line 50
+    .line 53
     const-class v0, Ljava/lang/String;
 
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -25,7 +31,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 52
+    .line 55
     :try_start_0
     const-class v1, Landroid/os/Trace;
 
@@ -37,10 +43,10 @@
 
     const/4 v2, 0x0
 
-    .line 53
+    .line 56
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->getLong(Ljava/lang/Object;)J
 
-    .line 55
+    .line 58
     const-class v1, Landroid/os/Trace;
 
     const-string v2, "isTagEnabled"
@@ -57,7 +63,7 @@
 
     invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    .line 56
+    .line 59
     const-class v1, Landroid/os/Trace;
 
     const-string v2, "asyncTraceBegin"
@@ -78,7 +84,7 @@
 
     invoke-virtual {v1, v2, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    .line 58
+    .line 61
     const-class v1, Landroid/os/Trace;
 
     const-string v2, "asyncTraceEnd"
@@ -93,7 +99,7 @@
 
     invoke-virtual {v1, v2, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    .line 60
+    .line 63
     const-class v1, Landroid/os/Trace;
 
     const-string v2, "traceCounter"
@@ -119,7 +125,7 @@
 
     const-string v2, "Unable to initialize via reflection."
 
-    .line 63
+    .line 66
     invoke-static {v1, v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
@@ -130,15 +136,15 @@
 .method public static beginSection(Ljava/lang/String;)V
     .locals 2
 
-    .line 104
+    .line 108
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
 
     if-lt v0, v1, :cond_0
 
-    .line 105
-    invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    .line 109
+    invoke-static {p0}, Landroidx/core/os/TraceCompat$Api18Impl;->beginSection(Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -147,15 +153,15 @@
 .method public static endSection()V
     .locals 2
 
-    .line 117
+    .line 121
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
 
     if-lt v0, v1, :cond_0
 
-    .line 118
-    invoke-static {}, Landroid/os/Trace;->endSection()V
+    .line 122
+    invoke-static {}, Landroidx/core/os/TraceCompat$Api18Impl;->endSection()V
 
     :cond_0
     return-void

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStorageModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,22:1\n127#2,5:23\n*S KotlinDebug\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$2\n*L\n16#1:23,5\n*E\n"
+    value = "SMAP\nStorageModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,27:1\n127#2,5:28\n*S KotlinDebug\n*F\n+ 1 StorageModule.kt\ncom/smedialink/storage/data/di/module/StorageModuleKt$dataStorageModule$1$2\n*L\n18#1:28,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 16
+    .line 18
     invoke-static {p1}, Lorg/koin/android/ext/koin/ModuleExtKt;->androidContext(Lorg/koin/core/scope/Scope;)Landroid/content/Context;
 
     move-result-object p2
@@ -90,7 +90,7 @@
 
     move-result-object v0
 
-    .line 16
+    .line 18
     check-cast v0, Lcom/google/gson/Gson;
 
     .line 131
@@ -104,7 +104,7 @@
 
     move-result-object p1
 
-    .line 16
+    .line 18
     check-cast p1, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
     new-instance v1, Lcom/smedialink/storage/data/locale/prefs/impl/CryptoPreference;
@@ -117,7 +117,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 16
+    .line 18
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

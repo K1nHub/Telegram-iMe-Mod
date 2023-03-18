@@ -10,12 +10,16 @@ public abstract class Fetcher<Args, R> {
     private HashMap<Pair<Integer, Args>, R> cachedResults;
     private HashMap<Pair<Integer, Args>, Long> lastRequestedRemotely;
     private HashMap<Pair<Integer, Args>, ArrayList<Utilities.Callback<R>>> loadingCallbacks;
-    private long requestRemotelyTimeout = 240000;
+    private final long requestRemotelyTimeout = 240000;
 
     protected void getRemote(int i, Args args, long j, Utilities.Callback3<Boolean, R, Long> callback3) {
     }
 
     protected void setLocal(int i, Args args, R r, long j) {
+    }
+
+    protected boolean useCache(Args args) {
+        return true;
     }
 
     protected void getLocal(int i, Args args, Utilities.Callback2<Long, R> callback2) {
@@ -82,11 +86,14 @@ public abstract class Fetcher<Args, R> {
         return hashMap.get(pair);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void cacheResult(Pair<Integer, Args> pair, R r) {
-        if (this.cachedResults == null) {
-            this.cachedResults = new HashMap<>();
+        if (useCache(pair.second)) {
+            if (this.cachedResults == null) {
+                this.cachedResults = new HashMap<>();
+            }
+            this.cachedResults.put(pair, r);
         }
-        this.cachedResults.put(pair, r);
     }
 
     private void saveLastRequested(Pair<Integer, Args> pair) {
@@ -99,7 +106,7 @@ public abstract class Fetcher<Args, R> {
     private boolean shouldRequest(Pair<Integer, Args> pair) {
         HashMap<Pair<Integer, Args>, Long> hashMap = this.lastRequestedRemotely;
         Long l = hashMap != null ? hashMap.get(pair) : null;
-        return l == null || System.currentTimeMillis() - l.longValue() >= this.requestRemotelyTimeout;
+        return l == null || System.currentTimeMillis() - l.longValue() >= 240000;
     }
 
     private boolean isLoading(Pair<Integer, Args> pair) {

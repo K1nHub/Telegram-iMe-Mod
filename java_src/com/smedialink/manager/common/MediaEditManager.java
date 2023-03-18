@@ -8,7 +8,6 @@ import com.smedialink.utils.extentions.common.ContextExtKt;
 import com.smedialink.utils.extentions.common.ThrowableExtKt;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.concurrent.Future;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
@@ -22,7 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -113,7 +112,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         if (rLottieDrawable == null) {
             return;
         }
-        showLoading$default(this, C3158R.string.custom_avatar_processing, null, 2, null);
+        showLoading$default(this, C3286R.string.custom_avatar_processing, null, 2, null);
         if (z) {
             prepareAvatarEditing();
         }
@@ -151,7 +150,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             this.notificationCenter.addObserver(this, this.fileLoadingObserver);
             this.loadingFileUrl = nftTokenUrl;
             getImageLoader().loadHttpFile(nftTokenUrl, ext, this.currentAccount);
-            showLoading(C3158R.string.custom_avatar_downloading, new MediaEditManager$setNftAvatar$1(this, nftTokenUrl));
+            showLoading(C3286R.string.custom_avatar_downloading, new MediaEditManager$setNftAvatar$1(this, nftTokenUrl));
             return;
         }
         onCommonError();
@@ -174,10 +173,10 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         Intrinsics.checkNotNullParameter(args, "args");
         if (i == NotificationCenter.gifStickerAvatarPrepared) {
             Object obj = args[0];
-            Objects.requireNonNull(obj, "null cannot be cast to non-null type kotlin.String");
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.String");
             String str = (String) obj;
             Object obj2 = args[1];
-            Objects.requireNonNull(obj2, "null cannot be cast to non-null type kotlin.Boolean");
+            Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.Boolean");
             boolean booleanValue = ((Boolean) obj2).booleanValue();
             finishLoading();
             endsWith$default = StringsKt__StringsJVMKt.endsWith$default(str, "temp_app_avatar.mp4", false, 2, null);
@@ -189,10 +188,10 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             AndroidUtilities.addMediaToGallery(str);
         } else if (i == NotificationCenter.httpFileDidLoad) {
             Object obj3 = args[0];
-            Objects.requireNonNull(obj3, "null cannot be cast to non-null type kotlin.String");
+            Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type kotlin.String");
             if (Intrinsics.areEqual((String) obj3, this.loadingFileUrl)) {
                 Object obj4 = args[1];
-                Objects.requireNonNull(obj4, "null cannot be cast to non-null type kotlin.String");
+                Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type kotlin.String");
                 finishLoading();
                 onNftLoaded((String) obj4);
             }
@@ -201,7 +200,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             onCommonError();
         } else if (i == NotificationCenter.httpFileDidFailedLoad) {
             Object obj5 = args[0];
-            Objects.requireNonNull(obj5, "null cannot be cast to non-null type kotlin.String");
+            Intrinsics.checkNotNull(obj5, "null cannot be cast to non-null type kotlin.String");
             if (Intrinsics.areEqual((String) obj5, this.loadingFileUrl)) {
                 this.loadingFileUrl = null;
                 finishLoading();
@@ -212,7 +211,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public final AlertDialog initLoadingDialog() {
-        return new AlertDialog(this.parentFragment.getParentActivity(), 1);
+        return new AlertDialog(this.parentFragment.getParentActivity(), 3);
     }
 
     private final void openExistingFileForAvatarEdit(String str, boolean z) {
@@ -248,7 +247,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         if (r0.equals("webp") == false) goto L24;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
-        if (r0.equals("webm") == false) goto L24;
+        if (r0.equals("webm") != false) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -283,8 +282,8 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         L1c:
             java.lang.String r1 = "webm"
             boolean r0 = r0.equals(r1)
-            if (r0 != 0) goto L40
-            goto L67
+            if (r0 == 0) goto L67
+            goto L40
         L25:
             java.lang.String r1 = "jpeg"
             boolean r0 = r0.equals(r1)
@@ -323,7 +322,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             r4.convertGifNft(r5)
             goto L77
         L67:
-            int r5 = org.telegram.messenger.C3158R.string.ImportErrorFileFormatInvalid
+            int r5 = org.telegram.messenger.C3286R.string.ImportErrorFileFormatInvalid
             java.lang.String r0 = "ImportErrorFileFormatInvalid"
             java.lang.String r5 = org.telegram.messenger.LocaleController.getString(r0, r5)
             java.lang.String r0 = "getString(\"ImportErrorFi…rtErrorFileFormatInvalid)"
@@ -336,7 +335,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
     }
 
     private final void convertGifNft(String str) {
-        final String str2 = FileLoader.checkDirectory(4).getAbsolutePath() + ((Object) File.separator) + "temp_app_avatar.mp4";
+        final String str2 = FileLoader.checkDirectory(4).getAbsolutePath() + File.separator + "temp_app_avatar.mp4";
         Future<Void> compress = GIFCompressor.into(str2).addDataSource(ApplicationLoader.applicationContext, str).setStrategy(DefaultStrategy.fraction(1.0f).build()).setListener(new GIFListener() { // from class: com.smedialink.manager.common.MediaEditManager$convertGifNft$gifCompressing$1
             @Override // com.otaliastudios.gif.GIFListener
             public void onGIFCompressionCanceled() {
@@ -363,7 +362,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             }
         }).compress();
         Intrinsics.checkNotNullExpressionValue(compress, "private fun convertGifNf…cel(true)\n        }\n    }");
-        showLoading(C3158R.string.custom_avatar_processing, new MediaEditManager$convertGifNft$1(compress));
+        showLoading(C3286R.string.custom_avatar_processing, new MediaEditManager$convertGifNft$1(compress));
     }
 
     private final void prepareAvatarEditing() {
@@ -387,7 +386,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
 
             @Override // org.telegram.p048ui.Components.ImageUpdater.ImageUpdaterDelegate
             public final void didUploadPhoto(TLRPC$InputFile tLRPC$InputFile, TLRPC$InputFile tLRPC$InputFile2, double d, String str, TLRPC$PhotoSize tLRPC$PhotoSize, TLRPC$PhotoSize tLRPC$PhotoSize2, boolean z, TLRPC$VideoSize tLRPC$VideoSize) {
-                MediaEditManager.m1263prepareAvatarEditing$lambda3$lambda2(MediaEditManager.this, tLRPC$InputFile, tLRPC$InputFile2, d, str, tLRPC$PhotoSize, tLRPC$PhotoSize2, z, tLRPC$VideoSize);
+                MediaEditManager.prepareAvatarEditing$lambda$3$lambda$2(MediaEditManager.this, tLRPC$InputFile, tLRPC$InputFile2, d, str, tLRPC$PhotoSize, tLRPC$PhotoSize2, z, tLRPC$VideoSize);
             }
 
             @Override // org.telegram.p048ui.Components.ImageUpdater.ImageUpdaterDelegate
@@ -403,20 +402,18 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: prepareAvatarEditing$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m1263prepareAvatarEditing$lambda3$lambda2(final MediaEditManager this$0, final TLRPC$InputFile tLRPC$InputFile, final TLRPC$InputFile tLRPC$InputFile2, final double d, final String str, final TLRPC$PhotoSize tLRPC$PhotoSize, final TLRPC$PhotoSize tLRPC$PhotoSize2, boolean z, TLRPC$VideoSize tLRPC$VideoSize) {
+    public static final void prepareAvatarEditing$lambda$3$lambda$2(final MediaEditManager this$0, final TLRPC$InputFile tLRPC$InputFile, final TLRPC$InputFile tLRPC$InputFile2, final double d, final String str, final TLRPC$PhotoSize tLRPC$PhotoSize, final TLRPC$PhotoSize tLRPC$PhotoSize2, boolean z, TLRPC$VideoSize tLRPC$VideoSize) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.manager.common.MediaEditManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MediaEditManager.m1264prepareAvatarEditing$lambda3$lambda2$lambda1(MediaEditManager.this, tLRPC$InputFile, tLRPC$InputFile2, d, str, tLRPC$PhotoSize, tLRPC$PhotoSize2);
+                MediaEditManager.prepareAvatarEditing$lambda$3$lambda$2$lambda$1(MediaEditManager.this, tLRPC$InputFile, tLRPC$InputFile2, d, str, tLRPC$PhotoSize, tLRPC$PhotoSize2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: prepareAvatarEditing$lambda-3$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m1264prepareAvatarEditing$lambda3$lambda2$lambda1(MediaEditManager this$0, TLRPC$InputFile tLRPC$InputFile, TLRPC$InputFile tLRPC$InputFile2, double d, String str, TLRPC$PhotoSize tLRPC$PhotoSize, TLRPC$PhotoSize tLRPC$PhotoSize2) {
+    public static final void prepareAvatarEditing$lambda$3$lambda$2$lambda$1(MediaEditManager this$0, TLRPC$InputFile tLRPC$InputFile, TLRPC$InputFile tLRPC$InputFile2, double d, String str, TLRPC$PhotoSize tLRPC$PhotoSize, TLRPC$PhotoSize tLRPC$PhotoSize2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.changeAvatar(tLRPC$InputFile, tLRPC$InputFile2, d, str, tLRPC$PhotoSize, tLRPC$PhotoSize2);
     }
@@ -434,29 +431,27 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             tLRPC$TL_photos_uploadProfilePhoto.video_start_ts = d;
             tLRPC$TL_photos_uploadProfilePhoto.flags = i | 4;
         }
-        showLoading(C3158R.string.custom_avatar_upload, new MediaEditManager$changeAvatar$1(this, this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: com.smedialink.manager.common.MediaEditManager$$ExternalSyntheticLambda3
+        showLoading(C3286R.string.custom_avatar_upload, new MediaEditManager$changeAvatar$1(this, this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: com.smedialink.manager.common.MediaEditManager$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                MediaEditManager.m1261changeAvatar$lambda9(MediaEditManager.this, str, tLRPC$PhotoSize2, tLRPC$PhotoSize, tLObject, tLRPC$TL_error);
+                MediaEditManager.changeAvatar$lambda$9(MediaEditManager.this, str, tLRPC$PhotoSize2, tLRPC$PhotoSize, tLObject, tLRPC$TL_error);
             }
         })));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: changeAvatar$lambda-9  reason: not valid java name */
-    public static final void m1261changeAvatar$lambda9(final MediaEditManager this$0, final String str, final TLRPC$PhotoSize tLRPC$PhotoSize, final TLRPC$PhotoSize tLRPC$PhotoSize2, final TLObject tLObject, final TLRPC$TL_error tLRPC$TL_error) {
+    public static final void changeAvatar$lambda$9(final MediaEditManager this$0, final String str, final TLRPC$PhotoSize tLRPC$PhotoSize, final TLRPC$PhotoSize tLRPC$PhotoSize2, final TLObject tLObject, final TLRPC$TL_error tLRPC$TL_error) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.manager.common.MediaEditManager$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MediaEditManager.m1262changeAvatar$lambda9$lambda8(MediaEditManager.this, tLRPC$TL_error, tLObject, str, tLRPC$PhotoSize, tLRPC$PhotoSize2);
+                MediaEditManager.changeAvatar$lambda$9$lambda$8(MediaEditManager.this, tLRPC$TL_error, tLObject, str, tLRPC$PhotoSize, tLRPC$PhotoSize2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: changeAvatar$lambda-9$lambda-8  reason: not valid java name */
-    public static final void m1262changeAvatar$lambda9$lambda8(MediaEditManager this$0, TLRPC$TL_error tLRPC$TL_error, TLObject tLObject, String str, TLRPC$PhotoSize tLRPC$PhotoSize, TLRPC$PhotoSize tLRPC$PhotoSize2) {
+    public static final void changeAvatar$lambda$9$lambda$8(MediaEditManager this$0, TLRPC$TL_error tLRPC$TL_error, TLObject tLObject, String str, TLRPC$PhotoSize tLRPC$PhotoSize, TLRPC$PhotoSize tLRPC$PhotoSize2) {
         ArrayList<TLRPC$User> arrayListOf;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         UserConfig userConfig = UserConfig.getInstance(this$0.currentAccount);
@@ -471,13 +466,12 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             } else {
                 userConfig.setCurrentUser(user);
             }
-            Objects.requireNonNull(tLObject, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_photos_photo");
+            Intrinsics.checkNotNull(tLObject, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_photos_photo");
             TLRPC$TL_userProfilePhoto tLRPC$TL_userProfilePhoto = new TLRPC$TL_userProfilePhoto();
             TLRPC$Photo tLRPC$Photo = ((TLRPC$TL_photos_photo) tLObject).photo;
-            tLRPC$TL_userProfilePhoto.photo_id = tLRPC$Photo.f1523id;
-            tLRPC$TL_userProfilePhoto.photo_small = tLRPC$PhotoSize == null ? null : tLRPC$PhotoSize.location;
-            tLRPC$TL_userProfilePhoto.photo_big = tLRPC$PhotoSize2 == null ? null : tLRPC$PhotoSize2.location;
-            Unit unit = Unit.INSTANCE;
+            tLRPC$TL_userProfilePhoto.photo_id = tLRPC$Photo.f1528id;
+            tLRPC$TL_userProfilePhoto.photo_small = tLRPC$PhotoSize != null ? tLRPC$PhotoSize.location : null;
+            tLRPC$TL_userProfilePhoto.photo_big = tLRPC$PhotoSize2 != null ? tLRPC$PhotoSize2.location : null;
             user.photo = tLRPC$TL_userProfilePhoto;
             ArrayList<TLRPC$VideoSize> arrayList = tLRPC$Photo.video_sizes;
             Intrinsics.checkNotNullExpressionValue(arrayList, "photosPhoto.photo.video_sizes");
@@ -486,10 +480,10 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
                 new File(str).renameTo(FileLoader.getInstance(this$0.currentAccount).getPathToAttach(tLRPC$VideoSize, "mp4", true));
             }
             MessagesStorage messagesStorage = this$0.parentFragment.getMessagesStorage();
-            messagesStorage.clearUserPhotos(user.f1633id);
+            messagesStorage.clearUserPhotos(user.f1639id);
             arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(user);
             messagesStorage.putUsersAndChats(arrayListOf, null, false, true);
-            String internalString = LocaleController.getInternalString(C3158R.string.custom_avatar_success);
+            String internalString = LocaleController.getInternalString(C3286R.string.custom_avatar_success);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.custom_avatar_success)");
             ContextExtKt.toast(internalString);
         }
@@ -521,21 +515,20 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         loadingAlertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: com.smedialink.manager.common.MediaEditManager$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
-                MediaEditManager.m1265showLoading$lambda12$lambda11(Function0.this, dialogInterface);
+                MediaEditManager.showLoading$lambda$12$lambda$11(Function0.this, dialogInterface);
             }
         });
         loadingAlertDialog.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showLoading$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m1265showLoading$lambda12$lambda11(Function0 onCancelAction, DialogInterface dialogInterface) {
+    public static final void showLoading$lambda$12$lambda$11(Function0 onCancelAction, DialogInterface dialogInterface) {
         Intrinsics.checkNotNullParameter(onCancelAction, "$onCancelAction");
         onCancelAction.invoke();
     }
 
     private final void onCommonError() {
-        String string = LocaleController.getString("ErrorOccurred", C3158R.string.ErrorOccurred);
+        String string = LocaleController.getString("ErrorOccurred", C3286R.string.ErrorOccurred);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"ErrorOccurred\", R.string.ErrorOccurred)");
         ContextExtKt.toast(string);
     }

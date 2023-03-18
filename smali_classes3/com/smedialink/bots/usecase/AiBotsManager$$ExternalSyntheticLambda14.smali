@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/bots/usecase/AiBotsManager;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/bots/usecase/AiBotsManager;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;->f$0:Lcom/smedialink/bots/usecase/AiBotsManager;
+    iput-object p1, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;->f$0:Lcom/smedialink/bots/usecase/AiBotsManager;
+    iget-object v0, p0, Lcom/smedialink/bots/usecase/AiBotsManager$$ExternalSyntheticLambda14;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lcom/google/firebase/firestore/QuerySnapshot;
-
-    invoke-static {v0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$Bqnep9XzBaXz_mx13HhWWaGsiTc(Lcom/smedialink/bots/usecase/AiBotsManager;Lcom/google/firebase/firestore/QuerySnapshot;)V
+    invoke-static {v0, p1}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$16CPQ8P6CjKCx9zeq5kxjt4xj0U(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -466,7 +466,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_9
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -486,7 +486,7 @@
 
     const/4 v5, 0x1
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_5
 
     .line 397
     sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -529,7 +529,7 @@
     if-nez v4, :cond_4
 
     .line 400
-    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0, v2, p2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->flatData(Ljava/util/Collection;Ljava/lang/Boolean;)Ljava/util/List;
 
@@ -539,12 +539,9 @@
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     :cond_4
-    if-nez p2, :cond_5
-
-    goto :goto_1
+    if-eqz p2, :cond_8
 
     .line 404
-    :cond_5
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v2
@@ -559,28 +556,28 @@
     goto :goto_1
 
     .line 408
-    :cond_6
+    :cond_5
     invoke-virtual {v1}, Lcom/chad/library/adapter/base/entity/node/BaseNode;->getChildNode()Ljava/util/List;
 
     move-result-object v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_6
 
     .line 409
     invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v6
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_7
 
-    :cond_7
+    :cond_6
     const/4 v4, 0x1
 
-    :cond_8
-    if-nez v4, :cond_9
+    :cond_7
+    if-nez v4, :cond_8
 
     .line 410
-    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0, v2, p2}, Lcom/chad/library/adapter/base/BaseNodeAdapter;->flatData(Ljava/util/Collection;Ljava/lang/Boolean;)Ljava/util/List;
 
@@ -590,7 +587,7 @@
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     .line 415
-    :cond_9
+    :cond_8
     :goto_1
     instance-of v2, v1, Lcom/chad/library/adapter/base/entity/node/NodeFooterImp;
 
@@ -603,17 +600,14 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_a
-
-    goto :goto_0
+    if-eqz v1, :cond_0
 
     .line 417
-    :cond_a
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :cond_b
+    :cond_9
     return-object v0
 .end method
 
@@ -879,14 +873,17 @@
     return-void
 
     :cond_0
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
+
+    goto :goto_0
 
     .line 155
+    :cond_1
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    :cond_1
+    :goto_0
     const/4 v0, 0x2
 
     const/4 v1, 0x0
@@ -910,14 +907,17 @@
         }
     .end annotation
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
+
+    goto :goto_0
 
     .line 83
+    :cond_0
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    :cond_0
+    :goto_0
     const/4 v0, 0x2
 
     const/4 v1, 0x0

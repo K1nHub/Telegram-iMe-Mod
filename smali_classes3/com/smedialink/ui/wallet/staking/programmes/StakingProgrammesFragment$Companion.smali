@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 167
+    .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 169
+    .line 170
     new-instance v0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;
 
     invoke-direct {v0, p1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;-><init>(Lcom/smedialink/storage/domain/model/staking/StakingTabType;)V

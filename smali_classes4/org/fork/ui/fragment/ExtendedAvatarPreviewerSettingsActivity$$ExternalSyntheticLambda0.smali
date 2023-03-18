@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->$r8$lambda$B4LpkTi1sT8B37447H7qLFVt_MY(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->$r8$lambda$xdcgHnLdut0qcYC4oSNt-93BQdM(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method

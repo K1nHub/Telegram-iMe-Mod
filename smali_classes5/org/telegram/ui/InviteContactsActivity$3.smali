@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/InviteContactsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 380
+    .line 381
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$3;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
     .locals 3
 
-    .line 383
+    .line 384
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$3;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/InviteContactsActivity;->access$300(Lorg/telegram/ui/InviteContactsActivity;)Z
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 385
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$3;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     const/4 p2, 0x0
@@ -53,7 +53,7 @@
 
     return p2
 
-    .line 387
+    .line 388
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
@@ -77,7 +77,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 388
+    .line 389
     iget v0, p2, Landroid/graphics/Rect;->top:I
 
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$3;->this$0:Lorg/telegram/ui/InviteContactsActivity;
@@ -98,7 +98,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->top:I
 
-    .line 389
+    .line 390
     iget v0, p2, Landroid/graphics/Rect;->bottom:I
 
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$3;->this$0:Lorg/telegram/ui/InviteContactsActivity;
@@ -119,7 +119,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
-    .line 390
+    .line 391
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
 
     move-result p1

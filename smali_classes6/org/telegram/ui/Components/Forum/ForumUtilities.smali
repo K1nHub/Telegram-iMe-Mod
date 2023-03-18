@@ -830,7 +830,7 @@
     .line 230
     iput-boolean v4, p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->top:Z
 
-    const/4 p1, 0x7
+    const/16 p1, 0xd
 
     .line 231
     iput p1, p2, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->cacheType:I

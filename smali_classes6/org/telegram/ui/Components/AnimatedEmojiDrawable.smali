@@ -15,6 +15,8 @@
 
 
 # static fields
+.field private static LOG_MEMORY_LEAK:Z = false
+
 .field public static attachedCount:I
 
 .field public static attachedDrawable:Ljava/util/ArrayList;
@@ -62,8 +64,6 @@
 
 
 # instance fields
-.field private LOG_MEMORY_LEAK:Z
-
 .field private absolutePath:Ljava/lang/String;
 
 .field private alpha:F
@@ -140,11 +140,6 @@
     .line 395
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    const/4 v0, 0x0
-
-    .line 76
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->LOG_MEMORY_LEAK:Z
-
     const/high16 v0, 0x3f800000    # 1.0f
 
     .line 393
@@ -190,11 +185,6 @@
     .line 406
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    const/4 v0, 0x0
-
-    .line 76
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->LOG_MEMORY_LEAK:Z
-
     const/high16 v0, 0x3f800000    # 1.0f
 
     .line 393
@@ -238,28 +228,23 @@
 .end method
 
 .method public constructor <init>(IILorg/telegram/tgnet/TLRPC$Document;)V
-    .locals 2
+    .locals 1
 
     .line 418
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    const/4 v0, 0x0
-
-    .line 76
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->LOG_MEMORY_LEAK:Z
-
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f800000    # 1.0f
 
     .line 393
-    iput v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->alpha:F
+    iput v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->alpha:F
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 735
-    iput-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->canOverrideColorCached:Ljava/lang/Boolean;
+    iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->canOverrideColorCached:Ljava/lang/Boolean;
 
     .line 746
-    iput-object v1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->isDefaultStatusEmojiCached:Ljava/lang/Boolean;
+    iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->isDefaultStatusEmojiCached:Ljava/lang/Boolean;
 
     .line 419
     iput p1, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->cacheType:I
@@ -273,8 +258,10 @@
     .line 422
     invoke-direct {p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->updateSize()V
 
+    const/4 p1, 0x0
+
     .line 423
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->initDocument(Z)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->initDocument(Z)V
 
     return-void
 .end method
@@ -628,9 +615,9 @@
 
     move-result v1
 
-    const/4 v6, 0x3
+    const/16 v6, 0x4004
 
-    const/4 v7, 0x4
+    const/4 v7, 0x3
 
     const/4 v8, 0x5
 
@@ -643,12 +630,22 @@
     :cond_6
     iget v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->cacheType:I
 
-    if-eq v1, v4, :cond_7
+    if-ne v1, v4, :cond_7
 
-    if-ne v1, v6, :cond_9
+    invoke-static {v6}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8
 
     :cond_7
-    invoke-static {v7}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    iget v1, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->cacheType:I
+
+    if-ne v1, v7, :cond_9
+
+    const/16 v1, 0x2008
+
+    invoke-static {v1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v1
 
@@ -876,18 +873,18 @@
 
     iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    const-string v6, "application/x-tgsticker"
+    const-string v7, "application/x-tgsticker"
 
-    invoke-virtual {v6, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_15
+    if-eqz v7, :cond_15
 
     .line 507
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     iget v11, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->cacheType:I
 
@@ -913,21 +910,21 @@
     const-string v11, ""
 
     :goto_1
-    invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-wide v13, v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->documentId:J
 
-    invoke-virtual {v6, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string v13, "@"
 
-    invoke-virtual {v6, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
     .line 508
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
@@ -944,7 +941,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4, v6}, Lorg/telegram/messenger/ImageLoader;->hasLottieMemCache(Ljava/lang/String;)Z
+    invoke-virtual {v4, v7}, Lorg/telegram/messenger/ImageLoader;->hasLottieMemCache(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -1120,7 +1117,7 @@
     if-nez v1, :cond_1a
 
     .line 532
-    invoke-static {v7}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    invoke-static {v6}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v1
 
@@ -1382,7 +1379,9 @@
 
     if-eq v1, v2, :cond_1d
 
-    if-ne v1, v7, :cond_1e
+    const/4 v2, 0x4
+
+    if-ne v1, v2, :cond_1e
 
     .line 548
     :cond_1d
@@ -1789,7 +1788,7 @@
 .method public static updateAll()V
     .locals 8
 
-    .line 1210
+    .line 1211
     sget-object v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->globalEmojiCache:Landroid/util/SparseArray;
 
     if-nez v0, :cond_0
@@ -1801,7 +1800,7 @@
 
     const/4 v1, 0x0
 
-    .line 1213
+    .line 1214
     :goto_0
     sget-object v2, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->globalEmojiCache:Landroid/util/SparseArray;
 
@@ -1811,7 +1810,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 1214
+    .line 1215
     sget-object v2, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->globalEmojiCache:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1822,7 +1821,7 @@
 
     const/4 v3, 0x0
 
-    .line 1215
+    .line 1216
     :goto_1
     invoke-virtual {v2}, Landroid/util/LongSparseArray;->size()I
 
@@ -1830,12 +1829,12 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 1216
+    .line 1217
     invoke-virtual {v2, v3}, Landroid/util/LongSparseArray;->keyAt(I)J
 
     move-result-wide v4
 
-    .line 1217
+    .line 1218
     invoke-virtual {v2, v4, v5}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v6
@@ -1844,19 +1843,19 @@
 
     if-eqz v6, :cond_1
 
-    .line 1218
+    .line 1219
     iget-boolean v7, v6, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attached:Z
 
     if-eqz v7, :cond_1
 
     const/4 v4, 0x1
 
-    .line 1219
+    .line 1220
     invoke-direct {v6, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->initDocument(Z)V
 
     goto :goto_2
 
-    .line 1221
+    .line 1222
     :cond_1
     invoke-virtual {v2, v4, v5}, Landroid/util/LongSparseArray;->remove(J)V
 
@@ -1943,7 +1942,7 @@
 
     .line 712
     :goto_1
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->LOG_MEMORY_LEAK:Z
+    sget-boolean v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->LOG_MEMORY_LEAK:Z
 
     if-eqz v0, :cond_7
 
@@ -1968,14 +1967,14 @@
     .line 717
     sget v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attachedCount:I
 
-    sub-int/2addr v0, v1
+    add-int/2addr v0, v1
 
     sput v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attachedCount:I
 
     .line 718
     sget-object v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attachedDrawable:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
@@ -1983,14 +1982,14 @@
     :cond_6
     sget v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attachedCount:I
 
-    add-int/2addr v0, v1
+    sub-int/2addr v0, v1
 
     sput v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attachedCount:I
 
     .line 721
     sget-object v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attachedDrawable:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 723
     :goto_2
@@ -2010,7 +2009,7 @@
 
     move-result-object v0
 
-    const-string v1, "animatedDrable"
+    const-string v1, "animatedDrawable"
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

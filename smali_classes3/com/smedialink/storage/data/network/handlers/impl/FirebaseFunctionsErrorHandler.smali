@@ -9,10 +9,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;,
-        Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;,
         Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;,
+        Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;,
+        Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;,
         Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;,
+        Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;,
         Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$WhenMappings;
     }
 .end annotation
@@ -72,16 +73,16 @@
 
     const/4 v1, 0x0
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    move-object v2, v1
+    invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;->getCode()Ljava/lang/String;
+
+    move-result-object v2
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;->getCode()Ljava/lang/String;
-
-    move-result-object v2
+    move-object v2, v1
 
     :goto_0
     invoke-virtual {v0, v2}, Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/data/network/handlers/model/GlobalApiErrorCode;
@@ -98,179 +99,203 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 54
+    .line 60
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->BAD_RESPONSE:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     goto/16 :goto_1
 
-    .line 52
+    .line 58
     :pswitch_0
+    sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
+
+    goto/16 :goto_1
+
+    .line 57
+    :pswitch_1
+    sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
+
+    goto/16 :goto_1
+
+    .line 56
+    :pswitch_2
+    sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
+
+    goto/16 :goto_1
+
+    .line 55
+    :pswitch_3
+    sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
+
+    goto/16 :goto_1
+
+    .line 52
+    :pswitch_4
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NO_TOKENS:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     goto :goto_1
 
     .line 51
-    :pswitch_1
+    :pswitch_5
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->USER_ALREADY_PARTICIPATED:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     goto :goto_1
 
     .line 50
-    :pswitch_2
+    :pswitch_6
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->REQUEST_ID_NOT_FOUND:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     goto :goto_1
 
     .line 49
-    :pswitch_3
+    :pswitch_7
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;->AIRDROP_NOT_ACTIVE:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$AirdropErrorStatus;
 
     goto :goto_1
 
     .line 46
-    :pswitch_4
+    :pswitch_8
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_CLAIM_OVERLAP:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     goto :goto_1
 
     .line 45
-    :pswitch_5
+    :pswitch_9
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     goto :goto_1
 
     .line 44
-    :pswitch_6
+    :pswitch_a
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_FINISHED:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     goto :goto_1
 
     .line 43
-    :pswitch_7
+    :pswitch_b
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->NO_ENOUGH_MONEY:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 40
-    :pswitch_8
+    :pswitch_c
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->DONATIONS_ADDRESS_ALREADY_LINKED:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 39
-    :pswitch_9
+    :pswitch_d
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->DONATIONS_NOT_CONFIGURED_YET:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 38
-    :pswitch_a
+    :pswitch_e
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->ETHER_BLOCK_CHAIN_ERROR:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 37
-    :pswitch_b
+    :pswitch_f
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_QUOTE_NOT_FOUND:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 36
-    :pswitch_c
+    :pswitch_10
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_DIFF_BTW_TOKEN_EXCHANGE_RATES_IS_TOO_BIG:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 35
-    :pswitch_d
+    :pswitch_11
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->NO_ENOUGH_MONEY:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 34
-    :pswitch_e
+    :pswitch_12
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_APPROVED_AMOUNT_NOT_SUFFICIENT:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 33
-    :pswitch_f
+    :pswitch_13
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SIMPLEX_QUOTE_ALREADY_USED:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 32
-    :pswitch_10
+    :pswitch_14
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->ETHER_WALLET_NOT_LINKED:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 31
-    :pswitch_11
+    :pswitch_15
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->PIN_CODE_MAX_ATTEMPTS:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     goto :goto_1
 
     .line 28
-    :pswitch_12
+    :pswitch_16
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->TRANSLATION_UNSUPPORTED_LANGUAGE:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 27
-    :pswitch_13
+    :pswitch_17
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->REFRESH_TOKEN_NOT_FOUND:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 26
-    :pswitch_14
+    :pswitch_18
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->ZERO_AMOUNT_ERROR:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 25
-    :pswitch_15
+    :pswitch_19
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->VALIDATION_ERROR:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 24
-    :pswitch_16
+    :pswitch_1a
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->ERR_MONEY_ACCOUNT_NOT_EXIST:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 23
-    :pswitch_17
+    :pswitch_1b
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->UNAUTHORIZED:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 22
-    :pswitch_18
+    :pswitch_1c
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->NO_ENOUGH_MONEY:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
     goto :goto_1
 
     .line 21
-    :pswitch_19
+    :pswitch_1d
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;->USER_NOT_FOUND:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$ErrorStatus;
 
-    .line 57
+    .line 63
     :goto_1
     new-instance v2, Lcom/smedialink/storage/data/network/model/error/ErrorModel;
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    move-object p1, v1
+    invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
 
     goto :goto_2
 
     :cond_1
-    invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
+    move-object p1, v1
 
     :goto_2
     invoke-direct {v2, p1, v0, v1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
@@ -281,6 +306,10 @@
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_1d
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
         :pswitch_19
         :pswitch_18
         :pswitch_17
@@ -294,10 +323,10 @@
         :pswitch_f
         :pswitch_e
         :pswitch_d
+        :pswitch_d
         :pswitch_c
         :pswitch_b
         :pswitch_a
-        :pswitch_9
         :pswitch_9
         :pswitch_8
         :pswitch_7

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nServiceMessageType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ServiceMessageType.kt\norg/fork/enums/ServiceMessageType$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,46:1\n3785#2:47\n4300#2,2:48\n37#3:50\n36#3,3:51\n*S KotlinDebug\n*F\n+ 1 ServiceMessageType.kt\norg/fork/enums/ServiceMessageType$Companion\n*L\n42#1:47\n42#1:48,2\n44#1:50\n44#1:51,3\n*E\n"
+    value = "SMAP\nServiceMessageType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ServiceMessageType.kt\norg/fork/enums/ServiceMessageType$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,46:1\n3792#2:47\n4307#2,2:48\n37#3,2:50\n*S KotlinDebug\n*F\n+ 1 ServiceMessageType.kt\norg/fork/enums/ServiceMessageType$Companion\n*L\n42#1:47\n42#1:48,2\n44#1:50,2\n*E\n"
 .end annotation
 
 
@@ -134,12 +134,12 @@
 
     move-result-object v0
 
-    .line 3785
+    .line 3792
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4300
+    .line 4307
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -180,6 +180,7 @@
     :goto_1
     if-eqz v6, :cond_3
 
+    .line 4307
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_3
@@ -194,10 +195,6 @@
     invoke-interface {v1, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
-
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast p1, [Lorg/fork/enums/ServiceMessageType;
 

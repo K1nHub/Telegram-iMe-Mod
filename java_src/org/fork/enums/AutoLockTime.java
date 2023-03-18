@@ -15,7 +15,7 @@ public enum AutoLockTime {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final int f1411id;
+    private final int f1416id;
 
     /* compiled from: AutoLockTime.kt */
     /* loaded from: classes4.dex */
@@ -24,11 +24,26 @@ public enum AutoLockTime {
 
         static {
             int[] iArr = new int[AutoLockTime.values().length];
-            iArr[AutoLockTime.NONE.ordinal()] = 1;
-            iArr[AutoLockTime.MINUTE.ordinal()] = 2;
-            iArr[AutoLockTime.FIVE_MINUTES.ordinal()] = 3;
-            iArr[AutoLockTime.HOUR.ordinal()] = 4;
-            iArr[AutoLockTime.FIVE_HOURS.ordinal()] = 5;
+            try {
+                iArr[AutoLockTime.NONE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[AutoLockTime.MINUTE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[AutoLockTime.FIVE_MINUTES.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[AutoLockTime.HOUR.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[AutoLockTime.FIVE_HOURS.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -38,11 +53,11 @@ public enum AutoLockTime {
     }
 
     AutoLockTime(int i) {
-        this.f1411id = i;
+        this.f1416id = i;
     }
 
     public final int getId() {
-        return this.f1411id;
+        return this.f1416id;
     }
 
     public final long getTimeInSeconds() {

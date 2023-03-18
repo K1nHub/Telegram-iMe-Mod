@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Z)V
     .locals 0
 
-    .line 11845
+    .line 11844
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$75;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$75;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 11859
+    .line 11858
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$75;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$34100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 11860
+    .line 11859
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$75;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v0, 0x0
@@ -74,7 +74,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 11848
+    .line 11847
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$75;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$34100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
@@ -95,14 +95,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 11849
+    .line 11848
     iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$75;->val$show:Z
 
     const/4 v0, 0x4
 
     if-nez p1, :cond_0
 
-    .line 11850
+    .line 11849
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$75;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$34200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 11852
+    .line 11851
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$75;->this$0:Lorg/telegram/ui/ChatActivity;
 

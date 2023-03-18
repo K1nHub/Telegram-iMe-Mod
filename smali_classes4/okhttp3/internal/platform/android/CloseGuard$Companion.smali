@@ -74,7 +74,7 @@
 
     move-result-object v4
 
-    const-string v5, "warnIfOpen"
+    const-string/jumbo v5, "warnIfOpen"
 
     new-array v3, v3, [Ljava/lang/Class;
 

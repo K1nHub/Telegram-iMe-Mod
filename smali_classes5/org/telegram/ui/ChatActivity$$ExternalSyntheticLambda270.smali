@@ -27,11 +27,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda270;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/util/List;
+    check-cast p1, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
 
     check-cast p2, Ljava/lang/Boolean;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$JThng596cegy4mZluAZYcq5dNrI(Lorg/telegram/ui/ChatActivity;Ljava/util/List;Ljava/lang/Boolean;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$mLZn-ybPdfJLb3czHCMTTx1KaOs(Lorg/telegram/ui/ChatActivity;Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;Ljava/lang/Boolean;)V
 
     return-void
 .end method

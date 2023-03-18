@@ -1,10 +1,10 @@
 package io.grpc.internal;
 
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface StreamListener {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface MessageProducer {
         InputStream next();
     }

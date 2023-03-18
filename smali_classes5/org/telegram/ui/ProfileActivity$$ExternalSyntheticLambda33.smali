@@ -8,26 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
-
-.field public final synthetic f$3:Ljava/lang/String;
+.field public final synthetic f$2:Ljava/util/HashSet;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/util/ArrayList;Ljava/util/HashSet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$1:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$2:Lorg/telegram/tgnet/TLObject;
-
-    iput-object p4, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$3:Ljava/lang/String;
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$2:Ljava/util/HashSet;
 
     return-void
 .end method
@@ -35,17 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$1:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$2:Lorg/telegram/tgnet/TLObject;
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$2:Ljava/util/HashSet;
 
-    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$3:Ljava/lang/String;
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$JGsaKzSqFn9EbiISmQ1hFzyPm2U(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$ciETOOYayvMPybsfTGcqU5YjY2s(Lorg/telegram/ui/ProfileActivity;Ljava/util/ArrayList;Ljava/util/HashSet;)V
 
     return-void
 .end method

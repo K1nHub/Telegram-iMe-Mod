@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
     .locals 0
 
-    .line 2186
+    .line 2260
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     invoke-direct {p0}, Lcom/smedialink/ui/common/SimpleTextWatcher;-><init>()V
@@ -35,7 +35,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 2189
+    .line 2263
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->this$0:Lorg/telegram/ui/ManageLinksActivity;

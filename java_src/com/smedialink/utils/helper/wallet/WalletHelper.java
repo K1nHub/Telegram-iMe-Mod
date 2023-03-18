@@ -20,7 +20,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
@@ -39,12 +39,10 @@ public final class WalletHelper implements KoinComponent {
         return j == 995696546 || j == 1076186499;
     }
 
-    /* renamed from: safeRunWalletScreen$lambda-3 */
-    public static final void m1857safeRunWalletScreen$lambda3() {
+    public static final void safeRunWalletScreen$lambda$3() {
     }
 
-    /* renamed from: safeRunWalletScreen$lambda-4 */
-    public static final void m1858safeRunWalletScreen$lambda4() {
+    public static final void safeRunWalletScreen$lambda$4() {
     }
 
     private WalletHelper() {
@@ -82,14 +80,13 @@ public final class WalletHelper implements KoinComponent {
             fragment.showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(fragment, blockchainType, new Callbacks$Callback() { // from class: com.smedialink.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda0
                 @Override // org.fork.utils.Callbacks$Callback
                 public final void invoke() {
-                    WalletHelper.m1855runWithCheckIsCryptoWalletCreated$lambda2$lambda1(Callbacks$Callback.this, fragment);
+                    WalletHelper.runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Callbacks$Callback.this, fragment);
                 }
             }));
         }
     }
 
-    /* renamed from: runWithCheckIsCryptoWalletCreated$lambda-2$lambda-1 */
-    public static final void m1855runWithCheckIsCryptoWalletCreated$lambda2$lambda1(Callbacks$Callback callbacks$Callback, final BaseFragment this_with) {
+    public static final void runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Callbacks$Callback callbacks$Callback, final BaseFragment this_with) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         if (callbacks$Callback != null) {
             callbacks$Callback.invoke();
@@ -97,13 +94,12 @@ public final class WalletHelper implements KoinComponent {
         safeRunWalletScreen$default(this_with, null, null, new Callbacks$Callback() { // from class: com.smedialink.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHelper.m1856runWithCheckIsCryptoWalletCreated$lambda2$lambda1$lambda0(BaseFragment.this);
+                WalletHelper.runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(BaseFragment.this);
             }
         }, 3, null);
     }
 
-    /* renamed from: runWithCheckIsCryptoWalletCreated$lambda-2$lambda-1$lambda-0 */
-    public static final void m1856runWithCheckIsCryptoWalletCreated$lambda2$lambda1$lambda0(BaseFragment this_with) {
+    public static final void runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(BaseFragment this_with) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         WalletFlowCoordinator walletFlowCoordinator = INSTANCE.getWalletFlowCoordinator();
         INavigationLayout parentLayout = this_with.getParentLayout();
@@ -137,7 +133,7 @@ public final class WalletHelper implements KoinComponent {
 
     public static /* synthetic */ void safeRunWalletScreen$default(BaseFragment baseFragment, String str, Callbacks$Callback callbacks$Callback, Callbacks$Callback callbacks$Callback2, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = LocaleController.getInternalString(C3158R.string.wallet_auth_dialog_description);
+            str = LocaleController.getInternalString(C3286R.string.wallet_auth_dialog_description);
             Intrinsics.checkNotNullExpressionValue(str, "getInternalString(R.stri…_auth_dialog_description)");
         }
         if ((i & 2) != 0) {
@@ -156,10 +152,9 @@ public final class WalletHelper implements KoinComponent {
         Intrinsics.checkNotNullParameter(walletAuthorizedAction, "walletAuthorizedAction");
         Activity parentActivity = baseFragment.getParentActivity();
         LaunchActivity launchActivity = parentActivity instanceof LaunchActivity ? (LaunchActivity) parentActivity : null;
-        if (launchActivity == null) {
-            return;
+        if (launchActivity != null) {
+            safeRunWalletScreen(launchActivity, dialogMessage, activateClickAction, walletAuthorizedAction);
         }
-        safeRunWalletScreen(launchActivity, dialogMessage, activateClickAction, walletAuthorizedAction);
     }
 
     public static final void safeRunWalletScreen(LaunchActivity launchActivity, String dialogMessage, Callbacks$Callback activateClickAction, Callbacks$Callback walletAuthorizedAction) {
@@ -193,31 +188,29 @@ public final class WalletHelper implements KoinComponent {
     }
 
     private final void showAppUpdateDialog(final LaunchActivity launchActivity) {
-        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3158R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3158R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3158R.string.common_cancel), LocaleController.getInternalString(C3158R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
+        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3286R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3286R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3286R.string.common_cancel), LocaleController.getInternalString(C3286R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHelper.m1859showAppUpdateDialog$lambda6(LaunchActivity.this);
+                WalletHelper.showAppUpdateDialog$lambda$6(LaunchActivity.this);
             }
         }, null, 8, null).show();
     }
 
-    /* renamed from: showAppUpdateDialog$lambda-6 */
-    public static final void m1859showAppUpdateDialog$lambda6(LaunchActivity activity) {
+    public static final void showAppUpdateDialog$lambda$6(LaunchActivity activity) {
         Intrinsics.checkNotNullParameter(activity, "$activity");
         Browser.openUrl(activity, BuildVars.PLAYSTORE_APP_URL);
     }
 
     private final void showWalletAuthDialog(final LaunchActivity launchActivity, String str, final Callbacks$Callback callbacks$Callback) {
-        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3158R.string.wallet_auth_dialog_title), str, LocaleController.getInternalString(C3158R.string.wallet_auth_dialog_cancel_btn), LocaleController.getInternalString(C3158R.string.wallet_auth_dialog_action_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda3
+        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3286R.string.wallet_auth_dialog_title), str, LocaleController.getInternalString(C3286R.string.wallet_auth_dialog_cancel_btn), LocaleController.getInternalString(C3286R.string.wallet_auth_dialog_action_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda3
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHelper.m1860showWalletAuthDialog$lambda7(LaunchActivity.this, callbacks$Callback);
+                WalletHelper.showWalletAuthDialog$lambda$7(LaunchActivity.this, callbacks$Callback);
             }
         }, null, 8, null).show();
     }
 
-    /* renamed from: showWalletAuthDialog$lambda-7 */
-    public static final void m1860showWalletAuthDialog$lambda7(LaunchActivity activity, Callbacks$Callback activateClickAction) {
+    public static final void showWalletAuthDialog$lambda$7(LaunchActivity activity, Callbacks$Callback activateClickAction) {
         Intrinsics.checkNotNullParameter(activity, "$activity");
         Intrinsics.checkNotNullParameter(activateClickAction, "$activateClickAction");
         openAuthBotChat(activity);

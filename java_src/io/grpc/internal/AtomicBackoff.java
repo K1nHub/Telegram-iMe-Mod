@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AtomicBackoff {
     private static final Logger log = Logger.getLogger(AtomicBackoff.class.getName());
     private final String name;
@@ -22,7 +22,7 @@ public final class AtomicBackoff {
         return new State(this.value.get());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class State {
         private final long savedValue;
 

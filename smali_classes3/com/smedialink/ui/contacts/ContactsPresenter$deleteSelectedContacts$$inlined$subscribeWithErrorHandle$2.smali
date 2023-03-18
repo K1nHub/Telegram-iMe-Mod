@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,11 +18,11 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Ljava/lang/Throwable;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
@@ -45,25 +45,29 @@
 
     iput-object p2, p0, Lcom/smedialink/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;->this$0:Lcom/smedialink/ui/contacts/ContactsPresenter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 72
     check-cast p1, Ljava/lang/Throwable;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;->accept(Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;->invoke(Ljava/lang/Throwable;)V
 
-    return-void
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
 .end method
 
-.method public final accept(Ljava/lang/Throwable;)V
+.method public final invoke(Ljava/lang/Throwable;)V
     .locals 1
 
     .line 75
@@ -72,24 +76,21 @@
     .line 76
     iget-object v0, p0, Lcom/smedialink/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;->$viewState:Lcom/smedialink/ui/base/mvp/base/BaseView;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_0
 
     const-string p1, ""
 
-    :cond_1
+    :cond_0
     invoke-interface {v0, p1}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     .line 33
-    :goto_0
+    :cond_1
     iget-object p1, p0, Lcom/smedialink/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;->this$0:Lcom/smedialink/ui/contacts/ContactsPresenter;
 
     invoke-static {p1}, Lcom/smedialink/ui/contacts/ContactsPresenter;->access$deleteAction(Lcom/smedialink/ui/contacts/ContactsPresenter;)V

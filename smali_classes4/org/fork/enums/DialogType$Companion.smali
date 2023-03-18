@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDialogType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogType.kt\norg/fork/enums/DialogType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,163:1\n1#2:164\n1547#3:165\n1618#3,3:166\n1547#3:169\n1618#3,3:170\n1547#3:173\n1618#3,3:174\n*S KotlinDebug\n*F\n+ 1 DialogType.kt\norg/fork/enums/DialogType$Companion\n*L\n135#1:165\n135#1:166,3\n138#1:169\n138#1:170,3\n141#1:173\n141#1:174,3\n*E\n"
+    value = "SMAP\nDialogType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogType.kt\norg/fork/enums/DialogType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,163:1\n1#2:164\n1549#3:165\n1620#3,3:166\n1549#3:169\n1620#3,3:170\n1549#3:173\n1620#3,3:174\n*S KotlinDebug\n*F\n+ 1 DialogType.kt\norg/fork/enums/DialogType$Companion\n*L\n135#1:165\n135#1:166,3\n138#1:169\n138#1:170,3\n141#1:173\n141#1:174,3\n*E\n"
 .end annotation
 
 
@@ -168,7 +168,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -179,7 +179,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -195,7 +195,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lorg/fork/enums/DialogType;
 
     .line 138
@@ -203,10 +203,12 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 138
     :cond_0
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -234,7 +236,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -245,7 +247,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -261,7 +263,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lorg/fork/enums/DialogType;
 
     .line 141
@@ -273,6 +275,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -340,14 +343,9 @@
         }
     .end annotation
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
-
-    goto :goto_1
-
-    .line 1547
-    :cond_0
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -358,7 +356,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -374,7 +372,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Ljava/lang/String;
 
     .line 135
@@ -382,22 +380,24 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    :cond_0
+    const/4 v0, 0x0
+
     :cond_1
-    move-object p1, v0
+    if-nez v0, :cond_2
 
-    :goto_1
-    if-nez p1, :cond_2
-
+    .line 135
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
-    move-result-object p1
+    move-result-object v0
 
     :cond_2
-    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object p1
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->$r8$lambda$VMlDcZqkvB_haRcOy-l17UHx0U0(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->$r8$lambda$ZS0oUVK3dGhSqfzL2-oWYFgP0so(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

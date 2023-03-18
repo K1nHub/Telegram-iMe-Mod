@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/services/FilteredChatParticipantsProcessingService$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/services/FilteredChatParticipantsProcessingService;
 
-    invoke-static {v0}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->$r8$lambda$txbRFpEPwEqV7p-lHYTRKFOE_gA(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
+    invoke-static {v0}, Lcom/smedialink/services/FilteredChatParticipantsProcessingService;->$r8$lambda$eac_4IbHzSli-ZkF4y_YqewY4Co(Lcom/smedialink/services/FilteredChatParticipantsProcessingService;)V
 
     return-void
 .end method

@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarLayout;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/BaseFragment;Z)V
     .locals 0
 
-    .line 1561
+    .line 1562
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$currentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -50,7 +50,7 @@
 .method public run()V
     .locals 3
 
-    .line 1564
+    .line 1565
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$2000(Lorg/telegram/ui/ActionBar/ActionBarLayout;)Ljava/lang/Runnable;
@@ -61,7 +61,7 @@
 
     return-void
 
-    .line 1567
+    .line 1568
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
@@ -69,17 +69,17 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarLayout;->access$2002(Lorg/telegram/ui/ActionBar/ActionBarLayout;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 1568
+    .line 1569
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$currentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 1569
+    .line 1570
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationStart(ZZ)V
 
-    .line 1571
+    .line 1572
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onTransitionAnimationStart(ZZ)V
 
-    .line 1572
+    .line 1573
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->this$0:Lorg/telegram/ui/ActionBar/ActionBarLayout;
 
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBarLayout$6;->val$preview:Z

@@ -1720,7 +1720,7 @@
     :cond_4
     new-instance v0, Lnet/lingala/zip4j/exception/ZipException;
 
-    const-string v2, "zip headers not found. probably not a zip file"
+    const-string/jumbo v2, "zip headers not found. probably not a zip file"
 
     invoke-direct {v0, v2}, Lnet/lingala/zip4j/exception/ZipException;-><init>(Ljava/lang/String;)V
 

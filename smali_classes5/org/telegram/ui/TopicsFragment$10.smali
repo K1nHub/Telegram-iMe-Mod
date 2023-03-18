@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 897
+    .line 898
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
@@ -43,7 +43,7 @@
 .method private synthetic lambda$onLayoutChildren$0()V
     .locals 1
 
-    .line 1063
+    .line 1064
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment;->adapter:Lorg/telegram/ui/TopicsFragment$Adapter;
@@ -58,12 +58,12 @@
 .method public onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 1
 
-    .line 1052
+    .line 1053
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
     if-eqz v0, :cond_0
 
-    .line 1054
+    .line 1055
     :try_start_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
     :try_end_0
@@ -71,7 +71,7 @@
 
     goto :goto_0
 
-    .line 1056
+    .line 1057
     :catch_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -81,7 +81,7 @@
 
     throw p1
 
-    .line 1060
+    .line 1061
     :cond_0
     :try_start_1
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->onLayoutChildren(Landroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)V
@@ -93,10 +93,10 @@
     :catch_1
     move-exception p1
 
-    .line 1062
+    .line 1063
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1063
+    .line 1064
     new-instance p1, Lorg/telegram/ui/TopicsFragment$10$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/TopicsFragment$10$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/TopicsFragment$10;)V
@@ -112,15 +112,15 @@
 
     const/4 v0, 0x1
 
-    .line 911
+    .line 912
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$10;->fixOffset:Z
 
-    .line 912
+    .line 913
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;->prepareForDrop(Landroid/view/View;Landroid/view/View;II)V
 
     const/4 p1, 0x0
 
-    .line 913
+    .line 914
     iput-boolean p1, p0, Lorg/telegram/ui/TopicsFragment$10;->fixOffset:Z
 
     return-void
@@ -129,12 +129,12 @@
 .method public scrollToPositionWithOffset(II)V
     .locals 1
 
-    .line 903
+    .line 904
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$10;->fixOffset:Z
 
     if-eqz v0, :cond_0
 
-    .line 904
+    .line 905
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -147,7 +147,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 906
+    .line 907
     :cond_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
@@ -165,7 +165,7 @@
 
     move-object/from16 v3, p3
 
-    .line 929
+    .line 930
     iget-object v4, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -180,7 +180,7 @@
 
     return v5
 
-    .line 932
+    .line 933
     :cond_0
     iget-object v4, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -203,7 +203,7 @@
     :cond_1
     const/4 v4, 0x0
 
-    .line 935
+    .line 936
     :goto_0
     iget-object v7, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -225,7 +225,7 @@
 
     if-gez v1, :cond_9
 
-    .line 936
+    .line 937
     iget-object v12, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v12}, Lorg/telegram/ui/TopicsFragment;->access$1500(Lorg/telegram/ui/TopicsFragment;)I
@@ -242,7 +242,7 @@
 
     if-ne v12, v11, :cond_9
 
-    .line 937
+    .line 938
     iget-object v12, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v12}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -251,7 +251,7 @@
 
     invoke-virtual {v12, v5}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
-    .line 938
+    .line 939
     iget-object v12, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v12, v12, Lorg/telegram/ui/TopicsFragment;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -262,7 +262,7 @@
 
     if-nez v12, :cond_3
 
-    .line 940
+    .line 941
     iget-object v13, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v13, v13, Lorg/telegram/ui/TopicsFragment;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -273,13 +273,13 @@
 
     if-eqz v13, :cond_2
 
-    .line 942
+    .line 943
     invoke-virtual {v13, v9}, Landroid/view/View;->setTranslationX(F)V
 
     :cond_2
     if-eqz v13, :cond_3
 
-    .line 944
+    .line 945
     invoke-virtual {v13}, Landroid/view/View;->getBottom()I
 
     move-result v13
@@ -297,7 +297,7 @@
     :cond_3
     if-nez v4, :cond_6
 
-    .line 949
+    .line 950
     iget-object v8, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v8, v8, Lorg/telegram/ui/TopicsFragment;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -308,7 +308,7 @@
 
     if-eqz v8, :cond_9
 
-    .line 951
+    .line 952
     sget-boolean v13, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
 
     if-eqz v13, :cond_4
@@ -336,7 +336,7 @@
 
     add-int/2addr v13, v6
 
-    .line 952
+    .line 953
     invoke-virtual {v8}, Landroid/view/View;->getTop()I
 
     move-result v8
@@ -351,7 +351,7 @@
 
     add-int/2addr v8, v12
 
-    .line 953
+    .line 954
     invoke-static/range {p1 .. p1}, Ljava/lang/Math;->abs(I)I
 
     move-result v12
@@ -365,7 +365,7 @@
     :cond_6
     if-nez v12, :cond_9
 
-    .line 959
+    .line 960
     iget-object v13, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v13, v13, Lorg/telegram/ui/TopicsFragment;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -374,7 +374,7 @@
 
     move-result-object v12
 
-    .line 960
+    .line 961
     invoke-virtual {v12}, Landroid/view/View;->getTop()I
 
     move-result v13
@@ -399,7 +399,7 @@
 
     const/high16 v13, 0x3f800000    # 1.0f
 
-    .line 964
+    .line 965
     :cond_7
     iget-object v12, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -435,7 +435,7 @@
     :cond_9
     move v8, v1
 
-    .line 972
+    .line 973
     :goto_2
     iget-object v12, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -455,7 +455,7 @@
 
     if-eqz v4, :cond_b
 
-    .line 973
+    .line 974
     iget-object v8, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v8}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -489,7 +489,7 @@
     :cond_a
     const/4 v12, 0x0
 
-    .line 981
+    .line 982
     :goto_3
     iget-object v13, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -501,7 +501,7 @@
 
     move v8, v12
 
-    .line 984
+    .line 985
     :cond_b
     iget-object v12, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -519,19 +519,10 @@
 
     if-lez v12, :cond_18
 
-    .line 985
+    .line 986
     invoke-super {v0, v8, v2, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
 
     move-result v2
-
-    .line 986
-    iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
-
-    invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_c
 
     .line 987
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -540,9 +531,18 @@
 
     move-result-object v3
 
+    if-eqz v3, :cond_c
+
+    .line 988
+    iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
+
+    invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
+
+    move-result-object v3
+
     iput v2, v3, Lorg/telegram/ui/Components/PullForegroundDrawable;->scrollDy:I
 
-    .line 989
+    .line 990
     :cond_c
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -556,7 +556,7 @@
 
     if-nez v3, :cond_d
 
-    .line 992
+    .line 993
     iget-object v12, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v12, v12, Lorg/telegram/ui/TopicsFragment;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -568,7 +568,7 @@
     :cond_d
     if-eqz v12, :cond_e
 
-    .line 995
+    .line 996
     invoke-virtual {v12, v9}, Landroid/view/View;->setTranslationX(F)V
 
     :cond_e
@@ -578,7 +578,7 @@
 
     if-eqz v12, :cond_15
 
-    .line 997
+    .line 998
     invoke-virtual {v12}, Landroid/view/View;->getBottom()I
 
     move-result v3
@@ -593,7 +593,7 @@
 
     if-lt v3, v15, :cond_15
 
-    .line 998
+    .line 999
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$3300(Lorg/telegram/ui/TopicsFragment;)J
@@ -604,7 +604,7 @@
 
     if-nez v3, :cond_f
 
-    .line 999
+    .line 1000
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -613,7 +613,7 @@
 
     invoke-static {v3, v13, v14}, Lorg/telegram/ui/TopicsFragment;->access$3302(Lorg/telegram/ui/TopicsFragment;J)J
 
-    .line 1001
+    .line 1002
     :cond_f
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -623,7 +623,7 @@
 
     if-ne v3, v11, :cond_10
 
-    .line 1002
+    .line 1003
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -632,7 +632,7 @@
 
     if-eqz v3, :cond_10
 
-    .line 1003
+    .line 1004
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -641,7 +641,7 @@
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/PullForegroundDrawable;->showHidden()V
 
-    .line 1006
+    .line 1007
     :cond_10
     invoke-virtual {v12}, Landroid/view/View;->getTop()I
 
@@ -667,7 +667,7 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 1010
+    .line 1011
     :cond_11
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -695,7 +695,7 @@
 
     const/4 v5, 0x1
 
-    .line 1012
+    .line 1013
     :cond_12
     iget-object v6, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -705,12 +705,12 @@
 
     if-eq v6, v5, :cond_13
 
-    .line 1013
+    .line 1014
     iget-object v6, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6, v5}, Lorg/telegram/ui/TopicsFragment;->access$3402(Lorg/telegram/ui/TopicsFragment;Z)Z
 
-    .line 1014
+    .line 1015
     iget-object v6, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$1700(Lorg/telegram/ui/TopicsFragment;)I
@@ -719,7 +719,7 @@
 
     if-ne v6, v11, :cond_13
 
-    .line 1015
+    .line 1016
     iget-object v6, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -730,7 +730,7 @@
 
     invoke-virtual {v6, v7, v11}, Landroid/view/ViewGroup;->performHapticFeedback(II)Z
 
-    .line 1016
+    .line 1017
     iget-object v6, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -739,7 +739,7 @@
 
     if-eqz v6, :cond_13
 
-    .line 1017
+    .line 1018
     iget-object v6, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -748,7 +748,7 @@
 
     invoke-virtual {v6, v5}, Lorg/telegram/ui/Components/PullForegroundDrawable;->colorize(Z)V
 
-    .line 1021
+    .line 1022
     :cond_13
     iget-object v5, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -766,7 +766,7 @@
 
     if-eqz v4, :cond_14
 
-    .line 1023
+    .line 1024
     iget-object v4, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -787,7 +787,7 @@
 
     sub-float/2addr v10, v4
 
-    .line 1025
+    .line 1026
     iget-object v4, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v4}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -808,7 +808,7 @@
 
     sub-float/2addr v4, v1
 
-    .line 1026
+    .line 1027
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;
@@ -817,7 +817,7 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;->setViewsOffset(F)V
 
-    .line 1028
+    .line 1029
     :cond_14
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -827,7 +827,7 @@
 
     if-eqz v1, :cond_16
 
-    .line 1029
+    .line 1030
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -836,7 +836,7 @@
 
     iput v3, v1, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullProgress:F
 
-    .line 1030
+    .line 1031
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -853,30 +853,21 @@
 
     goto :goto_4
 
-    .line 1033
+    .line 1034
     :cond_15
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1, v13, v14}, Lorg/telegram/ui/TopicsFragment;->access$3302(Lorg/telegram/ui/TopicsFragment;J)J
 
-    .line 1034
+    .line 1035
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1, v5}, Lorg/telegram/ui/TopicsFragment;->access$3402(Lorg/telegram/ui/TopicsFragment;Z)Z
 
-    .line 1035
-    iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
-
-    invoke-static {v1, v11}, Lorg/telegram/ui/TopicsFragment;->access$1702(Lorg/telegram/ui/TopicsFragment;I)I
-
     .line 1036
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_16
+    invoke-static {v1, v11}, Lorg/telegram/ui/TopicsFragment;->access$1702(Lorg/telegram/ui/TopicsFragment;I)I
 
     .line 1037
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -885,7 +876,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->resetText()V
+    if-eqz v1, :cond_16
 
     .line 1038
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -894,9 +885,18 @@
 
     move-result-object v1
 
-    iput v9, v1, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullProgress:F
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->resetText()V
 
     .line 1039
+    iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
+
+    invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
+
+    move-result-object v1
+
+    iput v9, v1, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullProgress:F
+
+    .line 1040
     iget-object v1, v0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$3200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/Components/PullForegroundDrawable;
@@ -915,13 +915,13 @@
     :goto_4
     if-eqz v12, :cond_17
 
-    .line 1043
+    .line 1044
     invoke-virtual {v12}, Landroid/view/View;->invalidate()V
 
     :cond_17
     return v2
 
-    .line 1047
+    .line 1048
     :cond_18
     invoke-super {v0, v8, v2, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollVerticallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
 
@@ -933,7 +933,7 @@
 .method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
     .locals 1
 
-    .line 918
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$10;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1500(Lorg/telegram/ui/TopicsFragment;)I
@@ -946,12 +946,12 @@
 
     if-ne p3, v0, :cond_0
 
-    .line 919
+    .line 920
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/LinearLayoutManager;->smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
 
     goto :goto_0
 
-    .line 921
+    .line 922
     :cond_0
     new-instance p2, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;
 
@@ -963,10 +963,10 @@
 
     invoke-direct {p2, p1, v0}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
 
-    .line 922
+    .line 923
     invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 923
+    .line 924
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     :goto_0

@@ -50,7 +50,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1388
+    .line 1392
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +59,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/PhotoViewer$1;)V
     .locals 0
 
-    .line 1388
+    .line 1392
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EditState;-><init>()V
 
     return-void
@@ -72,27 +72,27 @@
 
     const/4 v0, 0x0
 
-    .line 1398
+    .line 1402
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->paintPath:Ljava/lang/String;
 
-    .line 1399
+    .line 1403
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
-    .line 1400
+    .line 1404
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->savedFilterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
-    .line 1401
+    .line 1405
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 1402
+    .line 1406
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->croppedPaintPath:Ljava/lang/String;
 
-    .line 1403
+    .line 1407
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->croppedMediaEntities:Ljava/util/ArrayList;
 
     const-wide/16 v0, 0x0
 
-    .line 1404
+    .line 1408
     iput-wide v0, p0, Lorg/telegram/ui/PhotoViewer$EditState;->averageDuration:J
 
     return-void

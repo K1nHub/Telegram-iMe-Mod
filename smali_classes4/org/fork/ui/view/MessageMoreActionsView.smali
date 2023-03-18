@@ -6,10 +6,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItemsAdapter;,
-        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItemView;,
+        Lorg/fork/ui/view/MessageMoreActionsView$Companion;,
         Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItem;,
-        Lorg/fork/ui/view/MessageMoreActionsView$Companion;
+        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItemView;,
+        Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItemsAdapter;
     }
 .end annotation
 

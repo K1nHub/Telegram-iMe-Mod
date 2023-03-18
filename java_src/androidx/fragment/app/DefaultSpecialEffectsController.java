@@ -36,7 +36,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
         SpecialEffectsController.Operation operation2 = null;
         for (SpecialEffectsController.Operation operation3 : list) {
             SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(operation3.getFragment().mView);
-            int i = C017910.f43xe493b431[operation3.getFinalState().ordinal()];
+            int i = C017310.f43xe493b431[operation3.getFinalState().ordinal()];
             if (i == 1 || i == 2 || i == 3) {
                 if (from == SpecialEffectsController.Operation.State.VISIBLE && operation == null) {
                     operation = operation3;
@@ -121,7 +121,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
 
     /* renamed from: androidx.fragment.app.DefaultSpecialEffectsController$10 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C017910 {
+    static /* synthetic */ class C017310 {
 
         /* renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State */
         static final /* synthetic */ int[] f43xe493b431;
@@ -272,7 +272,7 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
                             container.post(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.4.1
                                 @Override // java.lang.Runnable
                                 public void run() {
-                                    animationAnimation$AnimationListenerC01824 animationanimation_animationlistenerc01824 = animationAnimation$AnimationListenerC01824.this;
+                                    animationAnimation$AnimationListenerC01764 animationanimation_animationlistenerc01764 = animationAnimation$AnimationListenerC01764.this;
                                     container.endViewTransition(view2);
                                     animationInfo.completeSpecialEffect();
                                 }

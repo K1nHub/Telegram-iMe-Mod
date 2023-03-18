@@ -22,9 +22,9 @@ public class StackLinearChartData extends ChartData {
             int[] iArr = new int[this.lines.size()];
             long j = 0;
             for (int i = 0; i < this.lines.size(); i++) {
-                int length = this.f1665x.length;
+                int length = this.f1671x.length;
                 for (int i2 = 0; i2 < length; i2++) {
-                    int i3 = this.lines.get(i).f1667y[i2];
+                    int i3 = this.lines.get(i).f1673y[i2];
                     jArr[i] = jArr[i] + i3;
                     if (i3 == 0) {
                         iArr[i] = iArr[i] + 1;
@@ -34,7 +34,7 @@ public class StackLinearChartData extends ChartData {
             }
             ArrayList arrayList = new ArrayList();
             for (int i4 = 0; i4 < this.lines.size(); i4++) {
-                if (jArr[i4] / j < 0.01d && iArr[i4] > this.f1665x.length / 2.0f) {
+                if (jArr[i4] / j < 0.01d && iArr[i4] > this.f1671x.length / 2.0f) {
                     arrayList.add(this.lines.get(i4));
                 }
             }
@@ -43,41 +43,41 @@ public class StackLinearChartData extends ChartData {
                 this.lines.remove((ChartData.Line) it.next());
             }
         }
-        int length2 = this.lines.get(0).f1667y.length;
+        int length2 = this.lines.get(0).f1673y.length;
         int size = this.lines.size();
         this.ySum = new int[length2];
         for (int i5 = 0; i5 < length2; i5++) {
             this.ySum[i5] = 0;
             for (int i6 = 0; i6 < size; i6++) {
                 int[] iArr2 = this.ySum;
-                iArr2[i5] = iArr2[i5] + this.lines.get(i6).f1667y[i5];
+                iArr2[i5] = iArr2[i5] + this.lines.get(i6).f1673y[i5];
             }
         }
         new SegmentTree(this.ySum);
     }
 
     public StackLinearChartData(ChartData chartData, long j) {
-        int binarySearch = Arrays.binarySearch(chartData.f1665x, j);
+        int binarySearch = Arrays.binarySearch(chartData.f1671x, j);
         int i = binarySearch - 4;
         int i2 = binarySearch + 4;
         if (i < 0) {
             i2 += -i;
             i = 0;
         }
-        long[] jArr = chartData.f1665x;
+        long[] jArr = chartData.f1671x;
         if (i2 > jArr.length - 1) {
             i -= i2 - jArr.length;
             i2 = jArr.length - 1;
         }
         i = i < 0 ? 0 : i;
         int i3 = (i2 - i) + 1;
-        this.f1665x = new long[i3];
+        this.f1671x = new long[i3];
         this.xPercentage = new float[i3];
         this.lines = new ArrayList<>();
         for (int i4 = 0; i4 < chartData.lines.size(); i4++) {
             ChartData.Line line = new ChartData.Line(this);
-            line.f1667y = new int[i3];
-            line.f1666id = chartData.lines.get(i4).f1666id;
+            line.f1673y = new int[i3];
+            line.f1672id = chartData.lines.get(i4).f1672id;
             line.name = chartData.lines.get(i4).name;
             line.colorKey = chartData.lines.get(i4).colorKey;
             line.color = chartData.lines.get(i4).color;
@@ -86,9 +86,9 @@ public class StackLinearChartData extends ChartData {
         }
         int i5 = 0;
         while (i <= i2) {
-            this.f1665x[i5] = chartData.f1665x[i];
+            this.f1671x[i5] = chartData.f1671x[i];
             for (int i6 = 0; i6 < this.lines.size(); i6++) {
-                this.lines.get(i6).f1667y[i5] = chartData.lines.get(i6).f1667y[i];
+                this.lines.get(i6).f1673y[i5] = chartData.lines.get(i6).f1673y[i];
             }
             i5++;
             i++;
@@ -110,7 +110,7 @@ public class StackLinearChartData extends ChartData {
         int[] iArr = new int[size];
         for (int i2 = 0; i2 < length; i2++) {
             for (int i3 = 0; i3 < size; i3++) {
-                int[] iArr2 = this.lines.get(i3).f1667y;
+                int[] iArr2 = this.lines.get(i3).f1673y;
                 if (iArr2[i2] > iArr[i3]) {
                     iArr[i3] = iArr2[i2];
                 }

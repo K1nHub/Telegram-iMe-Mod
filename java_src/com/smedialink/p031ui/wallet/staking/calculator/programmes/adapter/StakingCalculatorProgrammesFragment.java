@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -35,9 +34,9 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentStakingCalculatorProgrammesBinding;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: StakingCalculatorProgrammesFragment.kt */
 /* renamed from: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment */
@@ -62,7 +61,7 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
         this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, StakingCalculatorProgrammesPresenter.class.getName() + ".presenter", stakingCalculatorProgrammesFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2119xe19eb649(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2242xe19eb649(this, null, null));
         this.stakingProgrammesRecycleAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new StakingCalculatorProgrammesFragment$binding$2(this), 1, (Object) null);
     }
@@ -140,11 +139,11 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.staking_calculator_select_programme));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.staking_calculator_select_programme));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     StakingCalculatorProgrammesFragment.this.finishFragment();
@@ -158,7 +157,6 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
         StakingCalculatorProgrammesRecycleAdapter stakingProgrammesRecycleAdapter = getStakingProgrammesRecycleAdapter();
         stakingProgrammesRecycleAdapter.setDiffCallback(new StakingProgrammesDiffCallback());
         setupLoadMore(stakingProgrammesRecycleAdapter);
-        Unit unit = Unit.INSTANCE;
         recyclerView.setAdapter(stakingProgrammesRecycleAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
     }
@@ -169,15 +167,14 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$$ExternalSyntheticLambda2
             @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
             public final void onLoadMore() {
-                StakingCalculatorProgrammesFragment.m1735setupLoadMore$lambda6$lambda5$lambda4(StakingCalculatorProgrammesFragment.this);
+                StakingCalculatorProgrammesFragment.setupLoadMore$lambda$6$lambda$5$lambda$4(StakingCalculatorProgrammesFragment.this);
             }
         });
         stakingCalculatorProgrammesRecycleAdapter.setAnimationEnable(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupLoadMore$lambda-6$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1735setupLoadMore$lambda6$lambda5$lambda4(StakingCalculatorProgrammesFragment this$0) {
+    public static final void setupLoadMore$lambda$6$lambda$5$lambda$4(StakingCalculatorProgrammesFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         StakingCalculatorProgrammesPresenter.loadStakingProgrammes$default(this$0.getPresenter(), false, false, 3, null);
     }
@@ -187,24 +184,23 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
         stakingProgrammesRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                StakingCalculatorProgrammesFragment.m1733setupListeners$lambda9$lambda7(StakingCalculatorProgrammesRecycleAdapter.this, this, baseQuickAdapter, view, i);
+                StakingCalculatorProgrammesFragment.setupListeners$lambda$9$lambda$7(StakingCalculatorProgrammesRecycleAdapter.this, this, baseQuickAdapter, view, i);
             }
         });
         stakingProgrammesRecycleAdapter.setOnItemChildClickListener(new OnItemChildClickListener() { // from class: com.smedialink.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                StakingCalculatorProgrammesFragment.m1734setupListeners$lambda9$lambda8(StakingCalculatorProgrammesRecycleAdapter.this, this, baseQuickAdapter, view, i);
+                StakingCalculatorProgrammesFragment.setupListeners$lambda$9$lambda$8(StakingCalculatorProgrammesRecycleAdapter.this, this, baseQuickAdapter, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-9$lambda-7  reason: not valid java name */
-    public static final void m1733setupListeners$lambda9$lambda7(StakingCalculatorProgrammesRecycleAdapter this_with, StakingCalculatorProgrammesFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$9$lambda$7(StakingCalculatorProgrammesRecycleAdapter this_with, StakingCalculatorProgrammesFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         if (baseNode instanceof StakingProgrammeItem) {
             this$0.getPresenter().onStakingProgrammeClick((StakingProgrammeItem) baseNode);
@@ -212,13 +208,12 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthFragmen
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-9$lambda-8  reason: not valid java name */
-    public static final void m1734setupListeners$lambda9$lambda8(StakingCalculatorProgrammesRecycleAdapter this_with, StakingCalculatorProgrammesFragment this$0, BaseQuickAdapter noName_0, View view, int i) {
+    public static final void setupListeners$lambda$9$lambda$8(StakingCalculatorProgrammesRecycleAdapter this_with, StakingCalculatorProgrammesFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3158R.C3161id.image_info) {
+        if (view.getId() == C3286R.C3289id.image_info) {
             BaseNode baseNode = (BaseNode) this_with.getItem(i);
             if (baseNode instanceof StakingProgrammeItem) {
                 this$0.getPresenter().onStakingInfoClick((StakingProgrammeItem) baseNode);

@@ -15,7 +15,7 @@ public class FullLifecycleObserverAdapter implements LifecycleEventObserver {
 
     /* renamed from: androidx.lifecycle.FullLifecycleObserverAdapter$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C02311 {
+    static /* synthetic */ class C02251 {
         static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event;
 
         static {
@@ -54,7 +54,7 @@ public class FullLifecycleObserverAdapter implements LifecycleEventObserver {
 
     @Override // androidx.lifecycle.LifecycleEventObserver
     public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-        switch (C02311.$SwitchMap$androidx$lifecycle$Lifecycle$Event[event.ordinal()]) {
+        switch (C02251.$SwitchMap$androidx$lifecycle$Lifecycle$Event[event.ordinal()]) {
             case 1:
                 this.mFullLifecycleObserver.onCreate(lifecycleOwner);
                 break;

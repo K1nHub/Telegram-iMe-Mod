@@ -8,26 +8,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4oWsbKzhlrd4_NmnBLlPb5aqFWA(Ljava/lang/Throwable;)V
+.method public static synthetic $r8$lambda$9WAg_KGPqdq34F0fRsmIFol_JXI(Ljava/lang/Throwable;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->saveAndOpenPdf$lambda-7$lambda-6(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->saveAndOpenPdf$lambda$7$lambda$6(Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$e25DXPZTkUoUs-2X5lasSG5RLFI(Landroid/app/Activity;Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$voDy8ANj8fFykbDImlOlMwkXYjA(Ljava/io/File;Landroid/app/Activity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->generatePdf$lambda-4(Landroid/app/Activity;Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/util/List;)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->saveAndOpenPdf$lambda$9$lambda$8(Ljava/io/File;Landroid/app/Activity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kccZGVQIcEQBqpsiie_gxE055VQ(Ljava/io/File;Landroid/app/Activity;)V
+.method public static synthetic $r8$lambda$zIauhwk_6tZ3pnO83Op3in5OY80(Landroid/app/Activity;Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->saveAndOpenPdf$lambda-9$lambda-8(Ljava/io/File;Landroid/app/Activity;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->generatePdf$lambda$4(Landroid/app/Activity;Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/util/List;)V
 
     return-void
 .end method
@@ -53,7 +53,7 @@
     return-void
 .end method
 
-.method private static final generatePdf$lambda-4(Landroid/app/Activity;Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/util/List;)V
+.method private static final generatePdf$lambda$4(Landroid/app/Activity;Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/util/List;)V
     .locals 12
 
     const-string v0, "$parentActivity"
@@ -292,16 +292,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_0
     if-nez v0, :cond_1
@@ -320,7 +320,7 @@
 
     sget-object v0, Ljava/io/File;->separator:Ljava/lang/String;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "iMeWallet_Seed_"
 
@@ -340,7 +340,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ".pdf"
 
@@ -424,7 +424,7 @@
     return-void
 .end method
 
-.method private static final saveAndOpenPdf$lambda-7$lambda-6(Ljava/lang/Throwable;)V
+.method private static final saveAndOpenPdf$lambda$7$lambda$6(Ljava/lang/Throwable;)V
     .locals 1
 
     const-string v0, "$it"
@@ -456,7 +456,7 @@
     return-void
 .end method
 
-.method private static final saveAndOpenPdf$lambda-9$lambda-8(Ljava/io/File;Landroid/app/Activity;)V
+.method private static final saveAndOpenPdf$lambda$9$lambda$8(Ljava/io/File;Landroid/app/Activity;)V
     .locals 3
 
     const-string v0, "$file"

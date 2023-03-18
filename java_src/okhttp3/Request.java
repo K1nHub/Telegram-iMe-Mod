@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Pair;
 import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
+import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import okhttp3.Headers;
@@ -143,7 +143,7 @@ public final class Request {
             if (request.getTags$okhttp().isEmpty()) {
                 mutableMap = new LinkedHashMap<>();
             } else {
-                mutableMap = MapsKt.toMutableMap(request.getTags$okhttp());
+                mutableMap = MapsKt__MapsKt.toMutableMap(request.getTags$okhttp());
             }
             this.tags = mutableMap;
             this.headers = request.headers().newBuilder();

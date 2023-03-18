@@ -26,15 +26,15 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 5
 
-    .line 252
+    .line 251
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 253
+    .line 252
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     const-string p2, "dialogButtonSelector"
 
-    .line 255
+    .line 254
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->getThemedColor(Ljava/lang/String;)I
 
     move-result p2
@@ -49,7 +49,7 @@
 
     const/16 p2, 0x17
 
-    .line 256
+    .line 255
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -62,19 +62,19 @@
 
     invoke-virtual {p0, v0, v1, p2, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 258
+    .line 257
     new-instance p2, Landroid/widget/ImageView;
 
     invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->imageView:Landroid/widget/ImageView;
 
-    .line 259
+    .line 258
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 260
+    .line 259
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->imageView:Landroid/widget/ImageView;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
@@ -91,7 +91,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 261
+    .line 260
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->imageView:Landroid/widget/ImageView;
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -122,7 +122,7 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 263
+    .line 262
     new-instance p2, Landroid/widget/TextView;
 
     invoke-direct {p2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -131,27 +131,27 @@
 
     const/4 p1, 0x1
 
-    .line 264
+    .line 263
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 265
+    .line 264
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 266
+    .line 265
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 267
+    .line 266
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 268
+    .line 267
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     const-string v0, "dialogTextBlack"
@@ -162,14 +162,14 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 269
+    .line 268
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     const/high16 v0, 0x41800000    # 16.0f
 
     invoke-virtual {p2, p1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 270
+    .line 269
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -196,7 +196,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;)Landroid/widget/TextView;
     .locals 0
 
-    .line 245
+    .line 244
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     return-object p0
@@ -205,7 +205,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 245
+    .line 244
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->imageView:Landroid/widget/ImageView;
 
     return-object p0
@@ -214,7 +214,7 @@
 .method private getThemedColor(Ljava/lang/String;)I
     .locals 1
 
-    .line 299
+    .line 298
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
@@ -231,7 +231,7 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 300
+    .line 299
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -254,7 +254,7 @@
 
     const/16 p2, 0x30
 
-    .line 275
+    .line 274
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -273,7 +273,7 @@
 .method public setGravity(I)V
     .locals 1
 
-    .line 283
+    .line 282
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setGravity(I)V
@@ -284,7 +284,7 @@
 .method public setTextAndIcon(Ljava/lang/CharSequence;I)V
     .locals 3
 
-    .line 287
+    .line 286
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -293,17 +293,17 @@
 
     if-eqz p2, :cond_2
 
-    .line 289
+    .line 288
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 290
+    .line 289
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 291
+    .line 290
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -340,7 +340,7 @@
 
     goto :goto_2
 
-    .line 293
+    .line 292
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->imageView:Landroid/widget/ImageView;
 
@@ -348,7 +348,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 294
+    .line 293
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1, p1, p1, p1}, Landroid/widget/TextView;->setPadding(IIII)V
@@ -360,7 +360,7 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 279
+    .line 278
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AlertDialog$AlertDialogCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V

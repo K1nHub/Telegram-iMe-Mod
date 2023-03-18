@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletCreateManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletCreateManager.kt\ncom/smedialink/manager/wallet/create/WalletCreateManager\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,240:1\n39#2,6:241\n39#2,6:247\n1849#3,2:253\n37#4:255\n36#4,3:256\n*S KotlinDebug\n*F\n+ 1 WalletCreateManager.kt\ncom/smedialink/manager/wallet/create/WalletCreateManager\n*L\n109#1:241,6\n131#1:247,6\n174#1:253,2\n97#1:255\n97#1:256,3\n*E\n"
+    value = "SMAP\nWalletCreateManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletCreateManager.kt\ncom/smedialink/manager/wallet/create/WalletCreateManager\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,242:1\n39#2,8:243\n39#2,8:251\n1855#3,2:259\n37#4,2:261\n*S KotlinDebug\n*F\n+ 1 WalletCreateManager.kt\ncom/smedialink/manager/wallet/create/WalletCreateManager\n*L\n109#1:243,8\n132#1:251,8\n176#1:259,2\n97#1:261,2\n*E\n"
 .end annotation
 
 
@@ -34,42 +34,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$EyBOUTgKQXoX1owhxYtdg1vewS0(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+.method public static synthetic $r8$lambda$1wkcyITF1fuLLCJ1OWIBlVCLH3k(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda-3$lambda-1$lambda-0(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startChooseWalletOptionsFlow$lambda$6$lambda$5(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$HdqNl1lNwk5UXvYSVbiJmMM33nE(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$LIG7VgnDZp_XgjjWEY_A8NarOEY(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startChooseWalletOptionsFlow$lambda-6$lambda-5(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
+    invoke-static {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startChooseWalletOptionsFlow$lambda$6(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_43lJUV9nAU6dAILLlEKo_iVjss(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+.method public static synthetic $r8$lambda$Nwcde5RIKV5Xu002exHWjAXLbvE(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda-3$lambda-2(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-static {p0, p1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda$3$lambda$2(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jz0HMjw7OFdVMwyrdfVB2tvqJC0(Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+.method public static synthetic $r8$lambda$VR_Q8oHsjVtFnvTjtFx--na-w1Q(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda-3$lambda-1(Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-static {p0, p1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda$3$lambda$1$lambda$0(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kPWZ9-wyrmMA9m_kPC5BJqo09XE(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
+.method public static synthetic $r8$lambda$xWdLMUKvkt424APbmTH83YS2WE0(Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startChooseWalletOptionsFlow$lambda-6(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda$3$lambda$1(Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
 
     return-void
 .end method
@@ -157,7 +157,7 @@
 .method private final getAnimatedSpannableDialogModelByType(Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;
     .locals 1
 
-    .line 160
+    .line 162
     sget-object v0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -180,7 +180,7 @@
 
     goto :goto_0
 
-    .line 163
+    .line 165
     :cond_0
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
@@ -196,7 +196,7 @@
 
     goto :goto_1
 
-    .line 161
+    .line 163
     :cond_2
     invoke-direct {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getCreateWalletAnimatedSpannableDialogModel()Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;
 
@@ -213,7 +213,7 @@
 
     new-array v0, v0, [Landroid/text/style/CharacterStyle;
 
-    .line 168
+    .line 170
     new-instance v1, Lorg/telegram/ui/Components/URLSpanReplacement;
 
     iget-object v2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -230,7 +230,7 @@
 
     aput-object v1, v0, v2
 
-    .line 169
+    .line 171
     new-instance v1, Landroid/text/style/ForegroundColorSpan;
 
     iget-object v3, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -247,12 +247,12 @@
 
     aput-object v1, v0, v3
 
-    .line 167
+    .line 169
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 172
+    .line 174
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_start_dialog_description_privacy:I
@@ -265,7 +265,7 @@
 
     move-result-object v1
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -283,7 +283,7 @@
 
     check-cast v3, Landroid/text/style/CharacterStyle;
 
-    .line 174
+    .line 176
     invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v4
@@ -294,7 +294,7 @@
 
     goto :goto_0
 
-    .line 177
+    .line 179
     :cond_0
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
@@ -308,7 +308,7 @@
 
     move-result-object v0
 
-    .line 179
+    .line 181
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -333,16 +333,16 @@
 
     add-int/lit8 v3, v2, 0x2
 
-    .line 181
+    .line 183
     invoke-virtual {v0, v2, v3, v1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 185
+    .line 187
     new-instance v1, Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;
 
-    .line 186
+    .line 188
     sget v2, Lorg/telegram/messenger/R$raw;->fork_crypto_wallet:I
 
-    .line 187
+    .line 189
     iget-object v3, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_start_dialog_title:I
@@ -353,10 +353,10 @@
 
     const-string v4, "description"
 
-    .line 188
+    .line 190
     invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 189
+    .line 191
     iget-object v4, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->common_next:I
@@ -365,7 +365,7 @@
 
     move-result-object v4
 
-    .line 185
+    .line 187
     invoke-direct {v1, v2, v3, v0, v4}, Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;-><init>(ILjava/lang/CharSequence;Landroid/text/SpannableStringBuilder;Ljava/lang/CharSequence;)V
 
     return-object v1
@@ -374,10 +374,10 @@
 .method private final getCreateWalletWarningDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 7
 
-    .line 208
+    .line 210
     new-instance v0, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 209
+    .line 211
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_dashboard_eth_wallet_warning_dialog_title:I
@@ -386,17 +386,17 @@
 
     move-result-object v1
 
-    .line 210
+    .line 212
     iget-object v2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 211
+    .line 213
     sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_eth_wallet_warning_dialog_description:I
 
     const/4 v4, 0x1
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 212
+    .line 214
     invoke-virtual {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getLinkedCryptoWalletAddress()Ljava/lang/String;
 
     move-result-object v5
@@ -410,12 +410,12 @@
 
     aput-object v5, v4, v6
 
-    .line 210
+    .line 212
     invoke-interface {v2, v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 214
+    .line 216
     iget-object v3, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -424,7 +424,7 @@
 
     move-result-object v3
 
-    .line 215
+    .line 217
     iget-object v4, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_eth_wallet_warning_dialog_action_button:I
@@ -433,7 +433,7 @@
 
     move-result-object v4
 
-    .line 208
+    .line 210
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -442,13 +442,13 @@
 .method private final getImportWalletAnimatedSpannableDialogModel()Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;
     .locals 6
 
-    .line 194
+    .line 196
     new-instance v0, Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;
 
-    .line 195
+    .line 197
     sget v1, Lorg/telegram/messenger/R$raw;->fork_wallet_import:I
 
-    .line 196
+    .line 198
     iget-object v2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_import_start_dialog_title:I
@@ -457,7 +457,7 @@
 
     move-result-object v2
 
-    .line 197
+    .line 199
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
     iget-object v4, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -470,7 +470,7 @@
 
     invoke-direct {v3, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 198
+    .line 200
     iget-object v4, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->common_next:I
@@ -479,7 +479,7 @@
 
     move-result-object v4
 
-    .line 194
+    .line 196
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;-><init>(ILjava/lang/CharSequence;Landroid/text/SpannableStringBuilder;Ljava/lang/CharSequence;)V
 
     return-object v0
@@ -488,10 +488,10 @@
 .method private final getImportWalletWarningDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 7
 
-    .line 218
+    .line 220
     new-instance v0, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 219
+    .line 221
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_dashboard_eth_wallet_warning_dialog_title:I
@@ -500,17 +500,17 @@
 
     move-result-object v1
 
-    .line 220
+    .line 222
     iget-object v2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 221
+    .line 223
     sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_import_eth_wallet_warning_dialog_description:I
 
     const/4 v4, 0x1
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 222
+    .line 224
     invoke-virtual {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getLinkedCryptoWalletAddress()Ljava/lang/String;
 
     move-result-object v5
@@ -524,12 +524,12 @@
 
     aput-object v5, v4, v6
 
-    .line 220
+    .line 222
     invoke-interface {v2, v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 224
+    .line 226
     iget-object v3, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -538,7 +538,7 @@
 
     move-result-object v3
 
-    .line 225
+    .line 227
     iget-object v4, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_dashboard_import_eth_wallet_warning_dialog_action_button:I
@@ -547,7 +547,7 @@
 
     move-result-object v4
 
-    .line 218
+    .line 220
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -556,10 +556,10 @@
 .method private final getRestoreWalletWarningDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 7
 
-    .line 228
+    .line 230
     new-instance v0, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 229
+    .line 231
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_dashboard_eth_wallet_warning_dialog_title:I
@@ -568,17 +568,17 @@
 
     move-result-object v1
 
-    .line 230
+    .line 232
     iget-object v2, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 231
+    .line 233
     sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_restore_eth_wallet_warning_dialog_description:I
 
     const/4 v4, 0x1
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 232
+    .line 234
     invoke-virtual {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getLinkedCryptoWalletAddress()Ljava/lang/String;
 
     move-result-object v5
@@ -592,12 +592,12 @@
 
     aput-object v5, v4, v6
 
-    .line 230
+    .line 232
     invoke-interface {v2, v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 234
+    .line 236
     iget-object v3, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -606,7 +606,7 @@
 
     move-result-object v3
 
-    .line 235
+    .line 237
     iget-object v4, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_dashboard_restore_eth_wallet_warning_dialog_action_button:I
@@ -615,7 +615,7 @@
 
     move-result-object v4
 
-    .line 228
+    .line 230
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -624,14 +624,13 @@
 .method private final getViewState()Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;
     .locals 2
 
-    .line 156
+    .line 159
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->viewState:Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 157
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -649,7 +648,7 @@
 .method private final getWarningDialogModelByType(Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)Lcom/smedialink/model/dialog/DialogModel;
     .locals 1
 
-    .line 202
+    .line 204
     sget-object v0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -670,7 +669,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 205
+    .line 207
     invoke-direct {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getRestoreWalletWarningDialogModel()Lcom/smedialink/model/dialog/DialogModel;
 
     move-result-object p1
@@ -684,7 +683,7 @@
 
     throw p1
 
-    .line 204
+    .line 206
     :cond_1
     invoke-direct {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getImportWalletWarningDialogModel()Lcom/smedialink/model/dialog/DialogModel;
 
@@ -692,7 +691,7 @@
 
     goto :goto_0
 
-    .line 203
+    .line 205
     :cond_2
     invoke-direct {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getCreateWalletWarningDialogModel()Lcom/smedialink/model/dialog/DialogModel;
 
@@ -799,14 +798,14 @@
 .method private final prepareCreateWalletFlow(Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
     .locals 7
 
-    .line 122
+    .line 123
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->getWalletPassword()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 123
+    .line 124
     sget-object v0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -840,28 +839,28 @@
 
     move-object v2, p1
 
-    .line 145
+    .line 147
     invoke-static/range {v1 .. v6}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->openScreenByWalletCreationType$default(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)V
 
     goto :goto_0
 
-    .line 124
+    .line 125
     :cond_1
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->cryptoWalletInteractor:Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 126
+    .line 127
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->getLastLoggedInGuid()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 125
+    .line 126
     invoke-virtual {v0, v1, v4}, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;->generateMnemonic(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 129
+    .line 130
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -876,7 +875,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 130
+    .line 131
     invoke-direct {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v1
@@ -889,7 +888,7 @@
 
     move-result-object v0
 
-    .line 131
+    .line 132
     iget-object v1, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->viewState:Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;
 
     .line 44
@@ -897,19 +896,30 @@
 
     invoke-direct {v2, p0, p1, v4}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$prepareCreateWalletFlow$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 143
+    .line 145
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {p1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -918,7 +928,7 @@
     return-void
 .end method
 
-.method private static final startChooseWalletOptionsFlow$lambda-6(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
+.method private static final startChooseWalletOptionsFlow$lambda$6(Lcom/smedialink/manager/wallet/create/WalletCreateManager;)V
     .locals 6
 
     const-string v0, "this$0"
@@ -1006,10 +1016,6 @@
 
     move-result-object v2
 
-    const-string v3, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v2, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast v2, [Ljava/lang/String;
 
     .line 91
@@ -1022,7 +1028,7 @@
     return-void
 .end method
 
-.method private static final startChooseWalletOptionsFlow$lambda-6$lambda-5(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
+.method private static final startChooseWalletOptionsFlow$lambda$6$lambda$5(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
     .locals 0
 
     const-string p1, "this$0"
@@ -1041,7 +1047,7 @@
     return-void
 .end method
 
-.method private static final startWalletCreationFlow$lambda-3$lambda-1(Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+.method private static final startWalletCreationFlow$lambda$3$lambda$1(Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
     .locals 2
 
     const-string v0, "$this_with"
@@ -1061,16 +1067,16 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;
+    new-instance v1, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-direct {v1, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
 
     invoke-interface {p0, v0, v1}, Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;->showAnimatedDialog(Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
 
-.method private static final startWalletCreationFlow$lambda-3$lambda-1$lambda-0(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+.method private static final startWalletCreationFlow$lambda$3$lambda$1$lambda$0(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1087,7 +1093,7 @@
     return-void
 .end method
 
-.method private static final startWalletCreationFlow$lambda-3$lambda-2(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+.method private static final startWalletCreationFlow$lambda$3$lambda$2(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1174,16 +1180,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_2
 
     :cond_2
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_2
     invoke-virtual {p0}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->getLinkedCryptoWalletAddress()Ljava/lang/String;
@@ -1257,19 +1263,30 @@
 
     invoke-direct {v2, p0, p1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$loadCryptoInformation$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lorg/fork/utils/Callbacks$Callback;)V
 
-    new-instance p1, Lcom/smedialink/manager/wallet/create/WalletCreateManager$loadCryptoInformation$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$loadCryptoInformation$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/manager/wallet/create/WalletCreateManager$loadCryptoInformation$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$loadCryptoInformation$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 119
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {p1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -1363,9 +1380,9 @@
 
     move-result-object v1
 
-    new-instance v2, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda3;
+    new-instance v2, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;
 
-    invoke-direct {v2, p0, p1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-direct {v2, p0, p1}, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Lcom/smedialink/model/wallet/crypto/create/WalletCreationType;)V
 
     invoke-interface {v0, v1, v2}, Lcom/smedialink/manager/wallet/create/WalletCreateManagerView;->showAnimatedDialog(Lcom/smedialink/model/dialog/AnimatedSpannableDialogModel;Lorg/fork/utils/Callbacks$Callback;)V
 

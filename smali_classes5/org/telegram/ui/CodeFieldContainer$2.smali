@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/CodeFieldContainer;II)V
     .locals 0
 
-    .line 196
+    .line 201
     iput-object p1, p0, Lorg/telegram/ui/CodeFieldContainer$2;->this$0:Lorg/telegram/ui/CodeFieldContainer;
 
     iput p2, p0, Lorg/telegram/ui/CodeFieldContainer$2;->val$num:I
@@ -46,7 +46,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 9
 
-    .line 206
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/CodeFieldContainer$2;->this$0:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-boolean v0, v0, Lorg/telegram/ui/CodeFieldContainer;->ignoreOnTextChange:Z
@@ -55,7 +55,7 @@
 
     return-void
 
-    .line 209
+    .line 214
     :cond_0
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
@@ -65,17 +65,17 @@
 
     if-lt v0, v1, :cond_7
 
-    .line 212
+    .line 217
     iget v2, p0, Lorg/telegram/ui/CodeFieldContainer$2;->val$num:I
 
     if-le v0, v1, :cond_4
 
-    .line 214
+    .line 219
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 215
+    .line 220
     iget-object v4, p0, Lorg/telegram/ui/CodeFieldContainer$2;->this$0:Lorg/telegram/ui/CodeFieldContainer;
 
     iput-boolean v1, v4, Lorg/telegram/ui/CodeFieldContainer;->ignoreOnTextChange:Z
@@ -84,7 +84,7 @@
 
     const/4 v4, 0x0
 
-    .line 216
+    .line 221
     :goto_0
     iget v5, p0, Lorg/telegram/ui/CodeFieldContainer$2;->val$length:I
 
@@ -102,7 +102,7 @@
 
     add-int/lit8 v5, v4, 0x1
 
-    .line 218
+    .line 223
     invoke-virtual {v3, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v5
@@ -114,7 +114,7 @@
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    .line 221
+    .line 226
     iget v5, p0, Lorg/telegram/ui/CodeFieldContainer$2;->val$num:I
 
     add-int v6, v5, v4
@@ -129,7 +129,7 @@
 
     add-int/2addr v5, v4
 
-    .line 222
+    .line 227
     aget-object v5, v7, v5
 
     add-int/lit8 v6, v4, 0x1
@@ -146,7 +146,7 @@
 
     goto :goto_0
 
-    .line 226
+    .line 231
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/CodeFieldContainer$2;->this$0:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -157,7 +157,7 @@
 
     if-ltz p1, :cond_5
 
-    .line 230
+    .line 235
     iget-object v1, p0, Lorg/telegram/ui/CodeFieldContainer$2;->this$0:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object v1, v1, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -166,7 +166,7 @@
 
     if-ge p1, v3, :cond_5
 
-    .line 231
+    .line 236
     aget-object v3, v1, p1
 
     aget-object v1, v1, p1
@@ -177,7 +177,7 @@
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 232
+    .line 237
     iget-object v1, p0, Lorg/telegram/ui/CodeFieldContainer$2;->this$0:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object v1, v1, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -186,7 +186,7 @@
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 234
+    .line 239
     :cond_5
     iget p1, p0, Lorg/telegram/ui/CodeFieldContainer$2;->val$length:I
 
@@ -217,7 +217,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 235
+    .line 240
     iget-object p1, p0, Lorg/telegram/ui/CodeFieldContainer$2;->this$0:Lorg/telegram/ui/CodeFieldContainer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/CodeFieldContainer;->processNextPressed()V

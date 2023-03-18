@@ -30,6 +30,7 @@
 
     new-array v0, v0, [I
 
+    :try_start_0
     sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->POLYGON:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
@@ -39,7 +40,10 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
+    :catch_0
     sput-object v0, Lcom/smedialink/storage/data/repository/crypto/nft/avatar/NftAvatarRepositoryImpl$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

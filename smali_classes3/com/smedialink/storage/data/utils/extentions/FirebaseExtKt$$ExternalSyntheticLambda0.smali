@@ -35,7 +35,7 @@
 .method public final onCanceled()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$yEiumAmtHgO0QpPCq-eZqWRDpDY()V
+    invoke-static {}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt;->$r8$lambda$QD24EFdByCYYgk4KvOQXVe450a0()V
 
     return-void
 .end method

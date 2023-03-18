@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lorg/fork/ui/view/ArchiveSwitchTopicsBar$$ExternalSyntheticLambda0;->f$1:Z
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->$r8$lambda$dEpcl-_Ag00YH5NeVtcxGziTodU(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/ArchiveSwitchTopicsBar;->$r8$lambda$q5mB7K82aGmgvby3QMO2e0nK-34(Lorg/fork/ui/view/ArchiveSwitchTopicsBar;ZLandroid/view/View;)V
 
     return-void
 .end method

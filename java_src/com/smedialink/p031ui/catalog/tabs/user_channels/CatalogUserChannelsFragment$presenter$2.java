@@ -25,11 +25,11 @@ public final class CatalogUserChannelsFragment$presenter$2 extends Lambda implem
     /* compiled from: CatalogUserChannelsFragment.kt */
     /* renamed from: com.smedialink.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C18111 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C18881 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ CatalogUserChannelsFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C18111(CatalogUserChannelsFragment catalogUserChannelsFragment) {
+        C18881(CatalogUserChannelsFragment catalogUserChannelsFragment) {
             super(0);
             this.this$0 = catalogUserChannelsFragment;
         }
@@ -45,7 +45,7 @@ public final class CatalogUserChannelsFragment$presenter$2 extends Lambda implem
     public final CatalogUserChannelsPresenter invoke() {
         Lazy lazy;
         CatalogUserChannelsFragment catalogUserChannelsFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1810xfac0ed5a(catalogUserChannelsFragment, null, new C18111(catalogUserChannelsFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1887xfac0ed5a(catalogUserChannelsFragment, null, new C18881(catalogUserChannelsFragment)));
         return (CatalogUserChannelsPresenter) lazy.getValue();
     }
 }

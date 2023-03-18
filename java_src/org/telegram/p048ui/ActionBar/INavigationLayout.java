@@ -9,15 +9,12 @@ import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.BackButtonMenu;
-import org.telegram.p048ui.LNavigation.C5618LNavigation;
 /* renamed from: org.telegram.ui.ActionBar.INavigationLayout */
 /* loaded from: classes5.dex */
 public interface INavigationLayout {
@@ -51,8 +48,6 @@ public interface INavigationLayout {
 
     void closeLastFragment(boolean z);
 
-    void closeLastFragment(boolean z, boolean z2);
-
     void dismissDialogs();
 
     void drawCurrentPreviewFragment(Canvas canvas, Drawable drawable);
@@ -79,7 +74,7 @@ public interface INavigationLayout {
 
     Theme.MessageDrawable getMessageDrawableOutStart();
 
-    ViewGroup getOverlayContainerView();
+    FrameLayout getOverlayContainerView();
 
     Activity getParentActivity();
 
@@ -205,16 +200,8 @@ public interface INavigationLayout {
             return false;
         }
 
-        @Deprecated
-        public static void $default$rebuildAllFragmentViews(INavigationLayout iNavigationLayout, boolean z, boolean z2) {
-        }
-
-        @Deprecated
-        public static void $default$rebuildLogout(INavigationLayout iNavigationLayout) {
-        }
-
         public static INavigationLayout newLayout(Context context) {
-            return SharedConfig.useLNavigation ? new C5618LNavigation(context) : new ActionBarLayout(context);
+            return new ActionBarLayout(context);
         }
 
         public static void $default$rebuildFragments(INavigationLayout _this, int i) {
@@ -231,20 +218,6 @@ public interface INavigationLayout {
                 return null;
             }
             return _this.getFragmentStack().get(_this.getFragmentStack().size() - 2);
-        }
-
-        public static BaseFragment $default$getLastFragment(INavigationLayout _this) {
-            if (_this.getFragmentStack().isEmpty()) {
-                return null;
-            }
-            return _this.getFragmentStack().get(_this.getFragmentStack().size() - 1);
-        }
-
-        public static void $default$removeAllFragments(INavigationLayout _this) {
-            Iterator it = new ArrayList(_this.getFragmentStack()).iterator();
-            while (it.hasNext()) {
-                _this.removeFragmentFromStack((BaseFragment) it.next());
-            }
         }
 
         public static Activity $default$getParentActivity(INavigationLayout _this) {
@@ -327,11 +300,8 @@ public interface INavigationLayout {
     /* loaded from: classes5.dex */
     public static class NavigationParams {
         public boolean checkPresentFromDelegate = true;
-        public boolean delayDone;
         public BaseFragment fragment;
-        public boolean isFromDelay;
         public ActionBarPopupWindow.ActionBarPopupWindowLayout menuView;
-        public boolean needDelayWithoutAnimation;
         public boolean noAnimation;
         public boolean preview;
         public boolean removeLast;

@@ -26,8 +26,9 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Locale;
+import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -57,6 +58,7 @@ public class StickerSetCell extends FrameLayout {
     private boolean emojis;
     private BackupImageView imageView;
     private boolean needDivider;
+    private Callbacks$Callback onAddButtonClick;
     private final int option;
     private ImageView optionsButton;
     private PremiumButtonView premiumButtonView;
@@ -70,13 +72,19 @@ public class StickerSetCell extends FrameLayout {
     private TextView textView;
     private TextView valueTextView;
 
-    protected void onAddButtonClick() {
-    }
-
     protected void onPremiumButtonClick() {
     }
 
     protected void onRemoveButtonClick() {
+    }
+
+    public void setCustomButtonText(String str) {
+        updateButtonState(3, false);
+        this.addButtonView.setText(str);
+    }
+
+    public void setCustomButtonAction(Callbacks$Callback callbacks$Callback) {
+        this.onAddButtonClick = callbacks$Callback;
     }
 
     public StickerSetCell(Context context, int i) {
@@ -85,6 +93,7 @@ public class StickerSetCell extends FrameLayout {
 
     public StickerSetCell(Context context, Theme.ResourcesProvider resourcesProvider, int i) {
         super(context);
+        this.onAddButtonClick = null;
         this.rect = new Rect();
         this.option = i;
         BackupImageView backupImageView = new BackupImageView(context);
@@ -94,15 +103,7 @@ public class StickerSetCell extends FrameLayout {
         BackupImageView backupImageView2 = this.imageView;
         boolean z = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(40, 40, (z ? 5 : 3) | 48, z ? 0 : 13, 9, z ? 13 : 0, 0));
-        if (i == 2) {
-            RadialProgressView radialProgressView = new RadialProgressView(getContext());
-            this.progressView = radialProgressView;
-            radialProgressView.setProgressColor(Theme.getColor("dialogProgressCircle"));
-            this.progressView.setSize(AndroidUtilities.m50dp(30));
-            RadialProgressView radialProgressView2 = this.progressView;
-            boolean z2 = LocaleController.isRTL;
-            addView(radialProgressView2, LayoutHelper.createFrame(48, 48, (z2 ? 5 : 3) | 48, z2 ? 0 : 12, 5, z2 ? 12 : 0, 0));
-        } else if (i != 0) {
+        if (i != 0) {
             ImageView imageView = new ImageView(context);
             this.optionsButton = imageView;
             imageView.setFocusable(false);
@@ -112,15 +113,15 @@ public class StickerSetCell extends FrameLayout {
             }
             if (i == 1) {
                 this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
-                this.optionsButton.setImageResource(C3158R.C3160drawable.msg_actions);
-                this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
+                this.optionsButton.setImageResource(C3286R.C3288drawable.msg_actions);
+                this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
                 addView(this.optionsButton, LayoutHelper.createFrame(40, 40, (LocaleController.isRTL ? 3 : 5) | 16));
                 ImageView imageView2 = new ImageView(context);
                 this.reorderButton = imageView2;
                 imageView2.setAlpha(BitmapDescriptorFactory.HUE_RED);
                 this.reorderButton.setVisibility(8);
                 this.reorderButton.setScaleType(ImageView.ScaleType.CENTER);
-                this.reorderButton.setImageResource(C3158R.C3160drawable.list_reorder);
+                this.reorderButton.setImageResource(C3286R.C3288drawable.list_reorder);
                 this.reorderButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("stickers_menu"), PorterDuff.Mode.MULTIPLY));
                 addView(this.reorderButton, LayoutHelper.createFrameRelatively(58.0f, 58.0f, 8388613));
                 CheckBox2 checkBox2 = new CheckBox2(context, 21);
@@ -131,10 +132,10 @@ public class StickerSetCell extends FrameLayout {
                 addView(this.checkBox, LayoutHelper.createFrameRelatively(24.0f, 24.0f, 8388611, 34.0f, 30.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
             } else if (i == 3) {
                 this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("featuredStickers_addedIcon"), PorterDuff.Mode.MULTIPLY));
-                this.optionsButton.setImageResource(C3158R.C3160drawable.floating_check);
+                this.optionsButton.setImageResource(C3286R.C3288drawable.floating_check);
                 ImageView imageView3 = this.optionsButton;
-                boolean z3 = LocaleController.isRTL;
-                addView(imageView3, LayoutHelper.createFrame(40, 40, (z3 ? 3 : 5) | 48, z3 ? 10 : 0, 9, z3 ? 0 : 10, 0));
+                boolean z2 = LocaleController.isRTL;
+                addView(imageView3, LayoutHelper.createFrame(40, 40, (z2 ? 3 : 5) | 48, z2 ? 10 : 0, 9, z2 ? 0 : 10, 0));
             }
         }
         this.sideButtons = new FrameLayout(getContext());
@@ -142,7 +143,7 @@ public class StickerSetCell extends FrameLayout {
         this.addButtonView = textView;
         textView.setTextSize(1, 14.0f);
         this.addButtonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.addButtonView.setText(LocaleController.getString("Add", C3158R.string.Add));
+        this.addButtonView.setText(LocaleController.getString("Add", C3286R.string.Add));
         this.addButtonView.setTextColor(Theme.getColor("featuredStickers_buttonText", resourcesProvider));
         this.addButtonView.setBackground(Theme.AdaptiveRipple.createRect(Theme.getColor("featuredStickers_addButton", resourcesProvider), Theme.getColor("featuredStickers_addButtonPressed", resourcesProvider), 4.0f));
         this.addButtonView.setPadding(AndroidUtilities.m50dp(14), 0, AndroidUtilities.m50dp(14), 0);
@@ -158,7 +159,7 @@ public class StickerSetCell extends FrameLayout {
         this.removeButtonView = textView2;
         textView2.setTextSize(1, 14.0f);
         this.removeButtonView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3158R.string.StickersRemove));
+        this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3286R.string.StickersRemove));
         this.removeButtonView.setTextColor(Theme.getColor("featuredStickers_removeButtonText", resourcesProvider));
         this.removeButtonView.setBackground(Theme.AdaptiveRipple.createRect(0, Theme.getColor("featuredStickers_addButton", resourcesProvider) & 452984831, 4.0f));
         this.removeButtonView.setPadding(AndroidUtilities.m50dp(12), 0, AndroidUtilities.m50dp(12), 0);
@@ -172,8 +173,8 @@ public class StickerSetCell extends FrameLayout {
         this.sideButtons.addView(this.removeButtonView, LayoutHelper.createFrameRelatively(-2.0f, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, BitmapDescriptorFactory.HUE_RED, -2.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED));
         PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m50dp(4), false);
         this.premiumButtonView = premiumButtonView;
-        premiumButtonView.setIcon(C3158R.C3164raw.unlock_icon);
-        this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3158R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda5
+        premiumButtonView.setIcon(C3286R.C3291raw.unlock_icon);
+        this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3286R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StickerSetCell.this.lambda$new$2(view);
@@ -254,9 +255,43 @@ public class StickerSetCell extends FrameLayout {
         }
     }
 
+    protected void onAddButtonClick() {
+        Callbacks$Callback callbacks$Callback = this.onAddButtonClick;
+        if (callbacks$Callback != null) {
+            callbacks$Callback.invoke();
+        }
+    }
+
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(58) + (this.needDivider ? 1 : 0), 1073741824));
+    }
+
+    public void setText(String str, String str2, int i, boolean z) {
+        this.needDivider = z;
+        this.stickersSet = null;
+        this.textView.setText(str);
+        this.valueTextView.setText(str2);
+        if (TextUtils.isEmpty(str2)) {
+            this.textView.setTranslationY(AndroidUtilities.m50dp(10));
+        } else {
+            this.textView.setTranslationY(BitmapDescriptorFactory.HUE_RED);
+        }
+        if (i != 0) {
+            this.imageView.setImageResource(i, Theme.getColor("windowBackgroundWhiteGrayIcon"));
+            this.imageView.setVisibility(0);
+            RadialProgressView radialProgressView = this.progressView;
+            if (radialProgressView != null) {
+                radialProgressView.setVisibility(4);
+                return;
+            }
+            return;
+        }
+        this.imageView.setVisibility(4);
+        RadialProgressView radialProgressView2 = this.progressView;
+        if (radialProgressView2 != null) {
+            radialProgressView2.setVisibility(0);
+        }
     }
 
     public void setNeedDivider(boolean z) {
@@ -320,7 +355,7 @@ public class StickerSetCell extends FrameLayout {
             while (true) {
                 if (i < arrayList.size()) {
                     TLRPC$Document tLRPC$Document2 = arrayList.get(i);
-                    if (tLRPC$Document2 != null && tLRPC$Document2.f1502id == tLRPC$TL_messages_stickerSet.set.thumb_document_id) {
+                    if (tLRPC$Document2 != null && tLRPC$Document2.f1507id == tLRPC$TL_messages_stickerSet.set.thumb_document_id) {
                         tLRPC$Document = tLRPC$Document2;
                         break;
                     }
@@ -587,14 +622,14 @@ public class StickerSetCell extends FrameLayout {
 
     public void updateRightMargin() {
         this.sideButtons.measure(View.MeasureSpec.makeMeasureSpec(999999, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(58), 1073741824));
-        int measuredWidth = this.sideButtons.getMeasuredWidth();
+        int m50dp = AndroidUtilities.m50dp(26) + this.sideButtons.getMeasuredWidth();
         if (LocaleController.isRTL) {
-            ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).leftMargin = measuredWidth;
-            ((ViewGroup.MarginLayoutParams) this.valueTextView.getLayoutParams()).leftMargin = measuredWidth;
+            ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).leftMargin = m50dp;
+            ((ViewGroup.MarginLayoutParams) this.valueTextView.getLayoutParams()).leftMargin = m50dp;
             return;
         }
-        ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).rightMargin = measuredWidth;
-        ((ViewGroup.MarginLayoutParams) this.valueTextView.getLayoutParams()).rightMargin = measuredWidth;
+        ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).rightMargin = m50dp;
+        ((ViewGroup.MarginLayoutParams) this.valueTextView.getLayoutParams()).rightMargin = m50dp;
     }
 
     public void updateButtonState(final int i, boolean z) {
@@ -604,14 +639,14 @@ public class StickerSetCell extends FrameLayout {
             this.stateAnimator = null;
         }
         if (i == 1) {
-            this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3158R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda3
+            this.premiumButtonView.setButton(LocaleController.getString("Unlock", C3286R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StickerSetCell.this.lambda$updateButtonState$7(view);
                 }
             });
         } else if (i == 2) {
-            this.premiumButtonView.setButton(LocaleController.getString("Restore", C3158R.string.Restore), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda0
+            this.premiumButtonView.setButton(LocaleController.getString("Restore", C3286R.string.Restore), new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StickerSetCell.this.lambda$updateButtonState$8(view);

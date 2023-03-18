@@ -35,7 +35,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->$r8$lambda$uAU2nkTfVVMJy7Dtvp3qnz__KL8(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->$r8$lambda$beoG4HpfqHDn5byjoAxneEFQtyU(ILorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Ljava/lang/String;)V
 
     return-void
 .end method

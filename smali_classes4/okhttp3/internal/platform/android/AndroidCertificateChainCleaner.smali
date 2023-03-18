@@ -47,7 +47,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "x509TrustManagerExtensions"
+    const-string/jumbo v0, "x509TrustManagerExtensions"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -120,7 +120,7 @@
 
     move-result-object p1
 
-    const-string p2, "x509TrustManagerExtensio\u2026ficates, \"RSA\", hostname)"
+    const-string/jumbo p2, "x509TrustManagerExtensio\u2026ficates, \"RSA\", hostname)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_0

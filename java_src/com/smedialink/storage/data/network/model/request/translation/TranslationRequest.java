@@ -58,7 +58,7 @@ public final class TranslationRequest {
     }
 
     public String toString() {
-        return "TranslationRequest(text=" + this.text + ", targetLanguage=" + this.targetLanguage + ", sourceLanguage=" + ((Object) this.sourceLanguage) + ')';
+        return "TranslationRequest(text=" + this.text + ", targetLanguage=" + this.targetLanguage + ", sourceLanguage=" + this.sourceLanguage + ')';
     }
 
     public TranslationRequest(String text, String targetLanguage, String str) {

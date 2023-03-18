@@ -16,6 +16,6 @@ public abstract class RecentDao {
         Intrinsics.checkNotNullParameter(botId, "botId");
         Intrinsics.checkNotNullParameter(tag, "tag");
         Integer counter = getCounter(botId, tag, i);
-        insertOrReplace(new RecentDbModel(botId, tag, i, (counter == null ? 0 : counter.intValue()) + 1));
+        insertOrReplace(new RecentDbModel(botId, tag, i, (counter != null ? counter.intValue() : 0) + 1));
     }
 }

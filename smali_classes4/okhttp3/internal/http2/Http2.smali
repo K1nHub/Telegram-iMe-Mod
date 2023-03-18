@@ -153,7 +153,7 @@
     const/4 v0, 0x0
 
     :goto_1
-    const-string v3, "|PADDED"
+    const-string/jumbo v3, "|PADDED"
 
     if-ge v0, v4, :cond_1
 
@@ -237,7 +237,7 @@
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v14, "|"
+    const-string/jumbo v14, "|"
 
     invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

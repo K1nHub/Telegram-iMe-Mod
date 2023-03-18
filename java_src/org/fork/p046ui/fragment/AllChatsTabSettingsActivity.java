@@ -14,18 +14,17 @@ import java.util.ArrayList;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.FiltersController;
 import org.fork.p046ui.dialog.SelectFabsBottomSheet;
 import org.fork.p046ui.view.FabsCell;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -95,7 +94,7 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.fork.ui.fragment.AllChatsTabSettingsActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                AllChatsTabSettingsActivity.m2024getThemeDescriptions$lambda3(AllChatsTabSettingsActivity.this);
+                AllChatsTabSettingsActivity.getThemeDescriptions$lambda$3(AllChatsTabSettingsActivity.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -107,37 +106,27 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-3  reason: not valid java name */
-    public static final void m2024getThemeDescriptions$lambda3(AllChatsTabSettingsActivity this$0) {
+    public static final void getThemeDescriptions$lambda$3(AllChatsTabSettingsActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         RecyclerListView listView = this$0.getListView();
         int childCount = listView.getChildCount();
-        if (childCount <= 0) {
-            return;
-        }
-        int i = 0;
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < childCount; i++) {
             View childAt = listView.getChildAt(i);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(index)");
             FabsCell fabsCell = childAt instanceof FabsCell ? (FabsCell) childAt : null;
             if (fabsCell != null) {
                 fabsCell.updateColors();
             }
-            if (i2 >= childCount) {
-                return;
-            }
-            i = i2;
         }
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.folder_tabs_all_chats_tab_settings_item_title));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.AllChatsTabSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.folder_tabs_all_chats_tab_settings_item_title));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.AllChatsTabSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     AllChatsTabSettingsActivity.this.finishFragment();
@@ -162,15 +151,14 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.fragment.AllChatsTabSettingsActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                AllChatsTabSettingsActivity.m2025initListView$lambda10$lambda9(AllChatsTabSettingsActivity.this, view, i);
+                AllChatsTabSettingsActivity.initListView$lambda$10$lambda$9(AllChatsTabSettingsActivity.this, view, i);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-10$lambda-9  reason: not valid java name */
-    public static final void m2025initListView$lambda10$lambda9(final AllChatsTabSettingsActivity this$0, View view, int i) {
+    public static final void initListView$lambda$10$lambda$9(final AllChatsTabSettingsActivity this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
             TextCheckCell textCheckCell = (TextCheckCell) view;
@@ -200,15 +188,14 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
             this$0.showDialog(new SelectFabsBottomSheet(parentActivity, this$0.getFiltersController().getSelectedAllChatsTabFabs(), new Callbacks$Callback1() { // from class: org.fork.ui.fragment.AllChatsTabSettingsActivity$$ExternalSyntheticLambda0
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
-                    AllChatsTabSettingsActivity.m2026initListView$lambda10$lambda9$lambda8(AllChatsTabSettingsActivity.this, (Set) obj);
+                    AllChatsTabSettingsActivity.initListView$lambda$10$lambda$9$lambda$8(AllChatsTabSettingsActivity.this, (Set) obj);
                 }
             }));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-10$lambda-9$lambda-8  reason: not valid java name */
-    public static final void m2026initListView$lambda10$lambda9$lambda8(AllChatsTabSettingsActivity this$0, Set fabs) {
+    public static final void initListView$lambda$10$lambda$9$lambda$8(AllChatsTabSettingsActivity this$0, Set fabs) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FiltersController filtersController = this$0.getFiltersController();
         Intrinsics.checkNotNullExpressionValue(fabs, "fabs");
@@ -267,31 +254,27 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
     /* renamed from: org.fork.ui.fragment.AllChatsTabSettingsActivity$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ AllChatsTabSettingsActivity this$0;
-
-        public ListAdapter(AllChatsTabSettingsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
-            this$0.updateRows();
+        public ListAdapter() {
+            AllChatsTabSettingsActivity.this.updateRows();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return AllChatsTabSettingsActivity.this.rowCount;
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            return this.this$0.isClickableViewType(holder.getItemViewType());
+            return AllChatsTabSettingsActivity.this.isClickableViewType(holder.getItemViewType());
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            if (i == this.this$0.enableRow || i == this.this$0.iconInsteadTitleRow) {
+            if (i == AllChatsTabSettingsActivity.this.enableRow || i == AllChatsTabSettingsActivity.this.iconInsteadTitleRow) {
                 return IdFabric$ViewTypes.TEXT_CHECK;
             }
-            return i == this.this$0.enableSectionRow || i == this.this$0.fabsSectionRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : i == this.this$0.iconInsteadTitleHeaderRow ? IdFabric$ViewTypes.HEADER : i == this.this$0.fabsRow ? IdFabric$ViewTypes.FABS : IdFabric$ViewTypes.SHADOW_SECTION;
+            return i == AllChatsTabSettingsActivity.this.enableSectionRow || i == AllChatsTabSettingsActivity.this.fabsSectionRow ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : i == AllChatsTabSettingsActivity.this.iconInsteadTitleHeaderRow ? IdFabric$ViewTypes.HEADER : i == AllChatsTabSettingsActivity.this.fabsRow ? IdFabric$ViewTypes.FABS : IdFabric$ViewTypes.SHADOW_SECTION;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -299,72 +282,69 @@ public final class AllChatsTabSettingsActivity extends BaseFragment {
             HeaderCell headerCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.TEXT_CHECK) {
-                headerCell = new TextCheckCell(this.this$0.getParentActivity());
+                headerCell = new TextCheckCell(AllChatsTabSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
-                headerCell = new TextInfoPrivacyCell(this.this$0.getParentActivity());
+                headerCell = new TextInfoPrivacyCell(AllChatsTabSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.HEADER) {
-                HeaderCell headerCell2 = new HeaderCell(this.this$0.getParentActivity());
+                HeaderCell headerCell2 = new HeaderCell(AllChatsTabSettingsActivity.this.getParentActivity());
                 headerCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit = Unit.INSTANCE;
                 headerCell = headerCell2;
             } else if (i == IdFabric$ViewTypes.FABS) {
-                Activity parentActivity = this.this$0.getParentActivity();
+                Activity parentActivity = AllChatsTabSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 FabsCell fabsCell = new FabsCell(parentActivity);
                 fabsCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit2 = Unit.INSTANCE;
                 headerCell = fabsCell;
             } else {
-                headerCell = new ShadowSectionCell(this.this$0.getParentActivity());
+                headerCell = new ShadowSectionCell(AllChatsTabSettingsActivity.this.getParentActivity());
             }
             headerCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit3 = Unit.INSTANCE;
             return new RecyclerListView.Holder(headerCell);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            boolean needDivider = this.this$0.needDivider(getItemViewType(i + 1));
+            boolean needDivider = AllChatsTabSettingsActivity.this.needDivider(getItemViewType(i + 1));
             int itemViewType = getItemViewType(i);
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                AllChatsTabSettingsActivity allChatsTabSettingsActivity = this.this$0;
+                AllChatsTabSettingsActivity allChatsTabSettingsActivity = AllChatsTabSettingsActivity.this;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i != allChatsTabSettingsActivity.enableRow) {
                     if (i == allChatsTabSettingsActivity.iconInsteadTitleRow) {
                         textCheckCell.setType(0);
-                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.all_chats_tab_settings_icon_instead_text_item_title), allChatsTabSettingsActivity.getFiltersController().isIconInsteadAllChatsTabTitleEnabled(), needDivider);
+                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_icon_instead_text_item_title), allChatsTabSettingsActivity.getFiltersController().isIconInsteadAllChatsTabTitleEnabled(), needDivider);
                         return;
                     }
                     return;
                 }
                 textCheckCell.setType(1);
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.all_chats_tab_settings_enable_item_title), allChatsTabSettingsActivity.getFiltersController().isAllChatsTabEnabled(), needDivider);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_enable_item_title), allChatsTabSettingsActivity.getFiltersController().isAllChatsTabEnabled(), needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
-                AllChatsTabSettingsActivity allChatsTabSettingsActivity2 = this.this$0;
+                AllChatsTabSettingsActivity allChatsTabSettingsActivity2 = AllChatsTabSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i != allChatsTabSettingsActivity2.enableSectionRow) {
                     if (i == allChatsTabSettingsActivity2.fabsSectionRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3158R.string.create_folder_change_fab_section_description));
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3158R.C3160drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.create_folder_change_fab_section_description));
+                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
                     }
                 } else if (allChatsTabSettingsActivity2.getFiltersController().isAllChatsTabEnabled()) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setText(null);
                     textInfoPrivacyCell.setFixedSize(12);
                 } else {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3158R.C3160drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3158R.string.all_chats_tab_settings_enable_item_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_enable_item_hint));
                 }
             } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
                 HeaderCell headerCell = (HeaderCell) view;
-                if (i == this.this$0.iconInsteadTitleHeaderRow) {
-                    headerCell.setText(LocaleController.getInternalString(C3158R.string.all_chats_tab_settings_icon_instead_text_header));
+                if (i == AllChatsTabSettingsActivity.this.iconInsteadTitleHeaderRow) {
+                    headerCell.setText(LocaleController.getInternalString(C3286R.string.all_chats_tab_settings_icon_instead_text_header));
                 }
             } else if (itemViewType == IdFabric$ViewTypes.FABS && (view instanceof FabsCell)) {
-                AllChatsTabSettingsActivity allChatsTabSettingsActivity3 = this.this$0;
+                AllChatsTabSettingsActivity allChatsTabSettingsActivity3 = AllChatsTabSettingsActivity.this;
                 FabsCell fabsCell = (FabsCell) view;
                 if (i == allChatsTabSettingsActivity3.fabsRow) {
                     fabsCell.setFabs(allChatsTabSettingsActivity3.getFiltersController().getSelectedAllChatsTabFabs());

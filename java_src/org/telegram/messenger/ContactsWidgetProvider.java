@@ -81,21 +81,21 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
             }
             int ceil = (int) Math.ceil(arrayList.size() / 2.0f);
             if (cellsForSize == 1 || ceil <= 1) {
-                i2 = C3158R.layout.contacts_widget_layout_1;
+                i2 = C3286R.layout.contacts_widget_layout_1;
             } else if (cellsForSize == 2 || ceil <= 2) {
-                i2 = C3158R.layout.contacts_widget_layout_2;
+                i2 = C3286R.layout.contacts_widget_layout_2;
             } else if (cellsForSize == 3 || ceil <= 3) {
-                i2 = C3158R.layout.contacts_widget_layout_3;
+                i2 = C3286R.layout.contacts_widget_layout_3;
             } else {
-                i2 = C3158R.layout.contacts_widget_layout_4;
+                i2 = C3286R.layout.contacts_widget_layout_4;
             }
         } else {
-            i2 = C3158R.layout.contacts_widget_layout_1;
+            i2 = C3286R.layout.contacts_widget_layout_1;
         }
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), i2);
-        int i4 = C3158R.C3161id.list_view;
+        int i4 = C3286R.C3289id.list_view;
         remoteViews.setRemoteAdapter(i, i4, intent);
-        remoteViews.setEmptyView(i4, C3158R.C3161id.empty_view);
+        remoteViews.setEmptyView(i4, C3286R.C3289id.empty_view);
         Intent intent2 = new Intent(ApplicationLoader.applicationContext, LaunchActivity.class);
         intent2.setAction("com.tmessages.openchat" + Math.random() + Integer.MAX_VALUE);
         intent2.addFlags(ConnectionsManager.FileTypeFile);

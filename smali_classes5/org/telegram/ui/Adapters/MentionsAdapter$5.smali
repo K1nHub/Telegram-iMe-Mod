@@ -36,7 +36,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 904
+    .line 916
     iput-object p2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$favsStickers:Ljava/util/ArrayList;
 
     iput-object p3, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$recentStickers:Ljava/util/ArrayList;
@@ -53,7 +53,7 @@
 
     const/4 v1, 0x0
 
-    .line 906
+    .line 918
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$favsStickers:Ljava/util/ArrayList;
 
@@ -63,7 +63,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 907
+    .line 919
     iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$favsStickers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -97,7 +97,7 @@
     :goto_1
     const/16 v1, 0x14
 
-    .line 911
+    .line 923
     iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$recentStickers:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -110,7 +110,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 912
+    .line 924
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$recentStickers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -129,7 +129,7 @@
 
     if-nez v5, :cond_2
 
-    .line 913
+    .line 925
     iget-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->val$recentStickers:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -160,7 +160,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 904
+    .line 916
     check-cast p1, Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;
 
     check-cast p2, Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;
@@ -175,7 +175,7 @@
 .method public compare(Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;)I
     .locals 4
 
-    .line 921
+    .line 933
     iget-object v0, p1, Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
     const/4 v1, 0x1
@@ -184,7 +184,7 @@
 
     move-result v0
 
-    .line 922
+    .line 934
     iget-object v2, p2, Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {v2, v1}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;Z)Z
@@ -195,12 +195,12 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 924
+    .line 936
     invoke-direct {p0, p1}, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->getIndex(Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;)I
 
     move-result p1
 
-    .line 925
+    .line 937
     invoke-direct {p0, p2}, Lorg/telegram/ui/Adapters/MentionsAdapter$5;->getIndex(Lorg/telegram/ui/Adapters/MentionsAdapter$StickerResult;)I
 
     move-result p2

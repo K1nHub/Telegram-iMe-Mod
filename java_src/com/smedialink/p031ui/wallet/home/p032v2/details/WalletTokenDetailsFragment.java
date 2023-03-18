@@ -102,7 +102,7 @@ import org.fork.utils.TabbedFragmentPage;
 import org.fork.utils.TabbedViewPagerDelegate;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentWalletTokenDetailsBinding;
@@ -292,16 +292,16 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         LinearLayoutCompat linearStakingInfo = binding.linearStakingInfo;
         Intrinsics.checkNotNullExpressionValue(linearStakingInfo, "linearStakingInfo");
         ViewExtKt.visible(linearStakingInfo);
-        binding.textStakingInfo.setText(getResourceManager().getString(C3158R.string.staking_details_info));
-        binding.imageStakingInfo.setImageResource(C3158R.C3160drawable.msg_info);
+        binding.textStakingInfo.setText(getResourceManager().getString(C3286R.string.staking_details_info));
+        binding.imageStakingInfo.setImageResource(C3286R.C3288drawable.msg_info);
         binding.viewAnnualPercentageCell.setTextAndValue(annualValueText, annualTitleText, true);
         TextDetailCell textDetailCell = binding.viewProfitCell;
-        textDetailCell.setTextAndValue(profitText, getResourceManager().getString(C3158R.string.staking_details_profit), true);
+        textDetailCell.setTextAndValue(profitText, getResourceManager().getString(C3286R.string.staking_details_profit), true);
         this.isProfitTextColored = z;
         textDetailCell.getTextView().setTextColor(getThemedColor(this.isProfitTextColored ? "chat_inDownCall" : "windowBackgroundWhiteBlackText"));
         this.statusTextColorKey = status.getColorKey();
         TextDetailCell textDetailCell2 = binding.viewFinishedCell;
-        textDetailCell2.setTextAndValue(getResourceManager().getString(status.getTextResId()), getResourceManager().getString(C3158R.string.wallet_transaction_details_status_title), false);
+        textDetailCell2.setTextAndValue(getResourceManager().getString(status.getTextResId()), getResourceManager().getString(C3286R.string.wallet_transaction_details_status_title), false);
         textDetailCell2.getTextView().setTextColor(getThemedColor(this.statusTextColorKey));
     }
 
@@ -390,8 +390,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showRequiredWalletCreatedDialog$lambda-9  reason: not valid java name */
-    public static final void m1647showRequiredWalletCreatedDialog$lambda9(Callbacks$Callback action) {
+    public static final void showRequiredWalletCreatedDialog$lambda$9(Callbacks$Callback action) {
         Intrinsics.checkNotNullParameter(action, "$action");
         action.invoke();
     }
@@ -399,17 +398,16 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     @Override // com.smedialink.p031ui.wallet.home.p032v2.details.WalletTokenDetailsView
     public void showRequiredWalletCreatedDialog(final Callbacks$Callback action) {
         Intrinsics.checkNotNullParameter(action, "action");
-        showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(this, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda8
+        showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(this, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda7
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletTokenDetailsFragment.m1647showRequiredWalletCreatedDialog$lambda9(Callbacks$Callback.this);
+                WalletTokenDetailsFragment.showRequiredWalletCreatedDialog$lambda$9(Callbacks$Callback.this);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showAnimatedDialog$lambda-10  reason: not valid java name */
-    public static final void m1645showAnimatedDialog$lambda10(Callbacks$Callback action) {
+    public static final void showAnimatedDialog$lambda$10(Callbacks$Callback action) {
         Intrinsics.checkNotNullParameter(action, "$action");
         action.invoke();
     }
@@ -418,10 +416,10 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     public void showAnimatedDialog(AnimatedSpannableDialogModel model, final Callbacks$Callback action) {
         Intrinsics.checkNotNullParameter(model, "model");
         Intrinsics.checkNotNullParameter(action, "action");
-        showDialog(DialogsFactoryKt.createDialogWithAnimation(this, model, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda7
+        showDialog(DialogsFactoryKt.createDialogWithAnimation(this, model, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda8
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletTokenDetailsFragment.m1645showAnimatedDialog$lambda10(Callbacks$Callback.this);
+                WalletTokenDetailsFragment.showAnimatedDialog$lambda$10(Callbacks$Callback.this);
             }
         }));
     }
@@ -442,8 +440,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, dialogModel, action, null, 8, null);
-        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2029xbd1ed966(walletAddress), 1, null);
-        Unit unit = Unit.INSTANCE;
+        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2150xbd1ed966(walletAddress), 1, null);
         showDialog(createDialog$default);
     }
 
@@ -467,10 +464,10 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     @Override // com.smedialink.p031ui.wallet.home.p032v2.details.WalletTokenDetailsView
     public void setupRankBadge(boolean z, AccountLevel accountLevel) {
         Intrinsics.checkNotNullParameter(accountLevel, "accountLevel");
-        AccountLevelBadgeView accountLevelBadgeView = getBinding().accountRankBadge;
-        Intrinsics.checkNotNullExpressionValue(accountLevelBadgeView, "");
-        accountLevelBadgeView.setVisibility(z ? 0 : 8);
-        accountLevelBadgeView.setAccountLevel(accountLevel);
+        AccountLevelBadgeView setupRankBadge$lambda$12 = getBinding().accountRankBadge;
+        Intrinsics.checkNotNullExpressionValue(setupRankBadge$lambda$12, "setupRankBadge$lambda$12");
+        setupRankBadge$lambda$12.setVisibility(z ? 0 : 8);
+        setupRankBadge$lambda$12.setAccountLevel(accountLevel);
     }
 
     @Override // com.smedialink.p031ui.wallet.home.p032v2.details.WalletTokenDetailsView
@@ -494,14 +491,13 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         DialogsFactoryKt.showStakingLevelRequiredDialog(this, getResourceManager(), minimalRank, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda6
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletTokenDetailsFragment.m1646showLevelRequiredDialog$lambda13(WalletTokenDetailsFragment.this);
+                WalletTokenDetailsFragment.showLevelRequiredDialog$lambda$13(WalletTokenDetailsFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showLevelRequiredDialog$lambda-13  reason: not valid java name */
-    public static final void m1646showLevelRequiredDialog$lambda13(WalletTokenDetailsFragment this$0) {
+    public static final void showLevelRequiredDialog$lambda$13(WalletTokenDetailsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.presentFragment(WalletSwapProtocolsFragment.Companion.newInstance(ScreenType.FULLSCREEN, TokenCode.LIME));
     }
@@ -613,14 +609,14 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
             for (TransactionsGroup transactionsGroup : listOfNotNull) {
                 arrayList.add(new WalletTokenDetailsNavigationTab(transactionsGroup.getId(), new TabbedFragmentPage(getResourceManager().getString(transactionsGroup.getNameResId()), 0, WalletTransactionsFragment.Companion.newInstance(new WalletTransactionsFragment.ScreenType.TokenDetailsTab(transactionsGroup), ((TokenDetailsArgs.Crypto) this.args).getToken().getBalance().getCode()), new WalletTokenDetailsFragment$initPageTabs$2$1(this, transactionsGroup), 2, null)));
             }
-        } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Staking) {
+        } else if (!(tokenDetailsArgs instanceof TokenDetailsArgs.Staking)) {
+            throw new NoWhenBranchMatchedException();
+        } else {
             StakingOperationsGroup[] values = StakingOperationsGroup.values();
             arrayList = new ArrayList(values.length);
             for (StakingOperationsGroup stakingOperationsGroup : values) {
                 arrayList.add(new WalletTokenDetailsNavigationTab(stakingOperationsGroup.getId(), new TabbedFragmentPage(getResourceManager().getString(stakingOperationsGroup.getNameResId()), 0, WalletTransactionsFragment.Companion.newInstance(new WalletTransactionsFragment.ScreenType.StakingDetailsTab(((TokenDetailsArgs.Staking) this.args).getStakingDetails(), stakingOperationsGroup.getStakingOperationType()), TokenCode.Companion.map(((TokenDetailsArgs.Staking) this.args).getStakingDetails().getTokenTicker())), new WalletTokenDetailsFragment$initPageTabs$3$1(this, stakingOperationsGroup), 2, null)));
             }
-        } else {
-            throw new NoWhenBranchMatchedException();
         }
         return arrayList;
     }
@@ -633,25 +629,25 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         root.setColorSchemeColors(getThemedColor("chats_actionBackground"));
         binding.dividerStaking.setBackgroundColor(getThemedColor("windowBackgroundGray"));
         binding.linearStakingInfo.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
-        AppCompatTextView appCompatTextView = binding.textStakingInfo;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        appCompatTextView.setTextColor(getThemedColor("profile_tabSelectedText"));
-        AppCompatImageView appCompatImageView = binding.imageStakingInfo;
-        Intrinsics.checkNotNullExpressionValue(appCompatImageView, "");
-        ViewExtKt.setImageColor(appCompatImageView, getThemedColor("profile_tabSelectedText"));
-        ViewExtKt.setCircleRippleBackground(appCompatImageView);
+        AppCompatTextView setupColors$lambda$32$lambda$25 = binding.textStakingInfo;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$25, "setupColors$lambda$32$lambda$25");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$25);
+        setupColors$lambda$32$lambda$25.setTextColor(getThemedColor("profile_tabSelectedText"));
+        AppCompatImageView setupColors$lambda$32$lambda$26 = binding.imageStakingInfo;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$26, "setupColors$lambda$32$lambda$26");
+        ViewExtKt.setImageColor(setupColors$lambda$32$lambda$26, getThemedColor("profile_tabSelectedText"));
+        ViewExtKt.setCircleRippleBackground(setupColors$lambda$32$lambda$26);
         TextView textView = binding.viewAnnualPercentageCell.getTextView();
         Intrinsics.checkNotNullExpressionValue(textView, "viewAnnualPercentageCell.textView");
         ViewExtKt.withMediumTypeface(textView);
-        TextView textView2 = binding.viewProfitCell.getTextView();
-        Intrinsics.checkNotNullExpressionValue(textView2, "");
-        ViewExtKt.withMediumTypeface(textView2);
-        textView2.setTextColor(getThemedColor(this.isProfitTextColored ? "chat_inDownCall" : "windowBackgroundWhiteBlackText"));
-        TextView textView3 = binding.viewFinishedCell.getTextView();
-        Intrinsics.checkNotNullExpressionValue(textView3, "");
-        ViewExtKt.withMediumTypeface(textView3);
-        textView3.setTextColor(getThemedColor(this.statusTextColorKey));
+        TextView setupColors$lambda$32$lambda$27 = binding.viewProfitCell.getTextView();
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$27, "setupColors$lambda$32$lambda$27");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$27);
+        setupColors$lambda$32$lambda$27.setTextColor(getThemedColor(this.isProfitTextColored ? "chat_inDownCall" : "windowBackgroundWhiteBlackText"));
+        TextView setupColors$lambda$32$lambda$28 = binding.viewFinishedCell.getTextView();
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$28, "setupColors$lambda$32$lambda$28");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$28);
+        setupColors$lambda$32$lambda$28.setTextColor(getThemedColor(this.statusTextColorKey));
         binding.appbar.setBackgroundColor(getThemedColor("actionBarDefault"));
         binding.constraintLayoutHeader.setBackgroundColor(getThemedColor("actionBarDefault"));
         binding.dividerActionButtons.setBackgroundColor(getThemedColor("windowBackgroundGray"));
@@ -661,20 +657,20 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         HorizontalActionButtonsView horizontalActionButtonsView = binding.horizontalActionButtons;
         horizontalActionButtonsView.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
         horizontalActionButtonsView.setupColors();
-        ActionBarMenuItem actionBarMenuItem = binding.itemMoreOptions;
-        actionBarMenuItem.redrawPopup(getThemedColor("actionBarDefaultSubmenuBackground"));
-        actionBarMenuItem.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItem"), false);
-        actionBarMenuItem.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItemIcon"), true);
-        actionBarMenuItem.setupPopupRadialSelectors(getThemedColor("listSelectorSDK21"));
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
+        ActionBarMenuItem setupColors$lambda$32$lambda$30 = binding.itemMoreOptions;
+        setupColors$lambda$32$lambda$30.redrawPopup(getThemedColor("actionBarDefaultSubmenuBackground"));
+        setupColors$lambda$32$lambda$30.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItem"), false);
+        setupColors$lambda$32$lambda$30.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItemIcon"), true);
+        setupColors$lambda$32$lambda$30.setupPopupRadialSelectors(getThemedColor("listSelectorSDK21"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$30, "setupColors$lambda$32$lambda$30");
+        ViewExtKt.setCircleRippleBackground(setupColors$lambda$32$lambda$30);
         AppCompatTextView textAccountBalance = binding.textAccountBalance;
         Intrinsics.checkNotNullExpressionValue(textAccountBalance, "textAccountBalance");
         ViewExtKt.withMediumTypeface(textAccountBalance);
-        AppCompatTextView appCompatTextView2 = binding.textTransactions;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView2);
-        appCompatTextView2.setTextColor(getThemedColor("profile_tabSelectedText"));
+        AppCompatTextView setupColors$lambda$32$lambda$31 = binding.textTransactions;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$31, "setupColors$lambda$32$lambda$31");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$31);
+        setupColors$lambda$32$lambda$31.setTextColor(getThemedColor("profile_tabSelectedText"));
         setupCollapsingToolbarColors();
     }
 
@@ -696,57 +692,54 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     private final void setupActionBar() {
         this.actionBar.setAddToContainer(false);
         ForkFragmentWalletTokenDetailsBinding binding = getBinding();
-        ActionBarMenuItem actionBarMenuItem = binding.itemBack;
-        actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3158R.C3160drawable.ic_ab_back);
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
-        actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda0
+        ActionBarMenuItem setupActionBar$lambda$39$lambda$35 = binding.itemBack;
+        setupActionBar$lambda$39$lambda$35.setLongClickEnabled(false);
+        setupActionBar$lambda$39$lambda$35.setIcon(C3286R.C3288drawable.ic_ab_back);
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$39$lambda$35, "setupActionBar$lambda$39$lambda$35");
+        ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$39$lambda$35);
+        setupActionBar$lambda$39$lambda$35.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WalletTokenDetailsFragment.m1638setupActionBar$lambda39$lambda35$lambda34(WalletTokenDetailsFragment.this, view);
+                WalletTokenDetailsFragment.setupActionBar$lambda$39$lambda$35$lambda$34(WalletTokenDetailsFragment.this, view);
             }
         });
-        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrGoBack));
-        final ActionBarMenuItem actionBarMenuItem2 = binding.itemMoreOptions;
-        actionBarMenuItem2.setLongClickEnabled(false);
-        actionBarMenuItem2.setSubMenuOpenSide(2);
-        actionBarMenuItem2.setIcon(C3158R.C3160drawable.ic_ab_other);
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem2, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem2);
-        setupMenuItems(actionBarMenuItem2);
-        actionBarMenuItem2.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda1
+        setupActionBar$lambda$39$lambda$35.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrGoBack));
+        final ActionBarMenuItem setupActionBar$lambda$39$lambda$38 = binding.itemMoreOptions;
+        setupActionBar$lambda$39$lambda$38.setLongClickEnabled(false);
+        setupActionBar$lambda$39$lambda$38.setSubMenuOpenSide(2);
+        setupActionBar$lambda$39$lambda$38.setIcon(C3286R.C3288drawable.ic_ab_other);
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$39$lambda$38, "setupActionBar$lambda$39$lambda$38");
+        ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$39$lambda$38);
+        setupMenuItems(setupActionBar$lambda$39$lambda$38);
+        setupActionBar$lambda$39$lambda$38.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WalletTokenDetailsFragment.m1639setupActionBar$lambda39$lambda38$lambda36(ActionBarMenuItem.this, view);
+                WalletTokenDetailsFragment.setupActionBar$lambda$39$lambda$38$lambda$36(ActionBarMenuItem.this, view);
             }
         });
-        actionBarMenuItem2.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda9
+        setupActionBar$lambda$39$lambda$38.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda9
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
-                WalletTokenDetailsFragment.m1640setupActionBar$lambda39$lambda38$lambda37(WalletTokenDetailsFragment.this, i);
+                WalletTokenDetailsFragment.setupActionBar$lambda$39$lambda$38$lambda$37(WalletTokenDetailsFragment.this, i);
             }
         });
-        actionBarMenuItem2.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
+        setupActionBar$lambda$39$lambda$38.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupActionBar$lambda-39$lambda-35$lambda-34  reason: not valid java name */
-    public static final void m1638setupActionBar$lambda39$lambda35$lambda34(WalletTokenDetailsFragment this$0, View view) {
+    public static final void setupActionBar$lambda$39$lambda$35$lambda$34(WalletTokenDetailsFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupActionBar$lambda-39$lambda-38$lambda-36  reason: not valid java name */
-    public static final void m1639setupActionBar$lambda39$lambda38$lambda36(ActionBarMenuItem this_with, View view) {
+    public static final void setupActionBar$lambda$39$lambda$38$lambda$36(ActionBarMenuItem this_with, View view) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         this_with.toggleSubMenu();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupActionBar$lambda-39$lambda-38$lambda-37  reason: not valid java name */
-    public static final void m1640setupActionBar$lambda39$lambda38$lambda37(WalletTokenDetailsFragment this$0, int i) {
+    public static final void setupActionBar$lambda$39$lambda$38$lambda$37(WalletTokenDetailsFragment this$0, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.onSubItemClick(i);
     }
@@ -754,21 +747,21 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     private final void setupMenuItems(ActionBarMenuItem actionBarMenuItem) {
         TokenDetailsArgs tokenDetailsArgs = this.args;
         if (tokenDetailsArgs instanceof TokenDetailsArgs.Binance) {
-            actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_STATISTICS, C3158R.C3160drawable.fork_ic_token_statistic, getResourceManager().getString(C3158R.string.wallet_token_details_distribution_action));
+            actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_STATISTICS, C3286R.C3288drawable.fork_ic_token_statistic, getResourceManager().getString(C3286R.string.wallet_token_details_distribution_action));
         } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Crypto) {
             TokenBalance balance = ((TokenDetailsArgs.Crypto) tokenDetailsArgs).getToken().getBalance();
             if (TokenBalanceExtKt.isWithSmartContractAddress(balance)) {
-                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SMART_CONTRACT_ADDRESS, C3158R.C3160drawable.fork_ic_etherscan, getResourceManager().getString(C3158R.string.wallet_transaction_details_action_view_smart_contract));
+                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SMART_CONTRACT_ADDRESS, C3286R.C3288drawable.fork_ic_etherscan, getResourceManager().getString(C3286R.string.wallet_transaction_details_action_view_smart_contract));
             }
             if (TokenBalanceExtKt.isWithWebsite(balance)) {
-                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SITE, C3158R.C3160drawable.fork_ic_web_26, getResourceManager().getString(C3158R.string.wallet_token_details_site_action));
+                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SITE, C3286R.C3288drawable.fork_ic_web_26, getResourceManager().getString(C3286R.string.wallet_token_details_site_action));
             }
             Unit unit = Unit.INSTANCE;
         } else if (!(tokenDetailsArgs instanceof TokenDetailsArgs.Staking)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_CONTRACT, C3158R.C3160drawable.fork_ic_etherscan, getResourceManager().getString(C3158R.string.staking_details_contract_action));
-            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_WEBSITE, C3158R.C3160drawable.fork_ic_web_26, getResourceManager().getString(C3158R.string.wallet_token_details_site_action));
+            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_CONTRACT, C3286R.C3288drawable.fork_ic_etherscan, getResourceManager().getString(C3286R.string.staking_details_contract_action));
+            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_WEBSITE, C3286R.C3288drawable.fork_ic_web_26, getResourceManager().getString(C3286R.string.wallet_token_details_site_action));
         }
     }
 
@@ -783,20 +776,19 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         binding.getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda2
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                WalletTokenDetailsFragment.m1644setupListeners$lambda43$lambda42(WalletTokenDetailsFragment.this);
+                WalletTokenDetailsFragment.setupListeners$lambda$43$lambda$42(WalletTokenDetailsFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-43$lambda-42  reason: not valid java name */
-    public static final void m1644setupListeners$lambda43$lambda42(WalletTokenDetailsFragment this$0) {
+    public static final void setupListeners$lambda$43$lambda$42(WalletTokenDetailsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().reload();
     }
 
     private final void setupTexts() {
-        getBinding().textTransactions.setText(getResourceManager().getString(C3158R.string.wallet_token_details_transactions));
+        getBinding().textTransactions.setText(getResourceManager().getString(C3286R.string.wallet_token_details_transactions));
     }
 
     private final void setupRootView() {
@@ -815,11 +807,11 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         MaterialToolbar toolbar = binding.toolbar;
         Intrinsics.checkNotNullExpressionValue(toolbar, "toolbar");
         toolbar.setPadding(toolbar.getPaddingLeft(), AndroidUtilities.statusBarHeight, toolbar.getPaddingRight(), toolbar.getPaddingBottom());
-        ConstraintLayout constraintLayout = binding.constraintLayoutHeader;
-        Intrinsics.checkNotNullExpressionValue(constraintLayout, "");
-        constraintLayout.setPadding(constraintLayout.getPaddingLeft(), binding.constraintLayoutHeader.getPaddingTop() + AndroidUtilities.statusBarHeight, constraintLayout.getPaddingRight(), constraintLayout.getPaddingBottom());
-        if (!ViewCompat.isLaidOut(constraintLayout) || constraintLayout.isLayoutRequested()) {
-            constraintLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$setupCollapsingToolbar$lambda-61$lambda-50$$inlined$doOnLayout$1
+        ConstraintLayout setupCollapsingToolbar$lambda$61$lambda$50 = binding.constraintLayoutHeader;
+        Intrinsics.checkNotNullExpressionValue(setupCollapsingToolbar$lambda$61$lambda$50, "setupCollapsingToolbar$lambda$61$lambda$50");
+        setupCollapsingToolbar$lambda$61$lambda$50.setPadding(setupCollapsingToolbar$lambda$61$lambda$50.getPaddingLeft(), binding.constraintLayoutHeader.getPaddingTop() + AndroidUtilities.statusBarHeight, setupCollapsingToolbar$lambda$61$lambda$50.getPaddingRight(), setupCollapsingToolbar$lambda$61$lambda$50.getPaddingBottom());
+        if (!ViewCompat.isLaidOut(setupCollapsingToolbar$lambda$61$lambda$50) || setupCollapsingToolbar$lambda$61$lambda$50.isLayoutRequested()) {
+            setupCollapsingToolbar$lambda$61$lambda$50.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$61$lambda$50$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
                 public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
                     ViewGroup.LayoutParams layoutParams2;
@@ -837,7 +829,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
                     ForkFragmentWalletTokenDetailsBinding forkFragmentWalletTokenDetailsBinding = ForkFragmentWalletTokenDetailsBinding.this;
                     View view2 = forkFragmentWalletTokenDetailsBinding.headerUnderlay;
                     int measuredHeight = forkFragmentWalletTokenDetailsBinding.toolbar.getMeasuredHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m50dp(10);
-                    Intrinsics.checkNotNullExpressionValue(view2, "");
+                    Intrinsics.checkNotNullExpressionValue(view2, "setupCollapsingToolbar$l…da$50$lambda$49$lambda$48");
                     ViewGroup.LayoutParams layoutParams4 = view2.getLayoutParams();
                     Objects.requireNonNull(layoutParams4, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
                     layoutParams4.height = measuredHeight;
@@ -863,7 +855,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
             appCompatImageView.setPivotY(appCompatImageView.getPivotX() / 2);
             View view = binding.headerUnderlay;
             int measuredHeight = binding.toolbar.getMeasuredHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m50dp(10);
-            Intrinsics.checkNotNullExpressionValue(view, "");
+            Intrinsics.checkNotNullExpressionValue(view, "setupCollapsingToolbar$l…da$50$lambda$49$lambda$48");
             ViewGroup.LayoutParams layoutParams3 = view.getLayoutParams();
             Objects.requireNonNull(layoutParams3, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
             layoutParams3.height = measuredHeight;
@@ -881,14 +873,13 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         binding.appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda3
             @Override // com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
             public final void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-                WalletTokenDetailsFragment.m1641setupCollapsingToolbar$lambda61$lambda60(ForkFragmentWalletTokenDetailsBinding.this, ref$FloatRef2, this, ref$FloatRef, ref$BooleanRef, appBarLayout, i);
+                WalletTokenDetailsFragment.setupCollapsingToolbar$lambda$61$lambda$60(ForkFragmentWalletTokenDetailsBinding.this, ref$FloatRef2, this, ref$FloatRef, ref$BooleanRef, appBarLayout, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupCollapsingToolbar$lambda-61$lambda-60  reason: not valid java name */
-    public static final void m1641setupCollapsingToolbar$lambda61$lambda60(ForkFragmentWalletTokenDetailsBinding this_with, Ref$FloatRef lastScrollPercent, WalletTokenDetailsFragment this$0, Ref$FloatRef collapsedTranslationX, final Ref$BooleanRef isHeaderUnderlayAnimating, AppBarLayout appBarLayout, int i) {
+    public static final void setupCollapsingToolbar$lambda$61$lambda$60(ForkFragmentWalletTokenDetailsBinding this_with, Ref$FloatRef lastScrollPercent, WalletTokenDetailsFragment this$0, Ref$FloatRef collapsedTranslationX, final Ref$BooleanRef isHeaderUnderlayAnimating, AppBarLayout appBarLayout, int i) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(lastScrollPercent, "$lastScrollPercent");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -940,12 +931,12 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
             view.animate().scaleY(BitmapDescriptorFactory.HUE_RED).setInterpolator(new AccelerateDecelerateInterpolator()).withStartAction(new Runnable() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WalletTokenDetailsFragment.m1642setupCollapsingToolbar$lambda61$lambda60$lambda59$lambda56(Ref$BooleanRef.this);
+                    WalletTokenDetailsFragment.setupCollapsingToolbar$lambda$61$lambda$60$lambda$59$lambda$56(Ref$BooleanRef.this);
                 }
             }).withEndAction(new Runnable() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WalletTokenDetailsFragment.m1643setupCollapsingToolbar$lambda61$lambda60$lambda59$lambda57(Ref$BooleanRef.this);
+                    WalletTokenDetailsFragment.setupCollapsingToolbar$lambda$61$lambda$60$lambda$59$lambda$57(Ref$BooleanRef.this);
                 }
             }).setDuration(100L);
         } else {
@@ -954,15 +945,13 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupCollapsingToolbar$lambda-61$lambda-60$lambda-59$lambda-56  reason: not valid java name */
-    public static final void m1642setupCollapsingToolbar$lambda61$lambda60$lambda59$lambda56(Ref$BooleanRef isHeaderUnderlayAnimating) {
+    public static final void setupCollapsingToolbar$lambda$61$lambda$60$lambda$59$lambda$56(Ref$BooleanRef isHeaderUnderlayAnimating) {
         Intrinsics.checkNotNullParameter(isHeaderUnderlayAnimating, "$isHeaderUnderlayAnimating");
         isHeaderUnderlayAnimating.element = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupCollapsingToolbar$lambda-61$lambda-60$lambda-59$lambda-57  reason: not valid java name */
-    public static final void m1643setupCollapsingToolbar$lambda61$lambda60$lambda59$lambda57(Ref$BooleanRef isHeaderUnderlayAnimating) {
+    public static final void setupCollapsingToolbar$lambda$61$lambda$60$lambda$59$lambda$57(Ref$BooleanRef isHeaderUnderlayAnimating) {
         Intrinsics.checkNotNullParameter(isHeaderUnderlayAnimating, "$isHeaderUnderlayAnimating");
         isHeaderUnderlayAnimating.element = false;
     }
@@ -1012,8 +1001,14 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
 
                 static {
                     int[] iArr = new int[NetworkType.values().length];
-                    iArr[NetworkType.ETHEREUM.ordinal()] = 1;
-                    iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 2;
+                    try {
+                        iArr[NetworkType.ETHEREUM.ordinal()] = 1;
+                    } catch (NoSuchFieldError unused) {
+                    }
+                    try {
+                        iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 2;
+                    } catch (NoSuchFieldError unused2) {
+                    }
                     $EnumSwitchMapping$0 = iArr;
                 }
             }
@@ -1025,18 +1020,17 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
 
             @Override // org.telegram.p048ui.Components.QRCodeBottomSheet
             public int getCustomQrCenterImageRes() {
-                int i = WhenMappings.$EnumSwitchMapping$0[NetworkType.this.ordinal()];
+                int i = WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()];
                 if (i != 1) {
                     if (i == 2) {
                         return TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getLogo();
                     }
-                    return TokenInfoExtKt.getLogo(TokenInfo.Companion.map(tokenCode), NetworkType.this);
+                    return TokenInfoExtKt.getLogo(TokenInfo.Companion.map(tokenCode), networkType);
                 }
                 return TokenInfo.Crypto.Ethereum.ETH.INSTANCE.getLogo();
             }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3158R.string.wallet_receive_dialog_title), getResourceManager().getString(C3158R.string.wallet_receive_dialog_btn_text), str, tokenCode, networkType.getBlockchainType());
-        Unit unit = Unit.INSTANCE;
+        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3286R.string.wallet_receive_dialog_title), getResourceManager().getString(C3286R.string.wallet_receive_dialog_btn_text), str, tokenCode, networkType.getBlockchainType());
         showDialog(qRCodeBottomSheet);
     }
 

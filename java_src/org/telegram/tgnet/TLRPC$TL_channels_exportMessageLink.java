@@ -7,7 +7,7 @@ public class TLRPC$TL_channels_exportMessageLink extends TLObject {
     public boolean grouped;
 
     /* renamed from: id */
-    public int f1532id;
+    public int f1537id;
     public boolean thread;
 
     @Override // org.telegram.tgnet.TLObject
@@ -24,6 +24,6 @@ public class TLRPC$TL_channels_exportMessageLink extends TLObject {
         this.flags = i2;
         abstractSerializedData.writeInt32(i2);
         this.channel.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1532id);
+        abstractSerializedData.writeInt32(this.f1537id);
     }
 }

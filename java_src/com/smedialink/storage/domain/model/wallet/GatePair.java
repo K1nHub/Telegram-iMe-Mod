@@ -3,7 +3,6 @@ package com.smedialink.storage.domain.model.wallet;
 import com.smedialink.storage.R$string;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import java.util.ArrayList;
-import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GatePair.kt */
@@ -59,9 +58,7 @@ public enum GatePair {
             for (GatePair gatePair : values) {
                 arrayList.add(resourceManager.getString(gatePair.getTitle()));
             }
-            Object[] array = arrayList.toArray(new String[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-            return (String[]) array;
+            return (String[]) arrayList.toArray(new String[0]);
         }
     }
 }

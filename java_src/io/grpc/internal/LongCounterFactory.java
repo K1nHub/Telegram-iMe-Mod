@@ -1,5 +1,5 @@
 package io.grpc.internal;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class LongCounterFactory {
     public static LongCounter create() {
         if (ReflectionLongAdderCounter.isAvailable()) {

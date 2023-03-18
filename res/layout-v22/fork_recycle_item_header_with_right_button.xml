@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <include layout="@layout/fork_recycle_item_wallet_dashboard_header" />
-    </FrameLayout>
-    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="right" android:id="@id/image_header_right_button" android:paddingLeft="16.0dip" android:paddingTop="6.0dip" android:paddingRight="16.0dip" android:paddingBottom="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="16.0dip" android:paddingVertical="6.0dip" />
-</FrameLayout>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center_vertical" android:paddingTop="@dimen/padding_extra_small" android:paddingBottom="@dimen/padding_extra_small" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/padding_extra_small"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal" android:id="@id/text_wallet_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:includeFontPadding="false" android:layout_marginHorizontal="@dimen/margin_normal" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/image_info" android:visibility="gone" android:layout_width="@dimen/icon_size_small_upper" android:layout_height="@dimen/icon_size_small_upper" android:layout_marginLeft="@dimen/margin_small" android:layout_marginRight="@dimen/margin_small" android:layout_marginHorizontal="@dimen/margin_small" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/image_header_right_button" app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toEndOf="@id/text_wallet_header" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/msg_info" />
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right" android:id="@id/image_header_right_button" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="16.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

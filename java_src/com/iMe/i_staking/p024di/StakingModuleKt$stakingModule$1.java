@@ -54,10 +54,10 @@ final class StakingModuleKt$stakingModule$1 extends Lambda implements Function1<
     /* compiled from: StakingModule.kt */
     /* renamed from: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C12431 extends Lambda implements Function2<Scope, ParametersHolder, Retrofit> {
-        public static final C12431 INSTANCE = new C12431();
+    public static final class C12371 extends Lambda implements Function2<Scope, ParametersHolder, Retrofit> {
+        public static final C12371 INSTANCE = new C12371();
 
-        C12431() {
+        C12371() {
             super(2);
         }
 
@@ -79,58 +79,58 @@ final class StakingModuleKt$stakingModule$1 extends Lambda implements Function1<
         List emptyList6;
         Intrinsics.checkNotNullParameter(module, "$this$module");
         StringQualifier staking_retrofit = StakingModuleKt.getSTAKING_RETROFIT();
-        C12431 c12431 = C12431.INSTANCE;
+        C12371 c12371 = C12371.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Retrofit.class), staking_retrofit, c12431, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(Retrofit.class), staking_retrofit, c12371, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
         StringQualifier staking_client = StakingModuleKt.getSTAKING_CLIENT();
-        C12442 c12442 = C12442.INSTANCE;
+        C12382 c12382 = C12382.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(OkHttpClient.class), staking_client, c12442, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(OkHttpClient.class), staking_client, c12382, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C12453 c12453 = C12453.INSTANCE;
+        C12393 c12393 = C12393.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(StakingApi.class), null, c12453, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(StakingApi.class), null, c12393, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C12464 c12464 = C12464.INSTANCE;
+        C12404 c12404 = C12404.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(StakingDataSource.class), null, c12464, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(StakingDataSource.class), null, c12404, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
         }
         new Pair(module, singleInstanceFactory4);
-        C12475 c12475 = C12475.INSTANCE;
+        C12415 c12415 = C12415.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(StakingRepository.class), null, c12475, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(StakingRepository.class), null, c12415, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory5);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory5);
         }
         new Pair(module, singleInstanceFactory5);
-        C12486 c12486 = C12486.INSTANCE;
+        C12426 c12426 = C12426.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, c12486, kind, emptyList6));
+        SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(StakingInteractor.class), null, c12426, kind, emptyList6));
         module.indexPrimaryType(singleInstanceFactory6);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory6);
@@ -142,10 +142,10 @@ final class StakingModuleKt$stakingModule$1 extends Lambda implements Function1<
     /* compiled from: StakingModule.kt */
     /* renamed from: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C12453 extends Lambda implements Function2<Scope, ParametersHolder, StakingApi> {
-        public static final C12453 INSTANCE = new C12453();
+    public static final class C12393 extends Lambda implements Function2<Scope, ParametersHolder, StakingApi> {
+        public static final C12393 INSTANCE = new C12393();
 
-        C12453() {
+        C12393() {
             super(2);
         }
 
@@ -163,10 +163,10 @@ final class StakingModuleKt$stakingModule$1 extends Lambda implements Function1<
     /* compiled from: StakingModule.kt */
     /* renamed from: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C12464 extends Lambda implements Function2<Scope, ParametersHolder, StakingDataSource> {
-        public static final C12464 INSTANCE = new C12464();
+    public static final class C12404 extends Lambda implements Function2<Scope, ParametersHolder, StakingDataSource> {
+        public static final C12404 INSTANCE = new C12404();
 
-        C12464() {
+        C12404() {
             super(2);
         }
 
@@ -182,10 +182,10 @@ final class StakingModuleKt$stakingModule$1 extends Lambda implements Function1<
     /* compiled from: StakingModule.kt */
     /* renamed from: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C12475 extends Lambda implements Function2<Scope, ParametersHolder, StakingRepository> {
-        public static final C12475 INSTANCE = new C12475();
+    public static final class C12415 extends Lambda implements Function2<Scope, ParametersHolder, StakingRepository> {
+        public static final C12415 INSTANCE = new C12415();
 
-        C12475() {
+        C12415() {
             super(2);
         }
 
@@ -201,10 +201,10 @@ final class StakingModuleKt$stakingModule$1 extends Lambda implements Function1<
     /* compiled from: StakingModule.kt */
     /* renamed from: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C12486 extends Lambda implements Function2<Scope, ParametersHolder, StakingInteractor> {
-        public static final C12486 INSTANCE = new C12486();
+    public static final class C12426 extends Lambda implements Function2<Scope, ParametersHolder, StakingInteractor> {
+        public static final C12426 INSTANCE = new C12426();
 
-        C12486() {
+        C12426() {
             super(2);
         }
 
@@ -220,10 +220,10 @@ final class StakingModuleKt$stakingModule$1 extends Lambda implements Function1<
     /* compiled from: StakingModule.kt */
     /* renamed from: com.iMe.i_staking.di.StakingModuleKt$stakingModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C12442 extends Lambda implements Function2<Scope, ParametersHolder, OkHttpClient> {
-        public static final C12442 INSTANCE = new C12442();
+    public static final class C12382 extends Lambda implements Function2<Scope, ParametersHolder, OkHttpClient> {
+        public static final C12382 INSTANCE = new C12382();
 
-        C12442() {
+        C12382() {
             super(2);
         }
 

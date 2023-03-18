@@ -29,9 +29,9 @@
 
     check-cast p1, Ljava/util/List;
 
-    check-cast p2, Ljava/util/List;
+    check-cast p2, Ljava/lang/Boolean;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$EgtjwB5CMNk_Pwe-qPmcag2Tq0I(Lorg/telegram/ui/ChatActivity;Ljava/util/List;Ljava/util/List;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$JThng596cegy4mZluAZYcq5dNrI(Lorg/telegram/ui/ChatActivity;Ljava/util/List;Ljava/lang/Boolean;)V
 
     return-void
 .end method

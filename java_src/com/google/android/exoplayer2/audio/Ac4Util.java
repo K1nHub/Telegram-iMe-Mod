@@ -7,7 +7,6 @@ import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.ParsableBitArray;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 public final class Ac4Util {
     public static final int AC40_SYNCWORD = 44096;
@@ -15,7 +14,7 @@ public final class Ac4Util {
     private static final int CHANNEL_COUNT_2 = 2;
     public static final int HEADER_SIZE_FOR_PARSER = 16;
     public static final int MAX_RATE_BYTES_PER_SECOND = 336000;
-    private static final int[] SAMPLE_COUNT = {PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT, 2000, 1920, 1601, 1600, 1001, 1000, 960, 800, 800, LiteMode.FLAGS_CHAT, 400, 400, 2048};
+    private static final int[] SAMPLE_COUNT = {PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT, 2000, 1920, 1601, 1600, 1001, 1000, 960, 800, 800, 480, 400, 400, 2048};
     public static final int SAMPLE_HEADER_SIZE = 7;
 
     /* loaded from: classes.dex */

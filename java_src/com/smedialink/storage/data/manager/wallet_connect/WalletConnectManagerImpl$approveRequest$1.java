@@ -30,15 +30,13 @@ public final class WalletConnectManagerImpl$approveRequest$1 extends Lambda impl
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         Map map;
         map = this.this$0.wcClients;
         WCClient wCClient = (WCClient) map.get(this.$sessionKey);
-        if (wCClient == null) {
-            return;
+        if (wCClient != null) {
+            wCClient.approveRequest(this.$requestId, this.$result);
         }
-        wCClient.approveRequest(this.$requestId, this.$result);
     }
 }

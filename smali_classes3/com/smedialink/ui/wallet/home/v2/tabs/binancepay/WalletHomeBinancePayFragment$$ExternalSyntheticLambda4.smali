@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->$r8$lambda$u87mw3yVlxs-f_ew8omx7cAZDnI(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->$r8$lambda$AaKw1VkDSj9Eh1bLPmurRu0csiw(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
 
     return-void
 .end method

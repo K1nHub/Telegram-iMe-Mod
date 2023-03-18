@@ -19,6 +19,6 @@ final class RecentChatsBar$listAdapter$2 extends Lambda implements Function0<Rec
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final RecentChatsBar.ListAdapter invoke() {
-        return new RecentChatsBar.ListAdapter(this.this$0);
+        return new RecentChatsBar.ListAdapter();
     }
 }

@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 388
+    .line 391
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$11;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,27 +63,22 @@
 .method public final invoke()V
     .locals 2
 
-    .line 415
+    .line 418
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$11;->this$0:Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;
 
     invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->access$getStakingMetadata$p(Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;)Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-static {v0}, Lcom/smedialink/mapper/staking/StakingDetailedMetadataUiMappingKt;->mapToUi(Lcom/smedialink/storage/domain/model/staking/StakingDetailedMetadata;)Lcom/smedialink/model/staking/StakingDetailsItem;
 
     move-result-object v0
 
-    :goto_0
     if-nez v0, :cond_1
 
+    :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$11;->$args:Lcom/smedialink/model/wallet/details/TokenDetailsArgs;
 
     check-cast v0, Lcom/smedialink/model/wallet/details/TokenDetailsArgs$Staking;
@@ -92,7 +87,7 @@
 
     move-result-object v0
 
-    .line 416
+    .line 419
     :cond_1
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter$resolveAvailableTokenActions$11;->this$0:Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;
 

@@ -55,6 +55,10 @@
 
     move-result-object v0
 
+    const-string v1, "null cannot be cast to non-null type com.smedialink.navigation.common.router.base.BaseNavigationRouter<com.smedialink.ui.catalog.tabs.CatalogTabFragment>"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast v0, Lcom/smedialink/navigation/common/router/base/BaseNavigationRouter;
 
     sget v1, Lorg/telegram/messenger/R$id;->catalog_user_channels:I

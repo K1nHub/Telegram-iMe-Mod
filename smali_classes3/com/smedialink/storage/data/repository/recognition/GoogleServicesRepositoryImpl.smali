@@ -192,7 +192,11 @@
 
     invoke-direct {v2, v1, p1}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Ljava/io/File;)V
 
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v2}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -204,11 +208,15 @@
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v1, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$handleError$1;
 
-    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoObjects$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -270,7 +278,11 @@
 
     invoke-direct {v2, v1, p1}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoText$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Ljava/io/File;)V
 
-    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v2}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -282,11 +294,15 @@
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v1, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoText$$inlined$handleError$1;
 
-    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getPhotoText$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -358,7 +374,11 @@
 
     invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getVoiceText$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -370,11 +390,15 @@
     iget-object p2, p0, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl;->errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;
 
     .line 26
-    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;
+    new-instance v0, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getVoiceText$$inlined$handleError$1;
 
-    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
+    invoke-direct {v0, p2}, Lcom/smedialink/storage/data/repository/recognition/GoogleServicesRepositoryImpl$getVoiceText$$inlined$handleError$1;-><init>(Lcom/smedialink/storage/data/network/handlers/ErrorHandler;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/storage/data/utils/extentions/RxExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

@@ -8,6 +8,7 @@ import java.util.RandomAccess;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.TypeIntrinsics;
+import kotlin.ranges.IntRange;
 import kotlin.sequences.Sequence;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MutableCollections.kt */
@@ -76,44 +77,37 @@ public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableC
         return filterInPlace$CollectionsKt__MutableCollectionsKt((List) list, (Function1) predicate, true);
     }
 
+    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.collections.IntIterator, java.util.Iterator] */
     private static final <T> boolean filterInPlace$CollectionsKt__MutableCollectionsKt(List<T> list, Function1<? super T, Boolean> function1, boolean z) {
-        int i;
         if (!(list instanceof RandomAccess)) {
+            Intrinsics.checkNotNull(list, "null cannot be cast to non-null type kotlin.collections.MutableIterable<T of kotlin.collections.CollectionsKt__MutableCollectionsKt.filterInPlace>");
             return filterInPlace$CollectionsKt__MutableCollectionsKt(TypeIntrinsics.asMutableIterable(list), function1, z);
         }
-        int lastIndex = CollectionsKt.getLastIndex(list);
-        if (lastIndex >= 0) {
-            int i2 = 0;
-            i = 0;
-            while (true) {
-                T t = list.get(i2);
-                if (function1.invoke(t).booleanValue() != z) {
-                    if (i != i2) {
-                        list.set(i, t);
-                    }
-                    i++;
+        ?? it = new IntRange(0, CollectionsKt.getLastIndex(list)).iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            int nextInt = it.nextInt();
+            T t = list.get(nextInt);
+            if (function1.invoke(t).booleanValue() != z) {
+                if (i != nextInt) {
+                    list.set(i, t);
                 }
-                if (i2 == lastIndex) {
-                    break;
-                }
-                i2++;
+                i++;
             }
-        } else {
-            i = 0;
         }
         if (i >= list.size()) {
             return false;
         }
-        int lastIndex2 = CollectionsKt.getLastIndex(list);
-        if (i > lastIndex2) {
+        int lastIndex = CollectionsKt.getLastIndex(list);
+        if (i > lastIndex) {
             return true;
         }
         while (true) {
-            list.remove(lastIndex2);
-            if (lastIndex2 == i) {
+            list.remove(lastIndex);
+            if (lastIndex == i) {
                 return true;
             }
-            lastIndex2--;
+            lastIndex--;
         }
     }
 }

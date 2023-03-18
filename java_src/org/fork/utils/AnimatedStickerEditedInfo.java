@@ -29,14 +29,6 @@ public final class AnimatedStickerEditedInfo extends VideoEditedInfo {
         new Companion(null);
     }
 
-    public final TLRPC$Document getAnimatedSticker() {
-        return this.animatedSticker;
-    }
-
-    public final long getDuration() {
-        return this.duration;
-    }
-
     public AnimatedStickerEditedInfo(TLRPC$Document animatedSticker, long j) {
         ArrayList<VideoEditedInfo.MediaEntity> arrayListOf;
         int i;
@@ -75,19 +67,19 @@ public final class AnimatedStickerEditedInfo extends VideoEditedInfo {
         mediaEntity.type = (byte) 0;
         mediaEntity.width = 512.0f;
         mediaEntity.height = 512.0f;
-        mediaEntity.document = getAnimatedSticker();
+        mediaEntity.document = animatedSticker;
         mediaEntity.text = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(mediaEntity.document, true).getAbsolutePath();
         if (MessageObject.isAnimatedStickerDocument(mediaEntity.document, true)) {
             mediaEntity.subType = (byte) (mediaEntity.subType | 1);
-            BigInteger valueOf = BigInteger.valueOf(getDuration());
+            BigInteger valueOf = BigInteger.valueOf(j);
             bigInteger.multiply(valueOf).divide(bigInteger.gcd(valueOf));
         }
         mediaEntity.viewWidth = 640;
         mediaEntity.viewHeight = 640;
         mediaEntity.width = 0.75f;
         mediaEntity.height = 0.75f;
-        mediaEntity.f1471x = 0.125f;
-        mediaEntity.f1472y = 0.125f;
+        mediaEntity.f1476x = 0.125f;
+        mediaEntity.f1477y = 0.125f;
         Unit unit = Unit.INSTANCE;
         mediaEntityArr[0] = mediaEntity;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(mediaEntityArr);

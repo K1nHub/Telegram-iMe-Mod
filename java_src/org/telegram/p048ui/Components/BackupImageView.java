@@ -6,6 +6,8 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
@@ -203,6 +205,16 @@ public class BackupImageView extends View {
 
     public void setImageResource(int i) {
         this.imageReceiver.setImageBitmap(getResources().getDrawable(i));
+        invalidate();
+        onNewImageSet();
+    }
+
+    public void setImageResource(int i, int i2) {
+        Drawable drawable = getResources().getDrawable(i);
+        if (drawable != null) {
+            drawable.setColorFilter(new PorterDuffColorFilter(i2, PorterDuff.Mode.MULTIPLY));
+        }
+        this.imageReceiver.setImageBitmap(drawable);
         invalidate();
         onNewImageSet();
     }

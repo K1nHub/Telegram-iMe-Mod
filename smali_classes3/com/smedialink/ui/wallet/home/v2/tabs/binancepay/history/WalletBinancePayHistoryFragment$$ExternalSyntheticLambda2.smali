@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment$$ExternalSyntheticLambda2;->f$1:Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->$r8$lambda$nFHDenleyvfPwBUjACPcvyUIft8(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;->$r8$lambda$R1Ri4WfOporHEAJvOU61gG2ixeU(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/adapter/BinancePayHistoryRecycleAdapter;Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryFragment;)V
 
     return-void
 .end method

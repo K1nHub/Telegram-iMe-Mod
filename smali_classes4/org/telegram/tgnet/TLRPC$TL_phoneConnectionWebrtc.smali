@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 37339
+    .line 37568
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PhoneConnection;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 37344
+    .line 37573
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 37345
+    .line 37574
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->turn:Z
 
@@ -60,46 +60,46 @@
 
     const/4 v2, 0x1
 
-    .line 37346
+    .line 37575
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->stun:Z
 
-    .line 37347
+    .line 37576
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->id:J
 
-    .line 37348
+    .line 37577
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ip:Ljava/lang/String;
 
-    .line 37349
+    .line 37578
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ipv6:Ljava/lang/String;
 
-    .line 37350
+    .line 37579
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->port:I
 
-    .line 37351
+    .line 37580
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->username:Ljava/lang/String;
 
-    .line 37352
+    .line 37581
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -112,12 +112,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 37356
+    .line 37585
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_phoneConnectionWebrtc;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37357
+    .line 37586
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->turn:Z
 
     if-eqz v0, :cond_0
@@ -136,7 +136,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->flags:I
 
-    .line 37358
+    .line 37587
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->stun:Z
 
     if-eqz v1, :cond_1
@@ -151,35 +151,35 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->flags:I
 
-    .line 37359
+    .line 37588
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37360
+    .line 37589
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 37361
+    .line 37590
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ip:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 37362
+    .line 37591
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->ipv6:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 37363
+    .line 37592
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->port:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37364
+    .line 37593
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->username:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 37365
+    .line 37594
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneConnection;->password:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

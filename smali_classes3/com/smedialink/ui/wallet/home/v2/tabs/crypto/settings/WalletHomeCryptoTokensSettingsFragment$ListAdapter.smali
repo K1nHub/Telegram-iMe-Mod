@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeCryptoTokensSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoTokensSettingsFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,276:1\n254#2,2:277\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoTokensSettingsFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter\n*L\n204#1:277,2\n*E\n"
+    value = "SMAP\nWalletHomeCryptoTokensSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoTokensSettingsFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,276:1\n262#2,2:277\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoTokensSettingsFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter\n*L\n204#1:277,2\n*E\n"
 .end annotation
 
 
@@ -23,49 +23,45 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4XQpMru2rhYeZJea4XsXU5XiYGk(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
+.method public static synthetic $r8$lambda$AbuBAD_ZD_vXkLd0CTwXz3TNo80(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onBindViewHolder$lambda-12$lambda-11(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onCreateViewHolder$lambda$3$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$CRJyB59oBK4YEAciAx7JxsVqyZ0(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public static synthetic $r8$lambda$LQ-5QhBQPSMYw_STDhvDQu-z6FI(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onCreateViewHolder$lambda-3$lambda-2$lambda-1(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onBindViewHolder$lambda$12$lambda$11(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$CwChO-0ZxeJyiNaq_QB_eIYhf5k(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$tlLoevl2FFuKxBWwOtT4z2kt29Y(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onCreateViewHolder$lambda-3$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onCreateViewHolder$lambda$3$lambda$2$lambda$1(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yz3pKD0hxFtwnS6o0SvFGUwjyRs(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$xvM0icL7GlM2DeJbXa_FJGtJNrA(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onCreateViewHolder$lambda-3$lambda-2(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->onCreateViewHolder$lambda$3$lambda$2(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 137
     iput-object p1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->this$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;
@@ -75,7 +71,7 @@
     return-void
 .end method
 
-.method private static final onBindViewHolder$lambda-12$lambda-11(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
+.method private static final onBindViewHolder$lambda$12$lambda$11(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
     .locals 1
 
     const-string v0, "$this_with"
@@ -92,7 +88,7 @@
     return-void
 .end method
 
-.method private static final onCreateViewHolder$lambda-3$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
+.method private static final onCreateViewHolder$lambda$3$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
     .locals 0
 
     const-string p2, "this$0"
@@ -126,7 +122,7 @@
     return-void
 .end method
 
-.method private static final onCreateViewHolder$lambda-3$lambda-2(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
+.method private static final onCreateViewHolder$lambda$3$lambda$2(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Landroid/view/View;)V
     .locals 3
 
     const-string p2, "this$0"
@@ -184,7 +180,7 @@
     return-void
 .end method
 
-.method private static final onCreateViewHolder$lambda-3$lambda-2$lambda-1(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method private static final onCreateViewHolder$lambda$3$lambda$2$lambda$1(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
     const-string v0, "$this_apply"
@@ -360,7 +356,7 @@
 
     invoke-virtual {p1, v0}, Lcom/smedialink/ui/custom/NetworkTypeView;->setNetworkType(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
-    const-string v0, ""
+    const-string v0, "onBindViewHolder$lambda$10$lambda$9"
 
     .line 204
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -378,7 +374,7 @@
     :cond_0
     const/16 v2, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
@@ -388,10 +384,14 @@
     :cond_1
     sget v1, Lcom/smedialink/common/IdFabric$ViewTypes;->MOVING_CHECK:I
 
-    if-ne v0, v1, :cond_6
+    if-ne v0, v1, :cond_5
 
     .line 209
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string v0, "null cannot be cast to non-null type org.fork.ui.view.MovingCheckCell"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v3, p1
 
@@ -434,14 +434,8 @@
 
     const/4 v5, 0x1
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_2
 
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_3
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;->isEnabled()Z
 
     move-result v0
@@ -450,6 +444,11 @@
 
     const/4 v0, 0x1
 
+    goto :goto_1
+
+    :cond_2
+    const/4 v0, 0x0
+
     :goto_1
     invoke-static {p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;->access$getTokensEndRow$p(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;)I
 
@@ -457,11 +456,11 @@
 
     sub-int/2addr v6, v5
 
-    if-eq p2, v6, :cond_4
+    if-eq p2, v6, :cond_3
 
     const/4 v2, 0x1
 
-    :cond_4
+    :cond_3
     invoke-virtual {v3, v4, v0, v2}, Lorg/fork/ui/view/MovingCheckCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
     .line 214
@@ -474,7 +473,7 @@
     .line 216
     instance-of p2, v1, Lcom/smedialink/model/wallet/select/SelectableToken$WithLogoUrl$Binance;
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_4
 
     .line 217
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -500,10 +499,10 @@
     goto :goto_2
 
     .line 219
-    :cond_5
+    :cond_4
     instance-of p1, v1, Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
     check-cast v1, Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;
 
@@ -521,7 +520,7 @@
 
     invoke-static/range {v3 .. v8}, Lorg/fork/ui/view/MovingCheckCell;->setIcon$default(Lorg/fork/ui/view/MovingCheckCell;ILjava/lang/String;Landroid/graphics/PorterDuff$Mode;ILjava/lang/Object;)V
 
-    :cond_6
+    :cond_5
     :goto_2
     return-void
 .end method
@@ -580,8 +579,6 @@
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 177
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     invoke-virtual {p1}, Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;->getRoot()Landroid/widget/RelativeLayout;
 
     move-result-object p1
@@ -634,7 +631,7 @@
 
     const-string v1, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams"
 
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -651,9 +648,6 @@
     .line 185
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 186
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 182
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -668,9 +662,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 191
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 159
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

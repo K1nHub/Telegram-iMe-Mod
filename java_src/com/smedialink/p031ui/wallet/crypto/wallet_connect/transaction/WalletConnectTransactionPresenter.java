@@ -6,7 +6,6 @@ import com.smedialink.model.wallet.crypto.wallet_connect.WalletConnectTransactio
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.p031ui.custom.FeeView;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.domain.interactor.crypto.wallet_connect.WalletConnectInteractor;
 import com.smedialink.storage.domain.manager.wallet_connect.WalletConnectManager;
 import com.smedialink.storage.domain.model.Result;
@@ -19,10 +18,10 @@ import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.StringExtKt;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.formatter.BalanceFormatter;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import kotlin.Lazy;
@@ -30,8 +29,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
-import timber.log.Timber;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletConnectTransactionPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter */
@@ -79,10 +77,10 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     public final DialogModel getSendConfirmationDialogModel() {
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.wallet_amount_confirm_alert_ok_btn));
+            return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_amount_confirm_alert_ok_btn));
         }
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign) {
-            return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.wallet_connect_transaction_button_sign));
+            return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_connect_transaction_button_sign));
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -125,37 +123,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         Intrinsics.checkNotNullExpressionValue(observeOn, "processingObservable\n   …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, true);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    WalletConnectTransactionPresenter.this.onTransactionProcessingSuccess((String) ((Result.Success) result).getData());
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletConnectTransactionPresenter.this.resourceManager;
-                    ((WalletConnectTransactionView) WalletConnectTransactionPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$subscribeToTransactionProcessingWithResultsHandle$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, true).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2131xc1738946(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2132xc1738947((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -178,7 +146,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3158R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3286R.string.common_cancel), 6, null);
     }
 
     private final String getConfirmMessage() {
@@ -186,11 +154,11 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         ResourceManager resourceManager = this.resourceManager;
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            i = C3158R.string.wallet_amount_send_confirm_alert_description;
+            i = C3286R.string.wallet_amount_send_confirm_alert_description;
         } else if (!(walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3158R.string.wallet_connect_transaction_confirm_sign_description;
+            i = C3286R.string.wallet_connect_transaction_confirm_sign_description;
         }
         return resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(getAmount().doubleValue()), getTokenInfo().getDecimals()), this.resourceManager.getString(getTokenInfo().getShortName()));
     }

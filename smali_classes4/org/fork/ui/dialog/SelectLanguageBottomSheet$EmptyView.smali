@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,416:1\n169#2,2:417\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView\n*L\n399#1:417,2\n*E\n"
+    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,416:1\n177#2,2:417\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView\n*L\n399#1:417,2\n*E\n"
 .end annotation
 
 
@@ -59,9 +59,6 @@
 
     invoke-static {v0, v3}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setHorizontalPadding(Landroid/view/View;Ljava/lang/Number;)V
 
-    .line 387
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 383
     iput-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;->animationView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -81,7 +78,7 @@
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string p1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo p1, "windowBackgroundWhiteBlackText"
 
     .line 394
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -110,7 +107,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 169
+    .line 177
     invoke-virtual {v0, v2, v2, v2, v2}, Landroid/view/View;->setPadding(IIII)V
 
     .line 393

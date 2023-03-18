@@ -19,14 +19,13 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletSwapProtocolsPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.swap.WalletSwapProtocolsPresenter */
@@ -115,33 +114,27 @@ public final class WalletSwapProtocolsPresenter extends BasePresenter<WalletSwap
         for (SwapProtocolInfo swapProtocolInfo : supportedExchanges) {
             arrayList.add(new DexProtocolItem(swapProtocolInfo, true));
         }
-        Object[] array = arrayList.toArray(new DexProtocolItem[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        DexProtocolItem[] dexProtocolItemArr = (DexProtocolItem[]) array;
+        DexProtocolItem[] dexProtocolItemArr = (DexProtocolItem[]) arrayList.toArray(new DexProtocolItem[0]);
         List<SwapProtocolInfo.Symbiosis> supportedCrossChainExchanges = SwapProtocolInfo.Companion.getSupportedCrossChainExchanges();
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(supportedCrossChainExchanges, 10);
         ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
         for (SwapProtocolInfo.Symbiosis symbiosis : supportedCrossChainExchanges) {
             arrayList2.add(new DexProtocolItem(symbiosis, true));
         }
-        Object[] array2 = arrayList2.toArray(new DexProtocolItem[0]);
-        Objects.requireNonNull(array2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        DexProtocolItem[] dexProtocolItemArr2 = (DexProtocolItem[]) array2;
+        DexProtocolItem[] dexProtocolItemArr2 = (DexProtocolItem[]) arrayList2.toArray(new DexProtocolItem[0]);
         List<CentralizedExchangesInfo> supportedExchanges2 = CentralizedExchangesInfo.Companion.getSupportedExchanges();
         collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(supportedExchanges2, 10);
         ArrayList arrayList3 = new ArrayList(collectionSizeOrDefault3);
         for (CentralizedExchangesInfo centralizedExchangesInfo : supportedExchanges2) {
             arrayList3.add(new CexProtocolItem(centralizedExchangesInfo, true));
         }
-        Object[] array3 = arrayList3.toArray(new CexProtocolItem[0]);
-        Objects.requireNonNull(array3, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
         SpreadBuilder spreadBuilder = new SpreadBuilder(6);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3158R.string.wallet_swap_protocols_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3286R.string.wallet_swap_protocols_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3158R.string.wallet_swap_protocols_cross_chain_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3286R.string.wallet_swap_protocols_cross_chain_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr2);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3158R.string.wallet_swap_centralized_exchanges_header_title)));
-        spreadBuilder.addSpread((CexProtocolItem[]) array3);
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3286R.string.wallet_swap_centralized_exchanges_header_title)));
+        spreadBuilder.addSpread((CexProtocolItem[]) arrayList3.toArray(new CexProtocolItem[0]));
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) spreadBuilder.toArray(new NoChildNode[spreadBuilder.size()]));
         ((WalletSwapProtocolsView) getViewState()).showExchangesProviders(listOf);
     }

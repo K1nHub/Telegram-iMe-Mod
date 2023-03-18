@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.mp3;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.audio.MpegAudioUtil;
 import com.google.android.exoplayer2.extractor.DummyTrackOutput;
@@ -95,7 +95,7 @@ public final class Mp3Extractor implements Extractor {
     }
 
     public Mp3Extractor(int i) {
-        this(i, C0474C.TIME_UNSET);
+        this(i, C0468C.TIME_UNSET);
     }
 
     public Mp3Extractor(int i, long j) {
@@ -104,7 +104,7 @@ public final class Mp3Extractor implements Extractor {
         this.scratch = new ParsableByteArray(10);
         this.synchronizedHeader = new MpegAudioUtil.Header();
         this.gaplessInfoHolder = new GaplessInfoHolder();
-        this.basisTimeUs = C0474C.TIME_UNSET;
+        this.basisTimeUs = C0468C.TIME_UNSET;
         this.id3Peeker = new Id3Peeker();
         DummyTrackOutput dummyTrackOutput = new DummyTrackOutput();
         this.skippingTrackOutput = dummyTrackOutput;
@@ -128,7 +128,7 @@ public final class Mp3Extractor implements Extractor {
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public void seek(long j, long j2) {
         this.synchronizedHeaderData = 0;
-        this.basisTimeUs = C0474C.TIME_UNSET;
+        this.basisTimeUs = C0468C.TIME_UNSET;
         this.samplesRead = 0L;
         this.sampleBytesRemaining = 0;
         this.seekTimeUs = j2;
@@ -197,9 +197,9 @@ public final class Mp3Extractor implements Extractor {
                 return 0;
             }
             this.synchronizedHeader.setForHeaderData(readInt);
-            if (this.basisTimeUs == C0474C.TIME_UNSET) {
+            if (this.basisTimeUs == C0468C.TIME_UNSET) {
                 this.basisTimeUs = this.seeker.getTimeUs(extractorInput.getPosition());
-                if (this.forcedFirstSampleTimestampUs != C0474C.TIME_UNSET) {
+                if (this.forcedFirstSampleTimestampUs != C0468C.TIME_UNSET) {
                     this.basisTimeUs += this.forcedFirstSampleTimestampUs - this.seeker.getTimeUs(0L);
                 }
             }
@@ -520,8 +520,8 @@ public final class Mp3Extractor implements Extractor {
                     }
                 }
             }
-            return C0474C.TIME_UNSET;
+            return C0468C.TIME_UNSET;
         }
-        return C0474C.TIME_UNSET;
+        return C0468C.TIME_UNSET;
     }
 }

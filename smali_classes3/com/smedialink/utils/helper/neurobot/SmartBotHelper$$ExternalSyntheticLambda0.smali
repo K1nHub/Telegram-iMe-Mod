@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/helper/neurobot/SmartBotHelper$$ExternalSyntheticLambda0;->f$0:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/smedialink/utils/helper/neurobot/SmartBotHelper;->$r8$lambda$Irx7QomTLveBHwHTFkSdZ4Ei_AI(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/smedialink/utils/helper/neurobot/SmartBotHelper;->$r8$lambda$HRhL5Zu7R_hgk4jNb3DQamJkXVc(Landroid/content/Context;)V
 
     return-void
 .end method

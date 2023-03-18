@@ -15,10 +15,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$cRVbZ3yx3YKztDZ3G-Q61ZVHu00(ILjava/lang/Integer;)Lorg/fork/controller/DialogTranslationController;
+.method public static synthetic $r8$lambda$bKy_GC-ketQ6l-TTV9ym8Xr1Iqs(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lorg/fork/controller/DialogTranslationController;
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/DialogTranslationController$Companion;->getInstance$lambda-1(ILjava/lang/Integer;)Lorg/fork/controller/DialogTranslationController;
+    invoke-static {p0, p1}, Lorg/fork/controller/DialogTranslationController$Companion;->getInstance$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lorg/fork/controller/DialogTranslationController;
 
     move-result-object p0
 
@@ -42,19 +42,21 @@
     return-void
 .end method
 
-.method private static final getInstance$lambda-1(ILjava/lang/Integer;)Lorg/fork/controller/DialogTranslationController;
+.method private static final getInstance$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lorg/fork/controller/DialogTranslationController;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 100
-    new-instance p1, Lorg/fork/controller/DialogTranslationController;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {p1, p0}, Lorg/fork/controller/DialogTranslationController;-><init>(I)V
+    move-result-object p0
 
-    return-object p1
+    check-cast p0, Lorg/fork/controller/DialogTranslationController;
+
+    return-object p0
 .end method
 
 
@@ -131,26 +133,21 @@
     :cond_1
     check-cast v2, Ljava/util/Map$Entry;
 
-    const-string v0, "en-US"
-
-    if-nez v2, :cond_2
-
-    goto :goto_0
+    if-eqz v2, :cond_2
 
     .line 95
-    :cond_2
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    if-nez v1, :cond_3
+    if-eqz v0, :cond_2
 
     goto :goto_0
 
-    :cond_3
-    move-object v0, v1
+    :cond_2
+    const-string v0, "en-US"
 
     :goto_0
     return-object v0
@@ -168,15 +165,19 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/fork/controller/DialogTranslationController$Companion$$ExternalSyntheticLambda0;
+    new-instance v2, Lorg/fork/controller/DialogTranslationController$Companion$getInstance$1;
 
-    invoke-direct {v2, p1}, Lorg/fork/controller/DialogTranslationController$Companion$$ExternalSyntheticLambda0;-><init>(I)V
+    invoke-direct {v2, p1}, Lorg/fork/controller/DialogTranslationController$Companion$getInstance$1;-><init>(I)V
 
-    invoke-static {v0, v1, v2}, Lj$/util/concurrent/ConcurrentMap$-EL;->computeIfAbsent(Ljava/util/concurrent/ConcurrentMap;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+    new-instance p1, Lorg/fork/controller/DialogTranslationController$Companion$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v2}, Lorg/fork/controller/DialogTranslationController$Companion$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-static {v0, v1, p1}, Lj$/util/concurrent/ConcurrentMap$-EL;->computeIfAbsent(Ljava/util/concurrent/ConcurrentMap;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
 
     move-result-object p1
 
-    const-string v0, "accountInstances.compute\u2026ontroller(accountIndex) }"
+    const-string v0, "accountIndex: Int) = acc\u2026ontroller(accountIndex) }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

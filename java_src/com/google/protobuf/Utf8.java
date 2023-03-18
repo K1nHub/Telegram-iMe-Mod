@@ -1,7 +1,7 @@
 package com.google.protobuf;
 
+import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
-import org.telegram.messenger.LiteMode;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public final class Utf8 {
@@ -561,7 +561,7 @@ public final class Utf8 {
                         }
                     } else {
                         long j10 = j4 + j;
-                        UnsafeUtil.putByte(bArr, j4, (byte) ((charAt2 >>> '\f') | LiteMode.FLAGS_CHAT));
+                        UnsafeUtil.putByte(bArr, j4, (byte) ((charAt2 >>> '\f') | 480));
                         long j11 = j10 + j;
                         UnsafeUtil.putByte(bArr, j10, (byte) (((charAt2 >>> 6) & 63) | 128));
                         UnsafeUtil.putByte(bArr, j11, (byte) ((charAt2 & '?') | 128));
@@ -750,7 +750,7 @@ public final class Utf8 {
         }
 
         private static char lowSurrogate(int i) {
-            return (char) ((i & 1023) + 56320);
+            return (char) ((i & AnalyticsListener.EVENT_DRM_KEYS_LOADED) + 56320);
         }
 
         private static int trailingByteValue(byte b) {

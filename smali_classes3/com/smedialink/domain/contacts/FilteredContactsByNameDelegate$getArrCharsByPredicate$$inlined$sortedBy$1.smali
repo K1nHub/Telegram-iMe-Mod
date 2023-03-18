@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 FilteredContactsByNameDelegate.kt\ncom/smedialink/domain/contacts/FilteredContactsByNameDelegate\n*L\n1#1,320:1\n62#2:321\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 FilteredContactsByNameDelegate.kt\ncom/smedialink/domain/contacts/FilteredContactsByNameDelegate\n*L\n1#1,328:1\n62#2:329\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,6 @@
     .line 102
     check-cast p1, Ljava/lang/String;
 
-    .line 62
     check-cast p2, Ljava/lang/String;
 
     invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I

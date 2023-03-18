@@ -25,7 +25,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nClassReference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,205:1\n1557#2:206\n1588#2,4:207\n1251#2,4:211\n1236#2,4:217\n438#3:215\n388#3:216\n*S KotlinDebug\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n*L\n107#1:206\n107#1:207,4\n155#1:211,4\n163#1:217,4\n163#1:215\n163#1:216\n*E\n"
+    value = "SMAP\nClassReference.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,205:1\n1559#2:206\n1590#2,4:207\n1253#2,4:211\n1238#2,4:217\n442#3:215\n392#3:216\n*S KotlinDebug\n*F\n+ 1 ClassReference.kt\nkotlin/jvm/internal/ClassReference\n*L\n107#1:206\n107#1:207,4\n155#1:211,4\n163#1:217,4\n163#1:215\n163#1:216\n*E\n"
 .end annotation
 
 
@@ -251,7 +251,7 @@
 
     move-result-object v0
 
-    .line 1557
+    .line 1559
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-static {v0, v5}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -260,7 +260,7 @@
 
     invoke-direct {v2, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1589
+    .line 1591
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -280,7 +280,7 @@
 
     if-gez v3, :cond_0
 
-    .line 1590
+    .line 1592
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
     :cond_0
@@ -295,12 +295,14 @@
 
     move-result-object v3
 
+    .line 1592
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move v3, v6
 
     goto :goto_0
 
+    .line 107
     :cond_1
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMap(Ljava/lang/Iterable;)Ljava/util/Map;
 
@@ -573,7 +575,7 @@
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1251
+    .line 1253
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -591,7 +593,7 @@
 
     move-result-object v2
 
-    .line 1252
+    .line 1254
     check-cast v2, Ljava/lang/String;
 
     .line 156
@@ -639,6 +641,7 @@
 
     move-result-object v2
 
+    .line 1254
     invoke-virtual {v2}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v5
@@ -719,7 +722,7 @@
     :cond_3
     sput-object v3, Lkotlin/jvm/internal/ClassReference;->classFqNames:Ljava/util/HashMap;
 
-    .line 438
+    .line 442
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-interface {v3}, Ljava/util/Map;->size()I
@@ -732,12 +735,12 @@
 
     invoke-direct {v0, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 388
+    .line 392
     invoke-interface {v3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
 
-    .line 1236
+    .line 1238
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -753,10 +756,10 @@
 
     move-result-object v3
 
-    .line 1237
+    .line 1239
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 388
+    .line 392
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v6
@@ -772,6 +775,7 @@
 
     move-result-object v3
 
+    .line 1239
     invoke-interface {v0, v6, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3

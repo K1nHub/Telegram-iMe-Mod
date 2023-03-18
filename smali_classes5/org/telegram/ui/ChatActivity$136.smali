@@ -1,115 +1,64 @@
-.class synthetic Lorg/telegram/ui/ChatActivity$136;
+.class Lorg/telegram/ui/ChatActivity$136;
 .super Ljava/lang/Object;
 .source "ChatActivity.java"
 
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/ChatActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/ChatActivity;->onCustomTransitionAnimation(ZLjava/lang/Runnable;)Landroid/animation/AnimatorSet;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+    .locals 0
 
-    .line 32937
-    invoke-static {}, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->values()[Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    .line 34883
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    array-length v0, v0
+    return-void
+.end method
 
-    new-array v0, v0, [I
 
-    sput-object v0, Lorg/telegram/ui/ChatActivity$136;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+# virtual methods
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 1
 
-    :try_start_0
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_PROFILE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    .line 34886
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object p1
 
-    const/4 v2, 0x1
+    check-cast p1, Ljava/lang/Float;
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    :catch_0
-    :try_start_1
-    sget-object v0, Lorg/telegram/ui/ChatActivity$136;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
+    move-result p1
 
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_GROUP:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$39102(Lorg/telegram/ui/ChatActivity;F)F
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    .line 34887
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result v1
+    iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
-    const/4 v2, 0x2
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v0, Lorg/telegram/ui/ChatActivity$136;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
-
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->OPEN_CHANNEL:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v0, Lorg/telegram/ui/ChatActivity$136;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
-
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->SEND_MESSAGE:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v0, Lorg/telegram/ui/ChatActivity$136;->$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem:[I
-
-    sget-object v1, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->MENTION:Lorg/telegram/ui/AvatarPreviewer$MenuItem;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
     return-void
 .end method

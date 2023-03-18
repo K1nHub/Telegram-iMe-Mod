@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramPreferenceKeys.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/smedialink/common/TelegramPreferenceKeys$Global$Default\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,944:1\n11328#2:945\n11663#2,3:946\n11328#2:949\n11663#2,3:950\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/smedialink/common/TelegramPreferenceKeys$Global$Default\n*L\n311#1:945\n311#1:946,3\n365#1:949\n365#1:950,3\n*E\n"
+    value = "SMAP\nTelegramPreferenceKeys.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/smedialink/common/TelegramPreferenceKeys$Global$Default\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,949:1\n11335#2:950\n11670#2,3:951\n11335#2:954\n11670#2,3:955\n*S KotlinDebug\n*F\n+ 1 TelegramPreferenceKeys.kt\ncom/smedialink/common/TelegramPreferenceKeys$Global$Default\n*L\n305#1:950\n305#1:951,3\n359#1:954\n359#1:955,3\n*E\n"
 .end annotation
 
 
@@ -32,7 +32,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 222
+    .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -106,14 +106,6 @@
     .locals 1
 
     const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public static final isDebugForceHighPerformanceEnabled()Z
-    .locals 1
-
-    const/4 v0, 0x0
 
     return v0
 .end method
@@ -473,7 +465,7 @@
 .method public static final selectedChatProfileTelegramIdMode()Lorg/fork/enums/ChatProfileTelegramIdMode;
     .locals 1
 
-    .line 344
+    .line 338
     sget-object v0, Lorg/fork/enums/ChatProfileTelegramIdMode;->TELEGRAM_API:Lorg/fork/enums/ChatProfileTelegramIdMode;
 
     return-object v0
@@ -490,19 +482,19 @@
         }
     .end annotation
 
-    .line 365
+    .line 359
     invoke-static {}, Lorg/fork/enums/DialogType;->values()[Lorg/fork/enums/DialogType;
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -512,17 +504,19 @@
 
     aget-object v4, v0, v3
 
-    .line 365
+    .line 359
     invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v4
 
+    .line 11671
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 359
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -534,7 +528,7 @@
 .method public static final selectedDrawerHeaderSubtitle()Lcom/smedialink/ui/drawer/DrawerAccountData;
     .locals 1
 
-    .line 272
+    .line 266
     sget-object v0, Lcom/smedialink/ui/drawer/DrawerAccountData;->PHONE:Lcom/smedialink/ui/drawer/DrawerAccountData;
 
     return-object v0
@@ -543,7 +537,7 @@
 .method public static final selectedDrawerHeaderTitle()Lcom/smedialink/ui/drawer/DrawerAccountData;
     .locals 1
 
-    .line 269
+    .line 263
     sget-object v0, Lcom/smedialink/ui/drawer/DrawerAccountData;->NAME:Lcom/smedialink/ui/drawer/DrawerAccountData;
 
     return-object v0
@@ -552,7 +546,7 @@
 .method public static final selectedDrawerHolidayIconType()Lorg/fork/enums/DrawerHolidayIconType;
     .locals 1
 
-    .line 422
+    .line 416
     sget-object v0, Lorg/fork/enums/DrawerHolidayIconType;->DEFAULT:Lorg/fork/enums/DrawerHolidayIconType;
 
     return-object v0
@@ -569,7 +563,7 @@
         }
     .end annotation
 
-    .line 287
+    .line 281
     sget-object v0, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;->Companion:Lcom/smedialink/ui/drawer/DrawerSwitchableItem$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/drawer/DrawerSwitchableItem$Companion;->getDefaultItems()Ljava/util/Set;
@@ -590,19 +584,19 @@
         }
     .end annotation
 
-    .line 311
+    .line 305
     invoke-static {}, Lorg/fork/enums/ExtendedAvatarPreviewerItem;->values()[Lorg/fork/enums/ExtendedAvatarPreviewerItem;
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -612,17 +606,19 @@
 
     aget-object v4, v0, v3
 
-    .line 311
+    .line 305
     invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v4
 
+    .line 11671
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 305
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -634,7 +630,7 @@
 .method public static final selectedFilterTabsNotificationMode()Lorg/fork/enums/FilterTabNotificationMode;
     .locals 1
 
-    .line 374
+    .line 368
     sget-object v0, Lorg/fork/enums/FilterTabNotificationMode;->NUMBER:Lorg/fork/enums/FilterTabNotificationMode;
 
     return-object v0
@@ -643,7 +639,7 @@
 .method public static final selectedFilterTabsWidthMode()Lorg/fork/enums/FilterTabWidthMode;
     .locals 1
 
-    .line 419
+    .line 413
     sget-object v0, Lorg/fork/enums/FilterTabWidthMode;->DEFAULT:Lorg/fork/enums/FilterTabWidthMode;
 
     return-object v0
@@ -660,7 +656,7 @@
         }
     .end annotation
 
-    .line 359
+    .line 353
     sget-object v0, Lorg/fork/enums/PhotoViewerMenuItem;->Companion:Lorg/fork/enums/PhotoViewerMenuItem$Companion;
 
     invoke-virtual {v0}, Lorg/fork/enums/PhotoViewerMenuItem$Companion;->getDefaultEnumNames()Ljava/util/Set;
@@ -673,7 +669,7 @@
 .method public static final selectedStickersSize()Lorg/fork/enums/StickersSize;
     .locals 1
 
-    .line 254
+    .line 248
     sget-object v0, Lorg/fork/enums/StickersSize;->MEDIUM:Lorg/fork/enums/StickersSize;
 
     return-object v0
@@ -682,7 +678,7 @@
 .method public static final selectedTemplatesMode()Lorg/fork/enums/TemplatesMode;
     .locals 1
 
-    .line 407
+    .line 401
     sget-object v0, Lorg/fork/enums/TemplatesMode;->OVAL:Lorg/fork/enums/TemplatesMode;
 
     return-object v0
@@ -691,7 +687,7 @@
 .method public static final selectedTemplatesSortingType()Lorg/fork/enums/TemplatesSortingType;
     .locals 1
 
-    .line 410
+    .line 404
     sget-object v0, Lorg/fork/enums/TemplatesSortingType;->DATE:Lorg/fork/enums/TemplatesSortingType;
 
     return-object v0
@@ -700,7 +696,7 @@
 .method public static final selectedVideoVoiceCamera()Ljava/lang/String;
     .locals 1
 
-    .line 332
+    .line 326
     sget-object v0, Lorg/fork/enums/VideoVoiceCamera;->ASK:Lorg/fork/enums/VideoVoiceCamera;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;

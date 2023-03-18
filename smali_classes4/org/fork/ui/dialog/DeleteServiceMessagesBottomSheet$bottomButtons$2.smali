@@ -32,10 +32,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1ob_LCduiual9n61-H--VX0oNPo(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
+.method public static synthetic $r8$lambda$I-YzBrycP8QFX8F4Aw9LshRzHVk(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$bottomButtons$2;->invoke$lambda-0(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
+    invoke-static {p0}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$bottomButtons$2;->invoke$lambda$0(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
     return-void
 .end method
 
-.method private static final invoke$lambda-0(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
+.method private static final invoke$lambda$0(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
     .locals 1
 
     const-string v0, "this$0"

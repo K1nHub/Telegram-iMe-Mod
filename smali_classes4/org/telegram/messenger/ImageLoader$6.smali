@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/messenger/ImageLoader;)V
     .locals 0
 
-    .line 2115
+    .line 2143
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$6;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onReceive$0()V
     .locals 1
 
-    .line 2121
+    .line 2149
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$6;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageLoader;->checkMediaPaths()V
@@ -54,23 +54,23 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
 
-    .line 2118
+    .line 2146
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
     const-string p1, "file system changed"
 
-    .line 2119
+    .line 2147
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2121
+    .line 2149
     :cond_0
     new-instance p1, Lorg/telegram/messenger/ImageLoader$6$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/messenger/ImageLoader$6$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/ImageLoader$6;)V
 
-    .line 2122
+    .line 2150
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p2
@@ -85,12 +85,12 @@
 
     const-wide/16 v0, 0x3e8
 
-    .line 2123
+    .line 2151
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     goto :goto_0
 
-    .line 2125
+    .line 2153
     :cond_1
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 

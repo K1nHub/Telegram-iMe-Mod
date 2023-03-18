@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;)V
     .locals 0
 
-    .line 2826
+    .line 2830
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer$2;->this$1:Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .method public getBottomOffset(I)I
     .locals 2
 
-    .line 2830
+    .line 2834
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer$2;->this$1:Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -75,7 +75,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2831
+    .line 2835
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer$2;->this$1:Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -90,7 +90,7 @@
 
     add-int/2addr v0, p1
 
-    .line 2833
+    .line 2837
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer$2;->this$1:Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
 
@@ -148,7 +148,7 @@
 
     if-le p1, v1, :cond_2
 
-    .line 2834
+    .line 2838
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer$2;->this$1:Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
 

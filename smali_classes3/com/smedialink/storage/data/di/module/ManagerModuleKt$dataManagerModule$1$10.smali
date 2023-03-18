@@ -68,7 +68,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$dstr$activity"
+    const-string v0, "<name for destructuring parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,9 +85,9 @@
 
     move-result-object p2
 
-    .line 65
     check-cast p2, Landroid/app/Activity;
 
+    .line 65
     new-instance v0, Lcom/smedialink/storage/data/manager/review/AppReviewManager;
 
     .line 131

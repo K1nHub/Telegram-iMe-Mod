@@ -49,7 +49,7 @@ public final class StakingOperationsPaginationRequest {
     }
 
     public String toString() {
-        return "StakingOperationsPaginationRequest(cursor=" + ((Object) this.cursor) + ", size=" + this.size + ')';
+        return "StakingOperationsPaginationRequest(cursor=" + this.cursor + ", size=" + this.size + ')';
     }
 
     public StakingOperationsPaginationRequest(String str, Integer num) {

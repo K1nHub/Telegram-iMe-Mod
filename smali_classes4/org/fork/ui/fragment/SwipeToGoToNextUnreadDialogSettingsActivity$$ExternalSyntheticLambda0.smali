@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->$r8$lambda$-lij-gdDuFvuI5Zlv9Yb6TPwes8(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->$r8$lambda$_2aRlbEYS5S7bY0aqUGGrMRY2gM(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method

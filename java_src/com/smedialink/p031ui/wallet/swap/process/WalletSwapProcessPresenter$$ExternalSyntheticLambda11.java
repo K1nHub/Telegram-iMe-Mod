@@ -11,6 +11,6 @@ public final /* synthetic */ class WalletSwapProcessPresenter$$ExternalSynthetic
 
     @Override // org.fork.utils.Callbacks$Callback
     public final void invoke() {
-        WalletSwapProcessPresenter.m1778loadAvailableSwapTokensBinance$lambda20();
+        WalletSwapProcessPresenter.loadAvailableOppositeSwapTokensBinance$lambda$24();
     }
 }

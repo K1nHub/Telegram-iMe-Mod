@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;)V
     .locals 8
 
-    .line 1696
+    .line 1752
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1698
+    .line 1754
     new-instance v0, Lorg/telegram/ui/ManageLinksActivity$EmptyView;
 
     invoke-direct {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity$EmptyView;-><init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;)V
@@ -48,14 +48,14 @@
 
     const/4 v7, 0x0
 
-    .line 1699
+    .line 1755
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1701
+    .line 1757
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -64,14 +64,14 @@
 
     const-string p2, "chats_message"
 
-    .line 1702
+    .line 1758
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1703
+    .line 1759
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     const/4 v0, 0x1
@@ -80,21 +80,21 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1704
+    .line 1760
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     const/16 v0, 0x11
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1706
+    .line 1762
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$900(Lorg/telegram/ui/ManageLinksActivity;)Z
 
     move-result p2
 
     if-eqz p2, :cond_0
 
-    .line 1707
+    .line 1763
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -117,7 +117,7 @@
 
     goto/16 :goto_1
 
-    .line 1708
+    .line 1764
     :cond_0
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$700(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -125,7 +125,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 1709
+    .line 1765
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -148,7 +148,7 @@
 
     goto/16 :goto_1
 
-    .line 1710
+    .line 1766
     :cond_1
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1000(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -156,7 +156,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 1711
+    .line 1767
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -179,7 +179,7 @@
 
     goto/16 :goto_1
 
-    .line 1712
+    .line 1768
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$800(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -187,7 +187,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 1713
+    .line 1769
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -210,7 +210,7 @@
 
     goto/16 :goto_1
 
-    .line 1714
+    .line 1770
     :cond_3
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$200(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -218,7 +218,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 1715
+    .line 1771
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -241,7 +241,7 @@
 
     goto/16 :goto_1
 
-    .line 1716
+    .line 1772
     :cond_4
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$300(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -249,7 +249,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 1717
+    .line 1773
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -272,7 +272,7 @@
 
     goto :goto_1
 
-    .line 1718
+    .line 1774
     :cond_5
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$400(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -280,7 +280,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 1719
+    .line 1775
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -303,7 +303,7 @@
 
     goto :goto_1
 
-    .line 1720
+    .line 1776
     :cond_6
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$500(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -311,7 +311,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 1721
+    .line 1777
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -334,7 +334,7 @@
 
     goto :goto_1
 
-    .line 1722
+    .line 1778
     :cond_7
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$600(Lorg/telegram/ui/ManageLinksActivity;)Z
 
@@ -342,7 +342,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 1723
+    .line 1779
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/ManageLinksActivity;->access$1100(Lorg/telegram/ui/ManageLinksActivity;)Lkotlin/Lazy;
@@ -365,7 +365,7 @@
 
     goto :goto_1
 
-    .line 1725
+    .line 1781
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
@@ -393,7 +393,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1727
+    .line 1783
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
@@ -425,7 +425,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1732
+    .line 1788
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

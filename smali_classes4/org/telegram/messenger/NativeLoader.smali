@@ -186,7 +186,7 @@
     :try_start_3
     sget-object v2, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
 
-    const-string v3, "x86_64"
+    const-string/jumbo v3, "x86_64"
 
     .line 133
     invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -195,7 +195,7 @@
 
     if-eqz v3, :cond_2
 
-    const-string v2, "x86_64"
+    const-string/jumbo v2, "x86_64"
 
     goto :goto_0
 
@@ -242,7 +242,7 @@
     goto :goto_0
 
     :cond_5
-    const-string v3, "x86"
+    const-string/jumbo v3, "x86"
 
     .line 141
     invoke-virtual {v2, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -251,7 +251,7 @@
 
     if-eqz v3, :cond_6
 
-    const-string v2, "x86"
+    const-string/jumbo v2, "x86"
 
     goto :goto_0
 
@@ -330,7 +330,7 @@
 
     if-eqz v3, :cond_9
 
-    const-string v2, "x86"
+    const-string/jumbo v2, "x86"
 
     .line 175
     :cond_9
@@ -813,4 +813,13 @@
     :cond_6
     :goto_a
     throw p0
+.end method
+
+.method public static loaded()Z
+    .locals 1
+
+    .line 215
+    sget-boolean v0, Lorg/telegram/messenger/NativeLoader;->nativeLoaded:Z
+
+    return v0
 .end method

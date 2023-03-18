@@ -46,90 +46,90 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-lc6_i0KekEM4EqopZdbLfrHW74(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+.method public static synthetic $r8$lambda$4lrnJ7TuxwYfkx26zhQUWjJbqDg(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupSwipeRefresh$lambda-17(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->showRequiredWalletCreatedDialog$lambda$6(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Ev4VWcO6_ldTFGGt0B0TwAAkEXU(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$AaKw1VkDSj9Eh1bLPmurRu0csiw(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->openPayScreen$lambda-5$lambda-4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$13$lambda$12(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$HeYsyiJM6ffPwSLbxI__nrJNR2M(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$BRS-6jcw0oLSAjfeVWEdalHWAao(Lkotlin/jvm/functions/Function0;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda-14$lambda-10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->showLoginGuideDialog$lambda$1(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MAJJHFZRp4-Di7cQJlFf9nXWN0k(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+.method public static synthetic $r8$lambda$DZE4CKbLi9cSUW7i_T_lu12rXcE(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->showRequiredWalletCreatedDialog$lambda-6(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$NHiJjQO4DaDrUM3Y7QNk8m4_Nj0(Lkotlin/jvm/functions/Function0;)V
+.method public static synthetic $r8$lambda$R9qTpBeL_N31E66N05ttAHjJ1_w(Lkotlin/jvm/functions/Function0;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->showConfirmLogOutDialog$lambda-2(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->showConfirmLogOutDialog$lambda$2(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$OR3hGNoBk5Id40mOIXtA-SSmzaI(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$UurYnUM12rIeqGxjYu-eP36pgQE(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda-14$lambda-11(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$RrrN6bHzfd8bjIjTJbWvjid04x0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+.method public static synthetic $r8$lambda$XiMF1S40YarbTiQMhIfl_KSzokY(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$13(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$c4jHoRbPApP4Sl0Iij6AGdDcSHM(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$Xl8h7oZGP60MdPQCuBkqO51PLQI(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda-14$lambda-13(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$9(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$gtUpRr4vArpA2RJh2QSChKe7WuQ(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
+.method public static synthetic $r8$lambda$mBS9OtrFR4WVlJ8AjU8VV2Zrbeg(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda-14$lambda-9(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->openPayScreen$lambda$5$lambda$4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$u87mw3yVlxs-f_ew8omx7cAZDnI(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+.method public static synthetic $r8$lambda$nenvRUoTPpykmVjD6FfoJeaNimU(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda-14$lambda-13$lambda-12(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupSwipeRefresh$lambda$17(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$vriqvr8h_LoKtPHS8_m4twChObQ(Lkotlin/jvm/functions/Function0;)V
+.method public static synthetic $r8$lambda$zhVZ8bEpshPlmXrEKrtfjP2RrTo(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->showLoginGuideDialog$lambda-1(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->setupListeners$lambda$14$lambda$11(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -409,7 +409,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -480,7 +480,7 @@
     return-void
 .end method
 
-.method private static final openPayScreen$lambda-5$lambda-4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Ljava/lang/String;)V
+.method private static final openPayScreen$lambda$5$lambda$4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Ljava/lang/String;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -605,18 +605,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-14$lambda-10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$14$lambda$10(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 7
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -665,18 +665,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-14$lambda-11(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$14$lambda$11(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -746,14 +746,14 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-14$lambda-13(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$14$lambda$13(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -895,7 +895,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-14$lambda-13$lambda-12(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+.method private static final setupListeners$lambda$14$lambda$13$lambda$12(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -916,7 +916,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-14$lambda-9(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
+.method private static final setupListeners$lambda$14$lambda$9(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -950,7 +950,7 @@
     return-void
 .end method
 
-.method private static final setupSwipeRefresh$lambda-17(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+.method private static final setupSwipeRefresh$lambda$17(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1000,13 +1000,10 @@
 
     invoke-virtual {v1, v2}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffCallback(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;)V
 
-    .line 254
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 252
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    const-string v1, ""
+    const-string v1, "setupWalletRecycleView$lambda$16"
 
     .line 255
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1016,7 +1013,7 @@
     return-void
 .end method
 
-.method private static final showConfirmLogOutDialog$lambda-2(Lkotlin/jvm/functions/Function0;)V
+.method private static final showConfirmLogOutDialog$lambda$2(Lkotlin/jvm/functions/Function0;)V
     .locals 1
 
     const-string v0, "$tmp0"
@@ -1029,7 +1026,7 @@
     return-void
 .end method
 
-.method private static final showLoginGuideDialog$lambda-1(Lkotlin/jvm/functions/Function0;)V
+.method private static final showLoginGuideDialog$lambda$1(Lkotlin/jvm/functions/Function0;)V
     .locals 1
 
     const-string v0, "$tmp0"
@@ -1042,7 +1039,7 @@
     return-void
 .end method
 
-.method private static final showRequiredWalletCreatedDialog$lambda-6(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
+.method private static final showRequiredWalletCreatedDialog$lambda$6(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1328,9 +1325,6 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionIntroActivity;->setQrLoginDelegate(Lorg/telegram/ui/ActionIntroActivity$ActionIntroQRLoginDelegate;)V
 
-    .line 114
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 110
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -1454,9 +1448,9 @@
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 102
-    new-instance v3, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda6;
+    new-instance v3, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda7;
 
-    invoke-direct {v3, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {v3, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     const/4 v4, 0x0
 
@@ -1549,9 +1543,9 @@
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 93
-    new-instance v3, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda7;
+    new-instance v3, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda6;
 
-    invoke-direct {v3, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function0;)V
+    invoke-direct {v3, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     const/4 v4, 0x0
 

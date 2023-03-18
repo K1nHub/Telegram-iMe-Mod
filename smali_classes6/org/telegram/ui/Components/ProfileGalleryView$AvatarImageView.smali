@@ -46,15 +46,15 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ProfileGalleryView;Landroid/content/Context;ILandroid/graphics/Paint;)V
     .locals 2
 
-    .line 1279
+    .line 1312
     iput-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
-    .line 1280
+    .line 1313
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     const/high16 p2, 0x42800000    # 64.0f
 
-    .line 1269
+    .line 1302
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p2
@@ -63,16 +63,16 @@
 
     const-wide/16 v0, -0x1
 
-    .line 1274
+    .line 1307
     iput-wide v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->firstDrawTime:J
 
-    .line 1281
+    .line 1314
     iput p3, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->position:I
 
-    .line 1282
+    .line 1315
     iput-object p4, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->placeholderPaint:Landroid/graphics/Paint;
 
-    .line 1283
+    .line 1316
     invoke-static {p1}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$2600(Lorg/telegram/ui/Components/ProfileGalleryView;)I
 
     move-result p1
@@ -85,7 +85,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;)Lorg/telegram/ui/Components/RadialProgress2;
     .locals 0
 
-    .line 1267
+    .line 1300
     iget-object p0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     return-object p0
@@ -94,7 +94,7 @@
 .method static synthetic access$1802(Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;Lorg/telegram/ui/Components/RadialProgress2;)Lorg/telegram/ui/Components/RadialProgress2;
     .locals 0
 
-    .line 1267
+    .line 1300
     iput-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     return-object p1
@@ -103,7 +103,7 @@
 .method private synthetic lambda$onDraw$0(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 1325
+    .line 1358
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     iget v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimatorStartValue:F
@@ -128,10 +128,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 1381
+    .line 1414
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1382
+    .line 1415
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$2000(Lorg/telegram/ui/Components/ProfileGalleryView;)Z
@@ -140,7 +140,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1383
+    .line 1416
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
@@ -152,7 +152,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 1298
+    .line 1331
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
@@ -167,7 +167,7 @@
 
     return-void
 
-    .line 1301
+    .line 1334
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
@@ -175,7 +175,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 1302
+    .line 1335
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->position:I
@@ -184,7 +184,7 @@
 
     move-result v0
 
-    .line 1303
+    .line 1336
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$200(Lorg/telegram/ui/Components/ProfileGalleryView;)Z
@@ -195,7 +195,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1306
+    .line 1339
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
@@ -205,7 +205,7 @@
 
     move-result-object v2
 
-    .line 1308
+    .line 1341
     iget-object v3, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$1700(Lorg/telegram/ui/Components/ProfileGalleryView;)Ljava/util/ArrayList;
@@ -236,7 +236,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 1309
+    .line 1342
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$1700(Lorg/telegram/ui/Components/ProfileGalleryView;)Ljava/util/ArrayList;
@@ -271,7 +271,7 @@
     :cond_4
     if-eqz v2, :cond_3
 
-    .line 1311
+    .line 1344
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->isVideo:Z
 
     if-eqz v3, :cond_2
@@ -297,12 +297,12 @@
 
     if-eqz v2, :cond_6
 
-    .line 1314
+    .line 1347
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimator:Landroid/animation/ValueAnimator;
 
     if-nez v2, :cond_b
 
-    .line 1316
+    .line 1349
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RadialProgress2;->getProgress()F
@@ -313,14 +313,14 @@
 
     if-gez v2, :cond_5
 
-    .line 1317
+    .line 1350
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-virtual {v2, v4, v6}, Lorg/telegram/ui/Components/RadialProgress2;->setProgress(FZ)V
 
     const-wide/16 v7, 0x64
 
-    .line 1320
+    .line 1353
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
@@ -334,7 +334,7 @@
 
     new-array v2, v2, [F
 
-    .line 1321
+    .line 1354
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -343,10 +343,10 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1322
+    .line 1355
     invoke-virtual {v2, v7, v8}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 1323
+    .line 1356
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimator:Landroid/animation/ValueAnimator;
 
     iget v4, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimatorStartValue:F
@@ -357,14 +357,14 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1324
+    .line 1357
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1325
+    .line 1358
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView$$ExternalSyntheticLambda0;
@@ -373,7 +373,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1327
+    .line 1360
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView$1;
@@ -382,14 +382,14 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1334
+    .line 1367
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressHideAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_5
 
-    .line 1337
+    .line 1370
     :cond_6
     iget-wide v9, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->firstDrawTime:J
 
@@ -397,7 +397,7 @@
 
     if-gez v0, :cond_7
 
-    .line 1338
+    .line 1371
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -406,7 +406,7 @@
 
     goto :goto_3
 
-    .line 1340
+    .line 1373
     :cond_7
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -416,7 +416,7 @@
 
     sub-long/2addr v6, v8
 
-    .line 1341
+    .line 1374
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->isVideo:Z
 
     const-wide/16 v8, 0xfa
@@ -441,7 +441,7 @@
 
     if-lez v0, :cond_9
 
-    .line 1345
+    .line 1378
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -458,7 +458,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RadialProgress2;->setOverrideAlpha(F)V
 
-    .line 1349
+    .line 1382
     :cond_9
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -469,20 +469,20 @@
 
     if-eqz v0, :cond_a
 
-    .line 1350
+    .line 1383
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->invalidate()V
 
     goto :goto_4
 
-    .line 1352
+    .line 1385
     :cond_a
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
-    .line 1354
+    .line 1387
     :goto_4
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->invalidate()V
 
-    .line 1356
+    .line 1389
     :cond_b
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -505,7 +505,7 @@
 
     const/4 v8, 0x0
 
-    .line 1357
+    .line 1390
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -526,7 +526,7 @@
 
     goto/16 :goto_7
 
-    .line 1358
+    .line 1391
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
@@ -542,7 +542,7 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 1359
+    .line 1392
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->rect:Landroid/graphics/RectF;
@@ -561,7 +561,7 @@
 
     invoke-virtual {v0, v1, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1360
+    .line 1393
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->rect:Landroid/graphics/RectF;
@@ -586,7 +586,7 @@
 
     goto :goto_7
 
-    .line 1362
+    .line 1395
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
@@ -594,7 +594,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    .line 1363
+    .line 1396
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->rect:Landroid/graphics/RectF;
@@ -618,7 +618,7 @@
 
     if-ge v5, v0, :cond_e
 
-    .line 1365
+    .line 1398
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->radii:[F
@@ -631,7 +631,7 @@
 
     aput v0, v2, v5
 
-    .line 1366
+    .line 1399
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->radii:[F
@@ -650,7 +650,7 @@
 
     goto :goto_6
 
-    .line 1368
+    .line 1401
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
@@ -664,7 +664,7 @@
 
     invoke-virtual {v2, v3, v0, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 1369
+    .line 1402
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->path:Landroid/graphics/Path;
@@ -673,12 +673,12 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1372
+    .line 1405
     :cond_f
     :goto_7
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1374
+    .line 1407
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     if-eqz v0, :cond_10
@@ -691,7 +691,7 @@
 
     if-lez v0, :cond_10
 
-    .line 1375
+    .line 1408
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RadialProgress2;->draw(Landroid/graphics/Canvas;)V
@@ -711,15 +711,15 @@
 .method protected onSizeChanged(IIII)V
     .locals 3
 
-    .line 1288
+    .line 1321
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
-    .line 1289
+    .line 1322
     iget-object p3, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     if-eqz p3, :cond_1
 
-    .line 1290
+    .line 1323
     iget-object p3, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$2700(Lorg/telegram/ui/Components/ProfileGalleryView;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -748,12 +748,12 @@
 
     const/high16 p4, 0x42a00000    # 80.0f
 
-    .line 1291
+    .line 1324
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp2(F)I
 
     move-result p4
 
-    .line 1292
+    .line 1325
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
     iget v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->radialProgressSize:I

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;->$r8$lambda$iJrq-pQm3mrt-atHpq-ZiTKrFJU(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;->$r8$lambda$v9IebjP7fcs0mhk5_SdTu3ppgYY(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method

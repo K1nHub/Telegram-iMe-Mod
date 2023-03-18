@@ -72,12 +72,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.AutoDeleteMediaTask;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
@@ -105,6 +104,7 @@ import org.webrtc.EglBase;
 /* renamed from: org.telegram.ui.Components.InstantCameraView */
 /* loaded from: classes6.dex */
 public class InstantCameraView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    private static final int[] ALLOW_BIG_CAMERA_WHITELIST = {285904780};
     private float animationTranslationY;
     private AnimatorSet animatorSet;
     private Size aspectRatio;
@@ -129,7 +129,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
     private boolean isSecretChat;
 
     /* renamed from: iv */
-    private byte[] f1717iv;
+    private byte[] f1725iv;
     private byte[] key;
     private Bitmap lastBitmap;
     private float[] mMVPMatrix;
@@ -281,7 +281,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ImageView imageView = new ImageView(context);
         this.switchCameraButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.switchCameraButton.setContentDescription(LocaleController.getString("AccDescrSwitchCamera", C3158R.string.AccDescrSwitchCamera));
+        this.switchCameraButton.setContentDescription(LocaleController.getString("AccDescrSwitchCamera", C3286R.string.AccDescrSwitchCamera));
         addView(this.switchCameraButton, LayoutHelper.createFrame(62, 62, 83, 8, 0, 0, 0));
         this.switchCameraButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.InstantCameraView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -292,7 +292,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ImageView imageView2 = new ImageView(context);
         this.muteImageView = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.muteImageView.setImageResource(C3158R.C3160drawable.video_mute);
+        this.muteImageView.setImageResource(C3286R.C3288drawable.video_mute);
         this.muteImageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         addView(this.muteImageView, LayoutHelper.createFrame(48, 48, 17));
         final Paint paint3 = new Paint(1);
@@ -449,7 +449,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             this.size = ((Long) objArr[5]).longValue();
             if (this.encryptedFile != null) {
                 this.key = (byte[]) objArr[3];
-                this.f1717iv = (byte[]) objArr[4];
+                this.f1725iv = (byte[]) objArr[4];
             }
         }
     }
@@ -544,11 +544,11 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             return;
         }
         if (Build.VERSION.SDK_INT >= 21) {
-            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) ContextCompat.getDrawable(getContext(), C3158R.C3160drawable.avd_flip);
+            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) ContextCompat.getDrawable(getContext(), C3286R.C3288drawable.avd_flip);
             this.switchCameraDrawable = animatedVectorDrawable;
             this.switchCameraButton.setImageDrawable(animatedVectorDrawable);
         } else {
-            this.switchCameraButton.setImageResource(C3158R.C3160drawable.vd_flip);
+            this.switchCameraButton.setImageResource(C3286R.C3288drawable.vd_flip);
         }
         this.textureOverlayView.setAlpha(1.0f);
         this.textureOverlayView.invalidate();
@@ -562,7 +562,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         if (bitmap != null) {
             this.textureOverlayView.setImageBitmap(bitmap);
         } else {
-            this.textureOverlayView.setImageResource(C3158R.C3160drawable.icplaceholder);
+            this.textureOverlayView.setImageResource(C3286R.C3288drawable.icplaceholder);
         }
         this.cameraReady = false;
         if (z) {
@@ -577,7 +577,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         this.file = null;
         this.encryptedFile = null;
         this.key = null;
-        this.f1717iv = null;
+        this.f1725iv = null;
         this.needDrawFlickerStub = true;
         if (initCamera()) {
             MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
@@ -801,7 +801,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                 this.file = null;
                 this.encryptedFile = null;
                 this.key = null;
-                this.f1717iv = null;
+                this.f1725iv = null;
                 VideoEditedInfo videoEditedInfo = this.videoEditedInfo;
                 long j = videoEditedInfo.estimatedDuration;
                 double d = j;
@@ -834,7 +834,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             videoEditedInfo3.file = this.file;
             videoEditedInfo3.encryptedFile = this.encryptedFile;
             videoEditedInfo3.key = this.key;
-            videoEditedInfo3.f1470iv = this.f1717iv;
+            videoEditedInfo3.f1475iv = this.f1725iv;
             this.baseFragment.sendMedia(new MediaController.PhotoEntry(0, 0, 0L, this.cameraFile.getAbsolutePath(), 0, true, 0, 0, 0L), this.videoEditedInfo, z, i2, false, null);
             if (i2 != 0) {
                 startAnimation(false);
@@ -1053,18 +1053,18 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
     private Size chooseOptimalSize(ArrayList<Size> arrayList) {
         ArrayList<Size> arrayList2 = new ArrayList<>();
         for (int i = 0; i < arrayList.size(); i++) {
-            if (Math.max(arrayList.get(i).mHeight, arrayList.get(i).mWidth) <= 1200 && Math.min(arrayList.get(i).mHeight, arrayList.get(i).mWidth) >= 320) {
+            if (Math.max(arrayList.get(i).mHeight, arrayList.get(i).mWidth) <= 1440 && Math.min(arrayList.get(i).mHeight, arrayList.get(i).mWidth) >= 320) {
                 arrayList2.add(arrayList.get(i));
             }
         }
-        if (arrayList2.isEmpty() || SharedConfig.getDevicePerformanceClass() == 0 || SharedConfig.getDevicePerformanceClass() == 1) {
+        if (arrayList2.isEmpty() || !allowBigSizeCamera()) {
             if (!arrayList2.isEmpty()) {
                 arrayList = arrayList2;
             }
             if (Build.MANUFACTURER.equalsIgnoreCase("Xiaomi")) {
-                return CameraController.chooseOptimalSize(arrayList, 640, LiteMode.FLAGS_CHAT, this.aspectRatio);
+                return CameraController.chooseOptimalSize(arrayList, 640, 480, this.aspectRatio);
             }
-            return CameraController.chooseOptimalSize(arrayList, LiteMode.FLAGS_CHAT, 270, this.aspectRatio);
+            return CameraController.chooseOptimalSize(arrayList, 480, 270, this.aspectRatio);
         }
         Collections.sort(arrayList2, InstantCameraView$$ExternalSyntheticLambda6.INSTANCE);
         return arrayList2.get(0);
@@ -1078,6 +1078,24 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             return -1;
         }
         return abs > abs2 ? 1 : 0;
+    }
+
+    private boolean allowBigSizeCamera() {
+        if (Math.max(SharedConfig.getDevicePerformanceClass(), SharedConfig.getLegacyDevicePerformanceClass()) == 2) {
+            return true;
+        }
+        int hashCode = (Build.MANUFACTURER + " " + Build.DEVICE).toUpperCase().hashCode();
+        int i = 0;
+        while (true) {
+            int[] iArr = ALLOW_BIG_CAMERA_WHITELIST;
+            if (i >= iArr.length) {
+                return false;
+            }
+            if (iArr[i] == hashCode) {
+                return true;
+            }
+            i++;
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1189,14 +1207,14 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         }
         Timer timer2 = new Timer();
         this.progressTimer = timer2;
-        timer2.schedule(new C453511(), 0L, 17L);
+        timer2.schedule(new C467011(), 0L, 17L);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.InstantCameraView$11 */
     /* loaded from: classes6.dex */
-    public class C453511 extends TimerTask {
-        C453511() {
+    public class C467011 extends TimerTask {
+        C467011() {
         }
 
         @Override // java.util.TimerTask, java.lang.Runnable
@@ -1204,7 +1222,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InstantCameraView$11$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InstantCameraView.C453511.this.lambda$run$0();
+                    InstantCameraView.C467011.this.lambda$run$0();
                 }
             });
         }
@@ -1791,18 +1809,18 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             this.lastCameraId = 0;
             this.buffers = new ArrayBlockingQueue<>(10);
             this.keyframeThumbs = new ArrayList<>();
-            this.recorderRunnable = new RunnableC45461();
+            this.recorderRunnable = new RunnableC46811();
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.InstantCameraView$VideoRecorder$1 */
         /* loaded from: classes6.dex */
-        public class RunnableC45461 implements Runnable {
-            RunnableC45461() {
+        public class RunnableC46811 implements Runnable {
+            RunnableC46811() {
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:13:0x002f, code lost:
-                if (r16.this$1.sendWhenDone == 0) goto L61;
+            /* JADX WARN: Code restructure failed: missing block: B:16:0x003d, code lost:
+                if (r18.this$1.sendWhenDone == 0) goto L72;
              */
             @Override // java.lang.Runnable
             /*
@@ -1811,10 +1829,10 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             */
             public void run() {
                 /*
-                    Method dump skipped, instructions count: 318
+                    Method dump skipped, instructions count: 366
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.InstantCameraView.VideoRecorder.RunnableC45461.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.InstantCameraView.VideoRecorder.RunnableC46811.run():void");
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -2070,7 +2088,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             InstantCameraView.this.videoEditedInfo.file = InstantCameraView.this.file;
             InstantCameraView.this.videoEditedInfo.encryptedFile = InstantCameraView.this.encryptedFile;
             InstantCameraView.this.videoEditedInfo.key = InstantCameraView.this.key;
-            InstantCameraView.this.videoEditedInfo.f1470iv = InstantCameraView.this.f1717iv;
+            InstantCameraView.this.videoEditedInfo.f1475iv = InstantCameraView.this.f1725iv;
             InstantCameraView.this.videoEditedInfo.estimatedSize = Math.max(1L, InstantCameraView.this.size);
             InstantCameraView.this.videoEditedInfo.framerate = 25;
             VideoEditedInfo videoEditedInfo = InstantCameraView.this.videoEditedInfo;
@@ -2543,7 +2561,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public String createFragmentShader(Size size) {
-        return (SharedConfig.getDevicePerformanceClass() == 0 || SharedConfig.getDevicePerformanceClass() == 1 || ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f < ((float) MessagesController.getInstance(this.currentAccount).roundVideoSize)) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   vec2 coord = resolution * 0.5;\n   float radius = 0.51 * resolution.x;\n   float d = length(coord - gl_FragCoord.xy) - radius;\n   float t = clamp(d, 0.0, 1.0);\n   vec3 color = mix(textColor.rgb, vec3(1, 1, 1), t);\n   gl_FragColor = vec4(color * alpha, alpha);\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nconst float kernel = 1.0;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   float pixelSizeX = 1.0 / preview.x;\n   float pixelSizeY = 1.0 / preview.y;\n   vec3 accumulation = vec3(0);\n   vec3 weightsum = vec3(0);\n   for (float x = -kernel; x < kernel; x++){\n       for (float y = -kernel; y < kernel; y++){\n           accumulation += texture2D(sTexture, vTextureCoord + vec2(x * pixelSizeX, y * pixelSizeY)).xyz;\n           weightsum += 1.0;\n       }\n   }\n   vec4 textColor = vec4(accumulation / weightsum, 1.0);\n   vec2 coord = resolution * 0.5;\n   float radius = 0.51 * resolution.x;\n   float d = length(coord - gl_FragCoord.xy) - radius;\n   float t = clamp(d, 0.0, 1.0);\n   vec3 color = mix(textColor.rgb, vec3(1, 1, 1), t);\n   gl_FragColor = vec4(color * alpha, alpha);\n}\n";
+        return (!allowBigSizeCamera() || ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f < ((float) MessagesController.getInstance(this.currentAccount).roundVideoSize)) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   vec2 coord = resolution * 0.5;\n   float radius = 0.51 * resolution.x;\n   float d = length(coord - gl_FragCoord.xy) - radius;\n   float t = clamp(d, 0.0, 1.0);\n   vec3 color = mix(textColor.rgb, vec3(1, 1, 1), t);\n   gl_FragColor = vec4(color * alpha, alpha);\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 coord = resolution * 0.5;\n   float radius = 0.51 * resolution.x;\n   float d = length(coord - gl_FragCoord.xy) - radius;\n   float t = clamp(d, 0.0, 1.0);\n   if (t == 0.0) {\n       float pixelSizeX = 1.0 / preview.x;\n       float pixelSizeY = 1.0 / preview.y;\n       vec3 accumulation = vec3(0);\n       for (float x = 0.0; x < 2.0; x++){\n           for (float y = 0.0; y < 2.0; y++){\n               accumulation += texture2D(sTexture, vTextureCoord + vec2(x * pixelSizeX, y * pixelSizeY)).xyz;\n           }\n       }\n       vec4 textColor = vec4(accumulation / vec3(4, 4, 4), 1);\n       gl_FragColor = textColor * alpha;\n   } else {\n       gl_FragColor = vec4(1, 1, 1, alpha);\n   }\n}\n";
     }
 
     /* renamed from: org.telegram.ui.Components.InstantCameraView$InstantViewCameraContainer */

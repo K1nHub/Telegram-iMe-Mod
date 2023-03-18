@@ -11,6 +11,6 @@ public final /* synthetic */ class NeurobotsStoreActivity$$ExternalSyntheticLamb
 
     @Override // io.reactivex.functions.Action
     public final void run() {
-        NeurobotsStoreActivity.m1495updateBotStatus$lambda14();
+        NeurobotsStoreActivity.updateBotStatus$lambda$13();
     }
 }

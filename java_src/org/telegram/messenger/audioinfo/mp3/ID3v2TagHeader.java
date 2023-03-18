@@ -1,6 +1,6 @@
 package org.telegram.messenger.audioinfo.mp3;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +27,7 @@ public class ID3v2TagHeader {
         this.footerSize = 0;
         long position = positionInputStream.getPosition();
         ID3v2DataInput iD3v2DataInput = new ID3v2DataInput(positionInputStream);
-        String str = new String(iD3v2DataInput.readFully(3), C0474C.ISO88591_NAME);
+        String str = new String(iD3v2DataInput.readFully(3), C0468C.ISO88591_NAME);
         if (!"ID3".equals(str)) {
             throw new ID3v2Exception("Invalid ID3 identifier: " + str);
         }

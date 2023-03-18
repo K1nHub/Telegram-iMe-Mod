@@ -3539,9 +3539,13 @@
     :cond_6
     invoke-direct {p0}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->resentSearchAvailable()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_a
+    if-eqz v4, :cond_a
+
+    instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
+
+    if-nez v3, :cond_a
 
     .line 934
     iget-object v3, p0, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->delegate:Lorg/telegram/ui/Adapters/DialogsSearchAdapter$DialogsSearchAdapterDelegate;

@@ -6,7 +6,7 @@ public class TLRPC$TL_messages_getChats extends TLObject {
     public static int constructor = 1240027791;
 
     /* renamed from: id */
-    public ArrayList<Long> f1581id = new ArrayList<>();
+    public ArrayList<Long> f1587id = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -17,10 +17,10 @@ public class TLRPC$TL_messages_getChats extends TLObject {
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1581id.size();
+        int size = this.f1587id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt64(this.f1581id.get(i).longValue());
+            abstractSerializedData.writeInt64(this.f1587id.get(i).longValue());
         }
     }
 }

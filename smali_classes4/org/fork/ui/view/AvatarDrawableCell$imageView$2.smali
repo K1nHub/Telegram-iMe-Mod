@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 22
+    .line 31
     invoke-virtual {p0}, Lorg/fork/ui/view/AvatarDrawableCell$imageView$2;->invoke()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/BackupImageView;
     .locals 1
 
-    .line 22
+    .line 31
     iget-object v0, p0, Lorg/fork/ui/view/AvatarDrawableCell$imageView$2;->this$0:Lorg/fork/ui/view/AvatarDrawableCell;
 
     invoke-static {v0}, Lorg/fork/ui/view/AvatarDrawableCell;->access$initBackupImageView(Lorg/fork/ui/view/AvatarDrawableCell;)Lorg/telegram/ui/Components/BackupImageView;

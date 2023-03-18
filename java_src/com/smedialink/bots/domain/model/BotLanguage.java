@@ -33,18 +33,21 @@ public enum BotLanguage {
             BotLanguage botLanguage;
             Intrinsics.checkNotNullParameter(langCode, "langCode");
             BotLanguage[] values = BotLanguage.values();
-            int length = values.length;
-            while (true) {
-                length--;
-                if (length < 0) {
-                    botLanguage = null;
-                    break;
-                }
-                botLanguage = values[length];
-                if (Intrinsics.areEqual(botLanguage.getLangCode(), langCode)) {
-                    break;
+            int length = values.length - 1;
+            if (length >= 0) {
+                while (true) {
+                    int i = length - 1;
+                    botLanguage = values[length];
+                    if (Intrinsics.areEqual(botLanguage.getLangCode(), langCode)) {
+                        break;
+                    } else if (i < 0) {
+                        break;
+                    } else {
+                        length = i;
+                    }
                 }
             }
+            botLanguage = null;
             return botLanguage == null ? BotLanguage.RU : botLanguage;
         }
     }

@@ -16,7 +16,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: StakingOperationItem.kt */
 /* loaded from: classes3.dex */
 public final class StakingOperationItem extends NoChildNode {
@@ -25,7 +25,7 @@ public final class StakingOperationItem extends NoChildNode {
     private final StakingOperationCost fee;
 
     /* renamed from: id */
-    private final long f286id;
+    private final long f288id;
     private final boolean isBadgeVisible;
     private final boolean safe;
     private final int stakingIconResId;
@@ -42,16 +42,28 @@ public final class StakingOperationItem extends NoChildNode {
 
         static {
             int[] iArr = new int[StakingOperationType.values().length];
-            iArr[StakingOperationType.APPROVAL.ordinal()] = 1;
-            iArr[StakingOperationType.DEPOSIT.ordinal()] = 2;
-            iArr[StakingOperationType.WITHDRAWAL.ordinal()] = 3;
-            iArr[StakingOperationType.CLAIM.ordinal()] = 4;
+            try {
+                iArr[StakingOperationType.APPROVAL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[StakingOperationType.DEPOSIT.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[StakingOperationType.WITHDRAWAL.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[StakingOperationType.CLAIM.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
     public final long component1() {
-        return this.f286id;
+        return this.f288id;
     }
 
     public final boolean component10() {
@@ -110,14 +122,14 @@ public final class StakingOperationItem extends NoChildNode {
         }
         if (obj instanceof StakingOperationItem) {
             StakingOperationItem stakingOperationItem = (StakingOperationItem) obj;
-            return this.f286id == stakingOperationItem.f286id && Intrinsics.areEqual(this.amount, stakingOperationItem.amount) && Intrinsics.areEqual(this.tokenSymbol, stakingOperationItem.tokenSymbol) && this.type == stakingOperationItem.type && this.status == stakingOperationItem.status && Intrinsics.areEqual(this.createdAt, stakingOperationItem.createdAt) && Intrinsics.areEqual(this.txHash, stakingOperationItem.txHash) && Intrinsics.areEqual(this.fee, stakingOperationItem.fee) && this.safe == stakingOperationItem.safe && this.isBadgeVisible == stakingOperationItem.isBadgeVisible && this.stakingIconResId == stakingOperationItem.stakingIconResId;
+            return this.f288id == stakingOperationItem.f288id && Intrinsics.areEqual(this.amount, stakingOperationItem.amount) && Intrinsics.areEqual(this.tokenSymbol, stakingOperationItem.tokenSymbol) && this.type == stakingOperationItem.type && this.status == stakingOperationItem.status && Intrinsics.areEqual(this.createdAt, stakingOperationItem.createdAt) && Intrinsics.areEqual(this.txHash, stakingOperationItem.txHash) && Intrinsics.areEqual(this.fee, stakingOperationItem.fee) && this.safe == stakingOperationItem.safe && this.isBadgeVisible == stakingOperationItem.isBadgeVisible && this.stakingIconResId == stakingOperationItem.stakingIconResId;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m716m = ((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f286id) * 31) + this.amount.hashCode()) * 31) + this.tokenSymbol.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.txHash.hashCode()) * 31;
+        int m716m = ((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f288id) * 31) + this.amount.hashCode()) * 31) + this.tokenSymbol.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.txHash.hashCode()) * 31;
         StakingOperationCost stakingOperationCost = this.fee;
         int hashCode = (m716m + (stakingOperationCost == null ? 0 : stakingOperationCost.hashCode())) * 31;
         boolean z = this.safe;
@@ -131,11 +143,11 @@ public final class StakingOperationItem extends NoChildNode {
     }
 
     public String toString() {
-        return "StakingOperationItem(id=" + this.f286id + ", amount=" + this.amount + ", tokenSymbol=" + this.tokenSymbol + ", type=" + this.type + ", status=" + this.status + ", createdAt=" + this.createdAt + ", txHash=" + this.txHash + ", fee=" + this.fee + ", safe=" + this.safe + ", isBadgeVisible=" + this.isBadgeVisible + ", stakingIconResId=" + this.stakingIconResId + ')';
+        return "StakingOperationItem(id=" + this.f288id + ", amount=" + this.amount + ", tokenSymbol=" + this.tokenSymbol + ", type=" + this.type + ", status=" + this.status + ", createdAt=" + this.createdAt + ", txHash=" + this.txHash + ", fee=" + this.fee + ", safe=" + this.safe + ", isBadgeVisible=" + this.isBadgeVisible + ", stakingIconResId=" + this.stakingIconResId + ')';
     }
 
     public final long getId() {
-        return this.f286id;
+        return this.f288id;
     }
 
     public final BigDecimal getAmount() {
@@ -186,7 +198,7 @@ public final class StakingOperationItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(status, "status");
         Intrinsics.checkNotNullParameter(createdAt, "createdAt");
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        this.f286id = j;
+        this.f288id = j;
         this.amount = amount;
         this.tokenSymbol = tokenSymbol;
         this.type = type;
@@ -210,15 +222,15 @@ public final class StakingOperationItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3158R.string.staking_operation_type_approval;
+            i = C3286R.string.staking_operation_type_approval;
         } else if (i2 == 2) {
-            i = C3158R.string.staking_operation_type_deposit;
+            i = C3286R.string.staking_operation_type_deposit;
         } else if (i2 == 3) {
-            i = this.safe ? C3158R.string.staking_operation_type_withdrawal_request : C3158R.string.staking_operation_type_immediate_withdrawal;
+            i = this.safe ? C3286R.string.staking_operation_type_withdrawal_request : C3286R.string.staking_operation_type_immediate_withdrawal;
         } else if (i2 != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3158R.string.staking_operation_type_claim;
+            i = C3286R.string.staking_operation_type_claim;
         }
         return resourceManager.getString(i);
     }
@@ -238,15 +250,15 @@ public final class StakingOperationItem extends NoChildNode {
             if (i != 2) {
                 if (i != 3) {
                     if (i == 4) {
-                        return C3158R.C3160drawable.fork_ic_transaction_receive;
+                        return C3286R.C3288drawable.fork_ic_transaction_receive;
                     }
                     throw new NoWhenBranchMatchedException();
                 }
-                return C3158R.C3160drawable.fork_ic_transaction_staking_withdraw;
+                return C3286R.C3288drawable.fork_ic_transaction_staking_withdraw;
             }
-            return C3158R.C3160drawable.fork_ic_transaction_sent;
+            return C3286R.C3288drawable.fork_ic_transaction_sent;
         }
-        return C3158R.C3160drawable.fork_ic_transaction_approve;
+        return C3286R.C3288drawable.fork_ic_transaction_approve;
     }
 
     public final String getTransactionTimeText() {
@@ -256,7 +268,7 @@ public final class StakingOperationItem extends NoChildNode {
     public final String getAmount(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
-            return resourceManager.getString(C3158R.string.wallet_transactions_type_approve_title, resourceManager.getString(getTokenInfo().getShortName()));
+            return resourceManager.getString(C3286R.string.wallet_transactions_type_approve_title, resourceManager.getString(getTokenInfo().getShortName()));
         }
         return getSymbol() + BalanceFormatter.formatBalance(this.amount, getTokenInfo().getDecimals()) + ' ' + resourceManager.getString(getTokenInfo().getShortName());
     }

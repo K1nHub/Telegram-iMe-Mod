@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;
+    iput-object p1, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;
+    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lcom/smedialink/storage/domain/model/Result;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->$r8$lambda$RZP4ay87O_kNue6Bg8vC8-1HzJI(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;Lcom/smedialink/storage/domain/model/Result;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;->$r8$lambda$0zpyOPla83TOk_oXxLTS6d1efE4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

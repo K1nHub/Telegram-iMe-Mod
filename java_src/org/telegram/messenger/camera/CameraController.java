@@ -30,7 +30,6 @@ import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
@@ -844,7 +843,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     this.recorder.setMaxFileSize(1073741824L);
                     this.recorder.setVideoFrameRate(30);
                     this.recorder.setMaxDuration(0);
-                    Size chooseOptimalSize = chooseOptimalSize(cameraInfo.getPictureSizes(), 720, LiteMode.FLAGS_CHAT, new Size(16, 9));
+                    Size chooseOptimalSize = chooseOptimalSize(cameraInfo.getPictureSizes(), 720, 480, new Size(16, 9));
                     this.recorder.setVideoEncodingBitRate(Math.min(chooseOptimalSize.mHeight, chooseOptimalSize.mWidth) >= 720 ? 3500000 : 1800000);
                     this.recorder.setVideoSize(chooseOptimalSize.getWidth(), chooseOptimalSize.getHeight());
                     this.recorder.setOnInfoListener(this);

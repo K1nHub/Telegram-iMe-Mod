@@ -25,7 +25,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.DialogType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -114,7 +114,7 @@ public class TopicView extends LinearLayout {
         this.isActive = z;
         if (topic.getTopicId() == -2) {
             TextView nameTextView = getNameTextView();
-            String internalString = LocaleController.getInternalString(C3158R.string.topics_title_notopic);
+            String internalString = LocaleController.getInternalString(C3286R.string.topics_title_notopic);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.topics_title_notopic)");
             String upperCase = internalString.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -176,9 +176,9 @@ public class TopicView extends LinearLayout {
         this.isActive = z2;
         TextView nameTextView = getNameTextView();
         if (z) {
-            i = C3158R.string.folder_fab_settings_fab_archive;
+            i = C3286R.string.folder_fab_settings_fab_archive;
         } else {
-            i = C3158R.string.main_list;
+            i = C3286R.string.main_list;
         }
         String internalString = LocaleController.getInternalString(i);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(\n     …tring.main_list\n        )");
@@ -187,9 +187,9 @@ public class TopicView extends LinearLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i2 = C3158R.C3160drawable.fork_custom_forward_switch_archive;
+            i2 = C3286R.C3288drawable.fork_custom_forward_switch_archive;
         } else {
-            i2 = C3158R.C3160drawable.fork_custom_forward_switch_main;
+            i2 = C3286R.C3288drawable.fork_custom_forward_switch_main;
         }
         iconView.setImageResource(i2);
         updateColors();
@@ -199,7 +199,7 @@ public class TopicView extends LinearLayout {
         int i;
         this.messagesContextMenu = Boolean.valueOf(z);
         this.isActive = z2;
-        String title = z ? LocaleController.getInternalString(C3158R.string.settings_interface_message_header) : LocaleController.getString(C3158R.string.MediaTab);
+        String title = z ? LocaleController.getInternalString(C3286R.string.settings_interface_message_header) : LocaleController.getString(C3286R.string.MediaTab);
         TextView nameTextView = getNameTextView();
         Intrinsics.checkNotNullExpressionValue(title, "title");
         String upperCase = title.toUpperCase(Locale.ROOT);
@@ -207,9 +207,9 @@ public class TopicView extends LinearLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i = C3158R.C3160drawable.fork_settings_chat;
+            i = C3286R.C3288drawable.fork_settings_chat;
         } else {
-            i = C3158R.C3160drawable.fork_cloud_filter_image;
+            i = C3286R.C3288drawable.fork_cloud_filter_image;
         }
         iconView.setImageResource(i);
         updateColors();
@@ -232,11 +232,11 @@ public class TopicView extends LinearLayout {
                 }
                 if (!z) {
                     TopicModel topicModel2 = this.topic;
-                    if ((topicModel2 == null ? null : Boolean.valueOf(topicModel2.isUserTopic())) != null) {
+                    if ((topicModel2 != null ? Boolean.valueOf(topicModel2.isUserTopic()) : null) != null) {
                         color = Theme.getColor("iMe_dialogs_userTopicActiveBackground");
                     } else {
                         TopicModel topicModel3 = this.topic;
-                        if ((topicModel3 == null ? null : Boolean.valueOf(topicModel3.isAutoTopic())) == null) {
+                        if ((topicModel3 != null ? Boolean.valueOf(topicModel3.isAutoTopic()) : null) == null) {
                             return;
                         }
                         TopicModel topicModel4 = this.topic;
@@ -245,7 +245,7 @@ public class TopicView extends LinearLayout {
                         color = Theme.getColor(TelegramThemeKeys$Dialog.buildTopicActiveBackgroundKey(icon));
                     }
                 } else if (Theme.isCurrentThemeDefault()) {
-                    color = ContextCompat.getColor(getContext(), C3158R.C3159color.fork_color);
+                    color = ContextCompat.getColor(getContext(), C3286R.C3287color.fork_color);
                 } else {
                     color = Theme.getColor("chats_actionBackground");
                 }

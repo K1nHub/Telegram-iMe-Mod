@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectMessageSignBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,146:1\n56#2,6:147\n*S KotlinDebug\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog$presenter$2\n*L\n36#1:147,6\n*E\n"
+    value = "SMAP\nWalletConnectMessageSignBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,147:1\n56#2,6:148\n*S KotlinDebug\n*F\n+ 1 WalletConnectMessageSignBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignBottomSheetDialog$presenter$2\n*L\n36#1:148,6\n*E\n"
 .end annotation
 
 

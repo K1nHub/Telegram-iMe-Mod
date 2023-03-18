@@ -42,7 +42,7 @@ public final class DialogTranslationSettingsDb {
     }
 
     public String toString() {
-        return "DialogTranslationSettingsDb(isInTextTranslateEnabled=" + this.isInTextTranslateEnabled + ", inTextTranslateTargetLangCode=" + ((Object) this.inTextTranslateTargetLangCode) + ", isOutTextTranslateEnabled=" + this.isOutTextTranslateEnabled + ", outTextTranslateTargetLangCode=" + this.outTextTranslateTargetLangCode + ", dialogId=" + this.dialogId + ", userId=" + this.userId + ')';
+        return "DialogTranslationSettingsDb(isInTextTranslateEnabled=" + this.isInTextTranslateEnabled + ", inTextTranslateTargetLangCode=" + this.inTextTranslateTargetLangCode + ", isOutTextTranslateEnabled=" + this.isOutTextTranslateEnabled + ", outTextTranslateTargetLangCode=" + this.outTextTranslateTargetLangCode + ", dialogId=" + this.dialogId + ", userId=" + this.userId + ')';
     }
 
     public DialogTranslationSettingsDb(boolean z, String str, boolean z2, String outTextTranslateTargetLangCode, long j, long j2) {

@@ -3,7 +3,7 @@ package com.smedialink.utils.extentions.model.filter;
 import com.smedialink.storage.domain.model.filters.FilterFab;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: FilterFabExt.kt */
 /* loaded from: classes3.dex */
 public final class FilterFabExtKt {
@@ -15,15 +15,42 @@ public final class FilterFabExtKt {
 
         static {
             int[] iArr = new int[FilterFab.values().length];
-            iArr[FilterFab.CREATE_CHAT.ordinal()] = 1;
-            iArr[FilterFab.ARCHIVE.ordinal()] = 2;
-            iArr[FilterFab.CLOUD.ordinal()] = 3;
-            iArr[FilterFab.MARK_ALL_READ.ordinal()] = 4;
-            iArr[FilterFab.WALLET.ordinal()] = 5;
-            iArr[FilterFab.CONTACTS.ordinal()] = 6;
-            iArr[FilterFab.MUSIC.ordinal()] = 7;
-            iArr[FilterFab.ALBUMS.ordinal()] = 8;
-            iArr[FilterFab.CREATE_ALBUM.ordinal()] = 9;
+            try {
+                iArr[FilterFab.CREATE_CHAT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[FilterFab.ARCHIVE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[FilterFab.CLOUD.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[FilterFab.MARK_ALL_READ.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[FilterFab.WALLET.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[FilterFab.CONTACTS.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[FilterFab.MUSIC.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[FilterFab.ALBUMS.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
+            }
+            try {
+                iArr[FilterFab.CREATE_ALBUM.ordinal()] = 9;
+            } catch (NoSuchFieldError unused9) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -32,23 +59,23 @@ public final class FilterFabExtKt {
         Intrinsics.checkNotNullParameter(filterFab, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
             case 1:
-                return z ? C3158R.C3160drawable.fork_fab_create_chat : C3158R.C3160drawable.fork_mini_fab_create_chat;
+                return z ? C3286R.C3288drawable.fork_fab_create_chat : C3286R.C3288drawable.fork_mini_fab_create_chat;
             case 2:
-                return z ? C3158R.C3160drawable.fork_fab_archive : C3158R.C3160drawable.fork_mini_fab_archive;
+                return z ? C3286R.C3288drawable.fork_fab_archive : C3286R.C3288drawable.fork_mini_fab_archive;
             case 3:
-                return z ? C3158R.C3160drawable.fork_fab_cloud : C3158R.C3160drawable.fork_mini_fab_cloud;
+                return z ? C3286R.C3288drawable.fork_fab_cloud : C3286R.C3288drawable.fork_mini_fab_cloud;
             case 4:
-                return z ? C3158R.C3160drawable.fork_fab_mark_all_read : C3158R.C3160drawable.fork_mini_fab_mark_all_read;
+                return z ? C3286R.C3288drawable.fork_fab_mark_all_read : C3286R.C3288drawable.fork_mini_fab_mark_all_read;
             case 5:
-                return z ? C3158R.C3160drawable.fork_fab_wallet : C3158R.C3160drawable.fork_mini_fab_wallet;
+                return z ? C3286R.C3288drawable.fork_fab_wallet : C3286R.C3288drawable.fork_mini_fab_wallet;
             case 6:
-                return z ? C3158R.C3160drawable.fork_fab_contacts : C3158R.C3160drawable.fork_mini_fab_contacts;
+                return z ? C3286R.C3288drawable.fork_fab_contacts : C3286R.C3288drawable.fork_mini_fab_contacts;
             case 7:
-                return z ? C3158R.C3160drawable.fork_fab_music : C3158R.C3160drawable.fork_mini_fab_music;
+                return z ? C3286R.C3288drawable.fork_fab_music : C3286R.C3288drawable.fork_mini_fab_music;
             case 8:
-                return z ? C3158R.C3160drawable.fork_fab_albums : C3158R.C3160drawable.fork_mini_fab_albums;
+                return z ? C3286R.C3288drawable.fork_fab_albums : C3286R.C3288drawable.fork_mini_fab_albums;
             case 9:
-                return C3158R.C3160drawable.fork_plus;
+                return C3286R.C3288drawable.fork_plus;
             default:
                 throw new NoWhenBranchMatchedException();
         }
@@ -58,23 +85,23 @@ public final class FilterFabExtKt {
         Intrinsics.checkNotNullParameter(filterFab, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[filterFab.ordinal()]) {
             case 1:
-                return C3158R.string.folder_fab_settings_fab_create_chat;
+                return C3286R.string.folder_fab_settings_fab_create_chat;
             case 2:
-                return C3158R.string.folder_fab_settings_fab_archive;
+                return C3286R.string.folder_fab_settings_fab_archive;
             case 3:
-                return C3158R.string.folder_fab_settings_fab_cloud;
+                return C3286R.string.folder_fab_settings_fab_cloud;
             case 4:
-                return C3158R.string.folder_fab_settings_fab_mark_all_read;
+                return C3286R.string.folder_fab_settings_fab_mark_all_read;
             case 5:
-                return C3158R.string.folder_fab_settings_fab_wallet;
+                return C3286R.string.folder_fab_settings_fab_wallet;
             case 6:
-                return C3158R.string.folder_fab_settings_fab_contacts;
+                return C3286R.string.folder_fab_settings_fab_contacts;
             case 7:
-                return C3158R.string.cloud_filter_music;
+                return C3286R.string.cloud_filter_music;
             case 8:
-                return C3158R.string.music_albums_tab;
+                return C3286R.string.music_albums_tab;
             case 9:
-                return C3158R.string.cloud_albums_intro_button;
+                return C3286R.string.cloud_albums_intro_button;
             default:
                 throw new NoWhenBranchMatchedException();
         }

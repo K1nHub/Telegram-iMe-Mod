@@ -143,7 +143,7 @@
 
     const-string v8, "11.0.0"
 
-    .line 16
+    .line 18
     filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
 
     move-result-object v0
@@ -154,7 +154,7 @@
 
     sput-object v0, Lorg/telegram/messenger/voip/Instance;->AVAILABLE_VERSIONS:Ljava/util/List;
 
-    .line 67
+    .line 69
     new-instance v0, Lorg/telegram/messenger/voip/Instance$ServerConfig;
 
     new-instance v1, Lorg/json/JSONObject;
@@ -173,7 +173,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 72
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -182,14 +182,14 @@
 .method private static checkHasDelegate()V
     .locals 2
 
-    .line 122
+    .line 124
     sget-object v0, Lorg/telegram/messenger/voip/Instance;->instance:Lorg/telegram/messenger/voip/NativeInstance;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 123
+    .line 125
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -205,7 +205,7 @@
 
     const/4 v0, 0x0
 
-    .line 93
+    .line 95
     sput-object v0, Lorg/telegram/messenger/voip/Instance;->instance:Lorg/telegram/messenger/voip/NativeInstance;
 
     return-void
@@ -222,7 +222,7 @@
 .method public static getGlobalServerConfig()Lorg/telegram/messenger/voip/Instance$ServerConfig;
     .locals 1
 
-    .line 76
+    .line 78
     sget-object v0, Lorg/telegram/messenger/voip/Instance;->globalServerConfig:Lorg/telegram/messenger/voip/Instance$ServerConfig;
 
     return-object v0
@@ -231,7 +231,7 @@
 .method public static getVersion()Ljava/lang/String;
     .locals 1
 
-    .line 118
+    .line 120
     sget-object v0, Lorg/telegram/messenger/voip/Instance;->instance:Lorg/telegram/messenger/voip/NativeInstance;
 
     if-eqz v0, :cond_0
@@ -254,19 +254,19 @@
 
     const-string v0, "2.4.4"
 
-    .line 97
+    .line 99
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 98
+    .line 100
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v0}, Lorg/webrtc/ContextUtils;->initialize(Landroid/content/Context;)V
 
-    .line 100
+    .line 102
     :cond_0
     invoke-static/range {p0 .. p10}, Lorg/telegram/messenger/voip/NativeInstance;->make(Ljava/lang/String;Lorg/telegram/messenger/voip/Instance$Config;Ljava/lang/String;[Lorg/telegram/messenger/voip/Instance$Endpoint;Lorg/telegram/messenger/voip/Instance$Proxy;ILorg/telegram/messenger/voip/Instance$EncryptionKey;Lorg/webrtc/VideoSink;JLorg/telegram/messenger/voip/NativeInstance$AudioLevelsCallback;)Lorg/telegram/messenger/voip/NativeInstance;
 
@@ -274,7 +274,7 @@
 
     sput-object p0, Lorg/telegram/messenger/voip/Instance;->instance:Lorg/telegram/messenger/voip/NativeInstance;
 
-    .line 101
+    .line 103
     sget-object p0, Lorg/telegram/messenger/voip/Instance;->globalServerConfig:Lorg/telegram/messenger/voip/Instance$ServerConfig;
 
     invoke-static {p0}, Lorg/telegram/messenger/voip/Instance$ServerConfig;->access$100(Lorg/telegram/messenger/voip/Instance$ServerConfig;)Lorg/json/JSONObject;
@@ -287,12 +287,12 @@
 
     invoke-static {p0}, Lorg/telegram/messenger/voip/Instance;->setGlobalServerConfig(Ljava/lang/String;)V
 
-    .line 102
+    .line 104
     sget p0, Lorg/telegram/messenger/voip/Instance;->bufferSize:I
 
     invoke-static {p0}, Lorg/telegram/messenger/voip/Instance;->setBufferSize(I)V
 
-    .line 103
+    .line 105
     sget-object p0, Lorg/telegram/messenger/voip/Instance;->instance:Lorg/telegram/messenger/voip/NativeInstance;
 
     return-object p0
@@ -301,15 +301,15 @@
 .method public static setBufferSize(I)V
     .locals 1
 
-    .line 107
+    .line 109
     sput p0, Lorg/telegram/messenger/voip/Instance;->bufferSize:I
 
-    .line 108
+    .line 110
     sget-object v0, Lorg/telegram/messenger/voip/Instance;->instance:Lorg/telegram/messenger/voip/NativeInstance;
 
     if-eqz v0, :cond_0
 
-    .line 109
+    .line 111
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/voip/NativeInstance;->setBufferSize(I)V
 
     :cond_0
@@ -319,7 +319,7 @@
 .method public static setGlobalServerConfig(Ljava/lang/String;)V
     .locals 3
 
-    .line 81
+    .line 83
     :try_start_0
     new-instance v0, Lorg/telegram/messenger/voip/Instance$ServerConfig;
 
@@ -333,12 +333,12 @@
 
     sput-object v0, Lorg/telegram/messenger/voip/Instance;->globalServerConfig:Lorg/telegram/messenger/voip/Instance$ServerConfig;
 
-    .line 82
+    .line 84
     sget-object v0, Lorg/telegram/messenger/voip/Instance;->instance:Lorg/telegram/messenger/voip/NativeInstance;
 
     if-eqz v0, :cond_0
 
-    .line 83
+    .line 85
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/voip/NativeInstance;->setGlobalServerConfig(Ljava/lang/String;)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
@@ -348,14 +348,14 @@
     :catch_0
     move-exception p0
 
-    .line 86
+    .line 88
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "failed to parse tgvoip server config"
 
-    .line 87
+    .line 89
     invoke-static {v0, p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_0

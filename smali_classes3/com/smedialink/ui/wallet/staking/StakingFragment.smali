@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingFragment.kt\ncom/smedialink/ui/wallet/staking/StakingFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,249:1\n13#2,4:250\n56#3,6:254\n1849#4,2:260\n1849#4,2:262\n1849#4,2:264\n1849#4,2:266\n1547#4:268\n1618#4,3:269\n1849#4,2:272\n11328#5:274\n11663#5,3:275\n*S KotlinDebug\n*F\n+ 1 StakingFragment.kt\ncom/smedialink/ui/wallet/staking/StakingFragment\n*L\n45#1:250,4\n46#1:254,6\n71#1:260,2\n82#1:262,2\n88#1:264,2\n92#1:266,2\n139#1:268\n139#1:269,3\n171#1:272,2\n180#1:274\n180#1:275,3\n*E\n"
+    value = "SMAP\nStakingFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingFragment.kt\ncom/smedialink/ui/wallet/staking/StakingFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,249:1\n13#2,4:250\n56#3,6:254\n1855#4,2:260\n1855#4,2:262\n1855#4,2:264\n1855#4,2:266\n1549#4:268\n1620#4,3:269\n1855#4,2:272\n11335#5:274\n11670#5,3:275\n*S KotlinDebug\n*F\n+ 1 StakingFragment.kt\ncom/smedialink/ui/wallet/staking/StakingFragment\n*L\n45#1:250,4\n46#1:254,6\n71#1:260,2\n82#1:262,2\n88#1:264,2\n92#1:266,2\n139#1:268\n139#1:269,3\n171#1:272,2\n180#1:274\n180#1:275,3\n*E\n"
 .end annotation
 
 
@@ -60,6 +60,14 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$4I6WPyKWb02Q93v4aEquZV-3V4I(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->setupListeners$lambda$16(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$8P3hFwBLuSCsesEN59nbyOFbvbE(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 0
 
@@ -68,34 +76,26 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$D-PyMU-S1Si9niQEiyKgLPPLbA8(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+.method public static synthetic $r8$lambda$9P2yE9QwFWwIfSblSHl42sKuxQo(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->setupListeners$lambda-14(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->setupListeners$lambda$15(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Hnr_nEAEfR197SWN2j6NjMxe1TY(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+.method public static synthetic $r8$lambda$A_sI-oPP5OUc3pHieCdtGpEhwiY(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->setupListeners$lambda-15(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->setupListeners$lambda$14(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$VRHXIt2n_48Gm8UOm44iMqR1tF0(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+.method public static synthetic $r8$lambda$s088ybFWlLQVDeNBdxHiq1tsf6g(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->showInfoDialog$lambda-12(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$bHqu6z5sKaaOS9-mXmpnFdMjFDo(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->setupListeners$lambda-16(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment;->showInfoDialog$lambda$12(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
 
     return-void
 .end method
@@ -463,14 +463,14 @@
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -530,6 +530,7 @@
     .line 181
     invoke-direct {v5, v6, v14}, Lcom/smedialink/model/staking/StakingNavigationTab;-><init>(ILorg/fork/utils/TabbedFragmentPage;)V
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
@@ -680,20 +681,20 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda3;
+    new-instance v2, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+    invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
 
     invoke-virtual {v0, v1, v2}, Lcom/smedialink/ui/custom/StakingDashboardView;->setupListeners(Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
 
-.method private static final setupListeners$lambda-14(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+.method private static final setupListeners$lambda$14(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -710,7 +711,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-15(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+.method private static final setupListeners$lambda$15(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -729,7 +730,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-16(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+.method private static final setupListeners$lambda$16(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -774,9 +775,9 @@
     move-result-object v5
 
     .line 214
-    new-instance v6, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda2;
+    new-instance v6, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda3;
 
-    invoke-direct {v6, p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+    invoke-direct {v6, p0}, Lcom/smedialink/ui/wallet/staking/StakingFragment$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
 
     const/4 v3, 0x0
 
@@ -796,7 +797,7 @@
     return-void
 .end method
 
-.method private static final showInfoDialog$lambda-12(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
+.method private static final showInfoDialog$lambda$12(Lcom/smedialink/ui/wallet/staking/StakingFragment;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -871,7 +872,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -882,7 +883,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -898,7 +899,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/model/staking/StakingNavigationTab;
 
     .line 139
@@ -906,6 +907,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1126,7 +1128,7 @@
 
     move-result-object v2
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1189,7 +1191,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1260,7 +1262,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1381,7 +1383,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1426,7 +1428,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

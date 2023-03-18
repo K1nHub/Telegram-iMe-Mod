@@ -22,7 +22,7 @@ final class WalletNotificationsFragment$presenter$2 extends Lambda implements Fu
     @Override // kotlin.jvm.functions.Function0
     public final WalletNotificationsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2088x242f963f(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2211x242f963f(this.this$0, null, null));
         return (WalletNotificationsPresenter) lazy.getValue();
     }
 }

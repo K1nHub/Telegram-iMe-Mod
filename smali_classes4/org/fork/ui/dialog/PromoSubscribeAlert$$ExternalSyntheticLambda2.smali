@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda2;->f$0:Lorg/fork/ui/dialog/PromoSubscribeAlert;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->$r8$lambda$Gc1O-4k4GumOlU0EJiGADt8Ja9M(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->$r8$lambda$ThFV6K1i2zxzOd1jvA-a32m0hcI(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
 
     return-void
 .end method

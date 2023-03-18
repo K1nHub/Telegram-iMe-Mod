@@ -43,13 +43,34 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
 
         static {
             int[] iArr = new int[GlobalApiErrorCode.values().length];
-            iArr[GlobalApiErrorCode.ERR_APP_UPDATE_IS_REQUIRED.ordinal()] = 1;
-            iArr[GlobalApiErrorCode.INVALID_BINANCE_PAY_ACCESS_TOKEN.ordinal()] = 2;
-            iArr[GlobalApiErrorCode.INVALID_BINANCE_PAY_REFRESH_TOKEN.ordinal()] = 3;
-            iArr[GlobalApiErrorCode.JWT_EXPIRED.ordinal()] = 4;
-            iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_REQUIRED.ordinal()] = 5;
-            iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_MALFORMED.ordinal()] = 6;
-            iArr[GlobalApiErrorCode.REFRESH_TOKEN_ABSENT.ordinal()] = 7;
+            try {
+                iArr[GlobalApiErrorCode.ERR_APP_UPDATE_IS_REQUIRED.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.INVALID_BINANCE_PAY_ACCESS_TOKEN.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.INVALID_BINANCE_PAY_REFRESH_TOKEN.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.JWT_EXPIRED.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_REQUIRED.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.ERR_BEARER_AUTH_MALFORMED.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.REFRESH_TOKEN_ABSENT.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -104,7 +125,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
         Request request = chain.request();
         Response proceed = chain.proceed(request);
         try {
-            obj = this.gson.fromJson(HttpClientExtKt.getClonedBodyString(proceed.body()), new TypeToken<ApiBaseResponse<?>>() { // from class: com.smedialink.storage.data.network.interceptor.ApiErrorInterceptor$intercept$lambda-0$$inlined$fromJsonTokenType$1
+            obj = this.gson.fromJson(HttpClientExtKt.getClonedBodyString(proceed.body()), new TypeToken<ApiBaseResponse<?>>() { // from class: com.smedialink.storage.data.network.interceptor.ApiErrorInterceptor$intercept$lambda$0$$inlined$fromJsonTokenType$1
             }.getType());
         } catch (Exception e) {
             Timber.m4e(e);

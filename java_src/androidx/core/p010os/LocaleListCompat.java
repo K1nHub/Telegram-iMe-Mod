@@ -6,7 +6,7 @@ import java.util.Locale;
 /* renamed from: androidx.core.os.LocaleListCompat */
 /* loaded from: classes.dex */
 public final class LocaleListCompat {
-    private LocaleListInterface mImpl;
+    private final LocaleListInterface mImpl;
 
     static {
         create(new Locale[0]);
@@ -22,7 +22,7 @@ public final class LocaleListCompat {
 
     public static LocaleListCompat create(Locale... localeArr) {
         if (Build.VERSION.SDK_INT >= 24) {
-            return wrap(new LocaleList(localeArr));
+            return wrap(Api24Impl.createLocaleList(localeArr));
         }
         return new LocaleListCompat(new LocaleListCompatWrapper(localeArr));
     }
@@ -75,5 +75,22 @@ public final class LocaleListCompat {
 
     public String toString() {
         return this.mImpl.toString();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: androidx.core.os.LocaleListCompat$Api24Impl */
+    /* loaded from: classes.dex */
+    public static class Api24Impl {
+        static LocaleList createLocaleList(Locale... localeArr) {
+            return new LocaleList(localeArr);
+        }
+
+        static LocaleList getAdjustedDefault() {
+            return LocaleList.getAdjustedDefault();
+        }
+
+        static LocaleList getDefault() {
+            return LocaleList.getDefault();
+        }
     }
 }

@@ -36,12 +36,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 6743
+    .line 6747
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 6744
+    .line 6748
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -50,7 +50,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 6737
+    .line 6741
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->sortedUsers:Ljava/util/ArrayList;
 
     return-object p0
@@ -59,7 +59,7 @@
 .method static synthetic access$3602(Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;Ljava/util/ArrayList;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 6737
+    .line 6741
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->sortedUsers:Ljava/util/ArrayList;
 
     return-object p1
@@ -68,7 +68,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;)Lorg/telegram/tgnet/TLRPC$ChatFull;
     .locals 0
 
-    .line 6737
+    .line 6741
     iget-object p0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     return-object p0
@@ -77,7 +77,7 @@
 .method static synthetic access$3702(Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;Lorg/telegram/tgnet/TLRPC$ChatFull;)Lorg/telegram/tgnet/TLRPC$ChatFull;
     .locals 0
 
-    .line 6737
+    .line 6741
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     return-object p1
@@ -88,7 +88,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 6759
+    .line 6763
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     if-eqz v0, :cond_0
@@ -107,7 +107,7 @@
 
     return v0
 
-    .line 6762
+    .line 6766
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
@@ -133,7 +133,7 @@
 .method public getItemViewType(I)I
     .locals 0
 
-    .line 6825
+    .line 6829
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     if-eqz p1, :cond_0
@@ -161,7 +161,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 6750
+    .line 6754
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -181,7 +181,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 6780
+    .line 6784
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -192,7 +192,7 @@
 
     return-void
 
-    .line 6784
+    .line 6788
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -202,13 +202,13 @@
 
     return-void
 
-    .line 6787
+    .line 6791
     :cond_1
     move-object v2, p1
 
     check-cast v2, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 6789
+    .line 6793
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->sortedUsers:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -217,7 +217,7 @@
 
     if-nez p1, :cond_2
 
-    .line 6790
+    .line 6794
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
@@ -244,7 +244,7 @@
 
     goto :goto_0
 
-    .line 6792
+    .line 6796
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
@@ -261,7 +261,7 @@
     :goto_0
     if-eqz p1, :cond_9
 
-    .line 6796
+    .line 6800
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     const-string v3, "ChannelAdmin"
@@ -272,14 +272,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 6797
+    .line 6801
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 6798
+    .line 6802
     iget-object v6, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -288,7 +288,7 @@
 
     if-nez v6, :cond_3
 
-    .line 6799
+    .line 6803
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
     :goto_1
@@ -296,13 +296,13 @@
 
     goto :goto_2
 
-    .line 6801
+    .line 6805
     :cond_3
     instance-of v6, v0, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantCreator;
 
     if-eqz v6, :cond_4
 
-    .line 6802
+    .line 6806
     sget v0, Lorg/telegram/messenger/R$string;->ChannelCreator:I
 
     invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -311,13 +311,13 @@
 
     goto :goto_1
 
-    .line 6803
+    .line 6807
     :cond_4
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantAdmin;
 
     if-eqz v0, :cond_7
 
-    .line 6804
+    .line 6808
     sget v0, Lorg/telegram/messenger/R$string;->ChannelAdmin:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -326,13 +326,13 @@
 
     goto :goto_1
 
-    .line 6810
+    .line 6814
     :cond_5
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatParticipantCreator;
 
     if-eqz v0, :cond_6
 
-    .line 6811
+    .line 6815
     sget v0, Lorg/telegram/messenger/R$string;->ChannelCreator:I
 
     invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -341,25 +341,25 @@
 
     goto :goto_2
 
-    .line 6812
+    .line 6816
     :cond_6
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatParticipantAdmin;
 
     if-eqz v0, :cond_7
 
-    .line 6813
+    .line 6817
     sget v0, Lorg/telegram/messenger/R$string;->ChannelAdmin:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 6818
+    .line 6822
     :cond_7
     :goto_2
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Cells/UserCell;->setAdminRole(Ljava/lang/String;)V
 
-    .line 6819
+    .line 6823
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2300(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -425,7 +425,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 6768
+    .line 6772
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$ChatUsersAdapter;->mContext:Landroid/content/Context;
 
     const/4 v0, 0x7
@@ -446,21 +446,21 @@
 
     move-result-object p2
 
-    .line 6769
+    .line 6773
     new-instance v0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     invoke-direct {v0, p1, p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6770
+    .line 6774
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
 
     return-object p1
 
-    .line 6772
+    .line 6776
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/UserCell;
 
@@ -484,7 +484,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/UserCell;-><init>(Landroid/content/Context;IIZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 6773
+    .line 6777
     new-instance v0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v1, -0x2
@@ -493,7 +493,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6774
+    .line 6778
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

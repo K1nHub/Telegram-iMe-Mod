@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/level/AccountLevelInformation;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->$r8$lambda$k2XirgD_-xJTOTFezWqPVgYp2zA(Lcom/smedialink/model/staking/StakingDetailsItem;Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/storage/domain/model/crypto/level/AccountLevelInformation;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;->$r8$lambda$OuZ8KW5e6sQqqgyPjMild1t78jU(Lcom/smedialink/model/staking/StakingDetailsItem;Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;Lcom/smedialink/storage/domain/model/crypto/level/AccountLevelInformation;)V
 
     return-void
 .end method

@@ -58,14 +58,13 @@ public final class LanguagesAdapter extends RecyclerListView.ViewBindingSelectio
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.languages.LanguagesAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LanguagesAdapter.m1456onBindViewHolder$lambda1$lambda0(LanguagesAdapter.this, languageViewModel, view);
+                LanguagesAdapter.onBindViewHolder$lambda$1$lambda$0(LanguagesAdapter.this, languageViewModel, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBindViewHolder$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1456onBindViewHolder$lambda1$lambda0(LanguagesAdapter this$0, LanguageViewModel country, View view) {
+    public static final void onBindViewHolder$lambda$1$lambda$0(LanguagesAdapter this$0, LanguageViewModel country, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(country, "$country");
         this$0.onCountryClickListener.onLanguageClick(country);

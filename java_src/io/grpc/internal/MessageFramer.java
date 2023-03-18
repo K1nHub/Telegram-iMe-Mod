@@ -14,7 +14,7 @@ import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MessageFramer implements Framer {
     private WritableBuffer buffer;
     private final WritableBufferAllocator bufferAllocator;
@@ -30,7 +30,7 @@ public class MessageFramer implements Framer {
     private final byte[] headerScratch = new byte[5];
     private int currentMessageSeqNo = -1;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Sink {
         void deliverFrame(WritableBuffer writableBuffer, boolean z, boolean z2, int i);
     }
@@ -235,7 +235,7 @@ public class MessageFramer implements Framer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OutputStreamAdapter extends OutputStream {
         private OutputStreamAdapter() {
         }
@@ -252,7 +252,7 @@ public class MessageFramer implements Framer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class BufferChainOutputStream extends OutputStream {
         private final List<WritableBuffer> bufferList;
         private WritableBuffer current;

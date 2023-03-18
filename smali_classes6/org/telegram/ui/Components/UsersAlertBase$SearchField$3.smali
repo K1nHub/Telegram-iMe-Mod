@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;Lorg/telegram/ui/Components/UsersAlertBase;)V
     .locals 0
 
-    .line 272
+    .line 264
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 7
 
-    .line 285
+    .line 277
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -60,11 +60,11 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 286
+    .line 278
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->access$200(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;)Landroid/widget/ImageView;
+    invoke-static {v2}, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->access$100(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;)Landroid/widget/ImageView;
 
     move-result-object v2
 
@@ -88,10 +88,10 @@
     :goto_1
     if-eq p1, v2, :cond_5
 
-    .line 288
+    .line 280
     iget-object v2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->access$200(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;)Landroid/widget/ImageView;
+    invoke-static {v2}, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->access$100(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;)Landroid/widget/ImageView;
 
     move-result-object v2
 
@@ -105,7 +105,7 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 289
+    .line 281
     :cond_2
     invoke-virtual {v2, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -113,7 +113,7 @@
 
     const-wide/16 v5, 0x96
 
-    .line 290
+    .line 282
     invoke-virtual {v2, v5, v6}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
@@ -129,7 +129,7 @@
     :cond_3
     const v5, 0x3dcccccd    # 0.1f
 
-    .line 291
+    .line 283
     :goto_2
     invoke-virtual {v2, v5}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
@@ -142,16 +142,16 @@
     :cond_4
     const v4, 0x3dcccccd    # 0.1f
 
-    .line 292
+    .line 284
     :goto_3
     invoke-virtual {v2, v4}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 293
+    .line 285
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 295
+    .line 287
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
@@ -165,7 +165,7 @@
 
     move-result-object p1
 
-    .line 296
+    .line 288
     iget-object v2, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
@@ -197,7 +197,7 @@
 
     move-result v2
 
-    .line 297
+    .line 289
     :goto_4
     iget-object v3, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
@@ -205,7 +205,7 @@
 
     invoke-virtual {v3, p1}, Lorg/telegram/ui/Components/UsersAlertBase;->search(Ljava/lang/String;)V
 
-    .line 298
+    .line 290
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -232,12 +232,12 @@
 
     if-eq p1, v4, :cond_7
 
-    .line 299
+    .line 291
     iget-object p1, v3, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAnimateEmptyView(ZI)V
 
-    .line 300
+    .line 292
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
@@ -248,7 +248,7 @@
 
     invoke-virtual {v3, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 301
+    .line 293
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
@@ -259,14 +259,14 @@
 
     if-nez v2, :cond_7
 
-    .line 303
+    .line 295
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/UsersAlertBase;->showItemsAnimated(I)V
 
-    .line 306
+    .line 298
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$3;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 

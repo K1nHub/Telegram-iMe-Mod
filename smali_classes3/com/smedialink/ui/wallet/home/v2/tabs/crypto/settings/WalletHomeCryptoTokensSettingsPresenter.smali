@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeCryptoTokensSettingsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,185:1\n1#2:186\n1557#3:187\n1588#3,4:188\n1192#3,2:192\n1220#3,4:194\n1849#3,2:198\n1206#3,2:200\n1236#3,4:202\n1043#3:206\n1547#3:207\n1618#3,3:208\n1043#3:211\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n134#1:187\n134#1:188,4\n143#1:192,2\n143#1:194,4\n145#1:198,2\n170#1:200,2\n170#1:202,4\n173#1:206\n176#1:207\n176#1:208,3\n178#1:211\n*E\n"
+    value = "SMAP\nWalletHomeCryptoTokensSettingsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,185:1\n1#2:186\n1559#3:187\n1590#3,4:188\n1194#3,2:192\n1222#3,4:194\n1855#3,2:198\n1208#3,2:200\n1238#3,4:202\n1045#3:206\n1549#3:207\n1620#3,3:208\n1045#3:211\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoTokensSettingsPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter\n*L\n134#1:187\n134#1:188,4\n143#1:192,2\n143#1:194,4\n145#1:198,2\n170#1:200,2\n170#1:202,4\n173#1:206\n176#1:207\n176#1:208,3\n178#1:211\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -249,7 +249,7 @@
 
     const/16 v1, 0xa
 
-    .line 1206
+    .line 1208
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
@@ -264,12 +264,12 @@
 
     move-result v2
 
-    .line 1207
+    .line 1209
     new-instance v3, Ljava/util/LinkedHashMap;
 
     invoke-direct {v3, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1236
+    .line 1238
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -285,7 +285,7 @@
 
     move-result-object v2
 
-    .line 1237
+    .line 1239
     check-cast v2, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
     .line 170
@@ -301,6 +301,7 @@
 
     move-result-object v2
 
+    .line 1239
     invoke-interface {v3, v4, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
@@ -321,7 +322,7 @@
 
     move-result-object v0
 
-    .line 1043
+    .line 1045
     new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$resolveTokens$$inlined$sortedBy$1;
 
     invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$resolveTokens$$inlined$sortedBy$1;-><init>(Ljava/util/Map;)V
@@ -347,7 +348,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -356,7 +357,7 @@
 
     invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -372,7 +373,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     .line 176
@@ -382,6 +383,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v2, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -396,7 +398,7 @@
 
     move-result-object v0
 
-    .line 1043
+    .line 1045
     new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$resolveTokens$$inlined$sortedBy$2;
 
     invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsPresenter$resolveTokens$$inlined$sortedBy$2;-><init>(Ljava/util/Map;)V
@@ -471,7 +473,7 @@
 
     move-result-object v1
 
-    .line 1557
+    .line 1559
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -482,7 +484,7 @@
 
     const/4 v5, 0x0
 
-    .line 1589
+    .line 1591
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -502,7 +504,7 @@
 
     if-gez v5, :cond_0
 
-    .line 1590
+    .line 1592
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
     :cond_0
@@ -519,6 +521,7 @@
     .line 135
     invoke-direct {v8, v6, v5, v3}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;-><init>(Ljava/lang/String;IZ)V
 
+    .line 1592
     invoke-interface {v4, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move v5, v7
@@ -563,7 +566,7 @@
 
     move-result-object v1
 
-    .line 1192
+    .line 1194
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
@@ -578,12 +581,12 @@
 
     move-result v2
 
-    .line 1193
+    .line 1195
     new-instance v4, Ljava/util/LinkedHashMap;
 
     invoke-direct {v4, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1220
+    .line 1222
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -599,7 +602,7 @@
 
     move-result-object v2
 
-    .line 1221
+    .line 1223
     move-object v5, v2
 
     check-cast v5, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
@@ -609,6 +612,7 @@
 
     move-result-object v5
 
+    .line 1223
     invoke-interface {v4, v5, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
@@ -628,7 +632,7 @@
 
     move-result-object v2
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2

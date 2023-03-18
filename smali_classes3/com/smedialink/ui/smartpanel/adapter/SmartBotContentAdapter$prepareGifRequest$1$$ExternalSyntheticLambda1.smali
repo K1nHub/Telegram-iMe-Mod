@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$prepareGifRequest$1$$ExternalSyntheticLambda1;->f$2:Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$prepareGifRequest$1;->$r8$lambda$DktLsp2rJL9OPkfdhM7zbTeHBWc(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, v2, p1, p2}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$prepareGifRequest$1;->$r8$lambda$NDaD_ap2YsY-doPJfaIg40t24WA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

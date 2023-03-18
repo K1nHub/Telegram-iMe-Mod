@@ -59,10 +59,10 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
                 CoroutineDispatcher io2 = Dispatchers.getIO();
-                C12721 c12721 = new C12721(this.this$0, arrayList, arrayList2, this.$userId, this.$sentence, null);
+                C12671 c12671 = new C12671(this.this$0, arrayList, arrayList2, this.$userId, this.$sentence, null);
                 this.L$0 = arrayList;
                 this.label = 1;
-                if (BuildersKt.withContext(io2, c12721, this) == coroutine_suspended) {
+                if (BuildersKt.withContext(io2, c12671, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 list = arrayList;
@@ -84,7 +84,7 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
     @DebugMetadata(m99c = "com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1$1", m98f = "SmartReplier.kt", m97l = {39}, m96m = "invokeSuspend")
     /* renamed from: com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C12721 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
+    public static final class C12671 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
         final /* synthetic */ List<Response> $detected;
         final /* synthetic */ List<SmartBotResponse> $result;
         final /* synthetic */ String $sentence;
@@ -97,7 +97,7 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
         final /* synthetic */ SmartReplier this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C12721(SmartReplier smartReplier, List<SmartBotResponse> list, List<Response> list2, long j, String str, Continuation<? super C12721> continuation) {
+        C12671(SmartReplier smartReplier, List<SmartBotResponse> list, List<Response> list2, long j, String str, Continuation<? super C12671> continuation) {
             super(2, continuation);
             this.this$0 = smartReplier;
             this.$result = list;
@@ -108,17 +108,17 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C12721(this.this$0, this.$result, this.$detected, this.$userId, this.$sentence, continuation);
+            return new C12671(this.this$0, this.$result, this.$detected, this.$userId, this.$sentence, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Boolean> continuation) {
-            return ((C12721) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C12671) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX WARN: Removed duplicated region for block: B:11:0x0050  */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x007c  */
-        /* JADX WARN: Removed duplicated region for block: B:20:0x0086  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x007b  */
+        /* JADX WARN: Removed duplicated region for block: B:19:0x0085  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:14:0x006f -> B:15:0x0077). Please submit an issue!!! */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         /*
@@ -171,7 +171,7 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
                 r3 = r8
             L4a:
                 boolean r6 = r1.hasNext()
-                if (r6 == 0) goto L86
+                if (r6 == 0) goto L85
                 java.lang.Object r6 = r1.next()
                 com.smedialink.bots.domain.AigramBot r6 = (com.smedialink.bots.domain.AigramBot) r6
                 com.smedialink.bots.domain.model.BotLanguage r7 = r6.getLanguage()
@@ -195,11 +195,9 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
                 r1 = r8
             L77:
                 com.smedialink.bots.data.model.Response r10 = (com.smedialink.bots.data.model.Response) r10
-                if (r10 != 0) goto L7c
-                goto L7f
-            L7c:
+                if (r10 == 0) goto L7e
                 r4.add(r10)
-            L7f:
+            L7e:
                 r10 = r0
                 r0 = r1
                 r1 = r3
@@ -207,7 +205,7 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
                 r4 = r5
                 r5 = r6
                 goto L4a
-            L86:
+            L85:
                 java.util.List<com.smedialink.bots.domain.model.SmartBotResponse> r0 = r10.$result
                 com.smedialink.bots.data.SmartReplier r1 = r10.this$0
                 java.util.List<com.smedialink.bots.data.model.Response> r2 = r10.$detected
@@ -217,7 +215,7 @@ final class SmartReplier$getResponsesFromBots$1 extends SuspendLambda implements
                 java.lang.Boolean r10 = kotlin.coroutines.jvm.internal.Boxing.boxBoolean(r10)
                 return r10
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1.C12721.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.smedialink.bots.data.SmartReplier$getResponsesFromBots$1.C12671.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 }

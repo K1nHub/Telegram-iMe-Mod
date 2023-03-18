@@ -24,11 +24,9 @@ import com.smedialink.storage.domain.model.topics.TopicModel;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import com.smedialink.utils.extentions.model.topic.TopicExtKt;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -37,7 +35,7 @@ import org.fork.controller.ForkTopicsController;
 import org.fork.enums.FilterActivityType;
 import org.fork.p046ui.view.CircleCheckCell;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.BottomSheet;
@@ -86,14 +84,6 @@ public final class TopicsAlert extends BottomSheet {
         return this.parentFragment;
     }
 
-    public final List<Long> getDialogIds() {
-        return this.dialogIds;
-    }
-
-    public final TopicsAlertDelegate getTopicsAlertDelegate() {
-        return this.topicsAlertDelegate;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TopicsAlert(BaseFragment parentFragment, List<Long> dialogIds, boolean z, TopicsAlertDelegate topicsAlertDelegate) {
         super(parentFragment.getParentActivity(), false);
@@ -128,9 +118,9 @@ public final class TopicsAlert extends BottomSheet {
         this.createTopicButton$delegate = lazy8;
         if (!z) {
             TopicModel topicForDialog = ForkTopicsController.Companion.getInstance(this.currentAccount).getTopicForDialog(dialogIds.get(0).longValue());
-            this.selectedTopicId = topicForDialog == null ? null : Long.valueOf(topicForDialog.getTopicId());
+            this.selectedTopicId = topicForDialog != null ? Long.valueOf(topicForDialog.getTopicId()) : null;
         }
-        RootView rootView = new RootView(this);
+        RootView rootView = new RootView();
         rootView.setWillNotDraw(false);
         int i = this.backgroundPaddingLeft;
         rootView.setPadding(i, 0, i, 0);
@@ -140,7 +130,6 @@ public final class TopicsAlert extends BottomSheet {
         rootView.addView(getSelectTopicTitleTextView(), LayoutHelper.createFrame(-1, 50, 48));
         rootView.addView(getDeleteOrCloseButton(), LayoutHelper.createFrame(-2, 48, 83));
         rootView.addView(getCreateTopicButton(), LayoutHelper.createFrame(-2, 48, 85));
-        Unit unit = Unit.INSTANCE;
         this.containerView = rootView;
         setupListeners();
     }
@@ -217,7 +206,7 @@ public final class TopicsAlert extends BottomSheet {
                 Intrinsics.checkNotNullParameter(parent, "parent");
                 Intrinsics.checkNotNullParameter(state, "state");
                 RecyclerView.ViewHolder childViewHolder = parent.getChildViewHolder(view);
-                Objects.requireNonNull(childViewHolder, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder");
+                Intrinsics.checkNotNull(childViewHolder, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder");
                 int adapterPosition = ((RecyclerListView.Holder) childViewHolder).getAdapterPosition() % 4;
                 outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m50dp(4);
                 outRect.right = adapterPosition != 3 ? AndroidUtilities.m50dp(4) : 0;
@@ -234,7 +223,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3158R.string.topics_select));
+        textView.setText(LocaleController.getInternalString(C3286R.string.topics_select));
         textView.setTextColor(getThemedColor("dialogTextBlack"));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor("dialogTextLink"));
@@ -250,30 +239,30 @@ public final class TopicsAlert extends BottomSheet {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         if (z) {
-            textView.setText(LocaleController.getString("Create", C3158R.string.Create));
+            textView.setText(LocaleController.getString("Create", C3286R.string.Create));
             textView.setTextColor(getThemedColor("dialogTextBlue2"));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TopicsAlert.m1543initBottomButton$lambda7$lambda4(TopicsAlert.this, view);
+                    TopicsAlert.initBottomButton$lambda$7$lambda$4(TopicsAlert.this, view);
                 }
             });
         } else if (this.selectedTopicId == null) {
-            textView.setText(LocaleController.getString("Close", C3158R.string.Close));
+            textView.setText(LocaleController.getString("Close", C3286R.string.Close));
             textView.setTextColor(getThemedColor("dialogTextBlue2"));
-            textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    TopicsAlert.m1544initBottomButton$lambda7$lambda5(TopicsAlert.this, view);
-                }
-            });
-        } else {
-            textView.setText(LocaleController.getInternalString(C3158R.string.topics_remove));
-            textView.setTextColor(getThemedColor("dialogTextRed"));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TopicsAlert.m1545initBottomButton$lambda7$lambda6(TopicsAlert.this, view);
+                    TopicsAlert.initBottomButton$lambda$7$lambda$5(TopicsAlert.this, view);
+                }
+            });
+        } else {
+            textView.setText(LocaleController.getInternalString(C3286R.string.topics_remove));
+            textView.setTextColor(getThemedColor("dialogTextRed"));
+            textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    TopicsAlert.initBottomButton$lambda$7$lambda$6(TopicsAlert.this, view);
                 }
             });
         }
@@ -281,34 +270,30 @@ public final class TopicsAlert extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initBottomButton$lambda-7$lambda-4  reason: not valid java name */
-    public static final void m1543initBottomButton$lambda7$lambda4(TopicsAlert this$0, View view) {
+    public static final void initBottomButton$lambda$7$lambda$4(TopicsAlert this$0, View view) {
         Set set;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.dismiss();
-        BaseFragment parentFragment = this$0.getParentFragment();
-        set = CollectionsKt___CollectionsKt.toSet(this$0.getDialogIds());
-        parentFragment.presentFragment(new FilterCreateActivity(null, set, FilterActivityType.TOPIC));
-        TopicsAlertDelegate topicsAlertDelegate = this$0.getTopicsAlertDelegate();
-        if (topicsAlertDelegate == null) {
-            return;
+        BaseFragment baseFragment = this$0.parentFragment;
+        set = CollectionsKt___CollectionsKt.toSet(this$0.dialogIds);
+        baseFragment.presentFragment(new FilterCreateActivity(null, set, FilterActivityType.TOPIC));
+        TopicsAlertDelegate topicsAlertDelegate = this$0.topicsAlertDelegate;
+        if (topicsAlertDelegate != null) {
+            topicsAlertDelegate.onTopicSelected();
         }
-        topicsAlertDelegate.onTopicSelected();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initBottomButton$lambda-7$lambda-5  reason: not valid java name */
-    public static final void m1544initBottomButton$lambda7$lambda5(TopicsAlert this$0, View view) {
+    public static final void initBottomButton$lambda$7$lambda$5(TopicsAlert this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initBottomButton$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m1545initBottomButton$lambda7$lambda6(TopicsAlert this$0, View view) {
+    public static final void initBottomButton$lambda$7$lambda$6(TopicsAlert this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.dismiss();
-        ForkTopicsController.Companion.getInstance(this$0.currentAccount).removeTopicDialog(this$0.getDialogIds().get(0).longValue());
+        ForkTopicsController.Companion.getInstance(this$0.currentAccount).removeTopicDialog(this$0.dialogIds.get(0).longValue());
     }
 
     private final void setupListeners() {
@@ -323,26 +308,25 @@ public final class TopicsAlert extends BottomSheet {
         listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.smedialink.ui.topics.TopicsAlert$$ExternalSyntheticLambda3
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                TopicsAlert.m1546setupListeners$lambda10$lambda9(TopicsAlert.this, view, i);
+                TopicsAlert.setupListeners$lambda$10$lambda$9(TopicsAlert.this, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-10$lambda-9  reason: not valid java name */
-    public static final void m1546setupListeners$lambda10$lambda9(TopicsAlert this$0, View view, int i) {
+    public static final void setupListeners$lambda$10$lambda$9(TopicsAlert this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         long topicId = this$0.getTopics().get(i).getTopicId();
         Long l = this$0.selectedTopicId;
         if (l != null && topicId == l.longValue()) {
             return;
         }
-        for (Number number : this$0.getDialogIds()) {
+        for (Number number : this$0.dialogIds) {
             long longValue = number.longValue();
             ForkTopicsController.Companion.getInstance(this$0.currentAccount).addTopicDialog(this$0.getTopics().get(i), longValue);
-            if (((Number) CollectionsKt.last((List<? extends Object>) this$0.getDialogIds())).longValue() == longValue) {
+            if (((Number) CollectionsKt.last((List<? extends Object>) this$0.dialogIds)).longValue() == longValue) {
                 this$0.dismiss();
-                TopicsAlertDelegate topicsAlertDelegate = this$0.getTopicsAlertDelegate();
+                TopicsAlertDelegate topicsAlertDelegate = this$0.topicsAlertDelegate;
                 if (topicsAlertDelegate != null) {
                     topicsAlertDelegate.onTopicSelected();
                 }
@@ -434,7 +418,6 @@ public final class TopicsAlert extends BottomSheet {
             });
             animatorSet2.setDuration(150L);
             animatorSet2.start();
-            Unit unit = Unit.INSTANCE;
             this.shadowAnimation = animatorSet2;
         }
     }
@@ -446,21 +429,17 @@ public final class TopicsAlert extends BottomSheet {
         private boolean fullHeight;
         private int lastNotifyWidth;
         private final RectF rect;
-        final /* synthetic */ TopicsAlert this$0;
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public RootView(TopicsAlert this$0) {
-            super(this$0.getContext());
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public RootView() {
+            super(TopicsAlert.this.getContext());
             this.rect = new RectF();
         }
 
         @Override // android.view.ViewGroup
         public boolean onInterceptTouchEvent(MotionEvent ev) {
             Intrinsics.checkNotNullParameter(ev, "ev");
-            if (ev.getAction() == 0 && this.this$0.scrollOffsetY != 0 && ev.getY() < this.this$0.scrollOffsetY) {
-                this.this$0.dismiss();
+            if (ev.getAction() == 0 && TopicsAlert.this.scrollOffsetY != 0 && ev.getY() < TopicsAlert.this.scrollOffsetY) {
+                TopicsAlert.this.dismiss();
                 return true;
             }
             return super.onInterceptTouchEvent(ev);
@@ -469,28 +448,28 @@ public final class TopicsAlert extends BottomSheet {
         @Override // android.view.View
         public boolean onTouchEvent(MotionEvent e) {
             Intrinsics.checkNotNullParameter(e, "e");
-            return !this.this$0.isDismissed() && super.onTouchEvent(e);
+            return !TopicsAlert.this.isDismissed() && super.onTouchEvent(e);
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            this.this$0.ignoreLayout = true;
-            setPadding(((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) this.this$0).backgroundPaddingLeft, 0);
-            this.this$0.ignoreLayout = false;
-            this.this$0.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(28)) / 4;
-            int m50dp = AndroidUtilities.m50dp(110) + (((int) Math.ceil(this.this$0.getTopics().size() / 4.0f)) * AndroidUtilities.m50dp(100)) + ((BottomSheet) this.this$0).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            TopicsAlert.this.ignoreLayout = true;
+            setPadding(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, 0);
+            TopicsAlert.this.ignoreLayout = false;
+            TopicsAlert.this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(28)) / 4;
+            int m50dp = AndroidUtilities.m50dp(110) + (((int) Math.ceil(TopicsAlert.this.getTopics().size() / 4.0f)) * AndroidUtilities.m50dp(100)) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int size = View.MeasureSpec.getSize(i2);
             int i3 = ((double) m50dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
             if (i3 != 0 && m50dp < size) {
                 i3 -= size - m50dp;
             }
             if (i3 == 0) {
-                i3 = ((BottomSheet) this.this$0).backgroundPaddingTop;
+                i3 = ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
             }
-            if (this.this$0.getListView().getPaddingTop() != i3) {
-                this.this$0.ignoreLayout = true;
-                this.this$0.getListView().setPadding(AndroidUtilities.m50dp(10), i3, AndroidUtilities.m50dp(10), 14);
-                this.this$0.ignoreLayout = false;
+            if (TopicsAlert.this.getListView().getPaddingTop() != i3) {
+                TopicsAlert.this.ignoreLayout = true;
+                TopicsAlert.this.getListView().setPadding(AndroidUtilities.m50dp(10), i3, AndroidUtilities.m50dp(10), 14);
+                TopicsAlert.this.ignoreLayout = false;
             }
             this.fullHeight = m50dp >= size;
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m50dp, size), 1073741824));
@@ -501,15 +480,15 @@ public final class TopicsAlert extends BottomSheet {
             int i5 = i3 - i;
             if (this.lastNotifyWidth != i5) {
                 this.lastNotifyWidth = i5;
-                this.this$0.getListAdapter().notifyDataSetChanged();
+                TopicsAlert.this.getListAdapter().notifyDataSetChanged();
             }
             super.onLayout(z, i, i2, i3, i4);
-            this.this$0.updateLayout();
+            TopicsAlert.this.updateLayout();
         }
 
         @Override // android.view.View, android.view.ViewParent
         public void requestLayout() {
-            if (this.this$0.ignoreLayout) {
+            if (TopicsAlert.this.ignoreLayout) {
                 return;
             }
             super.requestLayout();
@@ -538,32 +517,28 @@ public final class TopicsAlert extends BottomSheet {
     /* renamed from: com.smedialink.ui.topics.TopicsAlert$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ TopicsAlert this$0;
-
-        public ListAdapter(TopicsAlert this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.getTopics().size();
+            return TopicsAlert.this.getTopics().size();
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            long topicId = ((TopicModel) this.this$0.getTopics().get(holder.getAdapterPosition())).getTopicId();
-            Long l = this.this$0.selectedTopicId;
+            long topicId = ((TopicModel) TopicsAlert.this.getTopics().get(holder.getAdapterPosition())).getTopicId();
+            Long l = TopicsAlert.this.selectedTopicId;
             return l == null || topicId != l.longValue();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            final Context context = this.this$0.getContext();
+            final Context context = TopicsAlert.this.getContext();
             final ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_CROP;
-            final TopicsAlert topicsAlert = this.this$0;
+            final TopicsAlert topicsAlert = TopicsAlert.this;
             return new RecyclerListView.Holder(new CircleCheckCell(context, scaleType) { // from class: com.smedialink.ui.topics.TopicsAlert$ListAdapter$onCreateViewHolder$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -586,9 +561,11 @@ public final class TopicsAlert extends BottomSheet {
             boolean z;
             Topic topic;
             Intrinsics.checkNotNullParameter(holder, "holder");
-            TopicModel topicModel = (TopicModel) this.this$0.getTopics().get(i);
-            CircleCheckCell circleCheckCell = (CircleCheckCell) holder.itemView;
-            TopicsAlert topicsAlert = this.this$0;
+            TopicModel topicModel = (TopicModel) TopicsAlert.this.getTopics().get(i);
+            View view = holder.itemView;
+            Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.fork.ui.view.CircleCheckCell");
+            CircleCheckCell circleCheckCell = (CircleCheckCell) view;
+            TopicsAlert topicsAlert = TopicsAlert.this;
             if (topicModel.isUserTopic()) {
                 int themedColor = topicsAlert.getThemedColor("iMe_dialogs_userTopicActiveBackground");
                 if (topicModel.getIcon() != null) {

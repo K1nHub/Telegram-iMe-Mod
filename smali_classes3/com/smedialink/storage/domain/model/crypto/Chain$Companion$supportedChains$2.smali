@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/domain/model/crypto/Chain;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/storage/domain/model/crypto/Chain;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

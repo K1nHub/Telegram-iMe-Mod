@@ -35,7 +35,7 @@
 .method public final didSelectDate(ZILjava/lang/String;)V
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$ZkgrknTHgqYU_q1kyuDGmGHsWWU(ZILjava/lang/String;)V
+    invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$G9L1Sf8fPFyDImS-bUJ8Rqkl1dE(ZILjava/lang/String;)V
 
     return-void
 .end method

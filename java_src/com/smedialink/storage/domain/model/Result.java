@@ -109,10 +109,10 @@ public abstract class Result<T> {
 
     public final Result<T> toSuccess() {
         T data = getData();
-        if (data == null) {
-            return null;
+        if (data != null) {
+            return Companion.success(data);
         }
-        return Companion.success(data);
+        return null;
     }
 
     public final Result<T> toFail(Throwable throwable) {

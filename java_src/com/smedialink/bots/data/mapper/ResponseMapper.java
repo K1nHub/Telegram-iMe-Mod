@@ -31,26 +31,22 @@ public final class ResponseMapper {
     }
 
     public final SmartBotResponse map(Response from) {
-        String id;
-        String title;
+        String str;
+        String str2;
         int intValue;
         String avatarOriginal;
         Intrinsics.checkNotNullParameter(from, "from");
         BotsDbModel botById = this.repository.getBotById(from.getBotId());
         if (Intrinsics.areEqual(from.getBotId(), "recent")) {
-            id = from.getBotId();
-            title = this.frequentAnswersTitle;
+            str = from.getBotId();
+            str2 = this.frequentAnswersTitle;
             intValue = R$drawable.ic_bots_recent;
         } else {
-            if (botById == null || (id = botById.getId()) == null) {
-                id = "";
-            }
-            if (botById == null || (title = botById.getTitle()) == null) {
-                title = "";
-            }
+            str = (botById == null || (str = botById.getId()) == null) ? "" : "";
+            str2 = (botById == null || (str2 = botById.getTitle()) == null) ? "" : "";
             Integer num = this.holidays.get(from.getTag());
-            intValue = num == null ? 0 : num.intValue();
+            intValue = num != null ? num.intValue() : 0;
         }
-        return new SmartBotResponse(id, title, intValue, (botById == null || (avatarOriginal = botById.getAvatarOriginal()) == null) ? "" : avatarOriginal, from.getTag(), from.getGif(), from.getLink(), from.getAnswers());
+        return new SmartBotResponse(str, str2, intValue, (botById == null || (avatarOriginal = botById.getAvatarOriginal()) == null) ? "" : avatarOriginal, from.getTag(), from.getGif(), from.getLink(), from.getAnswers());
     }
 }

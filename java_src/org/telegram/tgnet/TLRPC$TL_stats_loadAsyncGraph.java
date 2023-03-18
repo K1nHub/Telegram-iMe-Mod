@@ -6,7 +6,7 @@ public class TLRPC$TL_stats_loadAsyncGraph extends TLObject {
     public String token;
 
     /* renamed from: x */
-    public long f1621x;
+    public long f1627x;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -19,7 +19,7 @@ public class TLRPC$TL_stats_loadAsyncGraph extends TLObject {
         abstractSerializedData.writeInt32(this.flags);
         abstractSerializedData.writeString(this.token);
         if ((this.flags & 1) != 0) {
-            abstractSerializedData.writeInt64(this.f1621x);
+            abstractSerializedData.writeInt64(this.f1627x);
         }
     }
 }

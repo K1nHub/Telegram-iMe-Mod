@@ -7,7 +7,7 @@ public class TLRPC$TL_channels_reportSpam extends TLObject {
     public TLRPC$InputChannel channel;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1538id = new ArrayList<>();
+    public ArrayList<Integer> f1543id = new ArrayList<>();
     public TLRPC$InputPeer participant;
 
     @Override // org.telegram.tgnet.TLObject
@@ -21,10 +21,10 @@ public class TLRPC$TL_channels_reportSpam extends TLObject {
         this.channel.serializeToStream(abstractSerializedData);
         this.participant.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1538id.size();
+        int size = this.f1543id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1538id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1543id.get(i).intValue());
         }
     }
 }

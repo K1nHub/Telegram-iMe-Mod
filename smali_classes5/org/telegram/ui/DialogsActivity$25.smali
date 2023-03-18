@@ -28,7 +28,7 @@
 
     move-object v0, p1
 
-    .line 5811
+    .line 5801
     iput-object v0, v9, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     move-object/from16 v0, p10
@@ -63,7 +63,7 @@
 .method public notifyDataSetChanged()V
     .locals 3
 
-    .line 5814
+    .line 5804
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->getItemCount()I
@@ -72,7 +72,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$29702(Lorg/telegram/ui/DialogsActivity$ViewPage;I)I
 
-    .line 5816
+    .line 5806
     :try_start_0
     invoke-super {p0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->notifyDataSetChanged()V
     :try_end_0
@@ -83,10 +83,10 @@
     :catch_0
     move-exception v0
 
-    .line 5818
+    .line 5808
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 5820
+    .line 5810
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -100,7 +100,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 5821
+    .line 5811
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$21900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -121,7 +121,7 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 5824
+    .line 5814
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -131,7 +131,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 5825
+    .line 5815
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/DialogsActivity;->access$14500(Lorg/telegram/ui/DialogsActivity;Z)V
@@ -143,14 +143,14 @@
 .method public onButtonClicked(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 8
 
-    .line 5832
+    .line 5822
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getMessage()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 5833
+    .line 5823
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -185,7 +185,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 5835
+    .line 5825
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$10100(Lorg/telegram/ui/DialogsActivity;)Z
@@ -194,7 +194,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 5836
+    .line 5826
     iget-object v2, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getDialogId()J
@@ -211,7 +211,7 @@
 
     goto :goto_0
 
-    .line 5838
+    .line 5828
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -233,7 +233,7 @@
 .method public onButtonLongPress(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 8
 
-    .line 5846
+    .line 5836
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$25;->val$viewPage:Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -278,7 +278,7 @@
 .method public onCreateGroupForThisClick()V
     .locals 1
 
-    .line 5851
+    .line 5841
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$25;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$29800(Lorg/telegram/ui/DialogsActivity;)V

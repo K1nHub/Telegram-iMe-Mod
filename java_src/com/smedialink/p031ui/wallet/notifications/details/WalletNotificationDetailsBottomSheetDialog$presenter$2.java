@@ -26,11 +26,11 @@ public final class WalletNotificationDetailsBottomSheetDialog$presenter$2 extend
     /* compiled from: WalletNotificationDetailsBottomSheetDialog.kt */
     /* renamed from: com.smedialink.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21021 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22251 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletNotificationDetailsBottomSheetDialog this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21021(WalletNotificationDetailsBottomSheetDialog walletNotificationDetailsBottomSheetDialog) {
+        C22251(WalletNotificationDetailsBottomSheetDialog walletNotificationDetailsBottomSheetDialog) {
             super(0);
             this.this$0 = walletNotificationDetailsBottomSheetDialog;
         }
@@ -48,7 +48,7 @@ public final class WalletNotificationDetailsBottomSheetDialog$presenter$2 extend
     public final WalletNotificationDetailsPresenter invoke() {
         Lazy lazy;
         WalletNotificationDetailsBottomSheetDialog walletNotificationDetailsBottomSheetDialog = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2100xccf02360(walletNotificationDetailsBottomSheetDialog, null, new C21021(walletNotificationDetailsBottomSheetDialog)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2223xccf02360(walletNotificationDetailsBottomSheetDialog, null, new C22251(walletNotificationDetailsBottomSheetDialog)));
         return (WalletNotificationDetailsPresenter) lazy.getValue();
     }
 }

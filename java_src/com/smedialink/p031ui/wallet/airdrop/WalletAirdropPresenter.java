@@ -8,23 +8,20 @@ import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.data.network.model.error.IErrorStatus;
 import com.smedialink.storage.domain.interactor.crypto.airdrop.AirdropInteractor;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
-import com.smedialink.storage.domain.model.Result;
-import com.smedialink.storage.domain.model.crypto.airdrop.AirdropInfo;
 import com.smedialink.storage.domain.model.crypto.airdrop.AirdropStatus;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.helper.wallet.WalletHelper;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import timber.log.Timber;
 /* compiled from: WalletAirdropPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter */
@@ -71,30 +68,7 @@ public final class WalletAirdropPresenter extends BasePresenter<WalletAirdropVie
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                DomainRxEvents.CryptoEvent cryptoEvent = (DomainRxEvents.CryptoEvent) it;
-                if (cryptoEvent instanceof DomainRxEvents.SuccessRestoreWallet ? true : cryptoEvent instanceof DomainRxEvents.SuccessCreateWallet) {
-                    WalletAirdropPresenter.this.checkAirdropState();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        }), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2006x38278dff(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2007x38278e00(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -113,93 +87,31 @@ public final class WalletAirdropPresenter extends BasePresenter<WalletAirdropVie
     private final void checkAirdropStart(String str) {
         Observable observeOn = AirdropInteractor.checkAirdropStart$default(this.airdropInteractor, str, null, 2, null).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "airdropInteractor\n      …(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$checkAirdropStart$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    if (((AirdropInfo) ((Result.Success) result).getData()) instanceof AirdropInfo.Ready) {
-                        if (WalletAirdropPresenter.this.isCryptoWalletCreated() && WalletAirdropPresenter.this.isBotActivated()) {
-                            ((WalletAirdropView) WalletAirdropPresenter.this.getViewState()).checkNeedToShowAirdropDialog();
-                        } else {
-                            ((WalletAirdropView) WalletAirdropPresenter.this.getViewState()).showAirdropDialog();
-                        }
-                    }
-                } else if (result instanceof Result.Error) {
-                    WalletAirdropPresenter.this.handleErrors(((Result.Error) result).getError());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$checkAirdropStart$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2004xf724c718(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2005xf724c719((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void registerInAirdrop() {
-        Observable flatMap = AirdropInteractor.registerInAirdrop$default(this.airdropInteractor, null, 1, null).flatMap(new Function() { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$registerInAirdrop$$inlined$flatMapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
+        Observable registerInAirdrop$default = AirdropInteractor.registerInAirdrop$default(this.airdropInteractor, null, 1, null);
+        final C2008x38215bb c2008x38215bb = new C2008x38215bb(this);
+        Observable flatMap = registerInAirdrop$default.flatMap(new Function(c2008x38215bb) { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+            private final /* synthetic */ Function1 function;
+
+            {
+                Intrinsics.checkNotNullParameter(c2008x38215bb, "function");
+                this.function = c2008x38215bb;
+            }
+
             @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                AirdropInteractor airdropInteractor;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                }
-                airdropInteractor = WalletAirdropPresenter.this.airdropInteractor;
-                String str = (String) result.getData();
-                if (str == null) {
-                    str = "";
-                }
-                return AirdropInteractor.checkAirdropStart$default(airdropInteractor, str, null, 2, null);
+            public final /* synthetic */ Object apply(Object obj) {
+                return this.function.invoke(obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "airdropInteractor\n      …(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$registerInAirdrop$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    if (((AirdropInfo) ((Result.Success) result).getData()) instanceof AirdropInfo.Ready) {
-                        ((WalletAirdropView) WalletAirdropPresenter.this.getViewState()).showAirdropDialog();
-                    }
-                } else if (result instanceof Result.Error) {
-                    WalletAirdropPresenter.this.handleErrors(((Result.Error) result).getError());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.WalletAirdropPresenter$registerInAirdrop$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2009x3615c038(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2010x3615c039((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

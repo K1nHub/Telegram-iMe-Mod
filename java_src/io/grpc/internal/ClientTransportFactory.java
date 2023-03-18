@@ -8,7 +8,7 @@ import io.grpc.HttpConnectProxiedSocketAddress;
 import java.io.Closeable;
 import java.net.SocketAddress;
 import java.util.concurrent.ScheduledExecutorService;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ClientTransportFactory extends Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     void close();
@@ -17,7 +17,7 @@ public interface ClientTransportFactory extends Closeable {
 
     ConnectionClientTransport newClientTransport(SocketAddress socketAddress, ClientTransportOptions clientTransportOptions, ChannelLogger channelLogger);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ClientTransportOptions {
         private HttpConnectProxiedSocketAddress connectProxiedSocketAddr;
         private String userAgent;

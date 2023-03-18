@@ -168,44 +168,44 @@
 
     move-object/from16 v2, p2
 
-    .line 5119
+    .line 5130
     iput-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    .line 5120
+    .line 5131
     invoke-direct {v0, v2}, Lorg/telegram/ui/Components/SlideView;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 5122
+    .line 5133
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 5124
+    .line 5135
     new-instance v3, Landroid/widget/FrameLayout;
 
     invoke-direct {v3, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5125
+    .line 5136
     new-instance v4, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v4, v2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v4, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->lockImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 5126
+    .line 5137
     sget v5, Lorg/telegram/messenger/R$raw;->tsv_setup_intro:I
 
     const/16 v6, 0x78
 
     invoke-virtual {v4, v5, v6, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 5127
+    .line 5138
     iget-object v4, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->lockImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 5128
+    .line 5139
     iget-object v4, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->lockImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v6, v6, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -214,7 +214,7 @@
 
     invoke-virtual {v3, v4, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5129
+    .line 5140
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isSmallScreen()Z
 
     move-result v4
@@ -253,14 +253,14 @@
 
     const/4 v6, -0x2
 
-    .line 5130
+    .line 5141
     invoke-static {v4, v6, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v7
 
     invoke-virtual {v0, v3, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5132
+    .line 5143
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -269,10 +269,10 @@
 
     const/high16 v7, 0x41900000    # 18.0f
 
-    .line 5133
+    .line 5144
     invoke-virtual {v3, v1, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5134
+    .line 5145
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->titleView:Landroid/widget/TextView;
 
     const-string v8, "fonts/rmedium.ttf"
@@ -283,7 +283,7 @@
 
     invoke-virtual {v3, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 5135
+    .line 5146
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->titleView:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/messenger/R$string;->YourPasswordHeader:I
@@ -294,14 +294,14 @@
 
     invoke-virtual {v3, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5136
+    .line 5147
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->titleView:Landroid/widget/TextView;
 
     const/16 v8, 0x11
 
     invoke-virtual {v3, v8}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5137
+    .line 5148
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->titleView:Landroid/widget/TextView;
 
     const/4 v8, 0x2
@@ -316,7 +316,7 @@
 
     invoke-virtual {v3, v9, v10}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5138
+    .line 5149
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->titleView:Landroid/widget/TextView;
 
     const/4 v11, -0x1
@@ -339,7 +339,7 @@
 
     invoke-virtual {v0, v3, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5140
+    .line 5151
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -348,15 +348,15 @@
 
     const/high16 v9, 0x41600000    # 14.0f
 
-    .line 5141
+    .line 5152
     invoke-virtual {v3, v1, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5142
+    .line 5153
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->confirmTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5143
+    .line 5154
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->confirmTextView:Landroid/widget/TextView;
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -367,7 +367,7 @@
 
     invoke-virtual {v3, v9, v10}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5144
+    .line 5155
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->confirmTextView:Landroid/widget/TextView;
 
     sget v9, Lorg/telegram/messenger/R$string;->LoginPasswordTextShort:I
@@ -378,7 +378,7 @@
 
     invoke-virtual {v3, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5145
+    .line 5156
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->confirmTextView:Landroid/widget/TextView;
 
     const/4 v11, -0x2
@@ -395,14 +395,14 @@
 
     invoke-virtual {v0, v3, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5147
+    .line 5158
     new-instance v3, Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     invoke-direct {v3, v2}, Lorg/telegram/ui/Components/OutlineTextContainerView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->outlineCodeField:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    .line 5148
+    .line 5159
     sget v9, Lorg/telegram/messenger/R$string;->EnterPassword:I
 
     invoke-static {v9}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -411,7 +411,7 @@
 
     invoke-virtual {v3, v9}, Lorg/telegram/ui/Components/OutlineTextContainerView;->setText(Ljava/lang/String;)V
 
-    .line 5149
+    .line 5160
     new-instance v3, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-direct {v3, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
@@ -420,64 +420,64 @@
 
     const/16 v9, 0x14
 
-    .line 5150
+    .line 5161
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     invoke-virtual {v3, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 5151
+    .line 5162
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v9, 0x3fc00000    # 1.5f
 
     invoke-virtual {v3, v9}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 5152
+    .line 5163
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v9, 0x0
 
     invoke-virtual {v3, v9}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 5153
+    .line 5164
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v9, 0x10000005
 
     invoke-virtual {v3, v9}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 5154
+    .line 5165
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v3, v1, v7}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 5155
+    .line 5166
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v3, v1}, Landroid/widget/EditText;->setMaxLines(I)V
 
     const/16 v3, 0x10
 
-    .line 5156
+    .line 5167
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
 
-    .line 5157
+    .line 5168
     iget-object v9, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v9, v7, v7, v7, v7}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 5158
+    .line 5169
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/16 v9, 0x81
 
     invoke-virtual {v7, v9}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 5159
+    .line 5170
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
@@ -486,14 +486,14 @@
 
     invoke-virtual {v7, v9}, Landroid/widget/EditText;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
 
-    .line 5160
+    .line 5171
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget-object v9, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v7, v9}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 5161
+    .line 5172
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -510,7 +510,7 @@
     :goto_2
     invoke-virtual {v7, v9}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 5162
+    .line 5173
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v9, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda3;
@@ -519,14 +519,14 @@
 
     invoke-virtual {v7, v9}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 5163
+    .line 5174
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->outlineCodeField:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     iget-object v9, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/OutlineTextContainerView;->attachEditText(Landroid/widget/EditText;)V
 
-    .line 5164
+    .line 5175
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->outlineCodeField:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     iget-object v9, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -539,7 +539,7 @@
 
     invoke-virtual {v7, v9, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5165
+    .line 5176
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v7, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda4;
@@ -548,7 +548,7 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 5172
+    .line 5183
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->outlineCodeField:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     const/4 v11, -0x1
@@ -571,7 +571,7 @@
 
     invoke-virtual {v0, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5174
+    .line 5185
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -580,10 +580,10 @@
 
     const/16 v7, 0x13
 
-    .line 5175
+    .line 5186
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 5176
+    .line 5187
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     sget v7, Lorg/telegram/messenger/R$string;->ForgotPassword:I
@@ -596,14 +596,14 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5177
+    .line 5188
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     const/high16 v7, 0x41700000    # 15.0f
 
     invoke-virtual {v6, v1, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5178
+    .line 5189
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -614,7 +614,7 @@
 
     invoke-virtual {v1, v6, v10}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 5179
+    .line 5190
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -627,12 +627,12 @@
 
     invoke-virtual {v1, v6, v5, v3, v5}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 5181
+    .line 5192
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5182
+    .line 5193
     iget-object v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     const/4 v5, -0x1
@@ -669,19 +669,19 @@
 
     const/16 v3, 0x50
 
-    .line 5183
+    .line 5194
     invoke-static {v4, v4, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5184
+    .line 5195
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;->attach(Landroid/view/View;)Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;
 
-    .line 5186
+    .line 5197
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     new-instance v3, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda2;
@@ -696,7 +696,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;)Lorg/telegram/tgnet/TLRPC$account_Password;
     .locals 0
 
-    .line 5101
+    .line 5112
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     return-object p0
@@ -705,7 +705,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;Z)V
     .locals 0
 
-    .line 5162
+    .line 5173
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->outlineCodeField:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     if-eqz p2, :cond_0
@@ -732,7 +732,7 @@
 
     const/4 p1, 0x0
 
-    .line 5167
+    .line 5178
     invoke-virtual {p0, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->onNextPressed(Ljava/lang/String;)V
 
     const/4 p1, 0x1
@@ -748,47 +748,47 @@
 .method private synthetic lambda$new$2(Lorg/telegram/tgnet/TLRPC$TL_auth_passwordRecovery;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 5212
+    .line 5223
     new-instance p2, Landroid/os/Bundle;
 
     invoke-direct {p2}, Landroid/os/Bundle;-><init>()V
 
-    .line 5213
+    .line 5224
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_passwordRecovery;->email_pattern:Ljava/lang/String;
 
     const-string p3, "email_unconfirmed_pattern"
 
     invoke-virtual {p2, p3, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5214
+    .line 5225
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->passwordString:Ljava/lang/String;
 
     const-string p3, "password"
 
     invoke-virtual {p2, p3, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5215
+    .line 5226
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->requestPhone:Ljava/lang/String;
 
     const-string p3, "requestPhone"
 
     invoke-virtual {p2, p3, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5216
+    .line 5227
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->phoneHash:Ljava/lang/String;
 
     const-string p3, "phoneHash"
 
     invoke-virtual {p2, p3, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5217
+    .line 5228
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->phoneCode:Ljava/lang/String;
 
     const-string p3, "phoneCode"
 
     invoke-virtual {p2, p3, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5218
+    .line 5229
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 p3, 0x7
@@ -805,7 +805,7 @@
 .method private synthetic lambda$new$3(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
     .locals 7
 
-    .line 5194
+    .line 5205
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v1, 0x0
@@ -816,10 +816,10 @@
 
     if-nez p1, :cond_1
 
-    .line 5196
+    .line 5207
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_auth_passwordRecovery;
 
-    .line 5197
+    .line 5208
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -830,17 +830,17 @@
 
     invoke-direct {p1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5199
+    .line 5210
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_auth_passwordRecovery;->email_pattern:Ljava/lang/String;
 
-    .line 5200
+    .line 5211
     invoke-static {v2}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v3
 
     const/16 v4, 0x2a
 
-    .line 5201
+    .line 5212
     invoke-virtual {v2, v4}, Ljava/lang/String;->indexOf(I)I
 
     move-result v5
@@ -857,34 +857,34 @@
 
     if-eq v2, v4, :cond_0
 
-    .line 5203
+    .line 5214
     new-instance v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v4}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 5204
+    .line 5215
     iget v6, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit16 v6, v6, 0x100
 
     iput v6, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 5205
+    .line 5216
     iput v5, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->start:I
 
     add-int/2addr v2, v0
 
-    .line 5206
+    .line 5217
     iput v2, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->end:I
 
-    .line 5207
+    .line 5218
     new-instance v6, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v6, v4}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
 
     invoke-virtual {v3, v6, v5, v2, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 5209
+    .line 5220
     :cond_0
     sget v2, Lorg/telegram/messenger/R$string;->RestoreEmailSent:I
 
@@ -902,7 +902,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5210
+    .line 5221
     sget v0, Lorg/telegram/messenger/R$string;->RestoreEmailSentTitle:I
 
     const-string v2, "RestoreEmailSentTitle"
@@ -913,7 +913,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5211
+    .line 5222
     sget v0, Lorg/telegram/messenger/R$string;->Continue:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -926,7 +926,7 @@
 
     invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5220
+    .line 5231
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -939,15 +939,15 @@
 
     if-eqz p1, :cond_4
 
-    .line 5222
+    .line 5233
     invoke-virtual {p1, v1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 5223
+    .line 5234
     invoke-virtual {p1, v1}, Landroid/app/Dialog;->setCancelable(Z)V
 
     goto :goto_1
 
-    .line 5226
+    .line 5237
     :cond_1
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -959,7 +959,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 5227
+    .line 5238
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -978,14 +978,14 @@
 
     const-string v2, "Seconds"
 
-    .line 5230
+    .line 5241
     invoke-static {v2, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 5232
+    .line 5243
     :cond_2
     div-int/2addr p1, p2
 
@@ -997,7 +997,7 @@
 
     move-result-object p1
 
-    .line 5234
+    .line 5245
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -1023,7 +1023,7 @@
 
     goto :goto_1
 
-    .line 5236
+    .line 5247
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -1045,7 +1045,7 @@
 .method private synthetic lambda$new$4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 5193
+    .line 5204
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -1058,7 +1058,7 @@
 .method private synthetic lambda$new$5(Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 5246
+    .line 5257
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->requestPhone:Ljava/lang/String;
@@ -1075,7 +1075,7 @@
 .method private synthetic lambda$new$6(Landroid/content/Context;Landroid/view/View;)V
     .locals 2
 
-    .line 5187
+    .line 5198
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LoginActivity;->access$500(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -1090,7 +1090,7 @@
 
     return-void
 
-    .line 5190
+    .line 5201
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
@@ -1098,19 +1098,19 @@
 
     if-eqz p2, :cond_1
 
-    .line 5191
+    .line 5202
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/LoginActivity;->access$7300(Lorg/telegram/ui/LoginActivity;I)V
 
-    .line 5192
+    .line 5203
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_auth_requestPasswordRecovery;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_auth_requestPasswordRecovery;-><init>()V
 
-    .line 5193
+    .line 5204
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LoginActivity;->access$13100(Lorg/telegram/ui/LoginActivity;)I
@@ -1131,20 +1131,20 @@
 
     goto :goto_0
 
-    .line 5241
+    .line 5252
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 5242
+    .line 5253
     new-instance p2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     sget p1, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
 
-    .line 5243
+    .line 5254
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p1
@@ -1155,7 +1155,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailText:I
 
-    .line 5244
+    .line 5255
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -1166,7 +1166,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->Close:I
 
-    .line 5245
+    .line 5256
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -1179,7 +1179,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->ResetAccount:I
 
-    .line 5246
+    .line 5257
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -1192,7 +1192,7 @@
 
     move-result-object p1
 
-    .line 5247
+    .line 5258
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     :goto_0
@@ -1204,12 +1204,12 @@
 
     const/4 v0, 0x0
 
-    .line 5341
+    .line 5352
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->nextPressed:Z
 
     if-eqz p1, :cond_0
 
-    .line 5342
+    .line 5353
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v2, "SRP_ID_INVALID"
@@ -1220,12 +1220,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 5343
+    .line 5354
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;-><init>()V
 
-    .line 5344
+    .line 5355
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LoginActivity;->access$13000(Lorg/telegram/ui/LoginActivity;)I
@@ -1246,7 +1246,7 @@
 
     return-void
 
-    .line 5353
+    .line 5364
     :cond_0
     instance-of v1, p2, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;
 
@@ -1254,12 +1254,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 5354
+    .line 5365
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p1, v0, v2}, Lorg/telegram/ui/LoginActivity;->access$2700(Lorg/telegram/ui/LoginActivity;ZZ)V
 
-    .line 5355
+    .line 5366
     new-instance p1, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda7;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLObject;)V
@@ -1270,13 +1270,13 @@
 
     goto :goto_1
 
-    .line 5361
+    .line 5372
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2, v0}, Lorg/telegram/ui/LoginActivity;->access$6800(Lorg/telegram/ui/LoginActivity;Z)V
 
-    .line 5362
+    .line 5373
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v1, "PASSWORD_HASH_INVALID"
@@ -1287,12 +1287,12 @@
 
     if-eqz p2, :cond_2
 
-    .line 5363
+    .line 5374
     invoke-direct {p0, v2}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->onPasscodeError(Z)V
 
     goto :goto_1
 
-    .line 5364
+    .line 5375
     :cond_2
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -1304,7 +1304,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 5365
+    .line 5376
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
@@ -1323,14 +1323,14 @@
 
     const-string v1, "Seconds"
 
-    .line 5368
+    .line 5379
     invoke-static {v1, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_0
 
-    .line 5370
+    .line 5381
     :cond_3
     div-int/2addr p1, p2
 
@@ -1342,7 +1342,7 @@
 
     move-result-object p1
 
-    .line 5372
+    .line 5383
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -1368,7 +1368,7 @@
 
     goto :goto_1
 
-    .line 5374
+    .line 5385
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -1389,7 +1389,7 @@
 .method private synthetic lambda$onNextPressed$11(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 5340
+    .line 5351
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda10;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -1402,7 +1402,7 @@
 .method private synthetic lambda$onNextPressed$12(Ljava/lang/String;)V
     .locals 7
 
-    .line 5328
+    .line 5339
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     const/4 v1, 0x0
@@ -1416,23 +1416,23 @@
     :cond_0
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$account_Password;->current_algo:Lorg/telegram/tgnet/TLRPC$PasswordKdfAlgo;
 
-    .line 5329
+    .line 5340
     :goto_0
     instance-of v2, v0, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
 
     if-eqz v2, :cond_1
 
-    .line 5330
+    .line 5341
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->getStringBytes(Ljava/lang/String;)[B
 
     move-result-object p1
 
-    .line 5331
+    .line 5342
     move-object v3, v0
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;
 
-    .line 5332
+    .line 5343
     invoke-static {p1, v3}, Lorg/telegram/messenger/SRPHelper;->getX([BLorg/telegram/tgnet/TLRPC$TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow;)[B
 
     move-result-object p1
@@ -1442,20 +1442,20 @@
     :cond_1
     move-object p1, v1
 
-    .line 5338
+    .line 5349
     :goto_1
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_auth_checkPassword;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_auth_checkPassword;-><init>()V
 
-    .line 5340
+    .line 5351
     new-instance v4, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda13;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;)V
 
     if-eqz v2, :cond_3
 
-    .line 5380
+    .line 5391
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$account_Password;->srp_id:J
@@ -1472,22 +1472,22 @@
 
     if-nez p1, :cond_2
 
-    .line 5382
+    .line 5393
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_error;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_error;-><init>()V
 
     const-string v0, "PASSWORD_HASH_INVALID"
 
-    .line 5383
+    .line 5394
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
-    .line 5384
+    .line 5395
     invoke-interface {v4, v1, p1}, Lorg/telegram/tgnet/RequestDelegate;->run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 
-    .line 5387
+    .line 5398
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -1512,14 +1512,14 @@
 
     if-nez p1, :cond_0
 
-    .line 5346
+    .line 5357
     check-cast p2, Lorg/telegram/tgnet/TLRPC$account_Password;
 
     iput-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     const/4 p1, 0x0
 
-    .line 5347
+    .line 5358
     invoke-virtual {p0, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->onNextPressed(Ljava/lang/String;)V
 
     :cond_0
@@ -1529,7 +1529,7 @@
 .method private synthetic lambda$onNextPressed$8(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 5344
+    .line 5355
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda9;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -1542,19 +1542,19 @@
 .method private synthetic lambda$onNextPressed$9(Lorg/telegram/tgnet/TLObject;)V
     .locals 2
 
-    .line 5356
+    .line 5367
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1, v1}, Lorg/telegram/ui/LoginActivity;->access$9900(Lorg/telegram/ui/LoginActivity;ZZ)V
 
-    .line 5357
+    .line 5368
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 5358
+    .line 5369
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;
@@ -1567,15 +1567,15 @@
 .method private synthetic lambda$onShow$13()V
     .locals 2
 
-    .line 5409
+    .line 5420
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     if-eqz v0, :cond_0
 
-    .line 5410
+    .line 5421
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 5411
+    .line 5422
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->length()I
@@ -1584,14 +1584,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 5412
+    .line 5423
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity;->access$4100(Lorg/telegram/ui/LoginActivity;Landroid/view/View;)Z
 
-    .line 5413
+    .line 5424
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->lockImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -1602,7 +1602,7 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 5414
+    .line 5425
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->lockImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -1614,7 +1614,7 @@
 .method private onPasscodeError(Z)V
     .locals 2
 
-    .line 5302
+    .line 5313
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1628,14 +1628,14 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 5306
+    .line 5317
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v0, ""
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5308
+    .line 5319
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -1653,7 +1653,7 @@
 .method public getHeaderName()Ljava/lang/String;
     .locals 2
 
-    .line 5265
+    .line 5276
     sget v0, Lorg/telegram/messenger/R$string;->LoginPassword:I
 
     const-string v1, "LoginPassword"
@@ -1678,10 +1678,10 @@
 
     const/4 p1, 0x0
 
-    .line 5399
+    .line 5410
     iput-boolean p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->nextPressed:Z
 
-    .line 5400
+    .line 5411
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v0, 0x1
@@ -1690,7 +1690,7 @@
 
     const/4 p1, 0x0
 
-    .line 5401
+    .line 5412
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentParams:Landroid/os/Bundle;
 
     return v0
@@ -1701,7 +1701,7 @@
 
     const/4 v0, 0x0
 
-    .line 5270
+    .line 5281
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->nextPressed:Z
 
     return-void
@@ -1710,14 +1710,14 @@
 .method public onNextPressed(Ljava/lang/String;)V
     .locals 2
 
-    .line 5313
+    .line 5324
     iget-boolean p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->nextPressed:Z
 
     if-eqz p1, :cond_0
 
     return-void
 
-    .line 5317
+    .line 5328
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -1729,7 +1729,7 @@
 
     move-result-object p1
 
-    .line 5318
+    .line 5329
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -1738,7 +1738,7 @@
 
     if-nez v0, :cond_1
 
-    .line 5319
+    .line 5330
     invoke-direct {p0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->onPasscodeError(Z)V
 
     return-void
@@ -1746,15 +1746,15 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 5322
+    .line 5333
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->nextPressed:Z
 
-    .line 5323
+    .line 5334
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity;->access$7300(Lorg/telegram/ui/LoginActivity;I)V
 
-    .line 5325
+    .line 5336
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda6;
@@ -1769,22 +1769,22 @@
 .method public onShow()V
     .locals 3
 
-    .line 5407
+    .line 5418
     invoke-super {p0}, Lorg/telegram/ui/Components/SlideView;->onShow()V
 
-    .line 5408
+    .line 5419
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;)V
 
-    .line 5416
+    .line 5427
     invoke-static {}, Lorg/telegram/ui/LoginActivity;->access$7800()I
 
     move-result v1
 
     int-to-long v1, v1
 
-    .line 5408
+    .line 5419
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
@@ -1795,7 +1795,7 @@
 
     const-string v0, "passview_params"
 
-    .line 5432
+    .line 5443
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
@@ -1806,20 +1806,20 @@
 
     const/4 v1, 0x1
 
-    .line 5434
+    .line 5445
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->setParams(Landroid/os/Bundle;Z)V
 
     :cond_0
     const-string v0, "passview_code"
 
-    .line 5436
+    .line 5447
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 5438
+    .line 5449
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
@@ -1831,7 +1831,7 @@
 .method public saveStateParams(Landroid/os/Bundle;)V
     .locals 2
 
-    .line 5421
+    .line 5432
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -1842,7 +1842,7 @@
 
     move-result-object v0
 
-    .line 5422
+    .line 5433
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -1851,10 +1851,10 @@
 
     const-string v1, "passview_code"
 
-    .line 5423
+    .line 5434
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5425
+    .line 5436
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentParams:Landroid/os/Bundle;
 
@@ -1862,7 +1862,7 @@
 
     const-string v1, "passview_params"
 
-    .line 5426
+    .line 5437
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_1
@@ -1876,7 +1876,7 @@
 
     return-void
 
-    .line 5278
+    .line 5289
     :cond_0
     invoke-virtual {p1}, Landroid/os/Bundle;->isEmpty()Z
 
@@ -1884,14 +1884,14 @@
 
     if-eqz p2, :cond_1
 
-    .line 5279
+    .line 5290
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     return-void
 
-    .line 5282
+    .line 5293
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -1899,12 +1899,12 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5283
+    .line 5294
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentParams:Landroid/os/Bundle;
 
     const-string p2, "password"
 
-    .line 5284
+    .line 5295
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1913,7 +1913,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 5286
+    .line 5297
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-static {p2}, Lorg/telegram/messenger/Utilities;->hexToBytes(Ljava/lang/String;)[B
@@ -1924,7 +1924,7 @@
 
     const/4 p2, 0x0
 
-    .line 5287
+    .line 5298
     invoke-virtual {v0, p2}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v1
@@ -1938,7 +1938,7 @@
     :cond_2
     const-string p2, "phoneFormated"
 
-    .line 5290
+    .line 5301
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1947,7 +1947,7 @@
 
     const-string p2, "phoneHash"
 
-    .line 5291
+    .line 5302
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1956,14 +1956,14 @@
 
     const-string p2, "code"
 
-    .line 5292
+    .line 5303
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->phoneCode:Ljava/lang/String;
 
-    .line 5294
+    .line 5305
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
     if-eqz p1, :cond_3
@@ -1976,7 +1976,7 @@
 
     if-nez p1, :cond_3
 
-    .line 5295
+    .line 5306
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
@@ -1987,7 +1987,7 @@
 
     goto :goto_0
 
-    .line 5297
+    .line 5308
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -2002,7 +2002,7 @@
 .method public updateColors()V
     .locals 3
 
-    .line 5254
+    .line 5265
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->titleView:Landroid/widget/TextView;
 
     const-string v1, "windowBackgroundWhiteBlackText"
@@ -2013,7 +2013,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5255
+    .line 5266
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->confirmTextView:Landroid/widget/TextView;
 
     const-string v2, "windowBackgroundWhiteGrayText6"
@@ -2024,7 +2024,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5256
+    .line 5267
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -2033,7 +2033,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 5257
+    .line 5268
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -2042,7 +2042,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 5258
+    .line 5269
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->codeField:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v1, "windowBackgroundWhiteHintText"
@@ -2053,7 +2053,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 5259
+    .line 5270
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->cancelButton:Landroid/widget/TextView;
 
     const-string v1, "windowBackgroundWhiteBlueText4"
@@ -2064,7 +2064,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5260
+    .line 5271
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->outlineCodeField:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/OutlineTextContainerView;->updateColor()V

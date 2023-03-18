@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public final onLongClick(Landroid/view/View;)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda122;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$f5Jd8l99nB0KzIWe2J4Z0JS-kos(Lorg/telegram/ui/ChatActivity;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$o_RV4ETgEYR2OhNqARFmTaEzsEY(Lorg/telegram/ui/ChatActivity;Landroid/view/View;)Z
 
     move-result p1
 

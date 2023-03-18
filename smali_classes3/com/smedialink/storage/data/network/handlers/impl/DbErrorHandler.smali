@@ -77,16 +77,16 @@
     :goto_0
     new-instance v1, Lcom/smedialink/storage/data/network/model/error/ErrorModel;
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
+    const/4 v2, 0x0
 
     :goto_1
     invoke-direct {v1, v2, v0, p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V

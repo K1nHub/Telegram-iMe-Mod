@@ -1,6 +1,6 @@
 package io.grpc.internal;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Stopwatch;
@@ -35,7 +35,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GrpcUtil {
     public static final CallOptions.Key<Boolean> CALL_OPTIONS_RPC_OWNED_BY_BALANCER;
     public static final Metadata.Key<byte[]> CONTENT_ACCEPT_ENCODING_KEY;
@@ -54,7 +54,7 @@ public final class GrpcUtil {
     private static final Logger log = Logger.getLogger(GrpcUtil.class.getName());
 
     static {
-        Charset.forName(C0474C.ASCII_NAME);
+        Charset.forName(C0468C.ASCII_NAME);
         TIMEOUT_KEY = Metadata.Key.m700of("grpc-timeout", new TimeoutMarshaller());
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
         MESSAGE_ENCODING_KEY = Metadata.Key.m700of("grpc-encoding", asciiMarshaller);
@@ -121,7 +121,7 @@ public final class GrpcUtil {
         };
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class AcceptEncodingMarshaller implements InternalMetadata.TrustedAsciiMarshaller<byte[]> {
         @Override // io.grpc.Metadata.TrustedAsciiMarshaller
         public byte[] parseAsciiString(byte[] bArr) {
@@ -187,7 +187,7 @@ public final class GrpcUtil {
     	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
      */
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Http2Error {
         private static final /* synthetic */ Http2Error[] $VALUES;
         public static final Http2Error CANCEL;
@@ -337,7 +337,7 @@ public final class GrpcUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class TimeoutMarshaller implements Metadata.AsciiMarshaller<Long> {
         TimeoutMarshaller() {
         }

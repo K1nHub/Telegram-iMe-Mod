@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,145:1\n127#2,5:146\n127#2,5:151\n127#2,5:156\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n*L\n75#1:146,5\n76#1:151,5\n77#1:156,5\n*E\n"
+    value = "SMAP\nRepositoryModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,153:1\n127#2,5:154\n127#2,5:159\n127#2,5:164\n*S KotlinDebug\n*F\n+ 1 RepositoryModule.kt\ncom/smedialink/storage/data/di/module/RepositoryModuleKt$repositoryModule$1$5\n*L\n77#1:154,5\n78#1:159,5\n79#1:164,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 74
+    .line 76
     new-instance p2, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl;
 
     .line 131
@@ -180,7 +180,7 @@
 
     move-object v1, p2
 
-    .line 74
+    .line 76
     invoke-direct/range {v1 .. v8}, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl;-><init>(Lcom/smedialink/storage/data/network/api/own/CatalogApi;Lcom/smedialink/storage/data/locale/db/dao/minor/catalog/CatalogCategoryDao;Lcom/smedialink/storage/data/locale/db/dao/minor/catalog/CatalogLanguageDao;Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler;Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/smedialink/storage/domain/storage/PreferenceHelper;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
@@ -189,7 +189,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 73
+    .line 75
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

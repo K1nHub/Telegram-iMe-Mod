@@ -36,7 +36,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/MentionsAdapter;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 1149
+    .line 1161
     iput-object p2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->val$newMap:Landroidx/collection/LongSparseArray;
 
     iput-object p3, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->val$users:Ljava/util/ArrayList;
@@ -49,19 +49,19 @@
 .method private getId(Lorg/telegram/tgnet/TLObject;)J
     .locals 2
 
-    .line 1152
+    .line 1164
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_0
 
-    .line 1153
+    .line 1165
     check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     return-wide v0
 
-    .line 1155
+    .line 1167
     :cond_0
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -77,7 +77,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 1149
+    .line 1161
     check-cast p1, Lorg/telegram/tgnet/TLObject;
 
     check-cast p2, Lorg/telegram/tgnet/TLObject;
@@ -92,17 +92,17 @@
 .method public compare(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;)I
     .locals 6
 
-    .line 1161
+    .line 1173
     invoke-direct {p0, p1}, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->getId(Lorg/telegram/tgnet/TLObject;)J
 
     move-result-wide v0
 
-    .line 1162
+    .line 1174
     invoke-direct {p0, p2}, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->getId(Lorg/telegram/tgnet/TLObject;)J
 
     move-result-wide p1
 
-    .line 1163
+    .line 1175
     iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->val$newMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v0, v1}, Landroidx/collection/LongSparseArray;->indexOfKey(J)I
@@ -123,7 +123,7 @@
 
     return v3
 
-    .line 1165
+    .line 1177
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->val$newMap:Landroidx/collection/LongSparseArray;
 
@@ -137,7 +137,7 @@
 
     return v4
 
-    .line 1167
+    .line 1179
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->val$newMap:Landroidx/collection/LongSparseArray;
 
@@ -151,7 +151,7 @@
 
     return v5
 
-    .line 1170
+    .line 1182
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->val$users:Ljava/util/ArrayList;
 
@@ -163,7 +163,7 @@
 
     move-result v0
 
-    .line 1171
+    .line 1183
     iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$6;->val$users:Ljava/util/ArrayList;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;

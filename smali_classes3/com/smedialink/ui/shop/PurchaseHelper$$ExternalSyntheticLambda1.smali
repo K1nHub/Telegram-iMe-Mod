@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$Z2qxKNhMUobYnzNZkAa9RzOMLks()V
+    invoke-static {}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$31U8RR7gEQ-Bi8zS_UDF8r9l7fk()V
 
     return-void
 .end method

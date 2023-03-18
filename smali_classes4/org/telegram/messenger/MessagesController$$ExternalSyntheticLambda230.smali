@@ -5,27 +5,29 @@
 .implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:J
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZZJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iput-boolean p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$1:Z
+
+    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$2:Z
+
+    iput-wide p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$3:J
 
     return-void
 .end method
@@ -33,9 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 5
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iget-boolean v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$1:Z
+
+    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$2:Z
+
+    iget-wide v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda230;->f$3:J
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$4FCH8yrZZp77Tcg_5peOgI0LuRc(Lorg/telegram/messenger/MessagesController;ZZJ)V
 
     return-void
 .end method

@@ -35,9 +35,8 @@ public abstract class CatalogTabFragment extends MvpFragment {
     public void onResume() {
         super.onResume();
         BottomNavigationDelegate bottomNavigationDelegate = this.bottomNavigationDelegate;
-        if (bottomNavigationDelegate == null) {
-            return;
+        if (bottomNavigationDelegate != null) {
+            bottomNavigationDelegate.getBottomNavigationPadding(new CatalogTabFragment$onResume$1(this));
         }
-        bottomNavigationDelegate.getBottomNavigationPadding(new CatalogTabFragment$onResume$1(this));
     }
 }

@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 48402
+    .line 48645
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 
     goto :goto_0
 
-    .line 48408
+    .line 48651
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;
 
@@ -40,7 +40,7 @@
 
     goto :goto_0
 
-    .line 48414
+    .line 48657
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
@@ -48,7 +48,7 @@
 
     goto :goto_0
 
-    .line 48411
+    .line 48654
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
@@ -61,7 +61,7 @@
 
     goto :goto_1
 
-    .line 48418
+    .line 48661
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -91,7 +91,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 48421
+    .line 48664
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/view/MessageMoreActionsView;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 56
     iput-object p1, p0, Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItemsAdapter;->this$0:Lorg/fork/ui/view/MessageMoreActionsView;
@@ -176,6 +172,10 @@
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
+    const-string v0, "null cannot be cast to non-null type org.telegram.ui.ActionBar.ActionBarMenuSubItem"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     check-cast p2, Lorg/fork/ui/view/MessageMoreActionsView$SubMenuItem$Option;
@@ -199,6 +199,10 @@
     if-eqz p2, :cond_1
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string p2, "null cannot be cast to non-null type android.widget.FrameLayout"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Landroid/widget/FrameLayout;
 
@@ -255,9 +259,6 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 77
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 79
@@ -276,9 +277,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 84
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 70
     :goto_0

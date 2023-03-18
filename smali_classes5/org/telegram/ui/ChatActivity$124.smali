@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/ChatActivity$124;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
 .source "ChatActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
 
 # annotations
@@ -20,54 +17,75 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-.field final synthetic val$primaryMessage:Lorg/telegram/messenger/MessageObject;
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 27993
+    .line 28044
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$124;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$124;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
-
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$124;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
-    .locals 10
+.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    .locals 2
 
-    .line 27996
+    .line 28047
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v0
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getRepeatCount()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 28048
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$124;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$124;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$124;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    .line 28050
+    :cond_0
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
-    const/4 v4, 0x0
+    move-result p1
 
-    const/4 v5, 0x0
+    return p1
+.end method
 
-    const/4 v7, 0x0
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    move-object v3, p1
+    .line 28055
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-object v6, p2
+    move-result v0
 
-    move v8, p3
+    .line 28056
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    move v9, p4
+    move-result p1
 
-    invoke-virtual/range {v0 .. v9}, Lorg/telegram/ui/ChatActivity;->selectReaction(Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/view/View;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZZ)V
+    if-nez p1, :cond_0
 
-    return-void
+    if-nez v0, :cond_0
+
+    .line 28057
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$124;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
+
+    :cond_0
+    return v0
 .end method

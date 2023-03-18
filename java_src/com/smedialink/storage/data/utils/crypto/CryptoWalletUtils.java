@@ -24,9 +24,18 @@ public final class CryptoWalletUtils {
 
         static {
             int[] iArr = new int[WCEthereumSignMessage.WCSignType.values().length];
-            iArr[WCEthereumSignMessage.WCSignType.MESSAGE.ordinal()] = 1;
-            iArr[WCEthereumSignMessage.WCSignType.PERSONAL_MESSAGE.ordinal()] = 2;
-            iArr[WCEthereumSignMessage.WCSignType.TYPED_MESSAGE.ordinal()] = 3;
+            try {
+                iArr[WCEthereumSignMessage.WCSignType.MESSAGE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[WCEthereumSignMessage.WCSignType.PERSONAL_MESSAGE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[WCEthereumSignMessage.WCSignType.TYPED_MESSAGE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -91,6 +100,6 @@ public final class CryptoWalletUtils {
         } else {
             signMessage = Sign.signPrefixedMessage(hexStringToByteArray, wallet.getCredentials().getEcKeyPair());
         }
-        return Numeric.toHexString(signMessage.getR()) + ((Object) Numeric.cleanHexPrefix(Numeric.toHexString(signMessage.getS()))) + ((Object) Numeric.cleanHexPrefix(Numeric.toHexString(signMessage.getV())));
+        return Numeric.toHexString(signMessage.getR()) + Numeric.cleanHexPrefix(Numeric.toHexString(signMessage.getS())) + Numeric.cleanHexPrefix(Numeric.toHexString(signMessage.getV()));
     }
 }

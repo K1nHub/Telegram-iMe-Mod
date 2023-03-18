@@ -10,15 +10,17 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$2:Ljava/lang/Runnable;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_editBanned;
+.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$4:Z
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;
+
+.field public final synthetic f$5:Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_editBanned;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;Lorg/telegram/messenger/MessagesController$ErrorDelegate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,11 +29,13 @@
 
     iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$1:J
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$2:Ljava/lang/Runnable;
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_editBanned;
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iput-boolean p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$4:Z
+    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;
+
+    iput-object p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$5:Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
     return-void
 .end method
@@ -39,23 +43,25 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 8
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$0:Lorg/telegram/messenger/MessagesController;
 
     iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$1:J
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$2:Ljava/lang/Runnable;
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$3:Lorg/telegram/tgnet/TLRPC$TL_channels_editBanned;
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-boolean v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$4:Z
+    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;
 
-    move-object v6, p1
+    iget-object v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda321;->f$5:Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
-    move-object v7, p2
+    move-object v7, p1
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$Q_9HMuI6YXsqknNSypdz6_g2nVg(Lorg/telegram/messenger/MessagesController;JLorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_editBanned;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-object v8, p2
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$HU3ih9T9Jw6_fKOztVm3CTtRRtI(Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_editChatAdmin;Lorg/telegram/messenger/MessagesController$ErrorDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

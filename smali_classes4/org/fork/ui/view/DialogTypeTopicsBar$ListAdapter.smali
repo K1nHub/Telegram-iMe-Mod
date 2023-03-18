@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/view/DialogTypeTopicsBar;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 76
     iput-object p1, p0, Lorg/fork/ui/view/DialogTypeTopicsBar$ListAdapter;->this$0:Lorg/fork/ui/view/DialogTypeTopicsBar;
@@ -79,6 +75,10 @@
 
     .line 94
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string v0, "null cannot be cast to non-null type com.smedialink.ui.topics.TopicView"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/smedialink/ui/topics/TopicView;
 
@@ -187,9 +187,6 @@
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 91
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 84
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

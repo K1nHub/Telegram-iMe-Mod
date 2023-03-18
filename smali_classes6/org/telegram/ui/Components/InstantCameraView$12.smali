@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;)V
     .locals 0
 
-    .line 2806
+    .line 2837
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$12;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2809
+    .line 2840
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$12;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$6000(Lorg/telegram/ui/Components/InstantCameraView;)Landroid/animation/AnimatorSet;
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2810
+    .line 2841
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$12;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     const/4 v0, 0x0

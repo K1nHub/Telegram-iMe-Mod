@@ -11,16 +11,15 @@ import com.smedialink.model.wallet.crypto.pin.EnterPinCodeResult;
 import com.smedialink.model.wallet.crypto.pin.EnterPinCodeScreenType;
 import com.smedialink.p031ui.base.WalletAuthFragment;
 import com.smedialink.p031ui.base.mvp.MvpFragment;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazy;
 import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -37,14 +36,13 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.PasscodeView;
 import org.telegram.p048ui.PasscodeActivity;
-import timber.log.Timber;
 /* compiled from: EnterWalletPinFragment.kt */
 /* renamed from: com.smedialink.ui.wallet.crypto.enter.pin.EnterWalletPinFragment */
 /* loaded from: classes3.dex */
@@ -64,8 +62,14 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
 
         static {
             int[] iArr = new int[EnterPinCodeScreenType.values().length];
-            iArr[EnterPinCodeScreenType.TOTAL_LOCK.ordinal()] = 1;
-            iArr[EnterPinCodeScreenType.CHECK.ordinal()] = 2;
+            try {
+                iArr[EnterPinCodeScreenType.TOTAL_LOCK.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[EnterPinCodeScreenType.CHECK.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -208,19 +212,19 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
 
     private final void setupActionBar() {
         this.actionBar.setAddToContainer(false);
-        AppCompatImageView appCompatImageView = getBinding().imageBack;
-        Intrinsics.checkNotNullExpressionValue(appCompatImageView, "");
-        ViewGroup.LayoutParams layoutParams = appCompatImageView.getLayoutParams();
+        AppCompatImageView setupActionBar$lambda$1 = getBinding().imageBack;
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$1, "setupActionBar$lambda$1");
+        ViewGroup.LayoutParams layoutParams = setupActionBar$lambda$1.getLayoutParams();
         Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
-        ViewGroup.LayoutParams layoutParams3 = appCompatImageView.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams3 = setupActionBar$lambda$1.getLayoutParams();
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
-        appCompatImageView.setLayoutParams(layoutParams2);
-        appCompatImageView.setImageResource(C3158R.C3160drawable.ic_ab_back);
-        ViewExtKt.setCircleRippleBackground(appCompatImageView);
-        ViewExtKt.setImageColor(appCompatImageView, Theme.getColor("actionBarDefaultTitle"));
-        ViewExtKt.safeThrottledClick$default(appCompatImageView, 0L, new EnterWalletPinFragment$setupActionBar$1$2(this), 1, null);
+        setupActionBar$lambda$1.setLayoutParams(layoutParams2);
+        setupActionBar$lambda$1.setImageResource(C3286R.C3288drawable.ic_ab_back);
+        ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$1);
+        ViewExtKt.setImageColor(setupActionBar$lambda$1, Theme.getColor("actionBarDefaultTitle"));
+        ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$1, 0L, new EnterWalletPinFragment$setupActionBar$1$2(this), 1, null);
     }
 
     private final void setupPasscodeView() {
@@ -255,42 +259,7 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                RxEventBus rxEventBus2;
-                EnterPinCodeScreenType enterPinCodeScreenType;
-                Function2 function2;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                DomainRxEvents.CryptoEvent cryptoEvent = (DomainRxEvents.CryptoEvent) it;
-                if (cryptoEvent instanceof DomainRxEvents.SuccessResetWallet) {
-                    EnterWalletPinFragment.this.removeSelfFromStack();
-                    return;
-                }
-                if (cryptoEvent instanceof DomainRxEvents.SuccessRecreateWalletByPassword ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessRestoreWallet.INSTANCE)) {
-                    rxEventBus2 = EnterWalletPinFragment.this.getRxEventBus();
-                    enterPinCodeScreenType = EnterWalletPinFragment.this.screenType;
-                    rxEventBus2.publish(new AppRxEvents.SuccessEnterPinCode(enterPinCodeScreenType));
-                    function2 = EnterWalletPinFragment.this.resultDelegate;
-                    function2.invoke(new EnterPinCodeResult.Success(null, null, 3, null), EnterWalletPinFragment.this);
-                    EnterWalletPinFragment.this.removeSelfFromStack();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2071x64e4ff35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2072x64e4ff36(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

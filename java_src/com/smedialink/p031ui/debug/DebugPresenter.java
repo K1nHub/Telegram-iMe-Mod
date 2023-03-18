@@ -11,7 +11,7 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: DebugPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.debug.DebugPresenter */
@@ -32,14 +32,13 @@ public final class DebugPresenter extends BasePresenter<DebugView> {
         ((DebugView) getViewState()).showConfirmSwitchEnvironmentDialog(getConfirmSwitchEnvironmentDialogModel(), new Callbacks$Callback() { // from class: com.smedialink.ui.debug.DebugPresenter$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                DebugPresenter.m1453switchWalletEnvironment$lambda0(DebugPresenter.this, environment);
+                DebugPresenter.switchWalletEnvironment$lambda$0(DebugPresenter.this, environment);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: switchWalletEnvironment$lambda-0  reason: not valid java name */
-    public static final void m1453switchWalletEnvironment$lambda0(DebugPresenter this$0, Environment environment) {
+    public static final void switchWalletEnvironment$lambda$0(DebugPresenter this$0, Environment environment) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(environment, "$environment");
         T viewState = this$0.getViewState();
@@ -67,6 +66,6 @@ public final class DebugPresenter extends BasePresenter<DebugView> {
     }
 
     private final DialogModel getConfirmSwitchEnvironmentDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.debug_option_choose_wallet_environment_dialog_title), this.resourceManager.getString(C3158R.string.debug_option_choose_wallet_environment_dialog_message), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3286R.string.debug_option_choose_wallet_environment_dialog_title), this.resourceManager.getString(C3286R.string.debug_option_choose_wallet_environment_dialog_message), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.common_confirm));
     }
 }

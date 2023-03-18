@@ -1,7 +1,7 @@
 package kotlin.ranges;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
-/* compiled from: Ranges.kt */
+/* compiled from: PrimitiveRanges.kt */
 /* loaded from: classes4.dex */
 public final class LongRange extends LongProgression {
     public LongRange(long j, long j2) {
@@ -39,7 +39,7 @@ public final class LongRange extends LongProgression {
         return getFirst() + ".." + getLast();
     }
 
-    /* compiled from: Ranges.kt */
+    /* compiled from: PrimitiveRanges.kt */
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

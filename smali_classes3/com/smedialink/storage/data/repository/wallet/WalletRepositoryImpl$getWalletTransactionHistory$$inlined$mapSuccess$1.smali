@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl$getWalletTransactionHistory$$inlined$mapSuccess$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "FirebaseExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,18 +18,22 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+        "Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse;",
+        ">;",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;",
+        ">;>;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 WalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n152#2:87\n1547#3:88\n1618#3,3:89\n8#4:92\n6#4:93\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n152#1:88\n152#1:89,3\n71#2:92\n72#2:93\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n+ 2 WalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n152#2:87\n1549#3:88\n1620#3,3:89\n8#4:92\n6#4:93\n*S KotlinDebug\n*F\n+ 1 WalletRepositoryImpl.kt\ncom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$mapSuccess$1\n*L\n152#1:88\n152#1:89,3\n71#2:92\n72#2:93\n*E\n"
 .end annotation
 
 
@@ -43,20 +47,28 @@
 
     iput-object p1, p0, Lcom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl$getWalletTransactionHistory$$inlined$mapSuccess$1;->$errorHandler:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+.method public final invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)",
+            "(",
+            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse;",
+            ">;)",
             "Lcom/smedialink/storage/domain/model/Result<",
-            "TR;>;"
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;",
+            ">;>;"
         }
     .end annotation
 
@@ -82,7 +94,7 @@
 
     move-result-object p1
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -93,7 +105,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -109,7 +121,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
 
     .line 152
@@ -117,6 +129,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -154,13 +167,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 70
     check-cast p1, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl$getWalletTransactionHistory$$inlined$mapSuccess$1;->apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/wallet/WalletRepositoryImpl$getWalletTransactionHistory$$inlined$mapSuccess$1;->invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

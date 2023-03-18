@@ -14,7 +14,6 @@ import com.smedialink.storage.domain.model.crypto.airdrop.AirdropVersion;
 import com.smedialink.storage.domain.model.wallet.staking.StakingOrderType;
 import com.smedialink.storage.domain.model.wallet.token.TokenOrderType;
 import java.util.List;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoPreferenceHelper.kt */
 /* loaded from: classes3.dex */
 public interface CryptoPreferenceHelper extends BasePreferenceHelper {
@@ -134,7 +133,6 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
     /* loaded from: classes3.dex */
     public static final class DefaultImpls {
         public static BlockchainType getCurrentBlockchainType(CryptoPreferenceHelper cryptoPreferenceHelper) {
-            Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "this");
             return cryptoPreferenceHelper.getNetworkType().getBlockchainType();
         }
 
@@ -153,7 +151,7 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
     /* loaded from: classes3.dex */
     public static final class Keys {
         static final /* synthetic */ Keys $$INSTANCE = new Keys();
-        private static final String KEY_AIRDROP_METADATA = Intrinsics.stringPlus("airdrop_metadata_", AirdropVersion.VERSION_1.getValue());
+        private static final String KEY_AIRDROP_METADATA = "airdrop_metadata_" + AirdropVersion.VERSION_1.getValue();
 
         private Keys() {
         }

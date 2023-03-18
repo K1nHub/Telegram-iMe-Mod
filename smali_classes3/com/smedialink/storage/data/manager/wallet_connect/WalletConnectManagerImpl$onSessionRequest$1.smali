@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 357
+    .line 358
     invoke-virtual {p0}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onSessionRequest$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,26 +63,26 @@
 .method public final invoke()V
     .locals 4
 
-    .line 358
+    .line 359
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onSessionRequest$1;->$client:Lcom/trustwallet/walletconnect/WCClient;
 
-    .line 359
+    .line 360
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onSessionRequest$1;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v1}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getWallet(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
-
-    move-result-object v1
+    const/4 v1, 0x0
 
     :goto_0
     if-nez v1, :cond_1
@@ -94,7 +94,7 @@
 
     move-result-object v1
 
-    .line 360
+    .line 361
     iget-object v2, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$onSessionRequest$1;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
     invoke-static {v2}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;->access$getCryptoPreferenceHelper$p(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;)Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
@@ -111,7 +111,7 @@
 
     long-to-int v3, v2
 
-    .line 358
+    .line 359
     invoke-virtual {v0, v1, v3}, Lcom/trustwallet/walletconnect/WCClient;->approveSession(Ljava/util/List;I)Z
 
     return-void

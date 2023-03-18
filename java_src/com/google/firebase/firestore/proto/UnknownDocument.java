@@ -43,7 +43,7 @@ public final class UnknownDocument extends GeneratedMessageLite<UnknownDocument,
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<UnknownDocument, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10231 c10231) {
+        /* synthetic */ Builder(C10161 c10161) {
             this();
         }
 
@@ -66,7 +66,7 @@ public final class UnknownDocument extends GeneratedMessageLite<UnknownDocument,
 
     /* renamed from: com.google.firebase.firestore.proto.UnknownDocument$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10231 {
+    static /* synthetic */ class C10161 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f184xa1df5c61;
@@ -107,7 +107,7 @@ public final class UnknownDocument extends GeneratedMessageLite<UnknownDocument,
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10231.f184xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10161.f184xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new UnknownDocument();
             case 2:

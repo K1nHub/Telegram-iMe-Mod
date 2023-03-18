@@ -37,7 +37,7 @@ public final class CursorMeta {
     }
 
     public String toString() {
-        return "CursorMeta(nextCursor=" + ((Object) this.nextCursor) + ')';
+        return "CursorMeta(nextCursor=" + this.nextCursor + ')';
     }
 
     public CursorMeta(String str) {

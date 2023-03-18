@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/catalog/CatalogRootFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/catalog/CatalogRootFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->$r8$lambda$kFbyb8HzViz10PHy_DeZYR2jQmE(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->$r8$lambda$3k5HtneIwng4fP0R3l0zHIrYUMk(Lcom/smedialink/ui/catalog/CatalogRootFragment;)V
 
     return-void
 .end method

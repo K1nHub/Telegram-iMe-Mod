@@ -23,7 +23,7 @@ public final class WalletSwapProtocolsFragment$presenter$2 extends Lambda implem
     @Override // kotlin.jvm.functions.Function0
     public final WalletSwapProtocolsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2144x4e80c69f(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2267x4e80c69f(this.this$0, null, null));
         return (WalletSwapProtocolsPresenter) lazy.getValue();
     }
 }

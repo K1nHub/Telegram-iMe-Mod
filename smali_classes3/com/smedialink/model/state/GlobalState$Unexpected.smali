@@ -34,13 +34,13 @@
 .method private constructor <init>()V
     .locals 6
 
-    .line 38
+    .line 40
     sget v2, Lorg/telegram/messenger/R$raw;->fork_state_unexpected:I
 
-    .line 39
+    .line 41
     sget v3, Lorg/telegram/messenger/R$string;->common_unexpected_state_title:I
 
-    .line 40
+    .line 42
     sget v4, Lorg/telegram/messenger/R$string;->common_unexpected_state_description:I
 
     const-string v1, "unexpected_error_state"
@@ -49,7 +49,7 @@
 
     move-object v0, p0
 
-    .line 36
+    .line 38
     invoke-direct/range {v0 .. v5}, Lcom/smedialink/model/state/GlobalState;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

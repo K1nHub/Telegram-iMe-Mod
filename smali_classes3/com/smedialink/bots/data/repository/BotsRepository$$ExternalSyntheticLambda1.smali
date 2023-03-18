@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda1;->f$0:Lio/reactivex/SingleEmitter;
 
-    invoke-static {v0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$ygRz6gmI_pYSA6Waj23LGTN_AAI(Lio/reactivex/SingleEmitter;Ljava/lang/Exception;)V
+    invoke-static {v0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$mr-yUqn5Y7Qcwp9NbT9pbflFZbQ(Lio/reactivex/SingleEmitter;Ljava/lang/Exception;)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/SettingsHelpBottomSheet$$ExternalSyntheticLambda1;->f$0:Lkotlin/Pair;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->$r8$lambda$lVF9Bs04uf3yu4ZCvkhEiId0sFE(Lkotlin/Pair;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->$r8$lambda$NKGpYAm7kuWDUo4ttq5SCGxE20k(Lkotlin/Pair;Landroid/view/View;)V
 
     return-void
 .end method

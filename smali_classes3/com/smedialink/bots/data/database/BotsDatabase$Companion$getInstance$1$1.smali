@@ -19,10 +19,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$QUo2qgJVnK4N_fC8Cm-u9uIbvy0(Landroid/content/Context;)V
+.method public static synthetic $r8$lambda$k4b02gnzC8XtRyQd_LK2RzKzLyE(Landroid/content/Context;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/bots/data/database/BotsDatabase$Companion$getInstance$1$1;->onOpen$lambda-0(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/smedialink/bots/data/database/BotsDatabase$Companion$getInstance$1$1;->onOpen$lambda$0(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method private static final onOpen$lambda-0(Landroid/content/Context;)V
+.method private static final onOpen$lambda$0(Landroid/content/Context;)V
     .locals 2
 
     const-string v0, "$context"

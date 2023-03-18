@@ -12,8 +12,8 @@ public final /* synthetic */ class ChatAttachAlertTemplatesLayout$$ExternalSynth
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        boolean m2090initEmptyView$lambda6$lambda5;
-        m2090initEmptyView$lambda6$lambda5 = ChatAttachAlertTemplatesLayout.m2090initEmptyView$lambda6$lambda5(view, motionEvent);
-        return m2090initEmptyView$lambda6$lambda5;
+        boolean initEmptyView$lambda$6$lambda$5;
+        initEmptyView$lambda$6$lambda$5 = ChatAttachAlertTemplatesLayout.initEmptyView$lambda$6$lambda$5(view, motionEvent);
+        return initEmptyView$lambda$6$lambda$5;
     }
 }

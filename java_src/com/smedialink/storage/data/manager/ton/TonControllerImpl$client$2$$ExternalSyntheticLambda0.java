@@ -11,6 +11,6 @@ public final /* synthetic */ class TonControllerImpl$client$2$$ExternalSynthetic
 
     @Override // drinkless.org.ton.Client.ResultHandler
     public final void onResult(TonApi.Object object) {
-        TonControllerImpl$client$2.m1326invoke$lambda0(object);
+        TonControllerImpl$client$2.invoke$lambda$0(object);
     }
 }

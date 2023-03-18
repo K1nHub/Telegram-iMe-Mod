@@ -1,5 +1,6 @@
 package org.telegram.messenger.voip;
 
+import com.google.android.exoplayer2.util.Util;
 import java.util.Arrays;
 import java.util.List;
 import org.json.JSONException;
@@ -177,13 +178,14 @@ public final class Instance {
     public static final class Endpoint {
 
         /* renamed from: id */
-        public final long f1488id;
+        public final long f1492id;
         public final String ipv4;
         public final String ipv6;
         public final boolean isRtc;
         public final String password;
         public final byte[] peerTag;
         public final int port;
+        public int reflectorId;
         public final boolean stun;
         public final boolean tcp;
         public final boolean turn;
@@ -192,7 +194,7 @@ public final class Instance {
 
         public Endpoint(boolean z, long j, String str, String str2, int i, int i2, byte[] bArr, boolean z2, boolean z3, String str3, String str4, boolean z4) {
             this.isRtc = z;
-            this.f1488id = j;
+            this.f1492id = j;
             this.ipv4 = str;
             this.ipv6 = str2;
             this.port = i;
@@ -200,13 +202,21 @@ public final class Instance {
             this.peerTag = bArr;
             this.turn = z2;
             this.stun = z3;
-            this.username = str3;
-            this.password = str4;
+            if (z) {
+                this.username = str3;
+                this.password = str4;
+            } else if (bArr != null) {
+                this.username = "reflector";
+                this.password = Util.toHexString(bArr);
+            } else {
+                this.username = null;
+                this.password = null;
+            }
             this.tcp = z4;
         }
 
         public String toString() {
-            return "Endpoint{id=" + this.f1488id + ", ipv4='" + this.ipv4 + "', ipv6='" + this.ipv6 + "', port=" + this.port + ", type=" + this.type + ", peerTag=" + Arrays.toString(this.peerTag) + ", turn=" + this.turn + ", stun=" + this.stun + ", username=" + this.username + ", password=" + this.password + ", tcp=" + this.tcp + '}';
+            return "Endpoint{id=" + this.f1492id + ", ipv4='" + this.ipv4 + "', ipv6='" + this.ipv6 + "', port=" + this.port + ", type=" + this.type + ", peerTag=" + Arrays.toString(this.peerTag) + ", turn=" + this.turn + ", stun=" + this.stun + ", username=" + this.username + ", password=" + this.password + ", tcp=" + this.tcp + '}';
         }
     }
 
@@ -306,10 +316,10 @@ public final class Instance {
         public final String generation;
 
         /* renamed from: id */
-        public final String f1486id;
+        public final String f1490id;
 
         /* renamed from: ip */
-        public final String f1487ip;
+        public final String f1491ip;
         public final String network;
         public final String port;
         public final String priority;
@@ -324,11 +334,11 @@ public final class Instance {
             this.protocol = str2;
             this.network = str3;
             this.generation = str4;
-            this.f1486id = str5;
+            this.f1490id = str5;
             this.component = str6;
             this.foundation = str7;
             this.priority = str8;
-            this.f1487ip = str9;
+            this.f1491ip = str9;
             this.type = str10;
             this.tcpType = str11;
             this.relAddr = str12;
@@ -336,7 +346,7 @@ public final class Instance {
         }
 
         public String toString() {
-            return "Candidate{port=" + this.port + ", protocol=" + this.protocol + ", network=" + this.network + ", generation=" + this.generation + ", id=" + this.f1486id + ", component=" + this.component + ", foundation=" + this.foundation + ", priority=" + this.priority + ", ip=" + this.f1487ip + ", type=" + this.type + ", tcpType=" + this.tcpType + ", relAddr=" + this.relAddr + ", relPort=" + this.relPort + '}';
+            return "Candidate{port=" + this.port + ", protocol=" + this.protocol + ", network=" + this.network + ", generation=" + this.generation + ", id=" + this.f1490id + ", component=" + this.component + ", foundation=" + this.foundation + ", priority=" + this.priority + ", ip=" + this.f1491ip + ", type=" + this.type + ", tcpType=" + this.tcpType + ", relAddr=" + this.relAddr + ", relPort=" + this.relPort + '}';
         }
     }
 

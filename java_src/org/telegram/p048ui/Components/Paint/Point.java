@@ -7,24 +7,24 @@ public class Point {
     public boolean edge;
 
     /* renamed from: x */
-    public double f1720x;
+    public double f1731x;
 
     /* renamed from: y */
-    public double f1721y;
+    public double f1732y;
 
     /* renamed from: z */
-    public double f1722z;
+    public double f1733z;
 
     public Point(double d, double d2, double d3) {
-        this.f1720x = d;
-        this.f1721y = d2;
-        this.f1722z = d3;
+        this.f1731x = d;
+        this.f1732y = d2;
+        this.f1733z = d3;
     }
 
     public Point(double d, double d2, double d3, boolean z) {
-        this.f1720x = d;
-        this.f1721y = d2;
-        this.f1722z = d3;
+        this.f1731x = d;
+        this.f1732y = d2;
+        this.f1733z = d3;
         this.edge = z;
     }
 
@@ -37,38 +37,38 @@ public class Point {
         }
         if (obj instanceof Point) {
             Point point = (Point) obj;
-            return this.f1720x == point.f1720x && this.f1721y == point.f1721y && this.f1722z == point.f1722z;
+            return this.f1731x == point.f1731x && this.f1732y == point.f1732y && this.f1733z == point.f1733z;
         }
         return false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Point multiplySum(Point point, double d) {
-        return new Point((this.f1720x + point.f1720x) * d, (this.f1721y + point.f1721y) * d, (this.f1722z + point.f1722z) * d);
+        return new Point((this.f1731x + point.f1731x) * d, (this.f1732y + point.f1732y) * d, (this.f1733z + point.f1733z) * d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Point add(Point point) {
-        return new Point(this.f1720x + point.f1720x, this.f1721y + point.f1721y, this.f1722z + point.f1722z);
+        return new Point(this.f1731x + point.f1731x, this.f1732y + point.f1732y, this.f1733z + point.f1733z);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Point substract(Point point) {
-        return new Point(this.f1720x - point.f1720x, this.f1721y - point.f1721y, this.f1722z - point.f1722z);
+        return new Point(this.f1731x - point.f1731x, this.f1732y - point.f1732y, this.f1733z - point.f1733z);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Point multiplyByScalar(double d) {
-        return new Point(this.f1720x * d, this.f1721y * d, this.f1722z * d);
+        return new Point(this.f1731x * d, this.f1732y * d, this.f1733z * d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float getDistanceTo(Point point) {
-        return (float) Math.sqrt(Math.pow(this.f1720x - point.f1720x, 2.0d) + Math.pow(this.f1721y - point.f1721y, 2.0d) + Math.pow(this.f1722z - point.f1722z, 2.0d));
+        return (float) Math.sqrt(Math.pow(this.f1731x - point.f1731x, 2.0d) + Math.pow(this.f1732y - point.f1732y, 2.0d) + Math.pow(this.f1733z - point.f1733z, 2.0d));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PointF toPointF() {
-        return new PointF((float) this.f1720x, (float) this.f1721y);
+        return new PointF((float) this.f1731x, (float) this.f1732y);
     }
 }

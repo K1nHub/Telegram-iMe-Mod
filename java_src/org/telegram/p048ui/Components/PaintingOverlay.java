@@ -114,8 +114,8 @@ public class PaintingOverlay extends FrameLayout {
                         i5 = ((int) (measuredWidth * mediaEntity.textViewX)) - (childAt.getMeasuredWidth() / 2);
                         i6 = ((int) (measuredHeight * mediaEntity.textViewY)) - (childAt.getMeasuredHeight() / 2);
                     } else {
-                        i5 = (int) (measuredWidth * mediaEntity.f1471x);
-                        i6 = (int) (measuredHeight * mediaEntity.f1472y);
+                        i5 = (int) (measuredWidth * mediaEntity.f1476x);
+                        i6 = (int) (measuredHeight * mediaEntity.f1477y);
                     }
                     childAt.layout(i5, i6, childAt.getMeasuredWidth() + i5, childAt.getMeasuredHeight() + i6);
                 }

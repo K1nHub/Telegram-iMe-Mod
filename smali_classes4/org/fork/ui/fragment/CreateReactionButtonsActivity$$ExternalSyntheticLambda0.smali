@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$$ExternalSyntheticLambda0;->f$2:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$4e4zu337PalLGfJvkr0OVT0zKok(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$BM0HBhtAjulnhz5WDFiBhViE3Xs(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

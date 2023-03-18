@@ -24,7 +24,6 @@ public final class StakingDashboardView$setupViews$1$1 extends Lambda implements
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         Callbacks$Callback callbacks$Callback;

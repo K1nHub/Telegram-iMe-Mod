@@ -46,10 +46,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14281 extends Lambda implements Function2<Scope, ParametersHolder, TelegramApi> {
-        public static final C14281 INSTANCE = new C14281();
+    public static final class C14361 extends Lambda implements Function2<Scope, ParametersHolder, TelegramApi> {
+        public static final C14361 INSTANCE = new C14361();
 
-        C14281() {
+        C14361() {
             super(2);
         }
 
@@ -71,10 +71,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C14292 extends Lambda implements Function2<Scope, ParametersHolder, TelegramGateway> {
-        public static final C14292 INSTANCE = new C14292();
+    public static final class C14372 extends Lambda implements Function2<Scope, ParametersHolder, TelegramGateway> {
+        public static final C14372 INSTANCE = new C14372();
 
-        C14292() {
+        C14372() {
             super(2);
         }
 
@@ -97,64 +97,64 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
         List emptyList7;
         List emptyList8;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C14281 c14281 = C14281.INSTANCE;
+        C14361 c14361 = C14361.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TelegramApi.class), null, c14281, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TelegramApi.class), null, c14361, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
-        C14292 c14292 = C14292.INSTANCE;
+        C14372 c14372 = C14372.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         Kind kind2 = Kind.Factory;
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, c14292, kind2, emptyList2));
+        InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, c14372, kind2, emptyList2));
         module.indexPrimaryType(factoryInstanceFactory);
         new Pair(module, factoryInstanceFactory);
-        C14303 c14303 = C14303.INSTANCE;
+        C14383 c14383 = C14383.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, c14303, kind2, emptyList3));
+        InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, c14383, kind2, emptyList3));
         module.indexPrimaryType(factoryInstanceFactory2);
         new Pair(module, factoryInstanceFactory2);
-        C14314 c14314 = C14314.INSTANCE;
+        C14394 c14394 = C14394.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(MessageLinkCache.class), null, c14314, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(MessageLinkCache.class), null, c14394, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C14325 c14325 = C14325.INSTANCE;
+        C14405 c14405 = C14405.INSTANCE;
         StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
         emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(MultiReplyRepository.class), null, c14325, kind, emptyList5));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(MultiReplyRepository.class), null, c14405, kind, emptyList5));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new Pair(module, singleInstanceFactory3);
-        C14336 c14336 = C14336.INSTANCE;
+        C14416 c14416 = C14416.INSTANCE;
         StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
         emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(MultiReplyInteractor.class), null, c14336, kind2, emptyList6));
+        InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(MultiReplyInteractor.class), null, c14416, kind2, emptyList6));
         module.indexPrimaryType(factoryInstanceFactory3);
         new Pair(module, factoryInstanceFactory3);
-        C14347 c14347 = C14347.INSTANCE;
+        C14427 c14427 = C14427.INSTANCE;
         StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
         emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory4 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(ContactsInteractor.class), null, c14347, kind2, emptyList7));
+        InstanceFactory<?> factoryInstanceFactory4 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(ContactsInteractor.class), null, c14427, kind2, emptyList7));
         module.indexPrimaryType(factoryInstanceFactory4);
         new Pair(module, factoryInstanceFactory4);
-        C14358 c14358 = C14358.INSTANCE;
+        C14438 c14438 = C14438.INSTANCE;
         StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
         emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-        InstanceFactory<?> factoryInstanceFactory5 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(SelectedContactsDataStore.class), null, c14358, kind2, emptyList8));
+        InstanceFactory<?> factoryInstanceFactory5 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(SelectedContactsDataStore.class), null, c14438, kind2, emptyList8));
         module.indexPrimaryType(factoryInstanceFactory5);
         new Pair(module, factoryInstanceFactory5);
     }
@@ -163,10 +163,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C14303 extends Lambda implements Function2<Scope, ParametersHolder, TelegramControllersGateway> {
-        public static final C14303 INSTANCE = new C14303();
+    public static final class C14383 extends Lambda implements Function2<Scope, ParametersHolder, TelegramControllersGateway> {
+        public static final C14383 INSTANCE = new C14383();
 
-        C14303() {
+        C14383() {
             super(2);
         }
 
@@ -182,10 +182,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C14314 extends Lambda implements Function2<Scope, ParametersHolder, MessageLinkCache> {
-        public static final C14314 INSTANCE = new C14314();
+    public static final class C14394 extends Lambda implements Function2<Scope, ParametersHolder, MessageLinkCache> {
+        public static final C14394 INSTANCE = new C14394();
 
-        C14314() {
+        C14394() {
             super(2);
         }
 
@@ -201,10 +201,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$5 */
     /* loaded from: classes3.dex */
-    public static final class C14325 extends Lambda implements Function2<Scope, ParametersHolder, MultiReplyRepository> {
-        public static final C14325 INSTANCE = new C14325();
+    public static final class C14405 extends Lambda implements Function2<Scope, ParametersHolder, MultiReplyRepository> {
+        public static final C14405 INSTANCE = new C14405();
 
-        C14325() {
+        C14405() {
             super(2);
         }
 
@@ -220,10 +220,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$6 */
     /* loaded from: classes3.dex */
-    public static final class C14336 extends Lambda implements Function2<Scope, ParametersHolder, MultiReplyInteractor> {
-        public static final C14336 INSTANCE = new C14336();
+    public static final class C14416 extends Lambda implements Function2<Scope, ParametersHolder, MultiReplyInteractor> {
+        public static final C14416 INSTANCE = new C14416();
 
-        C14336() {
+        C14416() {
             super(2);
         }
 
@@ -239,10 +239,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$7 */
     /* loaded from: classes3.dex */
-    public static final class C14347 extends Lambda implements Function2<Scope, ParametersHolder, ContactsInteractor> {
-        public static final C14347 INSTANCE = new C14347();
+    public static final class C14427 extends Lambda implements Function2<Scope, ParametersHolder, ContactsInteractor> {
+        public static final C14427 INSTANCE = new C14427();
 
-        C14347() {
+        C14427() {
             super(2);
         }
 
@@ -258,10 +258,10 @@ final class TelegramModuleKt$telegramModule$1 extends Lambda implements Function
     /* compiled from: TelegramModule.kt */
     /* renamed from: com.smedialink.di.module.TelegramModuleKt$telegramModule$1$8 */
     /* loaded from: classes3.dex */
-    public static final class C14358 extends Lambda implements Function2<Scope, ParametersHolder, SelectedContactsDataStore> {
-        public static final C14358 INSTANCE = new C14358();
+    public static final class C14438 extends Lambda implements Function2<Scope, ParametersHolder, SelectedContactsDataStore> {
+        public static final C14438 INSTANCE = new C14438();
 
-        C14358() {
+        C14438() {
             super(2);
         }
 

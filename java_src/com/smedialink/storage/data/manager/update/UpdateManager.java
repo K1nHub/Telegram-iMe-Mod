@@ -17,6 +17,7 @@ import com.smedialink.storage.domain.gateway.TelegramGateway;
 import com.smedialink.storage.domain.storage.PreferenceHelper;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import java.lang.ref.WeakReference;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
@@ -64,18 +65,18 @@ public final class UpdateManager {
         this.listener = new InstallStateUpdatedListener() { // from class: com.smedialink.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda0
             @Override // com.google.android.play.core.listener.StateUpdatedListener
             public final void onStateUpdate(InstallState installState) {
-                UpdateManager.m1330listener$lambda0(UpdateManager.this, installState);
+                UpdateManager.listener$lambda$0(UpdateManager.this, installState);
             }
         };
     }
 
-    private final Activity getActivity() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Activity getActivity() {
         return this.mActivityWeakReference.get();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: listener$lambda-0  reason: not valid java name */
-    public static final void m1330listener$lambda0(UpdateManager this$0, InstallState installState) {
+    public static final void listener$lambda$0(UpdateManager this$0, InstallState installState) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(installState, "installState");
         if (installState.installStatus() == 2) {
@@ -108,7 +109,8 @@ public final class UpdateManager {
         checkUpdate();
     }
 
-    private final boolean isNeedUpdate() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final boolean isNeedUpdate() {
         RequestAppUpdateMetadata requestAppUpdateMetadata = this.preferenceHelper.getRequestAppUpdateMetadata();
         if (!requestAppUpdateMetadata.isAnyRequestsBefore()) {
             updateLastUpdateMetadata(false, false);
@@ -123,31 +125,24 @@ public final class UpdateManager {
 
     private final void checkUpdate() {
         Timber.m7d("Checking for updates", new Object[0]);
-        this.appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener() { // from class: com.smedialink.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda2
+        Task<AppUpdateInfo> task = this.appUpdateInfoTask;
+        final UpdateManager$checkUpdate$1 updateManager$checkUpdate$1 = new UpdateManager$checkUpdate$1(this);
+        task.addOnSuccessListener(new OnSuccessListener() { // from class: com.smedialink.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda3
             @Override // com.google.android.play.core.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                UpdateManager.m1327checkUpdate$lambda3(UpdateManager.this, (AppUpdateInfo) obj);
+                UpdateManager.checkUpdate$lambda$3(Function1.this, obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: checkUpdate$lambda-3  reason: not valid java name */
-    public static final void m1327checkUpdate$lambda3(UpdateManager this$0, AppUpdateInfo appUpdateInfo) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
-        if (appUpdateInfo.updateAvailability() == 2 && appUpdateInfo.isUpdateTypeAllowed(this$0.mode)) {
-            Timber.m7d("Update available", new Object[0]);
-            if (this$0.isNeedUpdate()) {
-                this$0.startUpdate(appUpdateInfo);
-                return;
-            }
-            return;
-        }
-        Timber.m7d("No Update available", new Object[0]);
+    public static final void checkUpdate$lambda$3(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    private final void startUpdate(AppUpdateInfo appUpdateInfo) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void startUpdate(AppUpdateInfo appUpdateInfo) {
         try {
             Timber.m7d("Starting update", new Object[0]);
             AppUpdateManager appUpdateManager = this.appUpdateManager;
@@ -187,53 +182,41 @@ public final class UpdateManager {
     }
 
     private final void continueUpdateForFlexible() {
-        this.appUpdateManager.getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener() { // from class: com.smedialink.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda3
+        Task<AppUpdateInfo> appUpdateInfo = this.appUpdateManager.getAppUpdateInfo();
+        final UpdateManager$continueUpdateForFlexible$1 updateManager$continueUpdateForFlexible$1 = new UpdateManager$continueUpdateForFlexible$1(this);
+        appUpdateInfo.addOnSuccessListener(new OnSuccessListener() { // from class: com.smedialink.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda2
             @Override // com.google.android.play.core.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                UpdateManager.m1328continueUpdateForFlexible$lambda5(UpdateManager.this, (AppUpdateInfo) obj);
+                UpdateManager.continueUpdateForFlexible$lambda$5(Function1.this, obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: continueUpdateForFlexible$lambda-5  reason: not valid java name */
-    public static final void m1328continueUpdateForFlexible$lambda5(UpdateManager this$0, AppUpdateInfo appUpdateInfo) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
-        if (appUpdateInfo.installStatus() == 11) {
-            Timber.m7d("An update has been downloaded", new Object[0]);
-            this$0.popupSnackbarForCompleteUpdate();
-        }
+    public static final void continueUpdateForFlexible$lambda$5(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     private final void continueUpdateForImmediate() {
-        this.appUpdateManager.getAppUpdateInfo().addOnSuccessListener(new OnSuccessListener() { // from class: com.smedialink.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda1
+        Task<AppUpdateInfo> appUpdateInfo = this.appUpdateManager.getAppUpdateInfo();
+        final UpdateManager$continueUpdateForImmediate$1 updateManager$continueUpdateForImmediate$1 = new UpdateManager$continueUpdateForImmediate$1(this);
+        appUpdateInfo.addOnSuccessListener(new OnSuccessListener() { // from class: com.smedialink.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda1
             @Override // com.google.android.play.core.tasks.OnSuccessListener
             public final void onSuccess(Object obj) {
-                UpdateManager.m1329continueUpdateForImmediate$lambda6(UpdateManager.this, (AppUpdateInfo) obj);
+                UpdateManager.continueUpdateForImmediate$lambda$6(Function1.this, obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: continueUpdateForImmediate$lambda-6  reason: not valid java name */
-    public static final void m1329continueUpdateForImmediate$lambda6(UpdateManager this$0, AppUpdateInfo appUpdateInfo) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
-        if (appUpdateInfo.updateAvailability() == 3) {
-            try {
-                AppUpdateManager appUpdateManager = this$0.appUpdateManager;
-                int i = this$0.mode;
-                Activity activity = this$0.getActivity();
-                Intrinsics.checkNotNull(activity);
-                appUpdateManager.startUpdateFlowForResult(appUpdateInfo, i, activity, 777);
-            } catch (IntentSender.SendIntentException e) {
-                Timber.m6d(e);
-            }
-        }
+    public static final void continueUpdateForImmediate$lambda$6(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    private final void popupSnackbarForCompleteUpdate() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void popupSnackbarForCompleteUpdate() {
         ActionGateway actionGateway = this.actionGateway;
         Activity activity = getActivity();
         Intrinsics.checkNotNull(activity);

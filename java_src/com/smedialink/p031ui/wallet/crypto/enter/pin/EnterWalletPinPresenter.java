@@ -5,23 +5,19 @@ import com.smedialink.gateway.TelegramControllersGateway;
 import com.smedialink.model.wallet.crypto.pin.EnterPinCodeScreenType;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
-import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.domain.interactor.crypto.pin.PinCodeInteractor;
-import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import javax.crypto.Cipher;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.controller.WalletFingerprintController;
 import org.telegram.messenger.FingerprintController;
-import timber.log.Timber;
 /* compiled from: EnterWalletPinPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.enter.pin.EnterWalletPinPresenter */
@@ -53,52 +49,14 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
         this.schedulersProvider = schedulersProvider;
     }
 
-    public final void validatePin(final String pin) {
+    public final void validatePin(String pin) {
         Intrinsics.checkNotNullParameter(pin, "pin");
         if (isValidPinCode(pin)) {
             Observable observeOn = PinCodeInteractor.readPasswordByPinCode$default(this.pinCodeInteractor, pin, null, this.screenType == EnterPinCodeScreenType.TOTAL_LOCK, 2, null).observeOn(this.schedulersProvider.mo707ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "pinCodeInteractor\n      …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Observable withLoadingDialog = RxExtKt.withLoadingDialog(observeOn, (BaseView) viewState, false);
-            final BaseView baseView = (BaseView) getViewState();
-            Disposable subscribe = withLoadingDialog.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.crypto.enter.pin.EnterWalletPinPresenter$validatePin$$inlined$subscribeWithErrorHandle$default$1
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(T it) {
-                    ResourceManager resourceManager;
-                    Intrinsics.checkNotNullExpressionValue(it, "it");
-                    Result result = (Result) it;
-                    if (result instanceof Result.Success) {
-                        EnterWalletPinPresenter.this.setSuccessUnlock(true);
-                        EnterWalletPinPresenter.this.savePinEncryptedIfNeeded(pin);
-                        ((EnterWalletPinView) EnterWalletPinPresenter.this.getViewState()).onSuccessEnterPinCode(pin, (String) ((Result.Success) result).getData());
-                    } else if (result instanceof Result.Error) {
-                        EnterWalletPinView enterWalletPinView = (EnterWalletPinView) EnterWalletPinPresenter.this.getViewState();
-                        Result.Error error = (Result.Error) result;
-                        if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.CryptoErrorStatus.PIN_CODE_MAX_ATTEMPTS) {
-                            enterWalletPinView.redirectScreenToPasswordEnter();
-                        }
-                        enterWalletPinView.onPinCodeErrorShake();
-                        ErrorModel error2 = error.getError();
-                        resourceManager = EnterWalletPinPresenter.this.resourceManager;
-                        enterWalletPinView.showToast(error2.getMessage(resourceManager));
-                    }
-                }
-            }, new Consumer() { // from class: com.smedialink.ui.wallet.crypto.enter.pin.EnterWalletPinPresenter$validatePin$$inlined$subscribeWithErrorHandle$default$2
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(Throwable th) {
-                    Timber.m4e(th);
-                    BaseView baseView2 = BaseView.this;
-                    if (baseView2 == null) {
-                        return;
-                    }
-                    String message = th.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView2.showToast(message);
-                }
-            });
+            Disposable subscribe = RxExtKt.withLoadingDialog(observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2074x3ca87642(this, pin)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2075x3ca87643((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }

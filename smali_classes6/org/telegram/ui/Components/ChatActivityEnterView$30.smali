@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 4051
+    .line 4070
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +38,17 @@
 .method public onItemClick(Landroid/view/View;I)Z
     .locals 2
 
-    .line 4055
+    .line 4074
     instance-of p2, p1, Lorg/fork/ui/view/TemplateCell;
 
     const/4 v0, 0x1
 
     if-eqz p2, :cond_0
 
-    .line 4056
+    .line 4075
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
+    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
     move-result-object p2
 
@@ -62,20 +62,20 @@
 
     return v0
 
-    .line 4060
+    .line 4079
     :cond_0
     instance-of p2, p1, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;
 
     if-eqz p2, :cond_1
 
-    .line 4061
+    .line 4080
     check-cast p1, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->getCommand()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 4062
+    .line 4081
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,7 +94,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
 
-    .line 4063
+    .line 4082
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$30;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView;->botCommandsMenuContainer:Lorg/telegram/ui/Components/BotCommandsMenuContainer;

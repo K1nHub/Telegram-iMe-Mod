@@ -2245,7 +2245,7 @@
 
     if-eqz p1, :cond_2
 
-    const-string v0, "dialogTextRed2"
+    const-string v0, "dialogTextRed"
 
     .line 397
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -7041,7 +7041,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const-string v1, "dialogTextRed2"
+    const-string v1, "dialogTextRed"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -10533,7 +10533,7 @@
     return-void
 .end method
 
-.method public finishFragment(Z)V
+.method public finishFragment(Z)Z
     .locals 3
 
     .line 2158
@@ -10581,9 +10581,11 @@
 
     .line 2164
     :cond_1
-    invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)V
+    invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method
 
 .method protected getNewSrpPassword()Lorg/telegram/tgnet/TLRPC$TL_inputCheckPasswordSRP;

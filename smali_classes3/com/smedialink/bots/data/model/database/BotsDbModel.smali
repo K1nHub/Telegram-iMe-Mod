@@ -1741,21 +1741,13 @@
     :cond_d
     iget v1, p0, Lcom/smedialink/bots/data/model/database/BotsDbModel;->rating:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget v3, p1, Lcom/smedialink/bots/data/model/database/BotsDbModel;->rating:F
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
     move-result v1
 
-    if-nez v1, :cond_e
+    if-eqz v1, :cond_e
 
     return v2
 
@@ -2479,7 +2471,7 @@
 
     iget-object v1, p0, Lcom/smedialink/bots/data/model/database/BotsDbModel;->sku:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", lang="
 
@@ -2663,7 +2655,7 @@
 
     iget-object v1, p0, Lcom/smedialink/bots/data/model/database/BotsDbModel;->price:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", type="
 

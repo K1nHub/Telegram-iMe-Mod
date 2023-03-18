@@ -28,14 +28,13 @@ import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -44,7 +43,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.GroupCreateUserCell;
@@ -59,6 +58,7 @@ import org.telegram.p048ui.Components.BackupImageView;
 import org.telegram.p048ui.Components.CombinedDrawable;
 import org.telegram.p048ui.Components.ContextProgressView;
 import org.telegram.p048ui.Components.EditTextEmoji;
+import org.telegram.p048ui.Components.FillLastLinearLayoutManager;
 import org.telegram.p048ui.Components.ImageUpdater;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.ListView.AdapterWithDiffUtils;
@@ -107,6 +107,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
     private TLRPC$InputFile inputPhoto;
     private TLRPC$InputFile inputVideo;
     private String inputVideoPath;
+    private FillLastLinearLayoutManager linearLayoutManager;
     private RecyclerListView listView;
     private String nameToSet;
     ActionBarPopupWindow popupWindow;
@@ -293,11 +294,11 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         if (editTextEmoji != null) {
             editTextEmoji.onDestroy();
         }
-        this.actionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("NewGroup", C3158R.string.NewGroup));
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.GroupCreateFinalActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("NewGroup", C3286R.string.NewGroup));
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.GroupCreateFinalActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     GroupCreateFinalActivity.this.finishFragment();
@@ -471,7 +472,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     r10.notifyHeightChanged()
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.GroupCreateFinalActivity.C55812.onLayout(boolean, int, int, int, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.GroupCreateFinalActivity.C57182.onLayout(boolean, int, int, int, int):void");
             }
 
             @Override // android.view.View, android.view.ViewParent
@@ -485,7 +486,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         this.fragmentView = sizeNotifierFrameLayout2;
         sizeNotifierFrameLayout2.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         this.fragmentView.setOnTouchListener(GroupCreateFinalActivity$$ExternalSyntheticLambda3.INSTANCE);
-        this.shadowDrawable = context.getResources().getDrawable(C3158R.C3160drawable.greydivider_top).mutate();
+        this.shadowDrawable = context.getResources().getDrawable(C3286R.C3288drawable.greydivider_top).mutate();
         LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.GroupCreateFinalActivity.3
             @Override // android.view.ViewGroup
             protected boolean drawChild(Canvas canvas, View view, long j) {
@@ -524,7 +525,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         backupImageView.setRoundRadius(AndroidUtilities.m50dp(this.chatType == 5 ? 16 : 32));
         this.avatarDrawable.setInfo(5L, null, null);
         this.avatarImage.setImageDrawable(this.avatarDrawable);
-        this.avatarImage.setContentDescription(LocaleController.getString("ChoosePhoto", C3158R.string.ChoosePhoto));
+        this.avatarImage.setContentDescription(LocaleController.getString("ChoosePhoto", C3286R.string.ChoosePhoto));
         FrameLayout frameLayout2 = this.editTextContainer;
         BackupImageView backupImageView2 = this.avatarImage;
         boolean z = LocaleController.isRTL;
@@ -550,7 +551,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                 GroupCreateFinalActivity.this.lambda$createView$4(view2);
             }
         });
-        int i2 = C3158R.C3164raw.camera;
+        int i2 = C3286R.C3291raw.camera;
         this.cameraDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m50dp(60), AndroidUtilities.m50dp(60), false, null);
         RLottieImageView rLottieImageView = new RLottieImageView(context) { // from class: org.telegram.ui.GroupCreateFinalActivity.6
             @Override // android.view.View
@@ -595,10 +596,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         this.editText = editTextEmoji2;
         int i3 = this.chatType;
         if (i3 == 0 || i3 == 4 || i3 == 5) {
-            i = C3158R.string.EnterGroupNamePlaceholder;
+            i = C3286R.string.EnterGroupNamePlaceholder;
             str = "EnterGroupNamePlaceholder";
         } else {
-            i = C3158R.string.EnterListName;
+            i = C3286R.string.EnterListName;
             str = "EnterListName";
         }
         editTextEmoji2.setHint(LocaleController.getString(str, i));
@@ -612,13 +613,14 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         EditTextEmoji editTextEmoji3 = this.editText;
         boolean z5 = LocaleController.isRTL;
         frameLayout6.addView(editTextEmoji3, LayoutHelper.createFrame(-1, -2, 16, z5 ? 5 : 96, 0, z5 ? 96 : 5, 0));
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 1, false);
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
+        this.linearLayoutManager = new FillLastLinearLayoutManager(context, 1, recyclerListView);
+        RecyclerListView recyclerListView2 = this.listView;
         GroupCreateAdapter groupCreateAdapter = new GroupCreateAdapter(context);
         this.adapter = groupCreateAdapter;
-        recyclerListView.setAdapter(groupCreateAdapter);
-        this.listView.setLayoutManager(linearLayoutManager);
+        recyclerListView2.setAdapter(groupCreateAdapter);
+        this.listView.setLayoutManager(this.linearLayoutManager);
         this.listView.setVerticalScrollBarEnabled(false);
         this.listView.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         linearLayout.addView(this.listView, LayoutHelper.createLinear(-1, -1));
@@ -650,7 +652,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m50dp(56), Theme.getColor("chats_actionBackground"), Theme.getColor("chats_actionPressedBackground"));
         int i4 = Build.VERSION.SDK_INT;
         if (i4 < 21) {
-            Drawable mutate = context.getResources().getDrawable(C3158R.C3160drawable.floating_shadow).mutate();
+            Drawable mutate = context.getResources().getDrawable(C3286R.C3288drawable.floating_shadow).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorCircleDrawable, 0, 0);
             combinedDrawable.setIconSize(AndroidUtilities.m50dp(56), AndroidUtilities.m50dp(56));
@@ -688,9 +690,9 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         this.floatingButtonIcon = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.floatingButtonIcon.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.MULTIPLY));
-        this.floatingButtonIcon.setImageResource(C3158R.C3160drawable.checkbig);
+        this.floatingButtonIcon.setImageResource(C3286R.C3288drawable.checkbig);
         this.floatingButtonIcon.setPadding(0, AndroidUtilities.m50dp(2), 0, 0);
-        this.floatingButtonContainer.setContentDescription(LocaleController.getString("Done", C3158R.string.Done));
+        this.floatingButtonContainer.setContentDescription(LocaleController.getString("Done", C3286R.string.Done));
         this.floatingButtonContainer.addView(this.floatingButtonIcon, LayoutHelper.createFrame(i4 >= 21 ? 56 : 60, i4 >= 21 ? 56 : 60));
         ContextProgressView contextProgressView = new ContextProgressView(context, 1);
         this.progressView = contextProgressView;
@@ -790,7 +792,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             this.popupWindow.setDismissAnimationDuration(220);
             this.popupWindow.setOutsideTouchable(true);
             this.popupWindow.setClippingEnabled(true);
-            this.popupWindow.setAnimationStyle(C3158R.style.PopupContextAnimation);
+            this.popupWindow.setAnimationStyle(C3286R.style.PopupContextAnimation);
             this.popupWindow.setFocusable(true);
             autoDeletePopupWrapper.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(1000), Integer.MIN_VALUE));
             this.popupWindow.setInputMethodMode(2);
@@ -1099,21 +1101,24 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             this.items.add(new InnerItem(this, 0));
             if (GroupCreateFinalActivity.this.chatType == 5) {
                 this.items.add(new InnerItem(this, 6));
-                this.items.add(new InnerItem(this, 5, LocaleController.getString("ForumToggleDescription", C3158R.string.ForumToggleDescription)));
+                this.items.add(new InnerItem(this, 5, LocaleController.getString("ForumToggleDescription", C3286R.string.ForumToggleDescription)));
             } else {
                 this.items.add(new InnerItem(this, 4));
-                this.items.add(new InnerItem(this, 5, LocaleController.getString("GroupCreateAutodeleteDescription", C3158R.string.GroupCreateAutodeleteDescription)));
+                this.items.add(new InnerItem(this, 5, LocaleController.getString("GroupCreateAutodeleteDescription", C3286R.string.GroupCreateAutodeleteDescription)));
             }
             if (GroupCreateFinalActivity.this.currentGroupCreateAddress != null) {
                 this.items.add(new InnerItem(this, 1));
                 this.items.add(new InnerItem(this, 3));
                 this.items.add(new InnerItem(this, 0));
             }
-            this.items.add(new InnerItem(this, 1));
-            this.usersStartRow = this.items.size();
-            for (int i = 0; i < GroupCreateFinalActivity.this.selectedContacts.size(); i++) {
-                this.items.add(new InnerItem(this, 2));
+            if (GroupCreateFinalActivity.this.selectedContacts.size() > 0) {
+                this.items.add(new InnerItem(this, 1));
+                this.usersStartRow = this.items.size();
+                for (int i = 0; i < GroupCreateFinalActivity.this.selectedContacts.size(); i++) {
+                    this.items.add(new InnerItem(this, 2));
+                }
             }
+            this.items.add(new InnerItem(this, 7));
             super.notifyDataSetChanged();
         }
 
@@ -1133,7 +1138,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             TextSettingsCell textSettingsCell;
             if (i == 0) {
                 shadowSectionCell = new ShadowSectionCell(this.context);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(this.context, C3158R.C3160drawable.greydivider_top, "windowBackgroundGrayShadow"));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(this.context, C3286R.C3288drawable.greydivider_top, "windowBackgroundGrayShadow"));
                 combinedDrawable.setFullsize(true);
                 shadowSectionCell.setBackgroundDrawable(combinedDrawable);
             } else {
@@ -1147,13 +1152,20 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     textSettingsCell = new TextCell(this.context);
                 } else if (i == 5) {
                     shadowSectionCell = new TextInfoPrivacyCell(this.context);
-                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(this.context, C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"));
+                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(this.context, GroupCreateFinalActivity.this.selectedContacts.size() == 0 ? C3286R.C3288drawable.greydivider_bottom : C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
                     combinedDrawable2.setFullsize(true);
                     shadowSectionCell.setBackgroundDrawable(combinedDrawable2);
                 } else if (i == 6) {
                     textSettingsCell = new TextCell(this.context, 23, false, true, GroupCreateFinalActivity.this.getResourceProvider());
-                } else {
+                } else if (i != 7) {
                     textSettingsCell = new TextSettingsCell(this.context);
+                } else {
+                    View view = new View(this.context);
+                    textSettingsCell = view;
+                    if (GroupCreateFinalActivity.this.selectedContacts.isEmpty()) {
+                        view.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+                        textSettingsCell = view;
+                    }
                 }
                 return new RecyclerListView.Holder(textSettingsCell);
             }
@@ -1171,7 +1183,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                         headerCell.setText(LocaleController.formatPluralString("Members", GroupCreateFinalActivity.this.selectedContacts.size(), new Object[0]));
                         return;
                     } else {
-                        headerCell.setText(LocaleController.getString("AttachLocation", C3158R.string.AttachLocation));
+                        headerCell.setText(LocaleController.getString("AttachLocation", C3286R.string.AttachLocation));
                         return;
                     }
                 case 2:
@@ -1187,16 +1199,16 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     if (GroupCreateFinalActivity.this.ttlPeriod != 0) {
                         formatTTLString = LocaleController.formatTTLString(GroupCreateFinalActivity.this.ttlPeriod);
                     } else {
-                        formatTTLString = LocaleController.getString("PasswordOff", C3158R.string.PasswordOff);
+                        formatTTLString = LocaleController.getString("PasswordOff", C3286R.string.PasswordOff);
                     }
-                    textCell.setTextAndValueAndIcon(LocaleController.getString("AutoDeleteMessages", C3158R.string.AutoDeleteMessages), formatTTLString, ((BaseFragment) GroupCreateFinalActivity.this).fragmentBeginToShow, C3158R.C3160drawable.msg_autodelete, false);
+                    textCell.setTextAndValueAndIcon(LocaleController.getString("AutoDeleteMessages", C3286R.string.AutoDeleteMessages), formatTTLString, ((BaseFragment) GroupCreateFinalActivity.this).fragmentBeginToShow, C3286R.C3288drawable.msg_autodelete, false);
                     return;
                 case 5:
                     ((TextInfoPrivacyCell) viewHolder.itemView).setText(this.items.get(i).string);
                     return;
                 case 6:
                     TextCell textCell2 = (TextCell) viewHolder.itemView;
-                    textCell2.setTextAndCheckAndIcon(LocaleController.getString("ChannelTopics", C3158R.string.ChannelTopics), true, C3158R.C3160drawable.msg_topics, false);
+                    textCell2.setTextAndCheckAndIcon(LocaleController.getString("ChannelTopics", C3286R.string.ChannelTopics), true, C3286R.C3288drawable.msg_topics, false);
                     textCell2.getCheckBox().setAlpha(0.75f);
                     return;
                 default:

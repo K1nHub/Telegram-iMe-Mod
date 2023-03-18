@@ -15,9 +15,15 @@
 
 .field private selectedMenuView:Landroid/view/View;
 
+.field startFromX:F
+
+.field startFromY:F
+
 .field subItemClicked:Z
 
 .field submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+.field tapConfirmedOrCanceled:Z
 
 .field view:Landroid/view/View;
 
@@ -26,17 +32,17 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 84
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
+    .line 17
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->rect:Landroid/graphics/Rect;
 
-    .line 19
+    .line 20
     new-instance v0, Lorg/telegram/ui/Components/GestureDetector2;
 
     new-instance v1, Lorg/telegram/ui/LongPressListenerWithMovingGesture$1;
@@ -51,12 +57,12 @@
 
     new-array v1, v1, [I
 
-    .line 81
+    .line 87
     iput-object v1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
 
     const/4 v1, 0x1
 
-    .line 85
+    .line 91
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/GestureDetector2;->setIsLongpressEnabled(Z)V
 
     return-void
@@ -65,7 +71,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/LongPressListenerWithMovingGesture;)Landroid/view/View;
     .locals 0
 
-    .line 12
+    .line 13
     iget-object p0, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->selectedMenuView:Landroid/view/View;
 
     return-object p0
@@ -82,285 +88,379 @@
 .end method
 
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 9
+    .locals 10
 
-    .line 90
+    .line 98
     iput-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->view:Landroid/view/View;
 
-    .line 91
-    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->gestureDetector2:Lorg/telegram/ui/Components/GestureDetector2;
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/GestureDetector2;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    .line 92
-    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
-    const/4 v0, 0x1
-
-    if-eqz p1, :cond_4
-
-    iget-boolean p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->subItemClicked:Z
-
-    if-nez p1, :cond_4
-
+    .line 99
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
-    const/4 v1, 0x2
+    const/4 v0, 0x0
 
-    if-ne p1, v1, :cond_4
+    if-nez p1, :cond_0
 
-    .line 93
-    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->view:Landroid/view/View;
-
-    iget-object v1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    .line 94
+    .line 100
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
 
-    iget-object v1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
-
-    const/4 v2, 0x0
-
-    aget v1, v1, v2
-
-    int-to-float v1, v1
-
-    add-float/2addr p1, v1
-
-    .line 95
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v1
-
-    iget-object v3, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
-
-    aget v3, v3, v0
-
-    int-to-float v3, v3
-
-    add-float/2addr v1, v3
-
-    .line 96
-    iget-object v3, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
-    invoke-virtual {v3}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
-
-    invoke-virtual {v3, v4}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    .line 97
-    iget-object v3, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
-
-    aget v4, v3, v2
-
-    int-to-float v4, v4
-
-    sub-float/2addr p1, v4
-
-    .line 98
-    aget v3, v3, v0
-
-    int-to-float v3, v3
-
-    sub-float/2addr v1, v3
-
-    const/4 v3, 0x0
-
-    .line 99
-    iput-object v3, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->selectedMenuView:Landroid/view/View;
-
-    .line 100
-    iget-object v3, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
-    invoke-virtual {v3}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-    const/4 v4, 0x0
+    iput p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->startFromX:F
 
     .line 101
-    :goto_0
-    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemsCount()I
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v5
+    move-result p1
 
-    if-ge v4, v5, :cond_4
+    iput p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->startFromY:F
 
     .line 102
-    invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    .line 103
-    iget-object v6, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->rect:Landroid/graphics/Rect;
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+    iput-boolean v0, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->tapConfirmedOrCanceled:Z
 
     .line 104
-    invoke-virtual {v5}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->gestureDetector2:Lorg/telegram/ui/Components/GestureDetector2;
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/GestureDetector2;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 105
-    invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
+    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    move-result v6
+    const/4 v1, 0x2
 
-    if-nez v6, :cond_3
+    const/4 v2, 0x1
 
-    invoke-virtual {v5}, Landroid/view/View;->isClickable()Z
+    if-eqz p1, :cond_5
 
-    move-result v6
+    iget-boolean p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->subItemClicked:Z
 
-    if-eqz v6, :cond_3
+    if-nez p1, :cond_5
 
-    .line 106
-    iget-object v6, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->rect:Landroid/graphics/Rect;
-
-    float-to-int v7, p1
-
-    float-to-int v8, v1
-
-    invoke-virtual {v6, v7, v8}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v6
-
-    const/16 v7, 0x15
-
-    if-nez v6, :cond_0
-
-    .line 107
-    invoke-virtual {v5, v2}, Landroid/view/View;->setPressed(Z)V
-
-    .line 108
-    invoke-virtual {v5, v2}, Landroid/view/View;->setSelected(Z)V
-
-    .line 109
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ne v6, v7, :cond_3
-
-    invoke-virtual {v5}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_3
-
-    .line 110
-    invoke-virtual {v5}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v2, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    goto :goto_1
-
-    .line 113
-    :cond_0
-    invoke-virtual {v5, v0}, Landroid/view/View;->setPressed(Z)V
-
-    .line 114
-    invoke-virtual {v5, v0}, Landroid/view/View;->setSelected(Z)V
-
-    .line 115
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v6, v7, :cond_2
-
-    if-ne v6, v7, :cond_1
-
-    .line 116
-    invoke-virtual {v5}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_1
-
-    .line 117
-    invoke-virtual {v5}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v0, v2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    .line 119
-    :cond_1
-    invoke-virtual {v5}, Landroid/view/View;->getTop()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    sub-float v6, v1, v6
-
-    invoke-virtual {v5, p1, v6}, Landroid/view/View;->drawableHotspotChanged(FF)V
-
-    .line 121
-    :cond_2
-    iput-object v5, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->selectedMenuView:Landroid/view/View;
-
-    :cond_3
-    :goto_1
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    .line 126
-    :cond_4
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
-    if-ne p1, v0, :cond_6
+    if-ne p1, v1, :cond_5
+
+    .line 106
+    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->view:Landroid/view/View;
+
+    iget-object v3, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    .line 107
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result p1
+
+    iget-object v3, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
+
+    aget v3, v3, v0
+
+    int-to-float v3, v3
+
+    add-float/2addr p1, v3
+
+    .line 108
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v3
+
+    iget-object v4, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
+
+    aget v4, v4, v2
+
+    int-to-float v4, v4
+
+    add-float/2addr v3, v4
+
+    .line 109
+    iget-object v4, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    invoke-virtual {v4}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    .line 110
+    iget-object v4, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->location:[I
+
+    aget v5, v4, v0
+
+    int-to-float v5, v5
+
+    sub-float/2addr p1, v5
+
+    .line 111
+    aget v4, v4, v2
+
+    int-to-float v4, v4
+
+    sub-float/2addr v3, v4
+
+    const/4 v4, 0x0
+
+    .line 112
+    iput-object v4, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->selectedMenuView:Landroid/view/View;
+
+    .line 113
+    iget-object v4, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    invoke-virtual {v4}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object v4
+
+    check-cast v4, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    const/4 v5, 0x0
+
+    .line 114
+    :goto_0
+    invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemsCount()I
+
+    move-result v6
+
+    if-ge v5, v6, :cond_5
+
+    .line 115
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
+
+    move-result-object v6
+
+    .line 116
+    iget-object v7, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->rect:Landroid/graphics/Rect;
+
+    invoke-virtual {v6, v7}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+
+    .line 117
+    invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    .line 118
+    invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
+
+    move-result v7
+
+    if-nez v7, :cond_4
+
+    invoke-virtual {v6}, Landroid/view/View;->isClickable()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_4
+
+    .line 119
+    iget-object v7, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->rect:Landroid/graphics/Rect;
+
+    float-to-int v8, p1
+
+    float-to-int v9, v3
+
+    invoke-virtual {v7, v8, v9}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v7
+
+    const/16 v8, 0x15
+
+    if-nez v7, :cond_1
+
+    .line 120
+    invoke-virtual {v6, v0}, Landroid/view/View;->setPressed(Z)V
+
+    .line 121
+    invoke-virtual {v6, v0}, Landroid/view/View;->setSelected(Z)V
+
+    .line 122
+    sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-ne v7, v8, :cond_4
+
+    invoke-virtual {v6}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v7
+
+    if-eqz v7, :cond_4
+
+    .line 123
+    invoke-virtual {v6}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v0, v0}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+
+    goto :goto_1
+
+    .line 126
+    :cond_1
+    invoke-virtual {v6, v2}, Landroid/view/View;->setPressed(Z)V
+
+    .line 127
+    invoke-virtual {v6, v2}, Landroid/view/View;->setSelected(Z)V
+
+    .line 128
+    sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-lt v7, v8, :cond_3
+
+    if-ne v7, v8, :cond_2
+
+    .line 129
+    invoke-virtual {v6}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v7
+
+    if-eqz v7, :cond_2
+
+    .line 130
+    invoke-virtual {v6}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2, v0}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+
+    .line 132
+    :cond_2
+    invoke-virtual {v6}, Landroid/view/View;->getTop()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    sub-float v7, v3, v7
+
+    invoke-virtual {v6, p1, v7}, Landroid/view/View;->drawableHotspotChanged(FF)V
+
+    .line 134
+    :cond_3
+    iput-object v6, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->selectedMenuView:Landroid/view/View;
+
+    :cond_4
+    :goto_1
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    .line 139
+    :cond_5
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p1
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    if-ne p1, v1, :cond_6
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result p1
+
+    iget v1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->startFromX:F
+
+    sub-float/2addr p1, v1
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    sget v1, Lorg/telegram/messenger/AndroidUtilities;->touchSlop:F
+
+    mul-float v1, v1, v3
+
+    cmpl-float p1, p1, v1
+
+    if-gtz p1, :cond_7
+
+    :cond_6
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p1
+
+    iget v1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->startFromY:F
+
+    sub-float/2addr p1, v1
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    sget v1, Lorg/telegram/messenger/AndroidUtilities;->touchSlop:F
+
+    mul-float v1, v1, v3
+
+    cmpl-float p1, p1, v1
+
+    if-lez p1, :cond_8
+
+    .line 140
+    :cond_7
+    iput-boolean v2, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->tapConfirmedOrCanceled:Z
+
+    .line 141
+    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->view:Landroid/view/View;
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
+
+    .line 142
+    iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->view:Landroid/view/View;
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setSelected(Z)V
+
+    .line 144
+    :cond_8
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p1
+
+    if-ne p1, v2, :cond_a
 
     iget-boolean p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->subItemClicked:Z
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_a
 
-    .line 127
+    iget-boolean p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->tapConfirmedOrCanceled:Z
+
+    if-nez p1, :cond_a
+
+    .line 145
     iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->selectedMenuView:Landroid/view/View;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_9
 
-    .line 128
+    .line 146
     invoke-virtual {p1}, Landroid/view/View;->callOnClick()Z
 
-    .line 129
-    iput-boolean v0, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->subItemClicked:Z
+    .line 147
+    iput-boolean v2, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->subItemClicked:Z
 
     goto :goto_2
 
-    .line 130
-    :cond_5
+    .line 148
+    :cond_9
     iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    if-nez p1, :cond_6
+    if-nez p1, :cond_a
 
     iget-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->view:Landroid/view/View;
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_a
 
-    .line 131
+    .line 149
     invoke-virtual {p1}, Landroid/view/View;->callOnClick()Z
 
-    :cond_6
+    :cond_a
     :goto_2
-    return v0
+    return v2
 .end method
 
 .method public setSubmenu(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 138
+    .line 156
     iput-object p1, p0, Lorg/telegram/ui/LongPressListenerWithMovingGesture;->submenu:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     return-void

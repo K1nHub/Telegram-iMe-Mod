@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 63398
+    .line 63644
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$upload_File;-><init>()V
 
     return-void
@@ -28,25 +28,25 @@
 .method public freeResources()V
     .locals 1
 
-    .line 63417
+    .line 63663
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLObject;->disableFree:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 63420
+    .line 63666
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_File;->bytes:Lorg/telegram/tgnet/NativeByteBuffer;
 
     if-eqz v0, :cond_1
 
-    .line 63421
+    .line 63667
     invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     const/4 v0, 0x0
 
-    .line 63422
+    .line 63668
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_File;->bytes:Lorg/telegram/tgnet/NativeByteBuffer;
 
     :cond_1
@@ -56,7 +56,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 63403
+    .line 63649
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -67,14 +67,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_File;->type:Lorg/telegram/tgnet/TLRPC$storage_FileType;
 
-    .line 63404
+    .line 63650
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$upload_File;->mtime:I
 
-    .line 63405
+    .line 63651
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteBuffer(Z)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object p1
@@ -87,22 +87,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 63409
+    .line 63655
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_upload_file;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63410
+    .line 63656
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_File;->type:Lorg/telegram/tgnet/TLRPC$storage_FileType;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 63411
+    .line 63657
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$upload_File;->mtime:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63412
+    .line 63658
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$upload_File;->bytes:Lorg/telegram/tgnet/NativeByteBuffer;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteBuffer(Lorg/telegram/tgnet/NativeByteBuffer;)V

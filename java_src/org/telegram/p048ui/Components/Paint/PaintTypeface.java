@@ -5,7 +5,7 @@ import android.graphics.fonts.Font;
 import android.graphics.fonts.SystemFonts;
 import android.os.Build;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -40,7 +40,7 @@ public class PaintTypeface {
         ROBOTO_MEDIUM = paintTypeface;
         PaintTypeface paintTypeface2 = new PaintTypeface(TtmlNode.ITALIC, "PhotoEditorTypefaceItalic", AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC));
         ROBOTO_ITALIC = paintTypeface2;
-        PaintTypeface paintTypeface3 = new PaintTypeface(C0474C.SERIF_NAME, "PhotoEditorTypefaceSerif", Typeface.create(C0474C.SERIF_NAME, 1));
+        PaintTypeface paintTypeface3 = new PaintTypeface(C0468C.SERIF_NAME, "PhotoEditorTypefaceSerif", Typeface.create(C0468C.SERIF_NAME, 1));
         ROBOTO_SERIF = paintTypeface3;
         PaintTypeface paintTypeface4 = new PaintTypeface("mono", "PhotoEditorTypefaceMono", AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
         ROBOTO_MONO = paintTypeface4;

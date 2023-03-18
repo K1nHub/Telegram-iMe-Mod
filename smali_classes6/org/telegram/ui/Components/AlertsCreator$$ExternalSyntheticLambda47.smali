@@ -55,7 +55,7 @@
 
     move v6, p2
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$X46ELAKqyTCog5aQs9Sa6PIkD_Q(ZLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$DatePickerDelegate;Landroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$NBzzO2Gqk1kknQ0BlmExc4hCf9w(ZLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$DatePickerDelegate;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

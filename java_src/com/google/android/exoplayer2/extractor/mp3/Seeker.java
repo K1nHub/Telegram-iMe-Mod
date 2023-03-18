@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.mp3;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.extractor.SeekMap;
 /* loaded from: classes.dex */
 interface Seeker extends SeekMap {
@@ -21,7 +21,7 @@ interface Seeker extends SeekMap {
         }
 
         public UnseekableSeeker() {
-            super(C0474C.TIME_UNSET);
+            super(C0468C.TIME_UNSET);
         }
     }
 }

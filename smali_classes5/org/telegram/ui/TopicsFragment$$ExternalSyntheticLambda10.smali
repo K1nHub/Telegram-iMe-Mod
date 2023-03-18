@@ -45,7 +45,7 @@
 
     iget v3, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda10;->f$3:I
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$h5Setk9W5shvqbf_C7R0kJE-lUQ(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLRPC$TL_forumTopic;[Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILandroid/view/View;)V
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$BIZBvesEyxCY6FHkdR3yNNpMoBY(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLRPC$TL_forumTopic;[Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILandroid/view/View;)V
 
     return-void
 .end method

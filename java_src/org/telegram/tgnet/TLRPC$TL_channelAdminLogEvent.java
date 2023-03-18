@@ -6,7 +6,7 @@ public class TLRPC$TL_channelAdminLogEvent extends TLObject {
     public int date;
 
     /* renamed from: id */
-    public long f1530id;
+    public long f1535id;
     public long user_id;
 
     public static TLRPC$TL_channelAdminLogEvent TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -23,7 +23,7 @@ public class TLRPC$TL_channelAdminLogEvent extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1530id = abstractSerializedData.readInt64(z);
+        this.f1535id = abstractSerializedData.readInt64(z);
         this.date = abstractSerializedData.readInt32(z);
         this.user_id = abstractSerializedData.readInt64(z);
         this.action = TLRPC$ChannelAdminLogEventAction.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
@@ -32,7 +32,7 @@ public class TLRPC$TL_channelAdminLogEvent extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1530id);
+        abstractSerializedData.writeInt64(this.f1535id);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeInt64(this.user_id);
         this.action.serializeToStream(abstractSerializedData);

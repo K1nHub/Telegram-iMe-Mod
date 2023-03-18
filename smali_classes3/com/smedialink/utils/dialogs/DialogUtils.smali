@@ -5,95 +5,95 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDialogUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogUtils.kt\ncom/smedialink/utils/dialogs/DialogUtils\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,159:1\n37#2:160\n36#2,3:161\n1858#3,3:164\n*S KotlinDebug\n*F\n+ 1 DialogUtils.kt\ncom/smedialink/utils/dialogs/DialogUtils\n*L\n66#1:160\n66#1:161,3\n83#1:164,3\n*E\n"
+    value = "SMAP\nDialogUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DialogUtils.kt\ncom/smedialink/utils/dialogs/DialogUtils\n+ 2 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,159:1\n37#2,2:160\n1864#3,3:162\n*S KotlinDebug\n*F\n+ 1 DialogUtils.kt\ncom/smedialink/utils/dialogs/DialogUtils\n*L\n66#1:160,2\n83#1:162,3\n*E\n"
 .end annotation
 
 
 # direct methods
-.method public static synthetic $r8$lambda$83VDnZejJPDbaJTpU3hil8pZ5xo(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$0MtYaHWeE2zXdeTWulDz21GIKhk(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog$lambda-2$lambda-1(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithSelectableList$lambda$9$lambda$8(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$8eOR4IHCdVhph_42zZAn0GLpLpk(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$27d4I5KcejXvjsYILsHwfqMGeno(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithSelectableList$lambda-9$lambda-6(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda$22$lambda$19(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$FHJq98m3u77zHKy8hqtXqHjSlM8(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$442Pw7Nq5ghcwRry69osbxlSeLY(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithSelectableList$lambda-9$lambda-7(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog$lambda$2$lambda$0(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$FxLz5I8Qauwr_7VFnrKGD5M959o(Lorg/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$WMTXN0BZvjeEl2o1G_EeMMPGp48(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithRadioCellsList$lambda-15$lambda-13$lambda-12$lambda-11$lambda-10(Lorg/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithSelectableList$lambda$9$lambda$7(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Rnbql8Mj4AFV7vAph0xVEJpDcq4(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$XbpL9E6x9skWYKiOsUHIxeaAEyg(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithSelectableList$lambda-9$lambda-8(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda$22$lambda$17$lambda$16(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$UET3fG6_g9Xbc26YOQnsQFPK8I8(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$gckfK6DVZtVXQqTHk_ss0ze7XmU(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda-22$lambda-19(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda$22$lambda$21(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Vv9JqL4WoRZHnhK8DBhBClqZh-k(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$kUD8Ew9ZcV-D3xLJGYuFhwHA9_w(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog$lambda-2$lambda-0(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialog$lambda$2$lambda$1(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_BsE1vDiN02ZwwI5IhYruzPHNaI(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
+.method public static synthetic $r8$lambda$kjIgONQubPrPhmx37oDSBZ2dyC0(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda-22$lambda-17$lambda-16(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda$22$lambda$20(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$mznp7x0k1jsFZcXOTS_dFIIaNKk(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$oKDZyq6B_8OT39KI2A2DnH7_uIw(Lorg/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda-22$lambda-21(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10(Lorg/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$vXrHCmFX_YjIAl9MFQ-FpDQRTT4(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$qPaxNHTdsI3ydJntq4j_BoSmGSI(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithRadioCellsList$lambda-15$lambda-14(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithSelectableList$lambda$9$lambda$6(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$znsgrRUFCwDU6LUV_TuN0HNva1I(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$s9epAptluD5d6aFo8QibzTWtlVM(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/utils/dialogs/DialogUtils;->createEditTextAlert$lambda-22$lambda-20(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->createDialogWithRadioCellsList$lambda$15$lambda$14(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -152,9 +152,9 @@
 
     move-result-object p0
 
-    new-instance v1, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;
+    new-instance v1, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p3}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v1, p3}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda2;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -163,9 +163,9 @@
 
     move-result-object p0
 
-    new-instance p1, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda1;
+    new-instance p1, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;
 
-    invoke-direct {p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda1;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda4;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -208,33 +208,27 @@
     return-object p0
 .end method
 
-.method private static final createDialog$lambda-2$lambda-0(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method private static final createDialog$lambda$2$lambda$0(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 38
-    :cond_0
     invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final createDialog$lambda-2$lambda-1(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method private static final createDialog$lambda$2$lambda$1(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 39
-    :cond_0
     invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -307,7 +301,7 @@
 
     move-result-object v3
 
-    .line 1859
+    .line 1865
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -387,9 +381,6 @@
 
     invoke-virtual {v7, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 92
-    sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 84
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
@@ -397,11 +388,8 @@
 
     goto :goto_0
 
-    .line 94
-    :cond_1
-    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 80
+    :cond_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 95
@@ -445,7 +433,7 @@
     return-object p0
 .end method
 
-.method private static final createDialogWithRadioCellsList$lambda-15$lambda-13$lambda-12$lambda-11$lambda-10(Lorg/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method private static final createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10(Lorg/fork/utils/Callbacks$Callback1;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
     const-string p3, "$itemSelectedListener"
@@ -473,18 +461,15 @@
     return-void
 .end method
 
-.method private static final createDialogWithRadioCellsList$lambda-15$lambda-14(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method private static final createDialogWithRadioCellsList$lambda$15$lambda$14(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 95
-    :cond_0
     invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -557,10 +542,6 @@
 
     move-result-object p0
 
-    const-string v1, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {p0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast p0, [Ljava/lang/CharSequence;
 
     .line 66
@@ -575,9 +556,9 @@
 
     move-result-object p0
 
-    new-instance p2, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda2;
+    new-instance p2, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda3;
 
-    invoke-direct {p2, p4}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda2;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p4}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda3;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v0, p0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -586,9 +567,9 @@
 
     move-result-object p0
 
-    new-instance p1, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda3;
+    new-instance p1, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p3}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda3;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p1, p3}, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda1;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -604,7 +585,7 @@
     return-object p0
 .end method
 
-.method private static final createDialogWithSelectableList$lambda-9$lambda-6(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+.method private static final createDialogWithSelectableList$lambda$9$lambda$6(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
     const-string p1, "$itemSelectedListener"
@@ -621,33 +602,27 @@
     return-void
 .end method
 
-.method private static final createDialogWithSelectableList$lambda-9$lambda-7(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method private static final createDialogWithSelectableList$lambda$9$lambda$7(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 67
-    :cond_0
     invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final createDialogWithSelectableList$lambda-9$lambda-8(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
+.method private static final createDialogWithSelectableList$lambda$9$lambda$8(Lorg/fork/utils/Callbacks$Callback;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 68
-    :cond_0
     invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -870,9 +845,6 @@
 
     invoke-virtual {v3, v1, p0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 137
-    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 134
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -923,7 +895,7 @@
     return-object p0
 .end method
 
-.method private static final createEditTextAlert$lambda-22$lambda-17$lambda-16(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
+.method private static final createEditTextAlert$lambda$22$lambda$17$lambda$16(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;)V
     .locals 4
 
     const-string v0, "$this_apply"
@@ -986,23 +958,20 @@
     return-void
 .end method
 
-.method private static final createEditTextAlert$lambda-22$lambda-19(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
+.method private static final createEditTextAlert$lambda$22$lambda$19(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
     .locals 0
 
     const-string p2, "$this_apply"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 139
-    :cond_0
     invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
     .line 140
-    :goto_0
+    :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -1012,7 +981,7 @@
     return-void
 .end method
 
-.method private static final createEditTextAlert$lambda-22$lambda-20(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
+.method private static final createEditTextAlert$lambda$22$lambda$20(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface;I)V
     .locals 2
 
     const-string p3, "$mentionEditTextView"
@@ -1086,7 +1055,7 @@
     return-void
 .end method
 
-.method private static final createEditTextAlert$lambda-22$lambda-21(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+.method private static final createEditTextAlert$lambda$22$lambda$21(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 0
 
     const-string p2, "$model"

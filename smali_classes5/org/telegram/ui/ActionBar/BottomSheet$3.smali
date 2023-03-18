@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 1085
+    .line 1080
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$3;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -43,10 +43,10 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 1093
+    .line 1088
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1094
+    .line 1089
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$3;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->onContainerTranslationYChanged(F)V

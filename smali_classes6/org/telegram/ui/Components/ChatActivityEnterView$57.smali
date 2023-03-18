@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPeer;)V
     .locals 0
 
-    .line 8719
+    .line 8765
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$57;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$57;->val$messageObject:Lorg/telegram/messenger/MessageObject;
@@ -61,19 +61,19 @@
 
     if-eqz p2, :cond_0
 
-    .line 8722
+    .line 8768
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p3
 
     if-nez p3, :cond_0
 
-    .line 8723
+    .line 8769
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;-><init>()V
 
-    .line 8724
+    .line 8770
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$57;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
@@ -96,7 +96,7 @@
 
     iput-object p4, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 8725
+    .line 8771
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$57;->val$messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -105,14 +105,14 @@
 
     iput p4, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->msg_id:I
 
-    .line 8726
+    .line 8772
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$57;->val$btn:Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPeer;
 
     iget p4, p4, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->button_id:I
 
     iput p4, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->button_id:I
 
-    .line 8727
+    .line 8773
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$57;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
@@ -139,7 +139,7 @@
 
     iput-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->requested_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 8728
+    .line 8774
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$57;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
@@ -154,7 +154,7 @@
 
     invoke-virtual {p2, p3, p4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 8730
+    .line 8776
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
 

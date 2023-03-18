@@ -26,20 +26,20 @@
 .method public constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 3075
+    .line 3079
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    .line 3076
+    .line 3080
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/TextViewSwitcher;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 3072
+    .line 3076
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 3073
+    .line 3077
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->alpha:F
 
     return-void
@@ -50,17 +50,17 @@
 .method public getAlpha()F
     .locals 1
 
-    .line 3103
+    .line 3107
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
     if-eqz v0, :cond_0
 
-    .line 3104
+    .line 3108
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->alpha:F
 
     return v0
 
-    .line 3106
+    .line 3110
     :cond_0
     invoke-super {p0}, Landroid/widget/ViewSwitcher;->getAlpha()F
 
@@ -72,10 +72,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 3120
+    .line 3124
     invoke-super {p0}, Landroid/widget/ViewSwitcher;->onAttachedToWindow()V
 
-    .line 3121
+    .line 3125
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11500(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/FrameLayout;
@@ -98,10 +98,10 @@
 
     const/4 v0, 0x1
 
-    .line 3122
+    .line 3126
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
-    .line 3123
+    .line 3127
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3124
+    .line 3128
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -127,7 +127,7 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 3125
+    .line 3129
     invoke-super {p0, v0}, Landroid/widget/ViewSwitcher;->setAlpha(F)V
 
     :cond_0
@@ -137,20 +137,20 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 3131
+    .line 3135
     invoke-super {p0}, Landroid/widget/ViewSwitcher;->onDetachedFromWindow()V
 
-    .line 3132
+    .line 3136
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 3133
+    .line 3137
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
-    .line 3134
+    .line 3138
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -161,7 +161,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3135
+    .line 3139
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->alpha:F
 
     invoke-super {p0, v0}, Landroid/widget/ViewSwitcher;->setAlpha(F)V
@@ -173,15 +173,15 @@
 .method public setAlpha(F)V
     .locals 1
 
-    .line 3093
+    .line 3097
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->alpha:F
 
-    .line 3094
+    .line 3098
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
     if-eqz v0, :cond_0
 
-    .line 3095
+    .line 3099
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -192,7 +192,7 @@
 
     goto :goto_0
 
-    .line 3097
+    .line 3101
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/ViewSwitcher;->setAlpha(F)V
 
@@ -203,15 +203,15 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 3112
+    .line 3116
     invoke-super {p0, p1}, Landroid/widget/ViewSwitcher;->setTranslationY(F)V
 
-    .line 3113
+    .line 3117
     iget-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
     if-eqz p1, :cond_0
 
-    .line 3114
+    .line 3118
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -229,7 +229,7 @@
 
     const/4 v0, 0x1
 
-    .line 3081
+    .line 3085
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->setVisibility(IZ)V
 
     return-void
@@ -238,17 +238,17 @@
 .method public setVisibility(IZ)V
     .locals 1
 
-    .line 3085
+    .line 3089
     invoke-super {p0, p1}, Landroid/widget/ViewSwitcher;->setVisibility(I)V
 
-    .line 3086
+    .line 3090
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->inScrollView:Z
 
     if-eqz v0, :cond_0
 
     if-eqz p2, :cond_0
 
-    .line 3087
+    .line 3091
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/PhotoViewer;->access$500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;

@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareByDescending$1\n+ 2 RecentChatsController.kt\norg/fork/controller/RecentChatsController\n*L\n1#1,320:1\n83#2:321\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareByDescending$1\n+ 2 RecentChatsController.kt\norg/fork/controller/RecentChatsController\n*L\n1#1,328:1\n97#2:329\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
     .line 121
     check-cast p2, Lcom/smedialink/storage/domain/model/HistoryDialogModel;
 
-    .line 83
+    .line 97
     invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/HistoryDialogModel;->getCreationDate()J
 
     move-result-wide v0
@@ -62,8 +62,10 @@
 
     move-result-object p2
 
+    .line 121
     check-cast p1, Lcom/smedialink/storage/domain/model/HistoryDialogModel;
 
+    .line 97
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/HistoryDialogModel;->getCreationDate()J
 
     move-result-wide v0
@@ -72,6 +74,7 @@
 
     move-result-object p1
 
+    .line 121
     invoke-static {p2, p1}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result p1

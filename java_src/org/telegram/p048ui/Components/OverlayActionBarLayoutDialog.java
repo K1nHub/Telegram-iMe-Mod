@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -60,7 +60,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
     }
 
     public OverlayActionBarLayoutDialog(Context context, Theme.ResourcesProvider resourcesProvider) {
-        super(context, C3158R.style.TransparentDialog);
+        super(context, C3286R.style.TransparentDialog);
         this.resourcesProvider = resourcesProvider;
         INavigationLayout newLayout = INavigationLayout.CC.newLayout(context);
         this.actionBarLayout = newLayout;
@@ -136,7 +136,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         } else if (i >= 21) {
             window.addFlags(-2147417856);
         }
-        window.setWindowAnimations(C3158R.style.DialogNoAnimation);
+        window.setWindowAnimations(C3286R.style.DialogNoAnimation);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.gravity = 51;
@@ -195,16 +195,24 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
 
     /* renamed from: org.telegram.ui.Components.OverlayActionBarLayoutDialog$EmptyFragment */
     /* loaded from: classes6.dex */
-    private static final class EmptyFragment extends BaseFragment {
+    private final class EmptyFragment extends BaseFragment {
         private EmptyFragment() {
         }
 
         @Override // org.telegram.p048ui.ActionBar.BaseFragment
         public View createView(Context context) {
+            this.hasOwnBackground = true;
             this.actionBar.setAddToContainer(false);
             View view = new View(context);
             view.setBackgroundColor(0);
             return view;
+        }
+
+        @Override // org.telegram.p048ui.ActionBar.BaseFragment
+        public void onTransitionAnimationEnd(boolean z, boolean z2) {
+            if (z && z2) {
+                OverlayActionBarLayoutDialog.this.dismiss();
+            }
         }
     }
 }

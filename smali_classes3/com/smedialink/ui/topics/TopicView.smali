@@ -931,17 +931,17 @@
 
     const-string v1, "chats_actionBackground"
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicView;->archive:Ljava/lang/Boolean;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicView;->isFilter:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
 
-    goto/16 :goto_4
+    goto/16 :goto_2
 
     .line 135
     :cond_0
@@ -959,7 +959,7 @@
 
     move-result v0
 
-    goto/16 :goto_5
+    goto/16 :goto_3
 
     .line 136
     :cond_1
@@ -967,11 +967,8 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
 
-    goto :goto_0
-
-    :cond_2
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v3
@@ -980,19 +977,18 @@
 
     cmp-long v0, v3, v5
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     const/4 v2, 0x1
 
-    :cond_3
-    :goto_0
-    if-eqz v2, :cond_5
+    :cond_2
+    if-eqz v2, :cond_4
 
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDefault()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     .line 137
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -1005,29 +1001,24 @@
 
     move-result v0
 
-    goto :goto_5
+    goto :goto_3
 
     .line 139
-    :cond_4
+    :cond_3
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
-    goto :goto_5
+    goto :goto_3
 
     .line 141
-    :cond_5
+    :cond_4
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicView;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-eqz v0, :cond_5
 
-    move-object v0, v1
-
-    goto :goto_1
-
-    :cond_6
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
     move-result v0
@@ -1036,8 +1027,13 @@
 
     move-result-object v0
 
-    :goto_1
-    if-eqz v0, :cond_7
+    goto :goto_0
+
+    :cond_5
+    move-object v0, v1
+
+    :goto_0
+    if-eqz v0, :cond_6
 
     const-string v0, "iMe_dialogs_userTopicActiveBackground"
 
@@ -1045,19 +1041,14 @@
 
     move-result v0
 
-    goto :goto_5
+    goto :goto_3
 
     .line 142
-    :cond_7
+    :cond_6
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicView;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
-    if-nez v0, :cond_8
+    if-eqz v0, :cond_7
 
-    move-object v0, v1
-
-    goto :goto_2
-
-    :cond_8
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->isAutoTopic()Z
 
     move-result v0
@@ -1066,21 +1057,23 @@
 
     move-result-object v0
 
-    :goto_2
-    if-eqz v0, :cond_a
+    goto :goto_1
+
+    :cond_7
+    move-object v0, v1
+
+    :goto_1
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lcom/smedialink/ui/topics/TopicView;->topic:Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
-    if-nez v0, :cond_9
+    if-eqz v0, :cond_8
 
-    goto :goto_3
-
-    :cond_9
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getIcon()Lcom/smedialink/storage/data/repository/topics/Topic;
 
     move-result-object v1
 
-    :goto_3
+    :cond_8
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-static {v1}, Lcom/smedialink/common/TelegramThemeKeys$Dialog;->buildTopicActiveBackgroundKey(Lcom/smedialink/storage/data/repository/topics/Topic;)Ljava/lang/String;
@@ -1091,36 +1084,36 @@
 
     move-result v0
 
-    goto :goto_5
+    goto :goto_3
 
-    :cond_a
+    :cond_9
     return-void
 
     .line 134
-    :cond_b
-    :goto_4
+    :cond_a
+    :goto_2
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     .line 145
-    :goto_5
+    :goto_3
     iget-object v1, p0, Lcom/smedialink/ui/topics/TopicView;->backgroundPaint:Landroid/graphics/Paint;
 
     iget-boolean v2, p0, Lcom/smedialink/ui/topics/TopicView;->isActive:Z
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_b
 
-    goto :goto_6
+    goto :goto_4
 
-    :cond_c
+    :cond_b
     const-string v0, "iMe_dialogs_topicInactiveBackground"
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
-    :goto_6
+    :goto_4
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 146
@@ -1134,18 +1127,18 @@
 
     const/4 v3, -0x1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_c
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
-    goto :goto_7
+    goto :goto_5
 
-    :cond_d
+    :cond_c
     const/4 v1, -0x1
 
-    :goto_7
+    :goto_5
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 147
@@ -1157,13 +1150,13 @@
 
     iget-boolean v4, p0, Lcom/smedialink/ui/topics/TopicView;->isActive:Z
 
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_d
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
 
-    :cond_e
+    :cond_d
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
     invoke-direct {v1, v3, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V

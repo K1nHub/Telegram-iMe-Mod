@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2902
+    .line 2927
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 2911
+    .line 2936
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_jsonNull;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 2923
+    .line 2948
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_jsonNumber;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 2917
+    .line 2942
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_jsonArray;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 2908
+    .line 2933
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_jsonBool;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 2914
+    .line 2939
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_jsonString;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 2920
+    .line 2945
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_jsonObject;
 
@@ -75,7 +75,7 @@
 
     goto :goto_1
 
-    .line 2927
+    .line 2952
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -105,7 +105,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 2930
+    .line 2955
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

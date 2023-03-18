@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$4\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n42#2,2:411\n127#3,5:413\n127#3,5:418\n127#3,5:423\n127#3,5:428\n127#3,5:433\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$4\n*L\n123#1:411,2\n125#1:413,5\n126#1:418,5\n127#1:423,5\n128#1:428,5\n129#1:433,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$4\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2,2:434\n127#3,5:436\n127#3,5:441\n127#3,5:446\n127#3,5:451\n127#3,5:456\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$4\n*L\n127#1:434,2\n129#1:436,5\n130#1:441,5\n131#1:446,5\n132#1:451,5\n133#1:456,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v2, "$dstr$screenType$args"
+    const-string v2, "<name for destructuring parameter 0>"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -89,7 +89,6 @@
 
     move-result-object v2
 
-    .line 123
     check-cast v2, Ljava/lang/Number;
 
     invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
@@ -109,7 +108,6 @@
 
     move-result-object v1
 
-    .line 123
     move-object v5, v1
 
     check-cast v5, Lcom/smedialink/model/wallet/transfer/TransferScreenArgs;
@@ -127,7 +125,7 @@
 
     move-result-object v1
 
-    .line 125
+    .line 129
     move-object v11, v1
 
     check-cast v11, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -143,7 +141,7 @@
 
     move-result-object v1
 
-    .line 126
+    .line 130
     move-object v15, v1
 
     check-cast v15, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
@@ -159,7 +157,7 @@
 
     move-result-object v1
 
-    .line 126
+    .line 130
     move-object v6, v1
 
     check-cast v6, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;
@@ -175,7 +173,7 @@
 
     move-result-object v1
 
-    .line 126
+    .line 130
     move-object v9, v1
 
     check-cast v9, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
@@ -191,7 +189,7 @@
 
     move-result-object v1
 
-    .line 127
+    .line 131
     move-object v10, v1
 
     check-cast v10, Lcom/smedialink/gateway/TelegramControllersGateway;
@@ -207,7 +205,7 @@
 
     move-result-object v1
 
-    .line 127
+    .line 131
     move-object/from16 v16, v1
 
     check-cast v16, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
@@ -223,7 +221,7 @@
 
     move-result-object v1
 
-    .line 127
+    .line 131
     move-object v13, v1
 
     check-cast v13, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
@@ -239,7 +237,7 @@
 
     move-result-object v1
 
-    .line 128
+    .line 132
     move-object v7, v1
 
     check-cast v7, Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;
@@ -255,7 +253,7 @@
 
     move-result-object v1
 
-    .line 128
+    .line 132
     move-object v8, v1
 
     check-cast v8, Lcom/smedialink/storage/domain/interactor/binancepay/BinanceInternalInteractor;
@@ -271,7 +269,7 @@
 
     move-result-object v1
 
-    .line 128
+    .line 132
     move-object v12, v1
 
     check-cast v12, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
@@ -287,12 +285,12 @@
 
     move-result-object v0
 
-    .line 129
+    .line 133
     move-object v14, v0
 
     check-cast v14, Lcom/smedialink/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 124
+    .line 128
     new-instance v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     move-object v3, v0
@@ -305,7 +303,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 123
+    .line 127
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

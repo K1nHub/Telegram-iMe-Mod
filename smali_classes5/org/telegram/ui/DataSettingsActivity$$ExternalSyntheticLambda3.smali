@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/DataSettingsActivity$$ExternalSyntheticLambda3;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/DataSettingsActivity;->$r8$lambda$UMrUL4pCddbv3rSSYIYU2nfsXQE(Lorg/telegram/ui/DataSettingsActivity;Ljava/lang/String;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/DataSettingsActivity;->$r8$lambda$d9ZS_tvjnJeJsLvB99GhjVmWouY(Lorg/telegram/ui/DataSettingsActivity;Ljava/lang/String;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method

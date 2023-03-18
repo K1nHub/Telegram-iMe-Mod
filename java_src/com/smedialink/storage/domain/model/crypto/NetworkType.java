@@ -53,10 +53,22 @@ public final class NetworkType {
 
         static {
             int[] iArr = new int[NetworkType.values().length];
-            iArr[NetworkType.ETHEREUM.ordinal()] = 1;
-            iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 2;
-            iArr[NetworkType.POLYGON.ordinal()] = 3;
-            iArr[NetworkType.FANTOM.ordinal()] = 4;
+            try {
+                iArr[NetworkType.ETHEREUM.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[NetworkType.POLYGON.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[NetworkType.FANTOM.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

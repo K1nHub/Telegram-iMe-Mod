@@ -74,40 +74,40 @@
 .method private constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 3053
+    .line 3130
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DiffUtil$Callback;-><init>()V
 
-    .line 3060
+    .line 3137
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationsTransactions:Ljava/util/ArrayList;
 
-    .line 3072
+    .line 3149
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldPositionToItem:Landroid/util/SparseIntArray;
 
-    .line 3073
+    .line 3150
     new-instance p1, Landroid/util/SparseIntArray;
 
     invoke-direct {p1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->newPositionToItem:Landroid/util/SparseIntArray;
 
-    .line 3074
+    .line 3151
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinks:Ljava/util/ArrayList;
 
-    .line 3075
+    .line 3152
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -120,7 +120,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Lorg/telegram/ui/ManageLinksActivity$1;)V
     .locals 0
 
-    .line 3053
+    .line 3130
     invoke-direct {p0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;-><init>(Lorg/telegram/ui/ManageLinksActivity;)V
 
     return-void
@@ -131,7 +131,7 @@
 
     if-ltz p2, :cond_0
 
-    .line 3173
+    .line 3251
     invoke-virtual {p3, p2, p1}, Landroid/util/SparseIntArray;->put(II)V
 
     :cond_0
@@ -143,7 +143,7 @@
 .method public areContentsTheSame(II)Z
     .locals 0
 
-    .line 3126
+    .line 3203
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->areItemsTheSame(II)Z
 
     move-result p1
@@ -154,7 +154,7 @@
 .method public areItemsTheSame(II)Z
     .locals 4
 
-    .line 3091
+    .line 3168
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationTransactionsStartRow:I
 
     if-lt p1, v0, :cond_0
@@ -163,7 +163,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 3092
+    .line 3169
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1600(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -180,7 +180,7 @@
 
     if-ge p2, v0, :cond_0
 
-    .line 3093
+    .line 3170
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$3700(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -201,7 +201,7 @@
 
     check-cast p2, Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
-    .line 3094
+    .line 3171
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationsTransactions:Ljava/util/ArrayList;
 
     iget v1, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldDonationTransactionsStartRow:I
@@ -214,7 +214,7 @@
 
     check-cast p1, Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
-    .line 3095
+    .line 3172
     invoke-virtual {p1}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
     move-result-object p1
@@ -237,7 +237,7 @@
 
     return p1
 
-    .line 3099
+    .line 3176
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinksStartRow:I
 
@@ -256,7 +256,7 @@
 
     if-ge p1, v0, :cond_7
 
-    .line 3100
+    .line 3177
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -291,7 +291,7 @@
 
     if-ge p2, v0, :cond_7
 
-    .line 3103
+    .line 3180
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -309,7 +309,7 @@
 
     if-ge p2, v0, :cond_5
 
-    .line 3104
+    .line 3181
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5800(Lorg/telegram/ui/ManageLinksActivity;)Ljava/util/ArrayList;
@@ -332,7 +332,7 @@
 
     goto :goto_0
 
-    .line 3106
+    .line 3183
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
@@ -354,7 +354,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3108
+    .line 3185
     :goto_0
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinksStartRow:I
 
@@ -364,7 +364,7 @@
 
     if-ge p1, v1, :cond_6
 
-    .line 3109
+    .line 3186
     iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldLinks:Ljava/util/ArrayList;
 
     sub-int/2addr p1, v0
@@ -377,7 +377,7 @@
 
     goto :goto_1
 
-    .line 3111
+    .line 3188
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldRevokedLinks:Ljava/util/ArrayList;
 
@@ -391,7 +391,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 3113
+    .line 3190
     :goto_1
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->link:Ljava/lang/String;
 
@@ -403,7 +403,7 @@
 
     return p1
 
-    .line 3116
+    .line 3193
     :cond_7
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldAdminsStartRow:I
 
@@ -433,7 +433,7 @@
 
     if-ge p2, v0, :cond_9
 
-    .line 3117
+    .line 3194
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldAdminsStartRow:I
 
     sub-int/2addr p1, v0
@@ -456,7 +456,7 @@
     :goto_2
     return v1
 
-    .line 3119
+    .line 3196
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldPositionToItem:Landroid/util/SparseIntArray;
 
@@ -466,7 +466,7 @@
 
     move-result p1
 
-    .line 3120
+    .line 3197
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->newPositionToItem:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p2, v3}, Landroid/util/SparseIntArray;->get(II)I
@@ -489,10 +489,10 @@
 .method public fillPositions(Landroid/util/SparseIntArray;)V
     .locals 2
 
-    .line 3130
+    .line 3207
     invoke-virtual {p1}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 3134
+    .line 3211
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$3500(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -503,7 +503,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3135
+    .line 3212
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$3900(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -514,7 +514,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3136
+    .line 3213
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5100(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -525,7 +525,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3137
+    .line 3214
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$4000(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -536,7 +536,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3138
+    .line 3215
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5000(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -547,7 +547,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3139
+    .line 3216
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$4600(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -558,7 +558,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3140
+    .line 3217
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5200(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -569,7 +569,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3141
+    .line 3218
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$4100(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -580,7 +580,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3142
+    .line 3219
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$2700(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -591,10 +591,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3143
+    .line 3220
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$8000(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$8100(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -602,7 +602,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3144
+    .line 3221
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$3600(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -613,10 +613,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3145
+    .line 3222
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6800(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6900(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -624,7 +624,7 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3146
+    .line 3223
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5300(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -635,10 +635,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3147
+    .line 3224
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6900(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7000(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -646,10 +646,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3148
+    .line 3225
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7200(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7300(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -657,10 +657,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3149
+    .line 3226
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6300(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6400(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -668,10 +668,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3150
+    .line 3227
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6400(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6500(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -679,10 +679,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3151
+    .line 3228
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6500(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6600(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -690,10 +690,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3152
+    .line 3229
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6600(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6700(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -701,10 +701,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3153
+    .line 3230
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6700(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6800(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -712,10 +712,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3154
+    .line 3231
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6200(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6300(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -723,10 +723,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3156
+    .line 3232
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7000(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$6200(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -734,10 +734,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3157
+    .line 3234
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5400(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7100(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -745,10 +745,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3158
+    .line 3235
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7100(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5400(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -756,10 +756,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3159
+    .line 3236
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7300(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7200(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -767,10 +767,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3160
+    .line 3237
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1900(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7400(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -778,10 +778,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3161
+    .line 3238
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5500(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1900(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -789,10 +789,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3162
+    .line 3239
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$2400(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5500(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -800,10 +800,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3163
+    .line 3240
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$8100(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$2400(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -811,10 +811,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3164
+    .line 3241
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1800(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$8200(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -822,10 +822,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3165
+    .line 3242
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7600(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1800(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -833,10 +833,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3166
+    .line 3243
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5700(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7700(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -844,10 +844,10 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3167
+    .line 3244
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5600(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5700(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
@@ -855,14 +855,25 @@
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
-    .line 3168
+    .line 3245
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7800(Lorg/telegram/ui/ManageLinksActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$5600(Lorg/telegram/ui/ManageLinksActivity;)I
 
     move-result v0
 
     const/16 v1, 0x22
+
+    invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
+
+    .line 3246
+    iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$7900(Lorg/telegram/ui/ManageLinksActivity;)I
+
+    move-result v0
+
+    const/16 v1, 0x23
 
     invoke-direct {p0, v1, v0, p1}, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->put(IILandroid/util/SparseIntArray;)V
 
@@ -872,7 +883,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 3085
+    .line 3162
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->access$1300(Lorg/telegram/ui/ManageLinksActivity;)I
@@ -885,7 +896,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 3080
+    .line 3157
     iget v0, p0, Lorg/telegram/ui/ManageLinksActivity$DiffCallback;->oldRowCount:I
 
     return v0

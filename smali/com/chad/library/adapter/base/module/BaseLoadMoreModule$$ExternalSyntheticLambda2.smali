@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule$$ExternalSyntheticLambda2;->f$0:Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
-    invoke-static {v0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->$r8$lambda$D0Wn-fd8L8EL0TjUVBzvYuiJKks(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+    invoke-static {v0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->$r8$lambda$I0NejYIIOOajvamrGUd9rVF1Nto(Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
 
     return-void
 .end method

@@ -29,7 +29,6 @@ final class WalletConnectManagerImpl$approveNewSession$1$1 extends Lambda implem
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         Wallet.EVM wallet;
@@ -37,7 +36,7 @@ final class WalletConnectManagerImpl$approveNewSession$1$1 extends Lambda implem
         CryptoPreferenceHelper cryptoPreferenceHelper;
         WCClient wCClient = this.$this_run;
         wallet = this.this$0.getWallet();
-        String address = wallet == null ? null : wallet.getAddress();
+        String address = wallet != null ? wallet.getAddress() : null;
         if (address == null) {
             address = "";
         }

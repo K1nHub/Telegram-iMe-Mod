@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->$r8$lambda$CRJyB59oBK4YEAciAx7JxsVqyZ0(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->$r8$lambda$tlLoevl2FFuKxBWwOtT4z2kt29Y(Lorg/telegram/messenger/databinding/ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method

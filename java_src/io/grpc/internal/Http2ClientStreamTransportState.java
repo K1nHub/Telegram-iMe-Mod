@@ -8,7 +8,7 @@ import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.internal.AbstractClientStream;
 import java.nio.charset.Charset;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class Http2ClientStreamTransportState extends AbstractClientStream.TransportState {
     private static final Metadata.Key<Integer> HTTP2_STATUS;
     private static final InternalMetadata.TrustedAsciiMarshaller<Integer> HTTP_STATUS_MARSHALLER;

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingPrognosisView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingPrognosisView.kt\ncom/smedialink/ui/custom/StakingPrognosisView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,103:1\n56#2,6:104\n4#3:110\n5#3,2:113\n4#3:115\n5#3,2:118\n4#3:120\n5#3,2:123\n2478#4:111\n2478#4:116\n2478#4:121\n1#5:112\n1#5:117\n1#5:122\n*S KotlinDebug\n*F\n+ 1 StakingPrognosisView.kt\ncom/smedialink/ui/custom/StakingPrognosisView\n*L\n27#1:104,6\n59#1:110\n59#1:113,2\n62#1:115\n62#1:118,2\n66#1:120\n66#1:123,2\n59#1:111\n62#1:116\n66#1:121\n59#1:112\n62#1:117\n66#1:122\n*E\n"
+    value = "SMAP\nStakingPrognosisView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingPrognosisView.kt\ncom/smedialink/ui/custom/StakingPrognosisView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,103:1\n56#2,6:104\n4#3:110\n5#3,2:113\n4#3:115\n5#3,2:118\n4#3:120\n5#3,2:123\n2634#4:111\n2634#4:116\n2634#4:121\n1#5:112\n1#5:117\n1#5:122\n*S KotlinDebug\n*F\n+ 1 StakingPrognosisView.kt\ncom/smedialink/ui/custom/StakingPrognosisView\n*L\n27#1:104,6\n59#1:110\n59#1:113,2\n62#1:115\n62#1:118,2\n66#1:120\n66#1:123,2\n59#1:111\n62#1:116\n66#1:121\n59#1:112\n62#1:117\n66#1:122\n*E\n"
 .end annotation
 
 
@@ -264,7 +264,7 @@
 .end method
 
 .method public final setupColors()V
-    .locals 9
+    .locals 8
 
     .line 58
     iget-object v0, p0, Lcom/smedialink/ui/custom/StakingPrognosisView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;
@@ -308,7 +308,7 @@
 
     move-result-object v2
 
-    .line 2478
+    .line 2634
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -364,7 +364,7 @@
 
     move-result-object v2
 
-    .line 2478
+    .line 2634
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -373,8 +373,6 @@
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
-
-    const-string v7, ""
 
     if-eqz v3, :cond_1
 
@@ -385,14 +383,16 @@
     .line 5
     check-cast v3, Landroid/widget/TextView;
 
-    const-string v8, "windowBackgroundWhiteBlackText"
+    const-string v7, "windowBackgroundWhiteBlackText"
 
     .line 63
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v7, "setupColors$lambda$5$lambda$2"
 
     .line 64
     invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -417,7 +417,7 @@
 
     move-result-object v2
 
-    .line 2478
+    .line 2634
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -436,14 +436,16 @@
     .line 5
     check-cast v3, Landroid/widget/TextView;
 
-    const-string v8, "windowBackgroundWhiteGreenText2"
+    const-string v7, "windowBackgroundWhiteGreenText2"
 
     .line 67
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v8
+    move-result v7
 
-    invoke-virtual {v3, v8}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v7, "setupColors$lambda$5$lambda$3"
 
     .line 68
     invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -496,8 +498,10 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
+    const-string v2, "setupColors$lambda$5$lambda$4"
+
     .line 73
-    invoke-static {v1, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 

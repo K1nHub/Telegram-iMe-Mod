@@ -35,7 +35,7 @@
 .method public final getSpanSize(Landroidx/recyclerview/widget/GridLayoutManager;II)I
     .locals 0
 
-    invoke-static {p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$pDMQMLz0VLQ1ZBborCh2t04v-5s(Landroidx/recyclerview/widget/GridLayoutManager;II)I
+    invoke-static {p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$XmXGc7waZ_S19VuNM1XQF5wAUAw(Landroidx/recyclerview/widget/GridLayoutManager;II)I
 
     move-result p1
 

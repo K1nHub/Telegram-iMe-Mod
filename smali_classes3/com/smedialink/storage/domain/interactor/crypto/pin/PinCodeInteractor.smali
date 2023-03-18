@@ -73,10 +73,9 @@
 
     if-eqz p5, :cond_0
 
-    .line 33
+    .line 35
     iget-object p2, p0, Lcom/smedialink/storage/domain/interactor/crypto/pin/PinCodeInteractor;->cryptoAccessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 35
     invoke-interface {p2}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->getLastLoggedInGuid()Ljava/lang/String;
 
     move-result-object p2
@@ -150,7 +149,11 @@
 
     invoke-direct {v0, p0, p3, p2}, Lcom/smedialink/storage/domain/interactor/crypto/pin/PinCodeInteractor$createPinCode$$inlined$doOnSuccessNext$1;-><init>(Lcom/smedialink/storage/domain/interactor/crypto/pin/PinCodeInteractor;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->doOnNext(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
+    new-instance p2, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->doOnNext(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
 
     move-result-object p1
 

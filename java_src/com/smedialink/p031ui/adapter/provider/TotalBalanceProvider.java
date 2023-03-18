@@ -8,7 +8,7 @@ import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: TotalBalanceProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.TotalBalanceProvider */
 /* loaded from: classes3.dex */
@@ -26,7 +26,7 @@ public final class TotalBalanceProvider extends BaseNodeProvider<TotalBalanceIte
         Intrinsics.checkNotNullParameter(cryptoPreferenceHelper, "cryptoPreferenceHelper");
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.itemViewType = IdFabric$ViewTypes.TOTAL_BALANCE;
-        this.layoutId = C3158R.layout.fork_recycle_item_wallet_crypto_total_balance;
+        this.layoutId = C3286R.layout.fork_recycle_item_wallet_crypto_total_balance;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -43,18 +43,18 @@ public final class TotalBalanceProvider extends BaseNodeProvider<TotalBalanceIte
     public void convert(BaseViewHolder helper, TotalBalanceItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3158R.C3161id.text_wallet_crypto_total_balance;
+        int i = C3286R.C3289id.text_wallet_crypto_total_balance;
         BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, "chat_messagePanelText"), i).setText(i, item.getFormattedBalance(this.cryptoPreferenceHelper.getCryptoHiddenBalance()));
-        int i2 = C3158R.C3161id.image_wallet_crypto_eye;
-        BaseViewHolder circleRippleBackground = BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(text, i2, "windowBackgroundWhiteGrayText2").setImageResource(i2, this.cryptoPreferenceHelper.getCryptoHiddenBalance() ? C3158R.C3160drawable.fork_wallet_crypto_cipher_eye : C3158R.C3160drawable.fork_filter_icon_eye), i2);
-        int i3 = C3158R.C3161id.image_wallet_crypto_tokens_settings;
-        BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(circleRippleBackground, "windowBackgroundWhiteGrayText2", i3, C3158R.C3161id.image_wallet_order_tokens), i3);
+        int i2 = C3286R.C3289id.image_wallet_crypto_eye;
+        BaseViewHolder circleRippleBackground = BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(text, i2, "windowBackgroundWhiteGrayText2").setImageResource(i2, this.cryptoPreferenceHelper.getCryptoHiddenBalance() ? C3286R.C3288drawable.fork_wallet_crypto_cipher_eye : C3286R.C3288drawable.fork_filter_icon_eye), i2);
+        int i3 = C3286R.C3289id.image_wallet_crypto_tokens_settings;
+        BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(circleRippleBackground, "windowBackgroundWhiteGrayText2", i3, C3286R.C3289id.image_wallet_order_tokens), i3);
     }
 
     public void convert(BaseViewHolder helper, TotalBalanceItem item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        helper.setText(C3158R.C3161id.text_wallet_crypto_total_balance, item.getFormattedBalance(this.cryptoPreferenceHelper.getCryptoHiddenBalance()));
+        helper.setText(C3286R.C3289id.text_wallet_crypto_total_balance, item.getFormattedBalance(this.cryptoPreferenceHelper.getCryptoHiddenBalance()));
     }
 }

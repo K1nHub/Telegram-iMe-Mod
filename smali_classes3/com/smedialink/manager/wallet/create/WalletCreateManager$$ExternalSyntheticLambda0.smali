@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/manager/wallet/create/WalletCreateManager;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->$r8$lambda$HdqNl1lNwk5UXvYSVbiJmMM33nE(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/manager/wallet/create/WalletCreateManager;->$r8$lambda$1wkcyITF1fuLLCJ1OWIBlVCLH3k(Lcom/smedialink/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

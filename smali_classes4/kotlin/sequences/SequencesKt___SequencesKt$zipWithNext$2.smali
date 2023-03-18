@@ -35,7 +35,7 @@
     c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2"
     f = "_Sequences.kt"
     l = {
-        0xa85
+        0xb27
     }
     m = "invokeSuspend"
 .end annotation
@@ -177,7 +177,7 @@
 
     move-result-object v0
 
-    .line 2687
+    .line 2849
     iget v1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2;->label:I
 
     const/4 v2, 0x1
@@ -202,7 +202,6 @@
 
     goto :goto_0
 
-    .line 2696
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -212,7 +211,6 @@
 
     throw p1
 
-    .line 2687
     :cond_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -220,14 +218,14 @@
 
     check-cast p1, Lkotlin/sequences/SequenceScope;
 
-    .line 2688
+    .line 2850
     iget-object v1, p0, Lkotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2;->$this_zipWithNext:Lkotlin/sequences/Sequence;
 
     invoke-interface {v1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 2689
+    .line 2851
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
@@ -238,7 +236,7 @@
 
     return-object p1
 
-    .line 2690
+    .line 2852
     :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -253,7 +251,7 @@
     :goto_0
     move-object v1, p0
 
-    .line 2691
+    .line 2853
     :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -261,12 +259,12 @@
 
     if-eqz v5, :cond_4
 
-    .line 2692
+    .line 2854
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 2693
+    .line 2855
     iget-object v6, v1, Lkotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2;->$transform:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {v6, p1, v5}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -294,7 +292,7 @@
 
     goto :goto_1
 
-    .line 2696
+    .line 2858
     :cond_4
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

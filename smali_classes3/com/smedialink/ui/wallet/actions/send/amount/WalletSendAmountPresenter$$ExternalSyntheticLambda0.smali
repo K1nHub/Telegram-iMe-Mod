@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$j2AgraSLmRfl4Ncy_2P2d9NGOZg(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->$r8$lambda$ZcYHYtzgpa88hy4SK3rPN0jP-a0(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method

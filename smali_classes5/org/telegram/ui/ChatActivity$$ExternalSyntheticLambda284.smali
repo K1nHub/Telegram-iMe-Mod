@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/LanguageDetector$ExceptionCallback;
+.implements Lorg/fork/utils/Callbacks$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Cells/BotHelpCell;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda284;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/BotHelpCell;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda284;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda284;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda284;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda284;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda284;->f$0:Lorg/telegram/ui/Cells/BotHelpCell;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Exception;)V
-    .locals 1
+.method public final invoke()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda284;->f$0:Lorg/telegram/ui/Cells/BotHelpCell;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$4e_E3PjK0kRW5QItyDlZHmcect4(Lorg/telegram/ui/Cells/BotHelpCell;Ljava/lang/Exception;)V
+    invoke-static {}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wV0PRhgGb95FL9cOTkfp1XlC3tY()V
 
     return-void
 .end method

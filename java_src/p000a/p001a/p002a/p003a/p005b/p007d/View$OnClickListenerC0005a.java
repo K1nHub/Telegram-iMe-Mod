@@ -37,10 +37,10 @@ public final class View$OnClickListenerC0005a extends AppCompatDialog implements
     /* loaded from: classes.dex */
     public interface InterfaceC0006a {
         /* renamed from: a */
-        void mo858a(View view);
+        void mo859a(View view);
 
         /* renamed from: b */
-        void mo857b(View view);
+        void mo858b(View view);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -60,11 +60,11 @@ public final class View$OnClickListenerC0005a extends AppCompatDialog implements
         if (id == R$id.btn_ok) {
             InterfaceC0006a interfaceC0006a2 = this.f10a;
             if (interfaceC0006a2 != null) {
-                interfaceC0006a2.mo858a(v);
+                interfaceC0006a2.mo859a(v);
             }
         } else if (id != R$id.btn_cancel || (interfaceC0006a = this.f10a) == null) {
         } else {
-            interfaceC0006a.mo857b(v);
+            interfaceC0006a.mo858b(v);
         }
     }
 

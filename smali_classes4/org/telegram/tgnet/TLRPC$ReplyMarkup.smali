@@ -29,10 +29,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 11347
+    .line 11451
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 11353
+    .line 11457
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,7 +51,7 @@
 
     goto :goto_0
 
-    .line 11375
+    .line 11479
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_replyInlineMarkup;
 
@@ -59,7 +59,7 @@
 
     goto :goto_0
 
-    .line 11369
+    .line 11473
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_replyKeyboardMarkup_layer129;
 
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 11372
+    .line 11476
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_replyKeyboardForceReply_layer129;
 
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 11363
+    .line 11467
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_replyKeyboardHide;
 
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 11366
+    .line 11470
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_replyKeyboardForceReply;
 
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 11360
+    .line 11464
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_replyKeyboardMarkup;
 
@@ -104,7 +104,7 @@
 
     goto :goto_1
 
-    .line 11379
+    .line 11483
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -134,7 +134,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 11382
+    .line 11486
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

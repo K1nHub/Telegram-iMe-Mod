@@ -908,35 +908,30 @@
 
     move-result-object v6
 
-    const/4 v9, 0x0
+    if-eqz v6, :cond_18
 
-    if-nez v6, :cond_18
+    new-instance v9, Ljava/math/BigDecimal;
+
+    invoke-direct {v9, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
     move-object v14, v9
 
     goto :goto_12
 
     :cond_18
-    new-instance v14, Ljava/math/BigDecimal;
-
-    invoke-direct {v14, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
-
-    :goto_12
-    if-nez v14, :cond_19
-
     sget-object v6, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
     move-object v14, v6
 
     .line 80
-    :cond_19
+    :goto_12
     new-instance v15, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->getSpentCurrency()Ljava/lang/String;
 
     move-result-object v6
 
-    if-nez v6, :cond_1a
+    if-nez v6, :cond_19
 
     sget-object v6, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
@@ -944,14 +939,16 @@
 
     move-result-object v6
 
-    :cond_1a
-    const/4 v1, 0x0
+    :cond_19
+    const/4 v9, 0x0
+
+    const/4 v1, 0x2
 
     move-object/from16 v16, v4
 
-    const/4 v4, 0x2
+    const/4 v4, 0x0
 
-    invoke-direct {v15, v6, v1, v4, v9}, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;-><init>(Ljava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v15, v6, v9, v1, v4}, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;-><init>(Ljava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 81
     sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
@@ -960,11 +957,11 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_1b
+    if-nez v4, :cond_1a
 
     move-object/from16 v4, v16
 
-    :cond_1b
+    :cond_1a
     invoke-virtual {v1, v4}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v9
@@ -1003,7 +1000,7 @@
 
     move-result-object v11
 
-    if-nez v11, :cond_1c
+    if-nez v11, :cond_1b
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/notification/NotificationMappingKt;->unsupportedNotification(Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;)Lcom/smedialink/storage/domain/model/notification/Notification;
 
@@ -1012,7 +1009,7 @@
     return-object v0
 
     .line 59
-    :cond_1c
+    :cond_1b
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->getId()Ljava/lang/String;
 
     move-result-object v5
@@ -1035,13 +1032,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1c
 
     move-object/from16 v12, v16
 
     goto :goto_13
 
-    :cond_1d
+    :cond_1c
     move-object v12, v1
 
     .line 62
@@ -1050,13 +1047,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1d
 
     move-object/from16 v13, v16
 
     goto :goto_14
 
-    :cond_1e
+    :cond_1d
     move-object v13, v1
 
     .line 63
@@ -1076,11 +1073,11 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1f
+    if-nez v2, :cond_1e
 
     move-object/from16 v2, v16
 
-    :cond_1f
+    :cond_1e
     invoke-virtual {v1, v2}, Lcom/smedialink/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/base/Status;
 
     move-result-object v4
@@ -1092,11 +1089,11 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_20
+    if-nez v2, :cond_1f
 
     move-object/from16 v2, v16
 
-    :cond_20
+    :cond_1f
     invoke-virtual {v1, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v10
@@ -1128,7 +1125,7 @@
 
     move-result-object v10
 
-    if-nez v10, :cond_21
+    if-nez v10, :cond_20
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/notification/NotificationMappingKt;->unsupportedNotification(Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;)Lcom/smedialink/storage/domain/model/notification/Notification;
 
@@ -1137,7 +1134,7 @@
     return-object v0
 
     .line 46
-    :cond_21
+    :cond_20
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
@@ -1160,13 +1157,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_21
 
     move-object/from16 v11, v16
 
     goto :goto_15
 
-    :cond_22
+    :cond_21
     move-object v11, v1
 
     .line 49
@@ -1175,13 +1172,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_22
 
     move-object/from16 v12, v16
 
     goto :goto_16
 
-    :cond_23
+    :cond_22
     move-object v12, v1
 
     .line 50
@@ -1201,11 +1198,11 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_24
+    if-nez v2, :cond_23
 
     move-object/from16 v2, v16
 
-    :cond_24
+    :cond_23
     invoke-virtual {v1, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v9
@@ -1237,7 +1234,7 @@
 
     move-result-object v11
 
-    if-nez v11, :cond_25
+    if-nez v11, :cond_24
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/notification/NotificationMappingKt;->unsupportedNotification(Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;)Lcom/smedialink/storage/domain/model/notification/Notification;
 
@@ -1246,7 +1243,7 @@
     return-object v0
 
     .line 32
-    :cond_25
+    :cond_24
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->getId()Ljava/lang/String;
 
     move-result-object v5
@@ -1269,13 +1266,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_25
 
     move-object/from16 v12, v16
 
     goto :goto_17
 
-    :cond_26
+    :cond_25
     move-object v12, v1
 
     .line 35
@@ -1284,13 +1281,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_27
+    if-nez v1, :cond_26
 
     move-object/from16 v13, v16
 
     goto :goto_18
 
-    :cond_27
+    :cond_26
     move-object v13, v1
 
     .line 36
@@ -1310,11 +1307,11 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_28
+    if-nez v2, :cond_27
 
     move-object/from16 v2, v16
 
-    :cond_28
+    :cond_27
     invoke-virtual {v1, v2}, Lcom/smedialink/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/base/Status;
 
     move-result-object v4
@@ -1326,11 +1323,11 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_28
 
     move-object/from16 v2, v16
 
-    :cond_29
+    :cond_28
     invoke-virtual {v1, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v10
@@ -1362,7 +1359,7 @@
 
     move-result-object v10
 
-    if-nez v10, :cond_2a
+    if-nez v10, :cond_29
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/notification/NotificationMappingKt;->unsupportedNotification(Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;)Lcom/smedialink/storage/domain/model/notification/Notification;
 
@@ -1371,7 +1368,7 @@
     return-object v0
 
     .line 19
-    :cond_2a
+    :cond_29
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/notification/NotificationResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
@@ -1394,13 +1391,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_2a
 
     move-object/from16 v11, v16
 
     goto :goto_19
 
-    :cond_2b
+    :cond_2a
     move-object v11, v1
 
     .line 22
@@ -1409,13 +1406,13 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_2b
 
     move-object/from16 v12, v16
 
     goto :goto_1a
 
-    :cond_2c
+    :cond_2b
     move-object v12, v1
 
     .line 23
@@ -1435,11 +1432,11 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_2c
 
     move-object/from16 v2, v16
 
-    :cond_2d
+    :cond_2c
     invoke-virtual {v1, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v9

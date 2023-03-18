@@ -9,13 +9,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;,
-        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$Companion;
+        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$Companion;,
+        Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment$ScreenType;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTransactionsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,266:1\n13#2,4:267\n56#3,6:271\n154#4,8:277\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n*L\n44#1:267,4\n45#1:271,6\n127#1:277,8\n*E\n"
+    value = "SMAP\nWalletTransactionsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,266:1\n13#2,4:267\n56#3,6:271\n162#4,8:277\n*S KotlinDebug\n*F\n+ 1 WalletTransactionsFragment.kt\ncom/smedialink/ui/wallet/transaction/WalletTransactionsFragment\n*L\n44#1:267,4\n45#1:271,6\n127#1:277,8\n*E\n"
 .end annotation
 
 
@@ -51,42 +51,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Fc7UyryEoqSNZb92w83-HaXpezc(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$LYCsxplNN3BuCHsdJGAd1Mnta84(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupListeners$lambda-15$lambda-14(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupListeners$lambda$13$lambda$12(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$SjbzN2ilapfKg-PrkLHBEIl2xCo(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public static synthetic $r8$lambda$ME4__sMbOd548-IHy2mBiLzCxhw(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->showChooseNetworkDialog$lambda-0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupListeners$lambda$15$lambda$14(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$TaAGp6CxeVldZpZtqhk9T1XmJ14(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+.method public static synthetic $r8$lambda$TX7PbGIbYtA_1P2nDPaQPZ7AwqA(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupLoadMore$lambda-10$lambda-9$lambda-8(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupLoadMore$lambda$10$lambda$9$lambda$8(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$i4HfI-TNU4YdpglAhHTbqmF-SBc(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
+.method public static synthetic $r8$lambda$V0seCw4S8TxKRXL0W7Iw9kC-P9k(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getThemeDescriptions$lambda-2(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->getThemeDescriptions$lambda$2(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$i_R4VbUcK-a0XTVBoXkD5_gBSFQ(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
+.method public static synthetic $r8$lambda$s8Ue264HzAiVN_leGIsYn7fxiAM(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupListeners$lambda-13$lambda-12(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->showChooseNetworkDialog$lambda$0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method
@@ -320,7 +320,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-2(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
+.method private static final getThemeDescriptions$lambda$2(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -429,7 +429,7 @@
 
     move-result-object v0
 
-    const-string v1, ""
+    const-string v1, "setupActionBar$lambda$5$lambda$4$lambda$3"
 
     .line 167
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -542,7 +542,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-13$lambda-12(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
+.method private static final setupListeners$lambda$13$lambda$12(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;)V
     .locals 7
 
     const-string v0, "this$0"
@@ -569,18 +569,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-15$lambda-14(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$15$lambda$14(Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 6
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -680,7 +680,7 @@
     return-void
 .end method
 
-.method private static final setupLoadMore$lambda-10$lambda-9$lambda-8(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
+.method private static final setupLoadMore$lambda$10$lambda$9$lambda$8(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;)V
     .locals 7
 
     const-string v0, "$this_with"
@@ -799,9 +799,6 @@
     .line 179
     invoke-direct {p0, v1}, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->setupLoadMore(Lcom/smedialink/ui/wallet/transaction/adapter/WalletTransactionsRecycleAdapter;)V
 
-    .line 180
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 176
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
@@ -861,7 +858,7 @@
     return-void
 .end method
 
-.method private static final showChooseNetworkDialog$lambda-0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method private static final showChooseNetworkDialog$lambda$0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
     const-string v0, "$action"
@@ -1036,22 +1033,22 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 155
+    .line 163
     invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v1
 
-    .line 156
+    .line 164
     invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v2
 
-    .line 157
+    .line 165
     invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v3
 
-    .line 160
+    .line 168
     invoke-virtual {v0, v1, v2, v3, p1}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
@@ -1280,16 +1277,13 @@
     .line 104
     iget-object p1, p0, Lcom/smedialink/ui/wallet/transaction/WalletTransactionsFragment;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 

@@ -66,12 +66,12 @@
     :goto_0
     sput-boolean v0, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
 
-    const/16 v0, 0xc5c
+    const/16 v0, 0xc8d
 
     .line 31
     sput v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const-string v0, "9.4.9"
+    const-string v0, "9.5.3"
 
     .line 32
     sput-object v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION_STRING:Ljava/lang/String;
@@ -98,7 +98,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "w0lkcmTZkKh"
+    const-string/jumbo v0, "w0lkcmTZkKh"
 
     goto :goto_1
 

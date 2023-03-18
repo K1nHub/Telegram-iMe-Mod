@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;",
+        "Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,75:1\n127#2,5:76\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n*L\n62#1:76,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n127#2,5:78\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16\n*L\n63#1:78,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;
     .locals 3
 
     const-string v0, "$this$single"
@@ -72,51 +72,66 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 62
-    new-instance p2, Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;
+    .line 131
+    const-class p2, Lcom/smedialink/storage/domain/repository/crypto/cancel/CancelRepository;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    .line 63
+    check-cast p2, Lcom/smedialink/storage/domain/repository/crypto/cancel/CancelRepository;
 
     .line 131
-    const-class v0, Lcom/smedialink/storage/domain/repository/crypto/donations/DonationsRepository;
+    const-class v1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
+    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
+    .line 63
+    check-cast v1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
-    check-cast v0, Lcom/smedialink/storage/domain/repository/crypto/donations/DonationsRepository;
-
-    const-class v2, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
+    .line 131
+    const-class v2, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v2
 
-    invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
+    .line 63
+    check-cast p1, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 62
-    invoke-direct {p2, v0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;-><init>(Lcom/smedialink/storage/domain/repository/crypto/donations/DonationsRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
+    new-instance v0, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;
 
-    return-object p2
+    invoke-direct {v0, p1, p2, v1}, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;-><init>(Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/domain/repository/crypto/cancel/CancelRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
+
+    return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 62
+    .line 63
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$16;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;
 
     move-result-object p1
 

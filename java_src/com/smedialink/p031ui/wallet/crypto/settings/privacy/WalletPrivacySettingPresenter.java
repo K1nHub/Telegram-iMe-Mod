@@ -7,27 +7,26 @@ import com.smedialink.storage.domain.interactor.crypto.level.AccountLevelInterac
 import com.smedialink.storage.domain.interactor.crypto.permission.CryptoPermissionInteractor;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.CryptoWalletInfo;
-import com.smedialink.storage.domain.utils.extentions.ResultExtKt;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
-import com.smedialink.utils.extentions.p033rx.RxExtKt$mapResultWithDefaultErrorHandle$1;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Pair;
-import kotlin.TuplesKt;
-import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
-import timber.log.Timber;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletPrivacySettingPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter */
@@ -64,7 +63,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
             ((WalletPrivacySettingsView) getViewState()).showConfirmDialog(getEverybodyWarningDialogModel(), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda4
                 @Override // org.fork.utils.Callbacks$Callback
                 public final void invoke() {
-                    WalletPrivacySettingPresenter.m1611savePrivacySettings$lambda0(Function0.this);
+                    WalletPrivacySettingPresenter.savePrivacySettings$lambda$0(Function0.this);
                 }
             });
         } else {
@@ -73,8 +72,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: savePrivacySettings$lambda-0  reason: not valid java name */
-    public static final void m1611savePrivacySettings$lambda0(Function0 action) {
+    public static final void savePrivacySettings$lambda$0(Function0 action) {
         Intrinsics.checkNotNullParameter(action, "$action");
         action.invoke();
     }
@@ -88,104 +86,54 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final void loadPrivacySettings() {
-        Observable observeOn = Observable.zip(getWalletAddressSettingsObservable(), getAccountRankSettingsObservable(), WalletPrivacySettingPresenter$$ExternalSyntheticLambda1.INSTANCE).observeOn(this.schedulersProvider.mo707ui());
+        Observable<Result<CryptoWalletInfo>> walletAddressSettingsObservable = getWalletAddressSettingsObservable();
+        Observable<Result<Boolean>> accountRankSettingsObservable = getAccountRankSettingsObservable();
+        final WalletPrivacySettingPresenter$loadPrivacySettings$1 walletPrivacySettingPresenter$loadPrivacySettings$1 = WalletPrivacySettingPresenter$loadPrivacySettings$1.INSTANCE;
+        Observable observeOn = Observable.zip(walletAddressSettingsObservable, accountRankSettingsObservable, new BiFunction() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda1
+            @Override // io.reactivex.functions.BiFunction
+            public final Object apply(Object obj, Object obj2) {
+                Pair loadPrivacySettings$lambda$1;
+                loadPrivacySettings$lambda$1 = WalletPrivacySettingPresenter.loadPrivacySettings$lambda$1(Function2.this, obj, obj2);
+                return loadPrivacySettings$lambda$1;
+            }
+        }).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(getWalletAddressSett…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$loadPrivacySettings$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                int resolveAccessTypeBy;
-                int resolveAccessTypeBy2;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Pair pair = (Pair) it;
-                if (((Result) pair.getFirst()).isSuccess() && ((Result) pair.getSecond()).isSuccess()) {
-                    Object data = ((Result) pair.getFirst()).getData();
-                    Intrinsics.checkNotNull(data);
-                    List<Long> usersWithAccessToEthAddress = ((CryptoWalletInfo) data).getUsersWithAccessToEthAddress();
-                    WalletPrivacySettingPresenter walletPrivacySettingPresenter = WalletPrivacySettingPresenter.this;
-                    Object data2 = ((Result) pair.getFirst()).getData();
-                    Intrinsics.checkNotNull(data2);
-                    resolveAccessTypeBy = walletPrivacySettingPresenter.resolveAccessTypeBy(((CryptoWalletInfo) data2).isEthAddressOpenedForEverybody());
-                    WalletPrivacySettingPresenter walletPrivacySettingPresenter2 = WalletPrivacySettingPresenter.this;
-                    Object data3 = ((Result) pair.getSecond()).getData();
-                    Intrinsics.checkNotNull(data3);
-                    resolveAccessTypeBy2 = walletPrivacySettingPresenter2.resolveAccessTypeBy(((Boolean) data3).booleanValue());
-                    ((WalletPrivacySettingsView) WalletPrivacySettingPresenter.this.getViewState()).onSuccessLoadPrivacySettings(usersWithAccessToEthAddress, resolveAccessTypeBy, resolveAccessTypeBy2);
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$loadPrivacySettings$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2090xca859c2b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2091xca859c2c((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadPrivacySettings$lambda-1  reason: not valid java name */
-    public static final Pair m1609loadPrivacySettings$lambda1(Result walletAddressResult, Result accountRankResult) {
-        Intrinsics.checkNotNullParameter(walletAddressResult, "walletAddressResult");
-        Intrinsics.checkNotNullParameter(accountRankResult, "accountRankResult");
-        return TuplesKt.m100to(walletAddressResult, accountRankResult);
+    public static final Pair loadPrivacySettings$lambda$1(Function2 tmp0, Object obj, Object obj2) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Pair) tmp0.invoke(obj, obj2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void saveSettings(Observable<Result<Boolean>> observable, Observable<Result<Boolean>> observable2) {
-        Observable observeOn = Observable.zip(observable, observable2, WalletPrivacySettingPresenter$$ExternalSyntheticLambda0.INSTANCE).observeOn(this.schedulersProvider.mo707ui());
+        final WalletPrivacySettingPresenter$saveSettings$1 walletPrivacySettingPresenter$saveSettings$1 = WalletPrivacySettingPresenter$saveSettings$1.INSTANCE;
+        Observable observeOn = Observable.zip(observable, observable2, new BiFunction() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.BiFunction
+            public final Object apply(Object obj, Object obj2) {
+                List saveSettings$lambda$3;
+                saveSettings$lambda$3 = WalletPrivacySettingPresenter.saveSettings$lambda$3(Function2.this, obj, obj2);
+                return saveSettings$lambda$3;
+            }
+        }).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(walletAddressObserva…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveSettings$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                if (ResultExtKt.isAllSuccess((List) it)) {
-                    ((WalletPrivacySettingsView) WalletPrivacySettingPresenter.this.getViewState()).onSuccessSaveCryptoSettings();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$saveSettings$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2093x708bde00(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2094x708bde01((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: saveSettings$lambda-3  reason: not valid java name */
-    public static final List m1612saveSettings$lambda3(Result walletAddressResult, Result accountRankResult) {
-        List listOf;
-        Intrinsics.checkNotNullParameter(walletAddressResult, "walletAddressResult");
-        Intrinsics.checkNotNullParameter(accountRankResult, "accountRankResult");
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Result[]{walletAddressResult, accountRankResult});
-        return listOf;
+    public static final List saveSettings$lambda$3(Function2 tmp0, Object obj, Object obj2) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (List) tmp0.invoke(obj, obj2);
     }
 
     private final Observable<Result<CryptoWalletInfo>> getWalletAddressSettingsObservable() {
@@ -193,7 +141,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable map = observeOn.map(new RxExtKt$mapResultWithDefaultErrorHandle$1((BaseView) viewState, this.resourceManager));
+        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2089x78f2e5da((BaseView) viewState, this.resourceManager)));
         Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …ager))\n    }\n    result\n}");
         return map;
     }
@@ -203,83 +151,58 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
         Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable map = observeOn.map(new RxExtKt$mapResultWithDefaultErrorHandle$1((BaseView) viewState, this.resourceManager));
+        Observable map = observeOn.map(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C2088x14057a9c((BaseView) viewState, this.resourceManager)));
         Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …ager))\n    }\n    result\n}");
         return map;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Result<Boolean>> saveWalletAddressSettingsObservable(ArrayList<Long> arrayList, final ArrayList<Long> arrayList2, int i, final int i2) {
+    public final Observable<Result<Boolean>> saveWalletAddressSettingsObservable(ArrayList<Long> arrayList, ArrayList<Long> arrayList2, int i, int i2) {
         Observable just = Observable.just(Boolean.valueOf((i == i2 && Intrinsics.areEqual(arrayList, arrayList2)) ? false : true));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+        final C2097x88ce73d4 c2097x88ce73d4 = new C2097x88ce73d4(this, i2, arrayList2);
         Observable<Result<Boolean>> flatMap = just.flatMap(new Function() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource m1613saveWalletAddressSettingsObservable$lambda5;
-                m1613saveWalletAddressSettingsObservable$lambda5 = WalletPrivacySettingPresenter.m1613saveWalletAddressSettingsObservable$lambda5(WalletPrivacySettingPresenter.this, i2, arrayList2, (Boolean) obj);
-                return m1613saveWalletAddressSettingsObservable$lambda5;
+                ObservableSource saveWalletAddressSettingsObservable$lambda$5;
+                saveWalletAddressSettingsObservable$lambda$5 = WalletPrivacySettingPresenter.saveWalletAddressSettingsObservable$lambda$5(Function1.this, obj);
+                return saveWalletAddressSettingsObservable$lambda$5;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "prevPublicWalletAllowTyp…bservable()\n            }");
+        Intrinsics.checkNotNullExpressionValue(flatMap, "private fun saveWalletAd…bservable()\n            }");
         return flatMap;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: saveWalletAddressSettingsObservable$lambda-5  reason: not valid java name */
-    public static final ObservableSource m1613saveWalletAddressSettingsObservable$lambda5(WalletPrivacySettingPresenter this$0, int i, ArrayList allowUsers, Boolean isNeedChange) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(allowUsers, "$allowUsers");
-        Intrinsics.checkNotNullParameter(isNeedChange, "isNeedChange");
-        if (!isNeedChange.booleanValue()) {
-            Observable just = Observable.just(Result.Companion.success(Boolean.TRUE));
-            Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-            return just;
-        }
-        Observable observeOn = CryptoPermissionInteractor.manageCryptoPrivacySettings$default(this$0.cryptoPermissionInteractor, null, i == 0, allowUsers, 1, null).observeOn(this$0.schedulersProvider.mo707ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
-        T viewState = this$0.getViewState();
-        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable map = observeOn.map(new RxExtKt$mapResultWithDefaultErrorHandle$1((BaseView) viewState, this$0.resourceManager));
-        Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …ager))\n    }\n    result\n}");
-        return map;
+    public static final ObservableSource saveWalletAddressSettingsObservable$lambda$5(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (ObservableSource) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final Observable<Result<Boolean>> saveAccountRankSettingsObservable(int i, final int i2) {
+    public final Observable<Result<Boolean>> saveAccountRankSettingsObservable(int i, int i2) {
         Observable just = Observable.just(Boolean.valueOf(i != i2));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+        final C2096x1efe2092 c2096x1efe2092 = new C2096x1efe2092(this, i2);
         Observable<Result<Boolean>> flatMap = just.flatMap(new Function() { // from class: com.smedialink.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource m1610saveAccountRankSettingsObservable$lambda6;
-                m1610saveAccountRankSettingsObservable$lambda6 = WalletPrivacySettingPresenter.m1610saveAccountRankSettingsObservable$lambda6(WalletPrivacySettingPresenter.this, i2, (Boolean) obj);
-                return m1610saveAccountRankSettingsObservable$lambda6;
+                ObservableSource saveAccountRankSettingsObservable$lambda$6;
+                saveAccountRankSettingsObservable$lambda$6 = WalletPrivacySettingPresenter.saveAccountRankSettingsObservable$lambda$6(Function1.this, obj);
+                return saveAccountRankSettingsObservable$lambda$6;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMap, "prevAccountRankAllowType…bservable()\n            }");
+        Intrinsics.checkNotNullExpressionValue(flatMap, "private fun saveAccountR…bservable()\n            }");
         return flatMap;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: saveAccountRankSettingsObservable$lambda-6  reason: not valid java name */
-    public static final ObservableSource m1610saveAccountRankSettingsObservable$lambda6(WalletPrivacySettingPresenter this$0, int i, Boolean isNeedChange) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(isNeedChange, "isNeedChange");
-        if (!isNeedChange.booleanValue()) {
-            Observable just = Observable.just(Result.Companion.success(Boolean.TRUE));
-            Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-            return just;
-        }
-        Observable<Result<Boolean>> observeOn = this$0.accountLevelInteractor.changeLevelVisibility(i == 0).observeOn(this$0.schedulersProvider.mo707ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
-        T viewState = this$0.getViewState();
-        Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        ObservableSource map = observeOn.map(new RxExtKt$mapResultWithDefaultErrorHandle$1((BaseView) viewState, this$0.resourceManager));
-        Intrinsics.checkNotNullExpressionValue(map, "viewState: BaseView,\n   …ager))\n    }\n    result\n}");
-        return map;
+    public static final ObservableSource saveAccountRankSettingsObservable$lambda$6(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (ObservableSource) tmp0.invoke(obj);
     }
 
     private final DialogModel getEverybodyWarningDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3158R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3286R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.common_confirm));
     }
 }

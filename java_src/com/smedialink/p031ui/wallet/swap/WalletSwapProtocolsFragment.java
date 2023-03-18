@@ -43,9 +43,9 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSwapProtocolsBinding;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.ActionIntroActivity;
@@ -69,10 +69,22 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
 
         static {
             int[] iArr = new int[CentralizedExchange.values().length];
-            iArr[CentralizedExchange.GATE.ordinal()] = 1;
-            iArr[CentralizedExchange.ASCENDEEX.ordinal()] = 2;
-            iArr[CentralizedExchange.BINANCE.ordinal()] = 3;
-            iArr[CentralizedExchange.UNKNOWN.ordinal()] = 4;
+            try {
+                iArr[CentralizedExchange.GATE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[CentralizedExchange.ASCENDEEX.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[CentralizedExchange.BINANCE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[CentralizedExchange.UNKNOWN.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -138,7 +150,7 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.swap.WalletSwapProtocolsFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletSwapProtocolsFragment.m1749getThemeDescriptions$lambda1(WalletSwapProtocolsFragment.this);
+                WalletSwapProtocolsFragment.getThemeDescriptions$lambda$1(WalletSwapProtocolsFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -149,8 +161,7 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         return arrayListOf;
     }
 
-    /* renamed from: getThemeDescriptions$lambda-1 */
-    public static final void m1749getThemeDescriptions$lambda1(WalletSwapProtocolsFragment this$0) {
+    public static final void getThemeDescriptions$lambda$1(WalletSwapProtocolsFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getSwapProtocolsAdapter().notifyDataSetChanged();
     }
@@ -180,25 +191,24 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         WalletHelper.runWithCheckIsCryptoWalletCreated(this, null, BlockchainType.EVM, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.swap.WalletSwapProtocolsFragment$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletSwapProtocolsFragment.m1750openSwapScreen$lambda2(WalletSwapProtocolsFragment.this, item, networkType);
+                WalletSwapProtocolsFragment.openSwapScreen$lambda$2(WalletSwapProtocolsFragment.this, item, networkType);
             }
         });
     }
 
-    /* renamed from: openSwapScreen$lambda-2 */
-    public static final void m1750openSwapScreen$lambda2(WalletSwapProtocolsFragment this$0, SwapProtocolInfo item, NetworkType networkType) {
+    public static final void openSwapScreen$lambda$2(WalletSwapProtocolsFragment this$0, SwapProtocolInfo item, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         this$0.presentFragment(WalletSwapProcessFragment.Companion.newInstance(new WalletSwapProcessFragment.ScreenType.Crypto(item.getCode(), null, this$0.toToken, networkType, 2, null)));
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_navigation_exchange));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_navigation_exchange));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapProtocolsFragment.this.finishFragment();
@@ -215,16 +225,15 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
         getSwapProtocolsAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.swap.WalletSwapProtocolsFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletSwapProtocolsFragment.m1751setupListeners$lambda5(WalletSwapProtocolsFragment.this, baseQuickAdapter, view, i);
+                WalletSwapProtocolsFragment.setupListeners$lambda$5(WalletSwapProtocolsFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
-    /* renamed from: setupListeners$lambda-5 */
-    public static final void m1751setupListeners$lambda5(WalletSwapProtocolsFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$5(WalletSwapProtocolsFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this$0.getSwapProtocolsAdapter().getItem(i);
         if (!(baseNode instanceof DexProtocolItem)) {
             if (baseNode instanceof CexProtocolItem) {

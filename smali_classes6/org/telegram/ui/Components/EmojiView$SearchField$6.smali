@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$SearchField;Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 1217
+    .line 1218
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$6;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 1220
+    .line 1221
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -49,7 +49,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1221
+    .line 1222
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$6;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView$SearchField;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 1222
+    .line 1223
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -74,7 +74,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 1223
+    .line 1224
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$SearchField$6;->this$1:Lorg/telegram/ui/Components/EmojiView$SearchField;
 

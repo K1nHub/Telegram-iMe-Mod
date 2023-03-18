@@ -75,7 +75,7 @@
 
     iget-boolean v8, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda70;->f$8:Z
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$2Ks5v-gEZZlCpuRD9kSAUHZ-5aI(Lorg/telegram/ui/PhotoViewer;ILjava/io/File;Ljava/io/File;ZZZZZ)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$1pCZn8BxFNDGu4VLOL4ZoVR6VU0(Lorg/telegram/ui/PhotoViewer;ILjava/io/File;Ljava/io/File;ZZZZZ)V
 
     return-void
 .end method

@@ -39,10 +39,6 @@ public final class DetailsIconCellView extends FrameLayout {
         setupView();
     }
 
-    public final boolean isIconTinted() {
-        return this.isIconTinted;
-    }
-
     public final void setIconTinted(boolean z) {
         this.isIconTinted = z;
     }
@@ -69,16 +65,16 @@ public final class DetailsIconCellView extends FrameLayout {
     public final void setupColors() {
         ForkContentDetailsIconCellBinding forkContentDetailsIconCellBinding = this.binding;
         forkContentDetailsIconCellBinding.textTitle.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
-        AppCompatTextView appCompatTextView = forkContentDetailsIconCellBinding.textValue;
-        appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        AppCompatImageView appCompatImageView = forkContentDetailsIconCellBinding.imageIcon;
-        if (isIconTinted()) {
-            Intrinsics.checkNotNullExpressionValue(appCompatImageView, "");
-            ViewExtKt.setImageColor(appCompatImageView, Theme.getColor("windowBackgroundWhiteGrayIcon"));
+        AppCompatTextView setupColors$lambda$3$lambda$1 = forkContentDetailsIconCellBinding.textValue;
+        setupColors$lambda$3$lambda$1.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$3$lambda$1, "setupColors$lambda$3$lambda$1");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$3$lambda$1);
+        AppCompatImageView setupColors$lambda$3$lambda$2 = forkContentDetailsIconCellBinding.imageIcon;
+        if (this.isIconTinted) {
+            Intrinsics.checkNotNullExpressionValue(setupColors$lambda$3$lambda$2, "setupColors$lambda$3$lambda$2");
+            ViewExtKt.setImageColor(setupColors$lambda$3$lambda$2, Theme.getColor("windowBackgroundWhiteGrayIcon"));
         } else {
-            appCompatImageView.clearColorFilter();
+            setupColors$lambda$3$lambda$2.clearColorFilter();
         }
         forkContentDetailsIconCellBinding.divider.setBackgroundColor(Theme.getColor("divider"));
     }

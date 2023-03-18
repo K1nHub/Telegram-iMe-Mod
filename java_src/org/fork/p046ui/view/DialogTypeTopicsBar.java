@@ -121,19 +121,19 @@ public final class DialogTypeTopicsBar extends FrameLayout {
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                DialogTypeTopicsBar.m2106setupListeners$lambda1(DialogTypeTopicsBar.this, view, i, f, f2);
+                DialogTypeTopicsBar.setupListeners$lambda$1(DialogTypeTopicsBar.this, view, i, f, f2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-1  reason: not valid java name */
-    public static final void m2106setupListeners$lambda1(DialogTypeTopicsBar this$0, View noName_0, int i, float f, float f2) {
+    public static final void setupListeners$lambda$1(DialogTypeTopicsBar this$0, View view, int i, float f, float f2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        if (this$0.getCurrentDialogType() != this$0.getData().get(i)) {
-            this$0.setCurrentDialogType(this$0.getData().get(i));
-            this$0.getDelegate().invoke(this$0.getCurrentDialogType());
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 0>");
+        if (this$0.currentDialogType != this$0.data.get(i)) {
+            DialogType dialogType = this$0.data.get(i);
+            this$0.currentDialogType = dialogType;
+            this$0.delegate.invoke(dialogType);
             this$0.getListAdapter().notifyDataSetChanged();
         }
     }
@@ -143,40 +143,37 @@ public final class DialogTypeTopicsBar extends FrameLayout {
     /* renamed from: org.fork.ui.view.DialogTypeTopicsBar$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ DialogTypeTopicsBar this$0;
-
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;
         }
 
-        public ListAdapter(DialogTypeTopicsBar this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.getData().size();
+            return DialogTypeTopicsBar.this.getData().size();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            Context context = this.this$0.getContext();
+            Context context = DialogTypeTopicsBar.this.getContext();
             Intrinsics.checkNotNullExpressionValue(context, "context");
             TopicView topicView = new TopicView(context, null, 0, 16, 6, null);
             topicView.setLayoutParams(LayoutHelper.createRecycler(-2, 24, 8, 6, 8, 6));
-            Unit unit = Unit.INSTANCE;
             return new RecyclerListView.Holder(topicView);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            TopicView topicView = (TopicView) holder.itemView;
-            DialogTypeTopicsBar dialogTypeTopicsBar = this.this$0;
+            View view = holder.itemView;
+            Intrinsics.checkNotNull(view, "null cannot be cast to non-null type com.smedialink.ui.topics.TopicView");
+            TopicView topicView = (TopicView) view;
+            DialogTypeTopicsBar dialogTypeTopicsBar = DialogTypeTopicsBar.this;
             topicView.setDialogType(dialogTypeTopicsBar.getData().get(i), dialogTypeTopicsBar.getData().get(i) == dialogTypeTopicsBar.getCurrentDialogType());
         }
     }

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeCryptoFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,357:1\n13#2,4:358\n56#3,6:362\n333#4:368\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n*L\n61#1:358,4\n62#1:362,6\n82#1:368\n*E\n"
+    value = "SMAP\nWalletHomeCryptoFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,357:1\n13#2,4:358\n56#3,6:362\n341#4:368\n*S KotlinDebug\n*F\n+ 1 WalletHomeCryptoFragment.kt\ncom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment\n*L\n61#1:358,4\n62#1:362,6\n82#1:368\n*E\n"
 .end annotation
 
 
@@ -44,112 +44,112 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1igrjIHwM0xfeUZh0q3uDFScNOI(Lorg/fork/utils/Callbacks$Callback;)V
+.method public static synthetic $r8$lambda$0PTW1pzpxDzgTUhAL1Enm5qP75g(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showAnimatedDialog$lambda-1(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda$15$lambda$14$lambda$13(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5VvHDVVaEr9Ko6XjP9S3rwMBxno(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+.method public static synthetic $r8$lambda$9p3fK0ZUZQ9-JZaM8ZnjxlMUnGc(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showAddressMismatchScreen$lambda-3(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showAddressMismatchScreen$lambda$3(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9xYJ-sSZ6UmdGre2ooJTlrvxenc(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$Cd61Q-r-vo9K_WgTcAr-b94VWXc(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda-15$lambda-14(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda$15$lambda$10(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MFuybBegqauhZHCfh9l68p5AMrc(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$FYvExshZ0TXsGIAqRvJXBve69VY(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda-15$lambda-12(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda$15$lambda$14(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$U12zzA6KJkh3GCxCD7kqojXTucQ(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$IKV-Y4LGjWv7MyBm2M7wJ-FqxDM(Lorg/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda-15$lambda-11(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showAnimatedDialog$lambda$1(Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YnMO2rGuM3r4Ohv0MR8xNePAUR8(Lcom/smedialink/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public static synthetic $r8$lambda$OGPu48XVVNp4ite__uKJy7la_yM(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showChangeNetworkHint$lambda-8$lambda-7(Lcom/smedialink/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showChooseNetworkDialog$lambda$5(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$XmXGc7waZ_S19VuNM1XQF5wAUAw(Landroidx/recyclerview/widget/GridLayoutManager;II)I
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupWalletRecycleView$lambda$19$lambda$18$lambda$16(Landroidx/recyclerview/widget/GridLayoutManager;II)I
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$_0FW2P_YvIE9SsuWZkBBjROP0Ic(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+.method public static synthetic $r8$lambda$_pMm6W3y-8PzViyuQ_pH11_nbvg(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupSwipeRefresh$lambda$20(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_OgNiH211xvHhTivOOza9QKisO4(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;I)V
+.method public static synthetic $r8$lambda$d57-E-asQabjAnprMq3dU3Qjrp0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda-15$lambda-10(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupWalletRecycleView$lambda$19$lambda$18$lambda$17(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bxnVH8DdGf_k2Ofy3sb7Lwaui7E(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public static synthetic $r8$lambda$dCo1ShW5r6Oi3qShp3K5hgTpDTc(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showChooseNetworkDialog$lambda-5(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda$15$lambda$12(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$fIcBIRUIUey47iS1HhwPkVgXo04(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+.method public static synthetic $r8$lambda$n37qRW0maMzd_nQSSaFdCD-Y-Es(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda-15$lambda-14$lambda-13(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$k5XZd-UCjaqW65LedgBRbKJ18oM(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+.method public static synthetic $r8$lambda$y5bmhtWQLcaQlQ1ouF7iG8Njtho(Lcom/smedialink/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupWalletRecycleView$lambda-19$lambda-18$lambda-17(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$mWP-fV51n99Aa_RKEDGGUdg56YE(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupSwipeRefresh$lambda-20(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$pDMQMLz0VLQ1ZBborCh2t04v-5s(Landroidx/recyclerview/widget/GridLayoutManager;II)I
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupWalletRecycleView$lambda-19$lambda-18$lambda-16(Landroidx/recyclerview/widget/GridLayoutManager;II)I
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->showChangeNetworkHint$lambda$8$lambda$7(Lcom/smedialink/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic $r8$lambda$y94umrEoUsxaB51E7JyBNh41JzA(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;->setupListeners$lambda$15$lambda$11(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+
+    return-void
 .end method
 
 .method static constructor <clinit>()V
@@ -422,7 +422,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -449,7 +449,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 333
+    .line 341
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -621,7 +621,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-15$lambda-10(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;I)V
+.method private static final setupListeners$lambda$15$lambda$10(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -634,18 +634,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-15$lambda-11(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$15$lambda$11(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 7
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -694,7 +694,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-15$lambda-12(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$15$lambda$12(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 7
 
     const-string v0, "this$0"
@@ -818,14 +818,14 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-15$lambda-14(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$15$lambda$14(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -970,7 +970,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-15$lambda-14$lambda-13(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
+.method private static final setupListeners$lambda$15$lambda$14$lambda$13(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1012,7 +1012,7 @@
     return-void
 .end method
 
-.method private static final setupSwipeRefresh$lambda-20(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+.method private static final setupSwipeRefresh$lambda$20(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 7
 
     const-string v0, "this$0"
@@ -1091,13 +1091,10 @@
 
     invoke-virtual {v1, v2}, Lcom/smedialink/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;->setOnNetworkViewLayoutAction(Lorg/fork/utils/Callbacks$Callback;)V
 
-    .line 338
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 333
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    const-string v1, ""
+    const-string v1, "setupWalletRecycleView$lambda$19"
 
     .line 339
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1107,10 +1104,10 @@
     return-void
 .end method
 
-.method private static final setupWalletRecycleView$lambda-19$lambda-18$lambda-16(Landroidx/recyclerview/widget/GridLayoutManager;II)I
+.method private static final setupWalletRecycleView$lambda$19$lambda$18$lambda$16(Landroidx/recyclerview/widget/GridLayoutManager;II)I
     .locals 0
 
-    const-string p1, "$noName_0"
+    const-string p1, "<anonymous parameter 0>"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1119,7 +1116,7 @@
     return p0
 .end method
 
-.method private static final setupWalletRecycleView$lambda-19$lambda-18$lambda-17(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+.method private static final setupWalletRecycleView$lambda$19$lambda$18$lambda$17(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1136,7 +1133,7 @@
     return-void
 .end method
 
-.method private static final showAddressMismatchScreen$lambda-3(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
+.method private static final showAddressMismatchScreen$lambda$3(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1155,7 +1152,7 @@
     return-void
 .end method
 
-.method private static final showAnimatedDialog$lambda-1(Lorg/fork/utils/Callbacks$Callback;)V
+.method private static final showAnimatedDialog$lambda$1(Lorg/fork/utils/Callbacks$Callback;)V
     .locals 1
 
     const-string v0, "$action"
@@ -1168,7 +1165,7 @@
     return-void
 .end method
 
-.method private static final showChangeNetworkHint$lambda-8$lambda-7(Lcom/smedialink/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method private static final showChangeNetworkHint$lambda$8$lambda$7(Lcom/smedialink/utils/hints/HintUtils;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
     const-string p1, "$this_with"
@@ -1183,7 +1180,7 @@
     return p0
 .end method
 
-.method private static final showChooseNetworkDialog$lambda-5(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method private static final showChooseNetworkDialog$lambda$5(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
     const-string v0, "$action"
@@ -1719,9 +1716,6 @@
 
     invoke-static/range {v0 .. v5}, Lcom/smedialink/utils/dialogs/DialogExtKt;->makeClickableDescription$default(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/widget/TextView;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 109
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 105
     invoke-virtual {p0, v6}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
@@ -1870,7 +1864,7 @@
     .line 184
     new-instance v8, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;
 
-    invoke-direct {v8, p0, p1, v0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Ljava/lang/String;Landroid/app/Activity;Ljava/lang/String;)V
+    invoke-direct {v8, p1, p0, v0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;-><init>(Ljava/lang/String;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Landroid/app/Activity;Ljava/lang/String;)V
 
     .line 196
     invoke-virtual {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/WalletHomeTabFragment;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -1905,9 +1899,6 @@
 
     .line 195
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)V
-
-    .line 202
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 183
     invoke-virtual {p0, v8}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;

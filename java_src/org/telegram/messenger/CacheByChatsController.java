@@ -39,7 +39,7 @@ public class CacheByChatsController {
             return KEEP_MEDIA_ONE_MONTH;
         }
         if (i == 2) {
-            return KEEP_MEDIA_ONE_MONTH;
+            return KEEP_MEDIA_ONE_WEEK;
         }
         return SharedConfig.keepMedia;
     }
@@ -57,20 +57,20 @@ public class CacheByChatsController {
         if (i == KEEP_MEDIA_ONE_MONTH) {
             return LocaleController.formatPluralString("Months", 1, new Object[0]);
         }
-        return LocaleController.getString("AutoDeleteMediaNever", C3158R.string.AutoDeleteMediaNever);
+        return LocaleController.getString("AutoDeleteMediaNever", C3286R.string.AutoDeleteMediaNever);
     }
 
     public static long getDaysInSeconds(int i) {
-        if (i == KEEP_MEDIA_FOREVER) {
-            return Long.MAX_VALUE;
-        }
         if (i == KEEP_MEDIA_ONE_WEEK) {
             return 604800L;
         }
         if (i == KEEP_MEDIA_ONE_MONTH) {
             return 2592000L;
         }
-        return i == KEEP_MEDIA_ONE_DAY ? 86400L : 60L;
+        if (i == KEEP_MEDIA_ONE_DAY) {
+            return 86400L;
+        }
+        return (i == KEEP_MEDIA_ONE_MINUTE && BuildVars.DEBUG_PRIVATE_VERSION) ? 60L : Long.MAX_VALUE;
     }
 
     public ArrayList<KeepMediaException> getKeepMediaExceptions(int i) {

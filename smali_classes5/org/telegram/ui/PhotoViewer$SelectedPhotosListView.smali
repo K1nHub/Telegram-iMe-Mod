@@ -26,10 +26,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
 
-    .line 1689
+    .line 1693
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 1685
+    .line 1689
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -38,7 +38,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;->paint:Landroid/graphics/Paint;
 
-    .line 1686
+    .line 1690
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -47,15 +47,15 @@
 
     const/4 v0, 0x0
 
-    .line 1690
+    .line 1694
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
-    .line 1692
+    .line 1696
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
     const/16 v1, 0xa
 
-    .line 1693
+    .line 1697
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -66,22 +66,22 @@
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 1695
+    .line 1699
     new-instance v1, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView$1;-><init>(Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;)V
 
     invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 1701
+    .line 1705
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
 
-    .line 1702
+    .line 1706
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/SimpleItemAnimator;->setSupportsChangeAnimations(Z)V
 
     const/16 v0, 0xc
 
-    .line 1703
+    .line 1707
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -102,14 +102,14 @@
 
     invoke-virtual {p0, v1, v2, v0, v3}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 1704
+    .line 1708
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;->paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x7f000000
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1706
+    .line 1710
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -134,17 +134,17 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 1711
+    .line 1715
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1713
+    .line 1717
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
     if-lez v0, :cond_1
 
-    .line 1715
+    .line 1719
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -157,7 +157,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 1716
+    .line 1720
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;->arrowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -176,7 +176,7 @@
 
     invoke-virtual {v2, v1, v6, v3, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1717
+    .line 1721
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;->arrowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -192,14 +192,14 @@
     :goto_0
     if-ge v6, v0, :cond_0
 
-    .line 1722
+    .line 1726
     invoke-virtual {p0, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
     int-to-double v8, v3
 
-    .line 1723
+    .line 1727
     invoke-virtual {v7}, Landroid/view/View;->getX()F
 
     move-result v3
@@ -218,7 +218,7 @@
 
     int-to-double v8, v5
 
-    .line 1724
+    .line 1728
     invoke-virtual {v7}, Landroid/view/View;->getX()F
 
     move-result v5
@@ -252,7 +252,7 @@
 
     if-eq v5, v1, :cond_1
 
-    .line 1727
+    .line 1731
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;->rect:Landroid/graphics/RectF;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -287,7 +287,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1728
+    .line 1732
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$SelectedPhotosListView;->rect:Landroid/graphics/RectF;
 
     const/16 v1, 0x8

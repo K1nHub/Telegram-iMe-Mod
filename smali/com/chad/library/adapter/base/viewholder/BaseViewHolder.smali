@@ -68,7 +68,7 @@
 .end method
 
 .method public getView(I)Landroid/view/View;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -88,13 +88,17 @@
 
     .line 24
     :cond_0
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "No view found with id "
+    const-string v1, "No view found with id "
 
-    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -119,7 +123,7 @@
         }
     .end annotation
 
-    .line 30
+    .line 32
     iget-object v0, p0, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->views:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -128,37 +132,29 @@
 
     check-cast v0, Landroid/view/View;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
-    .line 32
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v1, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    if-nez v1, :cond_0
-
-    goto :goto_0
+    if-eqz v1, :cond_0
 
     .line 33
-    :cond_0
     iget-object v0, p0, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->views:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     return-object v1
 
-    :cond_1
-    :goto_0
-    if-eqz v0, :cond_2
+    :cond_0
+    if-nez v0, :cond_1
 
-    goto :goto_1
-
-    :cond_2
     const/4 v0, 0x0
 
-    :goto_1
+    :cond_1
     return-object v0
 .end method
 

@@ -63,7 +63,7 @@ public final class AccountWalletAddressResponse {
     }
 
     public String toString() {
-        return "AccountWalletAddressResponse(value=" + ((Object) this.value) + ", isSet=" + this.isSet + ", hasAccess=" + this.hasAccess + ')';
+        return "AccountWalletAddressResponse(value=" + this.value + ", isSet=" + this.isSet + ", hasAccess=" + this.hasAccess + ')';
     }
 
     public AccountWalletAddressResponse(String str, boolean z, boolean z2) {

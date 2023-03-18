@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
+    iput-object p1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;
+    iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter$$ExternalSyntheticLambda1;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lio/reactivex/disposables/Disposable;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;->$r8$lambda$HwAp7C-afIWGepsxKCgS-z8L6tk(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;Lio/reactivex/disposables/Disposable;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoPresenter;->$r8$lambda$gF06LUx1aqKJVuVSgvx5OZ85i9U(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

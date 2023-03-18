@@ -43,7 +43,7 @@
 .method public static final isActionBarAccountSwitchEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 85
+    .line 82
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "actionBarAccountSwitch"
@@ -58,7 +58,7 @@
 .method public static final isAlbumsIntroShown()Ljava/lang/String;
     .locals 2
 
-    .line 181
+    .line 178
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showAlbumsIntro"
@@ -73,7 +73,7 @@
 .method public static final isBotHelpTranslateEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 145
+    .line 142
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "botHelpTranslate"
@@ -88,7 +88,7 @@
 .method public static final isCallsConfirmationEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 109
+    .line 106
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showCallsConfirmDialog"
@@ -103,7 +103,7 @@
 .method public static final isChatSortingEnabledByDefault()Ljava/lang/String;
     .locals 2
 
-    .line 175
+    .line 172
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "sortingEnabledByDefault"
@@ -118,7 +118,7 @@
 .method public static final isChatThemesEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 97
+    .line 94
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "chatThemesEnabled"
@@ -133,7 +133,7 @@
 .method public static final isCloudAlbumsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 178
+    .line 175
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "cloudAlbums"
@@ -148,7 +148,7 @@
 .method public static final isCombineMessagesEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 151
+    .line 148
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "combineMessages"
@@ -163,25 +163,10 @@
 .method public static final isCustomSharingModeEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 133
+    .line 130
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "customSharingMode"
-
-    invoke-static {v0, v1}, Lcom/smedialink/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/smedialink/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static final isDebugForceHighPerformanceEnabled()Ljava/lang/String;
-    .locals 2
-
-    .line 34
-    sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
-
-    const-string v1, "isDebugForceHighPerformanceEnabled"
 
     invoke-static {v0, v1}, Lcom/smedialink/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/smedialink/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
 
@@ -208,7 +193,7 @@
 .method public static final isDeleteCloudConfirmationEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 112
+    .line 109
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showDeleteCloudConfirmDialog"
@@ -223,7 +208,7 @@
 .method public static final isDialogsCompactModeEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 91
+    .line 88
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "dialogsCompactMode"
@@ -238,7 +223,7 @@
 .method public static final isExtendedAvatarPreviewerByTapEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 103
+    .line 100
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "extendedAvatarPreviewerByTap"
@@ -253,7 +238,7 @@
 .method public static final isExtendedAvatarPreviewerEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 100
+    .line 97
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "extendedAvatarPreviewer"
@@ -268,7 +253,7 @@
 .method public static final isFilesOriginalNameSavingEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 37
+    .line 34
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isFilesOriginalNameSavingEnabled"
@@ -283,7 +268,7 @@
 .method public static final isFilesSendingPreviewAndCaptionEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 40
+    .line 37
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isFilesSendingPreviewAndCaptionEnabled"
@@ -298,7 +283,7 @@
 .method public static final isFilterTabsAtBottomEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 166
+    .line 163
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "filterTabsAtBottom"
@@ -313,7 +298,7 @@
 .method public static final isHideChatKeyboardOnScrollEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 94
+    .line 91
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "chatHideKeyboardOnScroll"
@@ -328,7 +313,7 @@
 .method public static final isMainActionBarMenuEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 88
+    .line 85
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "mainActionBarMenu"
@@ -343,7 +328,7 @@
 .method public static final isMessageQuickTranslateEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 142
+    .line 139
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "messageQuickTranslate"
@@ -358,7 +343,7 @@
 .method public static final isMultiForwardingOptionsHintShown()Ljava/lang/String;
     .locals 2
 
-    .line 61
+    .line 58
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "multiForwardingOptionsHintShown"
@@ -373,7 +358,7 @@
 .method public static final isMultiReplyEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 136
+    .line 133
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "multiReply"
@@ -388,7 +373,7 @@
 .method public static final isMusicIntroShown()Ljava/lang/String;
     .locals 2
 
-    .line 199
+    .line 196
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showMusicIntro"
@@ -403,7 +388,7 @@
 .method public static final isNewTelegramAuthorizationRulesRead()Ljava/lang/String;
     .locals 2
 
-    .line 220
+    .line 217
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isNewTelegramAuthorizationRulesRead"
@@ -418,7 +403,7 @@
 .method public static final isOpenForwardingOptionsAutomaticallyEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 130
+    .line 127
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "autoOpenForwardingOptions"
@@ -433,7 +418,7 @@
 .method public static final isPinnedPlayerMinimized()Ljava/lang/String;
     .locals 2
 
-    .line 190
+    .line 187
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isPinnedPlayerMinimized"
@@ -448,7 +433,7 @@
 .method public static final isPinnedPlayerNightThemeEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 196
+    .line 193
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isPinnedPlayerNightTheme"
@@ -463,7 +448,7 @@
 .method public static final isPinnedPlayerThemeOverridden()Ljava/lang/String;
     .locals 2
 
-    .line 193
+    .line 190
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isPinnedPlayerThemeOverridden"
@@ -478,7 +463,7 @@
 .method public static final isPlayerPinned()Ljava/lang/String;
     .locals 2
 
-    .line 187
+    .line 184
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isPlayerPinned"
@@ -493,7 +478,7 @@
 .method public static final isProfileInfoHidden()Ljava/lang/String;
     .locals 2
 
-    .line 58
+    .line 55
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "hideProfilePersonalInfo"
@@ -508,7 +493,7 @@
 .method public static final isProxyButtonForceVisible()Ljava/lang/String;
     .locals 2
 
-    .line 52
+    .line 49
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isProxyButtonForceVisible"
@@ -523,7 +508,7 @@
 .method public static final isRaiseToSwitchSpeakerEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 46
+    .line 43
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "raiseToSwitchSpeaker"
@@ -538,7 +523,7 @@
 .method public static final isReactionsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 157
+    .line 154
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "reactionsEnabled"
@@ -553,7 +538,7 @@
 .method public static final isReactionsInSendPopupEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 163
+    .line 160
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "sendPopupReactions"
@@ -568,7 +553,7 @@
 .method public static final isReadAllChatsConfirmationShown()Ljava/lang/String;
     .locals 2
 
-    .line 55
+    .line 52
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showReadAllConfirmDialog"
@@ -583,7 +568,7 @@
 .method public static final isRememberLastFilterTabEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 172
+    .line 169
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastFilterTab"
@@ -598,7 +583,7 @@
 .method public static final isSendingGifConfirmationEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 115
+    .line 112
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showSendingGifConfirmDialog"
@@ -613,7 +598,7 @@
 .method public static final isSendingStickerConfirmationEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 118
+    .line 115
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showSendingStickerConfirmDialog"
@@ -628,7 +613,7 @@
 .method public static final isShowDrawerHeaderArchiveEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 79
+    .line 76
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showDrawerHeaderArchive"
@@ -643,7 +628,7 @@
 .method public static final isShowDrawerHeaderAvatarEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 76
+    .line 73
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showDrawerHeaderAvatar"
@@ -658,7 +643,7 @@
 .method public static final isShowDrawerHeaderSubtitleEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 73
+    .line 70
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showDrawerHeaderSubtitle"
@@ -673,7 +658,7 @@
 .method public static final isShowDrawerHeaderTitleEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 70
+    .line 67
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showDrawerHeaderTitle"
@@ -688,7 +673,7 @@
 .method public static final isSortCloudAlbumsByNameEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 184
+    .line 181
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "sortCloudAlbumsByName"
@@ -703,7 +688,7 @@
 .method public static final isSpeakWithoutHoldEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 121
+    .line 118
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "speakWithoutHold"
@@ -718,7 +703,7 @@
 .method public static final isSuggestPremiumReactionsEmoji()Ljava/lang/String;
     .locals 2
 
-    .line 211
+    .line 208
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "suggestPremiumReactionsEmoji"
@@ -733,7 +718,7 @@
 .method public static final isTranslateInSendPopupEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 148
+    .line 145
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "sendPopupTranslate"
@@ -748,7 +733,7 @@
 .method public static final isVibrationEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 43
+    .line 40
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "allowVibration"
@@ -763,7 +748,7 @@
 .method public static final isVideoSpeakWithoutHoldEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 124
+    .line 121
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "videoSpeakWithoutHold"
@@ -808,7 +793,7 @@
 .method public static final lastSelectedLanguages()Ljava/lang/String;
     .locals 2
 
-    .line 208
+    .line 205
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "lastSelectedLanguages"
@@ -853,7 +838,7 @@
 .method public static final selectedChatProfileTelegramIdMode()Ljava/lang/String;
     .locals 2
 
-    .line 139
+    .line 136
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "chatProfileTelegramIdMode"
@@ -868,7 +853,7 @@
 .method public static final selectedDialogTypesForMessagePopupReactions()Ljava/lang/String;
     .locals 2
 
-    .line 160
+    .line 157
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "messagePopupReactionsEnabledDialogTypes"
@@ -883,7 +868,7 @@
 .method public static final selectedDrawerHeaderSubtitle()Ljava/lang/String;
     .locals 2
 
-    .line 67
+    .line 64
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "drawerHeaderSubtitle"
@@ -898,7 +883,7 @@
 .method public static final selectedDrawerHeaderTitle()Ljava/lang/String;
     .locals 2
 
-    .line 64
+    .line 61
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "drawerHeaderTitle"
@@ -913,7 +898,7 @@
 .method public static final selectedDrawerHolidayIconType()Ljava/lang/String;
     .locals 2
 
-    .line 217
+    .line 214
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedDrawerHolidayIconType"
@@ -928,7 +913,7 @@
 .method public static final selectedDrawerItems()Ljava/lang/String;
     .locals 2
 
-    .line 82
+    .line 79
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "drawerItems"
@@ -943,7 +928,7 @@
 .method public static final selectedExtendedAvatarPreviewerItems()Ljava/lang/String;
     .locals 2
 
-    .line 106
+    .line 103
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "extendedAvatarPreviewerItems"
@@ -958,7 +943,7 @@
 .method public static final selectedFilterTabsNotificationMode()Ljava/lang/String;
     .locals 2
 
-    .line 169
+    .line 166
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "filterTabsNotificationMode"
@@ -973,7 +958,7 @@
 .method public static final selectedFilterTabsWidthMode()Ljava/lang/String;
     .locals 2
 
-    .line 214
+    .line 211
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "filterTabsWidthMode"
@@ -988,7 +973,7 @@
 .method public static final selectedPhotoViewerMenuItems()Ljava/lang/String;
     .locals 2
 
-    .line 154
+    .line 151
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "photoViewerMenuItems"
@@ -1003,7 +988,7 @@
 .method public static final selectedStickersSize()Ljava/lang/String;
     .locals 2
 
-    .line 49
+    .line 46
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "stickersSize"
@@ -1018,7 +1003,7 @@
 .method public static final selectedTemplatesMode()Ljava/lang/String;
     .locals 2
 
-    .line 202
+    .line 199
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesMode"
@@ -1033,7 +1018,7 @@
 .method public static final selectedTemplatesSortingType()Ljava/lang/String;
     .locals 2
 
-    .line 205
+    .line 202
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesSortingType"
@@ -1048,7 +1033,7 @@
 .method public static final selectedVideoVoiceCamera()Ljava/lang/String;
     .locals 2
 
-    .line 127
+    .line 124
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "videoVoiceCamera"

@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.PhoneFormat.C3078PhoneFormat;
+import org.telegram.PhoneFormat.C3204PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -118,6 +118,11 @@ public class CodeFieldContainer extends LinearLayout {
         CodeNumberField[] codeNumberFieldArr = this.codeField;
         int i5 = 0;
         if (codeNumberFieldArr == null || codeNumberFieldArr.length != i) {
+            if (codeNumberFieldArr != null) {
+                for (CodeNumberField codeNumberField : codeNumberFieldArr) {
+                    removeView(codeNumberField);
+                }
+            }
             this.codeField = new CodeNumberField[i];
             final int i6 = 0;
             while (i6 < i) {
@@ -293,7 +298,7 @@ public class CodeFieldContainer extends LinearLayout {
         while (true) {
             CodeNumberField[] codeNumberFieldArr = this.codeField;
             if (i < codeNumberFieldArr.length) {
-                sb.append(C3078PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
+                sb.append(C3204PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
                 i++;
             } else {
                 return sb.toString();

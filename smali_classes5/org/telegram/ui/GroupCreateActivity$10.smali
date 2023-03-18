@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateActivity;I)V
     .locals 0
 
-    .line 854
+    .line 858
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$10;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     iput p2, p0, Lorg/telegram/ui/GroupCreateActivity$10;->val$from:I
@@ -42,7 +42,7 @@
 .method public onPreDraw()Z
     .locals 9
 
-    .line 857
+    .line 861
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$10;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 858
+    .line 862
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity$10;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -66,7 +66,7 @@
 
     move-result v0
 
-    .line 859
+    .line 863
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -80,7 +80,7 @@
 
     if-ge v3, v0, :cond_1
 
-    .line 861
+    .line 865
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity$10;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -91,7 +91,7 @@
 
     move-result-object v5
 
-    .line 862
+    .line 866
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity$10;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -111,10 +111,10 @@
     :cond_0
     const/4 v6, 0x0
 
-    .line 865
+    .line 869
     invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
 
-    .line 866
+    .line 870
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity$10;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -139,7 +139,7 @@
 
     int-to-float v6, v6
 
-    .line 867
+    .line 871
     iget-object v7, p0, Lorg/telegram/ui/GroupCreateActivity$10;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {v7}, Lorg/telegram/ui/GroupCreateActivity;->access$700(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -160,7 +160,7 @@
 
     float-to-int v6, v6
 
-    .line 868
+    .line 872
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v8, 0x2
@@ -175,19 +175,19 @@
 
     int-to-long v6, v6
 
-    .line 869
+    .line 873
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
     const-wide/16 v6, 0xc8
 
-    .line 870
+    .line 874
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     new-array v4, v4, [Landroid/animation/Animator;
 
     aput-object v5, v4, v2
 
-    .line 871
+    .line 875
     invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     :goto_1
@@ -195,7 +195,7 @@
 
     goto :goto_0
 
-    .line 873
+    .line 877
     :cond_1
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 

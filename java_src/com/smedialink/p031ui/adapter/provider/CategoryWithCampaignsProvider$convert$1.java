@@ -60,27 +60,26 @@ public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implem
         linearLayoutManager.setInitialPrefetchItemCount(4);
         map = categoryWithCampaignsProvider.channelsRecyclersScrollStates;
         RecycleViewExtKt.restoreScrollState(linearLayoutManager, (Parcelable) map.get(Integer.valueOf(baseViewHolder.getAdapterPosition())));
-        Unit unit = Unit.INSTANCE;
         applyForView.setLayoutManager(linearLayoutManager);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1779x81d5b2c4(this.this$0, null, null));
-        CatalogAllChannelsRecycleAdapter m1398invoke$lambda1 = m1398invoke$lambda1(lazy);
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1855x81d5b2c4(this.this$0, null, null));
+        CatalogAllChannelsRecycleAdapter invoke$lambda$1 = invoke$lambda$1(lazy);
         final CategoryWithCampaignsItem categoryWithCampaignsItem = this.$item;
         final CategoryWithCampaignsProvider categoryWithCampaignsProvider2 = this.this$0;
-        m1398invoke$lambda1.setNewInstance(categoryWithCampaignsItem.getCampaigns());
+        invoke$lambda$1.setNewInstance(categoryWithCampaignsItem.getCampaigns());
         channelsDiffCallback = categoryWithCampaignsProvider2.channelsDiffCallback;
-        m1398invoke$lambda1.setDiffCallback(channelsDiffCallback);
-        m1398invoke$lambda1.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.adapter.provider.CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda0
+        invoke$lambda$1.setDiffCallback(channelsDiffCallback);
+        invoke$lambda$1.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.adapter.provider.CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                CategoryWithCampaignsProvider$convert$1.m1399invoke$lambda5$lambda2(CategoryWithCampaignsProvider.this, baseQuickAdapter, view, i);
+                CategoryWithCampaignsProvider$convert$1.invoke$lambda$5$lambda$2(CategoryWithCampaignsProvider.this, baseQuickAdapter, view, i);
             }
         });
-        BaseLoadMoreModule loadMoreModule = m1398invoke$lambda1.getLoadMoreModule();
+        BaseLoadMoreModule loadMoreModule = invoke$lambda$1.getLoadMoreModule();
         loadMoreModule.setPreLoadNumber(categoryWithCampaignsItem.getCampaigns().size());
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.smedialink.ui.adapter.provider.CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
             public final void onLoadMore() {
-                CategoryWithCampaignsProvider$convert$1.m1400invoke$lambda5$lambda4$lambda3(CategoryWithCampaignsProvider.this, categoryWithCampaignsItem);
+                CategoryWithCampaignsProvider$convert$1.invoke$lambda$5$lambda$4$lambda$3(CategoryWithCampaignsProvider.this, categoryWithCampaignsItem);
             }
         });
         loadMoreModule.setLoadMoreView(new HorizontalLoadMoreView());
@@ -90,22 +89,20 @@ public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implem
             loadMoreModule.loadMoreComplete();
         }
         map2 = categoryWithCampaignsProvider2.channelsAdapters;
-        map2.put(Long.valueOf(categoryWithCampaignsItem.getCategory().getId()), m1398invoke$lambda1);
-        applyForView.setAdapter(m1398invoke$lambda1);
+        map2.put(Long.valueOf(categoryWithCampaignsItem.getCategory().getId()), invoke$lambda$1);
+        applyForView.setAdapter(invoke$lambda$1);
         RecycleViewExtKt.setHorizontalRecyclerInPagerScrollHelper(applyForView);
     }
 
-    /* renamed from: invoke$lambda-1  reason: not valid java name */
-    private static final CatalogAllChannelsRecycleAdapter m1398invoke$lambda1(Lazy<CatalogAllChannelsRecycleAdapter> lazy) {
+    private static final CatalogAllChannelsRecycleAdapter invoke$lambda$1(Lazy<CatalogAllChannelsRecycleAdapter> lazy) {
         return lazy.getValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-5$lambda-2  reason: not valid java name */
-    public static final void m1399invoke$lambda5$lambda2(CategoryWithCampaignsProvider this$0, BaseQuickAdapter adapter, View noName_1, int i) {
+    public static final void invoke$lambda$5$lambda$2(CategoryWithCampaignsProvider this$0, BaseQuickAdapter adapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(adapter, "adapter");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         Function1<CampaignItem, Unit> onChannelItemClick = this$0.getOnChannelItemClick();
         Object item = adapter.getItem(i);
         CampaignItem campaignItem = item instanceof CampaignItem ? (CampaignItem) item : null;
@@ -116,8 +113,7 @@ public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implem
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-5$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m1400invoke$lambda5$lambda4$lambda3(CategoryWithCampaignsProvider this$0, CategoryWithCampaignsItem item) {
+    public static final void invoke$lambda$5$lambda$4$lambda$3(CategoryWithCampaignsProvider this$0, CategoryWithCampaignsItem item) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         this$0.getOnLoadMoreChannels().invoke(Long.valueOf(item.getCategory().getId()));

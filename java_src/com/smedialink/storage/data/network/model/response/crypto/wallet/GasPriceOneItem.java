@@ -65,7 +65,7 @@ public final class GasPriceOneItem {
         }
         if (obj instanceof GasPriceOneItem) {
             GasPriceOneItem gasPriceOneItem = (GasPriceOneItem) obj;
-            return Intrinsics.areEqual(this.price, gasPriceOneItem.price) && Intrinsics.areEqual(this.limit, gasPriceOneItem.limit) && Intrinsics.areEqual(Float.valueOf(this.duration), Float.valueOf(gasPriceOneItem.duration)) && Intrinsics.areEqual(Double.valueOf(this.fee), Double.valueOf(gasPriceOneItem.fee)) && Intrinsics.areEqual(Float.valueOf(this.feeInDollars), Float.valueOf(gasPriceOneItem.feeInDollars));
+            return Intrinsics.areEqual(this.price, gasPriceOneItem.price) && Intrinsics.areEqual(this.limit, gasPriceOneItem.limit) && Float.compare(this.duration, gasPriceOneItem.duration) == 0 && Double.compare(this.fee, gasPriceOneItem.fee) == 0 && Float.compare(this.feeInDollars, gasPriceOneItem.feeInDollars) == 0;
         }
         return false;
     }

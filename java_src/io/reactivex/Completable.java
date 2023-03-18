@@ -21,7 +21,7 @@ import io.reactivex.internal.operators.completable.CompletableSubscribeOn;
 import io.reactivex.internal.operators.mixed.CompletableAndThenObservable;
 import io.reactivex.plugins.RxJavaPlugins;
 import java.util.concurrent.Callable;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class Completable implements CompletableSource {
     protected abstract void subscribeActual(CompletableObserver completableObserver);
 

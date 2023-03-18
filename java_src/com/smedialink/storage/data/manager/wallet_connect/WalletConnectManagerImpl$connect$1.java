@@ -32,7 +32,6 @@ final class WalletConnectManagerImpl$connect$1 extends Lambda implements Functio
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         CryptoPreferenceHelper cryptoPreferenceHelper;
@@ -55,13 +54,12 @@ final class WalletConnectManagerImpl$connect$1 extends Lambda implements Functio
             map = walletConnectManagerImpl2.wcClients;
             map.put(wCSessionStoreItem.getSession().getKey(), wCClient);
             WCSession from2 = companion.from(str);
-            if (from2 == null) {
-                throw new InvalidSessionException();
+            if (from2 != null) {
+                WCClient.connect$default(wCClient, from2, wCPeerMeta, null, null, 12, null);
+                walletConnectManagerImpl.pendingSessionStoreItem = wCSessionStoreItem;
+                return;
             }
-            WCClient.connect$default(wCClient, from2, wCPeerMeta, null, null, 12, null);
-            Unit unit = Unit.INSTANCE;
-            walletConnectManagerImpl.pendingSessionStoreItem = wCSessionStoreItem;
-            return;
+            throw new InvalidSessionException();
         }
         throw new InvalidSessionException();
     }

@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Iterator;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -156,7 +156,7 @@ public class BotHelpCell extends View {
         if (this.isTextVisible) {
             String[] split = str2.split("\n");
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            String string = LocaleController.getString(C3158R.string.BotInfoTitle);
+            String string = LocaleController.getString(C3286R.string.BotInfoTitle);
             if (z) {
                 spannableStringBuilder.append((CharSequence) string);
                 spannableStringBuilder.append((CharSequence) "\n\n");

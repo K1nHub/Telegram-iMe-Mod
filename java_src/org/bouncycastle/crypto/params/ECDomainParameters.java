@@ -10,14 +10,14 @@ import org.bouncycastle.math.p043ec.ECPoint;
 public class ECDomainParameters implements ECConstants {
 
     /* renamed from: G */
-    private ECPoint f1294G;
+    private ECPoint f1299G;
     private ECCurve curve;
 
     /* renamed from: h */
-    private BigInteger f1295h;
+    private BigInteger f1300h;
 
     /* renamed from: n */
-    private BigInteger f1296n;
+    private BigInteger f1301n;
 
     public ECDomainParameters(ECCurve eCCurve, ECPoint eCPoint, BigInteger bigInteger, BigInteger bigInteger2) {
         this(eCCurve, eCPoint, bigInteger, bigInteger2, null);
@@ -27,9 +27,9 @@ public class ECDomainParameters implements ECConstants {
         Objects.requireNonNull(eCCurve, "curve");
         Objects.requireNonNull(bigInteger, "n");
         this.curve = eCCurve;
-        this.f1294G = validate(eCCurve, eCPoint);
-        this.f1296n = bigInteger;
-        this.f1295h = bigInteger2;
+        this.f1299G = validate(eCCurve, eCPoint);
+        this.f1301n = bigInteger;
+        this.f1300h = bigInteger2;
     }
 
     static ECPoint validate(ECCurve eCCurve, ECPoint eCPoint) {
@@ -52,7 +52,7 @@ public class ECDomainParameters implements ECConstants {
         }
         if (obj instanceof ECDomainParameters) {
             ECDomainParameters eCDomainParameters = (ECDomainParameters) obj;
-            return this.curve.equals(eCDomainParameters.curve) && this.f1294G.equals(eCDomainParameters.f1294G) && this.f1296n.equals(eCDomainParameters.f1296n) && this.f1295h.equals(eCDomainParameters.f1295h);
+            return this.curve.equals(eCDomainParameters.curve) && this.f1299G.equals(eCDomainParameters.f1299G) && this.f1301n.equals(eCDomainParameters.f1301n) && this.f1300h.equals(eCDomainParameters.f1300h);
         }
         return false;
     }
@@ -62,14 +62,14 @@ public class ECDomainParameters implements ECConstants {
     }
 
     public ECPoint getG() {
-        return this.f1294G;
+        return this.f1299G;
     }
 
     public BigInteger getN() {
-        return this.f1296n;
+        return this.f1301n;
     }
 
     public int hashCode() {
-        return (((((this.curve.hashCode() * 37) ^ this.f1294G.hashCode()) * 37) ^ this.f1296n.hashCode()) * 37) ^ this.f1295h.hashCode();
+        return (((((this.curve.hashCode() * 37) ^ this.f1299G.hashCode()) * 37) ^ this.f1301n.hashCode()) * 37) ^ this.f1300h.hashCode();
     }
 }

@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/google/android/play/core/install/InstallState;
 
-    invoke-static {v0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->$r8$lambda$QcToTZ1FuWhMGJgLqBLEcNepPy8(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
+    invoke-static {v0, p1}, Lcom/smedialink/storage/data/manager/update/UpdateManager;->$r8$lambda$5CmhYXv767fjk5tiDgxIehD52h4(Lcom/smedialink/storage/data/manager/update/UpdateManager;Lcom/google/android/play/core/install/InstallState;)V
 
     return-void
 .end method

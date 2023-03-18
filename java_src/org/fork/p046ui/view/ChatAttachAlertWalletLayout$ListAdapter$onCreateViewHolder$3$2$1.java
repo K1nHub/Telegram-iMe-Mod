@@ -22,7 +22,6 @@ final class ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1 ext
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         this.this$0.getPresenter().getWalletData(true);

@@ -6153,7 +6153,7 @@
 
     move-result v15
 
-    const-string v16, "dialogTextRed2"
+    const-string v16, "dialogTextRed"
 
     invoke-static/range {v16 .. v16}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 

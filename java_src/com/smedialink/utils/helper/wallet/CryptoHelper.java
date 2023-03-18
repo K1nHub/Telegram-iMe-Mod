@@ -8,6 +8,7 @@ import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 /* compiled from: CryptoHelper.kt */
@@ -30,7 +31,7 @@ public final class CryptoHelper {
     public static final String formatAddressQR(String address, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        return Intrinsics.stringPlus(BlockchainAddressData.Companion.mapByBlockchainType(blockchainType).getPrefix(), address);
+        return BlockchainAddressData.Companion.mapByBlockchainType(blockchainType).getPrefix() + address;
     }
 
     public static final Observable<Result<String>> extractAddress(String value, BlockchainType blockchainType, CryptoWalletInteractor cryptoWalletInteractor) {
@@ -39,27 +40,22 @@ public final class CryptoHelper {
         Intrinsics.checkNotNullParameter(cryptoWalletInteractor, "cryptoWalletInteractor");
         Matcher matcher = Pattern.compile(BlockchainAddressData.Companion.mapByBlockchainType(blockchainType).getRegex()).matcher(value);
         if (matcher.find()) {
-            final String group = matcher.group();
+            String group = matcher.group();
             Intrinsics.checkNotNullExpressionValue(group, "group");
             if (group.length() > 0) {
-                Observable map = cryptoWalletInteractor.isValidAddress(group, blockchainType).map(new Function() { // from class: com.smedialink.utils.helper.wallet.CryptoHelper$extractAddress$$inlined$mapSuccess$1
-                    /* JADX WARN: Incorrect types in method signature: (TT;)TR; */
+                Observable<Result<Boolean>> isValidAddress = cryptoWalletInteractor.isValidAddress(group, blockchainType);
+                final CryptoHelper$extractAddress$$inlined$mapSuccess$1 cryptoHelper$extractAddress$$inlined$mapSuccess$1 = new CryptoHelper$extractAddress$$inlined$mapSuccess$1(group);
+                Observable map = isValidAddress.map(new Function(cryptoHelper$extractAddress$$inlined$mapSuccess$1) { // from class: com.smedialink.utils.helper.wallet.CryptoHelper$inlined$sam$i$io_reactivex_functions_Function$0
+                    private final /* synthetic */ Function1 function;
+
+                    {
+                        Intrinsics.checkNotNullParameter(cryptoHelper$extractAddress$$inlined$mapSuccess$1, "function");
+                        this.function = cryptoHelper$extractAddress$$inlined$mapSuccess$1;
+                    }
+
                     @Override // io.reactivex.functions.Function
-                    public final Object apply(Result result) {
-                        Intrinsics.checkNotNullParameter(result, "result");
-                        if (!(result instanceof Result.Success)) {
-                            if (result instanceof Result.Error) {
-                                return Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                            }
-                            if (result instanceof Object) {
-                                return result;
-                            }
-                            return null;
-                        } else if (Intrinsics.areEqual(result.getData(), Boolean.TRUE)) {
-                            return Result.Companion.success(group);
-                        } else {
-                            return Result.Companion.success("");
-                        }
+                    public final /* synthetic */ Object apply(Object obj) {
+                        return this.function.invoke(obj);
                     }
                 });
                 Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");

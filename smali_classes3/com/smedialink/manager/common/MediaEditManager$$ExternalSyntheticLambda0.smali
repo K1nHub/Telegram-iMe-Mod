@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v0, p1}, Lcom/smedialink/manager/common/MediaEditManager;->$r8$lambda$JWm2Zo0_poloSQgZPI2U4ooRGQE(Lkotlin/jvm/functions/Function0;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lcom/smedialink/manager/common/MediaEditManager;->$r8$lambda$H9msYbpI2ugjAp27mNIhHvZ902Y(Lkotlin/jvm/functions/Function0;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

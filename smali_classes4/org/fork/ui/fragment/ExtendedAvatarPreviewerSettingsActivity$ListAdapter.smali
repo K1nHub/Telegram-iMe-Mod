@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 157
     iput-object p1, p0, Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity$ListAdapter;->this$0:Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;
@@ -286,7 +282,7 @@
 
     move-result v1
 
-    const-string v2, "windowBackgroundGrayShadow"
+    const-string/jumbo v2, "windowBackgroundGrayShadow"
 
     if-ne p2, v1, :cond_2
 
@@ -487,7 +483,7 @@
     :cond_1
     sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->HEADER:I
 
-    const-string v0, "windowBackgroundWhite"
+    const-string/jumbo v0, "windowBackgroundWhite"
 
     if-ne p2, p1, :cond_2
 
@@ -507,9 +503,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 204
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 
@@ -532,9 +525,6 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 207
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 209
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
@@ -546,9 +536,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 210
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 199
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

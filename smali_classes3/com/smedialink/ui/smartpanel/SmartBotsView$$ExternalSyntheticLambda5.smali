@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda5;->f$0:Lcom/smedialink/ui/smartpanel/SmartBotsView;
 
-    invoke-static {v0}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->$r8$lambda$21Emjq3ciRDidqxNGP1VubP90HM(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
+    invoke-static {v0}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->$r8$lambda$5mRk0fGX7uuH3vkKjA2sImS8lxg(Lcom/smedialink/ui/smartpanel/SmartBotsView;)V
 
     return-void
 .end method

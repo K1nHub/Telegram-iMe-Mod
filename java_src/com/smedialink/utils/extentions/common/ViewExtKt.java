@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import androidx.core.graphics.ColorUtils;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
@@ -31,7 +32,6 @@ import com.smedialink.utils.common.DigitsInputFilter;
 import com.smedialink.utils.helper.binancepay.BinancePayHelper;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.functions.Function0;
@@ -41,7 +41,7 @@ import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.Theme;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
@@ -100,16 +100,15 @@ public final class ViewExtKt {
         textView.setOnTouchListener(new View.OnTouchListener() { // from class: com.smedialink.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean m1838setRightDrawableOnClickListener$lambda2;
-                m1838setRightDrawableOnClickListener$lambda2 = ViewExtKt.m1838setRightDrawableOnClickListener$lambda2(textView, action, view, motionEvent);
-                return m1838setRightDrawableOnClickListener$lambda2;
+                boolean rightDrawableOnClickListener$lambda$2;
+                rightDrawableOnClickListener$lambda$2 = ViewExtKt.setRightDrawableOnClickListener$lambda$2(textView, action, view, motionEvent);
+                return rightDrawableOnClickListener$lambda$2;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setRightDrawableOnClickListener$lambda-2  reason: not valid java name */
-    public static final boolean m1838setRightDrawableOnClickListener$lambda2(TextView this_setRightDrawableOnClickListener, Function0 action, View view, MotionEvent motionEvent) {
+    public static final boolean setRightDrawableOnClickListener$lambda$2(TextView this_setRightDrawableOnClickListener, Function0 action, View view, MotionEvent motionEvent) {
         Intrinsics.checkNotNullParameter(this_setRightDrawableOnClickListener, "$this_setRightDrawableOnClickListener");
         Intrinsics.checkNotNullParameter(action, "$action");
         if (motionEvent.getAction() != 1 || motionEvent.getRawX() < this_setRightDrawableOnClickListener.getRight() - this_setRightDrawableOnClickListener.getCompoundDrawables()[2].getBounds().width()) {
@@ -159,7 +158,12 @@ public final class ViewExtKt {
 
     public static final void setBoundedCircleRippleBackground(View view) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 3));
+        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 5));
+    }
+
+    public static final void setAutoSizedCircleRippleBackground(View view) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 5));
     }
 
     public static /* synthetic */ void setRippleForeground$default(View view, boolean z, int i, Object obj) {
@@ -195,14 +199,13 @@ public final class ViewExtKt {
         view.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ViewExtKt.m1837safeThrottledClick$lambda3(Ref$LongRef.this, j, listener, view2);
+                ViewExtKt.safeThrottledClick$lambda$3(Ref$LongRef.this, j, listener, view2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: safeThrottledClick$lambda-3  reason: not valid java name */
-    public static final void m1837safeThrottledClick$lambda3(Ref$LongRef lastClickTime, long j, Function1 listener, View view) {
+    public static final void safeThrottledClick$lambda$3(Ref$LongRef lastClickTime, long j, Function1 listener, View view) {
         Intrinsics.checkNotNullParameter(lastClickTime, "$lastClickTime");
         Intrinsics.checkNotNullParameter(listener, "$listener");
         if (System.currentTimeMillis() > lastClickTime.element + j) {
@@ -256,16 +259,15 @@ public final class ViewExtKt {
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.smedialink.utils.extentions.common.ViewExtKt$$ExternalSyntheticLambda2
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                boolean m1836onAction$lambda4;
-                m1836onAction$lambda4 = ViewExtKt.m1836onAction$lambda4(i, runAction, textView, i2, keyEvent);
-                return m1836onAction$lambda4;
+                boolean onAction$lambda$4;
+                onAction$lambda$4 = ViewExtKt.onAction$lambda$4(i, runAction, textView, i2, keyEvent);
+                return onAction$lambda$4;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onAction$lambda-4  reason: not valid java name */
-    public static final boolean m1836onAction$lambda4(int i, Callbacks$Callback runAction, TextView textView, int i2, KeyEvent keyEvent) {
+    public static final boolean onAction$lambda$4(int i, Callbacks$Callback runAction, TextView textView, int i2, KeyEvent keyEvent) {
         Intrinsics.checkNotNullParameter(runAction, "$runAction");
         if (i2 == i) {
             runAction.invoke();
@@ -289,7 +291,7 @@ public final class ViewExtKt {
     public static final void nextPage(ViewPager viewPager) {
         Intrinsics.checkNotNullParameter(viewPager, "<this>");
         PagerAdapter adapter = viewPager.getAdapter();
-        if ((adapter == null ? 0 : adapter.getCount()) > viewPager.getCurrentItem()) {
+        if ((adapter != null ? adapter.getCount() : 0) > viewPager.getCurrentItem()) {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
         }
     }
@@ -312,11 +314,18 @@ public final class ViewExtKt {
         if (z) {
             Object systemService = view.getContext().getSystemService("vibrator");
             Vibrator vibrator = systemService instanceof Vibrator ? (Vibrator) systemService : null;
-            if (vibrator == null) {
-                return;
+            if (vibrator != null) {
+                vibrator.vibrate(200L);
             }
-            vibrator.vibrate(200L);
         }
+    }
+
+    public static final int withAlpha(int i, float f) {
+        return withAlpha(i, (int) (255 * f));
+    }
+
+    public static final int withAlpha(int i, int i2) {
+        return ColorUtils.setAlphaComponent(i, i2);
     }
 
     public static final void applyDefaultProperties(ViewPager viewPager) {
@@ -363,13 +372,12 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(view, "<this>");
         ViewParent parent = view.getParent();
         ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
-        if (viewGroup == null) {
-            return;
-        }
-        try {
-            viewGroup.removeViewInLayout(view);
-        } catch (Exception e) {
-            Timber.m4e(e);
+        if (viewGroup != null) {
+            try {
+                viewGroup.removeViewInLayout(view);
+            } catch (Exception e) {
+                Timber.m4e(e);
+            }
         }
     }
 
@@ -382,7 +390,7 @@ public final class ViewExtKt {
 
     public static final void setGreyShadowBackground(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3158R.C3160drawable.greydivider_bottom : C3158R.C3160drawable.greydivider_top, "windowBackgroundGrayShadow"));
+        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3286R.C3288drawable.greydivider_bottom : C3286R.C3288drawable.greydivider_top, "windowBackgroundGrayShadow"));
     }
 
     public static final void setScale(View view, float f) {
@@ -401,10 +409,9 @@ public final class ViewExtKt {
     public static final void setMargins(View view, int i, int i2, int i3, int i4) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
+        Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         marginLayoutParams.setMargins(i, i2, i3, i4);
-        Unit unit = Unit.INSTANCE;
         view.setLayoutParams(marginLayoutParams);
     }
 
@@ -412,22 +419,22 @@ public final class ViewExtKt {
         if ((i5 & 1) != 0) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null;
-            i = marginLayoutParams == null ? 0 : marginLayoutParams.leftMargin;
+            i = marginLayoutParams != null ? marginLayoutParams.leftMargin : 0;
         }
         if ((i5 & 2) != 0) {
             ViewGroup.LayoutParams layoutParams2 = view.getLayoutParams();
             ViewGroup.MarginLayoutParams marginLayoutParams2 = layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null;
-            i2 = marginLayoutParams2 == null ? 0 : marginLayoutParams2.topMargin;
+            i2 = marginLayoutParams2 != null ? marginLayoutParams2.topMargin : 0;
         }
         if ((i5 & 4) != 0) {
             ViewGroup.LayoutParams layoutParams3 = view.getLayoutParams();
             ViewGroup.MarginLayoutParams marginLayoutParams3 = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
-            i3 = marginLayoutParams3 == null ? 0 : marginLayoutParams3.rightMargin;
+            i3 = marginLayoutParams3 != null ? marginLayoutParams3.rightMargin : 0;
         }
         if ((i5 & 8) != 0) {
             ViewGroup.LayoutParams layoutParams4 = view.getLayoutParams();
             ViewGroup.MarginLayoutParams marginLayoutParams4 = layoutParams4 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams4 : null;
-            i4 = marginLayoutParams4 == null ? 0 : marginLayoutParams4.bottomMargin;
+            i4 = marginLayoutParams4 != null ? marginLayoutParams4.bottomMargin : 0;
         }
         setMargins(view, i, i2, i3, i4);
     }

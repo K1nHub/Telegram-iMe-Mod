@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDrawerItemsSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerItemsSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerItemsSettingsBottomSheet\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,97:1\n1547#2:98\n1618#2,3:99\n764#2:104\n855#2,2:105\n1547#2:107\n1618#2,3:108\n169#3,2:102\n*S KotlinDebug\n*F\n+ 1 DrawerItemsSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerItemsSettingsBottomSheet\n*L\n47#1:98\n47#1:99,3\n83#1:104\n83#1:105,2\n83#1:107\n83#1:108,3\n89#1:102,2\n*E\n"
+    value = "SMAP\nDrawerItemsSettingsBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DrawerItemsSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerItemsSettingsBottomSheet\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,97:1\n1549#2:98\n1620#2,3:99\n766#2:104\n857#2,2:105\n1549#2:107\n1620#2,3:108\n177#3,2:102\n*S KotlinDebug\n*F\n+ 1 DrawerItemsSettingsBottomSheet.kt\norg/fork/ui/dialog/DrawerItemsSettingsBottomSheet\n*L\n47#1:98\n47#1:99,3\n83#1:104\n83#1:105,2\n83#1:107\n83#1:108,3\n89#1:102,2\n*E\n"
 .end annotation
 
 
@@ -14,26 +14,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4_3CoOeR7N5zxqkSayUU6NdI6Hc(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$8fyarK8wi5n3Kz8-uY3DmVpbjMs(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->initRootView$lambda-13$lambda-4$lambda-2$lambda-1(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->initRootView$lambda$13$lambda$7$lambda$6(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Qz8wiqUfGtrH9IOOEj455L76buI(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Ljava/util/List;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$M5WL1z47XDiuQ4aQKouh9XF3fUc(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Ljava/util/List;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->initRootView$lambda-13$lambda-11$lambda-10(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Ljava/util/List;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->initRootView$lambda$13$lambda$11$lambda$10(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Ljava/util/List;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xXBs5NSp_bxeo1MYdvFYz0m2njA(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$s2_QGYX8O8hJgvEHjGZgdBh9Bv4(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->initRootView$lambda-13$lambda-7$lambda-6(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;->initRootView$lambda$13$lambda$4$lambda$2$lambda$1(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
 
     return-void
 .end method
@@ -153,7 +153,7 @@
 
     move-result-object v5
 
-    .line 1547
+    .line 1549
     new-instance v6, Ljava/util/ArrayList;
 
     const/16 v7, 0xa
@@ -164,7 +164,7 @@
 
     invoke-direct {v6, v8}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -184,7 +184,7 @@
 
     move-result-object v8
 
-    .line 1619
+    .line 1621
     check-cast v8, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
 
     .line 48
@@ -235,7 +235,7 @@
 
     invoke-virtual {v4, v11, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 53
+    .line 1621
     invoke-interface {v6, v11}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -464,7 +464,7 @@
 
     move-result v4
 
-    .line 169
+    .line 177
     invoke-virtual {v3, v4, v4, v4, v4}, Landroid/view/View;->setPadding(IIII)V
 
     const v4, 0x800033
@@ -503,7 +503,7 @@
     return-object v1
 .end method
 
-.method private static final initRootView$lambda-13$lambda-11$lambda-10(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Ljava/util/List;Landroid/view/View;)V
+.method private static final initRootView$lambda$13$lambda$11$lambda$10(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Ljava/util/List;Landroid/view/View;)V
     .locals 1
 
     const-string p2, "this$0"
@@ -517,12 +517,12 @@
     .line 82
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 764
+    .line 766
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -550,11 +550,12 @@
 
     if-eqz v0, :cond_0
 
+    .line 857
     invoke-interface {p0, p2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1547
+    .line 1549
     :cond_1
     new-instance p1, Ljava/util/ArrayList;
 
@@ -566,7 +567,7 @@
 
     invoke-direct {p1, p2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -582,7 +583,7 @@
 
     move-result-object p2
 
-    .line 1619
+    .line 1621
     check-cast p2, Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
     .line 83
@@ -592,14 +593,16 @@
 
     const-string v0, "null cannot be cast to non-null type com.smedialink.ui.drawer.DrawerSwitchableItem"
 
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lcom/smedialink/ui/drawer/DrawerSwitchableItem;
 
+    .line 1621
     invoke-interface {p1, p2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
+    .line 83
     :cond_2
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -625,7 +628,7 @@
     return-void
 .end method
 
-.method private static final initRootView$lambda-13$lambda-4$lambda-2$lambda-1(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+.method private static final initRootView$lambda$13$lambda$4$lambda$2$lambda$1(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$this_apply"
@@ -644,7 +647,7 @@
     return-void
 .end method
 
-.method private static final initRootView$lambda-13$lambda-7$lambda-6(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
+.method private static final initRootView$lambda$13$lambda$7$lambda$6(Lorg/fork/ui/dialog/DrawerItemsSettingsBottomSheet;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"

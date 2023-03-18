@@ -42,9 +42,9 @@ import kotlin.reflect.KProperty;
 import kotlin.text.Charsets;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentWebViewBinding;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: SimplexWebViewProcessingFragment.kt */
@@ -129,7 +129,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
         finishFragment();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x003a  */
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -139,10 +139,10 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
         /*
             r2 = this;
             r0 = 1
-            if (r3 != r0) goto L41
+            if (r3 != r0) goto L40
             android.webkit.ValueCallback<android.net.Uri[]> r1 = r2.mFilePathCallback
             if (r1 != 0) goto L8
-            goto L41
+            goto L40
         L8:
             r3 = -1
             r1 = 0
@@ -170,14 +170,12 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
             r5 = r1
         L36:
             android.webkit.ValueCallback<android.net.Uri[]> r3 = r2.mFilePathCallback
-            if (r3 != 0) goto L3b
-            goto L3e
-        L3b:
+            if (r3 == 0) goto L3d
             r3.onReceiveValue(r5)
-        L3e:
+        L3d:
             r2.mFilePathCallback = r1
             return
-        L41:
+        L40:
             super.onActivityResultFragment(r3, r4, r5)
             return
         */
@@ -185,8 +183,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-0  reason: not valid java name */
-    public static final void m1581getThemeDescriptions$lambda0(SimplexWebViewProcessingFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(SimplexWebViewProcessingFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.setupColors();
     }
@@ -197,7 +194,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                SimplexWebViewProcessingFragment.m1581getThemeDescriptions$lambda0(SimplexWebViewProcessingFragment.this);
+                SimplexWebViewProcessingFragment.getThemeDescriptions$lambda$0(SimplexWebViewProcessingFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -220,10 +217,9 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
         webView.setWebChromeClient(new WebChromeClient() { // from class: com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupWebView$1$2
             @Override // android.webkit.WebChromeClient
             public void onPermissionRequest(PermissionRequest permissionRequest) {
-                if (permissionRequest == null) {
-                    return;
+                if (permissionRequest != null) {
+                    permissionRequest.grant(permissionRequest.getResources());
                 }
-                permissionRequest.grant(permissionRequest.getResources());
             }
 
             @Override // android.webkit.WebChromeClient
@@ -233,7 +229,7 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
                 binding.progressBar.setProgress(i);
             }
 
-            /* JADX WARN: Removed duplicated region for block: B:17:0x0053  */
+            /* JADX WARN: Removed duplicated region for block: B:16:0x0052  */
             @Override // android.webkit.WebChromeClient
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -251,11 +247,9 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
                     com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r3 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this
                     android.webkit.ValueCallback r3 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.access$getMFilePathCallback$p(r3)
                     r5 = 0
-                    if (r3 != 0) goto L19
-                    goto L1c
-                L19:
+                    if (r3 == 0) goto L1b
                     r3.onReceiveValue(r5)
-                L1c:
+                L1b:
                     com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r3 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this
                     com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.access$setMFilePathCallback$p(r3, r4)
                     android.content.Intent r3 = new android.content.Intent
@@ -265,35 +259,39 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
                     android.app.Activity r4 = r4.getParentActivity()
                     android.content.pm.PackageManager r4 = r4.getPackageManager()
                     android.content.ComponentName r4 = r3.resolveActivity(r4)
-                    if (r4 == 0) goto L6b
-                    com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r4 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this     // Catch: java.io.IOException -> L4c
-                    java.io.File r4 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.access$createImageFile(r4)     // Catch: java.io.IOException -> L4c
+                    if (r4 == 0) goto L75
+                    com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r4 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this     // Catch: java.io.IOException -> L4b
+                    java.io.File r4 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.access$createImageFile(r4)     // Catch: java.io.IOException -> L4b
                     java.lang.String r0 = "PhotoPath"
-                    com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r1 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this     // Catch: java.io.IOException -> L4a
-                    java.lang.String r1 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.access$getMCameraPhotoPath$p(r1)     // Catch: java.io.IOException -> L4a
-                    r3.putExtra(r0, r1)     // Catch: java.io.IOException -> L4a
-                    goto L51
-                L4a:
+                    com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r1 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this     // Catch: java.io.IOException -> L49
+                    java.lang.String r1 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.access$getMCameraPhotoPath$p(r1)     // Catch: java.io.IOException -> L49
+                    r3.putExtra(r0, r1)     // Catch: java.io.IOException -> L49
+                    goto L50
+                L49:
                     r0 = move-exception
-                    goto L4e
-                L4c:
+                    goto L4d
+                L4b:
                     r0 = move-exception
                     r4 = r5
-                L4e:
+                L4d:
                     timber.log.Timber.m4e(r0)
-                L51:
-                    if (r4 == 0) goto L6c
+                L50:
+                    if (r4 == 0) goto L76
                     com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment r5 = com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.this
-                    java.lang.String r0 = r4.getAbsolutePath()
+                    java.lang.StringBuilder r0 = new java.lang.StringBuilder
+                    r0.<init>()
                     java.lang.String r1 = "file:"
-                    java.lang.String r0 = kotlin.jvm.internal.Intrinsics.stringPlus(r1, r0)
+                    r0.append(r1)
+                    java.lang.String r1 = r4.getAbsolutePath()
+                    r0.append(r1)
+                    java.lang.String r0 = r0.toString()
                     com.smedialink.p031ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment.access$setMCameraPhotoPath$p(r5, r0)
                     android.net.Uri r4 = android.net.Uri.fromFile(r4)
                     java.lang.String r5 = "output"
                     r3.putExtra(r5, r4)
-                L6b:
+                L75:
                     r5 = r3
-                L6c:
+                L76:
                     android.content.Intent r3 = new android.content.Intent
                     java.lang.String r4 = "android.intent.action.CHOOSER"
                     r3.<init>(r4)
@@ -391,12 +389,12 @@ public final class SimplexWebViewProcessingFragment extends WalletAuthFragment i
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_crypto_buy_processing_toolbar_title));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_crypto_buy_processing_toolbar_title));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.buy.processing.SimplexWebViewProcessingFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SimplexWebViewProcessingFragment.this.handleBackPress();

@@ -28,6 +28,7 @@ public class ShortcutInfoCompat {
     Context mContext;
     CharSequence mDisabledMessage;
     int mDisabledReason;
+    int mExcludedSurfaces;
     PersistableBundle mExtras;
     boolean mHasKeyFieldsOnly;
     IconCompat mIcon;
@@ -223,6 +224,10 @@ public class ShortcutInfoCompat {
         return getLocusIdFromExtra(shortcutInfo.getExtras());
     }
 
+    public boolean isExcludedFromSurfaces(int i) {
+        return (i & this.mExcludedSurfaces) != 0;
+    }
+
     private static LocusIdCompat getLocusIdFromExtra(PersistableBundle persistableBundle) {
         String string;
         if (persistableBundle == null || (string = persistableBundle.getString("extraLocusId")) == null) {
@@ -285,6 +290,7 @@ public class ShortcutInfoCompat {
             if (persistableBundle != null) {
                 shortcutInfoCompat2.mExtras = persistableBundle;
             }
+            shortcutInfoCompat2.mExcludedSurfaces = shortcutInfoCompat.mExcludedSurfaces;
         }
 
         public Builder(Context context, ShortcutInfo shortcutInfo) {

@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChannelDetailsBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChannelDetailsBottomSheetDialog.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,247:1\n13#2,4:248\n56#3,6:252\n254#4,2:258\n254#4,2:260\n254#4,2:265\n1849#5:262\n1850#5:264\n1#6:263\n*S KotlinDebug\n*F\n+ 1 ChannelDetailsBottomSheetDialog.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog\n*L\n50#1:248,4\n53#1:252,6\n77#1:258,2\n87#1:260,2\n101#1:265,2\n92#1:262\n92#1:264\n*E\n"
+    value = "SMAP\nChannelDetailsBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChannelDetailsBottomSheetDialog.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,247:1\n13#2,4:248\n56#3,6:252\n262#4,2:258\n262#4,2:260\n262#4,2:265\n1855#5:262\n1856#5:264\n1#6:263\n*S KotlinDebug\n*F\n+ 1 ChannelDetailsBottomSheetDialog.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog\n*L\n50#1:248,4\n53#1:252,6\n77#1:258,2\n87#1:260,2\n101#1:265,2\n92#1:262\n92#1:264\n*E\n"
 .end annotation
 
 
@@ -47,30 +47,30 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$IonqGSasjPWfLoFAYcrbUhvEJkA(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public static synthetic $r8$lambda$SmTcB0n17UGrT9dtwEehOwiuJ0o(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->setupViews$lambda-16$lambda-15$lambda-14(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->setupButtonMore$lambda$18$lambda$17(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$fNvDQ0Jgea6MxfakBzD7-Shhi4I(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->setupListeners$lambda$20$lambda$19(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$kw182dTRVVkdrhfLK-d784k0kgE(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->setupViews$lambda$16$lambda$15$lambda$14(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p0
 
     return p0
-.end method
-
-.method public static synthetic $r8$lambda$QEp86qPfPH5ELksg6ofP-U8qzVM(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->setupListeners$lambda-20$lambda-19(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$tr9F5xJN3iQJ_KQhPzutipn1ABU(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->setupButtonMore$lambda-18$lambda-17(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
-
-    return-void
 .end method
 
 .method static constructor <clinit>()V
@@ -406,7 +406,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
-    const-string v2, ""
+    const-string v2, "setupButtonMore$lambda$18"
 
     .line 193
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -526,7 +526,7 @@
     return-void
 .end method
 
-.method private static final setupButtonMore$lambda-18$lambda-17(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+.method private static final setupButtonMore$lambda$18$lambda$17(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$this_with"
@@ -564,7 +564,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
 
-    const-string v3, ""
+    const-string v3, "setupColors$lambda$13$lambda$8"
 
     .line 142
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -574,55 +574,59 @@
     .line 144
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textName:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v4, "windowBackgroundWhiteBlackText"
+    const-string v3, "windowBackgroundWhiteBlackText"
 
     .line 145
-    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v4
 
-    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v4, "setupColors$lambda$13$lambda$9"
 
     .line 146
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     .line 148
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textNickname:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v5, "chats_actionBackground"
+    const-string v4, "chats_actionBackground"
 
     .line 149
-    invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
-    move-result v6
+    move-result v5
 
-    invoke-virtual {v1, v6}, Landroid/widget/TextView;->setLinkTextColor(I)V
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
     .line 150
-    invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
-    move-result v6
+    move-result v5
 
-    invoke-virtual {v1, v6}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 152
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textSubscribersCount:Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string v5, "setupColors$lambda$13$lambda$11"
+
     .line 153
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v3, "windowBackgroundWhiteGrayText"
+    const-string v5, "windowBackgroundWhiteGrayText"
 
-    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v6
 
     invoke-static {v1, v6}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setCompoundDrawablesColor(Landroid/widget/TextView;I)V
 
     .line 154
-    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v6
 
@@ -632,54 +636,54 @@
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textDescription:Landroidx/appcompat/widget/AppCompatTextView;
 
     .line 157
-    invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v6
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 158
-    invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
-
-    move-result v5
-
-    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setLinkTextColor(I)V
-
-    .line 160
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textLanguageValue:Landroidx/appcompat/widget/AppCompatTextView;
-
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v4
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setLinkTextColor(I)V
+
+    .line 160
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textLanguageValue:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/4 v1, 0x2
 
     new-array v1, v1, [Landroid/widget/TextView;
 
     .line 161
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textLanguageTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textLanguageTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v5, "textLanguageTitle"
+    const-string v4, "textLanguageTitle"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    aput-object v4, v1, v5
+    aput-object v3, v1, v4
 
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textTags:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->textTags:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v5, "textTags"
+    const-string v4, "textTags"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    aput-object v4, v1, v5
+    aput-object v3, v1, v4
 
-    invoke-static {v3, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
+    invoke-static {v5, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
 
     .line 162
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->imageLanguage:Landroidx/appcompat/widget/AppCompatImageView;
@@ -753,7 +757,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-20$lambda-19(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
+.method private static final setupListeners$lambda$20$lambda$19(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -834,7 +838,7 @@
     return-void
 .end method
 
-.method private static final setupViews$lambda-16$lambda-15$lambda-14(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method private static final setupViews$lambda$16$lambda$15$lambda$14(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 2
 
     .line 173
@@ -924,7 +928,7 @@
 .end method
 
 .method public setupCampaignInfo(Lcom/smedialink/model/catalog/CampaignItem;)V
-    .locals 16
+    .locals 22
 
     const-string v0, "campaignItem"
 
@@ -964,7 +968,7 @@
 
     const/4 v7, 0x1
 
-    invoke-static {v2, v3, v4, v6, v7}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
+    invoke-static {v2, v3, v4, v6, v7}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFromWithPlaceholderResId(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
 
     .line 77
     iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;->imageVerified:Landroidx/appcompat/widget/AppCompatImageView;
@@ -990,7 +994,7 @@
     :cond_0
     const/16 v3, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
@@ -1004,13 +1008,21 @@
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 79
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/16 v3, 0x40
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
     invoke-virtual/range {p1 .. p1}, Lcom/smedialink/model/catalog/CampaignItem;->getShortname()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "@"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1034,9 +1046,6 @@
 
     invoke-virtual {v8, v9, v6, v2, v10}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 82
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 80
     invoke-virtual {v3, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -1058,7 +1067,7 @@
     .line 84
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v3, ""
+    const-string v3, "setupCampaignInfo$lambda$6$lambda$5$lambda$2"
 
     .line 87
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1082,7 +1091,7 @@
     :cond_1
     const/16 v3, 0x8
 
-    .line 254
+    .line 262
     :goto_1
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
@@ -1128,7 +1137,7 @@
 
     move-result-object v2
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1172,20 +1181,20 @@
 
     invoke-virtual {v15, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    const/16 v16, -0x2
 
-    const/4 v9, -0x2
+    const/16 v17, -0x2
 
-    const/4 v10, -0x2
+    const/16 v18, 0x6
 
-    const/4 v11, 0x6
+    const/16 v19, 0x0
 
-    const/4 v13, 0x0
+    const/16 v20, 0x0
 
-    const/4 v14, 0x6
+    const/16 v21, 0x6
 
     .line 95
-    invoke-static/range {v9 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v16 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
@@ -1216,7 +1225,7 @@
 
     const/4 v4, 0x0
 
-    .line 254
+    .line 262
     :cond_3
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 

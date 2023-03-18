@@ -42,10 +42,10 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentWalletCryptoBuyBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 /* compiled from: BuyCryptoProductFragment.kt */
@@ -119,17 +119,16 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
 
     @Override // com.smedialink.p031ui.wallet.crypto.buy.BuyCryptoProductView
     public void showSuccessPurchase() {
-        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3158R.string.wallet_crypto_buy_success_dialog_title), getResourceManager().getString(C3158R.string.wallet_crypto_buy_success_dialog_description), null, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda2
+        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3286R.string.wallet_crypto_buy_success_dialog_title), getResourceManager().getString(C3286R.string.wallet_crypto_buy_success_dialog_description), null, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda2
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                BuyCryptoProductFragment.m1576showSuccessPurchase$lambda0(BuyCryptoProductFragment.this);
+                BuyCryptoProductFragment.showSuccessPurchase$lambda$0(BuyCryptoProductFragment.this);
             }
         }, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showSuccessPurchase$lambda-0  reason: not valid java name */
-    public static final void m1576showSuccessPurchase$lambda0(BuyCryptoProductFragment this$0) {
+    public static final void showSuccessPurchase$lambda$0(BuyCryptoProductFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.finishFragment();
     }
@@ -137,7 +136,7 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
     @Override // com.smedialink.p031ui.wallet.crypto.buy.BuyCryptoProductView
     public void showErrorPurchase(String orderId) {
         Intrinsics.checkNotNullParameter(orderId, "orderId");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3158R.string.common_unexpected_error_title), getResourceManager().getString(C3158R.string.wallet_crypto_buy_error_dialog_description, orderId), null, new BuyCryptoProductFragment$showErrorPurchase$1(orderId), null, 20, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3286R.string.common_unexpected_error_title), getResourceManager().getString(C3286R.string.wallet_crypto_buy_error_dialog_description, orderId), null, new BuyCryptoProductFragment$showErrorPurchase$1(orderId), null, 20, null);
     }
 
     @Override // com.smedialink.p031ui.wallet.crypto.buy.BuyCryptoProductView
@@ -149,14 +148,13 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
         showDialog(DialogUtils.createDialog$default(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda3
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                BuyCryptoProductFragment.m1575showConfirmDialog$lambda1(BuyCryptoProductFragment.this, item);
+                BuyCryptoProductFragment.showConfirmDialog$lambda$1(BuyCryptoProductFragment.this, item);
             }
         }, null, 8, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showConfirmDialog$lambda-1  reason: not valid java name */
-    public static final void m1575showConfirmDialog$lambda1(BuyCryptoProductFragment this$0, CryptoBuyItem item) {
+    public static final void showConfirmDialog$lambda$1(BuyCryptoProductFragment this$0, CryptoBuyItem item) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         this$0.getPresenter().purchase(item);
@@ -174,7 +172,7 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda4
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                BuyCryptoProductFragment.m1572getThemeDescriptions$lambda2(BuyCryptoProductFragment.this);
+                BuyCryptoProductFragment.getThemeDescriptions$lambda$2(BuyCryptoProductFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -186,8 +184,7 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-2  reason: not valid java name */
-    public static final void m1572getThemeDescriptions$lambda2(BuyCryptoProductFragment this$0) {
+    public static final void getThemeDescriptions$lambda$2(BuyCryptoProductFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getBuyCryptoProductAdapter().notifyDataSetChanged();
         this$0.getBinding().getRoot().setColorSchemeColors(Theme.getColor("chats_actionBackground"));
@@ -200,13 +197,13 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_buy_toolbar_title));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.createMenu();
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_buy_toolbar_title));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.createMenu();
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BuyCryptoProductFragment.this.finishFragment();
@@ -225,23 +222,22 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
         getBuyCryptoProductAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                BuyCryptoProductFragment.m1573setupListeners$lambda6(BuyCryptoProductFragment.this, baseQuickAdapter, view, i);
+                BuyCryptoProductFragment.setupListeners$lambda$6(BuyCryptoProductFragment.this, baseQuickAdapter, view, i);
             }
         });
         getBinding().getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                BuyCryptoProductFragment.m1574setupListeners$lambda7(BuyCryptoProductFragment.this);
+                BuyCryptoProductFragment.setupListeners$lambda$7(BuyCryptoProductFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-6  reason: not valid java name */
-    public static final void m1573setupListeners$lambda6(BuyCryptoProductFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$6(BuyCryptoProductFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         Object firstOrNull = CollectionsKt.firstOrNull(this$0.getBuyCryptoProductAdapter().getData());
         CryptoBuyItem cryptoBuyItem = firstOrNull instanceof CryptoBuyItem ? (CryptoBuyItem) firstOrNull : null;
         BaseNode baseNode = (BaseNode) this$0.getBuyCryptoProductAdapter().getItem(i);
@@ -253,8 +249,7 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-7  reason: not valid java name */
-    public static final void m1574setupListeners$lambda7(BuyCryptoProductFragment this$0) {
+    public static final void setupListeners$lambda$7(BuyCryptoProductFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().loadAvailableProducts();
     }

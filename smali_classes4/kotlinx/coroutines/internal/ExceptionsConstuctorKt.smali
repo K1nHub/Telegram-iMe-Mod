@@ -192,7 +192,7 @@
 
     move-result-object v0
 
-    .line 12862
+    .line 90
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -533,7 +533,7 @@
 
     move-result-object v0
 
-    .line 6516
+    .line 84
     new-instance v2, Lkotlinx/coroutines/internal/ExceptionsConstuctorKt$tryCopyException$$inlined$sortedByDescending$1;
 
     invoke-direct {v2}, Lkotlinx/coroutines/internal/ExceptionsConstuctorKt$tryCopyException$$inlined$sortedByDescending$1;-><init>()V

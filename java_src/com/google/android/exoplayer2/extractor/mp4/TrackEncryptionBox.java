@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.mp4;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.extractor.TrackOutput;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
@@ -30,25 +30,25 @@ public final class TrackEncryptionBox {
         char c = 65535;
         switch (str.hashCode()) {
             case 3046605:
-                if (str.equals(C0474C.CENC_TYPE_cbc1)) {
+                if (str.equals(C0468C.CENC_TYPE_cbc1)) {
                     c = 0;
                     break;
                 }
                 break;
             case 3046671:
-                if (str.equals(C0474C.CENC_TYPE_cbcs)) {
+                if (str.equals(C0468C.CENC_TYPE_cbcs)) {
                     c = 1;
                     break;
                 }
                 break;
             case 3049879:
-                if (str.equals(C0474C.CENC_TYPE_cenc)) {
+                if (str.equals(C0468C.CENC_TYPE_cenc)) {
                     c = 2;
                     break;
                 }
                 break;
             case 3049895:
-                if (str.equals(C0474C.CENC_TYPE_cens)) {
+                if (str.equals(C0468C.CENC_TYPE_cens)) {
                     c = 3;
                     break;
                 }

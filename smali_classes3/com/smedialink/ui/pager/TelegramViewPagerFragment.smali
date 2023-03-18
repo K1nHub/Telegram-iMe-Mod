@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;,
+        Lcom/smedialink/ui/pager/TelegramViewPagerFragment$Companion;,
         Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ContentView;,
-        Lcom/smedialink/ui/pager/TelegramViewPagerFragment$Companion;
+        Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n13536#2,2:656\n13601#2,3:659\n13601#2,3:662\n1#3:658\n187#4,4:665\n254#5,2:669\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment\n*L\n90#1:656,2\n171#1:659,3\n221#1:662,3\n241#1:665,4\n254#1:669,2\n*E\n"
+    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n13579#2,2:656\n13644#2,3:659\n13644#2,3:662\n1#3:658\n191#4,4:665\n262#5,2:669\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment\n*L\n90#1:656,2\n171#1:659,3\n221#1:662,3\n241#1:665,4\n254#1:669,2\n*E\n"
 .end annotation
 
 
@@ -55,22 +55,22 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$b3_5dHOCtlOWbIrk3ofjuqK28_A(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$mjTIP16kUi8DkpDGR5Ozq4Lz3JM(F)F
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->setupListeners$lambda-7(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$tpb3KhErmeF9w2m2LqH23ThGWng(F)F
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->interpolator$lambda-13(F)F
+    invoke-static {p0}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->interpolator$lambda$13(F)F
 
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic $r8$lambda$ytP8B4v5QuZtgxA6M94YZMGg7gM(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->setupListeners$lambda$7(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
+
+    return-void
 .end method
 
 .method static constructor <clinit>()V
@@ -408,14 +408,12 @@
 .method private final checkScroll(Landroidx/recyclerview/widget/RecyclerView;)V
     .locals 6
 
-    .line 187
+    .line 191
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
     const/4 v1, 0x0
-
-    if-lez v0, :cond_1
 
     const v2, 0x7fffffff
 
@@ -424,28 +422,28 @@
     const v3, 0x7fffffff
 
     :goto_0
-    add-int/lit8 v4, v1, 0x1
+    if-ge v1, v0, :cond_0
 
-    .line 188
+    .line 192
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v4
 
     const-string v5, "getChildAt(i)"
 
-    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 242
-    invoke-virtual {v1}, Landroid/view/View;->getBottom()I
+    invoke-virtual {v4}, Landroid/view/View;->getBottom()I
 
     move-result v5
 
     .line 243
-    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+    invoke-virtual {v4}, Landroid/view/View;->getTop()I
 
-    move-result v1
+    move-result v4
 
-    invoke-static {v3, v1}, Lkotlin/ranges/RangesKt;->coerceAtMost(II)I
+    invoke-static {v3, v4}, Lkotlin/ranges/RangesKt;->coerceAtMost(II)I
 
     move-result v3
 
@@ -454,20 +452,12 @@
 
     move-result v2
 
-    if-lt v4, v0, :cond_0
-
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_0
-    move v1, v4
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    :goto_1
-    if-eqz v1, :cond_2
+    :cond_0
+    if-eqz v2, :cond_1
 
     .line 246
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -480,12 +470,12 @@
 
     sub-int/2addr v0, p1
 
-    if-ge v1, v0, :cond_2
+    if-ge v2, v0, :cond_1
 
     .line 247
     invoke-virtual {p0}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->resetScroll()V
 
-    :cond_2
+    :cond_1
     return-void
 .end method
 
@@ -660,7 +650,7 @@
 
     move-result-object v1
 
-    .line 13602
+    .line 13645
     array-length v2, v1
 
     const/4 v3, 0x0
@@ -737,7 +727,7 @@
     return-object v0
 .end method
 
-.method private static final interpolator$lambda-13(F)F
+.method private static final interpolator$lambda$13(F)F
     .locals 4
 
     const/high16 v0, -0x40800000    # -1.0f
@@ -885,14 +875,11 @@
     const/4 v1, 0x0
 
     :goto_0
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    :goto_1
+    :cond_1
     return-void
 .end method
 
@@ -913,7 +900,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
+.method private static final setupListeners$lambda$7(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
     .locals 1
 
     const-string p1, "this$0"
@@ -957,14 +944,14 @@
 
     aget-object v4, v0, v3
 
-    add-int/lit8 v3, v3, 0x1
-
     .line 211
     invoke-virtual {v4}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v4
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RecyclerListView;->stopScroll()V
+
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
@@ -1047,7 +1034,7 @@
 
     move-result-object v1
 
-    .line 13602
+    .line 13645
     array-length v3, v1
 
     const/4 v4, 0x0
@@ -1133,7 +1120,7 @@
     :cond_1
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -1788,7 +1775,7 @@
 
     move-result-object v0
 
-    .line 13536
+    .line 13579
     array-length v1, v0
 
     const/4 v2, 0x0

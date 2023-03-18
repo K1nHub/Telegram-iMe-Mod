@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 24939
+    .line 25050
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatDeleteUser;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 24944
+    .line 25055
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -43,12 +43,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 24948
+    .line 25059
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionChatDeleteUser_layer131;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 24949
+    .line 25060
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$MessageAction;->user_id:J
 
     long-to-int v1, v0

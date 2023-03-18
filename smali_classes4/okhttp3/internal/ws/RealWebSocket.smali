@@ -591,7 +591,7 @@
 
     move-result-object v0
 
-    const-string v4, "websocket"
+    const-string/jumbo v4, "websocket"
 
     .line 235
     invoke-static {v4, v0, v5}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
@@ -993,7 +993,7 @@
 
     const-string v2, "Upgrade"
 
-    const-string v3, "websocket"
+    const-string/jumbo v3, "websocket"
 
     .line 158
     invoke-virtual {v0, v2, v3}, Lokhttp3/Request$Builder;->header(Ljava/lang/String;Ljava/lang/String;)Lokhttp3/Request$Builder;

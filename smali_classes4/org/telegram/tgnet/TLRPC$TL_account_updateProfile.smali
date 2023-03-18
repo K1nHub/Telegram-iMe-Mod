@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 50919
+    .line 51162
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 50928
+    .line 51171
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$User;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object p1
@@ -49,29 +49,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 50932
+    .line 51175
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 50933
+    .line 51176
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 50934
+    .line 51177
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 50935
+    .line 51178
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->first_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 50937
+    .line 51180
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->flags:I
 
@@ -79,12 +79,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 50938
+    .line 51181
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->last_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 50940
+    .line 51183
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->flags:I
 
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 50941
+    .line 51184
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->about:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

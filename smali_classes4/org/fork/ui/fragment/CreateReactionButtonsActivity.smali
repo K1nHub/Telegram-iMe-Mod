@@ -11,15 +11,15 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ColumnType;,
+        Lorg/fork/ui/fragment/CreateReactionButtonsActivity$Companion;,
         Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;,
-        Lorg/fork/ui/fragment/CreateReactionButtonsActivity$TouchHelperCallback;,
         Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ReactionDelegate;,
-        Lorg/fork/ui/fragment/CreateReactionButtonsActivity$Companion;
+        Lorg/fork/ui/fragment/CreateReactionButtonsActivity$TouchHelperCallback;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateReactionButtonsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,756:1\n13#2,4:757\n56#3,6:761\n1#4:767\n275#5,2:768\n252#5:770\n*S KotlinDebug\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity\n*L\n56#1:757,4\n57#1:761,6\n344#1:768,2\n249#1:770\n*E\n"
+    value = "SMAP\nCreateReactionButtonsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,756:1\n13#2,4:757\n56#3,6:761\n1#4:767\n283#5,2:768\n260#5:770\n*S KotlinDebug\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity\n*L\n56#1:757,4\n57#1:761,6\n344#1:768,2\n249#1:770\n*E\n"
 .end annotation
 
 
@@ -129,50 +129,50 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4e4zu337PalLGfJvkr0OVT0zKok(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$7etbeXamL2ElVZpy8-nVku-jd9s(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showURLButtonDialog$lambda-27$lambda-25(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showURLButtonDialog$lambda$27$lambda$26(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$BkquQVOLg-jqN9OVvXpdxWmubRo(Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$AFUzdKxBnE1VIJ9xYfpw_kvQrms(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showURLButtonDialog$lambda-27$lambda-26(Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showButtonPositionDialog$lambda$6$lambda$5(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MyGmCK7HrYZxNijeU_oRjFFB8Bk(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$BM0HBhtAjulnhz5WDFiBhViE3Xs(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->initListView$lambda-10$lambda-9(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showURLButtonDialog$lambda$27$lambda$25(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ZzoTFZ5kG6ZRxYanwTpMqprr-ss(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
+.method public static synthetic $r8$lambda$CttRYylGOxiF5iNAXZHBJW3ofak(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->getThemeDescriptions$lambda-7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->getThemeDescriptions$lambda$7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_HMUwnd6rfSeWfSBN8FKJ1Oghwg(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$RF5_R2IKLZ6SP9yIYuDp9_XEtf8(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showURLButtonDialog$lambda-29$lambda-28(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showURLButtonDialog$lambda$29$lambda$28(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$t9xVApi4BaNfeApWv-ngJsXdqXc(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$vZnhyfbOM-JKEkS_XA0yZlIKbKE(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->showButtonPositionDialog$lambda-6$lambda-5(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->initListView$lambda$10$lambda$9(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -1278,7 +1278,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
+.method private static final getThemeDescriptions$lambda$7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1470,9 +1470,6 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 266
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 263
     invoke-virtual {v10, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -1546,7 +1543,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-10$lambda-9(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$10$lambda$9(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
     .locals 1
 
     const-string p1, "this$0"
@@ -1558,7 +1555,7 @@
 
     move-result-object p1
 
-    .line 252
+    .line 260
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p1
@@ -1684,7 +1681,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const-string v0, "windowBackgroundGray"
+    const-string/jumbo v0, "windowBackgroundGray"
 
     .line 295
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1763,7 +1760,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 242
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1794,7 +1791,7 @@
     .line 318
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/RadialProgress;->setProgress(FZ)V
 
-    const-string v1, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v1, "windowBackgroundWhiteBlueHeader"
 
     .line 319
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1848,7 +1845,7 @@
     .line 313
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "windowBackgroundWhiteGrayText4"
+    const-string/jumbo v1, "windowBackgroundWhiteGrayText4"
 
     .line 314
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1913,14 +1910,12 @@
 
     move-result-object v0
 
-    const-string v1, ""
+    const-string v1, "setupActionBar$lambda$20$lambda$19$lambda$18"
 
     .line 337
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
-
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 336
     iput-object v0, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->doneItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -1928,7 +1923,7 @@
     return-void
 .end method
 
-.method private static final showButtonPositionDialog$lambda-6$lambda-5(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method private static final showButtonPositionDialog$lambda$6$lambda$5(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -1939,7 +1934,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1950,7 +1945,7 @@
 
     const-string v0, "null cannot be cast to non-null type kotlin.Int"
 
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Ljava/lang/Integer;
 
@@ -2022,7 +2017,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 275
+    .line 283
     :goto_0
     invoke-virtual {p2, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -2069,9 +2064,6 @@
 
     .line 348
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
-
-    .line 349
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 345
     iput-object p1, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->emojiViewAnimator:Landroid/animation/AnimatorSet;
@@ -2145,52 +2137,43 @@
     .line 385
     invoke-virtual {v3, v1}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    if-nez p2, :cond_0
-
-    goto :goto_1
+    if-eqz p2, :cond_2
 
     .line 386
-    :cond_0
     invoke-virtual {p2}, Lorg/fork/ui/view/MovingReactionCell;->getUrlButton()Lcom/smedialink/storage/data/network/model/request/reaction/UrlButton;
 
     move-result-object p2
 
-    if-nez p2, :cond_1
+    if-eqz p2, :cond_2
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {p2}, Lcom/smedialink/storage/data/network/model/request/reaction/UrlButton;->getUrl()Ljava/lang/String;
 
     move-result-object p2
 
-    if-nez p2, :cond_2
+    if-eqz p2, :cond_2
 
-    goto :goto_1
-
-    :cond_2
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_0
     const/4 v1, 0x0
 
     :goto_0
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_1
 
     const-string p2, "http://"
 
-    :cond_4
+    :cond_1
     move-object v1, p2
 
-    :goto_1
+    :cond_2
     invoke-virtual {v3, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     const/high16 p2, 0x41900000    # 18.0f
@@ -2218,7 +2201,7 @@
 
     invoke-virtual {v3, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    const-string p2, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo p2, "windowBackgroundWhiteBlueHeader"
 
     .line 390
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -2230,20 +2213,20 @@
     .line 391
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTransformHintToHeader(Z)V
 
-    const-string p2, "windowBackgroundWhiteInputField"
+    const-string/jumbo p2, "windowBackgroundWhiteInputField"
 
     .line 392
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
 
-    const-string v1, "windowBackgroundWhiteInputFieldActivated"
+    const-string/jumbo v1, "windowBackgroundWhiteInputFieldActivated"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
-    const-string v5, "windowBackgroundWhiteRedText3"
+    const-string/jumbo v5, "windowBackgroundWhiteRedText3"
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -2348,8 +2331,6 @@
     invoke-virtual {v1, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 413
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -2370,7 +2351,7 @@
     return-void
 .end method
 
-.method private static final showURLButtonDialog$lambda-27$lambda-25(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
+.method private static final showURLButtonDialog$lambda$27$lambda$25(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;ILorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;I)V
     .locals 0
 
     const-string p3, "this$0"
@@ -2399,7 +2380,7 @@
     return-void
 .end method
 
-.method private static final showURLButtonDialog$lambda-27$lambda-26(Landroid/content/DialogInterface;I)V
+.method private static final showURLButtonDialog$lambda$27$lambda$26(Landroid/content/DialogInterface;I)V
     .locals 0
 
     .line 411
@@ -2408,7 +2389,7 @@
     return-void
 .end method
 
-.method private static final showURLButtonDialog$lambda-29$lambda-28(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+.method private static final showURLButtonDialog$lambda$29$lambda$28(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 0
 
     const-string p1, "$editText"
@@ -2546,7 +2527,7 @@
     .line 306
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "windowBackgroundWhiteGrayText4"
+    const-string/jumbo v1, "windowBackgroundWhiteGrayText4"
 
     .line 307
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -2578,50 +2559,44 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmojiView;->invalidateViews()V
 
-    goto :goto_2
+    goto :goto_0
 
     .line 145
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->fileUploadProgressChanged:I
 
-    const-string v0, "null cannot be cast to non-null type kotlin.String"
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const-string v1, "null cannot be cast to non-null type kotlin.String"
 
     const/4 v2, 0x0
 
-    if-ne p1, p2, :cond_3
+    if-ne p1, p2, :cond_2
 
     .line 146
-    aget-object p1, p3, v1
+    aget-object p1, p3, v2
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/lang/String;
 
     .line 147
     iget-object p2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    if-nez p2, :cond_1
+    if-eqz p2, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     iget-object p2, p2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    if-nez p2, :cond_2
+    if-eqz p2, :cond_1
 
-    goto :goto_0
+    iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    :cond_2
-    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
-
-    :goto_0
-    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_1
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_4
 
     const/4 p1, 0x1
 
@@ -2630,7 +2605,7 @@
 
     const-string p2, "null cannot be cast to non-null type kotlin.Long"
 
-    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/lang/Long;
 
@@ -2643,7 +2618,7 @@
     .line 149
     aget-object p1, p3, p1
 
-    invoke-static {p1, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/lang/Long;
 
@@ -2654,44 +2629,38 @@
     .line 151
     invoke-direct {p0, v0, v1, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->updateProgressValue(JJ)V
 
-    goto :goto_2
+    goto :goto_0
 
     .line 154
-    :cond_3
+    :cond_2
     sget p2, Lorg/telegram/messenger/NotificationCenter;->fileUploaded:I
 
-    if-ne p1, p2, :cond_6
+    if-ne p1, p2, :cond_4
 
     .line 155
-    aget-object p1, p3, v1
+    aget-object p1, p3, v2
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/lang/String;
 
     .line 156
     iget-object p2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    if-nez p2, :cond_4
+    if-eqz p2, :cond_3
 
-    goto :goto_1
-
-    :cond_4
     iget-object p2, p2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    if-nez p2, :cond_5
+    if-eqz p2, :cond_3
 
-    goto :goto_1
+    iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    :cond_5
-    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
-
-    :goto_1
-    invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_3
+    invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_4
 
     .line 157
     invoke-direct {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->getUploadView()Landroid/widget/FrameLayout;
@@ -2700,8 +2669,8 @@
 
     invoke-static {p1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
 
-    :cond_6
-    :goto_2
+    :cond_4
+    :goto_0
     return-void
 .end method
 
@@ -2875,7 +2844,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundWhiteHintText"
+    const-string/jumbo v14, "windowBackgroundWhiteHintText"
 
     move-object v6, v3
 
@@ -2900,7 +2869,7 @@
 
     aput-object v6, v10, v2
 
-    const-string v6, "valueTextView"
+    const-string/jumbo v6, "valueTextView"
 
     filled-new-array {v6}, [Ljava/lang/String;
 
@@ -2908,7 +2877,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v15, "windowBackgroundWhiteGrayText2"
 
     move-object v7, v3
 
@@ -2941,7 +2910,7 @@
 
     const/4 v15, 0x0
 
-    const-string v16, "windowBackgroundWhiteGrayIcon"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayIcon"
 
     move-object v8, v3
 
@@ -2972,7 +2941,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteGrayIcon"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayIcon"
 
     move-object v8, v3
 
@@ -3001,7 +2970,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -3028,7 +2997,7 @@
 
     const/4 v12, 0x0
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -3053,7 +3022,7 @@
 
     aput-object v7, v11, v2
 
-    const-string v15, "windowBackgroundGrayShadow"
+    const-string/jumbo v15, "windowBackgroundGrayShadow"
 
     move-object v8, v3
 
@@ -3082,7 +3051,7 @@
 
     aput-object v7, v11, v2
 
-    const-string v15, "windowBackgroundGray"
+    const-string/jumbo v15, "windowBackgroundGray"
 
     move-object v8, v3
 
@@ -3113,7 +3082,7 @@
 
     const/4 v15, 0x0
 
-    const-string v16, "windowBackgroundWhiteGrayText4"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayText4"
 
     move-object v8, v3
 
@@ -3140,7 +3109,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v16, "windowBackgroundWhiteBlueHeader"
 
     move-object v8, v3
 
@@ -3171,7 +3140,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteRedText5"
+    const-string/jumbo v16, "windowBackgroundWhiteRedText5"
 
     move-object v8, v3
 
@@ -3202,7 +3171,7 @@
 
     const/16 v16, 0x0
 
-    const-string v17, "windowBackgroundWhiteGrayText3"
+    const-string/jumbo v17, "windowBackgroundWhiteGrayText3"
 
     move-object v9, v3
 
@@ -3231,7 +3200,7 @@
 
     const/4 v13, 0x0
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -3287,7 +3256,7 @@
 
     const/4 v15, 0x0
 
-    const-string v16, "windowBackgroundWhiteBlueText4"
+    const-string/jumbo v16, "windowBackgroundWhiteBlueText4"
 
     move-object v8, v3
 
@@ -3376,7 +3345,7 @@
 
     const/4 v13, 0x0
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -3401,7 +3370,7 @@
 
     aput-object v7, v11, v2
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -3430,7 +3399,7 @@
 
     aput-object v7, v11, v2
 
-    const-string v15, "windowBackgroundGray"
+    const-string/jumbo v15, "windowBackgroundGray"
 
     move-object v8, v3
 
@@ -3461,7 +3430,7 @@
 
     const/4 v15, 0x0
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -3492,7 +3461,7 @@
 
     const/4 v12, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v15, "windowBackgroundWhiteBlueHeader"
 
     move-object v7, v3
 
@@ -3526,7 +3495,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundGray"
+    const-string/jumbo v13, "windowBackgroundGray"
 
     move-object v6, v3
 
@@ -3554,14 +3523,11 @@
     .line 202
     iget-object v0, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->delegate:Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ReactionDelegate;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ReactionDelegate;->clearChat()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -3736,15 +3702,12 @@
     .line 118
     iget-object v0, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->emojiViewAnimator:Landroid/animation/AnimatorSet;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 119
-    :goto_0
+    :cond_0
     invoke-super {p0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     return-void
@@ -3865,8 +3828,6 @@
 
     aget-object v7, v4, v6
 
-    add-int/lit8 v6, v6, 0x1
-
     .line 176
     new-instance v8, Lorg/telegram/ui/Cells/RadioColorCell;
 
@@ -3950,12 +3911,12 @@
     .line 189
     invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
+    add-int/lit8 v6, v6, 0x1
+
     goto :goto_0
 
     .line 191
     :cond_1
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1

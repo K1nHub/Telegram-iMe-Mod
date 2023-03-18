@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$$ExternalSyntheticLambda5;->f$0:Lorg/fork/ui/fragment/CreateReactionButtonsActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$MyGmCK7HrYZxNijeU_oRjFFB8Bk(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$vZnhyfbOM-JKEkS_XA0yZlIKbKE(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;I)V
 
     return-void
 .end method

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer;I)V
     .locals 0
 
-    .line 549
+    .line 594
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     iput p2, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->val$toY:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 552
+    .line 597
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 553
+    .line 598
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setScrollY(I)V
 
-    .line 555
+    .line 600
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
@@ -77,7 +77,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 556
+    .line 601
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     const/4 v0, 0x0

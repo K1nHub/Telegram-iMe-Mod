@@ -96,7 +96,7 @@ public final class DialogTranslationSettings {
     }
 
     public String toString() {
-        return "DialogTranslationSettings(isInTextTranslateEnabled=" + this.isInTextTranslateEnabled + ", inTextTranslateLangCode=" + ((Object) this.inTextTranslateLangCode) + ", isOutTextTranslateEnabled=" + this.isOutTextTranslateEnabled + ", outTextTranslateLangCode=" + this.outTextTranslateLangCode + ", dialogId=" + this.dialogId + ", isEnabled=" + this.isEnabled + ", incomingTargetLanguageCode=" + ((Object) this.incomingTargetLanguageCode) + ", outgoingTargetLanguageCode=" + ((Object) this.outgoingTargetLanguageCode) + ')';
+        return "DialogTranslationSettings(isInTextTranslateEnabled=" + this.isInTextTranslateEnabled + ", inTextTranslateLangCode=" + this.inTextTranslateLangCode + ", isOutTextTranslateEnabled=" + this.isOutTextTranslateEnabled + ", outTextTranslateLangCode=" + this.outTextTranslateLangCode + ", dialogId=" + this.dialogId + ", isEnabled=" + this.isEnabled + ", incomingTargetLanguageCode=" + this.incomingTargetLanguageCode + ", outgoingTargetLanguageCode=" + this.outgoingTargetLanguageCode + ')';
     }
 
     public DialogTranslationSettings(boolean z, String str, boolean z2, String outTextTranslateLangCode, long j, boolean z3, String str2, String str3) {

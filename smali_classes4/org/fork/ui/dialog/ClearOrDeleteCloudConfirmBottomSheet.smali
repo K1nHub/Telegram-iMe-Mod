@@ -24,18 +24,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$BMHBcI1jB2IjZvJYRtPOE4o_R9A(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$8QEfQjg2lsJ0ab3byWI41EDQ_nY(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->initDoneButton$lambda-4$lambda-3(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;Landroid/view/View;)V
+    invoke-static {p0}, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->initInputEditText$lambda$2$lambda$1(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ZKTipFkmD8fvN-FhKqLq4O_-Vig(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
+.method public static synthetic $r8$lambda$kkbBIN5aN0ppU_J0erTow1WSCgs(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->initInputEditText$lambda-2$lambda-1(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->initDoneButton$lambda$4$lambda$3(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
@@ -417,7 +417,7 @@
     return-object v0
 .end method
 
-.method private static final initDoneButton$lambda-4$lambda-3(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;Landroid/view/View;)V
+.method private static final initDoneButton$lambda$4$lambda$3(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -500,7 +500,7 @@
     .line 86
     invoke-virtual {v0, v2, v3}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    const-string v2, "windowBackgroundWhiteHintText"
+    const-string/jumbo v2, "windowBackgroundWhiteHintText"
 
     .line 87
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -509,7 +509,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v2, "windowBackgroundWhiteBlackText"
 
     .line 88
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -549,7 +549,7 @@
     return-object v0
 .end method
 
-.method private static final initInputEditText$lambda-2$lambda-1(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
+.method private static final initInputEditText$lambda$2$lambda$1(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
     .locals 1
 
     const-string v0, "this$0"

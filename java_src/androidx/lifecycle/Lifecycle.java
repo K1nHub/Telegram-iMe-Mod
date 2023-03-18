@@ -24,7 +24,7 @@ public abstract class Lifecycle {
         ON_ANY;
 
         public static Event downFrom(State state) {
-            int i = C02321.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
+            int i = C02261.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
             if (i != 1) {
                 if (i != 2) {
                     if (i != 3) {
@@ -38,7 +38,7 @@ public abstract class Lifecycle {
         }
 
         public static Event downTo(State state) {
-            int i = C02321.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
+            int i = C02261.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
             if (i != 1) {
                 if (i != 2) {
                     if (i != 4) {
@@ -52,7 +52,7 @@ public abstract class Lifecycle {
         }
 
         public static Event upFrom(State state) {
-            int i = C02321.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
+            int i = C02261.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
             if (i != 1) {
                 if (i != 2) {
                     if (i != 5) {
@@ -66,7 +66,7 @@ public abstract class Lifecycle {
         }
 
         public static Event upTo(State state) {
-            int i = C02321.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
+            int i = C02261.$SwitchMap$androidx$lifecycle$Lifecycle$State[state.ordinal()];
             if (i != 1) {
                 if (i != 2) {
                     if (i != 3) {
@@ -80,7 +80,7 @@ public abstract class Lifecycle {
         }
 
         public State getTargetState() {
-            switch (C02321.$SwitchMap$androidx$lifecycle$Lifecycle$Event[ordinal()]) {
+            switch (C02261.$SwitchMap$androidx$lifecycle$Lifecycle$Event[ordinal()]) {
                 case 1:
                 case 2:
                     return State.CREATED;
@@ -99,7 +99,7 @@ public abstract class Lifecycle {
 
     /* renamed from: androidx.lifecycle.Lifecycle$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C02321 {
+    static /* synthetic */ class C02261 {
         static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event;
         static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$State;
 

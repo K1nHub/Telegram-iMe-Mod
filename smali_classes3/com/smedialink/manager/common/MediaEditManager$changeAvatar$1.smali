@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 266
+    .line 265
     invoke-virtual {p0}, Lcom/smedialink/manager/common/MediaEditManager$changeAvatar$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 3
 
-    .line 267
+    .line 266
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$changeAvatar$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     invoke-static {v0}, Lcom/smedialink/manager/common/MediaEditManager;->access$getParentFragment$p(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/ui/ActionBar/BaseFragment;

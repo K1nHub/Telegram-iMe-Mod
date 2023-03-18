@@ -125,7 +125,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -160,21 +160,13 @@
     :cond_2
     iget-wide v3, p0, Lcom/smedialink/storage/data/network/model/response/google/ImageToObjectsResponse$RecognizedImageObject;->score:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/storage/data/network/model/response/google/ImageToObjectsResponse$RecognizedImageObject;->score:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/storage/data/network/model/response/google/ImageToObjectsResponse$RecognizedImageObject;->score:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_3
 
     return v2
 

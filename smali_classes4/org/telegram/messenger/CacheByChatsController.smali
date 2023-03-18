@@ -120,46 +120,50 @@
     .locals 2
 
     .line 64
-    sget v0, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_FOREVER:I
-
-    if-ne p0, v0, :cond_0
-
-    const-wide v0, 0x7fffffffffffffffL
-
-    goto :goto_0
-
-    .line 66
-    :cond_0
     sget v0, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_WEEK:I
 
-    if-ne p0, v0, :cond_1
+    if-ne p0, v0, :cond_0
 
     const-wide/32 v0, 0x93a80
 
     goto :goto_0
 
-    .line 68
-    :cond_1
+    .line 66
+    :cond_0
     sget v0, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_MONTH:I
 
-    if-ne p0, v0, :cond_2
+    if-ne p0, v0, :cond_1
 
     const-wide/32 v0, 0x278d00
 
     goto :goto_0
 
-    .line 70
-    :cond_2
+    .line 68
+    :cond_1
     sget v0, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_DAY:I
 
-    if-ne p0, v0, :cond_3
+    if-ne p0, v0, :cond_2
 
     const-wide/32 v0, 0x15180
 
     goto :goto_0
 
-    :cond_3
+    .line 70
+    :cond_2
+    sget v0, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_MINUTE:I
+
+    if-ne p0, v0, :cond_3
+
+    sget-boolean p0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
+
+    if-eqz p0, :cond_3
+
     const-wide/16 v0, 0x3c
+
+    goto :goto_0
+
+    :cond_3
+    const-wide v0, 0x7fffffffffffffffL
 
     :goto_0
     return-wide v0
@@ -191,7 +195,7 @@
     if-ne p0, v0, :cond_2
 
     .line 44
-    sget p0, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_MONTH:I
+    sget p0, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_WEEK:I
 
     return p0
 

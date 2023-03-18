@@ -1,6 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_small_upper"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycle_filters" android:paddingLeft="@dimen/padding_normal" android:paddingRight="@dimen/padding_normal" android:clipToPadding="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:overScrollMode="never" />
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/image_staking_filters_info" android:layout_width="@dimen/icon_size_small_upper" android:layout_height="@dimen/icon_size_small_upper" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" app:srcCompat="@drawable/msg_info" />
-</LinearLayout>
+<androidx.recyclerview.widget.RecyclerView android:id="@id/recycle_filters" android:paddingLeft="@dimen/padding_normal" android:paddingRight="@dimen/padding_normal" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_small_upper" android:overScrollMode="never"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

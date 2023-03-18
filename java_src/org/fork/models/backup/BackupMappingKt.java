@@ -25,7 +25,7 @@ public final class BackupMappingKt {
         Intrinsics.checkNotNullParameter(topicBackup, "<this>");
         String name = topicBackup.getName();
         Topic icon = topicBackup.getIcon();
-        String name2 = icon == null ? null : icon.name();
+        String name2 = icon != null ? icon.name() : null;
         int order = topicBackup.getOrder();
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) topicBackup.getPresets());
         mutableList2 = CollectionsKt___CollectionsKt.toMutableList((Collection) topicBackup.getDatabaseDialogs());
@@ -40,10 +40,10 @@ public final class BackupMappingKt {
     public static final SortingTabState mapToDomain(SortingTabStateBackup sortingTabStateBackup) {
         Intrinsics.checkNotNullParameter(sortingTabStateBackup, "<this>");
         SortingFilter mapNameToEnum = SortingFilter.Companion.mapNameToEnum(sortingTabStateBackup.getType());
-        if (mapNameToEnum == null) {
-            return null;
+        if (mapNameToEnum != null) {
+            return new SortingTabState(mapNameToEnum, sortingTabStateBackup.getFabs(), sortingTabStateBackup.getPosition(), sortingTabStateBackup.isEnabled());
         }
-        return new SortingTabState(mapNameToEnum, sortingTabStateBackup.getFabs(), sortingTabStateBackup.getPosition(), sortingTabStateBackup.isEnabled());
+        return null;
     }
 
     public static final MultiPanelButtonStateBackup mapToBackup(MultiPanelButtonState multiPanelButtonState) {

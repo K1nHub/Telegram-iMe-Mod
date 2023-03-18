@@ -2,13 +2,13 @@ package org.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: TemplatesSortingType.kt */
 /* loaded from: classes4.dex */
 public enum TemplatesSortingType {
-    DATE(C3158R.string.dialogs_albums_sort_date, C3158R.C3160drawable.msg_contacts_time),
-    NAME(C3158R.string.dialogs_albums_sort_alphabetically, C3158R.C3160drawable.msg_contacts_name),
-    USAGE(C3158R.string.sort_by_usage, C3158R.C3160drawable.fork_templates_sort_usage_rating);
+    DATE(C3286R.string.dialogs_albums_sort_date, C3286R.C3288drawable.msg_contacts_time),
+    NAME(C3286R.string.dialogs_albums_sort_alphabetically, C3286R.C3288drawable.msg_contacts_name),
+    USAGE(C3286R.string.sort_by_usage, C3286R.C3288drawable.fork_templates_sort_usage_rating);
     
     public static final Companion Companion = new Companion(null);
     private final int iconResId;

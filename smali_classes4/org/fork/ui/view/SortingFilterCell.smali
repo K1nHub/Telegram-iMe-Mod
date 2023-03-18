@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSortingFilterCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterCell.kt\norg/fork/ui/view/SortingFilterCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,144:1\n254#2,2:145\n254#2,2:147\n252#2:149\n*S KotlinDebug\n*F\n+ 1 SortingFilterCell.kt\norg/fork/ui/view/SortingFilterCell\n*L\n66#1:145,2\n67#1:147,2\n71#1:149\n*E\n"
+    value = "SMAP\nSortingFilterCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SortingFilterCell.kt\norg/fork/ui/view/SortingFilterCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,144:1\n262#2,2:145\n262#2,2:147\n260#2:149\n*S KotlinDebug\n*F\n+ 1 SortingFilterCell.kt\norg/fork/ui/view/SortingFilterCell\n*L\n66#1:145,2\n67#1:147,2\n71#1:149\n*E\n"
 .end annotation
 
 
@@ -36,18 +36,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$jrQVoA9yu9fAFJF8k8hpyjR8sxE()V
+.method public static synthetic $r8$lambda$Bpx_kNXTiIq3EVupHJLjAN4GVvA()V
     .locals 0
 
-    invoke-static {}, Lorg/fork/ui/view/SortingFilterCell;->onFabsClick$lambda-0()V
+    invoke-static {}, Lorg/fork/ui/view/SortingFilterCell;->onFabsClick$lambda$0()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yB3LW-Dz6oH_fue0QVR8-pDut3A(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$quloWtrVxNQ-JVkiZsjOcoMyp7I(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/view/SortingFilterCell;->initFabsLayout$lambda-5$lambda-4(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/view/SortingFilterCell;->initFabsLayout$lambda$5$lambda$4(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
 
     return-void
 .end method
@@ -529,7 +529,7 @@
     return-object v0
 .end method
 
-.method private static final initFabsLayout$lambda-5$lambda-4(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
+.method private static final initFabsLayout$lambda$5$lambda$4(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -537,9 +537,7 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 129
-    invoke-virtual {p0}, Lorg/fork/ui/view/SortingFilterCell;->getOnFabsClick()Ljava/lang/Runnable;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/view/SortingFilterCell;->onFabsClick:Ljava/lang/Runnable;
 
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
@@ -635,7 +633,7 @@
     return-object v0
 .end method
 
-.method private static final onFabsClick$lambda-0()V
+.method private static final onFabsClick$lambda$0()V
     .locals 0
 
     return-void
@@ -651,7 +649,7 @@
 
     move-result-object v0
 
-    .line 252
+    .line 260
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -831,7 +829,7 @@
     :cond_0
     const/16 v3, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
@@ -847,7 +845,7 @@
     :cond_1
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -956,7 +954,7 @@
 .method public final updateColors()V
     .locals 4
 
-    const-string v0, "windowBackgroundWhite"
+    const-string/jumbo v0, "windowBackgroundWhite"
 
     .line 74
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1030,7 +1028,7 @@
 
     move-result-object v0
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 

@@ -39,7 +39,7 @@
 
     iget-object v3, p0, Lorg/fork/controller/AlbumsController$$ExternalSyntheticLambda0;->f$2:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/fork/controller/AlbumsController;->$r8$lambda$0zHSiK4Xtk4zmRTGWkFZ7bTtC6Q(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/fork/controller/AlbumsController;->$r8$lambda$UWOja63e2mDR3JpQ6cs8PBI_Mx0(Lorg/fork/controller/AlbumsController;JLjava/lang/Runnable;)V
 
     return-void
 .end method

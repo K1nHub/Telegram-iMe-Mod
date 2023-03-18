@@ -6,16 +6,16 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$Companion;,
+        Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$CustomContainerView;,
         Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$ErasingPeriod;,
         Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$ServiceMessagesTypesAdapter;,
-        Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$CustomContainerView;,
-        Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$Companion;,
         Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$WhenMappings;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDeleteServiceMessagesBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeleteServiceMessagesBottomSheet.kt\norg/fork/ui/dialog/DeleteServiceMessagesBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,600:1\n66#2,4:601\n38#2:605\n54#2:606\n73#2:607\n11328#3:608\n11663#3,3:609\n37#4:612\n36#4,3:613\n*S KotlinDebug\n*F\n+ 1 DeleteServiceMessagesBottomSheet.kt\norg/fork/ui/dialog/DeleteServiceMessagesBottomSheet\n*L\n192#1:601,4\n192#1:605\n192#1:606\n192#1:607\n259#1:608\n259#1:609,3\n260#1:612\n260#1:613,3\n*E\n"
+    value = "SMAP\nDeleteServiceMessagesBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DeleteServiceMessagesBottomSheet.kt\norg/fork/ui/dialog/DeleteServiceMessagesBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,600:1\n68#2,4:601\n40#2:605\n56#2:606\n75#2:607\n11335#3:608\n11670#3,3:609\n37#4,2:612\n*S KotlinDebug\n*F\n+ 1 DeleteServiceMessagesBottomSheet.kt\norg/fork/ui/dialog/DeleteServiceMessagesBottomSheet\n*L\n192#1:601,4\n192#1:605\n192#1:606\n192#1:607\n259#1:608\n259#1:609,3\n260#1:612,2\n*E\n"
 .end annotation
 
 
@@ -64,26 +64,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$VMlDcZqkvB_haRcOy-l17UHx0U0(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$I0SrWZw73oCS1tSF0Q_B2-D_TOc(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->showPeriodSelectionDialog$lambda-10(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->getBottomDialogButtons$lambda$12$lambda$11(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_yv-aMztMiUDWYjIJUZCJz7YdlY(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$ZS0oUVK3dGhSqfzL2-oWYFgP0so(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->getBottomDialogButtons$lambda-12$lambda-11(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->showPeriodSelectionDialog$lambda$10(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$oBDrxrGPxUJeliFHXftGvoKt8IM(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$keHuTT43hVBxgrNnx6rkHl3F9dc(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->initListView$lambda-5$lambda-4(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->initListView$lambda$5$lambda$4(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -385,9 +385,6 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 94
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 88
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
@@ -658,12 +655,12 @@
 
     const/4 v4, 0x2
 
-    new-array v4, v4, [Landroid/widget/TextView;
+    new-array v5, v4, [Landroid/widget/TextView;
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     :goto_0
-    add-int/lit8 v6, v5, 0x1
+    if-ge v6, v4, :cond_1
 
     .line 282
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -678,7 +675,7 @@
     invoke-static {v8, v1}, Lcom/tbuonomo/viewpagerdotsindicator/ViewExtKt;->setPaddingHorizontal(Landroid/view/View;I)V
 
     .line 294
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
@@ -709,7 +706,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     .line 301
     sget v9, Lorg/telegram/messenger/R$string;->Cancel:I
@@ -733,7 +730,7 @@
     move-result-object v9
 
     :goto_1
-    const-string v10, "when (i) {\n             \u2026Delete)\n                }"
+    const-string/jumbo v10, "when (i) {\n             \u2026Delete)\n                }"
 
     .line 300
     invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -772,29 +769,27 @@
     invoke-virtual {v8, v2}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$getBottomDialogButtons$1;->setTextColor(I)V
 
     .line 307
-    new-instance v9, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda1;
+    new-instance v7, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda1;
 
-    invoke-direct {v9, p1, p0}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda1;-><init>(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
+    invoke-direct {v7, p1, p0}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$$ExternalSyntheticLambda1;-><init>(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)V
 
-    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v8, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 317
-    sget-object v9, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sget-object v7, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 292
-    aput-object v8, v4, v5
+    aput-object v8, v5, v6
 
-    if-le v6, v7, :cond_1
-
-    return-object v4
-
-    :cond_1
-    move v5, v6
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
+
+    :cond_1
+    return-object v5
 .end method
 
-.method private static final getBottomDialogButtons$lambda-12$lambda-11(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;)V
+.method private static final getBottomDialogButtons$lambda$12$lambda$11(Ljava/lang/Runnable;Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;)V
     .locals 1
 
     const-string v0, "$onFiltersSelectionConfirmedAction"
@@ -841,7 +836,7 @@
 
     const-string v0, "null cannot be cast to non-null type kotlin.Int"
 
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Ljava/lang/Integer;
 
@@ -1368,31 +1363,37 @@
     move-result-object v0
 
     .line 383
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v3, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string v4, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "getDefault()"
+    const-string v5, "getDefault()"
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v1, v4}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v3, "this as java.lang.String).toUpperCase(locale)"
+    const-string v4, "this as java.lang.String).toUpperCase(locale)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1404,11 +1405,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
     return-object p1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1575,8 +1580,6 @@
 
     aget-object v4, v1, v3
 
-    add-int/lit8 v3, v3, 0x1
-
     .line 188
     invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
@@ -1586,7 +1589,7 @@
 
     const-string v6, "null cannot be cast to non-null type kotlin.Int"
 
-    invoke-static {v5, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v5, Ljava/lang/Integer;
 
@@ -1617,9 +1620,11 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    add-int/lit8 v3, v3, 0x1
+
     goto :goto_0
 
-    .line 66
+    .line 68
     :cond_1
     invoke-static {v0}, Landroidx/core/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
 
@@ -1650,11 +1655,11 @@
 
     goto :goto_2
 
-    .line 38
+    .line 40
     :cond_2
-    new-instance v1, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$initButtonsLayout$lambda-7$$inlined$doOnLayout$1;
+    new-instance v1, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$initButtonsLayout$lambda$7$$inlined$doOnLayout$1;
 
-    invoke-direct {v1, p0, v0}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$initButtonsLayout$lambda-7$$inlined$doOnLayout$1;-><init>(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/widget/FrameLayout;)V
+    invoke-direct {v1, p0, v0}, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet$initButtonsLayout$lambda$7$$inlined$doOnLayout$1;-><init>(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/widget/FrameLayout;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
@@ -1749,14 +1754,14 @@
     return-object v1
 .end method
 
-.method private static final initListView$lambda-5$lambda-4(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;I)V
+.method private static final initListView$lambda$5$lambda$4(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/view/View;I)V
     .locals 6
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1903,13 +1908,10 @@
 
     array-length v2, p1
 
-    :cond_4
     :goto_0
     if-ge v0, v2, :cond_6
 
     aget-object v3, p1, v0
-
-    add-int/lit8 v0, v0, 0x1
 
     .line 166
     iget-boolean v4, p0, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->isChannel:Z
@@ -1940,6 +1942,9 @@
     move-result-object v3
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_4
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
@@ -2304,15 +2309,12 @@
 
     aget-object v1, v1, v0
 
-    if-nez v1, :cond_4
+    if-eqz v1, :cond_4
 
-    goto :goto_1
-
-    :cond_4
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 232
-    :goto_1
+    :cond_4
     iget-object v1, p0, Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     new-instance v3, Landroid/animation/AnimatorSet;
@@ -2341,12 +2343,12 @@
 
     const/high16 v7, 0x3f800000    # 1.0f
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     const/4 v7, 0x0
 
-    :goto_2
+    :goto_1
     aput v7, v2, v0
 
     invoke-static {v5, v6, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2444,14 +2446,14 @@
 
     move-result-object v1
 
-    .line 11328
+    .line 11335
     new-instance v2, Ljava/util/ArrayList;
 
     array-length v3, v1
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v3, v1
 
     const/4 v4, 0x0
@@ -2472,6 +2474,7 @@
 
     move-result-object v6
 
+    .line 11671
     invoke-interface {v2, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v5, v5, 0x1
@@ -2485,10 +2488,6 @@
     invoke-interface {v2, v1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
-
-    const-string v2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     check-cast v1, [Ljava/lang/CharSequence;
 
@@ -2522,7 +2521,7 @@
     return-void
 .end method
 
-.method private static final showPeriodSelectionDialog$lambda-10(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
+.method private static final showPeriodSelectionDialog$lambda$10(Lorg/fork/ui/dialog/DeleteServiceMessagesBottomSheet;Landroid/content/DialogInterface;I)V
     .locals 2
 
     const-string p1, "this$0"

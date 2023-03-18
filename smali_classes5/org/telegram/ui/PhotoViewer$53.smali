@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 8693
+    .line 8704
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public onOrientationChanged(I)V
     .locals 7
 
-    .line 8696
+    .line 8707
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23300(Lorg/telegram/ui/PhotoViewer;)Landroid/view/OrientationEventListener;
@@ -66,7 +66,7 @@
 
     goto/16 :goto_0
 
-    .line 8699
+    .line 8710
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 8700
+    .line 8711
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$23400(Lorg/telegram/ui/PhotoViewer;)I
@@ -109,14 +109,14 @@
 
     if-gt p1, v2, :cond_1
 
-    .line 8702
+    .line 8713
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v5}, Lorg/telegram/ui/PhotoViewer;->access$23502(Lorg/telegram/ui/PhotoViewer;Z)Z
 
     goto :goto_0
 
-    .line 8703
+    .line 8714
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -132,7 +132,7 @@
 
     if-gt p1, v1, :cond_6
 
-    .line 8704
+    .line 8715
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -148,12 +148,12 @@
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 8705
+    .line 8716
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$23402(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 8706
+    .line 8717
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$23502(Lorg/telegram/ui/PhotoViewer;Z)Z
@@ -167,7 +167,7 @@
 
     if-gt p1, v1, :cond_5
 
-    .line 8710
+    .line 8721
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -175,7 +175,7 @@
 
     goto :goto_0
 
-    .line 8711
+    .line 8722
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -189,7 +189,7 @@
 
     if-gt p1, v2, :cond_6
 
-    .line 8712
+    .line 8723
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$5100(Lorg/telegram/ui/PhotoViewer;)Landroid/app/Activity;
@@ -204,12 +204,12 @@
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 8713
+    .line 8724
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$23402(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 8714
+    .line 8725
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$53;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v6}, Lorg/telegram/ui/PhotoViewer;->access$23502(Lorg/telegram/ui/PhotoViewer;Z)Z

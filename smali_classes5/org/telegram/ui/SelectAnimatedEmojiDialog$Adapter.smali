@@ -945,8 +945,10 @@
 
     move-result-object v17
 
+    const/16 v5, 0x2008
+
     .line 2115
-    invoke-static {v4}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    invoke-static {v5}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v5
 

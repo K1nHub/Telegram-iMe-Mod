@@ -50,7 +50,7 @@ public final class StakingOperationsPagedResponse {
     }
 
     public String toString() {
-        return "StakingOperationsPagedResponse(operations=" + this.operations + ", nextCursor=" + ((Object) this.nextCursor) + ')';
+        return "StakingOperationsPagedResponse(operations=" + this.operations + ", nextCursor=" + this.nextCursor + ')';
     }
 
     public StakingOperationsPagedResponse(List<StakingOperationResponse> operations, String str) {

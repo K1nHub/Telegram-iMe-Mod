@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/TemplatesController$$ExternalSyntheticLambda13;->f$1:Ljava/util/List;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/TemplatesController;->$r8$lambda$xSp_i8hq6Qe0FM4UCPpRkSk1dns(Lorg/fork/controller/TemplatesController;Ljava/util/List;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/TemplatesController;->$r8$lambda$sFsGphwxIt9fVYCUslxwXUnyXLU(Lorg/fork/controller/TemplatesController;Ljava/util/List;)V
 
     return-void
 .end method

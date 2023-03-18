@@ -19,7 +19,7 @@ public final class PlayerMessage {
     private final Target target;
     private final Timeline timeline;
     private int type;
-    private long positionMs = C0474C.TIME_UNSET;
+    private long positionMs = C0468C.TIME_UNSET;
     private boolean deleteAfterDelivery = true;
 
     /* loaded from: classes.dex */
@@ -96,7 +96,7 @@ public final class PlayerMessage {
 
     public PlayerMessage setPosition(int i, long j) {
         Assertions.checkState(!this.isSent);
-        Assertions.checkArgument(j != C0474C.TIME_UNSET);
+        Assertions.checkArgument(j != C0468C.TIME_UNSET);
         if (i < 0 || (!this.timeline.isEmpty() && i >= this.timeline.getWindowCount())) {
             throw new IllegalSeekPositionException(this.timeline, i, j);
         }
@@ -121,7 +121,7 @@ public final class PlayerMessage {
 
     public PlayerMessage send() {
         Assertions.checkState(!this.isSent);
-        if (this.positionMs == C0474C.TIME_UNSET) {
+        if (this.positionMs == C0468C.TIME_UNSET) {
             Assertions.checkArgument(this.deleteAfterDelivery);
         }
         this.isSent = true;

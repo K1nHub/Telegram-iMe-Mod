@@ -25,10 +25,10 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -67,7 +67,6 @@ public final class GridBotsPageView extends FrameLayout {
         this.recycler = new RecyclerListView(context);
         BotsCategoriesAdapter botsCategoriesAdapter = new BotsCategoriesAdapter(i);
         botsCategoriesAdapter.setHasStableIds(true);
-        Unit unit = Unit.INSTANCE;
         this.recyclerAdapter = botsCategoriesAdapter;
         this.recycler.setClipToPadding(false);
         this.recycler.setPadding(0, AndroidUtilities.m51dp(14.0f), 0, 0);
@@ -116,31 +115,41 @@ public final class GridBotsPageView extends FrameLayout {
         AiBotsManager aiBotsManager2 = ApplicationLoader.smartBotsManager;
         String langCode2 = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode2, "getInstance().currentLocaleInfo.langCode");
-        Disposable subscribe = Observable.zip(distinctUntilChanged, aiBotsManager2.getCategories(langCode2), new BiFunction() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda0
+        Observable observeOn = Observable.zip(distinctUntilChanged, aiBotsManager2.getCategories(langCode2), new BiFunction() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.BiFunction
             public final Object apply(Object obj, Object obj2) {
-                List m1509subscribeToContent$lambda1;
-                m1509subscribeToContent$lambda1 = GridBotsPageView.m1509subscribeToContent$lambda1(GridBotsPageView.this, (List) obj, (List) obj2);
-                return m1509subscribeToContent$lambda1;
+                List subscribeToContent$lambda$1;
+                subscribeToContent$lambda$1 = GridBotsPageView.subscribeToContent$lambda$1(GridBotsPageView.this, (List) obj, (List) obj2);
+                return subscribeToContent$lambda$1;
             }
-        }).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread()).doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda1
+        }).subscribeOn(Schedulers.m694io()).observeOn(AndroidSchedulers.mainThread());
+        final GridBotsPageView$subscribeToContent$2 gridBotsPageView$subscribeToContent$2 = new GridBotsPageView$subscribeToContent$2(this);
+        Observable doOnSubscribe = observeOn.doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                GridBotsPageView.m1510subscribeToContent$lambda2(GridBotsPageView.this, (Disposable) obj);
+                GridBotsPageView.subscribeToContent$lambda$2(Function1.this, obj);
             }
-        }).subscribe(new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda2
+        });
+        final GridBotsPageView$subscribeToContent$3 gridBotsPageView$subscribeToContent$3 = new GridBotsPageView$subscribeToContent$3(this);
+        Consumer consumer = new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                GridBotsPageView.m1511subscribeToContent$lambda3(GridBotsPageView.this, (List) obj);
+                GridBotsPageView.subscribeToContent$lambda$3(Function1.this, obj);
             }
-        }, GridBotsPageView$$ExternalSyntheticLambda3.INSTANCE);
+        };
+        final GridBotsPageView$subscribeToContent$4 gridBotsPageView$subscribeToContent$4 = GridBotsPageView$subscribeToContent$4.INSTANCE;
+        Disposable subscribe = doOnSubscribe.subscribe(consumer, new Consumer() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda2
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                GridBotsPageView.subscribeToContent$lambda$4(Function1.this, obj);
+            }
+        });
         this.disposable.add(subscribe);
         this.subscribeDisposable = subscribe;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToContent$lambda-1  reason: not valid java name */
-    public static final List m1509subscribeToContent$lambda1(GridBotsPageView this$0, List bots, List categories) {
+    public static final List subscribeToContent$lambda$1(GridBotsPageView this$0, List bots, List categories) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(bots, "bots");
         Intrinsics.checkNotNullParameter(categories, "categories");
@@ -148,33 +157,21 @@ public final class GridBotsPageView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToContent$lambda-2  reason: not valid java name */
-    public static final void m1510subscribeToContent$lambda2(GridBotsPageView this$0, Disposable disposable) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.recycler.setVisibility(8);
-        this$0.progress.setVisibility(0);
+    public static final void subscribeToContent$lambda$2(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToContent$lambda-3  reason: not valid java name */
-    public static final void m1511subscribeToContent$lambda3(GridBotsPageView this$0, List content) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (this$0.progress.getVisibility() != 8) {
-            this$0.progress.setVisibility(8);
-        }
-        if (this$0.recycler.getVisibility() != 0) {
-            this$0.recycler.setVisibility(0);
-        }
-        BotsCategoriesAdapter botsCategoriesAdapter = this$0.recyclerAdapter;
-        Intrinsics.checkNotNullExpressionValue(content, "content");
-        botsCategoriesAdapter.setContent(content);
+    public static final void subscribeToContent$lambda$3(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToContent$lambda-4  reason: not valid java name */
-    public static final void m1512subscribeToContent$lambda4(Throwable t) {
-        Intrinsics.checkNotNullParameter(t, "t");
-        t.printStackTrace();
+    public static final void subscribeToContent$lambda$4(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     private final List<Object> buildShopContent(List<ShopItem> list, List<SmartBotCategory> list2) {
@@ -182,7 +179,7 @@ public final class GridBotsPageView extends FrameLayout {
         ArrayList arrayList = new ArrayList();
         for (SmartBotCategory smartBotCategory : list2) {
             if (!smartBotCategory.getTags().isEmpty()) {
-                sortedWith = CollectionsKt___CollectionsKt.sortedWith(findItemsByTags(smartBotCategory.getTags(), list), new Comparator() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$buildShopContent$lambda-7$$inlined$sortedByDescending$1
+                sortedWith = CollectionsKt___CollectionsKt.sortedWith(findItemsByTags(smartBotCategory.getTags(), list), new Comparator() { // from class: com.smedialink.ui.shop.view.GridBotsPageView$buildShopContent$lambda$7$$inlined$sortedByDescending$1
                     @Override // java.util.Comparator
                     public final int compare(T t, T t2) {
                         int compareValues;
@@ -222,9 +219,8 @@ public final class GridBotsPageView extends FrameLayout {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         Disposable disposable = this.subscribeDisposable;
-        if (disposable == null) {
-            return;
+        if (disposable != null) {
+            disposable.dispose();
         }
-        disposable.dispose();
     }
 }

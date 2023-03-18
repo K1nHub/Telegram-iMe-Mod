@@ -1,6 +1,7 @@
 package org.telegram.tgnet;
 
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_userFull extends TLRPC$UserFull {
     public static int constructor = -120378643;
@@ -17,7 +18,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         this.video_calls_available = (readInt32 & 8192) != 0;
         this.voice_messages_forbidden = (1048576 & readInt32) != 0;
         this.translations_disabled = (readInt32 & 8388608) != 0;
-        this.f1634id = abstractSerializedData.readInt64(z);
+        this.f1640id = abstractSerializedData.readInt64(z);
         if ((this.flags & 2) != 0) {
             this.about = abstractSerializedData.readString(z);
         }
@@ -45,7 +46,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         if ((this.flags & 16384) != 0) {
             this.ttl_period = abstractSerializedData.readInt32(z);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.theme_emoticon = abstractSerializedData.readString(z);
         }
         if ((this.flags & 65536) != 0) {
@@ -96,7 +97,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         int i8 = this.translations_disabled ? i7 | 8388608 : i7 & (-8388609);
         this.flags = i8;
         abstractSerializedData.writeInt32(i8);
-        abstractSerializedData.writeInt64(this.f1634id);
+        abstractSerializedData.writeInt64(this.f1640id);
         if ((this.flags & 2) != 0) {
             abstractSerializedData.writeString(this.about);
         }
@@ -124,7 +125,7 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         if ((this.flags & 16384) != 0) {
             abstractSerializedData.writeInt32(this.ttl_period);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             abstractSerializedData.writeString(this.theme_emoticon);
         }
         if ((this.flags & 65536) != 0) {

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1277
+    .line 1278
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$18;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/FragmentContextView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,10 +35,10 @@
 .method public setTopPadding(F)V
     .locals 0
 
-    .line 1280
+    .line 1281
     iput p1, p0, Lorg/telegram/ui/Components/FragmentContextView;->topPadding:F
 
-    .line 1281
+    .line 1282
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$18;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$3900(Lorg/telegram/ui/TopicsFragment;)V

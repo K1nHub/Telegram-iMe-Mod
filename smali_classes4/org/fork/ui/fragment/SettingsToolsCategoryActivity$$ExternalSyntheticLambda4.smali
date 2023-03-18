@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda4;->f$0:Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;
 
-    invoke-static {v0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$L0b8BEMhuYsrLceW5JboyUsrY9o(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
+    invoke-static {v0}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$7bm1lK5TVcUDkpns0mw_bAjNfTg(Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;)V
 
     return-void
 .end method

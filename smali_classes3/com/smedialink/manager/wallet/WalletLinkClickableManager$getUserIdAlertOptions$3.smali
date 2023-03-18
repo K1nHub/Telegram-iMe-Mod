@@ -70,14 +70,9 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
+    if-eqz v1, :cond_0
 
     .line 65
-    :cond_0
     iget-object v0, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager$getUserIdAlertOptions$3;->this$0:Lcom/smedialink/manager/wallet/WalletLinkClickableManager;
 
     invoke-static {v0}, Lcom/smedialink/manager/wallet/WalletLinkClickableManager;->access$getClickableItem$p(Lcom/smedialink/manager/wallet/WalletLinkClickableManager;)Lcom/smedialink/model/wallet/transaction/ClickableItem;
@@ -132,6 +127,11 @@
     invoke-interface/range {v1 .. v6}, Lcom/smedialink/manager/wallet/WalletLinkClickableView;->actionMakeTransfer(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;ZLjava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0

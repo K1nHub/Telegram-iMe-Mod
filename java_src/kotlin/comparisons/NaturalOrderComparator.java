@@ -3,7 +3,7 @@ package kotlin.comparisons;
 import java.util.Comparator;
 import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
-import p034j$.util.AbstractC2414a;
+import p034j$.util.AbstractC2538a;
 import p034j$.util.Comparator;
 import p034j$.util.function.Function;
 import p034j$.util.function.ToDoubleFunction;
@@ -18,7 +18,7 @@ public final class NaturalOrderComparator implements Comparator<Comparable<? sup
     @Override // p034j$.util.Comparator
     public /* synthetic */ Comparator thenComparing(Function function) {
         Comparator m604w;
-        m604w = AbstractC2414a.m604w(this, Comparator.CC.comparing(function));
+        m604w = AbstractC2538a.m604w(this, Comparator.CC.comparing(function));
         return m604w;
     }
 
@@ -40,7 +40,7 @@ public final class NaturalOrderComparator implements Comparator<Comparable<? sup
     @Override // p034j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingInt(ToIntFunction toIntFunction) {
         java.util.Comparator m604w;
-        m604w = AbstractC2414a.m604w(this, Comparator.CC.comparingInt(toIntFunction));
+        m604w = AbstractC2538a.m604w(this, Comparator.CC.comparingInt(toIntFunction));
         return m604w;
     }
 

@@ -15,9 +15,11 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/state/GlobalState$Empty$Common;,
         Lcom/smedialink/model/state/GlobalState$Empty$Balance;,
-        Lcom/smedialink/model/state/GlobalState$Empty$Staking;
+        Lcom/smedialink/model/state/GlobalState$Empty$Common;,
+        Lcom/smedialink/model/state/GlobalState$Empty$Staking;,
+        Lcom/smedialink/model/state/GlobalState$Empty$Twitter;,
+        Lcom/smedialink/model/state/GlobalState$Empty$TwitterSearch;
     }
 .end annotation
 
@@ -48,19 +50,19 @@
 
     move v4, p4
 
-    .line 55
+    .line 57
     invoke-direct/range {v0 .. v5}, Lcom/smedialink/model/state/GlobalState;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 51
+    .line 53
     iput-object p1, p0, Lcom/smedialink/model/state/GlobalState$Empty;->state:Ljava/lang/String;
 
-    .line 52
+    .line 54
     iput p2, p0, Lcom/smedialink/model/state/GlobalState$Empty;->icon:I
 
-    .line 53
+    .line 55
     iput p3, p0, Lcom/smedialink/model/state/GlobalState$Empty;->title:I
 
-    .line 54
+    .line 56
     iput p4, p0, Lcom/smedialink/model/state/GlobalState$Empty;->description:I
 
     return-void
@@ -79,7 +81,7 @@
 .method public getDescription()I
     .locals 1
 
-    .line 54
+    .line 56
     iget v0, p0, Lcom/smedialink/model/state/GlobalState$Empty;->description:I
 
     return v0
@@ -88,7 +90,7 @@
 .method public getIcon()I
     .locals 1
 
-    .line 52
+    .line 54
     iget v0, p0, Lcom/smedialink/model/state/GlobalState$Empty;->icon:I
 
     return v0
@@ -97,7 +99,7 @@
 .method public getState()Ljava/lang/String;
     .locals 1
 
-    .line 51
+    .line 53
     iget-object v0, p0, Lcom/smedialink/model/state/GlobalState$Empty;->state:Ljava/lang/String;
 
     return-object v0
@@ -106,7 +108,7 @@
 .method public getTitle()I
     .locals 1
 
-    .line 53
+    .line 55
     iget v0, p0, Lcom/smedialink/model/state/GlobalState$Empty;->title:I
 
     return v0

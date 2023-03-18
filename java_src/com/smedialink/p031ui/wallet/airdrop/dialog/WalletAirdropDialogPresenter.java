@@ -9,7 +9,6 @@ import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.data.network.model.error.IErrorStatus;
 import com.smedialink.storage.domain.interactor.crypto.airdrop.AirdropInteractor;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
-import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.airdrop.AirdropDisplayStatus;
 import com.smedialink.storage.domain.model.crypto.airdrop.AirdropStatus;
 import com.smedialink.storage.domain.model.crypto.airdrop.AirdropStep;
@@ -17,20 +16,18 @@ import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.helper.wallet.WalletHelper;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import java.util.Set;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
-import timber.log.Timber;
 /* compiled from: WalletAirdropDialogPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter */
@@ -78,19 +75,19 @@ public final class WalletAirdropDialogPresenter extends BasePresenter<WalletAird
 
     public final void getTokensByAirdrop(String requestId) {
         Intrinsics.checkNotNullParameter(requestId, "requestId");
-        Observable flatMap = AirdropInteractor.checkAirdropStart$default(this.airdropInteractor, requestId, null, 2, null).flatMap(new Function() { // from class: com.smedialink.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$flatMapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
+        Observable checkAirdropStart$default = AirdropInteractor.checkAirdropStart$default(this.airdropInteractor, requestId, null, 2, null);
+        final C2012x61f5919c c2012x61f5919c = new C2012x61f5919c(this);
+        Observable flatMap = checkAirdropStart$default.flatMap(new Function(c2012x61f5919c) { // from class: com.smedialink.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+            private final /* synthetic */ Function1 function;
+
+            {
+                Intrinsics.checkNotNullParameter(c2012x61f5919c, "function");
+                this.function = c2012x61f5919c;
+            }
+
             @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                AirdropInteractor airdropInteractor;
-                CryptoPreferenceHelper cryptoPreferenceHelper;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                }
-                airdropInteractor = WalletAirdropDialogPresenter.this.airdropInteractor;
-                cryptoPreferenceHelper = WalletAirdropDialogPresenter.this.preferenceHelper;
-                return AirdropInteractor.getTokensByAirdrop$default(airdropInteractor, cryptoPreferenceHelper.getAirdropMetadata().getAirdropRequestId(), null, 2, null);
+            public final /* synthetic */ Object apply(Object obj) {
+                return this.function.invoke(obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
@@ -98,46 +95,7 @@ public final class WalletAirdropDialogPresenter extends BasePresenter<WalletAird
         Intrinsics.checkNotNullExpressionValue(observeOn, "airdropInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                CryptoPreferenceHelper cryptoPreferenceHelper;
-                CryptoPreferenceHelper cryptoPreferenceHelper2;
-                ResourceManager resourceManager;
-                ResourceManager resourceManager2;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    cryptoPreferenceHelper = WalletAirdropDialogPresenter.this.preferenceHelper;
-                    cryptoPreferenceHelper2 = WalletAirdropDialogPresenter.this.preferenceHelper;
-                    cryptoPreferenceHelper.setAirdropMetadata(WalletAirdropMetadata.copy$default(cryptoPreferenceHelper2.getAirdropMetadata(), false, 0, null, AirdropStatus.FINISHED, null, 23, null));
-                    WalletAirdropDialogPresenter.this.enableWalletMenuItem();
-                    resourceManager = WalletAirdropDialogPresenter.this.resourceManager;
-                    String string = resourceManager.getString(C3158R.string.airdrop_success_dialog_title);
-                    resourceManager2 = WalletAirdropDialogPresenter.this.resourceManager;
-                    ((WalletAirdropDialogView) WalletAirdropDialogPresenter.this.getViewState()).onSuccessClaimAirdrop(string, resourceManager2.getString(C3158R.string.airdrop_success_dialog_description));
-                    ((WalletAirdropDialogView) WalletAirdropDialogPresenter.this.getViewState()).finishScreen();
-                } else if (result instanceof Result.Error) {
-                    WalletAirdropDialogPresenter.this.handleErrors(((Result.Error) result).getError());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$getTokensByAirdrop$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2013x9d8065d9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2014x9d8065da((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

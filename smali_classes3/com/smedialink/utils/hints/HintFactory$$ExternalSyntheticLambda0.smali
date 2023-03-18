@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/hints/HintFactory$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/utils/hints/HintFactory;
 
-    invoke-static {v0}, Lcom/smedialink/utils/hints/HintFactory;->$r8$lambda$kR3OFHOBYzlXOYylm4HQCuEZgsU(Lcom/smedialink/utils/hints/HintFactory;)V
+    invoke-static {v0}, Lcom/smedialink/utils/hints/HintFactory;->$r8$lambda$k6yVNhIeM6jRxxBLAcrSb3ppbkw(Lcom/smedialink/utils/hints/HintFactory;)V
 
     return-void
 .end method

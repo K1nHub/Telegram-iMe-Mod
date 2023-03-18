@@ -2,32 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
+.field public final synthetic f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method public synthetic constructor <init>(Lcom/smedialink/ui/profile/ProfilePresenter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final invoke()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda51;->f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$KArsrFwWchm82QBdInjemX4mooE(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;I)V
+    invoke-virtual {v0}, Lcom/smedialink/ui/profile/ProfilePresenter;->onTwitterCellClick()V
 
     return-void
 .end method

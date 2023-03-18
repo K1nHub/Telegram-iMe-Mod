@@ -55,7 +55,7 @@
 
     move v6, p2
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$hwwVMoCkBZkc2Jmngy0y9mDymMo(Lorg/telegram/ui/PhotoViewer;ZIZZLandroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$ntPsJHMqXX0KThO7_xFzTY10SXs(Lorg/telegram/ui/PhotoViewer;ZIZZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -200,6 +200,7 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
                 } else {
                     String substring = str.substring(0, 1);
                     Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+                    Intrinsics.checkNotNull(substring, "null cannot be cast to non-null type java.lang.String");
                     String upperCase = substring.toUpperCase(locale);
                     Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(locale)");
                     sb.append(upperCase);
@@ -216,9 +217,9 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
         return str;
     }
 
+    /* JADX WARN: Type inference failed for: r5v3, types: [kotlin.collections.IntIterator, java.util.Iterator] */
     public static String repeat(CharSequence charSequence, int i) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
-        int i2 = 1;
         if (!(i >= 0)) {
             throw new IllegalArgumentException(("Count 'n' must be non-negative, but was " + i + '.').toString());
         } else if (i != 0) {
@@ -230,20 +231,16 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
                 if (length == 1) {
                     char charAt = charSequence.charAt(0);
                     char[] cArr = new char[i];
-                    for (int i3 = 0; i3 < i; i3++) {
-                        cArr[i3] = charAt;
+                    for (int i2 = 0; i2 < i; i2++) {
+                        cArr[i2] = charAt;
                     }
                     return new String(cArr);
                 }
                 StringBuilder sb = new StringBuilder(charSequence.length() * i);
-                if (1 <= i) {
-                    while (true) {
-                        sb.append(charSequence);
-                        if (i2 == i) {
-                            break;
-                        }
-                        i2++;
-                    }
+                ?? it = new IntRange(1, i).iterator();
+                while (it.hasNext()) {
+                    it.nextInt();
+                    sb.append(charSequence);
                 }
                 String sb2 = sb.toString();
                 Intrinsics.checkNotNullExpressionValue(sb2, "{\n                    va…tring()\n                }");

@@ -66,7 +66,7 @@ public final class GetBuyingCryptoQuoteRequest {
         }
         if (obj instanceof GetBuyingCryptoQuoteRequest) {
             GetBuyingCryptoQuoteRequest getBuyingCryptoQuoteRequest = (GetBuyingCryptoQuoteRequest) obj;
-            return Intrinsics.areEqual(this.digitalCurrency, getBuyingCryptoQuoteRequest.digitalCurrency) && Intrinsics.areEqual(this.fiatCurrency, getBuyingCryptoQuoteRequest.fiatCurrency) && Intrinsics.areEqual(this.requestedCurrency, getBuyingCryptoQuoteRequest.requestedCurrency) && Intrinsics.areEqual(Float.valueOf(this.requestedAmount), Float.valueOf(getBuyingCryptoQuoteRequest.requestedAmount)) && Intrinsics.areEqual(this.networkType, getBuyingCryptoQuoteRequest.networkType);
+            return Intrinsics.areEqual(this.digitalCurrency, getBuyingCryptoQuoteRequest.digitalCurrency) && Intrinsics.areEqual(this.fiatCurrency, getBuyingCryptoQuoteRequest.fiatCurrency) && Intrinsics.areEqual(this.requestedCurrency, getBuyingCryptoQuoteRequest.requestedCurrency) && Float.compare(this.requestedAmount, getBuyingCryptoQuoteRequest.requestedAmount) == 0 && Intrinsics.areEqual(this.networkType, getBuyingCryptoQuoteRequest.networkType);
         }
         return false;
     }

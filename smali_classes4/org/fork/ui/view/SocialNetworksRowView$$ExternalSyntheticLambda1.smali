@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/view/SocialNetworksRowView$$ExternalSyntheticLambda1;->f$1:Lorg/fork/enums/DrawerSocialNetwork;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/SocialNetworksRowView;->$r8$lambda$Dg4Zv1RKyrk18I_tZw1TDkLGvco(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/SocialNetworksRowView;->$r8$lambda$vcBqbBO3DXtdNAgkB4WOXBB-qFg(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
 
     move-result p1
 

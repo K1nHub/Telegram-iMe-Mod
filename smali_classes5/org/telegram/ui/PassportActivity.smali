@@ -21519,7 +21519,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string v0, "dialogTextRed2"
+    const-string v0, "dialogTextRed"
 
     .line 2478
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I

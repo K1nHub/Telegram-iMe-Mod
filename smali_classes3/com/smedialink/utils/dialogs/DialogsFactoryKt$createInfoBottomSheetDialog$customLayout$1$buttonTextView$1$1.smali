@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 506
+    .line 513
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt$createInfoBottomSheetDialog$customLayout$1$buttonTextView$1$1;->invoke(Landroid/view/View;)V
@@ -70,18 +70,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 507
+    .line 514
     iget-object p1, p0, Lcom/smedialink/utils/dialogs/DialogsFactoryKt$createInfoBottomSheetDialog$customLayout$1$buttonTextView$1$1;->$onButtonClickAction:Lorg/fork/utils/Callbacks$Callback;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p1}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    .line 508
-    :goto_0
+    .line 515
+    :cond_0
     iget-object p1, p0, Lcom/smedialink/utils/dialogs/DialogsFactoryKt$createInfoBottomSheetDialog$customLayout$1$buttonTextView$1$1;->$bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V

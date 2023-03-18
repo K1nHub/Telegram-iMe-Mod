@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 42482
+    .line 42725
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;
     .locals 1
 
-    .line 42496
+    .line 42739
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -57,7 +57,7 @@
 
     return-object p0
 
-    .line 42498
+    .line 42741
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -83,13 +83,13 @@
 
     throw p0
 
-    .line 42503
+    .line 42746
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;-><init>()V
 
-    .line 42504
+    .line 42747
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -100,7 +100,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 42509
+    .line 42752
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -122,7 +122,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 42510
+    .line 42753
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->disabled:Z
 
@@ -137,7 +137,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 42511
+    .line 42754
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->video_preload_large:Z
 
@@ -152,7 +152,7 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 42512
+    .line 42755
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->audio_preload_next:Z
 
@@ -162,32 +162,32 @@
 
     const/4 v2, 0x1
 
-    .line 42513
+    .line 42756
     :cond_3
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->phonecalls_less_data:Z
 
-    .line 42514
+    .line 42757
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->photo_size_max:I
 
-    .line 42515
+    .line 42758
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->video_size_max:J
 
-    .line 42516
+    .line 42759
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->file_size_max:J
 
-    .line 42517
+    .line 42760
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -200,12 +200,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 42521
+    .line 42764
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 42522
+    .line 42765
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->disabled:Z
 
     if-eqz v0, :cond_0
@@ -224,7 +224,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->flags:I
 
-    .line 42523
+    .line 42766
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->video_preload_large:Z
 
     if-eqz v1, :cond_1
@@ -239,7 +239,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->flags:I
 
-    .line 42524
+    .line 42767
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->audio_preload_next:Z
 
     if-eqz v1, :cond_2
@@ -254,7 +254,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->flags:I
 
-    .line 42525
+    .line 42768
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->phonecalls_less_data:Z
 
     if-eqz v1, :cond_3
@@ -269,25 +269,25 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->flags:I
 
-    .line 42526
+    .line 42769
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 42527
+    .line 42770
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->photo_size_max:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 42528
+    .line 42771
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->video_size_max:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 42529
+    .line 42772
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->file_size_max:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 42530
+    .line 42773
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_autoDownloadSettings;->video_upload_maxbitrate:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

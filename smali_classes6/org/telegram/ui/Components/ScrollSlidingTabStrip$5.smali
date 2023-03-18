@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
     .locals 0
 
-    .line 1097
+    .line 1060
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$5;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,24 +35,24 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1100
+    .line 1063
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$5;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->draggingView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 1101
+    .line 1064
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->invalidateOverlays()V
 
-    .line 1102
+    .line 1065
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$5;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->draggingView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1103
+    .line 1066
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$5;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->access$200(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)Landroid/widget/LinearLayout;
@@ -61,12 +61,12 @@
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->invalidate()V
 
-    .line 1104
+    .line 1067
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$5;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-virtual {p1}, Landroid/widget/HorizontalScrollView;->invalidate()V
 
-    .line 1105
+    .line 1068
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$5;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     const/4 v0, 0x0

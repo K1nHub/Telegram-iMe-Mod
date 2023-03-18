@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nExtendedAvatarPreviewerSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExtendedAvatarPreviewerSettingsActivity.kt\norg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,255:1\n1#2:256\n1000#3,2:257\n*S KotlinDebug\n*F\n+ 1 ExtendedAvatarPreviewerSettingsActivity.kt\norg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity\n*L\n52#1:257,2\n*E\n"
+    value = "SMAP\nExtendedAvatarPreviewerSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ExtendedAvatarPreviewerSettingsActivity.kt\norg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,255:1\n1#2:256\n1002#3,2:257\n*S KotlinDebug\n*F\n+ 1 ExtendedAvatarPreviewerSettingsActivity.kt\norg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity\n*L\n52#1:257,2\n*E\n"
 .end annotation
 
 
@@ -44,10 +44,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$B4LpkTi1sT8B37447H7qLFVt_MY(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$xdcgHnLdut0qcYC4oSNt-93BQdM(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->initListView$lambda-8$lambda-7(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;->initListView$lambda$8$lambda$7(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -441,7 +441,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-8$lambda-7(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$8$lambda$7(Lorg/fork/ui/fragment/ExtendedAvatarPreviewerSettingsActivity;Landroid/view/View;IFF)V
     .locals 1
 
     const-string p3, "this$0"
@@ -609,7 +609,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 105
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -779,7 +779,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -967,7 +967,7 @@
 
     const/4 v12, 0x0
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -1000,7 +1000,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -1029,7 +1029,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -1062,7 +1062,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1093,7 +1093,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -1294,7 +1294,7 @@
 
     const/4 v12, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v15, "windowBackgroundWhiteBlueHeader"
 
     move-object v7, v3
 
@@ -1321,7 +1321,7 @@
 
     move-result-object v11
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -1445,7 +1445,7 @@
 
     move-result-object v0
 
-    .line 1000
+    .line 1002
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1

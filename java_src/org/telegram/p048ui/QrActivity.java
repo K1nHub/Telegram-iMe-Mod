@@ -54,7 +54,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
@@ -565,7 +565,7 @@ public class QrActivity extends BaseFragment {
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = (Bitmap) pair.second;
-        if (longValue != this.currentTheme.getTlTheme(z ? 1 : 0).f1624id || bitmap == null) {
+        if (longValue != this.currentTheme.getTlTheme(z ? 1 : 0).f1630id || bitmap == null) {
             return;
         }
         onPatternLoaded(bitmap, this.currMotionDrawable.getIntensity(), SystemClock.elapsedRealtime() - j > 150);
@@ -573,7 +573,7 @@ public class QrActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onItemSelected$10() {
-        final Bitmap bitmap = SvgHelper.getBitmap(C3158R.C3164raw.default_pattern, this.backgroundView.getWidth(), this.backgroundView.getHeight(), -16777216);
+        final Bitmap bitmap = SvgHelper.getBitmap(C3286R.C3291raw.default_pattern, this.backgroundView.getWidth(), this.backgroundView.getHeight(), -16777216);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.QrActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
@@ -662,7 +662,7 @@ public class QrActivity extends BaseFragment {
         Uri bitmapShareUri = AndroidUtilities.getBitmapShareUri(createBitmap, "qr_tmp.jpg", Bitmap.CompressFormat.JPEG);
         if (bitmapShareUri != null) {
             try {
-                getParentActivity().startActivityForResult(Intent.createChooser(new Intent("android.intent.action.SEND").setType("image/*").putExtra("android.intent.extra.STREAM", bitmapShareUri), LocaleController.getString("InviteByQRCode", C3158R.string.InviteByQRCode)), 500);
+                getParentActivity().startActivityForResult(Intent.createChooser(new Intent("android.intent.action.SEND").setType("image/*").putExtra("android.intent.extra.STREAM", bitmapShareUri), LocaleController.getString("InviteByQRCode", C3286R.string.InviteByQRCode)), 500);
             } catch (ActivityNotFoundException e) {
                 e.printStackTrace();
             }
@@ -1013,7 +1013,7 @@ public class QrActivity extends BaseFragment {
             boolean z = this.hasTimer;
             if (z) {
                 if (z && this.loadingMatrix == null) {
-                    RLottieDrawable rLottieDrawable = new RLottieDrawable(C3158R.C3164raw.qr_matrix, "qr_matrix", AndroidUtilities.m50dp(200), AndroidUtilities.m50dp(200));
+                    RLottieDrawable rLottieDrawable = new RLottieDrawable(C3286R.C3291raw.qr_matrix, "qr_matrix", AndroidUtilities.m50dp(200), AndroidUtilities.m50dp(200));
                     this.loadingMatrix = rLottieDrawable;
                     rLottieDrawable.setMasterParent(this);
                     this.loadingMatrix.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
@@ -1221,7 +1221,7 @@ public class QrActivity extends BaseFragment {
                     return super.calculateTimeForScrolling(i) * 6;
                 }
             };
-            Drawable mutate = parentActivity.getResources().getDrawable(C3158R.C3160drawable.sheet_shadow_round).mutate();
+            Drawable mutate = parentActivity.getResources().getDrawable(C3286R.C3288drawable.sheet_shadow_round).mutate();
             this.backgroundDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(baseFragment.getThemedColor("dialogBackground"), PorterDuff.Mode.MULTIPLY));
             FrameLayout frameLayout = new FrameLayout(parentActivity, QrActivity.this, baseFragment) { // from class: org.telegram.ui.QrActivity.ThemeListViewController.2
@@ -1307,7 +1307,7 @@ public class QrActivity extends BaseFragment {
             frameLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 8388659, 0, 0, 62, 0));
             int themedColor = baseFragment.getThemedColor("featuredStickers_addButton");
             int m50dp = AndroidUtilities.m50dp(28);
-            int i = C3158R.C3164raw.sun_outline;
+            int i = C3286R.C3291raw.sun_outline;
             RLottieDrawable rLottieDrawable = new RLottieDrawable(i, "" + i, m50dp, m50dp, false, null);
             this.darkThemeDrawable = rLottieDrawable;
             this.forceDark = Theme.getActiveTheme().isDark() ^ true;
@@ -1319,9 +1319,9 @@ public class QrActivity extends BaseFragment {
                 public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                     super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                     if (QrActivity.this.isCurrentThemeDark) {
-                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3158R.string.AccDescrSwitchToDayTheme));
+                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3286R.string.AccDescrSwitchToDayTheme));
                     } else {
-                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3158R.string.AccDescrSwitchToNightTheme));
+                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3286R.string.AccDescrSwitchToNightTheme));
                     }
                 }
             };
@@ -1375,7 +1375,7 @@ public class QrActivity extends BaseFragment {
             View view = new View(parentActivity);
             this.topShadow = view;
             view.setAlpha(BitmapDescriptorFactory.HUE_RED);
-            int i2 = C3158R.C3160drawable.shadowdown;
+            int i2 = C3286R.C3288drawable.shadowdown;
             view.setBackground(ContextCompat.getDrawable(parentActivity, i2));
             view.setRotation(180.0f);
             frameLayout.addView(view);
@@ -1390,7 +1390,7 @@ public class QrActivity extends BaseFragment {
             textView2.setGravity(17);
             textView2.setLines(1);
             textView2.setSingleLine(true);
-            textView2.setText(LocaleController.getString("ShareQrCode", C3158R.string.ShareQrCode));
+            textView2.setText(LocaleController.getString("ShareQrCode", C3286R.string.ShareQrCode));
             textView2.setTextColor(baseFragment.getThemedColor("featuredStickers_buttonText"));
             textView2.setTextSize(1, 15.0f);
             textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));

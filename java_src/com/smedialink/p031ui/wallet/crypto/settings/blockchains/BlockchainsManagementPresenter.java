@@ -15,10 +15,10 @@ import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.formatter.DateFormatter;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -29,9 +29,8 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
-import timber.log.Timber;
 /* compiled from: BlockchainsManagementPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementPresenter */
@@ -51,8 +50,14 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
 
         static {
             int[] iArr = new int[BlockchainType.values().length];
-            iArr[BlockchainType.EVM.ordinal()] = 1;
-            iArr[BlockchainType.TON.ordinal()] = 2;
+            try {
+                iArr[BlockchainType.EVM.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BlockchainType.TON.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -76,7 +81,7 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
     }
 
     public final void showResetAllWalletsDialog() {
-        ((BlockchainsManagementView) getViewState()).showResetAllWalletsConfirmationDialog(new DialogModel(this.resourceManager.getString(C3158R.string.wallet_reset_all_title), this.resourceManager.getString(C3158R.string.wallet_reset_all_description), LocaleController.getString("Cancel", C3158R.string.Cancel), LocaleController.getString("Reset", C3158R.string.Reset)));
+        ((BlockchainsManagementView) getViewState()).showResetAllWalletsConfirmationDialog(new DialogModel(this.resourceManager.getString(C3286R.string.wallet_reset_all_title), this.resourceManager.getString(C3286R.string.wallet_reset_all_description), LocaleController.getString("Cancel", C3286R.string.Cancel), LocaleController.getString("Reset", C3286R.string.Reset)));
     }
 
     public final void resetAllWallets() {
@@ -124,36 +129,7 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
         Intrinsics.checkNotNullExpressionValue(observeOn, "observable\n             …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                CryptoAccessManager cryptoAccessManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                cryptoAccessManager = BlockchainsManagementPresenter.this.cryptoAccessManager;
-                if (!cryptoAccessManager.getAllWallets().isEmpty()) {
-                    BlockchainsManagementPresenter.this.showWallets();
-                } else {
-                    ((BlockchainsManagementView) BlockchainsManagementPresenter.this.getViewState()).finishScreen();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.BlockchainsManagementPresenter$handleWalletDeletionResult$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2080x42676ad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2081x42676ae((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -162,16 +138,16 @@ public final class BlockchainsManagementPresenter extends BasePresenter<Blockcha
         int i = WhenMappings.$EnumSwitchMapping$0[blockchainType.ordinal()];
         if (i != 1) {
             if (i == 2) {
-                return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_details_info_ton_title), this.resourceManager.getString(C3158R.string.wallet_details_info_ton_description), null, LocaleController.getString("OK", C3158R.string.OK), 4, null);
+                return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_details_info_ton_title), this.resourceManager.getString(C3286R.string.wallet_details_info_ton_description), null, LocaleController.getString("OK", C3286R.string.OK), 4, null);
             }
             throw new NoWhenBranchMatchedException();
         }
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_details_info_evm_title), this.resourceManager.getString(C3158R.string.wallet_details_info_evm_description), null, LocaleController.getString("OK", C3158R.string.OK), 4, null);
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_details_info_evm_title), this.resourceManager.getString(C3286R.string.wallet_details_info_evm_description), null, LocaleController.getString("OK", C3286R.string.OK), 4, null);
     }
 
     private final String getWalletCreationDateText(BlockchainType blockchainType) {
         String dataByBlockchain = this.cryptoPreferenceHelper.getWalletCreationDates().getDataByBlockchain(blockchainType);
-        Long longOrNull = dataByBlockchain == null ? null : StringsKt__StringNumberConversionsKt.toLongOrNull(dataByBlockchain);
-        return DateFormatter.format$default(DateFormatter.DateType.DATE_AND_TIME, new Date(longOrNull == null ? DateExtKt.now() : longOrNull.longValue()), null, 4, null);
+        Long longOrNull = dataByBlockchain != null ? StringsKt__StringNumberConversionsKt.toLongOrNull(dataByBlockchain) : null;
+        return DateFormatter.format$default(DateFormatter.DateType.DATE_AND_TIME, new Date(longOrNull != null ? longOrNull.longValue() : DateExtKt.now()), null, 4, null);
     }
 }

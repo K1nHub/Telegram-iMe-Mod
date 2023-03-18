@@ -19,6 +19,6 @@ final class TopicsBar$listAdapter$2 extends Lambda implements Function0<TopicsBa
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final TopicsBar.ListAdapter invoke() {
-        return new TopicsBar.ListAdapter(this.this$0);
+        return new TopicsBar.ListAdapter();
     }
 }

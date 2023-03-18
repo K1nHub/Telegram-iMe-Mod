@@ -1098,7 +1098,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    const-string p1, "wallet_greenText"
+    const-string p1, "windowBackgroundWhiteGreenText2"
 
     .line 174
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I

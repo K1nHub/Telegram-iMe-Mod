@@ -16,7 +16,7 @@ public interface DataSourceFactory<P, R> {
 
         public final String unsupportedDataSource(String name) {
             Intrinsics.checkNotNullParameter(name, "name");
-            return Intrinsics.stringPlus(name, " data source is not supported yet");
+            return name + " data source is not supported yet";
         }
     }
 }

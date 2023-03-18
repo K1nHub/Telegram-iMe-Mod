@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$$ExternalSyntheticLambda2;->f$1:Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;->$r8$lambda$GIsTbVp91QZOyG3gzFmFODZv498(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;I)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;->$r8$lambda$BYc1Rrf8IetBV3OtOFpqzio1-J0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;I)V
 
     return-void
 .end method

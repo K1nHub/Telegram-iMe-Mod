@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import com.smedialink.common.TelegramPreferenceKeys;
 import com.smedialink.model.contacts.ContactsFilter;
 import java.util.Objects;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.ForkCommonController;
@@ -139,32 +140,32 @@ public final class ForkCommonController extends BaseController {
 
     public final void loadConfig(SharedPreferences preferences) {
         Intrinsics.checkNotNullParameter(preferences, "preferences");
-        setWalletRefreshToken(preferences.getString(TelegramPreferenceKeys.User.walletRefreshToken(), TelegramPreferenceKeys.User.Default.walletRefreshToken()));
-        setAppVersionRequiredUpdate(preferences.getString(TelegramPreferenceKeys.User.appVersionRequiredUpdate(), TelegramPreferenceKeys.User.Default.appVersionRequiredUpdate()));
-        setSortingDeployVersion(preferences.getInt(TelegramPreferenceKeys.User.sortingDeployVersion(), TelegramPreferenceKeys.User.Default.sortingDeployVersion()));
-        setLastFilterTab(preferences.getInt(TelegramPreferenceKeys.User.lastFilterTab(), TelegramPreferenceKeys.User.Default.lastFilterTab()));
-        setAccountMuted(preferences.getBoolean(TelegramPreferenceKeys.User.isAccountMuted(), TelegramPreferenceKeys.User.Default.isAccountMuted()));
-        setQuickReactionEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isQuickReactionEnabled(), TelegramPreferenceKeys.User.Default.isQuickReactionEnabled()));
-        setPremiumAnimateStickers(preferences.getBoolean(TelegramPreferenceKeys.User.isPremiumAnimateStickers(), TelegramPreferenceKeys.User.Default.isPremiumAnimateStickers()));
-        setShowPremiumBadgeEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isShowPremiumBadgeEnabled(), TelegramPreferenceKeys.User.Default.isShowPremiumBadgeEnabled()));
-        setShowPremiumStatusEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isShowPremiumStatusEnabled(), TelegramPreferenceKeys.User.Default.isShowPremiumStatusEnabled()));
-        setPremiumAnimateAvatars(preferences.getBoolean(TelegramPreferenceKeys.User.isPremiumAnimateAvatars(), TelegramPreferenceKeys.User.Default.isPremiumAnimateAvatars()));
-        setSelectedContactsFilter(ContactsFilter.Companion.mapNameToEnum(preferences.getString(TelegramPreferenceKeys.User.selectedContactsFilter(), TelegramPreferenceKeys.User.Default.selectedContactsFilter().name())));
+        this.walletRefreshToken = preferences.getString(TelegramPreferenceKeys.User.walletRefreshToken(), TelegramPreferenceKeys.User.Default.walletRefreshToken());
+        this.appVersionRequiredUpdate = preferences.getString(TelegramPreferenceKeys.User.appVersionRequiredUpdate(), TelegramPreferenceKeys.User.Default.appVersionRequiredUpdate());
+        this.sortingDeployVersion = preferences.getInt(TelegramPreferenceKeys.User.sortingDeployVersion(), TelegramPreferenceKeys.User.Default.sortingDeployVersion());
+        this.lastFilterTab = preferences.getInt(TelegramPreferenceKeys.User.lastFilterTab(), TelegramPreferenceKeys.User.Default.lastFilterTab());
+        this.isAccountMuted = preferences.getBoolean(TelegramPreferenceKeys.User.isAccountMuted(), TelegramPreferenceKeys.User.Default.isAccountMuted());
+        this.isQuickReactionEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isQuickReactionEnabled(), TelegramPreferenceKeys.User.Default.isQuickReactionEnabled());
+        this.isPremiumAnimateStickers = preferences.getBoolean(TelegramPreferenceKeys.User.isPremiumAnimateStickers(), TelegramPreferenceKeys.User.Default.isPremiumAnimateStickers());
+        this.isShowPremiumBadgeEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isShowPremiumBadgeEnabled(), TelegramPreferenceKeys.User.Default.isShowPremiumBadgeEnabled());
+        this.isShowPremiumStatusEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isShowPremiumStatusEnabled(), TelegramPreferenceKeys.User.Default.isShowPremiumStatusEnabled());
+        this.isPremiumAnimateAvatars = preferences.getBoolean(TelegramPreferenceKeys.User.isPremiumAnimateAvatars(), TelegramPreferenceKeys.User.Default.isPremiumAnimateAvatars());
+        this.selectedContactsFilter = ContactsFilter.Companion.mapNameToEnum(preferences.getString(TelegramPreferenceKeys.User.selectedContactsFilter(), TelegramPreferenceKeys.User.Default.selectedContactsFilter().name()));
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putString(TelegramPreferenceKeys.User.walletRefreshToken(), getWalletRefreshToken());
-        edit.putString(TelegramPreferenceKeys.User.appVersionRequiredUpdate(), getAppVersionRequiredUpdate());
-        edit.putInt(TelegramPreferenceKeys.User.sortingDeployVersion(), getSortingDeployVersion());
-        edit.putInt(TelegramPreferenceKeys.User.lastFilterTab(), getLastFilterTab());
-        edit.putBoolean(TelegramPreferenceKeys.User.isAccountMuted(), isAccountMuted());
-        edit.putBoolean(TelegramPreferenceKeys.User.isQuickReactionEnabled(), isQuickReactionEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isPremiumAnimateStickers(), isPremiumAnimateStickers());
-        edit.putBoolean(TelegramPreferenceKeys.User.isShowPremiumBadgeEnabled(), isShowPremiumBadgeEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isShowPremiumStatusEnabled(), isShowPremiumStatusEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isPremiumAnimateAvatars(), isPremiumAnimateAvatars());
-        edit.putString(TelegramPreferenceKeys.User.selectedContactsFilter(), getSelectedContactsFilter().name());
+        edit.putString(TelegramPreferenceKeys.User.walletRefreshToken(), this.walletRefreshToken);
+        edit.putString(TelegramPreferenceKeys.User.appVersionRequiredUpdate(), this.appVersionRequiredUpdate);
+        edit.putInt(TelegramPreferenceKeys.User.sortingDeployVersion(), this.sortingDeployVersion);
+        edit.putInt(TelegramPreferenceKeys.User.lastFilterTab(), this.lastFilterTab);
+        edit.putBoolean(TelegramPreferenceKeys.User.isAccountMuted(), this.isAccountMuted);
+        edit.putBoolean(TelegramPreferenceKeys.User.isQuickReactionEnabled(), this.isQuickReactionEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isPremiumAnimateStickers(), this.isPremiumAnimateStickers);
+        edit.putBoolean(TelegramPreferenceKeys.User.isShowPremiumBadgeEnabled(), this.isShowPremiumBadgeEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isShowPremiumStatusEnabled(), this.isShowPremiumStatusEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isPremiumAnimateAvatars(), this.isPremiumAnimateAvatars);
+        edit.putString(TelegramPreferenceKeys.User.selectedContactsFilter(), this.selectedContactsFilter.name());
         edit.apply();
     }
 
@@ -202,14 +203,16 @@ public final class ForkCommonController extends BaseController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final ForkCommonController m1908getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new ForkCommonController(i);
+        public static final ForkCommonController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (ForkCommonController) tmp0.invoke(obj);
         }
 
-        public final ForkCommonController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(ForkCommonController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.ForkCommonController$Companion$$ExternalSyntheticLambda0
+        public final ForkCommonController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = ForkCommonController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final ForkCommonController$Companion$getInstance$1 forkCommonController$Companion$getInstance$1 = new ForkCommonController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.ForkCommonController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -217,9 +220,9 @@ public final class ForkCommonController extends BaseController {
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    ForkCommonController m1908getInstance$lambda0;
-                    m1908getInstance$lambda0 = ForkCommonController.Companion.m1908getInstance$lambda0(i, (Integer) obj);
-                    return m1908getInstance$lambda0;
+                    ForkCommonController instance$lambda$0;
+                    instance$lambda$0 = ForkCommonController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -227,7 +230,7 @@ public final class ForkCommonController extends BaseController {
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (ForkCommonController) computeIfAbsent;
         }
     }

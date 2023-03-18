@@ -299,7 +299,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "valueCount <= 0"
+    const-string/jumbo p2, "valueCount <= 0"
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

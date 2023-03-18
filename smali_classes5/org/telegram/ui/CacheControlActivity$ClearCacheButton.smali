@@ -32,10 +32,10 @@
 
     move-object/from16 v1, p1
 
-    .line 1739
+    .line 1744
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1741
+    .line 1746
     new-instance v2, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;-><init>(Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;Landroid/content/Context;)V
@@ -54,14 +54,29 @@
 
     const-string v5, "featuredStickers_addButton"
 
-    .line 1763
+    .line 1774
     invoke-static {v5, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1765
+    .line 1775
+    iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setFocusable(Z)V
+
+    .line 1776
+    iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setFocusableInTouchMode(Z)V
+
+    .line 1777
+    iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
+
+    .line 1779
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const-string v4, "featuredStickers_buttonText"
@@ -72,14 +87,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 1766
+    .line 1780
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->rtlTextView:Landroid/widget/TextView;
 
-    .line 1767
+    .line 1781
     sget v1, Lorg/telegram/messenger/R$string;->ClearCache:I
 
     invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -88,21 +103,21 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1768
+    .line 1782
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->rtlTextView:Landroid/widget/TextView;
 
     const/16 v2, 0x11
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1769
+    .line 1783
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->rtlTextView:Landroid/widget/TextView;
 
     const/high16 v8, 0x41600000    # 14.0f
 
     invoke-virtual {v1, v3, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1770
+    .line 1784
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->rtlTextView:Landroid/widget/TextView;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -111,7 +126,7 @@
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1771
+    .line 1785
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->rtlTextView:Landroid/widget/TextView;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -120,7 +135,7 @@
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1772
+    .line 1786
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     iget-object v8, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->rtlTextView:Landroid/widget/TextView;
@@ -135,7 +150,7 @@
 
     invoke-virtual {v1, v8, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1775
+    .line 1789
     :cond_0
     new-instance v9, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -149,21 +164,21 @@
 
     const-wide/16 v13, 0x12c
 
-    .line 1776
+    .line 1790
     sget-object v21, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     move-object/from16 v15, v21
 
     invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 1777
+    .line 1791
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     iget-object v2, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 1778
+    .line 1792
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v2, 0xe
@@ -176,7 +191,7 @@
 
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 1779
+    .line 1793
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     sget v8, Lorg/telegram/messenger/R$string;->ClearCache:I
@@ -187,14 +202,14 @@
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1780
+    .line 1794
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v6, 0x5
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 1781
+    .line 1795
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -203,7 +218,7 @@
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1782
+    .line 1796
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -212,7 +227,7 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 1784
+    .line 1798
     new-instance v15, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {v15, v3, v3, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -225,17 +240,17 @@
 
     const-wide/16 v19, 0x12c
 
-    .line 1785
+    .line 1799
     invoke-virtual/range {v15 .. v21}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 1786
+    .line 1800
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     iget-object v3, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v3}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 1787
+    .line 1801
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -246,7 +261,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 1788
+    .line 1802
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -255,7 +270,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1789
+    .line 1803
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -272,7 +287,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 1790
+    .line 1804
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v2, ""
@@ -281,14 +296,14 @@
 
     const-string v1, "windowBackgroundWhite"
 
-    .line 1792
+    .line 1806
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1793
+    .line 1807
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     const/4 v2, -0x1
@@ -319,7 +334,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1799
+    .line 1813
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -330,7 +345,7 @@
 
     move-result p1
 
-    .line 1798
+    .line 1812
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -339,7 +354,7 @@
 .method public setDisabled(Z)V
     .locals 2
 
-    .line 1816
+    .line 1832
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -348,7 +363,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1817
+    .line 1833
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -371,7 +386,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1818
+    .line 1834
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     xor-int/lit8 p1, p1, 0x1
@@ -384,12 +399,12 @@
 .method public setSize(ZJ)V
     .locals 3
 
-    .line 1805
+    .line 1819
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-eqz p1, :cond_0
 
-    .line 1807
+    .line 1821
     sget p1, Lorg/telegram/messenger/R$string;->ClearCache:I
 
     const-string v1, "ClearCache"
@@ -400,7 +415,7 @@
 
     goto :goto_0
 
-    .line 1808
+    .line 1822
     :cond_0
     sget p1, Lorg/telegram/messenger/R$string;->ClearSelectedCache:I
 
@@ -410,11 +425,11 @@
 
     move-result-object p1
 
-    .line 1805
+    .line 1819
     :goto_0
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1810
+    .line 1824
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-wide/16 v0, 0x0
@@ -435,23 +450,62 @@
     :goto_1
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
+    const/4 p1, 0x1
+
+    const/4 p2, 0x0
+
     if-gtz v2, :cond_2
 
-    const/4 p1, 0x1
+    const/4 p3, 0x1
 
     goto :goto_2
 
     :cond_2
-    const/4 p1, 0x0
+    const/4 p3, 0x0
 
-    .line 1811
+    .line 1825
     :goto_2
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->setDisabled(Z)V
+    invoke-virtual {p0, p3}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->setDisabled(Z)V
 
-    .line 1812
-    iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
+    .line 1826
+    iget-object p3, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
+    invoke-virtual {p3}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 1828
+    iget-object p3, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    aput-object v1, v0, p2
+
+    const-string p2, "\t"
+
+    aput-object p2, v0, p1
+
+    const/4 p1, 0x2
+
+    iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
+
+    invoke-virtual {p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getText()Ljava/lang/CharSequence;
+
+    move-result-object p2
+
+    aput-object p2, v0, p1
+
+    invoke-static {v0}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-virtual {p3, p1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

@@ -34,7 +34,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 410
+    .line 406
     new-instance v0, Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
 
     const-string v1, "BACK"
@@ -45,7 +45,7 @@
 
     sput-object v0, Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;->BACK:Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
 
-    .line 411
+    .line 407
     new-instance v1, Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
 
     const-string v3, "MENU"
@@ -64,7 +64,7 @@
 
     aput-object v1, v3, v4
 
-    .line 409
+    .line 405
     sput-object v3, Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;->$VALUES:[Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
 
     return-void
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    .line 409
+    .line 405
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -87,7 +87,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
     .locals 1
 
-    .line 409
+    .line 405
     const-class v0, Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -102,7 +102,7 @@
 .method public static values()[Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
     .locals 1
 
-    .line 409
+    .line 405
     sget-object v0, Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;->$VALUES:[Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/ActionBar/INavigationLayout$BackButtonState;->clone()Ljava/lang/Object;

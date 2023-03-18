@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->$r8$lambda$BPB0yuv7A6dp0q1ijX7cLe2cHM8(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->$r8$lambda$GHDB9Vyk6KeFSSWsiosyU5CeDns(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
     return-void
 .end method

@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Z[Lorg/telegram/ui/ActionBar/INavigationLayout;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 924
+    .line 925
     iput-object p4, p0, Lorg/telegram/ui/ActionBar/BaseFragment$1;->val$actionBarLayout:[Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     iput-object p5, p0, Lorg/telegram/ui/ActionBar/BaseFragment$1;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -41,7 +41,7 @@
 
     const/4 p1, 0x0
 
-    .line 926
+    .line 927
     aget-object p2, p4, p1
 
     new-instance p3, Ljava/util/ArrayList;
@@ -50,17 +50,17 @@
 
     invoke-interface {p2, p3}, Lorg/telegram/ui/ActionBar/INavigationLayout;->setFragmentStack(Ljava/util/List;)V
 
-    .line 927
+    .line 928
     aget-object p2, p4, p1
 
     invoke-interface {p2, p5}, Lorg/telegram/ui/ActionBar/INavigationLayout;->addFragmentToStack(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 928
+    .line 929
     aget-object p2, p4, p1
 
     invoke-interface {p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->showLastFragment()V
 
-    .line 929
+    .line 930
     aget-object p2, p4, p1
 
     invoke-interface {p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
@@ -71,7 +71,7 @@
 
     invoke-virtual {p2, p3, p1, p3, p1}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 930
+    .line 931
     aget-object p2, p4, p1
 
     invoke-interface {p2}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
@@ -80,13 +80,13 @@
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 931
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
-
     .line 932
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
     .line 933
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
+
+    .line 934
     new-instance p1, Lorg/telegram/ui/ActionBar/BaseFragment$1$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p5}, Lorg/telegram/ui/ActionBar/BaseFragment$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -99,7 +99,7 @@
 .method private static synthetic lambda$new$0(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 933
+    .line 934
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
     return-void
@@ -118,10 +118,10 @@
 .method public dismiss()V
     .locals 3
 
-    .line 952
+    .line 953
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 953
+    .line 954
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment$1;->val$actionBarLayout:[Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     const/4 v1, 0x0
@@ -136,7 +136,7 @@
 .method public onBackPressed()V
     .locals 3
 
-    .line 943
+    .line 944
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment$1;->val$actionBarLayout:[Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     const/4 v1, 0x0
@@ -161,7 +161,7 @@
 
     goto :goto_0
 
-    .line 946
+    .line 947
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment$1;->val$actionBarLayout:[Lorg/telegram/ui/ActionBar/INavigationLayout;
 
@@ -171,7 +171,7 @@
 
     goto :goto_1
 
-    .line 944
+    .line 945
     :cond_1
     :goto_0
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V

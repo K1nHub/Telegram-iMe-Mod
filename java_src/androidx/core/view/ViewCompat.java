@@ -1067,7 +1067,7 @@ public class ViewCompat {
     static void notifyViewAccessibilityStateChangedIfNeeded(View view, int i) {
         AccessibilityManager accessibilityManager = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         if (accessibilityManager.isEnabled()) {
-            boolean z = getAccessibilityPaneTitle(view) != null && view.getVisibility() == 0;
+            boolean z = getAccessibilityPaneTitle(view) != null && view.isShown() && view.getWindowVisibility() == 0;
             if (getAccessibilityLiveRegion(view) != 0 || z) {
                 AccessibilityEvent obtain = AccessibilityEvent.obtain();
                 obtain.setEventType(z ? 32 : 2048);
@@ -1134,7 +1134,7 @@ public class ViewCompat {
         }
 
         void addAccessibilityPane(View view) {
-            this.mPanesToVisible.put(view, Boolean.valueOf(view.getVisibility() == 0));
+            this.mPanesToVisible.put(view, Boolean.valueOf(view.isShown() && view.getWindowVisibility() == 0));
             view.addOnAttachStateChangeListener(this);
             if (Api19Impl.isAttachedToWindow(view)) {
                 registerForLayoutCallback(view);
@@ -1148,7 +1148,7 @@ public class ViewCompat {
         }
 
         private void checkPaneVisibility(View view, boolean z) {
-            boolean z2 = view.getVisibility() == 0;
+            boolean z2 = view.isShown() && view.getWindowVisibility() == 0;
             if (z != z2) {
                 ViewCompat.notifyViewAccessibilityStateChangedIfNeeded(view, z2 ? 16 : 32);
                 this.mPanesToVisible.put(view, Boolean.valueOf(z2));

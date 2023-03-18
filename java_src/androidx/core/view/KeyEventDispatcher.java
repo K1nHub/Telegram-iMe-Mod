@@ -54,7 +54,11 @@ public class KeyEventDispatcher {
         Method method = sActionBarOnMenuKeyMethod;
         if (method != null) {
             try {
-                return ((Boolean) method.invoke(actionBar, keyEvent)).booleanValue();
+                Object invoke = method.invoke(actionBar, keyEvent);
+                if (invoke == null) {
+                    return false;
+                }
+                return ((Boolean) invoke).booleanValue();
             } catch (IllegalAccessException | InvocationTargetException unused2) {
             }
         }

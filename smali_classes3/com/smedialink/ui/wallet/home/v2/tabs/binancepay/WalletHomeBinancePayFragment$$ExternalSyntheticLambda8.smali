@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda8;->f$0:Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->$r8$lambda$gtUpRr4vArpA2RJh2QSChKe7WuQ(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->$r8$lambda$Xl8h7oZGP60MdPQCuBkqO51PLQI(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;I)V
 
     return-void
 .end method

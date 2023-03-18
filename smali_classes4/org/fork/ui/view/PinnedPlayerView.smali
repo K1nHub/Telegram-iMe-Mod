@@ -4775,7 +4775,7 @@
 
     move-result v0
 
-    const-string v1, "windowBackgroundWhite"
+    const-string/jumbo v1, "windowBackgroundWhite"
 
     .line 730
     invoke-direct {p0, v1}, Lorg/fork/ui/view/PinnedPlayerView;->getThemedColor(Ljava/lang/String;)I

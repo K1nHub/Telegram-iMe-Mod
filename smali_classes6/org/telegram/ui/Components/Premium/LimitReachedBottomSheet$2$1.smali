@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;)V
     .locals 0
 
-    .line 287
+    .line 375
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2$1;->this$1:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,31 +38,31 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 290
+    .line 378
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/ui/Cells/AdminedChannelCell;
 
-    .line 291
+    .line 379
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 292
+    .line 380
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/AdminedChannelCell;->getCurrentChannel()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object p1
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 293
+    .line 381
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2$1;->this$1:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Ljava/util/ArrayList;)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$100(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Ljava/util/ArrayList;)V
 
     return-void
 .end method

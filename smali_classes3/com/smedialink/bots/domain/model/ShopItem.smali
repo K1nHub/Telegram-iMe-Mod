@@ -978,21 +978,13 @@
     :cond_a
     iget v1, p0, Lcom/smedialink/bots/domain/model/ShopItem;->rating:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget v3, p1, Lcom/smedialink/bots/domain/model/ShopItem;->rating:F
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-eqz v1, :cond_b
 
     return v2
 
@@ -1235,11 +1227,19 @@
     .locals 2
 
     .line 29
-    iget-object v0, p0, Lcom/smedialink/bots/domain/model/ShopItem;->title:Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lcom/smedialink/bots/domain/model/ShopItem;->title:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/smedialink/bots/domain/model/ShopItem;->description:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1552,7 +1552,7 @@
 
     iget-object v1, p0, Lcom/smedialink/bots/domain/model/ShopItem;->sku:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", avatar="
 
@@ -1672,7 +1672,7 @@
 
     iget-object v1, p0, Lcom/smedialink/bots/domain/model/ShopItem;->price:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", downloadLink="
 

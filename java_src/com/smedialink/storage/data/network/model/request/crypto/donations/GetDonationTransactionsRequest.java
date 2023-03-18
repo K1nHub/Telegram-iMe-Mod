@@ -64,7 +64,7 @@ public final class GetDonationTransactionsRequest {
     }
 
     public String toString() {
-        return "GetDonationTransactionsRequest(lastItemId=" + ((Object) this.lastItemId) + ", limit=" + this.limit + ", networkType=" + this.networkType + ", chatId=" + this.chatId + ')';
+        return "GetDonationTransactionsRequest(lastItemId=" + this.lastItemId + ", limit=" + this.limit + ", networkType=" + this.networkType + ", chatId=" + this.chatId + ')';
     }
 
     public GetDonationTransactionsRequest(String str, int i, String networkType, String chatId) {

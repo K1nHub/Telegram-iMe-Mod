@@ -139,60 +139,60 @@
 .method public constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 3
 
-    .line 3179
+    .line 3180
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    .line 3180
+    .line 3181
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ViewPagerFixed;-><init>(Landroid/content/Context;)V
 
     const-string v0, "empty"
 
-    .line 3153
+    .line 3154
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchString:Ljava/lang/String;
-
-    .line 3155
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     .line 3156
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
+
+    .line 3157
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
-    .line 3378
+    .line 3379
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->selectedItems:Ljava/util/ArrayList;
 
-    .line 3182
+    .line 3183
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchContainer:Landroid/widget/FrameLayout;
 
-    .line 3183
+    .line 3184
     new-instance v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$1;-><init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Lorg/telegram/ui/TopicsFragment;)V
 
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->chatPreviewDelegate:Lorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;
 
-    .line 3204
+    .line 3205
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 3205
+    .line 3206
     new-instance v1, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$SearchAdapter;
 
     const/4 v2, 0x0
@@ -203,7 +203,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 3206
+    .line 3207
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -214,7 +214,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 3207
+    .line 3208
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda3;
@@ -223,7 +223,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 3216
+    .line 3217
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$2;
@@ -232,7 +232,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 3233
+    .line 3234
     new-instance p1, Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
@@ -241,24 +241,24 @@
 
     const/4 v0, 0x7
 
-    .line 3234
+    .line 3235
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 3235
+    .line 3236
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->flickerLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->showDate(Z)V
 
-    .line 3236
+    .line 3237
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->flickerLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     const/4 v1, 0x1
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setUseHeaderOffset(Z)V
 
-    .line 3238
+    .line 3239
     new-instance p1, Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->flickerLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
@@ -267,7 +267,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
-    .line 3239
+    .line 3240
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->NoResult:I
@@ -280,7 +280,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3240
+    .line 3241
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Landroid/widget/TextView;
@@ -289,53 +289,53 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 3241
+    .line 3242
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/StickerEmptyView;->setVisibility(I)V
 
-    .line 3242
+    .line 3243
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->flickerLoadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-virtual {p1, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
 
-    .line 3243
+    .line 3244
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/StickerEmptyView;->setAnimateLayoutChange(Z)V
 
-    .line 3245
+    .line 3246
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 3246
+    .line 3247
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setAnimateEmptyView(ZI)V
 
-    .line 3247
+    .line 3248
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchContainer:Landroid/widget/FrameLayout;
 
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3248
+    .line 3249
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchContainer:Landroid/widget/FrameLayout;
 
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3249
+    .line 3250
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->updateRows()V
 
-    .line 3251
+    .line 3252
     new-instance p1, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -344,12 +344,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->itemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
-    .line 3252
+    .line 3253
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setItemsEnterAnimator(Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;)V
 
-    .line 3254
+    .line 3255
     new-instance p1, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$ViewPagerAdapter;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$ViewPagerAdapter;-><init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;)V
@@ -361,19 +361,19 @@
     return-void
 .end method
 
-.method static synthetic access$7600(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Ljava/lang/String;)V
+.method static synthetic access$7700(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Ljava/lang/String;)V
     .locals 0
 
-    .line 3145
+    .line 3146
     invoke-direct {p0, p1}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->loadMessages(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic access$8100(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Landroid/view/View;ILjava/lang/String;Z)V
+.method static synthetic access$8200(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Landroid/view/View;ILjava/lang/String;Z)V
     .locals 0
 
-    .line 3145
+    .line 3146
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->search(Landroid/view/View;ILjava/lang/String;Z)V
 
     return-void
@@ -382,7 +382,7 @@
 .method private synthetic lambda$loadMessages$2(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
     .locals 7
 
-    .line 3526
+    .line 3527
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchString:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -391,30 +391,30 @@
 
     if-eqz v0, :cond_4
 
-    .line 3527
+    .line 3528
     iget v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
     const/4 v1, 0x0
 
-    .line 3528
+    .line 3529
     iput-boolean v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesIsLoading:Z
 
-    .line 3529
+    .line 3530
     iput-boolean v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->isLoading:Z
 
-    .line 3530
+    .line 3531
     instance-of v2, p2, Lorg/telegram/tgnet/TLRPC$messages_Messages;
 
     const/4 v3, 0x1
 
     if-eqz v2, :cond_2
 
-    .line 3531
+    .line 3532
     check-cast p2, Lorg/telegram/tgnet/TLRPC$messages_Messages;
 
     const/4 v2, 0x0
 
-    .line 3533
+    .line 3534
     :goto_0
     iget-object v4, p2, Lorg/telegram/tgnet/TLRPC$messages_Messages;->messages:Ljava/util/ArrayList;
 
@@ -424,7 +424,7 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 3534
+    .line 3535
     iget-object v4, p2, Lorg/telegram/tgnet/TLRPC$messages_Messages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -433,21 +433,21 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 3535
+    .line 3536
     new-instance v5, Lorg/telegram/messenger/MessageObject;
 
     iget-object v6, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$8800(Lorg/telegram/ui/TopicsFragment;)I
+    invoke-static {v6}, Lorg/telegram/ui/TopicsFragment;->access$8900(Lorg/telegram/ui/TopicsFragment;)I
 
     move-result v6
 
     invoke-direct {v5, v6, v4, v1, v1}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 3536
+    .line 3537
     invoke-virtual {v5, p1}, Lorg/telegram/messenger/MessageObject;->setQuery(Ljava/lang/String;)V
 
-    .line 3537
+    .line 3538
     iget-object v4, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -456,11 +456,11 @@
 
     goto :goto_0
 
-    .line 3539
+    .line 3540
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->updateRows()V
 
-    .line 3540
+    .line 3541
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -486,24 +486,24 @@
 
     goto :goto_1
 
-    .line 3542
+    .line 3543
     :cond_2
     iput-boolean v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->canLoadMore:Z
 
-    .line 3545
+    .line 3546
     :goto_1
     iget p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
     if-nez p1, :cond_3
 
-    .line 3546
+    .line 3547
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-boolean p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->isLoading:Z
 
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
-    .line 3548
+    .line 3549
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->itemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
@@ -516,7 +516,7 @@
 .method private synthetic lambda$loadMessages$3(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 3525
+    .line 3526
     new-instance p3, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda1;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
@@ -529,15 +529,15 @@
 .method private synthetic lambda$new$0(Landroid/view/View;I)V
     .locals 3
 
-    .line 3208
+    .line 3209
     instance-of p2, p1, Lorg/telegram/ui/Cells/TopicSearchCell;
 
     if-eqz p2, :cond_0
 
-    .line 3209
+    .line 3210
     check-cast p1, Lorg/telegram/ui/Cells/TopicSearchCell;
 
-    .line 3210
+    .line 3211
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-wide v0, p2, Lorg/telegram/ui/TopicsFragment;->chatId:J
@@ -552,16 +552,16 @@
 
     goto :goto_0
 
-    .line 3211
+    .line 3212
     :cond_0
     instance-of p2, p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
     if-eqz p2, :cond_1
 
-    .line 3212
+    .line 3213
     check-cast p1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
-    .line 3213
+    .line 3214
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-wide v0, p2, Lorg/telegram/ui/TopicsFragment;->chatId:J
@@ -582,7 +582,7 @@
 .method private synthetic lambda$searchMessages$1(Ljava/lang/String;)V
     .locals 5
 
-    .line 3470
+    .line 3471
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
@@ -591,7 +591,7 @@
 
     move-result-object v0
 
-    .line 3471
+    .line 3472
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -600,7 +600,7 @@
 
     const/4 v3, 0x0
 
-    .line 3472
+    .line 3473
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -612,7 +612,7 @@
 
     if-ge v3, v4, :cond_1
 
-    .line 3473
+    .line 3474
     iget-object v4, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v4, v4, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -651,7 +651,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 3474
+    .line 3475
     iget-object v4, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v4, v4, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -666,7 +666,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3475
+    .line 3476
     iget-object v4, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object v4, v4, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -686,21 +686,21 @@
 
     goto :goto_0
 
-    .line 3479
+    .line 3480
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 3480
+    .line 3481
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 3481
+    .line 3482
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->updateRows()V
 
-    .line 3483
+    .line 3484
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -709,15 +709,15 @@
 
     if-nez v0, :cond_2
 
-    .line 3484
+    .line 3485
     iput-boolean v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->isLoading:Z
 
-    .line 3486
+    .line 3487
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->itemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;->showItemsAnimated(I)V
 
-    .line 3489
+    .line 3490
     :cond_2
     invoke-direct {p0, p1}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->loadMessages(Ljava/lang/String;)V
 
@@ -727,20 +727,20 @@
 .method private loadMessages(Ljava/lang/String;)V
     .locals 4
 
-    .line 3502
+    .line 3503
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesIsLoading:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 3505
+    .line 3506
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_search;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_search;-><init>()V
 
-    .line 3506
+    .line 3507
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -759,7 +759,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3507
+    .line 3508
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterEmpty;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_inputMessagesFilterEmpty;-><init>()V
@@ -768,13 +768,13 @@
 
     const/16 v1, 0x14
 
-    .line 3508
+    .line 3509
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->limit:I
 
-    .line 3509
+    .line 3510
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->q:Ljava/lang/String;
 
-    .line 3510
+    .line 3511
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -785,7 +785,7 @@
 
     if-nez v1, :cond_1
 
-    .line 3511
+    .line 3512
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -806,14 +806,14 @@
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
 
-    .line 3513
+    .line 3514
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesIsLoading:Z
 
-    .line 3525
+    .line 3526
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$8600(Lorg/telegram/ui/TopicsFragment;)I
+    invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$8700(Lorg/telegram/ui/TopicsFragment;)I
 
     move-result v1
 
@@ -839,20 +839,20 @@
 
     move-object/from16 v10, p3
 
-    .line 3424
+    .line 3425
     iput-object v10, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchString:Ljava/lang/String;
 
-    .line 3425
+    .line 3426
     iget-object v2, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchContainer:Landroid/widget/FrameLayout;
 
     if-ne v1, v2, :cond_0
 
-    .line 3426
+    .line 3427
     invoke-direct {p0, v10}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchMessages(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 3427
+    .line 3428
     :cond_0
     instance-of v2, v1, Lorg/telegram/ui/FilteredSearchView;
 
@@ -860,14 +860,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 3428
+    .line 3429
     check-cast v1, Lorg/telegram/ui/FilteredSearchView;
 
     iget v2, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->keyboardSize:I
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/FilteredSearchView;->setKeyboardHeight(IZ)V
 
-    .line 3429
+    .line 3430
     iget-object v2, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->viewPagerAdapter:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$ViewPagerAdapter;
 
     iget-object v2, v2, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$ViewPagerAdapter;->items:Ljava/util/ArrayList;
@@ -880,7 +880,7 @@
 
     check-cast v2, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$Item;
 
-    .line 3430
+    .line 3431
     iget-object v3, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-wide v3, v3, Lorg/telegram/ui/TopicsFragment;->chatId:J
@@ -913,20 +913,20 @@
 
     goto :goto_0
 
-    .line 3431
+    .line 3432
     :cond_1
     instance-of v2, v1, Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
     if-eqz v2, :cond_2
 
-    .line 3432
+    .line 3433
     check-cast v1, Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
     iget v2, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->keyboardSize:I
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->setKeyboardHeight(IZ)V
 
-    .line 3433
+    .line 3434
     invoke-virtual {v1, v10}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->search(Ljava/lang/String;)V
 
     :cond_2
@@ -937,57 +937,57 @@
 .method private searchMessages(Ljava/lang/String;)V
     .locals 3
 
-    .line 3438
+    .line 3439
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchRunnable:Ljava/lang/Runnable;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 3439
+    .line 3440
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3440
+    .line 3441
     iput-object v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchRunnable:Ljava/lang/Runnable;
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 3445
+    .line 3446
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesIsLoading:Z
 
-    .line 3446
+    .line 3447
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->canLoadMore:Z
 
-    .line 3447
+    .line 3448
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 3448
+    .line 3449
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 3449
+    .line 3450
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->updateRows()V
 
-    .line 3450
+    .line 3451
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 3451
+    .line 3452
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->isLoading:Z
 
-    .line 3452
+    .line 3453
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 3453
+    .line 3454
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -999,7 +999,7 @@
 
     if-ge v0, p1, :cond_2
 
-    .line 3454
+    .line 3455
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -1014,7 +1014,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 3455
+    .line 3456
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -1031,7 +1031,7 @@
 
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3456
+    .line 3457
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/TopicsFragment;->forumTopics:Ljava/util/ArrayList;
@@ -1051,27 +1051,27 @@
 
     goto :goto_0
 
-    .line 3459
+    .line 3460
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->updateRows()V
 
     return-void
 
-    .line 3463
+    .line 3464
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->updateRows()V
 
     const/4 v0, 0x1
 
-    .line 3466
+    .line 3467
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->isLoading:Z
 
-    .line 3467
+    .line 3468
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v1, v0, v0}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
-    .line 3469
+    .line 3470
     new-instance v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Ljava/lang/String;)V
@@ -1080,7 +1080,7 @@
 
     const-wide/16 v1, 0xc8
 
-    .line 3491
+    .line 3492
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
@@ -1091,30 +1091,30 @@
 
     const/4 v0, -0x1
 
-    .line 3554
+    .line 3555
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->topicsHeaderRow:I
 
-    .line 3555
+    .line 3556
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->topicsStartRow:I
 
-    .line 3556
+    .line 3557
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->topicsEndRow:I
 
-    .line 3557
+    .line 3558
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesHeaderRow:I
 
-    .line 3558
+    .line 3559
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesStartRow:I
 
-    .line 3559
+    .line 3560
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesEndRow:I
 
     const/4 v0, 0x0
 
-    .line 3561
+    .line 3562
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
-    .line 3563
+    .line 3564
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1123,7 +1123,7 @@
 
     if-nez v0, :cond_0
 
-    .line 3564
+    .line 3565
     iget v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -1132,10 +1132,10 @@
 
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->topicsHeaderRow:I
 
-    .line 3565
+    .line 3566
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->topicsStartRow:I
 
-    .line 3566
+    .line 3567
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultTopics:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1146,10 +1146,10 @@
 
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
-    .line 3567
+    .line 3568
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->topicsEndRow:I
 
-    .line 3570
+    .line 3571
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
@@ -1159,7 +1159,7 @@
 
     if-nez v0, :cond_1
 
-    .line 3571
+    .line 3572
     iget v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -1168,10 +1168,10 @@
 
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesHeaderRow:I
 
-    .line 3572
+    .line 3573
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesStartRow:I
 
-    .line 3573
+    .line 3574
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchResultMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1182,10 +1182,10 @@
 
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
-    .line 3574
+    .line 3575
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->messagesEndRow:I
 
-    .line 3577
+    .line 3578
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchAdapter:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$SearchAdapter;
 
@@ -1199,10 +1199,10 @@
 .method public actionModeShowing()Z
     .locals 1
 
-    .line 3382
+    .line 3383
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$8300(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$8400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v0
 
@@ -1216,24 +1216,24 @@
 .method public goToMessage(Lorg/telegram/messenger/MessageObject;)V
     .locals 6
 
-    .line 3359
+    .line 3360
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 3360
+    .line 3361
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v1
 
-    .line 3361
+    .line 3362
     invoke-static {v1, v2}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 3362
+    .line 3363
     invoke-static {v1, v2}, Lorg/telegram/messenger/DialogObject;->getEncryptedChatId(J)I
 
     move-result v1
@@ -1244,7 +1244,7 @@
 
     goto :goto_0
 
-    .line 3363
+    .line 3364
     :cond_0
     invoke-static {v1, v2}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
@@ -1254,16 +1254,16 @@
 
     const-string v3, "user_id"
 
-    .line 3364
+    .line 3365
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     goto :goto_0
 
-    .line 3366
+    .line 3367
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$8200(Lorg/telegram/ui/TopicsFragment;)I
+    invoke-static {v3}, Lorg/telegram/ui/TopicsFragment;->access$8300(Lorg/telegram/ui/TopicsFragment;)I
 
     move-result v3
 
@@ -1287,17 +1287,17 @@
 
     if-eqz v3, :cond_2
 
-    .line 3367
+    .line 3368
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     if-eqz v4, :cond_2
 
     const-string v4, "migrated_to"
 
-    .line 3368
+    .line 3369
     invoke-virtual {v0, v4, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 3369
+    .line 3370
     iget-object v1, v3, Lorg/telegram/tgnet/TLRPC$Chat;->migrated_to:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$InputChannel;->channel_id:J
@@ -1309,10 +1309,10 @@
 
     const-string v3, "chat_id"
 
-    .line 3371
+    .line 3372
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 3373
+    .line 3374
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
@@ -1322,7 +1322,7 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 3374
+    .line 3375
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     new-instance v1, Lorg/telegram/ui/ChatActivity;
@@ -1356,7 +1356,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 3400
+    .line 3401
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->selectedItems:Ljava/util/ArrayList;
 
@@ -1366,7 +1366,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 3401
+    .line 3402
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->selectedItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1377,7 +1377,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3402
+    .line 3403
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v3
@@ -1412,7 +1412,7 @@
 .method public setSearchString(Ljava/lang/String;)V
     .locals 3
 
-    .line 3495
+    .line 3496
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchString:Ljava/lang/String;
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1423,7 +1423,7 @@
 
     return-void
 
-    .line 3498
+    .line 3499
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -1443,10 +1443,10 @@
 .method public showActionMode()V
     .locals 1
 
-    .line 3411
+    .line 3412
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$8500(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$8600(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v0
 
@@ -1458,7 +1458,7 @@
 .method public toggleItemSelection(Lorg/telegram/messenger/MessageObject;Landroid/view/View;I)V
     .locals 0
 
-    .line 3387
+    .line 3388
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->selectedItems:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -1467,12 +1467,12 @@
 
     if-nez p2, :cond_0
 
-    .line 3388
+    .line 3389
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->selectedItems:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3390
+    .line 3391
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->selectedItems:Ljava/util/ArrayList;
 
@@ -1482,10 +1482,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 3391
+    .line 3392
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$8400(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$8500(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p1
 

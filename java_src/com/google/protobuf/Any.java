@@ -15,7 +15,7 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Any, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C11891 c11891) {
+        /* synthetic */ Builder(C11821 c11821) {
             this();
         }
 
@@ -26,7 +26,7 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
 
     /* renamed from: com.google.protobuf.Any$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C11891 {
+    static /* synthetic */ class C11821 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f224xa1df5c61;
@@ -67,7 +67,7 @@ public final class Any extends GeneratedMessageLite<Any, Builder> implements Mes
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C11891.f224xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C11821.f224xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Any();
             case 2:

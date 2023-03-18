@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n294#2:656\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1\n*L\n153#1:656\n*E\n"
+    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n302#2:656\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$initTabLayout$1$1\n*L\n153#1:656\n*E\n"
 .end annotation
 
 
@@ -71,7 +71,7 @@
 
     aget-object v3, v3, v0
 
-    .line 294
+    .line 302
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v3

@@ -99,7 +99,7 @@ public final class ListDialogModel {
     }
 
     public String toString() {
-        return "ListDialogModel(title=" + ((Object) this.title) + ", subtitle=" + ((Object) this.subtitle) + ", message=" + ((Object) this.message) + ", items=" + this.items + ", negativeButtonText=" + ((Object) this.negativeButtonText) + ", positiveButtonText=" + ((Object) this.positiveButtonText) + ')';
+        return "ListDialogModel(title=" + this.title + ", subtitle=" + this.subtitle + ", message=" + this.message + ", items=" + this.items + ", negativeButtonText=" + this.negativeButtonText + ", positiveButtonText=" + this.positiveButtonText + ')';
     }
 
     public ListDialogModel(String str, String str2, String str3, List<String> items, String str4, String str5) {

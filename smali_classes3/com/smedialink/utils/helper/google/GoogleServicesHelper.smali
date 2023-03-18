@@ -19,10 +19,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$IuB9IV7P0itwemkPgrwGBuBilC8()V
+.method public static synthetic $r8$lambda$gOn-kZLqy0JqTWezkIA_nZ6Mjk4()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck$lambda-0()V
+    invoke-static {}, Lcom/smedialink/utils/helper/google/GoogleServicesHelper;->runWithActivationCheck$lambda$0()V
 
     return-void
 .end method
@@ -137,7 +137,7 @@
     return-void
 .end method
 
-.method private static final runWithActivationCheck$lambda-0()V
+.method private static final runWithActivationCheck$lambda$0()V
     .locals 0
 
     return-void

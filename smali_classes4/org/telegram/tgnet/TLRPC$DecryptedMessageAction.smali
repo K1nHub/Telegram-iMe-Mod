@@ -37,10 +37,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 34000
+    .line 34145
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 34003
+    .line 34148
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -59,7 +59,7 @@
 
     goto :goto_0
 
-    .line 34037
+    .line 34182
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionAcceptKey;
 
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 34031
+    .line 34176
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionFlushHistory;
 
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 34022
+    .line 34167
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionDeleteMessages;
 
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 34043
+    .line 34188
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionResend;
 
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 34040
+    .line 34185
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionReadMessages;
 
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 34046
+    .line 34191
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionRequestKey;
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 34019
+    .line 34164
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionNotifyLayer;
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 34025
+    .line 34170
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionCommitKey;
 
@@ -123,7 +123,7 @@
 
     goto :goto_0
 
-    .line 34028
+    .line 34173
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionAbortKey;
 
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 34034
+    .line 34179
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionTyping;
 
@@ -139,7 +139,7 @@
 
     goto :goto_0
 
-    .line 34052
+    .line 34197
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionNoop;
 
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 34016
+    .line 34161
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionSetMessageTTL;
 
@@ -155,7 +155,7 @@
 
     goto :goto_0
 
-    .line 34049
+    .line 34194
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionScreenshotMessages;
 
@@ -168,7 +168,7 @@
 
     goto :goto_1
 
-    .line 34056
+    .line 34201
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -198,7 +198,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 34059
+    .line 34204
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

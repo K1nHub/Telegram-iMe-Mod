@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,19 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/lang/String;",
+        ">;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletDonationsPresenter.kt\ncom/smedialink/ui/wallet/donations/WalletDonationsPresenter\n*L\n1#1,111:1\n147#2,18:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletDonationsPresenter.kt\ncom/smedialink/ui/wallet/donations/WalletDonationsPresenter\n*L\n1#1,111:1\n148#2,19:112\n*E\n"
 .end annotation
 
 
@@ -41,18 +44,35 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/lang/String;",
+            ">;)V"
         }
     .end annotation
 
@@ -108,7 +128,7 @@
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;->access$loadWalletInformation(Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 119
     :cond_0
@@ -130,12 +150,9 @@
     .line 121
     sget-object v1, Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->DONATIONS_NOT_CONFIGURED_YET:Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    if-ne v0, v1, :cond_1
-
-    goto :goto_0
+    if-eq v0, v1, :cond_1
 
     .line 124
-    :cond_1
     iget-object v0, p0, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;
 
     invoke-virtual {v0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -161,7 +178,7 @@
     invoke-interface {v0, p1}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
 
     .line 126
-    :goto_0
+    :cond_1
     iget-object p1, p0, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;
 
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -179,6 +196,6 @@
     invoke-interface {p1, v0}, Lcom/smedialink/ui/wallet/donations/WalletDonationsView;->onDonationsAddressLoaded(Ljava/lang/String;)V
 
     :cond_2
-    :goto_1
+    :goto_0
     return-void
 .end method

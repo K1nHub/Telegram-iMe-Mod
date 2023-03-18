@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;->$r8$lambda$Vut8nwFeL_8AFOkBf-yhGEGqTBE(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;->$r8$lambda$GACllCM9Wnym4lMF7sZtJ3hdN_w(Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsBottomSheetDialog;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;I)V
 
     return-void
 .end method

@@ -2,7 +2,7 @@ package io.grpc.okhttp.internal.framed;
 
 import okio.BufferedSink;
 import okio.BufferedSource;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface Variant {
     FrameReader newReader(BufferedSource bufferedSource, boolean z);
 

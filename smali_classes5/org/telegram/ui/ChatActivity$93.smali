@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/graphics/Bitmap;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 17696
+    .line 17700
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$93;->val$thumb:Landroid/graphics/Bitmap;
@@ -51,7 +51,7 @@
 .method public getThumbForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
     .locals 1
 
-    .line 17699
+    .line 17703
     new-instance p1, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$93;->val$thumb:Landroid/graphics/Bitmap;
@@ -68,7 +68,7 @@
 .method public sendButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;Z)V
     .locals 7
 
-    .line 17704
+    .line 17708
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$93;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$93;->val$cameraPhoto:Ljava/util/ArrayList;

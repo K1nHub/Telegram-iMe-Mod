@@ -78,16 +78,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/binancepay/BinanceAuthTokens;->getAccessToken()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/binancepay/BinanceAuthTokens;->getAccessToken()Ljava/lang/String;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0
@@ -107,16 +107,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/binancepay/BinanceAuthTokens;->getRefreshToken()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/binancepay/BinanceAuthTokens;->getRefreshToken()Ljava/lang/String;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0

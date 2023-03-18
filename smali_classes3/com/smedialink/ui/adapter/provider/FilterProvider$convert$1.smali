@@ -95,9 +95,6 @@
 
     invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/common/RecycleViewExtKt;->restoreScrollState(Landroidx/recyclerview/widget/LinearLayoutManager;Landroid/os/Parcelable;)V
 
-    .line 52
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 49
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 

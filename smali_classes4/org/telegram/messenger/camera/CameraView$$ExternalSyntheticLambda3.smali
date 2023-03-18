@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/camera/CameraView;
 
-.field public final synthetic f$1:Landroid/graphics/SurfaceTexture;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/camera/CameraView;Landroid/graphics/SurfaceTexture;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/camera/CameraView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/messenger/camera/CameraView;
-
-    iput-object p2, p0, Lorg/telegram/messenger/camera/CameraView$$ExternalSyntheticLambda3;->f$1:Landroid/graphics/SurfaceTexture;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/messenger/camera/CameraView;
 
-    iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$$ExternalSyntheticLambda3;->f$1:Landroid/graphics/SurfaceTexture;
-
-    invoke-static {v0, v1}, Lorg/telegram/messenger/camera/CameraView;->$r8$lambda$m5aGqLo7D50G-d6Mfhavehw8RrU(Lorg/telegram/messenger/camera/CameraView;Landroid/graphics/SurfaceTexture;)V
+    invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->$r8$lambda$nunhqfsSS6qF9FJwhBp0OBQUmeM(Lorg/telegram/messenger/camera/CameraView;)V
 
     return-void
 .end method

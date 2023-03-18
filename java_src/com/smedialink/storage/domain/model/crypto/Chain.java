@@ -13,18 +13,18 @@ public abstract class Chain {
     private static final Lazy<List<Chain>> supportedChains$delegate;
 
     /* renamed from: id */
-    private final long f318id;
+    private final long f321id;
 
     public /* synthetic */ Chain(long j, DefaultConstructorMarker defaultConstructorMarker) {
         this(j);
     }
 
     private Chain(long j) {
-        this.f318id = j;
+        this.f321id = j;
     }
 
     public long getId() {
-        return this.f318id;
+        return this.f321id;
     }
 
     /* compiled from: Chain.kt */
@@ -32,7 +32,7 @@ public abstract class Chain {
     public static abstract class Ethereum extends Chain {
 
         /* renamed from: id */
-        private final long f320id;
+        private final long f323id;
 
         public /* synthetic */ Ethereum(long j, DefaultConstructorMarker defaultConstructorMarker) {
             this(j);
@@ -50,12 +50,12 @@ public abstract class Chain {
 
         private Ethereum(long j) {
             super(j, null);
-            this.f320id = j;
+            this.f323id = j;
         }
 
         @Override // com.smedialink.storage.domain.model.crypto.Chain
         public long getId() {
-            return this.f320id;
+            return this.f323id;
         }
 
         /* compiled from: Chain.kt */
@@ -74,7 +74,7 @@ public abstract class Chain {
     public static abstract class BSC extends Chain {
 
         /* renamed from: id */
-        private final long f319id;
+        private final long f322id;
 
         public /* synthetic */ BSC(long j, DefaultConstructorMarker defaultConstructorMarker) {
             this(j);
@@ -92,12 +92,12 @@ public abstract class Chain {
 
         private BSC(long j) {
             super(j, null);
-            this.f319id = j;
+            this.f322id = j;
         }
 
         @Override // com.smedialink.storage.domain.model.crypto.Chain
         public long getId() {
-            return this.f319id;
+            return this.f322id;
         }
 
         /* compiled from: Chain.kt */
@@ -116,7 +116,7 @@ public abstract class Chain {
     public static abstract class Polygon extends Chain {
 
         /* renamed from: id */
-        private final long f322id;
+        private final long f325id;
 
         public /* synthetic */ Polygon(long j, DefaultConstructorMarker defaultConstructorMarker) {
             this(j);
@@ -134,12 +134,12 @@ public abstract class Chain {
 
         private Polygon(long j) {
             super(j, null);
-            this.f322id = j;
+            this.f325id = j;
         }
 
         @Override // com.smedialink.storage.domain.model.crypto.Chain
         public long getId() {
-            return this.f322id;
+            return this.f325id;
         }
 
         /* compiled from: Chain.kt */
@@ -158,7 +158,7 @@ public abstract class Chain {
     public static abstract class Fantom extends Chain {
 
         /* renamed from: id */
-        private final long f321id;
+        private final long f324id;
 
         public /* synthetic */ Fantom(long j, DefaultConstructorMarker defaultConstructorMarker) {
             this(j);
@@ -176,12 +176,12 @@ public abstract class Chain {
 
         private Fantom(long j) {
             super(j, null);
-            this.f321id = j;
+            this.f324id = j;
         }
 
         @Override // com.smedialink.storage.domain.model.crypto.Chain
         public long getId() {
-            return this.f321id;
+            return this.f324id;
         }
 
         /* compiled from: Chain.kt */
@@ -200,7 +200,7 @@ public abstract class Chain {
     public static final class Unknown extends Chain {
 
         /* renamed from: id */
-        private final long f323id;
+        private final long f326id;
 
         public Unknown() {
             this(0L, 1, null);
@@ -208,7 +208,7 @@ public abstract class Chain {
 
         public Unknown(long j) {
             super(j, null);
-            this.f323id = j;
+            this.f326id = j;
         }
 
         public /* synthetic */ Unknown(long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -217,7 +217,7 @@ public abstract class Chain {
 
         @Override // com.smedialink.storage.domain.model.crypto.Chain
         public long getId() {
-            return this.f323id;
+            return this.f326id;
         }
     }
 

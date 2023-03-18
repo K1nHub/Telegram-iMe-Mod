@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/multifab/MiniFabsContainer$$ExternalSyntheticLambda2;->f$1:Lcom/smedialink/ui/multifab/MiniFabsContainer;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->$r8$lambda$dvGb0fV3fjhsxAy8uwxI5ALDha8(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/multifab/MiniFabsContainer;->$r8$lambda$mb1zyLPMXI942KwwTLFCuxNtbes(ZLcom/smedialink/ui/multifab/MiniFabsContainer;)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$$ExternalSyntheticLambda4;->f$0:Lorg/fork/ui/fragment/CreateReactionButtonsActivity;
 
-    invoke-static {v0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$ZzoTFZ5kG6ZRxYanwTpMqprr-ss(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
+    invoke-static {v0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$CttRYylGOxiF5iNAXZHBJW3ofak(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
 
     return-void
 .end method

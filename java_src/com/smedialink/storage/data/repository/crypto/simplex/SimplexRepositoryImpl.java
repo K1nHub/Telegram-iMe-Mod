@@ -6,10 +6,8 @@ import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.smedialink.storage.data.network.model.request.crypto.simplex.CreateBuyingCryptoPaymentRequest;
 import com.smedialink.storage.data.network.model.request.crypto.simplex.GetBuyingCryptoQuoteRequestList;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.simplex.CreateBuyingCryptoPaymentResponse;
-import com.smedialink.storage.data.network.model.response.crypto.simplex.GetBuyingCryptoQuoteResponse;
-import com.smedialink.storage.data.utils.extentions.RxExtKt$handleError$1;
+import com.smedialink.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.smedialink.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.crypto.simplex.BuyingCryptoPayment;
@@ -19,7 +17,6 @@ import com.smedialink.storage.domain.model.crypto.simplex.Currency;
 import com.smedialink.storage.domain.repository.crypto.simplex.SimplexRepository;
 import com.smedialink.storage.domain.utils.extentions.CryptoExtKt;
 import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.collections.CollectionsKt__IterablesKt;
@@ -47,22 +44,10 @@ public final class SimplexRepositoryImpl implements SimplexRepository {
         Intrinsics.checkNotNullParameter(quoteId, "quoteId");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         String value = digitalCurrency.getValue();
-        final CreateBuyingCryptoPaymentRequest createBuyingCryptoPaymentRequest = new CreateBuyingCryptoPaymentRequest(quoteId, CryptoExtKt.generateUuid(), fiatCurrency.getValue(), i, value, f, networkType.name());
-        Observable<ApiBaseResponse<CreateBuyingCryptoPaymentResponse>> createBuyingCryptoPaymentRequest2 = this.simplexApi.createBuyingCryptoPaymentRequest(createBuyingCryptoPaymentRequest);
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = createBuyingCryptoPaymentRequest2.map(new Function() { // from class: com.smedialink.storage.data.repository.crypto.simplex.SimplexRepositoryImpl$createBuyingCryptoPayment$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(new BuyingCryptoPayment(createBuyingCryptoPaymentRequest.getOrderId(), ((CreateBuyingCryptoPaymentResponse) response.getPayload()).getHtml()));
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        CreateBuyingCryptoPaymentRequest createBuyingCryptoPaymentRequest = new CreateBuyingCryptoPaymentRequest(quoteId, CryptoExtKt.generateUuid(), fiatCurrency.getValue(), i, value, f, networkType.name());
+        Observable<R> map = this.simplexApi.createBuyingCryptoPaymentRequest(createBuyingCryptoPaymentRequest).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1766xab3d1946(this.firebaseErrorHandler, createBuyingCryptoPaymentRequest)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<BuyingCryptoPayment>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<BuyingCryptoPayment>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1765x9f6dc81b(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -76,28 +61,9 @@ public final class SimplexRepositoryImpl implements SimplexRepository {
         for (BuyingCryptoQuoteArgs buyingCryptoQuoteArgs : quoteRequests) {
             arrayList.add(SimplexMappingKt.mapToRequest(buyingCryptoQuoteArgs));
         }
-        Observable<ApiBaseResponse<GetBuyingCryptoQuoteResponse>> buyingCryptoQuote = this.simplexApi.getBuyingCryptoQuote(new GetBuyingCryptoQuoteRequestList(arrayList));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = buyingCryptoQuote.map(new Function() { // from class: com.smedialink.storage.data.repository.crypto.simplex.SimplexRepositoryImpl$getBuyingCryptoQuote$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                int collectionSizeOrDefault2;
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    List<GetBuyingCryptoQuoteResponse.CryptoQuote> quotes = ((GetBuyingCryptoQuoteResponse) response.getPayload()).getQuotes();
-                    collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(quotes, 10);
-                    ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
-                    for (GetBuyingCryptoQuoteResponse.CryptoQuote cryptoQuote : quotes) {
-                        arrayList2.add(SimplexMappingKt.mapToDomain(cryptoQuote));
-                    }
-                    return Result.Companion.success(arrayList2);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.simplexApi.getBuyingCryptoQuote(new GetBuyingCryptoQuoteRequestList(arrayList)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new SimplexRepositoryImpl$getBuyingCryptoQuote$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<BuyingCryptoQuote>>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<List<BuyingCryptoQuote>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1767xe982d2d7(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

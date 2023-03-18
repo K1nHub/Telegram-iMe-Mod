@@ -85,8 +85,6 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/PaintDrawable;->setCornerRadius(F)V
 
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 26
     invoke-virtual {p2, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
@@ -112,9 +110,7 @@
     invoke-virtual {p2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 31
-    invoke-virtual {p0}, Lcom/fxn/Bubble;->getItem()Lcom/fxn/parser/MenuItem;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/fxn/Bubble;->item:Lcom/fxn/parser/MenuItem;
 
     invoke-virtual {v0}, Lcom/fxn/parser/MenuItem;->getBadgeVisible()Z
 
@@ -133,7 +129,7 @@
     :cond_0
     const/16 v0, 0x8
 
-    .line 254
+    .line 135
     :goto_0
     invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
@@ -293,9 +289,7 @@
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 81
-    invoke-virtual {p0}, Lcom/fxn/Bubble;->getItem()Lcom/fxn/parser/MenuItem;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/fxn/Bubble;->item:Lcom/fxn/parser/MenuItem;
 
     invoke-virtual {v0}, Lcom/fxn/parser/MenuItem;->getTitle_size()F
 
@@ -319,9 +313,7 @@
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 83
-    invoke-virtual {p0}, Lcom/fxn/Bubble;->getItem()Lcom/fxn/parser/MenuItem;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/fxn/Bubble;->item:Lcom/fxn/parser/MenuItem;
 
     invoke-virtual {v0}, Lcom/fxn/parser/MenuItem;->getCustom_font()I
 
@@ -331,9 +323,7 @@
 
     .line 85
     :try_start_0
-    invoke-virtual {p0}, Lcom/fxn/Bubble;->getItem()Lcom/fxn/parser/MenuItem;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/fxn/Bubble;->item:Lcom/fxn/parser/MenuItem;
 
     invoke-virtual {v0}, Lcom/fxn/parser/MenuItem;->getCustom_font()I
 
@@ -353,13 +343,21 @@
     move-exception p1
 
     .line 87
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "Could not get typeface: "
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {p1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object p1
 
-    const-string p2, "Could not get typeface: "
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -515,7 +513,7 @@
     :cond_0
     const/16 p1, 0x8
 
-    .line 254
+    .line 137
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 

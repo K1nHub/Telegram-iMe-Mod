@@ -70,18 +70,18 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     iget-wide v1, p0, Lcom/smedialink/manager/wallet/WalletLinkClickableManager$getUserIdAlertOptions$1;->$userId:J
 
     invoke-interface {v0, v1, v2}, Lcom/smedialink/manager/wallet/WalletLinkClickableView;->actionOpenProfileScreen(J)V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0

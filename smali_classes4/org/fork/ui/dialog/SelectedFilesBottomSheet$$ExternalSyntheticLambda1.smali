@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet$$ExternalSyntheticLambda1;->f$0:Ljava/lang/Throwable;
 
-    invoke-static {v0}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->$r8$lambda$EZpCsW_HsNsTXzBY-em3UypPGW8(Ljava/lang/Throwable;)V
+    invoke-static {v0}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->$r8$lambda$3s_HnFrzqjCFuRetEBfvyuOpKo0(Ljava/lang/Throwable;)V
 
     return-void
 .end method

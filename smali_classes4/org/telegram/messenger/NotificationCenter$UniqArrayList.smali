@@ -41,12 +41,12 @@
 .method private constructor <init>(Lorg/telegram/messenger/NotificationCenter;)V
     .locals 0
 
-    .line 761
+    .line 762
     iput-object p1, p0, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->this$0:Lorg/telegram/messenger/NotificationCenter;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 762
+    .line 763
     new-instance p1, Ljava/util/HashSet;
 
     invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
@@ -59,7 +59,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/NotificationCenter;Lorg/telegram/messenger/NotificationCenter$1;)V
     .locals 0
 
-    .line 761
+    .line 762
     invoke-direct {p0, p1}, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;-><init>(Lorg/telegram/messenger/NotificationCenter;)V
 
     return-void
@@ -75,7 +75,7 @@
         }
     .end annotation
 
-    .line 774
+    .line 775
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->set:Ljava/util/HashSet;
 
     invoke-virtual {v0, p2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 775
+    .line 776
     invoke-super {p0, p1, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     :cond_0
@@ -99,7 +99,7 @@
         }
     .end annotation
 
-    .line 766
+    .line 767
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->set:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 767
+    .line 768
     invoke-super {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     move-result p1
@@ -131,7 +131,7 @@
         }
     .end annotation
 
-    .line 792
+    .line 793
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -149,7 +149,7 @@
         }
     .end annotation
 
-    .line 782
+    .line 783
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -168,7 +168,7 @@
 
     move-result-object v1
 
-    .line 783
+    .line 784
     invoke-virtual {p0, v1}, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->add(Ljava/lang/Object;)Z
 
     move-result v1
@@ -186,12 +186,12 @@
 .method public clear()V
     .locals 1
 
-    .line 824
+    .line 825
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->set:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 825
+    .line 826
     invoke-super {p0}, Ljava/util/ArrayList;->clear()V
 
     return-void
@@ -200,7 +200,7 @@
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
 
-    .line 819
+    .line 820
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->set:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -218,14 +218,14 @@
         }
     .end annotation
 
-    .line 797
+    .line 798
     invoke-super {p0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 799
+    .line 800
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->set:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
@@ -237,7 +237,7 @@
 .method public remove(Ljava/lang/Object;)Z
     .locals 1
 
-    .line 806
+    .line 807
     iget-object v0, p0, Lorg/telegram/messenger/NotificationCenter$UniqArrayList;->set:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
@@ -246,7 +246,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 807
+    .line 808
     invoke-super {p0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     move-result p1
@@ -269,7 +269,7 @@
         }
     .end annotation
 
-    .line 814
+    .line 815
     new-instance p1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V

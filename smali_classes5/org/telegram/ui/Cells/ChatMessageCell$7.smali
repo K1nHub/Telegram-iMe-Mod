@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;ILandroid/graphics/Paint;)V
     .locals 0
 
-    .line 8913
+    .line 8926
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iput p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->val$num:I
@@ -39,14 +39,14 @@
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 8915
+    .line 8928
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;
 
-    .line 8916
+    .line 8929
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -61,12 +61,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 14
 
-    .line 8920
+    .line 8933
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 8921
+    .line 8934
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
@@ -87,7 +87,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 8922
+    .line 8935
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$3700(Lorg/telegram/ui/Cells/ChatMessageCell;)[I
@@ -118,7 +118,7 @@
 
     goto/16 :goto_6
 
-    .line 8924
+    .line 8937
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -138,12 +138,12 @@
 
     if-ne v0, v5, :cond_b
 
-    .line 8925
+    .line 8938
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    .line 8926
+    .line 8939
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -181,7 +181,7 @@
 
     if-ge v7, v2, :cond_8
 
-    .line 8928
+    .line 8941
     iget-object v9, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$3800(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
@@ -194,7 +194,7 @@
 
     if-nez v0, :cond_2
 
-    .line 8930
+    .line 8943
     invoke-static {}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$3900()[F
 
     move-result-object v8
@@ -226,7 +226,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 8933
+    .line 8946
     invoke-static {}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$3900()[F
 
     move-result-object v8
@@ -253,7 +253,7 @@
 
     goto :goto_3
 
-    .line 8936
+    .line 8949
     :cond_3
     iget-object v9, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -274,7 +274,7 @@
 
     if-ne v7, v1, :cond_7
 
-    .line 8937
+    .line 8950
     :cond_5
     invoke-static {}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$3900()[F
 
@@ -318,7 +318,7 @@
 
     goto :goto_3
 
-    .line 8941
+    .line 8954
     :cond_7
     invoke-static {}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$3900()[F
 
@@ -344,7 +344,7 @@
     :cond_8
     if-nez v0, :cond_a
 
-    .line 8943
+    .line 8956
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->drawPinnedBottom:Z
@@ -385,7 +385,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 8944
+    .line 8957
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
@@ -407,7 +407,7 @@
 
     invoke-virtual {v0, v1, v5}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 8945
+    .line 8958
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;
@@ -444,7 +444,7 @@
 
     invoke-virtual {v0, v1, v5}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 8946
+    .line 8959
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;
@@ -453,7 +453,7 @@
 
     const/4 v5, -0x7
 
-    .line 8947
+    .line 8960
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -468,7 +468,7 @@
 
     const/16 v7, 0x17
 
-    .line 8948
+    .line 8961
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -481,7 +481,7 @@
 
     iget v7, v7, Landroid/graphics/RectF;->left:F
 
-    .line 8949
+    .line 8962
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -494,17 +494,17 @@
 
     iget v4, v4, Landroid/graphics/RectF;->bottom:F
 
-    .line 8946
+    .line 8959
     invoke-virtual {v0, v1, v5, v7, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 8952
+    .line 8965
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     const/high16 v4, 0x42a60000    # 83.0f
 
     invoke-virtual {v1, v0, v3, v4, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 8953
+    .line 8966
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;
 
     iget v1, v1, Landroid/graphics/RectF;->right:F
@@ -543,7 +543,7 @@
 
     invoke-virtual {v0, v1, v2, v4, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 8954
+    .line 8967
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     const/high16 v2, 0x42b40000    # 90.0f
@@ -552,7 +552,7 @@
 
     invoke-virtual {v1, v0, v2, v3, v6}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 8955
+    .line 8968
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;
@@ -563,14 +563,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 8956
+    .line 8969
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->close()V
 
     goto :goto_4
 
-    .line 8958
+    .line 8971
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
@@ -584,13 +584,13 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 8960
+    .line 8973
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->close()V
 
-    .line 8961
+    .line 8974
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->val$maskPaint:Landroid/graphics/Paint;
@@ -599,7 +599,7 @@
 
     goto :goto_8
 
-    .line 8963
+    .line 8976
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;
 
@@ -652,7 +652,7 @@
 
     goto :goto_8
 
-    .line 8923
+    .line 8936
     :cond_e
     :goto_6
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$7;->rect:Landroid/graphics/RectF;

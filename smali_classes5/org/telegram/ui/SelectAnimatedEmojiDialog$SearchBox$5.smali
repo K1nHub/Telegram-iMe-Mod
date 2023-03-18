@@ -33,16 +33,16 @@
 
 # virtual methods
 .method protected isTabIconsAnimationEnabled(Z)Z
-    .locals 2
+    .locals 1
 
-    const/4 v0, 0x4
+    const/16 v0, 0x4004
 
     .line 4183
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     if-eqz p1, :cond_0
 
@@ -53,6 +53,8 @@
     invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$4400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
 
     move-result p1
+
+    const/4 v0, 0x4
 
     if-ne p1, v0, :cond_1
 

@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 70
+    .line 69
     check-cast p1, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/adapter/provider/BannerProvider$convert$2;->invoke(Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 70
     iget-object v0, p0, Lcom/smedialink/ui/adapter/provider/BannerProvider$convert$2;->$helper:Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     sget v1, Lorg/telegram/messenger/R$id;->recycle_banners:I
@@ -81,21 +81,21 @@
 
     const-string v0, "chats_actionBackground"
 
-    .line 72
+    .line 71
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {p1, v1}, Lru/tinkoff/scrollingpagerindicator/ScrollingPagerIndicator;->setSelectedDotColor(I)V
 
-    .line 73
+    .line 72
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
 
     const/16 v1, 0x37
 
-    invoke-static {v0, v1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withAlpha(II)I
 
     move-result v0
 

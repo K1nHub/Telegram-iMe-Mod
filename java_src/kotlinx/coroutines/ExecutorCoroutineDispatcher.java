@@ -23,10 +23,10 @@ public abstract class ExecutorCoroutineDispatcher extends CoroutineDispatcher im
         /* compiled from: Executors.kt */
         /* renamed from: kotlinx.coroutines.ExecutorCoroutineDispatcher$Key$1 */
         /* loaded from: classes4.dex */
-        static final class C28981 extends Lambda implements Function1<CoroutineContext.Element, ExecutorCoroutineDispatcher> {
-            public static final C28981 INSTANCE = new C28981();
+        static final class C30221 extends Lambda implements Function1<CoroutineContext.Element, ExecutorCoroutineDispatcher> {
+            public static final C30221 INSTANCE = new C30221();
 
-            C28981() {
+            C30221() {
                 super(1);
             }
 
@@ -40,7 +40,7 @@ public abstract class ExecutorCoroutineDispatcher extends CoroutineDispatcher im
         }
 
         private Key() {
-            super(CoroutineDispatcher.Key, C28981.INSTANCE);
+            super(CoroutineDispatcher.Key, C30221.INSTANCE);
         }
     }
 }

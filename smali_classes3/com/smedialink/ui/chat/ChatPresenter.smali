@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatPresenter.kt\ncom/smedialink/ui/chat/ChatPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n*L\n1#1,259:1\n83#2,6:260\n39#2,6:266\n39#2,6:272\n39#2,6:278\n39#2,6:284\n39#2,6:290\n39#2,6:299\n16#3,3:296\n*S KotlinDebug\n*F\n+ 1 ChatPresenter.kt\ncom/smedialink/ui/chat/ChatPresenter\n*L\n73#1:260,6\n88#1:266,6\n118#1:272,6\n140#1:278,6\n160#1:284,6\n216#1:290,6\n227#1:299,6\n226#1:296,3\n*E\n"
+    value = "SMAP\nChatPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatPresenter.kt\ncom/smedialink/ui/chat/ChatPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n*L\n1#1,264:1\n83#2,8:265\n39#2,8:273\n39#2,8:281\n39#2,8:289\n39#2,8:297\n39#2,8:305\n39#2,8:316\n16#3,3:313\n*S KotlinDebug\n*F\n+ 1 ChatPresenter.kt\ncom/smedialink/ui/chat/ChatPresenter\n*L\n73#1:265,8\n89#1:273,8\n120#1:281,8\n142#1:289,8\n163#1:297,8\n220#1:305,8\n232#1:316,8\n231#1:313,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -51,20 +51,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$JOwEIkJAcxbDhfzCVKYFOYrSsk0(Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;Ljava/lang/Boolean;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$ReVD5NPYLuDy7YcHRrS1uHadaBw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/chat/ChatPresenter;->acceptTelegramAuthUrlAndGetTokens$lambda-4(Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;Ljava/lang/Boolean;)Lio/reactivex/ObservableSource;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$o9d2N9EZtcJPAPvdQVY81Ug0VVI(Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;)Lio/reactivex/ObservableSource;
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/ui/chat/ChatPresenter;->acceptTelegramAuthUrlAndGetTokens$lambda-4$lambda-3(Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/chat/ChatPresenter;->acceptTelegramAuthUrlAndGetTokens$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
@@ -168,71 +158,19 @@
     return-void
 .end method
 
-.method private static final acceptTelegramAuthUrlAndGetTokens$lambda-4(Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;Ljava/lang/Boolean;)Lio/reactivex/ObservableSource;
+.method private static final acceptTelegramAuthUrlAndGetTokens$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "$url"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "it"
-
-    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    if-eqz p0, :cond_0
-
-    .line 131
-    iget-object p3, p1, Lcom/smedialink/ui/chat/ChatPresenter;->telegramApi:Lcom/smedialink/manager/TelegramApi;
-
-    .line 132
-    invoke-interface {p3, p2, p0}, Lcom/smedialink/manager/TelegramApi;->acceptUrlAuth(Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;)Lio/reactivex/Observable;
-
-    move-result-object p0
-
-    .line 133
-    new-instance p2, Lcom/smedialink/ui/chat/ChatPresenter$$ExternalSyntheticLambda0;
-
-    invoke-direct {p2, p1}, Lcom/smedialink/ui/chat/ChatPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;)V
-
-    invoke-virtual {p0, p2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    .line 135
-    :cond_0
-    iget-object p0, p1, Lcom/smedialink/ui/chat/ChatPresenter;->walletSessionInteractor:Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;
-
-    invoke-virtual {p0, p2}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->login(Ljava/lang/String;)Lio/reactivex/Observable;
-
-    move-result-object p0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method private static final acceptTelegramAuthUrlAndGetTokens$lambda-4$lambda-3(Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;)Lio/reactivex/ObservableSource;
-    .locals 1
-
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "authUrl"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 133
-    iget-object p0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->walletSessionInteractor:Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;
-
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;->login(Ljava/lang/String;)Lio/reactivex/Observable;
+    .line 131
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
@@ -264,6 +202,24 @@
     return-object p0
 .end method
 
+.method public static final synthetic access$getTelegramApi$p(Lcom/smedialink/ui/chat/ChatPresenter;)Lcom/smedialink/manager/TelegramApi;
+    .locals 0
+
+    .line 40
+    iget-object p0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramApi:Lcom/smedialink/manager/TelegramApi;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getWalletSessionInteractor$p(Lcom/smedialink/ui/chat/ChatPresenter;)Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;
+    .locals 0
+
+    .line 40
+    iget-object p0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->walletSessionInteractor:Lcom/smedialink/storage/domain/interactor/wallet/WalletSessionInteractor;
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$sendReactionMessage(Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
@@ -276,15 +232,15 @@
 .method private final checkIsDonationEnabled(J)V
     .locals 2
 
-    .line 213
+    .line 217
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->donationsInteractor:Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;
 
-    .line 214
+    .line 218
     invoke-virtual {v0, p1, p2}, Lcom/smedialink/storage/domain/interactor/crypto/donations/DonationsInteractor;->isDonationsEnabled(J)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 215
+    .line 219
     iget-object p2, p0, Lcom/smedialink/ui/chat/ChatPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -299,7 +255,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 216
+    .line 220
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -311,23 +267,34 @@
 
     invoke-direct {v0, p0}, Lcom/smedialink/ui/chat/ChatPresenter$checkIsDonationEnabled$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;)V
 
-    new-instance v1, Lcom/smedialink/ui/chat/ChatPresenter$checkIsDonationEnabled$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v1, p2}, Lcom/smedialink/ui/chat/ChatPresenter$checkIsDonationEnabled$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v0, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v0, Lcom/smedialink/ui/chat/ChatPresenter$checkIsDonationEnabled$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/ui/chat/ChatPresenter$checkIsDonationEnabled$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance p2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v1, p2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x0
 
     const/4 v0, 0x1
 
-    .line 221
+    .line 226
     invoke-static {p0, p1, p2, v0, p2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -336,7 +303,7 @@
 .method private final isValidChatForDonations()Z
     .locals 1
 
-    .line 210
+    .line 214
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_1
@@ -368,9 +335,9 @@
 .end method
 
 .method private final listenEvents()V
-    .locals 4
+    .locals 5
 
-    .line 225
+    .line 230
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->rxEventBus:Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -407,56 +374,71 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/chat/ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v4, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 232
+    .line 237
     invoke-static {p0, v0, v3, v1, v3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
 
 .method private final sendReactionMessage(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;)V
-    .locals 19
+    .locals 18
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, p2
+    move-object/from16 v1, p1
 
-    .line 236
-    move-object/from16 v2, p1
+    move-object/from16 v2, p2
 
-    check-cast v2, Ljava/util/ArrayList;
+    const-string v3, "null cannot be cast to non-null type java.util.ArrayList<*>"
 
-    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
+    .line 241
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v2
+    check-cast v1, Ljava/util/ArrayList;
 
-    if-nez v2, :cond_0
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
 
     return-void
 
-    .line 237
+    .line 242
     :cond_0
     invoke-static {}, Lcom/smedialink/storage/common/AppConfiguration$Reaction;->getBotId()J
 
-    move-result-wide v9
+    move-result-wide v8
 
-    .line 240
-    instance-of v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
+    .line 245
+    instance-of v3, v1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
     const/4 v4, 0x0
 
@@ -464,76 +446,76 @@
 
     if-eqz v3, :cond_4
 
-    .line 241
-    check-cast v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
+    .line 246
+    check-cast v1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
-    iget-object v1, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
+    iget-object v2, v1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     :goto_1
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
-    const-string v1, ""
+    const-string v2, ""
 
     goto :goto_2
 
     :cond_3
-    iget-object v1, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
+    iget-object v2, v1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
 
     const-string v3, "data.caption"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :goto_2
-    iput-object v1, v0, Lcom/smedialink/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
+    iput-object v2, v0, Lcom/smedialink/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
 
-    move-object/from16 v7, p3
+    move-object/from16 v6, p3
 
-    .line 242
-    iput-object v7, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
+    .line 247
+    iput-object v6, v1, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
 
-    .line 243
-    iget-object v1, v0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+    .line 248
+    iget-object v2, v0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
+    invoke-interface {v2}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
+
+    move-result-object v2
+
+    new-array v3, v5, [Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
+
+    aput-object v1, v3, v4
+
+    invoke-static {v3}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v3
 
-    new-array v1, v5, [Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
-
-    aput-object v2, v1, v4
-
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
-
-    move-result-object v4
-
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
@@ -547,61 +529,75 @@
 
     const/16 v16, 0x0
 
-    move-wide v5, v9
+    move-wide v4, v8
 
-    move-object/from16 v7, p4
+    move-object/from16 v6, p4
 
-    move-object v9, v1
+    move-object v8, v1
 
-    move v10, v2
+    move v9, v10
 
-    invoke-static/range {v3 .. v16}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Landroidx/core/view/inputmethod/InputContentInfoCompat;ZZLorg/telegram/messenger/MessageObject;ZIZLjava/lang/String;)V
+    move v10, v11
+
+    move-object v11, v12
+
+    move v12, v13
+
+    move v13, v14
+
+    move v14, v15
+
+    move-object/from16 v15, v16
+
+    invoke-static/range {v2 .. v15}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Landroidx/core/view/inputmethod/InputContentInfoCompat;ZZLorg/telegram/messenger/MessageObject;ZIZLjava/lang/String;)V
 
     goto :goto_3
 
     :cond_4
-    move-object/from16 v7, p3
+    move-object/from16 v6, p3
 
-    .line 246
-    instance-of v3, v2, Ljava/lang/String;
+    .line 251
+    instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_5
 
-    .line 247
-    iput-object v1, v0, Lcom/smedialink/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
+    .line 252
+    iput-object v2, v0, Lcom/smedialink/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
 
-    .line 248
-    iget-object v1, v0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+    .line 253
+    iget-object v2, v0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
+    invoke-interface {v2}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
+
+    move-result-object v2
+
+    new-array v3, v5, [Ljava/lang/String;
+
+    check-cast v1, Ljava/lang/String;
+
+    aput-object v1, v3, v4
+
+    invoke-static {v3}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v3
 
-    new-array v1, v5, [Ljava/lang/String;
-
-    check-cast v2, Ljava/lang/String;
-
-    aput-object v2, v1, v4
-
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
     new-array v5, v5, [Ljava/lang/String;
 
-    aput-object v2, v5, v4
+    aput-object v1, v5, v4
 
     invoke-static {v5}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
-    move-result-object v5
+    move-result-object v4
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
+
+    const/4 v11, 0x0
 
     const/4 v12, 0x0
 
@@ -613,53 +609,49 @@
 
     const/16 v16, 0x0
 
-    const/16 v17, 0x0
+    const/16 v17, 0x1
 
-    const/16 v18, 0x1
+    move-object/from16 v6, p3
 
-    move-object v4, v1
+    move-object/from16 v10, p4
 
-    move-object/from16 v7, p3
-
-    move-object/from16 v11, p4
-
-    invoke-static/range {v3 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Landroidx/core/view/inputmethod/InputContentInfoCompat;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Z)V
+    invoke-static/range {v2 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Landroidx/core/view/inputmethod/InputContentInfoCompat;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Z)V
 
     goto :goto_3
 
-    .line 251
+    .line 256
     :cond_5
-    instance-of v3, v2, Lorg/telegram/messenger/MessageObject;
+    instance-of v3, v1, Lorg/telegram/messenger/MessageObject;
 
     if-eqz v3, :cond_6
 
-    .line 252
-    iput-object v1, v0, Lcom/smedialink/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
+    .line 257
+    iput-object v2, v0, Lcom/smedialink/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
 
-    .line 253
-    iget-object v1, v0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
+    .line 258
+    iget-object v2, v0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
-    invoke-interface {v1}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
+    invoke-interface {v2}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v1}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
+
+    move-result-object v2
+
+    new-array v3, v5, [Lorg/telegram/messenger/MessageObject;
+
+    check-cast v1, Lorg/telegram/messenger/MessageObject;
+
+    aput-object v1, v3, v4
+
+    invoke-static {v3}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v3
 
-    new-array v1, v5, [Lorg/telegram/messenger/MessageObject;
-
-    check-cast v2, Lorg/telegram/messenger/MessageObject;
-
-    aput-object v2, v1, v4
-
-    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
-
-    move-result-object v4
-
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
@@ -669,17 +661,25 @@
 
     const/4 v14, 0x1
 
-    move-object/from16 v5, p3
+    move-object/from16 v4, p3
 
-    move-wide v6, v9
+    move-wide v5, v8
 
-    move-object/from16 v8, p4
+    move-object/from16 v7, p4
 
-    move-object v9, v1
+    move-object v8, v1
 
-    move-object v10, v2
+    move-object v9, v10
 
-    invoke-static/range {v3 .. v14}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Z)V
+    move v10, v11
+
+    move v11, v12
+
+    move-object v12, v13
+
+    move v13, v14
+
+    invoke-static/range {v2 .. v13}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;Z)V
 
     :cond_6
     :goto_3
@@ -695,23 +695,27 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 128
+    .line 130
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-static {v0}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 129
-    new-instance v1, Lcom/smedialink/ui/chat/ChatPresenter$$ExternalSyntheticLambda1;
+    .line 131
+    new-instance v1, Lcom/smedialink/ui/chat/ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1;
 
-    invoke-direct {v1, p2, p0, p1}, Lcom/smedialink/ui/chat/ChatPresenter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;)V
+    invoke-direct {v1, p2, p0, p1}, Lcom/smedialink/ui/chat/ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1;-><init>(Lorg/telegram/tgnet/TLRPC$TL_messages_requestUrlAuth;Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/ui/chat/ChatPresenter$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/ui/chat/ChatPresenter$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 138
+    .line 140
     iget-object p2, p0, Lcom/smedialink/ui/chat/ChatPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -722,11 +726,12 @@
 
     move-result-object p1
 
-    const-string p2, "just(true)\n             \u2026(schedulersProvider.ui())"
+    const-string p2, "fun acceptTelegramAuthUr\u2026     .autoDispose()\n    }"
 
+    .line 131
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 139
+    .line 141
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -747,7 +752,7 @@
 
     move-result-object p1
 
-    .line 140
+    .line 142
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p2
@@ -759,21 +764,32 @@
 
     invoke-direct {v0, p0}, Lcom/smedialink/ui/chat/ChatPresenter$acceptTelegramAuthUrlAndGetTokens$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;)V
 
-    new-instance v1, Lcom/smedialink/ui/chat/ChatPresenter$acceptTelegramAuthUrlAndGetTokens$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v1, p2}, Lcom/smedialink/ui/chat/ChatPresenter$acceptTelegramAuthUrlAndGetTokens$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v0, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v0, Lcom/smedialink/ui/chat/ChatPresenter$acceptTelegramAuthUrlAndGetTokens$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/ui/chat/ChatPresenter$acceptTelegramAuthUrlAndGetTokens$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance p2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v1, p2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x1
 
-    .line 150
+    .line 153
     invoke-static {p0, p1, v2, p2, v2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -786,21 +802,21 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 106
+    .line 108
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
 
     move-result v0
 
-    .line 107
+    .line 109
     invoke-static {v0}, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->checkReactionWork(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 108
+    .line 110
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -811,7 +827,7 @@
 
     return-void
 
-    .line 112
+    .line 114
     :cond_0
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
@@ -827,24 +843,24 @@
 
     iput-object v1, p0, Lcom/smedialink/ui/chat/ChatPresenter;->uuidReaction:Ljava/lang/String;
 
-    .line 113
+    .line 115
     sget-object v2, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->INSTANCE:Lcom/smedialink/utils/helper/reaction/ReactionHelper;
 
     invoke-virtual {v2, v1}, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->formatUuid(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 115
+    .line 117
     invoke-static {v0}, Lcom/smedialink/utils/helper/reaction/ReactionHelper;->checkBlacklistReaction(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 116
+    .line 118
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramApi:Lcom/smedialink/manager/TelegramApi;
 
-    .line 117
+    .line 119
     invoke-static {}, Lcom/smedialink/storage/common/AppConfiguration$Reaction;->getBotId()J
 
     move-result-wide v1
@@ -853,7 +869,7 @@
 
     move-result-object v0
 
-    .line 118
+    .line 120
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -875,23 +891,34 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/smedialink/ui/chat/ChatPresenter$checkAndSendReaction$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;)V
 
-    new-instance p1, Lcom/smedialink/ui/chat/ChatPresenter$checkAndSendReaction$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/ui/chat/ChatPresenter$checkAndSendReaction$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance p2, Lcom/smedialink/ui/chat/ChatPresenter$checkAndSendReaction$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {p2, v1}, Lcom/smedialink/ui/chat/ChatPresenter$checkAndSendReaction$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance p3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, p3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x1
 
     const/4 p3, 0x0
 
-    .line 121
+    .line 123
     invoke-static {p0, p1, p3, p2, p3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     goto :goto_0
@@ -901,7 +928,7 @@
 
     const-string p2, ""
 
-    .line 123
+    .line 125
     :cond_2
     invoke-direct {p0, p1, p2, v7, p3}, Lcom/smedialink/ui/chat/ChatPresenter;->sendReactionMessage(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;)V
 
@@ -912,10 +939,10 @@
 .method public final getDownloadMediaFirstDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 8
 
-    .line 183
+    .line 187
     new-instance v7, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 184
+    .line 188
     sget v0, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v1, "AppName"
@@ -924,7 +951,7 @@
 
     move-result-object v1
 
-    .line 185
+    .line 189
     sget v0, Lorg/telegram/messenger/R$string;->PleaseDownload:I
 
     const-string v2, "PleaseDownload"
@@ -933,7 +960,7 @@
 
     move-result-object v2
 
-    .line 186
+    .line 190
     sget v0, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v3, "OK"
@@ -950,7 +977,7 @@
 
     move-object v0, v7
 
-    .line 183
+    .line 187
     invoke-direct/range {v0 .. v6}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object v7
@@ -1026,23 +1053,34 @@
 
     invoke-direct {v0, p0}, Lcom/smedialink/ui/chat/ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;)V
 
-    new-instance v1, Lcom/smedialink/ui/chat/ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v1, p2}, Lcom/smedialink/ui/chat/ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v0, v1}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v0, Lcom/smedialink/ui/chat/ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v0, p2}, Lcom/smedialink/ui/chat/ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 90
+    new-instance p2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p2, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 88
+    invoke-virtual {p1, v1, p2}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 90
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x0
 
     const/4 v0, 0x1
 
-    .line 80
+    .line 81
     invoke-static {p0, p1, p2, v0, p2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -1051,10 +1089,10 @@
 .method public final getOldAuthButtonDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 6
 
-    .line 176
+    .line 180
     new-instance v0, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 177
+    .line 181
     iget-object v1, p0, Lcom/smedialink/ui/chat/ChatPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_button_old_auth_dialog_title:I
@@ -1063,7 +1101,7 @@
 
     move-result-object v1
 
-    .line 178
+    .line 182
     iget-object v2, p0, Lcom/smedialink/ui/chat/ChatPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_button_old_auth_dialog_description:I
@@ -1072,7 +1110,7 @@
 
     move-result-object v2
 
-    .line 179
+    .line 183
     iget-object v3, p0, Lcom/smedialink/ui/chat/ChatPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -1081,7 +1119,7 @@
 
     move-result-object v3
 
-    .line 180
+    .line 184
     iget-object v4, p0, Lcom/smedialink/ui/chat/ChatPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_button_old_auth_dialog_action_btn:I
@@ -1090,7 +1128,7 @@
 
     move-result-object v4
 
-    .line 176
+    .line 180
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -1108,7 +1146,7 @@
 .method public final loadTextTranslateLanguages()V
     .locals 6
 
-    .line 154
+    .line 157
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/gateway/TelegramGateway;->getCurrentLocaleInformation()Lcom/smedialink/storage/domain/model/telegram/TelegramLocaleInformation;
@@ -1119,15 +1157,15 @@
 
     move-result-object v0
 
-    .line 156
+    .line 159
     iget-object v1, p0, Lcom/smedialink/ui/chat/ChatPresenter;->translationInteractor:Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;
 
-    .line 157
+    .line 160
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;->languages()Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 158
+    .line 161
     iget-object v2, p0, Lcom/smedialink/ui/chat/ChatPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v2}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1142,7 +1180,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 159
+    .line 162
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v2
@@ -1163,7 +1201,7 @@
 
     move-result-object v1
 
-    .line 160
+    .line 163
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v2
@@ -1175,21 +1213,32 @@
 
     invoke-direct {v3, p0, v0}, Lcom/smedialink/ui/chat/ChatPresenter$loadTextTranslateLanguages$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;Ljava/lang/String;)V
 
-    new-instance v0, Lcom/smedialink/ui/chat/ChatPresenter$loadTextTranslateLanguages$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v0, v2}, Lcom/smedialink/ui/chat/ChatPresenter$loadTextTranslateLanguages$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v0, v3}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v1, v3, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v3, Lcom/smedialink/ui/chat/ChatPresenter$loadTextTranslateLanguages$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v3, v2}, Lcom/smedialink/ui/chat/ChatPresenter$loadTextTranslateLanguages$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v3}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v1, v0, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 173
+    .line 177
     invoke-static {p0, v0, v5, v1, v5}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -1198,12 +1247,12 @@
 .method public onDestroy()V
     .locals 1
 
-    .line 202
+    .line 206
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->binancePayProcessManager:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-virtual {v0}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->onDetachViewState()V
 
-    .line 203
+    .line 207
     invoke-super {p0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->onDestroy()V
 
     return-void
@@ -1212,7 +1261,7 @@
 .method protected onFirstViewAttach()V
     .locals 3
 
-    .line 194
+    .line 198
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->binancePayProcessManager:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -1227,14 +1276,14 @@
 
     invoke-virtual {v0, v1}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->attachViewState(Lcom/smedialink/manager/crypto/pay/BinancePayProcessView;)V
 
-    .line 195
+    .line 199
     invoke-direct {p0}, Lcom/smedialink/ui/chat/ChatPresenter;->isValidChatForDonations()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 196
+    .line 200
     sget-object v0, Lcom/smedialink/common/TelegramConstants;->INSTANCE:Lcom/smedialink/common/TelegramConstants;
 
     iget-object v1, p0, Lcom/smedialink/ui/chat/ChatPresenter;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -1249,7 +1298,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/smedialink/ui/chat/ChatPresenter;->checkIsDonationEnabled(J)V
 
-    .line 197
+    .line 201
     invoke-direct {p0}, Lcom/smedialink/ui/chat/ChatPresenter;->listenEvents()V
 
     :cond_0
@@ -1267,10 +1316,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->googleServicesInteractor:Lcom/smedialink/storage/domain/interactor/google/GoogleServicesInteractor;
 
-    .line 85
+    .line 86
     sget-object v1, Lorg/fork/controller/DialogTranslationController;->Companion:Lorg/fork/controller/DialogTranslationController$Companion;
 
     invoke-virtual {v1}, Lorg/fork/controller/DialogTranslationController$Companion;->getCurrentLocale()Ljava/lang/String;
@@ -1281,7 +1330,7 @@
 
     move-result-object p2
 
-    .line 86
+    .line 87
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x1
@@ -1290,7 +1339,7 @@
 
     move-result-object p2
 
-    .line 87
+    .line 88
     iget-object v0, p0, Lcom/smedialink/ui/chat/ChatPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -1305,7 +1354,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
+    .line 89
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -1317,23 +1366,34 @@
 
     invoke-direct {v1, p0, p1}, Lcom/smedialink/ui/chat/ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/chat/ChatPresenter;Lorg/telegram/messenger/MessageObject;)V
 
-    new-instance p1, Lcom/smedialink/ui/chat/ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v0}, Lcom/smedialink/ui/chat/ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p2, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/chat/ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/chat/ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p2, p1, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 p2, 0x0
 
     const/4 v0, 0x1
 
-    .line 102
+    .line 104
     invoke-static {p0, p1, p2, v0, p2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void

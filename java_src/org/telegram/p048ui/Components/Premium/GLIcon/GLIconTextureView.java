@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.source.rtsp.RtspMediaSource;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -116,7 +116,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         setOpaque(false);
         setRenderer(new GLIconRenderer(context, i));
         initialize(context);
-        GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector$OnGestureListenerC47581());
+        GestureDetector gestureDetector = new GestureDetector(context, new GestureDetector$OnGestureListenerC48941());
         this.gestureDetector = gestureDetector;
         gestureDetector.setIsLongpressEnabled(true);
         for (int i2 = 0; i2 < 5; i2++) {
@@ -128,7 +128,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$1 */
     /* loaded from: classes6.dex */
-    public class GestureDetector$OnGestureListenerC47581 implements GestureDetector.OnGestureListener {
+    public class GestureDetector$OnGestureListenerC48941 implements GestureDetector.OnGestureListener {
         @Override // android.view.GestureDetector.OnGestureListener
         public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
             return false;
@@ -138,7 +138,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         public void onShowPress(MotionEvent motionEvent) {
         }
 
-        GestureDetector$OnGestureListenerC47581() {
+        GestureDetector$OnGestureListenerC48941() {
         }
 
         @Override // android.view.GestureDetector.OnGestureListener
@@ -168,7 +168,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GLIconTextureView.GestureDetector$OnGestureListenerC47581.this.lambda$onSingleTapUp$0(nextInt, nextInt2);
+                    GLIconTextureView.GestureDetector$OnGestureListenerC48941.this.lambda$onSingleTapUp$0(nextInt, nextInt2);
                 }
             }, 16L);
             return true;
@@ -317,7 +317,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
         private RenderThread() {
         }
 
-        /* synthetic */ RenderThread(GLIconTextureView gLIconTextureView, GestureDetector$OnGestureListenerC47581 gestureDetector$OnGestureListenerC47581) {
+        /* synthetic */ RenderThread(GLIconTextureView gLIconTextureView, GestureDetector$OnGestureListenerC48941 gestureDetector$OnGestureListenerC48941) {
             this();
         }
 
@@ -631,12 +631,12 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             float f2 = abs == 2 ? -485 : 485;
             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(this.mRenderer.angleY, f2);
             ofFloat3.addUpdateListener(this.xUpdater);
-            ofFloat3.setDuration(C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+            ofFloat3.setDuration(C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
             ofFloat3.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
             ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f2, BitmapDescriptorFactory.HUE_RED);
             ofFloat4.addUpdateListener(this.xUpdater);
             ofFloat4.setDuration(1000L);
-            ofFloat4.setStartDelay(C0474C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+            ofFloat4.setStartDelay(C0468C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
             ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
             this.animatorSet.playTogether(ofFloat3, ofFloat4);
         }

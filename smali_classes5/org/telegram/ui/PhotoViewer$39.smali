@@ -46,7 +46,7 @@
 
     move-object v0, p1
 
-    .line 7153
+    .line 7164
     iput-object v0, v12, Lorg/telegram/ui/PhotoViewer$39;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     move-object/from16 v0, p13
@@ -89,7 +89,7 @@
 .method private synthetic lambda$dismissInternal$1()V
     .locals 1
 
-    .line 7166
+    .line 7177
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$39;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$13400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -110,7 +110,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7167
+    .line 7178
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$39;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$13400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -130,7 +130,7 @@
 .method private synthetic lambda$onSend$0(Landroid/widget/FrameLayout;Landroidx/collection/LongSparseArray;I)V
     .locals 9
 
-    .line 7157
+    .line 7168
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$39;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$5100(Lorg/telegram/ui/PhotoViewer;)Landroid/app/Activity;
@@ -187,15 +187,15 @@
 .method public dismissInternal()V
     .locals 3
 
-    .line 7163
+    .line 7174
     invoke-super {p0}, Lorg/telegram/ui/Components/ShareAlert;->dismissInternal()V
 
-    .line 7164
+    .line 7175
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$39;->val$finalOpenKeyboardOnShareAlertClose:Z
 
     if-eqz v0, :cond_0
 
-    .line 7165
+    .line 7176
     new-instance v0, Lorg/telegram/ui/PhotoViewer$39$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PhotoViewer$39$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$39;)V
@@ -204,7 +204,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 7171
+    .line 7182
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$39;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -226,7 +226,7 @@
         }
     .end annotation
 
-    .line 7156
+    .line 7167
     iget-object p3, p0, Lorg/telegram/ui/PhotoViewer$39;->val$photoContainerView:Landroid/widget/FrameLayout;
 
     new-instance v0, Lorg/telegram/ui/PhotoViewer$39$$ExternalSyntheticLambda1;

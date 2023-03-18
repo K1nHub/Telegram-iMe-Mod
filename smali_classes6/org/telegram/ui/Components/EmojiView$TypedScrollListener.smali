@@ -26,12 +26,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiView;I)V
     .locals 0
 
-    .line 1369
+    .line 1370
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
-    .line 1370
+    .line 1371
     iput p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->type:I
 
     return-void
@@ -40,7 +40,7 @@
 .method private checkSearchFieldScroll()V
     .locals 4
 
-    .line 1422
+    .line 1423
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->type:I
 
     const/4 v1, 0x1
@@ -51,7 +51,7 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 1423
+    .line 1424
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0, v2, v1}, Lorg/telegram/ui/Components/EmojiView;->access$5100(Lorg/telegram/ui/Components/EmojiView;ZZ)V
@@ -69,7 +69,7 @@
 
     goto :goto_0
 
-    .line 1433
+    .line 1434
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -77,7 +77,7 @@
 
     goto :goto_0
 
-    .line 1430
+    .line 1431
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -85,7 +85,7 @@
 
     goto :goto_0
 
-    .line 1427
+    .line 1428
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -100,7 +100,7 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 1
 
-    .line 1375
+    .line 1376
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object p1
@@ -113,7 +113,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1376
+    .line 1377
     iput-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->smoothScrolling:Z
 
     return-void
@@ -123,19 +123,19 @@
 
     if-nez p2, :cond_3
 
-    .line 1380
+    .line 1381
     iget-boolean p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->smoothScrolling:Z
 
     if-nez p2, :cond_1
 
-    .line 1381
+    .line 1382
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget v0, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->type:I
 
     invoke-static {p2, v0}, Lorg/telegram/ui/Components/EmojiView;->access$4200(Lorg/telegram/ui/Components/EmojiView;I)V
 
-    .line 1383
+    .line 1384
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -145,12 +145,12 @@
 
     if-eqz p2, :cond_2
 
-    .line 1384
+    .line 1385
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/EmojiView;->access$4302(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 1386
+    .line 1387
     :cond_2
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->smoothScrolling:Z
 
@@ -159,7 +159,7 @@
     :cond_3
     if-ne p2, v0, :cond_6
 
-    .line 1389
+    .line 1390
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$4300(Lorg/telegram/ui/Components/EmojiView;)Z
@@ -168,12 +168,12 @@
 
     if-eqz p2, :cond_4
 
-    .line 1390
+    .line 1391
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/EmojiView;->access$4302(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 1392
+    .line 1393
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -185,33 +185,33 @@
 
     if-eqz p2, :cond_5
 
-    .line 1394
+    .line 1395
     invoke-virtual {p2}, Lorg/telegram/ui/Components/EmojiView$SearchField;->hideKeyboard()V
 
-    .line 1396
+    .line 1397
     :cond_5
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->smoothScrolling:Z
 
-    .line 1398
+    .line 1399
     :cond_6
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->smoothScrolling:Z
 
     if-nez p1, :cond_7
 
-    .line 1399
+    .line 1400
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->type:I
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$4500(Lorg/telegram/ui/Components/EmojiView;I)V
 
-    .line 1401
+    .line 1402
     :cond_7
     iget p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->type:I
 
     if-nez p1, :cond_9
 
-    .line 1402
+    .line 1403
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$4600(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$ChooseStickerActionTracker;
@@ -220,12 +220,12 @@
 
     if-nez p1, :cond_8
 
-    .line 1403
+    .line 1404
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$4700(Lorg/telegram/ui/Components/EmojiView;)V
 
-    .line 1405
+    .line 1406
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -243,29 +243,29 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 1412
+    .line 1413
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->type:I
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$4800(Lorg/telegram/ui/Components/EmojiView;I)V
 
-    .line 1413
+    .line 1414
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget p2, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->type:I
 
     invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/EmojiView;->access$4900(Lorg/telegram/ui/Components/EmojiView;II)V
 
-    .line 1414
+    .line 1415
     invoke-direct {p0}, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->checkSearchFieldScroll()V
 
-    .line 1415
+    .line 1416
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->smoothScrolling:Z
 
     if-nez p1, :cond_0
 
-    .line 1416
+    .line 1417
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$TypedScrollListener;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     int-to-float p2, p3

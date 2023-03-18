@@ -35,7 +35,7 @@
 .method public final invoke()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/adapter/provider/StakingDashboardProvider;->$r8$lambda$-o8R37FP9ikif1AbDWllmlIaxxY()V
+    invoke-static {}, Lcom/smedialink/ui/adapter/provider/StakingDashboardProvider;->$r8$lambda$SDFEE7shoTWfqbOhil7b8DkmCqc()V
 
     return-void
 .end method

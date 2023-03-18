@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment$$ExternalSyntheticLambda6;->f$0:Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->$r8$lambda$NHiJjQO4DaDrUM3Y7QNk8m4_Nj0(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayFragment;->$r8$lambda$BRS-6jcw0oLSAjfeVWEdalHWAao(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method

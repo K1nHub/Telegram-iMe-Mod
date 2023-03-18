@@ -22,19 +22,19 @@
 .method public constructor <init>(Lorg/telegram/messenger/voip/VoIPService;)V
     .locals 0
 
-    .line 4429
+    .line 4485
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-direct {p0}, Landroid/telecom/Connection;-><init>()V
 
     const/16 p1, 0x80
 
-    .line 4430
+    .line 4486
     invoke-virtual {p0, p1}, Landroid/telecom/Connection;->setConnectionProperties(I)V
 
     const/4 p1, 0x1
 
-    .line 4431
+    .line 4487
     invoke-virtual {p0, p1}, Landroid/telecom/Connection;->setAudioModeIsVoip(Z)V
 
     return-void
@@ -45,10 +45,10 @@
 .method public onAnswer()V
     .locals 1
 
-    .line 4457
+    .line 4513
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
-    invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$2600(Lorg/telegram/messenger/voip/VoIPService;)V
+    invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$2800(Lorg/telegram/messenger/voip/VoIPService;)V
 
     return-void
 .end method
@@ -56,12 +56,12 @@
 .method public onCallAudioStateChanged(Landroid/telecom/CallAudioState;)V
     .locals 2
 
-    .line 4436
+    .line 4492
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 4437
+    .line 4493
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -78,11 +78,11 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 4439
+    .line 4495
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
-    invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$1700(Lorg/telegram/messenger/voip/VoIPService;)Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$1800(Lorg/telegram/messenger/voip/VoIPService;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -103,7 +103,7 @@
 
     check-cast v0, Lorg/telegram/messenger/voip/VoIPService$StateListener;
 
-    .line 4440
+    .line 4496
     invoke-interface {v0}, Lorg/telegram/messenger/voip/VoIPService$StateListener;->onAudioSettingsChanged()V
 
     goto :goto_0
@@ -115,15 +115,15 @@
 .method public onCallEvent(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
 
-    .line 4485
+    .line 4541
     invoke-super {p0, p1, p2}, Landroid/telecom/Connection;->onCallEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 4486
+    .line 4542
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_0
 
-    .line 4487
+    .line 4543
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -147,17 +147,17 @@
 .method public onDisconnect()V
     .locals 2
 
-    .line 4446
+    .line 4502
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "ConnectionService onDisconnect"
 
-    .line 4447
+    .line 4503
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 4449
+    .line 4505
     :cond_0
     new-instance v0, Landroid/telecom/DisconnectCause;
 
@@ -167,17 +167,17 @@
 
     invoke-virtual {p0, v0}, Landroid/telecom/Connection;->setDisconnected(Landroid/telecom/DisconnectCause;)V
 
-    .line 4450
+    .line 4506
     invoke-virtual {p0}, Landroid/telecom/Connection;->destroy()V
 
-    .line 4451
+    .line 4507
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->access$2502(Lorg/telegram/messenger/voip/VoIPService;Lorg/telegram/messenger/voip/VoIPService$CallConnection;)Lorg/telegram/messenger/voip/VoIPService$CallConnection;
+    invoke-static {v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->access$2702(Lorg/telegram/messenger/voip/VoIPService;Lorg/telegram/messenger/voip/VoIPService$CallConnection;)Lorg/telegram/messenger/voip/VoIPService$CallConnection;
 
-    .line 4452
+    .line 4508
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->hangUp()V
@@ -188,14 +188,14 @@
 .method public onReject()V
     .locals 3
 
-    .line 4462
+    .line 4518
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->access$2702(Lorg/telegram/messenger/voip/VoIPService;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->access$2902(Lorg/telegram/messenger/voip/VoIPService;Z)Z
 
-    .line 4463
+    .line 4519
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     const/4 v1, 0x1
@@ -210,10 +210,10 @@
 .method public onShowIncomingCallUi()V
     .locals 1
 
-    .line 4468
+    .line 4524
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
-    invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$2800(Lorg/telegram/messenger/voip/VoIPService;)V
+    invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$3000(Lorg/telegram/messenger/voip/VoIPService;)V
 
     return-void
 .end method
@@ -221,17 +221,17 @@
 .method public onSilence()V
     .locals 1
 
-    .line 4492
+    .line 4548
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "onSlience"
 
-    .line 4493
+    .line 4549
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 4495
+    .line 4551
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
@@ -243,15 +243,15 @@
 .method public onStateChanged(I)V
     .locals 2
 
-    .line 4473
+    .line 4529
     invoke-super {p0, p1}, Landroid/telecom/Connection;->onStateChanged(I)V
 
-    .line 4474
+    .line 4530
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 4475
+    .line 4531
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -277,10 +277,10 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 4478
+    .line 4534
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
-    invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$2900(Lorg/telegram/messenger/voip/VoIPService;)I
+    invoke-static {p1}, Lorg/telegram/messenger/voip/VoIPService;->access$3100(Lorg/telegram/messenger/voip/VoIPService;)I
 
     move-result p1
 
@@ -290,12 +290,12 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ContactsController;->deleteConnectionServiceContact()V
 
-    .line 4479
+    .line 4535
     iget-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$CallConnection;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lorg/telegram/messenger/voip/VoIPService;->access$3002(Lorg/telegram/messenger/voip/VoIPService;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/messenger/voip/VoIPService;->access$3202(Lorg/telegram/messenger/voip/VoIPService;Z)Z
 
     :cond_1
     return-void

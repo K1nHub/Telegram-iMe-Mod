@@ -37,7 +37,7 @@
 
     check-cast p1, Lcom/smedialink/model/wallet/ActionItem;
 
-    invoke-static {p1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->$r8$lambda$du7dCKjGZnlfPRqpP34Q_5_HRaw(Lcom/smedialink/model/wallet/ActionItem;)V
+    invoke-static {p1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$Companion;->$r8$lambda$e90_WjMj3jYU271KDIWg6YeUc-U(Lcom/smedialink/model/wallet/ActionItem;)V
 
     return-void
 .end method

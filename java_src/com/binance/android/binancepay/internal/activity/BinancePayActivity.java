@@ -20,14 +20,14 @@ import p000a.p001a.p002a.p003a.p005b.p007d.View$OnClickListenerC0005a;
 public final class BinancePayActivity extends AppCompatActivity {
 
     /* renamed from: b */
-    public static final C0384a f53b = new C0384a();
+    public static final C0378a f53b = new C0378a();
 
     /* renamed from: a */
     public final BinancePay f54a = BinancePayFactory.Companion.getBinancePay(this);
 
     /* renamed from: com.binance.android.binancepay.internal.activity.BinancePayActivity$a */
     /* loaded from: classes.dex */
-    public static final class C0384a {
+    public static final class C0378a {
     }
 
     /* renamed from: a */
@@ -68,7 +68,7 @@ public final class BinancePayActivity extends AppCompatActivity {
         super.onCreate(bundle);
         int i = Intrinsics.areEqual(getIntent().getStringExtra("extra_key_api_type"), "c2c") ? 2 : 1;
         Intrinsics.checkParameterIsNotNull(this, "context");
-        if (C0000a.m859a(this, "com.binance.dev")) {
+        if (C0000a.m860a(this, "com.binance.dev")) {
             Intrinsics.checkParameterIsNotNull(this, "context");
             float f = BitmapDescriptorFactory.HUE_RED;
             try {

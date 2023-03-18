@@ -115,22 +115,18 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->hasLoadMoreView()Z
 
     move-result v0
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v2, :cond_0
 
     const/4 v1, 0x1
 
-    :cond_1
-    :goto_0
-    if-eqz v1, :cond_2
+    :cond_0
+    if-eqz v1, :cond_1
 
     iget-object v0, p0, Lcom/chad/library/adapter/base/diff/BrvahListUpdateCallback;->mAdapter:Lcom/chad/library/adapter/base/BaseQuickAdapter;
 
@@ -138,7 +134,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     .line 15
     iget-object v0, p0, Lcom/chad/library/adapter/base/diff/BrvahListUpdateCallback;->mAdapter:Lcom/chad/library/adapter/base/BaseQuickAdapter;
@@ -153,10 +149,10 @@
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 17
-    :cond_2
+    :cond_1
     iget-object v0, p0, Lcom/chad/library/adapter/base/diff/BrvahListUpdateCallback;->mAdapter:Lcom/chad/library/adapter/base/BaseQuickAdapter;
 
     invoke-virtual {v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getHeaderLayoutCount()I
@@ -167,6 +163,6 @@
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    :goto_1
+    :goto_0
     return-void
 .end method

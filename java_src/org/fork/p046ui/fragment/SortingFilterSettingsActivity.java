@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -27,11 +26,11 @@ import org.fork.p046ui.fragment.SortingFilterSettingsActivity;
 import org.fork.p046ui.view.ArchiveSwitchTopicsBar;
 import org.fork.p046ui.view.SortingFilterCell;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.ShadowSectionCell;
@@ -120,7 +119,7 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                SortingFilterSettingsActivity.m2080getThemeDescriptions$lambda3(SortingFilterSettingsActivity.this);
+                SortingFilterSettingsActivity.getThemeDescriptions$lambda$3(SortingFilterSettingsActivity.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -132,8 +131,7 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-3  reason: not valid java name */
-    public static final void m2080getThemeDescriptions$lambda3(SortingFilterSettingsActivity this$0) {
+    public static final void getThemeDescriptions$lambda$3(SortingFilterSettingsActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ArchiveSwitchTopicsBar archiveSwitchTopicsBar = this$0.topicsBar;
         if (archiveSwitchTopicsBar == null) {
@@ -142,33 +140,24 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
         }
         archiveSwitchTopicsBar.updateSelectedTopicAndColors();
         RecyclerListView listView = this$0.getListView();
-        int i = 0;
         int childCount = listView.getChildCount();
-        if (childCount <= 0) {
-            return;
-        }
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < childCount; i++) {
             View childAt = listView.getChildAt(i);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
             SortingFilterCell sortingFilterCell = childAt instanceof SortingFilterCell ? (SortingFilterCell) childAt : null;
             if (sortingFilterCell != null) {
                 sortingFilterCell.updateColors();
             }
-            if (i2 >= childCount) {
-                return;
-            }
-            i = i2;
         }
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.folder_tabs_sorting_settings));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.folder_tabs_sorting_settings));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SortingFilterSettingsActivity.this.finishFragment();
@@ -190,7 +179,7 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
         recyclerListView.setFocusable(true);
         recyclerListView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
         recyclerListView.setAdapter(getListAdapter());
-        new ItemTouchHelper(new TouchHelperCallback(this)).attachToRecyclerView(recyclerListView);
+        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ boolean hasDoubleTap(View view, int i) {
@@ -204,20 +193,19 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                SortingFilterSettingsActivity.m2081initListView$lambda8$lambda7(SortingFilterSettingsActivity.this, view, i, f, f2);
+                SortingFilterSettingsActivity.initListView$lambda$8$lambda$7(SortingFilterSettingsActivity.this, view, i, f, f2);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m2081initListView$lambda8$lambda7(SortingFilterSettingsActivity this$0, View view, int i, float f, float f2) {
+    public static final void initListView$lambda$8$lambda$7(SortingFilterSettingsActivity this$0, View view, int i, float f, float f2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
             TextCheckCell textCheckCell = (TextCheckCell) view;
             textCheckCell.toggleCheckbox();
-            this$0.getFiltersController().toggleSortingEnabled(this$0.getCurrentArchive());
+            this$0.getFiltersController().toggleSortingEnabled(this$0.currentArchive);
             ListAdapter listAdapter = this$0.getListAdapter();
             int i2 = this$0.rowCount;
             listAdapter.updateRows();
@@ -236,7 +224,7 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
                 return;
             }
             sortingFilterCell.setChecked(!sortingFilterCell.isChecked());
-            this$0.getFiltersController().switchSortingFilterEnabled(this$0.getCurrentArchive(), this$0.getSortingIndexByPosition(i));
+            this$0.getFiltersController().switchSortingFilterEnabled(this$0.currentArchive, this$0.getSortingIndexByPosition(i));
             this$0.updateChatSwipeAction();
             this$0.getNotificationCenter().postNotificationName(NotificationCenter.dialogFiltersUpdated, new Object[0]);
         }
@@ -315,10 +303,9 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
         private final Context mContext;
         final /* synthetic */ SortingFilterSettingsActivity this$0;
 
-        public ListAdapter(SortingFilterSettingsActivity this$0, Context mContext) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
+        public ListAdapter(SortingFilterSettingsActivity sortingFilterSettingsActivity, Context mContext) {
             Intrinsics.checkNotNullParameter(mContext, "mContext");
-            this.this$0 = this$0;
+            this.this$0 = sortingFilterSettingsActivity;
             this.mContext = mContext;
             updateRows();
         }
@@ -394,23 +381,19 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 ArchiveSwitchTopicsBar archiveSwitchTopicsBar2 = new ArchiveSwitchTopicsBar(parentActivity, this.this$0.getCurrentArchive(), new SortingFilterSettingsActivity$ListAdapter$onCreateViewHolder$1(this.this$0));
                 this.this$0.topicsBar = archiveSwitchTopicsBar2;
-                Unit unit = Unit.INSTANCE;
                 archiveSwitchTopicsBar = archiveSwitchTopicsBar2;
             } else if (i == IdFabric$ViewTypes.TEXT_CHECK) {
                 TextCheckCell textCheckCell = new TextCheckCell(this.mContext);
                 textCheckCell.setType(1);
-                Unit unit2 = Unit.INSTANCE;
                 archiveSwitchTopicsBar = textCheckCell;
             } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
                 archiveSwitchTopicsBar = new TextInfoPrivacyCell(this.mContext);
             } else {
                 SortingFilterCell sortingFilterCell = new SortingFilterCell(this.mContext);
                 sortingFilterCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit3 = Unit.INSTANCE;
                 archiveSwitchTopicsBar = sortingFilterCell;
             }
             archiveSwitchTopicsBar.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit4 = Unit.INSTANCE;
             return new RecyclerListView.Holder(archiveSwitchTopicsBar);
         }
 
@@ -425,19 +408,19 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
                 SortingFilterSettingsActivity sortingFilterSettingsActivity = this.this$0;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == sortingFilterSettingsActivity.enableRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(sortingFilterSettingsActivity.getCurrentArchive() ? C3158R.string.settings_interface_archive_sorting : C3158R.string.sorting_settings_enable_item_title), sortingFilterSettingsActivity.getFiltersController().isSortingEnabled(sortingFilterSettingsActivity.getCurrentArchive()), needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(sortingFilterSettingsActivity.getCurrentArchive() ? C3286R.string.settings_interface_archive_sorting : C3286R.string.sorting_settings_enable_item_title), sortingFilterSettingsActivity.getFiltersController().isSortingEnabled(sortingFilterSettingsActivity.getCurrentArchive()), needDivider);
                 }
             } else if ((view instanceof TextInfoPrivacyCell) && itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
                 SortingFilterSettingsActivity sortingFilterSettingsActivity2 = this.this$0;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == sortingFilterSettingsActivity2.enableSectionRow && sortingFilterSettingsActivity2.getFiltersController().isSortingEnabled(sortingFilterSettingsActivity2.getCurrentArchive())) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
                     textInfoPrivacyCell.setText(null);
                     textInfoPrivacyCell.setFixedSize(12);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3158R.C3160drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                textInfoPrivacyCell.setText(LocaleController.getInternalString(i == sortingFilterSettingsActivity2.enableSectionRow ? C3158R.string.sorting_settings_enable_item_hint : C3158R.string.sorting_settings_drag_and_drop_hint));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(this.mContext, C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setText(LocaleController.getInternalString(i == sortingFilterSettingsActivity2.enableSectionRow ? C3286R.string.sorting_settings_enable_item_hint : C3286R.string.sorting_settings_drag_and_drop_hint));
                 textInfoPrivacyCell.setFixedSize(0);
             } else if ((view instanceof SortingFilterCell) && itemViewType == IdFabric$ViewTypes.SORTING_FILTER) {
                 final SortingFilterSettingsActivity sortingFilterSettingsActivity3 = this.this$0;
@@ -448,15 +431,14 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
                 sortingFilterCell.setOnFabsClick(new Runnable() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$ListAdapter$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SortingFilterSettingsActivity.ListAdapter.m2082onBindViewHolder$lambda8$lambda7(SortingFilterSettingsActivity.this, sortingTabState, i);
+                        SortingFilterSettingsActivity.ListAdapter.onBindViewHolder$lambda$8$lambda$7(SortingFilterSettingsActivity.this, sortingTabState, i);
                     }
                 });
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onBindViewHolder$lambda-8$lambda-7  reason: not valid java name */
-        public static final void m2082onBindViewHolder$lambda8$lambda7(final SortingFilterSettingsActivity this$0, final SortingTabState state, final int i) {
+        public static final void onBindViewHolder$lambda$8$lambda$7(final SortingFilterSettingsActivity this$0, final SortingTabState state, final int i) {
             Set mutableSet;
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(state, "$state");
@@ -466,14 +448,13 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
             this$0.showDialog(new SelectFabsBottomSheet(parentActivity, mutableSet, new Callbacks$Callback1() { // from class: org.fork.ui.fragment.SortingFilterSettingsActivity$ListAdapter$$ExternalSyntheticLambda1
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
-                    SortingFilterSettingsActivity.ListAdapter.m2083onBindViewHolder$lambda8$lambda7$lambda6(SortingTabState.this, this$0, i, (Set) obj);
+                    SortingFilterSettingsActivity.ListAdapter.onBindViewHolder$lambda$8$lambda$7$lambda$6(SortingTabState.this, this$0, i, (Set) obj);
                 }
             }));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: onBindViewHolder$lambda-8$lambda-7$lambda-6  reason: not valid java name */
-        public static final void m2083onBindViewHolder$lambda8$lambda7$lambda6(SortingTabState state, SortingFilterSettingsActivity this$0, int i, Set fabs) {
+        public static final void onBindViewHolder$lambda$8$lambda$7$lambda$6(SortingTabState state, SortingFilterSettingsActivity this$0, int i, Set fabs) {
             Intrinsics.checkNotNullParameter(state, "$state");
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullExpressionValue(fabs, "fabs");
@@ -488,8 +469,6 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
     /* renamed from: org.fork.ui.fragment.SortingFilterSettingsActivity$TouchHelperCallback */
     /* loaded from: classes4.dex */
     public final class TouchHelperCallback extends ItemTouchHelper.Callback {
-        final /* synthetic */ SortingFilterSettingsActivity this$0;
-
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public boolean isLongPressDragEnabled() {
             return true;
@@ -500,9 +479,7 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
             Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
         }
 
-        public TouchHelperCallback(SortingFilterSettingsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public TouchHelperCallback() {
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -520,14 +497,14 @@ public final class SortingFilterSettingsActivity extends BaseFragment {
             if (source.getItemViewType() != target.getItemViewType()) {
                 return false;
             }
-            this.this$0.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
+            SortingFilterSettingsActivity.this.getListAdapter().swapElements(source.getAdapterPosition(), target.getAdapterPosition());
             return true;
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
         public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int i) {
             if (i != 0) {
-                this.this$0.getListView().cancelClickRunnables(false);
+                SortingFilterSettingsActivity.this.getListView().cancelClickRunnables(false);
                 Intrinsics.checkNotNull(viewHolder);
                 viewHolder.itemView.setPressed(true);
             }

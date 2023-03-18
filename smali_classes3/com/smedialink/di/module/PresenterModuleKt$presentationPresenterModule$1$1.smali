@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n42#2:411\n127#3,5:412\n127#3,5:417\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n*L\n105#1:411\n107#1:412,5\n108#1:417,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2:434\n127#3,5:435\n127#3,5:440\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$1\n*L\n109#1:434\n111#1:435,5\n112#1:440,5\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$dstr$args"
+    const-string v0, "<name for destructuring parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,7 +85,6 @@
 
     move-result-object p2
 
-    .line 105
     move-object v1, p2
 
     check-cast v1, Lcom/smedialink/model/translation/TranslationArgs;
@@ -103,7 +102,7 @@
 
     move-result-object p2
 
-    .line 107
+    .line 111
     move-object v5, p2
 
     check-cast v5, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
@@ -119,7 +118,7 @@
 
     move-result-object p2
 
-    .line 107
+    .line 111
     move-object v4, p2
 
     check-cast v4, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -135,7 +134,7 @@
 
     move-result-object p2
 
-    .line 108
+    .line 112
     move-object v3, p2
 
     check-cast v3, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
@@ -151,12 +150,12 @@
 
     move-result-object p1
 
-    .line 108
+    .line 112
     move-object v2, p1
 
     check-cast v2, Lcom/smedialink/storage/domain/interactor/translate/TranslationInteractor;
 
-    .line 106
+    .line 110
     new-instance p1, Lcom/smedialink/ui/translate/TranslationPresenter;
 
     move-object v0, p1
@@ -169,7 +168,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 105
+    .line 109
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

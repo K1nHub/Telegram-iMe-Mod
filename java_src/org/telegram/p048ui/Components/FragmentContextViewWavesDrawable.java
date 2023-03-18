@@ -7,9 +7,11 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.View;
+import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -52,7 +54,7 @@ public class FragmentContextViewWavesDrawable {
     */
     public void draw(float r21, float r22, float r23, float r24, android.graphics.Canvas r25, org.telegram.p048ui.Components.FragmentContextView r26, float r27) {
         /*
-            Method dump skipped, instructions count: 597
+            Method dump skipped, instructions count: 611
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p048ui.Components.FragmentContextViewWavesDrawable.draw(float, float, float, float, android.graphics.Canvas, org.telegram.ui.Components.FragmentContextView, float):void");
@@ -139,6 +141,7 @@ public class FragmentContextViewWavesDrawable {
     public static class WeavingState {
         int color1;
         int color2;
+        int color3;
         private final int currentState;
         private float duration;
         public Shader shader;
@@ -178,9 +181,11 @@ public class FragmentContextViewWavesDrawable {
             } else if (i == 3) {
                 int color5 = Theme.getColor(this.mutedByAdmin);
                 this.color1 = color5;
-                int color6 = Theme.getColor(this.mutedByAdmin2);
-                this.color2 = color6;
-                this.shader = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{color5, Theme.getColor(this.mutedByAdmin3), color6}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
+                int color6 = Theme.getColor(this.mutedByAdmin3);
+                this.color3 = color6;
+                int color7 = Theme.getColor(this.mutedByAdmin2);
+                this.color2 = color7;
+                this.shader = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{color5, color6, color7}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
             }
         }
 
@@ -264,6 +269,16 @@ public class FragmentContextViewWavesDrawable {
         public void setToPaint(Paint paint) {
             int i = this.currentState;
             if (i == 0 || i == 1 || i == 3) {
+                if (!LiteMode.isEnabled(512)) {
+                    paint.setShader(null);
+                    if (this.currentState == 3) {
+                        paint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(this.color1, this.color2, 0.5f), this.color3, 0.5f));
+                        return;
+                    } else {
+                        paint.setColor(ColorUtils.blendARGB(this.color1, this.color2, 0.5f));
+                        return;
+                    }
+                }
                 paint.setShader(this.shader);
                 return;
             }

@@ -2,44 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/GenericProvider;
+.implements Lorg/telegram/tgnet/RequestTimeDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda18;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda18;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda18;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda18;->INSTANCE:Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda18;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/TextDetailSettingsCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final run(J)V
+    .locals 1
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$YskjvUamqwmF5NqCH_KJf_aXqIk(Ljava/lang/Integer;)Ljava/lang/String;
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->$r8$lambda$xoozFsALyBWJLeURATF7G3T3djc(Lorg/telegram/ui/Cells/TextDetailSettingsCell;J)V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

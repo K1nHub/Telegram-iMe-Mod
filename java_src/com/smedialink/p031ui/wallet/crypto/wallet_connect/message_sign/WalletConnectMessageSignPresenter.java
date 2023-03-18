@@ -12,7 +12,7 @@ import com.smedialink.utils.extentions.common.StringExtKt;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletConnectMessageSignPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignPresenter */
@@ -33,7 +33,10 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
 
         static {
             int[] iArr = new int[WCEthereumSignMessage.WCSignType.values().length];
-            iArr[WCEthereumSignMessage.WCSignType.PERSONAL_MESSAGE.ordinal()] = 1;
+            try {
+                iArr[WCEthereumSignMessage.WCSignType.PERSONAL_MESSAGE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -53,7 +56,7 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
     }
 
     public final DialogModel getSendConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_connect_message_sign_confirm_title), this.resourceManager.getString(C3158R.string.wallet_connect_message_sign_confirm_description), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.wallet_connect_transaction_button_sign));
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_connect_message_sign_confirm_title), this.resourceManager.getString(C3286R.string.wallet_connect_message_sign_confirm_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_connect_transaction_button_sign));
     }
 
     public final void approveSign() {
@@ -79,11 +82,8 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
 
     private final String getAddressText() {
         String address;
+        String shortened$default;
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        String str = null;
-        if (eVMWallet != null && (address = eVMWallet.getAddress()) != null) {
-            str = StringExtKt.shortened$default(address, 0, 1, null);
-        }
-        return str == null ? this.resourceManager.getString(C3158R.string.wallet_connect_message_sign_address_hidden) : str;
+        return (eVMWallet == null || (address = eVMWallet.getAddress()) == null || (shortened$default = StringExtKt.shortened$default(address, 0, 1, null)) == null) ? this.resourceManager.getString(C3286R.string.wallet_connect_message_sign_address_hidden) : shortened$default;
     }
 }

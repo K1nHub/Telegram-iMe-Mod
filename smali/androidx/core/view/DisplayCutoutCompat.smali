@@ -3,24 +3,32 @@
 .source "DisplayCutoutCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/view/DisplayCutoutCompat$Api28Impl;
+    }
+.end annotation
+
+
 # instance fields
-.field private final mDisplayCutout:Ljava/lang/Object;
+.field private final mDisplayCutout:Landroid/view/DisplayCutout;
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/Object;)V
+.method private constructor <init>(Landroid/view/DisplayCutout;)V
     .locals 0
 
     .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 113
-    iput-object p1, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iput-object p1, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
     return-void
 .end method
 
-.method static wrap(Ljava/lang/Object;)Landroidx/core/view/DisplayCutoutCompat;
+.method static wrap(Landroid/view/DisplayCutout;)Landroidx/core/view/DisplayCutoutCompat;
     .locals 1
 
     if-nez p0, :cond_0
@@ -29,11 +37,11 @@
 
     goto :goto_0
 
-    .line 212
+    .line 213
     :cond_0
     new-instance v0, Landroidx/core/view/DisplayCutoutCompat;
 
-    invoke-direct {v0, p0}, Landroidx/core/view/DisplayCutoutCompat;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Landroidx/core/view/DisplayCutoutCompat;-><init>(Landroid/view/DisplayCutout;)V
 
     move-object p0, v0
 
@@ -71,9 +79,9 @@
     check-cast p1, Landroidx/core/view/DisplayCutoutCompat;
 
     .line 198
-    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
-    iget-object p1, p1, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object p1, p1, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
     invoke-static {v0, p1}, Landroidx/core/util/ObjectsCompat;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -99,11 +107,9 @@
     if-lt v0, v1, :cond_0
 
     .line 128
-    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
-    check-cast v0, Landroid/view/DisplayCutout;
-
-    invoke-virtual {v0}, Landroid/view/DisplayCutout;->getSafeInsetBottom()I
+    invoke-static {v0}, Landroidx/core/view/DisplayCutoutCompat$Api28Impl;->getSafeInsetBottom(Landroid/view/DisplayCutout;)I
 
     move-result v0
 
@@ -126,11 +132,9 @@
     if-lt v0, v1, :cond_0
 
     .line 137
-    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
-    check-cast v0, Landroid/view/DisplayCutout;
-
-    invoke-virtual {v0}, Landroid/view/DisplayCutout;->getSafeInsetLeft()I
+    invoke-static {v0}, Landroidx/core/view/DisplayCutoutCompat$Api28Impl;->getSafeInsetLeft(Landroid/view/DisplayCutout;)I
 
     move-result v0
 
@@ -153,11 +157,9 @@
     if-lt v0, v1, :cond_0
 
     .line 146
-    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
-    check-cast v0, Landroid/view/DisplayCutout;
-
-    invoke-virtual {v0}, Landroid/view/DisplayCutout;->getSafeInsetRight()I
+    invoke-static {v0}, Landroidx/core/view/DisplayCutoutCompat$Api28Impl;->getSafeInsetRight(Landroid/view/DisplayCutout;)I
 
     move-result v0
 
@@ -180,11 +182,9 @@
     if-lt v0, v1, :cond_0
 
     .line 119
-    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
-    check-cast v0, Landroid/view/DisplayCutout;
-
-    invoke-virtual {v0}, Landroid/view/DisplayCutout;->getSafeInsetTop()I
+    invoke-static {v0}, Landroidx/core/view/DisplayCutoutCompat$Api28Impl;->getSafeInsetTop(Landroid/view/DisplayCutout;)I
 
     move-result v0
 
@@ -200,7 +200,7 @@
     .locals 1
 
     .line 203
-    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object v0, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
     if-nez v0, :cond_0
 
@@ -209,7 +209,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Landroid/view/DisplayCutout;->hashCode()I
 
     move-result v0
 
@@ -220,7 +220,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 208
+    .line 209
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -229,7 +229,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Ljava/lang/Object;
+    iget-object v1, p0, Landroidx/core/view/DisplayCutoutCompat;->mDisplayCutout:Landroid/view/DisplayCutout;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

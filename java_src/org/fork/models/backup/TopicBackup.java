@@ -93,7 +93,7 @@ public final class TopicBackup {
     }
 
     public String toString() {
-        return "TopicBackup(name=" + ((Object) this.name) + ", icon=" + this.icon + ", order=" + this.order + ", presets=" + this.presets + ", databaseDialogs=" + this.databaseDialogs + ", topicId=" + ((Object) this.topicId) + ')';
+        return "TopicBackup(name=" + this.name + ", icon=" + this.icon + ", order=" + this.order + ", presets=" + this.presets + ", databaseDialogs=" + this.databaseDialogs + ", topicId=" + this.topicId + ')';
     }
 
     public TopicBackup(String str, Topic topic, int i, Set<Long> presets, Set<Long> databaseDialogs, String str2) {

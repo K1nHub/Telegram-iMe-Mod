@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->$r8$lambda$9Z188-KpBVq8NBzg2sApuZK_wZc(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->$r8$lambda$6ewQGBDbMwkMIf6YI3qf83sHyb8(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method

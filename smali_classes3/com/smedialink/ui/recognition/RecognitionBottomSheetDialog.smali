@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$TranslationDelegate;,
-        Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$Companion;
+        Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$Companion;,
+        Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$TranslationDelegate;
     }
 .end annotation
 
@@ -48,34 +48,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$KUSWD6qhD_0wpNGNVaz20M6emew(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$A7lOL9taQQny9SSCSIzq5BUJVZs(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda-7$lambda-3(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda$7$lambda$5(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bvM8Xz-TAVIajtvifP-tc1fv3Ps(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$PjVpmhlMmZHL4Y5Gv7jb3_zzMkU(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda-7$lambda-5(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda$7$lambda$4(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$eBmcJI-FX4uvQQrP_EGUV06wC_0(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$f9-sJ6TCwRZa_HcNdak_F6AFzxY(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda-7$lambda-6(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda$7$lambda$6(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jB_c-4fxQkUGIoecBj1sQii0YHM(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$r53IIoA7yHuzjeMu7mo3lrBUEXE(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda-7$lambda-4(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->setupListeners$lambda$7$lambda$3(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
 
     return-void
 .end method
@@ -307,27 +307,27 @@
     .line 99
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageClose:Landroidx/appcompat/widget/AppCompatImageView;
 
-    new-instance v2, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda0;
-
-    invoke-direct {v2, p0}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;)V
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 100
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageCopy:Landroidx/appcompat/widget/AppCompatImageView;
-
     new-instance v2, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda3;
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 101
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageTranslate:Landroidx/appcompat/widget/AppCompatImageView;
+    .line 100
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageCopy:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v2, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 101
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkTextRecognitionContentLayoutBinding;->imageTranslate:Landroidx/appcompat/widget/AppCompatImageView;
+
+    new-instance v2, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, p0}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -343,7 +343,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7$lambda-3(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method private static final setupListeners$lambda$7$lambda$3(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -356,7 +356,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7$lambda-4(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method private static final setupListeners$lambda$7$lambda$4(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -369,7 +369,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7$lambda-5(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method private static final setupListeners$lambda$7$lambda$5(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -382,7 +382,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7$lambda-6(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+.method private static final setupListeners$lambda$7$lambda$6(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"

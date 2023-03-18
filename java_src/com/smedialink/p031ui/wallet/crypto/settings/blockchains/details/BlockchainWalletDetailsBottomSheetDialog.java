@@ -27,7 +27,7 @@ import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentBlockchainsWalletDetailsBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
@@ -151,8 +151,8 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         ImageHeaderView viewHeader = binding.viewHeader;
         Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
         ImageHeaderView.setupViewData$default(viewHeader, i, null, title, subtitle, 2, null);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3158R.string.wallet_details_created), createdDate, C3158R.C3160drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3158R.string.wallet_connect_session_details_address), address, C3158R.C3160drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_details_created), createdDate, C3286R.C3288drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_address), address, C3286R.C3288drawable.fork_ic_nav_wallet_24, true);
     }
 
     @Override // com.smedialink.p031ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView
@@ -171,39 +171,37 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
     }
 
     private final void setupActionItem() {
-        final ActionBarMenuItem actionBarMenuItem = getBinding().itemMoreOptions;
-        actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setSubMenuOpenSide(2);
-        actionBarMenuItem.setIcon(C3158R.C3160drawable.ic_ab_other);
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
-        actionBarMenuItem.addSubItem(IdFabric$Menu.INFO, C3158R.C3160drawable.msg_info, getResourceManager().getString(C3158R.string.wallet_crypto_buy_information_dialog_title));
-        actionBarMenuItem.addSubItem(IdFabric$Menu.COPY, C3158R.C3160drawable.msg_copy, getResourceManager().getString(C3158R.string.wallet_transaction_details_action_copy_address));
-        actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda0
+        final ActionBarMenuItem setupActionItem$lambda$4 = getBinding().itemMoreOptions;
+        setupActionItem$lambda$4.setLongClickEnabled(false);
+        setupActionItem$lambda$4.setSubMenuOpenSide(2);
+        setupActionItem$lambda$4.setIcon(C3286R.C3288drawable.ic_ab_other);
+        Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$4, "setupActionItem$lambda$4");
+        ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$4);
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3286R.C3288drawable.msg_info, getResourceManager().getString(C3286R.string.wallet_crypto_buy_information_dialog_title));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3286R.C3288drawable.msg_copy, getResourceManager().getString(C3286R.string.wallet_transaction_details_action_copy_address));
+        setupActionItem$lambda$4.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BlockchainWalletDetailsBottomSheetDialog.m1606setupActionItem$lambda4$lambda2(ActionBarMenuItem.this, view);
+                BlockchainWalletDetailsBottomSheetDialog.setupActionItem$lambda$4$lambda$2(ActionBarMenuItem.this, view);
             }
         });
-        actionBarMenuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda2
+        setupActionItem$lambda$4.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.smedialink.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
-                BlockchainWalletDetailsBottomSheetDialog.m1607setupActionItem$lambda4$lambda3(BlockchainWalletDetailsBottomSheetDialog.this, actionBarMenuItem, i);
+                BlockchainWalletDetailsBottomSheetDialog.setupActionItem$lambda$4$lambda$3(BlockchainWalletDetailsBottomSheetDialog.this, setupActionItem$lambda$4, i);
             }
         });
-        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupActionItem$lambda-4$lambda-2  reason: not valid java name */
-    public static final void m1606setupActionItem$lambda4$lambda2(ActionBarMenuItem this_with, View view) {
+    public static final void setupActionItem$lambda$4$lambda$2(ActionBarMenuItem this_with, View view) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         this_with.toggleSubMenu();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupActionItem$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m1607setupActionItem$lambda4$lambda3(BlockchainWalletDetailsBottomSheetDialog this$0, ActionBarMenuItem this_with, int i) {
+    public static final void setupActionItem$lambda$4$lambda$3(BlockchainWalletDetailsBottomSheetDialog this$0, ActionBarMenuItem this_with, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         if (i == IdFabric$Menu.INFO) {
@@ -221,17 +219,17 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         binding.viewConnectedCell.setupColors();
         binding.viewAddressCell.setupColors();
         binding.buttonBackup.applyColors();
-        BigActionButton bigActionButton = binding.buttonReset;
-        bigActionButton.setTextColor(Theme.getColor("windowBackgroundWhiteRedText"));
-        bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), 0, Theme.getColor("listSelectorSDK21")));
-        Intrinsics.checkNotNullExpressionValue(bigActionButton, "");
-        ViewExtKt.withMediumTypeface(bigActionButton);
+        BigActionButton setupColors$lambda$6$lambda$5 = binding.buttonReset;
+        setupColors$lambda$6$lambda$5.setTextColor(Theme.getColor("windowBackgroundWhiteRedText"));
+        setupColors$lambda$6$lambda$5.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), 0, Theme.getColor("listSelectorSDK21")));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$5, "setupColors$lambda$6$lambda$5");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$5);
     }
 
     private final void setupTexts() {
         ForkContentBlockchainsWalletDetailsBinding binding = getBinding();
-        binding.buttonBackup.setText(getResourceManager().getString(C3158R.string.wallet_eth_account_settings_backup_title));
-        binding.buttonReset.setText(LocaleController.getString("Reset", C3158R.string.Reset));
+        binding.buttonBackup.setText(getResourceManager().getString(C3286R.string.wallet_eth_account_settings_backup_title));
+        binding.buttonReset.setText(LocaleController.getString("Reset", C3286R.string.Reset));
     }
 
     private final void setupListeners() {

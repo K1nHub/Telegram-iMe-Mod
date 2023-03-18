@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/common/AppLifecycleObserver$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/common/AppLifecycleObserver;
 
-    invoke-static {v0}, Lcom/smedialink/common/AppLifecycleObserver;->$r8$lambda$RCgsAwxb9fCsWSMDIrxclr5dT88(Lcom/smedialink/common/AppLifecycleObserver;)V
+    invoke-static {v0}, Lcom/smedialink/common/AppLifecycleObserver;->$r8$lambda$-YTNT9dgx_WfG9qZfbof91Es1Oc(Lcom/smedialink/common/AppLifecycleObserver;)V
 
     return-void
 .end method

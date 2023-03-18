@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/view/CircleCheckCell$$ExternalSyntheticLambda0;->f$1:Lorg/fork/ui/view/CircleCheckCell;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/CircleCheckCell;->$r8$lambda$zCiYGDrzFrGEa916ImIZDEgx4tU(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/CircleCheckCell;->$r8$lambda$cQSjznEqIsoW6uYsu7HxVgFwqG8(Lorg/telegram/ui/Components/CheckBox2;Lorg/fork/ui/view/CircleCheckCell;F)V
 
     return-void
 .end method

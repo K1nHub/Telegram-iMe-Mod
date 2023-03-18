@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTopic.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topic.kt\ncom/smedialink/storage/data/repository/topics/Topic$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,311:1\n3785#2:312\n4300#2,2:313\n1#3:315\n*S KotlinDebug\n*F\n+ 1 Topic.kt\ncom/smedialink/storage/data/repository/topics/Topic$Companion\n*L\n307#1:312\n307#1:313,2\n*E\n"
+    value = "SMAP\nTopic.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topic.kt\ncom/smedialink/storage/data/repository/topics/Topic$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,311:1\n3792#2:312\n4307#2,2:313\n1#3:315\n*S KotlinDebug\n*F\n+ 1 Topic.kt\ncom/smedialink/storage/data/repository/topics/Topic$Companion\n*L\n307#1:312\n307#1:313,2\n*E\n"
 .end annotation
 
 
@@ -54,12 +54,12 @@
 
     move-result-object v0
 
-    .line 3785
+    .line 3792
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4300
+    .line 4307
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -88,6 +88,7 @@
     :goto_1
     if-eqz v6, :cond_1
 
+    .line 4307
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_1

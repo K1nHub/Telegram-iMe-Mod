@@ -35,9 +35,9 @@ public final class CryptoWalletMappingKt {
         BigInteger nonce = transactionParamsResponse.getNonce();
         Chain chainById = Chain.Companion.getChainById(transactionParamsResponse.getChainId());
         GasPriceOneItem safeLow = transactionParamsResponse.getSafeLow();
-        GasPriceInfo gasPriceInfo = safeLow == null ? null : new GasPriceInfo(safeLow.getPrice(), safeLow.getLimit(), (int) safeLow.getDuration(), safeLow.getFee(), safeLow.getFeeInDollars());
+        GasPriceInfo gasPriceInfo = safeLow != null ? new GasPriceInfo(safeLow.getPrice(), safeLow.getLimit(), (int) safeLow.getDuration(), safeLow.getFee(), safeLow.getFeeInDollars()) : null;
         GasPriceInfo gasPriceInfo2 = new GasPriceInfo(transactionParamsResponse.getFast().getPrice(), transactionParamsResponse.getFast().getLimit(), (int) transactionParamsResponse.getFast().getDuration(), transactionParamsResponse.getFast().getFee(), transactionParamsResponse.getFast().getFeeInDollars());
         GasPriceOneItem fastest = transactionParamsResponse.getFastest();
-        return new TransactionParams(fastest == null ? null : new GasPriceInfo(fastest.getPrice(), fastest.getLimit(), (int) fastest.getDuration(), fastest.getFee(), fastest.getFeeInDollars()), gasPriceInfo2, gasPriceInfo, nonce, chainById);
+        return new TransactionParams(fastest != null ? new GasPriceInfo(fastest.getPrice(), fastest.getLimit(), (int) fastest.getDuration(), fastest.getFee(), fastest.getFeeInDollars()) : null, gasPriceInfo2, gasPriceInfo, nonce, chainById);
     }
 }

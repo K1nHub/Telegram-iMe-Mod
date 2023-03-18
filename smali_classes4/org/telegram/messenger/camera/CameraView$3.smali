@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/messenger/camera/CameraView;->onFirstFrameRendered()V
+    value = Lorg/telegram/messenger/camera/CameraView;->showTexture(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,13 +17,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/messenger/camera/CameraView;
 
+.field final synthetic val$show:Z
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/messenger/camera/CameraView;)V
+.method constructor <init>(Lorg/telegram/messenger/camera/CameraView;Z)V
     .locals 0
 
-    .line 1138
+    .line 560
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraView$3;->this$0:Lorg/telegram/messenger/camera/CameraView;
+
+    iput-boolean p2, p0, Lorg/telegram/messenger/camera/CameraView$3;->val$show:Z
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -35,19 +39,33 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1141
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
-
-    .line 1142
+    .line 563
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$3;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
-    invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$100(Lorg/telegram/messenger/camera/CameraView;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
 
     move-result-object p1
 
-    const/16 v0, 0x8
+    iget-boolean v0, p0, Lorg/telegram/messenger/camera/CameraView$3;->val$show:Z
 
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+    if-eqz v0, :cond_0
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/view/TextureView;->setAlpha(F)V
+
+    .line 564
+    iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$3;->this$0:Lorg/telegram/messenger/camera/CameraView;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/messenger/camera/CameraView;->access$202(Lorg/telegram/messenger/camera/CameraView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
     return-void
 .end method

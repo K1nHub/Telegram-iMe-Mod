@@ -13,7 +13,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 64036
+    .line 64282
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$RequestPeerType;-><init>()V
 
     return-void
@@ -24,7 +24,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 64043
+    .line 64289
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -35,7 +35,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 64045
+    .line 64291
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_requestPeerTypeUser;->bot:Ljava/lang/Boolean;
 
-    .line 64047
+    .line 64293
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 64048
+    .line 64294
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result p1
@@ -74,10 +74,10 @@
 
     const v0, 0x5f3b8a00
 
-    .line 64053
+    .line 64299
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 64054
+    .line 64300
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_requestPeerTypeUser;->bot:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
@@ -96,7 +96,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64055
+    .line 64301
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_requestPeerTypeUser;->premium:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_1
@@ -111,28 +111,28 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$RequestPeerType;->flags:I
 
-    .line 64056
+    .line 64302
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 64057
+    .line 64303
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_requestPeerTypeUser;->bot:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_2
 
-    .line 64058
+    .line 64304
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 64060
+    .line 64306
     :cond_2
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_requestPeerTypeUser;->premium:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_3
 
-    .line 64061
+    .line 64307
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0

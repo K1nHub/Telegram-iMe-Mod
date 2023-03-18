@@ -6,7 +6,7 @@ import io.grpc.Deadline;
 import io.grpc.DecompressorRegistry;
 import io.grpc.Status;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 abstract class ForwardingClientStream implements ClientStream {
     protected abstract ClientStream delegate();
 

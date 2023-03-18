@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n42#2:411\n127#3,5:412\n127#3,5:417\n127#3,5:422\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n*L\n185#1:411\n187#1:412,5\n188#1:417,5\n189#1:422,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2:434\n127#3,5:435\n127#3,5:440\n127#3,5:445\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n*L\n189#1:434\n191#1:435,5\n192#1:440,5\n193#1:445,5\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$dstr$screenType"
+    const-string v0, "<name for destructuring parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,7 +85,6 @@
 
     move-result-object p2
 
-    .line 185
     move-object v1, p2
 
     check-cast v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
@@ -103,7 +102,7 @@
 
     move-result-object p2
 
-    .line 187
+    .line 191
     move-object v4, p2
 
     check-cast v4, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -119,7 +118,7 @@
 
     move-result-object p2
 
-    .line 187
+    .line 191
     move-object v3, p2
 
     check-cast v3, Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;
@@ -135,7 +134,7 @@
 
     move-result-object p2
 
-    .line 188
+    .line 192
     move-object v7, p2
 
     check-cast v7, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
@@ -151,7 +150,7 @@
 
     move-result-object p2
 
-    .line 188
+    .line 192
     move-object v2, p2
 
     check-cast v2, Lcom/smedialink/storage/domain/interactor/crypto/cancel/CancelInteractor;
@@ -167,7 +166,7 @@
 
     move-result-object p2
 
-    .line 188
+    .line 192
     move-object v6, p2
 
     check-cast v6, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
@@ -183,12 +182,12 @@
 
     move-result-object p1
 
-    .line 189
+    .line 193
     move-object v5, p1
 
     check-cast v5, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 186
+    .line 190
     new-instance p1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
 
     move-object v0, p1
@@ -201,7 +200,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 185
+    .line 189
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

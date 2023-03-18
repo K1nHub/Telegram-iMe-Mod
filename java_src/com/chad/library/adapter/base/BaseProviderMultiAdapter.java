@@ -99,10 +99,9 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
         Intrinsics.checkNotNullParameter(holder, "holder");
         super.onViewAttachedToWindow((BaseProviderMultiAdapter<T>) holder);
         BaseItemProvider<T> itemProvider = getItemProvider(holder.getItemViewType());
-        if (itemProvider == null) {
-            return;
+        if (itemProvider != null) {
+            itemProvider.onViewAttachedToWindow(holder);
         }
-        itemProvider.onViewAttachedToWindow(holder);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -110,10 +109,9 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
         Intrinsics.checkNotNullParameter(holder, "holder");
         super.onViewDetachedFromWindow((BaseProviderMultiAdapter<T>) holder);
         BaseItemProvider<T> itemProvider = getItemProvider(holder.getItemViewType());
-        if (itemProvider == null) {
-            return;
+        if (itemProvider != null) {
+            itemProvider.onViewDetachedFromWindow(holder);
         }
-        itemProvider.onViewDetachedFromWindow(holder);
     }
 
     protected void bindClick(final BaseViewHolder viewHolder) {
@@ -122,7 +120,7 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.chad.library.adapter.base.BaseProviderMultiAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BaseProviderMultiAdapter.m886bindClick$lambda2(BaseViewHolder.this, this, view);
+                    BaseProviderMultiAdapter.bindClick$lambda$2(BaseViewHolder.this, this, view);
                 }
             });
         }
@@ -130,17 +128,16 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
             viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.chad.library.adapter.base.BaseProviderMultiAdapter$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    boolean m887bindClick$lambda3;
-                    m887bindClick$lambda3 = BaseProviderMultiAdapter.m887bindClick$lambda3(BaseViewHolder.this, this, view);
-                    return m887bindClick$lambda3;
+                    boolean bindClick$lambda$3;
+                    bindClick$lambda$3 = BaseProviderMultiAdapter.bindClick$lambda$3(BaseViewHolder.this, this, view);
+                    return bindClick$lambda$3;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindClick$lambda-2  reason: not valid java name */
-    public static final void m886bindClick$lambda2(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, View it) {
+    public static final void bindClick$lambda$2(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, View it) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int adapterPosition = viewHolder.getAdapterPosition();
@@ -154,8 +151,7 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindClick$lambda-3  reason: not valid java name */
-    public static final boolean m887bindClick$lambda3(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, View it) {
+    public static final boolean bindClick$lambda$3(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, View it) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int adapterPosition = viewHolder.getAdapterPosition();
@@ -179,13 +175,14 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
             for (Number number : itemProvider2.getChildClickViewIds()) {
                 View findViewById = viewHolder.itemView.findViewById(number.intValue());
                 if (findViewById != null) {
+                    Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById<View>(id)");
                     if (!findViewById.isClickable()) {
                         findViewById.setClickable(true);
                     }
                     findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.chad.library.adapter.base.BaseProviderMultiAdapter$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            BaseProviderMultiAdapter.m884bindChildClick$lambda6$lambda5$lambda4(BaseViewHolder.this, this, itemProvider2, view);
+                            BaseProviderMultiAdapter.bindChildClick$lambda$6$lambda$5$lambda$4(BaseViewHolder.this, this, itemProvider2, view);
                         }
                     });
                 }
@@ -197,15 +194,16 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
         for (Number number2 : itemProvider.getChildLongClickViewIds()) {
             View findViewById2 = viewHolder.itemView.findViewById(number2.intValue());
             if (findViewById2 != null) {
+                Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById<View>(id)");
                 if (!findViewById2.isLongClickable()) {
                     findViewById2.setLongClickable(true);
                 }
                 findViewById2.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.chad.library.adapter.base.BaseProviderMultiAdapter$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnLongClickListener
                     public final boolean onLongClick(View view) {
-                        boolean m885bindChildClick$lambda9$lambda8$lambda7;
-                        m885bindChildClick$lambda9$lambda8$lambda7 = BaseProviderMultiAdapter.m885bindChildClick$lambda9$lambda8$lambda7(BaseViewHolder.this, this, itemProvider, view);
-                        return m885bindChildClick$lambda9$lambda8$lambda7;
+                        boolean bindChildClick$lambda$9$lambda$8$lambda$7;
+                        bindChildClick$lambda$9$lambda$8$lambda$7 = BaseProviderMultiAdapter.bindChildClick$lambda$9$lambda$8$lambda$7(BaseViewHolder.this, this, itemProvider, view);
+                        return bindChildClick$lambda$9$lambda$8$lambda$7;
                     }
                 });
             }
@@ -213,8 +211,7 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindChildClick$lambda-6$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m884bindChildClick$lambda6$lambda5$lambda4(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, BaseItemProvider provider, View v) {
+    public static final void bindChildClick$lambda$6$lambda$5$lambda$4(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, BaseItemProvider provider, View v) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(provider, "$provider");
@@ -228,8 +225,7 @@ public abstract class BaseProviderMultiAdapter<T> extends BaseQuickAdapter<T, Ba
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindChildClick$lambda-9$lambda-8$lambda-7  reason: not valid java name */
-    public static final boolean m885bindChildClick$lambda9$lambda8$lambda7(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, BaseItemProvider provider, View v) {
+    public static final boolean bindChildClick$lambda$9$lambda$8$lambda$7(BaseViewHolder viewHolder, BaseProviderMultiAdapter this$0, BaseItemProvider provider, View v) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(provider, "$provider");

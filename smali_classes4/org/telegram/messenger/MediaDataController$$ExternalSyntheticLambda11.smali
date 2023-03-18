@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/messenger/MediaDataController;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$R8M5_0_0pXS-sKkqgDDOWiZ1_wU(Lorg/telegram/messenger/MediaDataController;)V
+    invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$USs7tuKE28NgokB4idKOt--FsXo(Lorg/telegram/messenger/MediaDataController;)V
 
     return-void
 .end method

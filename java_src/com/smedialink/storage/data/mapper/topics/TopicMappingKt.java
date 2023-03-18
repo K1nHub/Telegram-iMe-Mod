@@ -32,7 +32,7 @@ public final class TopicMappingKt {
         long topicId = topicModel.getTopicId();
         String name = topicModel.getName();
         Topic icon = topicModel.getIcon();
-        String name2 = icon == null ? null : icon.name();
+        String name2 = icon != null ? icon.name() : null;
         int order = topicModel.getOrder();
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) topicModel.getPresets());
         mutableList2 = CollectionsKt___CollectionsKt.toMutableList((Collection) topicModel.getDialogs());

@@ -6,7 +6,7 @@ import io.grpc.internal.TransportFrameUtil;
 import io.grpc.okhttp.internal.framed.Header;
 import java.util.List;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class Utils {
     static {
         Logger.getLogger(Utils.class.getName());

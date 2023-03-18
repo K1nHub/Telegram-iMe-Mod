@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda2;->f$0:Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;
 
-    invoke-static {v0}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->$r8$lambda$s2fLBHSnksmuZEWtH6eEpZajPPU(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
+    invoke-static {v0}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->$r8$lambda$AJdvjSr5xr5jxDVg4La59GfMHgg(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
 
     return-void
 .end method

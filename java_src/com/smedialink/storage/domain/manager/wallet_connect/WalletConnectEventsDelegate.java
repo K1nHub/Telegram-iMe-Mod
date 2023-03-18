@@ -13,39 +13,32 @@ public interface WalletConnectEventsDelegate {
     /* loaded from: classes3.dex */
     public static final class DefaultImpls {
         public static void onEthSign(WalletConnectEventsDelegate walletConnectEventsDelegate, long j, WCSessionStoreItem sessionStoreItem, WCEthereumSignMessage message) {
-            Intrinsics.checkNotNullParameter(walletConnectEventsDelegate, "this");
             Intrinsics.checkNotNullParameter(sessionStoreItem, "sessionStoreItem");
             Intrinsics.checkNotNullParameter(message, "message");
         }
 
         public static void onFailure(WalletConnectEventsDelegate walletConnectEventsDelegate, Throwable throwable) {
-            Intrinsics.checkNotNullParameter(walletConnectEventsDelegate, "this");
             Intrinsics.checkNotNullParameter(throwable, "throwable");
         }
 
         public static void onSessionRequest(WalletConnectEventsDelegate walletConnectEventsDelegate, WCSessionStoreItem sessionItem) {
-            Intrinsics.checkNotNullParameter(walletConnectEventsDelegate, "this");
             Intrinsics.checkNotNullParameter(sessionItem, "sessionItem");
         }
 
         public static void onSuccess(WalletConnectEventsDelegate walletConnectEventsDelegate, int i) {
-            Intrinsics.checkNotNullParameter(walletConnectEventsDelegate, "this");
         }
 
         public static void onTransactionProcessing(WalletConnectEventsDelegate walletConnectEventsDelegate, long j, WCSessionStoreItem sessionStoreItem, WalletConnectProcessedTransaction transaction, boolean z) {
-            Intrinsics.checkNotNullParameter(walletConnectEventsDelegate, "this");
             Intrinsics.checkNotNullParameter(sessionStoreItem, "sessionStoreItem");
             Intrinsics.checkNotNullParameter(transaction, "transaction");
         }
 
         public static void onWalletChangeNetwork(WalletConnectEventsDelegate walletConnectEventsDelegate, long j, WCSessionStoreItem sessionStoreItem, NetworkType networkType) {
-            Intrinsics.checkNotNullParameter(walletConnectEventsDelegate, "this");
             Intrinsics.checkNotNullParameter(sessionStoreItem, "sessionStoreItem");
             Intrinsics.checkNotNullParameter(networkType, "networkType");
         }
 
         public static void onWalletChangeUnsupportedNetwork(WalletConnectEventsDelegate walletConnectEventsDelegate) {
-            Intrinsics.checkNotNullParameter(walletConnectEventsDelegate, "this");
         }
     }
 

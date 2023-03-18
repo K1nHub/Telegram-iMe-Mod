@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LogExceptionRunnable implements Runnable {
     private static final Logger log = Logger.getLogger(LogExceptionRunnable.class.getName());
     private final Runnable task;

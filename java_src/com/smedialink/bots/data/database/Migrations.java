@@ -3,7 +3,6 @@ package com.smedialink.bots.data.database;
 import androidx.room.migration.Migration;
 import androidx.sqlite.p011db.SupportSQLiteDatabase;
 import com.smedialink.bots.BotConstants;
-import com.smedialink.bots.data.model.BotStatus;
 import com.smedialink.bots.data.model.BotType;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__IndentKt;
@@ -39,7 +38,7 @@ public final class Migrations {
     /* JADX INFO: Access modifiers changed from: private */
     public final String getBotInsertionQuery(String str) {
         String trimIndent;
-        trimIndent = StringsKt__IndentKt.trimIndent("\n            INSERT INTO BotsDbModel (\n                id, sku, avatarOriginal, avatarRounded, title, description, installs, priority, reviews, rating, ownRating,\n                installLogged, useAssets, tags, file, hash, phrases, themes, created, updated, price, type, status\n            )\n            VALUES (\n                '" + str + "', '', '', '', '', '', '0', '0', '0', '0.0', '0', '1', '1', '', '', '', '0', '0', '0', '0', '',\n                '" + BotType.Companion.resolveByName(str).name() + "', '" + BotStatus.ENABLED.name() + "'\n            );\n        ");
+        trimIndent = StringsKt__IndentKt.trimIndent("\n            INSERT INTO BotsDbModel (\n                id, sku, avatarOriginal, avatarRounded, title, description, installs, priority, reviews, rating, ownRating,\n                installLogged, useAssets, tags, file, hash, phrases, themes, created, updated, price, type, status\n            )\n            VALUES (\n                '" + str + "', '', '', '', '', '', '0', '0', '0', '0.0', '0', '1', '1', '', '', '', '0', '0', '0', '0', '',\n                '" + BotType.Companion.resolveByName(str).name() + "', 'ENABLED'\n            );\n        ");
         return trimIndent;
     }
 }

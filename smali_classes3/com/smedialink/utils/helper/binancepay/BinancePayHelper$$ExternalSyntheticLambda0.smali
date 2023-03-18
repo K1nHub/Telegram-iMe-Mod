@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->$r8$lambda$Ge52XvK6hTa5cGhmUFUvceuPl-o(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0}, Lcom/smedialink/utils/helper/binancepay/BinancePayHelper;->$r8$lambda$aehN_yjWA-gDbVHcNnWscT52Atg(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

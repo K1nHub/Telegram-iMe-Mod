@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda8;->f$1:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/utils/dialogs/DialogUtils;->$r8$lambda$mznp7x0k1jsFZcXOTS_dFIIaNKk(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/utils/dialogs/DialogUtils;->$r8$lambda$gckfK6DVZtVXQqTHk_ss0ze7XmU(Lcom/smedialink/model/dialog/EditTextDialogModel;Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

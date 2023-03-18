@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 5198
+    .line 5223
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$StatsGraph;-><init>()V
 
     return-void
@@ -36,14 +36,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 5206
+    .line 5231
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->flags:I
 
-    .line 5207
+    .line 5232
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -54,14 +54,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->json:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
-    .line 5208
+    .line 5233
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 5209
+    .line 5234
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -75,29 +75,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 5214
+    .line 5239
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 5215
+    .line 5240
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 5216
+    .line 5241
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->json:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 5217
+    .line 5242
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 5218
+    .line 5243
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->zoom_token:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

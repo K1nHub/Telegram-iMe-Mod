@@ -20,10 +20,6 @@
 .end annotation
 
 
-# static fields
-.field public static final INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys$User;
-
-
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
@@ -32,15 +28,13 @@
 
     invoke-direct {v0}, Lcom/smedialink/common/TelegramPreferenceKeys$User;-><init>()V
 
-    sput-object v0, Lcom/smedialink/common/TelegramPreferenceKeys$User;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys$User;
-
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 429
+    .line 423
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,22 +49,30 @@
 .end method
 
 .method public static final buildAutoLockInKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 555
+    .line 549
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "autoLockIn_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "autoLockIn_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -82,22 +84,30 @@
 .end method
 
 .method public static final buildBadPasscodeTriesKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 558
+    .line 552
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "badPasscodeTries_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "badPasscodeTries_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -109,22 +119,30 @@
 .end method
 
 .method public static final buildEnabledChatAttachAlertButtonsKey(Lorg/fork/enums/DialogType;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "dialogType"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 536
+    .line 530
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "enabledChatAttachAlertButtons_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "enabledChatAttachAlertButtons_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -136,22 +154,30 @@
 .end method
 
 .method public static final buildIsSectionLockedKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 561
+    .line 555
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "isSectionLocked_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "isSectionLocked_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -163,22 +189,30 @@
 .end method
 
 .method public static final buildLastUptimeMillisKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 564
+    .line 558
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "lastUptimeMillis_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "lastUptimeMillis_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -200,7 +234,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 595
+    .line 589
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -247,7 +281,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 592
+    .line 586
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -284,22 +318,30 @@
 .end method
 
 .method public static final buildPasscodeHashKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 567
+    .line 561
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "passcodeHash_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "passcodeHash_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -311,22 +353,30 @@
 .end method
 
 .method public static final buildPasscodeRetryInMsKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 570
+    .line 564
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "passcodeRetryInMs_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "passcodeRetryInMs_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -338,22 +388,30 @@
 .end method
 
 .method public static final buildPasscodeSaltStringKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 573
+    .line 567
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "passcodeSaltString_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "passcodeSaltString_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -365,22 +423,30 @@
 .end method
 
 .method public static final buildPasscodeTypeKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 576
+    .line 570
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "passcodeType_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "passcodeType_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -398,7 +464,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 477
+    .line 471
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -437,7 +503,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 474
+    .line 468
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -476,7 +542,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 480
+    .line 474
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -509,22 +575,30 @@
 .end method
 
 .method public static final buildUseFingerprintKey(Lorg/fork/enums/LockedSection;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     const-string v0, "section"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 579
+    .line 573
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "useFingerprint_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "useFingerprint_"
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, p0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -538,7 +612,7 @@
 .method public static final isAccountMuted()Ljava/lang/String;
     .locals 2
 
-    .line 499
+    .line 493
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isAccountMuted"
@@ -553,7 +627,7 @@
 .method public static final isAllChatsTabEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 459
+    .line 453
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "allChatsTabEnabled"
@@ -568,7 +642,7 @@
 .method public static final isArchiveSortingChatsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 471
+    .line 465
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "archiveSorting"
@@ -583,7 +657,7 @@
 .method public static final isAutoBackupEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 440
+    .line 434
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "autoBackupEnabled"
@@ -598,7 +672,7 @@
 .method public static final isAutoUpdateTopicsCatalogEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 656
+    .line 650
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "autoUpdateTopicsCatalogEnabled"
@@ -613,7 +687,7 @@
 .method public static final isChannelWidePostsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 545
+    .line 539
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "channelWidePosts"
@@ -628,7 +702,7 @@
 .method public static final isFoldersFirstEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 456
+    .line 450
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "foldersFirst"
@@ -643,7 +717,7 @@
 .method public static final isHideFoldersEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 453
+    .line 447
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "hideFolders"
@@ -658,7 +732,7 @@
 .method public static final isHideMultiPanelOnScrollEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 589
+    .line 583
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isHideMultiPanelOnScrollEnabled"
@@ -673,7 +747,7 @@
 .method public static final isIconInsteadAllChatsTabTitleEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 462
+    .line 456
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "iconInsteadAllChatsTabTitle"
@@ -688,7 +762,7 @@
 .method public static final isMessagePopupAggregatorEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 542
+    .line 536
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "isMessagePopupAggregatorEnabled"
@@ -711,7 +785,7 @@
 .method public static final isNeuroBotsAutoEnabledInGroups()Ljava/lang/String;
     .locals 2
 
-    .line 615
+    .line 609
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "neuroBotsAutoEnabledInGroups"
@@ -726,7 +800,7 @@
 .method public static final isNeuroBotsAutoEnabledInPersonalChats()Ljava/lang/String;
     .locals 2
 
-    .line 612
+    .line 606
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "neuroBotsAutoEnabledInPersonalChats"
@@ -741,7 +815,7 @@
 .method public static final isNeuroBotsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 609
+    .line 603
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "neuroBotsEnabled"
@@ -756,7 +830,7 @@
 .method public static final isNoTopicFirstEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 662
+    .line 656
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "noTopicFirst"
@@ -771,7 +845,7 @@
 .method public static final isOpenAlbumsInsteadCloudEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 433
+    .line 427
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "openAlbumsInsteadCloud"
@@ -786,7 +860,7 @@
 .method public static final isPremiumAnimateAvatars()Ljava/lang/String;
     .locals 2
 
-    .line 514
+    .line 508
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumAnimateAvatars"
@@ -801,7 +875,7 @@
 .method public static final isPremiumAnimateStickers()Ljava/lang/String;
     .locals 2
 
-    .line 505
+    .line 499
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumAnimateStickers"
@@ -816,7 +890,7 @@
 .method public static final isQuickReactionEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 502
+    .line 496
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "quickReactionEnabled"
@@ -831,7 +905,7 @@
 .method public static final isRecentChatsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 672
+    .line 666
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "recentChatsEnabled"
@@ -846,7 +920,7 @@
 .method public static final isRememberLastDialogEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 638
+    .line 632
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastDialog"
@@ -861,7 +935,7 @@
 .method public static final isRevokeByDefault()Ljava/lang/String;
     .locals 2
 
-    .line 548
+    .line 542
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "deleteForAllSelectedByDefault"
@@ -873,10 +947,25 @@
     return-object v0
 .end method
 
+.method public static final isSaveArchiveRecentChatsEnabled()Ljava/lang/String;
+    .locals 2
+
+    .line 669
+    sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    const-string v1, "saveArchiveRecentChatsEnabled"
+
+    invoke-static {v0, v1}, Lcom/smedialink/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/smedialink/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static final isShowChannelBottomPanel()Ljava/lang/String;
     .locals 2
 
-    .line 533
+    .line 527
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showChannelBottomPanel"
@@ -891,7 +980,7 @@
 .method public static final isShowOftenUsedNeuroBotsEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 618
+    .line 612
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "showOftenUsedNeuroBots"
@@ -906,7 +995,7 @@
 .method public static final isShowPremiumBadgeEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 508
+    .line 502
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumShowStar"
@@ -921,7 +1010,7 @@
 .method public static final isShowPremiumStatusEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 511
+    .line 505
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "premiumShowStatus"
@@ -936,7 +1025,7 @@
 .method public static final isSilentSendingEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 632
+    .line 626
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "silentSending"
@@ -959,7 +1048,7 @@
 .method public static final isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 527
+    .line 521
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "swipeToGoToNextUnreadDialogConsiderArchive"
@@ -974,7 +1063,7 @@
 .method public static final isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 524
+    .line 518
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "swipeToGoToNextUnreadDialog"
@@ -989,7 +1078,7 @@
 .method public static final isTopicsBarAtBottomEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 653
+    .line 647
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "topicsBarAtBottom"
@@ -1004,7 +1093,7 @@
 .method public static final isTopicsBarEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 650
+    .line 644
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "topicsEnabled"
@@ -1019,7 +1108,7 @@
 .method public static final lastAutoBackupTime()Ljava/lang/String;
     .locals 2
 
-    .line 446
+    .line 440
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "lastAutoBackupTime"
@@ -1034,7 +1123,7 @@
 .method public static final lastAutoUpdateTopicsCatalogTime()Ljava/lang/String;
     .locals 2
 
-    .line 665
+    .line 659
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "lastAutoUpdateTopicsCatalogTime"
@@ -1049,7 +1138,7 @@
 .method public static final lastFilterTab()Ljava/lang/String;
     .locals 2
 
-    .line 496
+    .line 490
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "lastFilterTab"
@@ -1064,7 +1153,7 @@
 .method public static final rememberLastDialogId()Ljava/lang/String;
     .locals 2
 
-    .line 641
+    .line 635
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastDialogId"
@@ -1079,7 +1168,7 @@
 .method public static final rememberLastDialogTopicId()Ljava/lang/String;
     .locals 2
 
-    .line 644
+    .line 638
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "rememberLastDialogTopicId"
@@ -1094,7 +1183,7 @@
 .method public static final selectedAllChatsTabFabs()Ljava/lang/String;
     .locals 2
 
-    .line 465
+    .line 459
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedAllChatsTabFabs"
@@ -1109,7 +1198,7 @@
 .method public static final selectedAutoBackupInterval()Ljava/lang/String;
     .locals 2
 
-    .line 443
+    .line 437
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "autoBackupInterval"
@@ -1124,7 +1213,7 @@
 .method public static final selectedAutoUpdateTopicsCatalogInterval()Ljava/lang/String;
     .locals 2
 
-    .line 659
+    .line 653
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "autoUpdateTopicsCatalogInterval"
@@ -1139,7 +1228,7 @@
 .method public static final selectedContactsFilter()Ljava/lang/String;
     .locals 2
 
-    .line 517
+    .line 511
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "contactsFilter"
@@ -1154,7 +1243,7 @@
 .method public static final selectedDialogTypesForSwipeToGoToNextUnreadDialog()Ljava/lang/String;
     .locals 2
 
-    .line 530
+    .line 524
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "swipeToGoToNextUnreadDialogTypes"
@@ -1166,10 +1255,25 @@
     return-object v0
 .end method
 
+.method public static final selectedDrawStatusTypes()Ljava/lang/String;
+    .locals 2
+
+    .line 689
+    sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
+
+    const-string v1, "selectedDrawStatusTypes"
+
+    invoke-static {v0, v1}, Lcom/smedialink/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/smedialink/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static final selectedMessagePopupItems()Ljava/lang/String;
     .locals 2
 
-    .line 539
+    .line 533
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "messagePopupItems"
@@ -1184,7 +1288,7 @@
 .method public static final selectedMusicTab()Ljava/lang/String;
     .locals 2
 
-    .line 602
+    .line 596
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "lastMusicTab"
@@ -1199,7 +1303,7 @@
 .method public static final selectedRecentChatsDialogTypes()Ljava/lang/String;
     .locals 2
 
-    .line 689
+    .line 686
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedRecentChatsDialogTypes"
@@ -1214,7 +1318,7 @@
 .method public static final selectedSentMessageFont()Ljava/lang/String;
     .locals 2
 
-    .line 635
+    .line 629
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "selectedSentMessageFont"
@@ -1229,7 +1333,7 @@
 .method public static final sortingDeployVersion()Ljava/lang/String;
     .locals 2
 
-    .line 493
+    .line 487
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "SortingFilters_DeployVersion"
@@ -1244,7 +1348,7 @@
 .method public static final templatesChannelId()Ljava/lang/String;
     .locals 2
 
-    .line 625
+    .line 619
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "templatesChannelId"
@@ -1259,7 +1363,7 @@
 .method public static final walletFingerprintUnlockEnabled()Ljava/lang/String;
     .locals 2
 
-    .line 682
+    .line 679
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "walletFingerprintUnlockEnabled"
@@ -1274,7 +1378,7 @@
 .method public static final walletPinCodeEncrypted()Ljava/lang/String;
     .locals 2
 
-    .line 679
+    .line 676
     sget-object v0, Lcom/smedialink/common/TelegramPreferenceKeys;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys;
 
     const-string v1, "walletPinCodeEncrypted"

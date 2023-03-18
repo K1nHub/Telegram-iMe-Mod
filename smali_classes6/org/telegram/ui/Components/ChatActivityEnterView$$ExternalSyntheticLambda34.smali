@@ -2,34 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
+.field public final synthetic f$1:Z
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda34;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda34;->f$1:Z
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda34;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$AGSGem-SWWJCbK13nyacitNp-U8(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/view/View;)Z
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda34;->f$1:Z
 
-    move-result p1
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$LLx0-aS_pQzOPKG9WNnz_YY7Ads(Lorg/telegram/ui/Components/ChatActivityEnterView;ZLandroid/view/View;)V
 
-    return p1
+    return-void
 .end method

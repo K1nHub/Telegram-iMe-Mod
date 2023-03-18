@@ -3,9 +3,9 @@ package com.smedialink.utils.extentions.p033rx;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RxExt.kt */
 /* renamed from: com.smedialink.utils.extentions.rx.RxExtKt */
@@ -21,29 +21,28 @@ public final class RxExtKt {
     public static final <T> Observable<T> withLoadingDialog(Observable<T> observable, final BaseView viewState, final boolean z) {
         Intrinsics.checkNotNullParameter(observable, "<this>");
         Intrinsics.checkNotNullParameter(viewState, "viewState");
+        final RxExtKt$withLoadingDialog$1 rxExtKt$withLoadingDialog$1 = new RxExtKt$withLoadingDialog$1(viewState, z);
         Observable<T> doFinally = observable.doOnSubscribe(new Consumer() { // from class: com.smedialink.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RxExtKt.m1839withLoadingDialog$lambda0(BaseView.this, z, (Disposable) obj);
+                RxExtKt.withLoadingDialog$lambda$0(Function1.this, obj);
             }
-        }).doFinally(new Action() { // from class: com.smedialink.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda0
+        }).doFinally(new Action() { // from class: com.smedialink.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Action
             public final void run() {
-                RxExtKt.m1840withLoadingDialog$lambda1(BaseView.this, z);
+                RxExtKt.withLoadingDialog$lambda$1(BaseView.this, z);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(doFinally, "doOnSubscribe { disposab…cellable = cancellable) }");
+        Intrinsics.checkNotNullExpressionValue(doFinally, "viewState: BaseView, can…cellable = cancellable) }");
         return doFinally;
     }
 
-    /* renamed from: withLoadingDialog$lambda-0 */
-    public static final void m1839withLoadingDialog$lambda0(BaseView viewState, boolean z, Disposable disposable) {
-        Intrinsics.checkNotNullParameter(viewState, "$viewState");
-        viewState.showLoadingDialog(true, z, disposable);
+    public static final void withLoadingDialog$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    /* renamed from: withLoadingDialog$lambda-1 */
-    public static final void m1840withLoadingDialog$lambda1(BaseView viewState, boolean z) {
+    public static final void withLoadingDialog$lambda$1(BaseView viewState, boolean z) {
         Intrinsics.checkNotNullParameter(viewState, "$viewState");
         BaseView.DefaultImpls.showLoadingDialog$default(viewState, false, z, null, 4, null);
     }
@@ -58,29 +57,28 @@ public final class RxExtKt {
     public static final Completable withLoadingDialog(Completable completable, final BaseView viewState, final boolean z) {
         Intrinsics.checkNotNullParameter(completable, "<this>");
         Intrinsics.checkNotNullParameter(viewState, "viewState");
+        final RxExtKt$withLoadingDialog$5 rxExtKt$withLoadingDialog$5 = new RxExtKt$withLoadingDialog$5(viewState, z);
         Completable doFinally = completable.doOnSubscribe(new Consumer() { // from class: com.smedialink.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RxExtKt.m1841withLoadingDialog$lambda4(BaseView.this, z, (Disposable) obj);
+                RxExtKt.withLoadingDialog$lambda$4(Function1.this, obj);
             }
-        }).doFinally(new Action() { // from class: com.smedialink.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda1
+        }).doFinally(new Action() { // from class: com.smedialink.utils.extentions.rx.RxExtKt$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
-                RxExtKt.m1842withLoadingDialog$lambda5(BaseView.this, z);
+                RxExtKt.withLoadingDialog$lambda$5(BaseView.this, z);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(doFinally, "doOnSubscribe { disposab…cellable = cancellable) }");
+        Intrinsics.checkNotNullExpressionValue(doFinally, "viewState: BaseView, can…cellable = cancellable) }");
         return doFinally;
     }
 
-    /* renamed from: withLoadingDialog$lambda-4 */
-    public static final void m1841withLoadingDialog$lambda4(BaseView viewState, boolean z, Disposable disposable) {
-        Intrinsics.checkNotNullParameter(viewState, "$viewState");
-        viewState.showLoadingDialog(true, z, disposable);
+    public static final void withLoadingDialog$lambda$4(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    /* renamed from: withLoadingDialog$lambda-5 */
-    public static final void m1842withLoadingDialog$lambda5(BaseView viewState, boolean z) {
+    public static final void withLoadingDialog$lambda$5(BaseView viewState, boolean z) {
         Intrinsics.checkNotNullParameter(viewState, "$viewState");
         BaseView.DefaultImpls.showLoadingDialog$default(viewState, false, z, null, 4, null);
     }

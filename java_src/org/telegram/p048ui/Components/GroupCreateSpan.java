@@ -16,7 +16,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -162,7 +162,9 @@ public class GroupCreateSpan extends View {
         float f4 = this.progress;
         paint.setColor(Color.argb(i + ((int) (f3 * f4)), iArr[0] + ((int) ((iArr[1] - iArr[0]) * f4)), iArr[2] + ((int) ((iArr[3] - iArr[2]) * f4)), iArr[4] + ((int) ((iArr[5] - iArr[4]) * f4))));
         canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(16), backPaint);
-        this.imageReceiver.draw(canvas);
+        if (this.progress != 1.0f) {
+            this.imageReceiver.draw(canvas);
+        }
         if (this.progress != BitmapDescriptorFactory.HUE_RED) {
             backPaint.setColor(this.avatarDrawable.getColor());
             backPaint.setAlpha((int) (this.progress * 255.0f * (Color.alpha(color) / 255.0f)));
@@ -187,6 +189,6 @@ public class GroupCreateSpan extends View {
         if (!isDeleting() || Build.VERSION.SDK_INT < 21) {
             return;
         }
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("Delete", C3158R.string.Delete)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("Delete", C3286R.string.Delete)));
     }
 }

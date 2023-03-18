@@ -4,7 +4,6 @@ import com.iMe.i_staking.StakingInteractor;
 import com.smedialink.manager.common.FeatureAvailableManager$Token;
 import com.smedialink.manager.wallet.create.WalletCreateManager;
 import com.smedialink.manager.wallet.create.WalletCreateManagerView;
-import com.smedialink.mapper.staking.StakingDetailedMetadataUiMappingKt;
 import com.smedialink.mapper.wallet.select.SelectableMappingKt;
 import com.smedialink.model.staking.StakingAnnualPercentageMode;
 import com.smedialink.model.staking.StakingDetailsItem;
@@ -15,7 +14,6 @@ import com.smedialink.model.wallet.home.HorizontalActionButtonItem;
 import com.smedialink.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.data.utils.extentions.DateExtKt;
 import com.smedialink.storage.data.utils.extentions.NumberExtKt;
 import com.smedialink.storage.domain.interactor.crypto.level.AccountLevelInteractor;
@@ -43,14 +41,13 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.StringExtKt;
 import com.smedialink.utils.extentions.model.wallet.BinanceTokenBalanceExtKt;
 import com.smedialink.utils.extentions.model.wallet.TokenBalanceExtKt;
-import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.formatter.BalanceFormatter;
 import com.smedialink.utils.helper.wallet.SwapHelper;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.List;
@@ -59,12 +56,12 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
-import org.telegram.messenger.C3158R;
-import timber.log.Timber;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletTokenDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter */
@@ -85,8 +82,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
     private final WalletCreateManager walletCreateManager;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadAccountLevelInfo$lambda-3  reason: not valid java name */
-    public static final void m1649loadAccountLevelInfo$lambda3(AccountLevelInformation accountLevelInformation) {
+    public static final void loadAccountLevelInfo$lambda$3(AccountLevelInformation accountLevelInformation) {
     }
 
     public void attachViewState(WalletCreateManagerView view) {
@@ -151,14 +147,13 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         startAccountLevelInformationAction(new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda2
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletTokenDetailsPresenter.m1652startAccountLevelDialog$lambda0(WalletTokenDetailsPresenter.this, (AccountLevelInformation) obj);
+                WalletTokenDetailsPresenter.startAccountLevelDialog$lambda$0(WalletTokenDetailsPresenter.this, (AccountLevelInformation) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: startAccountLevelDialog$lambda-0  reason: not valid java name */
-    public static final void m1652startAccountLevelDialog$lambda0(WalletTokenDetailsPresenter this$0, AccountLevelInformation accountLevelInfo) {
+    public static final void startAccountLevelDialog$lambda$0(WalletTokenDetailsPresenter this$0, AccountLevelInformation accountLevelInfo) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullExpressionValue(accountLevelInfo, "accountLevelInfo");
         ((WalletTokenDetailsView) this$0.getViewState()).showAccountLevelDialog(accountLevelInfo);
@@ -173,34 +168,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
     public final void changeRankVisibility(boolean z) {
         Observable<Result<Boolean>> observeOn = this.accountLevelInteractor.changeLevelVisibility(z).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$changeRankVisibility$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletTokenDetailsPresenter.this.resourceManager;
-                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$changeRankVisibility$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2151x3dbc88cf(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2152x3dbc88d0((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -209,7 +177,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         List listOf;
         Intrinsics.checkNotNullParameter(token, "token");
         String totalBalanceText = BinanceTokenBalanceExtKt.getTotalBalanceText(token);
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new StatisticDiagramModel.DiagramItem[]{new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3158R.string.binance_token_details_distribution_spot), "statisticChartLine_blue", token.getSpot().getTotal()), new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3158R.string.binance_token_details_distribution_margin), "statisticChartLine_golden", token.getMargin().getTotal())});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new StatisticDiagramModel.DiagramItem[]{new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3286R.string.binance_token_details_distribution_spot), "statisticChartLine_blue", token.getSpot().getTotal()), new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3286R.string.binance_token_details_distribution_margin), "statisticChartLine_golden", token.getMargin().getTotal())});
         ((WalletTokenDetailsView) getViewState()).showStatisticDialog(new StatisticDiagramModel(totalBalanceText, listOf));
     }
 
@@ -261,51 +229,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         if (tokenDetailsArgs instanceof TokenDetailsArgs.Staking) {
             Observable<Result<StakingDetailedMetadata>> observeOn = this.stakingInteractor.getStakingDetails(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails().getId()).observeOn(this.schedulersProvider.mo707ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-            Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$loadStakingDetailedMetadata$$inlined$subscribeWithErrorHandle$default$1
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(T it) {
-                    ResourceManager resourceManager;
-                    RxEventBus rxEventBus;
-                    TokenDetailsArgs tokenDetailsArgs2;
-                    TokenDetailsArgs tokenDetailsArgs3;
-                    Intrinsics.checkNotNullExpressionValue(it, "it");
-                    Result result = (Result) it;
-                    if (result instanceof Result.Success) {
-                        rxEventBus = WalletTokenDetailsPresenter.this.rxEventBus;
-                        rxEventBus.publish(DomainRxEvents.RefreshTransactions.INSTANCE);
-                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showRefreshing(false);
-                        Result.Success success = (Result.Success) result;
-                        WalletTokenDetailsPresenter.this.stakingMetadata = (StakingDetailedMetadata) success.getData();
-                        tokenDetailsArgs2 = WalletTokenDetailsPresenter.this.args;
-                        ((TokenDetailsArgs.Staking) tokenDetailsArgs2).setStakingDetails(StakingDetailedMetadataUiMappingKt.mapToUi((StakingDetailedMetadata) success.getData()));
-                        WalletTokenDetailsPresenter walletTokenDetailsPresenter = WalletTokenDetailsPresenter.this;
-                        tokenDetailsArgs3 = walletTokenDetailsPresenter.args;
-                        walletTokenDetailsPresenter.setupStakingDetailsScreen(((TokenDetailsArgs.Staking) tokenDetailsArgs3).getStakingDetails());
-                        WalletTokenDetailsPresenter.this.setupHorizontalActionButtons();
-                    } else if (result instanceof Result.Loading) {
-                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showRefreshing(true);
-                    } else if (result instanceof Result.Error) {
-                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showRefreshing(false);
-                        ErrorModel error = ((Result.Error) result).getError();
-                        resourceManager = WalletTokenDetailsPresenter.this.resourceManager;
-                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                    }
-                }
-            }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$loadStakingDetailedMetadata$$inlined$subscribeWithErrorHandle$default$2
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(Throwable th) {
-                    Timber.m4e(th);
-                    BaseView baseView = BaseView.this;
-                    if (baseView == null) {
-                        return;
-                    }
-                    String message = th.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView.showToast(message);
-                }
-            });
+            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2157xdf270a35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2158xdf270a36(null)));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -331,64 +255,28 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         walletTokenDetailsPresenter.loadAccountLevelInfo(z, callbacks$Callback1);
     }
 
-    private final void loadAccountLevelInfo(final boolean z, final Callbacks$Callback1<AccountLevelInformation> callbacks$Callback1) {
-        Observable compose = AccountLevelInteractor.getAccountLevelInformation$default(this.accountLevelInteractor, 0L, 1, null).observeOn(this.schedulersProvider.mo707ui()).compose(new ObservableTransformer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda0
+    private final void loadAccountLevelInfo(boolean z, Callbacks$Callback1<AccountLevelInformation> callbacks$Callback1) {
+        Observable observeOn = AccountLevelInteractor.getAccountLevelInformation$default(this.accountLevelInteractor, 0L, 1, null).observeOn(this.schedulersProvider.mo707ui());
+        final WalletTokenDetailsPresenter$loadAccountLevelInfo$2 walletTokenDetailsPresenter$loadAccountLevelInfo$2 = new WalletTokenDetailsPresenter$loadAccountLevelInfo$2(z, this);
+        Observable compose = observeOn.compose(new ObservableTransformer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.ObservableTransformer
             public final ObservableSource apply(Observable observable) {
-                ObservableSource m1650loadAccountLevelInfo$lambda4;
-                m1650loadAccountLevelInfo$lambda4 = WalletTokenDetailsPresenter.m1650loadAccountLevelInfo$lambda4(z, this, observable);
-                return m1650loadAccountLevelInfo$lambda4;
+                ObservableSource loadAccountLevelInfo$lambda$4;
+                loadAccountLevelInfo$lambda$4 = WalletTokenDetailsPresenter.loadAccountLevelInfo$lambda$4(Function1.this, observable);
+                return loadAccountLevelInfo$lambda$4;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(compose, "accountLevelInteractor\n …ervable\n                }");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = compose.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$loadAccountLevelInfo$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    Result.Success success = (Result.Success) result;
-                    WalletTokenDetailsPresenter.this.accountLevelInformation = (AccountLevelInformation) success.getData();
-                    WalletTokenDetailsPresenter.this.setupRankBadge();
-                    callbacks$Callback1.invoke(success.getData());
-                } else if ((result instanceof Result.Error) && z) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletTokenDetailsPresenter.this.resourceManager;
-                    ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$loadAccountLevelInfo$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Intrinsics.checkNotNullExpressionValue(compose, "private fun loadAccountL…     .autoDispose()\n    }");
+        Disposable subscribe = compose.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2155xfd1058cc(this, callbacks$Callback1, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2156xfd1058cd((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadAccountLevelInfo$lambda-4  reason: not valid java name */
-    public static final ObservableSource m1650loadAccountLevelInfo$lambda4(boolean z, WalletTokenDetailsPresenter this$0, Observable observable) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(observable, "observable");
-        if (z) {
-            T viewState = this$0.getViewState();
-            Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            return RxExtKt.withLoadingDialog$default(observable, (BaseView) viewState, false, 2, (Object) null);
-        }
-        return observable;
+    public static final ObservableSource loadAccountLevelInfo$lambda$4(Function1 tmp0, Observable p0) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        Intrinsics.checkNotNullParameter(p0, "p0");
+        return (ObservableSource) tmp0.invoke(p0);
     }
 
     private final boolean isSendAvailable(TokenCode tokenCode) {
@@ -418,7 +306,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         if (getTokenCode().isCryptoTokens()) {
             ((WalletTokenDetailsView) getViewState()).openSendScreen(getTokenCode(), networkType);
         } else {
-            ((WalletTokenDetailsView) getViewState()).showToast(this.resourceManager.getString(C3158R.string.wallet_feature_not_available));
+            ((WalletTokenDetailsView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_feature_not_available));
         }
     }
 
@@ -432,102 +320,81 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupStakingDetailsScreen(StakingDetailsItem stakingDetailsItem) {
-        StakingDetailedStats stats;
-        StakingDetailedStats stats2;
-        String stringPlus;
-        String string;
-        BigDecimal asToken;
+        BigDecimal debt;
         String str;
+        String string;
+        String str2;
         StakingProgrammeStatus stakingProgrammeStatus;
         BigDecimal asUsd;
-        BigDecimal asToken2;
         BigDecimal asUsd2;
+        BigDecimal asToken;
+        BigDecimal asToken2;
+        StakingDetailedStats stats;
+        StakingDetailedStats stats2;
         TokenInfo map = TokenInfo.Companion.map(stakingDetailsItem.getTokenTicker());
         StakingDetailedMetadata stakingDetailedMetadata = this.stakingMetadata;
         Float f = null;
-        StakingValues profit = (stakingDetailedMetadata == null || (stats = stakingDetailedMetadata.getStats()) == null) ? null : stats.getProfit();
+        StakingValues profit = (stakingDetailedMetadata == null || (stats2 = stakingDetailedMetadata.getStats()) == null) ? null : stats2.getProfit();
         StakingDetailedMetadata stakingDetailedMetadata2 = this.stakingMetadata;
-        StakingValues debt = (stakingDetailedMetadata2 == null || (stats2 = stakingDetailedMetadata2.getStats()) == null) ? null : stats2.getDebt();
-        BigDecimal asToken3 = debt == null ? null : debt.getAsToken();
-        if (asToken3 == null) {
-            asToken3 = stakingDetailsItem.getDebt();
+        StakingValues debt2 = (stakingDetailedMetadata2 == null || (stats = stakingDetailedMetadata2.getStats()) == null) ? null : stats.getDebt();
+        if (debt2 == null || (debt = debt2.getAsToken()) == null) {
+            debt = stakingDetailsItem.getDebt();
         }
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
         Number parseFormattedString = balanceFormatter.parseFormattedString(stakingDetailsItem.getFormattedAPY());
         Number parseFormattedString2 = balanceFormatter.parseFormattedString(stakingDetailsItem.getFormattedAPR());
         if (NumberExtKt.isZero(parseFormattedString) || stakingDetailsItem.getAnnualPercentageMode() == StakingAnnualPercentageMode.APY) {
-            stringPlus = Intrinsics.stringPlus(stakingDetailsItem.getFormattedAPY(), "%");
-            string = this.resourceManager.getString(C3158R.string.staking_details_apy);
+            str = stakingDetailsItem.getFormattedAPY() + '%';
+            string = this.resourceManager.getString(C3286R.string.staking_details_apy);
         } else if (NumberExtKt.isZero(parseFormattedString2) || stakingDetailsItem.getAnnualPercentageMode() == StakingAnnualPercentageMode.APR) {
-            stringPlus = Intrinsics.stringPlus(stakingDetailsItem.getFormattedAPR(), "%");
-            string = this.resourceManager.getString(C3158R.string.staking_details_apr);
+            str = stakingDetailsItem.getFormattedAPR() + '%';
+            string = this.resourceManager.getString(C3286R.string.staking_details_apr);
         } else {
-            stringPlus = this.resourceManager.getString(C3158R.string.staking_details_apy_apr_values, stakingDetailsItem.getFormattedAPR(), stakingDetailsItem.getFormattedAPY());
-            string = this.resourceManager.getString(C3158R.string.staking_details_apy_apr);
+            str = this.resourceManager.getString(C3286R.string.staking_details_apy_apr_values, stakingDetailsItem.getFormattedAPR(), stakingDetailsItem.getFormattedAPY());
+            string = this.resourceManager.getString(C3286R.string.staking_details_apy_apr);
         }
-        String str2 = stringPlus;
-        String str3 = string;
-        boolean z = (profit == null || (asToken = profit.getAsToken()) == null || NumberExtKt.isZero(asToken)) ? false : true;
+        String str3 = str;
+        String str4 = string;
+        boolean z = (profit == null || (asToken2 = profit.getAsToken()) == null || NumberExtKt.isZero(asToken2)) ? false : true;
         if (z) {
-            TokenBalance copy$default = TokenBalance.copy$default(TokenBalance.Companion.createEmptyBalanceFor(map), null, NumberExtKt.orZero((profit == null || (asToken2 = profit.getAsToken()) == null) ? null : Double.valueOf(asToken2.doubleValue())), NumberExtKt.orZero((profit == null || (asUsd2 = profit.getAsUsd()) == null) ? null : Float.valueOf(asUsd2.floatValue())), null, null, null, 57, null);
+            TokenBalance copy$default = TokenBalance.copy$default(TokenBalance.Companion.createEmptyBalanceFor(map), null, NumberExtKt.orZero((profit == null || (asToken = profit.getAsToken()) == null) ? null : Double.valueOf(asToken.doubleValue())), NumberExtKt.orZero((profit == null || (asUsd2 = profit.getAsUsd()) == null) ? null : Float.valueOf(asUsd2.floatValue())), null, null, null, 57, null);
             ResourceManager resourceManager = this.resourceManager;
-            str = resourceManager.getString(C3158R.string.staking_details_profit_value, TokenBalanceExtKt.getTotalBalanceShortText(copy$default, resourceManager), TokenBalanceExtKt.getDollarsBalanceText(copy$default, this.resourceManager));
+            str2 = resourceManager.getString(C3286R.string.staking_details_profit_value, TokenBalanceExtKt.getTotalBalanceShortText(copy$default, resourceManager), TokenBalanceExtKt.getDollarsBalanceText(copy$default, this.resourceManager));
         } else {
-            str = "-";
+            str2 = "-";
         }
-        String str4 = str;
+        String str5 = str2;
         if (!stakingDetailsItem.getHasEnoughFunds()) {
             stakingProgrammeStatus = StakingProgrammeStatus.SHORT_OF_FUNDS;
         } else if (StringExtKt.parseISODate(stakingDetailsItem.getEndsAtISO()) > DateExtKt.now()) {
             stakingProgrammeStatus = StakingProgrammeStatus.ACTIVE;
         } else {
-            stakingProgrammeStatus = asToken3.compareTo(BigDecimal.ZERO) > 0 ? StakingProgrammeStatus.WITHDRAWAL_AVAILABLE : StakingProgrammeStatus.CLOSED;
+            stakingProgrammeStatus = debt.compareTo(BigDecimal.ZERO) > 0 ? StakingProgrammeStatus.WITHDRAWAL_AVAILABLE : StakingProgrammeStatus.CLOSED;
         }
         StakingProgrammeStatus stakingProgrammeStatus2 = stakingProgrammeStatus;
         WalletTokenDetailsView walletTokenDetailsView = (WalletTokenDetailsView) getViewState();
         int logo = TokenInfoExtKt.getLogo(map, stakingDetailsItem.getNetworkType());
         String string2 = this.resourceManager.getString(map.getFullName());
         TokenBalance createEmptyBalanceFor = TokenBalance.Companion.createEmptyBalanceFor(map);
-        double orZero = NumberExtKt.orZero(Double.valueOf(asToken3.doubleValue()));
-        if (debt != null && (asUsd = debt.getAsUsd()) != null) {
+        double orZero = NumberExtKt.orZero(Double.valueOf(debt.doubleValue()));
+        if (debt2 != null && (asUsd = debt2.getAsUsd()) != null) {
             f = Float.valueOf(asUsd.floatValue());
         }
-        walletTokenDetailsView.setupStakingDetailsScreen(logo, string2, TokenBalanceExtKt.getTotalBalanceShortText(TokenBalance.copy$default(createEmptyBalanceFor, null, orZero, NumberExtKt.orZero(f), null, null, null, 57, null), this.resourceManager), str3, str2, str4, z, stakingProgrammeStatus2);
+        walletTokenDetailsView.setupStakingDetailsScreen(logo, string2, TokenBalanceExtKt.getTotalBalanceShortText(TokenBalance.copy$default(createEmptyBalanceFor, null, orZero, NumberExtKt.orZero(f), null, null, null, 57, null), this.resourceManager), str4, str3, str5, z, stakingProgrammeStatus2);
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingProgrammesRefresh.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                DomainRxEvents.StakingProgrammesRefresh stakingProgrammesRefresh = (DomainRxEvents.StakingProgrammesRefresh) it;
-                WalletTokenDetailsPresenter.this.loadStakingDetailedMetadata();
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2153x72f8ed61(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2154x72f8ed62(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final String getCryptoAddress() {
         Wallet wallet = this.cryptoAccessManager.getWallet(this.cryptoPreferenceHelper.getCurrentBlockchainType());
-        String address = wallet == null ? null : wallet.getAddress();
+        String address = wallet != null ? wallet.getAddress() : null;
         return address == null ? "" : address;
     }
 
@@ -547,46 +414,47 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
     /* JADX INFO: Access modifiers changed from: private */
     public final List<HorizontalActionButtonItem> resolveAvailableTokenActions(TokenDetailsArgs tokenDetailsArgs) {
-        StakingRules rules;
-        StakingDetailedStats stats;
-        StakingRules rules2;
-        StakingRules rules3;
         List<HorizontalActionButtonItem> listOf;
+        StakingRules rules;
+        StakingRules rules2;
+        StakingDetailedStats stats;
+        StakingRules rules3;
         List<HorizontalActionButtonItem> listOfNotNull;
         List<HorizontalActionButtonItem> listOfNotNull2;
+        boolean z = true;
         if (tokenDetailsArgs instanceof TokenDetailsArgs.Binance) {
             HorizontalActionButtonItem[] horizontalActionButtonItemArr = new HorizontalActionButtonItem[3];
             TokenDetailsArgs.Binance binance = (TokenDetailsArgs.Binance) tokenDetailsArgs;
-            horizontalActionButtonItemArr[0] = binance.getToken().getConvertible() ? new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_exchange_27, C3158R.string.wallet_token_details_transactions_swap, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$1(this, tokenDetailsArgs), 4, null) : null;
-            horizontalActionButtonItemArr[1] = binance.getToken().getReplenishNetworks().isEmpty() ^ true ? new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_buy_28, C3158R.string.wallet_token_details_action_buy, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$2(this, tokenDetailsArgs), 4, null) : null;
-            horizontalActionButtonItemArr[2] = binance.getToken().getReceivable() ? new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_ask_transfer, C3158R.string.wallet_token_details_action_receive, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$3(this, tokenDetailsArgs), 4, null) : null;
+            horizontalActionButtonItemArr[0] = binance.getToken().getConvertible() ? new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_exchange_27, C3286R.string.wallet_token_details_transactions_swap, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$1(this, tokenDetailsArgs), 4, null) : null;
+            horizontalActionButtonItemArr[1] = binance.getToken().getReplenishNetworks().isEmpty() ^ true ? new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_buy_28, C3286R.string.wallet_token_details_action_buy, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$2(this, tokenDetailsArgs), 4, null) : null;
+            horizontalActionButtonItemArr[2] = binance.getToken().getReceivable() ? new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_ask_transfer, C3286R.string.wallet_token_details_action_receive, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$3(this, tokenDetailsArgs), 4, null) : null;
             listOfNotNull2 = CollectionsKt__CollectionsKt.listOfNotNull(horizontalActionButtonItemArr);
             return listOfNotNull2;
         } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Crypto) {
             HorizontalActionButtonItem[] horizontalActionButtonItemArr2 = new HorizontalActionButtonItem[3];
-            horizontalActionButtonItemArr2[0] = isSendAvailable(getTokenCode()) ? new HorizontalActionButtonItem(C3158R.C3160drawable.msg_send, C3158R.string.wallet_token_details_details_action_send, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$4(this, tokenDetailsArgs), 4, null) : null;
-            horizontalActionButtonItemArr2[1] = isBuyAvailable(getTokenCode(), ((TokenDetailsArgs.Crypto) tokenDetailsArgs).getToken().getBalance().getNetworkType()) ? new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_buy_28, C3158R.string.wallet_token_details_action_buy, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$5(this, tokenDetailsArgs), 4, null) : null;
-            horizontalActionButtonItemArr2[2] = isReceiveAvailable(getTokenCode()) ? new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_ask_transfer, C3158R.string.wallet_token_details_action_receive, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$6(this, tokenDetailsArgs), 4, null) : null;
+            horizontalActionButtonItemArr2[0] = isSendAvailable(getTokenCode()) ? new HorizontalActionButtonItem(C3286R.C3288drawable.msg_send, C3286R.string.wallet_token_details_details_action_send, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$4(this, tokenDetailsArgs), 4, null) : null;
+            horizontalActionButtonItemArr2[1] = isBuyAvailable(getTokenCode(), ((TokenDetailsArgs.Crypto) tokenDetailsArgs).getToken().getBalance().getNetworkType()) ? new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_buy_28, C3286R.string.wallet_token_details_action_buy, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$5(this, tokenDetailsArgs), 4, null) : null;
+            horizontalActionButtonItemArr2[2] = isReceiveAvailable(getTokenCode()) ? new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_ask_transfer, C3286R.string.wallet_token_details_action_receive, false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$6(this, tokenDetailsArgs), 4, null) : null;
             listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(horizontalActionButtonItemArr2);
             return listOfNotNull;
         } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Staking) {
             HorizontalActionButtonItem[] horizontalActionButtonItemArr3 = new HorizontalActionButtonItem[4];
-            int i = C3158R.C3160drawable.fork_ic_buy_28;
-            int i2 = C3158R.string.staking_details_replenish;
+            int i = C3286R.C3288drawable.fork_ic_buy_28;
+            int i2 = C3286R.string.staking_details_replenish;
             StakingDetailedMetadata stakingDetailedMetadata = this.stakingMetadata;
-            horizontalActionButtonItemArr3[0] = new HorizontalActionButtonItem(i, i2, (stakingDetailedMetadata == null || (rules = stakingDetailedMetadata.getRules()) == null || !rules.getCanDeposit()) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$7(this, tokenDetailsArgs));
-            int i3 = C3158R.C3160drawable.fork_ic_ask_transfer;
-            int i4 = C3158R.string.staking_details_claim;
+            horizontalActionButtonItemArr3[0] = new HorizontalActionButtonItem(i, i2, (stakingDetailedMetadata == null || (rules3 = stakingDetailedMetadata.getRules()) == null || !rules3.getCanDeposit()) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$7(this, tokenDetailsArgs));
+            int i3 = C3286R.C3288drawable.fork_ic_ask_transfer;
+            int i4 = C3286R.string.staking_details_claim;
             StakingDetailedMetadata stakingDetailedMetadata2 = this.stakingMetadata;
             horizontalActionButtonItemArr3[1] = new HorizontalActionButtonItem(i3, i4, (stakingDetailedMetadata2 == null || (stats = stakingDetailedMetadata2.getStats()) == null || !stats.isParticipated()) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$8(this, tokenDetailsArgs));
-            int i5 = C3158R.C3160drawable.fork_ic_withdraw;
-            int i6 = C3158R.string.staking_details_withdraw;
+            int i5 = C3286R.C3288drawable.fork_ic_withdraw;
+            int i6 = C3286R.string.staking_details_withdraw;
             StakingDetailedMetadata stakingDetailedMetadata3 = this.stakingMetadata;
             horizontalActionButtonItemArr3[2] = new HorizontalActionButtonItem(i5, i6, (stakingDetailedMetadata3 == null || (rules2 = stakingDetailedMetadata3.getRules()) == null || (!rules2.getCanWithdrawSafely() && !rules2.getCanWithdrawImmediately())) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$10(this, tokenDetailsArgs));
-            int i7 = C3158R.C3160drawable.fork_wallet_staking_dashboard_calculator;
-            int i8 = C3158R.string.staking_dashboard_calculator;
+            int i7 = C3286R.C3288drawable.fork_wallet_staking_dashboard_calculator;
+            int i8 = C3286R.string.staking_dashboard_calculator;
             StakingDetailedMetadata stakingDetailedMetadata4 = this.stakingMetadata;
-            horizontalActionButtonItemArr3[3] = new HorizontalActionButtonItem(i7, i8, (stakingDetailedMetadata4 == null || (rules3 = stakingDetailedMetadata4.getRules()) == null || !rules3.getCanDeposit()) ? false : true, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$11(this, tokenDetailsArgs));
+            horizontalActionButtonItemArr3[3] = new HorizontalActionButtonItem(i7, i8, (stakingDetailedMetadata4 == null || (rules = stakingDetailedMetadata4.getRules()) == null || !rules.getCanDeposit()) ? false : false, new WalletTokenDetailsPresenter$resolveAvailableTokenActions$11(this, tokenDetailsArgs));
             listOf = CollectionsKt__CollectionsKt.listOf((Object[]) horizontalActionButtonItemArr3);
             return listOf;
         } else {
@@ -599,14 +467,13 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         startAccountLevelInformationAction(new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletTokenDetailsPresenter.m1651openStakingReplenishCheckingAccountLevel$lambda10(StakingDetailsItem.this, this, (AccountLevelInformation) obj);
+                WalletTokenDetailsPresenter.openStakingReplenishCheckingAccountLevel$lambda$10(StakingDetailsItem.this, this, (AccountLevelInformation) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: openStakingReplenishCheckingAccountLevel$lambda-10  reason: not valid java name */
-    public static final void m1651openStakingReplenishCheckingAccountLevel$lambda10(StakingDetailsItem stakingDetailsItem, WalletTokenDetailsPresenter this$0, AccountLevelInformation accountLevelInformation) {
+    public static final void openStakingReplenishCheckingAccountLevel$lambda$10(StakingDetailsItem stakingDetailsItem, WalletTokenDetailsPresenter this$0, AccountLevelInformation accountLevelInformation) {
         Intrinsics.checkNotNullParameter(stakingDetailsItem, "$stakingDetailsItem");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (stakingDetailsItem.getMinimalRank().isReached(accountLevelInformation.getLevel())) {
@@ -619,7 +486,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
     /* JADX INFO: Access modifiers changed from: private */
     public final void startBinanceSwapScreen(BinanceTokenBalanceInfo binanceTokenBalanceInfo) {
         BinanceUserInfo info = this.cryptoPreferenceHelper.getBinanceUserInfo().getInfo();
-        if (Intrinsics.areEqual(info == null ? null : Boolean.valueOf(info.isVerified()), Boolean.FALSE)) {
+        if (Intrinsics.areEqual(info != null ? Boolean.valueOf(info.isVerified()) : null, Boolean.FALSE)) {
             ((WalletTokenDetailsView) getViewState()).showRequiredVerifyDialog();
         } else {
             ((WalletTokenDetailsView) getViewState()).openBinanceSwapScreen(SelectableMappingKt.mapToSelectable(binanceTokenBalanceInfo));
@@ -632,7 +499,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
             ((WalletTokenDetailsView) getViewState()).showRequiredWalletCreatedDialog(new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda4
                 @Override // org.fork.utils.Callbacks$Callback
                 public final void invoke() {
-                    WalletTokenDetailsPresenter.m1653startBinanceReplenishScreen$lambda11(WalletTokenDetailsPresenter.this);
+                    WalletTokenDetailsPresenter.startBinanceReplenishScreen$lambda$11(WalletTokenDetailsPresenter.this);
                 }
             });
             return;
@@ -650,8 +517,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: startBinanceReplenishScreen$lambda-11  reason: not valid java name */
-    public static final void m1653startBinanceReplenishScreen$lambda11(WalletTokenDetailsPresenter this$0) {
+    public static final void startBinanceReplenishScreen$lambda$11(WalletTokenDetailsPresenter this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.startChooseWalletOptionsFlow(this$0.cryptoPreferenceHelper.getCurrentBlockchainType());
     }

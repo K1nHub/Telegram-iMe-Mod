@@ -8,26 +8,38 @@
 # instance fields
 .field public final synthetic f$0:Landroid/widget/LinearLayout;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Components/NumberPicker;
+.field public final synthetic f$1:Landroid/widget/TextView;
 
-.field public final synthetic f$2:Lorg/telegram/ui/Components/NumberPicker;
+.field public final synthetic f$2:J
 
-.field public final synthetic f$3:Lorg/telegram/ui/Components/NumberPicker;
+.field public final synthetic f$3:J
+
+.field public final synthetic f$4:Lorg/telegram/ui/Components/NumberPicker;
+
+.field public final synthetic f$5:Lorg/telegram/ui/Components/NumberPicker;
+
+.field public final synthetic f$6:Lorg/telegram/ui/Components/NumberPicker;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
+.method public synthetic constructor <init>(Landroid/widget/LinearLayout;Landroid/widget/TextView;JJLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$0:Landroid/widget/LinearLayout;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$1:Lorg/telegram/ui/Components/NumberPicker;
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$1:Landroid/widget/TextView;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$2:Lorg/telegram/ui/Components/NumberPicker;
+    iput-wide p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$2:J
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$3:Lorg/telegram/ui/Components/NumberPicker;
+    iput-wide p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$3:J
+
+    iput-object p7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$4:Lorg/telegram/ui/Components/NumberPicker;
+
+    iput-object p8, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$5:Lorg/telegram/ui/Components/NumberPicker;
+
+    iput-object p9, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$6:Lorg/telegram/ui/Components/NumberPicker;
 
     return-void
 .end method
@@ -35,23 +47,29 @@
 
 # virtual methods
 .method public final onValueChange(Lorg/telegram/ui/Components/NumberPicker;II)V
-    .locals 7
+    .locals 12
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$0:Landroid/widget/LinearLayout;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$1:Lorg/telegram/ui/Components/NumberPicker;
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$1:Landroid/widget/TextView;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$2:Lorg/telegram/ui/Components/NumberPicker;
+    iget-wide v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$2:J
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$3:Lorg/telegram/ui/Components/NumberPicker;
+    iget-wide v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$3:J
 
-    move-object v4, p1
+    iget-object v6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$4:Lorg/telegram/ui/Components/NumberPicker;
 
-    move v5, p2
+    iget-object v7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$5:Lorg/telegram/ui/Components/NumberPicker;
 
-    move v6, p3
+    iget-object v8, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->f$6:Lorg/telegram/ui/Components/NumberPicker;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Y9WnlVvKM1cQXe9EVfXZTPKM4lw(Landroid/widget/LinearLayout;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;II)V
+    move-object v9, p1
+
+    move v10, p2
+
+    move v11, p3
+
+    invoke-static/range {v0 .. v11}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$nxviHoe-zMILvMByWPojqbt0u30(Landroid/widget/LinearLayout;Landroid/widget/TextView;JJLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;II)V
 
     return-void
 .end method

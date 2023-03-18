@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/ForwardCloudBottomSheet$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/dialog/ForwardCloudBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->$r8$lambda$D3kOnMEmj4LhUVhwoJi2A89fCSQ(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/ForwardCloudBottomSheet;->$r8$lambda$0Ef8EeapAEhFi7pXKS22kPjG98k(Lorg/fork/ui/dialog/ForwardCloudBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method

@@ -28,19 +28,19 @@
 .method public constructor <init>(JJJJ)V
     .locals 0
 
-    .line 316
+    .line 327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 317
+    .line 328
     iput-wide p1, p0, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesSentWifi:J
 
-    .line 318
+    .line 329
     iput-wide p3, p0, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesReceivedWifi:J
 
-    .line 319
+    .line 330
     iput-wide p5, p0, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesSentMobile:J
 
-    .line 320
+    .line 331
     iput-wide p7, p0, Lorg/telegram/messenger/voip/Instance$TrafficStats;->bytesReceivedMobile:J
 
     return-void
@@ -51,7 +51,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 325
+    .line 336
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

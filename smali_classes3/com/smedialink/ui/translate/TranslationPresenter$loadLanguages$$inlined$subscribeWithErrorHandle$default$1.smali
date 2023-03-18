@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,20 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "Lcom/smedialink/storage/domain/model/translation/TranslationLanguage;",
+        ">;>;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,111:1\n46#2,6:112\n52#2,7:122\n1547#3:118\n1618#3,3:119\n*S KotlinDebug\n*F\n+ 1 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n*L\n51#1:118\n51#1:119,3\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,111:1\n46#2,6:112\n52#2,8:122\n1549#3:118\n1620#3,3:119\n*S KotlinDebug\n*F\n+ 1 TranslationPresenter.kt\ncom/smedialink/ui/translate/TranslationPresenter\n*L\n51#1:118\n51#1:119,3\n*E\n"
 .end annotation
 
 
@@ -45,18 +49,36 @@
 
     iput-boolean p2, p0, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$1;->$isSourceLanguage$inlined:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/util/List<",
+            "Lcom/smedialink/storage/domain/model/translation/TranslationLanguage;",
+            ">;>;)V"
         }
     .end annotation
 
@@ -111,7 +133,7 @@
 
     check-cast p1, Ljava/lang/Iterable;
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -122,7 +144,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -138,7 +160,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/storage/domain/model/translation/TranslationLanguage;
 
     .line 117
@@ -152,6 +174,7 @@
 
     move-result-object v3
 
+    .line 1621
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -176,9 +199,9 @@
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v3, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$lambda-2$$inlined$compareBy$1;
+    new-instance v3, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$lambda$2$$inlined$compareBy$1;
 
-    invoke-direct {v3, p1}, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$lambda-2$$inlined$compareBy$1;-><init>(Ljava/util/Comparator;)V
+    invoke-direct {v3, p1}, Lcom/smedialink/ui/translate/TranslationPresenter$loadLanguages$lambda$2$$inlined$compareBy$1;-><init>(Ljava/util/Comparator;)V
 
     invoke-static {v2, v3}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 

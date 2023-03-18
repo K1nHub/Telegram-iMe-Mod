@@ -3,7 +3,7 @@ package com.smedialink.utils.extentions.model.wallet;
 import com.smedialink.storage.domain.model.wallet.transaction.TransactionDirection;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: TransactionDirectionExt.kt */
 /* loaded from: classes3.dex */
 public final class TransactionDirectionExtKt {
@@ -15,9 +15,18 @@ public final class TransactionDirectionExtKt {
 
         static {
             int[] iArr = new int[TransactionDirection.values().length];
-            iArr[TransactionDirection.OUT.ordinal()] = 1;
-            iArr[TransactionDirection.SELF.ordinal()] = 2;
-            iArr[TransactionDirection.f366IN.ordinal()] = 3;
+            try {
+                iArr[TransactionDirection.OUT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TransactionDirection.SELF.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[TransactionDirection.f370IN.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -26,10 +35,10 @@ public final class TransactionDirectionExtKt {
         Intrinsics.checkNotNullParameter(transactionDirection, "<this>");
         int i = WhenMappings.$EnumSwitchMapping$0[transactionDirection.ordinal()];
         if (i == 1 || i == 2) {
-            return C3158R.C3160drawable.fork_ic_transaction_sent;
+            return C3286R.C3288drawable.fork_ic_transaction_sent;
         }
         if (i == 3) {
-            return C3158R.C3160drawable.fork_ic_transaction_receive;
+            return C3286R.C3288drawable.fork_ic_transaction_receive;
         }
         throw new NoWhenBranchMatchedException();
     }

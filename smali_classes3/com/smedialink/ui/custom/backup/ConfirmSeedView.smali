@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nConfirmSeedView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConfirmSeedView.kt\ncom/smedialink/ui/custom/backup/ConfirmSeedView\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,71:1\n472#2:72\n1201#2,2:73\n472#2:75\n1290#2,2:76\n472#2:78\n1301#2,3:79\n*S KotlinDebug\n*F\n+ 1 ConfirmSeedView.kt\ncom/smedialink/ui/custom/backup/ConfirmSeedView\n*L\n30#1:72\n31#1:73,2\n42#1:75\n43#1:76,2\n60#1:78\n61#1:79,3\n*E\n"
+    value = "SMAP\nConfirmSeedView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConfirmSeedView.kt\ncom/smedialink/ui/custom/backup/ConfirmSeedView\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,71:1\n473#2:72\n1206#2,2:73\n473#2:75\n1295#2,2:76\n473#2:78\n1306#2,3:79\n*S KotlinDebug\n*F\n+ 1 ConfirmSeedView.kt\ncom/smedialink/ui/custom/backup/ConfirmSeedView\n*L\n30#1:72\n31#1:73,2\n42#1:75\n43#1:76,2\n60#1:78\n61#1:79,3\n*E\n"
 .end annotation
 
 
@@ -166,14 +166,18 @@
 
     move-result-object v1
 
-    .line 472
+    .line 473
     sget-object v2, Lcom/smedialink/ui/custom/backup/ConfirmSeedView$drawSwitchers$$inlined$filterIsInstance$1;->INSTANCE:Lcom/smedialink/ui/custom/backup/ConfirmSeedView$drawSwitchers$$inlined$filterIsInstance$1;
 
     invoke-static {v1, v2}, Lkotlin/sequences/SequencesKt;->filter(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object v1
 
-    .line 1302
+    const-string v2, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1307
     invoke-interface {v1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -255,14 +259,18 @@
 
     move-result-object v0
 
-    .line 472
+    .line 473
     sget-object v1, Lcom/smedialink/ui/custom/backup/ConfirmSeedView$applyColors$$inlined$filterIsInstance$1;->INSTANCE:Lcom/smedialink/ui/custom/backup/ConfirmSeedView$applyColors$$inlined$filterIsInstance$1;
 
     invoke-static {v0, v1}, Lkotlin/sequences/SequencesKt;->filter(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
 
-    .line 1290
+    const-string v1, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1295
     invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

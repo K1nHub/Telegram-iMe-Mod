@@ -19,10 +19,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$5pnIaSqqncmHm6T3Urt9Igj8hpM(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
+.method public static synthetic $r8$lambda$5bfFCzxovXC8ZBJ5kqGNQuzuPuw(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->onSearchExpand$lambda-0(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
+    invoke-static {p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->onSearchExpand$lambda$0(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method private static final onSearchExpand$lambda-0(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
+.method private static final onSearchExpand$lambda$0(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -50,16 +50,16 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
+
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    move-result-object p0
+    const/4 p0, 0x0
 
     :goto_0
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
@@ -160,15 +160,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_4
 
-    goto :goto_1
-
-    :cond_4
     invoke-interface {v0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
     .line 173
-    :goto_1
+    :cond_4
     iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->this$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
 
     invoke-static {v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->access$getSearchMenuItem$p(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -177,13 +174,13 @@
 
     if-nez v0, :cond_5
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 174
-    :goto_2
+    :goto_1
     iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->this$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
 
     invoke-static {v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->access$getChangeCountryItem$p(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -192,13 +189,13 @@
 
     if-nez v0, :cond_6
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_6
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 175
-    :goto_3
+    :goto_2
     iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->this$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
 
     invoke-static {v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->access$getSearchItem$p(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -207,12 +204,12 @@
 
     if-nez v0, :cond_7
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    :goto_4
+    :goto_3
     return-void
 .end method
 
@@ -281,20 +278,14 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_3
 
-    goto :goto_2
-
-    :cond_3
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getSearchField()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_3
 
-    goto :goto_2
-
-    :cond_4
     iget-object v1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2;->this$0:Lcom/smedialink/ui/shop/NeurobotsStoreActivity;
 
     new-instance v2, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$createView$2$$ExternalSyntheticLambda0;
@@ -305,24 +296,24 @@
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/widget/EditText;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :goto_2
+    :cond_3
     return-void
 .end method
 
 .method public onTextChanged(Landroid/widget/EditText;)V
     .locals 1
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 179
-    :cond_0
     invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

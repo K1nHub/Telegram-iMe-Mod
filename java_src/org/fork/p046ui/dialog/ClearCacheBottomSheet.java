@@ -10,11 +10,9 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
@@ -24,7 +22,7 @@ import org.fork.enums.TelegramCacheType;
 import org.fork.models.TelegramCacheData;
 import org.fork.utils.Callbacks$Callback2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.AlertDialog;
@@ -48,18 +46,6 @@ public final class ClearCacheBottomSheet extends BottomSheet {
 
     static {
         new Companion(null);
-    }
-
-    public final BaseFragment getFragment() {
-        return this.fragment;
-    }
-
-    public final EnumMap<TelegramCacheType, TelegramCacheData> getData() {
-        return this.data;
-    }
-
-    public final Callbacks$Callback2<List<TelegramCacheType>, List<TelegramCacheData>> getOnProcess() {
-        return this.onProcess;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -93,9 +79,7 @@ public final class ClearCacheBottomSheet extends BottomSheet {
         for (TelegramCacheData telegramCacheData : values) {
             arrayList.add(telegramCacheData.getClearViewData());
         }
-        Object[] array = arrayList.toArray(new StorageDiagramView.ClearViewData[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        diagramView.setData(null, (StorageDiagramView.ClearViewData[]) array);
+        diagramView.setData(null, (StorageDiagramView.ClearViewData[]) arrayList.toArray(new StorageDiagramView.ClearViewData[0]));
         getRootLinear().addView(getClearButton(), LayoutHelper.createLinear(-1, 50));
         setCustomView(getRootScrollingView());
     }
@@ -147,7 +131,6 @@ public final class ClearCacheBottomSheet extends BottomSheet {
             StorageDiagramView.ClearViewData clearViewData = new StorageDiagramView.ClearViewData(getDiagramView());
             clearViewData.color = cacheType.getColorKey();
             clearViewData.setSize(cacheData.getSize());
-            Unit unit = Unit.INSTANCE;
             cacheData.setClearViewData(clearViewData);
             Intrinsics.checkNotNullExpressionValue(cacheType, "cacheType");
             Intrinsics.checkNotNullExpressionValue(cacheData, "cacheData");
@@ -161,21 +144,20 @@ public final class ClearCacheBottomSheet extends BottomSheet {
         checkBoxCell.setText(telegramCacheType.title(), AndroidUtilities.formatFileSize(telegramCacheData.getSize()), true, true);
         checkBoxCell.setTextColor(Theme.getColor("dialogTextBlack"));
         checkBoxCell.setCheckBoxColor(telegramCacheType.getColorKey(), "windowBackgroundWhiteGrayIcon", "checkboxCheck");
-        Set<TelegramCacheType> keySet = getData().keySet();
+        Set<TelegramCacheType> keySet = this.data.keySet();
         Intrinsics.checkNotNullExpressionValue(keySet, "data.keys");
         checkBoxCell.setNeedDivider(telegramCacheType != CollectionsKt.last(keySet));
         checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.ClearCacheBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ClearCacheBottomSheet.m1967createCategoryItem$lambda6$lambda5(ClearCacheBottomSheet.this, checkBoxCell, telegramCacheData, view);
+                ClearCacheBottomSheet.createCategoryItem$lambda$6$lambda$5(ClearCacheBottomSheet.this, checkBoxCell, telegramCacheData, view);
             }
         });
         return checkBoxCell;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createCategoryItem$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m1967createCategoryItem$lambda6$lambda5(ClearCacheBottomSheet this$0, CheckBoxCell this_apply, TelegramCacheData cacheData, View view) {
+    public static final void createCategoryItem$lambda$6$lambda$5(ClearCacheBottomSheet this$0, CheckBoxCell this_apply, TelegramCacheData cacheData, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         Intrinsics.checkNotNullParameter(cacheData, "$cacheData");
@@ -192,7 +174,7 @@ public final class ClearCacheBottomSheet extends BottomSheet {
             int i2 = 0;
             while (it.hasNext()) {
                 StorageDiagramView.ClearViewData clearViewData2 = ((TelegramCacheData) ((Map.Entry) it.next()).getValue()).getClearViewData();
-                if (clearViewData2 == null ? false : clearViewData2.isClear()) {
+                if (clearViewData2 != null ? clearViewData2.isClear() : false) {
                     i2++;
                 }
             }
@@ -209,69 +191,66 @@ public final class ClearCacheBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final BottomSheet.BottomSheetCell initClearButton() {
         final BottomSheet.BottomSheetCell bottomSheetCell = new BottomSheet.BottomSheetCell(getContext(), 2);
-        bottomSheetCell.setTextAndIcon(LocaleController.getString("ClearMediaCache", C3158R.string.ClearMediaCache), 0);
+        bottomSheetCell.setTextAndIcon(LocaleController.getString("ClearMediaCache", C3286R.string.ClearMediaCache), 0);
         bottomSheetCell.getTextView().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.ClearCacheBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ClearCacheBottomSheet.m1968initClearButton$lambda13$lambda12(ClearCacheBottomSheet.this, bottomSheetCell, view);
+                ClearCacheBottomSheet.initClearButton$lambda$13$lambda$12(ClearCacheBottomSheet.this, bottomSheetCell, view);
             }
         });
         return bottomSheetCell;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initClearButton$lambda-13$lambda-12  reason: not valid java name */
-    public static final void m1968initClearButton$lambda13$lambda12(final ClearCacheBottomSheet this$0, BottomSheet.BottomSheetCell this_apply, View view) {
+    public static final void initClearButton$lambda$13$lambda$12(final ClearCacheBottomSheet this$0, BottomSheet.BottomSheetCell this_apply, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         this$0.dismiss();
         final AlertDialog alertDialog = new AlertDialog(this_apply.getContext(), 3);
         alertDialog.setCanCancel(false);
         alertDialog.showDelayed(500L);
-        this$0.getFragment().showDialog(alertDialog);
-        EnumMap<TelegramCacheType, TelegramCacheData> data = this$0.getData();
+        this$0.fragment.showDialog(alertDialog);
+        EnumMap<TelegramCacheType, TelegramCacheData> enumMap = this$0.data;
         final LinkedHashMap linkedHashMap = new LinkedHashMap();
-        Iterator it = data.entrySet().iterator();
+        Iterator it = enumMap.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
             StorageDiagramView.ClearViewData clearViewData = ((TelegramCacheData) entry.getValue()).getClearViewData();
-            if (clearViewData == null ? false : clearViewData.isClear()) {
+            if (clearViewData != null ? clearViewData.isClear() : false) {
                 linkedHashMap.put(entry.getKey(), entry.getValue());
             }
         }
         Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.fork.ui.dialog.ClearCacheBottomSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ClearCacheBottomSheet.m1969initClearButton$lambda13$lambda12$lambda11(ClearCacheBottomSheet.this, linkedHashMap, alertDialog);
+                ClearCacheBottomSheet.initClearButton$lambda$13$lambda$12$lambda$11(ClearCacheBottomSheet.this, linkedHashMap, alertDialog);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initClearButton$lambda-13$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m1969initClearButton$lambda13$lambda12$lambda11(ClearCacheBottomSheet this$0, Map dataToDelete, final AlertDialog progressDialog) {
+    public static final void initClearButton$lambda$13$lambda$12$lambda$11(ClearCacheBottomSheet this$0, Map dataToDelete, final AlertDialog progressDialog) {
         List<TelegramCacheType> list;
         List<TelegramCacheData> list2;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(dataToDelete, "$dataToDelete");
         Intrinsics.checkNotNullParameter(progressDialog, "$progressDialog");
-        Callbacks$Callback2<List<TelegramCacheType>, List<TelegramCacheData>> onProcess = this$0.getOnProcess();
-        if (onProcess != null) {
+        Callbacks$Callback2<List<TelegramCacheType>, List<TelegramCacheData>> callbacks$Callback2 = this$0.onProcess;
+        if (callbacks$Callback2 != null) {
             list = CollectionsKt___CollectionsKt.toList(dataToDelete.keySet());
             list2 = CollectionsKt___CollectionsKt.toList(dataToDelete.values());
-            onProcess.invoke(list, list2);
+            callbacks$Callback2.invoke(list, list2);
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.dialog.ClearCacheBottomSheet$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ClearCacheBottomSheet.m1970initClearButton$lambda13$lambda12$lambda11$lambda10(AlertDialog.this);
+                ClearCacheBottomSheet.initClearButton$lambda$13$lambda$12$lambda$11$lambda$10(AlertDialog.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initClearButton$lambda-13$lambda-12$lambda-11$lambda-10  reason: not valid java name */
-    public static final void m1970initClearButton$lambda13$lambda12$lambda11$lambda10(AlertDialog progressDialog) {
+    public static final void initClearButton$lambda$13$lambda$12$lambda$11$lambda$10(AlertDialog progressDialog) {
         Intrinsics.checkNotNullParameter(progressDialog, "$progressDialog");
         progressDialog.dismiss();
     }

@@ -79,13 +79,13 @@
 .end method
 
 .method public final invoke()Lorg/telegram/ui/ActionBar/BaseFragment;
-    .locals 10
+    .locals 9
 
     .line 128
     sget-object v0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
     .line 129
-    new-instance v9, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
+    new-instance v8, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
 
     .line 130
     iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$openCreateWalletScreen$1;->$words:Ljava/util/List;
@@ -97,19 +97,17 @@
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    const/16 v6, 0xa
 
-    const/16 v7, 0x1a
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
-
-    move-object v1, v9
+    move-object v1, v8
 
     .line 129
-    invoke-direct/range {v1 .. v8}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct/range {v1 .. v7}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;-><init>(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 128
-    invoke-virtual {v0, v9}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
+    invoke-virtual {v0, v8}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object v0
 

@@ -69,7 +69,7 @@
 
     iget-object v7, p0, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$$ExternalSyntheticLambda0;->f$7:Ljava/lang/String;
 
-    invoke-static/range {v0 .. v7}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->$r8$lambda$cqmassF93fBUKDdJFX7VOYNrCoA(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
+    invoke-static/range {v0 .. v7}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->$r8$lambda$G5a3fChVR7HLDMXXRa8NfjbvcEE(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;)V
 
     return-void
 .end method

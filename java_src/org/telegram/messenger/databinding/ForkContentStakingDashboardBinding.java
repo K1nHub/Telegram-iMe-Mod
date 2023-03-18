@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.smedialink.p031ui.custom.DividerView;
 import com.smedialink.p031ui.custom.HorizontalActionButtonsView;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.Components.StorageDiagramView;
 /* loaded from: classes4.dex */
 public final class ForkContentStakingDashboardBinding implements ViewBinding {
@@ -53,7 +53,7 @@ public final class ForkContentStakingDashboardBinding implements ViewBinding {
     }
 
     public static ForkContentStakingDashboardBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3158R.layout.fork_content_staking_dashboard, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3286R.layout.fork_content_staking_dashboard, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -63,39 +63,39 @@ public final class ForkContentStakingDashboardBinding implements ViewBinding {
     public static ForkContentStakingDashboardBinding bind(View view) {
         View findChildViewById;
         View findChildViewById2;
-        int i = C3158R.C3161id.card_staking_dashboard;
+        int i = C3286R.C3289id.card_staking_dashboard;
         CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
         if (cardView != null) {
-            i = C3158R.C3161id.divider;
+            i = C3286R.C3289id.divider;
             DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
             if (dividerView != null) {
-                i = C3158R.C3161id.horizontal_action_buttons;
+                i = C3286R.C3289id.horizontal_action_buttons;
                 HorizontalActionButtonsView horizontalActionButtonsView = (HorizontalActionButtonsView) ViewBindings.findChildViewById(view, i);
                 if (horizontalActionButtonsView != null) {
-                    i = C3158R.C3161id.linear_profit;
+                    i = C3286R.C3289id.linear_profit;
                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout != null) {
-                        i = C3158R.C3161id.linear_staked;
+                        i = C3286R.C3289id.linear_staked;
                         LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                         if (linearLayout2 != null) {
-                            i = C3158R.C3161id.text_header;
+                            i = C3286R.C3289id.text_header;
                             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView != null) {
-                                i = C3158R.C3161id.text_profit_title;
+                                i = C3286R.C3289id.text_profit_title;
                                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                 if (textView != null) {
-                                    i = C3158R.C3161id.text_profit_value;
+                                    i = C3286R.C3289id.text_profit_value;
                                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView2 != null) {
-                                        i = C3158R.C3161id.text_staked_title;
+                                        i = C3286R.C3289id.text_staked_title;
                                         TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView3 != null) {
-                                            i = C3158R.C3161id.text_staked_value;
+                                            i = C3286R.C3289id.text_staked_value;
                                             TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                             if (textView4 != null) {
-                                                i = C3158R.C3161id.view_diagram;
+                                                i = C3286R.C3289id.view_diagram;
                                                 StorageDiagramView storageDiagramView = (StorageDiagramView) ViewBindings.findChildViewById(view, i);
-                                                if (storageDiagramView != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3158R.C3161id.view_profit_dot))) != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = C3158R.C3161id.view_staked_dot))) != null) {
+                                                if (storageDiagramView != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = C3286R.C3289id.view_profit_dot))) != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = C3286R.C3289id.view_staked_dot))) != null) {
                                                     return new ForkContentStakingDashboardBinding((LinearLayout) view, cardView, dividerView, horizontalActionButtonsView, linearLayout, linearLayout2, appCompatTextView, textView, textView2, textView3, textView4, storageDiagramView, findChildViewById, findChildViewById2);
                                                 }
                                             }

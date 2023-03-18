@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;
 
-    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->$r8$lambda$B1PTMhu38kt5SY50SGHO1SdYzAs(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->$r8$lambda$P2zY0LQjUyR9e4hso47RKKpc2Gc(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

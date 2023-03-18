@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCryptoRecipientManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoRecipientManager.kt\ncom/smedialink/manager/crypto/recipient/CryptoRecipientManager\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,184:1\n15#2:185\n39#3,6:186\n39#3,6:192\n*S KotlinDebug\n*F\n+ 1 CryptoRecipientManager.kt\ncom/smedialink/manager/crypto/recipient/CryptoRecipientManager\n*L\n62#1:185\n81#1:186,6\n113#1:192,6\n*E\n"
+    value = "SMAP\nCryptoRecipientManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CryptoRecipientManager.kt\ncom/smedialink/manager/crypto/recipient/CryptoRecipientManager\n+ 2 ObservableExt.kt\ncom/smedialink/storage/domain/utils/extentions/ObservableExtKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,186:1\n15#2:187\n39#3,8:188\n39#3,8:196\n*S KotlinDebug\n*F\n+ 1 CryptoRecipientManager.kt\ncom/smedialink/manager/crypto/recipient/CryptoRecipientManager\n*L\n62#1:187\n81#1:188,8\n114#1:196,8\n*E\n"
 .end annotation
 
 
@@ -177,7 +177,7 @@
 .method private final autoDispose(Lio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 175
+    .line 177
     iget-object v0, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-virtual {v0, p1}, Lio/reactivex/disposables/CompositeDisposable;->add(Lio/reactivex/disposables/Disposable;)Z
@@ -206,7 +206,7 @@
 
     const-string v1, "id"
 
-    .line 159
+    .line 161
     invoke-static {v1, p1}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object p1
@@ -217,7 +217,7 @@
 
     const-string p1, "query_id"
 
-    .line 160
+    .line 162
     invoke-static {p1, p2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object p1
@@ -226,7 +226,7 @@
 
     aput-object p1, v0, p2
 
-    .line 161
+    .line 163
     invoke-static {}, Lcom/smedialink/storage/common/AppConfiguration$Wallet;->getWalletBotId()J
 
     move-result-wide p1
@@ -245,7 +245,7 @@
 
     aput-object p1, v0, p2
 
-    .line 162
+    .line 164
     invoke-static {}, Lcom/smedialink/storage/common/AppConfiguration$Wallet;->getWalletBotUsernameLowerCase()Ljava/lang/String;
 
     move-result-object p1
@@ -260,7 +260,7 @@
 
     aput-object p1, v0, p2
 
-    .line 158
+    .line 160
     invoke-static {v0}, Lkotlin/collections/MapsKt;->hashMapOf([Lkotlin/Pair;)Ljava/util/HashMap;
 
     move-result-object p1
@@ -271,10 +271,10 @@
 .method private final getRequestPermissionDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 6
 
-    .line 167
+    .line 169
     new-instance v0, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 168
+    .line 170
     iget-object v1, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_recipient_request_permission_dialog_title:I
@@ -283,7 +283,7 @@
 
     move-result-object v1
 
-    .line 169
+    .line 171
     iget-object v2, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_recipient_request_permission_dialog_description:I
@@ -292,7 +292,7 @@
 
     move-result-object v2
 
-    .line 170
+    .line 172
     iget-object v3, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -301,7 +301,7 @@
 
     move-result-object v3
 
-    .line 171
+    .line 173
     iget-object v4, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_recipient_request_permission_dialog_action_btn_text:I
@@ -310,7 +310,7 @@
 
     move-result-object v4
 
-    .line 167
+    .line 169
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -319,7 +319,7 @@
 .method private final getViewState()Lcom/smedialink/manager/crypto/recipient/CryptoRecipientView;
     .locals 2
 
-    .line 165
+    .line 167
     iget-object v0, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->viewState:Lcom/smedialink/manager/crypto/recipient/CryptoRecipientView;
 
     if-eqz v0, :cond_0
@@ -366,15 +366,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->cryptoPermissionInteractor:Lcom/smedialink/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
 
-    .line 110
+    .line 111
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;->getAddressInfo(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 111
+    .line 112
     iget-object v1, p0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -389,7 +389,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 113
     invoke-direct {p0}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->getViewState()Lcom/smedialink/manager/crypto/recipient/CryptoRecipientView;
 
     move-result-object v1
@@ -404,7 +404,7 @@
 
     move-result-object v0
 
-    .line 113
+    .line 114
     invoke-direct {p0}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->getViewState()Lcom/smedialink/manager/crypto/recipient/CryptoRecipientView;
 
     move-result-object v1
@@ -414,19 +414,30 @@
 
     invoke-direct {v2, p0, p1, p2}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$loadAddressInfoById$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/BlockchainType;)V
 
-    new-instance p1, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$loadAddressInfoById$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$loadAddressInfoById$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance p2, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$loadAddressInfoById$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {p2, v1}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$loadAddressInfoById$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, p2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string p2, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 150
+    .line 152
     invoke-direct {p0, p1}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->autoDispose(Lio/reactivex/disposables/Disposable;)V
 
     return-void
@@ -477,7 +488,11 @@
 
     invoke-direct {v2, p1, v0, p0}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$requestAddressPermission$$inlined$flatMapSuccess$1;-><init>(Ljava/lang/String;Lkotlin/jvm/internal/Ref$LongRef;Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;)V
 
-    invoke-virtual {v1, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v3, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v3, v2}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v1, v3}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v1
 
@@ -525,19 +540,30 @@
 
     invoke-direct {v3, p0, v0, p1}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$requestAddressPermission$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;Lkotlin/jvm/internal/Ref$LongRef;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$requestAddressPermission$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v2}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$requestAddressPermission$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v3}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v1, v3, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v0, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$requestAddressPermission$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v0, v2}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager$requestAddressPermission$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v0}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v1, p1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 105
+    .line 106
     invoke-direct {p0, p1}, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;->autoDispose(Lio/reactivex/disposables/Disposable;)V
 
     return-void

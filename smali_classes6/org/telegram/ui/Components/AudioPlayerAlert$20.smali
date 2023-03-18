@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AudioPlayerAlert;->updateLayout()V
+    value = Lorg/telegram/ui/Components/AudioPlayerAlert;->showAlbumCover(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;)V
     .locals 0
 
-    .line 1804
+    .line 1700
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$20;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -32,21 +32,37 @@
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1812
+    .line 1703
+    iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$20;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$200(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 1704
+    iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$20;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4400(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/BackupImageView;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    .line 1705
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$20;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$6402(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
-
-    return-void
-.end method
-
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$6302(Lorg/telegram/ui/Components/AudioPlayerAlert;Z)Z
 
     return-void
 .end method

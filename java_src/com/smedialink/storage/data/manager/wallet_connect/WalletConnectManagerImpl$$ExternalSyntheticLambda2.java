@@ -10,6 +10,6 @@ public final /* synthetic */ class WalletConnectManagerImpl$$ExternalSyntheticLa
 
     @Override // io.reactivex.functions.Action
     public final void run() {
-        WalletConnectManagerImpl.m1336approveNewSession$lambda7();
+        WalletConnectManagerImpl.approveNewSession$lambda$6();
     }
 }

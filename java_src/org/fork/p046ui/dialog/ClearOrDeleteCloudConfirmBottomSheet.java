@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.BottomSheet;
@@ -54,9 +54,9 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         }
         setApplyBottomPadding(false);
         if (z) {
-            setTitle(LocaleController.getString("ClearHistory", C3158R.string.ClearHistory), true);
+            setTitle(LocaleController.getString("ClearHistory", C3286R.string.ClearHistory), true);
         } else {
-            setTitle(LocaleController.getString("DeleteChatUser", C3158R.string.DeleteChatUser), true);
+            setTitle(LocaleController.getString("DeleteChatUser", C3286R.string.DeleteChatUser), true);
         }
         getRootLinear().addView(getInputEditText(), LayoutHelper.createLinear(-1, 36, 51, 21, 10, 21, 10));
         getRootLinear().addView(getDoneButton(), LayoutHelper.createFrame(-1, 50, 51));
@@ -99,7 +99,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
         editTextBoldCursor.setInputType(49152);
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(LocaleController.getInternalString(C3158R.string.cloud_clear_or_delete_captcha_alert_message));
+        editTextBoldCursor.setHint(LocaleController.getInternalString(C3286R.string.cloud_clear_or_delete_captcha_alert_message));
         ViewExtKt.singleLine(editTextBoldCursor);
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setHintTextColor(Theme.getColor("windowBackgroundWhiteHintText"));
@@ -110,15 +110,14 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         ViewExtKt.onAction(editTextBoldCursor, 6, new Callbacks$Callback() { // from class: org.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                ClearOrDeleteCloudConfirmBottomSheet.m1973initInputEditText$lambda2$lambda1(ClearOrDeleteCloudConfirmBottomSheet.this);
+                ClearOrDeleteCloudConfirmBottomSheet.initInputEditText$lambda$2$lambda$1(ClearOrDeleteCloudConfirmBottomSheet.this);
             }
         });
         return editTextBoldCursor;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initInputEditText$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m1973initInputEditText$lambda2$lambda1(ClearOrDeleteCloudConfirmBottomSheet this$0) {
+    public static final void initInputEditText$lambda$2$lambda$1(ClearOrDeleteCloudConfirmBottomSheet this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getDoneButton().getBackgroundPublic().callOnClick();
     }
@@ -130,16 +129,15 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         bottomSheetCell.getBackgroundPublic().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ClearOrDeleteCloudConfirmBottomSheet.m1972initDoneButton$lambda4$lambda3(ClearOrDeleteCloudConfirmBottomSheet.this, view);
+                ClearOrDeleteCloudConfirmBottomSheet.initDoneButton$lambda$4$lambda$3(ClearOrDeleteCloudConfirmBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getInternalString(C3158R.string.cloud_clear_or_delete_captcha_alert_positive_button));
+        bottomSheetCell.setText(LocaleController.getInternalString(C3286R.string.cloud_clear_or_delete_captcha_alert_positive_button));
         return bottomSheetCell;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initDoneButton$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m1972initDoneButton$lambda4$lambda3(ClearOrDeleteCloudConfirmBottomSheet this$0, View view) {
+    public static final void initDoneButton$lambda$4$lambda$3(ClearOrDeleteCloudConfirmBottomSheet this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.checkCaptcha();
     }

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/fxn/util/UtilsKt$$ExternalSyntheticLambda1;->f$0:Landroid/widget/TextView;
 
-    invoke-static {v0, p1}, Lcom/fxn/util/UtilsKt;->$r8$lambda$NI0RKcDmbCLIHwDx6T1dwMx_CXc(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lcom/fxn/util/UtilsKt;->$r8$lambda$FNKantfwpyc1OGYaqxu45jQfCNQ(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

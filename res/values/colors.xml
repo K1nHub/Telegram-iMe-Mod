@@ -209,6 +209,7 @@
     <color name="topic_red">#ffff5534</color>
     <color name="topic_yellow">#ffffd200</color>
     <color name="transparent">#00ffffff</color>
+    <color name="twitter">#ff08a0e9</color>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
     <color name="wallet_bright_foreground_holo_light">#ff000000</color>

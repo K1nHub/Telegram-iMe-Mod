@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/StickersActivity$5;
-.super Landroidx/recyclerview/widget/DiffUtil$Callback;
+.super Lorg/telegram/ui/Components/TrendingStickersLayout$Delegate;
 .source "StickersActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/StickersActivity;->updateRows(Z)V
+    value = Lorg/telegram/ui/StickersActivity;->lambda$createView$3(Landroid/content/Context;Landroid/view/View;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,172 +15,89 @@
 
 
 # instance fields
-.field oldList:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List<",
-            "Lorg/telegram/tgnet/TLRPC$StickerSetCovered;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field final synthetic this$0:Lorg/telegram/ui/StickersActivity;
-
-.field final synthetic val$featuredStickersList:Ljava/util/List;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/StickersActivity;Ljava/util/List;)V
+.method constructor <init>(Lorg/telegram/ui/StickersActivity;)V
     .locals 0
 
-    .line 658
+    .line 450
     iput-object p1, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/StickersActivity$5;->val$featuredStickersList:Ljava/util/List;
-
-    invoke-direct {p0}, Landroidx/recyclerview/widget/DiffUtil$Callback;-><init>()V
-
-    .line 659
-    invoke-static {p1}, Lorg/telegram/ui/StickersActivity;->access$000(Lorg/telegram/ui/StickersActivity;)Lorg/telegram/ui/StickersActivity$ListAdapter;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lorg/telegram/ui/StickersActivity$ListAdapter;->access$800(Lorg/telegram/ui/StickersActivity$ListAdapter;)Ljava/util/List;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lorg/telegram/ui/StickersActivity$5;->oldList:Ljava/util/List;
+    invoke-direct {p0}, Lorg/telegram/ui/Components/TrendingStickersLayout$Delegate;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public areContentsTheSame(II)Z
-    .locals 2
+.method public onStickerSetAdd(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;Z)V
+    .locals 7
 
-    .line 678
-    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->oldList:Ljava/util/List;
+    .line 453
+    iget-object p2, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {p2}, Lorg/telegram/ui/StickersActivity;->access$7000(Lorg/telegram/ui/StickersActivity;)I
 
-    move-result-object p1
+    move-result p2
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
+    invoke-static {p2}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
+    move-result-object v0
 
-    .line 679
-    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->val$featuredStickersList:Ljava/util/List;
+    iget-object p2, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
-    move-result-object p2
+    move-result-object v1
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
+    iget-object v4, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
+    const/4 v3, 0x2
 
-    .line 680
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
+    const/4 v5, 0x0
 
-    iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$StickerSet;->title:Ljava/lang/String;
+    const/4 v6, 0x0
 
-    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    move-object v2, p1
+
+    invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/MediaDataController;->toggleStickerSet(Landroid/content/Context;Lorg/telegram/tgnet/TLObject;ILorg/telegram/ui/ActionBar/BaseFragment;ZZ)V
+
+    return-void
+.end method
+
+.method public onStickerSetRemove(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;)V
+    .locals 8
+
+    .line 458
+    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/StickersActivity;->access$7100(Lorg/telegram/ui/StickersActivity;)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    iget v0, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->count:I
+    move-result-object v1
 
-    iget v1, p2, Lorg/telegram/tgnet/TLRPC$StickerSet;->count:I
+    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    if-ne v0, v1, :cond_0
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
-    iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->installed:Z
+    move-result-object v2
 
-    iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$StickerSet;->installed:Z
+    iget-object v5, p0, Lorg/telegram/ui/StickersActivity$5;->this$0:Lorg/telegram/ui/StickersActivity;
 
-    if-ne p1, p2, :cond_0
+    const/4 v4, 0x0
 
-    const/4 p1, 0x1
+    const/4 v6, 0x0
 
-    goto :goto_0
+    const/4 v7, 0x0
 
-    :cond_0
-    const/4 p1, 0x0
+    move-object v3, p1
 
-    :goto_0
-    return p1
-.end method
+    invoke-virtual/range {v1 .. v7}, Lorg/telegram/messenger/MediaDataController;->toggleStickerSet(Landroid/content/Context;Lorg/telegram/tgnet/TLObject;ILorg/telegram/ui/ActionBar/BaseFragment;ZZ)V
 
-.method public areItemsTheSame(II)Z
-    .locals 3
-
-    .line 673
-    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->oldList:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
-
-    iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
-
-    iget-object p1, p0, Lorg/telegram/ui/StickersActivity$5;->val$featuredStickersList:Ljava/util/List;
-
-    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$StickerSetCovered;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
-
-    iget-wide p1, p1, Lorg/telegram/tgnet/TLRPC$StickerSet;->id:J
-
-    cmp-long v2, v0, p1
-
-    if-nez v2, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
-.method public getNewListSize()I
-    .locals 1
-
-    .line 668
-    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->val$featuredStickersList:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getOldListSize()I
-    .locals 1
-
-    .line 663
-    iget-object v0, p0, Lorg/telegram/ui/StickersActivity$5;->oldList:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

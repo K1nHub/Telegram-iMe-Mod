@@ -7,7 +7,6 @@ import com.smedialink.utils.dialogs.DialogUtils;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import kotlin.collections.ArraysKt;
@@ -15,7 +14,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.p046ui.fragment.CreateReactionButtonsActivity;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -31,7 +30,7 @@ public final class ReactionHelper {
 
     public final String formatUuid(String uuid) {
         Intrinsics.checkNotNullParameter(uuid, "uuid");
-        return Intrinsics.stringPlus("File to put in iMe Like Message with id = ", uuid);
+        return "File to put in iMe Like Message with id = " + uuid;
     }
 
     public static final void showReactionActivationAlert(final BaseFragment fragment) {
@@ -40,17 +39,16 @@ public final class ReactionHelper {
         if (parentActivity == null) {
             return;
         }
-        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3158R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3158R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3158R.string.common_cancel), LocaleController.getInternalString(C3158R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3286R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3286R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3286R.string.common_cancel), LocaleController.getInternalString(C3286R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.smedialink.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                ReactionHelper.m1849showReactionActivationAlert$lambda0(BaseFragment.this);
+                ReactionHelper.showReactionActivationAlert$lambda$0(BaseFragment.this);
             }
         }, null, 8, null).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showReactionActivationAlert$lambda-0  reason: not valid java name */
-    public static final void m1849showReactionActivationAlert$lambda0(BaseFragment fragment) {
+    public static final void showReactionActivationAlert$lambda$0(BaseFragment fragment) {
         Intrinsics.checkNotNullParameter(fragment, "$fragment");
         INSTANCE.openReactionBot(fragment);
     }
@@ -66,7 +64,7 @@ public final class ReactionHelper {
                 if (!it.hasNext()) {
                     break;
                 }
-                if (((TLRPC$Dialog) it.next()).f1500id == AppConfiguration$Reaction.getBotId()) {
+                if (((TLRPC$Dialog) it.next()).f1505id == AppConfiguration$Reaction.getBotId()) {
                     z = true;
                     continue;
                 } else {
@@ -93,27 +91,26 @@ public final class ReactionHelper {
         Intrinsics.checkNotNullParameter(delegate, "delegate");
         Intrinsics.checkNotNullParameter(args, "args");
         Object firstOrNull = ArraysKt.firstOrNull(args);
-        Objects.requireNonNull(firstOrNull, "null cannot be cast to non-null type java.util.ArrayList<*>{ kotlin.collections.TypeAliasesKt.ArrayList<*> }");
+        Intrinsics.checkNotNull(firstOrNull, "null cannot be cast to non-null type java.util.ArrayList<*>{ kotlin.collections.TypeAliasesKt.ArrayList<*> }");
         ArrayList arrayList = (ArrayList) firstOrNull;
         if (!arrayList.isEmpty()) {
             Object firstOrNull2 = CollectionsKt.firstOrNull(arrayList);
             String str = null;
             MessageObject messageObject2 = firstOrNull2 instanceof MessageObject ? (MessageObject) firstOrNull2 : null;
-            if (messageObject2 == null) {
-                return;
-            }
-            CharSequence charSequence = messageObject2.caption;
-            String obj = charSequence == null ? null : charSequence.toString();
-            if (obj == null) {
-                obj = "";
-            }
-            Matcher matcher = Pattern.compile("\\b[0-9a-f]{8}\\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\\b[0-9a-f]{12}\\b").matcher(obj);
-            if (matcher.find()) {
-                str = obj.substring(matcher.start(), matcher.end());
-                Intrinsics.checkNotNullExpressionValue(str, "this as java.lang.String…ing(startIndex, endIndex)");
-            }
-            if (Intrinsics.areEqual(str, uuidReaction)) {
-                parentFragment.presentFragment(new CreateReactionButtonsActivity(j, messagesReaction, uuidReaction, messageObject2, messageObject, delegate));
+            if (messageObject2 != null) {
+                CharSequence charSequence = messageObject2.caption;
+                String obj = charSequence != null ? charSequence.toString() : null;
+                if (obj == null) {
+                    obj = "";
+                }
+                Matcher matcher = Pattern.compile("\\b[0-9a-f]{8}\\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\\b[0-9a-f]{12}\\b").matcher(obj);
+                if (matcher.find()) {
+                    str = obj.substring(matcher.start(), matcher.end());
+                    Intrinsics.checkNotNullExpressionValue(str, "this as java.lang.String…ing(startIndex, endIndex)");
+                }
+                if (Intrinsics.areEqual(str, uuidReaction)) {
+                    parentFragment.presentFragment(new CreateReactionButtonsActivity(j, messagesReaction, uuidReaction, messageObject2, messageObject, delegate));
+                }
             }
         }
     }

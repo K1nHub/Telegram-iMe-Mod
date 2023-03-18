@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda22;->f$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$aVpZwrLSlV6oLbDpEkTabE7eUws(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$W-_lBiTTRzhhevmFKujLL--vojE(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)V
 
     return-void
 .end method

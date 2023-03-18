@@ -300,7 +300,7 @@
 
     move-result v12
 
-    const-string v13, "dialogTextRed2"
+    const-string v13, "dialogTextRed"
 
     invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 

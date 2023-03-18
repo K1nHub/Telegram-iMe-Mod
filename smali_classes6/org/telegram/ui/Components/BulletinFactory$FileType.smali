@@ -72,7 +72,7 @@
 .method static constructor <clinit>()V
     .locals 30
 
-    .line 82
+    .line 92
     new-instance v6, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v4, Lorg/telegram/messenger/R$string;->PhotoSavedHint:I
@@ -93,7 +93,7 @@
 
     sput-object v6, Lorg/telegram/ui/Components/BulletinFactory$FileType;->PHOTO:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 83
+    .line 93
     new-instance v0, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     const-string v1, "PHOTOS"
@@ -106,7 +106,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->PHOTOS:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 85
+    .line 95
     new-instance v1, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v11, Lorg/telegram/messenger/R$string;->VideoSavedHint:I
@@ -125,7 +125,7 @@
 
     sput-object v1, Lorg/telegram/ui/Components/BulletinFactory$FileType;->VIDEO:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 86
+    .line 96
     new-instance v3, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     const-string v4, "VIDEOS"
@@ -138,7 +138,7 @@
 
     sput-object v3, Lorg/telegram/ui/Components/BulletinFactory$FileType;->VIDEOS:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 88
+    .line 98
     new-instance v4, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     const-string v7, "MEDIA"
@@ -151,7 +151,7 @@
 
     sput-object v4, Lorg/telegram/ui/Components/BulletinFactory$FileType;->MEDIA:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 90
+    .line 100
     new-instance v7, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v18, Lorg/telegram/messenger/R$string;->PhotoSavedToDownloadsHint:I
@@ -172,7 +172,7 @@
 
     sput-object v7, Lorg/telegram/ui/Components/BulletinFactory$FileType;->PHOTO_TO_DOWNLOADS:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 91
+    .line 101
     new-instance v15, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v14, Lorg/telegram/messenger/R$string;->VideoSavedToDownloadsHint:I
@@ -195,7 +195,7 @@
 
     sput-object v15, Lorg/telegram/ui/Components/BulletinFactory$FileType;->VIDEO_TO_DOWNLOADS:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 93
+    .line 103
     new-instance v23, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v21, Lorg/telegram/messenger/R$string;->GifSavedHint:I
@@ -214,7 +214,7 @@
 
     sput-object v23, Lorg/telegram/ui/Components/BulletinFactory$FileType;->GIF:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 94
+    .line 104
     new-instance v17, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v13, Lorg/telegram/messenger/R$string;->GifSavedToDownloadsHint:I
@@ -231,7 +231,7 @@
 
     sput-object v17, Lorg/telegram/ui/Components/BulletinFactory$FileType;->GIF_TO_DOWNLOADS:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 96
+    .line 106
     new-instance v18, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v28, Lorg/telegram/messenger/R$string;->AudioSavedHint:I
@@ -252,7 +252,7 @@
 
     sput-object v18, Lorg/telegram/ui/Components/BulletinFactory$FileType;->AUDIO:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 97
+    .line 107
     new-instance v14, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     const-string v10, "AUDIOS"
@@ -265,7 +265,7 @@
 
     sput-object v14, Lorg/telegram/ui/Components/BulletinFactory$FileType;->AUDIOS:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 99
+    .line 109
     new-instance v19, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     sget v20, Lorg/telegram/messenger/R$string;->FileSavedHint:I
@@ -290,7 +290,7 @@
 
     sput-object v19, Lorg/telegram/ui/Components/BulletinFactory$FileType;->UNKNOWN:Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
-    .line 100
+    .line 110
     new-instance v9, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     const-string v10, "UNKNOWNS"
@@ -351,7 +351,7 @@
 
     aput-object v9, v10, v11
 
-    .line 80
+    .line 90
     sput-object v10, Lorg/telegram/ui/Components/BulletinFactory$FileType;->$VALUES:[Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     return-void
@@ -369,21 +369,21 @@
         }
     .end annotation
 
-    .line 107
+    .line 117
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 108
+    .line 118
     iput-object p3, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->localeKey:Ljava/lang/String;
 
-    .line 109
+    .line 119
     iput p4, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->localeRes:I
 
-    .line 110
+    .line 120
     iput-object p5, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->icon:Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     const/4 p1, 0x0
 
-    .line 111
+    .line 121
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->plural:Z
 
     return-void
@@ -400,23 +400,23 @@
         }
     .end annotation
 
-    .line 114
+    .line 124
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 115
+    .line 125
     iput-object p3, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->localeKey:Ljava/lang/String;
 
-    .line 116
+    .line 126
     iput-object p4, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->icon:Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     const/4 p1, 0x0
 
-    .line 117
+    .line 127
     iput p1, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->localeRes:I
 
     const/4 p1, 0x1
 
-    .line 118
+    .line 128
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->plural:Z
 
     return-void
@@ -425,7 +425,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
     .locals 0
 
-    .line 80
+    .line 90
     iget-object p0, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->icon:Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     return-object p0
@@ -434,7 +434,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/BulletinFactory$FileType;I)Ljava/lang/String;
     .locals 0
 
-    .line 80
+    .line 90
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BulletinFactory$FileType;->getText(I)Ljava/lang/String;
 
     move-result-object p0
@@ -447,7 +447,7 @@
 
     const/4 v0, 0x1
 
-    .line 122
+    .line 132
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BulletinFactory$FileType;->getText(I)Ljava/lang/String;
 
     move-result-object v0
@@ -458,12 +458,12 @@
 .method private getText(I)Ljava/lang/String;
     .locals 2
 
-    .line 126
+    .line 136
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->plural:Z
 
     if-eqz v0, :cond_0
 
-    .line 127
+    .line 137
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->localeKey:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -476,7 +476,7 @@
 
     return-object p1
 
-    .line 129
+    .line 139
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->localeKey:Ljava/lang/String;
 
@@ -492,7 +492,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/Components/BulletinFactory$FileType;
     .locals 1
 
-    .line 80
+    .line 90
     const-class v0, Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -507,7 +507,7 @@
 .method public static values()[Lorg/telegram/ui/Components/BulletinFactory$FileType;
     .locals 1
 
-    .line 80
+    .line 90
     sget-object v0, Lorg/telegram/ui/Components/BulletinFactory$FileType;->$VALUES:[Lorg/telegram/ui/Components/BulletinFactory$FileType;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/Components/BulletinFactory$FileType;->clone()Ljava/lang/Object;

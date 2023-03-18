@@ -3,7 +3,7 @@ package org.fork.p046ui.dialog;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 /* compiled from: SettingsHelpBottomSheet.kt */
@@ -25,9 +25,8 @@ final class SettingsHelpBottomSheet$items$8 extends Lambda implements Function0<
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        Browser.openUrl(this.this$0.getContext(), LocaleController.getString("TelegramFeaturesUrl", C3158R.string.TelegramFeaturesUrl));
+        Browser.openUrl(this.this$0.getContext(), LocaleController.getString("TelegramFeaturesUrl", C3286R.string.TelegramFeaturesUrl));
     }
 }

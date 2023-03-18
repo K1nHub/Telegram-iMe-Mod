@@ -41,7 +41,7 @@
 
     const/4 p1, 0x0
 
-    if-ltz p3, :cond_4
+    if-ltz p3, :cond_3
 
     .line 100
     iget-object p2, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$gifContextProvider$1;->this$0:Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;
@@ -60,7 +60,7 @@
 
     if-lt p3, p2, :cond_0
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 103
     :cond_0
@@ -91,33 +91,31 @@
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
-    if-lez p2, :cond_4
-
     const/4 p4, 0x0
 
     const/4 v0, 0x0
 
     :goto_0
-    add-int/lit8 v1, v0, 0x1
+    if-ge v0, p2, :cond_3
 
     .line 108
-    iget-object v2, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$gifContextProvider$1;->this$0:Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;
+    iget-object v1, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$gifContextProvider$1;->this$0:Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;
 
-    invoke-static {v2}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->access$getListView$p(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v1}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->access$getListView$p(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;)Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 109
-    instance-of v2, v0, Lorg/telegram/ui/Cells/ContextLinkCell;
+    instance-of v2, v1, Lorg/telegram/ui/Cells/ContextLinkCell;
 
     if-eqz v2, :cond_1
 
     .line 110
-    move-object v2, v0
+    move-object v2, v1
 
     check-cast v2, Lorg/telegram/ui/Cells/ContextLinkCell;
 
@@ -149,7 +147,7 @@
     new-array p1, p1, [I
 
     .line 117
-    invoke-virtual {v0, p1}, Landroid/view/View;->getLocationInWindow([I)V
+    invoke-virtual {v1, p1}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 118
     new-instance p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
@@ -197,16 +195,11 @@
     return-object p2
 
     :cond_2
-    if-lt v1, p2, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    move v0, v1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     :goto_2
     return-object p1
 .end method
@@ -217,11 +210,8 @@
     .line 132
     iget-object p2, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$gifContextProvider$1;->$listener:Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;
 
-    if-nez p2, :cond_0
+    if-eqz p2, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     iget-object p3, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$gifContextProvider$1;->this$0:Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;
 
     invoke-static {p3}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->access$getListViewAdapter$p(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;)Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;
@@ -244,6 +234,6 @@
 
     invoke-interface {p2, p1, p3, p4, p5}, Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;->sendChosenGif(IJLjava/lang/String;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method

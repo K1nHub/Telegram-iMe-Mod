@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/shop/PurchaseHelper;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/shop/PurchaseHelper;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/shop/PurchaseHelper$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/shop/PurchaseHelper;
+    iput-object p1, p0, Lcom/smedialink/ui/shop/PurchaseHelper$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/shop/PurchaseHelper$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/shop/PurchaseHelper;
+    iget-object v0, p0, Lcom/smedialink/ui/shop/PurchaseHelper$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lio/reactivex/disposables/Disposable;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$NBn42CikNl3MseQGp18WpsApCq0(Lcom/smedialink/ui/shop/PurchaseHelper;Lio/reactivex/disposables/Disposable;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$8h7Y8G5VOIoOlXg-1tm3OFZ2tWc(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

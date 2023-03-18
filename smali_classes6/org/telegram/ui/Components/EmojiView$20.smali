@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 2797
+    .line 2798
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/EmojiView$SearchField;-><init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setTranslationY(F)V
     .locals 2
 
-    .line 2800
+    .line 2801
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -48,7 +48,7 @@
 
     invoke-static {v1, v0}, Lcom/google/android/exoplayer2/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2801
+    .line 2802
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
     return-void

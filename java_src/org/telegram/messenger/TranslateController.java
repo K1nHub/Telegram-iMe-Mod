@@ -69,7 +69,7 @@ public class TranslateController extends BaseController {
         public String ownDisplayName;
 
         /* renamed from: q */
-        public String f1469q;
+        public String f1474q;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -304,7 +304,7 @@ public class TranslateController extends BaseController {
                     str2 = "";
                 }
                 sb.append(str2);
-                language.f1469q = sb.toString().toLowerCase();
+                language.f1474q = sb.toString().toLowerCase();
                 arrayList.add(language);
             }
         }
@@ -392,7 +392,7 @@ public class TranslateController extends BaseController {
                     language.displayName = TranslateAlert2.capitalFirst(TranslateAlert2.languageName(language.code));
                     language.ownDisplayName = TranslateAlert2.capitalFirst(TranslateAlert2.systemLanguageName(language.code, true));
                     if (language.displayName != null) {
-                        language.f1469q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
+                        language.f1474q = (language.displayName + " " + language.ownDisplayName).toLowerCase();
                         arrayList.add(language);
                     }
                 }
@@ -660,7 +660,7 @@ public class TranslateController extends BaseController {
                 return;
             }
             this.pendingLanguageChecks.add(Integer.valueOf(hash));
-            Utilities.getStageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda9
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
                     TranslateController.this.lambda$checkLanguage$12(messageObject, dialogId, hash);
@@ -739,7 +739,7 @@ public class TranslateController extends BaseController {
         }
         boolean z = true;
         boolean z2 = isTranslatable(messageObject) && ((str2 = messageObject.messageOwner.originalLanguage) == null || "und".equals(str2));
-        z = (!isTranslatable(messageObject) || (str = messageObject.messageOwner.originalLanguage) == null || "und".equals(str) || RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(messageObject.messageOwner.originalLanguage) || TextUtils.equals(getDialogTranslateTo(dialogId), messageObject.messageOwner.originalLanguage)) ? false : false;
+        z = (!isTranslatable(messageObject) || (str = messageObject.messageOwner.originalLanguage) == null || "und".equals(str) || RestrictedLanguagesSelectActivity.getRestrictedLanguages().contains(messageObject.messageOwner.originalLanguage)) ? false : false;
         if (z2) {
             translatableDecision.unknown.add(Integer.valueOf(messageObject.getId()));
         } else {
@@ -875,7 +875,7 @@ public class TranslateController extends BaseController {
         TLRPC$TL_messages_translateText tLRPC$TL_messages_translateText = new TLRPC$TL_messages_translateText();
         tLRPC$TL_messages_translateText.flags |= 1;
         tLRPC$TL_messages_translateText.peer = getMessagesController().getInputPeer(j);
-        tLRPC$TL_messages_translateText.f1603id = pendingTranslation.messageIds;
+        tLRPC$TL_messages_translateText.f1609id = pendingTranslation.messageIds;
         tLRPC$TL_messages_translateText.to_lang = pendingTranslation.language;
         int sendRequest = getConnectionsManager().sendRequest(tLRPC$TL_messages_translateText, new RequestDelegate() { // from class: org.telegram.messenger.TranslateController$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
@@ -916,7 +916,7 @@ public class TranslateController extends BaseController {
             }
         } else if (tLRPC$TL_error != null && "TO_LANG_INVALID".equals(tLRPC$TL_error.text)) {
             toggleTranslatingDialog(j, false);
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3158R.string.TranslationFailedAlert2));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.getString("TranslationFailedAlert2", C3286R.string.TranslationFailedAlert2));
         } else {
             for (int i2 = 0; i2 < arrayList2.size(); i2++) {
                 arrayList2.get(i2).run(null, pendingTranslation.language);

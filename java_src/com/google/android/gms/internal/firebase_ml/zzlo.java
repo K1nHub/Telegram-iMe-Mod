@@ -5,8 +5,9 @@ import java.lang.ref.ReferenceQueue;
 import java.util.List;
 import java.util.Vector;
 import p034j$.util.concurrent.ConcurrentHashMap;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-final class zzlo {
+public final class zzlo {
     private final ConcurrentHashMap<zzlr, List<Throwable>> zzacw = new ConcurrentHashMap<>(16, 0.75f, 10);
     private final ReferenceQueue<Throwable> zzacx = new ReferenceQueue<>();
 

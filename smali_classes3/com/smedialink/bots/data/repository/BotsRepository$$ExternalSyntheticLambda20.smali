@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/bots/data/repository/BotsRepository;
-
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/bots/data/repository/BotsRepository;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda20;->f$0:Lcom/smedialink/bots/data/repository/BotsRepository;
-
-    iput-object p2, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda20;->f$1:Ljava/lang/String;
+    iput-object p1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda20;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -27,15 +23,11 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda20;->f$0:Lcom/smedialink/bots/data/repository/BotsRepository;
+    iget-object v0, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda20;->f$0:Lkotlin/jvm/functions/Function1;
 
-    iget-object v1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda20;->f$1:Ljava/lang/String;
-
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-static {v0, v1, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$ivwdM_uU9QHkn9VZ-60TxA6oE2Y(Lcom/smedialink/bots/data/repository/BotsRepository;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/Integer;
+    invoke-static {v0, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$CKvFR5YNM1bl2EEbIzV8e95E44w(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/SingleSource;
 
     move-result-object p1
 

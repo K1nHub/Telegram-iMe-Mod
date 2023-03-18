@@ -18,6 +18,6 @@ final class ChatLanguageSettingsBottomSheet$listAdapter$2 extends Lambda impleme
 
     @Override // kotlin.jvm.functions.Function0
     public final ChatLanguageSettingsBottomSheet.ListAdapter invoke() {
-        return new ChatLanguageSettingsBottomSheet.ListAdapter(this.this$0);
+        return new ChatLanguageSettingsBottomSheet.ListAdapter();
     }
 }

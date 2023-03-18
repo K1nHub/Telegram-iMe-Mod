@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda6;->f$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$UOD-wxr_afTViCl-z-wcEjxseMU(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$apXD1Ts9KTdKk_Kvcld1heG4sd4(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Landroid/view/View;I)V
 
     return-void
 .end method

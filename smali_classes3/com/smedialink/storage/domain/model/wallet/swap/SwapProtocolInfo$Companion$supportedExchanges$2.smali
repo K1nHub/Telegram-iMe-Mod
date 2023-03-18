@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

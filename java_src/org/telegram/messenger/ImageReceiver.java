@@ -533,8 +533,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (tLRPC$Document == null) {
                     tLRPC$Document = ((MessageObject) obj).getDocument();
                 }
-                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1502id != 0) {
-                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1502id;
+                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1507id != 0) {
+                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1507id;
                     this.currentKeyQuality = true;
                 }
             }

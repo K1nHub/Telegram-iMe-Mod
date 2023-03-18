@@ -92,7 +92,7 @@ public final class ImageToObjectsResponse {
             }
             if (obj instanceof RecognizedImageObject) {
                 RecognizedImageObject recognizedImageObject = (RecognizedImageObject) obj;
-                return Intrinsics.areEqual(this.recognizedObject, recognizedImageObject.recognizedObject) && Intrinsics.areEqual(Double.valueOf(this.score), Double.valueOf(recognizedImageObject.score)) && Intrinsics.areEqual(this.entityId, recognizedImageObject.entityId);
+                return Intrinsics.areEqual(this.recognizedObject, recognizedImageObject.recognizedObject) && Double.compare(this.score, recognizedImageObject.score) == 0 && Intrinsics.areEqual(this.entityId, recognizedImageObject.entityId);
             }
             return false;
         }

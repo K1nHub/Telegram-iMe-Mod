@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->onClick(Landroid/view/View;)V
+    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->lambda$onClick$0(ILandroid/content/Context;IZLorg/telegram/ui/ActionBar/BaseFragment;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DefaultThemesPreviewCell$1;I)V
     .locals 0
 
-    .line 223
+    .line 224
     iput-object p1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$2;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
 
     iput p2, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$2;->val$iconNewColor:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 226
+    .line 227
     iget-object v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$2;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
 
     iget-object v0, v0, Lorg/telegram/ui/DefaultThemesPreviewCell$1;->this$0:Lorg/telegram/ui/DefaultThemesPreviewCell;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 227
+    .line 228
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void

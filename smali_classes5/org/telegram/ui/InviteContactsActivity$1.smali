@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/InviteContactsActivity;)V
     .locals 0
 
-    .line 324
+    .line 325
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$1;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 328
+    .line 329
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$1;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

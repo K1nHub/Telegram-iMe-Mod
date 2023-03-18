@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingDashboardView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,203:1\n56#2,6:204\n4#3:210\n5#3,2:213\n2478#4:211\n1#5:212\n37#6:215\n36#6,3:216\n*S KotlinDebug\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n*L\n33#1:204,6\n71#1:210\n71#1:213,2\n71#1:211\n71#1:212\n129#1:215\n129#1:216,3\n*E\n"
+    value = "SMAP\nStakingDashboardView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,203:1\n56#2,6:204\n4#3:210\n5#3,2:213\n2634#4:211\n1#5:212\n37#6,2:215\n*S KotlinDebug\n*F\n+ 1 StakingDashboardView.kt\ncom/smedialink/ui/custom/StakingDashboardView\n*L\n33#1:204,6\n71#1:210\n71#1:213,2\n71#1:211\n71#1:212\n129#1:215,2\n*E\n"
 .end annotation
 
 
@@ -23,18 +23,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$jH1g6vBl2OOB-Y1cyiW_v01FZlQ()V
+.method public static synthetic $r8$lambda$B33gJBlUVKxS3dL496G_NV375uE()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/custom/StakingDashboardView;->onCalculatorClick$lambda-0()V
+    invoke-static {}, Lcom/smedialink/ui/custom/StakingDashboardView;->onHistoryClick$lambda$1()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yqRhS6EbWNKwfuSnOQckPJZtOSg()V
+.method public static synthetic $r8$lambda$Q2CJg4xZ4t5jb-QBEqyFUlBYhiQ()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/custom/StakingDashboardView;->onHistoryClick$lambda-1()V
+    invoke-static {}, Lcom/smedialink/ui/custom/StakingDashboardView;->onCalculatorClick$lambda$0()V
 
     return-void
 .end method
@@ -110,12 +110,12 @@
     iput-object p1, p0, Lcom/smedialink/ui/custom/StakingDashboardView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;
 
     .line 37
-    sget-object p1, Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda0;
+    sget-object p1, Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda1;->INSTANCE:Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda1;
 
     iput-object p1, p0, Lcom/smedialink/ui/custom/StakingDashboardView;->onCalculatorClick:Lorg/fork/utils/Callbacks$Callback;
 
     .line 38
-    sget-object p1, Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda1;->INSTANCE:Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda1;
+    sget-object p1, Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/ui/custom/StakingDashboardView$$ExternalSyntheticLambda0;
 
     iput-object p1, p0, Lcom/smedialink/ui/custom/StakingDashboardView;->onHistoryClick:Lorg/fork/utils/Callbacks$Callback;
 
@@ -166,13 +166,13 @@
     return-object p0
 .end method
 
-.method private static final onCalculatorClick$lambda-0()V
+.method private static final onCalculatorClick$lambda$0()V
     .locals 0
 
     return-void
 .end method
 
-.method private static final onHistoryClick$lambda-1()V
+.method private static final onHistoryClick$lambda$1()V
     .locals 0
 
     return-void
@@ -321,9 +321,6 @@
     .line 119
     iput-object v9, v8, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
 
-    .line 120
-    sget-object v9, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 116
     invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -360,9 +357,6 @@
     .line 126
     iput-object v6, v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
 
-    .line 127
-    sget-object v6, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 123
     invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -377,10 +371,6 @@
 
     move-result-object v3
 
-    const-string v6, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v3, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast v3, [Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;
 
     .line 112
@@ -391,7 +381,15 @@
 
     .line 134
     :goto_1
-    sget-object v3, Lcom/smedialink/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/smedialink/utils/formatter/BalanceFormatter;
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/16 v4, 0x7e
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    sget-object v4, Lcom/smedialink/utils/formatter/BalanceFormatter;->INSTANCE:Lcom/smedialink/utils/formatter/BalanceFormatter;
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -399,15 +397,15 @@
 
     invoke-virtual {p0}, Lcom/smedialink/ui/custom/StakingDashboardView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v3, v2, v4}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatShortFiatBalance(Ljava/lang/Number;Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    invoke-virtual {v4, v2, v5}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatShortFiatBalance(Ljava/lang/Number;Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v4, "~"
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -428,9 +426,9 @@
     move-result-object v2
 
     .line 140
-    sget-object v4, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
+    sget-object v3, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;->INSTANCE:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat$USD;
 
-    invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
+    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
 
     move-result v5
 
@@ -439,7 +437,7 @@
     move-result-object v5
 
     .line 137
-    invoke-virtual {v3, p1, v2, v5}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatFiatBalance(Ljava/lang/Number;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Ljava/lang/Integer;)Ljava/lang/String;
+    invoke-virtual {v4, p1, v2, v5}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatFiatBalance(Ljava/lang/Number;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -459,7 +457,7 @@
     move-result-object v0
 
     .line 145
-    invoke-virtual {v4}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
+    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
 
     move-result v1
 
@@ -468,7 +466,7 @@
     move-result-object v1
 
     .line 142
-    invoke-virtual {v3, p2, v0, v1}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatFiatBalance(Ljava/lang/Number;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Ljava/lang/Integer;)Ljava/lang/String;
+    invoke-virtual {v4, p2, v0, v1}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatFiatBalance(Ljava/lang/Number;Lcom/smedialink/storage/domain/utils/system/ResourceManager;Ljava/lang/Integer;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -721,7 +719,7 @@
 .end method
 
 .method public final setupColors()V
-    .locals 8
+    .locals 7
 
     .line 62
     iget-object v0, p0, Lcom/smedialink/ui/custom/StakingDashboardView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;
@@ -747,7 +745,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$6$lambda$3"
 
     .line 66
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -757,13 +755,13 @@
     .line 68
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->cardStakingDashboard:Landroidx/cardview/widget/CardView;
 
-    const-string v3, "windowBackgroundWhite"
+    const-string v2, "windowBackgroundWhite"
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v1, v4}, Landroidx/cardview/widget/CardView;->setCardBackgroundColor(I)V
+    invoke-virtual {v1, v3}, Landroidx/cardview/widget/CardView;->setCardBackgroundColor(I)V
 
     .line 69
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewDiagram:Lorg/telegram/ui/Components/StorageDiagramView;
@@ -772,49 +770,49 @@
 
     const/4 v1, 0x2
 
-    new-array v4, v1, [Landroid/widget/TextView;
+    new-array v3, v1, [Landroid/widget/TextView;
 
     .line 70
-    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedTitle:Landroid/widget/TextView;
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedTitle:Landroid/widget/TextView;
 
-    const-string v6, "textStakedTitle"
+    const-string v5, "textStakedTitle"
 
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    aput-object v5, v4, v6
+    aput-object v4, v3, v5
 
-    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitTitle:Landroid/widget/TextView;
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitTitle:Landroid/widget/TextView;
 
-    const-string v7, "textProfitTitle"
+    const-string v6, "textProfitTitle"
 
-    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    aput-object v5, v4, v7
+    aput-object v4, v3, v6
 
-    const-string v5, "windowBackgroundWhiteGrayText"
+    const-string v4, "windowBackgroundWhiteGrayText"
 
-    invoke-static {v5, v4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
+    invoke-static {v4, v3}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
 
     new-array v1, v1, [Landroid/widget/TextView;
 
     .line 71
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedValue:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedValue:Landroid/widget/TextView;
 
-    aput-object v4, v1, v6
+    aput-object v3, v1, v5
 
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitValue:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitValue:Landroid/widget/TextView;
 
-    aput-object v4, v1, v7
+    aput-object v3, v1, v6
 
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -822,30 +820,32 @@
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 5
-    check-cast v4, Landroid/widget/TextView;
+    check-cast v3, Landroid/widget/TextView;
 
-    const-string v5, "windowBackgroundWhiteBlackText"
+    const-string v4, "windowBackgroundWhiteBlackText"
 
     .line 72
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v4
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v4, "setupColors$lambda$6$lambda$4"
 
     .line 73
-    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
+    invoke-static {v3}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     goto :goto_0
 
@@ -853,10 +853,10 @@
     :cond_0
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewStakedDot:Landroid/view/View;
 
-    const/4 v2, 0x6
+    const/4 v3, 0x6
 
     .line 76
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
@@ -878,9 +878,9 @@
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewProfitDot:Landroid/view/View;
 
     .line 80
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v3
 
     const-string v4, "statisticChartLine_green"
 
@@ -890,28 +890,28 @@
     move-result v4
 
     .line 79
-    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 83
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->divider:Lcom/smedialink/ui/custom/DividerView;
 
-    const-string v2, "divider"
+    const-string v3, "divider"
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 84
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->horizontalActionButtons:Lcom/smedialink/ui/custom/HorizontalActionButtonsView;
 
     .line 85
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 

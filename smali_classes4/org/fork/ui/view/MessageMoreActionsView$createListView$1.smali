@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMessageMoreActionsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MessageMoreActionsView.kt\norg/fork/ui/view/MessageMoreActionsView$createListView$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,137:1\n798#2,11:138\n*S KotlinDebug\n*F\n+ 1 MessageMoreActionsView.kt\norg/fork/ui/view/MessageMoreActionsView$createListView$1\n*L\n43#1:138,11\n*E\n"
+    value = "SMAP\nMessageMoreActionsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MessageMoreActionsView.kt\norg/fork/ui/view/MessageMoreActionsView$createListView$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,137:1\n800#2,11:138\n*S KotlinDebug\n*F\n+ 1 MessageMoreActionsView.kt\norg/fork/ui/view/MessageMoreActionsView$createListView$1\n*L\n43#1:138,11\n*E\n"
 .end annotation
 
 
@@ -52,12 +52,12 @@
 
     move-result-object v1
 
-    .line 798
+    .line 800
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 807
+    .line 809
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -102,12 +102,12 @@
 
     move-result-object v2
 
-    .line 798
+    .line 800
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 807
+    .line 809
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2

@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/smedialink/ui/custom/state/StatefulLayout$Companion;,
         Lcom/smedialink/ui/custom/state/StatefulLayout$OnStateChangeListener;,
-        Lcom/smedialink/ui/custom/state/StatefulLayout$StateController;,
-        Lcom/smedialink/ui/custom/state/StatefulLayout$Companion;
+        Lcom/smedialink/ui/custom/state/StatefulLayout$StateController;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStatefulLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatefulLayout.kt\ncom/smedialink/ui/custom/state/StatefulLayout\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,204:1\n1849#2,2:205\n1#3:207\n211#4:208\n212#4:211\n254#5,2:209\n*S KotlinDebug\n*F\n+ 1 StatefulLayout.kt\ncom/smedialink/ui/custom/state/StatefulLayout\n*L\n77#1:205,2\n123#1:208\n123#1:211\n123#1:209,2\n*E\n"
+    value = "SMAP\nStatefulLayout.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StatefulLayout.kt\ncom/smedialink/ui/custom/state/StatefulLayout\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,204:1\n1855#2,2:205\n1#3:207\n215#4:208\n216#4:211\n262#5,2:209\n*S KotlinDebug\n*F\n+ 1 StatefulLayout.kt\ncom/smedialink/ui/custom/state/StatefulLayout\n*L\n77#1:205,2\n123#1:208\n123#1:211\n123#1:209,2\n*E\n"
 .end annotation
 
 
@@ -161,7 +161,7 @@
     .line 123
     iget-object v0, p0, Lcom/smedialink/ui/custom/state/StatefulLayout;->mStateViews:Ljava/util/Map;
 
-    .line 211
+    .line 215
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -214,7 +214,7 @@
     :cond_2
     const/16 v3, 0x8
 
-    .line 254
+    .line 262
     :goto_1
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
@@ -224,15 +224,12 @@
     :cond_3
     iget-object v0, p0, Lcom/smedialink/ui/custom/state/StatefulLayout;->mOnStateChangeListener:Lcom/smedialink/ui/custom/state/StatefulLayout$OnStateChangeListener;
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_4
 
-    goto :goto_2
-
-    :cond_4
     invoke-interface {v0, p1}, Lcom/smedialink/ui/custom/state/StatefulLayout$OnStateChangeListener;->onStateChange(Ljava/lang/String;)V
 
     .line 125
-    :goto_2
+    :cond_4
     iput-boolean v1, p0, Lcom/smedialink/ui/custom/state/StatefulLayout;->mDirtyFlag:Z
 
     return-void
@@ -642,17 +639,17 @@
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez p2, :cond_1
-
-    const/4 p1, 0x0
-
-    goto :goto_0
+    if-eqz p2, :cond_1
 
     .line 41
-    :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, 0x0
 
     :goto_0
     if-nez p1, :cond_2
@@ -661,15 +658,12 @@
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     :cond_2
-    if-nez p2, :cond_3
-
-    goto :goto_1
+    if-eqz p2, :cond_3
 
     .line 44
-    :cond_3
     invoke-static {p2}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 
-    :goto_1
+    :cond_3
     const/4 p1, 0x1
 
     .line 45

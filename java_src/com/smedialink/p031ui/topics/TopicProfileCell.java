@@ -20,7 +20,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.ForkTopicsController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
@@ -149,7 +149,7 @@ public final class TopicProfileCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initSelectTopicTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3158R.string.topics_select));
+        simpleTextView.setText(LocaleController.getInternalString(C3286R.string.topics_select));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }
@@ -158,7 +158,7 @@ public final class TopicProfileCell extends FrameLayout {
     public final ImageView initDeleteImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(C3158R.C3160drawable.plus);
+        imageView.setImageResource(C3286R.C3288drawable.fork_plus);
         return imageView;
     }
 
@@ -166,22 +166,19 @@ public final class TopicProfileCell extends FrameLayout {
         getDeleteImageView().setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.topics.TopicProfileCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopicProfileCell.m1540setupListeners$lambda6(TopicProfileCell.this, view);
+                TopicProfileCell.setupListeners$lambda$6(TopicProfileCell.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-6  reason: not valid java name */
-    public static final void m1540setupListeners$lambda6(TopicProfileCell this$0, View view) {
+    public static final void setupListeners$lambda$6(TopicProfileCell this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AnimatorSet animatorSet = this$0.animator;
-        Boolean valueOf = animatorSet == null ? null : Boolean.valueOf(animatorSet.isRunning());
-        if (valueOf == null) {
-            return;
+        if (animatorSet != null) {
+            animatorSet.isRunning();
+            ForkTopicsController.Companion.getInstance(this$0.currentAccount).removeTopicDialog(this$0.dialogId);
         }
-        valueOf.booleanValue();
-        ForkTopicsController.Companion.getInstance(this$0.currentAccount).removeTopicDialog(this$0.getDialogId());
     }
 
     /* compiled from: TopicProfileCell.kt */

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
 
 # instance fields
@@ -10,17 +10,19 @@
 
 .field public final synthetic f$1:I
 
-.field public final synthetic f$2:Ljava/lang/String;
+.field public final synthetic f$2:Lorg/telegram/ui/DialogsActivity;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$User;
+.field public final synthetic f$3:Z
 
-.field public final synthetic f$4:Ljava/lang/String;
+.field public final synthetic f$4:Ljava/util/ArrayList;
 
-.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;
+.field public final synthetic f$5:Landroid/net/Uri;
+
+.field public final synthetic f$6:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ILorg/telegram/ui/DialogsActivity;ZLjava/util/ArrayList;Landroid/net/Uri;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,39 +31,41 @@
 
     iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$1:I
 
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$2:Ljava/lang/String;
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$2:Lorg/telegram/ui/DialogsActivity;
 
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$3:Lorg/telegram/tgnet/TLRPC$User;
+    iput-boolean p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$3:Z
 
-    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$4:Ljava/lang/String;
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$4:Ljava/util/ArrayList;
 
-    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$5:Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;
+    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$5:Landroid/net/Uri;
+
+    iput-object p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$6:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 8
+.method public final run(J)V
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$0:Lorg/telegram/ui/LaunchActivity;
 
     iget v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$1:I
 
-    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$2:Ljava/lang/String;
+    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$2:Lorg/telegram/ui/DialogsActivity;
 
-    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$3:Lorg/telegram/tgnet/TLRPC$User;
+    iget-boolean v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$3:Z
 
-    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$4:Ljava/lang/String;
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$4:Ljava/util/ArrayList;
 
-    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$5:Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;
+    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$5:Landroid/net/Uri;
 
-    move-object v6, p1
+    iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda92;->f$6:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    move-object v7, p2
+    move-wide v7, p1
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$TOSiOQF6uPOZgUpY0_YoR1Hp3mw(Lorg/telegram/ui/LaunchActivity;ILjava/lang/String;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$9k0W6Ly3FLvmp7M5PTXWWCIOkwc(Lorg/telegram/ui/LaunchActivity;ILorg/telegram/ui/DialogsActivity;ZLjava/util/ArrayList;Landroid/net/Uri;Lorg/telegram/ui/ActionBar/AlertDialog;J)V
 
     return-void
 .end method

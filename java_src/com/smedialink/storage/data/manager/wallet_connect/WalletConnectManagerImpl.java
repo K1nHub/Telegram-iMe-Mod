@@ -26,11 +26,14 @@ import com.trustwallet.walletconnect.models.WCPeerMeta;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumTransaction;
 import com.trustwallet.walletconnect.models.session.WCSession;
+import io.reactivex.Completable;
 import io.reactivex.Observable;
+import io.reactivex.Single;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.observables.GroupedObservable;
 import io.reactivex.subjects.PublishSubject;
 import java.math.BigDecimal;
@@ -40,13 +43,12 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt__MutableCollectionsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
@@ -76,8 +78,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: approveNewSession$lambda-7  reason: not valid java name */
-    public static final void m1336approveNewSession$lambda7() {
+    public static final void approveNewSession$lambda$6() {
     }
 
     public WalletConnectManagerImpl(CryptoAccessManager cryptoAccessManager, CryptoPreferenceHelper cryptoPreferenceHelper, Gson gson, OkHttpClient okHttpClient, RxEventBus rxEventBus, SchedulersProvider schedulersProvider, WalletConnectInteractor walletConnectInteractor) {
@@ -170,49 +171,36 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     public void connectToStoredSessions() {
         if (this.cryptoAccessManager.isWalletCreated(BlockchainType.EVM)) {
             clear();
-            Disposable subscribe = this.walletConnectInteractor.getWalletConnectSavedSessionsFirst().singleOrError().subscribeOn(this.schedulersProvider.mo708io()).subscribe(new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda3
+            Single<Result<List<WCSessionStoreItem>>> subscribeOn = this.walletConnectInteractor.getWalletConnectSavedSessionsFirst().singleOrError().subscribeOn(this.schedulersProvider.mo708io());
+            final WalletConnectManagerImpl$connectToStoredSessions$1 walletConnectManagerImpl$connectToStoredSessions$1 = new WalletConnectManagerImpl$connectToStoredSessions$1(this);
+            Consumer<? super Result<List<WCSessionStoreItem>>> consumer = new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda7
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    WalletConnectManagerImpl.m1338connectToStoredSessions$lambda1(WalletConnectManagerImpl.this, (Result) obj);
+                    WalletConnectManagerImpl.connectToStoredSessions$lambda$0(Function1.this, obj);
                 }
-            }, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda7
+            };
+            final WalletConnectManagerImpl$connectToStoredSessions$2 walletConnectManagerImpl$connectToStoredSessions$2 = new WalletConnectManagerImpl$connectToStoredSessions$2(this);
+            Disposable subscribe = subscribeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda6
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    WalletConnectManagerImpl.m1339connectToStoredSessions$lambda2(WalletConnectManagerImpl.this, (Throwable) obj);
+                    WalletConnectManagerImpl.connectToStoredSessions$lambda$1(Function1.this, obj);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(subscribe, "walletConnectInteractor\n…t(it) }\n                )");
+            Intrinsics.checkNotNullExpressionValue(subscribe, "override fun connectToSt…pose(subscriptions)\n    }");
             RxExtKt.autoDispose(subscribe, this.subscriptions);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: connectToStoredSessions$lambda-1  reason: not valid java name */
-    public static final void m1338connectToStoredSessions$lambda1(WalletConnectManagerImpl this$0, Result result) {
-        int collectionSizeOrDefault;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (!(result instanceof Result.Success)) {
-            if (result instanceof Result.Error) {
-                Intrinsics.checkNotNullExpressionValue(result, "result");
-                this$0.onErrorResult((Result.Error) result);
-                return;
-            }
-            return;
-        }
-        Iterable<WCSessionStoreItem> iterable = (Iterable) ((Result.Success) result).getData();
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
-        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (WCSessionStoreItem wCSessionStoreItem : iterable) {
-            this$0.mapSessionStoreItem(wCSessionStoreItem);
-            arrayList.add(Unit.INSTANCE);
-        }
+    public static final void connectToStoredSessions$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: connectToStoredSessions$lambda-2  reason: not valid java name */
-    public static final void m1339connectToStoredSessions$lambda2(WalletConnectManagerImpl this$0, Throwable th) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.errorsSubject.onNext(th);
+    public static final void connectToStoredSessions$lambda$1(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     @Override // com.smedialink.storage.domain.manager.wallet_connect.WalletConnectManager
@@ -242,32 +230,34 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         Unit unit;
         Intrinsics.checkNotNullParameter(sessionStoreItem, "sessionStoreItem");
         WCClient wCClient = this.wcClients.get(sessionStoreItem.getSession().getKey());
-        if (wCClient == null) {
-            unit = null;
-        } else {
+        if (wCClient != null) {
             setupClientListeners(wCClient, sessionStoreItem);
             runWithErrorHandle(new WalletConnectManagerImpl$approveNewSession$1$1(wCClient, this));
             unit = Unit.INSTANCE;
+        } else {
+            unit = null;
         }
         if (unit == null) {
             return;
         }
         this.pendingSessionStoreItem = null;
-        Disposable subscribe = this.walletConnectInteractor.insertWalletConnectSession(sessionStoreItem).observeOn(this.schedulersProvider.mo707ui()).subscribe(WalletConnectManagerImpl$$ExternalSyntheticLambda2.INSTANCE, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda5
+        Completable observeOn = this.walletConnectInteractor.insertWalletConnectSession(sessionStoreItem).observeOn(this.schedulersProvider.mo707ui());
+        WalletConnectManagerImpl$$ExternalSyntheticLambda2 walletConnectManagerImpl$$ExternalSyntheticLambda2 = WalletConnectManagerImpl$$ExternalSyntheticLambda2.INSTANCE;
+        final WalletConnectManagerImpl$approveNewSession$3 walletConnectManagerImpl$approveNewSession$3 = new WalletConnectManagerImpl$approveNewSession$3(this);
+        Disposable subscribe = observeOn.subscribe(walletConnectManagerImpl$$ExternalSyntheticLambda2, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletConnectManagerImpl.m1337approveNewSession$lambda8(WalletConnectManagerImpl.this, (Throwable) obj);
+                WalletConnectManagerImpl.approveNewSession$lambda$7(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "walletConnectInteractor\n…t(it) }\n                )");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "override fun approveNewS…pose(subscriptions)\n    }");
         RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: approveNewSession$lambda-8  reason: not valid java name */
-    public static final void m1337approveNewSession$lambda8(WalletConnectManagerImpl this$0, Throwable th) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.errorsSubject.onNext(th);
+    public static final void approveNewSession$lambda$7(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     @Override // com.smedialink.storage.domain.manager.wallet_connect.WalletConnectManager
@@ -299,66 +289,68 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     public void disconnect(final String sessionKey) {
         Intrinsics.checkNotNullParameter(sessionKey, "sessionKey");
         runWithErrorHandle(new WalletConnectManagerImpl$disconnect$1(this, sessionKey));
-        Disposable subscribe = this.walletConnectInteractor.deleteWalletConnectSession(sessionKey).observeOn(this.schedulersProvider.mo707ui()).subscribe(new Action() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda1
+        Completable observeOn = this.walletConnectInteractor.deleteWalletConnectSession(sessionKey).observeOn(this.schedulersProvider.mo707ui());
+        Action action = new Action() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Action
             public final void run() {
-                WalletConnectManagerImpl.m1341disconnect$lambda9(WalletConnectManagerImpl.this, sessionKey);
+                WalletConnectManagerImpl.disconnect$lambda$8(WalletConnectManagerImpl.this, sessionKey);
             }
-        }, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda8
+        };
+        final WalletConnectManagerImpl$disconnect$3 walletConnectManagerImpl$disconnect$3 = new WalletConnectManagerImpl$disconnect$3(this);
+        Disposable subscribe = observeOn.subscribe(action, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletConnectManagerImpl.m1340disconnect$lambda10(WalletConnectManagerImpl.this, (Throwable) obj);
+                WalletConnectManagerImpl.disconnect$lambda$9(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "walletConnectInteractor\n…t(it) }\n                )");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "override fun disconnect(…pose(subscriptions)\n    }");
         RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: disconnect$lambda-9  reason: not valid java name */
-    public static final void m1341disconnect$lambda9(WalletConnectManagerImpl this$0, String sessionKey) {
+    public static final void disconnect$lambda$8(WalletConnectManagerImpl this$0, String sessionKey) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(sessionKey, "$sessionKey");
         CollectionsKt__MutableCollectionsKt.removeAll(this$0.sessionStoreItems, new WalletConnectManagerImpl$disconnect$2$1(sessionKey));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: disconnect$lambda-10  reason: not valid java name */
-    public static final void m1340disconnect$lambda10(WalletConnectManagerImpl this$0, Throwable th) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.errorsSubject.onNext(th);
+    public static final void disconnect$lambda$9(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     @Override // com.smedialink.storage.domain.manager.wallet_connect.WalletConnectManager
     public void disconnectAll() {
         runWithErrorHandle(new WalletConnectManagerImpl$disconnectAll$1(this));
-        Disposable subscribe = this.walletConnectInteractor.deleteAllWalletConnectSessions().observeOn(this.schedulersProvider.mo707ui()).subscribe(new Action() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda0
+        Completable observeOn = this.walletConnectInteractor.deleteAllWalletConnectSessions().observeOn(this.schedulersProvider.mo707ui());
+        Action action = new Action() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
-                WalletConnectManagerImpl.m1342disconnectAll$lambda11(WalletConnectManagerImpl.this);
+                WalletConnectManagerImpl.disconnectAll$lambda$10(WalletConnectManagerImpl.this);
             }
-        }, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda10
+        };
+        final WalletConnectManagerImpl$disconnectAll$3 walletConnectManagerImpl$disconnectAll$3 = new WalletConnectManagerImpl$disconnectAll$3(this);
+        Disposable subscribe = observeOn.subscribe(action, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletConnectManagerImpl.m1343disconnectAll$lambda12(WalletConnectManagerImpl.this, (Throwable) obj);
+                WalletConnectManagerImpl.disconnectAll$lambda$11(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "walletConnectInteractor\n…t(it) }\n                )");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "override fun disconnectA…pose(subscriptions)\n    }");
         RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: disconnectAll$lambda-11  reason: not valid java name */
-    public static final void m1342disconnectAll$lambda11(WalletConnectManagerImpl this$0) {
+    public static final void disconnectAll$lambda$10(WalletConnectManagerImpl this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.clear();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: disconnectAll$lambda-12  reason: not valid java name */
-    public static final void m1343disconnectAll$lambda12(WalletConnectManagerImpl this$0, Throwable th) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.errorsSubject.onNext(th);
+    public static final void disconnectAll$lambda$11(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     @Override // com.smedialink.storage.domain.manager.wallet_connect.WalletConnectManager
@@ -367,7 +359,8 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         this.subscriptions.clear();
     }
 
-    private final void mapSessionStoreItem(WCSessionStoreItem wCSessionStoreItem) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void mapSessionStoreItem(WCSessionStoreItem wCSessionStoreItem) {
         this.sessionStoreItems.add(wCSessionStoreItem);
         WCClient wCClient = new WCClient(getGsonBuilder(), this.okHttpClient);
         setupClientListeners(wCClient, wCSessionStoreItem);
@@ -387,60 +380,78 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     }
 
     private final void subscribeToErrors() {
-        Disposable subscribe = Observable.merge(this.errorsSubject.hide().groupBy(WalletConnectManagerImpl$$ExternalSyntheticLambda13.INSTANCE).map(WalletConnectManagerImpl$$ExternalSyntheticLambda12.INSTANCE)).subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui()).subscribe(new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda9
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Object obj) {
-                WalletConnectManagerImpl.m1348subscribeToErrors$lambda18(WalletConnectManagerImpl.this, (Throwable) obj);
+        Observable<Throwable> hide = this.errorsSubject.hide();
+        final WalletConnectManagerImpl$subscribeToErrors$1 walletConnectManagerImpl$subscribeToErrors$1 = WalletConnectManagerImpl$subscribeToErrors$1.INSTANCE;
+        Observable<GroupedObservable<K, Throwable>> groupBy = hide.groupBy(new Function() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda12
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Class subscribeToErrors$lambda$15;
+                subscribeToErrors$lambda$15 = WalletConnectManagerImpl.subscribeToErrors$lambda$15(Function1.this, obj);
+                return subscribeToErrors$lambda$15;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "merge(\n                 …ribe { processError(it) }");
+        final WalletConnectManagerImpl$subscribeToErrors$2 walletConnectManagerImpl$subscribeToErrors$2 = WalletConnectManagerImpl$subscribeToErrors$2.INSTANCE;
+        Observable observeOn = Observable.merge(groupBy.map(new Function() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda13
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Observable subscribeToErrors$lambda$16;
+                subscribeToErrors$lambda$16 = WalletConnectManagerImpl.subscribeToErrors$lambda$16(Function1.this, obj);
+                return subscribeToErrors$lambda$16;
+            }
+        })).subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui());
+        final WalletConnectManagerImpl$subscribeToErrors$3 walletConnectManagerImpl$subscribeToErrors$3 = new WalletConnectManagerImpl$subscribeToErrors$3(this);
+        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda11
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                WalletConnectManagerImpl.subscribeToErrors$lambda$17(Function1.this, obj);
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(subscribe, "private fun subscribeToE…pose(subscriptions)\n    }");
         RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToErrors$lambda-16  reason: not valid java name */
-    public static final Class m1346subscribeToErrors$lambda16(Throwable it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        return it.getClass();
+    public static final Class subscribeToErrors$lambda$15(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Class) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToErrors$lambda-17  reason: not valid java name */
-    public static final Observable m1347subscribeToErrors$lambda17(GroupedObservable it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        return it.debounce(1L, TimeUnit.SECONDS);
+    public static final Observable subscribeToErrors$lambda$16(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Observable) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToErrors$lambda-18  reason: not valid java name */
-    public static final void m1348subscribeToErrors$lambda18(WalletConnectManagerImpl this$0, Throwable it) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullExpressionValue(it, "it");
-        this$0.processError(it);
+    public static final void subscribeToErrors$lambda$17(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     private final void subscribeToRxEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui()).subscribe(new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda4
+        Observable observeOn2 = observeOn.subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui());
+        final WalletConnectManagerImpl$subscribeToRxEvents$1 walletConnectManagerImpl$subscribeToRxEvents$1 = new WalletConnectManagerImpl$subscribeToRxEvents$1(this);
+        Disposable subscribe = observeOn2.subscribe(new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletConnectManagerImpl.m1349subscribeToRxEvents$lambda19(WalletConnectManagerImpl.this, (RxEvent) obj);
+                WalletConnectManagerImpl.subscribeToRxEvents$lambda$18(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "rxEventBus\n             …{ updateSessionsChain() }");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "private fun subscribeToR…pose(subscriptions)\n    }");
         RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToRxEvents$lambda-19  reason: not valid java name */
-    public static final void m1349subscribeToRxEvents$lambda19(WalletConnectManagerImpl this$0, RxEvent rxEvent) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.updateSessionsChain();
+    public static final void subscribeToRxEvents$lambda$18(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    private final void updateSessionsChain() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void updateSessionsChain() {
         runWithErrorHandle(new WalletConnectManagerImpl$updateSessionsChain$1(this));
     }
 
@@ -464,10 +475,10 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void onTransactionProcessing(final long j, final WCSessionStoreItem wCSessionStoreItem, WCEthereumTransaction wCEthereumTransaction, final boolean z) {
-        BigInteger convertFromWei;
-        BigInteger bigIntegerOrNull;
+    public final void onTransactionProcessing(long j, WCSessionStoreItem wCSessionStoreItem, WCEthereumTransaction wCEthereumTransaction, boolean z) {
         BigInteger bigInteger;
+        BigInteger bigInteger2;
+        BigInteger bigIntegerOrNull;
         WalletConnectInteractor walletConnectInteractor = this.walletConnectInteractor;
         String from = wCEthereumTransaction.getFrom();
         String to = wCEthereumTransaction.getTo();
@@ -480,54 +491,50 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         String plainString = Convert.fromWei(new BigDecimal(bigInt), Convert.Unit.ETHER).toPlainString();
         Intrinsics.checkNotNullExpressionValue(plainString, "fromWei(\n               …        ).toPlainString()");
         String data = wCEthereumTransaction.getData();
-        BigInteger bigInt2 = wCEthereumTransaction.getGas() == null ? null : Numeric.toBigInt(wCEthereumTransaction.getGas());
-        if (wCEthereumTransaction.getGasPrice() == null) {
-            convertFromWei = null;
-        } else {
+        BigInteger bigInt2 = wCEthereumTransaction.getGas() != null ? Numeric.toBigInt(wCEthereumTransaction.getGas()) : null;
+        if (wCEthereumTransaction.getGasPrice() != null) {
             BigInteger bigInt3 = Numeric.toBigInt(wCEthereumTransaction.getGasPrice());
             Intrinsics.checkNotNullExpressionValue(bigInt3, "toBigInt(gasPrice)");
-            convertFromWei = NumberExtKt.convertFromWei(bigInt3, Convert.Unit.GWEI);
+            bigInteger = NumberExtKt.convertFromWei(bigInt3, Convert.Unit.GWEI);
+        } else {
+            bigInteger = null;
         }
         String nonce = wCEthereumTransaction.getNonce();
-        if (nonce == null) {
-            bigInteger = null;
-        } else {
+        if (nonce != null) {
             bigIntegerOrNull = StringsKt__StringNumberConversionsJVMKt.toBigIntegerOrNull(nonce);
-            bigInteger = bigIntegerOrNull;
+            bigInteger2 = bigIntegerOrNull;
+        } else {
+            bigInteger2 = null;
         }
-        Disposable subscribe = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, plainString, data, bigInt2, convertFromWei, bigInteger, this.cryptoPreferenceHelper.getNetworkType())).observeOn(this.schedulersProvider.mo707ui()).subscribe(new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda11
+        Observable<Result<WalletConnectProcessedTransaction>> observeOn = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, plainString, data, bigInt2, bigInteger, bigInteger2, this.cryptoPreferenceHelper.getNetworkType())).observeOn(this.schedulersProvider.mo707ui());
+        final WalletConnectManagerImpl$onTransactionProcessing$1$3 walletConnectManagerImpl$onTransactionProcessing$1$3 = new WalletConnectManagerImpl$onTransactionProcessing$1$3(this, j, wCSessionStoreItem, z);
+        Consumer<? super Result<WalletConnectProcessedTransaction>> consumer = new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletConnectManagerImpl.m1344onTransactionProcessing$lambda24$lambda22(WalletConnectManagerImpl.this, j, wCSessionStoreItem, z, (Result) obj);
+                WalletConnectManagerImpl.onTransactionProcessing$lambda$23$lambda$21(Function1.this, obj);
             }
-        }, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda6
+        };
+        final WalletConnectManagerImpl$onTransactionProcessing$1$4 walletConnectManagerImpl$onTransactionProcessing$1$4 = new WalletConnectManagerImpl$onTransactionProcessing$1$4(this);
+        Disposable subscribe = observeOn.subscribe(consumer, new Consumer() { // from class: com.smedialink.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletConnectManagerImpl.m1345onTransactionProcessing$lambda24$lambda23(WalletConnectManagerImpl.this, (Throwable) obj);
+                WalletConnectManagerImpl.onTransactionProcessing$lambda$23$lambda$22(Function1.this, obj);
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "walletConnectInteractor\n…) }\n                    )");
+        Intrinsics.checkNotNullExpressionValue(subscribe, "private fun onTransactio…riptions)\n        }\n    }");
         RxExtKt.autoDispose(subscribe, this.subscriptions);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onTransactionProcessing$lambda-24$lambda-22  reason: not valid java name */
-    public static final void m1344onTransactionProcessing$lambda24$lambda22(WalletConnectManagerImpl this$0, long j, WCSessionStoreItem sessionStoreItem, boolean z, Result result) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(sessionStoreItem, "$sessionStoreItem");
-        if (result instanceof Result.Success) {
-            this$0.getEventsDelegate().onTransactionProcessing(j, sessionStoreItem, (WalletConnectProcessedTransaction) ((Result.Success) result).getData(), z);
-        } else if (result instanceof Result.Error) {
-            Intrinsics.checkNotNullExpressionValue(result, "result");
-            this$0.onErrorResult((Result.Error) result);
-        }
+    public static final void onTransactionProcessing$lambda$23$lambda$21(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onTransactionProcessing$lambda-24$lambda-23  reason: not valid java name */
-    public static final void m1345onTransactionProcessing$lambda24$lambda23(WalletConnectManagerImpl this$0, Throwable th) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.errorsSubject.onNext(th);
+    public static final void onTransactionProcessing$lambda$23$lambda$22(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     private final void runWithErrorHandle(Function0<Unit> function0) {
@@ -538,12 +545,14 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         }
     }
 
-    private final void processError(Throwable th) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void processError(Throwable th) {
         Timber.m4e(th);
         getEventsDelegate().onFailure(th);
     }
 
-    private final <T> void onErrorResult(Result.Error<? extends T> error) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final <T> void onErrorResult(Result.Error<? extends T> error) {
         PublishSubject<Throwable> publishSubject = this.errorsSubject;
         Throwable originThrowable = error.getError().getOriginThrowable();
         if (originThrowable == null) {

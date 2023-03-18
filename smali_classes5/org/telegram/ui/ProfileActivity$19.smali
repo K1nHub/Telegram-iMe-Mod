@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/ProfileActivity$19;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
 .source "ProfileActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/ChatRightsEditActivity$ChatRightsEditActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ProfileActivity;->lambda$createView$18(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;)V
+    value = Lorg/telegram/ui/ProfileActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,72 +14,66 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4121
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$19;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 4265
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public didChangeOwner(Lorg/telegram/tgnet/TLRPC$User;)V
-    .locals 4
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 8
 
-    .line 4129
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$19;->this$0:Lorg/telegram/ui/ProfileActivity;
+    .line 4268
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$6900(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/UndoView;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result-object v0
+    move-result v0
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$19;->this$0:Lorg/telegram/ui/ProfileActivity;
+    .line 4269
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$300(Lorg/telegram/ui/ProfileActivity;)J
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    move-result-wide v1
+    move-result v2
 
-    neg-long v1, v1
+    const/4 v3, 0x0
 
-    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$19;->this$0:Lorg/telegram/ui/ProfileActivity;
+    invoke-virtual {v1, v3, v3, v2, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$4800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/tgnet/TLRPC$Chat;
+    .line 4270
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
+    int-to-float v4, v0
 
-    if-eqz v3, :cond_0
+    .line 4271
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
-    const/16 v3, 0xa
+    move-result v0
 
-    goto :goto_0
+    int-to-float v5, v0
 
-    :cond_0
-    const/16 v3, 0x9
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    :goto_0
-    invoke-virtual {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;)V
+    move-result v0
 
-    return-void
-.end method
+    int-to-float v6, v0
 
-.method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
-    .locals 0
+    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->chat_composeBackgroundPaint:Landroid/graphics/Paint;
 
-    .line 4124
-    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$19;->this$0:Lorg/telegram/ui/ProfileActivity;
+    const/4 v3, 0x0
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
+    move-object v2, p1
+
+    invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     return-void
 .end method

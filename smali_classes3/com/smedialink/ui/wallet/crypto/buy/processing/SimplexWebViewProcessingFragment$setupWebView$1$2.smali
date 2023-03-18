@@ -35,19 +35,16 @@
 .method public onPermissionRequest(Landroid/webkit/PermissionRequest;)V
     .locals 1
 
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 133
-    :cond_0
     invoke-virtual {p1}, Landroid/webkit/PermissionRequest;->getResources()[Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/webkit/PermissionRequest;->grant([Ljava/lang/String;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -104,15 +101,12 @@
 
     const/4 p3, 0x0
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p1, p3}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
     .line 145
-    :goto_0
+    :cond_0
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
     invoke-static {p1, p2}, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;->access$setMFilePathCallback$p(Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;Landroid/webkit/ValueCallback;)V
@@ -165,12 +159,12 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_0
     move-exception v0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_1
     move-exception v0
@@ -178,22 +172,30 @@
     move-object p2, p3
 
     .line 154
-    :goto_1
+    :goto_0
     invoke-static {v0}, Ltimber/log/Timber;->e(Ljava/lang/Throwable;)V
 
-    :goto_2
+    :goto_1
     if-eqz p2, :cond_2
 
     .line 159
     iget-object p3, p0, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$setupWebView$1$2;->this$0:Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment;
 
-    invoke-virtual {p2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "file:"
 
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

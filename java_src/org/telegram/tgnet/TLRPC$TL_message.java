@@ -1,8 +1,9 @@
 package org.telegram.tgnet;
 
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_message extends TLRPC$Message {
     public static int constructor = 940666592;
@@ -21,8 +22,8 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.edit_hide = (2097152 & readInt32) != 0;
         this.pinned = (16777216 & readInt32) != 0;
         this.noforwards = (67108864 & readInt32) != 0;
-        this.topic_start = (readInt32 & C0474C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1518id = abstractSerializedData.readInt32(z);
+        this.topic_start = (readInt32 & C0468C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
+        this.f1523id = abstractSerializedData.readInt32(z);
         if ((this.flags & 256) != 0) {
             this.from_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -77,7 +78,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         if ((this.flags & 8388608) != 0) {
             this.replies = TLRPC$MessageReplies.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             this.edit_date = abstractSerializedData.readInt32(z);
         }
         if ((this.flags & 65536) != 0) {
@@ -134,10 +135,10 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.flags = i9;
         int i10 = this.noforwards ? i9 | ConnectionsManager.FileTypeFile : i9 & (-67108865);
         this.flags = i10;
-        int i11 = this.topic_start ? i10 | C0474C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
+        int i11 = this.topic_start ? i10 | C0468C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
         this.flags = i11;
         abstractSerializedData.writeInt32(i11);
-        abstractSerializedData.writeInt32(this.f1518id);
+        abstractSerializedData.writeInt32(this.f1523id);
         if ((this.flags & 256) != 0) {
             this.from_id.serializeToStream(abstractSerializedData);
         }
@@ -176,7 +177,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
         if ((this.flags & 8388608) != 0) {
             this.replies.serializeToStream(abstractSerializedData);
         }
-        if ((this.flags & 32768) != 0) {
+        if ((this.flags & LiteMode.FLAG_CHAT_SCALE) != 0) {
             abstractSerializedData.writeInt32(this.edit_date);
         }
         if ((this.flags & 65536) != 0) {

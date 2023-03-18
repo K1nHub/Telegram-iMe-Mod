@@ -327,7 +327,7 @@
 
     new-instance v1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    const/16 v2, 0xa
+    const/16 v2, 0xd
 
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 

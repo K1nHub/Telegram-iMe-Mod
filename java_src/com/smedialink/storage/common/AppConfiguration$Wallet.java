@@ -27,6 +27,6 @@ public final class AppConfiguration$Wallet {
     }
 
     public static final String getWalletBotUsernameWithAT() {
-        return Intrinsics.stringPlus("@", EnvironmentManager.INSTANCE.getEnvironmentInformation().getWalletActivationBotUsername());
+        return '@' + EnvironmentManager.INSTANCE.getEnvironmentInformation().getWalletActivationBotUsername();
     }
 }

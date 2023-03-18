@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nGoogleServicesMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GoogleServicesMapper.kt\ncom/smedialink/storage/data/mapper/google/GoogleServicesMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,18:1\n1547#2:19\n1618#2,3:20\n*S KotlinDebug\n*F\n+ 1 GoogleServicesMapper.kt\ncom/smedialink/storage/data/mapper/google/GoogleServicesMapperKt\n*L\n11#1:19\n11#1:20,3\n*E\n"
+    value = "SMAP\nGoogleServicesMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GoogleServicesMapper.kt\ncom/smedialink/storage/data/mapper/google/GoogleServicesMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,18:1\n1549#2:19\n1620#2,3:20\n*S KotlinDebug\n*F\n+ 1 GoogleServicesMapper.kt\ncom/smedialink/storage/data/mapper/google/GoogleServicesMapperKt\n*L\n11#1:19\n11#1:20,3\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 
     move-result-object p0
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -75,7 +75,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -91,7 +91,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/data/network/model/response/google/ImageToObjectsResponse$RecognizedImageObject;
 
     .line 11
@@ -111,6 +111,7 @@
 
     invoke-direct {v2, v3, v1}, Lcom/smedialink/storage/domain/model/google/RecognizedImageModel;-><init>(Ljava/lang/String;I)V
 
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

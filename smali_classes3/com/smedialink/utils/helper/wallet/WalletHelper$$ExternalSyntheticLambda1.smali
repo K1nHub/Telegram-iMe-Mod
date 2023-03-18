@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/helper/wallet/WalletHelper$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->$r8$lambda$IWbgu1Y8owowfT-R6nD4CYeeyFQ(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->$r8$lambda$WeN3mF-j58Iud2dqoQVwVKZUdKI(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

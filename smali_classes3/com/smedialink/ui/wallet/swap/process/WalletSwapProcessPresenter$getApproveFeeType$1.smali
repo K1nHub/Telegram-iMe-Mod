@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 837
+    .line 849
     check-cast p1, Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter$getApproveFeeType$1;->invoke(Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 838
+    .line 850
     iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter$getApproveFeeType$1;->this$0:Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
     invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;->access$selectApproveFee(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;Lcom/smedialink/model/wallet/crypto/send/fee/GasPriceItem;)V

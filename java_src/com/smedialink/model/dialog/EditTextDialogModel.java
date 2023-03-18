@@ -109,7 +109,7 @@ public final class EditTextDialogModel {
     }
 
     public String toString() {
-        return "EditTextDialogModel(title=" + ((Object) this.title) + ", subtitle=" + ((Object) this.subtitle) + ", hint=" + ((Object) this.hint) + ", presetText=" + ((Object) this.presetText) + ", shouldHideKeyboardOnDismiss=" + this.shouldHideKeyboardOnDismiss + ", negativeButtonText=" + ((Object) this.negativeButtonText) + ", positiveButtonText=" + ((Object) this.positiveButtonText) + ')';
+        return "EditTextDialogModel(title=" + this.title + ", subtitle=" + this.subtitle + ", hint=" + this.hint + ", presetText=" + this.presetText + ", shouldHideKeyboardOnDismiss=" + this.shouldHideKeyboardOnDismiss + ", negativeButtonText=" + this.negativeButtonText + ", positiveButtonText=" + this.positiveButtonText + ')';
     }
 
     public EditTextDialogModel(String str, String str2, String str3, String str4, boolean z, String str5, String str6) {

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment$$ExternalSyntheticLambda3;->f$1:Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->$r8$lambda$E6irUgT5-VmiL7lCvoS9iYnoj5Q(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->$r8$lambda$lXYVZq3obBatWws3yz1i8G2rxMg(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
 
     return-void
 .end method

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 6038
+    .line 6049
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 6045
+    .line 6056
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -49,12 +49,12 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 6047
+    .line 6058
     invoke-virtual {p0, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 6048
+    .line 6059
     invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
     move-result v4
@@ -71,13 +71,13 @@
 
     goto :goto_0
 
-    .line 6053
+    .line 6064
     :cond_1
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 6054
+    .line 6065
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -86,7 +86,7 @@
 
     const/16 v2, 0x46
 
-    .line 6057
+    .line 6068
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -97,7 +97,7 @@
 
     move-result p1
 
-    .line 6058
+    .line 6069
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$19800(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
@@ -110,7 +110,7 @@
 
     if-nez v2, :cond_3
 
-    .line 6061
+    .line 6072
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$19900(Lorg/telegram/ui/PhotoViewer;)I
@@ -128,7 +128,7 @@
     :cond_2
     const/16 v2, 0x40
 
-    .line 6066
+    .line 6077
     :goto_2
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -142,7 +142,7 @@
 
     move-result v2
 
-    .line 6067
+    .line 6078
     iget-object v4, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v4}, Lorg/telegram/ui/PhotoViewer;->access$19800(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
@@ -155,12 +155,12 @@
     :goto_3
     if-ge v1, v0, :cond_5
 
-    .line 6071
+    .line 6082
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 6072
+    .line 6083
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v4
@@ -174,7 +174,7 @@
     :cond_4
     const/high16 v4, 0x40000000    # 2.0f
 
-    .line 6075
+    .line 6086
     invoke-static {p1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v5
@@ -193,12 +193,12 @@
     :cond_5
     mul-int p1, p1, v3
 
-    .line 6077
+    .line 6088
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->setMeasuredDimension(II)V
 
     goto :goto_5
 
-    .line 6079
+    .line 6090
     :cond_6
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->setMeasuredDimension(II)V
 

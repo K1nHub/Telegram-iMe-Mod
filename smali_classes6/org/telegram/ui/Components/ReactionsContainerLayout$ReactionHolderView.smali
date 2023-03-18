@@ -213,7 +213,7 @@
 .end method
 
 .method private setReaction(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;I)V
-    .locals 6
+    .locals 5
 
     .line 1316
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
@@ -257,11 +257,9 @@
 
     iget-object p2, p2, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
-    const/16 v0, 0x8
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz p2, :cond_2
 
@@ -282,7 +280,9 @@
     if-eqz p2, :cond_2
 
     :cond_1
-    invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    const/16 p2, 0x2008
+
+    invoke-static {p2}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result p2
 
@@ -339,7 +339,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1, v2, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
+    invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
     goto :goto_1
 
@@ -367,17 +367,17 @@
 
     const/4 p2, 0x4
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2200(Lorg/telegram/ui/Components/ReactionsContainerLayout;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2200(Lorg/telegram/ui/Components/ReactionsContainerLayout;)I
 
-    move-result v3
+    move-result v2
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
+    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    iget-wide v4, v4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
+    iget-wide v3, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    invoke-direct {p1, p2, v3, v4, v5}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
+    invoke-direct {p1, p2, v2, v3, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
 
     .line 1336
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
@@ -394,17 +394,17 @@
 
     const/4 p2, 0x3
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2200(Lorg/telegram/ui/Components/ReactionsContainerLayout;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2200(Lorg/telegram/ui/Components/ReactionsContainerLayout;)I
 
-    move-result v3
+    move-result v2
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
+    iget-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    iget-wide v4, v4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
+    iget-wide v3, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
-    invoke-direct {p1, p2, v3, v4, v5}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
+    invoke-direct {p1, p2, v2, v3, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;-><init>(IIJ)V
 
     .line 1339
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
@@ -419,7 +419,7 @@
     .line 1342
     :cond_4
     :goto_1
-    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setFocusable(Z)V
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     .line 1343
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->hasEnterAnimation:Z
@@ -447,36 +447,38 @@
     .line 1344
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->hasEnterAnimation:Z
 
+    const/16 p2, 0x8
+
     if-nez p1, :cond_6
 
     .line 1345
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
     .line 1346
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 1347
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->switchedToLoopView:Z
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->switchedToLoopView:Z
 
     goto :goto_3
 
     .line 1349
     :cond_6
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->switchedToLoopView:Z
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->switchedToLoopView:Z
 
     .line 1350
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 1351
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
     .line 1353
     :goto_3
@@ -629,7 +631,7 @@
 
     move-result-object v2
 
-    const/16 v3, 0x8
+    const/16 v3, 0x2008
 
     .line 1367
     invoke-static {v3}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z

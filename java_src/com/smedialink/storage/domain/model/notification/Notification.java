@@ -14,7 +14,7 @@ public abstract class Notification {
     private final String date;
 
     /* renamed from: id */
-    private final String f328id;
+    private final String f331id;
     private boolean isRead;
     private final NetworkType networkType;
     private final NotificationType type;
@@ -25,7 +25,7 @@ public abstract class Notification {
     }
 
     private Notification(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType) {
-        this.f328id = str;
+        this.f331id = str;
         this.isRead = z;
         this.type = notificationType;
         this.date = str2;
@@ -34,7 +34,7 @@ public abstract class Notification {
     }
 
     public String getId() {
-        return this.f328id;
+        return this.f331id;
     }
 
     public boolean isRead() {
@@ -68,7 +68,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f339id;
+        private final String f342id;
         private boolean isRead;
         private final NetworkType networkType;
         private final BigDecimal spentAmount;
@@ -169,7 +169,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f339id;
+            return this.f342id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -240,7 +240,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(status, "status");
             Intrinsics.checkNotNullParameter(spentAmount, "spentAmount");
             Intrinsics.checkNotNullParameter(spentFiatCode, "spentFiatCode");
-            this.f339id = id;
+            this.f342id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -261,7 +261,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f332id;
+        private final String f335id;
         private boolean isRead;
         private final NetworkType networkType;
         private final Status status;
@@ -339,7 +339,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f332id;
+            return this.f335id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -390,7 +390,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(networkType, "networkType");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
             Intrinsics.checkNotNullParameter(status, "status");
-            this.f332id = id;
+            this.f335id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -407,7 +407,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f329id;
+        private final String f332id;
         private boolean isRead;
         private final NetworkType networkType;
         private final Status status;
@@ -491,7 +491,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f329id;
+            return this.f332id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -547,7 +547,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
             Intrinsics.checkNotNullParameter(txHash, "txHash");
             Intrinsics.checkNotNullParameter(status, "status");
-            this.f329id = id;
+            this.f332id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -568,7 +568,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f330id;
+        private final String f333id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String payerUserId;
@@ -655,7 +655,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f330id;
+            return this.f333id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -716,7 +716,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(assetCode, "assetCode");
             Intrinsics.checkNotNullParameter(assetName, "assetName");
             Intrinsics.checkNotNullParameter(payerUserId, "payerUserId");
-            this.f330id = id;
+            this.f333id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -738,7 +738,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f331id;
+        private final String f334id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String payerUserId;
@@ -831,7 +831,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f331id;
+            return this.f334id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -897,7 +897,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(assetName, "assetName");
             Intrinsics.checkNotNullParameter(payerUserId, "payerUserId");
             Intrinsics.checkNotNullParameter(status, "status");
-            this.f331id = id;
+            this.f334id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -918,7 +918,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f342id;
+        private final String f345id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String shouldFinishAt;
@@ -1013,7 +1013,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f342id;
+            return this.f345id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -1079,7 +1079,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(shouldFinishAt, "shouldFinishAt");
-            this.f342id = id;
+            this.f345id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1100,7 +1100,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f341id;
+        private final String f344id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String stakingId;
@@ -1189,7 +1189,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f341id;
+            return this.f344id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -1250,7 +1250,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(stakingName, "stakingName");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
             Intrinsics.checkNotNullParameter(amount, "amount");
-            this.f341id = id;
+            this.f344id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1269,7 +1269,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f343id;
+        private final String f346id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String stakingAPR;
@@ -1383,7 +1383,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f343id;
+            return this.f346id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -1464,7 +1464,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(stakingAPR, "stakingAPR");
             Intrinsics.checkNotNullParameter(stakingEndsAt, "stakingEndsAt");
             Intrinsics.checkNotNullParameter(stakingToken, "stakingToken");
-            this.f343id = id;
+            this.f346id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1489,7 +1489,7 @@ public abstract class Notification {
         private final String debtAsUsd;
 
         /* renamed from: id */
-        private final String f340id;
+        private final String f343id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String profitAsToken;
@@ -1595,7 +1595,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f340id;
+            return this.f343id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -1671,7 +1671,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(debtAsUsd, "debtAsUsd");
             Intrinsics.checkNotNullParameter(profitAsToken, "profitAsToken");
             Intrinsics.checkNotNullParameter(profitAsUsd, "profitAsUsd");
-            this.f340id = id;
+            this.f343id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1693,7 +1693,7 @@ public abstract class Notification {
         private final String date;
 
         /* renamed from: id */
-        private final String f344id;
+        private final String f347id;
         private boolean isRead;
         private final NetworkType networkType;
         private final NotificationType type;
@@ -1785,7 +1785,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f344id;
+            return this.f347id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -1826,7 +1826,7 @@ public abstract class Notification {
             Intrinsics.checkNotNullParameter(date, "date");
             Intrinsics.checkNotNullParameter(userId, "userId");
             Intrinsics.checkNotNullParameter(networkType, "networkType");
-            this.f344id = id;
+            this.f347id = id;
             this.isRead = z;
             this.type = type;
             this.date = date;
@@ -1843,7 +1843,7 @@ public abstract class Notification {
         private final String fromAddress;
 
         /* renamed from: id */
-        private final String f333id;
+        private final String f336id;
         private boolean isRead;
         private final NetworkType networkType;
         private final String toAddress;
@@ -1857,7 +1857,7 @@ public abstract class Notification {
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
         public String getId() {
-            return this.f333id;
+            return this.f336id;
         }
 
         @Override // com.smedialink.storage.domain.model.notification.Notification
@@ -1908,7 +1908,7 @@ public abstract class Notification {
 
         private CryptoTransfer(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType, TokenCode tokenCode, String str4, String str5, String str6) {
             super(str, z, notificationType, str2, str3, networkType, null);
-            this.f333id = str;
+            this.f336id = str;
             this.isRead = z;
             this.type = notificationType;
             this.date = str2;
@@ -1923,458 +1923,7 @@ public abstract class Notification {
         /* compiled from: Notification.kt */
         /* renamed from: com.smedialink.storage.domain.model.notification.Notification$CryptoTransfer$In */
         /* loaded from: classes3.dex */
-        public static final class C1772In extends CryptoTransfer {
-            private final String amount;
-            private final String date;
-            private final String fromAddress;
-
-            /* renamed from: id */
-            private final String f334id;
-            private boolean isRead;
-            private final NetworkType networkType;
-            private final String toAddress;
-            private final TokenCode tokenCode;
-            private final NotificationType type;
-            private final String userId;
-
-            public final String component1() {
-                return getId();
-            }
-
-            public final String component10() {
-                return getAmount();
-            }
-
-            public final boolean component2() {
-                return isRead();
-            }
-
-            public final NotificationType component3() {
-                return getType();
-            }
-
-            public final String component4() {
-                return getDate();
-            }
-
-            public final String component5() {
-                return getUserId();
-            }
-
-            public final NetworkType component6() {
-                return getNetworkType();
-            }
-
-            public final TokenCode component7() {
-                return getTokenCode();
-            }
-
-            public final String component8() {
-                return getFromAddress();
-            }
-
-            public final String component9() {
-                return getToAddress();
-            }
-
-            public final C1772In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
-                Intrinsics.checkNotNullParameter(id, "id");
-                Intrinsics.checkNotNullParameter(type, "type");
-                Intrinsics.checkNotNullParameter(date, "date");
-                Intrinsics.checkNotNullParameter(userId, "userId");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
-                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
-                Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1772In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
-            }
-
-            public boolean equals(Object obj) {
-                if (this == obj) {
-                    return true;
-                }
-                if (obj instanceof C1772In) {
-                    C1772In c1772In = (C1772In) obj;
-                    return Intrinsics.areEqual(getId(), c1772In.getId()) && isRead() == c1772In.isRead() && getType() == c1772In.getType() && Intrinsics.areEqual(getDate(), c1772In.getDate()) && Intrinsics.areEqual(getUserId(), c1772In.getUserId()) && getNetworkType() == c1772In.getNetworkType() && getTokenCode() == c1772In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1772In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1772In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1772In.getAmount());
-                }
-                return false;
-            }
-
-            public int hashCode() {
-                int hashCode = getId().hashCode() * 31;
-                boolean isRead = isRead();
-                int i = isRead;
-                if (isRead) {
-                    i = 1;
-                }
-                return ((((((((((((((((hashCode + i) * 31) + getType().hashCode()) * 31) + getDate().hashCode()) * 31) + getUserId().hashCode()) * 31) + getNetworkType().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getFromAddress().hashCode()) * 31) + getToAddress().hashCode()) * 31) + getAmount().hashCode();
-            }
-
-            public String toString() {
-                return "In(id=" + getId() + ", isRead=" + isRead() + ", type=" + getType() + ", date=" + getDate() + ", userId=" + getUserId() + ", networkType=" + getNetworkType() + ", tokenCode=" + getTokenCode() + ", fromAddress=" + getFromAddress() + ", toAddress=" + getToAddress() + ", amount=" + getAmount() + ')';
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public String getId() {
-                return this.f334id;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public boolean isRead() {
-                return this.isRead;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public void setRead(boolean z) {
-                this.isRead = z;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public NotificationType getType() {
-                return this.type;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public String getDate() {
-                return this.date;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public String getUserId() {
-                return this.userId;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public NetworkType getNetworkType() {
-                return this.networkType;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public TokenCode getTokenCode() {
-                return this.tokenCode;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public String getFromAddress() {
-                return this.fromAddress;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public String getToAddress() {
-                return this.toAddress;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public String getAmount() {
-                return this.amount;
-            }
-
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1772In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
-                super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
-                Intrinsics.checkNotNullParameter(id, "id");
-                Intrinsics.checkNotNullParameter(type, "type");
-                Intrinsics.checkNotNullParameter(date, "date");
-                Intrinsics.checkNotNullParameter(userId, "userId");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
-                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
-                Intrinsics.checkNotNullParameter(amount, "amount");
-                this.f334id = id;
-                this.isRead = z;
-                this.type = type;
-                this.date = date;
-                this.userId = userId;
-                this.networkType = networkType;
-                this.tokenCode = tokenCode;
-                this.fromAddress = fromAddress;
-                this.toAddress = toAddress;
-                this.amount = amount;
-            }
-        }
-
-        /* compiled from: Notification.kt */
-        /* loaded from: classes3.dex */
-        public static final class Out extends CryptoTransfer {
-            private final String amount;
-            private final String date;
-            private final String fromAddress;
-
-            /* renamed from: id */
-            private final String f335id;
-            private boolean isRead;
-            private final NetworkType networkType;
-            private final Status status;
-            private final String toAddress;
-            private final TokenCode tokenCode;
-            private final NotificationType type;
-            private final String userId;
-
-            public final Status component1() {
-                return this.status;
-            }
-
-            public final String component10() {
-                return getToAddress();
-            }
-
-            public final String component11() {
-                return getAmount();
-            }
-
-            public final String component2() {
-                return getId();
-            }
-
-            public final boolean component3() {
-                return isRead();
-            }
-
-            public final NotificationType component4() {
-                return getType();
-            }
-
-            public final String component5() {
-                return getDate();
-            }
-
-            public final String component6() {
-                return getUserId();
-            }
-
-            public final NetworkType component7() {
-                return getNetworkType();
-            }
-
-            public final TokenCode component8() {
-                return getTokenCode();
-            }
-
-            public final String component9() {
-                return getFromAddress();
-            }
-
-            public final Out copy(Status status, String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
-                Intrinsics.checkNotNullParameter(status, "status");
-                Intrinsics.checkNotNullParameter(id, "id");
-                Intrinsics.checkNotNullParameter(type, "type");
-                Intrinsics.checkNotNullParameter(date, "date");
-                Intrinsics.checkNotNullParameter(userId, "userId");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
-                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
-                Intrinsics.checkNotNullParameter(amount, "amount");
-                return new Out(status, id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
-            }
-
-            public boolean equals(Object obj) {
-                if (this == obj) {
-                    return true;
-                }
-                if (obj instanceof Out) {
-                    Out out = (Out) obj;
-                    return this.status == out.status && Intrinsics.areEqual(getId(), out.getId()) && isRead() == out.isRead() && getType() == out.getType() && Intrinsics.areEqual(getDate(), out.getDate()) && Intrinsics.areEqual(getUserId(), out.getUserId()) && getNetworkType() == out.getNetworkType() && getTokenCode() == out.getTokenCode() && Intrinsics.areEqual(getFromAddress(), out.getFromAddress()) && Intrinsics.areEqual(getToAddress(), out.getToAddress()) && Intrinsics.areEqual(getAmount(), out.getAmount());
-                }
-                return false;
-            }
-
-            public int hashCode() {
-                int hashCode = ((this.status.hashCode() * 31) + getId().hashCode()) * 31;
-                boolean isRead = isRead();
-                int i = isRead;
-                if (isRead) {
-                    i = 1;
-                }
-                return ((((((((((((((((hashCode + i) * 31) + getType().hashCode()) * 31) + getDate().hashCode()) * 31) + getUserId().hashCode()) * 31) + getNetworkType().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getFromAddress().hashCode()) * 31) + getToAddress().hashCode()) * 31) + getAmount().hashCode();
-            }
-
-            public String toString() {
-                return "Out(status=" + this.status + ", id=" + getId() + ", isRead=" + isRead() + ", type=" + getType() + ", date=" + getDate() + ", userId=" + getUserId() + ", networkType=" + getNetworkType() + ", tokenCode=" + getTokenCode() + ", fromAddress=" + getFromAddress() + ", toAddress=" + getToAddress() + ", amount=" + getAmount() + ')';
-            }
-
-            public final Status getStatus() {
-                return this.status;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public String getId() {
-                return this.f335id;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public boolean isRead() {
-                return this.isRead;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public void setRead(boolean z) {
-                this.isRead = z;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public NotificationType getType() {
-                return this.type;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public String getDate() {
-                return this.date;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public String getUserId() {
-                return this.userId;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-            public NetworkType getNetworkType() {
-                return this.networkType;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public TokenCode getTokenCode() {
-                return this.tokenCode;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public String getFromAddress() {
-                return this.fromAddress;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public String getToAddress() {
-                return this.toAddress;
-            }
-
-            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-            public String getAmount() {
-                return this.amount;
-            }
-
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Out(Status status, String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
-                super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
-                Intrinsics.checkNotNullParameter(status, "status");
-                Intrinsics.checkNotNullParameter(id, "id");
-                Intrinsics.checkNotNullParameter(type, "type");
-                Intrinsics.checkNotNullParameter(date, "date");
-                Intrinsics.checkNotNullParameter(userId, "userId");
-                Intrinsics.checkNotNullParameter(networkType, "networkType");
-                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
-                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
-                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
-                Intrinsics.checkNotNullParameter(amount, "amount");
-                this.status = status;
-                this.f335id = id;
-                this.isRead = z;
-                this.type = type;
-                this.date = date;
-                this.userId = userId;
-                this.networkType = networkType;
-                this.tokenCode = tokenCode;
-                this.fromAddress = fromAddress;
-                this.toAddress = toAddress;
-                this.amount = amount;
-            }
-        }
-    }
-
-    /* compiled from: Notification.kt */
-    /* loaded from: classes3.dex */
-    public static abstract class Donation extends CryptoTransfer {
-        private final String amount;
-        private final String date;
-        private final String fromAddress;
-
-        /* renamed from: id */
-        private final String f336id;
-        private boolean isRead;
-        private final NetworkType networkType;
-        private final String toAddress;
-        private final TokenCode tokenCode;
-        private final NotificationType type;
-        private final String userId;
-
-        public /* synthetic */ Donation(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType, TokenCode tokenCode, String str4, String str5, String str6, DefaultConstructorMarker defaultConstructorMarker) {
-            this(str, z, notificationType, str2, str3, networkType, tokenCode, str4, str5, str6);
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-        public String getId() {
-            return this.f336id;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-        public boolean isRead() {
-            return this.isRead;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-        public void setRead(boolean z) {
-            this.isRead = z;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-        public NotificationType getType() {
-            return this.type;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-        public String getDate() {
-            return this.date;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-        public String getUserId() {
-            return this.userId;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
-        public NetworkType getNetworkType() {
-            return this.networkType;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-        public TokenCode getTokenCode() {
-            return this.tokenCode;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-        public String getFromAddress() {
-            return this.fromAddress;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-        public String getToAddress() {
-            return this.toAddress;
-        }
-
-        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
-        public String getAmount() {
-            return this.amount;
-        }
-
-        private Donation(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType, TokenCode tokenCode, String str4, String str5, String str6) {
-            super(str, z, notificationType, str2, str3, networkType, tokenCode, str4, str5, str6, null);
-            this.f336id = str;
-            this.isRead = z;
-            this.type = notificationType;
-            this.date = str2;
-            this.userId = str3;
-            this.networkType = networkType;
-            this.tokenCode = tokenCode;
-            this.fromAddress = str4;
-            this.toAddress = str5;
-            this.amount = str6;
-        }
-
-        /* compiled from: Notification.kt */
-        /* renamed from: com.smedialink.storage.domain.model.notification.Notification$Donation$In */
-        /* loaded from: classes3.dex */
-        public static final class C1773In extends Donation {
+        public static final class C1847In extends CryptoTransfer {
             private final String amount;
             private final String date;
             private final String fromAddress;
@@ -2428,7 +1977,7 @@ public abstract class Notification {
                 return getToAddress();
             }
 
-            public final C1773In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public final C1847In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
                 Intrinsics.checkNotNullParameter(date, "date");
@@ -2438,16 +1987,16 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
-                return new C1773In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
+                return new C1847In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
             }
 
             public boolean equals(Object obj) {
                 if (this == obj) {
                     return true;
                 }
-                if (obj instanceof C1773In) {
-                    C1773In c1773In = (C1773In) obj;
-                    return Intrinsics.areEqual(getId(), c1773In.getId()) && isRead() == c1773In.isRead() && getType() == c1773In.getType() && Intrinsics.areEqual(getDate(), c1773In.getDate()) && Intrinsics.areEqual(getUserId(), c1773In.getUserId()) && getNetworkType() == c1773In.getNetworkType() && getTokenCode() == c1773In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1773In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1773In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1773In.getAmount());
+                if (obj instanceof C1847In) {
+                    C1847In c1847In = (C1847In) obj;
+                    return Intrinsics.areEqual(getId(), c1847In.getId()) && isRead() == c1847In.isRead() && getType() == c1847In.getType() && Intrinsics.areEqual(getDate(), c1847In.getDate()) && Intrinsics.areEqual(getUserId(), c1847In.getUserId()) && getNetworkType() == c1847In.getNetworkType() && getTokenCode() == c1847In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1847In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1847In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1847In.getAmount());
                 }
                 return false;
             }
@@ -2466,63 +2015,63 @@ public abstract class Notification {
                 return "In(id=" + getId() + ", isRead=" + isRead() + ", type=" + getType() + ", date=" + getDate() + ", userId=" + getUserId() + ", networkType=" + getNetworkType() + ", tokenCode=" + getTokenCode() + ", fromAddress=" + getFromAddress() + ", toAddress=" + getToAddress() + ", amount=" + getAmount() + ')';
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public String getId() {
                 return this.f337id;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public boolean isRead() {
                 return this.isRead;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public void setRead(boolean z) {
                 this.isRead = z;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public NotificationType getType() {
                 return this.type;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public String getDate() {
                 return this.date;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public String getUserId() {
                 return this.userId;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public NetworkType getNetworkType() {
                 return this.networkType;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
             public TokenCode getTokenCode() {
                 return this.tokenCode;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
             public String getFromAddress() {
                 return this.fromAddress;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
             public String getToAddress() {
                 return this.toAddress;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
             public String getAmount() {
                 return this.amount;
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C1773In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+            public C1847In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
                 super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
                 Intrinsics.checkNotNullParameter(id, "id");
                 Intrinsics.checkNotNullParameter(type, "type");
@@ -2548,7 +2097,7 @@ public abstract class Notification {
 
         /* compiled from: Notification.kt */
         /* loaded from: classes3.dex */
-        public static final class Out extends Donation {
+        public static final class Out extends CryptoTransfer {
             private final String amount;
             private final String date;
             private final String fromAddress;
@@ -2650,9 +2199,460 @@ public abstract class Notification {
                 return this.status;
             }
 
-            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
             public String getId() {
                 return this.f338id;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public boolean isRead() {
+                return this.isRead;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public void setRead(boolean z) {
+                this.isRead = z;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public NotificationType getType() {
+                return this.type;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public String getDate() {
+                return this.date;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public String getUserId() {
+                return this.userId;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public NetworkType getNetworkType() {
+                return this.networkType;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public TokenCode getTokenCode() {
+                return this.tokenCode;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public String getFromAddress() {
+                return this.fromAddress;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public String getToAddress() {
+                return this.toAddress;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public String getAmount() {
+                return this.amount;
+            }
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            public Out(Status status, String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+                super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
+                Intrinsics.checkNotNullParameter(status, "status");
+                Intrinsics.checkNotNullParameter(id, "id");
+                Intrinsics.checkNotNullParameter(type, "type");
+                Intrinsics.checkNotNullParameter(date, "date");
+                Intrinsics.checkNotNullParameter(userId, "userId");
+                Intrinsics.checkNotNullParameter(networkType, "networkType");
+                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
+                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
+                Intrinsics.checkNotNullParameter(amount, "amount");
+                this.status = status;
+                this.f338id = id;
+                this.isRead = z;
+                this.type = type;
+                this.date = date;
+                this.userId = userId;
+                this.networkType = networkType;
+                this.tokenCode = tokenCode;
+                this.fromAddress = fromAddress;
+                this.toAddress = toAddress;
+                this.amount = amount;
+            }
+        }
+    }
+
+    /* compiled from: Notification.kt */
+    /* loaded from: classes3.dex */
+    public static abstract class Donation extends CryptoTransfer {
+        private final String amount;
+        private final String date;
+        private final String fromAddress;
+
+        /* renamed from: id */
+        private final String f339id;
+        private boolean isRead;
+        private final NetworkType networkType;
+        private final String toAddress;
+        private final TokenCode tokenCode;
+        private final NotificationType type;
+        private final String userId;
+
+        public /* synthetic */ Donation(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType, TokenCode tokenCode, String str4, String str5, String str6, DefaultConstructorMarker defaultConstructorMarker) {
+            this(str, z, notificationType, str2, str3, networkType, tokenCode, str4, str5, str6);
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+        public String getId() {
+            return this.f339id;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+        public boolean isRead() {
+            return this.isRead;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+        public void setRead(boolean z) {
+            this.isRead = z;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+        public NotificationType getType() {
+            return this.type;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+        public String getDate() {
+            return this.date;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+        public String getUserId() {
+            return this.userId;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+        public NetworkType getNetworkType() {
+            return this.networkType;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+        public TokenCode getTokenCode() {
+            return this.tokenCode;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+        public String getFromAddress() {
+            return this.fromAddress;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+        public String getToAddress() {
+            return this.toAddress;
+        }
+
+        @Override // com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+        public String getAmount() {
+            return this.amount;
+        }
+
+        private Donation(String str, boolean z, NotificationType notificationType, String str2, String str3, NetworkType networkType, TokenCode tokenCode, String str4, String str5, String str6) {
+            super(str, z, notificationType, str2, str3, networkType, tokenCode, str4, str5, str6, null);
+            this.f339id = str;
+            this.isRead = z;
+            this.type = notificationType;
+            this.date = str2;
+            this.userId = str3;
+            this.networkType = networkType;
+            this.tokenCode = tokenCode;
+            this.fromAddress = str4;
+            this.toAddress = str5;
+            this.amount = str6;
+        }
+
+        /* compiled from: Notification.kt */
+        /* renamed from: com.smedialink.storage.domain.model.notification.Notification$Donation$In */
+        /* loaded from: classes3.dex */
+        public static final class C1848In extends Donation {
+            private final String amount;
+            private final String date;
+            private final String fromAddress;
+
+            /* renamed from: id */
+            private final String f340id;
+            private boolean isRead;
+            private final NetworkType networkType;
+            private final String toAddress;
+            private final TokenCode tokenCode;
+            private final NotificationType type;
+            private final String userId;
+
+            public final String component1() {
+                return getId();
+            }
+
+            public final String component10() {
+                return getAmount();
+            }
+
+            public final boolean component2() {
+                return isRead();
+            }
+
+            public final NotificationType component3() {
+                return getType();
+            }
+
+            public final String component4() {
+                return getDate();
+            }
+
+            public final String component5() {
+                return getUserId();
+            }
+
+            public final NetworkType component6() {
+                return getNetworkType();
+            }
+
+            public final TokenCode component7() {
+                return getTokenCode();
+            }
+
+            public final String component8() {
+                return getFromAddress();
+            }
+
+            public final String component9() {
+                return getToAddress();
+            }
+
+            public final C1848In copy(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+                Intrinsics.checkNotNullParameter(id, "id");
+                Intrinsics.checkNotNullParameter(type, "type");
+                Intrinsics.checkNotNullParameter(date, "date");
+                Intrinsics.checkNotNullParameter(userId, "userId");
+                Intrinsics.checkNotNullParameter(networkType, "networkType");
+                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
+                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
+                Intrinsics.checkNotNullParameter(amount, "amount");
+                return new C1848In(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof C1848In) {
+                    C1848In c1848In = (C1848In) obj;
+                    return Intrinsics.areEqual(getId(), c1848In.getId()) && isRead() == c1848In.isRead() && getType() == c1848In.getType() && Intrinsics.areEqual(getDate(), c1848In.getDate()) && Intrinsics.areEqual(getUserId(), c1848In.getUserId()) && getNetworkType() == c1848In.getNetworkType() && getTokenCode() == c1848In.getTokenCode() && Intrinsics.areEqual(getFromAddress(), c1848In.getFromAddress()) && Intrinsics.areEqual(getToAddress(), c1848In.getToAddress()) && Intrinsics.areEqual(getAmount(), c1848In.getAmount());
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                int hashCode = getId().hashCode() * 31;
+                boolean isRead = isRead();
+                int i = isRead;
+                if (isRead) {
+                    i = 1;
+                }
+                return ((((((((((((((((hashCode + i) * 31) + getType().hashCode()) * 31) + getDate().hashCode()) * 31) + getUserId().hashCode()) * 31) + getNetworkType().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getFromAddress().hashCode()) * 31) + getToAddress().hashCode()) * 31) + getAmount().hashCode();
+            }
+
+            public String toString() {
+                return "In(id=" + getId() + ", isRead=" + isRead() + ", type=" + getType() + ", date=" + getDate() + ", userId=" + getUserId() + ", networkType=" + getNetworkType() + ", tokenCode=" + getTokenCode() + ", fromAddress=" + getFromAddress() + ", toAddress=" + getToAddress() + ", amount=" + getAmount() + ')';
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public String getId() {
+                return this.f340id;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public boolean isRead() {
+                return this.isRead;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public void setRead(boolean z) {
+                this.isRead = z;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public NotificationType getType() {
+                return this.type;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public String getDate() {
+                return this.date;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public String getUserId() {
+                return this.userId;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public NetworkType getNetworkType() {
+                return this.networkType;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public TokenCode getTokenCode() {
+                return this.tokenCode;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public String getFromAddress() {
+                return this.fromAddress;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public String getToAddress() {
+                return this.toAddress;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer
+            public String getAmount() {
+                return this.amount;
+            }
+
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            public C1848In(String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+                super(id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount, null);
+                Intrinsics.checkNotNullParameter(id, "id");
+                Intrinsics.checkNotNullParameter(type, "type");
+                Intrinsics.checkNotNullParameter(date, "date");
+                Intrinsics.checkNotNullParameter(userId, "userId");
+                Intrinsics.checkNotNullParameter(networkType, "networkType");
+                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
+                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
+                Intrinsics.checkNotNullParameter(amount, "amount");
+                this.f340id = id;
+                this.isRead = z;
+                this.type = type;
+                this.date = date;
+                this.userId = userId;
+                this.networkType = networkType;
+                this.tokenCode = tokenCode;
+                this.fromAddress = fromAddress;
+                this.toAddress = toAddress;
+                this.amount = amount;
+            }
+        }
+
+        /* compiled from: Notification.kt */
+        /* loaded from: classes3.dex */
+        public static final class Out extends Donation {
+            private final String amount;
+            private final String date;
+            private final String fromAddress;
+
+            /* renamed from: id */
+            private final String f341id;
+            private boolean isRead;
+            private final NetworkType networkType;
+            private final Status status;
+            private final String toAddress;
+            private final TokenCode tokenCode;
+            private final NotificationType type;
+            private final String userId;
+
+            public final Status component1() {
+                return this.status;
+            }
+
+            public final String component10() {
+                return getToAddress();
+            }
+
+            public final String component11() {
+                return getAmount();
+            }
+
+            public final String component2() {
+                return getId();
+            }
+
+            public final boolean component3() {
+                return isRead();
+            }
+
+            public final NotificationType component4() {
+                return getType();
+            }
+
+            public final String component5() {
+                return getDate();
+            }
+
+            public final String component6() {
+                return getUserId();
+            }
+
+            public final NetworkType component7() {
+                return getNetworkType();
+            }
+
+            public final TokenCode component8() {
+                return getTokenCode();
+            }
+
+            public final String component9() {
+                return getFromAddress();
+            }
+
+            public final Out copy(Status status, String id, boolean z, NotificationType type, String date, String userId, NetworkType networkType, TokenCode tokenCode, String fromAddress, String toAddress, String amount) {
+                Intrinsics.checkNotNullParameter(status, "status");
+                Intrinsics.checkNotNullParameter(id, "id");
+                Intrinsics.checkNotNullParameter(type, "type");
+                Intrinsics.checkNotNullParameter(date, "date");
+                Intrinsics.checkNotNullParameter(userId, "userId");
+                Intrinsics.checkNotNullParameter(networkType, "networkType");
+                Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
+                Intrinsics.checkNotNullParameter(fromAddress, "fromAddress");
+                Intrinsics.checkNotNullParameter(toAddress, "toAddress");
+                Intrinsics.checkNotNullParameter(amount, "amount");
+                return new Out(status, id, z, type, date, userId, networkType, tokenCode, fromAddress, toAddress, amount);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof Out) {
+                    Out out = (Out) obj;
+                    return this.status == out.status && Intrinsics.areEqual(getId(), out.getId()) && isRead() == out.isRead() && getType() == out.getType() && Intrinsics.areEqual(getDate(), out.getDate()) && Intrinsics.areEqual(getUserId(), out.getUserId()) && getNetworkType() == out.getNetworkType() && getTokenCode() == out.getTokenCode() && Intrinsics.areEqual(getFromAddress(), out.getFromAddress()) && Intrinsics.areEqual(getToAddress(), out.getToAddress()) && Intrinsics.areEqual(getAmount(), out.getAmount());
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                int hashCode = ((this.status.hashCode() * 31) + getId().hashCode()) * 31;
+                boolean isRead = isRead();
+                int i = isRead;
+                if (isRead) {
+                    i = 1;
+                }
+                return ((((((((((((((((hashCode + i) * 31) + getType().hashCode()) * 31) + getDate().hashCode()) * 31) + getUserId().hashCode()) * 31) + getNetworkType().hashCode()) * 31) + getTokenCode().hashCode()) * 31) + getFromAddress().hashCode()) * 31) + getToAddress().hashCode()) * 31) + getAmount().hashCode();
+            }
+
+            public String toString() {
+                return "Out(status=" + this.status + ", id=" + getId() + ", isRead=" + isRead() + ", type=" + getType() + ", date=" + getDate() + ", userId=" + getUserId() + ", networkType=" + getNetworkType() + ", tokenCode=" + getTokenCode() + ", fromAddress=" + getFromAddress() + ", toAddress=" + getToAddress() + ", amount=" + getAmount() + ')';
+            }
+
+            public final Status getStatus() {
+                return this.status;
+            }
+
+            @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
+            public String getId() {
+                return this.f341id;
             }
 
             @Override // com.smedialink.storage.domain.model.notification.Notification.Donation, com.smedialink.storage.domain.model.notification.Notification.CryptoTransfer, com.smedialink.storage.domain.model.notification.Notification
@@ -2719,7 +2719,7 @@ public abstract class Notification {
                 Intrinsics.checkNotNullParameter(toAddress, "toAddress");
                 Intrinsics.checkNotNullParameter(amount, "amount");
                 this.status = status;
-                this.f338id = id;
+                this.f341id = id;
                 this.isRead = z;
                 this.type = type;
                 this.date = date;

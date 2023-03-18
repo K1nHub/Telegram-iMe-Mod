@@ -6,18 +6,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/model/notification/Notification$Simplex;,
-        Lcom/smedialink/storage/domain/model/notification/Notification$Cancel;,
         Lcom/smedialink/storage/domain/model/notification/Notification$Approve;,
         Lcom/smedialink/storage/domain/model/notification/Notification$BinancePayRequestCreated;,
         Lcom/smedialink/storage/domain/model/notification/Notification$BinancePayRequestStatusUpdated;,
-        Lcom/smedialink/storage/domain/model/notification/Notification$StakingSafeWithdrawalStarted;,
-        Lcom/smedialink/storage/domain/model/notification/Notification$StakingSafeWithdrawalFinished;,
-        Lcom/smedialink/storage/domain/model/notification/Notification$StakingStarted;,
-        Lcom/smedialink/storage/domain/model/notification/Notification$StakingFinished;,
-        Lcom/smedialink/storage/domain/model/notification/Notification$Unsupported;,
+        Lcom/smedialink/storage/domain/model/notification/Notification$Cancel;,
         Lcom/smedialink/storage/domain/model/notification/Notification$CryptoTransfer;,
-        Lcom/smedialink/storage/domain/model/notification/Notification$Donation;
+        Lcom/smedialink/storage/domain/model/notification/Notification$Donation;,
+        Lcom/smedialink/storage/domain/model/notification/Notification$Simplex;,
+        Lcom/smedialink/storage/domain/model/notification/Notification$StakingFinished;,
+        Lcom/smedialink/storage/domain/model/notification/Notification$StakingSafeWithdrawalFinished;,
+        Lcom/smedialink/storage/domain/model/notification/Notification$StakingSafeWithdrawalStarted;,
+        Lcom/smedialink/storage/domain/model/notification/Notification$StakingStarted;,
+        Lcom/smedialink/storage/domain/model/notification/Notification$Unsupported;
     }
 .end annotation
 

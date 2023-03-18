@@ -211,7 +211,7 @@
     .line 91
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "\u00a72.12 violated: onSubscribe must be called at most once"
+    const-string/jumbo v0, "\u00a72.12 violated: onSubscribe must be called at most once"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -240,7 +240,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "\u00a73.9 violated: positive request amount required but it was "
+    const-string/jumbo v2, "\u00a73.9 violated: positive request amount required but it was "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

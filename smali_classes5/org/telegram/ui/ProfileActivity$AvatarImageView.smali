@@ -34,10 +34,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    .line 952
+    .line 1110
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
-    .line 937
+    .line 1095
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -46,17 +46,17 @@
 
     const/4 p1, 0x1
 
-    .line 943
+    .line 1101
     iput-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawForeground:Z
 
-    .line 953
+    .line 1111
     new-instance v0, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 954
+    .line 1112
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, p1}, Landroid/graphics/Paint;-><init>(I)V
@@ -65,7 +65,7 @@
 
     const/high16 p1, -0x1000000
 
-    .line 955
+    .line 1113
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
@@ -76,7 +76,7 @@
 .method public clearForeground()V
     .locals 1
 
-    .line 987
+    .line 1145
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getAnimation()Lorg/telegram/ui/Components/AnimatedFileDrawable;
@@ -85,35 +85,35 @@
 
     if-eqz v0, :cond_0
 
-    .line 989
+    .line 1147
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->removeSecondParentView(Landroid/view/View;)V
 
-    .line 991
+    .line 1149
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
-    .line 992
+    .line 1150
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     if-eqz v0, :cond_1
 
-    .line 993
+    .line 1151
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->release()V
 
     const/4 v0, 0x0
 
-    .line 994
+    .line 1152
     iput-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     :cond_1
     const/4 v0, 0x0
 
-    .line 996
+    .line 1154
     iput v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundAlpha:F
 
-    .line 997
+    .line 1155
     invoke-virtual {p0}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->invalidate()V
 
     return-void
@@ -122,7 +122,7 @@
 .method public drawForeground(Z)V
     .locals 0
 
-    .line 1051
+    .line 1209
     iput-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawForeground:Z
 
     return-void
@@ -131,7 +131,7 @@
 .method public getForegroundAlpha()F
     .locals 1
 
-    .line 978
+    .line 1136
     iget v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundAlpha:F
 
     return v0
@@ -140,15 +140,15 @@
 .method public invalidate()V
     .locals 1
 
-    .line 1044
+    .line 1202
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1045
+    .line 1203
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->avatarsViewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     if-eqz v0, :cond_0
 
-    .line 1046
+    .line 1204
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
@@ -158,10 +158,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 1011
+    .line 1169
     invoke-super {p0}, Lorg/telegram/ui/Components/BackupImageView;->onAttachedToWindow()V
 
-    .line 1012
+    .line 1170
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
@@ -172,25 +172,25 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 1001
+    .line 1159
     invoke-super {p0}, Lorg/telegram/ui/Components/BackupImageView;->onDetachedFromWindow()V
 
-    .line 1002
+    .line 1160
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 1003
+    .line 1161
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     if-eqz v0, :cond_0
 
-    .line 1004
+    .line 1162
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->release()V
 
     const/4 v0, 0x0
 
-    .line 1005
+    .line 1163
     iput-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     :cond_0
@@ -200,7 +200,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 1023
+    .line 1181
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
@@ -219,7 +219,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1024
+    .line 1182
     iget v2, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundAlpha:F
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -232,7 +232,7 @@
 
     if-nez v2, :cond_2
 
-    .line 1025
+    .line 1183
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -248,10 +248,10 @@
 
     invoke-virtual {v0, v1, v1, v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 1026
+    .line 1184
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 1028
+    .line 1186
     :cond_2
     iget v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundAlpha:F
 
@@ -263,7 +263,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1029
+    .line 1187
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -272,7 +272,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1030
+    .line 1188
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -289,21 +289,21 @@
 
     invoke-virtual {v0, v1, v1, v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 1031
+    .line 1189
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget v1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundAlpha:F
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 1032
+    .line 1190
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
     goto :goto_1
 
-    .line 1034
+    .line 1192
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->rect:Landroid/graphics/RectF;
 
@@ -321,7 +321,7 @@
 
     invoke-virtual {v0, v1, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1035
+    .line 1193
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->placeholderPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundAlpha:F
@@ -334,7 +334,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1036
+    .line 1194
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
@@ -345,7 +345,7 @@
 
     aget v0, v0, v1
 
-    .line 1037
+    .line 1195
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->rect:Landroid/graphics/RectF;
 
     int-to-float v0, v0
@@ -362,7 +362,7 @@
 .method public setAvatarsViewPager(Lorg/telegram/ui/Components/ProfileGalleryView;)V
     .locals 0
 
-    .line 948
+    .line 1106
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->avatarsViewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     return-void
@@ -371,10 +371,10 @@
 .method public setForegroundAlpha(F)V
     .locals 0
 
-    .line 982
+    .line 1140
     iput p1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundAlpha:F
 
-    .line 983
+    .line 1141
     invoke-virtual {p0}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->invalidate()V
 
     return-void
@@ -383,7 +383,7 @@
 .method public setForegroundImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
     .locals 9
 
-    .line 959
+    .line 1117
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const-wide/16 v4, 0x0
@@ -402,17 +402,17 @@
 
     invoke-virtual/range {v0 .. v8}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 960
+    .line 1118
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     if-eqz p1, :cond_0
 
-    .line 961
+    .line 1119
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->release()V
 
     const/4 p1, 0x0
 
-    .line 962
+    .line 1120
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     :cond_0
@@ -424,28 +424,28 @@
 
     if-eqz p1, :cond_0
 
-    .line 968
+    .line 1126
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v1, p1, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->drawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    .line 970
+    .line 1128
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     if-eqz v0, :cond_1
 
-    .line 971
+    .line 1129
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->release()V
 
     const/4 v0, 0x0
 
-    .line 972
+    .line 1130
     iput-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    .line 974
+    .line 1132
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawableHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
@@ -455,10 +455,10 @@
 .method public setRoundRadius(I)V
     .locals 1
 
-    .line 1017
+    .line 1175
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 1018
+    .line 1176
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->foregroundImageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V

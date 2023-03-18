@@ -9,7 +9,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 /* compiled from: GoogleServicesHelper.kt */
 /* loaded from: classes3.dex */
@@ -18,8 +18,7 @@ public final class GoogleServicesHelper implements KoinComponent {
     private static final Lazy resourceManager$delegate;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: runWithActivationCheck$lambda-0  reason: not valid java name */
-    public static final void m1847runWithActivationCheck$lambda0() {
+    public static final void runWithActivationCheck$lambda$0() {
     }
 
     private GoogleServicesHelper() {
@@ -44,7 +43,7 @@ public final class GoogleServicesHelper implements KoinComponent {
         Intrinsics.checkNotNullParameter(fragment, "fragment");
         Intrinsics.checkNotNullParameter(activateClickAction, "activateClickAction");
         Intrinsics.checkNotNullParameter(walletAuthorizedAction, "walletAuthorizedAction");
-        WalletHelper.safeRunWalletScreen(fragment, INSTANCE.getResourceManager().getString(C3158R.string.wallet_auth_dialog_to_use_feature_description), activateClickAction, walletAuthorizedAction);
+        WalletHelper.safeRunWalletScreen(fragment, INSTANCE.getResourceManager().getString(C3286R.string.wallet_auth_dialog_to_use_feature_description), activateClickAction, walletAuthorizedAction);
     }
 
     static {

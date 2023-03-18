@@ -30,7 +30,7 @@
 .method private constructor <init>(Lorg/telegram/messenger/LocaleController;)V
     .locals 0
 
-    .line 159
+    .line 162
     iput-object p1, p0, Lorg/telegram/messenger/LocaleController$TimeZoneChangedReceiver;->this$0:Lorg/telegram/messenger/LocaleController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -41,7 +41,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$1;)V
     .locals 0
 
-    .line 159
+    .line 162
     invoke-direct {p0, p1}, Lorg/telegram/messenger/LocaleController$TimeZoneChangedReceiver;-><init>(Lorg/telegram/messenger/LocaleController;)V
 
     return-void
@@ -50,7 +50,7 @@
 .method private synthetic lambda$onReceive$0()V
     .locals 2
 
-    .line 163
+    .line 166
     iget-object v0, p0, Lorg/telegram/messenger/LocaleController$TimeZoneChangedReceiver;->this$0:Lorg/telegram/messenger/LocaleController;
 
     iget-object v0, v0, Lorg/telegram/messenger/LocaleController;->formatterDayMonth:Lorg/telegram/messenger/time/FastDateFormat;
@@ -69,7 +69,7 @@
 
     if-nez v0, :cond_0
 
-    .line 164
+    .line 167
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -85,7 +85,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
 
-    .line 162
+    .line 165
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
     new-instance p2, Lorg/telegram/messenger/LocaleController$TimeZoneChangedReceiver$$ExternalSyntheticLambda0;

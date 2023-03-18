@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static final INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys$User$Default;
+
+
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
@@ -21,6 +25,8 @@
     new-instance v0, Lcom/smedialink/common/TelegramPreferenceKeys$User$Default;
 
     invoke-direct {v0}, Lcom/smedialink/common/TelegramPreferenceKeys$User$Default;-><init>()V
+
+    sput-object v0, Lcom/smedialink/common/TelegramPreferenceKeys$User$Default;->INSTANCE:Lcom/smedialink/common/TelegramPreferenceKeys$User$Default;
 
     return-void
 .end method
@@ -502,6 +508,79 @@
     return-object v0
 .end method
 
+.method public static final selectedDrawStatusTypes()Ljava/util/Set;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    .line 943
+    sget-object v1, Lorg/fork/enums/DrawStatusType;->UNREAD_COUNT_CHATS:Lorg/fork/enums/DrawStatusType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lorg/fork/enums/DrawStatusType;->ONLINE_USER:Lorg/fork/enums/DrawStatusType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lorg/fork/enums/DrawStatusType;->LIVE_VIDEO:Lorg/fork/enums/DrawStatusType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lorg/fork/enums/DrawStatusType;->REACTION:Lorg/fork/enums/DrawStatusType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lorg/fork/enums/DrawStatusType;->MENTIONS:Lorg/fork/enums/DrawStatusType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lkotlin/collections/SetsKt;->setOf([Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static final selectedMessagePopupItems()Ljava/util/Set;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -533,7 +612,7 @@
 .end method
 
 .method public static final selectedRecentChatsDialogTypes()Ljava/util/Set;
-    .locals 3
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -543,50 +622,20 @@
         }
     .end annotation
 
-    const/4 v0, 0x4
+    const-string v0, "CHAT"
 
-    new-array v0, v0, [Ljava/lang/String;
+    const-string v1, "GROUP"
 
-    .line 938
-    sget-object v1, Lorg/fork/enums/DialogType;->CHAT:Lorg/fork/enums/DialogType;
+    const-string v2, "CHANNEL"
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    const-string v3, "BOT"
 
-    move-result-object v1
+    const-string v4, "FORUM"
 
-    const/4 v2, 0x0
+    .line 940
+    filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;
 
-    aput-object v1, v0, v2
-
-    sget-object v1, Lorg/fork/enums/DialogType;->GROUP:Lorg/fork/enums/DialogType;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lorg/fork/enums/DialogType;->CHANNEL:Lorg/fork/enums/DialogType;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lorg/fork/enums/DialogType;->BOT:Lorg/fork/enums/DialogType;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x3
-
-    aput-object v1, v0, v2
+    move-result-object v0
 
     invoke-static {v0}, Lkotlin/collections/SetsKt;->setOf([Ljava/lang/Object;)Ljava/util/Set;
 
@@ -650,4 +699,14 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public final isSaveArchiveRecentChatsEnabled()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

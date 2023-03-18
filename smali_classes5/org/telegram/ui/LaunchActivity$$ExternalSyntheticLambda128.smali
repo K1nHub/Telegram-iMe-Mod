@@ -2,48 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;
+.implements Lorg/telegram/ui/Components/SharingLocationsAlert$SharingLocationsAlertDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:[I
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:J
+.field public final synthetic f$1:[I
 
 
 # direct methods
-.method public synthetic constructor <init>([IJ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;[I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$0:[I
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-wide p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$1:J
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$1:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectLocation(Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
-    .locals 8
+.method public final didSelectLocation(Lorg/telegram/messenger/LocationController$SharingLocationInfo;)V
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$0:[I
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-wide v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$1:J
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda128;->f$1:[I
 
-    move-object v3, p1
-
-    move v4, p2
-
-    move v5, p3
-
-    move v6, p4
-
-    move-object v7, p5
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$xpF2_5XzTnzIf5Zm22qhBws_JmE([IJLorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$TieuI1ckgMkNb_t1lrvXiCUQpD4(Lorg/telegram/ui/LaunchActivity;[ILorg/telegram/messenger/LocationController$SharingLocationInfo;)V
 
     return-void
 .end method

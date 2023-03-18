@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;I)V
     .locals 0
 
-    .line 2084
+    .line 2118
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     iput p2, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->val$currentAccount:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 2087
+    .line 2121
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->val$currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -48,16 +48,16 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FragmentContextView;->access$2200(Lorg/telegram/ui/Components/FragmentContextView;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/FragmentContextView;->access$2400(Lorg/telegram/ui/Components/FragmentContextView;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 2088
+    .line 2122
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2100(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2300(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -65,7 +65,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2100(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2300(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -75,24 +75,24 @@
 
     if-eqz p1, :cond_3
 
-    .line 2089
+    .line 2123
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->setVisibility(I)V
 
-    .line 2090
+    .line 2124
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2102(Lorg/telegram/ui/Components/FragmentContextView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2302(Lorg/telegram/ui/Components/FragmentContextView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 2091
+    .line 2125
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$2500(Lorg/telegram/ui/Components/FragmentContextView;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$2700(Lorg/telegram/ui/Components/FragmentContextView;)Z
 
     move-result p1
 
@@ -100,61 +100,61 @@
 
     if-eqz p1, :cond_0
 
-    .line 2092
+    .line 2126
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->checkCall(Z)V
 
     goto :goto_0
 
-    .line 2093
+    .line 2127
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$2600(Lorg/telegram/ui/Components/FragmentContextView;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    .line 2094
-    iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2700(Lorg/telegram/ui/Components/FragmentContextView;Z)V
-
-    goto :goto_0
-
-    .line 2095
-    :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$2800(Lorg/telegram/ui/Components/FragmentContextView;)Z
 
     move-result p1
 
+    if-eqz p1, :cond_1
+
+    .line 2128
+    iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2900(Lorg/telegram/ui/Components/FragmentContextView;Z)V
+
+    goto :goto_0
+
+    .line 2129
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/FragmentContextView;->access$3000(Lorg/telegram/ui/Components/FragmentContextView;)Z
+
+    move-result p1
+
     if-eqz p1, :cond_2
 
-    .line 2096
+    .line 2130
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->checkImport(Z)V
 
-    .line 2098
+    .line 2132
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2502(Lorg/telegram/ui/Components/FragmentContextView;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2702(Lorg/telegram/ui/Components/FragmentContextView;Z)Z
 
-    .line 2099
-    iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2602(Lorg/telegram/ui/Components/FragmentContextView;Z)Z
-
-    .line 2100
+    .line 2133
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2802(Lorg/telegram/ui/Components/FragmentContextView;Z)Z
+
+    .line 2134
+    iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$15;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$3002(Lorg/telegram/ui/Components/FragmentContextView;Z)Z
 
     :cond_3
     return-void

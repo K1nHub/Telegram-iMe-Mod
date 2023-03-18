@@ -13,7 +13,7 @@ import com.smedialink.p031ui.adapter.diff.FiltersDiffCallback;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: FilterProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.FilterProvider */
 /* loaded from: classes3.dex */
@@ -38,7 +38,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
         Intrinsics.checkNotNullParameter(filtersRecycleAdapter, "filtersRecycleAdapter");
         this.filtersRecycleAdapter = filtersRecycleAdapter;
         this.itemViewType = IdFabric$ViewTypes.FILTERS_LIST;
-        this.layoutId = C3158R.layout.fork_recycle_item_filters_list;
+        this.layoutId = C3286R.layout.fork_recycle_item_filters_list;
         this.filtersDiffCallback = new FiltersDiffCallback();
     }
 
@@ -63,8 +63,8 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
     public final void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3158R.C3161id.recycle_filters)).getLayoutManager();
-            this.filtersScrollState = layoutManager == null ? null : layoutManager.onSaveInstanceState();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3286R.C3289id.recycle_filters)).getLayoutManager();
+            this.filtersScrollState = layoutManager != null ? layoutManager.onSaveInstanceState() : null;
         }
     }
 
@@ -72,8 +72,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
     public void convert(BaseViewHolder helper, FiltersListItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3158R.C3161id.image_staking_filters_info;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(helper, i, "chats_actionBackground"), i), C3158R.C3161id.recycle_filters, new FilterProvider$convert$1(this, item));
+        BaseQuickAdapterExtKt.applyForView(helper, C3286R.C3289id.recycle_filters, new FilterProvider$convert$1(this, item));
     }
 
     public void convert(BaseViewHolder helper, FiltersListItem item, List<? extends Object> payloads) {

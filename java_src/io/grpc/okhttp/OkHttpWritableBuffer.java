@@ -2,7 +2,7 @@ package io.grpc.okhttp;
 
 import io.grpc.internal.WritableBuffer;
 import okio.Buffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class OkHttpWritableBuffer implements WritableBuffer {
     private final Buffer buffer;
     private int readableBytes;

@@ -15,11 +15,11 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;,
         Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Ready;,
-        Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$TooBad;,
         Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;,
-        Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$WordsCheck;,
-        Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$Import;
+        Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$TooBad;,
+        Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$WordsCheck;
     }
 .end annotation
 
@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1351
+    .line 1352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -17,7 +17,6 @@ public interface ActionItem {
     /* loaded from: classes3.dex */
     public static final class DefaultImpls {
         public static String getTitle(ActionItem actionItem, ResourceManager resourceManager) {
-            Intrinsics.checkNotNullParameter(actionItem, "this");
             Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
             String titleString = actionItem.getTitleString();
             if (titleString == null || titleString.length() == 0) {

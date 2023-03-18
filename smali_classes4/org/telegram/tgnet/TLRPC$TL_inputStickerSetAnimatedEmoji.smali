@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30522
+    .line 30664
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$InputStickerSet;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 30527
+    .line 30669
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputStickerSetAnimatedEmoji;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

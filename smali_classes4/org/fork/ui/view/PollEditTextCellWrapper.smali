@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$su_SeBS1RRQZMzXgMlJjEmVV2L0(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$m98_h8KxGK4Vizv74xoz36cXE7I(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/view/PollEditTextCellWrapper;->initIconLayout$lambda-2$lambda-1(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/view/PollEditTextCellWrapper;->initIconLayout$lambda$2$lambda$1(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
 
     return-void
 .end method
@@ -331,17 +331,13 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/ui/view/PollEditTextCellWrapper;->getType()Lorg/fork/enums/FilterActivityType;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/ui/view/PollEditTextCellWrapper;->type:Lorg/fork/enums/FilterActivityType;
 
     invoke-virtual {v2}, Lorg/fork/enums/FilterActivityType;->getIconSize()I
 
     move-result v2
 
-    invoke-virtual {p0}, Lorg/fork/ui/view/PollEditTextCellWrapper;->getType()Lorg/fork/enums/FilterActivityType;
-
-    move-result-object v3
+    iget-object v3, p0, Lorg/fork/ui/view/PollEditTextCellWrapper;->type:Lorg/fork/enums/FilterActivityType;
 
     invoke-virtual {v3}, Lorg/fork/enums/FilterActivityType;->getIconSize()I
 
@@ -394,7 +390,7 @@
     return-object v0
 .end method
 
-.method private static final initIconLayout$lambda-2$lambda-1(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
+.method private static final initIconLayout$lambda$2$lambda$1(Lorg/fork/ui/view/PollEditTextCellWrapper;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -402,9 +398,7 @@
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 81
-    invoke-virtual {p0}, Lorg/fork/ui/view/PollEditTextCellWrapper;->getOnSelectIconClick()Ljava/lang/Runnable;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/view/PollEditTextCellWrapper;->onSelectIconClick:Ljava/lang/Runnable;
 
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
@@ -610,7 +604,7 @@
     .line 57
     iget-object v0, p0, Lorg/fork/ui/view/PollEditTextCellWrapper;->pollEditTextCell:Lorg/telegram/ui/Cells/PollEditTextCell;
 
-    const-string v1, "windowBackgroundWhite"
+    const-string/jumbo v1, "windowBackgroundWhite"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -674,7 +668,7 @@
 
     move-result-object v0
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
+    const-string/jumbo v1, "windowBackgroundWhiteGrayIcon"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 

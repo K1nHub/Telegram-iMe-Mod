@@ -39,7 +39,7 @@ import org.fork.enums.FilterTabWidthMode;
 import org.fork.enums.SortingFilter;
 import org.fork.models.SortingTabState;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -174,7 +174,7 @@ public class FilterTabsView extends BlurredFrameLayout {
     public int getSelectedTabAfterRemoveCurrent(boolean z) {
         if (z) {
             ArrayList<Tab> arrayList = this.tabs;
-            return arrayList.get(arrayList.size() - 1).f1705id;
+            return arrayList.get(arrayList.size() - 1).f1713id;
         }
         return this.positionToId.get(this.currentPosition, getFirstTabId());
     }
@@ -249,7 +249,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         }
         int i = this.selectedTabId;
         ArrayList<Tab> arrayList = this.tabs;
-        return i == arrayList.get(arrayList.size() - 1).f1705id;
+        return i == arrayList.get(arrayList.size() - 1).f1713id;
     }
 
     public int getTabsCount() {
@@ -327,7 +327,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             int intrinsicWidth = (int) (this.outlinedDrawable.getIntrinsicWidth() * 0.9f);
             this.titleWidth = intrinsicWidth;
             if (z) {
-                i = FilterTabsView.this.delegate.getTabCounter(this.f1705id);
+                i = FilterTabsView.this.delegate.getTabCounter(this.f1713id);
                 if (i < 0) {
                     i = 0;
                 }
@@ -370,7 +370,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         public int counter;
 
         /* renamed from: id */
-        public int f1705id;
+        public int f1713id;
         public boolean isDefault;
         public boolean isLocked;
         public String title;
@@ -381,7 +381,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         }
 
         protected boolean isAllowEditing() {
-            return (FilterTabsView.this.mode != TabMode.MAIN || this.isDefault || SortingFilter.isSortingFilter(false, this.f1705id)) ? false : true;
+            return (FilterTabsView.this.mode != TabMode.MAIN || this.isDefault || SortingFilter.isSortingFilter(false, this.f1713id)) ? false : true;
         }
 
         protected int fixWidthForNoCounterMode(int i, float f) {
@@ -393,7 +393,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         }
 
         public Tab(int i, String str) {
-            this.f1705id = i;
+            this.f1713id = i;
             this.title = str;
         }
 
@@ -402,7 +402,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             int ceil = (int) Math.ceil(FilterTabsView.this.textPaint.measureText(this.title));
             this.titleWidth = ceil;
             if (z) {
-                i = FilterTabsView.this.delegate.getTabCounter(this.f1705id);
+                i = FilterTabsView.this.delegate.getTabCounter(this.f1713id);
                 if (i < 0) {
                     i = 0;
                 }
@@ -430,7 +430,7 @@ public class FilterTabsView extends BlurredFrameLayout {
                     return false;
                 }
                 if (FilterTabsView.this.mode == TabMode.ARCHIVE || FilterTabsView.this.customForwardArchive) {
-                    str = LocaleController.getString("ArchivedChats", C3158R.string.ArchivedChats);
+                    str = LocaleController.getString("FilterAllChats", C3286R.string.FilterAllChats);
                 }
             }
             if (TextUtils.equals(this.title, str)) {
@@ -500,7 +500,7 @@ public class FilterTabsView extends BlurredFrameLayout {
 
         @Override // android.view.View
         public int getId() {
-            return this.currentTab.f1705id;
+            return this.currentTab.f1713id;
         }
 
         @Override // android.view.View
@@ -679,10 +679,10 @@ public class FilterTabsView extends BlurredFrameLayout {
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-            accessibilityNodeInfo.setSelected((this.currentTab == null || FilterTabsView.this.selectedTabId == -1 || this.currentTab.f1705id != FilterTabsView.this.selectedTabId) ? false : true);
+            accessibilityNodeInfo.setSelected((this.currentTab == null || FilterTabsView.this.selectedTabId == -1 || this.currentTab.f1713id != FilterTabsView.this.selectedTabId) ? false : true);
             accessibilityNodeInfo.addAction(16);
             if (Build.VERSION.SDK_INT >= 21) {
-                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrOpenMenu2", C3158R.string.AccDescrOpenMenu2)));
+                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrOpenMenu2", C3286R.string.AccDescrOpenMenu2)));
             } else {
                 accessibilityNodeInfo.addAction(32);
             }
@@ -864,9 +864,9 @@ public class FilterTabsView extends BlurredFrameLayout {
         };
         this.listView = recyclerListView;
         recyclerListView.setClipChildren(false);
-        C44474 c44474 = new C44474();
-        this.itemAnimator = c44474;
-        c44474.setDelayAnimations(false);
+        C45824 c45824 = new C45824();
+        this.itemAnimator = c45824;
+        c45824.setDelayAnimations(false);
         this.listView.setItemAnimator(this.itemAnimator);
         this.listView.setSelectorType(8);
         this.listView.setSelectorRadius(6);
@@ -954,8 +954,8 @@ public class FilterTabsView extends BlurredFrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.FilterTabsView$4 */
     /* loaded from: classes6.dex */
-    public class C44474 extends DefaultItemAnimator {
-        C44474() {
+    public class C45824 extends DefaultItemAnimator {
+        C45824() {
         }
 
         @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
@@ -969,7 +969,7 @@ public class FilterTabsView extends BlurredFrameLayout {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FilterTabsView$4$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        FilterTabsView.C44474.this.lambda$runPendingAnimations$0(valueAnimator);
+                        FilterTabsView.C45824.this.lambda$runPendingAnimations$0(valueAnimator);
                     }
                 });
                 ofFloat.setDuration(getMoveDuration());
@@ -1034,7 +1034,7 @@ public class FilterTabsView extends BlurredFrameLayout {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FilterTabsView$4$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            FilterTabsView.C44474.lambda$animateMoveImpl$1(FilterTabsView.TabView.this, valueAnimator2);
+                            FilterTabsView.C45824.lambda$animateMoveImpl$1(FilterTabsView.TabView.this, valueAnimator2);
                         }
                     });
                     ofFloat.addListener(new AnimatorListenerAdapter(this) { // from class: org.telegram.ui.Components.FilterTabsView.4.1
@@ -1091,7 +1091,7 @@ public class FilterTabsView extends BlurredFrameLayout {
                     if (tabView.rect.left - m50dp >= f || tabView.rect.right + m50dp <= f) {
                         return;
                     }
-                    this.delegate.onDeletePressed(tabView.currentTab.f1705id);
+                    this.delegate.onDeletePressed(tabView.currentTab.f1713id);
                 }
             } else if (i != this.currentPosition || (filterTabsViewDelegate = this.delegate) == null) {
                 scrollToTab(tabView.currentTab, i);
@@ -1135,7 +1135,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         this.previousPosition = i2;
         this.previousId = this.selectedTabId;
         this.currentPosition = i;
-        this.selectedTabId = tab.f1705id;
+        this.selectedTabId = tab.f1713id;
         if (this.animatingIndicator) {
             AndroidUtilities.cancelRunOnUIThread(this.animationRunnable);
             this.animatingIndicator = false;
@@ -1148,7 +1148,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         FilterTabsViewDelegate filterTabsViewDelegate2 = this.delegate;
         if (filterTabsViewDelegate2 != null) {
             filterTabsViewDelegate2.onPageSelected(tab, z);
-            this.delegate.onTabSelected(tab.f1705id);
+            this.delegate.onTabSelected(tab.f1713id);
             notifySwipeProgressChanged();
         }
         scrollToChild(i);
@@ -1314,15 +1314,15 @@ public class FilterTabsView extends BlurredFrameLayout {
             Tab tab = this.tabs.get(0);
             String str = "FilterAllChats";
             if (tab == findDefaultTab) {
-                tab.setTitle(LocaleController.getString("FilterAllChats", C3158R.string.FilterAllChats));
+                tab.setTitle(LocaleController.getString("FilterAllChats", C3286R.string.FilterAllChats));
             }
             int width = tab.getWidth(false);
             if (tab == findDefaultTab) {
                 if (this.allTabsWidth > size) {
-                    i3 = C3158R.string.FilterAllChatsShort;
+                    i3 = C3286R.string.FilterAllChatsShort;
                     str = "FilterAllChatsShort";
                 } else {
-                    i3 = C3158R.string.FilterAllChats;
+                    i3 = C3286R.string.FilterAllChats;
                 }
                 tab.setTitle(LocaleController.getString(str, i3));
             }
@@ -1458,7 +1458,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             if (dialogFilter.isDefault()) {
                 tLRPC$TL_messages_updateDialogFiltersOrder.order.add(0);
             } else {
-                tLRPC$TL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(dialogFilter.f1434id));
+                tLRPC$TL_messages_updateDialogFiltersOrder.order.add(Integer.valueOf(dialogFilter.f1439id));
             }
         }
         MessagesController.getInstance(UserConfig.selectedAccount).lockFiltersInternal();
@@ -1488,11 +1488,11 @@ public class FilterTabsView extends BlurredFrameLayout {
             org.telegram.ui.Components.FilterTabsView$Tab r5 = (org.telegram.p048ui.Components.FilterTabsView.Tab) r5
             int r6 = r5.counter
             org.telegram.ui.Components.FilterTabsView$FilterTabsViewDelegate r7 = r9.delegate
-            int r8 = r5.f1705id
+            int r8 = r5.f1713id
             int r7 = r7.getTabCounter(r8)
             if (r6 == r7) goto L93
             org.telegram.ui.Components.FilterTabsView$FilterTabsViewDelegate r6 = r9.delegate
-            int r7 = r5.f1705id
+            int r7 = r5.f1713id
             int r6 = r6.getTabCounter(r7)
             if (r6 >= 0) goto L2b
             goto L93
@@ -1514,7 +1514,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             org.telegram.ui.Components.FilterTabsView$Tab r2 = r9.findDefaultTab()
             if (r2 == 0) goto L5a
             org.telegram.ui.Components.FilterTabsView$Tab r2 = r9.findDefaultTab()
-            int r3 = org.telegram.messenger.C3158R.string.FilterAllChats
+            int r3 = org.telegram.messenger.C3286R.string.FilterAllChats
             java.lang.String r5 = "FilterAllChats"
             java.lang.String r3 = org.telegram.messenger.LocaleController.getString(r5, r3)
             r2.setTitle(r3)
@@ -1568,7 +1568,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             return;
         }
         Tab tab = this.tabs.get(i2);
-        if (tab.counter == this.delegate.getTabCounter(tab.f1705id) || this.delegate.getTabCounter(tab.f1705id) < 0) {
+        if (tab.counter == this.delegate.getTabCounter(tab.f1713id) || this.delegate.getTabCounter(tab.f1713id) < 0) {
             return;
         }
         this.listView.invalidateViews();
@@ -1579,7 +1579,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             this.adapter.notifyDataSetChanged();
             this.allTabsWidth = 0;
             if (findDefaultTab() != null) {
-                findDefaultTab().setTitle(LocaleController.getString("FilterAllChats", C3158R.string.FilterAllChats));
+                findDefaultTab().setTitle(LocaleController.getString("FilterAllChats", C3286R.string.FilterAllChats));
             }
             int size = this.tabs.size();
             for (int i3 = 0; i3 < size; i3++) {
@@ -1665,26 +1665,26 @@ public class FilterTabsView extends BlurredFrameLayout {
             arrayList.set(i4, dialogFilter);
             Tab tab = (Tab) FilterTabsView.this.tabs.get(i);
             Tab tab2 = (Tab) FilterTabsView.this.tabs.get(i2);
-            int i7 = tab.f1705id;
-            tab.f1705id = tab2.f1705id;
-            tab2.f1705id = i7;
+            int i7 = tab.f1713id;
+            tab.f1713id = tab2.f1713id;
+            tab2.f1713id = i7;
             int i8 = FilterTabsView.this.positionToStableId.get(i);
             FilterTabsView.this.positionToStableId.put(i, FilterTabsView.this.positionToStableId.get(i2));
             FilterTabsView.this.positionToStableId.put(i2, i8);
-            FilterTabsView.this.delegate.onPageReorder(tab2.f1705id, tab.f1705id);
+            FilterTabsView.this.delegate.onPageReorder(tab2.f1713id, tab.f1713id);
             if (FilterTabsView.this.currentPosition == i) {
                 FilterTabsView.this.currentPosition = i2;
-                FilterTabsView.this.selectedTabId = tab.f1705id;
+                FilterTabsView.this.selectedTabId = tab.f1713id;
             } else if (FilterTabsView.this.currentPosition == i2) {
                 FilterTabsView.this.currentPosition = i;
-                FilterTabsView.this.selectedTabId = tab2.f1705id;
+                FilterTabsView.this.selectedTabId = tab2.f1713id;
             }
             if (FilterTabsView.this.previousPosition == i) {
                 FilterTabsView.this.previousPosition = i2;
-                FilterTabsView.this.previousId = tab.f1705id;
+                FilterTabsView.this.previousId = tab.f1713id;
             } else if (FilterTabsView.this.previousPosition == i2) {
                 FilterTabsView.this.previousPosition = i;
-                FilterTabsView.this.previousId = tab2.f1705id;
+                FilterTabsView.this.previousId = tab2.f1713id;
             }
             FilterTabsView.this.tabs.set(i, tab2);
             FilterTabsView.this.tabs.set(i2, tab);
@@ -1701,7 +1701,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             }
             ArrayList<MessagesController.DialogFilter> arrayList = MessagesController.getInstance(UserConfig.selectedAccount).dialogFilters;
             int i2 = FilterTabsView.this.positionToStableId.get(i);
-            int i3 = ((Tab) FilterTabsView.this.tabs.get(i)).f1705id;
+            int i3 = ((Tab) FilterTabsView.this.tabs.get(i)).f1713id;
             for (int i4 = i - 1; i4 >= 0; i4--) {
                 FilterTabsView.this.positionToStableId.put(i4 + 1, FilterTabsView.this.positionToStableId.get(i4));
             }
@@ -1710,9 +1710,9 @@ public class FilterTabsView extends BlurredFrameLayout {
             arrayList.add(0, remove);
             FilterTabsView.this.positionToStableId.put(0, i2);
             FilterTabsView.this.tabs.add(0, (Tab) FilterTabsView.this.tabs.remove(i));
-            ((Tab) FilterTabsView.this.tabs.get(0)).f1705id = i3;
+            ((Tab) FilterTabsView.this.tabs.get(0)).f1713id = i3;
             for (int i5 = 0; i5 <= i; i5++) {
-                ((Tab) FilterTabsView.this.tabs.get(i5)).f1705id = i5;
+                ((Tab) FilterTabsView.this.tabs.get(i5)).f1713id = i5;
                 arrayList.get(i5).order = i5;
             }
             int i6 = 0;
@@ -1728,7 +1728,7 @@ public class FilterTabsView extends BlurredFrameLayout {
                 i6++;
             }
             notifyItemMoved(i, 0);
-            FilterTabsView.this.delegate.onPageReorder(((Tab) FilterTabsView.this.tabs.get(i)).f1705id, i3);
+            FilterTabsView.this.delegate.onPageReorder(((Tab) FilterTabsView.this.tabs.get(i)).f1713id, i3);
             FilterTabsView.this.updateTabsWidths();
             FilterTabsView.this.orderChanged = true;
             FilterTabsView.this.listView.setItemAnimator(FilterTabsView.this.itemAnimator);
@@ -1820,7 +1820,7 @@ public class FilterTabsView extends BlurredFrameLayout {
 
     public boolean currentTabIsDefault() {
         Tab findDefaultTab = findDefaultTab();
-        return findDefaultTab != null && findDefaultTab.f1705id == this.selectedTabId;
+        return findDefaultTab != null && findDefaultTab.f1713id == this.selectedTabId;
     }
 
     public int getDefaultTabId() {
@@ -1828,7 +1828,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         if (findDefaultTab == null) {
             return -1;
         }
-        return findDefaultTab.f1705id;
+        return findDefaultTab.f1713id;
     }
 
     public boolean isEmpty() {
@@ -1836,12 +1836,12 @@ public class FilterTabsView extends BlurredFrameLayout {
     }
 
     public boolean isFirstTabSelected() {
-        return this.tabs.isEmpty() || this.selectedTabId == this.tabs.get(0).f1705id;
+        return this.tabs.isEmpty() || this.selectedTabId == this.tabs.get(0).f1713id;
     }
 
     public boolean isLocked(int i) {
         for (int i2 = 0; i2 < this.tabs.size(); i2++) {
-            if (this.tabs.get(i2).f1705id == i) {
+            if (this.tabs.get(i2).f1713id == i) {
                 return this.tabs.get(i2).isLocked;
             }
         }
@@ -1852,7 +1852,7 @@ public class FilterTabsView extends BlurredFrameLayout {
         for (int i2 = 0; i2 < this.listView.getChildCount(); i2++) {
             if (this.listView.getChildAt(i2) instanceof TabView) {
                 TabView tabView = (TabView) this.listView.getChildAt(i2);
-                if (tabView.currentTab.f1705id == i) {
+                if (tabView.currentTab.f1713id == i) {
                     tabView.shakeLockIcon(1.0f, 0);
                     tabView.performHapticFeedback(3);
                     return;

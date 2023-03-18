@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SpeedIconDrawable;)V
     .locals 0
 
-    .line 19
+    .line 26
     iput-object p1, p0, Lorg/telegram/ui/Components/SpeedIconDrawable$1;->this$0:Lorg/telegram/ui/Components/SpeedIconDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 22
+    .line 29
     iget-object p1, p0, Lorg/telegram/ui/Components/SpeedIconDrawable$1;->this$0:Lorg/telegram/ui/Components/SpeedIconDrawable;
 
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
@@ -49,7 +49,7 @@
 .method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
     .locals 0
 
-    .line 26
+    .line 33
     iget-object p1, p0, Lorg/telegram/ui/Components/SpeedIconDrawable$1;->this$0:Lorg/telegram/ui/Components/SpeedIconDrawable;
 
     invoke-virtual {p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->scheduleSelf(Ljava/lang/Runnable;J)V
@@ -60,7 +60,7 @@
 .method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 30
+    .line 37
     iget-object p1, p0, Lorg/telegram/ui/Components/SpeedIconDrawable$1;->this$0:Lorg/telegram/ui/Components/SpeedIconDrawable;
 
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->unscheduleSelf(Ljava/lang/Runnable;)V

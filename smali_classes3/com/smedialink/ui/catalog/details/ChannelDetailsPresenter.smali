@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChannelDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChannelDetailsPresenter.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,108:1\n39#2,6:109\n*S KotlinDebug\n*F\n+ 1 ChannelDetailsPresenter.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsPresenter\n*L\n37#1:109,6\n*E\n"
+    value = "SMAP\nChannelDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChannelDetailsPresenter.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,108:1\n39#2,8:109\n*S KotlinDebug\n*F\n+ 1 ChannelDetailsPresenter.kt\ncom/smedialink/ui/catalog/details/ChannelDetailsPresenter\n*L\n37#1:109,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -33,20 +33,20 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$3Piur2jdO8mqEkmtloEJ8_n7PyI(Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/ObservableSource;
+.method public static synthetic $r8$lambda$8gn_IcujYc3FggaG8x1jH6ElTiY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->onSubscribeClick$lambda-0(Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/ObservableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->onSubscribeClick$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$dKHWQOjn5bV2IUupLwgsBZv8c20(ZLorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/Boolean;
+.method public static synthetic $r8$lambda$RJh7PVrIjpgct7NZsNGanvGLIxA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/lang/Boolean;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->getSubscriptionStatusChangeObservable$lambda-4(ZLorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/Boolean;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->getSubscriptionStatusChangeObservable$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/lang/Boolean;
 
     move-result-object p0
 
@@ -106,6 +106,17 @@
     return-object p0
 .end method
 
+.method public static final synthetic access$getSubscriptionStatusChangeObservable(Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/Observable;
+    .locals 0
+
+    .line 21
+    invoke-direct {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->getSubscriptionStatusChangeObservable(Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/Observable;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method private final canSubscribe(Lorg/telegram/tgnet/TLRPC$Chat;)Z
     .locals 0
 
@@ -156,53 +167,55 @@
 
     .line 101
     :goto_0
-    new-instance v1, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1;
 
-    invoke-direct {v1, v0}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;-><init>(Z)V
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$getSubscriptionStatusChangeObservable$1;-><init>(Z)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    const-string v0, "if (isNotSubscribed) {\n \u2026ubscribed.not()\n        }"
+    const-string v0, "isNotSubscribed = canSub\u2026ubscribed.not()\n        }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
 
-.method private static final getSubscriptionStatusChangeObservable$lambda-4(ZLorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/Boolean;
+.method private static final getSubscriptionStatusChangeObservable$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/lang/Boolean;
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 102
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    .line 101
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Ljava/lang/Boolean;
 
     return-object p0
 .end method
 
-.method private static final onSubscribeClick$lambda-0(Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/ObservableSource;
+.method private static final onSubscribeClick$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     .line 36
-    invoke-direct {p0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;->getSubscriptionStatusChangeObservable(Lorg/telegram/tgnet/TLRPC$Chat;)Lio/reactivex/Observable;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
@@ -237,7 +250,7 @@
     iget-object v1, v1, Lorg/telegram/messenger/MessagesController;->linkPrefix:Ljava/lang/String;
 
     .line 66
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x2f
 
@@ -379,17 +392,20 @@
     move-result-object v0
 
     .line 36
-    new-instance v1, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda0;
+    new-instance v1, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$onSubscribeClick$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$onSubscribeClick$1;-><init>(Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v2, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    const-string v1, "telegramApi.getChatInfoB\u2026tusChangeObservable(it) }"
+    const-string v1, "fun onSubscribeClick() {\u2026     .autoDispose()\n    }"
 
-    .line 35
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
@@ -397,16 +413,27 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v2, v4}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v4}, Lcom/smedialink/ui/catalog/details/ChannelDetailsPresenter$onSubscribeClick$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1

@@ -88,9 +88,6 @@
     .line 37
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
-    .line 38
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 35
     invoke-virtual {p0, p2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 

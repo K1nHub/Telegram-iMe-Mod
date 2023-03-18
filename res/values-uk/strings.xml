@@ -35,7 +35,7 @@
     <string name="SendMediaPermissionStickersGifs">Стікери</string>
     <string name="ShareTelegram">Поділитися iMe...</string>
     <string name="TelegramVersion">iMe для Android %1$s</string>
-    <string name="UserRestrictionsSendStickers">Надсилання Стікери</string>
+    <string name="UserRestrictionsSendStickers">Стікери</string>
     <string name="VoipGroupAudioRecordSaved">Аудіо збережено в **Хмара**.</string>
     <string name="VoipGroupVideoRecordSaved">Відео збережено в ** Хмара **.</string>
     <string name="abc_action_bar_home_description">Перейти на головну</string>
@@ -278,8 +278,8 @@
     <string name="chat_templates_info">Надсилайте сюди повідомлення і надавайте їм назви для швидкого відправлення отриманих шаблонів в чати</string>
     <string name="chat_templates_list_header">Немає шаблонів</string>
     <string name="chat_templates_mode_attach">Меню вкладень</string>
-    <string name="chat_templates_mode_hint">"Ви завжди можете змінити це в
-Установки > Інструменти > Чати > Шаблони"</string>
+    <string name="chat_templates_mode_hint">"Ви завжди можете змінити це
+Налаштування > Інструменти > Чати > Шаблони"</string>
     <string name="chat_templates_mode_oval">Овал</string>
     <string name="choose_staking_order_interest_rate">За відсотковою ставкою</string>
     <string name="choose_tokens_order_alphabet">За алфавітом</string>
@@ -794,6 +794,7 @@
     <string name="push_notification_wallet_unsupported">Непідтримуване сповіщення</string>
     <string name="quick_reaction_settings_enable_item_hint">Увімкніть, щоб використовувати швидкі реакції для повідомлень у чатах</string>
     <string name="recent_chats_clear_history">Ви впевнені, що хочете очистити історію чатів?</string>
+    <string name="recent_chats_hint">Увімкніть це, якщо ви хочете мати швидкий доступ до ваших недавніх чатів з можливістю закріпити необмежену кількість чатів. Панель відображатиметься над списком чатів.</string>
     <string name="release_to_go_to_next_unread_bot">Відпустіть для переходу до нового бота</string>
     <string name="release_to_go_to_next_unread_group">Відпустіть, щоб перейти до непрочитаної групі</string>
     <string name="release_to_go_to_next_unread_personal_chat">Відпустіть, щоб перейти до непрочитаного особистого чату</string>
@@ -821,7 +822,7 @@
     <string name="setting_tools_drawer_holiday_icon_menu_14">День св. Валентина</string>
     <string name="setting_tools_drawer_holiday_icon_menu_hw">Хеллоуїн</string>
     <string name="setting_tools_drawer_holiday_icon_menu_ny">Новий рік</string>
-    <string name="settings_emoji_premium_suggest_sets">Пропоновані набори</string>
+    <string name="settings_emoji_premium_suggest_sets">Пропоновані емодзі набори</string>
     <string name="settings_help_alert_channel_item_title">Канал iMe</string>
     <string name="settings_help_alert_channel_username">https://t.me/ime_ru</string>
     <string name="settings_help_alert_faq_item_title">FAQ iMe</string>
@@ -1110,7 +1111,7 @@
     <string name="stickers_size_small">Маленький</string>
     <string name="stickers_size_title">Розмір стікерів</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Враховувати архів</string>
-    <string name="swipe_to_next_unread_dialog_hint">Увімкніть, щоб налаштувати переходи до непрочитаних чатів</string>
+    <string name="swipe_to_next_unread_dialog_hint">Увімкніть це, якщо ви хочете читати ваші чати, не повертаючись до списку чатів. Під час останнього повідомлення в чаті потягніть екран вгору, щоб перейти до наступного непрочитаного чату.</string>
     <string name="swipe_to_next_unread_dialog_types">Типи діалогів</string>
     <string name="text_recognition_bottom_sheet_title">Фото → Текст</string>
     <string name="topic">Топік</string>
@@ -1334,7 +1335,7 @@
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_long_description">Більше ніяких непотрібних комісій. Сплачуйте, надсилайте та отримуйте криптовалюту – все це без комісій.</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_title">БЕЗ КОМІСІЙ</string>
     <string name="wallet_banner_slide_crypto_transfers_description">Via чати, Telegram ID, адреси, QR-код</string>
-    <string name="wallet_banner_slide_crypto_transfers_long_description">Здійснюйте переказ криптовалюти прямо в чатах, за допомогою Telegram ID, використовуючи QR -код або публічні адреси.</string>
+    <string name="wallet_banner_slide_crypto_transfers_long_description">Здійснюйте переказ криптовалюти прямо в чатах, за допомогою Telegram ID, Twitter, використовуючи QR -код або публічні адреси.</string>
     <string name="wallet_banner_slide_crypto_transfers_title">Крипто перекази</string>
     <string name="wallet_banner_slide_faq_description">Загальний опис функціональності</string>
     <string name="wallet_banner_slide_faq_long_description">Будь ласка, прочитайте опис функціональності iMe, ви знайдете багато відповідей на свої запитання.</string>

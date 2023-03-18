@@ -8,26 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Components/SimpleAvatarView;
+.field public final synthetic f$1:Ljava/lang/CharSequence;
 
-.field public final synthetic f$2:[I
+.field public final synthetic f$2:Z
 
-.field public final synthetic f$3:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/CharSequence;ZILjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$1:Lorg/telegram/ui/Components/SimpleAvatarView;
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$1:Ljava/lang/CharSequence;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$2:[I
+    iput-boolean p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$2:Z
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$3:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+    iput p4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$3:I
+
+    iput-object p5, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$4:Ljava/lang/String;
 
     return-void
 .end method
@@ -35,17 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$1:Lorg/telegram/ui/Components/SimpleAvatarView;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$1:Ljava/lang/CharSequence;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$2:[I
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$2:Z
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$3:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
+    iget v3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$3:I
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$oKPcYqDLdMJXpMa1B8oXwW5SEn4(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    iget-object v4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$$ExternalSyntheticLambda62;->f$4:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->$r8$lambda$gH7zGW3y3x2pp4Aqq9DUKpPtjLw(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/CharSequence;ZILjava/lang/String;)V
 
     return-void
 .end method

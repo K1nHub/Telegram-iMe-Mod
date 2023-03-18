@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 36
+    .line 35
     invoke-virtual {p0}, Lcom/smedialink/manager/common/MediaEditManager$imageUpdater$2;->invoke()Lorg/telegram/ui/Components/ImageUpdater;
 
     move-result-object v0
@@ -69,7 +69,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/ImageUpdater;
     .locals 3
 
-    .line 36
+    .line 35
     new-instance v0, Lorg/telegram/ui/Components/ImageUpdater;
 
     const/4 v1, 0x1

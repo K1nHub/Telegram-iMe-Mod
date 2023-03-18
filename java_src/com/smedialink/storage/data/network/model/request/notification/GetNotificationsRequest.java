@@ -51,7 +51,7 @@ public final class GetNotificationsRequest {
     }
 
     public String toString() {
-        return "GetNotificationsRequest(lastItemId=" + ((Object) this.lastItemId) + ", limit=" + this.limit + ')';
+        return "GetNotificationsRequest(lastItemId=" + this.lastItemId + ", limit=" + this.limit + ')';
     }
 
     public GetNotificationsRequest(String str, int i) {

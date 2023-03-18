@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 34
+    .line 33
     invoke-virtual {p0}, Lcom/smedialink/manager/common/MediaEditManager$loadingAlertDialog$2;->invoke()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 1
 
-    .line 34
+    .line 33
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$loadingAlertDialog$2;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     invoke-static {v0}, Lcom/smedialink/manager/common/MediaEditManager;->access$initLoadingDialog(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/ui/ActionBar/AlertDialog;

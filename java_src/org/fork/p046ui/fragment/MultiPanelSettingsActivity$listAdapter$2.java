@@ -18,6 +18,6 @@ final class MultiPanelSettingsActivity$listAdapter$2 extends Lambda implements F
 
     @Override // kotlin.jvm.functions.Function0
     public final MultiPanelSettingsActivity.ListAdapter invoke() {
-        return new MultiPanelSettingsActivity.ListAdapter(this.this$0);
+        return new MultiPanelSettingsActivity.ListAdapter();
     }
 }

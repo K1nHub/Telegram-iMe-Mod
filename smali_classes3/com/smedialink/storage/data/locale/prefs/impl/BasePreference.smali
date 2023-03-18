@@ -130,6 +130,27 @@
 
 
 # virtual methods
+.method public clear()V
+    .locals 1
+
+    .line 26
+    invoke-virtual {p0}, Lcom/smedialink/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
 .method protected final getMPref()Landroid/content/SharedPreferences;
     .locals 2
 

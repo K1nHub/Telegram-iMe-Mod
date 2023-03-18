@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 1550
+    .line 1606
     invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
     return-void

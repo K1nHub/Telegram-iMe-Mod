@@ -58,7 +58,7 @@ public class WatchChangeAggregator {
         for (Integer num : getTargetIds(watchTargetChange)) {
             int intValue = num.intValue();
             TargetState ensureTargetState = ensureTargetState(intValue);
-            int i = C10351.f194x3bf9e295[watchTargetChange.getChangeType().ordinal()];
+            int i = C10281.f194x3bf9e295[watchTargetChange.getChangeType().ordinal()];
             if (i != 1) {
                 if (i == 2) {
                     ensureTargetState.recordTargetResponse();
@@ -95,7 +95,7 @@ public class WatchChangeAggregator {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.WatchChangeAggregator$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10351 {
+    public static /* synthetic */ class C10281 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$remote$WatchChange$WatchTargetChangeType */
         static final /* synthetic */ int[] f194x3bf9e295;

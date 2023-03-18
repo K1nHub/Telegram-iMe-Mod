@@ -549,8 +549,6 @@
     .line 154
     iget v0, p0, Lorg/telegram/ui/Components/PopupAudioView;->buttonState:I
 
-    add-int/lit8 v0, v0, 0x5
-
     .line 155
     iget-object v1, p0, Lorg/telegram/ui/Components/PopupAudioView;->timePaint:Landroid/text/TextPaint;
 

@@ -9,7 +9,7 @@ import android.view.Choreographer;
 import android.view.Display;
 import android.view.Surface;
 import android.view.WindowManager;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.Util;
@@ -60,8 +60,8 @@ public final class VideoFrameReleaseHelper {
         DisplayHelper maybeBuildDisplayHelper = maybeBuildDisplayHelper(context);
         this.displayHelper = maybeBuildDisplayHelper;
         this.vsyncSampler = maybeBuildDisplayHelper != null ? VSyncSampler.getInstance() : null;
-        this.vsyncDurationNs = C0474C.TIME_UNSET;
-        this.vsyncOffsetNs = C0474C.TIME_UNSET;
+        this.vsyncDurationNs = C0468C.TIME_UNSET;
+        this.vsyncOffsetNs = C0468C.TIME_UNSET;
         this.formatFrameRate = -1.0f;
         this.playbackSpeed = 1.0f;
         this.changeFrameRateStrategy = 0;
@@ -151,11 +151,11 @@ public final class VideoFrameReleaseHelper {
                 this.pendingLastAdjustedFrameIndex = this.frameIndex;
                 this.pendingLastAdjustedReleaseTimeNs = j2;
                 vSyncSampler = this.vsyncSampler;
-                if (vSyncSampler != null || this.vsyncDurationNs == C0474C.TIME_UNSET) {
+                if (vSyncSampler != null || this.vsyncDurationNs == C0468C.TIME_UNSET) {
                     return j2;
                 }
                 long j3 = vSyncSampler.sampledVsyncTimeNs;
-                return j3 == C0474C.TIME_UNSET ? j2 : closestVsync(j2, j3, this.vsyncDurationNs) - this.vsyncOffsetNs;
+                return j3 == C0468C.TIME_UNSET ? j2 : closestVsync(j2, j3, this.vsyncDurationNs) - this.vsyncOffsetNs;
             }
         }
         j2 = j;
@@ -302,8 +302,8 @@ public final class VideoFrameReleaseHelper {
             return;
         }
         Log.m806w(TAG, "Unable to query display refresh rate");
-        this.vsyncDurationNs = C0474C.TIME_UNSET;
-        this.vsyncOffsetNs = C0474C.TIME_UNSET;
+        this.vsyncDurationNs = C0468C.TIME_UNSET;
+        this.vsyncOffsetNs = C0468C.TIME_UNSET;
     }
 
     private static long closestVsync(long j, long j2, long j3) {
@@ -432,7 +432,7 @@ public final class VideoFrameReleaseHelper {
         private final HandlerThread choreographerOwnerThread;
         private final Handler handler;
         private int observerCount;
-        public volatile long sampledVsyncTimeNs = C0474C.TIME_UNSET;
+        public volatile long sampledVsyncTimeNs = C0468C.TIME_UNSET;
 
         public static VSyncSampler getInstance() {
             return INSTANCE;
@@ -504,7 +504,7 @@ public final class VideoFrameReleaseHelper {
                 this.observerCount = i;
                 if (i == 0) {
                     choreographer.removeFrameCallback(this);
-                    this.sampledVsyncTimeNs = C0474C.TIME_UNSET;
+                    this.sampledVsyncTimeNs = C0468C.TIME_UNSET;
                 }
             }
         }

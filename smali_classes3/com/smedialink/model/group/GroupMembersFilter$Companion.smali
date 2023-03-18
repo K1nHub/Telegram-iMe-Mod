@@ -15,10 +15,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$K8Dc75L-bpVyD0hm3woYIbNsY30(ZZLcom/smedialink/model/group/GroupMembersFilter;)Z
+.method public static synthetic $r8$lambda$hkiWBHwZB-fQr7uQr1P7WzBGJIw(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/model/group/GroupMembersFilter$Companion;->getAvailableFilters$lambda-1$lambda-0(ZZLcom/smedialink/model/group/GroupMembersFilter;)Z
+    invoke-static {p0, p1}, Lcom/smedialink/model/group/GroupMembersFilter$Companion;->getAvailableFilters$lambda$1$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -42,39 +42,24 @@
     return-void
 .end method
 
-.method private static final getAvailableFilters$lambda-1$lambda-0(ZZLcom/smedialink/model/group/GroupMembersFilter;)Z
+.method private static final getAvailableFilters$lambda$1$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 32
-    sget-object v0, Lcom/smedialink/model/group/GroupMembersFilter;->BLOCKED:Lcom/smedialink/model/group/GroupMembersFilter;
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eq p2, v0, :cond_0
+    move-result-object p0
 
-    sget-object v0, Lcom/smedialink/model/group/GroupMembersFilter;->RESTRICTED:Lcom/smedialink/model/group/GroupMembersFilter;
+    check-cast p0, Ljava/lang/Boolean;
 
-    if-ne p2, v0, :cond_1
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    :cond_0
-    if-eqz p0, :cond_2
+    move-result p0
 
-    if-nez p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
     return p0
 .end method
 
@@ -101,11 +86,15 @@
     move-result-object v0
 
     .line 32
-    new-instance v1, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;
+    new-instance v1, Lcom/smedialink/model/group/GroupMembersFilter$Companion$getAvailableFilters$1$1;
 
-    invoke-direct {v1, p1, p2}, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;-><init>(ZZ)V
+    invoke-direct {v1, p1, p2}, Lcom/smedialink/model/group/GroupMembersFilter$Companion$getAvailableFilters$1$1;-><init>(ZZ)V
 
-    invoke-static {v0, v1}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
+    new-instance p1, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/model/group/GroupMembersFilter$Companion$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-static {v0, p1}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     return-object v0
 .end method

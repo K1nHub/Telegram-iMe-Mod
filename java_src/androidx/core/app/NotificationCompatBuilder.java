@@ -12,7 +12,6 @@ import androidx.collection.ArraySet;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.LocusIdCompat;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.core.p010os.BuildCompat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -160,7 +159,7 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
                 this.mBuilder.setLocusId(locusIdCompat.toLocusId());
             }
         }
-        if (BuildCompat.isAtLeastS() && (i = builder.mFgsDeferBehavior) != 0) {
+        if (i6 >= 31 && (i = builder.mFgsDeferBehavior) != 0) {
             this.mBuilder.setForegroundServiceBehavior(i);
         }
         if (builder.mSilent) {
@@ -288,6 +287,9 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         }
         if (i2 >= 29) {
             builder.setContextual(action.isContextual());
+        }
+        if (i2 >= 31) {
+            builder.setAuthenticationRequired(action.isAuthenticationRequired());
         }
         bundle.putBoolean("android.support.action.showsUserInterface", action.getShowsUserInterface());
         builder.addExtras(bundle);

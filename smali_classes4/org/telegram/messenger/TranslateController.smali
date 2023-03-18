@@ -329,7 +329,7 @@
 
     const-string v1, "ar"
 
-    const-string v2, "zh"
+    const-string/jumbo v2, "zh"
 
     const-string v3, "fr"
 
@@ -386,11 +386,11 @@
 
     const-string v13, "ceb"
 
-    const-string v14, "zh-cn"
+    const-string/jumbo v14, "zh-cn"
 
-    const-string v15, "zh"
+    const-string/jumbo v15, "zh"
 
-    const-string v16, "zh-tw"
+    const-string/jumbo v16, "zh-tw"
 
     const-string v17, "co"
 
@@ -570,17 +570,17 @@
 
     const-string v105, "uz"
 
-    const-string v106, "vi"
+    const-string/jumbo v106, "vi"
 
     const-string v107, "cy"
 
-    const-string v108, "xh"
+    const-string/jumbo v108, "xh"
 
-    const-string v109, "yi"
+    const-string/jumbo v109, "yi"
 
-    const-string v110, "yo"
+    const-string/jumbo v110, "yo"
 
-    const-string v111, "zu"
+    const-string/jumbo v111, "zu"
 
     .line 278
     filled-new-array/range {v1 .. v111}, [Ljava/lang/String;
@@ -1021,21 +1021,6 @@
 
     if-nez v4, :cond_4
 
-    .line 661
-    invoke-virtual {p0, v0, v1}, Lorg/telegram/messenger/TranslateController;->getDialogTranslateTo(J)Ljava/lang/String;
-
-    move-result-object v4
-
-    iget-object v7, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Message;->originalLanguage:Ljava/lang/String;
-
-    invoke-static {v4, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_4
-
     goto :goto_1
 
     :cond_4
@@ -1279,9 +1264,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 623
-    invoke-static {}, Lorg/telegram/messenger/Utilities;->getStageQueue()Lorg/telegram/messenger/DispatchQueue;
-
-    move-result-object v0
+    sget-object v0, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v7, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda9;
 

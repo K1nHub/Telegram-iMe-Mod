@@ -24,16 +24,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 150
     iput-object p1, p0, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet$ListAdapter;->this$0:Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;
@@ -457,9 +453,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 189
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 183
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

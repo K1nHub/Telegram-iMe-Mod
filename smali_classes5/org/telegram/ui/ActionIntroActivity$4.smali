@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionIntroActivity;)V
     .locals 0
 
-    .line 1308
+    .line 1307
     iput-object p1, p0, Lorg/telegram/ui/ActionIntroActivity$4;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,14 +46,14 @@
 .method public didFindQr(Ljava/lang/String;)V
     .locals 2
 
-    .line 1311
+    .line 1310
     iget-object v0, p0, Lorg/telegram/ui/ActionIntroActivity$4;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)Z
 
-    .line 1312
+    .line 1311
     iget-object v0, p0, Lorg/telegram/ui/ActionIntroActivity$4;->this$0:Lorg/telegram/ui/ActionIntroActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionIntroActivity;->access$1500(Lorg/telegram/ui/ActionIntroActivity;)Lorg/telegram/ui/ActionIntroActivity$ActionIntroQRLoginDelegate;

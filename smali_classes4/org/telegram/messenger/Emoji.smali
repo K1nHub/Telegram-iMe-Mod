@@ -241,7 +241,7 @@
 
     const-string/jumbo v6, "\ud83d\ude18"
 
-    const-string v7, "\u2764"
+    const-string/jumbo v7, "\u2764"
 
     const-string/jumbo v8, "\ud83d\ude0d"
 
@@ -249,9 +249,9 @@
 
     const-string/jumbo v10, "\ud83d\ude01"
 
-    const-string v11, "\ud83d\udc4d"
+    const-string/jumbo v11, "\ud83d\udc4d"
 
-    const-string v12, "\u263a"
+    const-string/jumbo v12, "\u263a"
 
     const-string/jumbo v13, "\ud83d\ude14"
 
@@ -259,7 +259,7 @@
 
     const-string/jumbo v15, "\ud83d\ude2d"
 
-    const-string v16, "\ud83d\udc8b"
+    const-string/jumbo v16, "\ud83d\udc8b"
 
     const-string/jumbo v17, "\ud83d\ude12"
 
@@ -299,7 +299,7 @@
 
     const-string/jumbo v35, "\ud83d\ude06"
 
-    const-string v36, "\ud83d\udc4c"
+    const-string/jumbo v36, "\ud83d\udc4c"
 
     const-string/jumbo v37, "\ud83d\ude10"
 

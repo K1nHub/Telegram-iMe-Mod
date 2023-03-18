@@ -2,16 +2,17 @@ package com.smedialink.storage.data.repository.crypto.ton;
 
 import com.smedialink.storage.common.AppConfiguration$Ton;
 import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
-import com.smedialink.storage.data.utils.extentions.RxExtKt$handleError$1;
+import com.smedialink.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.repository.crypto.ton.TonConfigRepository;
 import io.reactivex.Observable;
+import io.reactivex.functions.Function;
 import java.util.concurrent.Callable;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.ResponseBody;
 /* compiled from: TonConfigRepositoryImpl.kt */
 /* loaded from: classes3.dex */
 public final class TonConfigRepositoryImpl implements TonConfigRepository {
@@ -27,36 +28,38 @@ public final class TonConfigRepositoryImpl implements TonConfigRepository {
 
     @Override // com.smedialink.storage.domain.repository.crypto.ton.TonConfigRepository
     public Observable<Result<String>> getTonConfigJsonString() {
-        Observable map = Observable.fromCallable(new Callable() { // from class: com.smedialink.storage.data.repository.crypto.ton.TonConfigRepositoryImpl$$ExternalSyntheticLambda1
+        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.smedialink.storage.data.repository.crypto.ton.TonConfigRepositoryImpl$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                Response m1363getTonConfigJsonString$lambda0;
-                m1363getTonConfigJsonString$lambda0 = TonConfigRepositoryImpl.m1363getTonConfigJsonString$lambda0(TonConfigRepositoryImpl.this);
-                return m1363getTonConfigJsonString$lambda0;
+                Response tonConfigJsonString$lambda$0;
+                tonConfigJsonString$lambda$0 = TonConfigRepositoryImpl.getTonConfigJsonString$lambda$0(TonConfigRepositoryImpl.this);
+                return tonConfigJsonString$lambda$0;
             }
-        }).map(TonConfigRepositoryImpl$$ExternalSyntheticLambda0.INSTANCE);
+        });
+        final TonConfigRepositoryImpl$getTonConfigJsonString$2 tonConfigRepositoryImpl$getTonConfigJsonString$2 = TonConfigRepositoryImpl$getTonConfigJsonString$2.INSTANCE;
+        Observable map = fromCallable.map(new Function() { // from class: com.smedialink.storage.data.repository.crypto.ton.TonConfigRepositoryImpl$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Result tonConfigJsonString$lambda$1;
+                tonConfigJsonString$lambda$1 = TonConfigRepositoryImpl.getTonConfigJsonString$lambda$1(Function1.this, obj);
+                return tonConfigJsonString$lambda$1;
+            }
+        });
         Intrinsics.checkNotNullExpressionValue(map, "fromCallable {\n         …s()\n                    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1770xf0d6aff7(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getTonConfigJsonString$lambda-0  reason: not valid java name */
-    public static final Response m1363getTonConfigJsonString$lambda0(TonConfigRepositoryImpl this$0) {
+    public static final Response getTonConfigJsonString$lambda$0(TonConfigRepositoryImpl this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         return this$0.okHttpClient.newCall(new Request.Builder().url(AppConfiguration$Ton.INSTANCE.getTonConfigFilename()).get().build()).execute();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getTonConfigJsonString$lambda-1  reason: not valid java name */
-    public static final Result m1364getTonConfigJsonString$lambda1(Response response) {
-        Intrinsics.checkNotNullParameter(response, "response");
-        ResponseBody body = response.body();
-        String string = body == null ? null : body.string();
-        if (string == null) {
-            string = "";
-        }
-        return Result.Companion.success(string);
+    public static final Result getTonConfigJsonString$lambda$1(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Result) tmp0.invoke(obj);
     }
 }

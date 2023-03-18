@@ -1428,21 +1428,13 @@
     :cond_11
     iget-wide v3, p0, Lcom/smedialink/model/staking/StakingDetailsItem;->availableForClaim:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->availableForClaim:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->availableForClaim:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_12
+    if-eqz v1, :cond_12
 
     return v2
 
@@ -1467,63 +1459,39 @@
     :cond_14
     iget-wide v3, p0, Lcom/smedialink/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->prematureWithdrawalFeePercentage:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_15
+    if-eqz v1, :cond_15
 
     return v2
 
     :cond_15
     iget-wide v3, p0, Lcom/smedialink/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->immediateWithdrawalFeePercentage:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_16
+    if-eqz v1, :cond_16
 
     return v2
 
     :cond_16
     iget-wide v3, p0, Lcom/smedialink/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->safeWithdrawalFeePercentage:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_17
+    if-eqz v1, :cond_17
 
     return v2
 
@@ -1592,21 +1560,13 @@
     :cond_1d
     iget-wide v3, p0, Lcom/smedialink/model/staking/StakingDetailsItem;->incomePercent:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->incomePercent:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/model/staking/StakingDetailsItem;->incomePercent:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result p1
 
-    if-nez p1, :cond_1e
+    if-eqz p1, :cond_1e
 
     return v2
 

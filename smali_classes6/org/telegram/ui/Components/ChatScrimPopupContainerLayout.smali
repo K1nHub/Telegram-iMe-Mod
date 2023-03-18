@@ -57,12 +57,12 @@
 .method private synthetic lambda$setPopupWindowLayout$0(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
     .locals 1
 
-    .line 134
+    .line 135
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 135
+    .line 136
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getVisibleHeight()I
 
     move-result v0
@@ -77,7 +77,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomViewYOffset:F
 
-    .line 136
+    .line 137
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->updateBottomViewPosition()V
 
     :cond_0
@@ -87,7 +87,7 @@
 .method private synthetic lambda$setPopupWindowLayout$1(Lorg/telegram/ui/Components/PopupSwipeBackLayout;FF)V
     .locals 0
 
-    .line 141
+    .line 142
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     if-eqz p1, :cond_0
@@ -96,14 +96,14 @@
 
     sub-float/2addr p2, p3
 
-    .line 142
+    .line 143
     invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 144
+    .line 145
     :cond_0
     iput p3, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->progressToSwipeBack:F
 
-    .line 145
+    .line 146
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->updatePopupTranslation()V
 
     return-void
@@ -112,12 +112,12 @@
 .method private updateBottomViewPosition()V
     .locals 3
 
-    .line 151
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 152
+    .line 153
     iget v1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomViewYOffset:F
 
     iget v2, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->expandSize:F
@@ -137,7 +137,7 @@
 .method private updatePopupTranslation()V
     .locals 2
 
-    .line 113
+    .line 114
     iget v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->progressToSwipeBack:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -148,17 +148,17 @@
 
     mul-float v1, v1, v0
 
-    .line 114
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupWindowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 115
+    .line 116
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 117
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
     :cond_0
@@ -170,7 +170,7 @@
 .method public applyViewBottom(Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 121
+    .line 122
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     return-void
@@ -792,22 +792,29 @@
     :cond_13
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
+    .line 110
     :goto_9
+    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredHeight()I
+
+    move-result p1
+
+    iput p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->maxHeight:I
+
     return-void
 .end method
 
 .method public setExpandSize(F)V
     .locals 1
 
-    .line 161
+    .line 162
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupWindowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 162
+    .line 163
     iput p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->expandSize:F
 
-    .line 163
+    .line 164
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->updateBottomViewPosition()V
 
     return-void
@@ -816,7 +823,7 @@
 .method public setMaxHeight(I)V
     .locals 0
 
-    .line 157
+    .line 158
     iput p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->maxHeight:I
 
     return-void
@@ -825,17 +832,17 @@
 .method public setPopupAlpha(F)V
     .locals 1
 
-    .line 167
+    .line 168
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupWindowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 168
+    .line 169
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 169
+    .line 170
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
     :cond_0
@@ -845,24 +852,24 @@
 .method public setPopupWindowLayout(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
     .locals 1
 
-    .line 132
+    .line 133
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupWindowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 133
+    .line 134
     new-instance v0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setOnSizeChangedListener(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$onSizeChangedListener;)V
 
-    .line 139
+    .line 140
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 140
+    .line 141
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
 
     move-result-object p1
@@ -880,12 +887,12 @@
 .method public setReactionsLayout(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 125
+    .line 126
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->reactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     if-eqz p1, :cond_0
 
-    .line 127
+    .line 128
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setChatScrimView(Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;)V
 
     :cond_0
@@ -895,17 +902,17 @@
 .method public setReactionsTransitionProgress(F)V
     .locals 3
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupWindowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setReactionsTransitionProgress(F)V
 
-    .line 175
+    .line 176
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 176
+    .line 177
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
     const/high16 v0, 0x3f000000    # 0.5f
@@ -914,7 +921,7 @@
 
     add-float/2addr v1, v0
 
-    .line 178
+    .line 179
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
@@ -925,14 +932,14 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setPivotX(F)V
 
-    .line 179
+    .line 180
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setPivotY(F)V
 
-    .line 180
+    .line 181
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->popupWindowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -951,15 +958,15 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomViewReactionsOffset:F
 
-    .line 181
+    .line 182
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->updateBottomViewPosition()V
 
-    .line 182
+    .line 183
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 183
+    .line 184
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->bottomView:Landroid/view/View;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setScaleY(F)V

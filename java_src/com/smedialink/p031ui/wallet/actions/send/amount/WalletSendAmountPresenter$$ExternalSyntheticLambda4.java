@@ -11,6 +11,6 @@ public final /* synthetic */ class WalletSendAmountPresenter$$ExternalSyntheticL
 
     @Override // org.fork.utils.Callbacks$Callback
     public final void invoke() {
-        WalletSendAmountPresenter.m1551getBinanceAvailableTokensForReplenish$lambda6();
+        WalletSendAmountPresenter.getBinanceAvailableTokensForReplenish$lambda$7();
     }
 }

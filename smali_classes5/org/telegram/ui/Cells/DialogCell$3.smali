@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 0
 
-    .line 3085
+    .line 3105
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$3;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 3088
+    .line 3108
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$3;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$502(Lorg/telegram/ui/Cells/DialogCell;F)F
 
-    .line 3089
+    .line 3109
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$3;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V

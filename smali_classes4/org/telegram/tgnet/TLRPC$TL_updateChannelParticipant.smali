@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 32156
+    .line 32301
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
     return-void
@@ -48,49 +48,49 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 32170
+    .line 32315
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
-    .line 32171
+    .line 32316
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->channel_id:J
 
-    .line 32172
+    .line 32317
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->date:I
 
-    .line 32173
+    .line 32318
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->actor_id:J
 
-    .line 32174
+    .line 32319
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->user_id:J
 
-    .line 32175
+    .line 32320
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 32176
+    .line 32321
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -101,7 +101,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->prev_participant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 32178
+    .line 32323
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
@@ -109,7 +109,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 32179
+    .line 32324
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -120,7 +120,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->new_participant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 32181
+    .line 32326
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
@@ -128,7 +128,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 32182
+    .line 32327
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -139,7 +139,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->invite:Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;
 
-    .line 32184
+    .line 32329
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -153,49 +153,49 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 32188
+    .line 32333
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32189
+    .line 32334
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32190
+    .line 32335
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->channel_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 32191
+    .line 32336
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 32192
+    .line 32337
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->actor_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 32193
+    .line 32338
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->user_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 32194
+    .line 32339
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 32195
+    .line 32340
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->prev_participant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 32197
+    .line 32342
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
@@ -203,12 +203,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 32198
+    .line 32343
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->new_participant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 32200
+    .line 32345
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->flags:I
 
@@ -216,12 +216,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 32201
+    .line 32346
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->invite:Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 32203
+    .line 32348
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;->qts:I
 

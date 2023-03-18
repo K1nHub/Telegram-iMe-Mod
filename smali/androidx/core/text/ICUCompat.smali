@@ -3,6 +3,15 @@
 .source "ICUCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/text/ICUCompat$Api21Impl;,
+        Landroidx/core/text/ICUCompat$Api24Impl;
+    }
+.end annotation
+
+
 # static fields
 .field private static sAddLikelySubtagsMethod:Ljava/lang/reflect/Method;
 
@@ -13,7 +22,7 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 36
+    .line 40
     const-class v0, Ljava/lang/String;
 
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -30,7 +39,7 @@
 
     if-ge v1, v6, :cond_0
 
-    .line 38
+    .line 42
     :try_start_0
     invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -42,7 +51,7 @@
 
     aput-object v0, v6, v4
 
-    .line 40
+    .line 43
     invoke-virtual {v1, v3, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v3
@@ -53,7 +62,7 @@
 
     aput-object v0, v3, v4
 
-    .line 42
+    .line 44
     invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
@@ -113,7 +122,7 @@
     :catch_1
     move-exception v0
 
-    .line 59
+    .line 58
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
@@ -125,17 +134,17 @@
     return-void
 .end method
 
-.method private static addLikelySubtags(Ljava/util/Locale;)Ljava/lang/String;
+.method private static addLikelySubtagsBelowApi21(Ljava/util/Locale;)Ljava/lang/String;
     .locals 4
 
     const-string v0, "ICUCompat"
 
-    .line 129
+    .line 132
     invoke-virtual {p0}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 131
+    .line 134
     :try_start_0
     sget-object v1, Landroidx/core/text/ICUCompat;->sAddLikelySubtagsMethod:Ljava/lang/reflect/Method;
 
@@ -151,7 +160,7 @@
 
     const/4 v3, 0x0
 
-    .line 133
+    .line 136
     invoke-virtual {v1, v3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -166,7 +175,7 @@
     :catch_0
     move-exception v1
 
-    .line 140
+    .line 143
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
@@ -174,7 +183,7 @@
     :catch_1
     move-exception v1
 
-    .line 137
+    .line 140
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
@@ -182,14 +191,14 @@
     return-object p0
 .end method
 
-.method private static getScript(Ljava/lang/String;)Ljava/lang/String;
+.method private static getScriptBelowApi21(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
     const-string v0, "ICUCompat"
 
     const/4 v1, 0x0
 
-    .line 114
+    .line 116
     :try_start_0
     sget-object v2, Landroidx/core/text/ICUCompat;->sGetScriptMethod:Ljava/lang/reflect/Method;
 
@@ -203,7 +212,7 @@
 
     aput-object p0, v3, v4
 
-    .line 116
+    .line 118
     invoke-virtual {v2, v1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -218,7 +227,7 @@
     :catch_0
     move-exception p0
 
-    .line 123
+    .line 125
     invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
@@ -226,7 +235,7 @@
     :catch_1
     move-exception p0
 
-    .line 120
+    .line 122
     invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
@@ -239,24 +248,24 @@
 
     const-string v0, "ICUCompat"
 
-    .line 89
+    .line 88
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x18
 
     if-lt v1, v2, :cond_0
 
+    .line 89
+    invoke-static {p0}, Landroidx/core/text/ICUCompat$Api24Impl;->forLocale(Ljava/util/Locale;)Landroid/icu/util/ULocale;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroidx/core/text/ICUCompat$Api24Impl;->addLikelySubtags(Ljava/lang/Object;)Landroid/icu/util/ULocale;
+
+    move-result-object p0
+
     .line 90
-    invoke-static {p0}, Landroid/icu/util/ULocale;->forLocale(Ljava/util/Locale;)Landroid/icu/util/ULocale;
-
-    move-result-object p0
-
-    invoke-static {p0}, Landroid/icu/util/ULocale;->addLikelySubtags(Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;
-
-    move-result-object p0
-
-    .line 91
-    invoke-virtual {p0}, Landroid/icu/util/ULocale;->getScript()Ljava/lang/String;
+    invoke-static {p0}, Landroidx/core/text/ICUCompat$Api24Impl;->getScript(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -278,7 +287,7 @@
 
     aput-object p0, v1, v2
 
-    .line 95
+    .line 96
     sget-object v2, Landroidx/core/text/ICUCompat;->sAddLikelySubtagsMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v2, v3, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -287,7 +296,7 @@
 
     check-cast v1, Ljava/util/Locale;
 
-    invoke-virtual {v1}, Ljava/util/Locale;->getScript()Ljava/lang/String;
+    invoke-static {v1}, Landroidx/core/text/ICUCompat$Api21Impl;->getScript(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_0
@@ -299,7 +308,7 @@
     :catch_0
     move-exception v1
 
-    .line 99
+    .line 100
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
@@ -307,27 +316,27 @@
     :catch_1
     move-exception v1
 
-    .line 97
+    .line 98
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 101
+    .line 102
     :goto_0
-    invoke-virtual {p0}, Ljava/util/Locale;->getScript()Ljava/lang/String;
+    invoke-static {p0}, Landroidx/core/text/ICUCompat$Api21Impl;->getScript(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 103
+    .line 104
     :cond_1
-    invoke-static {p0}, Landroidx/core/text/ICUCompat;->addLikelySubtags(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-static {p0}, Landroidx/core/text/ICUCompat;->addLikelySubtagsBelowApi21(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p0
 
     if-eqz p0, :cond_2
 
-    .line 105
-    invoke-static {p0}, Landroidx/core/text/ICUCompat;->getScript(Ljava/lang/String;)Ljava/lang/String;
+    .line 106
+    invoke-static {p0}, Landroidx/core/text/ICUCompat;->getScriptBelowApi21(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

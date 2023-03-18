@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/shop/PurchaseHelper$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/shop/PurchaseHelper;
 
-    invoke-static {v0}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$-_GaqnAQKGwtvQKq1oPA7CxHGV4(Lcom/smedialink/ui/shop/PurchaseHelper;)V
+    invoke-static {v0}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$0TF2ymhteiPJbLSwJQoSDrWnjQ8(Lcom/smedialink/ui/shop/PurchaseHelper;)V
 
     return-void
 .end method

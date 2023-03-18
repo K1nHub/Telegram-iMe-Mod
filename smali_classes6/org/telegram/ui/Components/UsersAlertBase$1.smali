@@ -32,23 +32,10 @@
 
 
 # virtual methods
-.method protected allowSelectChildAtPosition(FF)Z
-    .locals 1
-
-    .line 122
-    iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$1;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
-
-    invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/UsersAlertBase;->isAllowSelectChildAtPosition(FF)Z
-
-    move-result p1
-
-    return p1
-.end method
-
 .method public emptyViewIsVisible()Z
     .locals 3
 
-    .line 134
+    .line 130
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -59,7 +46,7 @@
 
     return v1
 
-    .line 137
+    .line 133
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$1;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
@@ -88,14 +75,14 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 127
+    .line 123
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [I
 
-    .line 129
+    .line 125
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getLocationInWindow([I)V
 
     return-void

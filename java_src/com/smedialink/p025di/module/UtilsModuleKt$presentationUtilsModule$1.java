@@ -38,10 +38,10 @@ final class UtilsModuleKt$presentationUtilsModule$1 extends Lambda implements Fu
     /* compiled from: UtilsModule.kt */
     /* renamed from: com.smedialink.di.module.UtilsModuleKt$presentationUtilsModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C14361 extends Lambda implements Function2<Scope, ParametersHolder, RxEventBus> {
-        public static final C14361 INSTANCE = new C14361();
+    public static final class C14441 extends Lambda implements Function2<Scope, ParametersHolder, RxEventBus> {
+        public static final C14441 INSTANCE = new C14441();
 
-        C14361() {
+        C14441() {
             super(2);
         }
 
@@ -63,10 +63,10 @@ final class UtilsModuleKt$presentationUtilsModule$1 extends Lambda implements Fu
     /* compiled from: UtilsModule.kt */
     /* renamed from: com.smedialink.di.module.UtilsModuleKt$presentationUtilsModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C14372 extends Lambda implements Function2<Scope, ParametersHolder, ActionGateway> {
-        public static final C14372 INSTANCE = new C14372();
+    public static final class C14452 extends Lambda implements Function2<Scope, ParametersHolder, ActionGateway> {
+        public static final C14452 INSTANCE = new C14452();
 
-        C14372() {
+        C14452() {
             super(2);
         }
 
@@ -84,30 +84,30 @@ final class UtilsModuleKt$presentationUtilsModule$1 extends Lambda implements Fu
         List emptyList2;
         List emptyList3;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C14361 c14361 = C14361.INSTANCE;
+        C14441 c14441 = C14441.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(RxEventBus.class), null, c14361, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(RxEventBus.class), null, c14441, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new Pair(module, singleInstanceFactory);
-        C14372 c14372 = C14372.INSTANCE;
+        C14452 c14452 = C14452.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ActionGateway.class), null, c14372, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ActionGateway.class), null, c14452, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new Pair(module, singleInstanceFactory2);
-        C14383 c14383 = C14383.INSTANCE;
+        C14463 c14463 = C14463.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(CustomPriceValidator.class), null, c14383, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(CustomPriceValidator.class), null, c14463, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
@@ -119,10 +119,10 @@ final class UtilsModuleKt$presentationUtilsModule$1 extends Lambda implements Fu
     /* compiled from: UtilsModule.kt */
     /* renamed from: com.smedialink.di.module.UtilsModuleKt$presentationUtilsModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C14383 extends Lambda implements Function2<Scope, ParametersHolder, CustomPriceValidator> {
-        public static final C14383 INSTANCE = new C14383();
+    public static final class C14463 extends Lambda implements Function2<Scope, ParametersHolder, CustomPriceValidator> {
+        public static final C14463 INSTANCE = new C14463();
 
-        C14383() {
+        C14463() {
             super(2);
         }
 

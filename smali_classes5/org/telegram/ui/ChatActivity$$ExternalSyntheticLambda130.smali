@@ -2,34 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/core/util/Consumer;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ReactedUsersListView;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda130;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda130;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda130;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda130;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda130;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda130;->f$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda130;->f$0:Lorg/telegram/ui/Components/ReactedUsersListView;
+    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wqaN556ZMOu1gQfg1pKLIGpEukU(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    check-cast p1, Ljava/util/List;
+    move-result p1
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ReactedUsersListView;->setSeenUsers(Ljava/util/List;)Lorg/telegram/ui/Components/ReactedUsersListView;
-
-    return-void
+    return p1
 .end method

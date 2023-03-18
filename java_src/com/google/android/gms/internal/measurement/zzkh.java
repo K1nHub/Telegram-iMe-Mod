@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
@@ -8,7 +8,7 @@ import java.util.Objects;
 /* loaded from: classes.dex */
 public final class zzkh {
     static final Charset zza = Charset.forName("UTF-8");
-    static final Charset zzb = Charset.forName(C0474C.ISO88591_NAME);
+    static final Charset zzb = Charset.forName(C0468C.ISO88591_NAME);
     public static final byte[] zzc;
     public static final ByteBuffer zzd;
     public static final zzjc zze;

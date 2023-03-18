@@ -30,10 +30,10 @@
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 247
+    .line 264
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 241
+    .line 258
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 v0, 0x1
@@ -42,27 +42,27 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->numberTextPaint:Landroid/text/TextPaint;
 
-    .line 242
+    .line 259
     new-instance p1, Landroid/text/TextPaint;
 
     invoke-direct {p1, v0}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->symbolsTextPaint:Landroid/text/TextPaint;
 
-    .line 244
+    .line 261
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->rect:Landroid/graphics/Rect;
 
-    .line 248
+    .line 265
     iput-object p2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mNumber:Ljava/lang/String;
 
-    .line 249
+    .line 266
     iput-object p3, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mSymbols:Ljava/lang/String;
 
-    .line 251
+    .line 268
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->numberTextPaint:Landroid/text/TextPaint;
 
     const/16 p2, 0x18
@@ -75,7 +75,7 @@
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 252
+    .line 269
     iget-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->symbolsTextPaint:Landroid/text/TextPaint;
 
     const/16 p2, 0xe
@@ -88,14 +88,14 @@
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 254
+    .line 271
     invoke-static {}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->access$500()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 255
+    .line 272
     invoke-direct {p0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->updateColors()V
 
     return-void
@@ -104,7 +104,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;)V
     .locals 0
 
-    .line 240
+    .line 257
     invoke-direct {p0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->updateColors()V
 
     return-void
@@ -113,7 +113,7 @@
 .method private updateColors()V
     .locals 2
 
-    .line 259
+    .line 276
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->numberTextPaint:Landroid/text/TextPaint;
 
     const-string v1, "windowBackgroundWhiteBlackText"
@@ -124,7 +124,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 260
+    .line 277
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->symbolsTextPaint:Landroid/text/TextPaint;
 
     const-string v1, "windowBackgroundWhiteHintText"
@@ -143,7 +143,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 265
+    .line 282
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->symbolsTextPaint:Landroid/text/TextPaint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mSymbols:Ljava/lang/String;
@@ -152,7 +152,7 @@
 
     move-result v0
 
-    .line 266
+    .line 283
     iget-object v1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->numberTextPaint:Landroid/text/TextPaint;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mNumber:Ljava/lang/String;
@@ -161,7 +161,7 @@
 
     move-result v1
 
-    .line 268
+    .line 285
     iget-object v2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->numberTextPaint:Landroid/text/TextPaint;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mNumber:Ljava/lang/String;
@@ -176,7 +176,7 @@
 
     invoke-virtual {v2, v3, v6, v4, v5}, Landroid/text/TextPaint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 269
+    .line 286
     iget-object v2, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
@@ -189,7 +189,7 @@
 
     div-float/2addr v2, v3
 
-    .line 270
+    .line 287
     iget-object v4, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->symbolsTextPaint:Landroid/text/TextPaint;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mSymbols:Ljava/lang/String;
@@ -202,7 +202,7 @@
 
     invoke-virtual {v4, v5, v6, v7, v8}, Landroid/text/TextPaint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 271
+    .line 288
     iget-object v4, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
@@ -213,7 +213,7 @@
 
     div-float/2addr v4, v3
 
-    .line 273
+    .line 290
     iget-object v5, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mNumber:Ljava/lang/String;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -244,7 +244,7 @@
 
     invoke-virtual {p1, v5, v6, v1, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 274
+    .line 291
     iget-object v1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->mSymbols:Ljava/lang/String;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I

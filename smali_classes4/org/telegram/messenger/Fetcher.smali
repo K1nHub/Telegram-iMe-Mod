@@ -55,7 +55,7 @@
     .end annotation
 .end field
 
-.field private requestRemotelyTimeout:J
+.field private final requestRemotelyTimeout:J
 
 
 # direct methods
@@ -91,7 +91,7 @@
 
     const-wide/32 v0, 0x3a980
 
-    .line 24
+    .line 28
     iput-wide v0, p0, Lorg/telegram/messenger/Fetcher;->requestRemotelyTimeout:J
 
     return-void
@@ -108,20 +108,32 @@
         }
     .end annotation
 
-    .line 77
-    iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->cachedResults:Ljava/util/HashMap;
+    .line 81
+    iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    invoke-virtual {p0, v0}, Lorg/telegram/messenger/Fetcher;->useCache(Ljava/lang/Object;)Z
+
+    move-result v0
 
     if-nez v0, :cond_0
 
-    .line 78
+    return-void
+
+    .line 84
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->cachedResults:Ljava/util/HashMap;
+
+    if-nez v0, :cond_1
+
+    .line 85
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/Fetcher;->cachedResults:Ljava/util/HashMap;
 
-    .line 80
-    :cond_0
+    .line 87
+    :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->cachedResults:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -140,14 +152,14 @@
         }
     .end annotation
 
-    .line 114
+    .line 121
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->loadingCallbacks:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 118
+    .line 125
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -159,7 +171,7 @@
 
     return-void
 
-    .line 123
+    .line 130
     :cond_1
     new-instance v1, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda0;
 
@@ -167,7 +179,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 130
+    .line 137
     iget-object p2, p0, Lorg/telegram/messenger/Fetcher;->loadingCallbacks:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -186,7 +198,7 @@
         }
     .end annotation
 
-    .line 70
+    .line 74
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->cachedResults:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
@@ -195,7 +207,7 @@
 
     return-object p1
 
-    .line 73
+    .line 77
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -215,7 +227,7 @@
         }
     .end annotation
 
-    .line 96
+    .line 103
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->loadingCallbacks:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -240,7 +252,7 @@
 .method private static synthetic lambda$callCallbacks$2(Ljava/util/ArrayList;Ljava/lang/Object;)V
     .locals 2
 
-    .line 124
+    .line 131
     invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -258,12 +270,12 @@
 
     check-cast v1, Lorg/telegram/messenger/Utilities$Callback;
 
-    .line 125
+    .line 132
     invoke-interface {v1, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 127
+    .line 134
     :cond_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->clear()V
 
@@ -273,17 +285,17 @@
 .method private synthetic lambda$fetch$0(Landroid/util/Pair;Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Boolean;Ljava/lang/Object;Ljava/lang/Long;)V
     .locals 6
 
-    .line 51
+    .line 55
     invoke-virtual {p5}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p5
 
     if-eqz p5, :cond_0
 
-    .line 52
+    .line 56
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/Fetcher;->cacheResult(Landroid/util/Pair;Ljava/lang/Object;)V
 
-    .line 53
+    .line 57
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/Fetcher;->callCallbacks(Landroid/util/Pair;Ljava/lang/Object;)V
 
     goto :goto_0
@@ -291,7 +303,7 @@
     :cond_0
     if-eqz p6, :cond_1
 
-    .line 56
+    .line 60
     invoke-virtual {p7}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v4
@@ -306,10 +318,10 @@
 
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/Fetcher;->setLocal(ILjava/lang/Object;Ljava/lang/Object;J)V
 
-    .line 57
+    .line 61
     invoke-direct {p0, p1, p6}, Lorg/telegram/messenger/Fetcher;->cacheResult(Landroid/util/Pair;Ljava/lang/Object;)V
 
-    .line 59
+    .line 63
     :cond_1
     invoke-direct {p0, p1, p6}, Lorg/telegram/messenger/Fetcher;->callCallbacks(Landroid/util/Pair;Ljava/lang/Object;)V
 
@@ -320,17 +332,17 @@
 .method private synthetic lambda$fetch$1(Landroid/util/Pair;ILjava/lang/Object;Ljava/lang/Long;Ljava/lang/Object;)V
     .locals 9
 
-    .line 48
+    .line 52
     invoke-direct {p0, p1}, Lorg/telegram/messenger/Fetcher;->shouldRequest(Landroid/util/Pair;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 49
+    .line 53
     invoke-direct {p0, p1}, Lorg/telegram/messenger/Fetcher;->saveLastRequested(Landroid/util/Pair;)V
 
-    .line 50
+    .line 54
     invoke-virtual {p4}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v6
@@ -365,11 +377,11 @@
 
     goto :goto_0
 
-    .line 63
+    .line 67
     :cond_0
     invoke-direct {p0, p1, p5}, Lorg/telegram/messenger/Fetcher;->cacheResult(Landroid/util/Pair;Ljava/lang/Object;)V
 
-    .line 64
+    .line 68
     invoke-direct {p0, p1, p5}, Lorg/telegram/messenger/Fetcher;->callCallbacks(Landroid/util/Pair;Ljava/lang/Object;)V
 
     :goto_0
@@ -393,20 +405,20 @@
 
     return-void
 
-    .line 103
+    .line 110
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->loadingCallbacks:Ljava/util/HashMap;
 
     if-nez v0, :cond_1
 
-    .line 104
+    .line 111
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/Fetcher;->loadingCallbacks:Ljava/util/HashMap;
 
-    .line 106
+    .line 113
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->loadingCallbacks:Ljava/util/HashMap;
 
@@ -418,7 +430,7 @@
 
     if-nez v0, :cond_2
 
-    .line 108
+    .line 115
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->loadingCallbacks:Ljava/util/HashMap;
 
     new-instance v1, Ljava/util/ArrayList;
@@ -429,7 +441,7 @@
 
     move-object v0, v1
 
-    .line 110
+    .line 117
     :cond_2
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -447,19 +459,19 @@
         }
     .end annotation
 
-    .line 84
+    .line 91
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->lastRequestedRemotely:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
-    .line 85
+    .line 92
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/Fetcher;->lastRequestedRemotely:Ljava/util/HashMap;
 
-    .line 87
+    .line 94
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->lastRequestedRemotely:Ljava/util/HashMap;
 
@@ -487,7 +499,7 @@
         }
     .end annotation
 
-    .line 91
+    .line 98
     iget-object v0, p0, Lorg/telegram/messenger/Fetcher;->lastRequestedRemotely:Ljava/util/HashMap;
 
     if-eqz v0, :cond_0
@@ -506,7 +518,7 @@
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 92
+    .line 99
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -517,7 +529,7 @@
 
     sub-long/2addr v0, v2
 
-    iget-wide v2, p0, Lorg/telegram/messenger/Fetcher;->requestRemotelyTimeout:J
+    const-wide/32 v2, 0x3a980
 
     cmp-long p1, v0, v2
 
@@ -550,7 +562,7 @@
         }
     .end annotation
 
-    .line 31
+    .line 35
     new-instance v0, Landroid/util/Pair;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -559,19 +571,19 @@
 
     invoke-direct {v0, v1, p2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 33
+    .line 37
     invoke-direct {p0, v0}, Lorg/telegram/messenger/Fetcher;->isLoading(Landroid/util/Pair;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 34
+    .line 38
     invoke-direct {p0, v0, p3}, Lorg/telegram/messenger/Fetcher;->saveCallback(Landroid/util/Pair;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 
-    .line 38
+    .line 42
     :cond_0
     invoke-direct {p0, v0}, Lorg/telegram/messenger/Fetcher;->getCachedResult(Landroid/util/Pair;)Ljava/lang/Object;
 
@@ -579,7 +591,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 39
+    .line 43
     invoke-direct {p0, v0}, Lorg/telegram/messenger/Fetcher;->shouldRequest(Landroid/util/Pair;)Z
 
     move-result v2
@@ -588,17 +600,17 @@
 
     if-eqz p3, :cond_1
 
-    .line 41
+    .line 45
     invoke-interface {p3, v1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     :cond_1
     return-void
 
-    .line 46
+    .line 50
     :cond_2
     invoke-direct {p0, v0, p3}, Lorg/telegram/messenger/Fetcher;->saveCallback(Landroid/util/Pair;Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 47
+    .line 51
     new-instance p3, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda1;
 
     invoke-direct {p3, p0, v0, p1, p2}, Lorg/telegram/messenger/Fetcher$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/Fetcher;Landroid/util/Pair;ILjava/lang/Object;)V
@@ -658,4 +670,17 @@
     .end annotation
 
     return-void
+.end method
+
+.method protected useCache(Ljava/lang/Object;)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TArgs;)Z"
+        }
+    .end annotation
+
+    const/4 p1, 0x1
+
+    return p1
 .end method

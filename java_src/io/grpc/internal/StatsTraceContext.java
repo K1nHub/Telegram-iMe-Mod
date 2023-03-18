@@ -8,7 +8,7 @@ import io.grpc.Status;
 import io.grpc.StreamTracer;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class StatsTraceContext {
     public static final StatsTraceContext NOOP = new StatsTraceContext(new StreamTracer[0]);
     private final AtomicBoolean closed = new AtomicBoolean(false);

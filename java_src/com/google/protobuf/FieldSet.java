@@ -87,7 +87,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     /* renamed from: clone */
-    public FieldSet<T> m1139clone() {
+    public FieldSet<T> m1121clone() {
         FieldSet<T> newFieldSet = newFieldSet();
         for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
             Map.Entry<T, Object> arrayEntryAt = this.fields.getArrayEntryAt(i);
@@ -164,7 +164,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
 
     private static boolean isValidType(WireFormat.FieldType fieldType, Object obj) {
         Internal.checkNotNull(obj);
-        switch (C11991.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
+        switch (C11921.$SwitchMap$com$google$protobuf$WireFormat$JavaType[fieldType.getJavaType().ordinal()]) {
             case 1:
                 return obj instanceof Integer;
             case 2:
@@ -293,7 +293,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.FieldSet$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11991 {
+    public static /* synthetic */ class C11921 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
@@ -414,7 +414,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     static void writeElementNoTag(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, Object obj) throws IOException {
-        switch (C11991.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C11921.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 codedOutputStream.writeDoubleNoTag(((Double) obj).doubleValue());
                 return;
@@ -534,7 +534,7 @@ public final class FieldSet<T extends FieldDescriptorLite<T>> {
     }
 
     static int computeElementSizeNoTag(WireFormat.FieldType fieldType, Object obj) {
-        switch (C11991.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C11921.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 return CodedOutputStream.computeDoubleSizeNoTag(((Double) obj).doubleValue());
             case 2:

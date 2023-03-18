@@ -17,6 +17,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.collections.MapsKt__MapsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -61,11 +62,14 @@ public final class LockedSectionsController extends BaseController {
             String string = preferences.getString(TelegramPreferenceKeys.User.buildPasscodeHashKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeHash());
             if (string == null) {
                 string = "";
+            } else {
+                Intrinsics.checkNotNullExpressionValue(string, "getString(TelegramPrefer…ants.Symbols.EMPTY_STRING");
             }
             sectionPasscodeData.setPasscodeHash(string);
             sectionPasscodeData.setPasscodeRetryInMs(preferences.getLong(TelegramPreferenceKeys.User.buildPasscodeRetryInMsKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeRetryInMs()));
             String string2 = preferences.getString(TelegramPreferenceKeys.User.buildPasscodeSaltStringKey(lockedSection), TelegramPreferenceKeys.User.Default.passcodeSaltString());
             String str = string2 != null ? string2 : "";
+            Intrinsics.checkNotNullExpressionValue(str, "getString(TelegramPrefer…ants.Symbols.EMPTY_STRING");
             if (str.length() > 0) {
                 byte[] decode = Base64.decode(str, 0);
                 Intrinsics.checkNotNullExpressionValue(decode, "decode(passcodeSaltString, Base64.DEFAULT)");
@@ -461,8 +465,17 @@ public final class LockedSectionsController extends BaseController {
         private Companion() {
         }
 
-        public final LockedSectionsController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(LockedSectionsController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.LockedSectionsController$Companion$$ExternalSyntheticLambda0
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final LockedSectionsController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (LockedSectionsController) tmp0.invoke(obj);
+        }
+
+        public final LockedSectionsController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = LockedSectionsController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final LockedSectionsController$Companion$getInstance$1 lockedSectionsController$Companion$getInstance$1 = new LockedSectionsController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.LockedSectionsController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -470,9 +483,9 @@ public final class LockedSectionsController extends BaseController {
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    LockedSectionsController m1917getInstance$lambda0;
-                    m1917getInstance$lambda0 = LockedSectionsController.Companion.m1917getInstance$lambda0(i, (Integer) obj);
-                    return m1917getInstance$lambda0;
+                    LockedSectionsController instance$lambda$0;
+                    instance$lambda$0 = LockedSectionsController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -480,15 +493,8 @@ public final class LockedSectionsController extends BaseController {
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…r(accountIndex)\n        }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…r(accountIndex)\n        }");
             return (LockedSectionsController) computeIfAbsent;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final LockedSectionsController m1917getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new LockedSectionsController(i);
         }
     }
 }

@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;",
+        "Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$22\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,75:1\n127#2,5:76\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$22\n*L\n68#1:76,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$22\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n127#2,5:78\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$22\n*L\n69#1:78,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;
     .locals 2
 
     const-string v0, "$this$single"
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 68
+    .line 69
     check-cast p2, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     .line 131
-    const-class v1, Lcom/smedialink/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;
+    const-class v1, Lcom/smedialink/storage/domain/repository/crypto/airdrop/AirdropRepository;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,12 +99,12 @@
 
     move-result-object p1
 
-    .line 68
-    check-cast p1, Lcom/smedialink/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;
+    .line 69
+    check-cast p1, Lcom/smedialink/storage/domain/repository/crypto/airdrop/AirdropRepository;
 
-    new-instance v0, Lcom/smedialink/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;
+    new-instance v0, Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;
 
-    invoke-direct {v0, p1, p2}, Lcom/smedialink/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;-><init>(Lcom/smedialink/storage/domain/repository/crypto/nft/avatar/NftAvatarRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
+    invoke-direct {v0, p1, p2}, Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;-><init>(Lcom/smedialink/storage/domain/repository/crypto/airdrop/AirdropRepository;Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object v0
 .end method
@@ -112,12 +112,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 68
+    .line 69
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$22;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/nft/avatar/NftAvatarInteractor;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$22;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/storage/domain/interactor/crypto/airdrop/AirdropInteractor;
 
     move-result-object p1
 

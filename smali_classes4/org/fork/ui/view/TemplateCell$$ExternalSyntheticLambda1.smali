@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/view/TemplateCell$$ExternalSyntheticLambda1;->f$1:Lcom/smedialink/storage/domain/model/templates/TemplateModel;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/TemplateCell;->$r8$lambda$T0RpRzY-ycevbeYG51rMZ__DhVw(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/TemplateCell;->$r8$lambda$uGBAY_i6-79WJQHvTieteLdcXJ0(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Lcom/smedialink/storage/domain/model/templates/TemplateModel;Landroid/view/View;)V
 
     return-void
 .end method

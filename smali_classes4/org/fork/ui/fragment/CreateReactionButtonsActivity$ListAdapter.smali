@@ -20,7 +20,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateReactionButtonsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 TextView.kt\nandroidx/core/widget/TextViewKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,756:1\n1720#2,3:757\n1547#2:760\n1618#2,3:761\n49#3:764\n65#3,16:765\n93#3,3:781\n275#4,2:784\n*S KotlinDebug\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter\n*L\n436#1:757,3\n441#1:760\n441#1:761,3\n531#1:764\n531#1:765,16\n531#1:781,3\n660#1:784,2\n*E\n"
+    value = "SMAP\nCreateReactionButtonsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 TextView.kt\nandroidx/core/widget/TextViewKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,756:1\n1726#2,3:757\n1549#2:760\n1620#2,3:761\n49#3:764\n65#3,16:765\n93#3,3:781\n283#4,2:784\n*S KotlinDebug\n*F\n+ 1 CreateReactionButtonsActivity.kt\norg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter\n*L\n436#1:757,3\n441#1:760\n441#1:761,3\n531#1:764\n531#1:765,16\n531#1:781,3\n660#1:784,2\n*E\n"
 .end annotation
 
 
@@ -31,18 +31,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$P5CBCxUHQ-eWTBtvWG9m3svwR0g(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$IsWSOA7nw4id-NN_5jxBp5znndk(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->onCreateViewHolder$lambda-8$lambda-7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->onCreateViewHolder$lambda$8$lambda$6(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$qOBB4GQzax44XrK7lwGpTxw4RHg(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$j_90TflZ3IlZawH4HWbX6yZMFjw(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->onCreateViewHolder$lambda-8$lambda-6(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->onCreateViewHolder$lambda$8$lambda$7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;Landroid/view/View;)V
 
     return-void
 .end method
@@ -56,10 +56,6 @@
             ")V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "resourceManager"
 
@@ -126,7 +122,7 @@
     return p2
 .end method
 
-.method private static final onCreateViewHolder$lambda-8$lambda-6(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;)V
+.method private static final onCreateViewHolder$lambda$8$lambda$6(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Landroid/view/View;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -144,7 +140,7 @@
 
     const-string v1, "null cannot be cast to non-null type org.fork.ui.view.MovingReactionCell"
 
-    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/fork/ui/view/MovingReactionCell;
 
@@ -171,7 +167,7 @@
     return-void
 .end method
 
-.method private static final onCreateViewHolder$lambda-8$lambda-7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;Landroid/view/View;)V
+.method private static final onCreateViewHolder$lambda$8$lambda$7(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;Landroid/view/View;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -193,7 +189,7 @@
 
     const-string v1, "null cannot be cast to non-null type org.fork.ui.view.MovingReactionCell"
 
-    invoke-static {p2, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lorg/fork/ui/view/MovingReactionCell;
 
@@ -299,14 +295,14 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    move-object v0, v1
+    iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    move-object v0, v1
 
     :goto_0
     instance-of v2, v0, Lorg/fork/ui/view/MovingReactionCell;
@@ -799,7 +795,7 @@
 
     const/4 v1, 0x4
 
-    .line 275
+    .line 283
     :cond_4
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -905,14 +901,14 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    move-object v0, v1
+    iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    move-object v0, v1
 
     :goto_0
     instance-of v2, v0, Lorg/fork/ui/view/MovingReactionCell;
@@ -1187,7 +1183,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -1198,7 +1194,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1214,7 +1210,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Ljava/lang/String;
 
     .line 441
@@ -1222,6 +1218,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1446,15 +1443,6 @@
     return p1
 .end method
 
-.method public final getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-    .locals 1
-
-    .line 426
-    iget-object v0, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    return-object v0
-.end method
-
 .method public final isAllButtonsValid()Z
     .locals 5
 
@@ -1486,7 +1474,7 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 1720
+    .line 1726
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v1
@@ -1498,7 +1486,7 @@
 
     goto :goto_3
 
-    .line 1721
+    .line 1727
     :cond_1
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1582,14 +1570,9 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 622
-    :cond_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
@@ -1597,6 +1580,11 @@
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     .line 623
     :goto_0
@@ -1722,9 +1710,7 @@
     .line 574
     sget-object p2, Lkotlin/jvm/internal/StringCompanionObject;->INSTANCE:Lkotlin/jvm/internal/StringCompanionObject;
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_reaction_max_reaction_value_info:I
 
@@ -1766,9 +1752,7 @@
     :cond_1
     sget-object p2, Lkotlin/jvm/internal/StringCompanionObject;->INSTANCE:Lkotlin/jvm/internal/StringCompanionObject;
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_reaction_max_reaction_value_info_single:I
 
@@ -1823,9 +1807,7 @@
     .line 581
     sget-object p2, Lkotlin/jvm/internal/StringCompanionObject;->INSTANCE:Lkotlin/jvm/internal/StringCompanionObject;
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_reaction_max_button_value_info:I
 
@@ -1863,9 +1845,7 @@
     :cond_3
     sget-object p2, Lkotlin/jvm/internal/StringCompanionObject;->INSTANCE:Lkotlin/jvm/internal/StringCompanionObject;
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_reaction_max_button_value_info_single:I
 
@@ -1917,7 +1897,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "windowBackgroundWhiteBlueText4"
+    const-string/jumbo v2, "windowBackgroundWhiteBlueText4"
 
     .line 589
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
@@ -1990,9 +1970,7 @@
     invoke-direct {v4, v1, v2}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 597
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     .line 598
     invoke-static {p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->access$getReactionsAddRow$p(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)I
@@ -2125,9 +2103,7 @@
     check-cast v0, Lorg/telegram/ui/Cells/TextSettingsCell;
 
     .line 616
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->chat_reaction_button_position:I
 
@@ -2135,9 +2111,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    move-result-object v1
+    iget-object v1, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-static {p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->access$getButtonsRowsType$p(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)Lcom/smedialink/model/reaction/ReactionButtonsRowsType;
 
@@ -2168,7 +2142,7 @@
     .line 517
     sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->HEADER:I
 
-    const-string v0, "windowBackgroundWhite"
+    const-string/jumbo v0, "windowBackgroundWhite"
 
     if-ne p2, p1, :cond_0
 
@@ -2188,9 +2162,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 519
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto/16 :goto_0
 
@@ -2236,9 +2207,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 523
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto/16 :goto_0
 
@@ -2288,9 +2256,6 @@
 
     invoke-static/range {v3 .. v8}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 529
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 530
@@ -2319,9 +2284,9 @@
     move-result-object v0
 
     .line 80
-    new-instance v1, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda-8$$inlined$doOnTextChanged$1;
+    new-instance v1, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda$8$$inlined$doOnTextChanged$1;
 
-    invoke-direct {v1, p2, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda-8$$inlined$doOnTextChanged$1;-><init>(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;)V
+    invoke-direct {v1, p2, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ListAdapter$onCreateViewHolder$lambda$8$$inlined$doOnTextChanged$1;-><init>(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/fork/ui/view/MovingReactionCell;)V
 
     .line 93
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
@@ -2351,9 +2316,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 557
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 558
@@ -2374,9 +2336,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 560
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 516
     :goto_0

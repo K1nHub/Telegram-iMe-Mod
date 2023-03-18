@@ -27,14 +27,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 4507
+    .line 4526
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 4509
+    .line 4528
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->ctrlPressed:Z
 
     return-void
@@ -51,10 +51,10 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 4514
+    .line 4533
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10400(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10300(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     return p1
 
@@ -63,14 +63,14 @@
 
     if-nez p2, :cond_2
 
-    .line 4517
+    .line 4536
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->ctrlPressed:Z
 
     if-nez p2, :cond_1
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
+    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10200(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
 
     move-result p2
 
@@ -85,16 +85,16 @@
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$9700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object p2
 
     if-nez p2, :cond_2
 
-    .line 4518
+    .line 4537
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$33;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10400(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10300(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
 
     return p1
 

@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class InternalSubchannel implements InternalInstrumented<Object>, TransportProvider {
     private volatile ManagedClientTransport activeTransport;
     private volatile List<EquivalentAddressGroup> addressGroups;
@@ -68,7 +68,7 @@ public final class InternalSubchannel implements InternalInstrumented<Object>, T
     private volatile ConnectivityStateInfo state = ConnectivityStateInfo.forNonError(ConnectivityState.IDLE);
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Callback {
         abstract void onInUse(InternalSubchannel internalSubchannel);
 
@@ -353,7 +353,7 @@ public final class InternalSubchannel implements InternalInstrumented<Object>, T
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class TransportListener implements ManagedClientTransport.Listener {
         boolean shutdownInitiated = false;
         final ConnectionClientTransport transport;
@@ -446,7 +446,7 @@ public final class InternalSubchannel implements InternalInstrumented<Object>, T
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class CallTracingTransport extends ForwardingConnectionClientTransport {
         private final CallTracer callTracer;
         private final ConnectionClientTransport delegate;
@@ -497,7 +497,7 @@ public final class InternalSubchannel implements InternalInstrumented<Object>, T
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Index {
         private List<EquivalentAddressGroup> addressGroups;
         private int addressIndex;
@@ -568,7 +568,7 @@ public final class InternalSubchannel implements InternalInstrumented<Object>, T
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TransportLogger extends ChannelLogger {
         InternalLogId logId;
 

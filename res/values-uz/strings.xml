@@ -32,7 +32,7 @@ Biz joylashuv axborotingizdan siz tanlagan muddat davomida foydalanamiz va istal
     <string name="SavedMessages">Bulut</string>
     <string name="ShareTelegram">"iMe-ni baham ko'rish"</string>
     <string name="TelegramVersion">Android uchun iMe %1$s</string>
-    <string name="UserRestrictionsSendStickers">Stiker yuborish</string>
+    <string name="UserRestrictionsSendStickers">Stiker</string>
     <string name="VoipGroupAudioRecordSaved">Audio **Bulutga** saqlandi</string>
     <string name="VoipGroupVideoRecordSaved">Video **Bulutga** saqlandi.</string>
     <string name="abc_action_bar_home_description">Boshiga o‘tish</string>
@@ -774,6 +774,7 @@ Ularni qayta qo'shish uchun siz ularning Telegram kontaktlarida bo'lishingiz ker
     <string name="push_notification_wallet_simplex_payment">%1$s %2$s -> %3$s %4$s sotib olish talabi. Holati: %5$s</string>
     <string name="push_notification_wallet_unsupported">"Qo'llab-quvvatlanmaydigan bildirishnoma"</string>
     <string name="quick_reaction_settings_enable_item_hint">Chat xabarlari uchun tezkor reaktsiyalardan foydalanish uchun buni yoqing</string>
+    <string name="recent_chats_hint">"Cheksiz miqdordagi chatlarni mahkamlash imkoniyati bilan oxirgi suhbatlaringizga tezkor kirishni istasangiz, buni YOQING. Panel chat ro'yxatining tepasida ko'rsatiladi."</string>
     <string name="release_to_go_to_next_unread_bot">"Keyingi o'qilmagan botga o'tish uchun qo'yib yuboring"</string>
     <string name="release_to_go_to_next_unread_group">"Keyingi o'qilmagan guruhga o'tish uchun qo'yib yuboring"</string>
     <string name="release_to_go_to_next_unread_personal_chat">"Keyingi o'qilmagan shaxsiy chatga o'tish uchun qo'yib yuboring"</string>
@@ -1059,7 +1060,7 @@ Sizning balansingiz blokcheynda tranzaksiya tasdiqlanganidan keyin yangilanadi."
     <string name="stickers_size_small">Kichik</string>
     <string name="stickers_size_title">Stiker hajmi</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">"Arxivni o'z ichiga olmaydi"</string>
-    <string name="swipe_to_next_unread_dialog_hint">"O'qilmagan chatlarga surish orqali o'tish uchun buni yoqing"</string>
+    <string name="swipe_to_next_unread_dialog_hint">Chat roʻyxatiga qaytmasdan chatlaringizni aylantirishni istasangiz, buni YOQING. Chatning oxiriga yetganingizda, keyingi o‘qilmagan chatga o‘tish uchun yuqoriga torting.</string>
     <string name="swipe_to_next_unread_dialog_types">Dialog turlari</string>
     <string name="text_recognition_bottom_sheet_title">Surat → Matn</string>
     <string name="topic">Mavzu</string>
@@ -1282,7 +1283,7 @@ Quyida **%d**, **%d** va **%d** soʻzlarini kiriting:"</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_long_description">"Endi keraksiz to'lovlar va komissiyalar yo'q. Kripto to'lash, yuborish va qabul qilish — bu komissiyalarsiz."</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_title">KOMISSIYASIZ</string>
     <string name="wallet_banner_slide_crypto_transfers_description">Chatlar orqali, Telegram ID, manzil, QR kod</string>
-    <string name="wallet_banner_slide_crypto_transfers_long_description">"QR kod yoki ochiq manzillardan foydalanib, Telegram ID orqali, chatda kriptovalyuta o'tkazmalarini amalga oshiring."</string>
+    <string name="wallet_banner_slide_crypto_transfers_long_description">"QR kod yoki ochiq manzillardan foydalanib, Telegram ID orqali, Twitter, chatda kriptovalyuta o'tkazmalarini amalga oshiring."</string>
     <string name="wallet_banner_slide_crypto_transfers_title">"KRIPTO O'TKAZMALAR"</string>
     <string name="wallet_banner_slide_faq_description">Umumiy funktsional tavsif</string>
     <string name="wallet_banner_slide_faq_long_description">"Iltimos, iMe funksional tavsifini o'qing, siz savollaringizga juda ko'p javob topasiz."</string>

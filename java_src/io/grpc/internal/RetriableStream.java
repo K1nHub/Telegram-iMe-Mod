@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class RetriableStream<ReqT> implements ClientStream {
     private static final Status CANCELLED_BECAUSE_COMMITTED;
     static final Metadata.Key<String> GRPC_PREVIOUS_RPC_ATTEMPTS;
@@ -58,7 +58,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     private final AtomicBoolean noMoreTransparentRetry = new AtomicBoolean();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface BufferEntry {
         void runWith(Substream substream);
     }
@@ -277,7 +277,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class HedgingRunnable implements Runnable {
         final FutureCanceller scheduledHedgingRef;
 
@@ -532,7 +532,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private final class Sublistener implements ClientStreamListener {
         final Substream substream;
 
@@ -694,7 +694,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class State {
         final Collection<Substream> activeHedges;
         final List<BufferEntry> buffer;
@@ -809,7 +809,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Substream {
         boolean bufferLimitExceeded;
         boolean closed;
@@ -822,7 +822,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class BufferSizeTracer extends ClientStreamTracer {
         long bufferNeeded;
         private final Substream substream;
@@ -863,7 +863,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ChannelBufferMeter {
         private final AtomicLong bufferUsed = new AtomicLong();
 
@@ -873,7 +873,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Throttle {
         final int maxTokens;
         final int threshold;
@@ -937,7 +937,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class RetryPlan {
         final long backoffNanos;
         final Integer hedgingPushbackMillis;
@@ -953,7 +953,7 @@ public abstract class RetriableStream<ReqT> implements ClientStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FutureCanceller {
         boolean cancelled;
         Future<?> future;

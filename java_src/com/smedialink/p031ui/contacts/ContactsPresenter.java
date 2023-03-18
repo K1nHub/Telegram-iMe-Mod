@@ -7,15 +7,14 @@ import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Completable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import timber.log.Timber;
 /* compiled from: ContactsPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.contacts.ContactsPresenter */
@@ -36,28 +35,12 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
         Intrinsics.checkNotNullExpressionValue(observeOn, "contactInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Completable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Action() { // from class: com.smedialink.ui.contacts.ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$1
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new Action() { // from class: com.smedialink.ui.contacts.ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$1
             @Override // io.reactivex.functions.Action
             public final void run() {
                 ContactsPresenter.this.deleteAction();
             }
-        }, new Consumer() { // from class: com.smedialink.ui.contacts.ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 != null) {
-                    String message = th.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView2.showToast(message);
-                }
-                this.deleteAction();
-            }
-        });
+        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1907x3873914f((BaseView) getViewState(), this)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

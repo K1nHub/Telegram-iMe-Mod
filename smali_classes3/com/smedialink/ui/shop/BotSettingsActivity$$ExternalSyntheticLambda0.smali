@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/shop/BotSettingsActivity$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/shop/BotSettingsActivity;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/shop/BotSettingsActivity;->$r8$lambda$nQwTZaEQZaB58WIZ6Cs9e9oEz9s(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/ui/shop/BotSettingsActivity;->$r8$lambda$6z_HiAPVB8luyewj4wXSQeQowY8(Lcom/smedialink/ui/shop/BotSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method

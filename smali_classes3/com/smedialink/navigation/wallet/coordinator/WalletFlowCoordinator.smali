@@ -146,24 +146,18 @@
     const/4 p1, 0x0
 
     :goto_0
-    if-nez p1, :cond_2
+    if-eqz p1, :cond_2
 
-    goto :goto_1
-
-    :cond_2
     iget-object p1, p1, Lorg/telegram/ui/LaunchActivity;->walletConnectManager:Lkotlin/Lazy;
 
-    if-nez p1, :cond_3
-
-    goto :goto_1
+    if-eqz p1, :cond_2
 
     .line 31
-    :cond_3
     invoke-interface {p1}, Lkotlin/Lazy;->isInitialized()Z
 
     move-result p2
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_2
 
     .line 32
     invoke-interface {p1}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -174,7 +168,7 @@
 
     invoke-interface {p1}, Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectManager;->connectToStoredSessions()V
 
-    :cond_4
+    :cond_2
     :goto_1
     return-void
 .end method

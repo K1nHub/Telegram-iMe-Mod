@@ -5217,8 +5217,6 @@ Do you still remember your password?"</string>
     <string name="chat_templates_info">在此发送消息并命名，以在聊天中快速发送接收的模板</string>
     <string name="chat_templates_list_header">无模板</string>
     <string name="chat_templates_mode_attach">附加菜单</string>
-    <string name="chat_templates_mode_hint">"您随时可以在
-“设置”>“界面”>“模板”中更改"</string>
     <string name="chat_templates_mode_oval">椭圆</string>
     <string name="choose_tokens_order_alphabet">按字母</string>
     <string name="choose_tokens_order_balance">按余额</string>

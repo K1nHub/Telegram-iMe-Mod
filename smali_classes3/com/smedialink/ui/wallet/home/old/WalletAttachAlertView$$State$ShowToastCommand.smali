@@ -30,14 +30,14 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State;Ljava/lang/String;)V
     .locals 1
 
-    .line 354
+    .line 336
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showToast"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 356
+    .line 338
     iput-object p2, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     return-void
@@ -48,7 +48,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V
     .locals 1
 
-    .line 361
+    .line 343
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowToastCommand;->text:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/smedialink/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -59,7 +59,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 350
+    .line 332
     check-cast p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowToastCommand;->apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoPickerSearchActivity;)V
     .locals 0
 
-    .line 761
+    .line 760
     iput-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$8;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public shouldClearRecentSearch()V
     .locals 1
 
-    .line 769
+    .line 768
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$8;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$000(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/PhotoPickerActivity;->clearRecentSearch()V
 
-    .line 770
+    .line 769
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$8;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$100(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
@@ -62,7 +62,7 @@
 .method public shouldSearchText(Ljava/lang/String;)V
     .locals 1
 
-    .line 764
+    .line 763
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$8;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$3600(Lorg/telegram/ui/PhotoPickerSearchActivity;Ljava/lang/String;)V

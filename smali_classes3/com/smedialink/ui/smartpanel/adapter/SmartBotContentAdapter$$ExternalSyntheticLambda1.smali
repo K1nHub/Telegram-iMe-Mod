@@ -67,7 +67,7 @@
 
     move-object v8, p2
 
-    invoke-static/range {v0 .. v8}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->$r8$lambda$4cbyOwtS0WnsG7sOXRQY-UidFMM(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v8}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->$r8$lambda$pIiuEyPHZV3DmXNbXoiroo4AODI(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Ljava/lang/String;ZLorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/messenger/MessagesStorage;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

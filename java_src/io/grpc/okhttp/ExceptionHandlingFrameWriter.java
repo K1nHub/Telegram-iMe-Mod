@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import okio.Buffer;
 import okio.ByteString;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ExceptionHandlingFrameWriter implements FrameWriter {
     private static final Logger log = Logger.getLogger(OkHttpClientTransport.class.getName());
     private final OkHttpFrameLogger frameLogger;
@@ -21,7 +21,7 @@ public final class ExceptionHandlingFrameWriter implements FrameWriter {
     private final TransportExceptionHandler transportExceptionHandler;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface TransportExceptionHandler {
         void onException(Throwable th);
     }

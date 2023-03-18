@@ -58,18 +58,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$7ie9HtdeEkBAuxd3UBwlQ6zhEyo(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
+.method public static synthetic $r8$lambda$IIvv0mPVaXWXisHmwZOO7MJoBCo(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;->showConfirmDialog$lambda-0(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;->showConfirmDialog$lambda$0(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$O7kpq6hIxvanyfDzwh7FmhcKGZo(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;)V
+.method public static synthetic $r8$lambda$Qx698GjdTPIkOp3YTbt89wZ5Oc0(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;->setupListeners$lambda-16$lambda-15(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;->setupListeners$lambda$16$lambda$15(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;)V
 
     return-void
 .end method
@@ -414,9 +414,9 @@
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 80
-    new-instance v4, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog$setupListeners$lambda-16$$inlined$doAfterTextChanged$1;
+    new-instance v4, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog$setupListeners$lambda$16$$inlined$doAfterTextChanged$1;
 
-    invoke-direct {v4, v0, v1}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog$setupListeners$lambda-16$$inlined$doAfterTextChanged$1;-><init>(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;)V
+    invoke-direct {v4, v0, v1}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog$setupListeners$lambda$16$$inlined$doAfterTextChanged$1;-><init>(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;)V
 
     .line 93
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
@@ -488,7 +488,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-16$lambda-15(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;)V
+.method private static final setupListeners$lambda$16$lambda$15(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -502,7 +502,7 @@
 .end method
 
 .method private final setupStyles()V
-    .locals 8
+    .locals 7
 
     .line 114
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
@@ -529,134 +529,144 @@
     .line 116
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->imageBack:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v3, ""
+    const-string v3, "setupStyles$lambda$11$lambda$5"
 
     .line 117
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
 
-    const-string v4, "actionBarDefaultTitle"
+    const-string v3, "actionBarDefaultTitle"
 
     .line 118
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v1, v5}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
+    invoke-static {v1, v4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
     .line 121
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textAction:Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string v4, "setupStyles$lambda$11$lambda$6"
+
     .line 122
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    invoke-static {v1, v5, v6, v7}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
+    invoke-static {v1, v4, v5, v6}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setRippleBackground$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 123
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string v5, "chats_actionBackground"
+    const-string v4, "chats_actionBackground"
 
     .line 124
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result v5
+
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 127
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->editFromAmount:Landroidx/appcompat/widget/AppCompatEditText;
+
+    const-string v5, "setupStyles$lambda$11$lambda$7"
+
+    .line 128
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
+
+    .line 129
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result v5
+
+    invoke-virtual {v1, v5}, Landroid/widget/EditText;->setTextColor(I)V
+
+    const-string v5, "windowBackgroundWhiteGrayText2"
+
+    .line 130
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result v6
+
+    invoke-virtual {v1, v6}, Landroid/widget/EditText;->setHintTextColor(I)V
+
+    .line 133
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textToAmount:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string v6, "setupStyles$lambda$11$lambda$8"
+
+    .line 134
+    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
+
+    .line 135
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+
+    move-result v6
+
+    invoke-static {v1, v6}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setCompoundDrawablesColor(Landroid/widget/TextView;I)V
+
+    .line 136
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v6
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 127
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->editFromAmount:Landroidx/appcompat/widget/AppCompatEditText;
-
-    .line 128
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
-
-    .line 129
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v6
-
-    invoke-virtual {v1, v6}, Landroid/widget/EditText;->setTextColor(I)V
-
-    const-string v6, "windowBackgroundWhiteGrayText2"
-
-    .line 130
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v7
-
-    invoke-virtual {v1, v7}, Landroid/widget/EditText;->setHintTextColor(I)V
-
-    .line 133
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textToAmount:Landroidx/appcompat/widget/AppCompatTextView;
-
-    .line 134
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
-
-    .line 135
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v7
-
-    invoke-static {v1, v7}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setCompoundDrawablesColor(Landroid/widget/TextView;I)V
-
-    .line 136
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v7
-
-    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setTextColor(I)V
-
     .line 139
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textFromCurrency:Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string v6, "setupStyles$lambda$11$lambda$9"
+
     .line 140
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     .line 141
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v5
+    move-result v4
 
-    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 144
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textToCurrency:Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string v4, "setupStyles$lambda$11$lambda$10"
+
     .line 145
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     .line 146
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 149
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->linearRoot:Landroid/widget/LinearLayout;
 
-    const-string v3, "windowBackgroundWhite"
+    const-string v4, "windowBackgroundWhite"
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
+    invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
     .line 150
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->linearHeader:Landroid/widget/LinearLayout;
@@ -670,7 +680,7 @@
     .line 151
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textTax:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
 
@@ -679,7 +689,7 @@
     .line 152
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletCryptoBuyCustomPriceLayoutBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
 
@@ -699,7 +709,7 @@
     return-void
 .end method
 
-.method private static final showConfirmDialog$lambda-0(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
+.method private static final showConfirmDialog$lambda$0(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
     .locals 1
 
     const-string v0, "this$0"

@@ -48,6 +48,7 @@ public interface CoroutineContext {
             public static <E extends Element> E get(Element element, Key<E> key) {
                 Intrinsics.checkNotNullParameter(key, "key");
                 if (Intrinsics.areEqual(element.getKey(), key)) {
+                    Intrinsics.checkNotNull(element, "null cannot be cast to non-null type E of kotlin.coroutines.CoroutineContext.Element.get");
                     return element;
                 }
                 return null;

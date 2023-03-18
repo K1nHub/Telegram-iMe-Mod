@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeResult$Success;,
-        Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeResult$Cancelled;
+        Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeResult$Cancelled;,
+        Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeResult$Success;
     }
 .end annotation
 

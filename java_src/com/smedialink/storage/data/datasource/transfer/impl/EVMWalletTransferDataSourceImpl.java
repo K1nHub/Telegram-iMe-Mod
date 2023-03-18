@@ -1,15 +1,11 @@
 package com.smedialink.storage.data.datasource.transfer.impl;
 
 import com.smedialink.storage.data.datasource.transfer.WalletTransferDataSource;
-import com.smedialink.storage.data.mapper.crypto.TransferMappingKt;
 import com.smedialink.storage.data.network.api.own.CryptoWalletApi;
 import com.smedialink.storage.data.network.api.own.WalletApi;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.smedialink.storage.data.network.model.request.crypto.wallet.GetDataForCryptoTransferRequest;
-import com.smedialink.storage.data.network.model.request.crypto.wallet.SendCryptoTransferTransactionRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.DataForCryptoTransferResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionResponse;
+import com.smedialink.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.data.utils.extentions.NumberExtKt;
 import com.smedialink.storage.data.utils.extentions.Web3jExtKt;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
@@ -20,9 +16,8 @@ import com.smedialink.storage.domain.model.crypto.send.CryptoTransferMetadata;
 import com.smedialink.storage.domain.model.crypto.send.TransactionArgs;
 import com.smedialink.storage.domain.model.crypto.send.TransferArgs;
 import com.smedialink.storage.domain.model.wallet.token.TokenCode;
+import com.smedialink.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import java.math.BigInteger;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
@@ -61,19 +56,7 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
     public Observable<Result<CryptoTransferMetadata>> getTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<ApiBaseResponse<DataForCryptoTransferResponse>> dataForCryptoTransfer = this.walletApi.getDataForCryptoTransfer(new GetDataForCryptoTransferRequest(tokenCode.getName(), str, str2, networkType.name()));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable map = dataForCryptoTransfer.map(new Function() { // from class: com.smedialink.storage.data.datasource.transfer.impl.EVMWalletTransferDataSourceImpl$getTransferMetadata$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(TransferMappingKt.mapToDomain((DataForCryptoTransferResponse) response.getPayload()));
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable map = this.walletApi.getDataForCryptoTransfer(new GetDataForCryptoTransferRequest(tokenCode.getName(), str, str2, networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1497xf44f235e(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }
@@ -81,38 +64,7 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
     @Override // com.smedialink.storage.data.datasource.transfer.WalletTransferDataSource
     public Observable<Result<Boolean>> transfer(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable flatMap = sign(args).flatMap(new Function() { // from class: com.smedialink.storage.data.datasource.transfer.impl.EVMWalletTransferDataSourceImpl$transfer$$inlined$flatMapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                CryptoWalletApi cryptoWalletApi;
-                final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                }
-                cryptoWalletApi = EVMWalletTransferDataSourceImpl.this.cryptoWalletApi;
-                String str = (String) result.getData();
-                if (str == null) {
-                    str = "";
-                }
-                Observable<ApiBaseResponse<TransactionResponse>> sendCryptoTransferTransaction = cryptoWalletApi.sendCryptoTransferTransaction(new SendCryptoTransferTransactionRequest(str));
-                firebaseFunctionsErrorHandler = EVMWalletTransferDataSourceImpl.this.firebaseErrorHandler;
-                Observable<R> map = sendCryptoTransferTransaction.map(new Function() { // from class: com.smedialink.storage.data.datasource.transfer.impl.EVMWalletTransferDataSourceImpl$transfer$lambda-2$$inlined$mapSuccess$1
-                    /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-                    @Override // io.reactivex.functions.Function
-                    public final Result apply(ApiBaseResponse response) {
-                        Intrinsics.checkNotNullParameter(response, "response");
-                        if (!response.isSuccess()) {
-                            return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                        }
-                        return Result.Companion.success(Boolean.TRUE);
-                    }
-                });
-                Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-                return map;
-            }
-        });
+        Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1498xd8190810(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         return flatMap;
     }
@@ -127,7 +79,7 @@ public final class EVMWalletTransferDataSourceImpl implements WalletTransferData
         RawTransaction createTransactionByType = createTransactionByType(evm);
         long chainId = evm.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet == null ? null : eVMWallet.getCredentials()))));
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null))));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }

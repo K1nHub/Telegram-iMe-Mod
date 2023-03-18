@@ -9,7 +9,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -121,8 +121,8 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
             MessageObject.SendAnimationData sendAnimationData = new MessageObject.SendAnimationData();
             int[] iArr = new int[2];
             getLocationInWindow(iArr);
-            sendAnimationData.f1432x = imageReceiver.getCenterX() + iArr[0];
-            sendAnimationData.f1433y = imageReceiver.getCenterY() + iArr[1];
+            sendAnimationData.f1437x = imageReceiver.getCenterX() + iArr[0];
+            sendAnimationData.f1438y = imageReceiver.getCenterY() + iArr[1];
             sendAnimationData.width = imageReceiver.getImageWidth();
             sendAnimationData.height = imageReceiver.getImageHeight();
             return sendAnimationData;
@@ -217,7 +217,7 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
                     }
                     z3 = false;
                     if (!z3) {
-                        this.emojiTextView.setText(Emoji.replaceEmoji(MediaDataController.getInstance(this.currentAccount).getEmojiForSticker(this.sticker.f1502id), this.emojiTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(16), false));
+                        this.emojiTextView.setText(Emoji.replaceEmoji(MediaDataController.getInstance(this.currentAccount).getEmojiForSticker(this.sticker.f1507id), this.emojiTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(16), false));
                     }
                     this.emojiTextView.setVisibility(0);
                 } else {
@@ -304,7 +304,7 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
     @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        String string = LocaleController.getString("AttachSticker", C3158R.string.AttachSticker);
+        String string = LocaleController.getString("AttachSticker", C3286R.string.AttachSticker);
         if (this.sticker != null) {
             int i = 0;
             while (true) {

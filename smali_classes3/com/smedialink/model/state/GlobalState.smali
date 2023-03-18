@@ -7,10 +7,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/model/state/GlobalState$Content;,
+        Lcom/smedialink/model/state/GlobalState$Empty;,
         Lcom/smedialink/model/state/GlobalState$NoInternet;,
-        Lcom/smedialink/model/state/GlobalState$Unexpected;,
         Lcom/smedialink/model/state/GlobalState$Progress;,
-        Lcom/smedialink/model/state/GlobalState$Empty;
+        Lcom/smedialink/model/state/GlobalState$Unexpected;
     }
 .end annotation
 
@@ -29,19 +29,19 @@
 .method private constructor <init>(Ljava/lang/String;III)V
     .locals 0
 
-    .line 15
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
+    .line 18
     iput-object p1, p0, Lcom/smedialink/model/state/GlobalState;->state:Ljava/lang/String;
 
-    .line 17
+    .line 19
     iput p2, p0, Lcom/smedialink/model/state/GlobalState;->icon:I
 
-    .line 18
+    .line 20
     iput p3, p0, Lcom/smedialink/model/state/GlobalState;->title:I
 
-    .line 19
+    .line 21
     iput p4, p0, Lcom/smedialink/model/state/GlobalState;->description:I
 
     return-void
@@ -60,7 +60,7 @@
 .method public getDescription()I
     .locals 1
 
-    .line 19
+    .line 21
     iget v0, p0, Lcom/smedialink/model/state/GlobalState;->description:I
 
     return v0
@@ -69,7 +69,7 @@
 .method public getIcon()I
     .locals 1
 
-    .line 17
+    .line 19
     iget v0, p0, Lcom/smedialink/model/state/GlobalState;->icon:I
 
     return v0
@@ -78,7 +78,7 @@
 .method public getState()Ljava/lang/String;
     .locals 1
 
-    .line 16
+    .line 18
     iget-object v0, p0, Lcom/smedialink/model/state/GlobalState;->state:Ljava/lang/String;
 
     return-object v0
@@ -87,7 +87,7 @@
 .method public getTitle()I
     .locals 1
 
-    .line 18
+    .line 20
     iget v0, p0, Lcom/smedialink/model/state/GlobalState;->title:I
 
     return v0

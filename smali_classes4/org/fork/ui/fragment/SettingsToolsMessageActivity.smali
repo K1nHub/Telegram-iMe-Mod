@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/fragment/SettingsToolsMessageActivity$ListAdapter;,
-        Lorg/fork/ui/fragment/SettingsToolsMessageActivity$Companion;
+        Lorg/fork/ui/fragment/SettingsToolsMessageActivity$Companion;,
+        Lorg/fork/ui/fragment/SettingsToolsMessageActivity$ListAdapter;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSettingsToolsMessageActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsToolsMessageActivity.kt\norg/fork/ui/fragment/SettingsToolsMessageActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,272:1\n1#2:273\n13536#3,2:274\n*S KotlinDebug\n*F\n+ 1 SettingsToolsMessageActivity.kt\norg/fork/ui/fragment/SettingsToolsMessageActivity\n*L\n100#1:274,2\n*E\n"
+    value = "SMAP\nSettingsToolsMessageActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsToolsMessageActivity.kt\norg/fork/ui/fragment/SettingsToolsMessageActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,272:1\n1#2:273\n13579#3,2:274\n*S KotlinDebug\n*F\n+ 1 SettingsToolsMessageActivity.kt\norg/fork/ui/fragment/SettingsToolsMessageActivity\n*L\n100#1:274,2\n*E\n"
 .end annotation
 
 
@@ -54,26 +54,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$H15mjDBQAZrlhlZ4mu5IKlZCoYA(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$EKHYuqWaQVPtDHBR96IPCRfYjGk(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;ILandroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->initListView$lambda$12$lambda$11$lambda$10(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;ILandroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Q3dR3Jl0NMxEx15zvqEdBcD5c9Y(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;ILandroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$ObnXlE-GVqGoLSwvlYryV5F9Dw8(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->initListView$lambda-12$lambda-11$lambda-10(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;ILandroid/content/DialogInterface;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->createChooseSentMessageFontDialog$lambda$7$lambda$6$lambda$5(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jXRhxC_viH7ULvXtmbGgUT77VoU(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$bP7sEnH_oSEbdMh2FNQNXRVJ5Sg(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->createChooseSentMessageFontDialog$lambda-7$lambda-6$lambda-5(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -398,7 +398,7 @@
 
     move-result-object v3
 
-    .line 13536
+    .line 13579
     array-length v4, v3
 
     const/4 v5, 0x0
@@ -474,9 +474,6 @@
 
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 117
-    sget-object v7, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 101
     invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
@@ -501,7 +498,7 @@
     return-object p1
 .end method
 
-.method private static final createChooseSentMessageFontDialog$lambda-7$lambda-6$lambda-5(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+.method private static final createChooseSentMessageFontDialog$lambda$7$lambda$6$lambda$5(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -512,7 +509,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -523,7 +520,7 @@
 
     const-string v0, "null cannot be cast to non-null type org.fork.enums.SentMessageFont"
 
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lorg/fork/enums/SentMessageFont;
 
@@ -742,7 +739,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;Landroid/view/View;IFF)V
     .locals 1
 
     const-string p4, "this$0"
@@ -896,7 +893,7 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-12$lambda-11$lambda-10(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;ILandroid/content/DialogInterface;)V
+.method private static final initListView$lambda$12$lambda$11$lambda$10(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;ILandroid/content/DialogInterface;)V
     .locals 0
 
     const-string p2, "this$0"
@@ -925,7 +922,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 84
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -954,9 +951,7 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
     .line 166
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->getPosition()I
-
-    move-result v1
+    iget v1, p0, Lorg/fork/ui/fragment/SettingsToolsMessageActivity;->position:I
 
     if-nez v1, :cond_0
 
@@ -1020,8 +1015,6 @@
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     .line 126
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -1075,7 +1068,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -1196,7 +1189,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -1298,7 +1291,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v14, "windowBackgroundWhiteBlackText"
 
     move-object v6, v3
 
@@ -1321,7 +1314,7 @@
 
     aput-object v6, v10, v2
 
-    const-string v6, "valueTextView"
+    const-string/jumbo v6, "valueTextView"
 
     filled-new-array {v6}, [Ljava/lang/String;
 
@@ -1331,7 +1324,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteValueText"
+    const-string/jumbo v15, "windowBackgroundWhiteValueText"
 
     move-object v7, v3
 
@@ -1362,7 +1355,7 @@
 
     const/4 v15, 0x0
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -1389,7 +1382,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -1420,7 +1413,7 @@
 
     const/4 v12, 0x0
 
-    const-string v15, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v15, "windowBackgroundWhiteGrayText2"
 
     move-object v7, v3
 

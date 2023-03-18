@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\norg/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n*L\n1#1,57:1\n1849#2,2:58\n187#3,4:60\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\norg/fork/ui/view/FabsView\n*L\n23#1:58,2\n30#1:60,4\n*E\n"
+    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\norg/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n*L\n1#1,57:1\n1855#2,2:58\n191#3,4:60\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\norg/fork/ui/view/FabsView\n*L\n23#1:58,2\n30#1:60,4\n*E\n"
 .end annotation
 
 
@@ -91,7 +91,7 @@
     .line 22
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -148,29 +148,31 @@
 .method public final updateColors()V
     .locals 6
 
-    .line 187
+    .line 191
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    if-lez v0, :cond_1
-
     const/4 v1, 0x0
 
     :goto_0
-    add-int/lit8 v2, v1, 0x1
+    if-ge v1, v0, :cond_0
 
-    .line 188
+    .line 192
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "getChildAt(i)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v3, "null cannot be cast to non-null type android.widget.ImageView"
 
     .line 31
-    check-cast v1, Landroid/widget/ImageView;
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v2, Landroid/widget/ImageView;
 
     .line 32
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
@@ -185,7 +187,7 @@
 
     invoke-direct {v3, v4, v5}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 33
     new-instance v3, Landroid/graphics/drawable/GradientDrawable;
@@ -202,7 +204,7 @@
 
     move-result v4
 
-    const-string v5, "windowBackgroundWhite"
+    const-string/jumbo v5, "windowBackgroundWhite"
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -232,22 +234,13 @@
 
     invoke-virtual {v3, v5, v4}, Landroid/graphics/drawable/GradientDrawable;->setSize(II)V
 
-    .line 38
-    sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 33
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    if-lt v2, v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    move v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    :goto_1
+    :cond_0
     return-void
 .end method

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectFragment.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,291:1\n13#2,4:292\n56#3,6:296\n254#4,2:302\n*S KotlinDebug\n*F\n+ 1 WalletConnectFragment.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment\n*L\n50#1:292,4\n51#1:296,6\n81#1:302,2\n*E\n"
+    value = "SMAP\nWalletConnectFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectFragment.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,291:1\n13#2,4:292\n56#3,6:296\n262#4,2:302\n*S KotlinDebug\n*F\n+ 1 WalletConnectFragment.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment\n*L\n50#1:292,4\n51#1:296,6\n81#1:302,2\n*E\n"
 .end annotation
 
 
@@ -46,18 +46,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$24syjw0JK2RJiAe1lEtSDOfRcK0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public static synthetic $r8$lambda$VNBqtIuBSL5yIJu90hDiASxoYX0(Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;->showChooseNetworkDialog$lambda-0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;->setupListeners$lambda$7$lambda$6(Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$4LHowsK3IsU-nQMteK1tVzvuJOQ(Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$ZPhlBjVoiXfleeTwDA13mS76aLw(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;->setupListeners$lambda-7$lambda-6(Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;->showChooseNetworkDialog$lambda$0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method
@@ -539,7 +539,7 @@
 
     move-result-object v0
 
-    const-string v1, ""
+    const-string v1, "setupActionBar$lambda$3$lambda$2$lambda$1"
 
     .line 147
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -628,7 +628,7 @@
     .line 163
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;->textSessionsTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, ""
+    const-string v1, "setupColors$lambda$5$lambda$4"
 
     .line 164
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -720,18 +720,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7$lambda-6(Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$7$lambda$6(Lcom/smedialink/ui/wallet/crypto/wallet_connect/WalletConnectFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -848,9 +848,6 @@
 
     invoke-virtual {v2, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 234
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 229
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -963,7 +960,7 @@
     return-void
 .end method
 
-.method private static final showChooseNetworkDialog$lambda-0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method private static final showChooseNetworkDialog$lambda$0(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
     const-string v0, "$action"
@@ -1579,7 +1576,7 @@
     :cond_0
     const/16 v1, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 

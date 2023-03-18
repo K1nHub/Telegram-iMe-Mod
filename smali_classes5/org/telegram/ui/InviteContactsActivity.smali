@@ -121,17 +121,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 274
+    .line 275
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
 
-    .line 90
+    .line 91
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->selectedContacts:Ljava/util/HashMap;
 
-    .line 91
+    .line 92
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -144,7 +144,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-object p0
@@ -153,7 +153,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/InviteContactsActivity;)I
     .locals 0
 
-    .line 70
+    .line 71
     iget p0, p0, Lorg/telegram/ui/InviteContactsActivity;->fieldY:I
 
     return p0
@@ -162,7 +162,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/TextView;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     return-object p0
@@ -171,7 +171,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/InviteContactsActivity;I)I
     .locals 0
 
-    .line 70
+    .line 71
     iput p1, p0, Lorg/telegram/ui/InviteContactsActivity;->fieldY:I
 
     return p1
@@ -180,7 +180,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -189,7 +189,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/ScrollView;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->scrollView:Landroid/widget/ScrollView;
 
     return-object p0
@@ -198,7 +198,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -207,7 +207,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     return-object p0
@@ -216,7 +216,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     return-object p0
@@ -225,7 +225,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/GroupCreateSpan;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
     return-object p0
@@ -234,7 +234,7 @@
 .method static synthetic access$1602(Lorg/telegram/ui/InviteContactsActivity;Lorg/telegram/ui/Components/GroupCreateSpan;)Lorg/telegram/ui/Components/GroupCreateSpan;
     .locals 0
 
-    .line 70
+    .line 71
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
     return-object p1
@@ -243,7 +243,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
     return-object p0
@@ -252,7 +252,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/InviteContactsActivity;)V
     .locals 0
 
-    .line 70
+    .line 71
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->updateHint()V
 
     return-void
@@ -261,7 +261,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/InviteContactsActivity;)V
     .locals 0
 
-    .line 70
+    .line 71
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->checkVisibleRows()V
 
     return-void
@@ -270,7 +270,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/InviteContactsActivity;)I
     .locals 0
 
-    .line 70
+    .line 71
     iget p0, p0, Lorg/telegram/ui/InviteContactsActivity;->containerHeight:I
 
     return p0
@@ -279,7 +279,7 @@
 .method static synthetic access$2002(Lorg/telegram/ui/InviteContactsActivity;Z)Z
     .locals 0
 
-    .line 70
+    .line 71
     iput-boolean p1, p0, Lorg/telegram/ui/InviteContactsActivity;->searching:Z
 
     return p1
@@ -288,7 +288,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/InviteContactsActivity;I)I
     .locals 0
 
-    .line 70
+    .line 71
     iput p1, p0, Lorg/telegram/ui/InviteContactsActivity;->containerHeight:I
 
     return p1
@@ -297,7 +297,7 @@
 .method static synthetic access$2102(Lorg/telegram/ui/InviteContactsActivity;Z)Z
     .locals 0
 
-    .line 70
+    .line 71
     iput-boolean p1, p0, Lorg/telegram/ui/InviteContactsActivity;->searchWas:Z
 
     return p1
@@ -306,7 +306,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->adapter:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     return-object p0
@@ -315,7 +315,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/InviteContactsActivity;)V
     .locals 0
 
-    .line 70
+    .line 71
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->closeSearch()V
 
     return-void
@@ -324,7 +324,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/InviteContactsActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->phoneBookContacts:Ljava/util/ArrayList;
 
     return-object p0
@@ -333,7 +333,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->decoration:Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;
 
     return-object p0
@@ -342,7 +342,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/InviteContactsActivity;)Z
     .locals 0
 
-    .line 70
+    .line 71
     iget-boolean p0, p0, Lorg/telegram/ui/InviteContactsActivity;->ignoreScrollEvent:Z
 
     return p0
@@ -351,7 +351,7 @@
 .method static synthetic access$302(Lorg/telegram/ui/InviteContactsActivity;Z)Z
     .locals 0
 
-    .line 70
+    .line 71
     iput-boolean p1, p0, Lorg/telegram/ui/InviteContactsActivity;->ignoreScrollEvent:Z
 
     return p1
@@ -360,7 +360,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/InviteContactsActivity;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->allSpans:Ljava/util/ArrayList;
 
     return-object p0
@@ -369,7 +369,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/InviteContactsActivity;)Ljava/util/HashMap;
     .locals 0
 
-    .line 70
+    .line 71
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity;->selectedContacts:Ljava/util/HashMap;
 
     return-object p0
@@ -378,7 +378,7 @@
 .method private checkVisibleRows()V
     .locals 5
 
-    .line 662
+    .line 663
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -390,29 +390,29 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 664
+    .line 665
     iget-object v2, p0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 665
+    .line 666
     instance-of v3, v2, Lorg/telegram/ui/Cells/InviteUserCell;
 
     if-eqz v3, :cond_0
 
-    .line 666
+    .line 667
     check-cast v2, Lorg/telegram/ui/Cells/InviteUserCell;
 
-    .line 667
+    .line 668
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/InviteUserCell;->getContact()Lorg/telegram/messenger/ContactsController$Contact;
 
     move-result-object v3
 
     if-eqz v3, :cond_0
 
-    .line 669
+    .line 670
     iget-object v4, p0, Lorg/telegram/ui/InviteContactsActivity;->selectedContacts:Ljava/util/HashMap;
 
     iget-object v3, v3, Lorg/telegram/messenger/ContactsController$Contact;->key:Ljava/lang/String;
@@ -439,37 +439,37 @@
 
     const/4 v0, 0x0
 
-    .line 687
+    .line 688
     iput-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity;->searching:Z
 
-    .line 688
+    .line 689
     iput-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity;->searchWas:Z
 
-    .line 689
+    .line 690
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity;->adapter:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->setSearching(Z)V
 
-    .line 690
+    .line 691
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity;->adapter:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchDialogs(Ljava/lang/String;)V
 
-    .line 691
+    .line 692
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setFastScrollVisible(Z)V
 
-    .line 692
+    .line 693
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 693
+    .line 694
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     sget v1, Lorg/telegram/messenger/R$string;->NoContacts:I
@@ -488,7 +488,7 @@
 .method private fetchContacts()V
     .locals 2
 
-    .line 697
+    .line 698
     new-instance v0, Ljava/util/ArrayList;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
@@ -503,26 +503,26 @@
 
     iput-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->phoneBookContacts:Ljava/util/ArrayList;
 
-    .line 698
+    .line 699
     sget-object v1, Lorg/telegram/ui/InviteContactsActivity$$ExternalSyntheticLambda1;->INSTANCE:Lorg/telegram/ui/InviteContactsActivity$$ExternalSyntheticLambda1;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 706
+    .line 707
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     if-eqz v0, :cond_0
 
-    .line 707
+    .line 708
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 709
+    .line 710
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->adapter:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     if-eqz v0, :cond_1
 
-    .line 710
+    .line 711
     invoke-virtual {v0}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->notifyDataSetChanged()V
 
     :cond_1
@@ -534,12 +534,12 @@
 
     if-nez p2, :cond_0
 
-    .line 519
+    .line 520
     iget-boolean p2, p0, Lorg/telegram/ui/InviteContactsActivity;->searching:Z
 
     if-nez p2, :cond_0
 
-    .line 521
+    .line 522
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -549,10 +549,10 @@
 
     const-string p2, "text/plain"
 
-    .line 522
+    .line 523
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 523
+    .line 524
     iget p2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -567,10 +567,10 @@
 
     const-string v0, "android.intent.extra.TEXT"
 
-    .line 524
+    .line 525
     invoke-virtual {p1, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 525
+    .line 526
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -590,13 +590,13 @@
     :catch_0
     move-exception p1
 
-    .line 527
+    .line 528
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 
-    .line 531
+    .line 532
     :cond_0
     instance-of p2, p1, Lorg/telegram/ui/Cells/InviteUserCell;
 
@@ -604,11 +604,11 @@
 
     return-void
 
-    .line 534
+    .line 535
     :cond_1
     check-cast p1, Lorg/telegram/ui/Cells/InviteUserCell;
 
-    .line 535
+    .line 536
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/InviteUserCell;->getContact()Lorg/telegram/messenger/ContactsController$Contact;
 
     move-result-object p2
@@ -617,7 +617,7 @@
 
     return-void
 
-    .line 540
+    .line 541
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->selectedContacts:Ljava/util/HashMap;
 
@@ -629,7 +629,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 541
+    .line 542
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity;->selectedContacts:Ljava/util/HashMap;
 
     iget-object p2, p2, Lorg/telegram/messenger/ContactsController$Contact;->key:Ljava/lang/String;
@@ -640,14 +640,14 @@
 
     check-cast p2, Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 542
+    .line 543
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
     invoke-virtual {v1, p2}, Lorg/telegram/ui/InviteContactsActivity$SpansContainer;->removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
     goto :goto_1
 
-    .line 544
+    .line 545
     :cond_3
     new-instance v1, Lorg/telegram/ui/Components/GroupCreateSpan;
 
@@ -659,19 +659,19 @@
 
     invoke-direct {v1, v2, p2}, Lorg/telegram/ui/Components/GroupCreateSpan;-><init>(Landroid/content/Context;Lorg/telegram/messenger/ContactsController$Contact;)V
 
-    .line 545
+    .line 546
     iget-object p2, p0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/InviteContactsActivity$SpansContainer;->addSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
-    .line 546
+    .line 547
     invoke-virtual {v1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 548
+    .line 549
     :goto_1
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->updateHint()V
 
-    .line 549
+    .line 550
     iget-boolean p2, p0, Lorg/telegram/ui/InviteContactsActivity;->searching:Z
 
     if-nez p2, :cond_5
@@ -687,19 +687,19 @@
 
     xor-int/2addr v0, p2
 
-    .line 552
+    .line 553
     invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/Cells/InviteUserCell;->setChecked(ZZ)V
 
     goto :goto_3
 
-    .line 550
+    .line 551
     :cond_5
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 554
+    .line 555
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -709,7 +709,7 @@
 
     if-lez p1, :cond_6
 
-    .line 555
+    .line 556
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 p2, 0x0
@@ -723,7 +723,7 @@
 .method private synthetic lambda$createView$1(Landroid/view/View;)V
     .locals 6
 
-    .line 583
+    .line 584
     :try_start_0
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -735,7 +735,7 @@
 
     const/4 v2, 0x0
 
-    .line 585
+    .line 586
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/InviteContactsActivity;->allSpans:Ljava/util/ArrayList;
 
@@ -745,7 +745,7 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 586
+    .line 587
     iget-object v3, p0, Lorg/telegram/ui/InviteContactsActivity;->allSpans:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -758,7 +758,7 @@
 
     move-result-object v3
 
-    .line 587
+    .line 588
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
@@ -767,10 +767,10 @@
 
     const/16 v4, 0x3b
 
-    .line 588
+    .line 589
     invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 590
+    .line 591
     :cond_0
     iget-object v4, v3, Lorg/telegram/messenger/ContactsController$Contact;->phones:Ljava/util/ArrayList;
 
@@ -784,7 +784,7 @@
 
     if-nez v1, :cond_1
 
-    .line 591
+    .line 592
     iget-object v4, p0, Lorg/telegram/ui/InviteContactsActivity;->allSpans:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -795,7 +795,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 592
+    .line 593
     iget v2, v3, Lorg/telegram/messenger/ContactsController$Contact;->imported:I
 
     :cond_1
@@ -803,7 +803,7 @@
 
     goto :goto_0
 
-    .line 595
+    .line 596
     :cond_2
     new-instance v0, Landroid/content/Intent;
 
@@ -835,7 +835,7 @@
 
     const-string p1, "sms_body"
 
-    .line 596
+    .line 597
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -848,7 +848,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 597
+    .line 598
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -864,10 +864,10 @@
     :catch_0
     move-exception p1
 
-    .line 599
+    .line 600
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 601
+    .line 602
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -877,7 +877,7 @@
 .method private static synthetic lambda$fetchContacts$2(Lorg/telegram/messenger/ContactsController$Contact;Lorg/telegram/messenger/ContactsController$Contact;)I
     .locals 0
 
-    .line 699
+    .line 700
     iget p0, p0, Lorg/telegram/messenger/ContactsController$Contact;->imported:I
 
     iget p1, p1, Lorg/telegram/messenger/ContactsController$Contact;->imported:I
@@ -904,12 +904,12 @@
 .method private synthetic lambda$getThemeDescriptions$3()V
     .locals 5
 
-    .line 898
+    .line 899
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz v0, :cond_1
 
-    .line 899
+    .line 900
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -921,19 +921,19 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 901
+    .line 902
     iget-object v3, p0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 902
+    .line 903
     instance-of v4, v3, Lorg/telegram/ui/Cells/InviteUserCell;
 
     if-eqz v4, :cond_0
 
-    .line 903
+    .line 904
     check-cast v3, Lorg/telegram/ui/Cells/InviteUserCell;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/InviteUserCell;->update(I)V
@@ -950,7 +950,7 @@
 .method private updateHint()V
     .locals 4
 
-    .line 676
+    .line 677
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->selectedContacts:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
@@ -963,30 +963,30 @@
 
     if-eqz v0, :cond_0
 
-    .line 677
+    .line 678
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 678
+    .line 679
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 680
+    .line 681
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 681
+    .line 682
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 682
+    .line 683
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     const/4 v1, 0x1
@@ -1028,42 +1028,42 @@
 
     const/4 v2, 0x0
 
-    .line 314
+    .line 315
     iput-boolean v2, v0, Lorg/telegram/ui/InviteContactsActivity;->searching:Z
 
-    .line 315
+    .line 316
     iput-boolean v2, v0, Lorg/telegram/ui/InviteContactsActivity;->searchWas:Z
 
-    .line 316
+    .line 317
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->allSpans:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 317
+    .line 318
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->selectedContacts:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
 
     const/4 v3, 0x0
 
-    .line 318
+    .line 319
     iput-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 320
+    .line 321
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 321
+    .line 322
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v5, 0x1
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 322
+    .line 323
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v6, Lorg/telegram/messenger/R$string;->InviteFriends:I
@@ -1076,7 +1076,7 @@
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 324
+    .line 325
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$1;
@@ -1085,27 +1085,27 @@
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 332
+    .line 333
     new-instance v4, Lorg/telegram/ui/InviteContactsActivity$2;
 
     invoke-direct {v4, v0, v1}, Lorg/telegram/ui/InviteContactsActivity$2;-><init>(Lorg/telegram/ui/InviteContactsActivity;Landroid/content/Context;)V
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 378
+    .line 379
     check-cast v4, Landroid/view/ViewGroup;
 
-    .line 380
+    .line 381
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$3;
 
     invoke-direct {v6, v0, v1}, Lorg/telegram/ui/InviteContactsActivity$3;-><init>(Lorg/telegram/ui/InviteContactsActivity;Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->scrollView:Landroid/widget/ScrollView;
 
-    .line 393
+    .line 394
     invoke-virtual {v6, v2}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 394
+    .line 395
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->scrollView:Landroid/widget/ScrollView;
 
     const-string v7, "windowBackgroundWhite"
@@ -1116,19 +1116,19 @@
 
     invoke-static {v6, v7}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
-    .line 395
+    .line 396
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v4, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 397
+    .line 398
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
     invoke-direct {v6, v0, v1}, Lorg/telegram/ui/InviteContactsActivity$SpansContainer;-><init>(Lorg/telegram/ui/InviteContactsActivity;Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
-    .line 398
+    .line 399
     iget-object v7, v0, Lorg/telegram/ui/InviteContactsActivity;->scrollView:Landroid/widget/ScrollView;
 
     const/4 v8, -0x1
@@ -1141,7 +1141,7 @@
 
     invoke-virtual {v7, v6, v10}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 400
+    .line 401
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$4;
 
     invoke-direct {v6, v0, v1}, Lorg/telegram/ui/InviteContactsActivity$4;-><init>(Lorg/telegram/ui/InviteContactsActivity;Landroid/content/Context;)V
@@ -1150,10 +1150,10 @@
 
     const/high16 v7, 0x41900000    # 18.0f
 
-    .line 416
+    .line 417
     invoke-virtual {v6, v5, v7}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 417
+    .line 418
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v7, "groupcreate_hintText"
@@ -1164,7 +1164,7 @@
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
-    .line 418
+    .line 419
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v7, "windowBackgroundWhiteBlackText"
@@ -1175,7 +1175,7 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 419
+    .line 420
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v7, "groupcreate_cursor"
@@ -1186,58 +1186,58 @@
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 420
+    .line 421
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v7, 0x3fc00000    # 1.5f
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 421
+    .line 422
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v7, 0xa00b0
 
     invoke-virtual {v6, v7}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 422
+    .line 423
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v6, v5}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 423
+    .line 424
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v6, v3}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 424
+    .line 425
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v3, v2}, Landroid/widget/EditText;->setVerticalScrollBarEnabled(Z)V
 
-    .line 425
+    .line 426
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v3, v2}, Landroid/widget/EditText;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 426
+    .line 427
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v3, v2}, Landroid/widget/EditText;->setTextIsSelectable(Z)V
 
-    .line 427
+    .line 428
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v3, v2, v2, v2, v2}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 428
+    .line 429
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v6, 0x10000006
 
     invoke-virtual {v3, v6}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 429
+    .line 430
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -1258,14 +1258,14 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 430
+    .line 431
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v3, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 431
+    .line 432
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v6, Lorg/telegram/messenger/R$string;->SearchFriends:I
@@ -1278,7 +1278,7 @@
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintText(Ljava/lang/CharSequence;)V
 
-    .line 432
+    .line 433
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$5;
@@ -1287,7 +1287,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/EditText;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
-    .line 455
+    .line 456
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$6;
@@ -1296,7 +1296,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/EditText;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 472
+    .line 473
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$7;
@@ -1305,14 +1305,14 @@
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 499
+    .line 500
     new-instance v3, Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/Components/EmptyTextProgressView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
-    .line 500
+    .line 501
     iget v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -1325,20 +1325,20 @@
 
     if-eqz v3, :cond_1
 
-    .line 501
+    .line 502
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showProgress()V
 
     goto :goto_1
 
-    .line 503
+    .line 504
     :cond_1
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 505
+    .line 506
     :goto_1
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
@@ -1352,29 +1352,29 @@
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setText(Ljava/lang/String;)V
 
-    .line 506
+    .line 507
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {v4, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 508
+    .line 509
     new-instance v3, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {v3, v1, v5, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
-    .line 510
+    .line 511
     new-instance v6, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v6, v1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 511
+    .line 512
     iget-object v10, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {v6, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 512
+    .line 513
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v10, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
@@ -1385,17 +1385,17 @@
 
     invoke-virtual {v6, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 513
+    .line 514
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v6, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 514
+    .line 515
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 515
+    .line 516
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -1412,7 +1412,7 @@
     :goto_2
     invoke-virtual {v3, v6}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
 
-    .line 516
+    .line 517
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v6, Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;
@@ -1423,12 +1423,12 @@
 
     invoke-virtual {v3, v6}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 517
+    .line 518
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v4, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 518
+    .line 519
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$$ExternalSyntheticLambda3;
@@ -1437,7 +1437,7 @@
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 558
+    .line 559
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v6, Lorg/telegram/ui/InviteContactsActivity$8;
@@ -1446,7 +1446,7 @@
 
     invoke-virtual {v3, v6}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 567
+    .line 568
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -1455,14 +1455,14 @@
 
     const-string v6, "contacts_inviteBackground"
 
-    .line 568
+    .line 569
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v10
 
     invoke-virtual {v3, v10}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
-    .line 569
+    .line 570
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     const-string v10, "contacts_inviteText"
@@ -1473,14 +1473,14 @@
 
     invoke-virtual {v3, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 570
+    .line 571
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     const/16 v11, 0x11
 
     invoke-virtual {v3, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 571
+    .line 572
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     sget v12, Lorg/telegram/messenger/R$string;->InviteFriendsHelp:I
@@ -1493,14 +1493,14 @@
 
     invoke-virtual {v3, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 572
+    .line 573
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v12, 0x41500000    # 13.0f
 
     invoke-virtual {v3, v5, v12}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 573
+    .line 574
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     const-string v12, "fonts/rmedium.ttf"
@@ -1511,7 +1511,7 @@
 
     invoke-virtual {v3, v13}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 574
+    .line 575
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1534,7 +1534,7 @@
 
     invoke-virtual {v3, v13, v15, v7, v14}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 575
+    .line 576
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
 
     const/16 v7, 0x53
@@ -1545,28 +1545,28 @@
 
     invoke-virtual {v4, v3, v13}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 577
+    .line 578
     new-instance v3, Landroid/widget/FrameLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
-    .line 578
+    .line 579
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v13
 
     invoke-virtual {v3, v13}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 579
+    .line 580
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
     const/4 v13, 0x4
 
     invoke-virtual {v3, v13}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 580
+    .line 581
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
     const/16 v13, 0x30
@@ -1577,7 +1577,7 @@
 
     invoke-virtual {v4, v3, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 581
+    .line 582
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
     new-instance v4, Lorg/telegram/ui/InviteContactsActivity$$ExternalSyntheticLambda0;
@@ -1586,15 +1586,15 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 604
+    .line 605
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 605
+    .line 606
     invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 606
+    .line 607
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
 
     invoke-static {v9, v8, v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -1603,28 +1603,28 @@
 
     invoke-virtual {v4, v3, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 608
+    .line 609
     new-instance v4, Landroid/widget/TextView;
 
     invoke-direct {v4, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
-    .line 609
+    .line 610
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v7
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 610
+    .line 611
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     const/high16 v7, 0x41600000    # 14.0f
 
     invoke-virtual {v4, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 611
+    .line 612
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1633,12 +1633,12 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 612
+    .line 613
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 613
+    .line 614
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     const/16 v6, 0xa
@@ -1657,7 +1657,7 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 614
+    .line 615
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     const/16 v6, 0x14
@@ -1668,7 +1668,7 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setMinWidth(I)V
 
-    .line 615
+    .line 616
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     const/4 v6, 0x6
@@ -1687,7 +1687,7 @@
 
     invoke-virtual {v4, v8, v2, v6, v13}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 616
+    .line 617
     iget-object v2, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
 
     const/16 v16, -0x2
@@ -1710,17 +1710,17 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 618
+    .line 619
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
 
-    .line 619
+    .line 620
     invoke-virtual {v2, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 620
+    .line 621
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
 
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1729,12 +1729,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 621
+    .line 622
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 622
+    .line 623
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
 
     const/16 v2, 0x8
@@ -1745,7 +1745,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 623
+    .line 624
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->InviteToTelegram:I
@@ -1762,7 +1762,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 624
+    .line 625
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -1771,7 +1771,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 625
+    .line 626
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
 
     const/16 v2, 0x10
@@ -1782,15 +1782,15 @@
 
     invoke-virtual {v3, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 627
+    .line 628
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/InviteContactsActivity;->updateHint()V
 
-    .line 628
+    .line 629
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity;->adapter:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     invoke-virtual {v1}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->notifyDataSetChanged()V
 
-    .line 630
+    .line 631
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object v1
@@ -1799,12 +1799,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 643
+    .line 644
     sget p2, Lorg/telegram/messenger/NotificationCenter;->contactsImported:I
 
     if-ne p1, p2, :cond_0
 
-    .line 644
+    .line 645
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->fetchContacts()V
 
     :cond_0
@@ -1816,7 +1816,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 658
+    .line 659
     iget v0, p0, Lorg/telegram/ui/InviteContactsActivity;->containerHeight:I
 
     return v0
@@ -1835,17 +1835,17 @@
 
     move-object/from16 v0, p0
 
-    .line 895
+    .line 896
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 897
+    .line 898
     new-instance v10, Lorg/telegram/ui/InviteContactsActivity$$ExternalSyntheticLambda2;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/InviteContactsActivity$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/InviteContactsActivity;)V
 
-    .line 909
+    .line 910
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -1868,7 +1868,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 911
+    .line 912
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1891,7 +1891,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 912
+    .line 913
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -1916,7 +1916,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 913
+    .line 914
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1933,7 +1933,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 914
+    .line 915
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1952,7 +1952,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 915
+    .line 916
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1967,7 +1967,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 917
+    .line 918
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->scrollView:Landroid/widget/ScrollView;
@@ -1984,7 +1984,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 919
+    .line 920
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -1999,7 +1999,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 921
+    .line 922
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2016,7 +2016,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 922
+    .line 923
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2031,7 +2031,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 923
+    .line 924
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2048,7 +2048,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 925
+    .line 926
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2075,7 +2075,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 927
+    .line 928
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -2094,7 +2094,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 928
+    .line 929
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -2113,7 +2113,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 930
+    .line 931
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2130,7 +2130,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 931
+    .line 932
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2145,7 +2145,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 932
+    .line 933
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2162,7 +2162,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 934
+    .line 935
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2183,7 +2183,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 935
+    .line 936
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2216,7 +2216,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 936
+    .line 937
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2253,7 +2253,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 938
+    .line 939
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2282,7 +2282,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 939
+    .line 940
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2313,7 +2313,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 940
+    .line 941
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2344,7 +2344,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 941
+    .line 942
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2373,7 +2373,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 942
+    .line 943
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2408,7 +2408,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 943
+    .line 944
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2441,7 +2441,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 944
+    .line 945
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2470,7 +2470,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 945
+    .line 946
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v3, 0x0
@@ -2495,7 +2495,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 946
+    .line 947
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundOrange"
@@ -2506,7 +2506,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 947
+    .line 948
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundViolet"
@@ -2517,7 +2517,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 948
+    .line 949
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundGreen"
@@ -2528,7 +2528,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 949
+    .line 950
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundCyan"
@@ -2539,7 +2539,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 950
+    .line 951
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundBlue"
@@ -2550,7 +2550,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 951
+    .line 952
     new-instance v12, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundPink"
@@ -2561,7 +2561,7 @@
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 953
+    .line 954
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2592,7 +2592,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 954
+    .line 955
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -2625,7 +2625,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 956
+    .line 957
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
@@ -2650,7 +2650,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 957
+    .line 958
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
@@ -2671,7 +2671,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 958
+    .line 959
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
@@ -2694,7 +2694,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 959
+    .line 960
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
@@ -2713,7 +2713,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 961
+    .line 962
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
@@ -2732,7 +2732,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 962
+    .line 963
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->infoTextView:Landroid/widget/TextView;
@@ -2753,7 +2753,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 963
+    .line 964
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->counterView:Landroid/widget/FrameLayout;
@@ -2772,7 +2772,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 964
+    .line 965
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
@@ -2787,7 +2787,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 965
+    .line 966
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/InviteContactsActivity;->textView:Landroid/widget/TextView;
@@ -2802,7 +2802,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 966
+    .line 967
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/InviteContactsActivity;->counterTextView:Landroid/widget/TextView;
@@ -2823,10 +2823,10 @@
 .method public onClick(Landroid/view/View;)V
     .locals 1
 
-    .line 297
+    .line 298
     check-cast p1, Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 298
+    .line 299
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->isDeleting()Z
 
     move-result v0
@@ -2835,36 +2835,36 @@
 
     const/4 v0, 0x0
 
-    .line 299
+    .line 300
     iput-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 300
+    .line 301
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/InviteContactsActivity$SpansContainer;->removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
-    .line 301
+    .line 302
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->updateHint()V
 
-    .line 302
+    .line 303
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->checkVisibleRows()V
 
     goto :goto_0
 
-    .line 304
+    .line 305
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
     if-eqz v0, :cond_1
 
-    .line 305
+    .line 306
     invoke-virtual {v0}, Lorg/telegram/ui/Components/GroupCreateSpan;->cancelDeleteAnimation()V
 
-    .line 307
+    .line 308
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity;->currentDeletingSpan:Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 308
+    .line 309
     invoke-virtual {p1}, Lorg/telegram/ui/Components/GroupCreateSpan;->startDeleteAnimation()V
 
     :goto_0
@@ -2874,7 +2874,7 @@
 .method public onFragmentCreate()Z
     .locals 2
 
-    .line 279
+    .line 280
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2885,10 +2885,10 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 280
+    .line 281
     invoke-direct {p0}, Lorg/telegram/ui/InviteContactsActivity;->fetchContacts()V
 
-    .line 281
+    .line 282
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -2899,7 +2899,7 @@
 
     if-nez v0, :cond_0
 
-    .line 282
+    .line 283
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -2908,7 +2908,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ContactsController;->forceImportContacts()V
 
-    .line 283
+    .line 284
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -2919,7 +2919,7 @@
 
     iput-boolean v1, v0, Lorg/telegram/messenger/UserConfig;->contactsReimported:Z
 
-    .line 284
+    .line 285
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -2930,7 +2930,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 286
+    .line 287
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
@@ -2942,10 +2942,10 @@
 .method public onFragmentDestroy()V
     .locals 2
 
-    .line 291
+    .line 292
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
-    .line 292
+    .line 293
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2962,15 +2962,15 @@
 .method public onResume()V
     .locals 1
 
-    .line 635
+    .line 636
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 636
+    .line 637
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     if-eqz v0, :cond_0
 
-    .line 637
+    .line 638
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
     :cond_0
@@ -2982,15 +2982,15 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 650
+    .line 651
     iput p1, p0, Lorg/telegram/ui/InviteContactsActivity;->containerHeight:I
 
-    .line 651
+    .line 652
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity;->spansContainer:Lorg/telegram/ui/InviteContactsActivity$SpansContainer;
 
     if-eqz p1, :cond_0
 
-    .line 652
+    .line 653
     invoke-virtual {p1}, Landroid/view/ViewGroup;->requestLayout()V
 
     :cond_0

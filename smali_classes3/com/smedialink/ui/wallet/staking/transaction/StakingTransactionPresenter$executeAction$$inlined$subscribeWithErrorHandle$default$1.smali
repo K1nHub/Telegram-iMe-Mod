@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter$executeAction$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,19 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/staking/StakingOperation;",
+        ">;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 StakingTransactionPresenter.kt\ncom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter\n*L\n1#1,111:1\n363#2,12:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 StakingTransactionPresenter.kt\ncom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter\n*L\n1#1,111:1\n368#2,13:112\n*E\n"
 .end annotation
 
 
@@ -41,18 +44,35 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter$executeAction$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter$executeAction$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/staking/StakingOperation;",
+            ">;)V"
         }
     .end annotation
 
@@ -66,7 +86,7 @@
     .line 113
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/Result$Success;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     .line 114
     iget-object v1, p0, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter$executeAction$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
@@ -125,39 +145,35 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;->getValue()Lcom/smedialink/storage/domain/model/staking/StakingValues;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_2
     invoke-virtual {p1}, Ljava/math/BigDecimal;->doubleValue()D
 
     move-result-wide v3
 
     invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v3
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
-    invoke-static {v3}, Lcom/smedialink/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Double;)D
+    invoke-static {p1}, Lcom/smedialink/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Double;)D
 
     move-result-wide v3
 
@@ -171,10 +187,10 @@
     goto :goto_1
 
     .line 121
-    :cond_3
+    :cond_1
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/Result$Error;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter$executeAction$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
@@ -186,7 +202,7 @@
 
     invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;->access$showCommonErrorToast(Lcom/smedialink/ui/wallet/staking/transaction/StakingTransactionPresenter;Lcom/smedialink/storage/data/network/model/error/ErrorModel;)V
 
-    :cond_4
+    :cond_2
     :goto_1
     return-void
 .end method

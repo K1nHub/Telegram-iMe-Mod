@@ -44,16 +44,16 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Lretrofit2/Response;->body()Ljava/lang/Object;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Lretrofit2/Response;->body()Ljava/lang/Object;
-
-    move-result-object v1
+    const/4 v1, 0x0
 
     :goto_0
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -163,7 +163,7 @@
 
     invoke-direct {v1, v2, v0, v3, p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Ljava/lang/Integer;Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 30
     :cond_0
@@ -171,7 +171,7 @@
 
     move-result-object v1
 
-    goto :goto_3
+    goto :goto_2
 
     .line 35
     :cond_1
@@ -202,7 +202,7 @@
 
     invoke-direct {v1, v0, v2, p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 39
     :cond_3
@@ -244,7 +244,7 @@
 
     invoke-direct {v1, v0, v2, p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 42
     :cond_5
@@ -254,27 +254,24 @@
 
     invoke-direct {v1, v2, v0, p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
-    goto :goto_3
+    goto :goto_2
 
     .line 45
     :cond_6
     new-instance v1, Lcom/smedialink/storage/data/network/model/error/ErrorModel;
 
-    if-nez p1, :cond_7
+    if-eqz p1, :cond_7
 
-    goto :goto_2
-
-    :cond_7
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 
-    :goto_2
+    :cond_7
     sget-object v0, Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->BAD_RESPONSE:Lcom/smedialink/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     invoke-direct {v1, v2, v0, p1}, Lcom/smedialink/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
-    :goto_3
+    :goto_2
     if-nez v1, :cond_8
 
     .line 48

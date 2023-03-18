@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;",
+        "Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$26\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n127#2,5:411\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$26\n*L\n213#1:411,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$26\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n*L\n1#1,433:1\n42#2:434\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$26\n*L\n233#1:434\n*E\n"
 .end annotation
 
 
@@ -61,49 +61,36 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
-    .locals 3
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;
+    .locals 1
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
+    const-string p1, "<name for destructuring parameter 0>"
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 213
-    new-instance p2, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    .line 42
+    const-class p1, Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType;
 
-    .line 131
-    const-class v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
-
-    const-class v2, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-static {p1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object p1
 
-    check-cast p1, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
+    const/4 v0, 0x0
 
-    .line 213
-    invoke-direct {p2, v0, p1}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;-><init>(Lcom/smedialink/storage/domain/utils/system/ResourceManager;Lcom/smedialink/storage/domain/utils/rx/RxEventBus;)V
+    invoke-virtual {p2, v0, p1}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType;
+
+    .line 233
+    new-instance p2, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;
+
+    invoke-direct {p2, p1}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;-><init>(Lcom/smedialink/model/wallet/crypto/tutorial/TutorialType;)V
 
     return-object p2
 .end method
@@ -111,12 +98,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 213
+    .line 233
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$26;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$26;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;
 
     move-result-object p1
 

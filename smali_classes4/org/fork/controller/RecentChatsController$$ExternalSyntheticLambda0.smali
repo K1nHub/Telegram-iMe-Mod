@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/controller/RecentChatsController$$ExternalSyntheticLambda0;->f$0:Lorg/fork/controller/RecentChatsController;
 
-    invoke-static {v0}, Lorg/fork/controller/RecentChatsController;->$r8$lambda$_rm0J-ag8YNaaSBlV1U4iCqixiI(Lorg/fork/controller/RecentChatsController;)V
+    invoke-static {v0}, Lorg/fork/controller/RecentChatsController;->$r8$lambda$2hdo-HSz8uJbIDhuiA6OyZCKTZ8(Lorg/fork/controller/RecentChatsController;)V
 
     return-void
 .end method

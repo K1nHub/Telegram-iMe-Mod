@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DispatchQueuePool;
 import org.telegram.messenger.DispatchQueuePoolBackground;
@@ -128,13 +128,13 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     public class LottieMetadata {
 
         /* renamed from: fr */
-        float f1780fr;
+        float f1791fr;
 
         /* renamed from: ip */
-        float f1781ip;
+        float f1792ip;
 
         /* renamed from: op */
-        float f1782op;
+        float f1793op;
     }
 
     public static native long create(String str, String str2, int i, int i2, int[] iArr, boolean z, int[] iArr2, boolean z2, int i3);
@@ -163,8 +163,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.RLottieDrawable$3 */
     /* loaded from: classes6.dex */
-    public class RunnableC48253 implements Runnable {
-        RunnableC48253() {
+    public class RunnableC49623 implements Runnable {
+        RunnableC49623() {
         }
 
         @Override // java.lang.Runnable
@@ -188,7 +188,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RLottieDrawable.RunnableC48253.this.lambda$run$0();
+                        RLottieDrawable.RunnableC49623.this.lambda$run$0();
                     }
                 };
                 rLottieDrawable3.cacheGenerateTask = runnable;
@@ -359,7 +359,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC48253();
+        this.uiRunnableGenerateCache = new RunnableC49623();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -653,7 +653,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC48253();
+        this.uiRunnableGenerateCache = new RunnableC49623();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -920,8 +920,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 } catch (Exception unused) {
                 }
             }
-            iArr[0] = (int) (lottieMetadata.f1782op - lottieMetadata.f1781ip);
-            iArr[1] = (int) lottieMetadata.f1780fr;
+            iArr[0] = (int) (lottieMetadata.f1793op - lottieMetadata.f1792ip);
+            iArr[1] = (int) lottieMetadata.f1791fr;
         } catch (Exception e) {
             FileLog.m44e((Throwable) e, false);
             String absolutePath = file.getAbsolutePath();
@@ -979,7 +979,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC48253();
+        this.uiRunnableGenerateCache = new RunnableC49623();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -1193,10 +1193,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.height = i2;
         this.isDice = 1;
         if ("🎲".equals(str)) {
-            readRes = readRes(null, C3158R.C3164raw.diceloop);
+            readRes = readRes(null, C3286R.C3291raw.diceloop);
             this.diceSwitchFramesCount = 60;
         } else {
-            readRes = "🎯".equals(str) ? readRes(null, C3158R.C3164raw.dartloop) : null;
+            readRes = "🎯".equals(str) ? readRes(null, C3286R.C3291raw.dartloop) : null;
         }
         getPaint().setFlags(2);
         if (TextUtils.isEmpty(readRes)) {
@@ -1367,7 +1367,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC48253();
+        this.uiRunnableGenerateCache = new RunnableC49623();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -1722,7 +1722,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void invalidateInternal() {
-        for (int i = 0; i < this.parentViews.size(); i++) {
+        int size = this.parentViews.size();
+        for (int i = 0; i < size; i++) {
             this.parentViews.get(i).invalidate();
         }
         View view = this.masterParent;

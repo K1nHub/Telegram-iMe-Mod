@@ -31,7 +31,7 @@ import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentWalletCryptoBuyCustomPriceLayoutBinding;
 import org.telegram.p048ui.ActionBar.BaseFragment;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -150,14 +150,13 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
         showDialog(DialogUtils.createDialog$default(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceBottomSheetDialog$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                CryptoBuyCustomPriceBottomSheetDialog.m1580showConfirmDialog$lambda0(CryptoBuyCustomPriceBottomSheetDialog.this, f, currency);
+                CryptoBuyCustomPriceBottomSheetDialog.showConfirmDialog$lambda$0(CryptoBuyCustomPriceBottomSheetDialog.this, f, currency);
             }
         }, null, 8, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showConfirmDialog$lambda-0  reason: not valid java name */
-    public static final void m1580showConfirmDialog$lambda0(CryptoBuyCustomPriceBottomSheetDialog this$0, float f, Currency currency) {
+    public static final void showConfirmDialog$lambda$0(CryptoBuyCustomPriceBottomSheetDialog this$0, float f, Currency currency) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(currency, "$currency");
         this$0.resultDelegate.invoke(Float.valueOf(f), currency);
@@ -235,39 +234,39 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
     public void resetInputError() {
         AppCompatTextView appCompatTextView = getBinding().textAction;
         appCompatTextView.setTextColor(Theme.getColor("chats_actionBackground"));
-        appCompatTextView.setText(getResourceManager().getString(C3158R.string.wallet_crypto_buy_custom_price_dialog_action));
+        appCompatTextView.setText(getResourceManager().getString(C3286R.string.wallet_crypto_buy_custom_price_dialog_action));
     }
 
     private final void setupStyles() {
         this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefault"), PorterDuff.Mode.SRC_IN));
         ForkContentWalletCryptoBuyCustomPriceLayoutBinding binding = getBinding();
-        AppCompatImageView appCompatImageView = binding.imageBack;
-        Intrinsics.checkNotNullExpressionValue(appCompatImageView, "");
-        ViewExtKt.setCircleRippleBackground(appCompatImageView);
-        ViewExtKt.setImageColor(appCompatImageView, Theme.getColor("actionBarDefaultTitle"));
-        AppCompatTextView appCompatTextView = binding.textAction;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.setRippleBackground$default(appCompatTextView, false, 1, null);
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        appCompatTextView.setTextColor(Theme.getColor("chats_actionBackground"));
-        AppCompatEditText appCompatEditText = binding.editFromAmount;
-        Intrinsics.checkNotNullExpressionValue(appCompatEditText, "");
-        ViewExtKt.withMediumTypeface(appCompatEditText);
-        appCompatEditText.setTextColor(Theme.getColor("chats_actionBackground"));
-        appCompatEditText.setHintTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
-        AppCompatTextView appCompatTextView2 = binding.textToAmount;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView2);
-        ViewExtKt.setCompoundDrawablesColor(appCompatTextView2, Theme.getColor("chats_actionBackground"));
-        appCompatTextView2.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
-        AppCompatTextView appCompatTextView3 = binding.textFromCurrency;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView3, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView3);
-        appCompatTextView3.setTextColor(Theme.getColor("chats_actionBackground"));
-        AppCompatTextView appCompatTextView4 = binding.textToCurrency;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView4, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView4);
-        appCompatTextView4.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        AppCompatImageView setupStyles$lambda$11$lambda$5 = binding.imageBack;
+        Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$5, "setupStyles$lambda$11$lambda$5");
+        ViewExtKt.setCircleRippleBackground(setupStyles$lambda$11$lambda$5);
+        ViewExtKt.setImageColor(setupStyles$lambda$11$lambda$5, Theme.getColor("actionBarDefaultTitle"));
+        AppCompatTextView setupStyles$lambda$11$lambda$6 = binding.textAction;
+        Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$6, "setupStyles$lambda$11$lambda$6");
+        ViewExtKt.setRippleBackground$default(setupStyles$lambda$11$lambda$6, false, 1, null);
+        ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$6);
+        setupStyles$lambda$11$lambda$6.setTextColor(Theme.getColor("chats_actionBackground"));
+        AppCompatEditText setupStyles$lambda$11$lambda$7 = binding.editFromAmount;
+        Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$7, "setupStyles$lambda$11$lambda$7");
+        ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$7);
+        setupStyles$lambda$11$lambda$7.setTextColor(Theme.getColor("chats_actionBackground"));
+        setupStyles$lambda$11$lambda$7.setHintTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        AppCompatTextView setupStyles$lambda$11$lambda$8 = binding.textToAmount;
+        Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$8, "setupStyles$lambda$11$lambda$8");
+        ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$8);
+        ViewExtKt.setCompoundDrawablesColor(setupStyles$lambda$11$lambda$8, Theme.getColor("chats_actionBackground"));
+        setupStyles$lambda$11$lambda$8.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        AppCompatTextView setupStyles$lambda$11$lambda$9 = binding.textFromCurrency;
+        Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$9, "setupStyles$lambda$11$lambda$9");
+        ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$9);
+        setupStyles$lambda$11$lambda$9.setTextColor(Theme.getColor("chats_actionBackground"));
+        AppCompatTextView setupStyles$lambda$11$lambda$10 = binding.textToCurrency;
+        Intrinsics.checkNotNullExpressionValue(setupStyles$lambda$11$lambda$10, "setupStyles$lambda$11$lambda$10");
+        ViewExtKt.withMediumTypeface(setupStyles$lambda$11$lambda$10);
+        setupStyles$lambda$11$lambda$10.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
         binding.linearRoot.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
         binding.linearHeader.setBackgroundColor(Theme.getColor("actionBarDefault"));
         binding.textTax.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
@@ -277,15 +276,15 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
 
     private final void setupActionBar() {
         ForkContentWalletCryptoBuyCustomPriceLayoutBinding binding = getBinding();
-        binding.imageBack.setImageResource(C3158R.C3160drawable.ic_ab_back);
-        binding.textTitle.setText(getResourceManager().getString(C3158R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
+        binding.imageBack.setImageResource(C3286R.C3288drawable.ic_ab_back);
+        binding.textTitle.setText(getResourceManager().getString(C3286R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
     }
 
     private final void setupListeners() {
         final ForkContentWalletCryptoBuyCustomPriceLayoutBinding binding = getBinding();
         AppCompatEditText editFromAmount = binding.editFromAmount;
         Intrinsics.checkNotNullExpressionValue(editFromAmount, "editFromAmount");
-        editFromAmount.addTextChangedListener(new TextWatcher() { // from class: com.smedialink.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceBottomSheetDialog$setupListeners$lambda-16$$inlined$doAfterTextChanged$1
+        editFromAmount.addTextChangedListener(new TextWatcher() { // from class: com.smedialink.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceBottomSheetDialog$setupListeners$lambda$16$$inlined$doAfterTextChanged$1
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
@@ -309,7 +308,7 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
         ViewExtKt.onAction(editFromAmount2, 6, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPriceBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                CryptoBuyCustomPriceBottomSheetDialog.m1579setupListeners$lambda16$lambda15(CryptoBuyCustomPriceBottomSheetDialog.this);
+                CryptoBuyCustomPriceBottomSheetDialog.setupListeners$lambda$16$lambda$15(CryptoBuyCustomPriceBottomSheetDialog.this);
             }
         });
         AppCompatTextView textAction = binding.textAction;
@@ -321,8 +320,7 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-16$lambda-15  reason: not valid java name */
-    public static final void m1579setupListeners$lambda16$lambda15(CryptoBuyCustomPriceBottomSheetDialog this$0) {
+    public static final void setupListeners$lambda$16$lambda$15(CryptoBuyCustomPriceBottomSheetDialog this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.validateExchange();
     }

@@ -41,7 +41,7 @@
 
     move v5, p4
 
-    invoke-static/range {v0 .. v5}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->$r8$lambda$HxM1Ia2rSRM7SO6odM-vycNcx9E(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->$r8$lambda$FtvHf5hYkbodcSI8ve5WhjyoRxQ(Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage$initListView$1;Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;IFF)Z
 
     move-result p1
 

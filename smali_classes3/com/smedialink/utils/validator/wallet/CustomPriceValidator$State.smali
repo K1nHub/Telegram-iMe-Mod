@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/utils/validator/wallet/CustomPriceValidator$State$Valid;,
-        Lcom/smedialink/utils/validator/wallet/CustomPriceValidator$State$Invalid;
+        Lcom/smedialink/utils/validator/wallet/CustomPriceValidator$State$Invalid;,
+        Lcom/smedialink/utils/validator/wallet/CustomPriceValidator$State$Valid;
     }
 .end annotation
 

@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$Zxe0l1zCiaMkJO3mhmXYa50dMRM()V
+    invoke-static {}, Lcom/smedialink/bots/usecase/AiBotsManager;->$r8$lambda$GmaHI17jYl6QFu0B9shNLswAPXc()V
 
     return-void
 .end method

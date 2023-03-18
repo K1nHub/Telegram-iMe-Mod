@@ -24,28 +24,25 @@
 
     move-result-object v1
 
-    const/4 v4, 0x0
+    if-eqz v1, :cond_0
 
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;->getValue()Lcom/smedialink/storage/domain/model/staking/StakingValues;
 
     move-result-object v1
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
+
+    move-result-object v1
 
     goto :goto_0
 
-    :cond_1
-    invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/staking/StakingValues;->getAsToken()Ljava/math/BigDecimal;
-
-    move-result-object v4
+    :cond_0
+    const/4 v1, 0x0
 
     :goto_0
-    invoke-static {v4}, Lcom/smedialink/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    invoke-static {v1}, Lcom/smedialink/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
 
     move-result-object v4
 
@@ -84,20 +81,20 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_1
 
-    const/4 v1, 0x0
-
-    const/4 v11, 0x0
-
-    goto :goto_1
-
-    :cond_2
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
     move v11, v1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v1, 0x0
+
+    const/4 v11, 0x0
 
     .line 21
     :goto_1

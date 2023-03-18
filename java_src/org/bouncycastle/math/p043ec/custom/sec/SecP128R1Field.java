@@ -9,18 +9,18 @@ import org.bouncycastle.math.raw.Nat256;
 public class SecP128R1Field {
 
     /* renamed from: P */
-    static final int[] f1319P = {-1, -1, -1, -3};
+    static final int[] f1324P = {-1, -1, -1, -3};
     static final int[] PExt = {1, 0, 0, 4, -2, -1, 3, -4};
     private static final int[] PExtInv = {-1, -1, -1, -5, 1, 0, -4, 3};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat128.add(iArr, iArr2, iArr3) != 0 || ((iArr3[3] >>> 1) >= 2147483646 && Nat128.gte(iArr3, f1319P))) {
+        if (Nat128.add(iArr, iArr2, iArr3) != 0 || ((iArr3[3] >>> 1) >= 2147483646 && Nat128.gte(iArr3, f1324P))) {
             addPInvTo(iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(4, iArr, iArr2) != 0 || ((iArr2[3] >>> 1) >= 2147483646 && Nat128.gte(iArr2, f1319P))) {
+        if (Nat.inc(4, iArr, iArr2) != 0 || ((iArr2[3] >>> 1) >= 2147483646 && Nat128.gte(iArr2, f1324P))) {
             addPInvTo(iArr2);
         }
     }
@@ -42,7 +42,7 @@ public class SecP128R1Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat128.fromBigInteger(bigInteger);
         if ((fromBigInteger[3] >>> 1) >= 2147483646) {
-            int[] iArr = f1319P;
+            int[] iArr = f1324P;
             if (Nat128.gte(fromBigInteger, iArr)) {
                 Nat128.subFrom(iArr, fromBigInteger);
             }
@@ -67,7 +67,7 @@ public class SecP128R1Field {
         if (Nat128.isZero(iArr)) {
             Nat128.zero(iArr2);
         } else {
-            Nat128.sub(f1319P, iArr, iArr2);
+            Nat128.sub(f1324P, iArr, iArr2);
         }
     }
 
@@ -149,7 +149,7 @@ public class SecP128R1Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(4, iArr, 0, iArr2) != 0 || ((iArr2[3] >>> 1) >= 2147483646 && Nat128.gte(iArr2, f1319P))) {
+        if (Nat.shiftUpBit(4, iArr, 0, iArr2) != 0 || ((iArr2[3] >>> 1) >= 2147483646 && Nat128.gte(iArr2, f1324P))) {
             addPInvTo(iArr2);
         }
     }

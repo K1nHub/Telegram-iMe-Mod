@@ -23,7 +23,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -110,7 +110,7 @@ public class LimitPreviewView extends LinearLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString("LimitFree", C3158R.string.LimitFree));
+        textView.setText(LocaleController.getString("LimitFree", C3286R.string.LimitFree));
         textView.setGravity(16);
         textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
         textView.setPadding(AndroidUtilities.m50dp(12), 0, 0, 0);
@@ -126,7 +126,7 @@ public class LimitPreviewView extends LinearLayout {
         FrameLayout frameLayout2 = new FrameLayout(context);
         TextView textView3 = new TextView(context);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("LimitPremium", C3158R.string.LimitPremium));
+        textView3.setText(LocaleController.getString("LimitPremium", C3286R.string.LimitPremium));
         textView3.setGravity(16);
         textView3.setTextColor(-1);
         textView3.setPadding(AndroidUtilities.m50dp(12), 0, 0, 0);
@@ -271,6 +271,13 @@ public class LimitPreviewView extends LinearLayout {
                 this.limitIcon.setText(spannableStringBuilder);
             }
             this.premiumCount.setText("4 GB");
+        } else if (i == 11) {
+            if (this.limitIcon != null) {
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+                spannableStringBuilder2.append((CharSequence) "d").setSpan(new ColoredImageSpan(this.icon), 0, 1, 0);
+                this.limitIcon.setText(spannableStringBuilder2);
+            }
+            this.premiumCount.setText("");
         }
     }
 
@@ -367,7 +374,7 @@ public class LimitPreviewView extends LinearLayout {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(3), getMeasuredWidth(), measuredHeight - AndroidUtilities.m50dp(3));
                 float f = measuredHeight / 2.0f;
-                canvas.drawRoundRect(rectF, f, f, PremiumGradient.getInstance().getMainGradientPaint());
+                canvas.drawRoundRect(rectF, f, f, PremiumGradient.getInstance().getPremiumLocakedPaint());
             } else {
                 if (this.invalidatePath) {
                     this.invalidatePath = false;
@@ -408,13 +415,13 @@ public class LimitPreviewView extends LinearLayout {
                 AnimatedLayout animatedLayout = this.animatedLayouts.get(i);
                 canvas.save();
                 if (animatedLayout.direction) {
-                    canvas.translate(animatedLayout.f1758x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1769x + measuredWidth, (height - ((measuredHeight * 10) * animatedLayout.progress)) + ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i2 = 0; i2 < animatedLayout.staticLayouts.size(); i2++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, measuredHeight);
                         animatedLayout.staticLayouts.get(i2).draw(canvas);
                     }
                 } else {
-                    canvas.translate(animatedLayout.f1758x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
+                    canvas.translate(animatedLayout.f1769x + measuredWidth, (((measuredHeight * 10) * animatedLayout.progress) + height) - ((10 - animatedLayout.staticLayouts.size()) * measuredHeight));
                     for (int i3 = 0; i3 < animatedLayout.staticLayouts.size(); i3++) {
                         canvas.translate(BitmapDescriptorFactory.HUE_RED, -measuredHeight);
                         animatedLayout.staticLayouts.get(i3).draw(canvas);
@@ -442,7 +449,7 @@ public class LimitPreviewView extends LinearLayout {
                 if (Character.isDigit(this.text.charAt(i2))) {
                     AnimatedLayout animatedLayout = new AnimatedLayout();
                     this.animatedLayouts.add(animatedLayout);
-                    animatedLayout.f1758x = this.textLayout.getSecondaryHorizontal(i2);
+                    animatedLayout.f1769x = this.textLayout.getSecondaryHorizontal(i2);
                     animatedLayout.direction = z;
                     if (i >= 1) {
                         z = !z;
@@ -527,7 +534,7 @@ public class LimitPreviewView extends LinearLayout {
             ValueAnimator valueAnimator;
 
             /* renamed from: x */
-            float f1758x;
+            float f1769x;
 
             private AnimatedLayout(CounterView counterView) {
                 this.staticLayouts = new ArrayList<>();

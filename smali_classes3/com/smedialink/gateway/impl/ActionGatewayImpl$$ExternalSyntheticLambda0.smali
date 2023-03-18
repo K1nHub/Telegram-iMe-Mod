@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/gateway/impl/ActionGatewayImpl$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v0, p1}, Lcom/smedialink/gateway/impl/ActionGatewayImpl;->$r8$lambda$Dk__cOttI7hmsj8zD2hu16b-yUg(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/gateway/impl/ActionGatewayImpl;->$r8$lambda$1i3JQuAZ_hrwMKWb1yNaBy7Y_es(Lkotlin/jvm/functions/Function0;Landroid/view/View;)V
 
     return-void
 .end method

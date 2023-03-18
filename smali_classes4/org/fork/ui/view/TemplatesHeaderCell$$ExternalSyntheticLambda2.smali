@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/view/TemplatesHeaderCell$$ExternalSyntheticLambda2;->f$1:Lorg/fork/ui/view/TemplatesHeaderCell;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->$r8$lambda$8zHO0wXoay824IIGO2GqWLnP4E0(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->$r8$lambda$5CyMu7l0RhVkeiFsGkVGRSQaI38(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/fork/ui/view/TemplatesHeaderCell;I)V
 
     return-void
 .end method

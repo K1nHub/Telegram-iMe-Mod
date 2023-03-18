@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.core.content.res.ResourcesCompat;
 import com.fxn.parser.MenuItem;
 import com.fxn.util.UtilsKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Bubble.kt */
 /* loaded from: classes.dex */
@@ -38,12 +37,11 @@ public final class Bubble extends FrameLayout {
         View view = new View(context);
         PaintDrawable paintDrawable = new PaintDrawable(-65536);
         paintDrawable.setCornerRadius(UtilsKt.dpToPx(7, context));
-        Unit unit = Unit.INSTANCE;
         view.setBackground(paintDrawable);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(UtilsKt.dpToPx(7, context), UtilsKt.dpToPx(7, context));
         layoutParams.gravity = 8388661;
         view.setLayoutParams(layoutParams);
-        view.setVisibility(getItem().getBadgeVisible() ? 0 : 8);
+        view.setVisibility(this.item.getBadgeVisible() ? 0 : 8);
         this.badgeNotification = view;
         this.title = new TextView(context);
         this.container = new LinearLayout(context);
@@ -79,13 +77,13 @@ public final class Bubble extends FrameLayout {
         textView.setTextAlignment(1);
         textView.setLayoutParams(layoutParams5);
         textView.setMaxLines(1);
-        textView.setTextSize(getItem().getTitle_size() / textView.getResources().getDisplayMetrics().scaledDensity);
+        textView.setTextSize(this.item.getTitle_size() / textView.getResources().getDisplayMetrics().scaledDensity);
         textView.setVisibility(8);
-        if (getItem().getCustom_font() != 0) {
+        if (this.item.getCustom_font() != 0) {
             try {
-                textView.setTypeface(ResourcesCompat.getFont(context, getItem().getCustom_font()));
+                textView.setTypeface(ResourcesCompat.getFont(context, this.item.getCustom_font()));
             } catch (Exception e) {
-                Log.e("BubbleTabBar", Intrinsics.stringPlus("Could not get typeface: ", e.getMessage()));
+                Log.e("BubbleTabBar", "Could not get typeface: " + e.getMessage());
             }
         }
         setId(this.item.getId());

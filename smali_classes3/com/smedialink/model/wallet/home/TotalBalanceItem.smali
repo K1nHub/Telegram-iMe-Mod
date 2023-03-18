@@ -80,21 +80,13 @@
 
     iget v1, p0, Lcom/smedialink/model/wallet/home/TotalBalanceItem;->balance:F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
     iget p1, p1, Lcom/smedialink/model/wallet/home/TotalBalanceItem;->balance:F
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
 
     move-result p1
 
-    if-nez p1, :cond_2
+    if-eqz p1, :cond_2
 
     return v2
 

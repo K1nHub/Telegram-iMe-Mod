@@ -35,7 +35,7 @@
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p1, p2}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->$r8$lambda$IonqGSasjPWfLoFAYcrbUhvEJkA(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p1, p2}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->$r8$lambda$kw182dTRVVkdrhfLK-d784k0kgE(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

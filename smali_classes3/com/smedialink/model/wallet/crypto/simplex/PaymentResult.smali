@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/wallet/crypto/simplex/PaymentResult$Success;,
-        Lcom/smedialink/model/wallet/crypto/simplex/PaymentResult$Failed;
+        Lcom/smedialink/model/wallet/crypto/simplex/PaymentResult$Failed;,
+        Lcom/smedialink/model/wallet/crypto/simplex/PaymentResult$Success;
     }
 .end annotation
 

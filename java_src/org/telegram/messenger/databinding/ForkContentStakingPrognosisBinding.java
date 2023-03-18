@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.smedialink.p031ui.custom.BigActionButton;
 import com.smedialink.p031ui.custom.ChartCellView;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* loaded from: classes4.dex */
 public final class ForkContentStakingPrognosisBinding implements ViewBinding {
     public final BigActionButton buttonDeposit;
@@ -57,7 +57,7 @@ public final class ForkContentStakingPrognosisBinding implements ViewBinding {
     }
 
     public static ForkContentStakingPrognosisBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3158R.layout.fork_content_staking_prognosis, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3286R.layout.fork_content_staking_prognosis, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -65,46 +65,46 @@ public final class ForkContentStakingPrognosisBinding implements ViewBinding {
     }
 
     public static ForkContentStakingPrognosisBinding bind(View view) {
-        int i = C3158R.C3161id.button_deposit;
+        int i = C3286R.C3289id.button_deposit;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3158R.C3161id.constraint_statistics;
+            i = C3286R.C3289id.constraint_statistics;
             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
             if (constraintLayout != null) {
-                i = C3158R.C3161id.linear_deposit;
+                i = C3286R.C3289id.linear_deposit;
                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                 if (linearLayout != null) {
-                    i = C3158R.C3161id.text_dates;
+                    i = C3286R.C3289id.text_dates;
                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView != null) {
-                        i = C3158R.C3161id.text_deposit_description;
+                        i = C3286R.C3289id.text_deposit_description;
                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView2 != null) {
-                            i = C3158R.C3161id.text_deposit_title;
+                            i = C3286R.C3289id.text_deposit_title;
                             TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                             if (textView3 != null) {
-                                i = C3158R.C3161id.text_mode_title;
+                                i = C3286R.C3289id.text_mode_title;
                                 TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                 if (textView4 != null) {
-                                    i = C3158R.C3161id.text_mode_value;
+                                    i = C3286R.C3289id.text_mode_value;
                                     TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView5 != null) {
-                                        i = C3158R.C3161id.text_percentage_value;
+                                        i = C3286R.C3289id.text_percentage_value;
                                         TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView6 != null) {
-                                            i = C3158R.C3161id.text_profit_title;
+                                            i = C3286R.C3289id.text_profit_title;
                                             TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
                                             if (textView7 != null) {
-                                                i = C3158R.C3161id.text_profit_token_value;
+                                                i = C3286R.C3289id.text_profit_token_value;
                                                 TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
                                                 if (textView8 != null) {
-                                                    i = C3158R.C3161id.text_profit_usd_value;
+                                                    i = C3286R.C3289id.text_profit_usd_value;
                                                     TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
                                                     if (textView9 != null) {
-                                                        i = C3158R.C3161id.text_statistics;
+                                                        i = C3286R.C3289id.text_statistics;
                                                         TextView textView10 = (TextView) ViewBindings.findChildViewById(view, i);
                                                         if (textView10 != null) {
-                                                            i = C3158R.C3161id.view_chart;
+                                                            i = C3286R.C3289id.view_chart;
                                                             ChartCellView chartCellView = (ChartCellView) ViewBindings.findChildViewById(view, i);
                                                             if (chartCellView != null) {
                                                                 return new ForkContentStakingPrognosisBinding((LinearLayout) view, bigActionButton, constraintLayout, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, chartCellView);

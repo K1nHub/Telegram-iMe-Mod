@@ -521,9 +521,9 @@
     move-result-object v3
 
     .line 25
-    new-instance v4, Lcom/smedialink/storage/data/network/interceptor/ApiErrorInterceptor$intercept$lambda-0$$inlined$fromJsonTokenType$1;
+    new-instance v4, Lcom/smedialink/storage/data/network/interceptor/ApiErrorInterceptor$intercept$lambda$0$$inlined$fromJsonTokenType$1;
 
-    invoke-direct {v4}, Lcom/smedialink/storage/data/network/interceptor/ApiErrorInterceptor$intercept$lambda-0$$inlined$fromJsonTokenType$1;-><init>()V
+    invoke-direct {v4}, Lcom/smedialink/storage/data/network/interceptor/ApiErrorInterceptor$intercept$lambda$0$$inlined$fromJsonTokenType$1;-><init>()V
 
     invoke-virtual {v4}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 

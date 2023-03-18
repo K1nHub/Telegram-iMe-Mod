@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,20 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;",
+        ">;>;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 BuyCryptoProductPresenter.kt\ncom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,111:1\n62#2,3:112\n65#2,5:120\n1043#3:115\n37#4:116\n36#4,3:117\n*S KotlinDebug\n*F\n+ 1 BuyCryptoProductPresenter.kt\ncom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n*L\n64#1:115\n64#1:116\n64#1:117,3\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 BuyCryptoProductPresenter.kt\ncom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,111:1\n62#2,3:112\n65#2,6:118\n1045#3:115\n37#4,2:116\n*S KotlinDebug\n*F\n+ 1 BuyCryptoProductPresenter.kt\ncom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter\n*L\n64#1:115\n64#1:116,2\n*E\n"
 .end annotation
 
 
@@ -41,18 +45,36 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/util/List<",
+            "Lcom/smedialink/storage/domain/model/crypto/simplex/BuyingCryptoQuote;",
+            ">;>;)V"
         }
     .end annotation
 
@@ -87,10 +109,10 @@
 
     move-result-object p1
 
-    .line 1043
-    new-instance v0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$lambda-3$$inlined$sortedBy$1;
+    .line 1045
+    new-instance v0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$lambda$3$$inlined$sortedBy$1;
 
-    invoke-direct {v0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$lambda-3$$inlined$sortedBy$1;-><init>()V
+    invoke-direct {v0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$lambda$3$$inlined$sortedBy$1;-><init>()V
 
     invoke-static {p1, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
@@ -105,21 +127,17 @@
 
     move-result-object p1
 
-    const-string v0, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     .line 114
     check-cast p1, [Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;
 
-    .line 120
+    .line 118
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter$loadAvailableProducts$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
 
     invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;->access$setupUiItems(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductPresenter;[Lcom/smedialink/model/wallet/crypto/buy/CryptoBuyItem;)V
 
     goto :goto_0
 
-    .line 122
+    .line 120
     :cond_0
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/Result$Error;
 

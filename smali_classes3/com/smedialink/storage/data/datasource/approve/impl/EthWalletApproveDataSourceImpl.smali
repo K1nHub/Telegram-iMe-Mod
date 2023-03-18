@@ -210,7 +210,11 @@
 
     invoke-direct {v1, p0, p1}, Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl$approve$$inlined$flatMapSuccess$1;-><init>(Lcom/smedialink/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;Lcom/smedialink/storage/domain/model/crypto/send/TransactionArgs;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -273,16 +277,16 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
-
-    move-result-object p1
+    const/4 p1, 0x0
 
     .line 53
     :goto_0

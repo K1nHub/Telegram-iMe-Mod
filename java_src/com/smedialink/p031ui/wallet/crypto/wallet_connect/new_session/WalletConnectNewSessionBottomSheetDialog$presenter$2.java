@@ -27,11 +27,11 @@ final class WalletConnectNewSessionBottomSheetDialog$presenter$2 extends Lambda 
     /* compiled from: WalletConnectNewSessionBottomSheetDialog.kt */
     /* renamed from: com.smedialink.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C19991 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C21201 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WCSessionStoreItem $sessionItem;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19991(WCSessionStoreItem wCSessionStoreItem) {
+        C21201(WCSessionStoreItem wCSessionStoreItem) {
             super(0);
             this.$sessionItem = wCSessionStoreItem;
         }
@@ -46,7 +46,7 @@ final class WalletConnectNewSessionBottomSheetDialog$presenter$2 extends Lambda 
     @Override // kotlin.jvm.functions.Function0
     public final WalletConnectNewSessionPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1997x4b6b59e9(this.this$0, null, new C19991(this.$sessionItem)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2118x4b6b59e9(this.this$0, null, new C21201(this.$sessionItem)));
         return (WalletConnectNewSessionPresenter) lazy.getValue();
     }
 }

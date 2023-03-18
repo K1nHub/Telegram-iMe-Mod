@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;
+.implements Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$Callback;
 
 
 # instance fields
@@ -22,30 +22,12 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;IFF)Z
+.method public final onEnterOffsetChanged()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$iTZNYW42B1ZjNeBwzcxzXLjibEw(Lorg/telegram/ui/TopicsFragment;Landroid/view/View;IFF)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public synthetic onLongClickRelease()V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended$-CC;->$default$onLongClickRelease(Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;)V
-
-    return-void
-.end method
-
-.method public synthetic onMove(FF)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended$-CC;->$default$onMove(Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;FF)V
+    invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$aBhulGIyAaZKKJpkqf8CqNH_8kU(Lorg/telegram/ui/TopicsFragment;)V
 
     return-void
 .end method

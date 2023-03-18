@@ -19,7 +19,7 @@
 
     const-string v1, "memuhyperv"
 
-    const-string v2, "virtualbox"
+    const-string/jumbo v2, "virtualbox"
 
     .line 17
     filled-new-array {v0, v1, v2}, [Ljava/lang/String;

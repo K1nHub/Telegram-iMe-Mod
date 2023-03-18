@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;",
+        "Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$41\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n127#2,5:411\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$41\n*L\n271#1:411,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$41\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2:434\n127#3,5:435\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$41\n*L\n284#1:434\n285#1:435,5\n*E\n"
 .end annotation
 
 
@@ -61,78 +61,52 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;
-    .locals 4
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsPresenter;
+    .locals 3
 
     const-string v0, "$this$factory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
+    const-string v0, "<name for destructuring parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
-    const-class p2, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    .line 42
+    const-class v0, Lcom/smedialink/model/wallet/crypto/settings/BlockchainWalletItem;
 
-    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p2, v1, v0}, Lorg/koin/core/parameter/ParametersHolder;->elementAt(ILkotlin/reflect/KClass;)Ljava/lang/Object;
 
     move-result-object p2
 
-    const/4 v0, 0x0
+    check-cast p2, Lcom/smedialink/model/wallet/crypto/settings/BlockchainWalletItem;
 
-    invoke-virtual {p1, p2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    .line 271
-    check-cast p2, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    .line 285
+    new-instance v0, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsPresenter;
 
     .line 131
-    const-class v1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
+    const-class v1, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v1
 
-    invoke-virtual {p1, v1, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v1
-
-    .line 271
-    check-cast v1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
-
-    .line 131
-    const-class v2, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 271
-    check-cast v2, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
-
-    .line 131
-    const-class v3, Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
-
-    invoke-static {v3}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3, v0, v0}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v1, v2, v2}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 271
-    check-cast p1, Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
+    check-cast p1, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    new-instance v0, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;
-
-    invoke-direct {v0, p2, v1, p1, v2}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;-><init>(Lcom/smedialink/storage/domain/utils/system/ResourceManager;Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;Lcom/smedialink/storage/domain/utils/rx/RxEventBus;)V
+    .line 285
+    invoke-direct {v0, p2, p1}, Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsPresenter;-><init>(Lcom/smedialink/model/wallet/crypto/settings/BlockchainWalletItem;Lcom/smedialink/storage/domain/utils/system/ResourceManager;)V
 
     return-object v0
 .end method
@@ -140,12 +114,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 271
+    .line 284
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$41;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$41;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/smedialink/ui/wallet/crypto/settings/blockchains/details/BlockchainWalletDetailsPresenter;
 
     move-result-object p1
 

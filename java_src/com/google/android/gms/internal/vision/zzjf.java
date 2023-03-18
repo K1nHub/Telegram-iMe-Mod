@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.Objects;
@@ -11,7 +11,7 @@ public final class zzjf {
     private static final ByteBuffer zzd;
     private static final zzif zze;
     static final Charset zza = Charset.forName("UTF-8");
-    private static final Charset zzc = Charset.forName(C0474C.ISO88591_NAME);
+    private static final Charset zzc = Charset.forName(C0468C.ISO88591_NAME);
 
     public static int zza(long j) {
         return (int) (j ^ (j >>> 32));

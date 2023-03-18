@@ -5,7 +5,7 @@ import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.internal.ClientStreamListener;
 import io.grpc.internal.StreamListener;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 abstract class ForwardingClientStreamListener implements ClientStreamListener {
     protected abstract ClientStreamListener delegate();
 

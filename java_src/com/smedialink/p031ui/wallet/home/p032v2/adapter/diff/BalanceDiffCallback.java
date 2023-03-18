@@ -48,7 +48,7 @@ public final class BalanceDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
                     return false;
                 }
             } else if ((oldItem instanceof CryptoAccountItem) && (newItem instanceof CryptoAccountItem)) {
-                if (((CryptoAccountItem) oldItem).getUser().f1633id != ((CryptoAccountItem) newItem).getUser().f1633id) {
+                if (((CryptoAccountItem) oldItem).getUser().f1639id != ((CryptoAccountItem) newItem).getUser().f1639id) {
                     return false;
                 }
             } else if ((!(oldItem instanceof CryptoSelectTokensItem) || !(newItem instanceof CryptoSelectTokensItem)) && ((!(oldItem instanceof BannerItem) || !(newItem instanceof BannerItem)) && (!((z = oldItem instanceof GlobalStateItem)) || !(newItem instanceof GlobalStateItem)))) {

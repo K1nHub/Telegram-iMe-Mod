@@ -4,7 +4,7 @@ import android.view.View;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
@@ -35,7 +35,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FragmentPreviewMenu(INavigationLayout parentActionBarLayout, BaseFragment previewFragment, Theme.ResourcesProvider resourcesProvider) {
-        super(parentActionBarLayout.getView().getContext(), C3158R.C3160drawable.popup_fixed_alert, resourcesProvider);
+        super(parentActionBarLayout.getView().getContext(), C3286R.C3288drawable.popup_fixed_alert, resourcesProvider);
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(parentActionBarLayout, "parentActionBarLayout");
@@ -64,45 +64,42 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
     public final ActionBarMenuSubItem initOpenItem() {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(160);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Open", C3158R.string.Open), C3158R.C3160drawable.msg_message);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Open", C3286R.string.Open), C3286R.C3288drawable.msg_message);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.FragmentPreviewMenu$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FragmentPreviewMenu.m2108initOpenItem$lambda1$lambda0(FragmentPreviewMenu.this, view);
+                FragmentPreviewMenu.initOpenItem$lambda$1$lambda$0(FragmentPreviewMenu.this, view);
             }
         });
         return actionBarMenuSubItem;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initOpenItem$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m2108initOpenItem$lambda1$lambda0(FragmentPreviewMenu this$0, View view) {
+    public static final void initOpenItem$lambda$1$lambda$0(FragmentPreviewMenu this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        INavigationLayout parentLayout = this$0.getPreviewFragment().getParentLayout();
-        if (parentLayout == null) {
-            return;
+        INavigationLayout parentLayout = this$0.previewFragment.getParentLayout();
+        if (parentLayout != null) {
+            parentLayout.expandPreviewFragment();
         }
-        parentLayout.expandPreviewFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final ActionBarMenuSubItem initCloseItem() {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), false, true, this.resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(160);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Close", C3158R.string.Close), C3158R.C3160drawable.poll_remove);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Close", C3286R.string.Close), C3286R.C3288drawable.poll_remove);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.FragmentPreviewMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FragmentPreviewMenu.m2107initCloseItem$lambda3$lambda2(FragmentPreviewMenu.this, view);
+                FragmentPreviewMenu.initCloseItem$lambda$3$lambda$2(FragmentPreviewMenu.this, view);
             }
         });
         return actionBarMenuSubItem;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initCloseItem$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m2107initCloseItem$lambda3$lambda2(FragmentPreviewMenu this$0, View view) {
+    public static final void initCloseItem$lambda$3$lambda$2(FragmentPreviewMenu this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getPreviewFragment().finishPreviewFragment();
+        this$0.previewFragment.finishPreviewFragment();
     }
 }

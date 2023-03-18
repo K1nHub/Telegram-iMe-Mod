@@ -39,7 +39,7 @@
 
     iget v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda133;->f$2:I
 
-    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Nuk86P6zHS3ONA9TkiFyzYWamn4(JLjava/util/Calendar;II)Ljava/lang/String;
+    invoke-static {v0, v1, v2, v3, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$1_E1U0oujeQy3AUER0U3PYxyITs(JLjava/util/Calendar;II)Ljava/lang/String;
 
     move-result-object p1
 

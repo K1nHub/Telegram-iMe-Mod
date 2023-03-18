@@ -3,6 +3,7 @@ package androidx.core.widget;
 import android.os.Build;
 /* loaded from: classes.dex */
 public interface AutoSizeableTextView {
+    @Deprecated
     public static final boolean PLATFORM_SUPPORTS_AUTOSIZE;
 
     static {

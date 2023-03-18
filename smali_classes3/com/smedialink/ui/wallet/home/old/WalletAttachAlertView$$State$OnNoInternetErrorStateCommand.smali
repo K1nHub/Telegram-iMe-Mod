@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State;)V
     .locals 1
 
-    .line 546
+    .line 507
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "onNoInternetErrorState"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V
     .locals 0
 
-    .line 551
+    .line 512
     invoke-interface {p1}, Lcom/smedialink/ui/custom/state/GlobalStateView;->onNoInternetErrorState()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 544
+    .line 505
     check-cast p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$OnNoInternetErrorStateCommand;->apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V

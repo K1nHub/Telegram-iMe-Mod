@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/bots/data/database/BotsDatabase$Companion$getInstance$1$1$$ExternalSyntheticLambda0;->f$0:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/smedialink/bots/data/database/BotsDatabase$Companion$getInstance$1$1;->$r8$lambda$QUo2qgJVnK4N_fC8Cm-u9uIbvy0(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/smedialink/bots/data/database/BotsDatabase$Companion$getInstance$1$1;->$r8$lambda$k4b02gnzC8XtRyQd_LK2RzKzLyE(Landroid/content/Context;)V
 
     return-void
 .end method

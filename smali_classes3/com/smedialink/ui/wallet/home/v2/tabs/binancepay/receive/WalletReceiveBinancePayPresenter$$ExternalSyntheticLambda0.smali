@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter$$ExternalSyntheticLambda0;->f$1:Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;->$r8$lambda$yuUA8KPqMAXnsajygYHnzKSxpEA(ZLcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;->$r8$lambda$bfheBNYL6fQWpTR_d2pLD0FHaWE(ZLcom/smedialink/ui/wallet/home/v2/tabs/binancepay/receive/WalletReceiveBinancePayPresenter;)V
 
     return-void
 .end method

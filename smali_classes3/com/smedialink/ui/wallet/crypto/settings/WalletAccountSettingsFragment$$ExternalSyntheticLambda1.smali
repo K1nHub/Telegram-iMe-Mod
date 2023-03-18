@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;->$r8$lambda$gV6T-7BEPJp34TeLf1xa_6IEiw0(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;->$r8$lambda$5hMPTqBNt8YjsQkC9fXKCJb_RwM(Lcom/smedialink/ui/wallet/crypto/settings/WalletAccountSettingsFragment;)V
 
     return-void
 .end method

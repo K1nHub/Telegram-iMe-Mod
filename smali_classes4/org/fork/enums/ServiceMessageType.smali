@@ -751,16 +751,16 @@
     iget-object p1, p0, Lorg/fork/enums/ServiceMessageType;->groupCode:Ljava/lang/Integer;
 
     :goto_0
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
+    const/4 p1, 0x0
 
     :goto_1
     return p1

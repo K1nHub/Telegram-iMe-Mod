@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 651
+    .line 652
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createCopyButton$1$1;->invoke(Landroid/view/View;)V
@@ -66,12 +66,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 652
+    .line 653
     iget-object p1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$createCopyButton$1$1;->this$0:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
     invoke-static {p1}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->access$getCurrentType$p(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;)Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType;
 
     move-result-object p1
+
+    const-string v0, "null cannot be cast to non-null type com.smedialink.ui.wallet.crypto.create.CreateWalletFragment.ScreenType.SecretWords"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$ScreenType$SecretWords;
 

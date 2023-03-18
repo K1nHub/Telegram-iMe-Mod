@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/RecentChatsController$$ExternalSyntheticLambda4;->f$1:Ljava/util/List;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/RecentChatsController;->$r8$lambda$VLn94xlWvcYRy1Kxcu1Lg-RiEDg(Lorg/fork/controller/RecentChatsController;Ljava/util/List;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/RecentChatsController;->$r8$lambda$I4M9iWk1IZwwD9uPRNVAe5VU5g0(Lorg/fork/controller/RecentChatsController;Ljava/util/List;)V
 
     return-void
 .end method

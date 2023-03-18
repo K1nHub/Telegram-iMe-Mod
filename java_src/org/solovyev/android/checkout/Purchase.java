@@ -45,10 +45,10 @@ public final class Purchase {
         
 
         /* renamed from: id */
-        public final int f1417id;
+        public final int f1422id;
 
         State(int i) {
-            this.f1417id = i;
+            this.f1422id = i;
         }
 
         static State valueOf(int i) {

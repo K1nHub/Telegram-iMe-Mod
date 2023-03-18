@@ -708,7 +708,6 @@ public final class Http2Connection implements Closeable {
         /* JADX WARN: Type inference failed for: r0v0, types: [okhttp3.internal.http2.ErrorCode] */
         /* JADX WARN: Type inference failed for: r0v3 */
         /* JADX WARN: Type inference failed for: r0v5, types: [java.io.Closeable, okhttp3.internal.http2.Http2Reader] */
-        @Override // kotlin.jvm.functions.Function0
         /* renamed from: invoke */
         public void invoke2() {
             ErrorCode errorCode;

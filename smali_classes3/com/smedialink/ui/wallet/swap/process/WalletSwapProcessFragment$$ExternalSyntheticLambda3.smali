@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment$$ExternalSyntheticLambda3;->f$0:Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$jLNIMsQYor-7jN22f5Ku_y5c194(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$xHupvT5UM1uAS7eOWcA11ndOn74(Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;Landroid/view/View;)V
 
     return-void
 .end method

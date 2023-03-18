@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n127#2,5:115\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$11\n*L\n84#1:115,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n127#2,5:119\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$11\n*L\n86#1:119,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 84
+    .line 86
     new-instance p2, Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesRecycleAdapter;
 
     .line 131
@@ -102,7 +102,7 @@
 
     check-cast p1, Lcom/smedialink/ui/adapter/provider/StakingCalculatorProgrammeProvider;
 
-    .line 84
+    .line 86
     invoke-direct {p2, v0, p1}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/adapter/StakingCalculatorProgrammesRecycleAdapter;-><init>(Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;Lcom/smedialink/ui/adapter/provider/StakingCalculatorProgrammeProvider;)V
 
     return-object p2
@@ -111,7 +111,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 83
+    .line 85
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

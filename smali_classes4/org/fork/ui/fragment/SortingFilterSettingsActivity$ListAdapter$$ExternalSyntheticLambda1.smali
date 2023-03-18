@@ -41,7 +41,7 @@
 
     check-cast p1, Ljava/util/Set;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->$r8$lambda$3HnYK6dLF2IJRRFW25lxSZEG0gs(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->$r8$lambda$LTdVffj-93A5L8FdE1K2od5LNqI(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
 
     return-void
 .end method

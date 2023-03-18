@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda0;->f$0:Lorg/fork/controller/MusicController;
 
-    invoke-static {v0}, Lorg/fork/controller/MusicController;->$r8$lambda$KhsjvfO6LFfcm9I46O53VsJDZ6U(Lorg/fork/controller/MusicController;)V
+    invoke-static {v0}, Lorg/fork/controller/MusicController;->$r8$lambda$ZOkI2LBQJnBH852kr0_cffIgezU(Lorg/fork/controller/MusicController;)V
 
     return-void
 .end method

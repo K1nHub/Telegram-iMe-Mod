@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAbstractList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,157:1\n348#2,7:158\n376#2,7:165\n*S KotlinDebug\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n*L\n27#1:158,7\n29#1:165,7\n*E\n"
+    value = "SMAP\nAbstractList.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,157:1\n350#2,7:158\n378#2,7:165\n*S KotlinDebug\n*F\n+ 1 AbstractList.kt\nkotlin/collections/AbstractList\n*L\n27#1:158,7\n29#1:165,7\n*E\n"
 .end annotation
 
 
@@ -161,7 +161,7 @@
         }
     .end annotation
 
-    .line 349
+    .line 351
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -226,7 +226,7 @@
         }
     .end annotation
 
-    .line 376
+    .line 378
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -235,7 +235,7 @@
 
     move-result-object v0
 
-    .line 377
+    .line 379
     :cond_0
     invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
@@ -243,7 +243,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 378
+    .line 380
     invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
     move-result-object v1
@@ -255,7 +255,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 379
+    .line 381
     invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
 
     move-result p1

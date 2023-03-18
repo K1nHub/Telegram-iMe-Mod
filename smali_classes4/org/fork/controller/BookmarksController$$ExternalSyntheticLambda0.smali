@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda0;->f$0:Lorg/fork/controller/BookmarksController;
 
-    invoke-static {v0}, Lorg/fork/controller/BookmarksController;->$r8$lambda$ItgLl5bFTbf2eRVF817M_i1H8E8(Lorg/fork/controller/BookmarksController;)V
+    invoke-static {v0}, Lorg/fork/controller/BookmarksController;->$r8$lambda$S5C1B6EcpFDOutUHSOVjyXQ_fx0(Lorg/fork/controller/BookmarksController;)V
 
     return-void
 .end method

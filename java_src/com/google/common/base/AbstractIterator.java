@@ -34,7 +34,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.base.AbstractIterator$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C08901 {
+    public static /* synthetic */ class C08831 {
         static final /* synthetic */ int[] $SwitchMap$com$google$common$base$AbstractIterator$State;
 
         static {
@@ -54,7 +54,7 @@ abstract class AbstractIterator<T> implements Iterator<T>, p034j$.util.Iterator 
     @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         Preconditions.checkState(this.state != State.FAILED);
-        int i = C08901.$SwitchMap$com$google$common$base$AbstractIterator$State[this.state.ordinal()];
+        int i = C08831.$SwitchMap$com$google$common$base$AbstractIterator$State[this.state.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return tryToComputeNext();

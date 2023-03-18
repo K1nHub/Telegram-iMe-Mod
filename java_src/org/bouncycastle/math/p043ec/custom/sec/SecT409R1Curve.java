@@ -16,8 +16,8 @@ public class SecT409R1Curve extends ECCurve.AbstractF2m {
     public SecT409R1Curve() {
         super(WalletConstants.ERROR_CODE_BUYER_ACCOUNT_ERROR, 87, 0, 0);
         this.infinity = new SecT409R1Point(this, null, null);
-        this.f1302a = fromBigInteger(BigInteger.valueOf(1L));
-        this.f1303b = fromBigInteger(new BigInteger(1, Hex.decode("0021A5C2C8EE9FEB5C4B9A753B7B476B7FD6422EF1F3DD674761FA99D6AC27C8A9A197B272822F6CD57A55AA4F50AE317B13545F")));
+        this.f1307a = fromBigInteger(BigInteger.valueOf(1L));
+        this.f1308b = fromBigInteger(new BigInteger(1, Hex.decode("0021A5C2C8EE9FEB5C4B9A753B7B476B7FD6422EF1F3DD674761FA99D6AC27C8A9A197B272822F6CD57A55AA4F50AE317B13545F")));
         this.order = new BigInteger(1, Hex.decode("010000000000000000000000000000000000000000000000000001E2AAD6A612F33307BE5FA47C3C9E052F838164CD37D9A21173"));
         this.cofactor = BigInteger.valueOf(2L);
         this.coord = 6;
@@ -34,9 +34,9 @@ public class SecT409R1Curve extends ECCurve.AbstractF2m {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat448.copy64(((SecT409FieldElement) eCPoint.getRawXCoord()).f1370x, 0, jArr, i3);
+            Nat448.copy64(((SecT409FieldElement) eCPoint.getRawXCoord()).f1375x, 0, jArr, i3);
             int i5 = i3 + 7;
-            Nat448.copy64(((SecT409FieldElement) eCPoint.getRawYCoord()).f1370x, 0, jArr, i5);
+            Nat448.copy64(((SecT409FieldElement) eCPoint.getRawYCoord()).f1375x, 0, jArr, i5);
             i3 = i5 + 7;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecT409R1Curve.1

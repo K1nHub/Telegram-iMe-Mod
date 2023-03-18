@@ -12,8 +12,8 @@ public final /* synthetic */ class PhotoViewer$$ExternalSyntheticLambda53 implem
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        boolean lambda$setParentActivity$30;
-        lambda$setParentActivity$30 = PhotoViewer.lambda$setParentActivity$30(view, motionEvent);
-        return lambda$setParentActivity$30;
+        boolean lambda$setParentActivity$31;
+        lambda$setParentActivity$31 = PhotoViewer.lambda$setParentActivity$31(view, motionEvent);
+        return lambda$setParentActivity$31;
     }
 }

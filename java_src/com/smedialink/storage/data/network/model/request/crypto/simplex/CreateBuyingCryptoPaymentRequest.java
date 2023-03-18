@@ -85,7 +85,7 @@ public final class CreateBuyingCryptoPaymentRequest {
         }
         if (obj instanceof CreateBuyingCryptoPaymentRequest) {
             CreateBuyingCryptoPaymentRequest createBuyingCryptoPaymentRequest = (CreateBuyingCryptoPaymentRequest) obj;
-            return Intrinsics.areEqual(this.quoteId, createBuyingCryptoPaymentRequest.quoteId) && Intrinsics.areEqual(this.orderId, createBuyingCryptoPaymentRequest.orderId) && Intrinsics.areEqual(this.fiatCurrency, createBuyingCryptoPaymentRequest.fiatCurrency) && this.fiatAmount == createBuyingCryptoPaymentRequest.fiatAmount && Intrinsics.areEqual(this.digitalCurrency, createBuyingCryptoPaymentRequest.digitalCurrency) && Intrinsics.areEqual(Float.valueOf(this.digitalAmount), Float.valueOf(createBuyingCryptoPaymentRequest.digitalAmount)) && Intrinsics.areEqual(this.networkType, createBuyingCryptoPaymentRequest.networkType);
+            return Intrinsics.areEqual(this.quoteId, createBuyingCryptoPaymentRequest.quoteId) && Intrinsics.areEqual(this.orderId, createBuyingCryptoPaymentRequest.orderId) && Intrinsics.areEqual(this.fiatCurrency, createBuyingCryptoPaymentRequest.fiatCurrency) && this.fiatAmount == createBuyingCryptoPaymentRequest.fiatAmount && Intrinsics.areEqual(this.digitalCurrency, createBuyingCryptoPaymentRequest.digitalCurrency) && Float.compare(this.digitalAmount, createBuyingCryptoPaymentRequest.digitalAmount) == 0 && Intrinsics.areEqual(this.networkType, createBuyingCryptoPaymentRequest.networkType);
         }
         return false;
     }

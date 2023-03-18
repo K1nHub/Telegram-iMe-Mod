@@ -93,7 +93,7 @@ public final class ReactionRequestData {
     }
 
     public String toString() {
-        return "ReactionRequestData(type=" + this.type + ", file=" + this.file + ", text=" + ((Object) this.text) + ", reactions=" + this.reactions + ", buttons=" + this.buttons + ", columnsNumber=" + this.columnsNumber + ')';
+        return "ReactionRequestData(type=" + this.type + ", file=" + this.file + ", text=" + this.text + ", reactions=" + this.reactions + ", buttons=" + this.buttons + ", columnsNumber=" + this.columnsNumber + ')';
     }
 
     public ReactionRequestData(ReactionMessageTypes type, ReactionMessageFile reactionMessageFile, String str, List<String> reactions, List<UrlButton> buttons, int i) {

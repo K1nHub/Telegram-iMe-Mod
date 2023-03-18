@@ -16,7 +16,7 @@
 
 # direct methods
 .method public static addLoadMoreModule(Lcom/chad/library/adapter/base/BaseQuickAdapterModuleImp;Lcom/chad/library/adapter/base/BaseQuickAdapter;)Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -26,10 +26,6 @@
             "Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;"
         }
     .end annotation
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p0, "baseQuickAdapter"
 

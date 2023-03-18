@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletHomeBinancePayPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeBinancePayPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 7 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 8 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n*L\n1#1,353:1\n39#2,6:354\n39#2,6:360\n39#2,6:366\n39#2,6:420\n39#2,6:426\n26#3:372\n764#4:373\n855#4,2:374\n1192#4,2:376\n1220#4,4:378\n764#4:382\n855#4,2:383\n1601#4,9:385\n1849#4:394\n1850#4:396\n1610#4:397\n1043#4:398\n1052#4:399\n1547#4:405\n1618#4,3:406\n1#5:395\n1#5:404\n37#6:400\n36#6,3:401\n37#6:409\n36#6,3:410\n11328#7:413\n11663#7,3:414\n16#8,3:417\n*S KotlinDebug\n*F\n+ 1 WalletHomeBinancePayPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter\n*L\n102#1:354,6\n158#1:360,6\n171#1:366,6\n307#1:420,6\n342#1:426,6\n209#1:372\n213#1:373\n213#1:374,2\n214#1:376,2\n214#1:378,4\n218#1:382\n218#1:383,2\n219#1:385,9\n219#1:394\n219#1:396\n219#1:397\n223#1:398\n224#1:399\n240#1:405\n240#1:406,3\n219#1:395\n236#1:400\n236#1:401,3\n240#1:409\n240#1:410,3\n301#1:413\n301#1:414,3\n306#1:417,3\n*E\n"
+    value = "SMAP\nWalletHomeBinancePayPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletHomeBinancePayPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 ArrayIntrinsics.kt\nkotlin/ArrayIntrinsicsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 7 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 8 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n*L\n1#1,357:1\n39#2,8:358\n39#2,8:366\n39#2,8:374\n39#2,8:426\n39#2,8:434\n26#3:382\n766#4:383\n857#4,2:384\n1194#4,2:386\n1222#4,4:388\n766#4:392\n857#4,2:393\n1603#4,9:395\n1855#4:404\n1856#4:406\n1612#4:407\n1045#4:408\n1054#4:409\n1549#4:413\n1620#4,3:414\n1#5:405\n1#5:412\n37#6,2:410\n37#6,2:417\n11335#7:419\n11670#7,3:420\n16#8,3:423\n*S KotlinDebug\n*F\n+ 1 WalletHomeBinancePayPresenter.kt\ncom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter\n*L\n102#1:358,8\n159#1:366,8\n173#1:374,8\n310#1:426,8\n345#1:434,8\n212#1:382\n216#1:383\n216#1:384,2\n217#1:386,2\n217#1:388,4\n221#1:392\n221#1:393,2\n222#1:395,9\n222#1:404\n222#1:406\n222#1:407\n226#1:408\n227#1:409\n243#1:413\n243#1:414,3\n222#1:405\n239#1:410,2\n243#1:417,2\n304#1:419\n304#1:420,3\n309#1:423,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -57,18 +57,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$52WQMKvb8fpIUx4aHPzpM7s15w0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;Lio/reactivex/disposables/Disposable;)V
+.method public static synthetic $r8$lambda$OZ7nyregLB5e1ZZWkwxdCnH3q7E(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->getBinanceUserBalances$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;Lio/reactivex/disposables/Disposable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->getBinanceUserBalances$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$eF5Lor4XfJqJrsKWw39qTjJnNY0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
+.method public static synthetic $r8$lambda$W98JdtMc25imsyCT5K7BOzb3Ze4(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->getBinanceUserBalances$lambda-1(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->getBinanceUserBalances$lambda$1(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
     return-void
 .end method
@@ -220,17 +220,17 @@
 .method private final getAuthTokensByCode(Ljava/lang/String;)V
     .locals 4
 
-    .line 154
+    .line 155
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binanceInternalInteractor:Lcom/smedialink/storage/domain/interactor/binancepay/BinanceInternalInteractor;
 
-    .line 155
+    .line 156
     sget-object v1, Lcom/smedialink/storage/domain/model/binancepay/BinancePayAuthType;->CODE:Lcom/smedialink/storage/domain/model/binancepay/BinancePayAuthType;
 
     invoke-virtual {v0, v1, p1}, Lcom/smedialink/storage/domain/interactor/binancepay/BinanceInternalInteractor;->getAuthTokens(Lcom/smedialink/storage/domain/model/binancepay/BinancePayAuthType;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 156
+    .line 157
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -245,7 +245,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 157
+    .line 158
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -266,7 +266,7 @@
 
     move-result-object p1
 
-    .line 158
+    .line 159
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -278,48 +278,51 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getAuthTokensByCode$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getAuthTokensByCode$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getAuthTokensByCode$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getAuthTokensByCode$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getAuthTokensByCode$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 164
+    .line 166
     invoke-static {p0, p1, v3, v0, v3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method private static final getBinanceUserBalances$lambda-0(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;Lio/reactivex/disposables/Disposable;)V
-    .locals 0
+.method private static final getBinanceUserBalances$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string p1, "this$0"
+    const-string v0, "$tmp0"
 
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 100
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;
-
-    const/4 p1, 0x1
-
-    invoke-interface {p0, p1}, Lcom/smedialink/ui/base/mvp/SwipeRefreshView;->showRefreshing(Z)V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final getBinanceUserBalances$lambda-1(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
+.method private static final getBinanceUserBalances$lambda$1(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -343,15 +346,15 @@
 .method private final getBinanceUserInfo(Z)V
     .locals 3
 
-    .line 168
+    .line 170
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binanceInternalInteractor:Lcom/smedialink/storage/domain/interactor/binancepay/BinanceInternalInteractor;
 
-    .line 169
+    .line 171
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/interactor/binancepay/BinanceInternalInteractor;->getUserInfo(Z)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 170
+    .line 172
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -366,7 +369,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 171
+    .line 173
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -378,23 +381,34 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserInfo$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserInfo$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserInfo$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserInfo$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserInfo$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 183
+    .line 186
     invoke-static {p0, p1, v0, v1, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -411,7 +425,7 @@
 
     const/4 p1, 0x1
 
-    .line 167
+    .line 169
     :cond_0
     invoke-direct {p0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->getBinanceUserInfo(Z)V
 
@@ -421,10 +435,10 @@
 .method private final getLogOutConfirmDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 6
 
-    .line 330
+    .line 333
     new-instance v0, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 331
+    .line 334
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_binance_logout_confirm_dialog_title:I
@@ -433,7 +447,7 @@
 
     move-result-object v1
 
-    .line 332
+    .line 335
     iget-object v3, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->wallet_binance_logout_confirm_dialog_description:I
@@ -442,7 +456,7 @@
 
     move-result-object v3
 
-    .line 333
+    .line 336
     iget-object v4, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -451,14 +465,14 @@
 
     move-result-object v4
 
-    .line 334
+    .line 337
     iget-object v5, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-interface {v5, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 330
+    .line 333
     invoke-direct {v0, v1, v3, v4, v2}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -467,10 +481,10 @@
 .method private final getLoginGuideDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 6
 
-    .line 186
+    .line 189
     new-instance v0, Lcom/smedialink/model/dialog/DialogModel;
 
-    .line 187
+    .line 190
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_binance_pay_login_title:I
@@ -479,7 +493,7 @@
 
     move-result-object v1
 
-    .line 188
+    .line 191
     iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_binance_pay_login_description:I
@@ -488,7 +502,7 @@
 
     move-result-object v2
 
-    .line 189
+    .line 192
     iget-object v3, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -497,7 +511,7 @@
 
     move-result-object v3
 
-    .line 190
+    .line 193
     iget-object v4, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_binance_pay_login_positive_button:I
@@ -506,7 +520,7 @@
 
     move-result-object v4
 
-    .line 186
+    .line 189
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -515,21 +529,21 @@
 .method private final initBannerSlides()Lcom/chad/library/adapter/base/entity/node/BaseNode;
     .locals 6
 
-    .line 301
+    .line 304
     sget-object v0, Lcom/smedialink/model/wallet/home/BannerSlide;->Companion:Lcom/smedialink/model/wallet/home/BannerSlide$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/home/BannerSlide$Companion;->getBinancePayBanners()[Lcom/smedialink/model/wallet/home/BannerSlide;
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -539,23 +553,25 @@
 
     aget-object v4, v0, v3
 
-    .line 301
+    .line 304
     new-instance v5, Lcom/smedialink/model/wallet/home/SlideItem;
 
     invoke-direct {v5, v4}, Lcom/smedialink/model/wallet/home/SlideItem;-><init>(Lcom/smedialink/model/wallet/home/BannerSlide;)V
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    .line 304
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 300
+    .line 303
     new-instance v1, Lcom/smedialink/model/wallet/home/BannerItem;
 
     invoke-direct {v1, v0}, Lcom/smedialink/model/wallet/home/BannerItem;-><init>(Ljava/util/List;)V
@@ -564,9 +580,9 @@
 .end method
 
 .method private final listenEvents()V
-    .locals 4
+    .locals 5
 
-    .line 305
+    .line 308
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->rxEventBus:Lcom/smedialink/storage/domain/utils/rx/RxEventBus;
 
     .line 16
@@ -603,23 +619,34 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v4, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v4, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 327
+    .line 330
     invoke-static {p0, v0, v3, v1, v3}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -628,7 +655,7 @@
 .method private final loginToBinancePay()V
     .locals 4
 
-    .line 141
+    .line 142
     new-instance v0, Lcom/binance/android/opensdk/api/OAuthParams;
 
     sget-object v1, Lcom/smedialink/storage/common/AppConfiguration$Binance;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Binance;
@@ -645,7 +672,7 @@
 
     invoke-direct {v0, v1, v3, v2}, Lcom/binance/android/opensdk/api/OAuthParams;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 142
+    .line 143
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binanceAPI:Lcom/binance/android/opensdk/api/BinanceAPI;
 
     new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$loginToBinancePay$1;
@@ -660,10 +687,10 @@
 .method private final logout()V
     .locals 5
 
-    .line 338
+    .line 341
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binanceInternalInteractor:Lcom/smedialink/storage/domain/interactor/binancepay/BinanceInternalInteractor;
 
-    .line 339
+    .line 342
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binancePayManager:Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;->getAccessToken()Ljava/lang/String;
@@ -679,7 +706,7 @@
 
     move-result-object v0
 
-    .line 340
+    .line 343
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -694,7 +721,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 341
+    .line 344
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -715,7 +742,7 @@
 
     move-result-object v0
 
-    .line 342
+    .line 345
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -727,21 +754,32 @@
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$logout$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
-    new-instance v3, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$logout$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v3, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$logout$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v3, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$logout$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$logout$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v3, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 348
+    .line 352
     invoke-static {p0, v0, v4, v1, v4}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -750,7 +788,7 @@
 .method private final openConvertScreen()V
     .locals 2
 
-    .line 294
+    .line 297
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getBinanceUserInfo()Lcom/smedialink/storage/data/locale/prefs/model/binancepay/BinanceUserInfoMetadata;
@@ -761,13 +799,8 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/binancepay/BinanceUserInfo;->isVerified()Z
 
     move-result v0
@@ -776,7 +809,12 @@
 
     move-result-object v0
 
-    .line 295
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 298
     :goto_0
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -796,7 +834,7 @@
 
     goto :goto_1
 
-    .line 296
+    .line 299
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -813,7 +851,7 @@
 .method private final openReplenishScreen()V
     .locals 2
 
-    .line 287
+    .line 290
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->accessManager:Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;->isCurrentBlockchainWalletCreated()Z
@@ -830,9 +868,9 @@
 
     invoke-interface {v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;->showRequiredWalletCreatedDialog()V
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 288
+    .line 291
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -846,22 +884,18 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/binancepay/BinanceUserInfo;->isVerified()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_2
-    :goto_0
-    if-eqz v1, :cond_3
+    :cond_1
+    if-eqz v1, :cond_2
 
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -871,10 +905,10 @@
 
     invoke-interface {v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;->showRequiredVerifyDialog()V
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 289
-    :cond_3
+    .line 292
+    :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -889,7 +923,7 @@
 
     invoke-interface {v0, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;->openReplenishScreen(Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
-    :goto_1
+    :goto_0
     return-void
 .end method
 
@@ -904,14 +938,14 @@
         }
     .end annotation
 
-    .line 194
+    .line 197
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;
 
-    .line 196
+    .line 199
     new-instance v1, Lkotlin/jvm/internal/SpreadBuilder;
 
     const/4 v2, 0x4
@@ -938,10 +972,10 @@
     :goto_0
     invoke-virtual {v1, v2}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
 
-    .line 197
+    .line 200
     new-instance v2, Lcom/smedialink/model/wallet/home/HeaderItemWithNetworkSwitcher;
 
-    .line 198
+    .line 201
     iget-object v3, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->wallet_binance_pay_account_header:I
@@ -950,31 +984,31 @@
 
     move-result-object v3
 
-    .line 199
+    .line 202
     sget-object v4, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     const/4 v5, 0x0
 
-    .line 197
+    .line 200
     invoke-direct {v2, v3, v4, v5}, Lcom/smedialink/model/wallet/home/HeaderItemWithNetworkSwitcher;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Z)V
 
-    .line 196
+    .line 199
     invoke-virtual {v1, v2}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
 
-    .line 202
+    .line 205
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resolveUserState()Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
     move-result-object v2
 
-    .line 196
+    .line 199
     invoke-virtual {v1, v2}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
 
-    .line 203
+    .line 206
     invoke-direct {p0, p1, p2}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resolveBalancesState(ZLjava/util/List;)[Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
     move-result-object p1
 
-    .line 196
+    .line 199
     invoke-virtual {v1, p1}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
 
     invoke-virtual {v1}, Lkotlin/jvm/internal/SpreadBuilder;->size()I
@@ -987,17 +1021,17 @@
 
     move-result-object p1
 
-    .line 195
+    .line 198
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 204
+    .line 207
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 194
+    .line 197
     invoke-interface {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayView;->render(Ljava/util/List;)V
 
     return-void
@@ -1017,7 +1051,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 193
+    .line 196
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p2
@@ -1045,16 +1079,16 @@
 
     new-array v1, v1, [Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 267
+    .line 270
     new-instance v9, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 268
+    .line 271
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_pay_qr_28:I
 
-    .line 269
+    .line 272
     sget v4, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_pay:I
 
-    .line 266
+    .line 269
     new-instance v6, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$1;
 
     invoke-direct {v6, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
@@ -1067,23 +1101,23 @@
 
     move-object v2, v9
 
-    .line 267
+    .line 270
     invoke-direct/range {v2 .. v8}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v2, 0x0
 
     aput-object v9, v1, v2
 
-    .line 271
+    .line 274
     new-instance v2, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 272
+    .line 275
     sget v11, Lorg/telegram/messenger/R$drawable;->fork_ic_buy_28:I
 
-    .line 273
+    .line 276
     sget v12, Lorg/telegram/messenger/R$string;->wallet_token_details_action_buy:I
 
-    .line 266
+    .line 269
     new-instance v14, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$2;
 
     invoke-direct {v14, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$2;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
@@ -1096,23 +1130,23 @@
 
     move-object v10, v2
 
-    .line 271
+    .line 274
     invoke-direct/range {v10 .. v16}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v3, 0x1
 
     aput-object v2, v1, v3
 
-    .line 275
+    .line 278
     new-instance v2, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 276
+    .line 279
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_exchange_27:I
 
-    .line 277
+    .line 280
     sget v6, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_convert:I
 
-    .line 266
+    .line 269
     new-instance v8, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$3;
 
     invoke-direct {v8, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$3;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
@@ -1125,37 +1159,37 @@
 
     move-object v4, v2
 
-    .line 275
+    .line 278
     invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v3, 0x2
 
     aput-object v2, v1, v3
 
-    .line 279
+    .line 282
     new-instance v2, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;
 
-    .line 280
+    .line 283
     sget v5, Lorg/telegram/messenger/R$drawable;->fork_ic_transactions_28:I
 
-    .line 281
+    .line 284
     sget v6, Lorg/telegram/messenger/R$string;->wallet_binance_pay_action_history:I
 
-    .line 266
+    .line 269
     new-instance v8, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$4;
 
     invoke-direct {v8, v0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveActions$4;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
     move-object v4, v2
 
-    .line 279
+    .line 282
     invoke-direct/range {v4 .. v10}, Lcom/smedialink/model/wallet/home/HorizontalActionButtonItem;-><init>(IIZLkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     const/4 v3, 0x3
 
     aput-object v2, v1, v3
 
-    .line 266
+    .line 269
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -1175,7 +1209,7 @@
         }
     .end annotation
 
-    .line 209
+    .line 212
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binancePayManager:Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;->isAuthorized()Z
@@ -1190,7 +1224,7 @@
 
     return-object p1
 
-    .line 211
+    .line 214
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -1198,12 +1232,12 @@
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -1228,7 +1262,7 @@
 
     check-cast v8, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    .line 213
+    .line 216
     iget-object v9, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v9}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getBinanceOnlyPositiveTokens()Z
@@ -1258,6 +1292,7 @@
     :goto_1
     if-eqz v7, :cond_1
 
+    .line 857
     invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1265,7 +1300,7 @@
     :cond_4
     const/16 v3, 0xa
 
-    .line 1192
+    .line 1194
     invoke-static {v2, v3}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v4
@@ -1280,12 +1315,12 @@
 
     move-result v4
 
-    .line 1193
+    .line 1195
     new-instance v8, Ljava/util/LinkedHashMap;
 
     invoke-direct {v8, v4}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1220
+    .line 1222
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1301,21 +1336,22 @@
 
     move-result-object v4
 
-    .line 1221
+    .line 1223
     move-object v9, v4
 
     check-cast v9, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    .line 214
+    .line 217
     invoke-virtual {v9}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;->getAsset()Ljava/lang/String;
 
     move-result-object v9
 
+    .line 1223
     invoke-interface {v8, v9, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
-    .line 216
+    .line 219
     :cond_5
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
@@ -1323,17 +1359,17 @@
 
     if-eqz v2, :cond_9
 
-    .line 217
+    .line 220
     invoke-virtual {v0}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1354,24 +1390,25 @@
 
     check-cast v9, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 218
+    .line 221
     invoke-virtual {v9}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;->isEnabled()Z
 
     move-result v9
 
     if-eqz v9, :cond_6
 
+    .line 857
     invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 1601
+    .line 1603
     :cond_7
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1388,10 +1425,10 @@
 
     move-result-object v4
 
-    .line 1609
+    .line 1611
     check-cast v4, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 219
+    .line 222
     invoke-virtual {v4}, Lcom/smedialink/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;->getToken()Ljava/lang/String;
 
     move-result-object v4
@@ -1404,7 +1441,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 1609
+    .line 1611
     invoke-interface {v0, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_4
@@ -1412,7 +1449,7 @@
     :cond_9
     move-object v0, p2
 
-    .line 222
+    .line 225
     :cond_a
     iget-object v2, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -1440,7 +1477,7 @@
 
     goto :goto_5
 
-    .line 225
+    .line 228
     :cond_b
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1448,7 +1485,7 @@
 
     throw p1
 
-    .line 1052
+    .line 1054
     :cond_c
     new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveBalancesState$$inlined$sortedByDescending$1;
 
@@ -1460,7 +1497,7 @@
 
     goto :goto_5
 
-    .line 1043
+    .line 1045
     :cond_d
     new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$resolveBalancesState$$inlined$sortedBy$1;
 
@@ -1470,31 +1507,29 @@
 
     move-result-object v0
 
-    .line 229
+    .line 232
     :goto_5
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v2
 
-    const-string v8, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
     if-eqz v2, :cond_10
 
     if-eqz p1, :cond_e
 
-    .line 231
+    .line 234
     sget-object p1, Lcom/smedialink/model/state/GlobalState$Progress;->INSTANCE:Lcom/smedialink/model/state/GlobalState$Progress;
 
     goto :goto_6
 
-    .line 232
+    .line 235
     :cond_e
     sget-object p1, Lcom/smedialink/model/state/GlobalState$Empty$Common;->INSTANCE:Lcom/smedialink/model/state/GlobalState$Empty$Common;
 
     :goto_6
     new-array v2, v4, [Lcom/smedialink/model/common/NoChildNode;
 
-    .line 234
+    .line 237
     invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
 
     move-result p2
@@ -1523,14 +1558,14 @@
     :goto_7
     aput-object p2, v2, v1
 
-    .line 235
+    .line 238
     new-instance p2, Lcom/smedialink/model/common/GlobalStateItem;
 
     invoke-direct {p2, p1}, Lcom/smedialink/model/common/GlobalStateItem;-><init>(Lcom/smedialink/model/state/GlobalState;)V
 
     aput-object p2, v2, v7
 
-    .line 233
+    .line 236
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -1542,13 +1577,11 @@
 
     move-result-object p1
 
-    invoke-static {p1, v8}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     check-cast p1, [Lcom/smedialink/model/common/NoChildNode;
 
     goto :goto_a
 
-    .line 239
+    .line 242
     :cond_10
     new-instance p1, Lkotlin/jvm/internal/SpreadBuilder;
 
@@ -1577,9 +1610,9 @@
 
     invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;->getFiatValuation()D
 
-    move-result-wide v9
+    move-result-wide v7
 
-    add-double/2addr v5, v9
+    add-double/2addr v5, v7
 
     goto :goto_8
 
@@ -1592,7 +1625,7 @@
 
     invoke-virtual {p1, v2}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
 
-    .line 1547
+    .line 1549
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-static {v0, v3}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -1601,7 +1634,7 @@
 
     invoke-direct {p2, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1617,14 +1650,15 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
 
-    .line 240
+    .line 243
     new-instance v3, Lcom/smedialink/model/wallet/home/pay/BinanceBalanceItem;
 
     invoke-direct {v3, v2}, Lcom/smedialink/model/wallet/home/pay/BinanceBalanceItem;-><init>(Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;)V
 
+    .line 1621
     invoke-interface {p2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_9
@@ -1637,9 +1671,7 @@
 
     move-result-object p2
 
-    invoke-static {p2, v8}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 239
+    .line 242
     invoke-virtual {p1, p2}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
 
     invoke-virtual {p1}, Lkotlin/jvm/internal/SpreadBuilder;->size()I
@@ -1654,7 +1686,7 @@
 
     check-cast p1, [Lcom/smedialink/model/common/NoChildNode;
 
-    .line 245
+    .line 248
     :goto_a
     new-instance p2, Lkotlin/jvm/internal/SpreadBuilder;
 
@@ -1694,14 +1726,14 @@
 .method private final resolveUserState()Lcom/chad/library/adapter/base/entity/node/BaseNode;
     .locals 4
 
-    .line 251
+    .line 254
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binancePayManager:Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;->getUser()Lcom/smedialink/storage/domain/model/binancepay/BinanceUserInfo;
 
     move-result-object v0
 
-    .line 252
+    .line 255
     iget-object v1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binancePayManager:Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/manager/binancepay/BinancePayManager;->isAuthorized()Z
@@ -1712,33 +1744,33 @@
 
     if-eqz v0, :cond_0
 
-    .line 253
+    .line 256
     new-instance v1, Lcom/smedialink/model/wallet/home/pay/BinanceAccountItem;
 
-    .line 255
+    .line 258
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->resolveActions()Ljava/util/List;
 
     move-result-object v2
 
-    .line 253
+    .line 256
     invoke-direct {v1, v0, v2}, Lcom/smedialink/model/wallet/home/pay/BinanceAccountItem;-><init>(Lcom/smedialink/storage/domain/model/binancepay/BinanceUserInfo;Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 258
+    .line 261
     :cond_0
     new-instance v1, Lcom/smedialink/model/wallet/home/CardButtonItem;
 
-    .line 259
+    .line 262
     sget v0, Lorg/telegram/messenger/R$id;->binance_pay_link:I
 
-    .line 260
+    .line 263
     sget v2, Lorg/telegram/messenger/R$drawable;->fork_ic_add_account_40:I
 
-    .line 261
+    .line 264
     sget v3, Lorg/telegram/messenger/R$string;->wallet_binance_pay_login:I
 
-    .line 258
+    .line 261
     invoke-direct {v1, v0, v2, v3}, Lcom/smedialink/model/wallet/home/CardButtonItem;-><init>(III)V
 
     :goto_0
@@ -1799,11 +1831,15 @@
     move-result-object v0
 
     .line 100
-    new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserBalances$1;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserBalances$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
+    new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$$ExternalSyntheticLambda1;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -1816,8 +1852,9 @@
 
     move-result-object v0
 
-    const-string v1, "binanceInternalInteracto\u2026e.showRefreshing(false) }"
+    const-string v1, "fun getBinanceUserBalanc\u2026     .autoDispose()\n    }"
 
+    .line 100
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 102
@@ -1832,23 +1869,34 @@
 
     invoke-direct {v2, p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserBalances$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;)V
 
-    new-instance v3, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserBalances$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v3, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserBalances$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v3, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserBalances$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter$getBinanceUserBalances$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v3, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 111
+    .line 112
     invoke-static {p0, v0, v2, v1, v2}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -1857,7 +1905,7 @@
 .method public final getSelectedTokensOrderType()Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;
     .locals 1
 
-    .line 114
+    .line 115
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getBinanceTokensOrderType()Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;
@@ -1910,12 +1958,12 @@
 .method public onDestroy()V
     .locals 1
 
-    .line 132
+    .line 133
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binancePayProcessManager:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-virtual {v0}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->onDetachViewState()V
 
-    .line 133
+    .line 134
     invoke-super {p0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->onDestroy()V
 
     return-void
@@ -1924,7 +1972,7 @@
 .method protected onFirstViewAttach()V
     .locals 3
 
-    .line 126
+    .line 127
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->binancePayProcessManager:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
@@ -1945,10 +1993,10 @@
 
     const/4 v2, 0x2
 
-    .line 127
+    .line 128
     invoke-static {p0, v0, v1, v2, v1}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->renderScreenItems$default(Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;ZLjava/util/List;ILjava/lang/Object;)V
 
-    .line 128
+    .line 129
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->listenEvents()V
 
     return-void
@@ -1982,12 +2030,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 117
+    .line 118
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0, p1}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->setBinanceTokensOrderType(Lcom/smedialink/storage/domain/model/wallet/token/TokenOrderType;)V
 
-    .line 118
+    .line 119
     iget-object p1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;->balances:Ljava/util/List;
 
     const/4 v0, 0x0

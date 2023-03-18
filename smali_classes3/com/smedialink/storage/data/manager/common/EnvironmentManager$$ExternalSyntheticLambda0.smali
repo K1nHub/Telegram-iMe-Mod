@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->$r8$lambda$1GWIbIeWpeh6ussx6w8iLdXxNKk()V
+    invoke-static {}, Lcom/smedialink/storage/data/manager/common/EnvironmentManager;->$r8$lambda$KfeqdMI29OtMryomhup3LjZmwZA()V
 
     return-void
 .end method

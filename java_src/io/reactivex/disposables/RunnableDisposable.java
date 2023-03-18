@@ -1,5 +1,5 @@
 package io.reactivex.disposables;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 final class RunnableDisposable extends ReferenceDisposable<Runnable> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public RunnableDisposable(Runnable runnable) {

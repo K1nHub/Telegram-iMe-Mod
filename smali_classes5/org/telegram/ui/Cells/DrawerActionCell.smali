@@ -482,17 +482,22 @@
     .line 172
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    const/16 v0, 0x10
+    const-string v0, "android.widget.Button"
 
     .line 173
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    const/16 v0, 0x20
+    const/16 v0, 0x10
 
     .line 174
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
+    const/16 v0, 0x20
+
     .line 175
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
+
+    .line 176
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerActionCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView;->getText()Ljava/lang/CharSequence;
@@ -501,7 +506,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 176
+    .line 177
     const-class v0, Landroid/widget/TextView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;

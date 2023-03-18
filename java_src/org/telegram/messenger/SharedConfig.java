@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.WebView;
 import androidx.core.content.p009pm.ShortcutManagerCompat;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
 import com.smedialink.common.TelegramPreferenceKeys;
 import com.smedialink.p031ui.drawer.DrawerAccountData;
@@ -89,7 +89,6 @@ public class SharedConfig {
     public static int fontSize = 0;
     public static boolean fontSizeIsDefault = false;
     public static boolean forceDisableTabletMode = false;
-    public static boolean forceRtmpStream = false;
     public static boolean forwardingOptionsHintShown = false;
     public static boolean hasCameraCache = false;
     public static boolean hasEmailLogin = false;
@@ -103,7 +102,6 @@ public class SharedConfig {
     public static boolean isCloudAlbumsEnabled = false;
     public static boolean isCombineMessagesEnabled = false;
     public static boolean isCustomSharingModeEnabled = false;
-    public static boolean isDebugForceHighPerformanceEnabled = false;
     public static boolean isDebugThemeSwitchEnabled = false;
     public static boolean isDeleteCloudConfirmationEnabled = false;
     public static boolean isDialogsCompactModeEnabled = false;
@@ -155,12 +153,13 @@ public class SharedConfig {
     public static long lastUpdateCheckTime = 0;
     public static String lastUpdateVersion = null;
     public static long lastUptimeMillis = 0;
+    private static int legacyDevicePerformanceClass = -1;
     public static LiteMode liteMode = null;
     public static int lockRecordAudioVideoHint = 0;
     public static int mediaColumnsCount = 0;
     public static int messageSeenHintCount = 0;
     public static boolean noSoundHintShowed = false;
-    public static boolean noStatusBar = false;
+    public static final boolean noStatusBar = true;
     public static boolean noiseSupression = false;
     private static int overrideDevicePerformanceClass = 0;
     public static String passcodeHash = "";
@@ -208,7 +207,6 @@ public class SharedConfig {
     public static VideoVoiceCamera selectedVideoVoiceCamera = null;
     public static boolean showNotificationsForAllAccounts = false;
     public static boolean shuffleMusic = false;
-    public static boolean smoothKeyboard = false;
     public static boolean sortContactsByName = false;
     public static boolean sortFilesByName = false;
     public static boolean stickersReorderingHintUsed = false;
@@ -221,7 +219,6 @@ public class SharedConfig {
     public static int textSelectionHintShows = 0;
     public static boolean translateChats = false;
     public static boolean useFingerprint = true;
-    public static boolean useLNavigation;
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
     public static byte[] passcodeSalt = new byte[0];
@@ -268,11 +265,6 @@ public class SharedConfig {
     public static void setDebugThemeSwitchEnabled(boolean z) {
         isDebugThemeSwitchEnabled = z;
         MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isDebugThemeSwitchEnabled(), isDebugThemeSwitchEnabled).apply();
-    }
-
-    public static void setDebugForceHighPerformanceEnabled(boolean z) {
-        isDebugForceHighPerformanceEnabled = z;
-        MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isDebugForceHighPerformanceEnabled(), isDebugForceHighPerformanceEnabled).apply();
     }
 
     public static void setFilesOriginalNameSavingEnabled(boolean z) {
@@ -596,9 +588,7 @@ public class SharedConfig {
         streamAllVideo = false;
         streamMkv = false;
         saveStreamMedia = true;
-        smoothKeyboard = true;
         pauseMusicOnRecord = false;
-        noStatusBar = true;
         showNotificationsForAllAccounts = true;
         fontSize = 16;
         bubbleRadius = 17;
@@ -725,7 +715,6 @@ public class SharedConfig {
                 edit.apply();
                 SharedPreferences.Editor edit2 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit();
                 edit2.putBoolean("hasEmailLogin", hasEmailLogin);
-                edit2.putBoolean("useLNavigation", useLNavigation);
                 edit2.putBoolean("floatingDebugActive", isFloatingDebugActive);
                 edit2.putBoolean("record_via_sco", recordViaSco);
                 edit2.apply();
@@ -744,20 +733,19 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x017a A[Catch: Exception -> 0x019c, all -> 0x07da, TryCatch #1 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:94:0x012b, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x017e A[Catch: Exception -> 0x019c, all -> 0x07da, TryCatch #1 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:94:0x012b, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0608  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x060b  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x061b  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x061d  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x06a3 A[Catch: all -> 0x07da, TryCatch #2 {, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00e7, B:12:0x00ed, B:14:0x00f5, B:16:0x00f9, B:17:0x0106, B:19:0x0114, B:21:0x011f, B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:29:0x015b, B:30:0x016d, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174, B:53:0x01a0, B:55:0x05aa, B:59:0x05b5, B:61:0x05d9, B:65:0x05e4, B:69:0x060d, B:73:0x061e, B:75:0x06a3, B:76:0x06a5, B:77:0x07c4, B:79:0x07ca, B:81:0x07ce, B:85:0x07d6, B:84:0x07d3, B:52:0x019d, B:20:0x011b, B:87:0x07d8), top: B:96:0x0003, inners: #1, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x017a A[Catch: Exception -> 0x019c, all -> 0x07a4, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:93:0x012b, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x017e A[Catch: Exception -> 0x019c, all -> 0x07a4, TryCatch #2 {Exception -> 0x019c, blocks: (B:22:0x012b, B:24:0x0133, B:26:0x0143, B:27:0x0157, B:38:0x017a, B:40:0x017e, B:41:0x0180, B:43:0x0184, B:45:0x018a, B:47:0x0190, B:49:0x0194, B:36:0x0174), top: B:93:0x012b, outer: #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x05fa  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x05fd  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x060d  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x060f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static void loadConfig() {
         /*
-            Method dump skipped, instructions count: 2013
+            Method dump skipped, instructions count: 1959
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.loadConfig():void");
@@ -781,7 +769,7 @@ public class SharedConfig {
             } else if (i == 4) {
                 passcodeRetryInMs = 10000L;
             } else if (i == 5) {
-                passcodeRetryInMs = C0474C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
+                passcodeRetryInMs = C0468C.DEFAULT_SEEK_FORWARD_INCREMENT_MS;
             } else if (i == 6) {
                 passcodeRetryInMs = SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US;
             } else if (i == 7) {
@@ -1097,13 +1085,6 @@ public class SharedConfig {
         edit.commit();
     }
 
-    public static void toggleForceRTMPStream() {
-        forceRtmpStream = !forceRtmpStream;
-        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        edit.putBoolean("forceRtmpStream", forceRtmpStream);
-        edit.apply();
-    }
-
     public static void toggleDebugWebView() {
         boolean z = !debugWebView;
         debugWebView = z;
@@ -1113,13 +1094,6 @@ public class SharedConfig {
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("debugWebView", debugWebView);
         edit.apply();
-    }
-
-    public static void toggleNoStatusBar() {
-        noStatusBar = !noStatusBar;
-        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        edit.putBoolean("noStatusBar", noStatusBar);
-        edit.commit();
     }
 
     public static void toggleLoopStickers() {
@@ -1171,7 +1145,8 @@ public class SharedConfig {
     public static void overrideDevicePerformanceClass(int i) {
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         overrideDevicePerformanceClass = i;
-        edit.putInt("overrideDevicePerformanceClass", i).remove("lite_mode").commit();
+        edit.putInt("overrideDevicePerformanceClass", i).remove("lite_mode").remove("lite_mode2").remove("lite_mode_battery_level").commit();
+        LiteMode.loadPreference();
         if (liteMode != null) {
             LiteMode.loadPreference();
         }
@@ -1285,13 +1260,6 @@ public class SharedConfig {
         saveStreamMedia = !saveStreamMedia;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("saveStreamMedia", saveStreamMedia);
-        edit.commit();
-    }
-
-    public static void toggleSmoothKeyboard() {
-        smoothKeyboard = !smoothKeyboard;
-        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        edit.putBoolean("smoothKeyboard2", smoothKeyboard);
         edit.commit();
     }
 
@@ -1547,9 +1515,6 @@ public class SharedConfig {
     }
 
     public static int getDevicePerformanceClass() {
-        if (isDebugForceHighPerformanceEnabled) {
-            return 2;
-        }
         int i = overrideDevicePerformanceClass;
         if (i != -1) {
             return i;
@@ -1727,5 +1692,37 @@ public class SharedConfig {
 
     public static boolean deviceIsAverage() {
         return getDevicePerformanceClass() <= 1;
+    }
+
+    @Deprecated
+    public static int getLegacyDevicePerformanceClass() {
+        if (legacyDevicePerformanceClass == -1) {
+            int i = Build.VERSION.SDK_INT;
+            int i2 = ConnectionsManager.CPU_COUNT;
+            int memoryClass = ((ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity")).getMemoryClass();
+            int i3 = 0;
+            int i4 = 0;
+            for (int i5 = 0; i5 < i2; i5++) {
+                try {
+                    RandomAccessFile randomAccessFile = new RandomAccessFile(String.format(Locale.ENGLISH, "/sys/devices/system/cpu/cpu%d/cpufreq/cpuinfo_max_freq", Integer.valueOf(i5)), "r");
+                    String readLine = randomAccessFile.readLine();
+                    if (readLine != null) {
+                        i4 += Utilities.parseInt((CharSequence) readLine).intValue() / 1000;
+                        i3++;
+                    }
+                    randomAccessFile.close();
+                } catch (Throwable unused) {
+                }
+            }
+            int ceil = i3 == 0 ? -1 : (int) Math.ceil(i4 / i3);
+            if (i < 21 || i2 <= 2 || memoryClass <= 100 || ((i2 <= 4 && ceil != -1 && ceil <= 1250) || ((i2 <= 4 && ceil <= 1600 && memoryClass <= 128 && i <= 21) || (i2 <= 4 && ceil <= 1300 && memoryClass <= 128 && i <= 24)))) {
+                legacyDevicePerformanceClass = 0;
+            } else if (i2 < 8 || memoryClass <= 160 || ((ceil != -1 && ceil <= 2050) || (ceil == -1 && i2 == 8 && i <= 23))) {
+                legacyDevicePerformanceClass = 1;
+            } else {
+                legacyDevicePerformanceClass = 2;
+            }
+        }
+        return legacyDevicePerformanceClass;
     }
 }

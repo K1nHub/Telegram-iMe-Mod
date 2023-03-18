@@ -80,7 +80,7 @@ public final class BinancePayCreateCollectionRequest {
     }
 
     public String toString() {
-        return "BinancePayCreateCollectionRequest(payerTelegramChatId=" + this.payerTelegramChatId + ", amount=" + this.amount + ", currency=" + this.currency + ", description=" + ((Object) this.description) + ", clientUserMobile=" + ((Object) this.clientUserMobile) + ')';
+        return "BinancePayCreateCollectionRequest(payerTelegramChatId=" + this.payerTelegramChatId + ", amount=" + this.amount + ", currency=" + this.currency + ", description=" + this.description + ", clientUserMobile=" + this.clientUserMobile + ')';
     }
 
     public BinancePayCreateCollectionRequest(String payerTelegramChatId, String amount, String currency, String str, String str2) {

@@ -16,7 +16,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     private final BigInteger nonce;
 
     /* renamed from: to */
-    private final String f348to;
+    private final String f351to;
     private final int value;
 
     public final long component1() {
@@ -28,7 +28,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     }
 
     public final String component3() {
-        return this.f348to;
+        return this.f351to;
     }
 
     public final int component4() {
@@ -67,17 +67,17 @@ public final class StakingTransactionArgs implements TransactionArgs {
         }
         if (obj instanceof StakingTransactionArgs) {
             StakingTransactionArgs stakingTransactionArgs = (StakingTransactionArgs) obj;
-            return this.chainId == stakingTransactionArgs.chainId && Intrinsics.areEqual(this.from, stakingTransactionArgs.from) && Intrinsics.areEqual(this.f348to, stakingTransactionArgs.f348to) && this.value == stakingTransactionArgs.value && Intrinsics.areEqual(this.data, stakingTransactionArgs.data) && Intrinsics.areEqual(this.nonce, stakingTransactionArgs.nonce) && Intrinsics.areEqual(this.gasPrice, stakingTransactionArgs.gasPrice) && Intrinsics.areEqual(this.gasLimit, stakingTransactionArgs.gasLimit);
+            return this.chainId == stakingTransactionArgs.chainId && Intrinsics.areEqual(this.from, stakingTransactionArgs.from) && Intrinsics.areEqual(this.f351to, stakingTransactionArgs.f351to) && this.value == stakingTransactionArgs.value && Intrinsics.areEqual(this.data, stakingTransactionArgs.data) && Intrinsics.areEqual(this.nonce, stakingTransactionArgs.nonce) && Intrinsics.areEqual(this.gasPrice, stakingTransactionArgs.gasPrice) && Intrinsics.areEqual(this.gasLimit, stakingTransactionArgs.gasLimit);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f348to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
+        return (((((((((((((StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f351to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
     }
 
     public String toString() {
-        return "StakingTransactionArgs(chainId=" + this.chainId + ", from=" + this.from + ", to=" + this.f348to + ", value=" + this.value + ", data=" + this.data + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ')';
+        return "StakingTransactionArgs(chainId=" + this.chainId + ", from=" + this.from + ", to=" + this.f351to + ", value=" + this.value + ", data=" + this.data + ", nonce=" + this.nonce + ", gasPrice=" + this.gasPrice + ", gasLimit=" + this.gasLimit + ')';
     }
 
     public StakingTransactionArgs(long j, String from, String to, int i, String data, BigInteger nonce, BigInteger gasPrice, BigInteger gasLimit) {
@@ -89,7 +89,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
         Intrinsics.checkNotNullParameter(gasLimit, "gasLimit");
         this.chainId = j;
         this.from = from;
-        this.f348to = to;
+        this.f351to = to;
         this.value = i;
         this.data = data;
         this.nonce = nonce;
@@ -110,7 +110,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     }
 
     public final String getTo() {
-        return this.f348to;
+        return this.f351to;
     }
 
     public final int getValue() {

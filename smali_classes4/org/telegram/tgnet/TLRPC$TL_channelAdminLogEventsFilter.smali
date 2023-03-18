@@ -53,7 +53,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30549
+    .line 30691
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -64,7 +64,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 30584
+    .line 30726
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -86,7 +86,7 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 30585
+    .line 30727
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->join:Z
 
@@ -101,7 +101,7 @@
     :cond_1
     const/4 p2, 0x0
 
-    .line 30586
+    .line 30728
     :goto_1
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->leave:Z
 
@@ -116,7 +116,7 @@
     :cond_2
     const/4 p2, 0x0
 
-    .line 30587
+    .line 30729
     :goto_2
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->invite:Z
 
@@ -131,7 +131,7 @@
     :cond_3
     const/4 p2, 0x0
 
-    .line 30588
+    .line 30730
     :goto_3
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->ban:Z
 
@@ -146,7 +146,7 @@
     :cond_4
     const/4 p2, 0x0
 
-    .line 30589
+    .line 30731
     :goto_4
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->unban:Z
 
@@ -161,7 +161,7 @@
     :cond_5
     const/4 p2, 0x0
 
-    .line 30590
+    .line 30732
     :goto_5
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->kick:Z
 
@@ -176,7 +176,7 @@
     :cond_6
     const/4 p2, 0x0
 
-    .line 30591
+    .line 30733
     :goto_6
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->unkick:Z
 
@@ -191,7 +191,7 @@
     :cond_7
     const/4 p2, 0x0
 
-    .line 30592
+    .line 30734
     :goto_7
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->promote:Z
 
@@ -206,7 +206,7 @@
     :cond_8
     const/4 p2, 0x0
 
-    .line 30593
+    .line 30735
     :goto_8
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->demote:Z
 
@@ -221,7 +221,7 @@
     :cond_9
     const/4 p2, 0x0
 
-    .line 30594
+    .line 30736
     :goto_9
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->info:Z
 
@@ -236,7 +236,7 @@
     :cond_a
     const/4 p2, 0x0
 
-    .line 30595
+    .line 30737
     :goto_a
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->settings:Z
 
@@ -251,7 +251,7 @@
     :cond_b
     const/4 p2, 0x0
 
-    .line 30596
+    .line 30738
     :goto_b
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->pinned:Z
 
@@ -266,7 +266,7 @@
     :cond_c
     const/4 p2, 0x0
 
-    .line 30597
+    .line 30739
     :goto_c
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->edit:Z
 
@@ -281,7 +281,7 @@
     :cond_d
     const/4 p2, 0x0
 
-    .line 30598
+    .line 30740
     :goto_d
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->delete:Z
 
@@ -296,7 +296,7 @@
     :cond_e
     const/4 p2, 0x0
 
-    .line 30599
+    .line 30741
     :goto_e
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->group_call:Z
 
@@ -308,7 +308,7 @@
 
     const/4 v0, 0x1
 
-    .line 30600
+    .line 30742
     :cond_f
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->invites:Z
 
@@ -318,12 +318,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 30604
+    .line 30746
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 30605
+    .line 30747
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->join:Z
 
     if-eqz v0, :cond_0
@@ -342,7 +342,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30606
+    .line 30748
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->leave:Z
 
     if-eqz v1, :cond_1
@@ -357,7 +357,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30607
+    .line 30749
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->invite:Z
 
     if-eqz v1, :cond_2
@@ -372,7 +372,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30608
+    .line 30750
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->ban:Z
 
     if-eqz v1, :cond_3
@@ -387,7 +387,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30609
+    .line 30751
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->unban:Z
 
     if-eqz v1, :cond_4
@@ -402,7 +402,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30610
+    .line 30752
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->kick:Z
 
     if-eqz v1, :cond_5
@@ -417,7 +417,7 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30611
+    .line 30753
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->unkick:Z
 
     if-eqz v1, :cond_6
@@ -432,7 +432,7 @@
     :goto_6
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30612
+    .line 30754
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->promote:Z
 
     if-eqz v1, :cond_7
@@ -447,7 +447,7 @@
     :goto_7
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30613
+    .line 30755
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->demote:Z
 
     if-eqz v1, :cond_8
@@ -462,7 +462,7 @@
     :goto_8
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30614
+    .line 30756
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->info:Z
 
     if-eqz v1, :cond_9
@@ -477,7 +477,7 @@
     :goto_9
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30615
+    .line 30757
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->settings:Z
 
     if-eqz v1, :cond_a
@@ -492,7 +492,7 @@
     :goto_a
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30616
+    .line 30758
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->pinned:Z
 
     if-eqz v1, :cond_b
@@ -507,7 +507,7 @@
     :goto_b
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30617
+    .line 30759
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->edit:Z
 
     if-eqz v1, :cond_c
@@ -522,7 +522,7 @@
     :goto_c
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30618
+    .line 30760
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->delete:Z
 
     if-eqz v1, :cond_d
@@ -537,7 +537,7 @@
     :goto_d
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30619
+    .line 30761
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->group_call:Z
 
     if-eqz v1, :cond_e
@@ -552,7 +552,7 @@
     :goto_e
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30620
+    .line 30762
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->invites:Z
 
     if-eqz v1, :cond_f
@@ -571,7 +571,7 @@
     :goto_f
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminLogEventsFilter;->flags:I
 
-    .line 30621
+    .line 30763
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

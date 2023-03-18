@@ -872,6 +872,25 @@
     <string name="profile_group_filter_title">Фильтры участников</string>
     <string name="profile_group_id_item_title">ID группы</string>
     <string name="profile_my_id_item_title">Мой ID</string>
+    <string name="profile_twitter_account_actions_title">Аккаунт Twitter</string>
+    <string name="profile_twitter_auth_to_use_feature_description">Чтобы использовать этот функционал, вы должны авторизировать ваш Telegram аккаунт через нашего iMe Wallet бота.</string>
+    <string name="profile_twitter_bot_confirmation_alert_description">Чтобы привязать Twitter, пожалуйста, добавьте бота %s в список админов, чтобы подтвердить, что вы являетесь владельцем чата</string>
+    <string name="profile_twitter_bot_confirmation_alert_title">Верификация владельца</string>
+    <string name="profile_twitter_link_confirmation_alert_description">Ваш аккаунт Twitter привязан к другому аккаунту, если вы привяжете его к текущему, то другие подключения будут сброшены</string>
+    <string name="profile_twitter_link_confirmation_alert_title">Подтверждение</string>
+    <string name="profile_twitter_not_connected">Не подключено</string>
+    <string name="profile_twitter_reset_confirmation_alert_description">"Вы уверены, что вы хотите сбросить ваш аккаунт Twitter?
+
+После сброса вы сможете привязать новый аккаунт."</string>
+    <string name="profile_twitter_reset_confirmation_alert_title">Сбросить аккаунт Twitter</string>
+    <string name="profile_twitter_unlinked_error_alert_description">"Ранее, ваш аккаунт Twitter был привязан к Telegram с другого устройства, поэтому подключение было сброшено. 
+
+Пожалуйста выйдите из системы или привяжите аккаунт Twitter снова."</string>
+    <string name="profile_twitter_unlinked_error_alert_link">Привязать</string>
+    <string name="profile_twitter_unlinked_error_alert_log_out">Выйти</string>
+    <string name="profile_twitter_unlinked_error_alert_title">Аккаунт отвязан</string>
+    <string name="profile_twitter_vpn_alert_description">Пожалуйста, включите VPN, если Twitter ограничен в вашем регионе.</string>
+    <string name="profile_twitter_vpn_alert_title">VPN</string>
     <string name="profile_user_id_action_copy">Копировать</string>
     <string name="profile_user_id_action_transfer">Сделать перевод</string>
     <string name="profile_user_id_item_title">ID пользователя</string>
@@ -901,6 +920,13 @@
     <string name="push_notification_wallet_unsupported">Неподдерживаемое уведомление</string>
     <string name="quick_reaction_settings_enable_item_hint">Включите, чтобы использовать быстрые реакции для сообщений в чатах</string>
     <string name="recent_chats_clear_history">Вы уверены, что хотите очистить историю недавних чатов?</string>
+    <string name="recent_chats_counters_and_reactions">Счетчики и реакции</string>
+    <string name="recent_chats_hint">Включите это, если вы хотите иметь быстрый доступ к вашим недавним чатам с возможность закрепления неограниченного количества чатов. Панель будет отображаться над списком чатов.</string>
+    <string name="recent_chats_live">Видеочаты</string>
+    <string name="recent_chats_mentions">Упоминания</string>
+    <string name="recent_chats_new_messages">Новые сообщения</string>
+    <string name="recent_chats_online_status">Онлайн статус</string>
+    <string name="recent_chats_reactions">Реакции</string>
     <string name="release_to_go_to_next_unread_bot">Отпустите для перехода к новому боту</string>
     <string name="release_to_go_to_next_unread_group">Отпустите для перехода к новой группе</string>
     <string name="release_to_go_to_next_unread_personal_chat">Отпустите для перехода к новому личному чату</string>
@@ -1226,7 +1252,7 @@
     <string name="stickers_size_small">Маленький</string>
     <string name="stickers_size_title">Размер стикеров</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Учитывать архив</string>
-    <string name="swipe_to_next_unread_dialog_hint">Включите, чтобы настроить переходы к непрочитанным чатам</string>
+    <string name="swipe_to_next_unread_dialog_hint">Включите это, если вы хотите читать ваши чаты, не возвращаясь в список чатов. Дойдя до последнего сообщения в чате, потяните экран вверх, чтобы перейти к следующему непрочитанному чату.</string>
     <string name="swipe_to_next_unread_dialog_types">Типы диалогов</string>
     <string name="text_recognition_bottom_sheet_title">Фото → Текст</string>
     <string name="topic">Топик</string>
@@ -1329,6 +1355,20 @@
     <string name="translation_rate_limit_error">API Google временно ограничил перевод из-за слишком частых запросов. Попробуйте позже, или смените IP-адрес.</string>
     <string name="translation_search_language">Поиск языка перевода</string>
     <string name="translation_search_language_empty">Нет подходящих языков</string>
+    <string name="twitter_auth_title">Авторизация Twitter</string>
+    <string name="twitter_empty_state_subtitle">Пока что еще Твитов нет</string>
+    <string name="twitter_empty_state_title">Пользователь пока еще не имеет Твитов</string>
+    <string name="twitter_open_in_twitter">Открыть в Twitter</string>
+    <string name="twitter_search_hint">Введите username получателя</string>
+    <string name="twitter_search_invite_confirmation_description">Вы действительно хотите отправить приглашение %s?</string>
+    <string name="twitter_search_invite_confirmation_title">Отправить приглашение</string>
+    <string name="twitter_search_invite_direct_messages_error">Возникла ошибка при отправке приглашения. Пользователь отключил личные сообщения.</string>
+    <string name="twitter_search_invite_subtitle">Не найден в iMe</string>
+    <string name="twitter_search_invite_success">Приглашение было успешно отправлено</string>
+    <string name="twitter_search_open_in_twitter">Открыть в Twitter</string>
+    <string name="twitter_search_subtitle">Введите Twitter username получателя в поле ввода</string>
+    <string name="twitter_search_title">Поиск Twitter</string>
+    <string name="twitter_title">Твиты</string>
     <string name="unlock_premium_transcription_hint">Для транскрибации голоса более 1 мин требуется Telegram Premium.</string>
     <string name="user_restrictions_send_games">Игр</string>
     <string name="user_restrictions_send_gifs">GIF</string>
@@ -1450,7 +1490,7 @@
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_long_description">Больше никаких ненужных сборов и комиссий. Платите, отправляйте и получайте криптовалюту - и все это без комиссий.</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_title">БЕЗ КОМИССИЙ</string>
     <string name="wallet_banner_slide_crypto_transfers_description">Через чаты, ID Telegram, адрес, QR-код</string>
-    <string name="wallet_banner_slide_crypto_transfers_long_description">Совершайте переводы криптовалют прямо внутри чатов, через ID Telegram, с помощью QR-кода или по публичным адресам.</string>
+    <string name="wallet_banner_slide_crypto_transfers_long_description">Совершайте переводы криптовалют прямо внутри чатов, через ID Telegram, Twitter, с помощью QR-кода или по публичным адресам.</string>
     <string name="wallet_banner_slide_crypto_transfers_title">ПЕРЕВОДЫ</string>
     <string name="wallet_banner_slide_faq_description">Общее описание функциональности</string>
     <string name="wallet_banner_slide_faq_long_description">Пожалуйста, ознакомьтесь с описанием функциональности iMe, вы найдете ответы на многие вопросы.</string>

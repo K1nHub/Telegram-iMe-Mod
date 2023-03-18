@@ -27,14 +27,13 @@ public final class BotsDatabase$Companion$getInstance$1$1 extends RoomDatabase.C
         newSingleThreadScheduledExecutor.execute(new Runnable() { // from class: com.smedialink.bots.data.database.BotsDatabase$Companion$getInstance$1$1$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BotsDatabase$Companion$getInstance$1$1.m1144onOpen$lambda0(context);
+                BotsDatabase$Companion$getInstance$1$1.onOpen$lambda$0(context);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onOpen$lambda-0  reason: not valid java name */
-    public static final void m1144onOpen$lambda0(Context context) {
+    public static final void onOpen$lambda$0(Context context) {
         Intrinsics.checkNotNullParameter(context, "$context");
         Log.d("BotsDatabase", "onopen");
         BotsDatabase.Companion.getInstance(context).botsDao().insertButIgnore(BotsRepository.Companion.initialBotsList());

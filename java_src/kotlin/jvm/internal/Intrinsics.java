@@ -25,12 +25,22 @@ public class Intrinsics {
         }
     }
 
+    public static void checkNotNull(Object obj, String str) {
+        if (obj == null) {
+            throwJavaNpe(str);
+        }
+    }
+
     public static void throwNpe() {
         throw ((KotlinNullPointerException) sanitizeStackTrace(new KotlinNullPointerException()));
     }
 
     public static void throwJavaNpe() {
         throw ((NullPointerException) sanitizeStackTrace(new NullPointerException()));
+    }
+
+    public static void throwJavaNpe(String str) {
+        throw ((NullPointerException) sanitizeStackTrace(new NullPointerException(str)));
     }
 
     public static void throwUninitializedProperty(String str) {
@@ -76,7 +86,16 @@ public class Intrinsics {
     }
 
     private static String createParameterIsNullExceptionMessage(String str) {
-        StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[4];
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+        String name = Intrinsics.class.getName();
+        int i = 0;
+        while (!stackTrace[i].getClassName().equals(name)) {
+            i++;
+        }
+        while (stackTrace[i].getClassName().equals(name)) {
+            i++;
+        }
+        StackTraceElement stackTraceElement = stackTrace[i];
         String className = stackTraceElement.getClassName();
         String methodName = stackTraceElement.getMethodName();
         return "Parameter specified as non-null is null: method " + className + "." + methodName + ", parameter " + str;

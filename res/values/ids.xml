@@ -218,13 +218,17 @@
     <item type="id" name="flexbox_tags" />
     <item type="id" name="fragment_container_view_tag" />
     <item type="id" name="frame_collapsing_content_container" />
+    <item type="id" name="frame_contacts" />
+    <item type="id" name="frame_container" />
     <item type="id" name="frame_fragment_container" />
     <item type="id" name="frame_half_bg" />
     <item type="id" name="frame_image_container" />
     <item type="id" name="frame_network_type" />
     <item type="id" name="frame_pages_container" />
+    <item type="id" name="frame_qr" />
     <item type="id" name="frame_root" />
     <item type="id" name="frame_tabs_container" />
+    <item type="id" name="frame_twitter" />
     <item type="id" name="ghost_view" />
     <item type="id" name="ghost_view_holder" />
     <item type="id" name="glide_custom_view_target_tag" />
@@ -258,6 +262,7 @@
     <item type="id" name="image_close" />
     <item type="id" name="image_coin_icon" />
     <item type="id" name="image_collection_image" />
+    <item type="id" name="image_comments" />
     <item type="id" name="image_copy" />
     <item type="id" name="image_empty" />
     <item type="id" name="image_empty_icon" />
@@ -271,16 +276,17 @@
     <item type="id" name="image_icon" />
     <item type="id" name="image_info" />
     <item type="id" name="image_language" />
+    <item type="id" name="image_like" />
     <item type="id" name="image_logo" />
     <item type="id" name="image_network_icon" />
     <item type="id" name="image_nft_image" />
     <item type="id" name="image_peer_icon" />
     <item type="id" name="image_price_direction" />
     <item type="id" name="image_qr" />
+    <item type="id" name="image_retweets" />
     <item type="id" name="image_service_logo" />
     <item type="id" name="image_settings" />
     <item type="id" name="image_share" />
-    <item type="id" name="image_staking_filters_info" />
     <item type="id" name="image_staking_icon" />
     <item type="id" name="image_staking_info" />
     <item type="id" name="image_state_animation" />
@@ -305,10 +311,6 @@
     <item type="id" name="info" />
     <item type="id" name="installs_counter" />
     <item type="id" name="installs_label" />
-    <item type="id" name="item1" />
-    <item type="id" name="item2" />
-    <item type="id" name="item3" />
-    <item type="id" name="item4" />
     <item type="id" name="item_back" />
     <item type="id" name="item_container" />
     <item type="id" name="item_menu" />
@@ -496,6 +498,7 @@
     <item type="id" name="recycle_swap_protocols" />
     <item type="id" name="recycle_tokens" />
     <item type="id" name="recycle_transactions" />
+    <item type="id" name="recycle_tweets" />
     <item type="id" name="recycle_user_channels" />
     <item type="id" name="recycle_wallet_balances" />
     <item type="id" name="recycle_wallet_home_binance_pay_dashboard" />
@@ -614,7 +617,9 @@
     <item type="id" name="text_column_right" />
     <item type="id" name="text_comment_title" />
     <item type="id" name="text_comment_value" />
+    <item type="id" name="text_comments_count" />
     <item type="id" name="text_company" />
+    <item type="id" name="text_contacts" />
     <item type="id" name="text_copy_info" />
     <item type="id" name="text_date" />
     <item type="id" name="text_date_title" />
@@ -640,6 +645,7 @@
     <item type="id" name="text_input_start_icon" />
     <item type="id" name="text_language_title" />
     <item type="id" name="text_language_value" />
+    <item type="id" name="text_likes_count" />
     <item type="id" name="text_message" />
     <item type="id" name="text_mode_title" />
     <item type="id" name="text_mode_value" />
@@ -654,6 +660,7 @@
     <item type="id" name="text_peer_name" />
     <item type="id" name="text_peer_url" />
     <item type="id" name="text_percentage_value" />
+    <item type="id" name="text_post" />
     <item type="id" name="text_powered_by" />
     <item type="id" name="text_price_title" />
     <item type="id" name="text_price_value" />
@@ -663,9 +670,11 @@
     <item type="id" name="text_profit_token_value" />
     <item type="id" name="text_profit_usd_value" />
     <item type="id" name="text_profit_value" />
+    <item type="id" name="text_qr" />
     <item type="id" name="text_recipient_title" />
     <item type="id" name="text_recipient_value" />
     <item type="id" name="text_recognition_container" />
+    <item type="id" name="text_retweets_count" />
     <item type="id" name="text_safe_withdrawal" />
     <item type="id" name="text_section_actions" />
     <item type="id" name="text_section_name" />
@@ -695,6 +704,7 @@
     <item type="id" name="text_target_language" />
     <item type="id" name="text_tax" />
     <item type="id" name="text_threshold_value" />
+    <item type="id" name="text_time" />
     <item type="id" name="text_time_title" />
     <item type="id" name="text_time_value" />
     <item type="id" name="text_title" />
@@ -716,6 +726,7 @@
     <item type="id" name="text_transaction_type_title" />
     <item type="id" name="text_transactions" />
     <item type="id" name="text_transactions_approval" />
+    <item type="id" name="text_twitter" />
     <item type="id" name="text_user_full_name" />
     <item type="id" name="text_validation_error" />
     <item type="id" name="text_value" />
@@ -797,6 +808,7 @@
     <item type="id" name="view_tree_lifecycle_owner" />
     <item type="id" name="view_tree_saved_state_registry_owner" />
     <item type="id" name="view_tree_view_model_store_owner" />
+    <item type="id" name="view_tweet" />
     <item type="id" name="view_wallet_cell" />
     <item type="id" name="viewpager" />
     <item type="id" name="visible_removing_fragment_view_tag" />

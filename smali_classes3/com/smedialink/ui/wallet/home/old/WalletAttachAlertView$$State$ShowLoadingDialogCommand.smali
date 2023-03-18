@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State;ZZLio/reactivex/disposables/Disposable;)V
     .locals 1
 
-    .line 373
+    .line 355
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showLoadingDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 375
+    .line 357
     iput-boolean p2, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowLoadingDialogCommand;->show:Z
 
-    .line 376
+    .line 358
     iput-boolean p3, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowLoadingDialogCommand;->cancellable:Z
 
-    .line 377
+    .line 359
     iput-object p4, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowLoadingDialogCommand;->actionToCancel:Lio/reactivex/disposables/Disposable;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V
     .locals 3
 
-    .line 382
+    .line 364
     iget-boolean v0, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowLoadingDialogCommand;->show:Z
 
     iget-boolean v1, p0, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowLoadingDialogCommand;->cancellable:Z
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 365
+    .line 347
     check-cast p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView$$State$ShowLoadingDialogCommand;->apply(Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertView;)V

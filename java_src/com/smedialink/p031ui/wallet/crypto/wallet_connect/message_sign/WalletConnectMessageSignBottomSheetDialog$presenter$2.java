@@ -35,14 +35,14 @@ final class WalletConnectMessageSignBottomSheetDialog$presenter$2 extends Lambda
     /* compiled from: WalletConnectMessageSignBottomSheetDialog.kt */
     /* renamed from: com.smedialink.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C19931 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C21141 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WCEthereumSignMessage $message;
         final /* synthetic */ long $requestId;
         final /* synthetic */ WalletConnectSessionItem $sessionItem;
         final /* synthetic */ WalletConnectManager $walletConnectManager;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19931(long j, WalletConnectSessionItem walletConnectSessionItem, WCEthereumSignMessage wCEthereumSignMessage, WalletConnectManager walletConnectManager) {
+        C21141(long j, WalletConnectSessionItem walletConnectSessionItem, WCEthereumSignMessage wCEthereumSignMessage, WalletConnectManager walletConnectManager) {
             super(0);
             this.$requestId = j;
             this.$sessionItem = walletConnectSessionItem;
@@ -60,7 +60,7 @@ final class WalletConnectMessageSignBottomSheetDialog$presenter$2 extends Lambda
     @Override // kotlin.jvm.functions.Function0
     public final WalletConnectMessageSignPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1990xe2ff69b5(this.this$0, null, new C19931(this.$requestId, this.$sessionItem, this.$message, this.$walletConnectManager)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2111xe2ff69b5(this.this$0, null, new C21141(this.$requestId, this.$sessionItem, this.$message, this.$walletConnectManager)));
         return (WalletConnectMessageSignPresenter) lazy.getValue();
     }
 }

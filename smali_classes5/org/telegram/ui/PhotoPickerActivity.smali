@@ -1564,7 +1564,7 @@
 
     if-eqz p1, :cond_2
 
-    const-string p2, "dialogTextRed2"
+    const-string p2, "dialogTextRed"
 
     .line 838
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -6551,7 +6551,7 @@
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const/4 v1, 0x1
 
@@ -6600,21 +6600,11 @@
 
     move-result-object v0
 
-    sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->smoothKeyboard:Z
-
-    if-eqz v1, :cond_3
-
     const/16 v1, 0x20
 
-    goto :goto_0
-
-    :cond_3
-    const/16 v1, 0x10
-
-    :goto_0
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    :cond_4
+    :cond_3
     return-void
 .end method
 

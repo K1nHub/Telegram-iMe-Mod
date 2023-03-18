@@ -45,7 +45,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet$$ExternalSyntheticLambda2;->f$0:Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->$r8$lambda$XNiwSNvW_nUuYjC6Y2grFaEYZ84(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2, p3, p4}, Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;->$r8$lambda$yoNCpdVWI6eMoS88LPZM4oY3v0k(Lorg/fork/ui/dialog/ChatLanguageSettingsBottomSheet;Landroid/view/View;IFF)V
 
     return-void
 .end method

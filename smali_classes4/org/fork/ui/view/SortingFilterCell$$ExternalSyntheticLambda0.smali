@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/SortingFilterCell$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/view/SortingFilterCell;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/view/SortingFilterCell;->$r8$lambda$yB3LW-Dz6oH_fue0QVR8-pDut3A(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/view/SortingFilterCell;->$r8$lambda$quloWtrVxNQ-JVkiZsjOcoMyp7I(Lorg/fork/ui/view/SortingFilterCell;Landroid/view/View;)V
 
     return-void
 .end method

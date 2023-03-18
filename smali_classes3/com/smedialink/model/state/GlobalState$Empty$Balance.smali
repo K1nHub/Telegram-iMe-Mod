@@ -34,13 +34,13 @@
 .method private constructor <init>()V
     .locals 6
 
-    .line 66
+    .line 68
     sget v2, Lorg/telegram/messenger/R$raw;->fork_state_empty_balance:I
 
-    .line 67
+    .line 69
     sget v3, Lorg/telegram/messenger/R$string;->common_empty_state_title:I
 
-    .line 68
+    .line 70
     sget v4, Lorg/telegram/messenger/R$string;->common_empty_balance_state_description:I
 
     const-string v1, "empty_balance_state"
@@ -49,7 +49,7 @@
 
     move-object v0, p0
 
-    .line 64
+    .line 66
     invoke-direct/range {v0 .. v5}, Lcom/smedialink/model/state/GlobalState$Empty;-><init>(Ljava/lang/String;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void

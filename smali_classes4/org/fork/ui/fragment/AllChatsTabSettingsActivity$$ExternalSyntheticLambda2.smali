@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity$$ExternalSyntheticLambda2;->f$0:Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->$r8$lambda$oPHNKQwDSiLvK36f_8x1YnIaNnw(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->$r8$lambda$Ec5a6-cYYz-6Ujng-uU69kVYbgE(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method

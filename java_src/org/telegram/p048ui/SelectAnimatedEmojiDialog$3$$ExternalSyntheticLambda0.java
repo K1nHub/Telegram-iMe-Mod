@@ -12,6 +12,6 @@ public final /* synthetic */ class SelectAnimatedEmojiDialog$3$$ExternalSyntheti
 
     @Override // android.content.DialogInterface.OnClickListener
     public final void onClick(DialogInterface dialogInterface, int i) {
-        SelectAnimatedEmojiDialog.C62533.lambda$onTabClickLong$0(dialogInterface, i);
+        SelectAnimatedEmojiDialog.C63963.lambda$onTabClickLong$0(dialogInterface, i);
     }
 }

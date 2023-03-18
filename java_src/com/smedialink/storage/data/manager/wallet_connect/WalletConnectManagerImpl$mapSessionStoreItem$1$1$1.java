@@ -26,7 +26,6 @@ public final class WalletConnectManagerImpl$mapSessionStoreItem$1$1$1 extends La
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         this.$it.connect(this.$this_with.getSession(), this.$this_with.getRemotePeerMeta(), this.$this_with.getPeerId(), this.$this_with.getRemotePeerId());

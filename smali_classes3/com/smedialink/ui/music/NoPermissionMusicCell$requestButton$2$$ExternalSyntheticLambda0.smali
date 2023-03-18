@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/music/NoPermissionMusicCell$requestButton$2$$ExternalSyntheticLambda0;->f$0:Landroid/app/Activity;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/music/NoPermissionMusicCell$requestButton$2;->$r8$lambda$l51LdMrqHWntOXrJsKbslFd5j58(Landroid/app/Activity;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/music/NoPermissionMusicCell$requestButton$2;->$r8$lambda$wKX40oinGJRTEN2jQLwBPIDovjA(Landroid/app/Activity;Landroid/view/View;)V
 
     return-void
 .end method

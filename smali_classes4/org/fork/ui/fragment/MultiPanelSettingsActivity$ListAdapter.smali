@@ -24,16 +24,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 226
     iput-object p1, p0, Lorg/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->this$0:Lorg/fork/ui/fragment/MultiPanelSettingsActivity;
@@ -370,7 +366,7 @@
 
     const/4 v2, 0x0
 
-    const-string v5, "windowBackgroundGrayShadow"
+    const-string/jumbo v5, "windowBackgroundGrayShadow"
 
     if-ne p2, v1, :cond_3
 
@@ -655,8 +651,6 @@
 
     invoke-static {p2, p1}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->access$setTopicsBar$p(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Lorg/fork/ui/view/DialogTypeTopicsBar;)V
 
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 290
@@ -702,16 +696,13 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    const-string/jumbo v1, "windowBackgroundGrayShadow"
 
     invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 293
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 
@@ -729,7 +720,7 @@
 
     invoke-direct {p1, p2}, Lorg/fork/ui/view/MovingCheckCell;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "windowBackgroundWhite"
+    const-string/jumbo p2, "windowBackgroundWhite"
 
     .line 295
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -737,9 +728,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 296
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 298
     :goto_0
@@ -752,9 +740,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 299
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 284
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

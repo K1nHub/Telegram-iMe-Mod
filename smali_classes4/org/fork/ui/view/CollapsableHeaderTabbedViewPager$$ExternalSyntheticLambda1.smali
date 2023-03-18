@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager$$ExternalSyntheticLambda1;->f$0:Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->$r8$lambda$S298N9oY4kr8Acmx60Wwnr4s3TA(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->$r8$lambda$NEUxdtbbyxZMP1_-HO9b0NglnJo(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
 
     return-void
 .end method

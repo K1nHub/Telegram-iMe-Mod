@@ -23,6 +23,10 @@ public class CounterView extends View {
     public CounterDrawable counterDrawable;
     private final Theme.ResourcesProvider resourcesProvider;
 
+    public void setCountResentChats(boolean z, boolean z2, float f, float f2) {
+        this.counterDrawable.setCountResentChats(z, z2, f, f2);
+    }
+
     public CounterView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.resourcesProvider = resourcesProvider;
@@ -76,10 +80,18 @@ public class CounterView extends View {
         private int countWidth;
         private int countWidthOld;
         int currentCount;
+
+        /* renamed from: cx */
+        private float f1697cx;
+
+        /* renamed from: cy */
+        private float f1698cy;
         private boolean drawBackground;
         public float horizontalPadding;
         int lastH;
+        private boolean mute;
         private View parent;
+        private boolean recentChatsMode;
         private final Theme.ResourcesProvider resourcesProvider;
         private boolean reverseAnimation;
         public boolean shortFormat;
@@ -88,7 +100,8 @@ public class CounterView extends View {
         int width;
 
         /* renamed from: x */
-        float f1691x;
+        float f1699x;
+        public float circleScale = 1.0f;
         int animationType = -1;
         public TextPaint textPaint = new TextPaint(1);
         public RectF rectF = new RectF();
@@ -96,7 +109,15 @@ public class CounterView extends View {
         private String textColorKey = "chat_goDownButtonCounter";
         private String circleColorKey = "chat_goDownButtonCounterBackground";
         public int gravity = 17;
+        public float radius = 11.5f;
         int type = 0;
+
+        public void setCountResentChats(boolean z, boolean z2, float f, float f2) {
+            this.recentChatsMode = z;
+            this.mute = z2;
+            this.f1697cx = f;
+            this.f1698cy = f2;
+        }
 
         public CounterDrawable(View view, boolean z, Theme.ResourcesProvider resourcesProvider) {
             this.drawBackground = true;
@@ -109,7 +130,11 @@ public class CounterView extends View {
                 paint.setColor(-16777216);
             }
             this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.textPaint.setTextSize(AndroidUtilities.m50dp(13));
+            if (this.recentChatsMode) {
+                this.textPaint.setTextSize(AndroidUtilities.m50dp(8));
+            } else {
+                this.textPaint.setTextSize(AndroidUtilities.m50dp(13));
+            }
         }
 
         public void setSize(int i, int i2) {
@@ -123,25 +148,47 @@ public class CounterView extends View {
         }
 
         private void drawInternal(Canvas canvas) {
-            float m50dp = (this.lastH - AndroidUtilities.m50dp(23)) / 2.0f;
+            float f = this.radius * 2.0f;
+            float m51dp = (this.lastH - AndroidUtilities.m51dp(f)) / 2.0f;
             updateX(this.countWidth);
-            RectF rectF = this.rectF;
-            float f = this.f1691x;
-            rectF.set(f, m50dp, this.countWidth + f + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m50dp);
-            Paint paint = this.circlePaint;
-            if (paint != null && this.drawBackground) {
+            if (this.recentChatsMode) {
+                RectF rectF = this.rectF;
+                float f2 = this.f1697cx;
+                rectF.set(f2, this.f1698cy, AndroidUtilities.m50dp(20) + f2, this.f1698cy + AndroidUtilities.m50dp(20));
+            } else {
                 RectF rectF2 = this.rectF;
-                float f2 = AndroidUtilities.density;
-                canvas.drawRoundRect(rectF2, f2 * 11.5f, f2 * 11.5f, paint);
+                float f3 = this.f1699x;
+                rectF2.set(f3, m51dp, this.countWidth + f3 + AndroidUtilities.m51dp(this.radius - 0.5f), AndroidUtilities.m51dp(f) + m51dp);
+            }
+            if (this.circlePaint != null && this.drawBackground) {
+                boolean z = false;
+                if (this.circleScale != 1.0f) {
+                    canvas.save();
+                    float f4 = this.circleScale;
+                    canvas.scale(f4, f4, this.rectF.centerX(), this.rectF.centerY());
+                    z = true;
+                }
+                RectF rectF3 = this.rectF;
+                float f5 = this.radius;
+                float f6 = AndroidUtilities.density;
+                canvas.drawRoundRect(rectF3, f5 * f6, f5 * f6, this.circlePaint);
                 if (this.addServiceGradient && Theme.hasGradientService()) {
-                    RectF rectF3 = this.rectF;
-                    float f3 = AndroidUtilities.density;
-                    canvas.drawRoundRect(rectF3, f3 * 11.5f, f3 * 11.5f, Theme.chat_actionBackgroundGradientDarkenPaint);
+                    RectF rectF4 = this.rectF;
+                    float f7 = this.radius;
+                    float f8 = AndroidUtilities.density;
+                    canvas.drawRoundRect(rectF4, f7 * f8, f7 * f8, Theme.chat_actionBackgroundGradientDarkenPaint);
+                }
+                if (z) {
+                    canvas.restore();
                 }
             }
             if (this.countLayout != null) {
                 canvas.save();
-                canvas.translate(this.countLeft, m50dp + AndroidUtilities.m50dp(4));
+                if (this.recentChatsMode) {
+                    canvas.translate(this.f1697cx + AndroidUtilities.m50dp(4), this.f1698cy + AndroidUtilities.m51dp(4.5f));
+                } else {
+                    canvas.translate(this.countLeft, m51dp + AndroidUtilities.m50dp(4));
+                }
                 this.countLayout.draw(canvas);
                 canvas.restore();
             }
@@ -282,12 +329,16 @@ public class CounterView extends View {
 
         public void draw(Canvas canvas) {
             float f;
+            boolean z;
             Paint paint;
             float interpolation;
             int i = this.type;
             if (i != 1 && i != 2) {
                 int themedColor = getThemedColor(this.textColorKey);
                 int themedColor2 = getThemedColor(this.circleColorKey);
+                if (this.recentChatsMode) {
+                    themedColor2 = (this.mute ? Theme.dialogs_countGrayPaint : Theme.dialogs_countPaint).getColor();
+                }
                 if (this.textColor != themedColor) {
                     this.textColor = themedColor;
                     this.textPaint.setColor(themedColor);
@@ -316,7 +367,7 @@ public class CounterView extends View {
                 if (f6 > 1.0f) {
                     f6 = 1.0f;
                 }
-                float m50dp = (this.lastH - AndroidUtilities.m50dp(23)) / 2.0f;
+                float m51dp = (this.lastH - AndroidUtilities.m51dp(this.radius * 2.0f)) / 2.0f;
                 int i3 = this.countWidth;
                 int i4 = this.countWidthOld;
                 float f7 = i3 == i4 ? i3 : (i3 * f6) + (i4 * (1.0f - f6));
@@ -333,57 +384,70 @@ public class CounterView extends View {
                     f = 1.0f;
                 }
                 RectF rectF = this.rectF;
-                float f9 = this.f1691x;
-                rectF.set(f9, m50dp, f7 + f9 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m50dp);
+                float f9 = this.f1699x;
+                rectF.set(f9, m51dp, f7 + f9 + AndroidUtilities.m51dp(this.radius - 0.5f), AndroidUtilities.m51dp(this.radius * 2.0f) + m51dp);
                 canvas.save();
                 canvas.scale(f, f, this.rectF.centerX(), this.rectF.centerY());
+                if (this.circleScale != 1.0f) {
+                    canvas.save();
+                    float f10 = this.circleScale;
+                    canvas.scale(f10, f10, this.rectF.centerX(), this.rectF.centerY());
+                    z = true;
+                } else {
+                    z = false;
+                }
                 if (this.drawBackground && (paint = this.circlePaint) != null) {
                     RectF rectF2 = this.rectF;
-                    float f10 = AndroidUtilities.density;
-                    canvas.drawRoundRect(rectF2, f10 * 11.5f, f10 * 11.5f, paint);
+                    float f11 = this.radius;
+                    float f12 = AndroidUtilities.density;
+                    canvas.drawRoundRect(rectF2, f11 * f12, f11 * f12, paint);
                     if (this.addServiceGradient && Theme.hasGradientService()) {
                         RectF rectF3 = this.rectF;
-                        float f11 = AndroidUtilities.density;
-                        canvas.drawRoundRect(rectF3, f11 * 11.5f, f11 * 11.5f, Theme.chat_actionBackgroundGradientDarkenPaint);
+                        float f13 = this.radius;
+                        float f14 = AndroidUtilities.density;
+                        canvas.drawRoundRect(rectF3, f13 * f14, f13 * f14, Theme.chat_actionBackgroundGradientDarkenPaint);
                     }
                 }
+                if (z) {
+                    canvas.restore();
+                }
                 canvas.clipRect(this.rectF);
-                boolean z = this.reverseAnimation != this.countAnimationIncrement;
+                boolean z2 = this.reverseAnimation != this.countAnimationIncrement;
                 if (this.countAnimationInLayout != null) {
                     canvas.save();
-                    float f12 = this.countLeft;
-                    float m50dp2 = AndroidUtilities.m50dp(4) + m50dp;
-                    int m50dp3 = AndroidUtilities.m50dp(13);
-                    if (!z) {
-                        m50dp3 = -m50dp3;
+                    float f15 = this.countLeft;
+                    float m50dp = AndroidUtilities.m50dp(4) + m51dp;
+                    int m50dp2 = AndroidUtilities.m50dp(13);
+                    if (!z2) {
+                        m50dp2 = -m50dp2;
                     }
-                    canvas.translate(f12, m50dp2 + (m50dp3 * (1.0f - f6)));
+                    canvas.translate(f15, m50dp + (m50dp2 * (1.0f - f6)));
                     this.textPaint.setAlpha((int) (f6 * 255.0f));
                     this.countAnimationInLayout.draw(canvas);
                     canvas.restore();
                 } else if (this.countLayout != null) {
                     canvas.save();
-                    float f13 = this.countLeft;
-                    float m50dp4 = AndroidUtilities.m50dp(4) + m50dp;
-                    int m50dp5 = AndroidUtilities.m50dp(13);
-                    if (!z) {
-                        m50dp5 = -m50dp5;
+                    float f16 = this.countLeft;
+                    float m50dp3 = AndroidUtilities.m50dp(4) + m51dp;
+                    int m50dp4 = AndroidUtilities.m50dp(13);
+                    if (!z2) {
+                        m50dp4 = -m50dp4;
                     }
-                    canvas.translate(f13, m50dp4 + (m50dp5 * (1.0f - f6)));
+                    canvas.translate(f16, m50dp3 + (m50dp4 * (1.0f - f6)));
                     this.textPaint.setAlpha((int) (f6 * 255.0f));
                     this.countLayout.draw(canvas);
                     canvas.restore();
                 }
                 if (this.countOldLayout != null) {
                     canvas.save();
-                    canvas.translate(this.countLeft, AndroidUtilities.m50dp(4) + m50dp + ((z ? -AndroidUtilities.m50dp(13) : AndroidUtilities.m50dp(13)) * f6));
+                    canvas.translate(this.countLeft, AndroidUtilities.m50dp(4) + m51dp + ((z2 ? -AndroidUtilities.m50dp(13) : AndroidUtilities.m50dp(13)) * f6));
                     this.textPaint.setAlpha((int) ((1.0f - f6) * 255.0f));
                     this.countOldLayout.draw(canvas);
                     canvas.restore();
                 }
                 if (this.countAnimationStableLayout != null) {
                     canvas.save();
-                    canvas.translate(this.countLeft, m50dp + AndroidUtilities.m50dp(4));
+                    canvas.translate(this.countLeft, m51dp + AndroidUtilities.m50dp(4));
                     this.textPaint.setAlpha(255);
                     this.countAnimationStableLayout.draw(canvas);
                     canvas.restore();
@@ -401,31 +465,31 @@ public class CounterView extends View {
                 int i = this.animationType;
                 if (i == 0 || i == 1) {
                     updateX(this.countWidth);
-                    float m50dp = (this.lastH - AndroidUtilities.m50dp(23)) / 2.0f;
+                    float m51dp = (this.lastH - AndroidUtilities.m51dp(this.radius * 2.0f)) / 2.0f;
                     RectF rectF = this.rectF;
-                    float f2 = this.f1691x;
-                    rectF.set(f2, m50dp, this.countWidth + f2 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m50dp);
+                    float f2 = this.f1699x;
+                    rectF.set(f2, m51dp, this.countWidth + f2 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m51dp);
                     return;
                 }
                 float f3 = f * 2.0f;
                 if (f3 > 1.0f) {
                     f3 = 1.0f;
                 }
-                float m50dp2 = (this.lastH - AndroidUtilities.m50dp(23)) / 2.0f;
+                float m51dp2 = (this.lastH - AndroidUtilities.m51dp(this.radius * 2.0f)) / 2.0f;
                 int i2 = this.countWidth;
                 int i3 = this.countWidthOld;
                 float f4 = i2 == i3 ? i2 : (i2 * f3) + (i3 * (1.0f - f3));
                 updateX(f4);
                 RectF rectF2 = this.rectF;
-                float f5 = this.f1691x;
-                rectF2.set(f5, m50dp2, f4 + f5 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m50dp2);
+                float f5 = this.f1699x;
+                rectF2.set(f5, m51dp2, f4 + f5 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m51dp2);
                 return;
             }
             updateX(this.countWidth);
-            float m50dp3 = (this.lastH - AndroidUtilities.m50dp(23)) / 2.0f;
+            float m51dp3 = (this.lastH - AndroidUtilities.m51dp(this.radius * 2.0f)) / 2.0f;
             RectF rectF3 = this.rectF;
-            float f6 = this.f1691x;
-            rectF3.set(f6, m50dp3, this.countWidth + f6 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m50dp3);
+            float f6 = this.f1699x;
+            rectF3.set(f6, m51dp3, this.countWidth + f6 + AndroidUtilities.m50dp(11), AndroidUtilities.m50dp(23) + m51dp3);
         }
 
         private void updateX(float f) {
@@ -445,7 +509,7 @@ public class CounterView extends View {
             } else {
                 this.countLeft = (int) ((this.width - f) / 2.0f);
             }
-            this.f1691x = this.countLeft - m51dp;
+            this.f1699x = this.countLeft - m51dp;
         }
 
         public float getCenterX() {
@@ -465,6 +529,13 @@ public class CounterView extends View {
             Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
             Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
             return color != null ? color.intValue() : Theme.getColor(str);
+        }
+
+        public int getWidth() {
+            if (this.currentCount == 0) {
+                return 0;
+            }
+            return this.countWidth + AndroidUtilities.m51dp(this.radius - 0.5f);
         }
     }
 

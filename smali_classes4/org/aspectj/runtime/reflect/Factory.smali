@@ -35,7 +35,7 @@
     .line 44
     sget-object v1, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
-    const-string v2, "void"
+    const-string/jumbo v2, "void"
 
     invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

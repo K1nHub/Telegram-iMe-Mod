@@ -70,26 +70,26 @@
         }
     .end annotation
 
-    .line 377
+    .line 393
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string v0, "showSelectTokenDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 379
+    .line 395
     iput-object p2, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->type:Lcom/smedialink/model/wallet/select/SelectableType;
 
-    .line 380
+    .line 396
     iput-object p3, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->tokens:Ljava/util/List;
 
-    .line 381
+    .line 397
     iput-object p4, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->networkType:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    .line 382
+    .line 398
     iput-boolean p5, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->onlyPositiveBalance:Z
 
-    .line 383
+    .line 399
     iput-object p6, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->action:Lorg/fork/utils/Callbacks$Callback1;
 
     return-void
@@ -100,7 +100,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;)V
     .locals 6
 
-    .line 388
+    .line 404
     iget-object v1, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->type:Lcom/smedialink/model/wallet/select/SelectableType;
 
     iget-object v2, p0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->tokens:Ljava/util/List;
@@ -121,7 +121,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 363
+    .line 379
     check-cast p1, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ShowSelectTokenDialogCommand;->apply(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;)V

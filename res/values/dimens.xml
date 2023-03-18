@@ -495,6 +495,7 @@
     <dimen name="tooltip_vertical_padding">6.5dip</dimen>
     <dimen name="tooltip_y_offset_non_touch">0.0dip</dimen>
     <dimen name="tooltip_y_offset_touch">16.0dip</dimen>
+    <dimen name="tweet_counter_text_width">36.0dip</dimen>
     <dimen name="wallet_account_coin_big_icon_size">58.0dip</dimen>
     <dimen name="wallet_account_coin_medium_icon_size">50.0dip</dimen>
     <dimen name="wallet_card_elevation">3.0dip</dimen>

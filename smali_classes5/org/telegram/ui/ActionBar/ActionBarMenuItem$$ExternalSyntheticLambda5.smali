@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->$r8$lambda$w3Z9yTuw71093zi3XLPRX4ZNaZs(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->$r8$lambda$07lU1UW_tcleJ22YQnzg7XHnuhk(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/ActionBar/ActionBarMenuItem$SearchFilterView;Landroid/view/View;)V
 
     return-void
 .end method

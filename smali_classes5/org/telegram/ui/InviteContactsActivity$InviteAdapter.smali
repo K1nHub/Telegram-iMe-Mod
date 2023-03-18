@@ -56,26 +56,26 @@
 .method public constructor <init>(Lorg/telegram/ui/InviteContactsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 722
+    .line 723
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
-
-    .line 717
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResult:Ljava/util/ArrayList;
 
     .line 718
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
+    iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResult:Ljava/util/ArrayList;
+
+    .line 719
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResultNames:Ljava/util/ArrayList;
 
-    .line 723
+    .line 724
     iput-object p2, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->context:Landroid/content/Context;
 
     return-void
@@ -84,7 +84,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;)Ljava/util/Timer;
     .locals 0
 
-    .line 714
+    .line 715
     iget-object p0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchTimer:Ljava/util/Timer;
 
     return-object p0
@@ -93,7 +93,7 @@
 .method static synthetic access$2502(Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;Ljava/util/Timer;)Ljava/util/Timer;
     .locals 0
 
-    .line 714
+    .line 715
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchTimer:Ljava/util/Timer;
 
     return-object p1
@@ -102,7 +102,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 714
+    .line 715
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->updateSearchResults(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     return-void
@@ -111,21 +111,21 @@
 .method private synthetic lambda$updateSearchResults$0(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 1
 
-    .line 875
+    .line 876
     iget-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searching:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 878
+    .line 879
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResult:Ljava/util/ArrayList;
 
-    .line 879
+    .line 880
     iput-object p2, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResultNames:Ljava/util/ArrayList;
 
-    .line 880
+    .line 881
     invoke-virtual {p0}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->notifyDataSetChanged()V
 
     return-void
@@ -145,7 +145,7 @@
         }
     .end annotation
 
-    .line 874
+    .line 875
     new-instance v0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
@@ -160,12 +160,12 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 736
+    .line 737
     iget-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searching:Z
 
     if-eqz v0, :cond_0
 
-    .line 737
+    .line 738
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -174,7 +174,7 @@
 
     return v0
 
-    .line 739
+    .line 740
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
@@ -194,7 +194,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 780
+    .line 781
     iget-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searching:Z
 
     if-nez v0, :cond_0
@@ -222,15 +222,15 @@
 .method public notifyDataSetChanged()V
     .locals 5
 
-    .line 886
+    .line 887
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 887
+    .line 888
     invoke-virtual {p0}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->getItemCount()I
 
     move-result v0
 
-    .line 888
+    .line 889
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/InviteContactsActivity;->access$1400(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -253,7 +253,7 @@
     :goto_0
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 889
+    .line 890
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/InviteContactsActivity;->access$2700(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;
@@ -273,7 +273,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 759
+    .line 760
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -282,18 +282,18 @@
 
     goto :goto_1
 
-    .line 761
+    .line 762
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/InviteUserCell;
 
-    .line 764
+    .line 765
     iget-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searching:Z
 
     if-eqz v0, :cond_1
 
-    .line 765
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -302,7 +302,7 @@
 
     check-cast v0, Lorg/telegram/messenger/ContactsController$Contact;
 
-    .line 766
+    .line 767
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResultNames:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -313,7 +313,7 @@
 
     goto :goto_0
 
-    .line 768
+    .line 769
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
@@ -333,11 +333,11 @@
 
     const/4 p2, 0x0
 
-    .line 771
+    .line 772
     :goto_0
     invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/Cells/InviteUserCell;->setUser(Lorg/telegram/messenger/ContactsController$Contact;Ljava/lang/CharSequence;)V
 
-    .line 772
+    .line 773
     iget-object p2, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/InviteContactsActivity;->access$500(Lorg/telegram/ui/InviteContactsActivity;)Ljava/util/HashMap;
@@ -365,7 +365,7 @@
 
     if-eq p2, p1, :cond_0
 
-    .line 751
+    .line 752
     new-instance p2, Lorg/telegram/ui/Cells/InviteUserCell;
 
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->context:Landroid/content/Context;
@@ -374,7 +374,7 @@
 
     goto :goto_0
 
-    .line 747
+    .line 748
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/InviteTextCell;
 
@@ -382,7 +382,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/InviteTextCell;-><init>(Landroid/content/Context;)V
 
-    .line 748
+    .line 749
     sget p1, Lorg/telegram/messenger/R$string;->ShareTelegram:I
 
     const-string v0, "ShareTelegram"
@@ -395,7 +395,7 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/InviteTextCell;->setTextAndIcon(Ljava/lang/String;I)V
 
-    .line 754
+    .line 755
     :goto_0
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -407,14 +407,14 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 790
+    .line 791
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/InviteUserCell;
 
     if-eqz v0, :cond_0
 
-    .line 791
+    .line 792
     check-cast p1, Lorg/telegram/ui/Cells/InviteUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/InviteUserCell;->recycle()V
@@ -426,13 +426,13 @@
 .method public searchDialogs(Ljava/lang/String;)V
     .locals 6
 
-    .line 802
+    .line 803
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchTimer:Ljava/util/Timer;
 
     if-eqz v0, :cond_0
 
-    .line 803
+    .line 804
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -442,29 +442,29 @@
     :catch_0
     move-exception v0
 
-    .line 806
+    .line 807
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
     :goto_0
     if-nez p1, :cond_1
 
-    .line 809
+    .line 810
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 810
+    .line 811
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchResultNames:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 811
+    .line 812
     invoke-virtual {p0}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->notifyDataSetChanged()V
 
     goto :goto_1
 
-    .line 813
+    .line 814
     :cond_1
     new-instance v0, Ljava/util/Timer;
 
@@ -472,7 +472,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searchTimer:Ljava/util/Timer;
 
-    .line 814
+    .line 815
     new-instance v1, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;-><init>(Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;Ljava/lang/String;)V
@@ -490,18 +490,18 @@
 .method public setSearching(Z)V
     .locals 1
 
-    .line 727
+    .line 728
     iget-boolean v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searching:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 730
+    .line 731
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->searching:Z
 
-    .line 731
+    .line 732
     invoke-virtual {p0}, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->notifyDataSetChanged()V
 
     return-void

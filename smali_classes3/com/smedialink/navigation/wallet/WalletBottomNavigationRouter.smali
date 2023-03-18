@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletBottomNavigationRouter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletBottomNavigationRouter.kt\ncom/smedialink/navigation/wallet/WalletBottomNavigationRouter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,33:1\n286#2,2:34\n*S KotlinDebug\n*F\n+ 1 WalletBottomNavigationRouter.kt\ncom/smedialink/navigation/wallet/WalletBottomNavigationRouter\n*L\n23#1:34,2\n*E\n"
+    value = "SMAP\nWalletBottomNavigationRouter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletBottomNavigationRouter.kt\ncom/smedialink/navigation/wallet/WalletBottomNavigationRouter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,33:1\n288#2,2:34\n*S KotlinDebug\n*F\n+ 1 WalletBottomNavigationRouter.kt\ncom/smedialink/navigation/wallet/WalletBottomNavigationRouter\n*L\n23#1:34,2\n*E\n"
 .end annotation
 
 
@@ -45,7 +45,7 @@
 
     move-result-object v1
 
-    .line 286
+    .line 288
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -91,7 +91,6 @@
     :cond_3
     const/4 v2, 0x0
 
-    .line 287
     :goto_1
     check-cast v2, Lcom/smedialink/model/wallet/navigation/WalletBottomNavigationTab;
 
@@ -113,12 +112,9 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_5
-
-    goto :goto_3
+    if-eqz v0, :cond_6
 
     .line 26
-    :cond_5
     invoke-virtual {v2}, Lcom/smedialink/model/wallet/navigation/WalletBottomNavigationTab;->getTitle()Ljava/lang/String;
 
     move-result-object v1
@@ -128,17 +124,17 @@
     .line 27
     sget v1, Lorg/telegram/messenger/R$id;->wallet_root_bottom_navigation_home:I
 
-    if-eq p1, v1, :cond_6
+    if-eq p1, v1, :cond_5
 
     goto :goto_2
 
-    :cond_6
+    :cond_5
     const/4 v3, 0x0
 
     :goto_2
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
 
-    :goto_3
+    :cond_6
     return-void
 .end method
 

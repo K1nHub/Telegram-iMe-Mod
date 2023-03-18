@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter$$ExternalSyntheticLambda4;->f$0:Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->$r8$lambda$KU3R2D7_1NYCQ5Qe6nB6m2wGLY8(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;->$r8$lambda$EnhZtfo_yl3iAvbsV8OMGXAnM4c(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method

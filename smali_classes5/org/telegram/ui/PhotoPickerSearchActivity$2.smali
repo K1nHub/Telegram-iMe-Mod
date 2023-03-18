@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoPickerSearchActivity;)V
     .locals 0
 
-    .line 119
+    .line 118
     iput-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public canCollapseSearch()Z
     .locals 1
 
-    .line 129
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -48,7 +48,7 @@
 .method public onSearchExpand()V
     .locals 3
 
-    .line 122
+    .line 121
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$000(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->openSearchField(Ljava/lang/String;Z)V
 
-    .line 123
+    .line 122
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$100(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->openSearchField(Ljava/lang/String;Z)V
 
-    .line 124
+    .line 123
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$200(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -97,7 +97,7 @@
 .method public onSearchPressed(Landroid/widget/EditText;)V
     .locals 0
 
-    .line 141
+    .line 140
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$000(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
@@ -110,7 +110,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->onSearchPressed()V
 
-    .line 142
+    .line 141
     iget-object p1, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$100(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
@@ -129,7 +129,7 @@
 .method public onTextChanged(Landroid/widget/EditText;)V
     .locals 2
 
-    .line 135
+    .line 134
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$000(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;
@@ -150,7 +150,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setSearchFieldText(Ljava/lang/String;)V
 
-    .line 136
+    .line 135
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerSearchActivity$2;->this$0:Lorg/telegram/ui/PhotoPickerSearchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoPickerSearchActivity;->access$100(Lorg/telegram/ui/PhotoPickerSearchActivity;)Lorg/telegram/ui/PhotoPickerActivity;

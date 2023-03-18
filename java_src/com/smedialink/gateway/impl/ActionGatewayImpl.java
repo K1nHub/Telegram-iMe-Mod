@@ -27,7 +27,7 @@ public final class ActionGatewayImpl implements ActionGateway {
             make.setAction(buttonText, new View.OnClickListener() { // from class: com.smedialink.gateway.impl.ActionGatewayImpl$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ActionGatewayImpl.m1237showInfinitySnackBar$lambda1$lambda0(Function0.this, view);
+                    ActionGatewayImpl.showInfinitySnackBar$lambda$1$lambda$0(Function0.this, view);
                 }
             });
         }
@@ -35,8 +35,7 @@ public final class ActionGatewayImpl implements ActionGateway {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showInfinitySnackBar$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1237showInfinitySnackBar$lambda1$lambda0(Function0 action, View view) {
+    public static final void showInfinitySnackBar$lambda$1$lambda$0(Function0 action, View view) {
         Intrinsics.checkNotNullParameter(action, "$action");
         action.invoke();
     }

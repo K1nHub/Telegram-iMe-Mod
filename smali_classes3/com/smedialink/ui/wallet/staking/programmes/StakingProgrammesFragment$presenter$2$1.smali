@@ -27,14 +27,14 @@
 
 
 # instance fields
-.field final synthetic $stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+.field final synthetic this$0:Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/smedialink/storage/domain/model/staking/StakingTabType;)V
+.method constructor <init>(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2$1;->$stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+    iput-object p1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2$1;->this$0:Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;
 
     const/4 p1, 0x0
 
@@ -64,7 +64,11 @@
     new-array v0, v0, [Ljava/lang/Object;
 
     .line 42
-    iget-object v1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2$1;->$stakingTabType:Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+    iget-object v1, p0, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment$presenter$2$1;->this$0:Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;
+
+    invoke-static {v1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->access$getStakingTabType$p(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;)Lcom/smedialink/storage/domain/model/staking/StakingTabType;
+
+    move-result-object v1
 
     const/4 v2, 0x0
 

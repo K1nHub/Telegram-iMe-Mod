@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$17\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n42#2:411\n127#3,5:412\n127#3,5:417\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$17\n*L\n179#1:411\n181#1:412,5\n182#1:417,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$17\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n42#2:434\n127#3,5:435\n127#3,5:440\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$17\n*L\n183#1:434\n185#1:435,5\n186#1:440,5\n*E\n"
 .end annotation
 
 
@@ -68,7 +68,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$dstr$item"
+    const-string v0, "<name for destructuring parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -85,7 +85,6 @@
 
     move-result-object p2
 
-    .line 179
     check-cast p2, Lcom/smedialink/model/wallet/notification/NotificationItem;
 
     .line 131
@@ -101,7 +100,7 @@
 
     move-result-object v0
 
-    .line 181
+    .line 185
     check-cast v0, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
 
     .line 131
@@ -115,7 +114,7 @@
 
     move-result-object v2
 
-    .line 181
+    .line 185
     check-cast v2, Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
     .line 131
@@ -129,10 +128,10 @@
 
     move-result-object p1
 
-    .line 182
+    .line 186
     check-cast p1, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 180
+    .line 184
     new-instance v1, Lcom/smedialink/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;
 
     invoke-direct {v1, p2, v2, v0, p1}, Lcom/smedialink/ui/wallet/notifications/details/WalletNotificationDetailsPresenter;-><init>(Lcom/smedialink/model/wallet/notification/NotificationItem;Lcom/smedialink/storage/domain/gateway/TelegramGateway;Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;Lcom/smedialink/storage/domain/utils/system/ResourceManager;)V
@@ -143,7 +142,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 179
+    .line 183
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

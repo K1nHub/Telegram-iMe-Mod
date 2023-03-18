@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogAllFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogAllFragment.kt\ncom/smedialink/ui/catalog/tabs/all/CatalogAllFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,191:1\n13#2,4:192\n56#3,6:196\n154#4,8:202\n*S KotlinDebug\n*F\n+ 1 CatalogAllFragment.kt\ncom/smedialink/ui/catalog/tabs/all/CatalogAllFragment\n*L\n31#1:192,4\n32#1:196,6\n124#1:202,8\n*E\n"
+    value = "SMAP\nCatalogAllFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogAllFragment.kt\ncom/smedialink/ui/catalog/tabs/all/CatalogAllFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,191:1\n13#2,4:192\n56#3,6:196\n162#4,8:202\n*S KotlinDebug\n*F\n+ 1 CatalogAllFragment.kt\ncom/smedialink/ui/catalog/tabs/all/CatalogAllFragment\n*L\n31#1:192,4\n32#1:196,6\n124#1:202,8\n*E\n"
 .end annotation
 
 
@@ -42,18 +42,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0LYaJWfcWIWQ9J0Bqk8kuhNlPAc(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
+.method public static synthetic $r8$lambda$dNr0f70hGWMfT3Jqir3pgNmAVaY(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;->setupListeners$lambda-11$lambda-10(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;->setupLoadMore$lambda$7$lambda$6$lambda$5(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$nOhu8zaVZlJfiGx8Ya5duHrWohU(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
+.method public static synthetic $r8$lambda$l4U5DozCdfXJ5DhGXiC_BbQK5zU(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;->setupLoadMore$lambda-7$lambda-6$lambda-5(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;->setupListeners$lambda$11$lambda$10(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
 
     return-void
 .end method
@@ -372,7 +372,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-11$lambda-10(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
+.method private static final setupListeners$lambda$11$lambda$10(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -423,7 +423,7 @@
     return-void
 .end method
 
-.method private static final setupLoadMore$lambda-7$lambda-6$lambda-5(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
+.method private static final setupLoadMore$lambda$7$lambda$6$lambda$5(Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -464,9 +464,6 @@
 
     .line 147
     invoke-direct {p0, v1}, Lcom/smedialink/ui/catalog/tabs/all/CatalogAllFragment;->setupLoadMore(Lcom/smedialink/ui/catalog/tabs/all/adapter/CatalogAllCategoriesRecycleAdapter;)V
-
-    .line 148
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 145
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
@@ -645,22 +642,22 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 155
+    .line 163
     invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v1
 
-    .line 156
+    .line 164
     invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v2
 
-    .line 157
+    .line 165
     invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v3
 
-    .line 160
+    .line 168
     invoke-virtual {v0, v1, v2, v3, p1}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
@@ -845,25 +842,19 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_1
     const/4 p2, 0x1
 
     invoke-virtual {p1, p2}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreEnd(Z)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -875,23 +866,17 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {p1}, Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;->loadMoreFail()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -915,12 +900,9 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    if-eqz p1, :cond_0
 
     .line 77
-    :cond_0
     invoke-virtual {p1}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->getLoadMoreModule()Lcom/chad/library/adapter/base/module/BaseLoadMoreModule;
 
     move-result-object p2
@@ -934,7 +916,7 @@
     .line 78
     invoke-static {p1, p3, v0, p2, v0}, Lcom/chad/library/adapter/base/BaseQuickAdapter;->setDiffNewData$default(Lcom/chad/library/adapter/base/BaseQuickAdapter;Ljava/util/List;Ljava/lang/Runnable;ILjava/lang/Object;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 

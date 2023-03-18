@@ -12,8 +12,8 @@ public final /* synthetic */ class ChannelDetailsBottomSheetDialog$$ExternalSynt
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        boolean m1416setupViews$lambda16$lambda15$lambda14;
-        m1416setupViews$lambda16$lambda15$lambda14 = ChannelDetailsBottomSheetDialog.m1416setupViews$lambda16$lambda15$lambda14(view, motionEvent);
-        return m1416setupViews$lambda16$lambda15$lambda14;
+        boolean z;
+        z = ChannelDetailsBottomSheetDialog.setupViews$lambda$16$lambda$15$lambda$14(view, motionEvent);
+        return z;
     }
 }

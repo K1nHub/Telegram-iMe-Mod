@@ -284,7 +284,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     /* loaded from: classes3.dex */
     public static final class Builder<E> extends ImmutableCollection.ArrayBasedBuilder<E> {
         /* JADX WARN: Multi-variable type inference failed */
-        @Override // com.google.common.collect.ImmutableCollection.ArrayBasedBuilder, com.google.common.collect.ImmutableCollection.Builder
+        @Override // com.google.common.collect.ImmutableCollection.Builder
         public /* bridge */ /* synthetic */ ImmutableCollection.Builder add(Object obj) {
             return add((Builder<E>) obj);
         }

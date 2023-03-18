@@ -88,7 +88,9 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
 
         public final boolean isInstance(Object obj, Class<?> jClass) {
             Intrinsics.checkNotNullParameter(jClass, "jClass");
-            Integer num = (Integer) ClassReference.FUNCTION_CLASSES.get(jClass);
+            Map map = ClassReference.FUNCTION_CLASSES;
+            Intrinsics.checkNotNull(map, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.get, V of kotlin.collections.MapsKt__MapsKt.get>");
+            Integer num = (Integer) map.get(jClass);
             if (num != null) {
                 return TypeIntrinsics.isFunctionOfArity(obj, num.intValue());
             }

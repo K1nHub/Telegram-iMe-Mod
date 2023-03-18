@@ -15,13 +15,13 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
     public String first_name;
 
     /* renamed from: h */
-    public int f1496h;
+    public int f1501h;
 
     /* renamed from: id */
-    public long f1497id;
+    public long f1502id;
 
     /* renamed from: iv */
-    public byte[] f1498iv;
+    public byte[] f1503iv;
     public byte[] key;
     public String last_name;
     public double lat;
@@ -37,7 +37,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
     public String venue_id;
 
     /* renamed from: w */
-    public int f1499w;
+    public int f1504w;
 
     public static TLRPC$DecryptedMessageMedia TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$DecryptedMessageMedia tLRPC$TL_decryptedMessageMediaVenue;
@@ -62,7 +62,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.mime_type = abstractSerializedData2.readString(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1498iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1503iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaDocument, org.telegram.tgnet.TLObject
@@ -75,7 +75,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         abstractSerializedData2.writeString(this.mime_type);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1498iv);
+                        abstractSerializedData2.writeByteArray(this.f1503iv);
                     }
                 };
                 break;
@@ -101,11 +101,11 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.thumb = abstractSerializedData2.readByteArray(z2);
                         this.thumb_w = abstractSerializedData2.readInt32(z2);
                         this.thumb_h = abstractSerializedData2.readInt32(z2);
-                        this.f1499w = abstractSerializedData2.readInt32(z2);
-                        this.f1496h = abstractSerializedData2.readInt32(z2);
+                        this.f1504w = abstractSerializedData2.readInt32(z2);
+                        this.f1501h = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1498iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1503iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaPhoto, org.telegram.tgnet.TLObject
@@ -114,11 +114,11 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         abstractSerializedData2.writeByteArray(this.thumb);
                         abstractSerializedData2.writeInt32(this.thumb_w);
                         abstractSerializedData2.writeInt32(this.thumb_h);
-                        abstractSerializedData2.writeInt32(this.f1499w);
-                        abstractSerializedData2.writeInt32(this.f1496h);
+                        abstractSerializedData2.writeInt32(this.f1504w);
+                        abstractSerializedData2.writeInt32(this.f1501h);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1498iv);
+                        abstractSerializedData2.writeByteArray(this.f1503iv);
                     }
                 };
                 break;
@@ -136,11 +136,11 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.thumb_w = abstractSerializedData2.readInt32(z2);
                         this.thumb_h = abstractSerializedData2.readInt32(z2);
                         this.duration = abstractSerializedData2.readInt32(z2);
-                        this.f1499w = abstractSerializedData2.readInt32(z2);
-                        this.f1496h = abstractSerializedData2.readInt32(z2);
+                        this.f1504w = abstractSerializedData2.readInt32(z2);
+                        this.f1501h = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1498iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1503iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo, org.telegram.tgnet.TLObject
@@ -150,11 +150,11 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         abstractSerializedData2.writeInt32(this.thumb_w);
                         abstractSerializedData2.writeInt32(this.thumb_h);
                         abstractSerializedData2.writeInt32(this.duration);
-                        abstractSerializedData2.writeInt32(this.f1499w);
-                        abstractSerializedData2.writeInt32(this.f1496h);
+                        abstractSerializedData2.writeInt32(this.f1504w);
+                        abstractSerializedData2.writeInt32(this.f1501h);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1498iv);
+                        abstractSerializedData2.writeByteArray(this.f1503iv);
                     }
                 };
                 break;
@@ -170,11 +170,11 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.thumb_h = abstractSerializedData2.readInt32(z2);
                         this.duration = abstractSerializedData2.readInt32(z2);
                         this.mime_type = abstractSerializedData2.readString(z2);
-                        this.f1499w = abstractSerializedData2.readInt32(z2);
-                        this.f1496h = abstractSerializedData2.readInt32(z2);
+                        this.f1504w = abstractSerializedData2.readInt32(z2);
+                        this.f1501h = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1498iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1503iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo, org.telegram.tgnet.TLObject
@@ -185,11 +185,11 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         abstractSerializedData2.writeInt32(this.thumb_h);
                         abstractSerializedData2.writeInt32(this.duration);
                         abstractSerializedData2.writeString(this.mime_type);
-                        abstractSerializedData2.writeInt32(this.f1499w);
-                        abstractSerializedData2.writeInt32(this.f1496h);
+                        abstractSerializedData2.writeInt32(this.f1504w);
+                        abstractSerializedData2.writeInt32(this.f1501h);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1498iv);
+                        abstractSerializedData2.writeByteArray(this.f1503iv);
                     }
                 };
                 break;
@@ -208,7 +208,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.duration = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1498iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1503iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaAudio, org.telegram.tgnet.TLObject
@@ -217,7 +217,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         abstractSerializedData2.writeInt32(this.duration);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1498iv);
+                        abstractSerializedData2.writeByteArray(this.f1503iv);
                     }
                 };
                 break;
@@ -237,7 +237,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.mime_type = abstractSerializedData2.readString(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1498iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1503iv = abstractSerializedData2.readByteArray(z2);
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         if (readInt32 != 481674261) {
                             if (z2) {
@@ -265,7 +265,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         abstractSerializedData2.writeString(this.mime_type);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1498iv);
+                        abstractSerializedData2.writeByteArray(this.f1503iv);
                         abstractSerializedData2.writeInt32(481674261);
                         int size = this.attributes.size();
                         abstractSerializedData2.writeInt32(size);

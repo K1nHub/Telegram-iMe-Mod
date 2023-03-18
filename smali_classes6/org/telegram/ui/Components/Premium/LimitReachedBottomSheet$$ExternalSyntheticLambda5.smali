@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$1:Ljava/util/ArrayList;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_inactiveChats;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Lorg/telegram/tgnet/TLObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_messages_inactiveChats;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/tgnet/TLObject;
+    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$1:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_inactiveChats;
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/tgnet/TLObject;
+    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$1:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$xnqFHFUJT3Apj52BAd_CdP8FgbQ(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Lorg/telegram/tgnet/TLObject;)V
+    iget-object v2, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda5;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_inactiveChats;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$A3I6HXpVD8S-8kcEtldzZaD_tmE(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_messages_inactiveChats;)V
 
     return-void
 .end method

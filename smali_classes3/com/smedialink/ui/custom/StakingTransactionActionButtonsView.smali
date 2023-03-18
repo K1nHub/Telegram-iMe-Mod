@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingTransactionActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/smedialink/ui/custom/StakingTransactionActionButtonsView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,88:1\n254#2,2:89\n254#2,2:91\n*S KotlinDebug\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/smedialink/ui/custom/StakingTransactionActionButtonsView\n*L\n47#1:89,2\n51#1:91,2\n*E\n"
+    value = "SMAP\nStakingTransactionActionButtonsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/smedialink/ui/custom/StakingTransactionActionButtonsView\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,88:1\n262#2,2:89\n262#2,2:91\n*S KotlinDebug\n*F\n+ 1 StakingTransactionActionButtonsView.kt\ncom/smedialink/ui/custom/StakingTransactionActionButtonsView\n*L\n47#1:89,2\n51#1:91,2\n*E\n"
 .end annotation
 
 
@@ -16,26 +16,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0qIZlFjRIuUIIRVpPZURa-EUfiU(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$NrA4JODmWen09tL-mpOYe8nFgYg(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda-6$lambda-1$lambda-0(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$3$lambda$2(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$LpNhcvrXEueD8oNaGDFALGVod30(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$VknJrt0wAOV5ynq5spVP98TkLlM(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda-6$lambda-5$lambda-4(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$1$lambda$0(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$W5gzmykwwcjAsOtE4b53H6zyayE(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$oyt5_Uy2WvuM7V0CtnD6auV_Xrc(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda-6$lambda-3$lambda-2(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->setupViewData$lambda$6$lambda$5$lambda$4(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method
@@ -196,7 +196,7 @@
     return-void
 .end method
 
-.method private static final setupViewData$lambda-6$lambda-1$lambda-0(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+.method private static final setupViewData$lambda$6$lambda$1$lambda$0(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$onActionClickAction"
@@ -209,7 +209,7 @@
     return-void
 .end method
 
-.method private static final setupViewData$lambda-6$lambda-3$lambda-2(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+.method private static final setupViewData$lambda$6$lambda$3$lambda$2(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$onApproveInfoClickAction"
@@ -222,7 +222,7 @@
     return-void
 .end method
 
-.method private static final setupViewData$lambda-6$lambda-5$lambda-4(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+.method private static final setupViewData$lambda$6$lambda$5$lambda$4(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$onConditionsClickAction"
@@ -279,7 +279,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$9$lambda$7"
 
     .line 63
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -317,7 +317,7 @@
 .end method
 
 .method public final setupViewData(Ljava/lang/String;ZZLorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)V
-    .locals 4
+    .locals 3
 
     const-string v0, "actionText"
 
@@ -345,49 +345,51 @@
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 44
-    new-instance p1, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;
+    new-instance p1, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p4}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p1, p4}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 46
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonApproveInfo:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p4, ""
+    const-string p4, "setupViewData$lambda$6$lambda$3"
 
     .line 47
     invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/16 v1, 0x8
+    const/16 p4, 0x8
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz p3, :cond_0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/16 v3, 0x8
+    const/16 v2, 0x8
 
-    .line 254
+    .line 262
     :goto_0
-    invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 48
-    new-instance v3, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;
+    new-instance v2, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;
 
-    invoke-direct {v3, p6}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {v2, p6}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
 
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 50
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingTransactionActionsBinding;->buttonConditions:Landroidx/appcompat/widget/AppCompatTextView;
 
+    const-string p6, "setupViewData$lambda$6$lambda$5"
+
     .line 51
-    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p2, :cond_1
 
@@ -403,16 +405,16 @@
     :goto_1
     if-eqz p2, :cond_2
 
-    const/4 v1, 0x0
+    const/4 p4, 0x0
 
-    .line 254
+    .line 262
     :cond_2
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p4}, Landroid/view/View;->setVisibility(I)V
 
     .line 52
-    new-instance p2, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;
+    new-instance p2, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;
 
-    invoke-direct {p2, p5}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda1;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-direct {p2, p5}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda2;-><init>(Lorg/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

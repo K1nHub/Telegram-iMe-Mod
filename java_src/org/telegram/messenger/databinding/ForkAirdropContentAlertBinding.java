@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.smedialink.p031ui.custom.ActionButton;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.Cells.CheckBoxCell;
 import org.telegram.p048ui.Components.RLottieImageView;
@@ -48,7 +48,7 @@ public final class ForkAirdropContentAlertBinding implements ViewBinding {
     }
 
     public static ForkAirdropContentAlertBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3158R.layout.fork_airdrop_content_alert, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3286R.layout.fork_airdrop_content_alert, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -56,32 +56,32 @@ public final class ForkAirdropContentAlertBinding implements ViewBinding {
     }
 
     public static ForkAirdropContentAlertBinding bind(View view) {
-        int i = C3158R.C3161id.button_action;
+        int i = C3286R.C3289id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3158R.C3161id.checkbox_auth;
+            i = C3286R.C3289id.checkbox_auth;
             CheckBoxCell checkBoxCell = (CheckBoxCell) ViewBindings.findChildViewById(view, i);
             if (checkBoxCell != null) {
-                i = C3158R.C3161id.checkbox_create_wallet;
+                i = C3286R.C3289id.checkbox_create_wallet;
                 CheckBoxCell checkBoxCell2 = (CheckBoxCell) ViewBindings.findChildViewById(view, i);
                 if (checkBoxCell2 != null) {
-                    i = C3158R.C3161id.checkbox_take_bonus;
+                    i = C3286R.C3289id.checkbox_take_bonus;
                     CheckBoxCell checkBoxCell3 = (CheckBoxCell) ViewBindings.findChildViewById(view, i);
                     if (checkBoxCell3 != null) {
-                        i = C3158R.C3161id.image_alert_picture;
+                        i = C3286R.C3289id.image_alert_picture;
                         RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
                         if (rLottieImageView != null) {
-                            i = C3158R.C3161id.item_menu;
+                            i = C3286R.C3289id.item_menu;
                             ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
                             if (actionBarMenuItem != null) {
                                 LinearLayout linearLayout = (LinearLayout) view;
-                                i = C3158R.C3161id.text_additional_action;
+                                i = C3286R.C3289id.text_additional_action;
                                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView != null) {
-                                    i = C3158R.C3161id.text_alert_description;
+                                    i = C3286R.C3289id.text_alert_description;
                                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView2 != null) {
-                                        i = C3158R.C3161id.text_alert_title;
+                                        i = C3286R.C3289id.text_alert_title;
                                         AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatTextView3 != null) {
                                             return new ForkAirdropContentAlertBinding(linearLayout, actionButton, checkBoxCell, checkBoxCell2, checkBoxCell3, rLottieImageView, actionBarMenuItem, linearLayout, appCompatTextView, appCompatTextView2, appCompatTextView3);

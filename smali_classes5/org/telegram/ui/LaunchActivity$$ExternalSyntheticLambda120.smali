@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/SharingLocationsAlert$SharingLocationsAlertDelegate;
+.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
-
-.field public final synthetic f$1:[I
+.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;[I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda120;->f$0:Lorg/telegram/ui/LaunchActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda120;->f$1:[I
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda120;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectLocation(Lorg/telegram/messenger/LocationController$SharingLocationInfo;)V
-    .locals 2
+.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda120;->f$0:Lorg/telegram/ui/LaunchActivity;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda120;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda120;->f$1:[I
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$TieuI1ckgMkNb_t1lrvXiCUQpD4(Lorg/telegram/ui/LaunchActivity;[ILorg/telegram/messenger/LocationController$SharingLocationInfo;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$d4BgTd1FV3wmQ3i7ojTI-aXwpXI(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/view/KeyEvent;)V
 
     return-void
 .end method

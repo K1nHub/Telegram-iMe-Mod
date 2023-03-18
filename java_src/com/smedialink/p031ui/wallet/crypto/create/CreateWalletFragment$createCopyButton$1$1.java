@@ -31,6 +31,8 @@ public final class CreateWalletFragment$createCopyButton$1$1 extends Lambda impl
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(View it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        ContextExtKt.copyToClipboard$default(StringExtKt.joinBySpace(((CreateWalletFragment.ScreenType.SecretWords) this.this$0.currentType).getSecretWords()), null, 2, null);
+        CreateWalletFragment.ScreenType screenType = this.this$0.currentType;
+        Intrinsics.checkNotNull(screenType, "null cannot be cast to non-null type com.smedialink.ui.wallet.crypto.create.CreateWalletFragment.ScreenType.SecretWords");
+        ContextExtKt.copyToClipboard$default(StringExtKt.joinBySpace(((CreateWalletFragment.ScreenType.SecretWords) screenType).getSecretWords()), null, 2, null);
     }
 }

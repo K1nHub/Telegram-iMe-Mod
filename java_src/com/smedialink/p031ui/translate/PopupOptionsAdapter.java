@@ -7,9 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import androidx.appcompat.widget.AppCompatTextView;
 import java.util.List;
-import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.p048ui.ActionBar.Theme;
 /* compiled from: PopupOptionsAdapter.kt */
 /* renamed from: com.smedialink.ui.translate.PopupOptionsAdapter */
@@ -25,7 +24,7 @@ public final class PopupOptionsAdapter extends ArrayAdapter<String> {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PopupOptionsAdapter(Context mContext, List<String> options) {
-        super(mContext, C3158R.layout.fork_item_adapter_popup_option, options);
+        super(mContext, C3286R.layout.fork_item_adapter_popup_option, options);
         Intrinsics.checkNotNullParameter(mContext, "mContext");
         Intrinsics.checkNotNullParameter(options, "options");
         this.mContext = mContext;
@@ -42,7 +41,7 @@ public final class PopupOptionsAdapter extends ArrayAdapter<String> {
         public ViewHolder(View view) {
             Intrinsics.checkNotNullParameter(view, "view");
             this.view = view;
-            View findViewById = view.findViewById(C3158R.C3161id.text_title);
+            View findViewById = view.findViewById(C3286R.C3289id.text_title);
             Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.text_title)");
             this.title = (AppCompatTextView) findViewById;
         }
@@ -57,12 +56,12 @@ public final class PopupOptionsAdapter extends ArrayAdapter<String> {
         ViewHolder viewHolder;
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (view == null) {
-            view = LayoutInflater.from(this.mContext).inflate(C3158R.layout.fork_item_adapter_popup_option, (ViewGroup) null, true);
+            view = LayoutInflater.from(this.mContext).inflate(C3286R.layout.fork_item_adapter_popup_option, (ViewGroup) null, true);
             viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
         } else {
             Object tag = view.getTag();
-            Objects.requireNonNull(tag, "null cannot be cast to non-null type com.smedialink.ui.translate.PopupOptionsAdapter.ViewHolder");
+            Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type com.smedialink.ui.translate.PopupOptionsAdapter.ViewHolder");
             viewHolder = (ViewHolder) tag;
         }
         viewHolder.getTitle().setText(this.options.get(i));

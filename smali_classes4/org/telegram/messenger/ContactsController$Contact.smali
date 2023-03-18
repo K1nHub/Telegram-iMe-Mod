@@ -78,10 +78,10 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 212
+    .line 256
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 217
+    .line 261
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x4
@@ -90,21 +90,21 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/ContactsController$Contact;->phones:Ljava/util/ArrayList;
 
-    .line 218
+    .line 262
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/messenger/ContactsController$Contact;->phoneTypes:Ljava/util/ArrayList;
 
-    .line 219
+    .line 263
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/messenger/ContactsController$Contact;->shortPhones:Ljava/util/ArrayList;
 
-    .line 220
+    .line 264
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
@@ -117,7 +117,7 @@
 .method public static getLetter(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
-    .line 233
+    .line 277
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -128,14 +128,14 @@
 
     if-nez v0, :cond_0
 
-    .line 234
+    .line 278
     invoke-virtual {p0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 235
+    .line 279
     :cond_0
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -143,7 +143,7 @@
 
     if-nez p0, :cond_1
 
-    .line 236
+    .line 280
     invoke-virtual {p1, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
@@ -161,7 +161,7 @@
 .method public getLetter()Ljava/lang/String;
     .locals 2
 
-    .line 228
+    .line 272
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
     iget-object v1, p0, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;

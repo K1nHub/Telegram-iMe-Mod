@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/di/module/ItemProviderModuleKt;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/di/module/ItemProviderModuleKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nItemProviderModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ItemProviderModule.kt\ncom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,40:1\n148#2,14:41\n162#2,2:71\n148#2,14:73\n162#2,2:103\n148#2,14:105\n162#2,2:135\n148#2,14:137\n162#2,2:167\n148#2,14:169\n162#2,2:199\n148#2,14:201\n162#2,2:231\n148#2,14:233\n162#2,2:263\n148#2,14:265\n162#2,2:295\n148#2,14:297\n162#2,2:327\n148#2,14:329\n162#2,2:359\n148#2,14:361\n162#2,2:391\n148#2,14:393\n162#2,2:423\n148#2,14:425\n162#2,2:455\n148#2,14:457\n162#2,2:487\n148#2,14:489\n162#2,2:519\n148#2,14:521\n162#2,2:551\n148#2,14:553\n162#2,2:583\n148#2,14:585\n162#2,2:615\n148#2,14:617\n162#2,2:647\n148#2,14:649\n162#2,2:679\n148#2,14:681\n162#2,2:711\n148#2,14:713\n162#2,2:743\n148#2,14:745\n162#2,2:775\n148#2,14:777\n162#2,2:807\n148#2,14:809\n162#2,2:839\n148#2,14:841\n162#2,2:871\n148#2,14:873\n162#2,2:903\n148#2,14:905\n162#2,2:935\n148#2,14:937\n162#2,2:967\n148#2,14:969\n162#2,2:999\n148#2,14:1001\n162#2,2:1031\n217#3:55\n218#3:70\n217#3:87\n218#3:102\n217#3:119\n218#3:134\n217#3:151\n218#3:166\n217#3:183\n218#3:198\n217#3:215\n218#3:230\n217#3:247\n218#3:262\n217#3:279\n218#3:294\n217#3:311\n218#3:326\n217#3:343\n218#3:358\n217#3:375\n218#3:390\n217#3:407\n218#3:422\n217#3:439\n218#3:454\n217#3:471\n218#3:486\n217#3:503\n218#3:518\n217#3:535\n218#3:550\n217#3:567\n218#3:582\n217#3:599\n218#3:614\n217#3:631\n218#3:646\n217#3:663\n218#3:678\n217#3:695\n218#3:710\n217#3:727\n218#3:742\n217#3:759\n218#3:774\n217#3:791\n218#3:806\n217#3:823\n218#3:838\n217#3:855\n218#3:870\n217#3:887\n218#3:902\n217#3:919\n218#3:934\n217#3:951\n218#3:966\n217#3:983\n218#3:998\n217#3:1015\n218#3:1030\n102#4,14:56\n102#4,14:88\n102#4,14:120\n102#4,14:152\n102#4,14:184\n102#4,14:216\n102#4,14:248\n102#4,14:280\n102#4,14:312\n102#4,14:344\n102#4,14:376\n102#4,14:408\n102#4,14:440\n102#4,14:472\n102#4,14:504\n102#4,14:536\n102#4,14:568\n102#4,14:600\n102#4,14:632\n102#4,14:664\n102#4,14:696\n102#4,14:728\n102#4,14:760\n102#4,14:792\n102#4,14:824\n102#4,14:856\n102#4,14:888\n102#4,14:920\n102#4,14:952\n102#4,14:984\n102#4,14:1016\n*S KotlinDebug\n*F\n+ 1 ItemProviderModule.kt\ncom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n*L\n7#1:41,14\n7#1:71,2\n8#1:73,14\n8#1:103,2\n9#1:105,14\n9#1:135,2\n10#1:137,14\n10#1:167,2\n11#1:169,14\n11#1:199,2\n12#1:201,14\n12#1:231,2\n13#1:233,14\n13#1:263,2\n14#1:265,14\n14#1:295,2\n15#1:297,14\n15#1:327,2\n16#1:329,14\n16#1:359,2\n17#1:361,14\n17#1:391,2\n18#1:393,14\n18#1:423,2\n19#1:425,14\n19#1:455,2\n20#1:457,14\n20#1:487,2\n21#1:489,14\n21#1:519,2\n22#1:521,14\n22#1:551,2\n23#1:553,14\n23#1:583,2\n24#1:585,14\n24#1:615,2\n25#1:617,14\n25#1:647,2\n26#1:649,14\n26#1:679,2\n27#1:681,14\n27#1:711,2\n28#1:713,14\n28#1:743,2\n29#1:745,14\n29#1:775,2\n30#1:777,14\n30#1:807,2\n31#1:809,14\n31#1:839,2\n32#1:841,14\n32#1:871,2\n33#1:873,14\n33#1:903,2\n34#1:905,14\n34#1:935,2\n35#1:937,14\n35#1:967,2\n36#1:969,14\n36#1:999,2\n37#1:1001,14\n37#1:1031,2\n7#1:55\n7#1:70\n8#1:87\n8#1:102\n9#1:119\n9#1:134\n10#1:151\n10#1:166\n11#1:183\n11#1:198\n12#1:215\n12#1:230\n13#1:247\n13#1:262\n14#1:279\n14#1:294\n15#1:311\n15#1:326\n16#1:343\n16#1:358\n17#1:375\n17#1:390\n18#1:407\n18#1:422\n19#1:439\n19#1:454\n20#1:471\n20#1:486\n21#1:503\n21#1:518\n22#1:535\n22#1:550\n23#1:567\n23#1:582\n24#1:599\n24#1:614\n25#1:631\n25#1:646\n26#1:663\n26#1:678\n27#1:695\n27#1:710\n28#1:727\n28#1:742\n29#1:759\n29#1:774\n30#1:791\n30#1:806\n31#1:823\n31#1:838\n32#1:855\n32#1:870\n33#1:887\n33#1:902\n34#1:919\n34#1:934\n35#1:951\n35#1:966\n36#1:983\n36#1:998\n37#1:1015\n37#1:1030\n7#1:56,14\n8#1:88,14\n9#1:120,14\n10#1:152,14\n11#1:184,14\n12#1:216,14\n13#1:248,14\n14#1:280,14\n15#1:312,14\n16#1:344,14\n17#1:376,14\n18#1:408,14\n19#1:440,14\n20#1:472,14\n21#1:504,14\n22#1:536,14\n23#1:568,14\n24#1:600,14\n25#1:632,14\n26#1:664,14\n27#1:696,14\n28#1:728,14\n29#1:760,14\n30#1:792,14\n31#1:824,14\n32#1:856,14\n33#1:888,14\n34#1:920,14\n35#1:952,14\n36#1:984,14\n37#1:1016,14\n*E\n"
+    value = "SMAP\nItemProviderModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ItemProviderModule.kt\ncom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n+ 2 Module.kt\norg/koin/core/module/Module\n+ 3 Module.kt\norg/koin/core/module/ModuleKt\n+ 4 BeanDefinition.kt\norg/koin/core/definition/BeanDefinitionKt\n*L\n1#1,44:1\n148#2,14:45\n162#2,2:75\n148#2,14:77\n162#2,2:107\n148#2,14:109\n162#2,2:139\n148#2,14:141\n162#2,2:171\n148#2,14:173\n162#2,2:203\n148#2,14:205\n162#2,2:235\n148#2,14:237\n162#2,2:267\n148#2,14:269\n162#2,2:299\n148#2,14:301\n162#2,2:331\n148#2,14:333\n162#2,2:363\n148#2,14:365\n162#2,2:395\n148#2,14:397\n162#2,2:427\n148#2,14:429\n162#2,2:459\n148#2,14:461\n162#2,2:491\n148#2,14:493\n162#2,2:523\n148#2,14:525\n162#2,2:555\n148#2,14:557\n162#2,2:587\n148#2,14:589\n162#2,2:619\n148#2,14:621\n162#2,2:651\n148#2,14:653\n162#2,2:683\n148#2,14:685\n162#2,2:715\n148#2,14:717\n162#2,2:747\n148#2,14:749\n162#2,2:779\n148#2,14:781\n162#2,2:811\n148#2,14:813\n162#2,2:843\n148#2,14:845\n162#2,2:875\n148#2,14:877\n162#2,2:907\n148#2,14:909\n162#2,2:939\n148#2,14:941\n162#2,2:971\n148#2,14:973\n162#2,2:1003\n148#2,14:1005\n162#2,2:1035\n148#2,14:1037\n162#2,2:1067\n148#2,14:1069\n162#2,2:1099\n148#2,14:1101\n162#2,2:1131\n148#2,14:1133\n162#2,2:1163\n217#3:59\n218#3:74\n217#3:91\n218#3:106\n217#3:123\n218#3:138\n217#3:155\n218#3:170\n217#3:187\n218#3:202\n217#3:219\n218#3:234\n217#3:251\n218#3:266\n217#3:283\n218#3:298\n217#3:315\n218#3:330\n217#3:347\n218#3:362\n217#3:379\n218#3:394\n217#3:411\n218#3:426\n217#3:443\n218#3:458\n217#3:475\n218#3:490\n217#3:507\n218#3:522\n217#3:539\n218#3:554\n217#3:571\n218#3:586\n217#3:603\n218#3:618\n217#3:635\n218#3:650\n217#3:667\n218#3:682\n217#3:699\n218#3:714\n217#3:731\n218#3:746\n217#3:763\n218#3:778\n217#3:795\n218#3:810\n217#3:827\n218#3:842\n217#3:859\n218#3:874\n217#3:891\n218#3:906\n217#3:923\n218#3:938\n217#3:955\n218#3:970\n217#3:987\n218#3:1002\n217#3:1019\n218#3:1034\n217#3:1051\n218#3:1066\n217#3:1083\n218#3:1098\n217#3:1115\n218#3:1130\n217#3:1147\n218#3:1162\n102#4,14:60\n102#4,14:92\n102#4,14:124\n102#4,14:156\n102#4,14:188\n102#4,14:220\n102#4,14:252\n102#4,14:284\n102#4,14:316\n102#4,14:348\n102#4,14:380\n102#4,14:412\n102#4,14:444\n102#4,14:476\n102#4,14:508\n102#4,14:540\n102#4,14:572\n102#4,14:604\n102#4,14:636\n102#4,14:668\n102#4,14:700\n102#4,14:732\n102#4,14:764\n102#4,14:796\n102#4,14:828\n102#4,14:860\n102#4,14:892\n102#4,14:924\n102#4,14:956\n102#4,14:988\n102#4,14:1020\n102#4,14:1052\n102#4,14:1084\n102#4,14:1116\n102#4,14:1148\n*S KotlinDebug\n*F\n+ 1 ItemProviderModule.kt\ncom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1\n*L\n7#1:45,14\n7#1:75,2\n8#1:77,14\n8#1:107,2\n9#1:109,14\n9#1:139,2\n10#1:141,14\n10#1:171,2\n11#1:173,14\n11#1:203,2\n12#1:205,14\n12#1:235,2\n13#1:237,14\n13#1:267,2\n14#1:269,14\n14#1:299,2\n15#1:301,14\n15#1:331,2\n16#1:333,14\n16#1:363,2\n17#1:365,14\n17#1:395,2\n18#1:397,14\n18#1:427,2\n19#1:429,14\n19#1:459,2\n20#1:461,14\n20#1:491,2\n21#1:493,14\n21#1:523,2\n22#1:525,14\n22#1:555,2\n23#1:557,14\n23#1:587,2\n24#1:589,14\n24#1:619,2\n25#1:621,14\n25#1:651,2\n26#1:653,14\n26#1:683,2\n27#1:685,14\n27#1:715,2\n28#1:717,14\n28#1:747,2\n29#1:749,14\n29#1:779,2\n30#1:781,14\n30#1:811,2\n31#1:813,14\n31#1:843,2\n32#1:845,14\n32#1:875,2\n33#1:877,14\n33#1:907,2\n34#1:909,14\n34#1:939,2\n35#1:941,14\n35#1:971,2\n36#1:973,14\n36#1:1003,2\n37#1:1005,14\n37#1:1035,2\n38#1:1037,14\n38#1:1067,2\n39#1:1069,14\n39#1:1099,2\n40#1:1101,14\n40#1:1131,2\n41#1:1133,14\n41#1:1163,2\n7#1:59\n7#1:74\n8#1:91\n8#1:106\n9#1:123\n9#1:138\n10#1:155\n10#1:170\n11#1:187\n11#1:202\n12#1:219\n12#1:234\n13#1:251\n13#1:266\n14#1:283\n14#1:298\n15#1:315\n15#1:330\n16#1:347\n16#1:362\n17#1:379\n17#1:394\n18#1:411\n18#1:426\n19#1:443\n19#1:458\n20#1:475\n20#1:490\n21#1:507\n21#1:522\n22#1:539\n22#1:554\n23#1:571\n23#1:586\n24#1:603\n24#1:618\n25#1:635\n25#1:650\n26#1:667\n26#1:682\n27#1:699\n27#1:714\n28#1:731\n28#1:746\n29#1:763\n29#1:778\n30#1:795\n30#1:810\n31#1:827\n31#1:842\n32#1:859\n32#1:874\n33#1:891\n33#1:906\n34#1:923\n34#1:938\n35#1:955\n35#1:970\n36#1:987\n36#1:1002\n37#1:1019\n37#1:1034\n38#1:1051\n38#1:1066\n39#1:1083\n39#1:1098\n40#1:1115\n40#1:1130\n41#1:1147\n41#1:1162\n7#1:60,14\n8#1:92,14\n9#1:124,14\n10#1:156,14\n11#1:188,14\n12#1:220,14\n13#1:252,14\n14#1:284,14\n15#1:316,14\n16#1:348,14\n17#1:380,14\n18#1:412,14\n19#1:444,14\n20#1:476,14\n21#1:508,14\n22#1:540,14\n23#1:572,14\n24#1:604,14\n25#1:636,14\n26#1:668,14\n27#1:700,14\n28#1:732,14\n29#1:764,14\n30#1:796,14\n31#1:828,14\n32#1:860,14\n33#1:892,14\n34#1:924,14\n35#1:956,14\n36#1:988,14\n37#1:1020,14\n38#1:1052,14\n39#1:1084,14\n40#1:1116,14\n41#1:1148,14\n*E\n"
 .end annotation
 
 
@@ -1337,10 +1337,174 @@
     move-result-object v12
 
     .line 109
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 110
+    const-class v2, Lcom/smedialink/ui/adapter/provider/StakingCalculatorProgrammeProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 109
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 218
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 162
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 163
+    new-instance v1, Lkotlin/Pair;
+
+    invoke-direct {v1, p1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 38
+    sget-object v10, Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$32;->INSTANCE:Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$32;
+
+    .line 152
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 106
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 109
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 110
+    const-class v2, Lcom/smedialink/ui/adapter/provider/TweetProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 109
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 218
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 162
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 163
+    new-instance v1, Lkotlin/Pair;
+
+    invoke-direct {v1, p1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 39
+    sget-object v10, Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$33;->INSTANCE:Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$33;
+
+    .line 152
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 106
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 109
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 110
+    const-class v2, Lcom/smedialink/ui/adapter/provider/TweetDatesProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 109
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 218
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 162
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 163
+    new-instance v1, Lkotlin/Pair;
+
+    invoke-direct {v1, p1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 40
+    sget-object v10, Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$34;->INSTANCE:Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$34;
+
+    .line 152
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 106
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 109
+    new-instance v1, Lorg/koin/core/definition/BeanDefinition;
+
+    .line 110
+    const-class v2, Lcom/smedialink/ui/adapter/provider/TwitterUserProvider;
+
+    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v8
+
+    move-object v6, v1
+
+    .line 109
+    invoke-direct/range {v6 .. v12}, Lorg/koin/core/definition/BeanDefinition;-><init>(Lorg/koin/core/qualifier/Qualifier;Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function2;Lorg/koin/core/definition/Kind;Ljava/util/List;)V
+
+    .line 218
+    new-instance v2, Lorg/koin/core/instance/FactoryInstanceFactory;
+
+    invoke-direct {v2, v1}, Lorg/koin/core/instance/FactoryInstanceFactory;-><init>(Lorg/koin/core/definition/BeanDefinition;)V
+
+    .line 162
+    invoke-virtual {p1, v2}, Lorg/koin/core/module/Module;->indexPrimaryType(Lorg/koin/core/instance/InstanceFactory;)V
+
+    .line 163
+    new-instance v1, Lkotlin/Pair;
+
+    invoke-direct {v1, p1, v2}, Lkotlin/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 41
+    sget-object v10, Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35;->INSTANCE:Lcom/smedialink/di/module/ItemProviderModuleKt$presentationItemProviderModule$1$35;
+
+    .line 152
+    invoke-virtual {v0}, Lorg/koin/core/registry/ScopeRegistry$Companion;->getRootScopeQualifier()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v7
+
+    .line 106
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object v12
+
+    .line 109
     new-instance v0, Lorg/koin/core/definition/BeanDefinition;
 
     .line 110
-    const-class v1, Lcom/smedialink/ui/adapter/provider/StakingCalculatorProgrammeProvider;
+    const-class v1, Lcom/smedialink/ui/adapter/provider/TwitterInviteProvider;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 

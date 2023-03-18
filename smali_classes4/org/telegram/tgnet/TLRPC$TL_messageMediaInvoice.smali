@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 8034
+    .line 8090
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessageMedia;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 8040
+    .line 8096
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -54,7 +54,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 8041
+    .line 8097
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->shipping_address_requested:Z
 
@@ -64,32 +64,32 @@
 
     const/4 v2, 0x1
 
-    .line 8042
+    .line 8098
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->test:Z
 
-    .line 8043
+    .line 8099
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->title:Ljava/lang/String;
 
-    .line 8044
+    .line 8100
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->description:Ljava/lang/String;
 
-    .line 8045
+    .line 8101
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     and-int/2addr v0, v3
 
     if-eqz v0, :cond_2
 
-    .line 8046
+    .line 8102
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -100,7 +100,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;->webPhoto:Lorg/telegram/tgnet/TLRPC$WebDocument;
 
-    .line 8048
+    .line 8104
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
@@ -108,14 +108,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 8049
+    .line 8105
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->receipt_msg_id:I
 
-    .line 8051
+    .line 8107
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
@@ -123,28 +123,28 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->currency:Ljava/lang/String;
 
-    .line 8052
+    .line 8108
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->total_amount:J
 
-    .line 8053
+    .line 8109
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->start_param:Ljava/lang/String;
 
-    .line 8054
+    .line 8110
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     and-int/lit8 v0, v0, 0x10
 
     if-eqz v0, :cond_4
 
-    .line 8055
+    .line 8111
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -162,12 +162,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 8060
+    .line 8116
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8061
+    .line 8117
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->shipping_address_requested:Z
 
     if-eqz v0, :cond_0
@@ -186,7 +186,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 8062
+    .line 8118
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->test:Z
 
     if-eqz v1, :cond_1
@@ -201,32 +201,32 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 8063
+    .line 8119
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8064
+    .line 8120
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8065
+    .line 8121
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->description:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8066
+    .line 8122
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_2
 
-    .line 8067
+    .line 8123
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;->webPhoto:Lorg/telegram/tgnet/TLRPC$WebDocument;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 8069
+    .line 8125
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
@@ -234,35 +234,35 @@
 
     if-eqz v0, :cond_3
 
-    .line 8070
+    .line 8126
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->receipt_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 8072
+    .line 8128
     :cond_3
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->currency:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8073
+    .line 8129
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->total_amount:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 8074
+    .line 8130
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->start_param:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 8075
+    .line 8131
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     and-int/lit8 v0, v0, 0x10
 
     if-eqz v0, :cond_4
 
-    .line 8076
+    .line 8132
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->extended_media:Lorg/telegram/tgnet/TLRPC$MessageExtendedMedia;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

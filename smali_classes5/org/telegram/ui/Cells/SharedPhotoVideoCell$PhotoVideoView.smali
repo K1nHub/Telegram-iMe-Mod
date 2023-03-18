@@ -38,18 +38,18 @@
 .method public constructor <init>(Lorg/telegram/ui/Cells/SharedPhotoVideoCell;Landroid/content/Context;)V
     .locals 11
 
-    .line 87
+    .line 88
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell;
 
-    .line 88
+    .line 89
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x0
 
-    .line 90
+    .line 91
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 92
+    .line 93
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -58,21 +58,21 @@
 
     const/4 v2, -0x1
 
-    .line 93
+    .line 94
     invoke-static {v2, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {p0, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 95
+    .line 96
     new-instance v1, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v1, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 96
+    .line 97
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
@@ -81,7 +81,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/ImageReceiver;->setNeedsQualityThumb(Z)V
 
-    .line 97
+    .line 98
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -90,7 +90,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/messenger/ImageReceiver;->setShouldGenerateQualityThumb(Z)V
 
-    .line 98
+    .line 99
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->container:Landroid/widget/FrameLayout;
 
     iget-object v4, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -101,17 +101,17 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 100
+    .line 101
     new-instance v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$1;
 
     invoke-direct {v1, p0, p2, p1}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$1;-><init>(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;Landroid/content/Context;Lorg/telegram/ui/Cells/SharedPhotoVideoCell;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
-    .line 110
+    .line 111
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 111
+    .line 112
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x5
@@ -126,7 +126,7 @@
 
     invoke-virtual {p1, v4, v0, v1, v0}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 112
+    .line 113
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->container:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
@@ -151,17 +151,17 @@
 
     invoke-virtual {p1, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 114
+    .line 115
     new-instance p1, Landroid/widget/ImageView;
 
     invoke-direct {p1, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 115
+    .line 116
     sget v1, Lorg/telegram/messenger/R$drawable;->play_mini_video:I
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 116
+    .line 117
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
     const/4 v4, -0x2
@@ -174,17 +174,17 @@
 
     invoke-virtual {v1, p1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 118
+    .line 119
     new-instance p1, Landroid/widget/TextView;
 
     invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoTextView:Landroid/widget/TextView;
 
-    .line 119
+    .line 120
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 120
+    .line 121
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoTextView:Landroid/widget/TextView;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -195,21 +195,21 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 121
+    .line 122
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoTextView:Landroid/widget/TextView;
 
     const/high16 v1, 0x41400000    # 12.0f
 
     invoke-virtual {p1, v3, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 122
+    .line 123
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoTextView:Landroid/widget/TextView;
 
     const/4 v1, 0x2
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setImportantForAccessibility(I)V
 
-    .line 123
+    .line 124
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoTextView:Landroid/widget/TextView;
@@ -234,21 +234,21 @@
 
     invoke-virtual {p1, v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 125
+    .line 126
     new-instance p1, Landroid/view/View;
 
     invoke-direct {p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->selector:Landroid/view/View;
 
-    .line 126
+    .line 127
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 127
+    .line 128
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->selector:Landroid/view/View;
 
     invoke-static {v2, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -257,7 +257,7 @@
 
     invoke-virtual {p0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 129
+    .line 130
     new-instance p1, Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v1, 0x15
@@ -268,10 +268,10 @@
 
     const/4 p2, 0x4
 
-    .line 130
+    .line 131
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 131
+    .line 132
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/4 p2, 0x0
@@ -282,17 +282,17 @@
 
     invoke-virtual {p1, p2, v1, v2}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 132
+    .line 133
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 133
+    .line 134
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 134
+    .line 135
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v0, 0x18
@@ -321,7 +321,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 75
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -330,7 +330,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 75
+    .line 76
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -339,7 +339,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;)Lorg/telegram/ui/Components/CheckBox2;
     .locals 0
 
-    .line 75
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     return-object p0
@@ -348,7 +348,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;)Lorg/telegram/ui/Components/BackupImageView;
     .locals 0
 
-    .line 75
+    .line 76
     iget-object p0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object p0
@@ -359,20 +359,20 @@
 .method public clearAnimation()V
     .locals 1
 
-    .line 235
+    .line 236
     invoke-super {p0}, Landroid/widget/FrameLayout;->clearAnimation()V
 
-    .line 236
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 237
+    .line 238
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 238
+    .line 239
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     :cond_0
@@ -382,7 +382,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 244
+    .line 245
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBox2;->isChecked()Z
@@ -432,7 +432,7 @@
 
     const/4 v3, 0x0
 
-    .line 245
+    .line 246
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -462,10 +462,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    .line 251
+    .line 252
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 252
+    .line 253
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
@@ -474,7 +474,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 253
+    .line 254
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -513,7 +513,7 @@
 
     goto :goto_0
 
-    .line 255
+    .line 256
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->AttachPhoto:I
 
@@ -525,7 +525,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 257
+    .line 258
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
@@ -537,10 +537,10 @@
 
     const/4 v0, 0x1
 
-    .line 258
+    .line 259
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 259
+    .line 260
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
 
     :cond_1
@@ -550,14 +550,14 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 139
+    .line 140
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    .line 140
+    .line 141
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->selector:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -570,7 +570,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->drawableHotspotChanged(FF)V
 
-    .line 142
+    .line 143
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -582,7 +582,7 @@
 .method public setChecked(ZZ)V
     .locals 9
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -593,28 +593,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 149
+    .line 150
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
 
-    .line 150
+    .line 151
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_1
 
-    .line 151
+    .line 152
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 152
+    .line 153
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     :cond_1
@@ -622,7 +622,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 155
+    .line 156
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -633,7 +633,7 @@
 
     new-array v2, v2, [Landroid/animation/Animator;
 
-    .line 156
+    .line 157
     iget-object v3, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->container:Landroid/widget/FrameLayout;
 
     sget-object v4, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -656,7 +656,7 @@
     :goto_0
     aput v8, v6, v1
 
-    .line 157
+    .line 158
     invoke-static {v3, v4, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -676,24 +676,24 @@
     :cond_3
     aput v0, v6, v1
 
-    .line 158
+    .line 159
     invoke-static {v3, v4, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
     aput-object p1, v2, v5
 
-    .line 156
+    .line 157
     invoke-virtual {p2, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 159
+    .line 160
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0xc8
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 160
+    .line 161
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     new-instance p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$2;
@@ -702,14 +702,14 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 175
+    .line 176
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->animator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_2
 
-    .line 177
+    .line 178
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->container:Landroid/widget/FrameLayout;
 
@@ -727,7 +727,7 @@
     :goto_1
     invoke-virtual {p2, v2}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 178
+    .line 179
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->container:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_6
@@ -748,10 +748,10 @@
 
     move-object/from16 v10, p1
 
-    .line 183
+    .line 184
     iput-object v10, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 184
+    .line 185
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -770,7 +770,7 @@
 
     invoke-virtual {v1, v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
 
-    .line 185
+    .line 186
     iget-object v1, v10, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->restriction_reason:Ljava/util/ArrayList;
@@ -779,7 +779,7 @@
 
     move-result-object v1
 
-    .line 186
+    .line 187
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -788,12 +788,12 @@
 
     if-nez v1, :cond_0
 
-    .line 187
+    .line 188
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 188
+    .line 189
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->photo_placeholder_in:I
@@ -802,7 +802,7 @@
 
     goto/16 :goto_5
 
-    .line 189
+    .line 190
     :cond_0
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
 
@@ -816,12 +816,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 190
+    .line 191
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 191
+    .line 192
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoTextView:Landroid/widget/TextView;
 
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()I
@@ -834,19 +834,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 192
+    .line 193
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v1
 
-    .line 193
+    .line 194
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-static {v2, v7}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v2
 
-    .line 194
+    .line 195
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-static {v3, v6}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
@@ -863,12 +863,12 @@
     :goto_0
     if-eqz v2, :cond_3
 
-    .line 199
+    .line 200
     iget-object v3, v10, Lorg/telegram/messenger/MessageObject;->strippedThumb:Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v3, :cond_2
 
-    .line 200
+    .line 201
     iget-object v2, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-static {v5, v1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -893,7 +893,7 @@
 
     goto/16 :goto_5
 
-    .line 202
+    .line 203
     :cond_2
     iget-object v3, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -943,7 +943,7 @@
 
     goto/16 :goto_5
 
-    .line 205
+    .line 206
     :cond_3
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -953,7 +953,7 @@
 
     goto/16 :goto_5
 
-    .line 207
+    .line 208
     :cond_4
     iget-object v1, v10, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -975,26 +975,26 @@
 
     if-nez v1, :cond_e
 
-    .line 208
+    .line 209
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 209
+    .line 210
     iget-object v1, v10, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
     invoke-static {v1, v7}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v1
 
-    .line 210
+    .line 211
     iget-object v2, v10, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
     invoke-static {v2, v6, v4, v1, v4}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;IZLorg/telegram/tgnet/TLRPC$PhotoSize;Z)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v2
 
-    .line 211
+    .line 212
     iget-boolean v4, v10, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
     if-nez v4, :cond_7
@@ -1017,13 +1017,13 @@
 
     goto :goto_1
 
-    .line 221
+    .line 222
     :cond_5
     iget-object v6, v10, Lorg/telegram/messenger/MessageObject;->strippedThumb:Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v6, :cond_6
 
-    .line 222
+    .line 223
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v2, 0x0
@@ -1046,7 +1046,7 @@
 
     goto/16 :goto_5
 
-    .line 224
+    .line 225
     :cond_6
     iget-object v2, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1105,7 +1105,7 @@
     :cond_8
     move-object v5, v1
 
-    .line 215
+    .line 216
     :goto_2
     iget-object v1, v10, Lorg/telegram/messenger/MessageObject;->strippedThumb:Landroid/graphics/drawable/BitmapDrawable;
 
@@ -1115,7 +1115,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 216
+    .line 217
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1181,7 +1181,7 @@
 
     goto :goto_5
 
-    .line 218
+    .line 219
     :cond_b
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1244,13 +1244,13 @@
 
     goto :goto_5
 
-    .line 228
+    .line 229
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->videoInfoContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 229
+    .line 230
     iget-object v1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->photo_placeholder_in:I

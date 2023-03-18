@@ -1,6 +1,6 @@
 .class public final Lkotlin/ranges/LongRange$Companion;
 .super Ljava/lang/Object;
-.source "Ranges.kt"
+.source "PrimitiveRanges.kt"
 
 
 # annotations
@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 97
+    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda0;->f$1:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    invoke-static {v0, v1}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$1;->$r8$lambda$SvoP9aZh3vgx0QeH8QOOPILLu0Q(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
+    invoke-static {v0, v1}, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$1;->$r8$lambda$6id1OF4h3HA-73ywUy6eHgPC_7I(Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;Lcom/trustwallet/walletconnect/WCSessionStoreItem;)V
 
     return-void
 .end method

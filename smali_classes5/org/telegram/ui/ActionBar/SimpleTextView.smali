@@ -155,27 +155,27 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    .line 132
+    .line 134
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/16 p1, 0x33
 
-    .line 56
+    .line 58
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     const/4 p1, 0x1
 
-    .line 57
+    .line 59
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maxLines:I
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 66
+    .line 68
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
     const/4 v0, 0x4
 
-    .line 67
+    .line 69
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -184,48 +184,48 @@
 
     const/16 v0, 0x10
 
-    .line 99
+    .line 101
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradientWidthDp:I
 
     const/4 v0, 0x3
 
-    .line 114
+    .line 116
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullTextMaxLines:I
 
-    .line 116
+    .line 118
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->spoilers:Ljava/util/List;
 
-    .line 117
+    .line 119
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->spoilersPool:Ljava/util/Stack;
 
-    .line 118
+    .line 120
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->path:Landroid/graphics/Path;
 
-    .line 129
+    .line 131
     sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->mAlignment:Landroid/text/Layout$Alignment;
 
-    .line 133
+    .line 135
     new-instance v0, Landroid/text/TextPaint;
 
     invoke-direct {v0, p1}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
-    .line 134
+    .line 136
     invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     return-void
@@ -234,14 +234,14 @@
 .method private calcOffset(I)V
     .locals 5
 
-    .line 281
+    .line 283
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 284
+    .line 286
     :cond_0
     invoke-virtual {v0}, Landroid/text/Layout;->getLineCount()I
 
@@ -251,7 +251,7 @@
 
     if-lez v0, :cond_9
 
-    .line 285
+    .line 287
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     const/4 v2, 0x0
@@ -270,14 +270,14 @@
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
-    .line 286
+    .line 288
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayout:Landroid/text/Layout;
 
     const/4 v3, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 287
+    .line 289
     invoke-virtual {v0}, Landroid/text/Layout;->getLineCount()I
 
     move-result v4
@@ -292,7 +292,7 @@
 
     goto :goto_0
 
-    .line 288
+    .line 290
     :cond_1
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maxLines:I
 
@@ -306,7 +306,7 @@
 
     if-lez v0, :cond_2
 
-    .line 289
+    .line 291
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     invoke-virtual {v0}, Landroid/text/Layout;->getLineCount()I
@@ -323,7 +323,7 @@
 
     goto :goto_0
 
-    .line 291
+    .line 293
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
@@ -333,7 +333,7 @@
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textHeight:I
 
-    .line 294
+    .line 296
     :goto_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
@@ -341,7 +341,7 @@
 
     if-ne v4, v3, :cond_3
 
-    .line 295
+    .line 297
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     sub-int v0, p1, v0
@@ -369,12 +369,12 @@
 
     if-ne v0, v4, :cond_5
 
-    .line 297
+    .line 299
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->firstLineLayout:Landroid/text/Layout;
 
     if-eqz v0, :cond_4
 
-    .line 298
+    .line 300
     invoke-virtual {v0, v2}, Landroid/text/Layout;->getLineLeft(I)F
 
     move-result v0
@@ -387,7 +387,7 @@
 
     goto :goto_1
 
-    .line 300
+    .line 302
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
@@ -403,7 +403,7 @@
 
     goto :goto_1
 
-    .line 302
+    .line 304
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
@@ -415,14 +415,14 @@
 
     if-nez v0, :cond_7
 
-    .line 303
+    .line 305
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->firstLineLayout:Landroid/text/Layout;
 
     if-eqz v0, :cond_6
 
     int-to-float v4, p1
 
-    .line 304
+    .line 306
     invoke-virtual {v0, v2}, Landroid/text/Layout;->getLineWidth(I)F
 
     move-result v0
@@ -435,7 +435,7 @@
 
     goto :goto_1
 
-    .line 306
+    .line 308
     :cond_6
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
@@ -448,7 +448,7 @@
     :cond_7
     const/16 v0, 0x8
 
-    .line 309
+    .line 311
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -457,7 +457,7 @@
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
-    .line 311
+    .line 313
     :goto_1
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
@@ -469,7 +469,7 @@
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
-    .line 312
+    .line 314
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     iget v4, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->paddingRight:I
@@ -486,7 +486,7 @@
     :goto_2
     iput-boolean v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textDoesNotFit:Z
 
-    .line 314
+    .line 316
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayout:Landroid/text/Layout;
 
     if-eqz p1, :cond_9
@@ -495,7 +495,7 @@
 
     if-lez v0, :cond_9
 
-    .line 315
+    .line 317
     invoke-virtual {p1, v2}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
 
     move-result p1
@@ -510,13 +510,13 @@
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftCharactersOffset:F
 
-    .line 319
+    .line 321
     :cond_9
     iget p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacingDrawableTextIndex:I
 
     if-ltz p1, :cond_a
 
-    .line 320
+    .line 322
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     invoke-virtual {v0, p1}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
@@ -527,7 +527,7 @@
 
     goto :goto_3
 
-    .line 322
+    .line 324
     :cond_a
     iput v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacingDrawableTextOffset:F
 
@@ -538,12 +538,12 @@
 .method private clipOutSpoilers(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 968
+    .line 975
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 969
+    .line 976
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->spoilers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -563,12 +563,12 @@
 
     check-cast v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 970
+    .line 977
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 971
+    .line 978
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->path:Landroid/graphics/Path;
 
     iget v3, v1, Landroid/graphics/Rect;->left:I
@@ -593,7 +593,7 @@
 
     goto :goto_0
 
-    .line 973
+    .line 980
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->path:Landroid/graphics/Path;
 
@@ -607,7 +607,7 @@
 .method private drawLayout(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 938
+    .line 945
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
 
     const/4 v1, 0x0
@@ -620,10 +620,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 939
+    .line 946
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 940
+    .line 947
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftOffset:I
 
     neg-int v0, v0
@@ -642,30 +642,30 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 942
+    .line 949
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 943
+    .line 950
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->clipOutSpoilers(Landroid/graphics/Canvas;)V
 
-    .line 944
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     if-eqz v0, :cond_0
 
-    .line 945
+    .line 952
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->clearPositions()V
 
-    .line 947
+    .line 954
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     invoke-virtual {v0, p1}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 948
+    .line 955
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 950
+    .line 957
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -686,39 +686,39 @@
 
     invoke-static/range {v1 .. v9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
 
-    .line 951
+    .line 958
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawSpoilers(Landroid/graphics/Canvas;)V
 
-    .line 952
+    .line 959
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 954
+    .line 961
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 955
+    .line 962
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->clipOutSpoilers(Landroid/graphics/Canvas;)V
 
-    .line 956
+    .line 963
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     if-eqz v0, :cond_2
 
-    .line 957
+    .line 964
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;->clearPositions()V
 
-    .line 959
+    .line 966
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     invoke-virtual {v0, p1}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 960
+    .line 967
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 962
+    .line 969
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -739,7 +739,7 @@
 
     invoke-static/range {v1 .. v9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
 
-    .line 963
+    .line 970
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawSpoilers(Landroid/graphics/Canvas;)V
 
     :goto_0
@@ -749,7 +749,7 @@
 .method private drawSpoilers(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 977
+    .line 984
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->spoilers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -769,7 +769,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 978
+    .line 985
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_0
@@ -781,7 +781,7 @@
 .method private getAlignment()Landroid/text/Layout$Alignment;
     .locals 1
 
-    .line 438
+    .line 440
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->mAlignment:Landroid/text/Layout$Alignment;
 
     return-object v0
@@ -790,7 +790,7 @@
 .method private getMaxTextWidth()I
     .locals 3
 
-    .line 934
+    .line 941
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -825,7 +825,7 @@
 .method private recreateLayoutMaybe()Z
     .locals 3
 
-    .line 625
+    .line 632
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wasLayout:Z
 
     if-eqz v0, :cond_1
@@ -840,7 +840,7 @@
 
     if-nez v0, :cond_1
 
-    .line 626
+    .line 633
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getMaxTextWidth()I
 
     move-result v0
@@ -865,7 +865,7 @@
 
     move-result v0
 
-    .line 627
+    .line 634
     iget v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v1, v1, 0x70
@@ -874,7 +874,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 628
+    .line 635
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -889,7 +889,7 @@
 
     goto :goto_0
 
-    .line 630
+    .line 637
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -900,7 +900,7 @@
     :goto_0
     return v0
 
-    .line 634
+    .line 641
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
@@ -912,7 +912,7 @@
 .method private updateFadePaints()V
     .locals 12
 
-    .line 223
+    .line 225
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x2
@@ -928,14 +928,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 224
+    .line 226
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaint:Landroid/graphics/Paint;
 
-    .line 225
+    .line 227
     new-instance v10, Landroid/graphics/LinearGradient;
 
     const/4 v3, 0x0
@@ -968,7 +968,7 @@
 
     invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 226
+    .line 228
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaint:Landroid/graphics/Paint;
 
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
@@ -979,14 +979,14 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 228
+    .line 230
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaintBack:Landroid/graphics/Paint;
 
-    .line 229
+    .line 231
     new-instance v10, Landroid/graphics/LinearGradient;
 
     const/4 v3, 0x0
@@ -1013,7 +1013,7 @@
 
     invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 230
+    .line 232
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaintBack:Landroid/graphics/Paint;
 
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
@@ -1024,20 +1024,20 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 233
+    .line 235
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->forceEllipsizeByGradientLeft:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_2
 
-    .line 234
+    .line 236
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     goto :goto_0
 
-    .line 236
+    .line 238
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getAlignment()Landroid/text/Layout$Alignment;
 
@@ -1072,7 +1072,7 @@
     :cond_5
     const/4 v0, 0x0
 
-    .line 238
+    .line 240
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadeEllpsizePaint:Landroid/graphics/Paint;
 
@@ -1097,25 +1097,25 @@
 
     if-eqz v2, :cond_9
 
-    .line 239
+    .line 241
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadeEllpsizePaint:Landroid/graphics/Paint;
 
     if-nez v2, :cond_7
 
-    .line 240
+    .line 242
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadeEllpsizePaint:Landroid/graphics/Paint;
 
-    .line 242
+    .line 244
     :cond_7
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradientLeft:Z
 
     if-eqz v0, :cond_8
 
-    .line 244
+    .line 246
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadeEllpsizePaint:Landroid/graphics/Paint;
 
     new-instance v10, Landroid/graphics/LinearGradient;
@@ -1154,7 +1154,7 @@
 
     goto :goto_1
 
-    .line 246
+    .line 248
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadeEllpsizePaint:Landroid/graphics/Paint;
 
@@ -1192,7 +1192,7 @@
 
     invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 248
+    .line 250
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadeEllpsizePaint:Landroid/graphics/Paint;
 
@@ -1261,7 +1261,7 @@
 .method private updateScrollAnimation()V
     .locals 11
 
-    .line 982
+    .line 989
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollNonFitText:Z
 
     if-eqz v0, :cond_6
@@ -1280,13 +1280,13 @@
 
     goto/16 :goto_2
 
-    .line 985
+    .line 992
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    .line 986
+    .line 993
     iget-wide v4, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->lastUpdateTime:J
 
     sub-long v4, v2, v4
@@ -1299,7 +1299,7 @@
 
     move-wide v4, v6
 
-    .line 990
+    .line 997
     :cond_1
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->currentScrollDelay:I
 
@@ -1311,12 +1311,12 @@
 
     long-to-int v1, v0
 
-    .line 991
+    .line 998
     iput v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->currentScrollDelay:I
 
     goto :goto_1
 
-    .line 993
+    .line 1000
     :cond_2
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
@@ -1328,7 +1328,7 @@
 
     add-int/2addr v0, v6
 
-    .line 995
+    .line 1002
     iget v6, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     const/16 v7, 0x64
@@ -1349,7 +1349,7 @@
 
     const/high16 v6, 0x41f00000    # 30.0f
 
-    .line 996
+    .line 1003
     iget v8, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1366,7 +1366,7 @@
 
     goto :goto_0
 
-    .line 997
+    .line 1004
     :cond_3
     iget v6, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
@@ -1382,7 +1382,7 @@
 
     if-ltz v6, :cond_4
 
-    .line 998
+    .line 1005
     iget v6, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1395,7 +1395,7 @@
 
     sub-float/2addr v6, v8
 
-    .line 999
+    .line 1006
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1408,7 +1408,7 @@
 
     sub-float/2addr v9, v6
 
-    .line 1003
+    .line 1010
     :cond_4
     :goto_0
     iget v6, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
@@ -1431,7 +1431,7 @@
 
     iput v6, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
-    .line 1004
+    .line 1011
     iput-wide v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->lastUpdateTime:J
 
     int-to-float v0, v0
@@ -1440,15 +1440,15 @@
 
     if-lez v0, :cond_5
 
-    .line 1006
+    .line 1013
     iput v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     const/16 v0, 0x1f4
 
-    .line 1007
+    .line 1014
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->currentScrollDelay:I
 
-    .line 1010
+    .line 1017
     :cond_5
     :goto_1
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
@@ -1465,17 +1465,17 @@
 
     move-object/from16 v0, p0
 
-    .line 327
+    .line 329
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
     const/4 v2, -0x1
 
-    .line 328
+    .line 330
     iput v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacingDrawableTextIndex:I
 
     const/4 v2, 0x0
 
-    .line 329
+    .line 331
     iput-boolean v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableHidden:Z
 
     const/4 v3, 0x0
@@ -1484,20 +1484,20 @@
 
     if-eqz v1, :cond_16
 
-    .line 332
+    .line 334
     :try_start_0
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v5, :cond_0
 
-    .line 333
+    .line 335
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v5
 
     sub-int v5, p1, v5
 
-    .line 334
+    .line 336
     iget v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     sub-int/2addr v5, v6
@@ -1507,7 +1507,7 @@
     :cond_0
     move/from16 v5, p1
 
-    .line 337
+    .line 339
     :goto_0
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -1517,7 +1517,7 @@
 
     if-nez v7, :cond_1
 
-    .line 338
+    .line 340
     invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v6
@@ -1532,7 +1532,7 @@
 
     sub-int/2addr v5, v6
 
-    .line 340
+    .line 342
     iget v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     sub-int/2addr v5, v7
@@ -1542,7 +1542,7 @@
     :cond_1
     const/4 v6, 0x0
 
-    .line 342
+    .line 344
     :goto_1
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedText:Ljava/lang/String;
 
@@ -1552,7 +1552,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 343
+    .line 345
     invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v7
@@ -1567,12 +1567,12 @@
 
     if-ltz v7, :cond_2
 
-    .line 345
+    .line 347
     invoke-static {v1}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
 
-    .line 346
+    .line 348
     new-instance v7, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
@@ -1597,7 +1597,7 @@
 
     goto :goto_2
 
-    .line 349
+    .line 351
     :cond_2
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -1607,12 +1607,12 @@
 
     sub-int/2addr v5, v7
 
-    .line 350
+    .line 352
     iget v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     sub-int/2addr v5, v7
 
-    .line 353
+    .line 355
     :cond_3
     :goto_2
     iget-boolean v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->canHideRightDrawable:Z
@@ -1625,7 +1625,7 @@
 
     if-nez v7, :cond_4
 
-    .line 354
+    .line 356
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     int-to-float v8, v5
@@ -1636,24 +1636,24 @@
 
     move-result-object v7
 
-    .line 355
+    .line 357
     invoke-virtual {v1, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
     if-nez v7, :cond_4
 
-    .line 356
+    .line 358
     iput-boolean v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableHidden:Z
 
     add-int/2addr v5, v6
 
-    .line 358
+    .line 360
     iget v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     add-int/2addr v5, v6
 
-    .line 361
+    .line 363
     :cond_4
     iget-boolean v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->buildFullLayout:Z
 
@@ -1663,12 +1663,12 @@
 
     if-eqz v6, :cond_e
 
-    .line 363
+    .line 365
     iget-boolean v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradient:Z
 
     if-nez v6, :cond_5
 
-    .line 364
+    .line 366
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     int-to-float v7, v5
@@ -1684,7 +1684,7 @@
     :cond_5
     move-object v6, v1
 
-    .line 366
+    .line 368
     :goto_3
     iget-boolean v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradient:Z
 
@@ -1698,7 +1698,7 @@
 
     const/4 v8, 0x0
 
-    .line 367
+    .line 369
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
     move-result v9
@@ -1737,43 +1737,43 @@
 
     if-eqz v3, :cond_14
 
-    .line 369
+    .line 371
     invoke-virtual {v3, v2}, Landroid/text/Layout;->getLineEnd(I)I
 
     move-result v3
 
-    .line 370
+    .line 372
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayout:Landroid/text/Layout;
 
     invoke-virtual {v7, v4}, Landroid/text/Layout;->getLineStart(I)I
 
     move-result v7
 
-    .line 371
+    .line 373
     invoke-interface {v1, v2, v3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v17
 
-    .line 372
+    .line 374
     invoke-static {v1}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
 
-    .line 373
+    .line 375
     new-instance v8, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v8}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
 
     invoke-virtual {v1, v8, v2, v7, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 375
+    .line 377
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
 
     move-result v7
 
     if-ge v3, v7, :cond_6
 
-    .line 376
+    .line 378
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
 
     move-result v7
@@ -1787,7 +1787,7 @@
     :cond_6
     const-string v3, "\u2026"
 
-    .line 380
+    .line 382
     :goto_4
     new-instance v15, Landroid/text/StaticLayout;
 
@@ -1843,7 +1843,7 @@
 
     iput-object v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->firstLineLayout:Landroid/text/Layout;
 
-    .line 381
+    .line 383
     new-instance v6, Landroid/text/StaticLayout;
 
     const/4 v10, 0x0
@@ -1894,7 +1894,7 @@
 
     iput-object v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
-    .line 382
+    .line 384
     invoke-virtual {v6, v2}, Landroid/text/Layout;->getLineLeft(I)F
 
     move-result v6
@@ -1905,7 +1905,7 @@
 
     if-eqz v6, :cond_9
 
-    .line 383
+    .line 385
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1923,7 +1923,7 @@
     :cond_9
     move-object v7, v3
 
-    .line 385
+    .line 387
     new-instance v3, Landroid/text/StaticLayout;
 
     const/4 v8, 0x0
@@ -1972,7 +1972,7 @@
 
     const/16 v23, 0x0
 
-    .line 386
+    .line 388
     invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v24
@@ -2023,7 +2023,7 @@
 
     goto/16 :goto_d
 
-    .line 389
+    .line 391
     :cond_b
     new-instance v1, Landroid/text/StaticLayout;
 
@@ -2081,18 +2081,18 @@
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
-    .line 390
+    .line 392
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayout:Landroid/text/Layout;
 
-    .line 391
+    .line 393
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->partLayout:Landroid/text/Layout;
 
-    .line 392
+    .line 394
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->firstLineLayout:Landroid/text/Layout;
 
     goto/16 :goto_d
 
-    .line 394
+    .line 396
     :cond_e
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maxLines:I
 
@@ -2100,7 +2100,7 @@
 
     const/4 v8, 0x0
 
-    .line 395
+    .line 397
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
     move-result v9
@@ -2139,7 +2139,7 @@
 
     goto :goto_d
 
-    .line 398
+    .line 400
     :cond_f
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollNonFitText:Z
 
@@ -2151,7 +2151,7 @@
 
     goto :goto_a
 
-    .line 401
+    .line 403
     :cond_10
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
@@ -2167,7 +2167,7 @@
     :goto_a
     move-object v7, v1
 
-    .line 407
+    .line 409
     new-instance v1, Landroid/text/StaticLayout;
 
     const/4 v8, 0x0
@@ -2222,7 +2222,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
-    .line 410
+    .line 412
     :cond_14
     :goto_d
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->spoilersPool:Ljava/util/Stack;
@@ -2231,12 +2231,12 @@
 
     invoke-virtual {v1, v3}, Ljava/util/Stack;->addAll(Ljava/util/Collection;)Z
 
-    .line 411
+    .line 413
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->spoilers:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 412
+    .line 414
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     if-eqz v1, :cond_15
@@ -2249,7 +2249,7 @@
 
     if-eqz v1, :cond_15
 
-    .line 413
+    .line 415
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->spoilersPool:Ljava/util/Stack;
@@ -2258,7 +2258,7 @@
 
     invoke-static {v0, v1, v3, v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/view/View;Landroid/text/Layout;Ljava/util/Stack;Ljava/util/List;)V
 
-    .line 415
+    .line 417
     :cond_15
     invoke-direct {v0, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->calcOffset(I)V
     :try_end_0
@@ -2271,28 +2271,28 @@
 
     goto :goto_e
 
-    .line 420
+    .line 422
     :cond_16
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
-    .line 421
+    .line 423
     iput v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
-    .line 422
+    .line 424
     iput v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textHeight:I
 
-    .line 424
+    .line 426
     :goto_e
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
 
-    .line 425
+    .line 427
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->attachedToWindow:Z
 
     if-eqz v1, :cond_17
 
-    .line 426
+    .line 428
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     new-array v3, v4, [Landroid/text/Layout;
@@ -2307,7 +2307,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 428
+    .line 430
     :cond_17
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
@@ -2317,14 +2317,14 @@
 .method public getBackground()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 519
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wrapBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 522
+    .line 524
     :cond_0
     invoke-super {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -2336,7 +2336,7 @@
 .method public getFullAlpha()F
     .locals 1
 
-    .line 183
+    .line 185
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
 
     return v0
@@ -2345,7 +2345,7 @@
 .method public getLeftDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 497
+    .line 499
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -2354,27 +2354,27 @@
 .method public getLineCount()I
     .locals 2
 
-    .line 648
+    .line 655
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 649
+    .line 656
     invoke-virtual {v0}, Landroid/text/Layout;->getLineCount()I
 
     move-result v0
 
     add-int/2addr v1, v0
 
-    .line 651
+    .line 658
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayout:Landroid/text/Layout;
 
     if-eqz v0, :cond_1
 
-    .line 652
+    .line 659
     invoke-virtual {v0}, Landroid/text/Layout;->getLineCount()I
 
     move-result v0
@@ -2388,7 +2388,7 @@
 .method public getPaint()Landroid/graphics/Paint;
     .locals 1
 
-    .line 277
+    .line 279
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     return-object v0
@@ -2397,7 +2397,7 @@
 .method public getRightDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 569
+    .line 576
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -2406,7 +2406,7 @@
 .method public getRightDrawableOutside()Z
     .locals 1
 
-    .line 1062
+    .line 1069
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableOutside:Z
 
     return v0
@@ -2415,7 +2415,7 @@
 .method public getRightDrawableX()I
     .locals 1
 
-    .line 926
+    .line 933
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableX:I
 
     return v0
@@ -2424,7 +2424,7 @@
 .method public getRightDrawableY()I
     .locals 1
 
-    .line 930
+    .line 937
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableY:I
 
     return v0
@@ -2433,14 +2433,14 @@
 .method public getSideDrawablesSize()I
     .locals 3
 
-    .line 266
+    .line 268
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 267
+    .line 269
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -2451,13 +2451,13 @@
 
     add-int/2addr v1, v0
 
-    .line 269
+    .line 271
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 270
+    .line 272
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -2470,7 +2470,7 @@
 
     float-to-int v0, v0
 
-    .line 271
+    .line 273
     iget v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     add-int/2addr v0, v2
@@ -2484,7 +2484,7 @@
 .method public getText()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 640
+    .line 647
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_0
@@ -2498,7 +2498,7 @@
 .method public getTextColor()I
     .locals 1
 
-    .line 1050
+    .line 1057
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getColor()I
@@ -2511,7 +2511,7 @@
 .method public getTextHeight()I
     .locals 1
 
-    .line 481
+    .line 483
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textHeight:I
 
     return v0
@@ -2520,7 +2520,7 @@
 .method public getTextPaint()Landroid/text/TextPaint;
     .locals 1
 
-    .line 676
+    .line 683
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     return-object v0
@@ -2529,7 +2529,7 @@
 .method public getTextStartX()I
     .locals 4
 
-    .line 658
+    .line 665
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     const/4 v1, 0x0
@@ -2538,7 +2538,7 @@
 
     return v1
 
-    .line 662
+    .line 669
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2546,14 +2546,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 663
+    .line 670
     iget v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v3, v3, 0x7
 
     if-ne v3, v2, :cond_1
 
-    .line 664
+    .line 671
     iget v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -2564,7 +2564,7 @@
 
     add-int/2addr v1, v3
 
-    .line 667
+    .line 674
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2574,14 +2574,14 @@
 
     if-gez v3, :cond_2
 
-    .line 668
+    .line 675
     iget v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v3, v3, 0x7
 
     if-ne v3, v2, :cond_2
 
-    .line 669
+    .line 676
     iget v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -2592,7 +2592,7 @@
 
     add-int/2addr v1, v2
 
-    .line 672
+    .line 679
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->getX()F
 
@@ -2612,7 +2612,7 @@
 .method public getTextStartY()I
     .locals 1
 
-    .line 680
+    .line 687
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     if-nez v0, :cond_0
@@ -2621,7 +2621,7 @@
 
     return v0
 
-    .line 683
+    .line 690
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getY()F
 
@@ -2635,7 +2635,7 @@
 .method public getTextWidth()I
     .locals 1
 
-    .line 477
+    .line 479
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     return v0
@@ -2652,12 +2652,12 @@
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    .line 1015
+    .line 1022
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     if-ne p1, v0, :cond_0
 
-    .line 1016
+    .line 1023
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p1
@@ -2666,13 +2666,13 @@
 
     goto :goto_0
 
-    .line 1017
+    .line 1024
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     if-ne p1, v0, :cond_1
 
-    .line 1018
+    .line 1025
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p1
@@ -2681,13 +2681,13 @@
 
     goto :goto_0
 
-    .line 1019
+    .line 1026
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
     if-ne p1, v0, :cond_2
 
-    .line 1020
+    .line 1027
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p1
@@ -2702,15 +2702,15 @@
 .method protected onAttachedToWindow()V
     .locals 4
 
-    .line 149
+    .line 151
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
     const/4 v0, 0x1
 
-    .line 150
+    .line 152
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->attachedToWindow:Z
 
-    .line 151
+    .line 153
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     new-array v0, v0, [Landroid/text/Layout;
@@ -2733,20 +2733,20 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 156
+    .line 158
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 
-    .line 157
+    .line 159
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->attachedToWindow:Z
 
-    .line 158
+    .line 160
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->emojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     invoke-static {p0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
 
-    .line 159
+    .line 161
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wasLayout:Z
 
     return-void
@@ -2759,10 +2759,10 @@
 
     move-object/from16 v8, p1
 
-    .line 723
+    .line 730
     invoke-super/range {p0 .. p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 726
+    .line 733
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollNonFitText:Z
 
     const/4 v9, 0x0
@@ -2796,7 +2796,7 @@
 
     if-nez v12, :cond_3
 
-    .line 728
+    .line 735
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradient:Z
 
     if-eqz v2, :cond_2
@@ -2814,7 +2814,7 @@
 
     const/4 v3, 0x0
 
-    .line 729
+    .line 736
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -2839,13 +2839,13 @@
 
     move v7, v1
 
-    .line 732
+    .line 739
     :goto_2
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     iput v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
-    .line 733
+    .line 740
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v2, 0x3
@@ -2856,21 +2856,21 @@
 
     if-eqz v1, :cond_8
 
-    .line 734
+    .line 741
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     neg-float v1, v1
 
     float-to-int v1, v1
 
-    .line 735
+    .line 742
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v4, v3, 0x7
 
     if-ne v4, v10, :cond_4
 
-    .line 736
+    .line 743
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
     add-int/2addr v1, v4
@@ -2880,7 +2880,7 @@
 
     if-ne v3, v13, :cond_5
 
-    .line 740
+    .line 747
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
@@ -2899,7 +2899,7 @@
 
     goto :goto_3
 
-    .line 742
+    .line 749
     :cond_5
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -2924,7 +2924,7 @@
     :goto_3
     add-int/2addr v3, v4
 
-    .line 744
+    .line 751
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -2943,12 +2943,12 @@
 
     invoke-virtual {v4, v1, v3, v5, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 745
+    .line 752
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 746
+    .line 753
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v3, v1, 0x7
@@ -2966,7 +2966,7 @@
 
     goto :goto_5
 
-    .line 747
+    .line 754
     :cond_7
     :goto_4
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
@@ -2981,7 +2981,7 @@
 
     add-int/2addr v1, v9
 
-    .line 749
+    .line 756
     :goto_5
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
@@ -3004,7 +3004,7 @@
     :cond_8
     const/4 v1, 0x0
 
-    .line 751
+    .line 758
     :goto_6
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -3014,7 +3014,7 @@
 
     if-eqz v4, :cond_d
 
-    .line 752
+    .line 759
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     neg-float v4, v4
@@ -3025,14 +3025,14 @@
 
     float-to-int v4, v4
 
-    .line 753
+    .line 760
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v6, v5, 0x7
 
     if-ne v6, v10, :cond_9
 
-    .line 754
+    .line 761
     iget v6, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
     add-int/2addr v4, v6
@@ -3042,7 +3042,7 @@
 
     if-ne v5, v13, :cond_a
 
-    .line 758
+    .line 765
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
@@ -3063,7 +3063,7 @@
 
     goto :goto_7
 
-    .line 760
+    .line 767
     :cond_a
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textHeight:I
 
@@ -3079,7 +3079,7 @@
 
     add-int/2addr v3, v5
 
-    .line 762
+    .line 769
     :goto_7
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -3099,17 +3099,17 @@
 
     invoke-virtual {v5, v4, v3, v6, v15}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 763
+    .line 770
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 764
+    .line 771
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacingDrawableTextIndex:I
 
     if-gez v3, :cond_d
 
-    .line 765
+    .line 772
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v4, v3, 0x7
@@ -3120,7 +3120,7 @@
 
     if-ne v2, v10, :cond_c
 
-    .line 766
+    .line 773
     :cond_b
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
@@ -3134,7 +3134,7 @@
 
     add-int/2addr v1, v2
 
-    .line 768
+    .line 775
     :cond_c
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
@@ -3155,7 +3155,7 @@
     :cond_d
     move v15, v1
 
-    .line 772
+    .line 779
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_11
@@ -3174,7 +3174,7 @@
 
     if-nez v2, :cond_11
 
-    .line 773
+    .line 780
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     add-int/2addr v2, v15
@@ -3191,7 +3191,7 @@
 
     add-int/2addr v2, v3
 
-    .line 774
+    .line 781
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v4, v3, 0x7
@@ -3204,13 +3204,13 @@
 
     if-ne v3, v4, :cond_f
 
-    .line 776
+    .line 783
     :cond_e
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
     add-int/2addr v2, v3
 
-    .line 778
+    .line 785
     :cond_f
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -3224,7 +3224,7 @@
 
     float-to-int v1, v1
 
-    .line 779
+    .line 786
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -3239,14 +3239,14 @@
 
     float-to-int v3, v3
 
-    .line 781
+    .line 788
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v4, v4, 0x70
 
     if-ne v4, v13, :cond_10
 
-    .line 782
+    .line 789
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -3259,7 +3259,7 @@
 
     goto :goto_8
 
-    .line 784
+    .line 791
     :cond_10
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -3278,7 +3278,7 @@
     :goto_8
     add-int/2addr v4, v5
 
-    .line 786
+    .line 793
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     add-int v6, v2, v1
@@ -3291,22 +3291,22 @@
 
     add-int/2addr v2, v5
 
-    .line 787
+    .line 794
     iput v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableX:I
 
     shr-int/lit8 v2, v3, 0x1
 
     add-int/2addr v4, v2
 
-    .line 788
+    .line 795
     iput v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableY:I
 
-    .line 789
+    .line 796
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 790
+    .line 797
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
@@ -3317,7 +3317,7 @@
 
     iput v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
-    .line 792
+    .line 799
     :cond_11
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
 
@@ -3327,14 +3327,14 @@
 
     add-int v9, v1, v2
 
-    .line 794
+    .line 801
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     cmpl-float v2, v1, v11
 
     if-eqz v2, :cond_15
 
-    .line 795
+    .line 802
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v2, :cond_13
@@ -3345,14 +3345,14 @@
 
     add-int/2addr v1, v9
 
-    .line 798
+    .line 805
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v2, v2, 0x70
 
     if-ne v2, v13, :cond_12
 
-    .line 799
+    .line 806
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
@@ -3371,7 +3371,7 @@
 
     goto :goto_9
 
-    .line 801
+    .line 808
     :cond_12
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -3396,7 +3396,7 @@
     :goto_9
     add-int/2addr v2, v3
 
-    .line 803
+    .line 810
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -3415,12 +3415,12 @@
 
     invoke-virtual {v3, v1, v2, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 804
+    .line 811
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 806
+    .line 813
     :cond_13
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -3430,7 +3430,7 @@
 
     if-nez v2, :cond_15
 
-    .line 807
+    .line 814
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v1
@@ -3443,7 +3443,7 @@
 
     float-to-int v1, v1
 
-    .line 808
+    .line 815
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -3458,7 +3458,7 @@
 
     float-to-int v2, v2
 
-    .line 809
+    .line 816
     iget v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     add-int/2addr v3, v15
@@ -3477,14 +3477,14 @@
 
     add-int/2addr v3, v9
 
-    .line 811
+    .line 818
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v4, v4, 0x70
 
     if-ne v4, v13, :cond_14
 
-    .line 812
+    .line 819
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -3497,7 +3497,7 @@
 
     goto :goto_a
 
-    .line 814
+    .line 821
     :cond_14
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -3516,7 +3516,7 @@
     :goto_a
     add-int/2addr v4, v5
 
-    .line 816
+    .line 823
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     add-int/2addr v1, v3
@@ -3525,12 +3525,12 @@
 
     invoke-virtual {v5, v3, v4, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 817
+    .line 824
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 821
+    .line 828
     :cond_15
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
@@ -3538,7 +3538,7 @@
 
     if-eqz v1, :cond_2a
 
-    .line 822
+    .line 829
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableOutside:Z
 
     if-nez v1, :cond_16
@@ -3547,11 +3547,11 @@
 
     if-eqz v1, :cond_18
 
-    .line 823
+    .line 830
     :cond_16
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 824
+    .line 831
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getMaxTextWidth()I
 
     move-result v1
@@ -3594,18 +3594,18 @@
 
     invoke-virtual {v8, v3, v3, v1, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 826
+    .line 833
     :cond_18
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->usaAlphaForEmoji:Z
 
     sput-boolean v1, Lorg/telegram/messenger/Emoji;->emojiDrawingUseAlpha:Z
 
-    .line 827
+    .line 834
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wrapBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_19
 
-    .line 828
+    .line 835
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
     add-int/2addr v1, v15
@@ -3624,7 +3624,7 @@
 
     add-int/2addr v1, v3
 
-    .line 829
+    .line 836
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v3
@@ -3643,12 +3643,12 @@
 
     move-result v2
 
-    .line 830
+    .line 837
     div-int/lit8 v3, v2, 0x2
 
     sub-int/2addr v1, v3
 
-    .line 831
+    .line 838
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wrapBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     add-int/2addr v2, v1
@@ -3661,12 +3661,12 @@
 
     invoke-virtual {v3, v1, v5, v2, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 832
+    .line 839
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wrapBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 834
+    .line 841
     :cond_19
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
@@ -3684,11 +3684,11 @@
 
     if-eqz v1, :cond_1b
 
-    .line 835
+    .line 842
     :cond_1a
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 836
+    .line 843
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
     add-int/2addr v1, v15
@@ -3705,11 +3705,11 @@
 
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 841
+    .line 848
     :cond_1b
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawLayout(Landroid/graphics/Canvas;)V
 
-    .line 842
+    .line 849
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->partLayout:Landroid/text/Layout;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -3724,14 +3724,14 @@
 
     if-gez v1, :cond_1f
 
-    .line 843
+    .line 850
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1}, Landroid/text/TextPaint;->getAlpha()I
 
     move-result v1
 
-    .line 844
+    .line 851
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
@@ -3744,10 +3744,10 @@
 
     invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 845
+    .line 852
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 847
+    .line 854
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->partLayout:Landroid/text/Layout;
 
     invoke-virtual {v4}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
@@ -3760,7 +3760,7 @@
 
     if-ne v4, v10, :cond_1d
 
-    .line 848
+    .line 855
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullTextMaxLines:I
 
     if-ne v4, v10, :cond_1c
@@ -3786,7 +3786,7 @@
     :cond_1d
     const/4 v4, 0x0
 
-    .line 850
+    .line 857
     :goto_d
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
@@ -3800,7 +3800,7 @@
 
     if-eqz v5, :cond_1e
 
-    .line 851
+    .line 858
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
     invoke-virtual {v5, v6}, Landroid/text/Layout;->getLineWidth(I)F
@@ -3815,7 +3815,7 @@
 
     goto :goto_e
 
-    .line 853
+    .line 860
     :cond_1e
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->layout:Landroid/text/Layout;
 
@@ -3827,7 +3827,7 @@
 
     invoke-virtual {v8, v5, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 855
+    .line 862
     :goto_e
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftOffset:I
 
@@ -3847,20 +3847,20 @@
 
     invoke-virtual {v8, v4, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 856
+    .line 863
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->partLayout:Landroid/text/Layout;
 
     invoke-virtual {v4, v8}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 857
+    .line 864
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 858
+    .line 865
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v4, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 860
+    .line 867
     :cond_1f
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayout:Landroid/text/Layout;
 
@@ -3872,14 +3872,14 @@
 
     if-lez v1, :cond_20
 
-    .line 861
+    .line 868
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1}, Landroid/text/TextPaint;->getAlpha()I
 
     move-result v1
 
-    .line 862
+    .line 869
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
@@ -3890,7 +3890,7 @@
 
     invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 864
+    .line 871
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftOffset:I
 
     neg-int v4, v4
@@ -3911,17 +3911,17 @@
 
     invoke-virtual {v8, v4, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 865
+    .line 872
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayout:Landroid/text/Layout;
 
     invoke-virtual {v4, v8}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 866
+    .line 873
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v4, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 868
+    .line 875
     :cond_20
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
@@ -3931,13 +3931,13 @@
 
     int-to-float v1, v9
 
-    .line 869
+    .line 876
     invoke-virtual {v8, v1, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 870
+    .line 877
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawLayout(Landroid/graphics/Canvas;)V
 
-    .line 872
+    .line 879
     :cond_21
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->offsetX:I
 
@@ -3955,14 +3955,14 @@
 
     if-eqz v1, :cond_23
 
-    .line 873
+    .line 880
     :cond_22
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_23
     if-eqz v12, :cond_26
 
-    .line 876
+    .line 883
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     const/16 v4, 0xa
@@ -3977,7 +3977,7 @@
 
     if-gez v1, :cond_24
 
-    .line 877
+    .line 884
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaint:Landroid/graphics/Paint;
 
     iget v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
@@ -3998,7 +3998,7 @@
 
     goto :goto_f
 
-    .line 878
+    .line 885
     :cond_24
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
@@ -4022,7 +4022,7 @@
 
     if-lez v1, :cond_25
 
-    .line 879
+    .line 886
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     iget v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->totalWidth:I
@@ -4043,7 +4043,7 @@
 
     sub-float/2addr v1, v5
 
-    .line 880
+    .line 887
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaint:Landroid/graphics/Paint;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4064,7 +4064,7 @@
 
     goto :goto_f
 
-    .line 882
+    .line 889
     :cond_25
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadePaint:Landroid/graphics/Paint;
 
@@ -4079,7 +4079,7 @@
 
     const/16 v16, 0x6
 
-    .line 884
+    .line 891
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4098,10 +4098,10 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 885
+    .line 892
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 886
+    .line 893
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getMaxTextWidth()I
 
     move-result v1
@@ -4122,7 +4122,7 @@
 
     const/4 v2, 0x0
 
-    .line 887
+    .line 894
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4141,12 +4141,12 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 888
+    .line 895
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_11
 
-    .line 889
+    .line 896
     :cond_26
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradient:Z
 
@@ -4160,18 +4160,18 @@
 
     if-eqz v1, :cond_29
 
-    .line 890
+    .line 897
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 891
+    .line 898
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->updateFadePaints()V
 
-    .line 892
+    .line 899
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradientLeft:Z
 
     if-nez v1, :cond_28
 
-    .line 893
+    .line 900
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getMaxTextWidth()I
 
     move-result v1
@@ -4219,7 +4219,7 @@
 
     const/4 v3, 0x0
 
-    .line 895
+    .line 902
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fadeEllpsizePaintWidth:I
 
     int-to-float v4, v1
@@ -4236,38 +4236,38 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 896
+    .line 903
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 898
+    .line 905
     :cond_29
     :goto_11
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->updateScrollAnimation()V
 
-    .line 899
+    .line 906
     sput-boolean v10, Lorg/telegram/messenger/Emoji;->emojiDrawingUseAlpha:Z
 
-    .line 900
+    .line 907
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableOutside:Z
 
     if-eqz v1, :cond_2a
 
-    .line 901
+    .line 908
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2a
     if-nez v12, :cond_2b
 
-    .line 904
+    .line 911
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradient:Z
 
     if-eqz v1, :cond_2c
 
-    .line 905
+    .line 912
     :cond_2b
     invoke-virtual {v8, v7}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 908
+    .line 915
     :cond_2c
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -4277,7 +4277,7 @@
 
     if-eqz v1, :cond_2f
 
-    .line 909
+    .line 916
     iget v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textWidth:I
 
     add-int/2addr v15, v1
@@ -4328,7 +4328,7 @@
 
     move-result v1
 
-    .line 910
+    .line 917
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -4343,7 +4343,7 @@
 
     float-to-int v2, v2
 
-    .line 911
+    .line 918
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -4358,14 +4358,14 @@
 
     float-to-int v3, v3
 
-    .line 913
+    .line 920
     iget v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 v4, v4, 0x70
 
     if-ne v4, v13, :cond_2e
 
-    .line 914
+    .line 921
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -4378,7 +4378,7 @@
 
     goto :goto_13
 
-    .line 916
+    .line 923
     :cond_2e
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -4397,7 +4397,7 @@
     :goto_13
     add-int/2addr v4, v5
 
-    .line 918
+    .line 925
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     add-int v6, v1, v2
@@ -4410,17 +4410,17 @@
 
     add-int/2addr v1, v2
 
-    .line 919
+    .line 926
     iput v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableX:I
 
     shr-int/lit8 v1, v3, 0x1
 
     add-int/2addr v4, v1
 
-    .line 920
+    .line 927
     iput v4, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableY:I
 
-    .line 921
+    .line 928
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -4432,20 +4432,20 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 1031
+    .line 1038
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const/4 v0, 0x1
 
-    .line 1032
+    .line 1039
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setVisibleToUser(Z)V
 
     const-string v0, "android.widget.TextView"
 
-    .line 1033
+    .line 1040
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1034
+    .line 1041
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
@@ -4458,7 +4458,7 @@
 
     const/4 p1, 0x1
 
-    .line 473
+    .line 475
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wasLayout:Z
 
     return-void
@@ -4467,17 +4467,17 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 443
+    .line 445
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 444
+    .line 446
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 445
+    .line 447
     iget v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->lastWidth:I
 
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -4486,20 +4486,20 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 446
+    .line 448
     iput v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->lastWidth:I
 
     const/4 v1, 0x0
 
-    .line 447
+    .line 449
     iput v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     const/16 v1, 0x1f4
 
-    .line 448
+    .line 450
     iput v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->currentScrollDelay:I
 
-    .line 450
+    .line 452
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
@@ -4545,7 +4545,7 @@
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->createLayout(I)Z
 
-    .line 453
+    .line 455
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result p2
@@ -4556,7 +4556,7 @@
 
     goto :goto_1
 
-    .line 456
+    .line 458
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -4572,13 +4572,13 @@
 
     add-int/2addr v0, p2
 
-    .line 458
+    .line 460
     :goto_1
     iget-boolean p2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->widthWrapContent:Z
 
     if-eqz p2, :cond_4
 
-    .line 460
+    .line 462
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result p2
@@ -4620,11 +4620,11 @@
 
     move-result p1
 
-    .line 462
+    .line 464
     :cond_4
     invoke-virtual {p0, p1, v0}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 464
+    .line 466
     iget p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     and-int/lit8 p1, p1, 0x70
@@ -4633,7 +4633,7 @@
 
     if-ne p1, p2, :cond_5
 
-    .line 465
+    .line 467
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result p1
@@ -4666,7 +4666,7 @@
 
     goto :goto_2
 
-    .line 467
+    .line 469
     :cond_5
     invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -4681,7 +4681,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 8
 
-    .line 1071
+    .line 1078
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableOnClickListener:Landroid/view/View$OnClickListener;
 
     const/4 v1, 0x0
@@ -4694,7 +4694,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 1072
+    .line 1079
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v3, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableX:I
@@ -4741,7 +4741,7 @@
 
     invoke-virtual {v0, v3, v5, v6, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1073
+    .line 1080
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
@@ -4770,24 +4770,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 1074
+    .line 1081
     iput-boolean v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maybeClick:Z
 
-    .line 1075
+    .line 1082
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->touchDownX:F
 
-    .line 1076
+    .line 1083
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->touchDownY:F
 
-    .line 1077
+    .line 1084
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -4796,7 +4796,7 @@
 
     goto :goto_0
 
-    .line 1078
+    .line 1085
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -4810,7 +4810,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1079
+    .line 1086
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -4847,11 +4847,11 @@
 
     if-ltz v0, :cond_5
 
-    .line 1080
+    .line 1087
     :cond_1
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maybeClick:Z
 
-    .line 1081
+    .line 1088
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -4860,7 +4860,7 @@
 
     goto :goto_0
 
-    .line 1083
+    .line 1090
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -4876,7 +4876,7 @@
 
     if-ne v0, v3, :cond_5
 
-    .line 1084
+    .line 1091
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maybeClick:Z
 
@@ -4888,23 +4888,23 @@
 
     if-ne v0, v2, :cond_4
 
-    .line 1085
+    .line 1092
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableOnClickListener:Landroid/view/View$OnClickListener;
 
     invoke-interface {v0, p0}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    .line 1087
+    .line 1094
     :cond_4
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maybeClick:Z
 
-    .line 1088
+    .line 1095
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1091
+    .line 1098
     :cond_5
     :goto_0
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -4927,7 +4927,7 @@
 .method public replaceTextWithDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V
     .locals 2
 
-    .line 542
+    .line 549
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
     if-ne v0, p1, :cond_0
@@ -4939,19 +4939,19 @@
 
     const/4 v1, 0x0
 
-    .line 546
+    .line 553
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 548
+    .line 555
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_2
 
-    .line 550
+    .line 557
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 552
+    .line 559
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->recreateLayoutMaybe()Z
 
@@ -4959,10 +4959,10 @@
 
     if-nez p1, :cond_3
 
-    .line 553
+    .line 560
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 555
+    .line 562
     :cond_3
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedText:Ljava/lang/String;
 
@@ -4972,10 +4972,10 @@
 .method public setAlignment(Landroid/text/Layout$Alignment;)V
     .locals 0
 
-    .line 433
+    .line 435
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->mAlignment:Landroid/text/Layout$Alignment;
 
-    .line 434
+    .line 436
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
@@ -4984,19 +4984,19 @@
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 2
 
-    .line 510
+    .line 512
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maxLines:I
 
     const/4 v1, 0x1
 
     if-le v0, v1, :cond_0
 
-    .line 511
+    .line 513
     invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 
-    .line 514
+    .line 516
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->wrapBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -5006,7 +5006,7 @@
 .method public setBuildFullLayout(Z)V
     .locals 0
 
-    .line 174
+    .line 176
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->buildFullLayout:Z
 
     return-void
@@ -5015,7 +5015,7 @@
 .method public setCanHideRightDrawable(Z)V
     .locals 0
 
-    .line 1054
+    .line 1061
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->canHideRightDrawable:Z
 
     return-void
@@ -5024,25 +5024,25 @@
 .method public setDrawablePadding(I)V
     .locals 1
 
-    .line 615
+    .line 622
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 618
+    .line 625
     :cond_0
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
-    .line 619
+    .line 626
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->recreateLayoutMaybe()Z
 
     move-result p1
 
     if-nez p1, :cond_1
 
-    .line 620
+    .line 627
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -5054,7 +5054,7 @@
 
     const/4 v0, 0x0
 
-    .line 200
+    .line 202
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(ILjava/lang/Boolean;)V
 
     return-void
@@ -5065,13 +5065,13 @@
 
     const/4 v0, 0x1
 
-    .line 213
+    .line 215
     invoke-virtual {p0, v0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(ZLjava/lang/Boolean;)V
 
-    .line 214
+    .line 216
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradientWidthDp:I
 
-    .line 215
+    .line 217
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->updateFadePaints()V
 
     return-void
@@ -5082,7 +5082,7 @@
 
     const/4 v0, 0x0
 
-    .line 196
+    .line 198
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(ZLjava/lang/Boolean;)V
 
     return-void
@@ -5091,21 +5091,21 @@
 .method public setEllipsizeByGradient(ZLjava/lang/Boolean;)V
     .locals 1
 
-    .line 204
+    .line 206
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollNonFitText:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 207
+    .line 209
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->ellipsizeByGradient:Z
 
-    .line 208
+    .line 210
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->forceEllipsizeByGradientLeft:Ljava/lang/Boolean;
 
-    .line 209
+    .line 211
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->updateFadePaints()V
 
     return-void
@@ -5114,10 +5114,10 @@
 .method public setFullAlpha(F)V
     .locals 0
 
-    .line 178
+    .line 180
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullAlpha:F
 
-    .line 179
+    .line 181
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5126,7 +5126,7 @@
 .method public setFullLayoutAdditionalWidth(II)V
     .locals 1
 
-    .line 1038
+    .line 1045
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutAdditionalWidth:I
 
     if-ne v0, p1, :cond_0
@@ -5135,14 +5135,14 @@
 
     if-eq v0, p2, :cond_1
 
-    .line 1039
+    .line 1046
     :cond_0
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutAdditionalWidth:I
 
-    .line 1040
+    .line 1047
     iput p2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullLayoutLeftOffset:I
 
-    .line 1041
+    .line 1048
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getMaxTextWidth()I
 
     move-result p1
@@ -5172,7 +5172,7 @@
 .method public setFullTextMaxLines(I)V
     .locals 0
 
-    .line 1046
+    .line 1053
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->fullTextMaxLines:I
 
     return-void
@@ -5181,7 +5181,7 @@
 .method public setGravity(I)V
     .locals 0
 
-    .line 257
+    .line 259
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->gravity:I
 
     return-void
@@ -5196,7 +5196,7 @@
 
     goto :goto_0
 
-    .line 493
+    .line 495
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -5219,7 +5219,7 @@
 .method public setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 2
 
-    .line 526
+    .line 528
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     if-ne v0, p1, :cond_0
@@ -5231,19 +5231,19 @@
 
     const/4 v1, 0x0
 
-    .line 530
+    .line 532
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 532
+    .line 534
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_2
 
-    .line 534
+    .line 536
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 536
+    .line 538
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->recreateLayoutMaybe()Z
 
@@ -5251,7 +5251,7 @@
 
     if-nez p1, :cond_3
 
-    .line 537
+    .line 539
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_3
@@ -5261,7 +5261,7 @@
 .method public setLeftDrawableTopPadding(I)V
     .locals 0
 
-    .line 485
+    .line 487
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawableTopPadding:I
 
     return-void
@@ -5270,12 +5270,12 @@
 .method public setLinkTextColor(I)V
     .locals 1
 
-    .line 143
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     iput p1, v0, Landroid/text/TextPaint;->linkColor:I
 
-    .line 144
+    .line 146
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5284,7 +5284,7 @@
 .method public setMaxLines(I)V
     .locals 0
 
-    .line 253
+    .line 255
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->maxLines:I
 
     return-void
@@ -5293,7 +5293,7 @@
 .method public setMinWidth(I)V
     .locals 0
 
-    .line 505
+    .line 507
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->minWidth:I
 
     return-void
@@ -5302,25 +5302,25 @@
 .method public setMinusWidth(I)V
     .locals 1
 
-    .line 559
+    .line 566
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->minusWidth:I
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 562
+    .line 569
     :cond_0
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->minusWidth:I
 
-    .line 563
+    .line 570
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->recreateLayoutMaybe()Z
 
     move-result p1
 
     if-nez p1, :cond_1
 
-    .line 564
+    .line 571
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -5336,7 +5336,7 @@
 
     goto :goto_0
 
-    .line 501
+    .line 503
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -5359,7 +5359,7 @@
 .method public setRightDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 2
 
-    .line 573
+    .line 580
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     if-ne v0, p1, :cond_0
@@ -5371,19 +5371,19 @@
 
     const/4 v1, 0x0
 
-    .line 577
+    .line 584
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 579
+    .line 586
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_2
 
-    .line 581
+    .line 588
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 583
+    .line 590
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->recreateLayoutMaybe()Z
 
@@ -5391,7 +5391,7 @@
 
     if-nez p1, :cond_3
 
-    .line 584
+    .line 591
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_3
@@ -5401,7 +5401,7 @@
 .method public setRightDrawableOnClick(Landroid/view/View$OnClickListener;)V
     .locals 0
 
-    .line 1066
+    .line 1073
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableOnClickListener:Landroid/view/View$OnClickListener;
 
     return-void
@@ -5410,7 +5410,7 @@
 .method public setRightDrawableOutside(Z)V
     .locals 0
 
-    .line 1058
+    .line 1065
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableOutside:Z
 
     return-void
@@ -5419,7 +5419,7 @@
 .method public setRightDrawableScale(F)V
     .locals 0
 
-    .line 589
+    .line 596
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableScale:F
 
     return-void
@@ -5428,7 +5428,7 @@
 .method public setRightDrawableTopPadding(I)V
     .locals 0
 
-    .line 489
+    .line 491
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableTopPadding:I
 
     return-void
@@ -5437,15 +5437,15 @@
 .method public setRightPadding(I)V
     .locals 5
 
-    .line 687
+    .line 694
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->paddingRight:I
 
     if-eq v0, p1, :cond_4
 
-    .line 688
+    .line 695
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->paddingRight:I
 
-    .line 690
+    .line 697
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getMaxTextWidth()I
 
     move-result p1
@@ -5466,19 +5466,19 @@
 
     sub-int/2addr p1, v0
 
-    .line 691
+    .line 698
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 692
+    .line 699
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
 
     sub-int/2addr p1, v0
 
-    .line 693
+    .line 700
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     sub-int/2addr p1, v0
@@ -5486,7 +5486,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 696
+    .line 703
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_1
@@ -5495,7 +5495,7 @@
 
     if-nez v2, :cond_1
 
-    .line 697
+    .line 704
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -5510,12 +5510,12 @@
 
     sub-int/2addr p1, v0
 
-    .line 699
+    .line 706
     iget v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     sub-int/2addr p1, v1
 
-    .line 701
+    .line 708
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedText:Ljava/lang/String;
 
@@ -5525,7 +5525,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 702
+    .line 709
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -5542,7 +5542,7 @@
 
     if-gez v1, :cond_2
 
-    .line 703
+    .line 710
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->replacedDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -5551,12 +5551,12 @@
 
     sub-int/2addr p1, v1
 
-    .line 704
+    .line 711
     iget v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     sub-int/2addr p1, v1
 
-    .line 707
+    .line 714
     :cond_2
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->canHideRightDrawable:Z
 
@@ -5568,7 +5568,7 @@
 
     if-nez v1, :cond_3
 
-    .line 708
+    .line 715
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
@@ -5581,7 +5581,7 @@
 
     move-result-object v1
 
-    .line 709
+    .line 716
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -5592,21 +5592,21 @@
 
     const/4 v1, 0x1
 
-    .line 710
+    .line 717
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawableHidden:Z
 
     add-int/2addr p1, v0
 
-    .line 712
+    .line 719
     iget v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->drawablePadding:I
 
     add-int/2addr p1, v0
 
-    .line 715
+    .line 722
     :cond_3
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->calcOffset(I)V
 
-    .line 717
+    .line 724
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_4
@@ -5616,21 +5616,21 @@
 .method public setScrollNonFitText(Z)V
     .locals 1
 
-    .line 187
+    .line 189
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollNonFitText:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 190
+    .line 192
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollNonFitText:Z
 
-    .line 191
+    .line 193
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->updateFadePaints()V
 
-    .line 192
+    .line 194
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
@@ -5639,12 +5639,12 @@
 .method public setSideDrawablesColor(I)V
     .locals 1
 
-    .line 593
+    .line 600
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 594
+    .line 601
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
@@ -5657,7 +5657,7 @@
 
     const/4 v0, 0x0
 
-    .line 598
+    .line 605
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;Z)Z
 
     move-result p1
@@ -5668,7 +5668,7 @@
 .method public setText(Ljava/lang/CharSequence;Z)Z
     .locals 1
 
-    .line 602
+    .line 609
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_0
@@ -5691,7 +5691,7 @@
 
     return p1
 
-    .line 605
+    .line 612
     :cond_2
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->text:Ljava/lang/CharSequence;
 
@@ -5702,7 +5702,7 @@
     :cond_3
     if-eqz p1, :cond_4
 
-    .line 606
+    .line 613
     invoke-virtual {p1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -5712,16 +5712,16 @@
     :cond_4
     const/4 p1, 0x0
 
-    .line 607
+    .line 614
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->scrollingOffset:F
 
     :cond_5
     const/16 p1, 0x1f4
 
-    .line 609
+    .line 616
     iput p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->currentScrollDelay:I
 
-    .line 610
+    .line 617
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->recreateLayoutMaybe()Z
 
     const/4 p1, 0x1
@@ -5732,12 +5732,12 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 138
+    .line 140
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 139
+    .line 141
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -5746,14 +5746,14 @@
 .method public setTextSize(I)V
     .locals 1
 
-    .line 163
+    .line 165
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     int-to-float p1, p1
 
-    .line 164
+    .line 166
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getTextSize()F
@@ -5766,20 +5766,20 @@
 
     return-void
 
-    .line 167
+    .line 169
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 168
+    .line 170
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->recreateLayoutMaybe()Z
 
     move-result p1
 
     if-nez p1, :cond_1
 
-    .line 169
+    .line 171
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -5789,7 +5789,7 @@
 .method public setTypeface(Landroid/graphics/Typeface;)V
     .locals 1
 
-    .line 261
+    .line 263
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
@@ -5800,8 +5800,41 @@
 .method public setWidthWrapContent(Z)V
     .locals 0
 
-    .line 219
+    .line 221
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->widthWrapContent:Z
 
     return-void
+.end method
+
+.method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+    .locals 1
+
+    .line 545
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->rightDrawable:Landroid/graphics/drawable/Drawable;
+
+    if-eq p1, v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/SimpleTextView;->leftDrawable:Landroid/graphics/drawable/Drawable;
+
+    if-eq p1, v0, :cond_1
+
+    invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    return p1
 .end method

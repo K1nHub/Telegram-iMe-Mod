@@ -15,8 +15,8 @@ public class SecT163R1Curve extends ECCurve.AbstractF2m {
     public SecT163R1Curve() {
         super(163, 3, 6, 7);
         this.infinity = new SecT163R1Point(this, null, null);
-        this.f1302a = fromBigInteger(new BigInteger(1, Hex.decode("07B6882CAAEFA84F9554FF8428BD88E246D2782AE2")));
-        this.f1303b = fromBigInteger(new BigInteger(1, Hex.decode("0713612DCDDCB40AAB946BDA29CA91F73AF958AFD9")));
+        this.f1307a = fromBigInteger(new BigInteger(1, Hex.decode("07B6882CAAEFA84F9554FF8428BD88E246D2782AE2")));
+        this.f1308b = fromBigInteger(new BigInteger(1, Hex.decode("0713612DCDDCB40AAB946BDA29CA91F73AF958AFD9")));
         this.order = new BigInteger(1, Hex.decode("03FFFFFFFFFFFFFFFFFFFF48AAB689C29CA710279B"));
         this.cofactor = BigInteger.valueOf(2L);
         this.coord = 6;
@@ -33,9 +33,9 @@ public class SecT163R1Curve extends ECCurve.AbstractF2m {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat192.copy64(((SecT163FieldElement) eCPoint.getRawXCoord()).f1365x, 0, jArr, i3);
+            Nat192.copy64(((SecT163FieldElement) eCPoint.getRawXCoord()).f1370x, 0, jArr, i3);
             int i5 = i3 + 3;
-            Nat192.copy64(((SecT163FieldElement) eCPoint.getRawYCoord()).f1365x, 0, jArr, i5);
+            Nat192.copy64(((SecT163FieldElement) eCPoint.getRawYCoord()).f1370x, 0, jArr, i5);
             i3 = i5 + 3;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecT163R1Curve.1

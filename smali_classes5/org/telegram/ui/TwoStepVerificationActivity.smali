@@ -1744,7 +1744,7 @@
 
     if-eqz p1, :cond_5
 
-    const-string p2, "dialogTextRed2"
+    const-string p2, "dialogTextRed"
 
     .line 408
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -3372,7 +3372,7 @@
 
     if-eqz v0, :cond_4
 
-    const-string v1, "dialogTextRed2"
+    const-string v1, "dialogTextRed"
 
     .line 620
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -3670,7 +3670,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const-string v1, "dialogTextRed2"
+    const-string v1, "dialogTextRed"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 

@@ -37,7 +37,7 @@ public final class CursorMetaResponse {
     }
 
     public String toString() {
-        return "CursorMetaResponse(nextCursor=" + ((Object) this.nextCursor) + ')';
+        return "CursorMetaResponse(nextCursor=" + this.nextCursor + ')';
     }
 
     public CursorMetaResponse(String str) {

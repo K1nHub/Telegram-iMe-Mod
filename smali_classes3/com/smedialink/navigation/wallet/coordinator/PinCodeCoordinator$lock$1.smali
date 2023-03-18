@@ -75,7 +75,7 @@
 .method public final invoke(Lcom/smedialink/model/wallet/crypto/pin/EnterPinCodeResult;Lcom/smedialink/ui/base/mvp/MvpFragment;)V
     .locals 1
 
-    const-string v0, "result"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

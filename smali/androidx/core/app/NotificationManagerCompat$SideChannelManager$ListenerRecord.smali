@@ -38,25 +38,25 @@
 .method constructor <init>(Landroid/content/ComponentName;)V
     .locals 2
 
-    .line 957
+    .line 962
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 949
+    .line 954
     iput-boolean v0, p0, Landroidx/core/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->bound:Z
 
-    .line 953
+    .line 958
     new-instance v1, Ljava/util/ArrayDeque;
 
     invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object v1, p0, Landroidx/core/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->taskQueue:Ljava/util/ArrayDeque;
 
-    .line 955
+    .line 960
     iput v0, p0, Landroidx/core/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->retryCount:I
 
-    .line 958
+    .line 963
     iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->componentName:Landroid/content/ComponentName;
 
     return-void

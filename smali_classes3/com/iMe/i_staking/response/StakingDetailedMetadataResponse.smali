@@ -1034,42 +1034,26 @@
     :cond_a
     iget-wide v3, p0, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->apy:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->apy:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->apy:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-eqz v1, :cond_b
 
     return v2
 
     :cond_b
     iget-wide v3, p0, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->apr:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->apr:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->apr:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_c
+    if-eqz v1, :cond_c
 
     return v2
 
@@ -1087,84 +1071,52 @@
     :cond_d
     iget-wide v3, p0, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->incomePercent:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->incomePercent:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->incomePercent:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_e
+    if-eqz v1, :cond_e
 
     return v2
 
     :cond_e
     iget-wide v3, p0, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->prematureWithdrawalFee:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->prematureWithdrawalFee:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->prematureWithdrawalFee:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_f
+    if-eqz v1, :cond_f
 
     return v2
 
     :cond_f
     iget-wide v3, p0, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->immediateWithdrawalFee:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->immediateWithdrawalFee:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->immediateWithdrawalFee:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_10
+    if-eqz v1, :cond_10
 
     return v2
 
     :cond_10
     iget-wide v3, p0, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->safeWithdrawalFee:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->safeWithdrawalFee:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->safeWithdrawalFee:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result v1
 
-    if-nez v1, :cond_11
+    if-eqz v1, :cond_11
 
     return v2
 
@@ -1886,7 +1838,7 @@
 
     iget-object v1, p0, Lcom/iMe/i_staking/response/StakingDetailedMetadataResponse;->minimalRank:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", website="
 

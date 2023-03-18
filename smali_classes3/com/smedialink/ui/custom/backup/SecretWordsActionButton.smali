@@ -217,9 +217,6 @@
     .line 49
     invoke-virtual {v0, p2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 50
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 45
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

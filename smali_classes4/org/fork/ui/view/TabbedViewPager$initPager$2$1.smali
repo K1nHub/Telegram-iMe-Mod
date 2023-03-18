@@ -35,7 +35,7 @@
 .method public bindView(Landroid/view/View;II)V
     .locals 0
 
-    const-string p3, "view"
+    const-string/jumbo p3, "view"
 
     invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

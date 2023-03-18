@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$loadBinanceBalances$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,21 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;",
+        ">;>;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,111:1\n63#2,4:112\n67#2:122\n68#2,9:133\n79#2,10:145\n1192#3,2:116\n1220#3,4:118\n1601#3,9:123\n1849#3:132\n1850#3:143\n1610#3:144\n1#4:142\n*S KotlinDebug\n*F\n+ 1 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter\n*L\n66#1:116,2\n66#1:118,4\n67#1:123,9\n67#1:132\n67#1:143\n67#1:144\n67#1:142\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,111:1\n63#2,4:112\n67#2:122\n68#2,9:133\n79#2,11:145\n1194#3,2:116\n1222#3,4:118\n1603#3,9:123\n1855#3:132\n1856#3:143\n1612#3:144\n1#4:142\n*S KotlinDebug\n*F\n+ 1 WalletSelectTokenPresenter.kt\ncom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter\n*L\n66#1:116,2\n66#1:118,4\n67#1:123,9\n67#1:132\n67#1:143\n67#1:144\n67#1:142\n*E\n"
 .end annotation
 
 
@@ -41,18 +46,37 @@
 
     iput-object p1, p0, Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$loadBinanceBalances$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$loadBinanceBalances$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;",
+            ">;>;)V"
         }
     .end annotation
 
@@ -96,7 +120,7 @@
 
     const/16 v0, 0xa
 
-    .line 1192
+    .line 1194
     invoke-static {p1, v0}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v0
@@ -111,12 +135,12 @@
 
     move-result v0
 
-    .line 1193
+    .line 1195
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1220
+    .line 1222
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -132,7 +156,7 @@
 
     move-result-object v0
 
-    .line 1221
+    .line 1223
     move-object v3, v0
 
     check-cast v3, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;
@@ -142,6 +166,7 @@
 
     move-result-object v3
 
+    .line 1223
     invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
@@ -158,12 +183,12 @@
 
     move-result-object p1
 
-    .line 1601
+    .line 1603
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -180,7 +205,7 @@
 
     move-result-object v3
 
-    .line 1609
+    .line 1611
     check-cast v3, Lcom/smedialink/model/wallet/select/SelectableTokenItem;
 
     .line 133
@@ -248,14 +273,9 @@
     goto :goto_3
 
     :cond_2
-    if-nez v4, :cond_3
-
-    move-object v4, v6
-
-    goto :goto_2
+    if-eqz v4, :cond_3
 
     .line 141
-    :cond_3
     iget-object v5, p0, Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter$loadBinanceBalances$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter;
 
     invoke-static {v5}, Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter;->access$getResourceManager$p(Lcom/smedialink/ui/wallet/swap/token/WalletSelectTokenPresenter;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -266,6 +286,11 @@
 
     move-result-object v4
 
+    goto :goto_2
+
+    :cond_3
+    move-object v4, v6
+
     :goto_2
     invoke-static {v3, v6, v4, v1, v6}, Lcom/smedialink/model/wallet/select/SelectableTokenItem;->copy$default(Lcom/smedialink/model/wallet/select/SelectableTokenItem;Lcom/smedialink/model/wallet/select/SelectableToken;Lcom/smedialink/model/wallet/select/SelectableTokenBalance;ILjava/lang/Object;)Lcom/smedialink/model/wallet/select/SelectableTokenItem;
 
@@ -275,7 +300,7 @@
     :goto_3
     if-eqz v6, :cond_1
 
-    .line 1609
+    .line 1611
     invoke-interface {v0, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1

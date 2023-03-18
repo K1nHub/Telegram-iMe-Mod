@@ -1,9 +1,7 @@
 package org.telegram.messenger;
 
 import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.Application;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -367,7 +365,6 @@ public class ApplicationLoader extends Application implements BillingProvider {
             }
         }
         applicationContext.stopService(new Intent(applicationContext, NotificationsService.class));
-        ((AlarmManager) applicationContext.getSystemService("alarm")).cancel(PendingIntent.getService(applicationContext, 0, new Intent(applicationContext, NotificationsService.class), ConnectionsManager.FileTypeVideo));
     }
 
     @Override // android.app.Application, android.content.ComponentCallbacks

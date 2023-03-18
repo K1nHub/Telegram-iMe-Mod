@@ -62,15 +62,10 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
 
     public int hashCode() {
         int i = 1;
-        int i2 = 0;
-        while (true) {
-            Locale[] localeArr = this.mList;
-            if (i2 >= localeArr.length) {
-                return i;
-            }
-            i = (i * 31) + localeArr[i2].hashCode();
-            i2++;
+        for (Locale locale : this.mList) {
+            i = (i * 31) + locale.hashCode();
         }
+        return i;
     }
 
     public String toString() {
@@ -116,7 +111,7 @@ final class LocaleListCompatWrapper implements LocaleListInterface {
                 hashSet.add(locale2);
             }
         }
-        this.mList = (Locale[]) arrayList.toArray(new Locale[arrayList.size()]);
+        this.mList = (Locale[]) arrayList.toArray(new Locale[0]);
     }
 
     static void toLanguageTag(StringBuilder sb, Locale locale) {

@@ -82,12 +82,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/CacheChart;)V
     .locals 12
 
-    .line 106
+    .line 107
     iput-object p1, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
+    .line 109
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x3
@@ -96,7 +96,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->particlePaint:Landroid/graphics/Paint;
 
-    .line 112
+    .line 113
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -107,14 +107,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->angleCenterAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 113
+    .line 114
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {v0, p1, v1, v2, v8}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->angleSizeAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 115
+    .line 116
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v10, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -135,10 +135,10 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 116
+    .line 117
     iput v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->textScale:F
 
-    .line 117
+    .line 118
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     move-object v0, v9
@@ -147,7 +147,7 @@
 
     iput-object v9, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->textScaleAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 118
+    .line 119
     new-instance v0, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v1, 0x0
@@ -158,7 +158,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 120
+    .line 121
     new-instance v11, Lorg/telegram/ui/Components/AnimatedFloat;
 
     move-object v0, v11
@@ -169,7 +169,7 @@
 
     iput-object v11, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->particlesAlphaAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 123
+    .line 124
     new-instance v10, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0xc8
@@ -182,14 +182,14 @@
 
     iput-object v10, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->selectedAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 126
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 127
+    .line 128
     iget-object v1, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const v2, 0x3eb33333    # 0.35f
@@ -202,7 +202,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 128
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -213,7 +213,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 129
+    .line 130
     iget-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v1, 0xf
@@ -226,49 +226,49 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 130
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
-    .line 133
+    .line 134
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
-    .line 134
+    .line 135
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->paint:Landroid/graphics/Paint;
 
-    .line 135
+    .line 136
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->pathBounds:Landroid/graphics/RectF;
 
-    .line 136
+    .line 137
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->uncut:Landroid/graphics/Paint;
 
-    .line 137
+    .line 138
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->cut:Landroid/graphics/Paint;
 
-    .line 139
+    .line 140
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
@@ -277,7 +277,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 140
+    .line 141
     iget-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->paint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -288,7 +288,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 141
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->particlePaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -299,7 +299,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 143
+    .line 144
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -320,11 +320,20 @@
 
     cmpg-float v3, p11, v2
 
-    if-gtz v3, :cond_0
+    if-lez v3, :cond_2
 
-    return-void
+    const v3, 0x81e0
 
-    .line 254
+    .line 252
+    invoke-static {v3}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    goto/16 :goto_1
+
+    .line 255
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -332,14 +341,14 @@
 
     const-wide/high16 v5, 0x4000000000000000L    # 2.0
 
-    .line 255
+    .line 256
     invoke-static {v5, v6}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v5
 
     double-to-float v5, v5
 
-    .line 256
+    .line 257
     invoke-static {}, Lorg/telegram/ui/Components/CacheChart;->access$300()J
 
     move-result-wide v6
@@ -350,10 +359,10 @@
 
     if-gez v10, :cond_1
 
-    .line 257
+    .line 258
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/CacheChart;->access$302(J)J
 
-    .line 259
+    .line 260
     :cond_1
     invoke-static {}, Lorg/telegram/ui/Components/CacheChart;->access$300()J
 
@@ -367,19 +376,19 @@
 
     div-float/2addr v3, v4
 
-    .line 260
+    .line 261
     iget-object v4, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->particle:Landroid/graphics/Bitmap;
 
     if-eqz v4, :cond_2
 
-    .line 261
+    .line 262
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
 
     const/high16 v6, 0x41700000    # 15.0f
 
-    .line 262
+    .line 263
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v6
@@ -400,7 +409,7 @@
 
     float-to-double v10, v10
 
-    .line 269
+    .line 270
     invoke-static {v10, v11}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v10
@@ -411,7 +420,7 @@
 
     float-to-double v11, v9
 
-    .line 270
+    .line 271
     invoke-static {v11, v12}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v11
@@ -437,7 +446,7 @@
 
     float-to-double v14, v14
 
-    .line 275
+    .line 276
     invoke-static {v14, v15}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v14
@@ -464,7 +473,7 @@
 
     add-float v13, p9, v13
 
-    .line 277
+    .line 278
     invoke-static {v14, v13, v12}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v13
@@ -479,7 +488,7 @@
 
     float-to-double v2, v13
 
-    .line 279
+    .line 280
     invoke-static {v11}, Lorg/telegram/ui/Components/CacheChart;->access$100(F)F
 
     move-result v13
@@ -500,7 +509,7 @@
 
     float-to-double v13, v9
 
-    .line 280
+    .line 281
     invoke-static {v11}, Lorg/telegram/ui/Components/CacheChart;->access$100(F)F
 
     move-result v15
@@ -529,7 +538,7 @@
 
     sub-float v10, v12, v10
 
-    .line 285
+    .line 286
     invoke-static {v10}, Ljava/lang/Math;->abs(F)F
 
     move-result v10
@@ -548,7 +557,7 @@
 
     mul-double v12, v12, v14
 
-    .line 286
+    .line 287
     invoke-static {v12, v13}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v14
@@ -569,7 +578,7 @@
 
     move/from16 v15, p5
 
-    .line 287
+    .line 288
     invoke-static {v8, v2, v10, v15}, Lcom/google/zxing/common/detector/MathUtils;->distance(FFFF)F
 
     move-result v22
@@ -596,7 +605,7 @@
 
     mul-float v3, v3, v14
 
-    .line 288
+    .line 289
     invoke-static {v9, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
@@ -607,7 +616,7 @@
 
     move-result v3
 
-    .line 289
+    .line 290
     iget-object v14, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->particlePaint:Landroid/graphics/Paint;
 
     const/high16 v23, 0x437f0000    # 255.0f
@@ -620,7 +629,7 @@
 
     const/high16 v3, 0x3f400000    # 0.75f
 
-    .line 291
+    .line 292
     invoke-static {v12, v13}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v12
@@ -659,16 +668,16 @@
 
     mul-float v3, v3, v6
 
-    .line 293
+    .line 294
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 294
+    .line 295
     invoke-virtual {v1, v8, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 295
+    .line 296
     invoke-virtual {v1, v3, v3}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 296
+    .line 297
     iget-object v2, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->particle:Landroid/graphics/Bitmap;
 
     shr-int/lit8 v3, v4, 0x1
@@ -681,7 +690,7 @@
 
     invoke-virtual {v1, v2, v3, v3, v8}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 297
+    .line 298
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     add-int/lit8 v10, v21, 0x1
@@ -699,23 +708,24 @@
     goto/16 :goto_0
 
     :cond_2
+    :goto_1
     return-void
 .end method
 
 .method private setGradientBounds(FFFF)V
     .locals 0
 
-    .line 237
+    .line 238
     iget-object p3, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p3}, Landroid/graphics/Matrix;->reset()V
 
-    .line 238
+    .line 239
     iget-object p3, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p3, p1, p2}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 240
+    .line 241
     iget-object p1, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->gradient:Landroid/graphics/RadialGradient;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/CacheChart$Sector;->gradientMatrix:Landroid/graphics/Matrix;
@@ -734,7 +744,7 @@
 
     move/from16 v2, p4
 
-    .line 158
+    .line 159
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->width()F
 
     move-result v3
@@ -765,7 +775,7 @@
 
     mul-double v5, v5, v7
 
-    .line 159
+    .line 160
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
 
     move-result v9
@@ -784,7 +794,7 @@
 
     move-result v3
 
-    .line 161
+    .line 162
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->width()F
 
     move-result v5
@@ -797,7 +807,7 @@
 
     div-float/2addr v5, v10
 
-    .line 162
+    .line 163
     iget v6, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastAngleCenter:F
 
     cmpl-float v6, v6, v1
@@ -824,7 +834,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastWidth:F
 
-    .line 166
+    .line 167
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->width()F
 
     move-result v9
@@ -835,7 +845,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastCx:F
 
-    .line 167
+    .line 168
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerX()F
 
     move-result v9
@@ -846,7 +856,7 @@
 
     iget v6, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastCy:F
 
-    .line 168
+    .line 169
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerY()F
 
     move-result v9
@@ -857,34 +867,34 @@
 
     return-void
 
-    .line 172
+    .line 173
     :cond_0
     iput v1, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastAngleCenter:F
 
-    .line 173
+    .line 174
     iput v2, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastAngleSize:F
 
-    .line 174
+    .line 175
     iput v3, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastRounding:F
 
-    .line 175
+    .line 176
     iput v5, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastThickness:F
 
-    .line 176
+    .line 177
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->width()F
 
     move-result v5
 
     iput v5, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastWidth:F
 
-    .line 177
+    .line 178
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerX()F
 
     move-result v5
 
     iput v5, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->lastCx:F
 
-    .line 178
+    .line 179
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerY()F
 
     move-result v5
@@ -910,7 +920,7 @@
     :cond_1
     const/4 v6, 0x0
 
-    .line 185
+    .line 186
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->width()F
 
@@ -932,7 +942,7 @@
 
     mul-float v17, v11, v13
 
-    .line 186
+    .line 187
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
 
     move-result v11
@@ -966,7 +976,7 @@
 
     add-float/2addr v7, v2
 
-    .line 188
+    .line 189
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->width()F
 
     move-result v2
@@ -975,7 +985,7 @@
 
     sub-float/2addr v2, v3
 
-    .line 189
+    .line 190
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
 
     move-result v9
@@ -984,7 +994,7 @@
 
     add-float/2addr v9, v3
 
-    .line 191
+    .line 192
     iget-object v11, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     invoke-virtual {v11}, Landroid/graphics/Path;->rewind()V
@@ -1000,15 +1010,15 @@
     :cond_3
     if-eqz v6, :cond_4
 
-    .line 196
+    .line 197
     iget-object v11, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
 
-    .line 197
+    .line 198
     invoke-static {v11}, Lorg/telegram/ui/Components/CacheChart;->access$000(Lorg/telegram/ui/Components/CacheChart;)Landroid/graphics/RectF;
 
     move-result-object v11
 
-    .line 198
+    .line 199
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerX()F
 
     move-result v12
@@ -1035,7 +1045,7 @@
 
     add-double/2addr v12, v8
 
-    .line 199
+    .line 200
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerY()F
 
     move-result v4
@@ -1064,10 +1074,10 @@
 
     move/from16 v16, v3
 
-    .line 196
+    .line 197
     invoke-static/range {v11 .. v16}, Lorg/telegram/ui/Components/CacheChart;->access$200(Landroid/graphics/RectF;DDF)V
 
-    .line 202
+    .line 203
     iget-object v8, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     iget-object v9, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
@@ -1089,7 +1099,7 @@
 
     const/4 v4, 0x0
 
-    .line 204
+    .line 205
     :goto_1
     iget-object v8, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
@@ -1107,15 +1117,15 @@
 
     if-eqz v6, :cond_5
 
-    .line 206
+    .line 207
     iget-object v8, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
 
-    .line 207
+    .line 208
     invoke-static {v8}, Lorg/telegram/ui/Components/CacheChart;->access$000(Lorg/telegram/ui/Components/CacheChart;)Landroid/graphics/RectF;
 
     move-result-object v8
 
-    .line 208
+    .line 209
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerX()F
 
     move-result v9
@@ -1140,7 +1150,7 @@
 
     add-double/2addr v9, v14
 
-    .line 209
+    .line 210
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/RectF;->centerY()F
 
     move-result v11
@@ -1169,10 +1179,10 @@
 
     move/from16 v16, v3
 
-    .line 206
+    .line 207
     invoke-static/range {v11 .. v16}, Lorg/telegram/ui/Components/CacheChart;->access$200(Landroid/graphics/RectF;DDF)V
 
-    .line 212
+    .line 213
     iget-object v4, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
@@ -1185,15 +1195,15 @@
 
     invoke-virtual {v4, v5, v2, v8}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 213
+    .line 214
     iget-object v2, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
 
-    .line 214
+    .line 215
     invoke-static {v2}, Lorg/telegram/ui/Components/CacheChart;->access$000(Lorg/telegram/ui/Components/CacheChart;)Landroid/graphics/RectF;
 
     move-result-object v11
 
-    .line 215
+    .line 216
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->centerX()F
 
     move-result v2
@@ -1220,7 +1230,7 @@
 
     add-double/2addr v4, v14
 
-    .line 216
+    .line 217
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->centerY()F
 
     move-result v8
@@ -1243,10 +1253,10 @@
 
     move-wide v12, v4
 
-    .line 213
+    .line 214
     invoke-static/range {v11 .. v16}, Lorg/telegram/ui/Components/CacheChart;->access$200(Landroid/graphics/RectF;DDF)V
 
-    .line 219
+    .line 220
     iget-object v4, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
@@ -1266,7 +1276,7 @@
     :cond_5
     move/from16 v17, v5
 
-    .line 221
+    .line 222
     :goto_2
     iget-object v2, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
@@ -1286,15 +1296,15 @@
 
     if-eqz v6, :cond_6
 
-    .line 223
+    .line 224
     iget-object v1, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
 
-    .line 224
+    .line 225
     invoke-static {v1}, Lorg/telegram/ui/Components/CacheChart;->access$000(Lorg/telegram/ui/Components/CacheChart;)Landroid/graphics/RectF;
 
     move-result-object v11
 
-    .line 225
+    .line 226
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->centerX()F
 
     move-result v1
@@ -1321,7 +1331,7 @@
 
     add-double v12, v1, v6
 
-    .line 226
+    .line 227
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->centerY()F
 
     move-result v1
@@ -1344,10 +1354,10 @@
 
     move/from16 v16, v3
 
-    .line 223
+    .line 224
     invoke-static/range {v11 .. v16}, Lorg/telegram/ui/Components/CacheChart;->access$200(Landroid/graphics/RectF;DDF)V
 
-    .line 229
+    .line 230
     iget-object v1, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
@@ -1364,13 +1374,13 @@
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    .line 231
+    .line 232
     :cond_6
     iget-object v1, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->close()V
 
-    .line 233
+    .line 234
     iget-object v1, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/CacheChart$Sector;->pathBounds:Landroid/graphics/RectF;
@@ -1393,7 +1403,7 @@
 
     move/from16 v6, p4
 
-    .line 310
+    .line 311
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->selectedAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->selected:Z
@@ -1416,14 +1426,14 @@
 
     move-result v0
 
-    .line 311
+    .line 312
     iget-object v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     move-object/from16 v7, p2
 
     invoke-virtual {v1, v7}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 312
+    .line 313
     iget-object v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     const/16 v2, 0x9
@@ -1450,7 +1460,7 @@
 
     invoke-virtual {v1, v3, v0}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 314
+    .line 315
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -1493,7 +1503,7 @@
 
     double-to-float v11, v0
 
-    .line 315
+    .line 316
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
@@ -1534,7 +1544,7 @@
 
     double-to-float v10, v0
 
-    .line 317
+    .line 318
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->textAlphaAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->textAlpha:F
@@ -1547,7 +1557,7 @@
 
     mul-float v16, p8, v0
 
-    .line 318
+    .line 319
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->particlesAlphaAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->particlesAlpha:F
@@ -1556,7 +1566,7 @@
 
     move-result v8
 
-    .line 320
+    .line 321
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->paint:Landroid/graphics/Paint;
 
     const/high16 v17, 0x437f0000    # 255.0f
@@ -1583,12 +1593,12 @@
 
     if-ltz v0, :cond_1
 
-    .line 322
+    .line 323
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v13, v0, v5, v9}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 323
+    .line 324
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -1613,14 +1623,14 @@
 
     invoke-virtual {v13, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 324
+    .line 325
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     iget-object v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v13, v0, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 325
+    .line 326
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -1683,7 +1693,7 @@
 
     invoke-direct/range {v0 .. v11}, Lorg/telegram/ui/Components/CacheChart$Sector;->drawParticles(Landroid/graphics/Canvas;FFFFFFFFFF)V
 
-    .line 326
+    .line 327
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/RectF;->centerX()F
 
     move-result v0
@@ -1702,7 +1712,7 @@
 
     invoke-virtual {v13, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 327
+    .line 328
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_1
@@ -1712,7 +1722,7 @@
 
     move/from16 v20, v11
 
-    .line 329
+    .line 330
     iget-object v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     move-object/from16 v0, p0
@@ -1729,7 +1739,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/CacheChart$Sector;->setupPath(Landroid/graphics/RectF;Landroid/graphics/RectF;FFF)V
 
-    .line 330
+    .line 331
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -1750,26 +1760,26 @@
 
     invoke-direct {v12, v0, v1, v2, v6}, Lorg/telegram/ui/Components/CacheChart$Sector;->setGradientBounds(FFFF)V
 
-    .line 332
+    .line 333
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v13, v0, v10, v9}, Landroid/graphics/Canvas;->saveLayerAlpha(Landroid/graphics/RectF;II)I
 
-    .line 333
+    .line 334
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->path:Landroid/graphics/Path;
 
     iget-object v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->uncut:Landroid/graphics/Paint;
 
     invoke-virtual {v13, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 334
+    .line 335
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     iget-object v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v13, v0, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 335
+    .line 336
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -1832,10 +1842,10 @@
 
     invoke-direct/range {v0 .. v11}, Lorg/telegram/ui/Components/CacheChart$Sector;->drawParticles(Landroid/graphics/Canvas;FFFFFFFFFF)V
 
-    .line 336
+    .line 337
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 339
+    .line 340
     :goto_1
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->textScaleAnimated:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -1845,7 +1855,7 @@
 
     move-result v0
 
-    .line 340
+    .line 341
     iget-object v1, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/CacheChart;->access$000(Lorg/telegram/ui/Components/CacheChart;)Landroid/graphics/RectF;
@@ -1862,10 +1872,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 342
+    .line 343
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 343
+    .line 344
     iget-object v2, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/CacheChart;->access$000(Lorg/telegram/ui/Components/CacheChart;)Landroid/graphics/RectF;
@@ -1888,7 +1898,7 @@
 
     invoke-virtual {v13, v0, v0, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 345
+    .line 346
     :cond_2
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -1898,7 +1908,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
-    .line 346
+    .line 347
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     iget-object v2, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->this$0:Lorg/telegram/ui/Components/CacheChart;
@@ -1943,14 +1953,14 @@
 
     invoke-virtual {v0, v2, v3, v4, v5}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 347
+    .line 348
     iget-object v0, v12, Lorg/telegram/ui/Components/CacheChart$Sector;->text:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
     if-eqz v1, :cond_3
 
-    .line 349
+    .line 350
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3

@@ -131,14 +131,9 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
-
-    move-object v4, v1
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 44
-    :cond_0
     new-instance v2, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
 
     .line 45
@@ -174,6 +169,11 @@
     invoke-direct/range {v7 .. v13}, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;IDF)V
 
     move-object v4, v2
+
+    goto :goto_0
+
+    :cond_0
+    move-object v4, v1
 
     .line 52
     :goto_0
@@ -236,14 +236,9 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_1
-
-    move-object v2, v1
-
-    goto :goto_1
+    if-eqz p0, :cond_1
 
     .line 60
-    :cond_1
     new-instance v0, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;
 
     .line 61
@@ -279,6 +274,11 @@
     invoke-direct/range {v7 .. v13}, Lcom/smedialink/storage/domain/model/crypto/send/GasPriceInfo;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;IDF)V
 
     move-object v2, v0
+
+    goto :goto_1
+
+    :cond_1
+    move-object v2, v1
 
     .line 40
     :goto_1

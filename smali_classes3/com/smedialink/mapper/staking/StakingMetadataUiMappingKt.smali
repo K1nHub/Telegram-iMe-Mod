@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingMetadataUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingMetadataUiMapping.kt\ncom/smedialink/mapper/staking/StakingMetadataUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,39:1\n1547#2:40\n1618#2,3:41\n*S KotlinDebug\n*F\n+ 1 StakingMetadataUiMapping.kt\ncom/smedialink/mapper/staking/StakingMetadataUiMappingKt\n*L\n14#1:40\n14#1:41,3\n*E\n"
+    value = "SMAP\nStakingMetadataUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingMetadataUiMapping.kt\ncom/smedialink/mapper/staking/StakingMetadataUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,39:1\n1549#2:40\n1620#2,3:41\n*S KotlinDebug\n*F\n+ 1 StakingMetadataUiMapping.kt\ncom/smedialink/mapper/staking/StakingMetadataUiMappingKt\n*L\n14#1:40\n14#1:41,3\n*E\n"
 .end annotation
 
 
@@ -30,7 +30,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -41,7 +41,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface/range {p0 .. p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -57,7 +57,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
 
     .line 17
@@ -236,7 +236,7 @@
 
     invoke-direct/range {v3 .. v12}, Lcom/smedialink/model/staking/StakingProgrammeItem;-><init>(JLjava/lang/String;ZLcom/smedialink/storage/domain/model/wallet/token/TokenBalance;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/model/staking/StakingAnnualPercentageMode;Ljava/lang/String;)V
 
-    .line 15
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0

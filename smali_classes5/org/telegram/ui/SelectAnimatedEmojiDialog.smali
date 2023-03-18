@@ -3429,34 +3429,39 @@
 .end method
 
 .method private getCacheType()I
-    .locals 2
+    .locals 3
 
     .line 3298
     iget v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->type:I
 
-    const/4 v1, 0x4
+    const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_0
+    if-eq v0, v1, :cond_3
 
-    const/16 v0, 0xd
+    const/4 v2, 0x4
 
-    return v0
-
-    :cond_0
-    const/4 v1, 0x2
-
-    if-eqz v0, :cond_2
-
-    if-ne v0, v1, :cond_1
+    if-ne v0, v2, :cond_0
 
     goto :goto_0
 
+    :cond_0
+    const/4 v2, 0x2
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v2, :cond_2
+
     :cond_1
-    const/4 v1, 0x3
+    const/4 v1, 0x2
 
     :cond_2
-    :goto_0
     return v1
+
+    :cond_3
+    :goto_0
+    const/16 v0, 0xd
+
+    return v0
 .end method
 
 .method private getPremiumStar()Landroid/graphics/drawable/Drawable;

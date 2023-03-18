@@ -163,6 +163,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 112
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinPackage(Ljava/lang/Class;)Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object v0

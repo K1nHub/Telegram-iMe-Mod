@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPromoSubscribeAlert.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PromoSubscribeAlert.kt\norg/fork/ui/dialog/PromoSubscribeAlert\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n*L\n1#1,199:1\n13536#2,2:200\n13536#2,2:202\n61#3,4:204\n*S KotlinDebug\n*F\n+ 1 PromoSubscribeAlert.kt\norg/fork/ui/dialog/PromoSubscribeAlert\n*L\n107#1:200,2\n165#1:202,2\n182#1:204,4\n*E\n"
+    value = "SMAP\nPromoSubscribeAlert.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PromoSubscribeAlert.kt\norg/fork/ui/dialog/PromoSubscribeAlert\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n*L\n1#1,199:1\n13579#2,2:200\n13579#2,2:202\n62#3,4:204\n*S KotlinDebug\n*F\n+ 1 PromoSubscribeAlert.kt\norg/fork/ui/dialog/PromoSubscribeAlert\n*L\n107#1:200,2\n165#1:202,2\n182#1:204,4\n*E\n"
 .end annotation
 
 
@@ -36,50 +36,50 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$686HighrLmC8Y959C7NESFvJM88(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
+.method public static synthetic $r8$lambda$0_G-YL4fsKh_hOSiFa8yFJolGxA(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->resolvePromoUsernames$lambda-20$lambda-19$lambda-18(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->resolvePromoUsernames$lambda$20$lambda$19(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9DGuG50l4aoLGm1izvQS5s8V9fA(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$CPG9hMpQomVPVichwWKhxXPh_ag(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->initChatsView$lambda-11$lambda-10$lambda-9$lambda-8(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->initSkipButton$lambda$16$lambda$15(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Gc1O-4k4GumOlU0EJiGADt8Ja9M(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$ThFV6K1i2zxzOd1jvA-a32m0hcI(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->initSkipButton$lambda-16$lambda-15(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->initChatsView$lambda$11$lambda$10$lambda$9$lambda$8(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$UL3VlcdcIijy8cj9eM65CSwDNKA(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$U4rvLrID7RR2Yev2NpgG-iwRP_U(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->_init_$lambda-2(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->initNotShowAgainCheckBoxContainer$lambda$14$lambda$13(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WhYGg5gM795dKUrlyK6lVYScqa8(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$xGSrJi5pkU_niCU7PyKH55w9hBE(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->resolvePromoUsernames$lambda-20$lambda-19(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->_init_$lambda$2(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$aoLDiBAVQRzYnymSc8P2zVReXpI(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$xwfmS4doa91pqLcmBhDlzZ8xr0k(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->initNotShowAgainCheckBoxContainer$lambda-14$lambda-13(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+    invoke-static {p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->resolvePromoUsernames$lambda$20$lambda$19$lambda$18(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
 
     return-void
 .end method
@@ -197,7 +197,7 @@
     .line 60
     sget p1, Lorg/telegram/messenger/R$drawable;->fork_promo_subscribe_dialog_icon:I
 
-    const-string p2, "windowBackgroundGray"
+    const-string/jumbo p2, "windowBackgroundGray"
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -292,9 +292,6 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 70
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     const/4 v1, -0x1
 
     const/4 v2, -0x2
@@ -307,6 +304,7 @@
 
     const/4 v7, 0x0
 
+    .line 70
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -376,7 +374,7 @@
     return-void
 .end method
 
-.method private static final _init_$lambda-2(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/content/DialogInterface;I)V
+.method private static final _init_$lambda$2(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/content/DialogInterface;I)V
     .locals 0
 
     const-string p1, "this$0"
@@ -483,7 +481,7 @@
 
     move-result v1
 
-    const-string v2, ""
+    const-string v2, "checkNotShowAgainCheckBox$lambda$17"
 
     if-eqz v1, :cond_0
 
@@ -532,7 +530,7 @@
 .end method
 
 .method private final endLoading()V
-    .locals 14
+    .locals 13
 
     .line 181
     invoke-direct {p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->getLoadingView()Landroid/widget/LinearLayout;
@@ -546,132 +544,128 @@
 
     move-result-object v0
 
-    .line 61
+    .line 62
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
-
-    if-lez v1, :cond_2
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
     :goto_0
-    add-int/lit8 v4, v3, 0x1
+    if-ge v3, v1, :cond_1
 
-    .line 62
+    .line 63
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    const-string v5, "getChildAt(index)"
+
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v5, "null cannot be cast to non-null type org.telegram.ui.Cells.ProfileSearchCell"
+
+    .line 183
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v4, Lorg/telegram/ui/Cells/ProfileSearchCell;
+
+    .line 184
+    invoke-virtual {v4}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
 
     move-result-object v5
 
-    const-string v6, "getChildAt(index)"
+    const-string v6, "null cannot be cast to non-null type org.fork.enums.PromoSubscribeChat"
 
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 183
-    check-cast v5, Lorg/telegram/ui/Cells/ProfileSearchCell;
+    check-cast v5, Lorg/fork/enums/PromoSubscribeChat;
 
-    .line 184
-    invoke-virtual {v5}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
+    .line 185
+    iget v6, p0, Lorg/fork/ui/dialog/PromoSubscribeAlert;->accountNum:I
+
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v6
 
-    const-string v7, "null cannot be cast to non-null type org.fork.enums.PromoSubscribeChat"
+    invoke-virtual {v5}, Lorg/fork/enums/PromoSubscribeChat;->getId()J
 
-    invoke-static {v6, v7}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result-wide v7
 
-    check-cast v6, Lorg/fork/enums/PromoSubscribeChat;
+    neg-long v7, v7
 
-    .line 185
-    iget v7, p0, Lorg/fork/ui/dialog/PromoSubscribeAlert;->accountNum:I
-
-    invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v7
 
-    invoke-virtual {v6}, Lorg/fork/enums/PromoSubscribeChat;->getId()J
+    invoke-virtual {v6, v7}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-wide v8
+    move-result-object v7
 
-    neg-long v8, v8
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
-
-    move-result-object v8
+    const/4 v8, 0x0
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x0
-
     .line 186
-    invoke-virtual {v6}, Lorg/fork/enums/PromoSubscribeChat;->getDescriptionResId()I
+    invoke-virtual {v5}, Lorg/fork/enums/PromoSubscribeChat;->getDescriptionResId()I
 
-    move-result v6
+    move-result v5
 
-    invoke-static {v6}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, "getInternalString(promo.descriptionResId)"
+    const-string v6, "getInternalString(promo.descriptionResId)"
 
-    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object v7, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    const-string v6, "this as java.lang.String).toLowerCase(Locale.ROOT)"
+    const-string v5, "this as java.lang.String).toLowerCase(Locale.ROOT)"
 
-    invoke-static {v11, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v10, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v11, 0x0
 
     const/4 v12, 0x0
 
-    const/4 v13, 0x0
+    move-object v6, v4
 
-    move-object v7, v5
-
-    invoke-virtual/range {v7 .. v13}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
+    invoke-virtual/range {v6 .. v12}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
 
     .line 187
     invoke-static {}, Lorg/fork/enums/PromoSubscribeChat;->values()[Lorg/fork/enums/PromoSubscribeChat;
 
-    move-result-object v6
+    move-result-object v5
 
-    array-length v6, v6
+    array-length v5, v5
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v5, v6
 
-    if-ge v3, v6, :cond_0
+    if-ge v3, v5, :cond_0
 
     goto :goto_1
 
     :cond_0
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    iput-boolean v7, v5, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
+    iput-boolean v6, v4, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
 
-    if-lt v4, v1, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    move v3, v4
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     .line 189
-    :cond_2
-    :goto_2
+    :cond_1
     invoke-direct {p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert;->getChatsView()Landroid/widget/LinearLayout;
 
     move-result-object v0
@@ -808,7 +802,7 @@
 
     move-result-object v1
 
-    .line 13536
+    .line 13579
     array-length v2, v1
 
     const/4 v3, 0x0
@@ -847,14 +841,11 @@
     invoke-virtual {v6, v5}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setPromoSubscribeIcon(I)V
 
     .line 112
-    new-instance v5, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda1;
+    new-instance v5, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda2;
 
-    invoke-direct {v5, p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda1;-><init>(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
+    invoke-direct {v5, p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda2;-><init>(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
 
     invoke-virtual {v6, v5}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 117
-    sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 108
     invoke-virtual {v0, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -867,7 +858,7 @@
     return-object v0
 .end method
 
-.method private static final initChatsView$lambda-11$lambda-10$lambda-9$lambda-8(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+.method private static final initChatsView$lambda$11$lambda$10$lambda$9$lambda$8(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
     .locals 4
 
     const-string v0, "this$0"
@@ -899,7 +890,7 @@
 
     const-string v2, "null cannot be cast to non-null type org.fork.enums.PromoSubscribeChat"
 
-    invoke-static {p1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/fork/enums/PromoSubscribeChat;
 
@@ -985,9 +976,6 @@
     .line 100
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 101
-    sget-object v6, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 97
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
@@ -1017,7 +1005,7 @@
 .end method
 
 .method private final initNotShowAgainCheckBoxContainer()Landroid/widget/LinearLayout;
-    .locals 10
+    .locals 11
 
     .line 121
     new-instance v0, Landroid/widget/LinearLayout;
@@ -1085,24 +1073,22 @@
     .line 128
     invoke-virtual {v1, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 129
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    const/4 v3, -0x2
-
     const/4 v4, -0x2
 
-    const/16 v5, 0x33
+    const/4 v5, -0x2
 
-    const/16 v6, 0x11
+    const/16 v6, 0x33
 
-    const/4 v7, 0x0
+    const/16 v7, 0x11
 
     const/4 v8, 0x0
 
     const/4 v9, 0x0
 
-    invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    const/4 v10, 0x0
+
+    .line 129
+    invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
@@ -1119,7 +1105,7 @@
     return-object v0
 .end method
 
-.method private static final initNotShowAgainCheckBoxContainer$lambda-14$lambda-13(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+.method private static final initNotShowAgainCheckBoxContainer$lambda$14$lambda$13(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
     .locals 1
 
     const-string p1, "this$0"
@@ -1241,16 +1227,16 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 144
-    new-instance v1, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda2;
+    new-instance v1, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda2;-><init>(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
+    invoke-direct {v1, p0}, Lorg/fork/ui/dialog/PromoSubscribeAlert$$ExternalSyntheticLambda1;-><init>(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-object v0
 .end method
 
-.method private static final initSkipButton$lambda-16$lambda-15(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
+.method private static final initSkipButton$lambda$16$lambda$15(Lorg/fork/ui/dialog/PromoSubscribeAlert;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -1399,7 +1385,7 @@
 
     move-result-object v1
 
-    .line 13536
+    .line 13579
     array-length v2, v1
 
     const/4 v3, 0x0
@@ -1442,7 +1428,7 @@
     return-void
 .end method
 
-.method private static final resolvePromoUsernames$lambda-20$lambda-19(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private static final resolvePromoUsernames$lambda$20$lambda$19(Lorg/fork/ui/dialog/PromoSubscribeAlert;Lkotlin/jvm/internal/Ref$IntRef;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -1495,7 +1481,7 @@
     return-void
 .end method
 
-.method private static final resolvePromoUsernames$lambda-20$lambda-19$lambda-18(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
+.method private static final resolvePromoUsernames$lambda$20$lambda$19$lambda$18(Lorg/fork/ui/dialog/PromoSubscribeAlert;)V
     .locals 1
 
     const-string v0, "this$0"

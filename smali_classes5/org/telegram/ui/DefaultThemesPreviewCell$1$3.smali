@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->onClick(Landroid/view/View;)V
+    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->lambda$onClick$0(ILandroid/content/Context;IZLorg/telegram/ui/ActionBar/BaseFragment;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,6 +20,10 @@
 # instance fields
 .field final synthetic this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
 
+.field final synthetic val$duration:F
+
+.field final synthetic val$fullDuration:F
+
 .field final synthetic val$navBarFromColor:I
 
 .field final synthetic val$navBarNewColor:I
@@ -30,19 +34,23 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DefaultThemesPreviewCell$1;FIILandroid/view/Window;)V
+.method constructor <init>(Lorg/telegram/ui/DefaultThemesPreviewCell$1;FFFIILandroid/view/Window;)V
     .locals 0
 
-    .line 242
+    .line 243
     iput-object p1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
 
-    iput p2, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$startDelay:F
+    iput p2, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$fullDuration:F
 
-    iput p3, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$navBarFromColor:I
+    iput p3, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$startDelay:F
 
-    iput p4, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$navBarNewColor:I
+    iput p4, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$duration:F
 
-    iput-object p5, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$window:Landroid/view/Window;
+    iput p5, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$navBarFromColor:I
+
+    iput p6, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$navBarNewColor:I
+
+    iput-object p7, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$window:Landroid/view/Window;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -54,7 +62,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 245
+    .line 246
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -65,7 +73,7 @@
 
     move-result p1
 
-    const/high16 v0, 0x43af0000    # 350.0f
+    iget v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$fullDuration:F
 
     mul-float p1, p1, v0
 
@@ -73,7 +81,7 @@
 
     sub-float/2addr p1, v0
 
-    const/high16 v0, 0x43160000    # 150.0f
+    iget v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$duration:F
 
     div-float/2addr p1, v0
 
@@ -89,7 +97,7 @@
 
     move-result p1
 
-    .line 246
+    .line 247
     iget-object v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
 
     iget-object v0, v0, Lorg/telegram/ui/DefaultThemesPreviewCell$1;->this$0:Lorg/telegram/ui/DefaultThemesPreviewCell;
@@ -104,7 +112,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/DefaultThemesPreviewCell;->access$202(Lorg/telegram/ui/DefaultThemesPreviewCell;I)I
 
-    .line 247
+    .line 248
     iget-object p1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$window:Landroid/view/Window;
 
     iget-object v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
@@ -119,7 +127,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->setNavigationBarColor(Landroid/view/Window;IZ)V
 
-    .line 248
+    .line 249
     iget-object p1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->val$window:Landroid/view/Window;
 
     iget-object v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$3;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;

@@ -302,7 +302,7 @@
     new-instance v0, Lorg/fork/enums/MultiPanelButton;
 
     .line 45
-    sget v13, Lorg/telegram/messenger/R$drawable;->msg_data:I
+    sget v13, Lorg/telegram/messenger/R$drawable;->msg2_data:I
 
     .line 46
     sget-object v14, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;

@@ -78,7 +78,7 @@ public final class SendCryptoSwapTransactionRequest {
     }
 
     public String toString() {
-        return "SendCryptoSwapTransactionRequest(signedTransactionBody=" + this.signedTransactionBody + ", quoteId=" + this.quoteId + ", defiProtocol=" + this.defiProtocol + ", networkType=" + this.networkType + ", outputNetworkType=" + ((Object) this.outputNetworkType) + ')';
+        return "SendCryptoSwapTransactionRequest(signedTransactionBody=" + this.signedTransactionBody + ", quoteId=" + this.quoteId + ", defiProtocol=" + this.defiProtocol + ", networkType=" + this.networkType + ", outputNetworkType=" + this.outputNetworkType + ')';
     }
 
     public SendCryptoSwapTransactionRequest(String signedTransactionBody, String quoteId, String defiProtocol, String networkType, String str) {

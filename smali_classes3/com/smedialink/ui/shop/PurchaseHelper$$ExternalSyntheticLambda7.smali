@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/shop/PurchaseHelper$$ExternalSyntheticLambda7;->f$1:Lcom/smedialink/ui/shop/PurchaseHelper;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$j-wafEn3Gy01klgD4x9O25pwNak(Ljava/lang/String;Lcom/smedialink/ui/shop/PurchaseHelper;Lorg/solovyev/android/checkout/Inventory$Products;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/shop/PurchaseHelper;->$r8$lambda$fjyt6S6uFtQaFr82qnSaM8n32R8(Ljava/lang/String;Lcom/smedialink/ui/shop/PurchaseHelper;Lorg/solovyev/android/checkout/Inventory$Products;)V
 
     return-void
 .end method

@@ -28,7 +28,10 @@ public enum AccountLevel {
 
         static {
             int[] iArr = new int[AccountLevel.values().length];
-            iArr[AccountLevel.ORACLE.ordinal()] = 1;
+            try {
+                iArr[AccountLevel.ORACLE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -57,7 +60,7 @@ public enum AccountLevel {
         if (WhenMappings.$EnumSwitchMapping$0[ordinal()] == 1) {
             return resourceManager.getString(this.descriptionResId);
         }
-        return Intrinsics.stringPlus("= ", resourceManager.getString(this.descriptionResId));
+        return "= " + resourceManager.getString(this.descriptionResId);
     }
 
     /* compiled from: AccountLevel.kt */

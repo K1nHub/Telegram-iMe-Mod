@@ -77,21 +77,20 @@ public final class ArchiveSwitchTopicsBar extends LinearLayout {
         topicView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.ArchiveSwitchTopicsBar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ArchiveSwitchTopicsBar.m2087initTopic$lambda1$lambda0(ArchiveSwitchTopicsBar.this, z, view);
+                ArchiveSwitchTopicsBar.initTopic$lambda$1$lambda$0(ArchiveSwitchTopicsBar.this, z, view);
             }
         });
         return topicView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initTopic$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m2087initTopic$lambda1$lambda0(ArchiveSwitchTopicsBar this$0, boolean z, View view) {
+    public static final void initTopic$lambda$1$lambda$0(ArchiveSwitchTopicsBar this$0, boolean z, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (this$0.getCurrentArchive() == z) {
+        if (this$0.currentArchive == z) {
             return;
         }
-        this$0.setCurrentArchive(z);
-        this$0.getDelegate().invoke(Boolean.valueOf(this$0.getCurrentArchive()));
+        this$0.currentArchive = z;
+        this$0.delegate.invoke(Boolean.valueOf(z));
         this$0.updateSelectedTopicAndColors();
     }
 

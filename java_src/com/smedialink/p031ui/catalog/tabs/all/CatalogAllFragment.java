@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -115,11 +114,10 @@ public final class CatalogAllFragment extends CatalogTabFragment implements Cata
     public void onNestedLoadMoreItems(long j, List<CampaignItem> items) {
         Intrinsics.checkNotNullParameter(items, "items");
         CatalogAllChannelsRecycleAdapter nestedChannelsAdapter = getNestedChannelsAdapter(j);
-        if (nestedChannelsAdapter == null) {
-            return;
+        if (nestedChannelsAdapter != null) {
+            nestedChannelsAdapter.getLoadMoreModule().loadMoreComplete();
+            BaseQuickAdapter.setDiffNewData$default(nestedChannelsAdapter, items, null, 2, null);
         }
-        nestedChannelsAdapter.getLoadMoreModule().loadMoreComplete();
-        BaseQuickAdapter.setDiffNewData$default(nestedChannelsAdapter, items, null, 2, null);
     }
 
     @Override // com.smedialink.p031ui.catalog.tabs.all.CatalogAllView
@@ -211,7 +209,6 @@ public final class CatalogAllFragment extends CatalogTabFragment implements Cata
         CatalogAllCategoriesRecycleAdapter categoriesRecycleAdapter = getCategoriesRecycleAdapter();
         categoriesRecycleAdapter.setDiffCallback(new CategoriesPreviewsDiffCallback());
         setupLoadMore(categoriesRecycleAdapter);
-        Unit unit = Unit.INSTANCE;
         recyclerView.setAdapter(categoriesRecycleAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
     }
@@ -223,14 +220,13 @@ public final class CatalogAllFragment extends CatalogTabFragment implements Cata
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
             public final void onLoadMore() {
-                CatalogAllFragment.m1421setupLoadMore$lambda7$lambda6$lambda5(CatalogAllFragment.this);
+                CatalogAllFragment.setupLoadMore$lambda$7$lambda$6$lambda$5(CatalogAllFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupLoadMore$lambda-7$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m1421setupLoadMore$lambda7$lambda6$lambda5(CatalogAllFragment this$0) {
+    public static final void setupLoadMore$lambda$7$lambda$6$lambda$5(CatalogAllFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().loadCategoriesPreviews();
     }
@@ -246,14 +242,13 @@ public final class CatalogAllFragment extends CatalogTabFragment implements Cata
         binding.getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                CatalogAllFragment.m1420setupListeners$lambda11$lambda10(CatalogAllFragment.this);
+                CatalogAllFragment.setupListeners$lambda$11$lambda$10(CatalogAllFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-11$lambda-10  reason: not valid java name */
-    public static final void m1420setupListeners$lambda11$lambda10(CatalogAllFragment this$0) {
+    public static final void setupListeners$lambda$11$lambda$10(CatalogAllFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().reloadCategories();
     }

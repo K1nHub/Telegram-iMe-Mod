@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTransactionDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionDetailsPresenter.kt\ncom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,430:1\n39#2,6:431\n39#2,6:437\n1#3:443\n1547#4:444\n1618#4,3:445\n1547#4:448\n1618#4,3:449\n*S KotlinDebug\n*F\n+ 1 WalletTransactionDetailsPresenter.kt\ncom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter\n*L\n55#1:431,6\n69#1:437,6\n161#1:444\n161#1:445,3\n162#1:448\n162#1:449,3\n*E\n"
+    value = "SMAP\nWalletTransactionDetailsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTransactionDetailsPresenter.kt\ncom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,432:1\n39#2,8:433\n39#2,8:441\n1#3:449\n1549#4:450\n1620#4,3:451\n1549#4:454\n1620#4,3:455\n*S KotlinDebug\n*F\n+ 1 WalletTransactionDetailsPresenter.kt\ncom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter\n*L\n55#1:433,8\n70#1:441,8\n163#1:450\n163#1:451,3\n164#1:454\n164#1:455,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -176,14 +176,14 @@
 .method private final canAskSupport()Z
     .locals 2
 
-    .line 239
+    .line 241
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_0
 
-    .line 240
+    .line 242
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -212,10 +212,10 @@
 .method private final canCancelOrBoost()Z
     .locals 5
 
-    .line 243
+    .line 245
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 244
+    .line 246
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     const/4 v2, 0x1
@@ -224,14 +224,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 245
+    .line 247
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getItem()Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
 
     move-result-object v0
 
-    .line 246
+    .line 248
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getStatus()Lcom/smedialink/storage/domain/model/staking/StakingOperationStatus;
 
     move-result-object v1
@@ -240,7 +240,7 @@
 
     if-ne v1, v4, :cond_1
 
-    .line 247
+    .line 249
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getTxHash()Ljava/lang/String;
 
     move-result-object v1
@@ -261,7 +261,7 @@
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 248
+    .line 250
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getType()Lcom/smedialink/storage/domain/model/staking/StakingOperationType;
 
     move-result-object v0
@@ -277,13 +277,13 @@
 
     goto :goto_2
 
-    .line 250
+    .line 252
     :cond_2
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_5
 
-    .line 251
+    .line 253
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -294,7 +294,7 @@
 
     move-result-object v0
 
-    .line 252
+    .line 254
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/smedialink/storage/data/network/model/response/base/Status;
 
     move-result-object v1
@@ -303,12 +303,12 @@
 
     if-ne v1, v4, :cond_1
 
-    .line 253
+    .line 255
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
 
     if-eqz v1, :cond_1
 
-    .line 254
+    .line 256
     move-object v1, v0
 
     check-cast v1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
@@ -333,7 +333,7 @@
     :goto_1
     if-eqz v1, :cond_1
 
-    .line 255
+    .line 257
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object v1
@@ -354,7 +354,7 @@
     :goto_2
     return v2
 
-    .line 251
+    .line 253
     :cond_5
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -366,7 +366,7 @@
 .method private final canCopy()Z
     .locals 4
 
-    .line 264
+    .line 266
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
@@ -377,7 +377,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 265
+    .line 267
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -392,7 +392,7 @@
 
     if-nez v0, :cond_3
 
-    .line 266
+    .line 268
     :cond_0
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getCopyValue()Ljava/lang/String;
 
@@ -427,14 +427,14 @@
 .method private final canOpenProfile()Z
     .locals 2
 
-    .line 260
+    .line 262
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_0
 
-    .line 261
+    .line 263
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -473,10 +473,10 @@
 .method private final canOpenScanSite()Z
     .locals 4
 
-    .line 269
+    .line 271
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 270
+    .line 272
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     const/4 v2, 0x1
@@ -485,7 +485,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 271
+    .line 273
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getItem()Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
@@ -509,13 +509,13 @@
 
     goto :goto_0
 
-    .line 272
+    .line 274
     :cond_1
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_5
 
-    .line 273
+    .line 275
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -526,7 +526,7 @@
 
     move-result-object v0
 
-    .line 275
+    .line 277
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
 
     if-eqz v1, :cond_2
@@ -545,7 +545,7 @@
 
     goto :goto_0
 
-    .line 276
+    .line 278
     :cond_2
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;
 
@@ -565,7 +565,7 @@
 
     goto :goto_0
 
-    .line 277
+    .line 279
     :cond_3
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
@@ -585,7 +585,7 @@
 
     goto :goto_0
 
-    .line 278
+    .line 280
     :cond_4
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
@@ -606,7 +606,7 @@
     :goto_0
     return v2
 
-    .line 273
+    .line 275
     :cond_5
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -618,14 +618,14 @@
 .method private final canSend()Z
     .locals 2
 
-    .line 235
+    .line 237
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_0
 
-    .line 236
+    .line 238
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -654,7 +654,7 @@
 .method private final copyAddress()V
     .locals 2
 
-    .line 344
+    .line 346
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -673,7 +673,7 @@
 .method private final getConfirmBoostDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 5
 
-    .line 422
+    .line 424
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_boost_transaction_title:I
@@ -682,7 +682,7 @@
 
     move-result-object v0
 
-    .line 423
+    .line 425
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_boost_transaction_description:I
@@ -691,7 +691,7 @@
 
     move-result-object v1
 
-    .line 424
+    .line 426
     iget-object v2, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->common_confirm:I
@@ -700,7 +700,7 @@
 
     move-result-object v2
 
-    .line 425
+    .line 427
     iget-object v3, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -709,7 +709,7 @@
 
     move-result-object v3
 
-    .line 421
+    .line 423
     new-instance v4, Lcom/smedialink/model/dialog/DialogModel;
 
     invoke-direct {v4, v0, v1, v3, v2}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -720,7 +720,7 @@
 .method private final getConfirmCancelDialogModel()Lcom/smedialink/model/dialog/DialogModel;
     .locals 5
 
-    .line 415
+    .line 417
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_cancel_transaction_title:I
@@ -729,7 +729,7 @@
 
     move-result-object v0
 
-    .line 416
+    .line 418
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_cancel_transaction_description:I
@@ -738,7 +738,7 @@
 
     move-result-object v1
 
-    .line 417
+    .line 419
     iget-object v2, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->common_confirm:I
@@ -747,7 +747,7 @@
 
     move-result-object v2
 
-    .line 418
+    .line 420
     iget-object v3, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -756,7 +756,7 @@
 
     move-result-object v3
 
-    .line 414
+    .line 416
     new-instance v4, Lcom/smedialink/model/dialog/DialogModel;
 
     invoke-direct {v4, v0, v1, v3, v2}, Lcom/smedialink/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -767,26 +767,26 @@
 .method private final getCopyTitle()I
     .locals 2
 
-    .line 347
+    .line 349
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 348
+    .line 350
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     if-eqz v1, :cond_0
 
-    .line 349
+    .line 351
     sget v0, Lorg/telegram/messenger/R$string;->wallet_transaction_details_action_copy_hash:I
 
     goto :goto_1
 
-    .line 350
+    .line 352
     :cond_0
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_4
 
-    .line 351
+    .line 353
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -797,7 +797,7 @@
 
     move-result-object v0
 
-    .line 352
+    .line 354
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
     if-eqz v1, :cond_1
@@ -806,7 +806,7 @@
 
     goto :goto_1
 
-    .line 353
+    .line 355
     :cond_1
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
@@ -826,7 +826,7 @@
 
     goto :goto_1
 
-    .line 354
+    .line 356
     :cond_3
     sget v0, Lorg/telegram/messenger/R$string;->wallet_transaction_details_action_copy_address:I
 
@@ -844,15 +844,15 @@
 .method private final getCopyValue()Ljava/lang/String;
     .locals 2
 
-    .line 358
+    .line 360
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 359
+    .line 361
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     if-eqz v1, :cond_0
 
-    .line 360
+    .line 362
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getItem()Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
@@ -865,13 +865,13 @@
 
     goto/16 :goto_1
 
-    .line 361
+    .line 363
     :cond_0
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_7
 
-    .line 362
+    .line 364
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -882,7 +882,7 @@
 
     move-result-object v0
 
-    .line 363
+    .line 365
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Referral;
 
     if-eqz v1, :cond_1
@@ -915,7 +915,7 @@
 
     goto :goto_1
 
-    .line 364
+    .line 366
     :cond_2
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;
 
@@ -935,7 +935,7 @@
 
     goto :goto_1
 
-    .line 365
+    .line 367
     :cond_3
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
@@ -961,7 +961,7 @@
 
     goto :goto_1
 
-    .line 366
+    .line 368
     :cond_4
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
 
@@ -987,7 +987,7 @@
 
     goto :goto_1
 
-    .line 367
+    .line 369
     :cond_5
     instance-of v0, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
@@ -1019,7 +1019,7 @@
     :goto_1
     return-object v0
 
-    .line 368
+    .line 370
     :cond_7
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1031,10 +1031,10 @@
 .method private final getFee()Ljava/lang/String;
     .locals 6
 
-    .line 376
+    .line 378
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 377
+    .line 379
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     const/4 v2, 0x1
@@ -1043,7 +1043,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 378
+    .line 380
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getItem()Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
@@ -1060,7 +1060,7 @@
 
     return-object v0
 
-    .line 380
+    .line 382
     :cond_0
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;->getValue()Lcom/smedialink/storage/domain/model/staking/StakingValues;
 
@@ -1070,7 +1070,7 @@
 
     move-result-object v1
 
-    .line 381
+    .line 383
     sget-object v4, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;->getToken()Lcom/smedialink/storage/domain/model/staking/StakingToken;
@@ -1085,7 +1085,7 @@
 
     move-result-object v0
 
-    .line 382
+    .line 384
     iget-object v4, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     check-cast v4, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
@@ -1109,13 +1109,13 @@
 
     goto :goto_1
 
-    .line 384
+    .line 386
     :cond_2
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_6
 
-    .line 385
+    .line 387
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -1126,17 +1126,17 @@
 
     move-result-object v0
 
-    .line 386
+    .line 388
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getFeeAmount()Ljava/math/BigDecimal;
 
     move-result-object v1
 
-    .line 387
+    .line 389
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getFeeTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v4
 
-    .line 388
+    .line 390
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/smedialink/storage/data/network/model/response/base/Status;
 
     move-result-object v0
@@ -1153,7 +1153,7 @@
     :goto_0
     move-object v0, v4
 
-    .line 393
+    .line 395
     :goto_1
     invoke-virtual {v1}, Ljava/math/BigDecimal;->stripTrailingZeros()Ljava/math/BigDecimal;
 
@@ -1167,7 +1167,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 394
+    .line 396
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->fee_nothing:I
@@ -1178,7 +1178,7 @@
 
     goto :goto_2
 
-    .line 396
+    .line 398
     :cond_4
     sget-object v3, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
@@ -1186,7 +1186,7 @@
 
     move-result-object v0
 
-    .line 397
+    .line 399
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1223,10 +1223,18 @@
 
     if-eqz v2, :cond_5
 
-    const-string v1, "~"
+    .line 400
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 398
-    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/16 v2, 0x7e
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1234,7 +1242,7 @@
     :goto_2
     return-object v0
 
-    .line 385
+    .line 387
     :cond_6
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1246,7 +1254,7 @@
 .method private final getNetworkTypeByProcessing(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
     .locals 1
 
-    .line 334
+    .line 336
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
 
     if-eqz v0, :cond_0
@@ -1259,7 +1267,7 @@
 
     goto :goto_0
 
-    .line 335
+    .line 337
     :cond_0
     iget-object p1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
@@ -1274,25 +1282,25 @@
 .method private final getOpenTitle()Ljava/lang/String;
     .locals 5
 
-    .line 201
+    .line 203
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
-    .line 202
+    .line 204
     sget v1, Lorg/telegram/messenger/R$string;->wallet_transaction_details_action_open_etherscan:I
 
     const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 204
+    .line 206
     iget-object v3, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 205
+    .line 207
     instance-of v4, v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     if-eqz v4, :cond_0
 
-    .line 206
+    .line 208
     check-cast v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v3}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -1301,13 +1309,13 @@
 
     goto :goto_0
 
-    .line 207
+    .line 209
     :cond_0
     instance-of v4, v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v4, :cond_1
 
-    .line 208
+    .line 210
     check-cast v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v3}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -1322,13 +1330,13 @@
 
     move-result-object v3
 
-    .line 209
+    .line 211
     :goto_0
     invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getScannerName()I
 
     move-result v3
 
-    .line 203
+    .line 205
     invoke-interface {v0, v3}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1337,14 +1345,14 @@
 
     aput-object v3, v2, v4
 
-    .line 201
+    .line 203
     invoke-interface {v0, v1, v2}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 208
+    .line 210
     :cond_1
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1356,7 +1364,7 @@
 .method private final getRecipientId(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Ljava/lang/String;
     .locals 1
 
-    .line 404
+    .line 406
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Transfer;
 
     if-eqz v0, :cond_0
@@ -1369,7 +1377,7 @@
 
     goto :goto_0
 
-    .line 405
+    .line 407
     :cond_0
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Referral;
 
@@ -1393,7 +1401,7 @@
 .method private final getRecipientOrSenderOrElseTitle(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Ljava/lang/String;
     .locals 2
 
-    .line 134
+    .line 136
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
     if-eqz v0, :cond_0
@@ -1408,7 +1416,7 @@
 
     goto :goto_2
 
-    .line 135
+    .line 137
     :cond_0
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
@@ -1436,7 +1444,7 @@
 
     goto :goto_2
 
-    .line 137
+    .line 139
     :cond_2
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
@@ -1462,7 +1470,7 @@
 
     goto :goto_1
 
-    .line 139
+    .line 141
     :cond_3
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1482,7 +1490,7 @@
 
     goto :goto_2
 
-    .line 138
+    .line 140
     :cond_5
     iget-object p1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
@@ -1499,7 +1507,7 @@
 .method private final getRecipientOrSenderOrElseValue(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Ljava/lang/String;
     .locals 4
 
-    .line 145
+    .line 147
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Referral;
 
     const/4 v1, 0x1
@@ -1528,7 +1536,7 @@
 
     goto/16 :goto_2
 
-    .line 146
+    .line 148
     :cond_0
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Lottery;
 
@@ -1554,7 +1562,7 @@
 
     goto :goto_2
 
-    .line 147
+    .line 149
     :cond_2
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Transfer;
 
@@ -1568,7 +1576,7 @@
 
     goto :goto_2
 
-    .line 148
+    .line 150
     :cond_3
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
@@ -1582,7 +1590,7 @@
 
     goto :goto_2
 
-    .line 149
+    .line 151
     :cond_4
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
 
@@ -1596,7 +1604,7 @@
 
     goto :goto_2
 
-    .line 150
+    .line 152
     :cond_5
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
@@ -1610,13 +1618,13 @@
 
     goto :goto_2
 
-    .line 151
+    .line 153
     :cond_6
     instance-of v0, p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;
 
     if-eqz v0, :cond_a
 
-    .line 152
+    .line 154
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object v0
@@ -1641,7 +1649,7 @@
 
     goto :goto_1
 
-    .line 154
+    .line 156
     :cond_7
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1659,7 +1667,7 @@
 
     goto :goto_2
 
-    .line 153
+    .line 155
     :cond_9
     check-cast p1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;
 
@@ -1669,7 +1677,7 @@
 
     goto :goto_2
 
-    .line 157
+    .line 159
     :cond_a
     iget-object p1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
@@ -1686,15 +1694,15 @@
 .method private final getScanIconResId()I
     .locals 2
 
-    .line 214
+    .line 216
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 215
+    .line 217
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     if-eqz v1, :cond_0
 
-    .line 216
+    .line 218
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -1703,13 +1711,13 @@
 
     goto :goto_0
 
-    .line 217
+    .line 219
     :cond_0
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_1
 
-    .line 218
+    .line 220
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -1724,7 +1732,7 @@
 
     move-result-object v0
 
-    .line 219
+    .line 221
     :goto_0
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->getScannerIcon()I
 
@@ -1732,7 +1740,7 @@
 
     return v0
 
-    .line 218
+    .line 220
     :cond_1
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -1744,10 +1752,10 @@
 .method private final getScanUrl()Ljava/lang/String;
     .locals 6
 
-    .line 310
+    .line 312
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 311
+    .line 313
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     const-string v2, ""
@@ -1758,7 +1766,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 312
+    .line 314
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getItem()Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
@@ -1783,7 +1791,7 @@
     :goto_0
     if-eqz v3, :cond_9
 
-    .line 313
+    .line 315
     sget-object v0, Lcom/smedialink/storage/common/AppConfiguration$Crypto;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Crypto;
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
@@ -1812,13 +1820,13 @@
 
     goto/16 :goto_6
 
-    .line 317
+    .line 319
     :cond_1
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_a
 
-    .line 318
+    .line 320
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -1829,7 +1837,7 @@
 
     move-result-object v0
 
-    .line 320
+    .line 322
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;
 
     if-eqz v1, :cond_3
@@ -1858,7 +1866,7 @@
     :goto_1
     if-eqz v5, :cond_3
 
-    .line 321
+    .line 323
     sget-object v2, Lcom/smedialink/storage/common/AppConfiguration$Crypto;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Crypto;
 
     invoke-direct {p0, v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getNetworkTypeByProcessing(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -1878,7 +1886,7 @@
 
     goto/16 :goto_6
 
-    .line 322
+    .line 324
     :cond_3
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
 
@@ -1908,7 +1916,7 @@
     :goto_3
     if-eqz v5, :cond_5
 
-    .line 323
+    .line 325
     sget-object v2, Lcom/smedialink/storage/common/AppConfiguration$Crypto;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Crypto;
 
     invoke-direct {p0, v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getNetworkTypeByProcessing(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -1925,7 +1933,7 @@
 
     goto :goto_2
 
-    .line 324
+    .line 326
     :cond_5
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
 
@@ -1955,7 +1963,7 @@
     :goto_4
     if-eqz v5, :cond_7
 
-    .line 325
+    .line 327
     sget-object v2, Lcom/smedialink/storage/common/AppConfiguration$Crypto;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Crypto;
 
     invoke-direct {p0, v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getNetworkTypeByProcessing(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -1972,7 +1980,7 @@
 
     goto :goto_2
 
-    .line 326
+    .line 328
     :cond_7
     instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;
 
@@ -2000,7 +2008,7 @@
     :goto_5
     if-eqz v3, :cond_9
 
-    .line 327
+    .line 329
     sget-object v2, Lcom/smedialink/storage/common/AppConfiguration$Crypto;->INSTANCE:Lcom/smedialink/storage/common/AppConfiguration$Crypto;
 
     invoke-direct {p0, v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getNetworkTypeByProcessing(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
@@ -2021,7 +2029,7 @@
     :goto_6
     return-object v2
 
-    .line 318
+    .line 320
     :cond_a
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -2039,7 +2047,7 @@
 
     goto :goto_0
 
-    .line 412
+    .line 414
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->telegramGateway:Lcom/smedialink/storage/domain/gateway/TelegramGateway;
 
@@ -2058,10 +2066,10 @@
 .method private final isFeeEnabled()Z
     .locals 5
 
-    .line 222
+    .line 224
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 223
+    .line 225
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     const/4 v2, 0x1
@@ -2070,7 +2078,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 224
+    .line 226
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getItem()Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
@@ -2090,13 +2098,13 @@
 
     goto :goto_0
 
-    .line 225
+    .line 227
     :cond_1
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_3
 
-    .line 226
+    .line 228
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -2107,7 +2115,7 @@
 
     move-result-object v0
 
-    .line 227
+    .line 229
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object v1
@@ -2116,7 +2124,7 @@
 
     if-eq v1, v4, :cond_2
 
-    .line 228
+    .line 230
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getDirection()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object v1
@@ -2125,7 +2133,7 @@
 
     if-eq v1, v4, :cond_2
 
-    .line 229
+    .line 231
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getType()Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;
 
     move-result-object v0
@@ -2138,7 +2146,7 @@
     :goto_0
     return v2
 
-    .line 226
+    .line 228
     :cond_3
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
@@ -2165,7 +2173,7 @@
 
     new-array v0, v0, [Lkotlin/Pair;
 
-    .line 168
+    .line 170
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->canAskSupport()Z
 
     move-result v1
@@ -2196,7 +2204,7 @@
 
     const/4 v1, 0x1
 
-    .line 169
+    .line 171
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->canSend()Z
 
     move-result v3
@@ -2223,7 +2231,7 @@
 
     const/4 v1, 0x2
 
-    .line 170
+    .line 172
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->canOpenProfile()Z
 
     move-result v3
@@ -2250,7 +2258,7 @@
 
     const/4 v1, 0x3
 
-    .line 171
+    .line 173
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->canOpenScanSite()Z
 
     move-result v3
@@ -2287,7 +2295,7 @@
 
     const/4 v1, 0x4
 
-    .line 172
+    .line 174
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->canCopy()Z
 
     move-result v3
@@ -2320,7 +2328,7 @@
 
     const/4 v1, 0x5
 
-    .line 173
+    .line 175
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->canCancelOrBoost()Z
 
     move-result v3
@@ -2347,7 +2355,7 @@
 
     const/4 v1, 0x6
 
-    .line 174
+    .line 176
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->canCancelOrBoost()Z
 
     move-result v3
@@ -2367,12 +2375,12 @@
     :cond_6
     aput-object v2, v0, v1
 
-    .line 167
+    .line 169
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 175
+    .line 177
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->filterNotNull(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v0
@@ -2398,7 +2406,7 @@
         }
     .end annotation
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -2409,7 +2417,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -2425,26 +2433,28 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lkotlin/Pair;
 
-    .line 161
+    .line 163
     invoke-virtual {v3}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/smedialink/model/wallet/transaction/TransactionActionItem;
 
+    .line 1621
     invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 163
     :cond_0
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-static {p1, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -2453,7 +2463,7 @@
 
     invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -2469,21 +2479,22 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lkotlin/Pair;
 
-    .line 162
+    .line 164
     invoke-virtual {v1}, Lkotlin/Pair;->getSecond()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lkotlin/jvm/functions/Function0;
 
+    .line 1621
     invoke-interface {v2, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 164
+    .line 166
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2503,14 +2514,14 @@
 .method private final startAskSupport()V
     .locals 2
 
-    .line 300
+    .line 302
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     if-eqz v1, :cond_0
 
-    .line 301
+    .line 303
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
@@ -2525,7 +2536,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 302
+    .line 304
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2543,12 +2554,10 @@
 .method private final startBoostTransaction()V
     .locals 4
 
-    .line 190
+    .line 192
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
-
-    const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
@@ -2557,71 +2566,65 @@
     goto :goto_0
 
     :cond_0
-    move-object v0, v2
+    const/4 v0, 0x0
 
     :goto_0
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_2
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
 
     goto :goto_1
 
-    :cond_2
-    invoke-virtual {v0}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
+    .line 195
+    :cond_1
+    instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
 
-    move-result-object v2
+    if-eqz v1, :cond_2
 
-    :goto_1
-    if-nez v2, :cond_3
-
-    return-void
-
-    .line 193
-    :cond_3
-    instance-of v0, v2, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/smedialink/storage/data/network/model/response/base/Status;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/smedialink/storage/data/network/model/response/base/Status;->PENDING:Lcom/smedialink/storage/data/network/model/response/base/Status;
-
-    if-ne v0, v1, :cond_4
-
-    .line 194
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;
-
-    invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getConfirmBoostDialogModel()Lcom/smedialink/model/dialog/DialogModel;
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/smedialink/storage/data/network/model/response/base/Status;
 
     move-result-object v1
 
+    sget-object v2, Lcom/smedialink/storage/data/network/model/response/base/Status;->PENDING:Lcom/smedialink/storage/data/network/model/response/base/Status;
+
+    if-ne v1, v2, :cond_2
+
+    .line 196
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;
+
+    invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getConfirmBoostDialogModel()Lcom/smedialink/model/dialog/DialogModel;
+
+    move-result-object v2
+
     new-instance v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;
 
-    invoke-direct {v3, p0, v2}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;-><init>(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)V
+    invoke-direct {v3, p0, v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startBoostTransaction$1$1;-><init>(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)V
 
-    invoke-interface {v0, v1, v3}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->showConfirmBoostDialog(Lcom/smedialink/model/dialog/DialogModel;Lkotlin/jvm/functions/Function0;)V
+    invoke-interface {v1, v2, v3}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->showConfirmBoostDialog(Lcom/smedialink/model/dialog/DialogModel;Lkotlin/jvm/functions/Function0;)V
 
-    :cond_4
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method private final startBrowserWithUrl()V
     .locals 2
 
-    .line 307
+    .line 309
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -2640,12 +2643,10 @@
 .method private final startCancelTransaction()V
     .locals 4
 
-    .line 178
+    .line 180
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
-
-    const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
@@ -2654,71 +2655,65 @@
     goto :goto_0
 
     :cond_0
-    move-object v0, v2
+    const/4 v0, 0x0
 
     :goto_0
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_2
 
-    goto :goto_1
-
-    :cond_1
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;->getItem()Lcom/smedialink/model/wallet/transaction/TransactionItem;
 
     move-result-object v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
 
     goto :goto_1
 
-    :cond_2
-    invoke-virtual {v0}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
+    .line 183
+    :cond_1
+    instance-of v1, v0, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
 
-    move-result-object v2
+    if-eqz v1, :cond_2
 
-    :goto_1
-    if-nez v2, :cond_3
-
-    return-void
-
-    .line 181
-    :cond_3
-    instance-of v0, v2, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto;
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/smedialink/storage/data/network/model/response/base/Status;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/smedialink/storage/data/network/model/response/base/Status;->PENDING:Lcom/smedialink/storage/data/network/model/response/base/Status;
-
-    if-ne v0, v1, :cond_4
-
-    .line 182
-    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;
-
-    invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getConfirmCancelDialogModel()Lcom/smedialink/model/dialog/DialogModel;
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getStatus()Lcom/smedialink/storage/data/network/model/response/base/Status;
 
     move-result-object v1
 
+    sget-object v2, Lcom/smedialink/storage/data/network/model/response/base/Status;->PENDING:Lcom/smedialink/storage/data/network/model/response/base/Status;
+
+    if-ne v1, v2, :cond_2
+
+    .line 184
+    invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;
+
+    invoke-direct {p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getConfirmCancelDialogModel()Lcom/smedialink/model/dialog/DialogModel;
+
+    move-result-object v2
+
     new-instance v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startCancelTransaction$1$1;
 
-    invoke-direct {v3, p0, v2}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startCancelTransaction$1$1;-><init>(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)V
+    invoke-direct {v3, p0, v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$startCancelTransaction$1$1;-><init>(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)V
 
-    invoke-interface {v0, v1, v3}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->showConfirmCancelDialog(Lcom/smedialink/model/dialog/DialogModel;Lkotlin/jvm/functions/Function0;)V
+    invoke-interface {v1, v2, v3}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->showConfirmCancelDialog(Lcom/smedialink/model/dialog/DialogModel;Lkotlin/jvm/functions/Function0;)V
 
-    :cond_4
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method private final startProfileScreen()V
     .locals 3
 
-    .line 339
+    .line 341
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
@@ -2727,7 +2722,7 @@
 
     return-void
 
-    .line 340
+    .line 342
     :cond_0
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
@@ -2747,11 +2742,8 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v0
@@ -2764,14 +2756,14 @@
 
     invoke-interface {v2, v0, v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->openProfileScreen(J)V
 
-    :goto_0
+    :cond_1
     return-void
 .end method
 
 .method private final startSendScreen()V
     .locals 4
 
-    .line 285
+    .line 287
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     instance-of v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
@@ -2780,7 +2772,7 @@
 
     return-void
 
-    .line 286
+    .line 288
     :cond_0
     check-cast v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
@@ -2792,7 +2784,7 @@
 
     move-result-object v0
 
-    .line 287
+    .line 289
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v1
@@ -2803,24 +2795,24 @@
 
     if-eqz v1, :cond_1
 
-    .line 288
+    .line 290
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
 
     check-cast v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;
 
-    .line 289
+    .line 291
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;->getTokenCode()Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v2
 
-    .line 290
+    .line 292
     invoke-direct {p0, v0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getNetworkTypeByProcessing(Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
 
-    .line 291
+    .line 293
     iget-object v3, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     check-cast v3, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
@@ -2833,12 +2825,12 @@
 
     move-result-object v3
 
-    .line 288
+    .line 290
     invoke-interface {v1, v2, v0, v3}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->openSendScreen(Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 294
+    .line 296
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -2869,15 +2861,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 66
     iget-object v0, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->boostInteractor:Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;
 
-    .line 66
+    .line 67
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/interactor/crypto/boost/BoostInteractor;->boostEthTransaction(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 67
+    .line 68
     iget-object v1, p0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -2892,7 +2884,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 69
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -2913,7 +2905,7 @@
 
     move-result-object v0
 
-    .line 69
+    .line 70
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -2925,21 +2917,32 @@
 
     invoke-direct {v2, p0, p1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$boostTransaction$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 75
+    .line 77
     invoke-static {p0, p1, v4, v0, v4}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -3033,21 +3036,32 @@
 
     invoke-direct {v2, p0, p1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$cancelTransaction$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$cancelTransaction$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$cancelTransaction$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$cancelTransaction$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter$cancelTransaction$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 61
+    .line 62
     invoke-static {p0, p1, v4, v0, v4}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -3058,10 +3072,10 @@
 
     move-object/from16 v0, p0
 
-    .line 87
+    .line 89
     iget-object v1, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
-    .line 88
+    .line 90
     instance-of v2, v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     const/4 v3, 0x1
@@ -3070,14 +3084,14 @@
 
     if-eqz v2, :cond_3
 
-    .line 89
+    .line 91
     check-cast v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$StakingOperationDetails;->getItem()Lcom/smedialink/model/wallet/transaction/StakingOperationItem;
 
     move-result-object v1
 
-    .line 90
+    .line 92
     invoke-virtual/range {p0 .. p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v2
@@ -3086,12 +3100,12 @@
 
     check-cast v5, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;
 
-    .line 91
+    .line 93
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getIcon()I
 
     move-result v6
 
-    .line 92
+    .line 94
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getCreatedAt()Ljava/lang/String;
 
     move-result-object v2
@@ -3102,21 +3116,21 @@
 
     move-result-object v13
 
-    .line 93
+    .line 95
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v1, v2}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getTransactionTitle(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 94
+    .line 96
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v1, v2}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getAmount(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 95
+    .line 97
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v9, Lorg/telegram/messenger/R$string;->wallet_transaction_details_transaction_hash_title:I
@@ -3125,7 +3139,7 @@
 
     move-result-object v9
 
-    .line 96
+    .line 98
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getTxHash()Ljava/lang/String;
 
     move-result-object v2
@@ -3151,7 +3165,7 @@
     :cond_1
     move-object v10, v2
 
-    .line 98
+    .line 100
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     iget-object v11, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
@@ -3170,24 +3184,24 @@
 
     move-result-object v14
 
-    .line 99
+    .line 101
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->isFeeEnabled()Z
 
     move-result v16
 
-    .line 100
+    .line 102
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getFee()Ljava/lang/String;
 
     move-result-object v15
 
-    .line 101
+    .line 103
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v1, v2}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getStatusText(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 102
+    .line 104
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getScanUrl()Ljava/lang/String;
 
     move-result-object v2
@@ -3205,7 +3219,7 @@
     :cond_2
     const/16 v17, 0x0
 
-    .line 103
+    .line 105
     :goto_1
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/StakingOperationItem;->getStakingIconResId()I
 
@@ -3217,12 +3231,12 @@
 
     move-result-object v18
 
-    .line 90
+    .line 92
     invoke-interface/range {v5 .. v18}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->setupScreenWithData(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/Integer;)V
 
     goto/16 :goto_5
 
-    .line 106
+    .line 108
     :cond_3
     instance-of v2, v1, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
 
@@ -3234,7 +3248,7 @@
 
     move-result-object v1
 
-    .line 107
+    .line 109
     invoke-virtual/range {p0 .. p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v2
@@ -3243,12 +3257,12 @@
 
     check-cast v5, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;
 
-    .line 108
+    .line 110
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransactionIcon()I
 
     move-result v6
 
-    .line 109
+    .line 111
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
     move-result-object v2
@@ -3263,21 +3277,21 @@
 
     move-result-object v13
 
-    .line 110
+    .line 112
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v1, v2}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransactionTitle(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 111
+    .line 113
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v1, v2}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getAmount(Lcom/smedialink/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 112
+    .line 114
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
     move-result-object v2
@@ -3286,7 +3300,7 @@
 
     move-result-object v9
 
-    .line 113
+    .line 115
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
     move-result-object v2
@@ -3295,7 +3309,7 @@
 
     move-result-object v10
 
-    .line 114
+    .line 116
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->screenType:Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType;
 
     check-cast v2, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog$ScreenType$TransactionDetails;
@@ -3322,20 +3336,20 @@
     move-object v2, v12
 
     :goto_2
-    if-nez v2, :cond_5
+    if-eqz v2, :cond_5
 
-    move-object v11, v12
-
-    goto :goto_3
-
-    :cond_5
     invoke-virtual {v2}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Transfer;->getPayloadMessage()Ljava/lang/String;
 
     move-result-object v2
 
     move-object v11, v2
 
-    .line 115
+    goto :goto_3
+
+    :cond_5
+    move-object v11, v12
+
+    .line 117
     :goto_3
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
@@ -3355,17 +3369,17 @@
 
     move-result-object v14
 
-    .line 116
+    .line 118
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->isFeeEnabled()Z
 
     move-result v16
 
-    .line 117
+    .line 119
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getFee()Ljava/lang/String;
 
     move-result-object v15
 
-    .line 118
+    .line 120
     iget-object v2, v0, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     invoke-virtual {v1}, Lcom/smedialink/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
@@ -3384,7 +3398,7 @@
 
     move-result-object v12
 
-    .line 119
+    .line 121
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->getScanUrl()Ljava/lang/String;
 
     move-result-object v1
@@ -3405,10 +3419,10 @@
     :goto_4
     const/16 v18, 0x0
 
-    .line 107
+    .line 109
     invoke-interface/range {v5 .. v18}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsView;->setupScreenWithData(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/Integer;)V
 
-    .line 125
+    .line 127
     :cond_7
     :goto_5
     invoke-direct/range {p0 .. p0}, Lcom/smedialink/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resolveTransactionAction()Ljava/util/List;
@@ -3423,7 +3437,7 @@
 .method public final shareTransaction()V
     .locals 2
 
-    .line 79
+    .line 81
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0

@@ -7,7 +7,7 @@ import io.grpc.Metadata;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TransportFrameUtil {
     private static final Logger logger = Logger.getLogger(TransportFrameUtil.class.getName());
     private static final byte[] binaryHeaderSuffixBytes = "-bin".getBytes(Charsets.US_ASCII);

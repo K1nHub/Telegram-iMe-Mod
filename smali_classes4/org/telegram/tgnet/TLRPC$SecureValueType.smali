@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27361
+    .line 27503
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 27391
+    .line 27533
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassport;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 27397
+    .line 27539
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeDriverLicense;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 27376
+    .line 27518
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeUtilityBill;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 27388
+    .line 27530
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeTemporaryRegistration;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 27367
+    .line 27509
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeAddress;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 27400
+    .line 27542
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePhone;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 27373
+    .line 27515
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeIdentityCard;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 27385
+    .line 27527
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePersonalDetails;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 27370
+    .line 27512
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypePassportRegistration;
 
@@ -94,7 +94,7 @@
 
     goto :goto_0
 
-    .line 27403
+    .line 27545
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeInternalPassport;
 
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 27382
+    .line 27524
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeEmail;
 
@@ -110,7 +110,7 @@
 
     goto :goto_0
 
-    .line 27394
+    .line 27536
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeRentalAgreement;
 
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 27379
+    .line 27521
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueTypeBankStatement;
 
@@ -131,7 +131,7 @@
 
     goto :goto_1
 
-    .line 27407
+    .line 27549
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -161,7 +161,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 27410
+    .line 27552
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

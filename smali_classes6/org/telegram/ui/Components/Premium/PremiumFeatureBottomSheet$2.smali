@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;)V
     .locals 0
 
-    .line 147
+    .line 148
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$2;->val$gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
@@ -39,7 +39,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 157
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$2;->val$gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -60,7 +60,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->gradientMatrix(IIIIFF)V
 
-    .line 158
+    .line 159
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v1, 0x2
@@ -95,10 +95,10 @@
 
     invoke-virtual {v0, v4, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 159
+    .line 160
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 160
+    .line 161
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -111,7 +111,7 @@
 
     invoke-virtual {p1, v3, v3, v1, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 161
+    .line 162
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$2;->val$gradientTools:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->paint:Landroid/graphics/Paint;
@@ -126,7 +126,7 @@
 
     const/16 v1, 0xc
 
-    .line 162
+    .line 163
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -149,10 +149,10 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 163
+    .line 164
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 164
+    .line 165
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -161,14 +161,14 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 151
+    .line 152
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget p2, p2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->contentHeight:I
 
     const/4 v0, 0x2
 
-    .line 152
+    .line 153
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0

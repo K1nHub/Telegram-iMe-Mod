@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/view/View;ZLorg/telegram/ui/Components/RLottieImageView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1581
+    .line 1576
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ContactsActivity$14;->val$previousFabContainer:Landroid/view/View;
@@ -51,7 +51,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1584
+    .line 1579
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1586
+    .line 1581
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -75,7 +75,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1587
+    .line 1582
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -88,7 +88,7 @@
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    .line 1588
+    .line 1583
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -97,7 +97,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1590
+    .line 1585
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
@@ -115,19 +115,19 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1592
+    .line 1587
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->val$previousFabContainer:Landroid/view/View;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1593
+    .line 1588
     iget-boolean p1, p0, Lorg/telegram/ui/ContactsActivity$14;->val$isOpen:Z
 
     if-nez p1, :cond_1
 
-    .line 1594
+    .line 1589
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->val$previousFab:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v0, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_reverse:I
@@ -136,7 +136,7 @@
 
     invoke-virtual {p1, v0, v1, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1595
+    .line 1590
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->val$previousFab:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -159,12 +159,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 1596
+    .line 1591
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->val$previousFab:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 1599
+    .line 1594
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->val$callback:Ljava/lang/Runnable;
 

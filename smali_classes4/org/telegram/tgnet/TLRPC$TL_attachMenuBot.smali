@@ -51,17 +51,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 63742
+    .line 63988
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$AttachMenuBot;-><init>()V
 
-    .line 63751
+    .line 63997
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->peer_types:Ljava/util/ArrayList;
 
-    .line 63752
+    .line 63998
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -76,7 +76,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 63755
+    .line 64001
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -98,7 +98,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 63756
+    .line 64002
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->inactive:Z
 
@@ -113,7 +113,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 63757
+    .line 64003
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->has_settings:Z
 
@@ -128,30 +128,30 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 63758
+    .line 64004
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->request_write_access:Z
 
-    .line 63759
+    .line 64005
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->bot_id:J
 
-    .line 63760
+    .line 64006
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->short_name:Ljava/lang/String;
 
-    .line 63761
+    .line 64007
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
-    const-string v1, "wrong Vector magic, got %x"
+    const-string/jumbo v1, "wrong Vector magic, got %x"
 
     const v4, 0x1cb5c415
 
@@ -161,7 +161,7 @@
 
     return-void
 
-    .line 63764
+    .line 64010
     :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -181,7 +181,7 @@
 
     throw p1
 
-    .line 63768
+    .line 64014
     :cond_4
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -192,7 +192,7 @@
     :goto_3
     if-ge v5, v0, :cond_6
 
-    .line 63770
+    .line 64016
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -205,7 +205,7 @@
 
     return-void
 
-    .line 63774
+    .line 64020
     :cond_5
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->peer_types:Ljava/util/ArrayList;
 
@@ -215,7 +215,7 @@
 
     goto :goto_3
 
-    .line 63776
+    .line 64022
     :cond_6
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -227,7 +227,7 @@
 
     return-void
 
-    .line 63779
+    .line 64025
     :cond_7
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -247,7 +247,7 @@
 
     throw p1
 
-    .line 63783
+    .line 64029
     :cond_8
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -256,7 +256,7 @@
     :goto_4
     if-ge v2, v0, :cond_a
 
-    .line 63785
+    .line 64031
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -269,7 +269,7 @@
 
     return-void
 
-    .line 63789
+    .line 64035
     :cond_9
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->icons:Ljava/util/ArrayList;
 
@@ -286,12 +286,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 63794
+    .line 64040
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63795
+    .line 64041
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->inactive:Z
 
     if-eqz v0, :cond_0
@@ -310,7 +310,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->flags:I
 
-    .line 63796
+    .line 64042
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->has_settings:Z
 
     if-eqz v1, :cond_1
@@ -325,7 +325,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->flags:I
 
-    .line 63797
+    .line 64043
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->request_write_access:Z
 
     if-eqz v1, :cond_2
@@ -340,32 +340,32 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->flags:I
 
-    .line 63798
+    .line 64044
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63799
+    .line 64045
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->bot_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 63800
+    .line 64046
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->short_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 63801
+    .line 64047
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63802
+    .line 64048
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->peer_types:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 63803
+    .line 64049
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v2, 0x0
@@ -375,7 +375,7 @@
     :goto_3
     if-ge v3, v1, :cond_3
 
-    .line 63805
+    .line 64051
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->peer_types:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -390,24 +390,24 @@
 
     goto :goto_3
 
-    .line 63807
+    .line 64053
     :cond_3
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63808
+    .line 64054
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->icons:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 63809
+    .line 64055
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_4
     if-ge v2, v0, :cond_4
 
-    .line 63811
+    .line 64057
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->icons:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

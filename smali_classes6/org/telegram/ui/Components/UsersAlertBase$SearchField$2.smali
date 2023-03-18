@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/UsersAlertBase$SearchField;Landroid/content/Context;Lorg/telegram/ui/Components/UsersAlertBase;)V
     .locals 0
 
-    .line 245
+    .line 237
     iput-object p1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$2;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 248
+    .line 240
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 249
+    .line 241
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v1
@@ -53,19 +53,19 @@
 
     iget-object v3, v3, Lorg/telegram/ui/Components/UsersAlertBase$SearchField;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/UsersAlertBase;->access$100(Lorg/telegram/ui/Components/UsersAlertBase;)Landroid/view/ViewGroup;
+    iget-object v3, v3, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getTranslationY()F
+    invoke-virtual {v3}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v3
+
+    int-to-float v3, v3
 
     sub-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/view/MotionEvent;->setLocation(FF)V
 
-    .line 250
+    .line 242
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
@@ -76,10 +76,10 @@
 
     const/4 v1, 0x3
 
-    .line 251
+    .line 243
     invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 253
+    .line 245
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$SearchField$2;->this$1:Lorg/telegram/ui/Components/UsersAlertBase$SearchField;
 
@@ -89,10 +89,10 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 254
+    .line 246
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 255
+    .line 247
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextEffects;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1

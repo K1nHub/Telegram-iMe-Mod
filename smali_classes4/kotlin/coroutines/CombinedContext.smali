@@ -93,8 +93,12 @@
 
     goto :goto_0
 
-    .line 163
     :cond_1
+    const-string v0, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element"
+
+    .line 163
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Lkotlin/coroutines/CoroutineContext$Element;
 
     invoke-direct {p0, p1}, Lkotlin/coroutines/CombinedContext;->contains(Lkotlin/coroutines/CoroutineContext$Element;)Z

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
 # instance fields
@@ -22,12 +22,16 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$v29h5GS281N3r1w0ogkYSFlGGc8(Lorg/telegram/ui/Components/BotWebViewSheet;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    check-cast p1, Ljava/lang/Void;
 
-    return-void
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$Vq8DJYIH0s0OyBcG6PtkI7fw2ro(Lorg/telegram/ui/Components/BotWebViewSheet;Ljava/lang/Void;)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

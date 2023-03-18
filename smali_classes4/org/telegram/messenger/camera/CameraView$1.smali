@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/camera/CameraView;)V
     .locals 0
 
-    .line 200
+    .line 205
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 203
+    .line 208
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -73,7 +73,7 @@
 
     mul-float p1, p1, v3
 
-    .line 214
+    .line 219
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v3}, Lorg/telegram/messenger/camera/CameraView;->access$000(Lorg/telegram/messenger/camera/CameraView;)Landroid/view/TextureView;
@@ -82,7 +82,7 @@
 
     invoke-virtual {v3, p1}, Landroid/view/TextureView;->setRotationY(F)V
 
-    .line 215
+    .line 220
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v3}, Lorg/telegram/messenger/camera/CameraView;->access$100(Lorg/telegram/messenger/camera/CameraView;)Landroid/widget/ImageView;
@@ -93,21 +93,21 @@
 
     if-eqz v2, :cond_1
 
-    .line 216
+    .line 221
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-boolean v2, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z
 
     if-nez v2, :cond_1
 
-    .line 217
+    .line 222
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$100(Lorg/telegram/messenger/camera/CameraView;)Landroid/widget/ImageView;
 
     move-result-object p1
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 218
+    .line 223
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$1;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iput-boolean v1, p1, Lorg/telegram/messenger/camera/CameraView;->flipHalfReached:Z

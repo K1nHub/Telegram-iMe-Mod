@@ -289,23 +289,19 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 31
-    :cond_0
     instance-of v1, v0, Lorg/telegram/ui/Components/RLottieImageView;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 32
     check-cast v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->stopAnimation()V
 
-    :cond_1
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -321,22 +317,18 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 39
-    :cond_0
     instance-of v1, v0, Lorg/telegram/ui/Components/RLottieImageView;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 40
     check-cast v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    :cond_1
-    :goto_0
+    :cond_0
     return-void
 .end method

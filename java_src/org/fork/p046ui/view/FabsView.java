@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import com.smedialink.storage.domain.model.filters.FilterFab;
 import com.smedialink.utils.extentions.model.filter.FilterFabExtKt;
 import java.util.Set;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -59,14 +58,10 @@ public final class FabsView extends FrameLayout {
 
     public final void updateColors() {
         int childCount = getChildCount();
-        if (childCount <= 0) {
-            return;
-        }
-        int i = 0;
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < childCount; i++) {
             View childAt = getChildAt(i);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
+            Intrinsics.checkNotNull(childAt, "null cannot be cast to non-null type android.widget.ImageView");
             ImageView imageView = (ImageView) childAt;
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.SRC_IN));
             GradientDrawable gradientDrawable = new GradientDrawable();
@@ -74,12 +69,7 @@ public final class FabsView extends FrameLayout {
             gradientDrawable.setStroke(AndroidUtilities.m50dp(1), Theme.getColor("windowBackgroundWhite"));
             gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
             gradientDrawable.setSize(AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36));
-            Unit unit = Unit.INSTANCE;
             imageView.setBackground(gradientDrawable);
-            if (i2 >= childCount) {
-                return;
-            }
-            i = i2;
         }
     }
 }

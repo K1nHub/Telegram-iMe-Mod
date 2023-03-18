@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Lorg/koin/core/definition/BeanDefinition;->setSecondaryTypes(Ljava/util/List;)V
 
-    .line 13536
+    .line 77
     array-length v0, p1
 
     const/4 v1, 0x0

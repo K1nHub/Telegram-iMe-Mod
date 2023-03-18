@@ -56,11 +56,11 @@ public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
                         @Override // java.lang.Runnable
                         public void run() {
                             if (ExecutorCallbackCall.this.delegate.isCanceled()) {
-                                C65791 c65791 = C65791.this;
+                                C67241 c67241 = C67241.this;
                                 callback.onFailure(ExecutorCallbackCall.this, new IOException("Canceled"));
                                 return;
                             }
-                            C65791 c657912 = C65791.this;
+                            C67241 c672412 = C67241.this;
                             callback.onResponse(ExecutorCallbackCall.this, response);
                         }
                     });
@@ -71,7 +71,7 @@ public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
                     ExecutorCallbackCall.this.callbackExecutor.execute(new Runnable() { // from class: retrofit2.ExecutorCallAdapterFactory.ExecutorCallbackCall.1.2
                         @Override // java.lang.Runnable
                         public void run() {
-                            C65791 c65791 = C65791.this;
+                            C67241 c67241 = C67241.this;
                             callback.onFailure(ExecutorCallbackCall.this, th);
                         }
                     });
@@ -101,7 +101,7 @@ public final class ExecutorCallAdapterFactory extends CallAdapter.Factory {
 
         @Override // retrofit2.Call
         public Call<T> clone() {
-            return new ExecutorCallbackCall(this.callbackExecutor, this.delegate.clone());
+            return new ExecutorCallbackCall(this.callbackExecutor, this.delegate.mo3937clone());
         }
 
         @Override // retrofit2.Call

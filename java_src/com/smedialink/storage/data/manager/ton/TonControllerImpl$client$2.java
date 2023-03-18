@@ -14,8 +14,7 @@ final class TonControllerImpl$client$2 extends Lambda implements Function0<Clien
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-0  reason: not valid java name */
-    public static final void m1326invoke$lambda0(TonApi.Object object) {
+    public static final void invoke$lambda$0(TonApi.Object object) {
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

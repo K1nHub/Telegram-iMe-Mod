@@ -15,7 +15,7 @@ public final class UserExtKt {
         Intrinsics.checkNotNullParameter(tLRPC$User, "<this>");
         if (tLRPC$User.contact) {
             String str = tLRPC$User.username;
-            return str == null || str.length() == 0 ? String.valueOf(tLRPC$User.f1633id) : tLRPC$User.username;
+            return str == null || str.length() == 0 ? String.valueOf(tLRPC$User.f1639id) : tLRPC$User.username;
         }
         return tLRPC$User.first_name;
     }

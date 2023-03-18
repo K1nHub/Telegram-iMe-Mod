@@ -59,18 +59,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$KWVBWkalJ-gy9Y7qQwH77p3y1k8(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;ILjava/util/List;Landroidx/recyclerview/widget/DiffUtil$DiffResult;Ljava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$ebJyULo6oMHu4k2PD2xG_AjaHLk(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;->submitList$lambda-1$lambda-0(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;ILjava/util/List;Landroidx/recyclerview/widget/DiffUtil$DiffResult;Ljava/lang/Runnable;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;->submitList$lambda$1(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$eezhYJeBp9mI_Rs6E8hBioZtDHk(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$x_aqSKV2sN9LjGgfcZ81oMbhSd0(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;ILjava/util/List;Landroidx/recyclerview/widget/DiffUtil$DiffResult;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;->submitList$lambda-1(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;->submitList$lambda$1$lambda$0(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;ILjava/util/List;Landroidx/recyclerview/widget/DiffUtil$DiffResult;Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -231,19 +231,16 @@
     goto :goto_0
 
     :cond_0
-    if-nez p2, :cond_1
-
-    goto :goto_1
+    if-eqz p2, :cond_1
 
     .line 191
-    :cond_1
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    :goto_1
+    :cond_1
     return-void
 .end method
 
-.method private static final submitList$lambda-1(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
+.method private static final submitList$lambda$1(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
     .locals 7
 
     const-string v0, "this$0"
@@ -289,7 +286,7 @@
     return-void
 .end method
 
-.method private static final submitList$lambda-1$lambda-0(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;ILjava/util/List;Landroidx/recyclerview/widget/DiffUtil$DiffResult;Ljava/lang/Runnable;)V
+.method private static final submitList$lambda$1$lambda$0(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;ILjava/util/List;Landroidx/recyclerview/widget/DiffUtil$DiffResult;Ljava/lang/Runnable;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -342,15 +339,12 @@
 
     if-ne p1, v0, :cond_1
 
-    if-nez p2, :cond_0
-
-    goto :goto_0
+    if-eqz p2, :cond_0
 
     .line 105
-    :cond_0
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    :goto_0
+    :cond_0
     return-void
 
     .line 108

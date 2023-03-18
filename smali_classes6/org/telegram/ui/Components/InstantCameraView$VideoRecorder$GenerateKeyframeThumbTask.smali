@@ -33,7 +33,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
     .locals 0
 
-    .line 2153
+    .line 2184
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;Lorg/telegram/ui/Components/InstantCameraView$1;)V
     .locals 0
 
-    .line 2153
+    .line 2184
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
 
     return-void
@@ -57,7 +57,7 @@
 
     const/4 v0, 0x0
 
-    .line 2161
+    .line 2192
     invoke-virtual {p1, v0, v0}, Landroid/graphics/Bitmap;->getPixel(II)I
 
     move-result v0
@@ -79,7 +79,7 @@
 
     if-le v0, v1, :cond_1
 
-    .line 2162
+    .line 2193
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->access$4200(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)Ljava/util/ArrayList;
@@ -114,7 +114,7 @@
 
     goto :goto_0
 
-    .line 2164
+    .line 2195
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
@@ -133,7 +133,7 @@
 .method public run()V
     .locals 3
 
-    .line 2156
+    .line 2187
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;->this$1:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -146,7 +146,7 @@
 
     const/16 v1, 0x38
 
-    .line 2159
+    .line 2190
     :try_start_0
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -160,7 +160,7 @@
 
     move-result-object v0
 
-    .line 2160
+    .line 2191
     new-instance v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;Landroid/graphics/Bitmap;)V
@@ -174,7 +174,7 @@
     :catch_0
     move-exception v0
 
-    .line 2168
+    .line 2199
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0

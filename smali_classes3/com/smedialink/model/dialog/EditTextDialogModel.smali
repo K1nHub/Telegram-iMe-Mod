@@ -608,7 +608,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/dialog/EditTextDialogModel;->title:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", subtitle="
 
@@ -616,7 +616,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/dialog/EditTextDialogModel;->subtitle:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", hint="
 
@@ -624,7 +624,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/dialog/EditTextDialogModel;->hint:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", presetText="
 
@@ -632,7 +632,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/dialog/EditTextDialogModel;->presetText:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", shouldHideKeyboardOnDismiss="
 
@@ -648,7 +648,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/dialog/EditTextDialogModel;->negativeButtonText:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", positiveButtonText="
 
@@ -656,7 +656,7 @@
 
     iget-object v1, p0, Lcom/smedialink/model/dialog/EditTextDialogModel;->positiveButtonText:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

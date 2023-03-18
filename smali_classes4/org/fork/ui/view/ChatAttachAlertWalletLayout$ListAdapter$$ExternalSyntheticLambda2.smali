@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/smedialink/model/wallet/ActionItem;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->$r8$lambda$W0UD7wrutZApay0tcYBo4fYKVPs(Lorg/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/smedialink/model/wallet/ActionItem;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->$r8$lambda$pR6ZMbUiZ1dBbIjNpSckWnjE7_E(Lorg/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/smedialink/model/wallet/ActionItem;)V
 
     return-void
 .end method

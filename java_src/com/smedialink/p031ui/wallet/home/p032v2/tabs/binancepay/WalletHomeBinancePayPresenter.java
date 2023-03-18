@@ -1,6 +1,5 @@
 package com.smedialink.p031ui.wallet.home.p032v2.tabs.binancepay;
 
-import android.net.Uri;
 import com.binance.android.opensdk.api.BinanceAPI;
 import com.binance.android.opensdk.api.BinanceListener;
 import com.binance.android.opensdk.api.OAuthParams;
@@ -28,7 +27,6 @@ import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.common.AppConfiguration$Binance;
 import com.smedialink.storage.data.locale.prefs.model.WalletCryptoTokensSettingsMetadata;
 import com.smedialink.storage.data.locale.prefs.model.WalletCryptoTokensSettingsTokenState;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.data.utils.extentions.CryptoExtKt;
 import com.smedialink.storage.data.utils.system.AndroidActivityHolder;
 import com.smedialink.storage.domain.interactor.binancepay.BinanceInternalInteractor;
@@ -44,10 +42,10 @@ import com.smedialink.storage.domain.model.wallet.token.TokenOrderType;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
-import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.storage.domain.utils.p030rx.event.RxEvent;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.helper.binancepay.BinancePayHelper;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -60,19 +58,18 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
-import timber.log.Timber;
+import org.telegram.messenger.C3286R;
 /* compiled from: WalletHomeBinancePayPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter */
@@ -97,9 +94,18 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
 
         static {
             int[] iArr = new int[TokenOrderType.values().length];
-            iArr[TokenOrderType.ALPHABET.ordinal()] = 1;
-            iArr[TokenOrderType.BALANCE.ordinal()] = 2;
-            iArr[TokenOrderType.DEFAULT.ordinal()] = 3;
+            try {
+                iArr[TokenOrderType.ALPHABET.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TokenOrderType.BALANCE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[TokenOrderType.DEFAULT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -147,7 +153,7 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(link, "link");
         if (!BinancePayHelper.isProcessBinancePayUrl(link)) {
-            ((WalletHomeBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3158R.string.wallet_binance_pay_scan_qr_error));
+            ((WalletHomeBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3286R.string.wallet_binance_pay_scan_qr_error));
         } else {
             this.binancePayProcessManager.loadAndPay(holder, link);
         }
@@ -172,65 +178,34 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
 
     public final void getBinanceUserBalances() {
         if (this.binancePayManager.isAuthorized()) {
-            Observable<Result<List<BinanceTokenBalanceInfo>>> doFinally = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo707ui()).doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$$ExternalSyntheticLambda1
+            Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo707ui());
+            final WalletHomeBinancePayPresenter$getBinanceUserBalances$1 walletHomeBinancePayPresenter$getBinanceUserBalances$1 = new WalletHomeBinancePayPresenter$getBinanceUserBalances$1(this);
+            Observable<Result<List<BinanceTokenBalanceInfo>>> doFinally = observeOn.doOnSubscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$$ExternalSyntheticLambda1
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    WalletHomeBinancePayPresenter.m1669getBinanceUserBalances$lambda0(WalletHomeBinancePayPresenter.this, (Disposable) obj);
+                    WalletHomeBinancePayPresenter.getBinanceUserBalances$lambda$0(Function1.this, obj);
                 }
             }).doFinally(new Action() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$$ExternalSyntheticLambda0
                 @Override // io.reactivex.functions.Action
                 public final void run() {
-                    WalletHomeBinancePayPresenter.m1670getBinanceUserBalances$lambda1(WalletHomeBinancePayPresenter.this);
+                    WalletHomeBinancePayPresenter.getBinanceUserBalances$lambda$1(WalletHomeBinancePayPresenter.this);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(doFinally, "binanceInternalInteracto…e.showRefreshing(false) }");
-            final BaseView baseView = (BaseView) getViewState();
-            Disposable subscribe = doFinally.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$getBinanceUserBalances$$inlined$subscribeWithErrorHandle$default$1
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(T it) {
-                    ResourceManager resourceManager;
-                    Intrinsics.checkNotNullExpressionValue(it, "it");
-                    Result result = (Result) it;
-                    if (result instanceof Result.Success) {
-                        Result.Success success = (Result.Success) result;
-                        WalletHomeBinancePayPresenter.this.setBalances((List) success.getData());
-                        WalletHomeBinancePayPresenter.renderScreenItems$default(WalletHomeBinancePayPresenter.this, false, (List) success.getData(), 1, null);
-                    } else if (result instanceof Result.Error) {
-                        ErrorModel error = ((Result.Error) result).getError();
-                        resourceManager = WalletHomeBinancePayPresenter.this.resourceManager;
-                        ((WalletHomeBinancePayView) WalletHomeBinancePayPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                    }
-                }
-            }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$getBinanceUserBalances$$inlined$subscribeWithErrorHandle$default$2
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(Throwable th) {
-                    Timber.m4e(th);
-                    BaseView baseView2 = BaseView.this;
-                    if (baseView2 == null) {
-                        return;
-                    }
-                    String message = th.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView2.showToast(message);
-                }
-            });
+            Intrinsics.checkNotNullExpressionValue(doFinally, "fun getBinanceUserBalanc…     .autoDispose()\n    }");
+            Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2163x7f5177cb(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2164x7f5177cc((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinanceUserBalances$lambda-0  reason: not valid java name */
-    public static final void m1669getBinanceUserBalances$lambda0(WalletHomeBinancePayPresenter this$0, Disposable disposable) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        ((WalletHomeBinancePayView) this$0.getViewState()).showRefreshing(true);
+    public static final void getBinanceUserBalances$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinanceUserBalances$lambda-1  reason: not valid java name */
-    public static final void m1670getBinanceUserBalances$lambda1(WalletHomeBinancePayPresenter this$0) {
+    public static final void getBinanceUserBalances$lambda$1(WalletHomeBinancePayPresenter this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ((WalletHomeBinancePayView) this$0.getViewState()).showRefreshing(false);
     }
@@ -270,7 +245,7 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
                 ResourceManager resourceManager;
                 StringBuilder sb = new StringBuilder();
                 resourceManager = WalletHomeBinancePayPresenter.this.resourceManager;
-                sb.append(resourceManager.getString(C3158R.string.common_error_unexpected));
+                sb.append(resourceManager.getString(C3286R.string.common_error_unexpected));
                 sb.append(" (");
                 sb.append(i);
                 sb.append(')');
@@ -285,37 +260,7 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$getAuthTokensByCode$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    WalletHomeBinancePayPresenter.this.loadScreenInfo();
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletHomeBinancePayPresenter.this.resourceManager;
-                    ((WalletHomeBinancePayView) WalletHomeBinancePayPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$getAuthTokensByCode$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2161x88e4b599(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2162x88e4b59a((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -330,44 +275,13 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
     private final void getBinanceUserInfo(boolean z) {
         Observable<Result<BinanceUserInfo>> observeOn = this.binanceInternalInteractor.getUserInfo(z).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$getBinanceUserInfo$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                List resolveActions;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    resolveActions = WalletHomeBinancePayPresenter.this.resolveActions();
-                    ((WalletHomeBinancePayView) WalletHomeBinancePayPresenter.this.getViewState()).showUserInfo(new BinanceAccountItem((BinanceUserInfo) ((Result.Success) result).getData(), resolveActions));
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletHomeBinancePayPresenter.this.resourceManager;
-                    ((WalletHomeBinancePayView) WalletHomeBinancePayPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$getBinanceUserInfo$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2165x207b8962(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2166x207b8963((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final DialogModel getLoginGuideDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_binance_pay_login_title), this.resourceManager.getString(C3158R.string.wallet_binance_pay_login_description), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.wallet_binance_pay_login_positive_button));
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_binance_pay_login_title), this.resourceManager.getString(C3286R.string.wallet_binance_pay_login_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_binance_pay_login_positive_button));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -388,7 +302,7 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
         WalletHomeBinancePayView walletHomeBinancePayView = (WalletHomeBinancePayView) getViewState();
         SpreadBuilder spreadBuilder = new SpreadBuilder(4);
         spreadBuilder.add(this.cryptoPreferenceHelper.isBannersVisible() ? initBannerSlides() : null);
-        spreadBuilder.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3158R.string.wallet_binance_pay_account_header), NetworkType.BINANCE_SMART_CHAIN, false));
+        spreadBuilder.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3286R.string.wallet_binance_pay_account_header), NetworkType.BINANCE_SMART_CHAIN, false));
         spreadBuilder.add(resolveUserState());
         spreadBuilder.addSpread(resolveBalancesState(z, list));
         listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(spreadBuilder.toArray(new BaseNode[spreadBuilder.size()]));
@@ -404,7 +318,6 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
         List<BinanceTokenBalanceInfo> list2;
         int collectionSizeOrDefault2;
         NoChildNode[] noChildNodeArr;
-        GlobalState globalState;
         List listOfNotNull;
         if (this.binancePayManager.isAuthorized()) {
             WalletCryptoTokensSettingsMetadata binanceTokensSettings = this.cryptoPreferenceHelper.getBinanceTokensSettings();
@@ -479,18 +392,12 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
                 throw new NoWhenBranchMatchedException();
             }
             if (list2.isEmpty()) {
-                if (z) {
-                    globalState = GlobalState.Progress.INSTANCE;
-                } else {
-                    globalState = GlobalState.Empty.Common.INSTANCE;
-                }
+                GlobalState globalState = z ? GlobalState.Progress.INSTANCE : GlobalState.Empty.Common.INSTANCE;
                 NoChildNode[] noChildNodeArr2 = new NoChildNode[2];
                 noChildNodeArr2[0] = ((list.isEmpty() ^ true) && list2.isEmpty()) ? new TotalBalanceItem(BitmapDescriptorFactory.HUE_RED) : null;
                 noChildNodeArr2[1] = new GlobalStateItem(globalState);
                 listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(noChildNodeArr2);
-                Object[] array = listOfNotNull.toArray(new NoChildNode[0]);
-                Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-                noChildNodeArr = (NoChildNode[]) array;
+                noChildNodeArr = (NoChildNode[]) listOfNotNull.toArray(new NoChildNode[0]);
             } else {
                 SpreadBuilder spreadBuilder = new SpreadBuilder(2);
                 for (BinanceTokenBalanceInfo binanceTokenBalanceInfo3 : list2) {
@@ -502,13 +409,11 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
                 for (BinanceTokenBalanceInfo binanceTokenBalanceInfo4 : list2) {
                     arrayList3.add(new BinanceBalanceItem(binanceTokenBalanceInfo4));
                 }
-                Object[] array2 = arrayList3.toArray(new BinanceBalanceItem[0]);
-                Objects.requireNonNull(array2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-                spreadBuilder.addSpread(array2);
+                spreadBuilder.addSpread(arrayList3.toArray(new BinanceBalanceItem[0]));
                 noChildNodeArr = (NoChildNode[]) spreadBuilder.toArray(new NoChildNode[spreadBuilder.size()]);
             }
             SpreadBuilder spreadBuilder2 = new SpreadBuilder(2);
-            spreadBuilder2.add(new HeaderItem(this.resourceManager.getString(C3158R.string.wallet_binance_pay_balances_header)));
+            spreadBuilder2.add(new HeaderItem(this.resourceManager.getString(C3286R.string.wallet_binance_pay_balances_header)));
             spreadBuilder2.addSpread(noChildNodeArr);
             return (BaseNode[]) spreadBuilder2.toArray(new BaseNode[spreadBuilder2.size()]);
         }
@@ -520,13 +425,13 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
         if (this.binancePayManager.isAuthorized() && user != null) {
             return new BinanceAccountItem(user, resolveActions());
         }
-        return new CardButtonItem(C3158R.C3161id.binance_pay_link, C3158R.C3160drawable.fork_ic_add_account_40, C3158R.string.wallet_binance_pay_login);
+        return new CardButtonItem(C3286R.C3289id.binance_pay_link, C3286R.C3288drawable.fork_ic_add_account_40, C3286R.string.wallet_binance_pay_login);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final List<HorizontalActionButtonItem> resolveActions() {
         List<HorizontalActionButtonItem> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_pay_qr_28, C3158R.string.wallet_binance_pay_action_pay, false, new WalletHomeBinancePayPresenter$resolveActions$1(this), 4, null), new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_buy_28, C3158R.string.wallet_token_details_action_buy, false, new WalletHomeBinancePayPresenter$resolveActions$2(this), 4, null), new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_exchange_27, C3158R.string.wallet_binance_pay_action_convert, false, new WalletHomeBinancePayPresenter$resolveActions$3(this), 4, null), new HorizontalActionButtonItem(C3158R.C3160drawable.fork_ic_transactions_28, C3158R.string.wallet_binance_pay_action_history, false, new WalletHomeBinancePayPresenter$resolveActions$4(this), 4, null)});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_pay_qr_28, C3286R.string.wallet_binance_pay_action_pay, false, new WalletHomeBinancePayPresenter$resolveActions$1(this), 4, null), new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_buy_28, C3286R.string.wallet_token_details_action_buy, false, new WalletHomeBinancePayPresenter$resolveActions$2(this), 4, null), new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_exchange_27, C3286R.string.wallet_binance_pay_action_convert, false, new WalletHomeBinancePayPresenter$resolveActions$3(this), 4, null), new HorizontalActionButtonItem(C3286R.C3288drawable.fork_ic_transactions_28, C3286R.string.wallet_binance_pay_action_history, false, new WalletHomeBinancePayPresenter$resolveActions$4(this), 4, null)});
         return listOf;
     }
 
@@ -551,7 +456,7 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
     /* JADX INFO: Access modifiers changed from: private */
     public final void openConvertScreen() {
         BinanceUserInfo info = this.cryptoPreferenceHelper.getBinanceUserInfo().getInfo();
-        if (Intrinsics.areEqual(info == null ? null : Boolean.valueOf(info.isVerified()), Boolean.FALSE)) {
+        if (Intrinsics.areEqual(info != null ? Boolean.valueOf(info.isVerified()) : null, Boolean.FALSE)) {
             ((WalletHomeBinancePayView) getViewState()).showRequiredVerifyDialog();
         } else {
             ((WalletHomeBinancePayView) getViewState()).openConvertScreen();
@@ -573,56 +478,15 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                RxEvent rxEvent = (RxEvent) it;
-                if (rxEvent instanceof AppRxEvents.BinanceAuthHandled) {
-                    AppRxEvents.BinanceAuthHandled binanceAuthHandled = (AppRxEvents.BinanceAuthHandled) rxEvent;
-                    if (binanceAuthHandled.getIntent() != null) {
-                        WalletHomeBinancePayPresenter walletHomeBinancePayPresenter = WalletHomeBinancePayPresenter.this;
-                        Uri data = binanceAuthHandled.getIntent().getData();
-                        String queryParameter = data != null ? data.getQueryParameter("code") : null;
-                        if (queryParameter == null) {
-                            queryParameter = "";
-                        }
-                        walletHomeBinancePayPresenter.getAuthTokensByCode(queryParameter);
-                    }
-                } else if (rxEvent instanceof DomainRxEvents.BinanceExpiredSession) {
-                    WalletHomeBinancePayPresenter.renderScreenItems$default(WalletHomeBinancePayPresenter.this, false, null, 3, null);
-                } else if (rxEvent instanceof DomainRxEvents.InterfaceSettingsChanged) {
-                    WalletHomeBinancePayPresenter walletHomeBinancePayPresenter2 = WalletHomeBinancePayPresenter.this;
-                    WalletHomeBinancePayPresenter.renderScreenItems$default(walletHomeBinancePayPresenter2, false, walletHomeBinancePayPresenter2.getBalances(), 1, null);
-                } else if (rxEvent instanceof DomainRxEvents.BinanceTokensSettingsChanged) {
-                    WalletHomeBinancePayPresenter.this.loadScreenInfo();
-                } else if (rxEvent instanceof AppRxEvents.HiddenBalanceSettingChanged) {
-                    ((WalletHomeBinancePayView) WalletHomeBinancePayPresenter.this.getViewState()).notifyDataSetChanged();
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2167xc9b19749(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2168xc9b1974a(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final DialogModel getLogOutConfirmDialogModel() {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3158R.string.wallet_binance_logout_confirm_dialog_title;
-        return new DialogModel(resourceManager.getString(i), this.resourceManager.getString(C3158R.string.wallet_binance_logout_confirm_dialog_description), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(i));
+        int i = C3286R.string.wallet_binance_logout_confirm_dialog_title;
+        return new DialogModel(resourceManager.getString(i), this.resourceManager.getString(C3286R.string.wallet_binance_logout_confirm_dialog_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -636,37 +500,7 @@ public final class WalletHomeBinancePayPresenter extends BasePresenter<WalletHom
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$logout$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    WalletHomeBinancePayPresenter.renderScreenItems$default(WalletHomeBinancePayPresenter.this, false, null, 3, null);
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = WalletHomeBinancePayPresenter.this.resourceManager;
-                    ((WalletHomeBinancePayView) WalletHomeBinancePayPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$logout$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2169x9e560893(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2170x9e560894((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/dialogs/DialogUtils$$ExternalSyntheticLambda0;->f$0:Lorg/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->$r8$lambda$8eOR4IHCdVhph_42zZAn0GLpLpk(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lcom/smedialink/utils/dialogs/DialogUtils;->$r8$lambda$qPaxNHTdsI3ydJntq4j_BoSmGSI(Lorg/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView$$ExternalSyntheticLambda0;->f$0:Lorg/fork/utils/Callbacks$Callback;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->$r8$lambda$0qIZlFjRIuUIIRVpPZURa-EUfiU(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/custom/StakingTransactionActionButtonsView;->$r8$lambda$NrA4JODmWen09tL-mpOYe8nFgYg(Lorg/fork/utils/Callbacks$Callback;Landroid/view/View;)V
 
     return-void
 .end method

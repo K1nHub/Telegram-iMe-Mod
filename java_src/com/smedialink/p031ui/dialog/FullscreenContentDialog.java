@@ -37,16 +37,16 @@ public final class FullscreenContentDialog extends AlertDialog.Builder {
         setView(inflate.getRoot());
         ForkFullscreenContentAlertBinding forkFullscreenContentAlertBinding = this.binding;
         Intrinsics.checkNotNull(forkFullscreenContentAlertBinding);
-        RLottieImageView rLottieImageView = forkFullscreenContentAlertBinding.imageAlertResult;
+        RLottieImageView lambda$2$lambda$0 = forkFullscreenContentAlertBinding.imageAlertResult;
         if (num != null) {
-            rLottieImageView.setAutoRepeat(true);
-            rLottieImageView.setAnimation(num.intValue(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
-            rLottieImageView.playAnimation();
+            lambda$2$lambda$0.setAutoRepeat(true);
+            lambda$2$lambda$0.setAnimation(num.intValue(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+            lambda$2$lambda$0.playAnimation();
         } else if (num2 != null) {
-            rLottieImageView.setImageResource(num2.intValue());
+            lambda$2$lambda$0.setImageResource(num2.intValue());
             if (i != -1) {
-                Intrinsics.checkNotNullExpressionValue(rLottieImageView, "");
-                ViewExtKt.setImageColor(rLottieImageView, i);
+                Intrinsics.checkNotNullExpressionValue(lambda$2$lambda$0, "lambda$2$lambda$0");
+                ViewExtKt.setImageColor(lambda$2$lambda$0, i);
             }
         }
         AppCompatTextView appCompatTextView = forkFullscreenContentAlertBinding.textAlertDescription;
@@ -59,14 +59,13 @@ public final class FullscreenContentDialog extends AlertDialog.Builder {
         setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: com.smedialink.ui.dialog.FullscreenContentDialog$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                FullscreenContentDialog.m1454_init_$lambda3(FullscreenContentDialog.this, dialogInterface);
+                FullscreenContentDialog._init_$lambda$3(FullscreenContentDialog.this, dialogInterface);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: _init_$lambda-3  reason: not valid java name */
-    public static final void m1454_init_$lambda3(FullscreenContentDialog this$0, DialogInterface dialogInterface) {
+    public static final void _init_$lambda$3(FullscreenContentDialog this$0, DialogInterface dialogInterface) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.binding = null;
     }
@@ -101,7 +100,7 @@ public final class FullscreenContentDialog extends AlertDialog.Builder {
         private final AlertDialog createDialog(FullscreenContentDialog fullscreenContentDialog, Callbacks$Callback callbacks$Callback) {
             ActionButton actionButton;
             AlertDialog dialog = fullscreenContentDialog.create();
-            Intrinsics.checkNotNullExpressionValue(dialog, "");
+            Intrinsics.checkNotNullExpressionValue(dialog, "createDialog$lambda$0");
             DialogsFactoryKt.setBottomGravity(dialog);
             ForkFullscreenContentAlertBinding forkFullscreenContentAlertBinding = fullscreenContentDialog.binding;
             if (forkFullscreenContentAlertBinding != null && (actionButton = forkFullscreenContentAlertBinding.buttonAction) != null) {

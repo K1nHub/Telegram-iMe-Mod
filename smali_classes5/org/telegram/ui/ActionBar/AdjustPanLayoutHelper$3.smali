@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)V
     .locals 0
 
-    .line 143
+    .line 139
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$3;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 146
+    .line 142
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$3;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->access$200(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)Z
@@ -44,7 +44,7 @@
 
     if-nez p1, :cond_0
 
-    .line 147
+    .line 143
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$3;->this$0:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->stopTransition()V

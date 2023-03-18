@@ -2,6 +2,8 @@ package org.telegram.p048ui.Components;
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
@@ -22,7 +24,7 @@ import org.fork.controller.TemplatesController;
 import org.fork.p046ui.view.TemplateCell;
 import org.fork.p046ui.view.TemplatesHeaderCell;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.MenuDrawable;
@@ -54,7 +56,7 @@ public class BotCommandsMenuView extends View {
     }
 
     public void enableTemplatesMode() {
-        this.templatesDrawable = getResources().getDrawable(C3158R.C3160drawable.fork_templates);
+        this.templatesDrawable = getResources().getDrawable(C3286R.C3288drawable.fork_templates);
     }
 
     public boolean isTemplatesMode() {
@@ -75,7 +77,7 @@ public class BotCommandsMenuView extends View {
             }
         };
         this.backDrawable = menuDrawable;
-        int i = C3158R.C3164raw.bot_webview_sheet_to_cross;
+        int i = C3286R.C3291raw.bot_webview_sheet_to_cross;
         this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
             @Override // android.graphics.drawable.Drawable
             public void invalidateSelf() {
@@ -89,7 +91,7 @@ public class BotCommandsMenuView extends View {
                 BotCommandsMenuView.this.invalidate();
             }
         };
-        this.menuText = LocaleController.getString(C3158R.string.BotsMenuTitle);
+        this.menuText = LocaleController.getString(C3286R.string.BotsMenuTitle);
         this.drawBackgroundDrawable = true;
         updateColors();
         menuDrawable.setMiniIcon(true);
@@ -101,7 +103,7 @@ public class BotCommandsMenuView extends View {
         Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(16), 0, Theme.getColor("featuredStickers_addButtonPressed"));
         this.backgroundDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
-        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3158R.string.AccDescrBotMenu));
+        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3286R.string.AccDescrBotMenu));
     }
 
     public void setDrawBackgroundDrawable(boolean z) {
@@ -129,9 +131,13 @@ public class BotCommandsMenuView extends View {
 
     private void updateColors() {
         this.paint.setColor(Theme.getColor("chat_messagePanelVoiceBackground"));
-        int color = Theme.getColor("chat_messagePanelVoicePressed");
+        int color = Theme.getColor("chat_messagePanelVoiceDuration");
         this.backDrawable.setBackColor(color);
         this.backDrawable.setIconColor(color);
+        RLottieDrawable rLottieDrawable = this.webViewAnimation;
+        if (rLottieDrawable != null) {
+            rLottieDrawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+        }
         this.textPaint.setColor(color);
     }
 
@@ -177,7 +183,7 @@ public class BotCommandsMenuView extends View {
 
     public boolean setMenuText(String str) {
         if (str == null) {
-            str = LocaleController.getString(C3158R.string.BotsMenuTitle);
+            str = LocaleController.getString(C3286R.string.BotsMenuTitle);
         }
         String str2 = this.menuText;
         boolean z = str2 == null || !str2.equals(str);

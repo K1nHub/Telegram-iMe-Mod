@@ -5,25 +5,27 @@
 .implements Lio/reactivex/functions/Function;
 
 
-# instance fields
-.field public final synthetic f$0:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;
-
-.field public final synthetic f$1:Ljava/lang/String;
-
-.field public final synthetic f$2:Ljava/util/List;
+# static fields
+.field public static final synthetic INSTANCE:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ljava/lang/String;Ljava/util/List;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;
+
+    invoke-direct {v0}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;-><init>()V
+
+    sput-object v0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;->INSTANCE:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;->f$0:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;
-
-    iput-object p2, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;->f$1:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;->f$2:Ljava/util/List;
 
     return-void
 .end method
@@ -31,15 +33,9 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 0
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;->f$0:Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;
-
-    iget-object v1, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;->f$1:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda10;->f$2:Ljava/util/List;
-
-    invoke-static {v0, v1, v2, p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$oaiAiMjgHwheTOafgNNfRJGbVYw(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ljava/lang/String;Ljava/util/List;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    invoke-static {p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$4-gdUG6yRiYrjJ05W1IcJ-kSSjo(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 8356
+    .line 8374
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
@@ -47,7 +47,7 @@
 .method public areItemsTheSame(II)Z
     .locals 1
 
-    .line 8369
+    .line 8387
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -76,7 +76,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 8364
+    .line 8382
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->access$19900(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
@@ -93,7 +93,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 8359
+    .line 8377
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

@@ -18,12 +18,12 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1033
+    .line 1037
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/FireworksOverlay;-><init>(Landroid/content/Context;)V
 
     const/16 p1, 0x8
 
-    .line 1035
+    .line 1039
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -34,12 +34,12 @@
 .method protected onStop()V
     .locals 1
 
-    .line 1046
+    .line 1050
     invoke-super {p0}, Lorg/telegram/ui/Components/FireworksOverlay;->onStop()V
 
     const/16 v0, 0x8
 
-    .line 1047
+    .line 1051
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -50,10 +50,10 @@
 
     const/4 v0, 0x0
 
-    .line 1040
+    .line 1044
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1041
+    .line 1045
     invoke-super {p0}, Lorg/telegram/ui/Components/FireworksOverlay;->start()V
 
     return-void

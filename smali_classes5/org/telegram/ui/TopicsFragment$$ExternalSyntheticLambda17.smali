@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$x4GEQLha09gY5oag6RY5ahfplto(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$7cG3wfvFXJznYAxhbd9opcKLPRo(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

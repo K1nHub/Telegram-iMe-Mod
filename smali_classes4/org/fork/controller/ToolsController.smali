@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nToolsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ToolsController.kt\norg/fork/controller/ToolsController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,148:1\n9489#2,2:149\n9639#2,4:151\n211#3,2:155\n764#4:157\n855#4,2:158\n1177#4,2:160\n1251#4,4:162\n1043#4:166\n1547#4:167\n1618#4,3:168\n1547#4:171\n1618#4,3:172\n1177#4,2:175\n1251#4,4:177\n*S KotlinDebug\n*F\n+ 1 ToolsController.kt\norg/fork/controller/ToolsController\n*L\n45#1:149,2\n45#1:151,4\n66#1:155,2\n100#1:157\n100#1:158,2\n101#1:160,2\n101#1:162,4\n128#1:166\n129#1:167\n129#1:168,3\n132#1:171\n132#1:172,3\n136#1:175,2\n136#1:177,4\n*E\n"
+    value = "SMAP\nToolsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ToolsController.kt\norg/fork/controller/ToolsController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,148:1\n9496#2,2:149\n9646#2,4:151\n215#3,2:155\n766#4:157\n857#4,2:158\n1179#4,2:160\n1253#4,4:162\n1045#4:166\n1549#4:167\n1620#4,3:168\n1549#4:171\n1620#4,3:172\n1179#4,2:175\n1253#4,4:177\n*S KotlinDebug\n*F\n+ 1 ToolsController.kt\norg/fork/controller/ToolsController\n*L\n45#1:149,2\n45#1:151,4\n66#1:155,2\n100#1:157\n100#1:158,2\n101#1:160,2\n101#1:162,4\n128#1:166\n129#1:167\n129#1:168,3\n132#1:171\n132#1:172,3\n136#1:175,2\n136#1:177,4\n*E\n"
 .end annotation
 
 
@@ -262,7 +262,7 @@
 
     const/16 v1, 0xa
 
-    .line 1177
+    .line 1179
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v1
@@ -277,12 +277,12 @@
 
     move-result v1
 
-    .line 1178
+    .line 1180
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1251
+    .line 1253
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -298,7 +298,7 @@
 
     move-result-object v1
 
-    .line 1252
+    .line 1254
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 136
@@ -328,6 +328,7 @@
 
     move-result-object v1
 
+    .line 1254
     invoke-virtual {v1}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v3
@@ -363,7 +364,7 @@
     .line 131
     iget-object v0, p0, Lorg/fork/controller/ToolsController;->selectedMessagePopupItems:Ljava/util/Set;
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -374,7 +375,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -390,7 +391,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lorg/fork/enums/MessagePopupItem;
 
     .line 132
@@ -398,6 +399,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -505,7 +507,7 @@
     .line 127
     iget-object v0, p0, Lorg/fork/controller/ToolsController;->selectedDialogTypesForSwipeToGoToNextUnreadDialog:Ljava/util/Set;
 
-    .line 1043
+    .line 1045
     new-instance v1, Lorg/fork/controller/ToolsController$getSwipeToGoToNextUnreadDialogTypeNames$$inlined$sortedBy$1;
 
     invoke-direct {v1}, Lorg/fork/controller/ToolsController$getSwipeToGoToNextUnreadDialogTypeNames$$inlined$sortedBy$1;-><init>()V
@@ -514,7 +516,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -525,7 +527,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -541,7 +543,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lorg/fork/enums/DialogType;
 
     .line 129
@@ -553,6 +555,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -708,7 +711,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setSilentSendingEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ToolsController;->isSilentSendingEnabled:Z
 
     .line 36
     sget-object v0, Lorg/fork/enums/SentMessageFont;->Companion:Lorg/fork/enums/SentMessageFont$Companion;
@@ -733,7 +736,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setSelectedSentMessageFont(Lorg/fork/enums/SentMessageFont;)V
+    iput-object v0, p0, Lorg/fork/controller/ToolsController;->selectedSentMessageFont:Lorg/fork/enums/SentMessageFont;
 
     .line 37
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isRememberLastDialogEnabled()Ljava/lang/String;
@@ -748,7 +751,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setRememberLastDialogEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ToolsController;->isRememberLastDialogEnabled:Z
 
     .line 38
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->rememberLastDialogId()Ljava/lang/String;
@@ -763,7 +766,7 @@
 
     move-result-wide v0
 
-    invoke-virtual {p0, v0, v1}, Lorg/fork/controller/ToolsController;->setRememberLastDialogId(J)V
+    iput-wide v0, p0, Lorg/fork/controller/ToolsController;->rememberLastDialogId:J
 
     .line 39
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->rememberLastDialogTopicId()Ljava/lang/String;
@@ -778,7 +781,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setRememberLastDialogTopicId(I)V
+    iput v0, p0, Lorg/fork/controller/ToolsController;->rememberLastDialogTopicId:I
 
     .line 41
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/String;
@@ -793,7 +796,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setSwipeToGoToNextUnreadDialogEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogEnabled:Z
 
     .line 42
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/String;
@@ -808,7 +811,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled:Z
 
     .line 43
     sget-object v0, Lorg/fork/enums/DialogType;->Companion:Lorg/fork/enums/DialogType$Companion;
@@ -829,7 +832,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setSelectedDialogTypesForSwipeToGoToNextUnreadDialog(Ljava/util/Set;)V
+    iput-object v0, p0, Lorg/fork/controller/ToolsController;->selectedDialogTypesForSwipeToGoToNextUnreadDialog:Ljava/util/Set;
 
     .line 44
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isShowChannelBottomPanel()Ljava/lang/String;
@@ -844,14 +847,14 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setShowChannelBottomPanel(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ToolsController;->isShowChannelBottomPanel:Z
 
     .line 45
     invoke-static {}, Lorg/fork/enums/DialogType;->values()[Lorg/fork/enums/DialogType;
 
     move-result-object v0
 
-    .line 9489
+    .line 9496
     new-instance v1, Ljava/util/LinkedHashMap;
 
     array-length v2, v0
@@ -868,7 +871,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 9639
+    .line 9646
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -905,6 +908,7 @@
 
     move-result-object v5
 
+    .line 9647
     invoke-interface {v1, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v3, v3, 0x1
@@ -918,7 +922,7 @@
     move-result-object v0
 
     .line 45
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setSelectedChatAttachAlertButtons(Ljava/util/Map;)V
+    iput-object v0, p0, Lorg/fork/controller/ToolsController;->selectedChatAttachAlertButtons:Ljava/util/Map;
 
     .line 48
     sget-object v0, Lorg/fork/enums/MessagePopupItem;->Companion:Lorg/fork/enums/MessagePopupItem$Companion;
@@ -939,7 +943,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setSelectedMessagePopupItems(Ljava/util/Set;)V
+    iput-object v0, p0, Lorg/fork/controller/ToolsController;->selectedMessagePopupItems:Ljava/util/Set;
 
     .line 49
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isMessagePopupAggregatorEnabled()Ljava/lang/String;
@@ -954,7 +958,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setMessagePopupAggregatorEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ToolsController;->isMessagePopupAggregatorEnabled:Z
 
     .line 50
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isChannelWidePostsEnabled()Ljava/lang/String;
@@ -969,7 +973,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/ToolsController;->setChannelWidePostsEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/ToolsController;->isChannelWidePostsEnabled:Z
 
     .line 51
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isRevokeByDefault()Ljava/lang/String;
@@ -984,7 +988,7 @@
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Lorg/fork/controller/ToolsController;->setRevokeByDefault(Z)V
+    iput-boolean p1, p0, Lorg/fork/controller/ToolsController;->isRevokeByDefault:Z
 
     return-void
 .end method
@@ -1149,12 +1153,12 @@
 
     move-result-object v0
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1200,6 +1204,7 @@
     :goto_1
     if-eqz v3, :cond_7
 
+    .line 857
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -1207,7 +1212,7 @@
     :cond_9
     const/16 v0, 0xa
 
-    .line 1177
+    .line 1179
     invoke-static {v1, v0}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v0
@@ -1222,12 +1227,12 @@
 
     move-result v0
 
-    .line 1178
+    .line 1180
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1251
+    .line 1253
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1243,7 +1248,7 @@
 
     move-result-object v1
 
-    .line 1252
+    .line 1254
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 101
@@ -1261,7 +1266,7 @@
 
     const-string v4, "null cannot be cast to non-null type org.fork.enums.DialogType"
 
-    invoke-static {v3, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget-object v4, Lorg/fork/enums/ChatAttachAlertButton;->Companion:Lorg/fork/enums/ChatAttachAlertButton$Companion;
 
@@ -1279,6 +1284,7 @@
 
     move-result-object v1
 
+    .line 1254
     invoke-virtual {v1}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v3
@@ -1410,9 +1416,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isSilentSendingEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isSilentSendingEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1421,9 +1425,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->getSelectedSentMessageFont()Lorg/fork/enums/SentMessageFont;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/ToolsController;->selectedSentMessageFont:Lorg/fork/enums/SentMessageFont;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
@@ -1436,9 +1438,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isRememberLastDialogEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isRememberLastDialogEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1447,9 +1447,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->getRememberLastDialogId()J
-
-    move-result-wide v2
+    iget-wide v2, p0, Lorg/fork/controller/ToolsController;->rememberLastDialogId:J
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
@@ -1458,9 +1456,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->getRememberLastDialogTopicId()I
-
-    move-result v2
+    iget v2, p0, Lorg/fork/controller/ToolsController;->rememberLastDialogTopicId:I
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
@@ -1469,9 +1465,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1480,9 +1474,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1493,9 +1485,7 @@
 
     sget-object v2, Lorg/fork/enums/DialogType;->Companion:Lorg/fork/enums/DialogType$Companion;
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->getSelectedDialogTypesForSwipeToGoToNextUnreadDialog()Ljava/util/Set;
-
-    move-result-object v3
+    iget-object v3, p0, Lorg/fork/controller/ToolsController;->selectedDialogTypesForSwipeToGoToNextUnreadDialog:Ljava/util/Set;
 
     invoke-virtual {v2, v3}, Lorg/fork/enums/DialogType$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 
@@ -1508,18 +1498,14 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isShowChannelBottomPanel()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isShowChannelBottomPanel:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     .line 66
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->getSelectedChatAttachAlertButtons()Ljava/util/Map;
+    iget-object v1, p0, Lorg/fork/controller/ToolsController;->selectedChatAttachAlertButtons:Ljava/util/Map;
 
-    move-result-object v1
-
-    .line 211
+    .line 215
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
@@ -1577,9 +1563,7 @@
 
     sget-object v2, Lorg/fork/enums/MessagePopupItem;->Companion:Lorg/fork/enums/MessagePopupItem$Companion;
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->getSelectedMessagePopupItems()Ljava/util/Set;
-
-    move-result-object v3
+    iget-object v3, p0, Lorg/fork/controller/ToolsController;->selectedMessagePopupItems:Ljava/util/Set;
 
     invoke-virtual {v2, v3}, Lorg/fork/enums/MessagePopupItem$Companion;->mapEnumsToNames(Ljava/util/Set;)Ljava/util/Set;
 
@@ -1592,9 +1576,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isMessagePopupAggregatorEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isMessagePopupAggregatorEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1603,9 +1585,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isChannelWidePostsEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isChannelWidePostsEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1614,9 +1594,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/ToolsController;->isRevokeByDefault()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/ToolsController;->isRevokeByDefault:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -1676,71 +1654,6 @@
 
     .line 29
     iput-boolean p1, p0, Lorg/fork/controller/ToolsController;->isRevokeByDefault:Z
-
-    return-void
-.end method
-
-.method public final setSelectedChatAttachAlertButtons(Ljava/util/Map;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map<",
-            "Lorg/fork/enums/DialogType;",
-            "Ljava/util/Set<",
-            "Lorg/fork/enums/ChatAttachAlertButton;",
-            ">;>;)V"
-        }
-    .end annotation
-
-    const-string v0, "<set-?>"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 25
-    iput-object p1, p0, Lorg/fork/controller/ToolsController;->selectedChatAttachAlertButtons:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method public final setSelectedDialogTypesForSwipeToGoToNextUnreadDialog(Ljava/util/Set;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Set<",
-            "Lorg/fork/enums/DialogType;",
-            ">;)V"
-        }
-    .end annotation
-
-    const-string v0, "<set-?>"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 23
-    iput-object p1, p0, Lorg/fork/controller/ToolsController;->selectedDialogTypesForSwipeToGoToNextUnreadDialog:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public final setSelectedMessagePopupItems(Ljava/util/Set;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Set<",
-            "Lorg/fork/enums/MessagePopupItem;",
-            ">;)V"
-        }
-    .end annotation
-
-    const-string v0, "<set-?>"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 26
-    iput-object p1, p0, Lorg/fork/controller/ToolsController;->selectedMessagePopupItems:Ljava/util/Set;
 
     return-void
 .end method

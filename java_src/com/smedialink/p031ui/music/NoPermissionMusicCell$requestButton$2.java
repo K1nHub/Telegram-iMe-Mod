@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,7 +41,7 @@ public final class NoPermissionMusicCell$requestButton$2 extends Lambda implemen
         int color = Theme.getColor(str);
         str2 = noPermissionMusicCell.buttonPressedColor;
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(m51dp, color, Theme.getColor(str2)));
-        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3158R.string.PeopleNearbyAllowAccess));
+        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3286R.string.PeopleNearbyAllowAccess));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 14.0f);
         str3 = noPermissionMusicCell.buttonTextColor;
@@ -50,15 +50,14 @@ public final class NoPermissionMusicCell$requestButton$2 extends Lambda implemen
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.music.NoPermissionMusicCell$requestButton$2$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NoPermissionMusicCell$requestButton$2.m1461invoke$lambda1$lambda0(activity, view);
+                NoPermissionMusicCell$requestButton$2.invoke$lambda$1$lambda$0(activity, view);
             }
         });
         return textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1461invoke$lambda1$lambda0(Activity context, View view) {
+    public static final void invoke$lambda$1$lambda$0(Activity context, View view) {
         Intrinsics.checkNotNullParameter(context, "$context");
         context.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
     }

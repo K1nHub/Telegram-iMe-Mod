@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ManageLinksActivity;->openScanQrCodeScreen()V
+    value = Lorg/telegram/ui/ManageLinksActivity;->showCameraScanner()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 660
+    .line 699
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$1;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,19 +44,31 @@
 .end method
 
 .method public didFindQr(Ljava/lang/String;)V
-    .locals 1
+    .locals 2
 
-    .line 663
+    .line 702
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$1;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
+    iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
+
+    if-eqz v1, :cond_0
+
+    .line 703
+    invoke-virtual {v1, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->validateRecipientAddress(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 704
+    :cond_0
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 664
+    .line 705
     invoke-virtual {v0, p1}, Lcom/smedialink/ui/wallet/donations/WalletDonationsPresenter;->linkAddress(Ljava/lang/String;)V
 
-    :cond_0
+    :cond_1
+    :goto_0
     return-void
 .end method
 

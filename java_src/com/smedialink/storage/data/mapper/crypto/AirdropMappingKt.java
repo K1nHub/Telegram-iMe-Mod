@@ -16,10 +16,22 @@ public final class AirdropMappingKt {
 
         static {
             int[] iArr = new int[AirdropStatus.values().length];
-            iArr[AirdropStatus.READY.ordinal()] = 1;
-            iArr[AirdropStatus.UNKNOWN.ordinal()] = 2;
-            iArr[AirdropStatus.FINISHED.ordinal()] = 3;
-            iArr[AirdropStatus.NOT_READY.ordinal()] = 4;
+            try {
+                iArr[AirdropStatus.READY.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[AirdropStatus.UNKNOWN.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[AirdropStatus.FINISHED.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[AirdropStatus.NOT_READY.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -39,6 +51,6 @@ public final class AirdropMappingKt {
             airdropRequestId = rightRequestId;
         }
         Integer value = checkAirdropPromotionStartResponse.getValue();
-        return new AirdropInfo.Ready(airdropRequestId, value == null ? 0 : value.intValue());
+        return new AirdropInfo.Ready(airdropRequestId, value != null ? value.intValue() : 0);
     }
 }

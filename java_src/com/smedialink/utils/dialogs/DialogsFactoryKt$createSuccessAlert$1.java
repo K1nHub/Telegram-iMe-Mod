@@ -17,9 +17,9 @@ public final class DialogsFactoryKt$createSuccessAlert$1 extends Lambda implemen
     }
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
-    public final void invoke2(TextView noName_0, AlertDialog noName_1) {
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+    public final void invoke2(TextView textView, AlertDialog alertDialog) {
+        Intrinsics.checkNotNullParameter(textView, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(alertDialog, "<anonymous parameter 1>");
     }
 
     @Override // kotlin.jvm.functions.Function2

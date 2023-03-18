@@ -10,7 +10,6 @@ import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -30,7 +29,6 @@ import com.smedialink.utils.extentions.common.ViewExtKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazy;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
@@ -38,7 +36,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.browser.Browser;
@@ -69,8 +67,14 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
 
         static {
             int[] iArr = new int[ChatType.values().length];
-            iArr[ChatType.CHANNEL.ordinal()] = 1;
-            iArr[ChatType.GROUP.ordinal()] = 2;
+            try {
+                iArr[ChatType.CHANNEL.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ChatType.GROUP.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -168,34 +172,32 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         String photo = campaignItem.getPhoto();
         Context context = getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFrom((ImageView) imageAvatar, photo, context, Integer.valueOf(C3158R.C3160drawable.photo_placeholder_in), true);
+        ImageViewExtKt.loadFromWithPlaceholderResId(imageAvatar, photo, context, Integer.valueOf(C3286R.C3288drawable.photo_placeholder_in), true);
         AppCompatImageView imageVerified = binding.imageVerified;
         Intrinsics.checkNotNullExpressionValue(imageVerified, "imageVerified");
         imageVerified.setVisibility(campaignItem.isVerified() ? 0 : 8);
         binding.textName.setText(campaignItem.getTitle());
-        String stringPlus = Intrinsics.stringPlus("@", campaignItem.getShortname());
+        String str = '@' + campaignItem.getShortname();
         AppCompatTextView appCompatTextView = binding.textNickname;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(stringPlus);
-        spannableStringBuilder.setSpan(new URLSpanNoUnderline(stringPlus, true), 0, stringPlus.length(), 33);
-        Unit unit = Unit.INSTANCE;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+        spannableStringBuilder.setSpan(new URLSpanNoUnderline(str, true), 0, str.length(), 33);
         appCompatTextView.setText(spannableStringBuilder);
-        AppCompatTextView appCompatTextView2 = binding.textDescription;
+        AppCompatTextView setupCampaignInfo$lambda$6$lambda$5$lambda$2 = binding.textDescription;
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(campaignItem.getDescription());
         MessageObject.addLinks(false, spannableStringBuilder2, false, false);
-        appCompatTextView2.setText(spannableStringBuilder2);
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "");
+        setupCampaignInfo$lambda$6$lambda$5$lambda$2.setText(spannableStringBuilder2);
+        Intrinsics.checkNotNullExpressionValue(setupCampaignInfo$lambda$6$lambda$5$lambda$2, "setupCampaignInfo$lambda$6$lambda$5$lambda$2");
         isBlank = StringsKt__StringsJVMKt.isBlank(campaignItem.getDescription());
-        appCompatTextView2.setVisibility(isBlank ^ true ? 0 : 8);
+        setupCampaignInfo$lambda$6$lambda$5$lambda$2.setVisibility(isBlank ^ true ? 0 : 8);
         binding.topic.setTopic(TopicModel.Companion.createMockupWithTitle(campaignItem.getCategory()), false);
         binding.textLanguageValue.setText(campaignItem.getLanguage());
         binding.textSubscribersCount.setText(String.valueOf(campaignItem.getMembersCount()));
-        for (String str : campaignItem.getTags()) {
+        for (String str2 : campaignItem.getTags()) {
             FlexboxLayout flexboxLayout = binding.flexboxTags;
             Context context2 = getContext();
             Intrinsics.checkNotNullExpressionValue(context2, "context");
             ChannelTagView channelTagView = new ChannelTagView(context2, null, 0, 6, null);
-            channelTagView.setText(str);
-            Unit unit2 = Unit.INSTANCE;
+            channelTagView.setText(str2);
             flexboxLayout.addView(channelTagView, LayoutHelper.createLinear(-2, -2, 6, 0, 0, 6));
         }
         ConstraintLayout constraintTags = binding.constraintTags;
@@ -213,14 +215,14 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
                 throw new NoWhenBranchMatchedException();
             }
             if (z) {
-                string = LocaleController.getString("JoinGroup", C3158R.string.JoinGroup);
+                string = LocaleController.getString("JoinGroup", C3286R.string.JoinGroup);
             } else {
-                string = LocaleController.getString("LeaveMegaMenu", C3158R.string.LeaveMegaMenu);
+                string = LocaleController.getString("LeaveMegaMenu", C3286R.string.LeaveMegaMenu);
             }
         } else if (z) {
-            string = LocaleController.getString("ChannelJoin", C3158R.string.ChannelJoin);
+            string = LocaleController.getString("ChannelJoin", C3286R.string.ChannelJoin);
         } else {
-            string = LocaleController.getString("LeaveChannel", C3158R.string.LeaveChannel);
+            string = LocaleController.getString("LeaveChannel", C3286R.string.LeaveChannel);
         }
         bigActionButton.setText(string);
     }
@@ -249,24 +251,24 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
     private final void setupColors() {
         ForkContentChannelDetailsBinding binding = getBinding();
         binding.buttonSubscribe.applyColors();
-        ActionBarMenuItem actionBarMenuItem = binding.buttonMore;
-        actionBarMenuItem.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
-        AppCompatTextView appCompatTextView = binding.textName;
-        appCompatTextView.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        AppCompatTextView appCompatTextView2 = binding.textNickname;
+        ActionBarMenuItem setupColors$lambda$13$lambda$8 = binding.buttonMore;
+        setupColors$lambda$13$lambda$8.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$13$lambda$8, "setupColors$lambda$13$lambda$8");
+        ViewExtKt.setCircleRippleBackground(setupColors$lambda$13$lambda$8);
+        AppCompatTextView setupColors$lambda$13$lambda$9 = binding.textName;
+        setupColors$lambda$13$lambda$9.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$13$lambda$9, "setupColors$lambda$13$lambda$9");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$13$lambda$9);
+        AppCompatTextView appCompatTextView = binding.textNickname;
+        appCompatTextView.setLinkTextColor(getThemedColor("chats_actionBackground"));
+        appCompatTextView.setTextColor(getThemedColor("chats_actionBackground"));
+        AppCompatTextView setupColors$lambda$13$lambda$11 = binding.textSubscribersCount;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$13$lambda$11, "setupColors$lambda$13$lambda$11");
+        ViewExtKt.setCompoundDrawablesColor(setupColors$lambda$13$lambda$11, getThemedColor("windowBackgroundWhiteGrayText"));
+        setupColors$lambda$13$lambda$11.setTextColor(getThemedColor("windowBackgroundWhiteGrayText"));
+        AppCompatTextView appCompatTextView2 = binding.textDescription;
+        appCompatTextView2.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
         appCompatTextView2.setLinkTextColor(getThemedColor("chats_actionBackground"));
-        appCompatTextView2.setTextColor(getThemedColor("chats_actionBackground"));
-        AppCompatTextView appCompatTextView3 = binding.textSubscribersCount;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView3, "");
-        ViewExtKt.setCompoundDrawablesColor(appCompatTextView3, getThemedColor("windowBackgroundWhiteGrayText"));
-        appCompatTextView3.setTextColor(getThemedColor("windowBackgroundWhiteGrayText"));
-        AppCompatTextView appCompatTextView4 = binding.textDescription;
-        appCompatTextView4.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        appCompatTextView4.setLinkTextColor(getThemedColor("chats_actionBackground"));
         binding.textLanguageValue.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
         AppCompatTextView textLanguageTitle = binding.textLanguageTitle;
         Intrinsics.checkNotNullExpressionValue(textLanguageTitle, "textLanguageTitle");
@@ -283,14 +285,13 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         AppCompatTextView appCompatTextView = binding.textDescription;
         appCompatTextView.setMovementMethod(LinkMovementMethod.getInstance());
         appCompatTextView.setOnTouchListener(ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda1.INSTANCE);
-        binding.textLanguageTitle.setText(getResourceManager().getString(C3158R.string.catalog_channel_details_language));
-        binding.textTags.setText(getResourceManager().getString(C3158R.string.catalog_channel_details_tags));
+        binding.textLanguageTitle.setText(getResourceManager().getString(C3286R.string.catalog_channel_details_language));
+        binding.textTags.setText(getResourceManager().getString(C3286R.string.catalog_channel_details_tags));
         setupButtonMore();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupViews$lambda-16$lambda-15$lambda-14  reason: not valid java name */
-    public static final boolean m1416setupViews$lambda16$lambda15$lambda14(View view, MotionEvent motionEvent) {
+    public static final boolean setupViews$lambda$16$lambda$15$lambda$14(View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             view.getParent().requestDisallowInterceptTouchEvent(true);
         }
@@ -301,31 +302,30 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
     }
 
     private final void setupButtonMore() {
-        final ActionBarMenuItem actionBarMenuItem = getBinding().buttonMore;
-        actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setSubMenuOpenSide(2);
-        actionBarMenuItem.setIcon(C3158R.C3160drawable.ic_ab_other);
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
-        actionBarMenuItem.addSubItem(IdFabric$Menu.SHARE, C3158R.C3160drawable.share, LocaleController.getString("ShareLink", C3158R.string.ShareLink));
-        actionBarMenuItem.addSubItem(IdFabric$Menu.COPY, C3158R.C3160drawable.msg_link2, LocaleController.getString("CopyLink", C3158R.string.CopyLink));
-        actionBarMenuItem.addSubItem(IdFabric$Menu.f257QR, C3158R.C3160drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3158R.string.GetQRCode));
-        actionBarMenuItem.redrawPopup(getThemedColor("actionBarDefaultSubmenuBackground"));
-        actionBarMenuItem.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItem"), false);
-        actionBarMenuItem.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItemIcon"), true);
-        actionBarMenuItem.setupPopupRadialSelectors(getThemedColor("listSelectorSDK21"));
-        actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda0
+        final ActionBarMenuItem setupButtonMore$lambda$18 = getBinding().buttonMore;
+        setupButtonMore$lambda$18.setLongClickEnabled(false);
+        setupButtonMore$lambda$18.setSubMenuOpenSide(2);
+        setupButtonMore$lambda$18.setIcon(C3286R.C3288drawable.ic_ab_other);
+        Intrinsics.checkNotNullExpressionValue(setupButtonMore$lambda$18, "setupButtonMore$lambda$18");
+        ViewExtKt.setCircleRippleBackground(setupButtonMore$lambda$18);
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.SHARE, C3286R.C3288drawable.share, LocaleController.getString("ShareLink", C3286R.string.ShareLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.COPY, C3286R.C3288drawable.msg_link2, LocaleController.getString("CopyLink", C3286R.string.CopyLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.f257QR, C3286R.C3288drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3286R.string.GetQRCode));
+        setupButtonMore$lambda$18.redrawPopup(getThemedColor("actionBarDefaultSubmenuBackground"));
+        setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItem"), false);
+        setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItemIcon"), true);
+        setupButtonMore$lambda$18.setupPopupRadialSelectors(getThemedColor("listSelectorSDK21"));
+        setupButtonMore$lambda$18.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChannelDetailsBottomSheetDialog.m1414setupButtonMore$lambda18$lambda17(ActionBarMenuItem.this, view);
+                ChannelDetailsBottomSheetDialog.setupButtonMore$lambda$18$lambda$17(ActionBarMenuItem.this, view);
             }
         });
-        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
+        setupButtonMore$lambda$18.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupButtonMore$lambda-18$lambda-17  reason: not valid java name */
-    public static final void m1414setupButtonMore$lambda18$lambda17(ActionBarMenuItem this_with, View view) {
+    public static final void setupButtonMore$lambda$18$lambda$17(ActionBarMenuItem this_with, View view) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         this_with.toggleSubMenu();
     }
@@ -348,14 +348,13 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         binding.buttonMore.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.smedialink.ui.catalog.details.ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
-                ChannelDetailsBottomSheetDialog.m1415setupListeners$lambda20$lambda19(ChannelDetailsBottomSheetDialog.this, i);
+                ChannelDetailsBottomSheetDialog.setupListeners$lambda$20$lambda$19(ChannelDetailsBottomSheetDialog.this, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-20$lambda-19  reason: not valid java name */
-    public static final void m1415setupListeners$lambda20$lambda19(ChannelDetailsBottomSheetDialog this$0, int i) {
+    public static final void setupListeners$lambda$20$lambda$19(ChannelDetailsBottomSheetDialog this$0, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.onSubItemClick(i);
     }

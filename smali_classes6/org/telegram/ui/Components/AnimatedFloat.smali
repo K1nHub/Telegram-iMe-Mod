@@ -351,6 +351,44 @@
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/Runnable;JLandroid/animation/TimeInterpolator;)V
+    .locals 2
+
+    .line 73
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, 0x0
+
+    .line 20
+    iput-wide v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionDelay:J
+
+    const-wide/16 v0, 0xc8
+
+    .line 21
+    iput-wide v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionDuration:J
+
+    .line 22
+    sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionInterpolator:Landroid/animation/TimeInterpolator;
+
+    .line 74
+    iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->invalidate:Ljava/lang/Runnable;
+
+    .line 75
+    iput-wide p2, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionDuration:J
+
+    .line 76
+    iput-object p4, p0, Lorg/telegram/ui/Components/AnimatedFloat;->transitionInterpolator:Landroid/animation/TimeInterpolator;
+
+    const/4 p1, 0x1
+
+    .line 77
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->firstSet:Z
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public get()F

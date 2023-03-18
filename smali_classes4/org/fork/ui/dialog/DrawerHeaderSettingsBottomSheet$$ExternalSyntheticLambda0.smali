@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda0;->f$1:Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->$r8$lambda$fuQxzTAEgpo87j5xluaxPKfxybs(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->$r8$lambda$aqvgHOWu-qk8cLPX2pP8gwl3qts(ZLorg/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method

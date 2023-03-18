@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper$$ExternalSyntheticLambda2;->f$0:Ljava/lang/Throwable;
 
-    invoke-static {v0}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->$r8$lambda$4oWsbKzhlrd4_NmnBLlPb5aqFWA(Ljava/lang/Throwable;)V
+    invoke-static {v0}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->$r8$lambda$9WAg_KGPqdq34F0fRsmIFol_JXI(Ljava/lang/Throwable;)V
 
     return-void
 .end method

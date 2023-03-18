@@ -3,24 +3,19 @@ package com.smedialink.storage.data.datasource.swap.impl;
 import com.smedialink.storage.data.datasource.swap.WalletSwapDataSource;
 import com.smedialink.storage.data.network.api.own.SwapApi;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.smedialink.storage.data.network.model.request.crypto.swap.SendCryptoSwapTransactionRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.crypto.wallet.TransactionResponse;
 import com.smedialink.storage.data.utils.extentions.DateExtKt;
 import com.smedialink.storage.data.utils.extentions.NumberExtKt;
 import com.smedialink.storage.data.utils.extentions.Web3jExtKt;
 import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
 import com.smedialink.storage.domain.model.Result;
-import com.smedialink.storage.domain.model.crypto.NetworkType;
 import com.smedialink.storage.domain.model.crypto.Wallet;
 import com.smedialink.storage.domain.model.crypto.send.TransactionArgs;
 import com.smedialink.storage.domain.model.crypto.swap.SwapArgs;
 import com.smedialink.storage.domain.model.wallet.swap.SwapMethod;
 import com.smedialink.storage.domain.model.wallet.swap.SwapProtocol;
+import com.smedialink.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.utils.extentions.model.TokenInfoExtKt;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -51,16 +46,37 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
 
         static {
-            int[] iArr = new int[SwapMethod.values().length];
-            iArr[SwapMethod.EXACT_TOKENS_FOR_TOKENS.ordinal()] = 1;
-            iArr[SwapMethod.EXACT_TOKENS_FOR_ETH.ordinal()] = 2;
-            iArr[SwapMethod.EXACT_ETH_FOR_TOKENS.ordinal()] = 3;
-            iArr[SwapMethod.UNKNOWN.ordinal()] = 4;
+            int[] iArr = new int[SwapProtocol.values().length];
+            try {
+                iArr[SwapProtocol.UNISWAP_V3.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[SwapProtocol.ONEINCH.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[SwapProtocol.SYMBIOSIS.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
-            int[] iArr2 = new int[SwapProtocol.values().length];
-            iArr2[SwapProtocol.UNISWAP_V3.ordinal()] = 1;
-            iArr2[SwapProtocol.ONEINCH.ordinal()] = 2;
-            iArr2[SwapProtocol.SYMBIOSIS.ordinal()] = 3;
+            int[] iArr2 = new int[SwapMethod.values().length];
+            try {
+                iArr2[SwapMethod.EXACT_TOKENS_FOR_TOKENS.ordinal()] = 1;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr2[SwapMethod.EXACT_TOKENS_FOR_ETH.ordinal()] = 2;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr2[SwapMethod.EXACT_ETH_FOR_TOKENS.ordinal()] = 3;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr2[SwapMethod.UNKNOWN.ordinal()] = 4;
+            } catch (NoSuchFieldError unused7) {
+            }
             $EnumSwitchMapping$1 = iArr2;
         }
     }
@@ -79,46 +95,10 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
     }
 
     @Override // com.smedialink.storage.data.datasource.swap.WalletSwapDataSource
-    public Observable<Result<String>> swap(final TransactionArgs args) {
+    public Observable<Result<String>> swap(TransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
         if (args instanceof SwapArgs.Dex) {
-            Observable flatMap = sign(args).flatMap(new Function() { // from class: com.smedialink.storage.data.datasource.swap.impl.DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1
-                /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-                @Override // io.reactivex.functions.Function
-                public final ObservableSource apply(Result result) {
-                    SwapApi swapApi;
-                    final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler;
-                    Intrinsics.checkNotNullParameter(result, "result");
-                    if (!(result instanceof Result.Success)) {
-                        return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                    }
-                    swapApi = DexWalletSwapDataSourceImpl.this.swapApi;
-                    SwapArgs.Dex dex = (SwapArgs.Dex) args;
-                    String str = (String) result.getData();
-                    if (str == null) {
-                        str = "";
-                    }
-                    String str2 = str;
-                    String quoteId = dex.getQuoteId();
-                    String name = dex.getNetworkType().name();
-                    NetworkType outputNetworkType = dex.getOutputNetworkType();
-                    Observable<ApiBaseResponse<TransactionResponse>> sendCryptoSwapTransaction = swapApi.sendCryptoSwapTransaction(new SendCryptoSwapTransactionRequest(str2, quoteId, dex.getSwapProtocol().name(), name, outputNetworkType != null ? outputNetworkType.name() : null));
-                    firebaseFunctionsErrorHandler = DexWalletSwapDataSourceImpl.this.firebaseErrorHandler;
-                    Observable<R> map = sendCryptoSwapTransaction.map(new Function() { // from class: com.smedialink.storage.data.datasource.swap.impl.DexWalletSwapDataSourceImpl$swap$lambda-2$$inlined$mapSuccess$1
-                        /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-                        @Override // io.reactivex.functions.Function
-                        public final Result apply(ApiBaseResponse response) {
-                            Intrinsics.checkNotNullParameter(response, "response");
-                            if (!response.isSuccess()) {
-                                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                            }
-                            return Result.Companion.success(((TransactionResponse) response.getPayload()).getTransactionHash());
-                        }
-                    });
-                    Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-                    return map;
-                }
-            });
+            Observable flatMap = sign(args).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new DexWalletSwapDataSourceImpl$swap$$inlined$flatMapSuccess$1(this, args)));
             Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
             return flatMap;
         }
@@ -135,13 +115,13 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
         RawTransaction createTransactionByType = createTransactionByType(dex);
         long chainId = dex.getChainId();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet == null ? null : eVMWallet.getCredentials()))));
+        Observable<Result<String>> just = Observable.just(Result.Companion.success(Numeric.toHexString(TransactionEncoder.signMessage(createTransactionByType, chainId, eVMWallet != null ? eVMWallet.getCredentials() : null))));
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         return just;
     }
 
     private final RawTransaction createTransactionByType(SwapArgs.Dex dex) {
-        int i = WhenMappings.$EnumSwitchMapping$0[dex.getSwapMethod().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$1[dex.getSwapMethod().ordinal()];
         if (i == 1 || i == 2) {
             RawTransaction createTransaction = RawTransaction.createTransaction(dex.getNonce(), dex.getGasPrice(), dex.getGasLimit(), dex.getContractAddress(), BigInteger.ZERO, createSmartFunctionParams(dex));
             Intrinsics.checkNotNullExpressionValue(createTransaction, "{\n                RawTra…          )\n            }");
@@ -151,7 +131,7 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
             Intrinsics.checkNotNullExpressionValue(createTransaction2, "{\n                RawTra…          )\n            }");
             return createTransaction2;
         } else if (i == 4) {
-            int i2 = WhenMappings.$EnumSwitchMapping$1[dex.getSwapProtocol().ordinal()];
+            int i2 = WhenMappings.$EnumSwitchMapping$0[dex.getSwapProtocol().ordinal()];
             if (i2 == 1 || i2 == 2 || i2 == 3) {
                 RawTransaction createTransaction3 = RawTransaction.createTransaction(dex.getNonce(), dex.getGasPrice(), dex.getGasLimit(), dex.getContractAddress(), dex.getValue(), dex.getData());
                 Intrinsics.checkNotNullExpressionValue(createTransaction3, "{\n                when (…          }\n            }");
@@ -176,7 +156,7 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
             arrayList.add(new Address(str));
         }
         SwapMethod swapMethod = dex.getSwapMethod();
-        int i = WhenMappings.$EnumSwitchMapping$0[swapMethod.ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$1[swapMethod.ordinal()];
         if (i == 1 || i == 2) {
             String methodName = swapMethod.getMethodName();
             Type[] typeArr = new Type[5];
@@ -184,7 +164,7 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
             typeArr[1] = new Uint256(dex.getAmountOutBound());
             typeArr[2] = new DynamicArray(Address.class, arrayList);
             Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-            typeArr[3] = new Address(eVMWallet == null ? null : eVMWallet.getAddress());
+            typeArr[3] = new Address(eVMWallet != null ? eVMWallet.getAddress() : null);
             typeArr[4] = new Uint256(calculateDeadline);
             listOf = CollectionsKt__CollectionsKt.listOf((Object[]) typeArr);
             return Web3jExtKt.createSmartFunctionDataFor$default(methodName, listOf, null, 4, null);
@@ -194,7 +174,7 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
             typeArr2[0] = new Uint256(dex.getAmountOutBound());
             typeArr2[1] = new DynamicArray(Address.class, arrayList);
             Wallet.EVM eVMWallet2 = this.cryptoAccessManager.getEVMWallet();
-            typeArr2[2] = new Address(eVMWallet2 == null ? null : eVMWallet2.getAddress());
+            typeArr2[2] = new Address(eVMWallet2 != null ? eVMWallet2.getAddress() : null);
             typeArr2[3] = new Uint256(calculateDeadline);
             listOf2 = CollectionsKt__CollectionsKt.listOf((Object[]) typeArr2);
             return Web3jExtKt.createSmartFunctionDataFor$default(methodName2, listOf2, null, 4, null);

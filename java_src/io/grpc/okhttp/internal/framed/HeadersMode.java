@@ -1,5 +1,5 @@
 package io.grpc.okhttp.internal.framed;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum HeadersMode {
     SPDY_SYN_STREAM,
     SPDY_REPLY,

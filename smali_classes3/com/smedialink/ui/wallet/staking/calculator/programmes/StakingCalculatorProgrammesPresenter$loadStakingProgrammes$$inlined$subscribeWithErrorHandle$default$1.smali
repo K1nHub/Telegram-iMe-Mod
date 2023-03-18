@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,19 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/staking/StakingProgrammes;",
+        ">;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 StakingCalculatorProgrammesPresenter.kt\ncom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter\n*L\n1#1,111:1\n50#2,25:112\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 StakingCalculatorProgrammesPresenter.kt\ncom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter\n*L\n1#1,111:1\n50#2,26:112\n*E\n"
 .end annotation
 
 
@@ -49,18 +52,35 @@
 
     iput-boolean p3, p0, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$1;->$isInitialLoad$inlined:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/staking/StakingProgrammes;",
+            ">;)V"
         }
     .end annotation
 
@@ -98,13 +118,8 @@
 
     check-cast v1, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;
 
-    if-nez v1, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v1}, Lcom/smedialink/storage/domain/model/staking/StakingMetadata;->getId()J
 
     move-result-wide v1
@@ -112,6 +127,11 @@
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
 
     :goto_0
     invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter;->access$setLastItemId$p(Lcom/smedialink/ui/wallet/staking/calculator/programmes/StakingCalculatorProgrammesPresenter;Ljava/lang/Long;)V

@@ -27,7 +27,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
         if (t != null) {
             return t;
         }
-        throw new IllegalStateException(Intrinsics.stringPlus("No view found with id ", Integer.valueOf(i)).toString());
+        throw new IllegalStateException(("No view found with id " + i).toString());
     }
 
     public <T extends View> T getViewOrNull(int i) {
@@ -36,10 +36,10 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
         if (t2 == null && (t = (T) this.itemView.findViewById(i)) != null) {
             this.views.put(i, t);
             return t;
-        } else if (t2 != null) {
-            return t2;
-        } else {
+        } else if (t2 == null) {
             return null;
+        } else {
+            return t2;
         }
     }
 

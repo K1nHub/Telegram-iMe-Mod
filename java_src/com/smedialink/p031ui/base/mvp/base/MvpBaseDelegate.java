@@ -91,26 +91,23 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
     public void onPause() {
         getProgressDialog().dismiss();
         MvpDelegate<T> mvpDelegate = getMvpDelegate();
-        if (mvpDelegate == null) {
-            return;
+        if (mvpDelegate != null) {
+            mvpDelegate.onDetach();
         }
-        mvpDelegate.onDetach();
     }
 
     public void onResume() {
         MvpDelegate<T> mvpDelegate = getMvpDelegate();
-        if (mvpDelegate == null) {
-            return;
+        if (mvpDelegate != null) {
+            mvpDelegate.onAttach();
         }
-        mvpDelegate.onAttach();
     }
 
     public void onDestroyView() {
         MvpDelegate<T> mvpDelegate = getMvpDelegate();
-        if (mvpDelegate == null) {
-            return;
+        if (mvpDelegate != null) {
+            mvpDelegate.onDestroyView();
         }
-        mvpDelegate.onDestroyView();
     }
 
     public void onDetachedFromWindow() {
@@ -131,10 +128,9 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
                 mvpDelegate2.onDestroyView();
             }
             MvpDelegate<T> mvpDelegate3 = getMvpDelegate();
-            if (mvpDelegate3 == null) {
-                return;
+            if (mvpDelegate3 != null) {
+                mvpDelegate3.onDestroy();
             }
-            mvpDelegate3.onDestroy();
         } catch (Exception e) {
             Timber.m4e(e);
         }
@@ -161,14 +157,13 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.ui.base.mvp.base.MvpBaseDelegate$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MvpBaseDelegate.m1408showLoadingDialog$lambda2(MvpBaseDelegate.this, z, z2, disposable);
+                MvpBaseDelegate.showLoadingDialog$lambda$2(MvpBaseDelegate.this, z, z2, disposable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showLoadingDialog$lambda-2  reason: not valid java name */
-    public static final void m1408showLoadingDialog$lambda2(MvpBaseDelegate this$0, boolean z, boolean z2, final Disposable disposable) {
+    public static final void showLoadingDialog$lambda$2(MvpBaseDelegate this$0, boolean z, boolean z2, final Disposable disposable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Context context = this$0.getContext();
         Activity activity = context instanceof Activity ? (Activity) context : null;
@@ -184,7 +179,7 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
                     progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: com.smedialink.ui.base.mvp.base.MvpBaseDelegate$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
-                            MvpBaseDelegate.m1409showLoadingDialog$lambda2$lambda1$lambda0(Disposable.this, dialogInterface);
+                            MvpBaseDelegate.showLoadingDialog$lambda$2$lambda$1$lambda$0(Disposable.this, dialogInterface);
                         }
                     });
                     progressDialog.show();
@@ -198,11 +193,9 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showLoadingDialog$lambda-2$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1409showLoadingDialog$lambda2$lambda1$lambda0(Disposable disposable, DialogInterface dialogInterface) {
-        if (disposable == null) {
-            return;
+    public static final void showLoadingDialog$lambda$2$lambda$1$lambda$0(Disposable disposable, DialogInterface dialogInterface) {
+        if (disposable != null) {
+            disposable.dispose();
         }
-        disposable.dispose();
     }
 }

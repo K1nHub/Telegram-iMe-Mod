@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.metadata.scte35;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import com.google.android.exoplayer2.util.TimestampAdjuster;
 /* loaded from: classes.dex */
@@ -37,7 +37,7 @@ public final class TimeSignalCommand extends SpliceCommand {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static long parseSpliceTime(ParsableByteArray parsableByteArray, long j) {
         long readUnsignedByte = parsableByteArray.readUnsignedByte();
-        return (128 & readUnsignedByte) != 0 ? 8589934591L & ((((readUnsignedByte & 1) << 32) | parsableByteArray.readUnsignedInt()) + j) : C0474C.TIME_UNSET;
+        return (128 & readUnsignedByte) != 0 ? 8589934591L & ((((readUnsignedByte & 1) << 32) | parsableByteArray.readUnsignedInt()) + j) : C0468C.TIME_UNSET;
     }
 
     @Override // android.os.Parcelable

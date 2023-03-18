@@ -385,7 +385,7 @@
 
     if-nez v2, :cond_1c
 
-    const-string v2, "width"
+    const-string/jumbo v2, "width"
 
     .line 88
     invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
@@ -415,7 +415,7 @@
 
     iput-object v2, v0, Lorg/telegram/messenger/video/Track;->syncSamples:Ljava/util/LinkedList;
 
-    const-string v2, "vide"
+    const-string/jumbo v2, "vide"
 
     .line 92
     iput-object v2, v0, Lorg/telegram/messenger/video/Track;->handler:Ljava/lang/String;
@@ -439,7 +439,7 @@
 
     move-result-object v2
 
-    const-string v7, "video/avc"
+    const-string/jumbo v7, "video/avc"
 
     .line 96
     invoke-virtual {v2, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -886,7 +886,7 @@
     goto/16 :goto_5
 
     :cond_1b
-    const-string v1, "video/mp4v"
+    const-string/jumbo v1, "video/mp4v"
 
     .line 195
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

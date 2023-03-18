@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.analytics;
 
 import android.os.SystemClock;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.DeviceInfo;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
@@ -472,7 +472,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
     public void onSessionFinished(AnalyticsListener.EventTime eventTime, String str, boolean z) {
         PlaybackStatsTracker playbackStatsTracker = (PlaybackStatsTracker) Assertions.checkNotNull(this.playbackStatsTrackers.remove(str));
         AnalyticsListener.EventTime eventTime2 = (AnalyticsListener.EventTime) Assertions.checkNotNull(this.sessionStartEventTimes.remove(str));
-        playbackStatsTracker.onFinished(eventTime, z, str.equals(this.discontinuityFromSession) ? this.discontinuityFromPositionMs : C0474C.TIME_UNSET);
+        playbackStatsTracker.onFinished(eventTime, z, str.equals(this.discontinuityFromSession) ? this.discontinuityFromPositionMs : C0468C.TIME_UNSET);
         PlaybackStats build = playbackStatsTracker.build(true);
         this.finishedPlaybackStats = PlaybackStats.merge(this.finishedPlaybackStats, build);
         Callback callback = this.callback;
@@ -543,7 +543,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
             boolean z = hasEvent(events, str, 1003) || hasEvent(events, str, 1024);
             boolean hasEvent6 = hasEvent(events, str, AnalyticsListener.EVENT_BANDWIDTH_ESTIMATE);
             boolean hasEvent7 = hasEvent(events, str, 1004);
-            playbackStatsTracker.onEvents(player, (AnalyticsListener.EventTime) findBestEventTime.first, ((Boolean) findBestEventTime.second).booleanValue(), str.equals(this.discontinuityFromSession) ? this.discontinuityFromPositionMs : C0474C.TIME_UNSET, hasEvent, hasEvent2 ? this.droppedFrames : 0, hasEvent3, hasEvent4, hasEvent5 ? player.getPlayerError() : null, z ? this.nonFatalException : null, hasEvent6 ? this.bandwidthTimeMs : 0L, hasEvent6 ? this.bandwidthBytes : 0L, hasEvent7 ? this.videoFormat : null, hasEvent7 ? this.audioFormat : null, hasEvent(events, str, 25) ? this.videoSize : null);
+            playbackStatsTracker.onEvents(player, (AnalyticsListener.EventTime) findBestEventTime.first, ((Boolean) findBestEventTime.second).booleanValue(), str.equals(this.discontinuityFromSession) ? this.discontinuityFromPositionMs : C0468C.TIME_UNSET, hasEvent, hasEvent2 ? this.droppedFrames : 0, hasEvent3, hasEvent4, hasEvent5 ? player.getPlayerError() : null, z ? this.nonFatalException : null, hasEvent6 ? this.bandwidthTimeMs : 0L, hasEvent6 ? this.bandwidthBytes : 0L, hasEvent7 ? this.videoFormat : null, hasEvent7 ? this.audioFormat : null, hasEvent(events, str, 25) ? this.videoSize : null);
         }
         this.videoFormat = null;
         this.audioFormat = null;
@@ -677,8 +677,8 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
             boolean z2 = false;
             this.currentPlaybackState = 0;
             this.currentPlaybackStateStartTimeMs = eventTime.realtimeMs;
-            this.firstReportedTimeMs = C0474C.TIME_UNSET;
-            this.maxRebufferTimeMs = C0474C.TIME_UNSET;
+            this.firstReportedTimeMs = C0468C.TIME_UNSET;
+            this.maxRebufferTimeMs = C0468C.TIME_UNSET;
             MediaSource.MediaPeriodId mediaPeriodId = eventTime.mediaPeriodId;
             if (mediaPeriodId != null && mediaPeriodId.isAd()) {
                 z2 = true;
@@ -711,8 +711,8 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
         }
 
         public void onEvents(Player player, AnalyticsListener.EventTime eventTime, boolean z, long j, boolean z2, int i, boolean z3, boolean z4, PlaybackException playbackException, Exception exc, long j2, long j3, Format format, Format format2, VideoSize videoSize) {
-            long j4 = C0474C.TIME_UNSET;
-            if (j != C0474C.TIME_UNSET) {
+            long j4 = C0468C.TIME_UNSET;
+            if (j != C0468C.TIME_UNSET) {
                 maybeUpdateMediaTimeHistory(eventTime.realtimeMs, j);
                 this.isSeeking = true;
             }
@@ -808,7 +808,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
                 arrayList = arrayList2;
             }
             int i2 = (this.isJoinTimeInvalid || !this.hasBeenReady) ? 1 : 0;
-            long j = i2 != 0 ? C0474C.TIME_UNSET : jArr[2];
+            long j = i2 != 0 ? C0468C.TIME_UNSET : jArr[2];
             int i3 = jArr[1] > 0 ? 1 : 0;
             List arrayList3 = z ? this.videoFormatHistory : new ArrayList(this.videoFormatHistory);
             List arrayList4 = z ? this.audioFormatHistory : new ArrayList(this.audioFormatHistory);
@@ -851,7 +851,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
             long[] jArr = this.playbackStateDurationsMs;
             int i2 = this.currentPlaybackState;
             jArr[i2] = jArr[i2] + (j - this.currentPlaybackStateStartTimeMs);
-            if (this.firstReportedTimeMs == C0474C.TIME_UNSET) {
+            if (this.firstReportedTimeMs == C0468C.TIME_UNSET) {
                 this.firstReportedTimeMs = j;
             }
             this.isJoinTimeInvalid |= isInvalidJoinTransition(i2, i);
@@ -921,7 +921,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
             if (isRebufferingState(this.currentPlaybackState)) {
                 long j2 = j - this.lastRebufferStartTimeMs;
                 long j3 = this.maxRebufferTimeMs;
-                if (j3 == C0474C.TIME_UNSET || j2 > j3) {
+                if (j3 == C0468C.TIME_UNSET || j2 > j3) {
                     this.maxRebufferTimeMs = j2;
                 }
             }
@@ -930,7 +930,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
         private void maybeUpdateMediaTimeHistory(long j, long j2) {
             if (this.keepHistory) {
                 if (this.currentPlaybackState != 3) {
-                    if (j2 == C0474C.TIME_UNSET) {
+                    if (j2 == C0468C.TIME_UNSET) {
                         return;
                     }
                     if (!this.mediaTimeHistory.isEmpty()) {
@@ -941,7 +941,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
                         }
                     }
                 }
-                if (j2 != C0474C.TIME_UNSET) {
+                if (j2 != C0468C.TIME_UNSET) {
                     this.mediaTimeHistory.add(new long[]{j, j2});
                 } else if (this.mediaTimeHistory.isEmpty()) {
                 } else {

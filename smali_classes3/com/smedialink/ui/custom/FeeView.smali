@@ -29,18 +29,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4cn5v5kumI3qZ7PAqOKXQdaeI_o(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$qeDi1zu7519Vr8IgOpCKru1rKo4(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/FeeView;->configureCustomFeeChooser$lambda-2$lambda-1(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/custom/FeeView;->configureCustomFeeChooser$lambda$2$lambda$1(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$oVQus4X4sT-rcRAU5Bra2STF_FI(Lcom/smedialink/ui/custom/FeeView;Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$tr2pt5SYI8AxXwms_HGDWOuqtwE(Lcom/smedialink/ui/custom/FeeView;Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/custom/FeeView;->configureDefaultFeeChooser$lambda-4$lambda-3(Lcom/smedialink/ui/custom/FeeView;Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/custom/FeeView;->configureDefaultFeeChooser$lambda$4$lambda$3(Lcom/smedialink/ui/custom/FeeView;Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
 
     return-void
 .end method
@@ -204,7 +204,7 @@
     return-void
 .end method
 
-.method private static final configureCustomFeeChooser$lambda-2$lambda-1(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
+.method private static final configureCustomFeeChooser$lambda$2$lambda$1(Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Custom;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$type"
@@ -261,7 +261,7 @@
     return-void
 .end method
 
-.method private static final configureDefaultFeeChooser$lambda-4$lambda-3(Lcom/smedialink/ui/custom/FeeView;Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
+.method private static final configureDefaultFeeChooser$lambda$4$lambda$3(Lcom/smedialink/ui/custom/FeeView;Lcom/smedialink/ui/custom/FeeView$ChooseFeeType$Default;Ljava/util/List;Landroid/view/View;)V
     .locals 1
 
     const-string p3, "this$0"
@@ -561,7 +561,7 @@
 .end method
 
 .method private final showFeeDialog(Lcom/smedialink/model/dialog/DialogModel;Ljava/util/List;ILkotlin/jvm/functions/Function1;)V
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -580,16 +580,9 @@
     .line 128
     iget-object v0, p0, Lcom/smedialink/ui/custom/FeeView;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    const/4 v10, 0x0
-
-    if-nez v0, :cond_0
-
-    move-object p1, v10
-
-    goto :goto_0
+    if-eqz v0, :cond_2
 
     .line 129
-    :cond_0
     invoke-direct {p0}, Lcom/smedialink/ui/custom/FeeView;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -617,38 +610,31 @@
 
     move-result-object p1
 
-    :goto_0
-    if-nez p1, :cond_1
+    if-nez p1, :cond_0
 
-    return-void
+    goto :goto_0
 
     .line 139
-    :cond_1
+    :cond_0
     iget-object p2, p0, Lcom/smedialink/ui/custom/FeeView;->mvpBottomSheet:Lcom/smedialink/ui/base/mvp/MvpBottomSheet;
+
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p2, p1}, Lcom/smedialink/ui/base/mvp/MvpBottomSheet;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+
+    move-result-object p2
 
     if-nez p2, :cond_2
 
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p2, p1}, Lcom/smedialink/ui/base/mvp/MvpBottomSheet;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
-
-    move-result-object v10
-
-    :goto_1
-    if-nez v10, :cond_4
-
+    :cond_1
     iget-object p2, p0, Lcom/smedialink/ui/custom/FeeView;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    if-nez p2, :cond_3
+    if-eqz p2, :cond_2
 
-    goto :goto_2
-
-    :cond_3
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    :cond_4
-    :goto_2
+    :cond_2
+    :goto_0
     return-void
 .end method
 

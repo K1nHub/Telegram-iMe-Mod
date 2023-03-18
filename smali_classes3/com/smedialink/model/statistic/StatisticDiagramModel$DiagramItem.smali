@@ -125,7 +125,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -173,21 +173,13 @@
     :cond_3
     iget-wide v3, p0, Lcom/smedialink/model/statistic/StatisticDiagramModel$DiagramItem;->value:D
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iget-wide v5, p1, Lcom/smedialink/model/statistic/StatisticDiagramModel$DiagramItem;->value:D
 
-    move-result-object v1
-
-    iget-wide v3, p1, Lcom/smedialink/model/statistic/StatisticDiagramModel$DiagramItem;->value:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
 
     move-result p1
 
-    if-nez p1, :cond_4
+    if-eqz p1, :cond_4
 
     return v2
 

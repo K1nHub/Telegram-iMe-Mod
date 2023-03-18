@@ -1780,7 +1780,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "webpage"
+    const-string/jumbo v1, "webpage"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1974,7 +1974,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "wallpaper"
+    const-string/jumbo v1, "wallpaper"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3216,7 +3216,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "wallpaper"
+    const-string/jumbo v0, "wallpaper"
 
     goto :goto_0
 
@@ -6352,7 +6352,7 @@
     .line 405
     check-cast p1, Ljava/lang/String;
 
-    const-string v0, "wallpaper"
+    const-string/jumbo v0, "wallpaper"
 
     .line 406
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8094,7 +8094,7 @@
 
     const-string v6, "gif"
 
-    const-string v7, "wallpaper"
+    const-string/jumbo v7, "wallpaper"
 
     if-eqz v1, :cond_1f
 

@@ -25,7 +25,6 @@ import java.util.Collection;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -34,7 +33,7 @@ import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
@@ -79,18 +78,6 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         return this.languages;
     }
 
-    public final String getSelectedLangCode() {
-        return this.selectedLangCode;
-    }
-
-    public final void setSelectedLangCode(String str) {
-        this.selectedLangCode = str;
-    }
-
-    public final Callbacks$Callback1<String> getSelectLanguageDelegate() {
-        return this.selectLanguageDelegate;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SelectLanguageBottomSheet(Context context, List<TranslationLanguageUiModel> languages, String str, Callbacks$Callback1<String> selectLanguageDelegate) {
         super(context, true);
@@ -122,14 +109,13 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.filteredLanguages = emptyList;
         this.lastSelectLanguages = getLastSelectionList();
-        RootView rootView = new RootView(this);
+        RootView rootView = new RootView();
         rootView.setWillNotDraw(false);
         rootView.addView(getTopShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 48, 0, 54, 0, 0));
         rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, 54, 0, 48));
         rootView.addView(getSearchView(), LayoutHelper.createFrame(-1, 56, 48));
         rootView.addView(getBottomShadow(), LayoutHelper.createFrame(-1, AndroidUtilities.getShadowHeight(), 80, 0, 0, 0, 48));
         rootView.addView(getCancelButton(), LayoutHelper.createFrame(-1, 48, 80));
-        Unit unit = Unit.INSTANCE;
         this.containerView = rootView;
         setupListeners();
     }
@@ -199,7 +185,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
                 SelectLanguageBottomSheet.this.getListAdapter().notifyDataSetChanged();
             }
         };
-        r2.setHint(LocaleController.getInternalString(C3158R.string.translation_search_language));
+        r2.setHint(LocaleController.getInternalString(C3286R.string.translation_search_language));
         return r2;
     }
 
@@ -211,20 +197,19 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("dialogBackground"), Theme.getColor("listSelectorSDK21")));
-        textView.setText(LocaleController.getString("Cancel", C3158R.string.Cancel));
+        textView.setText(LocaleController.getString("Cancel", C3286R.string.Cancel));
         textView.setTextColor(Theme.getColor("dialogTextBlue2"));
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.SelectLanguageBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SelectLanguageBottomSheet.m2004initCancelButton$lambda3$lambda2(SelectLanguageBottomSheet.this, view);
+                SelectLanguageBottomSheet.initCancelButton$lambda$3$lambda$2(SelectLanguageBottomSheet.this, view);
             }
         });
         return textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initCancelButton$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m2004initCancelButton$lambda3$lambda2(SelectLanguageBottomSheet this$0, View view) {
+    public static final void initCancelButton$lambda$3$lambda$2(SelectLanguageBottomSheet this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.dismiss();
     }
@@ -271,34 +256,34 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.dialog.SelectLanguageBottomSheet$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                SelectLanguageBottomSheet.m2005setupListeners$lambda7$lambda6(SelectLanguageBottomSheet.this, view, i);
+                SelectLanguageBottomSheet.setupListeners$lambda$7$lambda$6(SelectLanguageBottomSheet.this, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m2005setupListeners$lambda7$lambda6(SelectLanguageBottomSheet this$0, View view, int i) {
+    public static final void setupListeners$lambda$7$lambda$6(SelectLanguageBottomSheet this$0, View view, int i) {
         boolean contains;
         String joinToString$default;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (this$0.getCurrentItemsList().isEmpty()) {
             return;
         }
-        this$0.setSelectedLangCode(this$0.getCurrentItemsList().get(i).getLanguageCode());
-        contains = CollectionsKt___CollectionsKt.contains(this$0.lastSelectLanguages, this$0.getSelectedLangCode());
+        String languageCode = this$0.getCurrentItemsList().get(i).getLanguageCode();
+        this$0.selectedLangCode = languageCode;
+        contains = CollectionsKt___CollectionsKt.contains(this$0.lastSelectLanguages, languageCode);
         if (!contains) {
             if (this$0.lastSelectLanguages.size() < 3) {
-                this$0.lastSelectLanguages.add(String.valueOf(this$0.getSelectedLangCode()));
+                this$0.lastSelectLanguages.add(String.valueOf(this$0.selectedLangCode));
             } else {
-                this$0.lastSelectLanguages.set(0, String.valueOf(this$0.getSelectedLangCode()));
+                this$0.lastSelectLanguages.set(0, String.valueOf(this$0.selectedLangCode));
             }
             joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(this$0.lastSelectLanguages, "-", null, null, 0, null, null, 62, null);
             SharedConfig.setLastSelectedLanguage(joinToString$default);
         }
         this$0.getListAdapter().notifyDataSetChanged();
         this$0.dismiss();
-        this$0.getSelectLanguageDelegate().invoke(this$0.getSelectedLangCode());
+        this$0.selectLanguageDelegate.invoke(this$0.selectedLangCode);
     }
 
     private final List<TranslationLanguageUiModel> getSelectedList() {
@@ -430,7 +415,6 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             });
             animatorSet2.setDuration(150L);
             animatorSet2.start();
-            Unit unit = Unit.INSTANCE;
             this.shadowAnimation = animatorSet2;
         }
     }
@@ -442,21 +426,17 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         private boolean fullHeight;
         private int lastNotifyWidth;
         private final RectF rect;
-        final /* synthetic */ SelectLanguageBottomSheet this$0;
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public RootView(SelectLanguageBottomSheet this$0) {
-            super(this$0.getContext());
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public RootView() {
+            super(SelectLanguageBottomSheet.this.getContext());
             this.rect = new RectF();
         }
 
         @Override // android.view.ViewGroup
         public boolean onInterceptTouchEvent(MotionEvent ev) {
             Intrinsics.checkNotNullParameter(ev, "ev");
-            if (ev.getAction() == 0 && this.this$0.scrollOffsetY != 0 && ev.getY() < this.this$0.scrollOffsetY) {
-                this.this$0.dismiss();
+            if (ev.getAction() == 0 && SelectLanguageBottomSheet.this.scrollOffsetY != 0 && ev.getY() < SelectLanguageBottomSheet.this.scrollOffsetY) {
+                SelectLanguageBottomSheet.this.dismiss();
                 return true;
             }
             return super.onInterceptTouchEvent(ev);
@@ -465,34 +445,34 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         @Override // android.view.View
         public boolean onTouchEvent(MotionEvent e) {
             Intrinsics.checkNotNullParameter(e, "e");
-            return !this.this$0.isDismissed() && super.onTouchEvent(e);
+            return !SelectLanguageBottomSheet.this.isDismissed() && super.onTouchEvent(e);
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             int ceil;
-            this.this$0.ignoreLayout = true;
+            SelectLanguageBottomSheet.this.ignoreLayout = true;
             setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
-            this.this$0.ignoreLayout = false;
-            this.this$0.itemWidth = View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(28);
-            if (!this.this$0.getCurrentItemsList().isEmpty()) {
-                ceil = ((int) Math.ceil(this.this$0.getCurrentItemsList().size())) * AndroidUtilities.m50dp(50);
+            SelectLanguageBottomSheet.this.ignoreLayout = false;
+            SelectLanguageBottomSheet.this.itemWidth = View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(28);
+            if (!SelectLanguageBottomSheet.this.getCurrentItemsList().isEmpty()) {
+                ceil = ((int) Math.ceil(SelectLanguageBottomSheet.this.getCurrentItemsList().size())) * AndroidUtilities.m50dp(50);
             } else {
                 ceil = AndroidUtilities.m50dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
             }
-            int m50dp = AndroidUtilities.m50dp(110) + ceil + ((BottomSheet) this.this$0).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            int m50dp = AndroidUtilities.m50dp(110) + ceil + ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int size = View.MeasureSpec.getSize(i2);
             int i3 = ((double) m50dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
             if (i3 != 0 && m50dp < size) {
                 i3 -= size - m50dp;
             }
             if (i3 == 0) {
-                i3 = ((BottomSheet) this.this$0).backgroundPaddingTop;
+                i3 = ((BottomSheet) SelectLanguageBottomSheet.this).backgroundPaddingTop;
             }
-            if (this.this$0.getListView().getPaddingTop() != i3) {
-                this.this$0.ignoreLayout = true;
-                this.this$0.getListView().setPadding(0, i3, 0, 0);
-                this.this$0.ignoreLayout = false;
+            if (SelectLanguageBottomSheet.this.getListView().getPaddingTop() != i3) {
+                SelectLanguageBottomSheet.this.ignoreLayout = true;
+                SelectLanguageBottomSheet.this.getListView().setPadding(0, i3, 0, 0);
+                SelectLanguageBottomSheet.this.ignoreLayout = false;
             }
             this.fullHeight = m50dp >= size;
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m50dp, size), 1073741824));
@@ -503,15 +483,15 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             int i5 = i3 - i;
             if (this.lastNotifyWidth != i5) {
                 this.lastNotifyWidth = i5;
-                this.this$0.getListAdapter().notifyDataSetChanged();
+                SelectLanguageBottomSheet.this.getListAdapter().notifyDataSetChanged();
             }
             super.onLayout(z, i, i2, i3, i4);
-            this.this$0.updateLayout();
+            SelectLanguageBottomSheet.this.updateLayout();
         }
 
         @Override // android.view.View, android.view.ViewParent
         public void requestLayout() {
-            if (this.this$0.ignoreLayout) {
+            if (SelectLanguageBottomSheet.this.ignoreLayout) {
                 return;
             }
             super.requestLayout();
@@ -540,29 +520,25 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
     /* renamed from: org.fork.ui.dialog.SelectLanguageBottomSheet$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ SelectLanguageBottomSheet this$0;
-
-        public ListAdapter(SelectLanguageBottomSheet this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-            return (viewHolder == null || viewHolder.getItemViewType() != IdFabric$ViewTypes.LANGUAGE || this.this$0.isSelectedLanguagePosition(viewHolder.getAdapterPosition())) ? false : true;
+            return (viewHolder == null || viewHolder.getItemViewType() != IdFabric$ViewTypes.LANGUAGE || SelectLanguageBottomSheet.this.isSelectedLanguagePosition(viewHolder.getAdapterPosition())) ? false : true;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            if (this.this$0.getCurrentItemsList().isEmpty()) {
+            if (SelectLanguageBottomSheet.this.getCurrentItemsList().isEmpty()) {
                 return 1;
             }
-            return this.this$0.getCurrentItemsList().size();
+            return SelectLanguageBottomSheet.this.getCurrentItemsList().size();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return this.this$0.getCurrentItemsList().isEmpty() ? IdFabric$ViewTypes.EMPTY : IdFabric$ViewTypes.LANGUAGE;
+            return SelectLanguageBottomSheet.this.getCurrentItemsList().isEmpty() ? IdFabric$ViewTypes.EMPTY : IdFabric$ViewTypes.LANGUAGE;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -572,14 +548,13 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             TextCellWithRightImage textCellWithRightImage;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.EMPTY) {
-                Context context = this.this$0.getContext();
+                Context context = SelectLanguageBottomSheet.this.getContext();
                 Intrinsics.checkNotNullExpressionValue(context, "context");
                 ?? emptyView = new EmptyView(context);
                 emptyView.setLayoutParams(LayoutHelper.createRecycler(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION));
-                Unit unit = Unit.INSTANCE;
                 textCellWithRightImage = emptyView;
             } else {
-                Context context2 = this.this$0.getContext();
+                Context context2 = SelectLanguageBottomSheet.this.getContext();
                 Intrinsics.checkNotNullExpressionValue(context2, "context");
                 textCellWithRightImage = new TextCellWithRightImage(context2, 23, true);
             }
@@ -590,17 +565,21 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             int lastIndex;
             Intrinsics.checkNotNullParameter(holder, "holder");
-            lastIndex = CollectionsKt__CollectionsKt.getLastIndex(this.this$0.getLastSelectionList());
+            lastIndex = CollectionsKt__CollectionsKt.getLastIndex(SelectLanguageBottomSheet.this.getLastSelectionList());
             boolean z = lastIndex == i;
             int itemViewType = holder.getItemViewType();
             if (itemViewType == IdFabric$ViewTypes.LANGUAGE) {
-                TextCellWithRightImage textCellWithRightImage = (TextCellWithRightImage) holder.itemView;
-                SelectLanguageBottomSheet selectLanguageBottomSheet = this.this$0;
+                View view = holder.itemView;
+                Intrinsics.checkNotNull(view, "null cannot be cast to non-null type com.smedialink.ui.contacts.view.TextCellWithRightImage");
+                TextCellWithRightImage textCellWithRightImage = (TextCellWithRightImage) view;
+                SelectLanguageBottomSheet selectLanguageBottomSheet = SelectLanguageBottomSheet.this;
                 textCellWithRightImage.setText(((TranslationLanguageUiModel) selectLanguageBottomSheet.getCurrentItemsList().get(i)).getDisplayLanguage(), z);
                 textCellWithRightImage.setRightIconVisible(selectLanguageBottomSheet.isSelectedLanguagePosition(i));
-                textCellWithRightImage.setRightIcon(C3158R.C3160drawable.ic_ab_done, Theme.getColor("chats_actionBackground"));
+                textCellWithRightImage.setRightIcon(C3286R.C3288drawable.ic_ab_done, Theme.getColor("chats_actionBackground"));
             } else if (itemViewType == IdFabric$ViewTypes.EMPTY) {
-                ((EmptyView) holder.itemView).getAnimationView().playAnimation();
+                View view2 = holder.itemView;
+                Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type org.fork.ui.dialog.SelectLanguageBottomSheet.EmptyView");
+                ((EmptyView) view2).getAnimationView().playAnimation();
             }
         }
     }
@@ -618,9 +597,8 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             Intrinsics.checkNotNullParameter(context, "context");
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             rLottieImageView.setAutoRepeat(true);
-            rLottieImageView.setAnimation(C3158R.C3164raw.fork_catalog_empty, 100, 100);
+            rLottieImageView.setAnimation(C3286R.C3291raw.fork_catalog_empty, 100, 100);
             ViewExtKt.setHorizontalPadding(rLottieImageView, 32);
-            Unit unit = Unit.INSTANCE;
             this.animationView = rLottieImageView;
             setOrientation(1);
             setGravity(17);
@@ -630,7 +608,7 @@ public final class SelectLanguageBottomSheet extends BottomSheet {
             textView.setTextSize(1, 16.0f);
             ViewExtKt.withMediumTypeface(textView);
             textView.setGravity(17);
-            textView.setText(LocaleController.getInternalString(C3158R.string.translation_search_language_empty));
+            textView.setText(LocaleController.getInternalString(C3286R.string.translation_search_language_empty));
             textView.setPadding(32, 32, 32, 32);
             addView(textView);
         }

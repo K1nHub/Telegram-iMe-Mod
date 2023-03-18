@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogCampaignsUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogCampaignsUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCampaignsUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,21:1\n1547#2:22\n1618#2,2:23\n1547#2:25\n1618#2,3:26\n1620#2:29\n*S KotlinDebug\n*F\n+ 1 CatalogCampaignsUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCampaignsUiMappingKt\n*L\n6#1:22\n6#1:23,2\n17#1:25\n17#1:26,3\n6#1:29\n*E\n"
+    value = "SMAP\nCatalogCampaignsUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogCampaignsUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCampaignsUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,21:1\n1549#2:22\n1620#2,2:23\n1549#2:25\n1620#2,3:26\n1622#2:29\n*S KotlinDebug\n*F\n+ 1 CatalogCampaignsUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogCampaignsUiMappingKt\n*L\n6#1:22\n6#1:23,2\n17#1:25\n17#1:26,3\n6#1:29\n*E\n"
 .end annotation
 
 
@@ -30,7 +30,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -41,7 +41,7 @@
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface/range {p0 .. p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -57,7 +57,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/storage/domain/model/catalog/Campaign;
 
     .line 9
@@ -137,7 +137,7 @@
 
     move-result-object v4
 
-    .line 1547
+    .line 1549
     new-instance v5, Ljava/util/ArrayList;
 
     move-object/from16 p0, v0
@@ -148,7 +148,7 @@
 
     invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -164,7 +164,7 @@
 
     move-result-object v4
 
-    .line 1619
+    .line 1621
     check-cast v4, Lcom/smedialink/storage/domain/model/catalog/ChannelTag;
 
     .line 17
@@ -172,6 +172,7 @@
 
     move-result-object v4
 
+    .line 1621
     invoke-interface {v5, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -197,7 +198,7 @@
 
     invoke-direct/range {v5 .. v17}, Lcom/smedialink/model/catalog/CampaignItem;-><init>(Ljava/lang/String;Ljava/lang/String;JZLjava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;)V
 
-    .line 7
+    .line 1621
     invoke-interface {v1, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move-object/from16 v0, p0

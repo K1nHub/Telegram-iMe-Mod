@@ -17,7 +17,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.TemplatesSortingType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -117,36 +117,34 @@ public final class TemplateCell extends LinearLayout {
         TextView subtitleTextView = getSubtitleTextView();
         if (SharedConfig.selectedTemplatesSortingType != TemplatesSortingType.USAGE) {
             ViewExtKt.visible(subtitleTextView);
-            subtitleTextView.setText(LocaleController.getInternalString(C3158R.string.chat_template_subtitle_created_at) + ' ' + ((Object) LocaleController.formatDateCallLog(template.getCreationDate() / 1000)));
+            subtitleTextView.setText(LocaleController.getInternalString(C3286R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
         } else {
             subtitleTextView.setVisibility(template.getUsageRating() != 0 ? 0 : 8);
-            subtitleTextView.setText(LocaleController.getInternalString(C3158R.string.chat_template_subtitle_sent) + ' ' + ((Object) LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0])));
+            subtitleTextView.setText(LocaleController.getInternalString(C3286R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
         }
-        getGoToMessageButton().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.TemplateCell$$ExternalSyntheticLambda1
+        getGoToMessageButton().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.TemplateCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TemplateCell.m2121bind$lambda2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate.this, template, view);
+                TemplateCell.bind$lambda$2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate.this, template, view);
             }
         });
-        getSendButton().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.TemplateCell$$ExternalSyntheticLambda0
+        getSendButton().setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.view.TemplateCell$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TemplateCell.m2122bind$lambda3(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate.this, template, view);
+                TemplateCell.bind$lambda$3(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate.this, template, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bind$lambda-2  reason: not valid java name */
-    public static final void m2121bind$lambda2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate, TemplateModel template, View view) {
+    public static final void bind$lambda$2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate, TemplateModel template, View view) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "$templatesDelegate");
         Intrinsics.checkNotNullParameter(template, "$template");
         templatesDelegate.didPressGoToMessage((int) template.getMessageId());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bind$lambda-3  reason: not valid java name */
-    public static final void m2122bind$lambda3(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate, TemplateModel template, View view) {
+    public static final void bind$lambda$3(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate, TemplateModel template, View view) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "$templatesDelegate");
         Intrinsics.checkNotNullParameter(template, "$template");
         templatesDelegate.didPressSendMessage(template, false);
@@ -195,7 +193,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21")));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chat_messagePanelIcons"), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3158R.C3160drawable.msg_message);
+        imageView.setImageResource(C3286R.C3288drawable.msg_message);
         return imageView;
     }
 
@@ -205,7 +203,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21")));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chat_messagePanelSend"), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3158R.C3160drawable.ic_send);
+        imageView.setImageResource(C3286R.C3288drawable.ic_send);
         return imageView;
     }
 

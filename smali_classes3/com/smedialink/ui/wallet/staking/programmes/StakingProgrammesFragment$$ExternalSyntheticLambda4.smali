@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->$r8$lambda$LIRua4p5vewAqpHap_rspu45Leg(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;->$r8$lambda$BhQamHOBHGj6ry7L5ibzf_V7mVE(Lcom/smedialink/ui/wallet/staking/programmes/StakingProgrammesFragment;Lcom/smedialink/storage/domain/model/wallet/staking/StakingOrderType;)V
 
     return-void
 .end method

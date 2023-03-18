@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->onClick(Landroid/view/View;)V
+    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->lambda$onClick$0(ILandroid/content/Context;IZLorg/telegram/ui/ActionBar/BaseFragment;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/DefaultThemesPreviewCell$1;II)V
     .locals 0
 
-    .line 216
+    .line 217
     iput-object p1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$1;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
 
     iput p2, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$1;->val$iconOldColor:I
@@ -46,7 +46,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 219
+    .line 220
     iget v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$1;->val$iconOldColor:I
 
     iget v1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$1;->val$iconNewColor:I
@@ -65,7 +65,7 @@
 
     move-result p1
 
-    .line 220
+    .line 221
     iget-object v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$1;->this$1:Lorg/telegram/ui/DefaultThemesPreviewCell$1;
 
     iget-object v0, v0, Lorg/telegram/ui/DefaultThemesPreviewCell$1;->this$0:Lorg/telegram/ui/DefaultThemesPreviewCell;

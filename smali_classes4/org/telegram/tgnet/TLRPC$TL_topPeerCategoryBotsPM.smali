@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26901
+    .line 27043
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TopPeerCategory;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 26906
+    .line 27048
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryBotsPM;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

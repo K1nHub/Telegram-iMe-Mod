@@ -2,32 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/widget/PopupWindow$OnDismissListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final onDismiss()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda132;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$pafh79_422pWtZTq9Ds1fPZReTs(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$e8a43PNlYPzBDfLXL9x_fGuzOBA(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda20;->f$1:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$zcIiVK53bNj3OVmf7f-yg1gTNeQ(Ljava/lang/String;Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$U8WlszOFeRQOMYNfjrREcYZ_bPo(Ljava/lang/String;Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

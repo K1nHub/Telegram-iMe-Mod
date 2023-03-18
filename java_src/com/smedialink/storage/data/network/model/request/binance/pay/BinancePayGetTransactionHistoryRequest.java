@@ -57,7 +57,7 @@ public final class BinancePayGetTransactionHistoryRequest {
     }
 
     public String toString() {
-        return "BinancePayGetTransactionHistoryRequest(limit=" + this.limit + ", lastItemId=" + ((Object) this.lastItemId) + ", filter=" + ((Object) this.filter) + ')';
+        return "BinancePayGetTransactionHistoryRequest(limit=" + this.limit + ", lastItemId=" + this.lastItemId + ", filter=" + this.filter + ')';
     }
 
     public BinancePayGetTransactionHistoryRequest(int i, String str, String str2) {

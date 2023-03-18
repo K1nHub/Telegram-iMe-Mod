@@ -58,7 +58,7 @@ public class ShareTopicCell extends FrameLayout {
         if (tLRPC$Dialog == null) {
             return;
         }
-        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1500id));
+        TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1505id));
         if (charSequence != null) {
             this.nameTextView.setText(charSequence);
         } else if (chat != null) {
@@ -68,7 +68,7 @@ public class ShareTopicCell extends FrameLayout {
         }
         if (tLRPC$TL_forumTopic.icon_emoji_id != 0) {
             this.imageView.setImageDrawable(null);
-            this.imageView.setAnimatedEmojiDrawable(new AnimatedEmojiDrawable(10, UserConfig.selectedAccount, tLRPC$TL_forumTopic.icon_emoji_id));
+            this.imageView.setAnimatedEmojiDrawable(new AnimatedEmojiDrawable(13, UserConfig.selectedAccount, tLRPC$TL_forumTopic.icon_emoji_id));
         } else {
             this.imageView.setAnimatedEmojiDrawable(null);
             ForumBubbleDrawable forumBubbleDrawable = new ForumBubbleDrawable(tLRPC$TL_forumTopic.icon_color);
@@ -81,8 +81,8 @@ public class ShareTopicCell extends FrameLayout {
             this.imageView.setImageDrawable(combinedDrawable);
         }
         this.imageView.setRoundRadius(AndroidUtilities.m50dp((chat == null || !chat.forum || z) ? 28 : 16));
-        this.currentDialog = tLRPC$Dialog.f1500id;
-        this.currentTopic = tLRPC$TL_forumTopic.f1547id;
+        this.currentDialog = tLRPC$Dialog.f1505id;
+        this.currentTopic = tLRPC$TL_forumTopic.f1552id;
     }
 
     public long getCurrentDialog() {

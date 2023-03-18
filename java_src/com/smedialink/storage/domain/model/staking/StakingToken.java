@@ -56,7 +56,7 @@ public final class StakingToken {
     }
 
     public String toString() {
-        return "StakingToken(address=" + ((Object) this.address) + ", name=" + this.name + ", ticker=" + this.ticker + ')';
+        return "StakingToken(address=" + this.address + ", name=" + this.name + ", ticker=" + this.ticker + ')';
     }
 
     public StakingToken(String str, String name, String ticker) {

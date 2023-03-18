@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->$r8$lambda$Mii7-GI7DhKlxyMDZy4CMUICHfQ(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/CatalogRootFragment;->$r8$lambda$huFwHlt3tF31OgtdiO3Wyp0CST4(Lcom/smedialink/ui/catalog/CatalogRootFragment;Ljava/lang/Integer;)V
 
     return-void
 .end method

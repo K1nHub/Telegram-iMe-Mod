@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static final WalletFragmentDefaultButtonTextAppearance:I = 0x7f120235
+.field public static final WalletFragmentDefaultButtonTextAppearance:I = 0x7f110235
 
-.field public static final WalletFragmentDefaultDetailsHeaderTextAppearance:I = 0x7f120236
+.field public static final WalletFragmentDefaultDetailsHeaderTextAppearance:I = 0x7f110236
 
-.field public static final WalletFragmentDefaultDetailsTextAppearance:I = 0x7f120237
+.field public static final WalletFragmentDefaultDetailsTextAppearance:I = 0x7f110237
 
-.field public static final WalletFragmentDefaultStyle:I = 0x7f120238
+.field public static final WalletFragmentDefaultStyle:I = 0x7f110238
 
 
 # direct methods

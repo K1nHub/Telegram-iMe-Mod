@@ -23,14 +23,11 @@
     .line 32
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-static {v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->removeSelfFromParent(Landroid/view/View;)V
 
-    :goto_0
+    :cond_0
     const/4 v0, 0x0
 
     .line 33
@@ -74,18 +71,15 @@
     .line 19
     iget-object v0, p0, Lcom/smedialink/ui/wallet/common/BottomNavigationTabFragment;->bottomNavigationDelegate:Lcom/smedialink/ui/wallet/common/BottomNavigationDelegate;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     new-instance v1, Lcom/smedialink/ui/wallet/common/BottomNavigationTabFragment$onResume$1;
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/common/BottomNavigationTabFragment$onResume$1;-><init>(Lcom/smedialink/ui/wallet/common/BottomNavigationTabFragment;)V
 
     invoke-interface {v0, v1}, Lcom/smedialink/ui/wallet/common/BottomNavigationDelegate;->getBottomNavigationPadding(Lkotlin/jvm/functions/Function1;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 

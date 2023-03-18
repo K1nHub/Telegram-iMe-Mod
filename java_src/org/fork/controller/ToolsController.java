@@ -19,6 +19,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -137,11 +138,6 @@ public final class ToolsController extends BaseController {
         return this.selectedDialogTypesForSwipeToGoToNextUnreadDialog;
     }
 
-    public final void setSelectedDialogTypesForSwipeToGoToNextUnreadDialog(Set<DialogType> set) {
-        Intrinsics.checkNotNullParameter(set, "<set-?>");
-        this.selectedDialogTypesForSwipeToGoToNextUnreadDialog = set;
-    }
-
     public final boolean isShowChannelBottomPanel() {
         return this.isShowChannelBottomPanel;
     }
@@ -154,18 +150,8 @@ public final class ToolsController extends BaseController {
         return this.selectedChatAttachAlertButtons;
     }
 
-    public final void setSelectedChatAttachAlertButtons(Map<DialogType, Set<ChatAttachAlertButton>> map) {
-        Intrinsics.checkNotNullParameter(map, "<set-?>");
-        this.selectedChatAttachAlertButtons = map;
-    }
-
     public final Set<MessagePopupItem> getSelectedMessagePopupItems() {
         return this.selectedMessagePopupItems;
-    }
-
-    public final void setSelectedMessagePopupItems(Set<MessagePopupItem> set) {
-        Intrinsics.checkNotNullParameter(set, "<set-?>");
-        this.selectedMessagePopupItems = set;
     }
 
     public final boolean isMessagePopupAggregatorEnabled() {
@@ -198,15 +184,15 @@ public final class ToolsController extends BaseController {
         Map<DialogType, Set<ChatAttachAlertButton>> mutableMap;
         Set<? extends ChatAttachAlertButton> set;
         Intrinsics.checkNotNullParameter(preferences, "preferences");
-        setSilentSendingEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isSilentSendingEnabled(), TelegramPreferenceKeys.User.Default.isSilentSendingEnabled()));
-        setSelectedSentMessageFont(SentMessageFont.Companion.mapNameToEnum(preferences.getString(TelegramPreferenceKeys.User.selectedSentMessageFont(), TelegramPreferenceKeys.User.Default.selectedSentMessageFont().name())));
-        setRememberLastDialogEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isRememberLastDialogEnabled(), TelegramPreferenceKeys.User.Default.isRememberLastDialogEnabled()));
-        setRememberLastDialogId(preferences.getLong(TelegramPreferenceKeys.User.rememberLastDialogId(), TelegramPreferenceKeys.User.Default.rememberLastDialogId()));
-        setRememberLastDialogTopicId(preferences.getInt(TelegramPreferenceKeys.User.rememberLastDialogTopicId(), TelegramPreferenceKeys.User.Default.rememberLastDialogTopicId()));
-        setSwipeToGoToNextUnreadDialogEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogEnabled(), TelegramPreferenceKeys.User.Default.isSwipeToGoToNextUnreadDialogEnabled()));
-        setSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(), TelegramPreferenceKeys.User.Default.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()));
-        setSelectedDialogTypesForSwipeToGoToNextUnreadDialog(DialogType.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedDialogTypesForSwipeToGoToNextUnreadDialog(), TelegramPreferenceKeys.User.Default.selectedDialogTypesForSwipeToGoToNextUnreadDialog())));
-        setShowChannelBottomPanel(preferences.getBoolean(TelegramPreferenceKeys.User.isShowChannelBottomPanel(), TelegramPreferenceKeys.User.Default.isShowChannelBottomPanel()));
+        this.isSilentSendingEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isSilentSendingEnabled(), TelegramPreferenceKeys.User.Default.isSilentSendingEnabled());
+        this.selectedSentMessageFont = SentMessageFont.Companion.mapNameToEnum(preferences.getString(TelegramPreferenceKeys.User.selectedSentMessageFont(), TelegramPreferenceKeys.User.Default.selectedSentMessageFont().name()));
+        this.isRememberLastDialogEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isRememberLastDialogEnabled(), TelegramPreferenceKeys.User.Default.isRememberLastDialogEnabled());
+        this.rememberLastDialogId = preferences.getLong(TelegramPreferenceKeys.User.rememberLastDialogId(), TelegramPreferenceKeys.User.Default.rememberLastDialogId());
+        this.rememberLastDialogTopicId = preferences.getInt(TelegramPreferenceKeys.User.rememberLastDialogTopicId(), TelegramPreferenceKeys.User.Default.rememberLastDialogTopicId());
+        this.isSwipeToGoToNextUnreadDialogEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogEnabled(), TelegramPreferenceKeys.User.Default.isSwipeToGoToNextUnreadDialogEnabled());
+        this.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(), TelegramPreferenceKeys.User.Default.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled());
+        this.selectedDialogTypesForSwipeToGoToNextUnreadDialog = DialogType.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedDialogTypesForSwipeToGoToNextUnreadDialog(), TelegramPreferenceKeys.User.Default.selectedDialogTypesForSwipeToGoToNextUnreadDialog()));
+        this.isShowChannelBottomPanel = preferences.getBoolean(TelegramPreferenceKeys.User.isShowChannelBottomPanel(), TelegramPreferenceKeys.User.Default.isShowChannelBottomPanel());
         DialogType[] values = DialogType.values();
         mapCapacity = MapsKt__MapsJVMKt.mapCapacity(values.length);
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
@@ -218,31 +204,31 @@ public final class ToolsController extends BaseController {
             linkedHashMap.put(dialogType, companion.mapNamesToEnums(preferences.getStringSet(buildEnabledChatAttachAlertButtonsKey, companion.mapEnumsToNames(set))));
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
-        setSelectedChatAttachAlertButtons(mutableMap);
-        setSelectedMessagePopupItems(MessagePopupItem.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedMessagePopupItems(), TelegramPreferenceKeys.User.Default.selectedMessagePopupItems())));
-        setMessagePopupAggregatorEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isMessagePopupAggregatorEnabled(), TelegramPreferenceKeys.User.Default.isMessagePopupAggregatorEnabled()));
-        setChannelWidePostsEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isChannelWidePostsEnabled(), TelegramPreferenceKeys.User.Default.isChannelWidePostsEnabled()));
-        setRevokeByDefault(preferences.getBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), TelegramPreferenceKeys.User.Default.isRevokeByDefault()));
+        this.selectedChatAttachAlertButtons = mutableMap;
+        this.selectedMessagePopupItems = MessagePopupItem.Companion.mapNamesToEnums(preferences.getStringSet(TelegramPreferenceKeys.User.selectedMessagePopupItems(), TelegramPreferenceKeys.User.Default.selectedMessagePopupItems()));
+        this.isMessagePopupAggregatorEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isMessagePopupAggregatorEnabled(), TelegramPreferenceKeys.User.Default.isMessagePopupAggregatorEnabled());
+        this.isChannelWidePostsEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isChannelWidePostsEnabled(), TelegramPreferenceKeys.User.Default.isChannelWidePostsEnabled());
+        this.isRevokeByDefault = preferences.getBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), TelegramPreferenceKeys.User.Default.isRevokeByDefault());
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putBoolean(TelegramPreferenceKeys.User.isSilentSendingEnabled(), isSilentSendingEnabled());
-        edit.putString(TelegramPreferenceKeys.User.selectedSentMessageFont(), getSelectedSentMessageFont().name());
-        edit.putBoolean(TelegramPreferenceKeys.User.isRememberLastDialogEnabled(), isRememberLastDialogEnabled());
-        edit.putLong(TelegramPreferenceKeys.User.rememberLastDialogId(), getRememberLastDialogId());
-        edit.putInt(TelegramPreferenceKeys.User.rememberLastDialogTopicId(), getRememberLastDialogTopicId());
-        edit.putBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogEnabled(), isSwipeToGoToNextUnreadDialogEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(), isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled());
-        edit.putStringSet(TelegramPreferenceKeys.User.selectedDialogTypesForSwipeToGoToNextUnreadDialog(), DialogType.Companion.mapEnumsToNames(getSelectedDialogTypesForSwipeToGoToNextUnreadDialog()));
-        edit.putBoolean(TelegramPreferenceKeys.User.isShowChannelBottomPanel(), isShowChannelBottomPanel());
-        for (Map.Entry<DialogType, Set<ChatAttachAlertButton>> entry : getSelectedChatAttachAlertButtons().entrySet()) {
+        edit.putBoolean(TelegramPreferenceKeys.User.isSilentSendingEnabled(), this.isSilentSendingEnabled);
+        edit.putString(TelegramPreferenceKeys.User.selectedSentMessageFont(), this.selectedSentMessageFont.name());
+        edit.putBoolean(TelegramPreferenceKeys.User.isRememberLastDialogEnabled(), this.isRememberLastDialogEnabled);
+        edit.putLong(TelegramPreferenceKeys.User.rememberLastDialogId(), this.rememberLastDialogId);
+        edit.putInt(TelegramPreferenceKeys.User.rememberLastDialogTopicId(), this.rememberLastDialogTopicId);
+        edit.putBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogEnabled(), this.isSwipeToGoToNextUnreadDialogEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(), this.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled);
+        edit.putStringSet(TelegramPreferenceKeys.User.selectedDialogTypesForSwipeToGoToNextUnreadDialog(), DialogType.Companion.mapEnumsToNames(this.selectedDialogTypesForSwipeToGoToNextUnreadDialog));
+        edit.putBoolean(TelegramPreferenceKeys.User.isShowChannelBottomPanel(), this.isShowChannelBottomPanel);
+        for (Map.Entry<DialogType, Set<ChatAttachAlertButton>> entry : this.selectedChatAttachAlertButtons.entrySet()) {
             edit.putStringSet(TelegramPreferenceKeys.User.buildEnabledChatAttachAlertButtonsKey(entry.getKey()), ChatAttachAlertButton.Companion.mapEnumsToNames(entry.getValue()));
         }
-        edit.putStringSet(TelegramPreferenceKeys.User.selectedMessagePopupItems(), MessagePopupItem.Companion.mapEnumsToNames(getSelectedMessagePopupItems()));
-        edit.putBoolean(TelegramPreferenceKeys.User.isMessagePopupAggregatorEnabled(), isMessagePopupAggregatorEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isChannelWidePostsEnabled(), isChannelWidePostsEnabled());
-        edit.putBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), isRevokeByDefault());
+        edit.putStringSet(TelegramPreferenceKeys.User.selectedMessagePopupItems(), MessagePopupItem.Companion.mapEnumsToNames(this.selectedMessagePopupItems));
+        edit.putBoolean(TelegramPreferenceKeys.User.isMessagePopupAggregatorEnabled(), this.isMessagePopupAggregatorEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isChannelWidePostsEnabled(), this.isChannelWidePostsEnabled);
+        edit.putBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), this.isRevokeByDefault);
         edit.apply();
     }
 
@@ -288,7 +274,7 @@ public final class ToolsController extends BaseController {
             LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
             for (Map.Entry entry : arrayList) {
                 DialogType mapNameToEnum = DialogType.Companion.mapNameToEnum((String) entry.getKey());
-                Objects.requireNonNull(mapNameToEnum, "null cannot be cast to non-null type org.fork.enums.DialogType");
+                Intrinsics.checkNotNull(mapNameToEnum, "null cannot be cast to non-null type org.fork.enums.DialogType");
                 Pair m100to = TuplesKt.m100to(mapNameToEnum, ChatAttachAlertButton.Companion.mapNamesToEnums((Set) entry.getValue()));
                 linkedHashMap.put(m100to.getFirst(), m100to.getSecond());
             }
@@ -386,14 +372,16 @@ public final class ToolsController extends BaseController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final ToolsController m1961getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new ToolsController(i);
+        public static final ToolsController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (ToolsController) tmp0.invoke(obj);
         }
 
-        public final ToolsController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(ToolsController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.ToolsController$Companion$$ExternalSyntheticLambda0
+        public final ToolsController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = ToolsController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final ToolsController$Companion$getInstance$1 toolsController$Companion$getInstance$1 = new ToolsController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.ToolsController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -401,9 +389,9 @@ public final class ToolsController extends BaseController {
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    ToolsController m1961getInstance$lambda0;
-                    m1961getInstance$lambda0 = ToolsController.Companion.m1961getInstance$lambda0(i, (Integer) obj);
-                    return m1961getInstance$lambda0;
+                    ToolsController instance$lambda$0;
+                    instance$lambda$0 = ToolsController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -411,7 +399,7 @@ public final class ToolsController extends BaseController {
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (ToolsController) computeIfAbsent;
         }
     }

@@ -47,10 +47,9 @@ public final class HeaderWithNetworkSwitcherProvider$convert$1 extends Lambda im
                     Intrinsics.checkNotNullParameter(view, "view");
                     view.removeOnLayoutChangeListener(this);
                     Callbacks$Callback onNetworkViewLayoutAction2 = HeaderWithNetworkSwitcherProvider.this.getOnNetworkViewLayoutAction();
-                    if (onNetworkViewLayoutAction2 == null) {
-                        return;
+                    if (onNetworkViewLayoutAction2 != null) {
+                        onNetworkViewLayoutAction2.invoke();
                     }
-                    onNetworkViewLayoutAction2.invoke();
                 }
             });
         }

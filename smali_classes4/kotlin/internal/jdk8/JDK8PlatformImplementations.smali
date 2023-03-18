@@ -55,9 +55,9 @@
 .method public defaultPlatformRandom()Lkotlin/random/Random;
     .locals 1
 
-    const/16 v0, 0x18
+    const/16 v0, 0x22
 
-    .line 55
+    .line 58
     invoke-direct {p0, v0}, Lkotlin/internal/jdk8/JDK8PlatformImplementations;->sdkIsNullOrAtLeast(I)Z
 
     move-result v0

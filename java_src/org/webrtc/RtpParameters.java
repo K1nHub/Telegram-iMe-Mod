@@ -192,13 +192,13 @@ public class RtpParameters {
         private final boolean encrypted;
 
         /* renamed from: id */
-        private final int f1833id;
+        private final int f1844id;
         private final String uri;
 
         @CalledByNative("HeaderExtension")
         HeaderExtension(String str, int i, boolean z) {
             this.uri = str;
-            this.f1833id = i;
+            this.f1844id = i;
             this.encrypted = z;
         }
 
@@ -209,7 +209,7 @@ public class RtpParameters {
 
         @CalledByNative("HeaderExtension")
         public int getId() {
-            return this.f1833id;
+            return this.f1844id;
         }
 
         @CalledByNative("HeaderExtension")

@@ -20,7 +20,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import me.grantland.widget.AutofitTextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.databinding.ForkShopItemListBinding;
@@ -41,12 +41,30 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
 
         static {
             int[] iArr = new int[BotStatus.values().length];
-            iArr[BotStatus.AVAILABLE.ordinal()] = 1;
-            iArr[BotStatus.PAID.ordinal()] = 2;
-            iArr[BotStatus.UPDATE_AVAILABLE.ordinal()] = 3;
-            iArr[BotStatus.DOWNLOADING.ordinal()] = 4;
-            iArr[BotStatus.ENABLED.ordinal()] = 5;
-            iArr[BotStatus.DISABLED.ordinal()] = 6;
+            try {
+                iArr[BotStatus.AVAILABLE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BotStatus.PAID.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[BotStatus.UPDATE_AVAILABLE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[BotStatus.DOWNLOADING.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[BotStatus.ENABLED.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[BotStatus.DISABLED.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -108,31 +126,31 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
             case 1:
                 AutofitTextView shopButton = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton, "shopButton");
-                TextViewExtKt.setTextColor(shopButton, C3158R.C3159color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton, C3286R.C3287color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
                 break;
             case 2:
                 AutofitTextView shopButton2 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton2, "shopButton");
-                TextViewExtKt.setTextColor(shopButton2, C3158R.C3159color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton2, C3286R.C3287color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
                 break;
             case 3:
                 AutofitTextView shopButton3 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton3, "shopButton");
-                TextViewExtKt.setTextColor(shopButton3, C3158R.C3159color.colorShopButtonTextLight);
+                TextViewExtKt.setTextColor(shopButton3, C3286R.C3287color.colorShopButtonTextLight);
                 gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
                 break;
             case 4:
                 AutofitTextView shopButton4 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton4, "shopButton");
-                TextViewExtKt.setTextColor(shopButton4, C3158R.C3159color.colorShopButtonTextDisable);
+                TextViewExtKt.setTextColor(shopButton4, C3286R.C3287color.colorShopButtonTextDisable);
                 gradientDrawable.setColor(0);
                 break;
             case 5:
                 AutofitTextView shopButton5 = binding.shopButton;
                 Intrinsics.checkNotNullExpressionValue(shopButton5, "shopButton");
-                int i2 = C3158R.C3159color.colorShopButtonTextDisable;
+                int i2 = C3286R.C3287color.colorShopButtonTextDisable;
                 TextViewExtKt.setTextColor(shopButton5, i2);
                 gradientDrawable.setColor(0);
                 gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), ContextCompat.getColor(binding.shopButton.getContext(), i2));
@@ -147,7 +165,7 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
         AutofitTextView autofitTextView = binding.shopButton;
         switch (iArr[shopItem.getStatus().ordinal()]) {
             case 1:
-                internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_download);
+                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_download);
                 break;
             case 2:
                 internalString = shopItem.getPrice();
@@ -157,16 +175,16 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
                 }
                 break;
             case 3:
-                internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_update);
+                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_update);
                 break;
             case 4:
-                internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_status_downloading);
+                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_status_downloading);
                 break;
             case 5:
-                internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_disable);
+                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_disable);
                 break;
             case 6:
-                internalString = LocaleController.getInternalString(C3158R.string.neurobots_store_bot_action_enable);
+                internalString = LocaleController.getInternalString(C3286R.string.neurobots_store_bot_action_enable);
                 break;
             default:
                 throw new NoWhenBranchMatchedException();
@@ -175,56 +193,52 @@ public final class BotsAdapter extends RecyclerListView.ViewBindingSelectionAdap
         binding.botAvatar.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.shop.view.adapter.BotsAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotsAdapter.m1520onBindViewHolder$lambda5$lambda1(BotsAdapter.this, shopItem, view);
+                BotsAdapter.onBindViewHolder$lambda$5$lambda$1(BotsAdapter.this, shopItem, view);
             }
         });
         binding.botName.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.shop.view.adapter.BotsAdapter$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotsAdapter.m1521onBindViewHolder$lambda5$lambda2(BotsAdapter.this, shopItem, view);
+                BotsAdapter.onBindViewHolder$lambda$5$lambda$2(BotsAdapter.this, shopItem, view);
             }
         });
         binding.botDescription.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.shop.view.adapter.BotsAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotsAdapter.m1522onBindViewHolder$lambda5$lambda3(BotsAdapter.this, shopItem, view);
+                BotsAdapter.onBindViewHolder$lambda$5$lambda$3(BotsAdapter.this, shopItem, view);
             }
         });
         binding.shopButton.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.shop.view.adapter.BotsAdapter$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BotsAdapter.m1523onBindViewHolder$lambda5$lambda4(BotsAdapter.this, shopItem, view);
+                BotsAdapter.onBindViewHolder$lambda$5$lambda$4(BotsAdapter.this, shopItem, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBindViewHolder$lambda-5$lambda-1  reason: not valid java name */
-    public static final void m1520onBindViewHolder$lambda5$lambda1(BotsAdapter this$0, ShopItem item, View view) {
+    public static final void onBindViewHolder$lambda$5$lambda$1(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBindViewHolder$lambda-5$lambda-2  reason: not valid java name */
-    public static final void m1521onBindViewHolder$lambda5$lambda2(BotsAdapter this$0, ShopItem item, View view) {
+    public static final void onBindViewHolder$lambda$5$lambda$2(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBindViewHolder$lambda-5$lambda-3  reason: not valid java name */
-    public static final void m1522onBindViewHolder$lambda5$lambda3(BotsAdapter this$0, ShopItem item, View view) {
+    public static final void onBindViewHolder$lambda$5$lambda$3(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botItemClicked, item);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: onBindViewHolder$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1523onBindViewHolder$lambda5$lambda4(BotsAdapter this$0, ShopItem item, View view) {
+    public static final void onBindViewHolder$lambda$5$lambda$4(BotsAdapter this$0, ShopItem item, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
         NotificationCenter.getInstance(this$0.currentAccount).postNotificationName(NotificationCenter.botButtonClicked, item);

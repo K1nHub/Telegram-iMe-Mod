@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 31123
+    .line 31265
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto/16 :goto_0
 
-    .line 31243
+    .line 31385
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateWebPage;
 
@@ -30,7 +30,7 @@
 
     goto/16 :goto_0
 
-    .line 31324
+    .line 31466
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateSavedRingtones;
 
@@ -38,7 +38,7 @@
 
     goto/16 :goto_0
 
-    .line 31345
+    .line 31487
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateContactsReset;
 
@@ -46,7 +46,7 @@
 
     goto/16 :goto_0
 
-    .line 31378
+    .line 31523
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePendingJoinRequests;
 
@@ -54,7 +54,7 @@
 
     goto/16 :goto_0
 
-    .line 31240
+    .line 31382
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateRecentReactions;
 
@@ -62,7 +62,7 @@
 
     goto/16 :goto_0
 
-    .line 31168
+    .line 31310
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogPinned;
 
@@ -70,7 +70,7 @@
 
     goto/16 :goto_0
 
-    .line 31171
+    .line 31313
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePeerSettings;
 
@@ -78,7 +78,7 @@
 
     goto/16 :goto_0
 
-    .line 31228
+    .line 31370
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelDiscussionOutbox;
 
@@ -86,7 +86,7 @@
 
     goto/16 :goto_0
 
-    .line 31405
+    .line 31550
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadMessagesContents;
 
@@ -94,7 +94,7 @@
 
     goto/16 :goto_0
 
-    .line 31387
+    .line 31532
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateNewStickerSet;
 
@@ -102,7 +102,7 @@
 
     goto/16 :goto_0
 
-    .line 31348
+    .line 31490
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannel;
 
@@ -110,7 +110,7 @@
 
     goto/16 :goto_0
 
-    .line 31162
+    .line 31304
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateNewChannelMessage;
 
@@ -118,7 +118,7 @@
 
     goto/16 :goto_0
 
-    .line 31300
+    .line 31442
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateMessageReactions;
 
@@ -126,7 +126,7 @@
 
     goto/16 :goto_0
 
-    .line 31144
+    .line 31286
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedChannelMessages;
 
@@ -134,7 +134,7 @@
 
     goto/16 :goto_0
 
-    .line 31129
+    .line 31271
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateMessageExtendedMedia;
 
@@ -142,7 +142,7 @@
 
     goto/16 :goto_0
 
-    .line 31150
+    .line 31292
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadFeaturedStickers;
 
@@ -150,7 +150,7 @@
 
     goto/16 :goto_0
 
-    .line 31255
+    .line 31397
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateLoginToken;
 
@@ -158,7 +158,7 @@
 
     goto/16 :goto_0
 
-    .line 31273
+    .line 31415
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateLangPack;
 
@@ -166,7 +166,7 @@
 
     goto/16 :goto_0
 
-    .line 31411
+    .line 31556
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChatDefaultBannedRights;
 
@@ -174,7 +174,7 @@
 
     goto/16 :goto_0
 
-    .line 31177
+    .line 31319
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateMessageID;
 
@@ -182,7 +182,7 @@
 
     goto/16 :goto_0
 
-    .line 31216
+    .line 31358
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateBotCommands;
 
@@ -190,7 +190,7 @@
 
     goto/16 :goto_0
 
-    .line 31393
+    .line 31538
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateLangPackTooLong;
 
@@ -198,7 +198,7 @@
 
     goto/16 :goto_0
 
-    .line 31249
+    .line 31391
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChatParticipantAdd;
 
@@ -206,7 +206,7 @@
 
     goto/16 :goto_0
 
-    .line 31195
+    .line 31337
     :sswitch_17
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateNewScheduledMessage;
 
@@ -214,7 +214,7 @@
 
     goto/16 :goto_0
 
-    .line 31396
+    .line 31541
     :sswitch_18
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateEncryptedMessagesRead;
 
@@ -222,7 +222,7 @@
 
     goto/16 :goto_0
 
-    .line 31372
+    .line 31517
     :sswitch_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilters;
 
@@ -230,7 +230,7 @@
 
     goto/16 :goto_0
 
-    .line 31186
+    .line 31328
     :sswitch_1a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;
 
@@ -238,7 +238,7 @@
 
     goto/16 :goto_0
 
-    .line 31375
+    .line 31520
     :sswitch_1b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateRecentEmojiStatuses;
 
@@ -246,7 +246,7 @@
 
     goto/16 :goto_0
 
-    .line 31159
+    .line 31301
     :sswitch_1c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryOutbox;
 
@@ -254,7 +254,7 @@
 
     goto/16 :goto_0
 
-    .line 31351
+    .line 31493
     :sswitch_1d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelWebPage;
 
@@ -262,7 +262,7 @@
 
     goto/16 :goto_0
 
-    .line 31207
+    .line 31349
     :sswitch_1e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateUserEmojiStatus;
 
@@ -270,7 +270,7 @@
 
     goto/16 :goto_0
 
-    .line 31306
+    .line 31448
     :sswitch_1f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilter;
 
@@ -278,7 +278,7 @@
 
     goto/16 :goto_0
 
-    .line 31315
+    .line 31457
     :sswitch_20
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePhoneCallSignalingData;
 
@@ -286,7 +286,7 @@
 
     goto/16 :goto_0
 
-    .line 31309
+    .line 31451
     :sswitch_21
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;
 
@@ -294,7 +294,7 @@
 
     goto/16 :goto_0
 
-    .line 31366
+    .line 31508
     :sswitch_22
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateUser;
 
@@ -302,7 +302,7 @@
 
     goto/16 :goto_0
 
-    .line 31192
+    .line 31334
     :sswitch_23
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateNewMessage;
 
@@ -310,7 +310,7 @@
 
     goto/16 :goto_0
 
-    .line 31294
+    .line 31436
     :sswitch_24
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDraftMessage;
 
@@ -318,7 +318,7 @@
 
     goto/16 :goto_0
 
-    .line 31384
+    .line 31529
     :sswitch_25
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateEditChannelMessage;
 
@@ -326,7 +326,7 @@
 
     goto/16 :goto_0
 
-    .line 31189
+    .line 31331
     :sswitch_26
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateFolderPeers;
 
@@ -334,7 +334,7 @@
 
     goto/16 :goto_0
 
-    .line 31420
+    .line 31565
     :sswitch_27
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopic;
 
@@ -342,7 +342,7 @@
 
     goto/16 :goto_0
 
-    .line 31369
+    .line 31514
     :sswitch_28
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateAttachMenuBots;
 
@@ -350,7 +350,7 @@
 
     goto/16 :goto_0
 
-    .line 31153
+    .line 31295
     :sswitch_29
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateEncryptedChatTyping;
 
@@ -358,7 +358,7 @@
 
     goto/16 :goto_0
 
-    .line 31165
+    .line 31307
     :sswitch_2a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateWebViewResultSent;
 
@@ -366,7 +366,7 @@
 
     goto/16 :goto_0
 
-    .line 31414
+    .line 31559
     :sswitch_2b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateBotMenuButton;
 
@@ -374,7 +374,7 @@
 
     goto/16 :goto_0
 
-    .line 31261
+    .line 31403
     :sswitch_2c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateGroupCall;
 
@@ -382,7 +382,7 @@
 
     goto/16 :goto_0
 
-    .line 31198
+    .line 31340
     :sswitch_2d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateNewEncryptedMessage;
 
@@ -390,7 +390,7 @@
 
     goto/16 :goto_0
 
-    .line 31264
+    .line 31406
     :sswitch_2e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelTooLong;
 
@@ -398,7 +398,7 @@
 
     goto/16 :goto_0
 
-    .line 31399
+    .line 31544
     :sswitch_2f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSetsOrder;
 
@@ -406,7 +406,7 @@
 
     goto/16 :goto_0
 
-    .line 31213
+    .line 31355
     :sswitch_30
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateGroupCallConnection;
 
@@ -414,7 +414,7 @@
 
     goto/16 :goto_0
 
-    .line 31408
+    .line 31553
     :sswitch_31
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChatParticipants;
 
@@ -422,7 +422,7 @@
 
     goto/16 :goto_0
 
-    .line 31174
+    .line 31316
     :sswitch_32
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateUserPhone;
 
@@ -430,7 +430,7 @@
 
     goto/16 :goto_0
 
-    .line 31327
+    .line 31469
     :sswitch_33
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateTranscribedAudio;
 
@@ -438,7 +438,7 @@
 
     goto/16 :goto_0
 
-    .line 31417
+    .line 31562
     :sswitch_34
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelPinnedTopics;
 
@@ -446,7 +446,7 @@
 
     goto/16 :goto_0
 
-    .line 31234
+    .line 31376
     :sswitch_35
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadFeaturedEmojiStickers;
 
@@ -454,7 +454,7 @@
 
     goto/16 :goto_0
 
-    .line 31321
+    .line 31463
     :sswitch_36
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedDialogs;
 
@@ -462,7 +462,7 @@
 
     goto/16 :goto_0
 
-    .line 31138
+    .line 31280
     :sswitch_37
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChat;
 
@@ -470,7 +470,7 @@
 
     goto/16 :goto_0
 
-    .line 31147
+    .line 31289
     :sswitch_38
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateGroupCallParticipants;
 
@@ -478,7 +478,7 @@
 
     goto/16 :goto_0
 
-    .line 31363
+    .line 31505
     :sswitch_39
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateUserPhoto;
 
@@ -486,7 +486,7 @@
 
     goto/16 :goto_0
 
-    .line 31210
+    .line 31352
     :sswitch_3a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelMessageViews;
 
@@ -494,7 +494,7 @@
 
     goto/16 :goto_0
 
-    .line 31285
+    .line 31427
     :sswitch_3b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePrivacy;
 
@@ -502,7 +502,7 @@
 
     goto/16 :goto_0
 
-    .line 31312
+    .line 31454
     :sswitch_3c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;
 
@@ -510,7 +510,7 @@
 
     goto/16 :goto_0
 
-    .line 31270
+    .line 31412
     :sswitch_3d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;
 
@@ -518,7 +518,7 @@
 
     goto/16 :goto_0
 
-    .line 31282
+    .line 31424
     :sswitch_3e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelReadMessagesContents;
 
@@ -526,7 +526,7 @@
 
     goto/16 :goto_0
 
-    .line 31204
+    .line 31346
     :sswitch_3f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateUserStatus;
 
@@ -534,7 +534,7 @@
 
     goto/16 :goto_0
 
-    .line 31246
+    .line 31388
     :sswitch_40
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateFavedStickers;
 
@@ -542,7 +542,7 @@
 
     goto/16 :goto_0
 
-    .line 31237
+    .line 31379
     :sswitch_41
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateEditMessage;
 
@@ -550,7 +550,7 @@
 
     goto/16 :goto_0
 
-    .line 31231
+    .line 31373
     :sswitch_42
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChatParticipantDelete;
 
@@ -558,7 +558,7 @@
 
     goto/16 :goto_0
 
-    .line 31291
+    .line 31433
     :sswitch_43
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogUnreadMark;
 
@@ -566,7 +566,7 @@
 
     goto/16 :goto_0
 
-    .line 31279
+    .line 31421
     :sswitch_44
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChatParticipantAdmin;
 
@@ -574,7 +574,7 @@
 
     goto/16 :goto_0
 
-    .line 31156
+    .line 31298
     :sswitch_45
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelDiscussionInbox;
 
@@ -582,7 +582,7 @@
 
     goto/16 :goto_0
 
-    .line 31357
+    .line 31499
     :sswitch_46
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelMessageForwards;
 
@@ -590,216 +590,224 @@
 
     goto/16 :goto_0
 
-    .line 31360
+    .line 31511
     :sswitch_47
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateGroupInvitePrivacyForbidden;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateGroupInvitePrivacyForbidden;-><init>()V
+
+    goto/16 :goto_0
+
+    .line 31502
+    :sswitch_48
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteChannelMessages;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteChannelMessages;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31267
-    :sswitch_48
+    .line 31409
+    :sswitch_49
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateUserTyping;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateUserTyping;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31222
-    :sswitch_49
+    .line 31364
+    :sswitch_4a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateNotifySettings;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateNotifySettings;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31135
-    :sswitch_4a
+    .line 31277
+    :sswitch_4b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePeerHistoryTTL;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updatePeerHistoryTTL;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31180
-    :sswitch_4b
+    .line 31322
+    :sswitch_4c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelOutbox;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelOutbox;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31330
-    :sswitch_4c
+    .line 31472
+    :sswitch_4d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePeerLocated;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updatePeerLocated;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31258
-    :sswitch_4d
+    .line 31400
+    :sswitch_4e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateEncryption;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateEncryption;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31276
-    :sswitch_4e
+    .line 31418
+    :sswitch_4f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelAvailableMessages;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateChannelAvailableMessages;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31132
-    :sswitch_4f
+    .line 31274
+    :sswitch_50
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateMessagePoll;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateMessagePoll;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31303
-    :sswitch_50
+    .line 31445
+    :sswitch_51
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatePhoneCall;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updatePhoneCall;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31297
-    :sswitch_51
+    .line 31439
+    :sswitch_52
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateUserName;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateUserName;-><init>()V
 
     goto/16 :goto_0
 
-    .line 31339
-    :sswitch_52
+    .line 31481
+    :sswitch_53
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilterOrder;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateDialogFilterOrder;-><init>()V
 
     goto :goto_0
 
-    .line 31288
-    :sswitch_53
+    .line 31430
+    :sswitch_54
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateConfig;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateConfig;-><init>()V
 
     goto :goto_0
 
-    .line 31141
-    :sswitch_54
+    .line 31283
+    :sswitch_55
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;-><init>()V
 
     goto :goto_0
 
-    .line 31336
-    :sswitch_55
+    .line 31478
+    :sswitch_56
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateReadHistoryInbox;-><init>()V
 
     goto :goto_0
 
-    .line 31333
-    :sswitch_56
+    .line 31475
+    :sswitch_57
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateRecentStickers;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateRecentStickers;-><init>()V
 
     goto :goto_0
 
-    .line 31225
-    :sswitch_57
+    .line 31367
+    :sswitch_58
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateChannelParticipant;-><init>()V
 
     goto :goto_0
 
-    .line 31342
-    :sswitch_58
+    .line 31484
+    :sswitch_59
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateSavedGifs;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateSavedGifs;-><init>()V
 
     goto :goto_0
 
-    .line 31402
-    :sswitch_59
+    .line 31547
+    :sswitch_5a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateReadChannelInbox;-><init>()V
 
     goto :goto_0
 
-    .line 31354
-    :sswitch_5a
+    .line 31496
+    :sswitch_5b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteScheduledMessages;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteScheduledMessages;-><init>()V
 
     goto :goto_0
 
-    .line 31381
-    :sswitch_5b
+    .line 31526
+    :sswitch_5c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateDcOptions;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateDcOptions;-><init>()V
 
     goto :goto_0
 
-    .line 31183
-    :sswitch_5c
+    .line 31325
+    :sswitch_5d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChannelUserTyping;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateChannelUserTyping;-><init>()V
 
     goto :goto_0
 
-    .line 31318
-    :sswitch_5d
+    .line 31460
+    :sswitch_5e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateTranscribeAudio;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateTranscribeAudio;-><init>()V
 
     goto :goto_0
 
-    .line 31219
-    :sswitch_5e
+    .line 31361
+    :sswitch_5f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateGeoLiveViewed;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateGeoLiveViewed;-><init>()V
 
     goto :goto_0
 
-    .line 31201
-    :sswitch_5f
+    .line 31343
+    :sswitch_60
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateMoveStickerSetToTop;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateMoveStickerSetToTop;-><init>()V
 
     goto :goto_0
 
-    .line 31252
-    :sswitch_60
+    .line 31394
+    :sswitch_61
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateChatUserTyping;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateChatUserTyping;-><init>()V
 
     goto :goto_0
 
-    .line 31390
-    :sswitch_61
+    .line 31535
+    :sswitch_62
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateTheme;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_updateTheme;-><init>()V
@@ -811,7 +819,7 @@
 
     goto :goto_1
 
-    .line 31424
+    .line 31569
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -841,41 +849,44 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 31427
+    .line 31572
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
     return-object v0
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
-        -0x7de9045d -> :sswitch_61
-        -0x7cb78510 -> :sswitch_60
-        -0x7903307b -> :sswitch_5f
-        -0x78e046c7 -> :sswitch_5e
-        -0x779e8f70 -> :sswitch_5d
-        -0x737736dd -> :sswitch_5c
-        -0x71a1678d -> :sswitch_5b
-        -0x6f799312 -> :sswitch_5a
-        -0x6dd191f0 -> :sswitch_59
-        -0x6c8acbe2 -> :sswitch_58
-        -0x67a2c545 -> :sswitch_57
-        -0x65bdd3e0 -> :sswitch_56
-        -0x6368b021 -> :sswitch_55
-        -0x5df24f1b -> :sswitch_54
-        -0x5dd622fa -> :sswitch_53
-        -0x5a28defb -> :sswitch_52
-        -0x587b76dc -> :sswitch_51
-        -0x54f094e2 -> :sswitch_50
-        -0x535e9a85 -> :sswitch_4f
-        -0x4dc03968 -> :sswitch_4e
-        -0x4b5d1773 -> :sswitch_4d
-        -0x4b503050 -> :sswitch_4c
-        -0x48a06657 -> :sswitch_4b
-        -0x4464465b -> :sswitch_4a
-        -0x413d9711 -> :sswitch_49
-        -0x3fe17a81 -> :sswitch_48
-        -0x3cd2a4ee -> :sswitch_47
+        -0x7de9045d -> :sswitch_62
+        -0x7cb78510 -> :sswitch_61
+        -0x7903307b -> :sswitch_60
+        -0x78e046c7 -> :sswitch_5f
+        -0x779e8f70 -> :sswitch_5e
+        -0x737736dd -> :sswitch_5d
+        -0x71a1678d -> :sswitch_5c
+        -0x6f799312 -> :sswitch_5b
+        -0x6dd191f0 -> :sswitch_5a
+        -0x6c8acbe2 -> :sswitch_59
+        -0x67a2c545 -> :sswitch_58
+        -0x65bdd3e0 -> :sswitch_57
+        -0x6368b021 -> :sswitch_56
+        -0x5df24f1b -> :sswitch_55
+        -0x5dd622fa -> :sswitch_54
+        -0x5a28defb -> :sswitch_53
+        -0x587b76dc -> :sswitch_52
+        -0x54f094e2 -> :sswitch_51
+        -0x535e9a85 -> :sswitch_50
+        -0x4dc03968 -> :sswitch_4f
+        -0x4b5d1773 -> :sswitch_4e
+        -0x4b503050 -> :sswitch_4d
+        -0x48a06657 -> :sswitch_4c
+        -0x4464465b -> :sswitch_4b
+        -0x413d9711 -> :sswitch_4a
+        -0x3fe17a81 -> :sswitch_49
+        -0x3cd2a4ee -> :sswitch_48
+        -0x330f752a -> :sswitch_47
         -0x2d65d80c -> :sswitch_46
         -0x294e6aba -> :sswitch_45
         -0x28359e5e -> :sswitch_44

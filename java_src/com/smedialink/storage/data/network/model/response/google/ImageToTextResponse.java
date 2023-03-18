@@ -48,7 +48,7 @@ public final class ImageToTextResponse {
     }
 
     public String toString() {
-        return "ImageToTextResponse(foundText=" + this.foundText + ", detectedLanguage=" + ((Object) this.detectedLanguage) + ')';
+        return "ImageToTextResponse(foundText=" + this.foundText + ", detectedLanguage=" + this.detectedLanguage + ')';
     }
 
     public ImageToTextResponse(String foundText, String str) {

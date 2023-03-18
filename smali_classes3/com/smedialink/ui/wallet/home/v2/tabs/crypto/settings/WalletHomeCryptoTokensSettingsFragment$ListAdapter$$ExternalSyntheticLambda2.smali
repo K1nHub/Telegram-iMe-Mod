@@ -29,7 +29,7 @@
 
     check-cast p1, Landroid/graphics/Bitmap;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->$r8$lambda$4XQpMru2rhYeZJea4XsXU5XiYGk(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/settings/WalletHomeCryptoTokensSettingsFragment$ListAdapter;->$r8$lambda$LQ-5QhBQPSMYw_STDhvDQu-z6FI(Lorg/fork/ui/view/MovingCheckCell;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method

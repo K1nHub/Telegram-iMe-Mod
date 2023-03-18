@@ -19,6 +19,6 @@ public final class SelectLanguageBottomSheet$listAdapter$2 extends Lambda implem
 
     @Override // kotlin.jvm.functions.Function0
     public final SelectLanguageBottomSheet.ListAdapter invoke() {
-        return new SelectLanguageBottomSheet.ListAdapter(this.this$0);
+        return new SelectLanguageBottomSheet.ListAdapter();
     }
 }

@@ -244,7 +244,7 @@ public final class Billing {
             sb.append(this.mState);
             sb.append(" state");
             this.mState = state;
-            int i = C30647.$SwitchMap$org$solovyev$android$checkout$Billing$State[state.ordinal()];
+            int i = C31907.$SwitchMap$org$solovyev$android$checkout$Billing$State[state.ordinal()];
             if (i == 1) {
                 this.mPlayStoreBroadcastReceiver.removeListener(this.mPlayStoreListener);
             } else if (i == 2) {
@@ -371,7 +371,7 @@ public final class Billing {
                 @Override // org.solovyev.android.checkout.RequestListenerWrapper, org.solovyev.android.checkout.RequestListener
                 public void onSuccess(Purchase purchase) {
                     Billing.this.mCache.removeAll(RequestType.GET_PURCHASES.getCacheKeyType());
-                    super.onSuccess((C30636) purchase);
+                    super.onSuccess((C31896) purchase);
                 }
             };
         }
@@ -701,7 +701,7 @@ public final class Billing {
             if (cacheKey != null) {
                 Billing.this.mCache.putIfNotExist(type.getCacheKey(cacheKey), new Cache.Entry(r, System.currentTimeMillis() + type.expiresIn));
             }
-            int i = C30647.$SwitchMap$org$solovyev$android$checkout$RequestType[type.ordinal()];
+            int i = C31907.$SwitchMap$org$solovyev$android$checkout$RequestType[type.ordinal()];
             if (i == 1 || i == 2 || i == 3) {
                 Billing.this.mCache.removeAll(RequestType.GET_PURCHASES.getCacheKeyType());
             }
@@ -710,7 +710,7 @@ public final class Billing {
 
         @Override // org.solovyev.android.checkout.RequestListenerWrapper, org.solovyev.android.checkout.RequestListener
         public void onError(int i, Exception exc) {
-            int i2 = C30647.$SwitchMap$org$solovyev$android$checkout$RequestType[this.mRequest.getType().ordinal()];
+            int i2 = C31907.$SwitchMap$org$solovyev$android$checkout$RequestType[this.mRequest.getType().ordinal()];
             if (i2 == 1 || i2 == 2) {
                 if (i == 7) {
                     Billing.this.mCache.removeAll(RequestType.GET_PURCHASES.getCacheKeyType());
@@ -725,7 +725,7 @@ public final class Billing {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.solovyev.android.checkout.Billing$7 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C30647 {
+    public static /* synthetic */ class C31907 {
         static final /* synthetic */ int[] $SwitchMap$org$solovyev$android$checkout$Billing$State;
         static final /* synthetic */ int[] $SwitchMap$org$solovyev$android$checkout$RequestType;
 

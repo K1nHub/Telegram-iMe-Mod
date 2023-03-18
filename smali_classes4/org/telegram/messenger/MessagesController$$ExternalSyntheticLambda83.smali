@@ -10,13 +10,11 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$3:Z
+.field public final synthetic f$2:Landroid/util/SparseArray;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLandroidx/collection/LongSparseArray;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLandroid/util/SparseArray;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +23,7 @@
 
     iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$1:J
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$2:Landroidx/collection/LongSparseArray;
-
-    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$3:Z
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$2:Landroid/util/SparseArray;
 
     return-void
 .end method
@@ -35,17 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$0:Lorg/telegram/messenger/MessagesController;
 
     iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$1:J
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$2:Landroidx/collection/LongSparseArray;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$2:Landroid/util/SparseArray;
 
-    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda83;->f$3:Z
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$WJQMf7A7H0ijhQRN41e4zoUR-GM(Lorg/telegram/messenger/MessagesController;JLandroidx/collection/LongSparseArray;Z)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$d2ZeFw4YWyrvnDmPFKjbWhJ31TA(Lorg/telegram/messenger/MessagesController;JLandroid/util/SparseArray;)V
 
     return-void
 .end method

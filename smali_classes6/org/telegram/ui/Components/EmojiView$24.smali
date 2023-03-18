@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;)V
     .locals 0
 
-    .line 3006
+    .line 3024
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$24;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ListView/RecyclerListViewWithOverlayDraw;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 3023
+    .line 3041
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -48,7 +48,7 @@
 .method protected onLayout(ZIIII)V
     .locals 3
 
-    .line 3028
+    .line 3046
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$24;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$11700(Lorg/telegram/ui/Components/EmojiView;)Z
@@ -71,10 +71,10 @@
 
     if-lez v0, :cond_0
 
-    .line 3029
+    .line 3047
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$24;->ignoreLayout:Z
 
-    .line 3030
+    .line 3048
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$24;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$11900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;
@@ -85,19 +85,19 @@
 
     invoke-virtual {v0, v2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 3031
+    .line 3049
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$24;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->access$11702(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 3032
+    .line 3050
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$24;->ignoreLayout:Z
 
-    .line 3034
+    .line 3052
     :cond_0
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/RecyclerListView;->onLayout(ZIIII)V
 
-    .line 3035
+    .line 3053
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$24;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1, v1, v1}, Lorg/telegram/ui/Components/EmojiView;->access$5100(Lorg/telegram/ui/Components/EmojiView;ZZ)V
@@ -108,10 +108,10 @@
 .method public onScrolled(II)V
     .locals 1
 
-    .line 3048
+    .line 3066
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onScrolled(II)V
 
-    .line 3049
+    .line 3067
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$24;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$12000(Lorg/telegram/ui/Components/EmojiView;)Landroid/widget/FrameLayout;
@@ -120,7 +120,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 3050
+    .line 3068
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$24;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$000(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
@@ -160,14 +160,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 3040
+    .line 3058
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$24;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 3043
+    .line 3061
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->requestLayout()V
 
@@ -177,7 +177,7 @@
 .method public setPadding(IIII)V
     .locals 2
 
-    .line 3015
+    .line 3033
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -196,7 +196,7 @@
 
     invoke-static {v1, v0}, Lcom/google/android/exoplayer2/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3016
+    .line 3034
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
     return-void
@@ -205,7 +205,7 @@
 .method public setTranslationY(F)V
     .locals 2
 
-    .line 3009
+    .line 3027
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -224,7 +224,7 @@
 
     invoke-static {v1, v0}, Lcom/google/android/exoplayer2/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3010
+    .line 3028
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
     return-void

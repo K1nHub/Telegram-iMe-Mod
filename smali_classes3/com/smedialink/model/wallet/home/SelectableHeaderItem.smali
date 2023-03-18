@@ -265,16 +265,16 @@
     :cond_0
     const-class v1, Lcom/smedialink/model/wallet/home/SelectableHeaderItem;
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_1
 
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
+    const/4 v2, 0x0
 
     :goto_0
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -291,7 +291,7 @@
     const-string v1, "null cannot be cast to non-null type com.smedialink.model.wallet.home.SelectableHeaderItem"
 
     .line 22
-    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/smedialink/model/wallet/home/SelectableHeaderItem;
 

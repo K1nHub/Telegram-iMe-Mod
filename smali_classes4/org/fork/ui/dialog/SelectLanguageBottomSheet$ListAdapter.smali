@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 341
     iput-object p1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lorg/fork/ui/dialog/SelectLanguageBottomSheet;
@@ -182,6 +178,10 @@
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
+    const-string v1, "null cannot be cast to non-null type com.smedialink.ui.contacts.view.TextCellWithRightImage"
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Lcom/smedialink/ui/contacts/view/TextCellWithRightImage;
 
     iget-object v1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;->this$0:Lorg/fork/ui/dialog/SelectLanguageBottomSheet;
@@ -230,6 +230,10 @@
     if-ne v1, p2, :cond_2
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string p2, "null cannot be cast to non-null type org.fork.ui.dialog.SelectLanguageBottomSheet.EmptyView"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;
 
@@ -291,9 +295,6 @@
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 360
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 

@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 6807
+    .line 6832
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
 
     goto :goto_0
 
-    .line 6832
+    .line 6857
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;
 
@@ -56,7 +56,7 @@
 
     goto :goto_0
 
-    .line 6829
+    .line 6854
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeCall;
 
@@ -64,7 +64,7 @@
 
     goto :goto_0
 
-    .line 6826
+    .line 6851
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeApp;
 
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 6850
+    .line 6875
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFirebaseSms;
 
@@ -80,7 +80,7 @@
 
     goto :goto_0
 
-    .line 6847
+    .line 6872
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFragmentSms;
 
@@ -88,7 +88,7 @@
 
     goto :goto_0
 
-    .line 6844
+    .line 6869
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSms;
 
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 6838
+    .line 6863
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeFlashCall;
 
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 6835
+    .line 6860
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeSetUpEmailRequired;
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 6841
+    .line 6866
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeMissedCall;
 
@@ -125,7 +125,7 @@
 
     goto :goto_1
 
-    .line 6854
+    .line 6879
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -155,7 +155,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 6857
+    .line 6882
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

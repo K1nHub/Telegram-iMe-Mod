@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "FirebaseExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Function;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,18 +18,26 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        "R:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Function;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/data/network/model/response/catalog/CategoryWithCounterResponse;",
+        ">;>;",
+        "Lio/reactivex/ObservableSource<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/util/List<",
+        "+",
+        "Lcom/smedialink/storage/domain/model/catalog/CategoryWithCounter;",
+        ">;>;>;>;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n+ 2 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 5 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n62#2:87\n63#2,3:92\n66#2,2:99\n1547#3:88\n1618#3,3:89\n1547#3:95\n1618#3,3:96\n18#4:101\n18#4:103\n6#5:102\n*S KotlinDebug\n*F\n+ 1 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n*L\n62#1:88\n62#1:89,3\n65#1:95\n65#1:96,3\n67#1:101\n84#2:103\n84#2:102\n*E\n"
+    value = "SMAP\nFirebaseExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n+ 2 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 5 ResultExt.kt\ncom/smedialink/storage/domain/utils/extentions/ResultExtKt\n*L\n1#1,86:1\n62#2:87\n63#2,3:92\n66#2,2:99\n1549#3:88\n1620#3,3:89\n1549#3:95\n1620#3,3:96\n18#4:101\n18#4:103\n6#5:102\n*S KotlinDebug\n*F\n+ 1 CatalogRepositoryImpl.kt\ncom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl\n+ 2 FirebaseExt.kt\ncom/smedialink/storage/data/utils/extentions/FirebaseExtKt$flatMapSuccess$1\n*L\n62#1:88\n62#1:89,3\n65#1:95\n65#1:96,3\n67#1:101\n84#2:103\n84#2:102\n*E\n"
 .end annotation
 
 
@@ -47,22 +55,32 @@
 
     iput-object p2, p0, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1;->this$0:Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lio/reactivex/ObservableSource;
+.method public final invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lio/reactivex/ObservableSource;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)",
+            "(",
+            "Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse<",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/data/network/model/response/catalog/CategoryWithCounterResponse;",
+            ">;>;)",
             "Lio/reactivex/ObservableSource<",
             "+",
             "Lcom/smedialink/storage/domain/model/Result<",
-            "TR;>;>;"
+            "Ljava/util/List<",
+            "+",
+            "Lcom/smedialink/storage/domain/model/catalog/CategoryWithCounter;",
+            ">;>;>;"
         }
     .end annotation
 
@@ -86,7 +104,7 @@
 
     check-cast p1, Ljava/lang/Iterable;
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -97,7 +115,7 @@
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -113,7 +131,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/storage/data/network/model/response/catalog/CategoryWithCounterResponse;
 
     .line 87
@@ -121,6 +139,7 @@
 
     move-result-object v3
 
+    .line 1621
     invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -145,7 +164,7 @@
 
     move-result-object v3
 
-    .line 1547
+    .line 1549
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-static {v0, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -154,7 +173,7 @@
 
     invoke-direct {v4, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -170,7 +189,7 @@
 
     move-result-object v5
 
-    .line 1619
+    .line 1621
     check-cast v5, Lcom/smedialink/storage/domain/model/catalog/CategoryWithCounter;
 
     .line 94
@@ -178,10 +197,12 @@
 
     move-result-object v5
 
+    .line 1621
     invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
+    .line 94
     :cond_1
     invoke-interface {v3, v4}, Lcom/smedialink/storage/data/locale/db/dao/base/BaseDao;->rxInsert(Ljava/util/List;)Lio/reactivex/Completable;
 
@@ -222,11 +243,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v0, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1$1;
+    .line 83
+    sget-object v0, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1$1;->INSTANCE:Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1$1;
 
-    invoke-direct {v0}, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1$1;-><init>()V
+    new-instance v1, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    invoke-direct {v1, v0}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -262,13 +286,13 @@
     return-object p1
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 82
     check-cast p1, Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;
 
-    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1;->apply(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lio/reactivex/ObservableSource;
+    invoke-virtual {p0, p1}, Lcom/smedialink/storage/data/repository/catalog/CatalogRepositoryImpl$getCategories$$inlined$flatMapSuccess$1;->invoke(Lcom/smedialink/storage/data/network/model/response/base/ApiBaseResponse;)Lio/reactivex/ObservableSource;
 
     move-result-object p1
 

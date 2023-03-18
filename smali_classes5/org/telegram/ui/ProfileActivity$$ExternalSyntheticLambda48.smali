@@ -2,38 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/fork/utils/Callbacks$Callback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
-
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lcom/smedialink/ui/profile/ProfilePresenter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda48;->f$0:Lorg/telegram/ui/ProfileActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda48;->f$1:Ljava/lang/String;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda48;->f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+.method public final invoke()V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda48;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda48;->f$0:Lcom/smedialink/ui/profile/ProfilePresenter;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda48;->f$1:Ljava/lang/String;
-
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$YfPectLY1_7Xq9DldkYFTAghsiQ(Lorg/telegram/ui/ProfileActivity;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-virtual {v0}, Lcom/smedialink/ui/profile/ProfilePresenter;->acceptTwitterConnection()V
 
     return-void
 .end method

@@ -27,7 +27,7 @@ public abstract class AbstractIterator<T> extends UnmodifiableIterator<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.common.collect.AbstractIterator$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C08991 {
+    public static /* synthetic */ class C08921 {
         static final /* synthetic */ int[] $SwitchMap$com$google$common$collect$AbstractIterator$State;
 
         static {
@@ -47,7 +47,7 @@ public abstract class AbstractIterator<T> extends UnmodifiableIterator<T> {
     @Override // java.util.Iterator, p034j$.util.Iterator
     public final boolean hasNext() {
         Preconditions.checkState(this.state != State.FAILED);
-        int i = C08991.$SwitchMap$com$google$common$collect$AbstractIterator$State[this.state.ordinal()];
+        int i = C08921.$SwitchMap$com$google$common$collect$AbstractIterator$State[this.state.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return tryToComputeNext();

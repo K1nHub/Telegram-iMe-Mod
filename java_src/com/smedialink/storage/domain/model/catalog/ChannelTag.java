@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ChannelTag {
 
     /* renamed from: id */
-    private final long f317id;
+    private final long f320id;
     private final String title;
 
     public static /* synthetic */ ChannelTag copy$default(ChannelTag channelTag, long j, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = channelTag.f317id;
+            j = channelTag.f320id;
         }
         if ((i & 2) != 0) {
             str = channelTag.title;
@@ -21,7 +21,7 @@ public final class ChannelTag {
     }
 
     public final long component1() {
-        return this.f317id;
+        return this.f320id;
     }
 
     public final String component2() {
@@ -39,27 +39,27 @@ public final class ChannelTag {
         }
         if (obj instanceof ChannelTag) {
             ChannelTag channelTag = (ChannelTag) obj;
-            return this.f317id == channelTag.f317id && Intrinsics.areEqual(this.title, channelTag.title);
+            return this.f320id == channelTag.f320id && Intrinsics.areEqual(this.title, channelTag.title);
         }
         return false;
     }
 
     public int hashCode() {
-        return (StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f317id) * 31) + this.title.hashCode();
+        return (StakingApprovalPrepareRequest$$ExternalSyntheticBackport0.m716m(this.f320id) * 31) + this.title.hashCode();
     }
 
     public String toString() {
-        return "ChannelTag(id=" + this.f317id + ", title=" + this.title + ')';
+        return "ChannelTag(id=" + this.f320id + ", title=" + this.title + ')';
     }
 
     public ChannelTag(long j, String title) {
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f317id = j;
+        this.f320id = j;
         this.title = title;
     }
 
     public final long getId() {
-        return this.f317id;
+        return this.f320id;
     }
 
     public final String getTitle() {

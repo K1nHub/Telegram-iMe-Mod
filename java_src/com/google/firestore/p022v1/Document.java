@@ -80,7 +80,7 @@ public final class Document extends GeneratedMessageLite<Document, Builder> impl
     /* renamed from: com.google.firestore.v1.Document$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Document, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10551 c10551) {
+        /* synthetic */ Builder(C10481 c10481) {
             this();
         }
 
@@ -109,7 +109,7 @@ public final class Document extends GeneratedMessageLite<Document, Builder> impl
 
     /* renamed from: com.google.firestore.v1.Document$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10551 {
+    static /* synthetic */ class C10481 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f203xa1df5c61;
@@ -150,7 +150,7 @@ public final class Document extends GeneratedMessageLite<Document, Builder> impl
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10551.f203xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10481.f203xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Document();
             case 2:

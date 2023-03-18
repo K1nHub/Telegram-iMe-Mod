@@ -2,38 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+
+.field public final synthetic f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$2:I
+
+.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;[Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$0:Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$0:Lorg/telegram/messenger/MessagesController;
+
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$2:I
+
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$0:Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    check-cast p2, Lorg/telegram/messenger/MessageObject;
+    iget v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$2:I
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$QPvtx6--D1bpo0okzObBx6iLWDU(Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;)I
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda231;->f$3:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    move-result p1
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$5cjx_l9CpizIriJj8vJ91_-858c(Lorg/telegram/messenger/MessagesController;[Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    return p1
+    return-void
 .end method

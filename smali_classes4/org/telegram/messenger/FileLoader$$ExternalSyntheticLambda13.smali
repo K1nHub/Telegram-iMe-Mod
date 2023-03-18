@@ -12,17 +12,9 @@
 
 .field public final synthetic f$2:Ljava/lang/String;
 
-.field public final synthetic f$3:J
-
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:Z
-
-.field public final synthetic f$6:Z
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;JIZZ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,21 +25,13 @@
 
     iput-object p3, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$2:Ljava/lang/String;
 
-    iput-wide p4, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$3:J
-
-    iput p6, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$4:I
-
-    iput-boolean p7, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$5:Z
-
-    iput-boolean p8, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$6:Z
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/messenger/FileLoader;
 
@@ -55,15 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$2:Ljava/lang/String;
 
-    iget-wide v3, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$3:J
-
-    iget v5, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$4:I
-
-    iget-boolean v6, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$5:Z
-
-    iget-boolean v7, p0, Lorg/telegram/messenger/FileLoader$$ExternalSyntheticLambda13;->f$6:Z
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$IydKbm_yqELsg9R_9n_tvsi2nyU(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;JIZZ)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/FileLoader;->$r8$lambda$l3Yz5gzZFXz4ApzRCRtNbW3vntw(Lorg/telegram/messenger/FileLoader;ZLjava/lang/String;)V
 
     return-void
 .end method

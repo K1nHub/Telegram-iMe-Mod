@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroidx/core/view/ViewPropertyAnimatorCompat$Api19Impl;,
         Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;
     }
 .end annotation
@@ -18,7 +19,7 @@
 
 .field mStartAction:Ljava/lang/Runnable;
 
-.field private mView:Ljava/lang/ref/WeakReference;
+.field private final mView:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference<",
@@ -30,26 +31,34 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$-X-OeeZ3zgiQP_YgN-Cy4Y7jVqc(Landroidx/core/view/ViewPropertyAnimatorUpdateListener;Landroid/view/View;Landroid/animation/ValueAnimator;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Landroidx/core/view/ViewPropertyAnimatorCompat;->lambda$setUpdateListener$0(Landroidx/core/view/ViewPropertyAnimatorUpdateListener;Landroid/view/View;Landroid/animation/ValueAnimator;)V
+
+    return-void
+.end method
+
 .method constructor <init>(Landroid/view/View;)V
     .locals 1
 
-    .line 37
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 30
+    .line 38
     iput-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mStartAction:Ljava/lang/Runnable;
 
-    .line 31
+    .line 39
     iput-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mEndAction:Ljava/lang/Runnable;
 
     const/4 v0, -0x1
 
-    .line 32
+    .line 40
     iput v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mOldLayerType:I
 
-    .line 38
+    .line 46
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -59,12 +68,21 @@
     return-void
 .end method
 
+.method private static synthetic lambda$setUpdateListener$0(Landroidx/core/view/ViewPropertyAnimatorUpdateListener;Landroid/view/View;Landroid/animation/ValueAnimator;)V
+    .locals 0
+
+    .line 830
+    invoke-interface {p0, p1}, Landroidx/core/view/ViewPropertyAnimatorUpdateListener;->onAnimationUpdate(Landroid/view/View;)V
+
+    return-void
+.end method
+
 .method private setListenerInternal(Landroid/view/View;Landroidx/core/view/ViewPropertyAnimatorListener;)V
     .locals 2
 
     if-eqz p2, :cond_0
 
-    .line 742
+    .line 791
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -77,7 +95,7 @@
 
     goto :goto_0
 
-    .line 759
+    .line 808
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -96,7 +114,7 @@
 .method public alpha(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .locals 1
 
-    .line 138
+    .line 148
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -107,7 +125,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 139
+    .line 149
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -121,7 +139,7 @@
 .method public cancel()V
     .locals 1
 
-    .line 464
+    .line 493
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -132,7 +150,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 465
+    .line 494
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -146,7 +164,7 @@
 .method public getDuration()J
     .locals 2
 
-    .line 237
+    .line 252
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -157,7 +175,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 238
+    .line 253
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -177,7 +195,7 @@
 .method public setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .locals 1
 
-    .line 123
+    .line 132
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -188,7 +206,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 124
+    .line 133
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -202,7 +220,7 @@
 .method public setInterpolator(Landroid/view/animation/Interpolator;)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .locals 1
 
-    .line 254
+    .line 270
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -213,7 +231,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 255
+    .line 271
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -227,7 +245,7 @@
 .method public setListener(Landroidx/core/view/ViewPropertyAnimatorListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .locals 3
 
-    .line 729
+    .line 778
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -238,14 +256,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 730
+    .line 779
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x10
 
     if-lt v1, v2, :cond_0
 
-    .line 731
+    .line 780
     invoke-direct {p0, v0, p1}, Landroidx/core/view/ViewPropertyAnimatorCompat;->setListenerInternal(Landroid/view/View;Landroidx/core/view/ViewPropertyAnimatorListener;)V
 
     goto :goto_0
@@ -253,10 +271,10 @@
     :cond_0
     const/high16 v1, 0x7e000000
 
-    .line 733
+    .line 782
     invoke-virtual {v0, v1, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 734
+    .line 783
     new-instance p1, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;
 
     invoke-direct {p1, p0}, Landroidx/core/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14;-><init>(Landroidx/core/view/ViewPropertyAnimatorCompat;)V
@@ -271,7 +289,7 @@
 .method public setStartDelay(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .locals 1
 
-    .line 286
+    .line 305
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -282,7 +300,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 287
+    .line 306
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -296,7 +314,7 @@
 .method public setUpdateListener(Landroidx/core/view/ViewPropertyAnimatorUpdateListener;)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .locals 3
 
-    .line 776
+    .line 826
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -307,7 +325,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 777
+    .line 827
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x13
@@ -318,18 +336,19 @@
 
     if-eqz p1, :cond_0
 
-    .line 780
-    new-instance v1, Landroidx/core/view/ViewPropertyAnimatorCompat$2;
+    .line 830
+    new-instance v1, Landroidx/core/view/ViewPropertyAnimatorCompat$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0, p1, v0}, Landroidx/core/view/ViewPropertyAnimatorCompat$2;-><init>(Landroidx/core/view/ViewPropertyAnimatorCompat;Landroidx/core/view/ViewPropertyAnimatorUpdateListener;Landroid/view/View;)V
+    invoke-direct {v1, p1, v0}, Landroidx/core/view/ViewPropertyAnimatorCompat$$ExternalSyntheticLambda0;-><init>(Landroidx/core/view/ViewPropertyAnimatorUpdateListener;Landroid/view/View;)V
 
-    .line 787
+    .line 832
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    invoke-virtual {p1, v1}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
+    .line 833
+    invoke-static {p1, v1}, Landroidx/core/view/ViewPropertyAnimatorCompat$Api19Impl;->setUpdateListener(Landroid/view/ViewPropertyAnimator;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
 
     :cond_1
     return-object p0
@@ -338,7 +357,7 @@
 .method public start()V
     .locals 1
 
-    .line 644
+    .line 687
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -349,7 +368,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 645
+    .line 688
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -363,7 +382,7 @@
 .method public translationY(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .locals 1
 
-    .line 183
+    .line 196
     iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -374,7 +393,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 184
+    .line 197
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0

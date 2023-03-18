@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/smedialink/ui/wallet/common/WalletRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 7 View.kt\nandroidx/core/view/ViewKt\n+ 8 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,279:1\n13#2,4:280\n13#2,4:284\n56#3,6:288\n1849#4,2:294\n1849#4,2:296\n1849#4,2:307\n2478#4:315\n215#5,9:298\n211#6,2:309\n254#7,2:311\n254#7,2:313\n1#8:316\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/smedialink/ui/wallet/common/WalletRootFragment\n*L\n46#1:280,4\n47#1:284,4\n48#1:288,6\n81#1:294,2\n86#1:296,2\n124#1:307,2\n231#1:315\n90#1:298,9\n138#1:309,2\n145#1:311,2\n149#1:313,2\n231#1:316\n*E\n"
+    value = "SMAP\nWalletRootFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletRootFragment.kt\ncom/smedialink/ui/wallet/common/WalletRootFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 7 View.kt\nandroidx/core/view/ViewKt\n+ 8 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,279:1\n13#2,4:280\n13#2,4:284\n56#3,6:288\n1855#4,2:294\n1855#4,2:296\n1855#4,2:307\n2634#4:315\n219#5,9:298\n215#6,2:309\n262#7,2:311\n262#7,2:313\n1#8:316\n*S KotlinDebug\n*F\n+ 1 WalletRootFragment.kt\ncom/smedialink/ui/wallet/common/WalletRootFragment\n*L\n46#1:280,4\n47#1:284,4\n48#1:288,6\n81#1:294,2\n86#1:296,2\n124#1:307,2\n231#1:315\n90#1:298,9\n138#1:309,2\n145#1:311,2\n149#1:313,2\n231#1:316\n*E\n"
 .end annotation
 
 
@@ -49,10 +49,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$yu59cCalUJW60RYncnTKD4h44dQ(Lcom/smedialink/ui/wallet/common/WalletRootFragment;)V
+.method public static synthetic $r8$lambda$98n65-AGVoc44WBdUnEur7-8lGQ(Lcom/smedialink/ui/wallet/common/WalletRootFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/common/WalletRootFragment;->getThemeDescriptions$lambda-4(Lcom/smedialink/ui/wallet/common/WalletRootFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/common/WalletRootFragment;->getThemeDescriptions$lambda$4(Lcom/smedialink/ui/wallet/common/WalletRootFragment;)V
 
     return-void
 .end method
@@ -498,7 +498,7 @@
 
     move-result-object v0
 
-    .line 2478
+    .line 2634
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -529,7 +529,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-4(Lcom/smedialink/ui/wallet/common/WalletRootFragment;)V
+.method private static final getThemeDescriptions$lambda$4(Lcom/smedialink/ui/wallet/common/WalletRootFragment;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -565,7 +565,7 @@
 
     const/16 v1, 0x37
 
-    invoke-static {v0, v1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withAlpha(II)I
 
     move-result v0
 
@@ -836,7 +836,7 @@
 
     const/16 v4, 0x37
 
-    invoke-static {v3, v4}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v3, v4}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withAlpha(II)I
 
     move-result v3
 
@@ -937,7 +937,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 215
+    .line 219
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v1
@@ -1133,7 +1133,7 @@
 
     move-result-object v2
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1185,16 +1185,16 @@
 
     check-cast v0, Lcom/smedialink/ui/wallet/common/WalletTabFragment;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p1, 0x1
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
+
+    move-result p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->isSwipeBackEnabled(Landroid/view/MotionEvent;)Z
-
-    move-result p1
+    const/4 p1, 0x1
 
     :goto_0
     return p1
@@ -1215,7 +1215,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1300,7 +1300,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1360,14 +1360,11 @@
 
     check-cast v0, Lcom/smedialink/ui/wallet/common/WalletTabFragment;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onPause()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -1388,14 +1385,11 @@
 
     check-cast v0, Lcom/smedialink/ui/wallet/common/WalletTabFragment;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/common/BottomNavigationTabFragment;->onResume()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -1458,7 +1452,7 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletGlobalBinding;->bottomNavigationWallet:Lcom/fxn/BubbleTabBar;
 
-    .line 211
+    .line 215
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -1545,7 +1539,7 @@
     :cond_1
     const/16 p1, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -1573,7 +1567,7 @@
     :cond_1
     const/16 p1, 0x8
 
-    .line 254
+    .line 262
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 

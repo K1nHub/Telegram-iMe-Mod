@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26919
+    .line 27061
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -42,7 +42,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
     .locals 1
 
-    .line 26931
+    .line 27073
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -53,7 +53,7 @@
 
     return-object p0
 
-    .line 26933
+    .line 27075
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -79,13 +79,13 @@
 
     throw p0
 
-    .line 26938
+    .line 27080
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;-><init>()V
 
-    .line 26939
+    .line 27081
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -96,7 +96,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 26944
+    .line 27086
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -118,7 +118,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 26945
+    .line 27087
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_scheduled:Z
 
@@ -128,25 +128,25 @@
 
     const/4 v2, 0x1
 
-    .line 26946
+    .line 27088
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->forum_topic:Z
 
-    .line 26947
+    .line 27089
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_msg_id:I
 
-    .line 26948
+    .line 27090
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->flags:I
 
     and-int/2addr v0, v3
 
     if-eqz v0, :cond_2
 
-    .line 26949
+    .line 27091
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -157,7 +157,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 26951
+    .line 27093
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->flags:I
 
@@ -165,7 +165,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 26952
+    .line 27094
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -179,12 +179,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 26957
+    .line 27099
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26958
+    .line 27100
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_scheduled:Z
 
     if-eqz v0, :cond_0
@@ -203,7 +203,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->flags:I
 
-    .line 26959
+    .line 27101
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->forum_topic:Z
 
     if-eqz v1, :cond_1
@@ -218,27 +218,27 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->flags:I
 
-    .line 26960
+    .line 27102
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26961
+    .line 27103
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 26962
+    .line 27104
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_2
 
-    .line 26963
+    .line 27105
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 26965
+    .line 27107
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->flags:I
 
@@ -246,7 +246,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 26966
+    .line 27108
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;->reply_to_top_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

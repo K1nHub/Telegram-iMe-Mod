@@ -18,6 +18,6 @@ final class SelectedFilesBottomSheet$listAdapter$2 extends Lambda implements Fun
 
     @Override // kotlin.jvm.functions.Function0
     public final SelectedFilesBottomSheet.FilesAdapter invoke() {
-        return new SelectedFilesBottomSheet.FilesAdapter(this.this$0);
+        return new SelectedFilesBottomSheet.FilesAdapter();
     }
 }

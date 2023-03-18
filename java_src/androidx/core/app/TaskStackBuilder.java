@@ -78,8 +78,7 @@ public final class TaskStackBuilder implements Iterable<Intent> {
         if (this.mIntents.isEmpty()) {
             throw new IllegalStateException("No intents added to TaskStackBuilder; cannot startActivities");
         }
-        ArrayList<Intent> arrayList = this.mIntents;
-        Intent[] intentArr = (Intent[]) arrayList.toArray(new Intent[arrayList.size()]);
+        Intent[] intentArr = (Intent[]) this.mIntents.toArray(new Intent[0]);
         intentArr[0] = new Intent(intentArr[0]).addFlags(268484608);
         if (ContextCompat.startActivities(this.mSourceContext, intentArr, bundle)) {
             return;

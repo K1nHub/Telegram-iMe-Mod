@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ContextLinkCell;Ljava/lang/String;)V
     .locals 0
 
-    .line 1079
+    .line 1097
     iput-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell$2;->this$0:Lorg/telegram/ui/Cells/ContextLinkCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
@@ -43,7 +43,7 @@
 .method public get(Lorg/telegram/ui/Cells/ContextLinkCell;)Ljava/lang/Float;
     .locals 0
 
-    .line 1088
+    .line 1106
     iget-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell$2;->this$0:Lorg/telegram/ui/Cells/ContextLinkCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ContextLinkCell;->access$600(Lorg/telegram/ui/Cells/ContextLinkCell;)F
@@ -60,7 +60,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1079
+    .line 1097
     check-cast p1, Lorg/telegram/ui/Cells/ContextLinkCell;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Cells/ContextLinkCell$2;->get(Lorg/telegram/ui/Cells/ContextLinkCell;)Ljava/lang/Float;
@@ -73,7 +73,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 1079
+    .line 1097
     check-cast p1, Lorg/telegram/ui/Cells/ContextLinkCell;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Cells/ContextLinkCell$2;->setValue(Lorg/telegram/ui/Cells/ContextLinkCell;F)V
@@ -84,12 +84,12 @@
 .method public setValue(Lorg/telegram/ui/Cells/ContextLinkCell;F)V
     .locals 0
 
-    .line 1082
+    .line 1100
     iget-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell$2;->this$0:Lorg/telegram/ui/Cells/ContextLinkCell;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Cells/ContextLinkCell;->access$602(Lorg/telegram/ui/Cells/ContextLinkCell;F)F
 
-    .line 1083
+    .line 1101
     iget-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell$2;->this$0:Lorg/telegram/ui/Cells/ContextLinkCell;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

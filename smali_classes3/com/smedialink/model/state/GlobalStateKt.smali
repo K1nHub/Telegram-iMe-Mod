@@ -12,6 +12,10 @@
 
 .field private static final EMPTY_STAKING_STATE:Ljava/lang/String; = "empty_staking_state"
 
+.field private static final EMPTY_TWITTER_SEARCH_STATE:Ljava/lang/String; = "empty_twitter_search_state"
+
+.field private static final EMPTY_TWITTER_STATE:Ljava/lang/String; = "empty_twitter_state"
+
 .field private static final NO_INTERNET_STATE:Ljava/lang/String; = "no_internet_state"
 
 .field private static final PROGRESS_STATE:Ljava/lang/String; = "progress_state"

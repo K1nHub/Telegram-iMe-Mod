@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;)V
     .locals 0
 
-    .line 160
+    .line 161
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$2;->this$1:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 170
+    .line 171
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$2;->this$1:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->access$000(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;)Landroid/animation/AnimatorSet;
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 171
+    .line 172
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$2;->this$1:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     const/4 v0, 0x0
@@ -70,7 +70,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 163
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$2;->this$1:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->access$000(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;)Landroid/animation/AnimatorSet;
@@ -91,7 +91,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 164
+    .line 165
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView$2;->this$1:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     const/4 v0, 0x0

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;
 
-    invoke-static {v0}, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->$r8$lambda$ZKTipFkmD8fvN-FhKqLq4O_-Vig(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
+    invoke-static {v0}, Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;->$r8$lambda$8QEfQjg2lsJ0ab3byWI41EDQ_nY(Lorg/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;)V
 
     return-void
 .end method

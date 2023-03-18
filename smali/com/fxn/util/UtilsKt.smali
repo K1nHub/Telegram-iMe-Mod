@@ -16,26 +16,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$3pgHyqLYLnUqPXJfwxWL6diBVko(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$FNKantfwpyc1OGYaqxu45jQfCNQ(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/fxn/util/UtilsKt;->collapse$lambda-10$lambda-9(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
+    invoke-static {p0, p1}, Lcom/fxn/util/UtilsKt;->expand$lambda$7$lambda$6$lambda$5(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$NI0RKcDmbCLIHwDx6T1dwMx_CXc(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$Hlhrt0CuHivMSMj5m2dTO18nVdY(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/fxn/util/UtilsKt;->expand$lambda-7$lambda-6$lambda-5(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/fxn/util/UtilsKt;->collapse$lambda$10$lambda$9(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bPT2gzBaj_flnP0qTFdySaeg1c8(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$_CcnyxInTLlLYxPdMoUUf7fE0Ps(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/fxn/util/UtilsKt;->colorAnimator$lambda-2$lambda-1(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
+    invoke-static {p0, p1, p2}, Lcom/fxn/util/UtilsKt;->colorAnimator$lambda$2$lambda$1(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method
@@ -81,7 +81,7 @@
     return-void
 .end method
 
-.method private static final collapse$lambda-10$lambda-9(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
+.method private static final collapse$lambda$10$lambda$9(Landroid/widget/TextView;Landroid/view/ViewPropertyAnimator;Landroid/widget/LinearLayout;ILandroid/animation/ValueAnimator;)V
     .locals 4
 
     const-string v0, "$this_collapse"
@@ -154,28 +154,20 @@
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     .line 107
-    invoke-static {}, Lcom/fxn/util/UtilsKt;->getDURATION()J
-
-    move-result-wide v0
+    sget-wide v0, Lcom/fxn/util/UtilsKt;->DURATION:J
 
     invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     .line 108
-    invoke-static {}, Lcom/fxn/util/UtilsKt;->getALPHA()F
-
-    move-result p1
-
-    invoke-static {}, Lcom/fxn/util/UtilsKt;->getALPHA()F
-
-    move-result v0
+    sget p1, Lcom/fxn/util/UtilsKt;->ALPHA:F
 
     invoke-virtual {p4}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result p4
 
-    mul-float v0, v0, p4
+    mul-float p4, p4, p1
 
-    sub-float/2addr p1, v0
+    sub-float/2addr p1, p4
 
     invoke-static {p2, p3, p1}, Lcom/fxn/util/UtilsKt;->setCustomBackground(Landroid/widget/LinearLayout;IF)V
 
@@ -239,7 +231,7 @@
     return-object p1
 .end method
 
-.method private static final colorAnimator$lambda-2$lambda-1(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
+.method private static final colorAnimator$lambda$2$lambda$1(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
     .locals 0
 
     const-string p0, "$this_colorAnimator"
@@ -253,7 +245,7 @@
 
     const-string p2, "null cannot be cast to non-null type kotlin.Int"
 
-    invoke-static {p0, p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p0, Ljava/lang/Integer;
 
@@ -391,9 +383,7 @@
     invoke-virtual {p1, p0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     .line 84
-    invoke-static {}, Lcom/fxn/util/UtilsKt;->getDURATION()J
-
-    move-result-wide v0
+    sget-wide v0, Lcom/fxn/util/UtilsKt;->DURATION:J
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
@@ -403,7 +393,7 @@
     return-void
 .end method
 
-.method private static final expand$lambda-7$lambda-6$lambda-5(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
+.method private static final expand$lambda$7$lambda$6$lambda$5(Landroid/widget/TextView;Landroid/animation/ValueAnimator;)V
     .locals 5
 
     const-string v0, "$this_expand"
@@ -453,7 +443,7 @@
 
     const-string v4, "null cannot be cast to non-null type kotlin.Int"
 
-    invoke-static {v3, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v3, Ljava/lang/Integer;
 
@@ -490,24 +480,6 @@
     invoke-virtual {p0}, Landroid/widget/TextView;->requestLayout()V
 
     return-void
-.end method
-
-.method public static final getALPHA()F
-    .locals 1
-
-    .line 61
-    sget v0, Lcom/fxn/util/UtilsKt;->ALPHA:F
-
-    return v0
-.end method
-
-.method public static final getDURATION()J
-    .locals 2
-
-    .line 60
-    sget-wide v0, Lcom/fxn/util/UtilsKt;->DURATION:J
-
-    return-wide v0
 .end method
 
 .method public static final setColorStateListAnimator(Landroid/widget/ImageView;II)V

@@ -35,7 +35,7 @@
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p1, p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$tXr3t0xcwyCb2IejbZviS52FuNo(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p1, p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$AD3YhFC1pwUE21ysQfuUr868-s0(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

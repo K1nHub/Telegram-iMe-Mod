@@ -57,7 +57,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 59
+    .line 60
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -72,26 +72,26 @@
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 8
 
-    .line 72
+    .line 73
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 52
+    .line 53
     iput v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->alpha:F
 
-    .line 60
+    .line 61
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->currentAccount:I
 
-    .line 63
+    .line 64
     iput v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumAlpha:F
 
-    .line 74
+    .line 75
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->fromEmojiPanel:Z
 
-    .line 76
+    .line 77
     new-instance p2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p2}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
@@ -100,15 +100,15 @@
 
     const/4 v0, 0x1
 
-    .line 77
+    .line 78
     invoke-virtual {p2, v0}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
 
-    .line 78
+    .line 79
     iget-object p2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2, v0}, Lorg/telegram/messenger/ImageReceiver;->setLayerNum(I)V
 
-    .line 80
+    .line 81
     new-instance p2, Landroid/widget/TextView;
 
     invoke-direct {p2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -117,24 +117,24 @@
 
     const/high16 v1, 0x41800000    # 16.0f
 
-    .line 81
+    .line 82
     invoke-virtual {p2, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 84
+    .line 85
     new-instance p2, Landroid/graphics/Paint;
 
     invoke-direct {p2, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     const-string v1, "featuredStickers_addButton"
 
-    .line 85
+    .line 86
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 87
+    .line 88
     new-instance p2, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     sget v1, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->TYPE_STICKERS_PREMIUM_LOCKED:I
@@ -143,12 +143,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
-    .line 88
+    .line 89
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->setImageReceiver(Lorg/telegram/messenger/ImageReceiver;)V
 
-    .line 89
+    .line 90
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     const/4 p2, 0x4
@@ -171,14 +171,14 @@
 
     invoke-virtual {p1, v1, v2, v3, p2}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 90
+    .line 91
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     iget-object p2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->setImageReceiver(Lorg/telegram/messenger/ImageReceiver;)V
 
-    .line 91
+    .line 92
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     const/16 v1, 0x18
@@ -201,7 +201,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 92
+    .line 93
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     return-void
@@ -210,7 +210,7 @@
 .method private drawInternal(Landroid/view/View;Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 369
+    .line 370
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->changingAlpha:Z
 
     const v1, 0x3f4ccccd    # 0.8f
@@ -238,26 +238,26 @@
 
     if-eqz v0, :cond_7
 
-    .line 370
+    .line 371
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 371
+    .line 372
     iget-wide v5, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->lastUpdateTime:J
 
     sub-long v5, v3, v5
 
-    .line 372
+    .line 373
     iput-wide v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->lastUpdateTime:J
 
-    .line 373
+    .line 374
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->changingAlpha:Z
 
     if-eqz v0, :cond_4
 
-    .line 374
+    .line 375
     iget-wide v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->time:J
 
     add-long/2addr v0, v5
@@ -270,10 +270,10 @@
 
     if-lez v5, :cond_2
 
-    .line 376
+    .line 377
     iput-wide v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->time:J
 
-    .line 378
+    .line 379
     :cond_2
     sget-object v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->interpolator:Landroid/view/animation/AccelerateInterpolator;
 
@@ -303,13 +303,13 @@
 
     const/4 v0, 0x0
 
-    .line 380
+    .line 381
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->changingAlpha:Z
 
-    .line 381
+    .line 382
     iput v2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->alpha:F
 
-    .line 383
+    .line 384
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -323,7 +323,7 @@
 
     goto :goto_0
 
-    .line 384
+    .line 385
     :cond_4
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scaled:Z
 
@@ -343,19 +343,19 @@
 
     sub-float/2addr v0, v4
 
-    .line 385
+    .line 386
     iput v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scale:F
 
     cmpg-float v0, v0, v1
 
     if-gez v0, :cond_6
 
-    .line 387
+    .line 388
     iput v1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scale:F
 
     goto :goto_0
 
-    .line 390
+    .line 391
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scale:F
 
@@ -371,10 +371,10 @@
 
     if-lez v0, :cond_6
 
-    .line 392
+    .line 393
     iput v2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scale:F
 
-    .line 395
+    .line 396
     :cond_6
     :goto_0
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -382,7 +382,7 @@
     :cond_7
     const/16 p1, 0x42
 
-    .line 397
+    .line 398
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -403,21 +403,21 @@
 
     move-result p1
 
-    .line 398
+    .line 399
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
 
     shr-int/lit8 v0, v0, 0x1
 
-    .line 399
+    .line 400
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v1
 
     shr-int/lit8 v1, v1, 0x1
 
-    .line 400
+    .line 401
     iget-object v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     int-to-float v0, v0
@@ -436,7 +436,7 @@
 
     invoke-virtual {v3, v5, v4, p1, p1}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 401
+    .line 402
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->alpha:F
@@ -447,32 +447,32 @@
 
     invoke-virtual {p1, v3}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 402
+    .line 403
     iget p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scale:F
 
     cmpl-float p1, p1, v2
 
     if-eqz p1, :cond_8
 
-    .line 403
+    .line 404
     invoke-virtual {p2}, Landroid/graphics/Canvas;->save()I
 
-    .line 404
+    .line 405
     iget p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scale:F
 
     invoke-virtual {p2, p1, p1, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 405
+    .line 406
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 406
+    .line 407
     invoke-virtual {p2}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_1
 
-    .line 408
+    .line 409
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -485,7 +485,7 @@
 .method private updatePremiumStatus(Z)V
     .locals 6
 
-    .line 234
+    .line 235
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->isPremiumSticker:Z
 
     const/4 v1, 0x0
@@ -494,16 +494,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 235
+    .line 236
     iput-boolean v2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->showPremiumLock:Z
 
     goto :goto_0
 
-    .line 237
+    .line 238
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->showPremiumLock:Z
 
-    .line 239
+    .line 240
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
@@ -513,7 +513,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 240
+    .line 241
     iget v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -530,7 +530,7 @@
 
     const/16 v3, 0x18
 
-    .line 241
+    .line 242
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -541,20 +541,20 @@
 
     const/16 v3, 0x51
 
-    .line 242
+    .line 243
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 243
+    .line 244
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 244
+    .line 245
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 245
+    .line 246
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     const/4 v1, 0x4
@@ -582,7 +582,7 @@
     :cond_1
     const/16 v1, 0x10
 
-    .line 247
+    .line 248
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -593,24 +593,24 @@
 
     const/16 v1, 0x55
 
-    .line 248
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
     .line 249
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 250
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 251
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    .line 252
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -631,7 +631,7 @@
 
     invoke-virtual {v0, v1, v3, v4, v5}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 253
+    .line 254
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
@@ -649,7 +649,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->setLocked(Z)V
 
-    .line 254
+    .line 255
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->showPremiumLock:Z
@@ -658,7 +658,7 @@
 
     invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 255
+    .line 256
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/StickerEmojiCell;->invalidate()V
 
     return-void
@@ -669,14 +669,14 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 348
+    .line 349
     sget p2, Lorg/telegram/messenger/NotificationCenter;->currentUserPremiumStatusChanged:I
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x1
 
-    .line 349
+    .line 350
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/StickerEmojiCell;->updatePremiumStatus(Z)V
 
     :cond_0
@@ -688,20 +688,20 @@
 
     const/4 v0, 0x1
 
-    .line 259
+    .line 260
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->changingAlpha:Z
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    .line 260
+    .line 261
     iput v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->alpha:F
 
     const-wide/16 v1, 0x0
 
-    .line 261
+    .line 262
     iput-wide v1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->time:J
 
-    .line 262
+    .line 263
     iget-object v1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget v2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumAlpha:F
@@ -710,19 +710,19 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 263
+    .line 264
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->invalidate()V
 
-    .line 264
+    .line 265
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->lastUpdateTime:J
 
-    .line 265
+    .line 266
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/StickerEmojiCell;->invalidate()V
 
     return-void
@@ -731,15 +731,15 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 355
+    .line 356
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInParentView:Z
 
     if-nez v0, :cond_0
 
-    .line 356
+    .line 357
     invoke-direct {p0, p0, p1}, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInternal(Landroid/view/View;Landroid/graphics/Canvas;)V
 
-    .line 358
+    .line 359
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -749,7 +749,7 @@
 .method public getEmoji()Ljava/lang/String;
     .locals 1
 
-    .line 104
+    .line 105
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->currentEmoji:Ljava/lang/String;
 
     return-object v0
@@ -758,7 +758,7 @@
 .method public getImageView()Lorg/telegram/messenger/ImageReceiver;
     .locals 1
 
-    .line 283
+    .line 284
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     return-object v0
@@ -767,7 +767,7 @@
 .method public getParentObject()Ljava/lang/Object;
     .locals 1
 
-    .line 108
+    .line 109
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->parentObject:Ljava/lang/Object;
 
     return-object v0
@@ -776,10 +776,10 @@
 .method public getSendAnimationData()Lorg/telegram/messenger/MessageObject$SendAnimationData;
     .locals 5
 
-    .line 128
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 129
+    .line 130
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->hasNotThumb()Z
 
     move-result v1
@@ -790,7 +790,7 @@
 
     return-object v0
 
-    .line 132
+    .line 133
     :cond_0
     new-instance v1, Lorg/telegram/messenger/MessageObject$SendAnimationData;
 
@@ -800,10 +800,10 @@
 
     new-array v2, v2, [I
 
-    .line 134
+    .line 135
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->getLocationInWindow([I)V
 
-    .line 135
+    .line 136
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getCenterX()F
 
     move-result v3
@@ -818,7 +818,7 @@
 
     iput v3, v1, Lorg/telegram/messenger/MessageObject$SendAnimationData;->x:F
 
-    .line 136
+    .line 137
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getCenterY()F
 
     move-result v3
@@ -833,14 +833,14 @@
 
     iput v3, v1, Lorg/telegram/messenger/MessageObject$SendAnimationData;->y:F
 
-    .line 137
+    .line 138
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getImageWidth()F
 
     move-result v2
 
     iput v2, v1, Lorg/telegram/messenger/MessageObject$SendAnimationData;->width:F
 
-    .line 138
+    .line 139
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getImageHeight()F
 
     move-result v0
@@ -853,7 +853,7 @@
 .method public getSticker()Lorg/telegram/tgnet/TLRPC$Document;
     .locals 1
 
-    .line 96
+    .line 97
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
     return-object v0
@@ -862,7 +862,7 @@
 .method public getStickerPath()Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;
     .locals 2
 
-    .line 100
+    .line 101
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->stickerPath:Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;
 
     if-eqz v0, :cond_0
@@ -883,7 +883,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 288
+    .line 289
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInParentView:Z
 
     if-eqz v0, :cond_0
@@ -894,7 +894,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 289
+    .line 290
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -903,13 +903,13 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 291
+    .line 292
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->invalidate()V
 
-    .line 292
+    .line 293
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -918,7 +918,7 @@
 .method public isDisabled()Z
     .locals 1
 
-    .line 275
+    .line 276
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->changingAlpha:Z
 
     return v0
@@ -927,7 +927,7 @@
 .method public isRecent()Z
     .locals 1
 
-    .line 112
+    .line 113
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->recent:Z
 
     return v0
@@ -936,22 +936,22 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 328
+    .line 329
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 329
+    .line 330
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInParentView:Z
 
     if-eqz v0, :cond_0
 
-    .line 330
+    .line 331
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setInvalidateAll(Z)V
 
-    .line 331
+    .line 332
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -964,19 +964,19 @@
 
     goto :goto_0
 
-    .line 333
+    .line 334
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, p0}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
 
-    .line 335
+    .line 336
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 336
+    .line 337
     iget v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -993,15 +993,15 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 341
+    .line 342
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 342
+    .line 343
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 343
+    .line 344
     iget v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1018,10 +1018,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 7
 
-    .line 298
+    .line 299
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 299
+    .line 300
     sget v0, Lorg/telegram/messenger/R$string;->AttachSticker:I
 
     const-string v1, "AttachSticker"
@@ -1030,7 +1030,7 @@
 
     move-result-object v0
 
-    .line 300
+    .line 301
     iget-object v1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v1, :cond_1
@@ -1039,7 +1039,7 @@
 
     const/4 v2, 0x0
 
-    .line 301
+    .line 302
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -1051,7 +1051,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 302
+    .line 303
     iget-object v3, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
@@ -1062,12 +1062,12 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 303
+    .line 304
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker;
 
     if-eqz v4, :cond_0
 
-    .line 304
+    .line 305
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
     if-eqz v2, :cond_1
@@ -1078,7 +1078,7 @@
 
     if-lez v2, :cond_1
 
-    .line 305
+    .line 306
     iget-object v2, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
@@ -1103,7 +1103,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 306
+    .line 307
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1129,14 +1129,14 @@
 
     goto :goto_0
 
-    .line 312
+    .line 313
     :cond_1
     :goto_1
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
     const/4 v0, 0x1
 
-    .line 313
+    .line 314
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
     return-void
@@ -1145,12 +1145,12 @@
 .method public preDraw(Landroid/view/View;Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 363
+    .line 364
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInParentView:Z
 
     if-eqz v0, :cond_0
 
-    .line 364
+    .line 365
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInternal(Landroid/view/View;Landroid/graphics/Canvas;)V
 
     :cond_0
@@ -1160,7 +1160,7 @@
 .method public setRecent(Z)V
     .locals 0
 
-    .line 116
+    .line 117
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->recent:Z
 
     return-void
@@ -1169,17 +1169,17 @@
 .method public setScaled(Z)V
     .locals 2
 
-    .line 269
+    .line 270
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->scaled:Z
 
-    .line 270
+    .line 271
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->lastUpdateTime:J
 
-    .line 271
+    .line 272
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/StickerEmojiCell;->invalidate()V
 
     return-void
@@ -1188,7 +1188,7 @@
 .method public setSticker(Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;)V
     .locals 6
 
-    .line 124
+    .line 125
     iget-object v4, p1, Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;->emoji:Ljava/lang/String;
 
     if-eqz v4, :cond_0
@@ -1233,7 +1233,7 @@
 
     move v5, p3
 
-    .line 120
+    .line 121
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Cells/StickerEmojiCell;->setSticker(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;Ljava/lang/Object;Ljava/lang/String;Z)V
 
     return-void
@@ -1250,10 +1250,10 @@
 
     move-object/from16 v3, p4
 
-    .line 143
+    .line 144
     iput-object v3, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->currentEmoji:Ljava/lang/String;
 
-    .line 144
+    .line 145
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isPremiumSticker(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result v4
@@ -1262,27 +1262,27 @@
 
     const/4 v4, 0x0
 
-    .line 156
+    .line 157
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v14
 
-    .line 145
+    .line 146
     iput-boolean v4, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInParentView:Z
 
-    .line 146
+    .line 147
     iget-object v5, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v6, 0x0
 
     invoke-virtual {v5, v6}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 147
+    .line 148
     iget-boolean v5, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->isPremiumSticker:Z
 
     if-eqz v5, :cond_0
 
-    .line 148
+    .line 149
     iget-object v5, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     const-string v7, "windowBackgroundWhite"
@@ -1293,7 +1293,7 @@
 
     invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->setColor(I)V
 
-    .line 149
+    .line 150
     iget-object v5, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->premiumIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->setWaitingImage()V
@@ -1309,10 +1309,10 @@
 
     if-eqz v2, :cond_5
 
-    .line 152
+    .line 153
     iput-object v2, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->stickerPath:Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;
 
-    .line 153
+    .line 154
     iget-boolean v1, v2, Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;->validated:Z
 
     const-string v7, "tgs"
@@ -1321,7 +1321,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 154
+    .line 155
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v9, v2, Lorg/telegram/messenger/SendMessagesHelper$ImportingSticker;->path:Ljava/lang/String;
@@ -1383,7 +1383,7 @@
     :cond_2
     const/4 v1, 0x1
 
-    .line 156
+    .line 157
     iget-object v9, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v10, 0x0
@@ -1439,7 +1439,7 @@
     :goto_2
     if-eqz v3, :cond_4
 
-    .line 159
+    .line 160
     iget-object v2, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -1460,14 +1460,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 160
+    .line 161
     iget-object v2, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_3
 
-    .line 162
+    .line 163
     :cond_4
     iget-object v3, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
@@ -1485,15 +1485,15 @@
 
     if-eqz v1, :cond_16
 
-    .line 165
+    .line 166
     iput-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->sticker:Lorg/telegram/tgnet/TLRPC$Document;
 
     move-object/from16 v7, p3
 
-    .line 166
+    .line 167
     iput-object v7, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->parentObject:Ljava/lang/Object;
 
-    .line 168
+    .line 169
     iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     const/16 v8, 0x5a
@@ -1502,7 +1502,7 @@
 
     move-result-object v7
 
-    .line 169
+    .line 170
     iget-boolean v8, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->fromEmojiPanel:Z
 
     if-eqz v8, :cond_6
@@ -1524,7 +1524,7 @@
 
     move-result-object v5
 
-    .line 170
+    .line 171
     iget-boolean v8, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->fromEmojiPanel:Z
 
     if-eqz v8, :cond_8
@@ -1539,21 +1539,21 @@
     :goto_5
     move-object v11, v8
 
-    .line 171
+    .line 172
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isTextColorEmoji(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result v8
 
     if-eqz v8, :cond_9
 
-    .line 172
+    .line 173
     iget-object v8, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
     invoke-virtual {v8, v9}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 174
+    .line 175
     :cond_9
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->canAutoplayAnimatedSticker(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
@@ -1561,18 +1561,18 @@
 
     if-eqz v8, :cond_d
 
-    .line 175
+    .line 176
     iget-boolean v8, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->fromEmojiPanel:Z
 
     if-eqz v8, :cond_a
 
-    .line 176
+    .line 177
     iput-boolean v6, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInParentView:Z
 
     :cond_a
     if-eqz v5, :cond_b
 
-    .line 179
+    .line 180
     iget-object v8, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -1612,7 +1612,7 @@
     :cond_b
     if-eqz v7, :cond_c
 
-    .line 182
+    .line 183
     iget-object v5, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -1641,7 +1641,7 @@
 
     goto :goto_6
 
-    .line 184
+    .line 185
     :cond_c
     iget-object v9, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1666,7 +1666,7 @@
 
     if-eqz v7, :cond_e
 
-    .line 189
+    .line 190
     iget-object v8, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v7, v1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -1691,7 +1691,7 @@
 
     goto :goto_6
 
-    .line 191
+    .line 192
     :cond_e
     iget-object v7, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1720,7 +1720,7 @@
     :cond_f
     if-eqz v7, :cond_10
 
-    .line 194
+    .line 195
     iget-object v9, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v7, v1}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -1739,7 +1739,7 @@
 
     goto :goto_6
 
-    .line 196
+    .line 197
     :cond_10
     iget-object v9, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1760,7 +1760,7 @@
     :goto_6
     if-eqz v3, :cond_11
 
-    .line 201
+    .line 202
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -1781,7 +1781,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 202
+    .line 203
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setVisibility(I)V
@@ -1793,7 +1793,7 @@
 
     const/4 v2, 0x0
 
-    .line 205
+    .line 206
     :goto_7
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
@@ -1803,7 +1803,7 @@
 
     if-ge v2, v3, :cond_13
 
-    .line 206
+    .line 207
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1812,12 +1812,12 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 207
+    .line 208
     instance-of v5, v3, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker;
 
     if-eqz v5, :cond_12
 
-    .line 208
+    .line 209
     iget-object v1, v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
     if-eqz v1, :cond_13
@@ -1828,7 +1828,7 @@
 
     if-lez v1, :cond_13
 
-    .line 209
+    .line 210
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
@@ -1866,7 +1866,7 @@
     :goto_8
     if-nez v13, :cond_14
 
-    .line 216
+    .line 217
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     iget v2, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->currentAccount:I
@@ -1903,7 +1903,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 218
+    .line 219
     :cond_14
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
@@ -1911,18 +1911,18 @@
 
     goto :goto_9
 
-    .line 220
+    .line 221
     :cond_15
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->emojiTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 223
+    .line 224
     :cond_16
     :goto_9
     invoke-direct {v0, v4}, Lorg/telegram/ui/Cells/StickerEmojiCell;->updatePremiumStatus(Z)V
 
-    .line 224
+    .line 225
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget v2, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->alpha:F
@@ -1933,17 +1933,17 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 225
+    .line 226
     iget-boolean v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->drawInParentView:Z
 
     if-eqz v1, :cond_17
 
-    .line 226
+    .line 227
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v6}, Lorg/telegram/messenger/ImageReceiver;->setInvalidateAll(Z)V
 
-    .line 227
+    .line 228
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -1956,7 +1956,7 @@
 
     goto :goto_a
 
-    .line 229
+    .line 230
     :cond_17
     iget-object v1, v0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
@@ -1969,7 +1969,7 @@
 .method public showingBitmap()Z
     .locals 1
 
-    .line 279
+    .line 280
     iget-object v0, p0, Lorg/telegram/ui/Cells/StickerEmojiCell;->imageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;

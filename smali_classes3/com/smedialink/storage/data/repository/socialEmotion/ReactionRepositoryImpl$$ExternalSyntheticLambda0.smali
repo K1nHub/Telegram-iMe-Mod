@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl;
+    iput-object p1, p0, Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl;
+    iget-object v0, p0, Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-static {v0, p1}, Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl;->$r8$lambda$BalqrsLW2tTM4ogHYQ70xcHHuFw(Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl;Ljava/lang/Throwable;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {v0, p1}, Lcom/smedialink/storage/data/repository/socialEmotion/ReactionRepositoryImpl;->$r8$lambda$qa_8iQpM5jyIIyWu0Mh4u434gvA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

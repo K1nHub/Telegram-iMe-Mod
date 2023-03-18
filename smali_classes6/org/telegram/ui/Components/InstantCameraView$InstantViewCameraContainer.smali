@@ -26,15 +26,15 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;Landroid/content/Context;)V
     .locals 0
 
-    .line 2752
+    .line 2783
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    .line 2753
+    .line 2784
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p2, 0x0
 
-    .line 2754
+    .line 2785
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -45,10 +45,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 2767
+    .line 2798
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 2768
+    .line 2799
     iget v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageProgress:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -61,30 +61,30 @@
 
     add-float/2addr v0, v2
 
-    .line 2769
+    .line 2800
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageProgress:F
 
     cmpl-float v0, v0, v1
 
     if-lez v0, :cond_0
 
-    .line 2771
+    .line 2802
     iput v1, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageProgress:F
 
-    .line 2773
+    .line 2804
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2775
+    .line 2806
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_3
 
-    .line 2776
+    .line 2807
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2777
+    .line 2808
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getImageWidth()F
@@ -103,7 +103,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2778
+    .line 2809
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$000(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -120,10 +120,10 @@
 
     div-float/2addr v0, v1
 
-    .line 2779
+    .line 2810
     invoke-virtual {p1, v0, v0}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 2781
+    .line 2812
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -143,31 +143,31 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2782
+    .line 2813
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getAlpha()F
 
     move-result v0
 
-    .line 2783
+    .line 2814
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget v2, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageProgress:F
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 2784
+    .line 2815
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 2785
+    .line 2816
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 2786
+    .line 2817
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
@@ -177,21 +177,21 @@
 .method public setImageReceiver(Lorg/telegram/messenger/ImageReceiver;)V
     .locals 1
 
-    .line 2758
+    .line 2789
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 2759
+    .line 2790
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageProgress:F
 
-    .line 2761
+    .line 2792
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$InstantViewCameraContainer;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 2762
+    .line 2793
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

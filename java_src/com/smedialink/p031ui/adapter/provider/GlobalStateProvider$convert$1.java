@@ -35,7 +35,6 @@ public final class GlobalStateProvider$convert$1 extends Lambda implements Funct
         if (this.this$0.isMatchParentHeight()) {
             ViewGroup.LayoutParams layoutParams = applyForView.getLayoutParams();
             layoutParams.height = -1;
-            Unit unit = Unit.INSTANCE;
             applyForView.setLayoutParams(layoutParams);
         }
         applyForView.setInternalState(this.$item.getState());

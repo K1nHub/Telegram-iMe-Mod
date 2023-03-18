@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/smedialink/ui/wallet/staking/operations/StakingOperationsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,212:1\n13#2,4:213\n56#3,6:217\n1849#4,2:223\n1849#4,2:225\n1849#4,2:227\n1849#4,2:229\n1547#4:231\n1618#4,3:232\n1849#4,2:235\n11328#5:237\n11663#5,3:238\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/smedialink/ui/wallet/staking/operations/StakingOperationsFragment\n*L\n45#1:213,4\n46#1:217,6\n69#1:223,2\n80#1:225,2\n86#1:227,2\n90#1:229,2\n125#1:231\n125#1:232,3\n158#1:235,2\n168#1:237\n168#1:238,3\n*E\n"
+    value = "SMAP\nStakingOperationsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsFragment.kt\ncom/smedialink/ui/wallet/staking/operations/StakingOperationsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,212:1\n13#2,4:213\n56#3,6:217\n1855#4,2:223\n1855#4,2:225\n1855#4,2:227\n1855#4,2:229\n1549#4:231\n1620#4,3:232\n1855#4,2:235\n11335#5:237\n11670#5,3:238\n*S KotlinDebug\n*F\n+ 1 StakingOperationsFragment.kt\ncom/smedialink/ui/wallet/staking/operations/StakingOperationsFragment\n*L\n45#1:213,4\n46#1:217,6\n69#1:223,2\n80#1:225,2\n86#1:227,2\n90#1:229,2\n125#1:231\n125#1:232,3\n158#1:235,2\n168#1:237\n168#1:238,3\n*E\n"
 .end annotation
 
 
@@ -60,10 +60,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$XFdLuGNILrnXXODC0TnzmW2cEQQ(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method public static synthetic $r8$lambda$313W5rVQBOIkvdRdS1uH9b1dN7w(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/staking/operations/StakingOperationsFragment;->showChooseNetworkDialog$lambda-8(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/wallet/staking/operations/StakingOperationsFragment;->showChooseNetworkDialog$lambda$8(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method
@@ -367,14 +367,14 @@
 
     move-result-object v0
 
-    .line 11328
+    .line 11335
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, v0
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11663
+    .line 11670
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -450,6 +450,7 @@
     .line 169
     invoke-direct {v5, v6, v14}, Lcom/smedialink/model/wallet/details/WalletTokenDetailsNavigationTab;-><init>(ILorg/fork/utils/TabbedFragmentPage;)V
 
+    .line 11671
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
@@ -539,7 +540,7 @@
 
     move-result-object v0
 
-    const-string v1, ""
+    const-string v1, "setupActionBar$lambda$13$lambda$12"
 
     .line 200
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -566,7 +567,7 @@
     return-void
 .end method
 
-.method private static final showChooseNetworkDialog$lambda-8(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+.method private static final showChooseNetworkDialog$lambda$8(Lkotlin/jvm/functions/Function1;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
     .locals 1
 
     const-string v0, "$action"
@@ -629,7 +630,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -640,7 +641,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -656,7 +657,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/model/wallet/details/WalletTokenDetailsNavigationTab;
 
     .line 125
@@ -664,6 +665,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -830,7 +832,7 @@
 
     move-result-object v2
 
-    .line 1849
+    .line 1855
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -893,7 +895,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -958,7 +960,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1079,7 +1081,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1124,7 +1126,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

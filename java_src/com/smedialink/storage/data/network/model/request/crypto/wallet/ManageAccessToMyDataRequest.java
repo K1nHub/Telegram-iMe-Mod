@@ -49,7 +49,7 @@ public final class ManageAccessToMyDataRequest {
     }
 
     public String toString() {
-        return "ManageAccessToMyDataRequest(targetUserId=" + ((Object) this.targetUserId) + ", permissions=" + this.permissions + ')';
+        return "ManageAccessToMyDataRequest(targetUserId=" + this.targetUserId + ", permissions=" + this.permissions + ')';
     }
 
     public ManageAccessToMyDataRequest(String str, List<GivePermissionRequest> permissions) {

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Bulletin;)V
     .locals 0
 
-    .line 282
+    .line 283
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$3;->this$0:Lorg/telegram/ui/Components/Bulletin;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 3
 
-    .line 289
+    .line 290
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$3;->this$0:Lorg/telegram/ui/Components/Bulletin;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Bulletin;->access$200(Lorg/telegram/ui/Components/Bulletin;)Lorg/telegram/ui/Components/Bulletin$Layout;
@@ -53,7 +53,7 @@
 
     invoke-virtual {p1, p0}, Landroid/widget/FrameLayout;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 290
+    .line 291
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$3;->this$0:Lorg/telegram/ui/Components/Bulletin;
 
     const/4 v0, 0x0

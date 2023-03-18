@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;->$r8$lambda$g4H7HFx0r9788UYEyr6qFRbmCxg(Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;->$r8$lambda$F-SDXAVBHVoPmZTOhqzgnvC6Qvc(Lcom/smedialink/ui/wallet/airdrop/dialog/WalletAirdropDialog;)V
 
     return-void
 .end method

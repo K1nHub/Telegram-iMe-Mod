@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;I)V
     .locals 0
 
-    .line 7088
+    .line 7078
     iput p2, p0, Lorg/telegram/ui/DialogsActivity$39;->val$forwardingOptionsButtonSize:I
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,7 +35,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 1
 
-    .line 7092
+    .line 7082
     iget p1, p0, Lorg/telegram/ui/DialogsActivity$39;->val$forwardingOptionsButtonSize:I
 
     const/4 v0, 0x0

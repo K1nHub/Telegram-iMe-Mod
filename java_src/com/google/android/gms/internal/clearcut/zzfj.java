@@ -2,7 +2,6 @@ package com.google.android.gms.internal.clearcut;
 
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 final class zzfj extends zzfg {
     private static int zza(byte[] bArr, int i, long j, int i2) {
@@ -120,7 +119,7 @@ final class zzfj extends zzfg {
                     throw new zzfi(i4 - 1, length);
                 } else {
                     long j10 = j4 + j;
-                    zzfd.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | LiteMode.FLAGS_CHAT));
+                    zzfd.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | 480));
                     long j11 = j10 + j;
                     zzfd.zza(bArr, j10, (byte) (((charAt3 >>> 6) & 63) | 128));
                     zzfd.zza(bArr, j11, (byte) ((charAt3 & '?') | 128));
@@ -225,7 +224,7 @@ final class zzfj extends zzfg {
                         throw new zzfi(i3 - 1, length);
                     }
                     long j6 = position + 1;
-                    zzfd.zza(position, (byte) ((charAt3 >>> '\f') | LiteMode.FLAGS_CHAT));
+                    zzfd.zza(position, (byte) ((charAt3 >>> '\f') | 480));
                     long j7 = j6 + 1;
                     zzfd.zza(j6, (byte) (((charAt3 >>> 6) & 63) | 128));
                     zzfd.zza(j7, (byte) ((charAt3 & '?') | 128));

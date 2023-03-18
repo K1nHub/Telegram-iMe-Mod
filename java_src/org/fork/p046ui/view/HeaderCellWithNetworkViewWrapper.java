@@ -44,7 +44,7 @@ public final class HeaderCellWithNetworkViewWrapper extends FrameLayout {
             Intrinsics.checkNotNullExpressionValue(textView, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
             ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null;
-            i = AndroidUtilities.m49px(marginLayoutParams == null ? 0 : marginLayoutParams.rightMargin);
+            i = AndroidUtilities.m49px(marginLayoutParams != null ? marginLayoutParams.rightMargin : 0);
         } else {
             i = 0;
         }

@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper$Keys;,
-        Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper$DefaultImpls;
+        Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper$DefaultImpls;,
+        Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper$Keys;
     }
 .end annotation
 

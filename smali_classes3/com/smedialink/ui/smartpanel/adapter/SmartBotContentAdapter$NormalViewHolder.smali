@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/messenger/databinding/ForkBotsContentPageItemNormalBinding;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -28,10 +28,6 @@
             ")V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string p1, "binding"
 
@@ -90,9 +86,6 @@
     int-to-float v3, v3
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
-
-    .line 298
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 295
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V

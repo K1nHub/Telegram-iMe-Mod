@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ProfileActivity$34;
-.super Lorg/telegram/ui/ChatRightsEditActivity;
+.super Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 .source "ProfileActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ProfileActivity;->openRightsEdit(ILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$ChatParticipant;Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;Z)V
+    value = Lorg/telegram/ui/ProfileActivity;->showStatusSelect()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,96 +17,33 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
 
-.field final synthetic val$needShowBulletin:[Z
-
-.field final synthetic val$user:Lorg/telegram/tgnet/TLRPC$User;
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;JJLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;IZZLjava/lang/String;[ZLorg/telegram/tgnet/TLRPC$User;)V
-    .locals 14
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;II)V
+    .locals 0
 
-    move-object v13, p0
+    .line 5161
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$34;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    move-object v0, p1
-
-    .line 5268
-    iput-object v0, v13, Lorg/telegram/ui/ProfileActivity$34;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    move-object/from16 v0, p14
-
-    iput-object v0, v13, Lorg/telegram/ui/ProfileActivity$34;->val$needShowBulletin:[Z
-
-    move-object/from16 v0, p15
-
-    iput-object v0, v13, Lorg/telegram/ui/ProfileActivity$34;->val$user:Lorg/telegram/tgnet/TLRPC$User;
-
-    move-object v0, p0
-
-    move-wide/from16 v1, p2
-
-    move-wide/from16 v3, p4
-
-    move-object/from16 v5, p6
-
-    move-object/from16 v6, p7
-
-    move-object/from16 v7, p8
-
-    move-object/from16 v8, p9
-
-    move/from16 v9, p10
-
-    move/from16 v10, p11
-
-    move/from16 v11, p12
-
-    move-object/from16 v12, p13
-
-    invoke-direct/range {v0 .. v12}, Lorg/telegram/ui/ChatRightsEditActivity;-><init>(JJLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;IZZLjava/lang/String;)V
+    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;-><init>(Landroid/view/View;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTransitionAnimationEnd(ZZ)V
-    .locals 0
+.method public dismiss()V
+    .locals 2
 
-    if-nez p1, :cond_0
+    .line 5164
+    invoke-super {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
 
-    if-eqz p2, :cond_0
+    .line 5165
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$34;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 5271
-    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$34;->val$needShowBulletin:[Z
+    const/4 v1, 0x0
 
-    const/4 p2, 0x0
+    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->access$13102(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
-    aget-boolean p1, p1, p2
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$34;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    .line 5272
-    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$34;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$34;->val$user:Lorg/telegram/tgnet/TLRPC$User;
-
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
-
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/BulletinFactory;->createPromoteToAdminBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
-
-    :cond_0
     return-void
 .end method

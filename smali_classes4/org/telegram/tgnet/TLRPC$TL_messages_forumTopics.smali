@@ -183,7 +183,7 @@
 
     move-result v0
 
-    const-string v3, "wrong Vector magic, got %x"
+    const-string/jumbo v3, "wrong Vector magic, got %x"
 
     const v4, 0x1cb5c415
 

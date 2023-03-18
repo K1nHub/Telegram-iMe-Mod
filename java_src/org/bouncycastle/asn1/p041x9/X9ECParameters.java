@@ -18,21 +18,21 @@ public class X9ECParameters extends ASN1Object implements X9ObjectIdentifiers {
     private X9FieldID fieldID;
 
     /* renamed from: g */
-    private X9ECPoint f1229g;
+    private X9ECPoint f1234g;
 
     /* renamed from: h */
-    private BigInteger f1230h;
+    private BigInteger f1235h;
 
     /* renamed from: n */
-    private BigInteger f1231n;
+    private BigInteger f1236n;
     private byte[] seed;
 
     public X9ECParameters(ECCurve eCCurve, X9ECPoint x9ECPoint, BigInteger bigInteger, BigInteger bigInteger2, byte[] bArr) {
         X9FieldID x9FieldID;
         this.curve = eCCurve;
-        this.f1229g = x9ECPoint;
-        this.f1231n = bigInteger;
-        this.f1230h = bigInteger2;
+        this.f1234g = x9ECPoint;
+        this.f1236n = bigInteger;
+        this.f1235h = bigInteger2;
         this.seed = bArr;
         if (ECAlgorithms.isFpCurve(eCCurve)) {
             x9FieldID = new X9FieldID(eCCurve.getField().getCharacteristic());
@@ -56,15 +56,15 @@ public class X9ECParameters extends ASN1Object implements X9ObjectIdentifiers {
     }
 
     public ECPoint getG() {
-        return this.f1229g.getPoint();
+        return this.f1234g.getPoint();
     }
 
     public BigInteger getH() {
-        return this.f1230h;
+        return this.f1235h;
     }
 
     public BigInteger getN() {
-        return this.f1231n;
+        return this.f1236n;
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
@@ -73,9 +73,9 @@ public class X9ECParameters extends ASN1Object implements X9ObjectIdentifiers {
         aSN1EncodableVector.add(new ASN1Integer(ONE));
         aSN1EncodableVector.add(this.fieldID);
         aSN1EncodableVector.add(new X9Curve(this.curve, this.seed));
-        aSN1EncodableVector.add(this.f1229g);
-        aSN1EncodableVector.add(new ASN1Integer(this.f1231n));
-        BigInteger bigInteger = this.f1230h;
+        aSN1EncodableVector.add(this.f1234g);
+        aSN1EncodableVector.add(new ASN1Integer(this.f1236n));
+        BigInteger bigInteger = this.f1235h;
         if (bigInteger != null) {
             aSN1EncodableVector.add(new ASN1Integer(bigInteger));
         }

@@ -154,17 +154,17 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$ReactionCount;Z)V
     .locals 5
 
-    .line 80
+    .line 83
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 65
+    .line 68
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
-    .line 66
+    .line 69
     new-instance v0, Landroid/util/LongSparseArray;
 
     invoke-direct {v0}, Landroid/util/LongSparseArray;-><init>()V
@@ -173,27 +173,27 @@
 
     const/4 v0, 0x1
 
-    .line 68
+    .line 71
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->canLoadMore:Z
 
-    .line 74
+    .line 77
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;
 
-    .line 75
+    .line 78
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customEmojiStickerSets:Ljava/util/ArrayList;
 
-    .line 81
+    .line 84
     iput p3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
 
-    .line 82
+    .line 85
     iput-object p4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->message:Lorg/telegram/messenger/MessageObject;
 
     const/4 p4, 0x0
@@ -204,14 +204,14 @@
 
     goto :goto_0
 
-    .line 83
+    .line 86
     :cond_0
     iget-object v1, p5, Lorg/telegram/tgnet/TLRPC$ReactionCount;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     :goto_0
     iput-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 84
+    .line 87
     iput-object p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-nez p5, :cond_1
@@ -220,33 +220,33 @@
 
     goto :goto_1
 
-    .line 85
+    .line 88
     :cond_1
     iget p5, p5, Lorg/telegram/tgnet/TLRPC$ReactionCount;->count:I
 
     :goto_1
     iput p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->predictiveCount:I
 
-    .line 86
+    .line 89
     new-instance p5, Lorg/telegram/ui/Components/ReactedUsersListView$1;
 
     invoke-direct {p5, p0, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$1;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 96
+    .line 99
     new-instance p5, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {p5, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
-    .line 97
+    .line 100
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, p5}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     if-eqz p6, :cond_2
 
-    .line 99
+    .line 102
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/16 v2, 0x8
@@ -259,12 +259,12 @@
 
     invoke-virtual {v1, v3, v3, v3, v2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 100
+    .line 103
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v3}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 102
+    .line 105
     :cond_2
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -274,7 +274,7 @@
 
     if-lt v1, v2, :cond_3
 
-    .line 103
+    .line 106
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v2, Landroid/graphics/drawable/ColorDrawable;
@@ -287,19 +287,19 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setVerticalScrollbarThumbDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 105
+    .line 108
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$2;
 
-    invoke-direct {v2, p0, p1, p2, p3}, Lorg/telegram/ui/Components/ReactedUsersListView$2;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    invoke-direct {v2, p0, p3, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$2;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 158
+    .line 161
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda6;
@@ -308,7 +308,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 170
+    .line 173
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$3;
@@ -317,19 +317,19 @@
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 178
+    .line 181
     iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p5, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 179
+    .line 182
     iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x0
 
     invoke-virtual {p5, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 180
+    .line 183
     iget-object p5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, -0x1
@@ -340,7 +340,7 @@
 
     invoke-virtual {p0, p5, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 182
+    .line 185
     new-instance p5, Lorg/telegram/ui/Components/ReactedUsersListView$4;
 
     invoke-direct {p5, p0, p1, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$4;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -349,22 +349,22 @@
 
     const-string p1, "actionBarDefaultSubmenuBackground"
 
-    .line 188
+    .line 191
     invoke-virtual {p5, p1, v3, p4}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 190
+    .line 193
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 191
+    .line 194
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     iget p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->predictiveCount:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setItemsCount(I)V
 
-    .line 192
+    .line 195
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-static {v1, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
@@ -375,7 +375,7 @@
 
     if-nez p6, :cond_4
 
-    .line 193
+    .line 196
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     if-eqz p1, :cond_4
@@ -392,12 +392,12 @@
 
     if-nez p1, :cond_4
 
-    .line 194
+    .line 197
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 195
+    .line 198
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
@@ -408,10 +408,10 @@
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 196
+    .line 199
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->updateCustomReactionsButton()V
 
-    .line 198
+    .line 201
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -439,7 +439,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/ReactedUsersListView;)V
     .locals 0
 
-    .line 47
+    .line 50
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->updateHeight()V
 
     return-void
@@ -448,7 +448,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/ReactedUsersListView;)V
     .locals 0
 
-    .line 47
+    .line 50
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->updateCustomReactionsButton()V
 
     return-void
@@ -457,7 +457,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/ReactedUsersListView;)Ljava/util/List;
     .locals 0
 
-    .line 47
+    .line 50
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
     return-object p0
@@ -466,7 +466,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/ReactedUsersListView;)Landroidx/recyclerview/widget/RecyclerView$Adapter;
     .locals 0
 
-    .line 47
+    .line 50
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     return-object p0
@@ -475,7 +475,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/ReactedUsersListView;)I
     .locals 0
 
-    .line 47
+    .line 50
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->getLoadCount()I
 
     move-result p0
@@ -486,25 +486,16 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/ReactedUsersListView;)V
     .locals 0
 
-    .line 47
+    .line 50
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->load()V
 
     return-void
 .end method
 
-.method static synthetic access$600(Lorg/telegram/ui/Components/ReactedUsersListView;)I
+.method static synthetic access$600(Lorg/telegram/ui/Components/ReactedUsersListView;)Lorg/telegram/ui/Components/FlickerLoadingView;
     .locals 0
 
-    .line 47
-    iget p0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
-
-    return p0
-.end method
-
-.method static synthetic access$700(Lorg/telegram/ui/Components/ReactedUsersListView;)Lorg/telegram/ui/Components/FlickerLoadingView;
-    .locals 0
-
-    .line 47
+    .line 50
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     return-object p0
@@ -513,7 +504,7 @@
 .method private getLoadCount()I
     .locals 1
 
-    .line 367
+    .line 386
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     if-nez v0, :cond_0
@@ -530,28 +521,36 @@
 .end method
 
 .method private static synthetic lambda$load$2(Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;)I
-    .locals 0
+    .locals 1
 
-    .line 291
+    .line 311
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->date:I
+
+    if-lez v0, :cond_1
+
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     if-eqz p0, :cond_0
 
-    const/4 p0, 0x0
-
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x1
+    neg-int p0, v0
 
+    goto :goto_1
+
+    :cond_1
     :goto_0
+    const/high16 p0, -0x80000000
+
+    :goto_1
     return p0
 .end method
 
 .method private synthetic lambda$load$3(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 300
+    .line 319
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -562,12 +561,12 @@
 
     move-result p1
 
-    .line 301
+    .line 320
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 302
+    .line 321
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -582,17 +581,17 @@
 .method private synthetic lambda$load$4(Lorg/telegram/tgnet/TLObject;)V
     .locals 12
 
-    .line 254
+    .line 274
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_9
 
-    .line 255
+    .line 275
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;
 
-    .line 257
+    .line 277
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -612,7 +611,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 258
+    .line 278
     iget v3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -623,7 +622,7 @@
 
     goto :goto_0
 
-    .line 261
+    .line 281
     :cond_0
     new-instance v0, Ljava/util/HashSet;
 
@@ -631,7 +630,7 @@
 
     const/4 v2, 0x0
 
-    .line 262
+    .line 282
     :goto_1
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;->reactions:Ljava/util/ArrayList;
 
@@ -643,7 +642,7 @@
 
     if-ge v2, v3, :cond_5
 
-    .line 263
+    .line 283
     iget-object v3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;->reactions:Ljava/util/ArrayList;
@@ -656,7 +655,7 @@
 
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 264
+    .line 284
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;->reactions:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -671,7 +670,7 @@
 
     move-result-wide v5
 
-    .line 265
+    .line 285
     iget-object v3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->peerReactionMap:Landroid/util/LongSparseArray;
 
     invoke-virtual {v3, v5, v6}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -682,7 +681,7 @@
 
     if-nez v3, :cond_1
 
-    .line 267
+    .line 287
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
@@ -690,7 +689,7 @@
     :cond_1
     const/4 v7, 0x0
 
-    .line 269
+    .line 289
     :goto_2
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -698,7 +697,7 @@
 
     if-ge v7, v8, :cond_3
 
-    .line 270
+    .line 290
     invoke-virtual {v3, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -709,7 +708,7 @@
 
     if-nez v8, :cond_2
 
-    .line 271
+    .line 291
     invoke-virtual {v3, v7}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     add-int/lit8 v7, v7, -0x1
@@ -719,7 +718,7 @@
 
     goto :goto_2
 
-    .line 277
+    .line 297
     :cond_3
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;->reactions:Ljava/util/ArrayList;
 
@@ -735,7 +734,7 @@
 
     move-result-object v4
 
-    .line 278
+    .line 298
     iget-wide v7, v4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
     const-wide/16 v9, 0x0
@@ -744,10 +743,10 @@
 
     if-eqz v11, :cond_4
 
-    .line 279
+    .line 299
     invoke-virtual {v0, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 281
+    .line 301
     :cond_4
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;->reactions:Ljava/util/ArrayList;
 
@@ -759,7 +758,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 282
+    .line 302
     iget-object v4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->peerReactionMap:Landroid/util/LongSparseArray;
 
     invoke-virtual {v4, v5, v6, v3}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
@@ -768,26 +767,26 @@
 
     goto :goto_1
 
-    .line 285
+    .line 305
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     if-nez v2, :cond_6
 
-    .line 286
+    .line 306
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 287
+    .line 307
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 288
+    .line 308
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->updateCustomReactionsButton()V
 
-    .line 291
+    .line 311
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
@@ -799,12 +798,12 @@
 
     invoke-static {v0, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 294
+    .line 313
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 296
+    .line 315
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->isLoaded:Z
 
     if-nez v0, :cond_7
@@ -813,7 +812,7 @@
 
     new-array v0, v0, [F
 
-    .line 297
+    .line 316
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -826,35 +825,35 @@
 
     move-result-object v0
 
-    .line 298
+    .line 317
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 299
+    .line 318
     new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 304
+    .line 323
     new-instance v2, Lorg/telegram/ui/Components/ReactedUsersListView$5;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/ReactedUsersListView$5;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 310
+    .line 329
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 312
+    .line 331
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->updateHeight()V
 
-    .line 314
+    .line 333
     iput-boolean v4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->isLoaded:Z
 
-    .line 316
+    .line 335
     :cond_7
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_messageReactionsList;->next_offset:Ljava/lang/String;
 
@@ -862,16 +861,16 @@
 
     if-nez p1, :cond_8
 
-    .line 318
+    .line 337
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->canLoadMore:Z
 
-    .line 319
+    .line 338
     :cond_8
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->isLoading:Z
 
     goto :goto_3
 
-    .line 321
+    .line 340
     :cond_9
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->isLoading:Z
 
@@ -888,7 +887,7 @@
 .method private synthetic lambda$load$5(Lorg/telegram/tgnet/TLObject;)V
     .locals 2
 
-    .line 253
+    .line 273
     iget v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -907,7 +906,7 @@
 .method private synthetic lambda$load$6(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 253
+    .line 273
     new-instance p2, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda2;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ReactedUsersListView;Lorg/telegram/tgnet/TLObject;)V
@@ -920,7 +919,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;I)V
     .locals 3
 
-    .line 159
+    .line 162
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemViewType(I)I
@@ -929,12 +928,12 @@
 
     if-nez p1, :cond_0
 
-    .line 161
+    .line 164
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->onProfileSelectedListener:Lorg/telegram/ui/Components/ReactedUsersListView$OnProfileSelectedListener;
 
     if-eqz p1, :cond_1
 
-    .line 162
+    .line 165
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -966,12 +965,12 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 165
+    .line 168
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->onCustomEmojiSelectedListener:Lorg/telegram/ui/Components/ReactedUsersListView$OnCustomEmojiSelectedListener;
 
     if-eqz p1, :cond_1
 
-    .line 166
+    .line 169
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customEmojiStickerSets:Ljava/util/ArrayList;
 
     invoke-interface {p1, p0, p2}, Lorg/telegram/ui/Components/ReactedUsersListView$OnCustomEmojiSelectedListener;->showCustomEmojiAlert(Lorg/telegram/ui/Components/ReactedUsersListView;Ljava/util/ArrayList;)V
@@ -982,21 +981,29 @@
 .end method
 
 .method private static synthetic lambda$setSeenUsers$1(Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;)I
-    .locals 0
+    .locals 1
 
-    .line 222
+    .line 242
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->date:I
+
+    if-lez v0, :cond_1
+
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     if-eqz p0, :cond_0
 
-    const/4 p0, 0x0
-
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x1
+    neg-int p0, v0
 
+    goto :goto_1
+
+    :cond_1
     :goto_0
+    const/high16 p0, -0x80000000
+
+    :goto_1
     return p0
 .end method
 
@@ -1005,22 +1012,22 @@
 
     const/4 v0, 0x1
 
-    .line 239
+    .line 259
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->isLoading:Z
 
-    .line 241
+    .line 261
     iget v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
 
-    .line 242
+    .line 262
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;-><init>()V
 
-    .line 243
+    .line 263
     iget-object v3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->message:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
@@ -1033,7 +1040,7 @@
 
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 244
+    .line 264
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->message:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -1042,26 +1049,26 @@
 
     iput v1, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->id:I
 
-    .line 245
+    .line 265
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->getLoadCount()I
 
     move-result v1
 
     iput v1, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->limit:I
 
-    .line 246
+    .line 266
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->filter:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 247
+    .line 267
     iget-object v3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->offset:Ljava/lang/String;
 
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->offset:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 249
+    .line 269
     iget v1, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->flags:I
 
     or-int/2addr v0, v1
@@ -1071,14 +1078,14 @@
     :cond_0
     if-eqz v3, :cond_1
 
-    .line 251
+    .line 271
     iget v0, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->flags:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReactionsList;->flags:I
 
-    .line 252
+    .line 272
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
 
@@ -1100,17 +1107,17 @@
 .method private updateCustomReactionsButton()V
     .locals 8
 
-    .line 328
+    .line 347
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customEmojiStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 329
+    .line 348
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 330
+    .line 349
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -1119,7 +1126,7 @@
 
     const/4 v1, 0x0
 
-    .line 331
+    .line 350
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;
 
@@ -1129,7 +1136,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 332
+    .line 351
     iget v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customReactionsEmoji:Ljava/util/ArrayList;
@@ -1152,7 +1159,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 333
+    .line 352
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->id:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1165,10 +1172,10 @@
 
     if-nez v3, :cond_0
 
-    .line 334
+    .line 353
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 335
+    .line 354
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$InputStickerSet;->id:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1182,7 +1189,7 @@
 
     goto :goto_0
 
-    .line 338
+    .line 357
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
 
@@ -1196,13 +1203,13 @@
 
     return-void
 
-    .line 341
+    .line 360
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->customEmojiStickerSets:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 342
+    .line 361
     new-instance v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     iget v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->currentAccount:I
@@ -1221,7 +1228,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->messageContainsEmojiButton:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
-    .line 343
+    .line 362
     iput-boolean v7, v0, Lorg/telegram/ui/Components/MessageContainsEmojiButton;->checkWidth:Z
 
     return-void
@@ -1230,12 +1237,12 @@
 .method private updateHeight()V
     .locals 3
 
-    .line 347
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->onHeightChangedListener:Lorg/telegram/ui/Components/ReactedUsersListView$OnHeightChangedListener;
 
     if-eqz v0, :cond_3
 
-    .line 349
+    .line 368
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1244,23 +1251,23 @@
 
     if-nez v0, :cond_0
 
-    .line 351
+    .line 370
     iget v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->predictiveCount:I
 
     :cond_0
-    mul-int/lit8 v0, v0, 0x30
+    mul-int/lit8 v0, v0, 0x32
 
-    .line 353
+    .line 372
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 354
+    .line 373
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->messageContainsEmojiButton:Lorg/telegram/ui/Components/MessageContainsEmojiButton;
 
     if-eqz v1, :cond_1
 
-    .line 355
+    .line 374
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v1
@@ -1275,7 +1282,7 @@
 
     add-int/2addr v0, v1
 
-    .line 357
+    .line 376
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -1285,7 +1292,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 358
+    .line 377
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -1296,7 +1303,7 @@
 
     move-result v0
 
-    .line 362
+    .line 381
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->onHeightChangedListener:Lorg/telegram/ui/Components/ReactedUsersListView$OnHeightChangedListener;
 
@@ -1311,10 +1318,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 231
+    .line 251
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 232
+    .line 252
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->isLoaded:Z
 
     if-nez v0, :cond_0
@@ -1323,7 +1330,7 @@
 
     if-nez v0, :cond_0
 
-    .line 233
+    .line 253
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->load()V
 
     :cond_0
@@ -1333,7 +1340,7 @@
 .method public setOnCustomEmojiSelectedListener(Lorg/telegram/ui/Components/ReactedUsersListView$OnCustomEmojiSelectedListener;)Lorg/telegram/ui/Components/ReactedUsersListView;
     .locals 0
 
-    .line 541
+    .line 629
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->onCustomEmojiSelectedListener:Lorg/telegram/ui/Components/ReactedUsersListView$OnCustomEmojiSelectedListener;
 
     return-object p0
@@ -1342,7 +1349,7 @@
 .method public setOnHeightChangedListener(Lorg/telegram/ui/Components/ReactedUsersListView$OnHeightChangedListener;)Lorg/telegram/ui/Components/ReactedUsersListView;
     .locals 0
 
-    .line 468
+    .line 556
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->onHeightChangedListener:Lorg/telegram/ui/Components/ReactedUsersListView$OnHeightChangedListener;
 
     return-object p0
@@ -1351,7 +1358,7 @@
 .method public setOnProfileSelectedListener(Lorg/telegram/ui/Components/ReactedUsersListView$OnProfileSelectedListener;)Lorg/telegram/ui/Components/ReactedUsersListView;
     .locals 0
 
-    .line 463
+    .line 551
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->onProfileSelectedListener:Lorg/telegram/ui/Components/ReactedUsersListView$OnProfileSelectedListener;
 
     return-object p0
@@ -1360,10 +1367,10 @@
 .method public setPredictiveCount(I)V
     .locals 1
 
-    .line 485
+    .line 573
     iput p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->predictiveCount:I
 
-    .line 486
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->loadingView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setItemsCount(I)V
@@ -1372,118 +1379,226 @@
 .end method
 
 .method public setSeenUsers(Ljava/util/List;)Lorg/telegram/ui/Components/ReactedUsersListView;
-    .locals 6
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lorg/telegram/tgnet/TLRPC$User;",
+            "Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;",
             ">;)",
             "Lorg/telegram/ui/Components/ReactedUsersListView;"
         }
     .end annotation
 
-    .line 203
+    .line 206
+    iget-object v0, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    .line 207
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;
+
+    .line 208
+    iget-object v3, v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;->user:Lorg/telegram/tgnet/TLRPC$User;
+
+    if-eqz v3, :cond_0
+
+    .line 209
+    iget v4, v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;->date:I
+
+    if-lez v4, :cond_0
+
+    const/4 v4, 0x0
+
+    .line 210
+    :goto_1
+    iget-object v5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
+
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_0
+
+    .line 211
+    iget-object v5, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
+
+    invoke-interface {v5, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;
+
+    if-eqz v5, :cond_1
+
+    .line 212
+    iget v6, v5, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->date:I
+
+    if-gtz v6, :cond_1
+
+    iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+
+    iget-wide v8, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    cmp-long v10, v6, v8
+
+    if-nez v10, :cond_1
+
+    .line 213
+    iget v2, v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;->date:I
+
+    iput v2, v5, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->date:I
+
+    .line 214
+    iput-boolean v1, v5, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->dateIsSeen:Z
+
+    goto :goto_0
+
+    :cond_1
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_1
+
+    .line 221
+    :cond_2
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v2
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 204
+    .line 222
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    :goto_0
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_4
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
-
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$User;
-
-    .line 205
-    iget-object v2, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->peerReactionMap:Landroid/util/LongSparseArray;
-
-    iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    invoke-virtual {v2, v3, v4}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
-
     move-result-object v2
 
-    check-cast v2, Ljava/util/ArrayList;
+    check-cast v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;
 
-    if-eqz v2, :cond_0
-
-    goto :goto_0
-
-    .line 209
-    :cond_0
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;
-
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;-><init>()V
-
-    const/4 v3, 0x0
-
-    .line 210
-    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
-
-    .line 211
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
-
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
-
-    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    .line 212
-    iget-wide v4, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
-
-    iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
-
-    .line 213
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    .line 214
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 215
+    .line 223
     iget-object v3, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->peerReactionMap:Landroid/util/LongSparseArray;
 
-    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v4, v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-static {v4}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
+    iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    move-result-wide v4
+    invoke-virtual {v3, v4, v5}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    invoke-virtual {v3, v4, v5, v1}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+    move-result-object v3
 
-    .line 216
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v3, Ljava/util/ArrayList;
 
-    goto :goto_0
+    if-eqz v3, :cond_3
 
-    .line 218
-    :cond_1
+    goto :goto_2
+
+    .line 227
+    :cond_3
+    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;
+
+    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction;-><init>()V
+
+    const/4 v4, 0x0
+
+    .line 228
+    iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+
+    .line 229
+    new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
+
+    invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
+
+    iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 230
+    iget-object v5, v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;->user:Lorg/telegram/tgnet/TLRPC$User;
+
+    iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    iput-wide v5, v4, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+
+    .line 231
+    iget v2, v2, Lorg/telegram/ui/Components/ReactedHeaderView$UserSeen;->date:I
+
+    iput v2, v3, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->date:I
+
+    .line 232
+    iput-boolean v1, v3, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->dateIsSeen:Z
+
+    .line 233
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 234
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 235
+    iget-object v4, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->peerReactionMap:Landroid/util/LongSparseArray;
+
+    iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    invoke-static {v5}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
+
+    move-result-wide v5
+
+    invoke-virtual {v4, v5, v6, v2}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+
+    .line 236
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    .line 238
+    :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    .line 221
+    .line 241
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
     invoke-interface {p1, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 222
+    .line 242
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->userReactions:Ljava/util/List;
 
     sget-object v0, Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda3;->INSTANCE:Lorg/telegram/ui/Components/ReactedUsersListView$$ExternalSyntheticLambda3;
@@ -1494,12 +1609,12 @@
 
     invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 224
+    .line 244
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactedUsersListView;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 225
+    .line 245
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactedUsersListView;->updateHeight()V
 
     return-object p0

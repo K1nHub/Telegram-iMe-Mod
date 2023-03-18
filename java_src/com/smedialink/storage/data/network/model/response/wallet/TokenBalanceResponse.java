@@ -47,7 +47,7 @@ public final class TokenBalanceResponse {
         }
         if (obj instanceof TokenBalanceResponse) {
             TokenBalanceResponse tokenBalanceResponse = (TokenBalanceResponse) obj;
-            return Intrinsics.areEqual(this.coinCode, tokenBalanceResponse.coinCode) && Intrinsics.areEqual(Double.valueOf(this.total), Double.valueOf(tokenBalanceResponse.total)) && Intrinsics.areEqual(Float.valueOf(this.totalInDollars), Float.valueOf(tokenBalanceResponse.totalInDollars)) && Intrinsics.areEqual(Double.valueOf(this.rateToDollars), Double.valueOf(tokenBalanceResponse.rateToDollars)) && Intrinsics.areEqual(this.ratePercentageChange24h, tokenBalanceResponse.ratePercentageChange24h) && Intrinsics.areEqual(this.networkType, tokenBalanceResponse.networkType);
+            return Intrinsics.areEqual(this.coinCode, tokenBalanceResponse.coinCode) && Double.compare(this.total, tokenBalanceResponse.total) == 0 && Float.compare(this.totalInDollars, tokenBalanceResponse.totalInDollars) == 0 && Double.compare(this.rateToDollars, tokenBalanceResponse.rateToDollars) == 0 && Intrinsics.areEqual(this.ratePercentageChange24h, tokenBalanceResponse.ratePercentageChange24h) && Intrinsics.areEqual(this.networkType, tokenBalanceResponse.networkType);
         }
         return false;
     }

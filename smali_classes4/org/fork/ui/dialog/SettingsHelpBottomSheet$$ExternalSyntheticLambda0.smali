@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/dialog/SettingsHelpBottomSheet$$ExternalSyntheticLambda0;->f$1:Lorg/fork/enums/DrawerSocialNetwork;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->$r8$lambda$FlC0iQCqBu8RXsfRiGQTh6eoEpY(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, p1, p2}, Lorg/fork/ui/dialog/SettingsHelpBottomSheet;->$r8$lambda$jH0hwP_eZr2lISf2cj9zkyvCac8(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Lorg/fork/enums/DrawerSocialNetwork;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

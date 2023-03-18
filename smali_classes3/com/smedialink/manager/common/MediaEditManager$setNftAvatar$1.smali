@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 83
+    .line 82
     invoke-virtual {p0}, Lcom/smedialink/manager/common/MediaEditManager$setNftAvatar$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -63,7 +63,7 @@
 .method public final invoke()V
     .locals 2
 
-    .line 84
+    .line 83
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$setNftAvatar$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     invoke-static {v0}, Lcom/smedialink/manager/common/MediaEditManager;->access$getImageLoader(Lcom/smedialink/manager/common/MediaEditManager;)Lorg/telegram/messenger/ImageLoader;
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageLoader;->cancelLoadHttpFile(Ljava/lang/String;)V
 
-    .line 85
+    .line 84
     iget-object v0, p0, Lcom/smedialink/manager/common/MediaEditManager$setNftAvatar$1;->this$0:Lcom/smedialink/manager/common/MediaEditManager;
 
     const/4 v1, 0x0

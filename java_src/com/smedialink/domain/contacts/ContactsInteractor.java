@@ -10,14 +10,11 @@ import io.reactivex.Completable;
 import io.reactivex.CompletableSource;
 import io.reactivex.Single;
 import io.reactivex.functions.Function;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.fork.utils.CollectionsUtilsKt;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: ContactsInteractor.kt */
 /* loaded from: classes3.dex */
@@ -66,34 +63,42 @@ public final class ContactsInteractor {
     }
 
     private final Completable deleteUsersById(Single<List<Long>> single) {
-        Completable flatMapCompletable = single.map(new Function() { // from class: com.smedialink.domain.contacts.ContactsInteractor$$ExternalSyntheticLambda0
+        final ContactsInteractor$deleteUsersById$1 contactsInteractor$deleteUsersById$1 = new ContactsInteractor$deleteUsersById$1(this);
+        Single subscribeOn = single.map(new Function() { // from class: com.smedialink.domain.contacts.ContactsInteractor$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                List m1234deleteUsersById$lambda1;
-                m1234deleteUsersById$lambda1 = ContactsInteractor.m1234deleteUsersById$lambda1(ContactsInteractor.this, (List) obj);
-                return m1234deleteUsersById$lambda1;
+                List deleteUsersById$lambda$0;
+                deleteUsersById$lambda$0 = ContactsInteractor.deleteUsersById$lambda$0(Function1.this, obj);
+                return deleteUsersById$lambda$0;
             }
-        }).subscribeOn(this.schedulersProvider.mo708io()).flatMapCompletable(new Function() { // from class: com.smedialink.domain.contacts.ContactsInteractor$$ExternalSyntheticLambda1
+        }).subscribeOn(this.schedulersProvider.mo708io());
+        final ContactsInteractor$deleteUsersById$2 contactsInteractor$deleteUsersById$2 = new ContactsInteractor$deleteUsersById$2(this);
+        Completable flatMapCompletable = subscribeOn.flatMapCompletable(new Function() { // from class: com.smedialink.domain.contacts.ContactsInteractor$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                CompletableSource m1235deleteUsersById$lambda2;
-                m1235deleteUsersById$lambda2 = ContactsInteractor.m1235deleteUsersById$lambda2(ContactsInteractor.this, (List) obj);
-                return m1235deleteUsersById$lambda2;
+                CompletableSource deleteUsersById$lambda$1;
+                deleteUsersById$lambda$1 = ContactsInteractor.deleteUsersById$lambda$1(Function1.this, obj);
+                return deleteUsersById$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(flatMapCompletable, "this\n                   …Users(it.toArrayList()) }");
+        Intrinsics.checkNotNullExpressionValue(flatMapCompletable, "private fun Single<List<…Users(it.toArrayList()) }");
         return flatMapCompletable;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: deleteUsersById$lambda-2  reason: not valid java name */
-    public static final CompletableSource m1235deleteUsersById$lambda2(ContactsInteractor this$0, List it) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(it, "it");
-        return this$0.telegramApi.deleteUsers(CollectionsUtilsKt.toArrayList(it));
+    public static final List deleteUsersById$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (List) tmp0.invoke(obj);
     }
 
-    private final TLRPC$User toUser(long j) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CompletableSource deleteUsersById$lambda$1(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (CompletableSource) tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final TLRPC$User toUser(long j) {
         return TelegramControllersGateway.DefaultImpls.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).getUser(Long.valueOf(j));
     }
 
@@ -120,20 +125,5 @@ public final class ContactsInteractor {
             listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new ContactSelectAction[]{ContactSelectAction.ClearSelectedContacts.INSTANCE, new ContactSelectAction.ChangeSelectedQty(selectedContactsDataStore.size())});
             return listOf;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: deleteUsersById$lambda-1  reason: not valid java name */
-    public static final List m1234deleteUsersById$lambda1(ContactsInteractor this$0, List ids) {
-        int collectionSizeOrDefault;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(ids, "ids");
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(ids, 10);
-        ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        Iterator it = ids.iterator();
-        while (it.hasNext()) {
-            arrayList.add(this$0.toUser(((Number) it.next()).longValue()));
-        }
-        return arrayList;
     }
 }

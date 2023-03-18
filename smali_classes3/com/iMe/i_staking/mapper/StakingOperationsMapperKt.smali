@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingOperationsMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,34:1\n1547#2:35\n1618#2,3:36\n*S KotlinDebug\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n*L\n13#1:35\n13#1:36,3\n*E\n"
+    value = "SMAP\nStakingOperationsMapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,34:1\n1549#2:35\n1620#2,3:36\n*S KotlinDebug\n*F\n+ 1 StakingOperationsMapper.kt\ncom/iMe/i_staking/mapper/StakingOperationsMapperKt\n*L\n13#1:35\n13#1:36,3\n*E\n"
 .end annotation
 
 
@@ -86,18 +86,18 @@
 
     const/4 v13, 0x0
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    move-object v14, v13
-
-    goto :goto_0
-
-    :cond_0
     invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingOperationCostMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingOperationCostResponse;)Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;
 
     move-result-object v2
 
     move-object v14, v2
+
+    goto :goto_0
+
+    :cond_0
+    move-object v14, v13
 
     .line 29
     :goto_0
@@ -105,18 +105,18 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_1
+    if-eqz v2, :cond_1
 
-    move-object v15, v13
-
-    goto :goto_1
-
-    :cond_1
     invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingOperationCostMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingOperationCostResponse;)Lcom/smedialink/storage/domain/model/staking/StakingOperationCost;
 
     move-result-object v2
 
     move-object v15, v2
+
+    goto :goto_1
+
+    :cond_1
+    move-object v15, v13
 
     .line 30
     :goto_1
@@ -129,18 +129,18 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_2
+    if-eqz v2, :cond_2
 
-    move-object/from16 v19, v13
-
-    goto :goto_2
-
-    :cond_2
     invoke-static {v2}, Lcom/iMe/i_staking/mapper/StakingTokenMapperKt;->mapToDomain(Lcom/iMe/i_staking/response/StakingTokenResponse;)Lcom/smedialink/storage/domain/model/staking/StakingToken;
 
     move-result-object v2
 
     move-object/from16 v19, v2
+
+    goto :goto_2
+
+    :cond_2
+    move-object/from16 v19, v13
 
     .line 32
     :goto_2
@@ -187,7 +187,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -198,7 +198,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -214,7 +214,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/iMe/i_staking/response/StakingOperationResponse;
 
     .line 13
@@ -222,6 +222,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

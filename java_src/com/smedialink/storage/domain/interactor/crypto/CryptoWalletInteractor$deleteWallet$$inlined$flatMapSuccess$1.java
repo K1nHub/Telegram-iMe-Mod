@@ -1,0 +1,72 @@
+package com.smedialink.storage.domain.interactor.crypto;
+
+import com.smedialink.storage.domain.manager.crypto.CryptoAccessManager;
+import com.smedialink.storage.domain.model.Result;
+import com.smedialink.storage.domain.model.crypto.BlockchainType;
+import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
+import io.reactivex.functions.Function;
+import java.util.concurrent.Callable;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+/* compiled from: ObservableExt.kt */
+/* loaded from: classes3.dex */
+public final class CryptoWalletInteractor$deleteWallet$$inlined$flatMapSuccess$1 extends Lambda implements Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>> {
+    final /* synthetic */ BlockchainType $blockchainType$inlined;
+    final /* synthetic */ CryptoWalletInteractor this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public CryptoWalletInteractor$deleteWallet$$inlined$flatMapSuccess$1(CryptoWalletInteractor cryptoWalletInteractor, BlockchainType blockchainType) {
+        super(1);
+        this.this$0 = cryptoWalletInteractor;
+        this.$blockchainType$inlined = blockchainType;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result) {
+        Intrinsics.checkNotNullParameter(result, "result");
+        if (!(result instanceof Result.Success)) {
+            if (result instanceof Result.Error) {
+                Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.smedialink.storage.domain.utils.extentions.ObservableExtKt.flatMapSuccess");
+                return Observable.just(error$default);
+            }
+            return Observable.empty();
+        }
+        final CryptoWalletInteractor cryptoWalletInteractor = this.this$0;
+        final BlockchainType blockchainType = this.$blockchainType$inlined;
+        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.smedialink.storage.domain.interactor.crypto.CryptoWalletInteractor$deleteWallet$1$1
+            @Override // java.util.concurrent.Callable
+            public /* bridge */ /* synthetic */ Object call() {
+                call();
+                return Unit.INSTANCE;
+            }
+
+            @Override // java.util.concurrent.Callable
+            public final void call() {
+                CryptoAccessManager cryptoAccessManager;
+                cryptoAccessManager = CryptoWalletInteractor.this.cryptoAccessManager;
+                cryptoAccessManager.deleteWallet(blockchainType);
+            }
+        });
+        final CryptoWalletInteractor$deleteWallet$1$2 cryptoWalletInteractor$deleteWallet$1$2 = new CryptoWalletInteractor$deleteWallet$1$2(this.this$0);
+        Observable flatMap = fromCallable.flatMap(new Function(cryptoWalletInteractor$deleteWallet$1$2) { // from class: com.smedialink.storage.domain.interactor.crypto.CryptoWalletInteractor$sam$io_reactivex_functions_Function$0
+            private final /* synthetic */ Function1 function;
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                Intrinsics.checkNotNullParameter(cryptoWalletInteractor$deleteWallet$1$2, "function");
+                this.function = cryptoWalletInteractor$deleteWallet$1$2;
+            }
+
+            @Override // io.reactivex.functions.Function
+            public final /* synthetic */ Object apply(Object obj) {
+                return this.function.invoke(obj);
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(flatMap, "fun deleteWallet(blockch…ulersProvider.io())\n    }");
+        return flatMap;
+    }
+}

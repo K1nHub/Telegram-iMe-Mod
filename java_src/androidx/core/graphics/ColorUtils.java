@@ -6,14 +6,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 public final class ColorUtils {
     private static final ThreadLocal<double[]> TEMP_ARRAY = new ThreadLocal<>();
 
-    private static float constrain(float f, float f2, float f3) {
-        return f < f2 ? f2 : f > f3 ? f3 : f;
-    }
-
-    private static int constrain(int i, int i2, int i3) {
-        return i < i2 ? i2 : i > i3 ? i3 : i;
-    }
-
     public static int compositeColors(int i, int i2) {
         int alpha = Color.alpha(i2);
         int alpha2 = Color.alpha(i);
@@ -132,6 +124,14 @@ public final class ColorUtils {
         double d5 = ((((-0.9689d) * d) + (1.8758d * d2)) + (0.0415d * d3)) / 100.0d;
         double d6 = (((0.0557d * d) + ((-0.204d) * d2)) + (1.057d * d3)) / 100.0d;
         return Color.rgb(constrain((int) Math.round((d4 > 0.0031308d ? (Math.pow(d4, 0.4166666666666667d) * 1.055d) - 0.055d : d4 * 12.92d) * 255.0d), 0, 255), constrain((int) Math.round((d5 > 0.0031308d ? (Math.pow(d5, 0.4166666666666667d) * 1.055d) - 0.055d : d5 * 12.92d) * 255.0d), 0, 255), constrain((int) Math.round((d6 > 0.0031308d ? (Math.pow(d6, 0.4166666666666667d) * 1.055d) - 0.055d : d6 * 12.92d) * 255.0d), 0, 255));
+    }
+
+    private static float constrain(float f, float f2, float f3) {
+        return f < f2 ? f2 : Math.min(f, f3);
+    }
+
+    private static int constrain(int i, int i2, int i3) {
+        return i < i2 ? i2 : Math.min(i, i3);
     }
 
     public static int blendARGB(int i, int i2, float f) {

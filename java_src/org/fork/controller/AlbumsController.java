@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.AlbumsController;
@@ -68,12 +69,12 @@ public final class AlbumsController extends BaseController implements KoinCompon
 
     public final void loadConfig(SharedPreferences preferences) {
         Intrinsics.checkNotNullParameter(preferences, "preferences");
-        setOpenAlbumsInsteadCloudEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.isOpenAlbumsInsteadCloudEnabled(), TelegramPreferenceKeys.User.Default.isOpenAlbumsInsteadCloudEnabled()));
+        this.isOpenAlbumsInsteadCloudEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isOpenAlbumsInsteadCloudEnabled(), TelegramPreferenceKeys.User.Default.isOpenAlbumsInsteadCloudEnabled());
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putBoolean(TelegramPreferenceKeys.User.isOpenAlbumsInsteadCloudEnabled(), isOpenAlbumsInsteadCloudEnabled());
+        edit.putBoolean(TelegramPreferenceKeys.User.isOpenAlbumsInsteadCloudEnabled(), this.isOpenAlbumsInsteadCloudEnabled);
         edit.apply();
     }
 
@@ -87,7 +88,7 @@ public final class AlbumsController extends BaseController implements KoinCompon
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AlbumsController.m1887restoreBackup$lambda3(AlbumsController.this, backup);
+                    AlbumsController.restoreBackup$lambda$3(AlbumsController.this, backup);
                 }
             });
         }
@@ -95,13 +96,12 @@ public final class AlbumsController extends BaseController implements KoinCompon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: restoreBackup$lambda-3  reason: not valid java name */
-    public static final void m1887restoreBackup$lambda3(AlbumsController this$0, Backup backup) {
+    public static final void restoreBackup$lambda$3(AlbumsController this$0, Backup backup) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(backup, "$backup");
-        List<Long> albums = this$0.getAlbums();
-        albums.clear();
-        albums.addAll(backup.getAlbums());
+        List<Long> list = this$0.albums;
+        list.clear();
+        list.addAll(backup.getAlbums());
         this$0.getMessagesController().sortDialogs(null);
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
     }
@@ -125,71 +125,65 @@ public final class AlbumsController extends BaseController implements KoinCompon
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                AlbumsController.m1883addAlbum$lambda6(AlbumsController.this, j, runnable);
+                AlbumsController.addAlbum$lambda$6(AlbumsController.this, j, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: addAlbum$lambda-6  reason: not valid java name */
-    public static final void m1883addAlbum$lambda6(final AlbumsController this$0, final long j, final Runnable runnable) {
+    public static final void addAlbum$lambda$6(final AlbumsController this$0, final long j, final Runnable runnable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getDao().insert((AlbumsDao) new CloudAlbumDb(this$0.getUserConfig().clientUserId, j));
-        this$0.getAlbums().add(Long.valueOf(j));
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda1
+        this$0.albums.add(Long.valueOf(j));
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                AlbumsController.m1884addAlbum$lambda6$lambda5(AlbumsController.this, j, runnable);
+                AlbumsController.addAlbum$lambda$6$lambda$5(AlbumsController.this, j, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: addAlbum$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m1884addAlbum$lambda6$lambda5(AlbumsController this$0, long j, Runnable runnable) {
+    public static final void addAlbum$lambda$6$lambda$5(AlbumsController this$0, long j, Runnable runnable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getMessagesController().addDialogToFolder(j, 1, -1, 0L);
-        if (runnable == null) {
-            return;
+        if (runnable != null) {
+            runnable.run();
         }
-        runnable.run();
     }
 
     public final void removeAlbum(final long j, final Runnable runnable) {
         if (getMessagesController().hasDialog(j)) {
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda0
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AlbumsController.m1885removeAlbum$lambda8(AlbumsController.this, j, runnable);
+                    AlbumsController.removeAlbum$lambda$8(AlbumsController.this, j, runnable);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: removeAlbum$lambda-8  reason: not valid java name */
-    public static final void m1885removeAlbum$lambda8(final AlbumsController this$0, final long j, final Runnable runnable) {
+    public static final void removeAlbum$lambda$8(final AlbumsController this$0, final long j, final Runnable runnable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getDao().deleteByAlbumId(this$0.getUserConfig().clientUserId, j);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda3
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.AlbumsController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AlbumsController.m1886removeAlbum$lambda8$lambda7(AlbumsController.this, j, runnable);
+                AlbumsController.removeAlbum$lambda$8$lambda$7(AlbumsController.this, j, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: removeAlbum$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m1886removeAlbum$lambda8$lambda7(AlbumsController this$0, long j, Runnable runnable) {
+    public static final void removeAlbum$lambda$8$lambda$7(AlbumsController this$0, long j, Runnable runnable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getAlbums().remove(Long.valueOf(j));
+        this$0.albums.remove(Long.valueOf(j));
         this$0.getMessagesController().sortDialogs(null);
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.dialogsNeedReload, new Object[0]);
-        if (runnable == null) {
-            return;
+        if (runnable != null) {
+            runnable.run();
         }
-        runnable.run();
     }
 
     public final boolean isDialogAlbum(long j) {
@@ -207,14 +201,16 @@ public final class AlbumsController extends BaseController implements KoinCompon
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final AlbumsController m1888getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new AlbumsController(i);
+        public static final AlbumsController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (AlbumsController) tmp0.invoke(obj);
         }
 
-        public final AlbumsController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(AlbumsController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.AlbumsController$Companion$$ExternalSyntheticLambda0
+        public final AlbumsController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = AlbumsController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final AlbumsController$Companion$getInstance$1 albumsController$Companion$getInstance$1 = new AlbumsController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.AlbumsController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -222,9 +218,9 @@ public final class AlbumsController extends BaseController implements KoinCompon
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    AlbumsController m1888getInstance$lambda0;
-                    m1888getInstance$lambda0 = AlbumsController.Companion.m1888getInstance$lambda0(i, (Integer) obj);
-                    return m1888getInstance$lambda0;
+                    AlbumsController instance$lambda$0;
+                    instance$lambda$0 = AlbumsController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -232,7 +228,7 @@ public final class AlbumsController extends BaseController implements KoinCompon
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (AlbumsController) computeIfAbsent;
         }
     }

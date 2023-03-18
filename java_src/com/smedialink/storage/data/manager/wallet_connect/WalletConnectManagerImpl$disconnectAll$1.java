@@ -23,7 +23,6 @@ final class WalletConnectManagerImpl$disconnectAll$1 extends Lambda implements F
         return Unit.INSTANCE;
     }
 
-    @Override // kotlin.jvm.functions.Function0
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
         Map map;

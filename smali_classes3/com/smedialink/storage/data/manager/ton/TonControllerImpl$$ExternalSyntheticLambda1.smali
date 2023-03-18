@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda1;->f$1:Ldrinkless/org/ton/TonApi$Function;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$HD9hwSbkYHzGEs8hYroUe5dL50o(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ldrinkless/org/ton/TonApi$Function;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$PNpqxaJUhtrGvFFB7R1oanwVoo8(Lcom/smedialink/storage/data/manager/ton/TonControllerImpl;Ldrinkless/org/ton/TonApi$Function;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

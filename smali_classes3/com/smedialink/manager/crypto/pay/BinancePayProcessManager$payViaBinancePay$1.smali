@@ -31,7 +31,7 @@
 
     iput-object p2, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->$transaction:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;
 
-    .line 86
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,14 +48,14 @@
 .method public onSuccess()V
     .locals 7
 
-    .line 100
+    .line 101
     iget-object v0, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->this$0:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-static {v0}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->access$getViewState(Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;)Lcom/smedialink/manager/crypto/pay/BinancePayProcessView;
 
     move-result-object v0
 
-    .line 101
+    .line 102
     iget-object v1, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->this$0:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-static {v1}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->access$getResourceManager$p(Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -68,21 +68,21 @@
 
     move-result-object v1
 
-    .line 102
+    .line 103
     iget-object v2, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->this$0:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-static {v2}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->access$getResourceManager$p(Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
 
-    .line 103
+    .line 104
     sget v3, Lorg/telegram/messenger/R$string;->wallet_binance_pay_request_paid_success_dialog_description:I
 
     const/4 v4, 0x3
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 104
+    .line 105
     iget-object v5, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->$transaction:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;
 
     invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;->getAmount()D
@@ -107,7 +107,7 @@
 
     aput-object v5, v4, v6
 
-    .line 105
+    .line 106
     iget-object v5, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->$transaction:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;
 
     invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;->getAsset()Ljava/lang/String;
@@ -118,7 +118,7 @@
 
     aput-object v5, v4, v6
 
-    .line 106
+    .line 107
     iget-object v5, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->$transaction:Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;
 
     invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction;->getInitiatorUserId()Ljava/lang/String;
@@ -129,12 +129,12 @@
 
     aput-object v5, v4, v6
 
-    .line 102
+    .line 103
     invoke-interface {v2, v3, v4}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 108
+    .line 109
     iget-object v3, p0, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager$payViaBinancePay$1;->this$0:Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;
 
     invoke-static {v3}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;->access$getResourceManager$p(Lcom/smedialink/manager/crypto/pay/BinancePayProcessManager;)Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -147,7 +147,7 @@
 
     move-result-object v3
 
-    .line 100
+    .line 101
     invoke-interface {v0, v1, v2, v3}, Lcom/smedialink/manager/crypto/pay/BinancePayProcessView;->showSuccessPaymentProcessedDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void

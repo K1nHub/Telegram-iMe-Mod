@@ -791,7 +791,7 @@
     .line 230
     sget v1, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const/16 v2, 0x98
+    const/16 v2, 0x9b
 
     sget v3, Lorg/telegram/messenger/BuildVars;->APP_ID:I
 
@@ -3190,7 +3190,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "valid interface: "
+    const-string/jumbo v4, "valid interface: "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

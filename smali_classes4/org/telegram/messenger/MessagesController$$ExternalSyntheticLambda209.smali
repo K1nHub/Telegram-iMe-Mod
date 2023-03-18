@@ -8,38 +8,34 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$photos_Photos;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
 
-.field public final synthetic f$3:J
+.field public final synthetic f$3:Landroidx/collection/LongSparseArray;
 
-.field public final synthetic f$4:I
+.field public final synthetic f$4:Z
 
-.field public final synthetic f$5:I
-
-.field public final synthetic f$6:Ljava/util/ArrayList;
+.field public final synthetic f$5:Lorg/telegram/messenger/support/LongSparseIntArray;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$photos_Photos;ZJIILjava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;ZLorg/telegram/messenger/support/LongSparseIntArray;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$1:Lorg/telegram/tgnet/TLRPC$photos_Photos;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$2:Z
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$2:Landroidx/collection/LongSparseArray;
 
-    iput-wide p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$3:J
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$3:Landroidx/collection/LongSparseArray;
 
-    iput p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$4:I
+    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$4:Z
 
-    iput p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$5:I
-
-    iput-object p8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$6:Ljava/util/ArrayList;
+    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$5:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     return-void
 .end method
@@ -47,23 +43,21 @@
 
 # virtual methods
 .method public final run()V
-    .locals 8
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$1:Lorg/telegram/tgnet/TLRPC$photos_Photos;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$2:Landroidx/collection/LongSparseArray;
 
-    iget-wide v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$3:J
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$3:Landroidx/collection/LongSparseArray;
 
-    iget v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$4:I
+    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$4:Z
 
-    iget v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$5:I
+    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$5:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    iget-object v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda209;->f$6:Ljava/util/ArrayList;
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$1dt3dj6oKhZlzcTLXdrGetc_dGA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$photos_Photos;ZJIILjava/util/ArrayList;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$3QyZ66cNgzK2UOeZg36fW_aYvB4(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;ZLorg/telegram/messenger/support/LongSparseIntArray;)V
 
     return-void
 .end method

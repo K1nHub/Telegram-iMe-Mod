@@ -1,6 +1,6 @@
 package org.telegram.messenger.video;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p048ui.Components.PhotoViewerWebView;
 import org.telegram.p048ui.Components.VideoPlayer;
@@ -24,7 +24,7 @@ public class VideoPlayerRewinder {
                 return;
             }
             long duration = VideoPlayerRewinder.this.getDuration();
-            if (duration == 0 || duration == C0474C.TIME_UNSET) {
+            if (duration == 0 || duration == C0468C.TIME_UNSET) {
                 VideoPlayerRewinder.this.rewindLastTime = System.currentTimeMillis();
                 return;
             }

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/manager/TelegramApiManager$$ExternalSyntheticLambda3;->f$1:Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$DZ9QuSsMtDs53CyIQQwAGIQYz88(Lcom/smedialink/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;Lio/reactivex/ObservableEmitter;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/manager/TelegramApiManager;->$r8$lambda$ZsU130I4C2MAGXA0Eqw8Xro2U8g(Lcom/smedialink/manager/TelegramApiManager;Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;Lio/reactivex/ObservableEmitter;)V
 
     return-void
 .end method

@@ -1,11 +1,13 @@
 package com.smedialink.utils.extentions.common;
 
+import android.text.SpannableStringBuilder;
 import com.smedialink.utils.formatter.DateFormatter;
 import java.util.Locale;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import kotlin.text.StringsKt___StringsKt;
+import org.telegram.messenger.MessageObject;
 /* compiled from: StringExt.kt */
 /* loaded from: classes3.dex */
 public final class StringExtKt {
@@ -85,7 +87,9 @@ public final class StringExtKt {
         Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
         if (lowerCase.length() > 0) {
             StringBuilder sb = new StringBuilder();
-            String upperCase = String.valueOf(lowerCase.charAt(0)).toUpperCase(locale);
+            String valueOf = String.valueOf(lowerCase.charAt(0));
+            Intrinsics.checkNotNull(valueOf, "null cannot be cast to non-null type java.lang.String");
+            String upperCase = valueOf.toUpperCase(locale);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
             sb.append((Object) upperCase);
             String substring = lowerCase.substring(1);
@@ -94,5 +98,12 @@ public final class StringExtKt {
             return sb.toString();
         }
         return lowerCase;
+    }
+
+    public static final SpannableStringBuilder addTwitterLinks(String str) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+        MessageObject.addTwitterLinks(spannableStringBuilder);
+        return spannableStringBuilder;
     }
 }

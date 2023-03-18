@@ -23,6 +23,8 @@
 
 .field color2:I
 
+.field color3:I
+
 .field private final currentState:I
 
 .field private duration:F
@@ -56,18 +58,18 @@
 .method public constructor <init>(I)V
     .locals 1
 
-    .line 342
+    .line 291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 328
+    .line 276
     iput v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    .line 329
+    .line 277
     iput v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
-    .line 336
+    .line 285
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
@@ -76,43 +78,43 @@
 
     const-string v0, "voipgroup_topPanelGreen1"
 
-    .line 347
+    .line 296
     iput-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->greenKey1:Ljava/lang/String;
 
     const-string v0, "voipgroup_topPanelGreen2"
 
-    .line 348
+    .line 297
     iput-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->greenKey2:Ljava/lang/String;
 
     const-string v0, "voipgroup_topPanelBlue1"
 
-    .line 349
+    .line 298
     iput-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->blueKey1:Ljava/lang/String;
 
     const-string v0, "voipgroup_topPanelBlue2"
 
-    .line 350
+    .line 299
     iput-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->blueKey2:Ljava/lang/String;
 
     const-string v0, "voipgroup_mutedByAdminGradient"
 
-    .line 351
+    .line 300
     iput-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->mutedByAdmin:Ljava/lang/String;
 
     const-string v0, "voipgroup_mutedByAdminGradient2"
 
-    .line 352
+    .line 301
     iput-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->mutedByAdmin2:Ljava/lang/String;
 
     const-string v0, "voipgroup_mutedByAdminGradient3"
 
-    .line 353
+    .line 302
     iput-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->mutedByAdmin3:Ljava/lang/String;
 
-    .line 343
+    .line 292
     iput p1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
-    .line 344
+    .line 293
     invoke-direct {p0}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->createGradients()V
 
     return-void
@@ -121,7 +123,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;)I
     .locals 0
 
-    .line 326
+    .line 274
     iget p0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
     return p0
@@ -132,7 +134,7 @@
 
     move-object/from16 v0, p0
 
-    .line 356
+    .line 305
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
     const/4 v2, 0x0
@@ -143,7 +145,7 @@
 
     if-nez v1, :cond_0
 
-    .line 357
+    .line 306
     new-instance v1, Landroid/graphics/RadialGradient;
 
     const/high16 v6, 0x43480000    # 200.0f
@@ -189,7 +191,7 @@
     :cond_0
     if-ne v1, v4, :cond_1
 
-    .line 359
+    .line 308
     new-instance v1, Landroid/graphics/RadialGradient;
 
     const/high16 v13, 0x43480000    # 200.0f
@@ -239,7 +241,7 @@
 
     if-ne v1, v5, :cond_2
 
-    .line 361
+    .line 310
     new-instance v1, Landroid/graphics/RadialGradient;
 
     const/high16 v7, 0x43480000    # 200.0f
@@ -265,6 +267,8 @@
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color3:I
 
     aput v2, v10, v4
 
@@ -309,12 +313,12 @@
 .method public checkColor()V
     .locals 2
 
-    .line 414
+    .line 363
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
     if-nez v0, :cond_1
 
-    .line 415
+    .line 364
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color1:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->greenKey1:Ljava/lang/String;
@@ -335,7 +339,7 @@
 
     if-eq v0, v1, :cond_5
 
-    .line 416
+    .line 365
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->createGradients()V
 
@@ -346,7 +350,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 419
+    .line 368
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color1:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->blueKey1:Ljava/lang/String;
@@ -367,7 +371,7 @@
 
     if-eq v0, v1, :cond_5
 
-    .line 420
+    .line 369
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->createGradients()V
 
@@ -378,7 +382,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 423
+    .line 372
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color1:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->mutedByAdmin:Ljava/lang/String;
@@ -399,7 +403,7 @@
 
     if-eq v0, v1, :cond_5
 
-    .line 424
+    .line 373
     :cond_4
     invoke-direct {p0}, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->createGradients()V
 
@@ -409,32 +413,32 @@
 .end method
 
 .method public setToPaint(Landroid/graphics/Paint;)V
-    .locals 2
+    .locals 4
 
-    .line 430
+    .line 379
     iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x3
+    if-eq v0, v3, :cond_1
 
     if-ne v0, v1, :cond_0
 
     goto :goto_0
 
+    .line 391
     :cond_0
-    const/4 v0, 0x0
-
-    .line 433
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     const-string v0, "voipgroup_topPanelGray"
 
-    .line 434
+    .line 392
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v0
@@ -443,9 +447,62 @@
 
     goto :goto_1
 
-    .line 431
     :cond_1
     :goto_0
+    const/16 v0, 0x200
+
+    .line 380
+    invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    .line 381
+    invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    .line 382
+    iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
+
+    const/high16 v2, 0x3f000000    # 0.5f
+
+    if-ne v0, v1, :cond_2
+
+    .line 383
+    iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color1:I
+
+    iget v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color2:I
+
+    invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v0
+
+    iget v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color3:I
+
+    invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    goto :goto_1
+
+    .line 385
+    :cond_2
+    iget v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color1:I
+
+    iget v1, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->color2:I
+
+    invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    goto :goto_1
+
+    .line 388
+    :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->shader:Landroid/graphics/Shader;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
@@ -459,7 +516,7 @@
 
     move-object v0, p0
 
-    .line 366
+    .line 315
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
     const/4 v2, 0x2
@@ -468,7 +525,7 @@
 
     return-void
 
-    .line 369
+    .line 318
     :cond_0
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->duration:F
 
@@ -486,7 +543,7 @@
 
     if-ltz v1, :cond_7
 
-    .line 370
+    .line 319
     :cond_1
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
@@ -502,10 +559,10 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->duration:F
 
-    .line 371
+    .line 320
     iput v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
 
-    .line 372
+    .line 321
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     const/high16 v2, -0x40800000    # -1.0f
@@ -532,12 +589,12 @@
 
     if-nez v1, :cond_4
 
-    .line 373
+    .line 322
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
     if-ne v1, v3, :cond_2
 
-    .line 374
+    .line 323
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -554,7 +611,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    .line 375
+    .line 324
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -576,7 +633,7 @@
     :cond_2
     if-nez v1, :cond_3
 
-    .line 377
+    .line 326
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -593,7 +650,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    .line 378
+    .line 327
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -612,7 +669,7 @@
 
     goto :goto_0
 
-    .line 380
+    .line 329
     :cond_3
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
@@ -630,7 +687,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    .line 381
+    .line 330
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -645,24 +702,24 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
-    .line 384
+    .line 333
     :cond_4
     :goto_0
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->startX:F
 
-    .line 385
+    .line 334
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->startY:F
 
-    .line 386
+    .line 335
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
     if-ne v1, v3, :cond_5
 
-    .line 387
+    .line 336
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -679,7 +736,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    .line 388
+    .line 337
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -701,7 +758,7 @@
     :cond_5
     if-nez v1, :cond_6
 
-    .line 390
+    .line 339
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -718,7 +775,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    .line 391
+    .line 340
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -737,7 +794,7 @@
 
     goto :goto_1
 
-    .line 393
+    .line 342
     :cond_6
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
@@ -755,7 +812,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
 
-    .line 394
+    .line 343
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1, v12}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -770,7 +827,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
 
-    .line 397
+    .line 346
     :cond_7
     :goto_1
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
@@ -803,17 +860,17 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
 
-    .line 398
+    .line 347
     iget v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->duration:F
 
     cmpl-float v1, v1, v2
 
     if-lez v1, :cond_8
 
-    .line 399
+    .line 348
     iput v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->time:F
 
-    .line 401
+    .line 350
     :cond_8
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -829,7 +886,7 @@
 
     int-to-float v2, v2
 
-    .line 402
+    .line 351
     iget v4, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->startX:F
 
     iget v5, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetX:F
@@ -850,7 +907,7 @@
 
     int-to-float v6, v6
 
-    .line 403
+    .line 352
     iget v7, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->startY:F
 
     iget v8, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->targetY:F
@@ -869,7 +926,7 @@
 
     div-float/2addr v2, v1
 
-    .line 405
+    .line 354
     iget v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->currentState:I
 
     if-eqz v1, :cond_a
@@ -890,17 +947,17 @@
     :goto_3
     mul-float v2, v2, v1
 
-    .line 406
+    .line 355
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 407
+    .line 356
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v4, v6}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 408
+    .line 357
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->matrix:Landroid/graphics/Matrix;
 
     add-float/2addr v4, v5
@@ -909,7 +966,7 @@
 
     invoke-virtual {v1, v2, v2, v4, v6}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 410
+    .line 359
     iget-object v1, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->shader:Landroid/graphics/Shader;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/FragmentContextViewWavesDrawable$WeavingState;->matrix:Landroid/graphics/Matrix;

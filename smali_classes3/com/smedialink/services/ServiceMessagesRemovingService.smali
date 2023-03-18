@@ -9,14 +9,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/services/ServiceMessagesRemovingService$State;,
         Lcom/smedialink/services/ServiceMessagesRemovingService$Companion;,
+        Lcom/smedialink/services/ServiceMessagesRemovingService$State;,
         Lcom/smedialink/services/ServiceMessagesRemovingService$WhenMappings;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nServiceMessagesRemovingService.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ServiceMessagesRemovingService.kt\ncom/smedialink/services/ServiceMessagesRemovingService\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,340:1\n798#2,11:341\n798#2,11:352\n1547#2:363\n1618#2,3:364\n764#2:367\n855#2,2:368\n1720#2,3:370\n764#2:373\n855#2,2:374\n1488#2:377\n1518#2,3:378\n1521#2,3:388\n1236#2,4:393\n1#3:376\n357#4,7:381\n438#4:391\n388#4:392\n*S KotlinDebug\n*F\n+ 1 ServiceMessagesRemovingService.kt\ncom/smedialink/services/ServiceMessagesRemovingService\n*L\n71#1:341,11\n75#1:352,11\n129#1:363\n129#1:364,3\n148#1:367\n148#1:368,2\n165#1:370,3\n209#1:373\n209#1:374,2\n213#1:377\n213#1:378,3\n213#1:388,3\n217#1:393,4\n213#1:381,7\n217#1:391\n217#1:392\n*E\n"
+    value = "SMAP\nServiceMessagesRemovingService.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ServiceMessagesRemovingService.kt\ncom/smedialink/services/ServiceMessagesRemovingService\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,340:1\n800#2,11:341\n800#2,11:352\n1549#2:363\n1620#2,3:364\n766#2:367\n857#2,2:368\n1726#2,3:370\n766#2:373\n857#2,2:374\n1490#2:377\n1520#2,3:378\n1523#2,3:388\n1238#2,4:393\n1#3:376\n361#4,7:381\n442#4:391\n392#4:392\n*S KotlinDebug\n*F\n+ 1 ServiceMessagesRemovingService.kt\ncom/smedialink/services/ServiceMessagesRemovingService\n*L\n71#1:341,11\n75#1:352,11\n129#1:363\n129#1:364,3\n148#1:367\n148#1:368,2\n165#1:370,3\n209#1:373\n209#1:374,2\n213#1:377\n213#1:378,3\n213#1:388,3\n217#1:393,4\n213#1:381,7\n217#1:391\n217#1:392\n*E\n"
 .end annotation
 
 
@@ -102,18 +102,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$iX8BSY3rbq1wDBb6Mzvp92vpoHU(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
+.method public static synthetic $r8$lambda$rcB9APhgcW1_fjtP_ybUR0a-Sr8(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/services/ServiceMessagesRemovingService;->loadMessages$lambda-3(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/services/ServiceMessagesRemovingService;->loadMessages$lambda$3(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$oZFzhol1Rq3k3VojD8ZlvcOXAFk(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
+.method public static synthetic $r8$lambda$wGDo1KRY1AydZ8LUNNYVt1LGlDM(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/services/ServiceMessagesRemovingService;->deleteMessages$lambda-9(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/services/ServiceMessagesRemovingService;->deleteMessages$lambda$9(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
 
     return-void
 .end method
@@ -259,15 +259,9 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_1
-
-    :cond_0
-    const/4 v3, 0x0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 239
-    :cond_1
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v3
@@ -278,19 +272,24 @@
 
     const/4 v3, 0x1
 
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x0
+
     :goto_0
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_4
 
     .line 240
     iget-wide v3, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->migratedChatId:J
 
     cmp-long v5, p1, v3
 
-    if-nez v5, :cond_2
+    if-nez v5, :cond_1
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     const/4 v2, 0x0
 
     :goto_1
@@ -350,14 +349,9 @@
 
     check-cast p1, Ljava/util/List;
 
-    if-nez p1, :cond_3
-
-    const/4 p1, 0x0
-
-    goto :goto_2
+    if-eqz p1, :cond_2
 
     .line 249
-    :cond_3
     invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
 
     move-result p2
@@ -366,20 +360,25 @@
 
     move-result-object p1
 
+    goto :goto_2
+
+    :cond_2
+    const/4 p1, 0x0
+
     :goto_2
-    if-nez p1, :cond_4
+    if-nez p1, :cond_3
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p1
 
     .line 248
-    :cond_4
+    :cond_3
     invoke-interface {v0, v4, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
 
-    :cond_5
+    :cond_4
     const/4 v1, 0x1
 
     :goto_3
@@ -414,7 +413,7 @@
     return-void
 .end method
 
-.method private static final deleteMessages$lambda-9(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
+.method private static final deleteMessages$lambda$9(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
     .locals 9
 
     const-string v0, "this$0"
@@ -527,7 +526,7 @@
     return-void
 .end method
 
-.method private static final loadMessages$lambda-3(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
+.method private static final loadMessages$lambda$3(Lcom/smedialink/services/ServiceMessagesRemovingService;J)V
     .locals 21
 
     move-object/from16 v0, p0
@@ -618,12 +617,12 @@
     .line 208
     iget-object v1, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->messages:Ljava/util/List;
 
-    .line 764
+    .line 766
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -687,6 +686,7 @@
     :goto_1
     if-eqz v4, :cond_0
 
+    .line 857
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -699,14 +699,12 @@
 
     iput v1, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->serviceMessagesCount:I
 
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    .line 1488
+    .line 1490
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 1518
+    .line 1520
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -722,7 +720,7 @@
 
     move-result-object v3
 
-    .line 1519
+    .line 1521
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
     .line 214
@@ -734,22 +732,22 @@
 
     move-result-object v5
 
-    .line 357
+    .line 361
     invoke-interface {v1, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
     if-nez v6, :cond_5
 
-    .line 1520
+    .line 1522
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 360
+    .line 364
     invoke-interface {v1, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1520
+    .line 1522
     :cond_5
     check-cast v6, Ljava/util/List;
 
@@ -762,11 +760,12 @@
 
     move-result-object v3
 
+    .line 1523
     invoke-interface {v6, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 438
+    .line 442
     :cond_6
     new-instance v2, Ljava/util/LinkedHashMap;
 
@@ -780,12 +779,12 @@
 
     invoke-direct {v2, v3}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 388
+    .line 392
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
 
-    .line 1236
+    .line 1238
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -801,10 +800,10 @@
 
     move-result-object v3
 
-    .line 1237
+    .line 1239
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 388
+    .line 392
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
@@ -820,6 +819,7 @@
 
     move-result-object v3
 
+    .line 1239
     invoke-interface {v2, v5, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
@@ -1001,12 +1001,12 @@
     .line 148
     iget-object v0, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->messages:Ljava/util/List;
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1046,10 +1046,12 @@
     :goto_1
     if-eqz v5, :cond_1
 
+    .line 857
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 148
     :cond_3
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
@@ -1144,7 +1146,7 @@
 
     move-result-object v0
 
-    .line 1720
+    .line 1726
     instance-of v1, v0, Ljava/util/Collection;
 
     if-eqz v1, :cond_8
@@ -1160,7 +1162,7 @@
 
     goto :goto_4
 
-    .line 1721
+    .line 1727
     :cond_8
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1325,7 +1327,7 @@
 
     goto :goto_1
 
-    .line 1547
+    .line 1549
     :cond_1
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1337,7 +1339,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1353,7 +1355,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Ljava/lang/Integer;
 
     .line 129
@@ -1375,10 +1377,12 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 129
     :cond_2
     iput-object v1, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->removingServiceMessagesTypes:Ljava/util/List;
 
@@ -1517,18 +1521,15 @@
     :goto_0
     iget-object v0, p0, Lcom/smedialink/services/ServiceMessagesRemovingService;->builder:Landroidx/core/app/NotificationCompat$Builder;
 
-    if-nez v0, :cond_3
-
-    goto :goto_1
+    if-eqz v0, :cond_3
 
     .line 297
-    :cond_3
     invoke-virtual {v0, p2}, Landroidx/core/app/NotificationCompat$Builder;->setTicker(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
     .line 298
     invoke-virtual {v0, p2}, Landroidx/core/app/NotificationCompat$Builder;->setContentText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     .line 301
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -1546,8 +1547,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroidx/core/app/NotificationManagerCompat;->notify(ILandroid/app/Notification;)V
 
-    :cond_4
-    :goto_1
+    :cond_3
     return-void
 .end method
 
@@ -1563,12 +1563,18 @@
     .line 68
     sget p2, Lorg/telegram/messenger/NotificationCenter;->messagesDidLoad:I
 
+    const-string v0, "null cannot be cast to non-null type kotlin.collections.List<*>"
+
+    const-string v1, "null cannot be cast to non-null type kotlin.Int"
+
     if-ne p1, p2, :cond_2
 
     const/16 p1, 0xa
 
     .line 69
     aget-object p1, p3, p1
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/lang/Integer;
 
@@ -1590,14 +1596,16 @@
     .line 71
     aget-object p1, p3, p1
 
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Ljava/util/List;
 
-    .line 798
+    .line 800
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 807
+    .line 809
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1632,21 +1640,23 @@
     :cond_2
     sget p2, Lorg/telegram/messenger/NotificationCenter;->messagesDeleted:I
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     if-ne p1, p2, :cond_6
 
     .line 75
-    aget-object p1, p3, v0
+    aget-object p1, p3, v2
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/util/List;
 
-    .line 798
+    .line 800
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 807
+    .line 809
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1676,6 +1686,10 @@
 
     .line 76
     aget-object p1, p3, p1
+
+    const-string p3, "null cannot be cast to non-null type kotlin.Long"
+
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/lang/Long;
 
@@ -1729,7 +1743,9 @@
     if-ne p1, p2, :cond_7
 
     .line 85
-    aget-object p1, p3, v0
+    aget-object p1, p3, v2
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Ljava/lang/Integer;
 

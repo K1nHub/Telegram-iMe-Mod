@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog$$ExternalSyntheticLambda1;->f$2:Lcom/smedialink/storage/domain/model/crypto/simplex/Currency;
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;->$r8$lambda$7ie9HtdeEkBAuxd3UBwlQ6zhEyo(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
+    invoke-static {v0, v1, v2}, Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;->$r8$lambda$IIvv0mPVaXWXisHmwZOO7MJoBCo(Lcom/smedialink/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPriceBottomSheetDialog;FLcom/smedialink/storage/domain/model/crypto/simplex/Currency;)V
 
     return-void
 .end method

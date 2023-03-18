@@ -58,7 +58,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "wrong publicKey format"
+    const-string/jumbo p2, "wrong publicKey format"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -76,7 +76,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "wrong publicKey size"
+    const-string/jumbo p2, "wrong publicKey size"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

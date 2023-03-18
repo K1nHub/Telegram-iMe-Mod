@@ -19,10 +19,10 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Ljava/lang/String;Landroid/app/Activity;Ljava/lang/String;)V
+.method constructor <init>(Ljava/lang/String;Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;Landroid/app/Activity;Ljava/lang/String;)V
     .locals 6
 
-    iput-object p1, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;->this$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;
+    iput-object p2, p0, Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment$showQrReceiveDialog$1;->this$0:Lcom/smedialink/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;
 
     const/4 v2, 0x0
 
@@ -34,7 +34,7 @@
 
     move-object v3, p4
 
-    move-object v4, p2
+    move-object v4, p1
 
     .line 184
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/QRCodeBottomSheet;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V

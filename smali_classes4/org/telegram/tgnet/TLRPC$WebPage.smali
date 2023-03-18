@@ -57,10 +57,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 20049
+    .line 20153
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 20088
+    .line 20192
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 20112
+    .line 20216
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageNotModified;
 
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 20100
+    .line 20204
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer104;
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 20097
+    .line 20201
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer107;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 20106
+    .line 20210
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageEmpty;
 
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 20094
+    .line 20198
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 20109
+    .line 20213
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageUrlPending;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 20121
+    .line 20225
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer58;
 
@@ -135,7 +135,7 @@
 
     goto :goto_0
 
-    .line 20115
+    .line 20219
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPagePending;
 
@@ -143,7 +143,7 @@
 
     goto :goto_0
 
-    .line 20103
+    .line 20207
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_old;
 
@@ -151,7 +151,7 @@
 
     goto :goto_0
 
-    .line 20118
+    .line 20222
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageNotModified_layer110;
 
@@ -164,7 +164,7 @@
 
     goto :goto_1
 
-    .line 20125
+    .line 20229
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -194,7 +194,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 20128
+    .line 20232
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

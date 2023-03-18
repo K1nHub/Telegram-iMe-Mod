@@ -25,18 +25,16 @@ public class AutoDeleteMediaTask {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x0288  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x02b1  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x015a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x0172 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:193:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0273  */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:182:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ void lambda$run$1(int r26, java.io.File r27) {
+    public static /* synthetic */ void lambda$run$1(int r27, java.io.File r28) {
         /*
-            Method dump skipped, instructions count: 761
+            Method dump skipped, instructions count: 740
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.AutoDeleteMediaTask.lambda$run$1(int, java.io.File):void");

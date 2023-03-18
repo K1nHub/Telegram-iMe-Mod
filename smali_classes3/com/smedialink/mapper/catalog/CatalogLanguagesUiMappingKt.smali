@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogLanguagesUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogLanguagesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogLanguagesUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,22:1\n1547#2:23\n1618#2,3:24\n*S KotlinDebug\n*F\n+ 1 CatalogLanguagesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogLanguagesUiMappingKt\n*L\n9#1:23\n9#1:24,3\n*E\n"
+    value = "SMAP\nCatalogLanguagesUiMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogLanguagesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogLanguagesUiMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,22:1\n1549#2:23\n1620#2,3:24\n*S KotlinDebug\n*F\n+ 1 CatalogLanguagesUiMapping.kt\ncom/smedialink/mapper/catalog/CatalogLanguagesUiMappingKt\n*L\n9#1:23\n9#1:24,3\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -39,7 +39,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -55,7 +55,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/domain/model/catalog/CatalogLanguage;
 
     .line 10
@@ -86,7 +86,7 @@
 
     iput v1, v2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->serverIndex:I
 
-    .line 10
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

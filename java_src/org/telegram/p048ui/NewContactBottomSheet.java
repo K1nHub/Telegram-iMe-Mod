@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -99,7 +99,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         this.classGuid = ConnectionsManager.generateClassGuid();
         this.parentFragment = baseFragment;
         setCustomView(createView(getContext()));
-        setTitle(LocaleController.getString("NewContactTitle", C3158R.string.NewContactTitle), true);
+        setTitle(LocaleController.getString("NewContactTitle", C3286R.string.NewContactTitle), true);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:57:0x03ea  */
@@ -142,15 +142,15 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$1 */
     /* loaded from: classes5.dex */
-    public class C58361 extends TextView {
+    public class C59781 extends TextView {
         final NotificationCenter.NotificationCenterDelegate delegate;
 
-        C58361(NewContactBottomSheet newContactBottomSheet, Context context) {
+        C59781(NewContactBottomSheet newContactBottomSheet, Context context) {
             super(context);
             this.delegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.NewContactBottomSheet$1$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    NewContactBottomSheet.C58361.this.lambda$$0(i, i2, objArr);
+                    NewContactBottomSheet.C59781.this.lambda$$0(i, i2, objArr);
                 }
             };
         }
@@ -176,8 +176,8 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.NewContactBottomSheet$2 */
     /* loaded from: classes5.dex */
-    public class C58372 implements CountrySelectActivity.CountrySelectActivityDelegate {
-        C58372() {
+    public class C59792 implements CountrySelectActivity.CountrySelectActivityDelegate {
+        C59792() {
         }
 
         @Override // org.telegram.p048ui.CountrySelectActivity.CountrySelectActivityDelegate
@@ -186,7 +186,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NewContactBottomSheet$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewContactBottomSheet.C58372.this.lambda$didSelectCountry$0();
+                    NewContactBottomSheet.C59792.this.lambda$didSelectCountry$0();
                 }
             }, 300L);
             NewContactBottomSheet.this.phoneField.requestFocus();
@@ -202,7 +202,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         CountrySelectActivity countrySelectActivity = new CountrySelectActivity(true);
-        countrySelectActivity.setCountrySelectActivityDelegate(new C58372());
+        countrySelectActivity.setCountrySelectActivityDelegate(new C59792());
         this.parentFragment.showAsSheet(countrySelectActivity);
     }
 

@@ -30,10 +30,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$yB4cqtnntuQNaxhAcu4kIfIw9Co(Lcom/smedialink/ui/topics/TopicProfileCell;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$7LerlY6YuwHRgljOY3do-aBqFxo(Lcom/smedialink/ui/topics/TopicProfileCell;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicProfileCell;->setupListeners$lambda-6(Lcom/smedialink/ui/topics/TopicProfileCell;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/topics/TopicProfileCell;->setupListeners$lambda$6(Lcom/smedialink/ui/topics/TopicProfileCell;Landroid/view/View;)V
 
     return-void
 .end method
@@ -252,7 +252,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 116
-    sget v1, Lorg/telegram/messenger/R$drawable;->plus:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->fork_plus:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -305,7 +305,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-6(Lcom/smedialink/ui/topics/TopicProfileCell;Landroid/view/View;)V
+.method private static final setupListeners$lambda$6(Lcom/smedialink/ui/topics/TopicProfileCell;Landroid/view/View;)V
     .locals 2
 
     const-string p1, "this$0"
@@ -315,28 +315,9 @@
     .line 121
     iget-object p1, p0, Lcom/smedialink/ui/topics/TopicProfileCell;->animator:Landroid/animation/AnimatorSet;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->isRunning()Z
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    :goto_0
-    if-nez p1, :cond_1
-
-    return-void
-
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 122
     sget-object p1, Lorg/fork/controller/ForkTopicsController;->Companion:Lorg/fork/controller/ForkTopicsController$Companion;
@@ -347,12 +328,11 @@
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lcom/smedialink/ui/topics/TopicProfileCell;->getDialogId()J
-
-    move-result-wide v0
+    iget-wide v0, p0, Lcom/smedialink/ui/topics/TopicProfileCell;->dialogId:J
 
     invoke-virtual {p1, v0, v1}, Lorg/fork/controller/ForkTopicsController;->removeTopicDialog(J)V
 
+    :cond_0
     return-void
 .end method
 

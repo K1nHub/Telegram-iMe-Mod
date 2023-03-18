@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.chunk;
 
 import android.media.MediaParser;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
@@ -70,7 +70,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
         this.outputConsumerAdapter.setMuxedCaptionFormats(list);
         this.trackOutputProviderAdapter = new TrackOutputProviderAdapter();
         this.dummyTrackOutput = new DummyTrackOutput();
-        this.pendingSeekUs = C0474C.TIME_UNSET;
+        this.pendingSeekUs = C0468C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.chunk.ChunkExtractor
@@ -106,11 +106,11 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
     private void maybeExecutePendingSeek() {
         MediaParser.SeekMap dummySeekMap = this.outputConsumerAdapter.getDummySeekMap();
         long j = this.pendingSeekUs;
-        if (j == C0474C.TIME_UNSET || dummySeekMap == null) {
+        if (j == C0468C.TIME_UNSET || dummySeekMap == null) {
             return;
         }
         this.mediaParser.seek((MediaParser.SeekPoint) dummySeekMap.getSeekPoints(j).first);
-        this.pendingSeekUs = C0474C.TIME_UNSET;
+        this.pendingSeekUs = C0468C.TIME_UNSET;
     }
 
     /* loaded from: classes.dex */

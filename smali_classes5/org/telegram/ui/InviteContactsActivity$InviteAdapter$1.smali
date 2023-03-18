@@ -40,7 +40,7 @@
 .method constructor <init>(Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;Ljava/lang/String;)V
     .locals 0
 
-    .line 814
+    .line 815
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->this$1:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->val$query:Ljava/lang/String;
@@ -55,7 +55,7 @@
 
     move-object/from16 v0, p0
 
-    .line 825
+    .line 826
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -64,14 +64,14 @@
 
     move-result-object v1
 
-    .line 826
+    .line 827
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 827
+    .line 828
     iget-object v1, v0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->this$1:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     new-instance v2, Ljava/util/ArrayList;
@@ -86,7 +86,7 @@
 
     return-void
 
-    .line 830
+    .line 831
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -96,7 +96,7 @@
 
     move-result-object v2
 
-    .line 831
+    .line 832
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -131,31 +131,31 @@
     :goto_0
     add-int/2addr v6, v5
 
-    .line 834
+    .line 835
     new-array v7, v6, [Ljava/lang/String;
 
-    .line 835
+    .line 836
     aput-object v1, v7, v3
 
     if-eqz v2, :cond_4
 
-    .line 837
+    .line 838
     aput-object v2, v7, v5
 
-    .line 840
+    .line 841
     :cond_4
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 841
+    .line 842
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v8, 0x0
 
-    .line 843
+    .line 844
     :goto_1
     iget-object v9, v0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->this$1:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
@@ -171,7 +171,7 @@
 
     if-ge v8, v9, :cond_a
 
-    .line 844
+    .line 845
     iget-object v9, v0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->this$1:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     iget-object v9, v9, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;->this$0:Lorg/telegram/ui/InviteContactsActivity;
@@ -186,7 +186,7 @@
 
     check-cast v9, Lorg/telegram/messenger/ContactsController$Contact;
 
-    .line 846
+    .line 847
     iget-object v10, v9, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
     iget-object v11, v9, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
@@ -199,7 +199,7 @@
 
     move-result-object v10
 
-    .line 847
+    .line 848
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v11
@@ -208,7 +208,7 @@
 
     move-result-object v11
 
-    .line 848
+    .line 849
     invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v12
@@ -225,10 +225,10 @@
     :goto_2
     if-ge v12, v6, :cond_9
 
-    .line 853
+    .line 854
     aget-object v14, v7, v12
 
-    .line 854
+    .line 855
     invoke-virtual {v10, v14}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v15
@@ -287,7 +287,7 @@
     :cond_7
     if-eqz v13, :cond_8
 
-    .line 859
+    .line 860
     iget-object v3, v9, Lorg/telegram/messenger/ContactsController$Contact;->first_name:Ljava/lang/String;
 
     iget-object v10, v9, Lorg/telegram/messenger/ContactsController$Contact;->last_name:Ljava/lang/String;
@@ -298,7 +298,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 860
+    .line 861
     invoke-virtual {v1, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
@@ -318,7 +318,7 @@
 
     goto/16 :goto_1
 
-    .line 865
+    .line 866
     :cond_a
     iget-object v3, v0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->this$1:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
@@ -330,7 +330,7 @@
 .method private synthetic lambda$run$1(Ljava/lang/String;)V
     .locals 2
 
-    .line 824
+    .line 825
     sget-object v0, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda0;
@@ -347,7 +347,7 @@
 .method public run()V
     .locals 2
 
-    .line 818
+    .line 819
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->this$1:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
@@ -357,7 +357,7 @@
 
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
-    .line 819
+    .line 820
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->this$1:Lorg/telegram/ui/InviteContactsActivity$InviteAdapter;
 
     const/4 v1, 0x0
@@ -371,10 +371,10 @@
     :catch_0
     move-exception v0
 
-    .line 821
+    .line 822
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 824
+    .line 825
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$InviteAdapter$1;->val$query:Ljava/lang/String;
 

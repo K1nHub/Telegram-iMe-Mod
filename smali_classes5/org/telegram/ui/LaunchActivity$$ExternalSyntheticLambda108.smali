@@ -8,38 +8,42 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:[I
+.field public final synthetic f$1:Ljava/lang/Runnable;
 
-.field public final synthetic f$2:I
+.field public final synthetic f$2:Ljava/lang/Integer;
 
-.field public final synthetic f$3:Ljava/lang/Runnable;
+.field public final synthetic f$3:Ljava/lang/Long;
 
 .field public final synthetic f$4:Ljava/lang/Integer;
 
-.field public final synthetic f$5:Ljava/lang/Integer;
+.field public final synthetic f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$6:Ljava/lang/Integer;
+.field public final synthetic f$6:I
+
+.field public final synthetic f$7:Landroid/os/Bundle;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;[IILjava/lang/Runnable;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Lorg/telegram/ui/ActionBar/BaseFragment;ILandroid/os/Bundle;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$1:[I
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$1:Ljava/lang/Runnable;
 
-    iput p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$2:I
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$2:Ljava/lang/Integer;
 
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$3:Ljava/lang/Runnable;
+    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$3:Ljava/lang/Long;
 
     iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$4:Ljava/lang/Integer;
 
-    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$5:Ljava/lang/Integer;
+    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iput-object p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$6:Ljava/lang/Integer;
+    iput p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$6:I
+
+    iput-object p8, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$7:Landroid/os/Bundle;
 
     return-void
 .end method
@@ -47,27 +51,29 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 9
+    .locals 10
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$1:[I
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$1:Ljava/lang/Runnable;
 
-    iget v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$2:I
+    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$2:Ljava/lang/Integer;
 
-    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$3:Ljava/lang/Runnable;
+    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$3:Ljava/lang/Long;
 
     iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$4:Ljava/lang/Integer;
 
-    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$5:Ljava/lang/Integer;
+    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$6:Ljava/lang/Integer;
+    iget v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$6:I
 
-    move-object v7, p1
+    iget-object v7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$7:Landroid/os/Bundle;
 
-    move-object v8, p2
+    move-object v8, p1
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$ktE-UQZ2tYobsbXu2321EMTCa4w(Lorg/telegram/ui/LaunchActivity;[IILjava/lang/Runnable;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-object v9, p2
+
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$hc2xZnxPDztc87GnGOMGDaXBvHM(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Lorg/telegram/ui/ActionBar/BaseFragment;ILandroid/os/Bundle;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

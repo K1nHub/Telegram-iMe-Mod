@@ -18,10 +18,7 @@
 .method public abstract openChatScreen(J)V
 .end method
 
-.method public abstract showRecipientEthWalletNotActivatedError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-.end method
-
-.method public abstract showRecipientWalletNotActivatedError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract showErrorDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
 .method public abstract showRequestPermissionDialog(Ljava/lang/String;Lcom/smedialink/model/dialog/DialogModel;Lorg/fork/utils/Callbacks$Callback;)V

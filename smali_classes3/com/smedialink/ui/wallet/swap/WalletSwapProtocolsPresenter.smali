@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletSwapProtocolsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapProtocolsPresenter.kt\ncom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,76:1\n1#2:77\n1547#3:78\n1618#3,3:79\n1547#3:86\n1618#3,3:87\n1547#3:94\n1618#3,3:95\n37#4:82\n36#4,3:83\n37#4:90\n36#4,3:91\n37#4:98\n36#4,3:99\n*S KotlinDebug\n*F\n+ 1 WalletSwapProtocolsPresenter.kt\ncom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter\n*L\n58#1:78\n58#1:79,3\n59#1:86\n59#1:87,3\n60#1:94\n60#1:95,3\n58#1:82\n58#1:83,3\n59#1:90\n59#1:91,3\n60#1:98\n60#1:99,3\n*E\n"
+    value = "SMAP\nWalletSwapProtocolsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletSwapProtocolsPresenter.kt\ncom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,76:1\n1#2:77\n1549#3:78\n1620#3,3:79\n1549#3:84\n1620#3,3:85\n1549#3:90\n1620#3,3:91\n37#4,2:82\n37#4,2:88\n37#4,2:94\n*S KotlinDebug\n*F\n+ 1 WalletSwapProtocolsPresenter.kt\ncom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter\n*L\n58#1:78\n58#1:79,3\n59#1:84\n59#1:85,3\n60#1:90\n60#1:91,3\n58#1:82,2\n59#1:88,2\n60#1:94,2\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -69,7 +69,7 @@
 .end method
 
 .method private final loadExchanges()V
-    .locals 9
+    .locals 8
 
     .line 58
     sget-object v0, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -89,7 +89,7 @@
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -107,7 +107,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;
 
     .line 58
@@ -115,6 +115,7 @@
 
     invoke-direct {v5, v3, v4}, Lcom/smedialink/model/wallet/swap/DexProtocolItem;-><init>(Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Z)V
 
+    .line 1621
     invoke-interface {v1, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -129,111 +130,107 @@
 
     move-result-object v1
 
-    const-string v3, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
-
-    invoke-static {v1, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     .line 58
     check-cast v1, [Lcom/smedialink/model/wallet/swap/DexProtocolItem;
 
     .line 59
-    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;
+    sget-object v3, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;
 
-    invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getSupportedCrossChainExchanges()Ljava/util/List;
+    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Companion;->getSupportedCrossChainExchanges()Ljava/util/List;
 
-    move-result-object v5
+    move-result-object v3
 
-    .line 1547
-    new-instance v6, Ljava/util/ArrayList;
+    .line 1549
+    new-instance v5, Ljava/util/ArrayList;
 
-    invoke-static {v5, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v3, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v7
+    move-result v6
 
-    invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
-    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 1620
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v3
 
     :goto_1
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_1
+    if-eqz v6, :cond_1
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    .line 1619
-    check-cast v7, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Symbiosis;
+    .line 1621
+    check-cast v6, Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo$Symbiosis;
 
     .line 59
-    new-instance v8, Lcom/smedialink/model/wallet/swap/DexProtocolItem;
+    new-instance v7, Lcom/smedialink/model/wallet/swap/DexProtocolItem;
 
-    invoke-direct {v8, v7, v4}, Lcom/smedialink/model/wallet/swap/DexProtocolItem;-><init>(Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Z)V
+    invoke-direct {v7, v6, v4}, Lcom/smedialink/model/wallet/swap/DexProtocolItem;-><init>(Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Z)V
 
-    invoke-interface {v6, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    .line 1621
+    invoke-interface {v5, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_1
-    new-array v5, v0, [Lcom/smedialink/model/wallet/swap/DexProtocolItem;
+    new-array v3, v0, [Lcom/smedialink/model/wallet/swap/DexProtocolItem;
 
     .line 38
-    invoke-interface {v6, v5}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v5, v3}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v3
+
+    .line 59
+    check-cast v3, [Lcom/smedialink/model/wallet/swap/DexProtocolItem;
+
+    .line 60
+    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Companion;
+
+    invoke-virtual {v5}, Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Companion;->getSupportedExchanges()Ljava/util/List;
 
     move-result-object v5
 
-    invoke-static {v5, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    .line 1549
+    new-instance v6, Ljava/util/ArrayList;
 
-    .line 59
-    check-cast v5, [Lcom/smedialink/model/wallet/swap/DexProtocolItem;
-
-    .line 60
-    sget-object v6, Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Companion;
-
-    invoke-virtual {v6}, Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo$Companion;->getSupportedExchanges()Ljava/util/List;
-
-    move-result-object v6
-
-    .line 1547
-    new-instance v7, Ljava/util/ArrayList;
-
-    invoke-static {v6, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v5, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
 
-    invoke-direct {v7, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v6, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    .line 1620
+    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
     :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_2
+    if-eqz v5, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
 
-    .line 1619
-    check-cast v6, Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo;
+    .line 1621
+    check-cast v5, Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo;
 
     .line 60
-    new-instance v8, Lcom/smedialink/model/wallet/swap/CexProtocolItem;
+    new-instance v7, Lcom/smedialink/model/wallet/swap/CexProtocolItem;
 
-    invoke-direct {v8, v6, v4}, Lcom/smedialink/model/wallet/swap/CexProtocolItem;-><init>(Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo;Z)V
+    invoke-direct {v7, v5, v4}, Lcom/smedialink/model/wallet/swap/CexProtocolItem;-><init>(Lcom/smedialink/storage/domain/model/wallet/swap/CentralizedExchangesInfo;Z)V
 
-    invoke-interface {v7, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    .line 1621
+    invoke-interface {v6, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
@@ -241,11 +238,9 @@
     new-array v0, v0, [Lcom/smedialink/model/wallet/swap/CexProtocolItem;
 
     .line 38
-    invoke-interface {v7, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v6, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
-
-    invoke-static {v0, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 60
     check-cast v0, [Lcom/smedialink/model/wallet/swap/CexProtocolItem;
@@ -258,13 +253,13 @@
     check-cast v2, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsView;
 
     .line 64
-    new-instance v3, Lkotlin/jvm/internal/SpreadBuilder;
+    new-instance v4, Lkotlin/jvm/internal/SpreadBuilder;
 
-    const/4 v4, 0x6
+    const/4 v5, 0x6
 
-    invoke-direct {v3, v4}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(I)V
+    invoke-direct {v4, v5}, Lkotlin/jvm/internal/SpreadBuilder;-><init>(I)V
 
-    new-instance v4, Lcom/smedialink/model/wallet/home/HeaderItem;
+    new-instance v5, Lcom/smedialink/model/wallet/home/HeaderItem;
 
     iget-object v6, p0, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
@@ -274,55 +269,55 @@
 
     move-result-object v6
 
-    invoke-direct {v4, v6}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
+    invoke-virtual {v4, v5}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
 
-    invoke-virtual {v3, v1}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
+    invoke-virtual {v4, v1}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
 
     .line 66
     new-instance v1, Lcom/smedialink/model/wallet/home/HeaderItem;
 
-    iget-object v4, p0, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    iget-object v5, p0, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v6, Lorg/telegram/messenger/R$string;->wallet_swap_protocols_cross_chain_header_title:I
 
-    invoke-interface {v4, v6}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v5, v6}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v1, v4}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v5}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
     .line 64
-    invoke-virtual {v3, v1}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
+    invoke-virtual {v4, v1}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
 
-    invoke-virtual {v3, v5}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
+    invoke-virtual {v4, v3}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
 
     .line 68
     new-instance v1, Lcom/smedialink/model/wallet/home/HeaderItem;
 
-    iget-object v4, p0, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
+    iget-object v3, p0, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->wallet_swap_centralized_exchanges_header_title:I
 
-    invoke-interface {v4, v5}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v5}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-direct {v1, v4}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
     .line 64
-    invoke-virtual {v3, v1}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
+    invoke-virtual {v4, v1}, Lkotlin/jvm/internal/SpreadBuilder;->add(Ljava/lang/Object;)V
 
-    invoke-virtual {v3, v0}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
+    invoke-virtual {v4, v0}, Lkotlin/jvm/internal/SpreadBuilder;->addSpread(Ljava/lang/Object;)V
 
-    invoke-virtual {v3}, Lkotlin/jvm/internal/SpreadBuilder;->size()I
+    invoke-virtual {v4}, Lkotlin/jvm/internal/SpreadBuilder;->size()I
 
     move-result v0
 
     new-array v0, v0, [Lcom/smedialink/model/common/NoChildNode;
 
-    invoke-virtual {v3, v0}, Lkotlin/jvm/internal/SpreadBuilder;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v4, v0}, Lkotlin/jvm/internal/SpreadBuilder;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -366,7 +361,7 @@
 
     invoke-virtual {v0, v1}, Lcom/smedialink/storage/domain/utils/rx/RxEventBus;->publish(Lcom/smedialink/storage/domain/utils/rx/event/RxEvent;)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 31
     :cond_0
@@ -382,22 +377,18 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/binancepay/BinanceUserInfo;->isVerified()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     const/4 v1, 0x1
 
-    :cond_2
-    :goto_0
-    if-eqz v1, :cond_3
+    :cond_1
+    if-eqz v1, :cond_2
 
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -407,10 +398,10 @@
 
     invoke-interface {v0}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsView;->showRequiredVerifyDialog()V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 32
-    :cond_3
+    :cond_2
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -419,7 +410,7 @@
 
     invoke-interface {v0}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsView;->openBinanceConvertScreen()V
 
-    :goto_1
+    :goto_0
     return-void
 .end method
 

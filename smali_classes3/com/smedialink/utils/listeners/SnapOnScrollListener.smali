@@ -81,15 +81,12 @@
     .line 39
     iget-object v0, p0, Lcom/smedialink/utils/listeners/SnapOnScrollListener;->onSnapPositionChangeListener:Lcom/smedialink/utils/listeners/OnSnapPositionChangeListener;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-interface {v0, p1}, Lcom/smedialink/utils/listeners/OnSnapPositionChangeListener;->onSnapPositionChange(I)V
 
     .line 40
-    :goto_1
+    :cond_1
     iput p1, p0, Lcom/smedialink/utils/listeners/SnapOnScrollListener;->snapPosition:I
 
     :cond_2

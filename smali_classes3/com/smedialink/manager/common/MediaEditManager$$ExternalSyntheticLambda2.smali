@@ -57,7 +57,7 @@
 
     iget-object v5, p0, Lcom/smedialink/manager/common/MediaEditManager$$ExternalSyntheticLambda2;->f$5:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    invoke-static/range {v0 .. v5}, Lcom/smedialink/manager/common/MediaEditManager;->$r8$lambda$0TuDJdeAplvdIf9fiMvKXEoWi2E(Lcom/smedialink/manager/common/MediaEditManager;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;)V
+    invoke-static/range {v0 .. v5}, Lcom/smedialink/manager/common/MediaEditManager;->$r8$lambda$u0el8pBpjXCEzVqBTgwMfv2cpvs(Lcom/smedialink/manager/common/MediaEditManager;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$PhotoSize;)V
 
     return-void
 .end method

@@ -3,12 +3,12 @@
 .source "ChatActivity.java"
 
 # interfaces
-.implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->processLoadedDiscussionMessage(ZLorg/telegram/tgnet/TLRPC$TL_messages_discussionMessage;ZLorg/telegram/tgnet/TLRPC$messages_Messages;ILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/messenger/MessageObject;)V
+    value = Lorg/telegram/ui/ChatActivity;->selectReaction(Lorg/telegram/messenger/MessageObject;Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/view/View;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,101 +20,287 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$chatActivity:Lorg/telegram/ui/ChatActivity;
+.field final synthetic val$added:Z
 
-.field final synthetic val$commentsClassGuid:I
+.field final synthetic val$finalMessageIdForCell:I
 
-.field final synthetic val$openCommentsChat:Ljava/lang/Runnable;
+.field final synthetic val$fromDoubleTap:Z
+
+.field final synthetic val$primaryMessage:Lorg/telegram/messenger/MessageObject;
+
+.field final synthetic val$reactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+.field final synthetic val$visibleReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
+
+.field final synthetic val$x:F
+
+.field final synthetic val$y:F
 
 
 # direct methods
-.method public static synthetic $r8$lambda$aA_v5PAMMIdi-vjTSwkI2OH3uGQ(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
+.method public static synthetic $r8$lambda$NqnS1gXYPdch8fcBnlii2C8iR3Y(Lorg/telegram/ui/ChatActivity$130;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity$130;->lambda$didReceivedNotification$0(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$130;->lambda$run$2(Lorg/telegram/messenger/MessageObject;)V
 
     return-void
 .end method
 
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;ILjava/lang/Runnable;Lorg/telegram/ui/ChatActivity;)V
+.method public static synthetic $r8$lambda$iqtTLEvt_mRqK-c_xeQSH4yQl9A(Lorg/telegram/ui/ChatActivity$130;IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
     .locals 0
 
-    .line 30259
+    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/ChatActivity$130;->lambda$run$0(IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$rV45sGhKC35koPdnJ2y42Zq-Pig(Lorg/telegram/ui/ChatActivity$130;IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/ChatActivity$130;->lambda$run$1(IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;ZIZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;Lorg/telegram/messenger/MessageObject;)V
+    .locals 0
+
+    .line 28549
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iput p2, p0, Lorg/telegram/ui/ChatActivity$130;->val$commentsClassGuid:I
+    iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$130;->val$fromDoubleTap:Z
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$130;->val$openCommentsChat:Ljava/lang/Runnable;
+    iput p3, p0, Lorg/telegram/ui/ChatActivity$130;->val$finalMessageIdForCell:I
 
-    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$130;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
+    iput-boolean p4, p0, Lorg/telegram/ui/ChatActivity$130;->val$added:Z
+
+    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$130;->val$reactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    iput p6, p0, Lorg/telegram/ui/ChatActivity$130;->val$x:F
+
+    iput p7, p0, Lorg/telegram/ui/ChatActivity$130;->val$y:F
+
+    iput-object p8, p0, Lorg/telegram/ui/ChatActivity$130;->val$visibleReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
+
+    iput-object p9, p0, Lorg/telegram/ui/ChatActivity$130;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static synthetic lambda$didReceivedNotification$0(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
-    .locals 0
+.method private synthetic lambda$run$0(IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
+    .locals 12
 
-    .line 30265
-    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
+    move-object v0, p0
+
+    .line 28557
+    iget-object v1, v0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v2, 0x1
+
+    move v3, p1
+
+    invoke-virtual {v1, p1, v2}, Lorg/telegram/ui/ChatActivity;->findMessageCell(IZ)Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    move-result-object v5
+
+    if-eqz p2, :cond_0
+
+    .line 28559
+    iget-object v3, v0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v6, 0x0
+
+    invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$47500(Lorg/telegram/ui/ChatActivity;)I
+
+    move-result v10
+
+    const/4 v11, 0x1
+
+    move-object v4, p3
+
+    move/from16 v7, p4
+
+    move/from16 v8, p5
+
+    move-object/from16 v9, p6
+
+    invoke-static/range {v3 .. v11}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->show(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/view/View;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;II)V
+
+    .line 28560
+    invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->startAnimation()V
+
+    :cond_0
+    return-void
+.end method
+
+.method private synthetic lambda$run$1(IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
+    .locals 9
+
+    .line 28556
+    new-instance v8, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda0;
+
+    move-object v0, v8
+
+    move-object v1, p0
+
+    move v2, p1
+
+    move v3, p2
+
+    move-object v4, p3
+
+    move v5, p4
+
+    move v6, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$130;IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
+
+    const-wide/16 p1, 0x32
+
+    invoke-static {v8, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$run$2(Lorg/telegram/messenger/MessageObject;)V
+    .locals 3
+
+    .line 28567
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14400(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/messenger/MessageObject;
+
+    if-eqz v0, :cond_0
+
+    if-eq v0, p1, :cond_0
+
+    .line 28569
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14400(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
+
+    move-result-object v0
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/messenger/MessageObject;
+
+    .line 28570
+    iget-object v1, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->reactions:Lorg/telegram/tgnet/TLRPC$TL_messageReactions;
+
+    iput-object p1, v1, Lorg/telegram/tgnet/TLRPC$Message;->reactions:Lorg/telegram/tgnet/TLRPC$TL_messageReactions;
+
+    move-object p1, v0
+
+    .line 28573
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, p1, v1}, Lorg/telegram/ui/ChatActivity;->access$47400(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Z)V
+
+    .line 28574
+    invoke-static {}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->startAnimation()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
-    .locals 3
+.method public run()V
+    .locals 10
 
-    .line 30262
-    sget v0, Lorg/telegram/messenger/NotificationCenter;->messagesDidLoad:I
+    .line 28552
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    if-ne p1, v0, :cond_0
+    iget-object v1, v0, Lorg/telegram/ui/ChatActivity;->updateReactionRunnable:Ljava/lang/Runnable;
 
-    const/16 v1, 0xa
+    if-eqz v1, :cond_1
 
-    aget-object v1, p3, v1
+    const/4 v1, 0x0
 
-    check-cast v1, Ljava/lang/Integer;
+    .line 28553
+    iput-object v1, v0, Lorg/telegram/ui/ChatActivity;->updateReactionRunnable:Ljava/lang/Runnable;
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    .line 28554
+    iget-boolean v1, p0, Lorg/telegram/ui/ChatActivity$130;->val$fromDoubleTap:Z
 
-    move-result v1
+    if-eqz v1, :cond_0
 
-    iget v2, p0, Lorg/telegram/ui/ChatActivity$130;->val$commentsClassGuid:I
+    .line 28555
+    iget v4, p0, Lorg/telegram/ui/ChatActivity$130;->val$finalMessageIdForCell:I
 
-    if-ne v1, v2, :cond_0
+    iget-boolean v5, p0, Lorg/telegram/ui/ChatActivity$130;->val$added:Z
 
-    .line 30263
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$130;->val$openCommentsChat:Ljava/lang/Runnable;
+    iget-object v6, p0, Lorg/telegram/ui/ChatActivity$130;->val$reactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+    iget v7, p0, Lorg/telegram/ui/ChatActivity$130;->val$x:F
 
-    .line 30264
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$130;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
+    iget v8, p0, Lorg/telegram/ui/ChatActivity$130;->val$y:F
 
-    new-instance v2, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda0;
+    iget-object v9, p0, Lorg/telegram/ui/ChatActivity$130;->val$visibleReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    invoke-direct {v2, v1, p1, p2, p3}, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
+    new-instance v1, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda1;
 
-    const-wide/16 p1, 0x32
+    move-object v2, v1
 
-    invoke-static {v2, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+    move-object v3, p0
 
-    .line 30267
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ChatActivity$130;IZLorg/telegram/ui/Components/ReactionsContainerLayout;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47600(Lorg/telegram/ui/ChatActivity;)I
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ChatActivity;->doOnIdle(Ljava/lang/Runnable;)V
 
-    move-result p1
+    goto :goto_0
 
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0, v0}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
-
+    .line 28565
     :cond_0
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$130;->val$primaryMessage:Lorg/telegram/messenger/MessageObject;
+
+    new-instance v2, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda2;
+
+    invoke-direct {v2, p0, v1}, Lorg/telegram/ui/ChatActivity$130$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ChatActivity$130;Lorg/telegram/messenger/MessageObject;)V
+
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/ChatActivity;->doOnIdle(Ljava/lang/Runnable;)V
+
+    .line 28577
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$130;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
+
+    :cond_1
     return-void
 .end method

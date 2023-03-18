@@ -42,7 +42,7 @@ public class UserConfig extends BaseController {
     public int botRatingLoadTime;
     LongSparseArray<SaveToGallerySettingsHelper.DialogException> chanelSaveGalleryExceptions;
     public long clientUserId;
-    private boolean configLoaded;
+    private volatile boolean configLoaded;
     public boolean contactsReimported;
     public int contactsSavedCount;
     private final Lazy<CryptoAccessManager> cryptoAccessManager;
@@ -98,11 +98,11 @@ public class UserConfig extends BaseController {
     }
 
     private void updateUserId() {
-        if (this.clientUserId == this.currentUser.f1633id) {
+        if (this.clientUserId == this.currentUser.f1639id) {
             return;
         }
         synchronized (this.sync) {
-            this.clientUserId = this.currentUser.f1633id;
+            this.clientUserId = this.currentUser.f1639id;
             this.cryptoAccessManager.getValue().onUserChanged();
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.UserConfig$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -207,88 +207,90 @@ public class UserConfig extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$saveConfig$1(boolean z) {
-        synchronized (this.sync) {
-            try {
-                SharedPreferences.Editor edit = getPreferences().edit();
-                if (this.currentAccount == 0) {
-                    edit.putInt("selectedAccount", selectedAccount);
-                }
-                edit.putBoolean("registeredForPush", this.registeredForPush);
-                edit.putInt("lastSendMessageId", this.lastSendMessageId);
-                edit.putInt("contactsSavedCount", this.contactsSavedCount);
-                edit.putInt("lastBroadcastId", this.lastBroadcastId);
-                edit.putInt("lastContactsSyncTime", this.lastContactsSyncTime);
-                edit.putInt("lastHintsSyncTime", this.lastHintsSyncTime);
-                edit.putBoolean("draftsLoaded", this.draftsLoaded);
-                edit.putBoolean("unreadDialogsLoaded", this.unreadDialogsLoaded);
-                edit.putInt("ratingLoadTime", this.ratingLoadTime);
-                edit.putInt("botRatingLoadTime", this.botRatingLoadTime);
-                edit.putBoolean("contactsReimported", this.contactsReimported);
-                edit.putInt("loginTime", this.loginTime);
-                edit.putBoolean("syncContacts", this.syncContacts);
-                edit.putBoolean("suggestContacts", this.suggestContacts);
-                edit.putBoolean("hasSecureData", this.hasSecureData);
-                edit.putBoolean("notificationsSettingsLoaded3", this.notificationsSettingsLoaded);
-                edit.putBoolean("notificationsSignUpSettingsLoaded", this.notificationsSignUpSettingsLoaded);
-                edit.putLong("autoDownloadConfigLoadTime", this.autoDownloadConfigLoadTime);
-                edit.putBoolean("hasValidDialogLoadIds", this.hasValidDialogLoadIds);
-                edit.putInt("sharingMyLocationUntil", this.sharingMyLocationUntil);
-                edit.putInt("lastMyLocationShareTime", this.lastMyLocationShareTime);
-                edit.putBoolean("filtersLoaded", this.filtersLoaded);
-                edit.putStringSet("awaitBillingProductIds", new HashSet(this.awaitBillingProductIds));
-                TLRPC$InputStorePaymentPurpose tLRPC$InputStorePaymentPurpose = this.billingPaymentPurpose;
-                if (tLRPC$InputStorePaymentPurpose != null) {
-                    SerializedData serializedData = new SerializedData(tLRPC$InputStorePaymentPurpose.getObjectSize());
-                    this.billingPaymentPurpose.serializeToStream(serializedData);
-                    edit.putString("billingPaymentPurpose", Base64.encodeToString(serializedData.toByteArray(), 0));
-                    serializedData.cleanup();
-                } else {
-                    edit.remove("billingPaymentPurpose");
-                }
-                edit.putString("premiumGiftsStickerPack", this.premiumGiftsStickerPack);
-                edit.putLong("lastUpdatedPremiumGiftsStickerPack", this.lastUpdatedPremiumGiftsStickerPack);
-                edit.putString("genericAnimationsStickerPack", this.genericAnimationsStickerPack);
-                edit.putLong("lastUpdatedGenericAnimations", this.lastUpdatedGenericAnimations);
-                edit.putInt("6migrateOffsetId", this.migrateOffsetId);
-                if (this.migrateOffsetId != -1) {
-                    edit.putInt("6migrateOffsetDate", this.migrateOffsetDate);
-                    edit.putLong("6migrateOffsetUserId", this.migrateOffsetUserId);
-                    edit.putLong("6migrateOffsetChatId", this.migrateOffsetChatId);
-                    edit.putLong("6migrateOffsetChannelId", this.migrateOffsetChannelId);
-                    edit.putLong("6migrateOffsetAccess", this.migrateOffsetAccess);
-                }
-                TLRPC$TL_help_termsOfService tLRPC$TL_help_termsOfService = this.unacceptedTermsOfService;
-                if (tLRPC$TL_help_termsOfService != null) {
-                    try {
-                        SerializedData serializedData2 = new SerializedData(tLRPC$TL_help_termsOfService.getObjectSize());
-                        this.unacceptedTermsOfService.serializeToStream(serializedData2);
-                        edit.putString("terms", Base64.encodeToString(serializedData2.toByteArray(), 0));
-                        serializedData2.cleanup();
-                    } catch (Exception unused) {
+        if (this.configLoaded) {
+            synchronized (this.sync) {
+                try {
+                    SharedPreferences.Editor edit = getPreferences().edit();
+                    if (this.currentAccount == 0) {
+                        edit.putInt("selectedAccount", selectedAccount);
                     }
-                } else {
-                    edit.remove("terms");
+                    edit.putBoolean("registeredForPush", this.registeredForPush);
+                    edit.putInt("lastSendMessageId", this.lastSendMessageId);
+                    edit.putInt("contactsSavedCount", this.contactsSavedCount);
+                    edit.putInt("lastBroadcastId", this.lastBroadcastId);
+                    edit.putInt("lastContactsSyncTime", this.lastContactsSyncTime);
+                    edit.putInt("lastHintsSyncTime", this.lastHintsSyncTime);
+                    edit.putBoolean("draftsLoaded", this.draftsLoaded);
+                    edit.putBoolean("unreadDialogsLoaded", this.unreadDialogsLoaded);
+                    edit.putInt("ratingLoadTime", this.ratingLoadTime);
+                    edit.putInt("botRatingLoadTime", this.botRatingLoadTime);
+                    edit.putBoolean("contactsReimported", this.contactsReimported);
+                    edit.putInt("loginTime", this.loginTime);
+                    edit.putBoolean("syncContacts", this.syncContacts);
+                    edit.putBoolean("suggestContacts", this.suggestContacts);
+                    edit.putBoolean("hasSecureData", this.hasSecureData);
+                    edit.putBoolean("notificationsSettingsLoaded3", this.notificationsSettingsLoaded);
+                    edit.putBoolean("notificationsSignUpSettingsLoaded", this.notificationsSignUpSettingsLoaded);
+                    edit.putLong("autoDownloadConfigLoadTime", this.autoDownloadConfigLoadTime);
+                    edit.putBoolean("hasValidDialogLoadIds", this.hasValidDialogLoadIds);
+                    edit.putInt("sharingMyLocationUntil", this.sharingMyLocationUntil);
+                    edit.putInt("lastMyLocationShareTime", this.lastMyLocationShareTime);
+                    edit.putBoolean("filtersLoaded", this.filtersLoaded);
+                    edit.putStringSet("awaitBillingProductIds", new HashSet(this.awaitBillingProductIds));
+                    TLRPC$InputStorePaymentPurpose tLRPC$InputStorePaymentPurpose = this.billingPaymentPurpose;
+                    if (tLRPC$InputStorePaymentPurpose != null) {
+                        SerializedData serializedData = new SerializedData(tLRPC$InputStorePaymentPurpose.getObjectSize());
+                        this.billingPaymentPurpose.serializeToStream(serializedData);
+                        edit.putString("billingPaymentPurpose", Base64.encodeToString(serializedData.toByteArray(), 0));
+                        serializedData.cleanup();
+                    } else {
+                        edit.remove("billingPaymentPurpose");
+                    }
+                    edit.putString("premiumGiftsStickerPack", this.premiumGiftsStickerPack);
+                    edit.putLong("lastUpdatedPremiumGiftsStickerPack", this.lastUpdatedPremiumGiftsStickerPack);
+                    edit.putString("genericAnimationsStickerPack", this.genericAnimationsStickerPack);
+                    edit.putLong("lastUpdatedGenericAnimations", this.lastUpdatedGenericAnimations);
+                    edit.putInt("6migrateOffsetId", this.migrateOffsetId);
+                    if (this.migrateOffsetId != -1) {
+                        edit.putInt("6migrateOffsetDate", this.migrateOffsetDate);
+                        edit.putLong("6migrateOffsetUserId", this.migrateOffsetUserId);
+                        edit.putLong("6migrateOffsetChatId", this.migrateOffsetChatId);
+                        edit.putLong("6migrateOffsetChannelId", this.migrateOffsetChannelId);
+                        edit.putLong("6migrateOffsetAccess", this.migrateOffsetAccess);
+                    }
+                    TLRPC$TL_help_termsOfService tLRPC$TL_help_termsOfService = this.unacceptedTermsOfService;
+                    if (tLRPC$TL_help_termsOfService != null) {
+                        try {
+                            SerializedData serializedData2 = new SerializedData(tLRPC$TL_help_termsOfService.getObjectSize());
+                            this.unacceptedTermsOfService.serializeToStream(serializedData2);
+                            edit.putString("terms", Base64.encodeToString(serializedData2.toByteArray(), 0));
+                            serializedData2.cleanup();
+                        } catch (Exception unused) {
+                        }
+                    } else {
+                        edit.remove("terms");
+                    }
+                    SharedConfig.saveConfig();
+                    if (this.tmpPassword != null) {
+                        SerializedData serializedData3 = new SerializedData();
+                        this.tmpPassword.serializeToStream(serializedData3);
+                        edit.putString("tmpPassword", Base64.encodeToString(serializedData3.toByteArray(), 0));
+                        serializedData3.cleanup();
+                    } else {
+                        edit.remove("tmpPassword");
+                    }
+                    if (this.currentUser == null) {
+                        edit.remove("user");
+                    } else if (z) {
+                        SerializedData serializedData4 = new SerializedData();
+                        this.currentUser.serializeToStream(serializedData4);
+                        edit.putString("user", Base64.encodeToString(serializedData4.toByteArray(), 0));
+                        serializedData4.cleanup();
+                    }
+                    edit.commit();
+                } catch (Exception e) {
+                    FileLog.m45e(e);
                 }
-                SharedConfig.saveConfig();
-                if (this.tmpPassword != null) {
-                    SerializedData serializedData3 = new SerializedData();
-                    this.tmpPassword.serializeToStream(serializedData3);
-                    edit.putString("tmpPassword", Base64.encodeToString(serializedData3.toByteArray(), 0));
-                    serializedData3.cleanup();
-                } else {
-                    edit.remove("tmpPassword");
-                }
-                if (this.currentUser == null) {
-                    edit.remove("user");
-                } else if (z) {
-                    SerializedData serializedData4 = new SerializedData();
-                    this.currentUser.serializeToStream(serializedData4);
-                    edit.putString("user", Base64.encodeToString(serializedData4.toByteArray(), 0));
-                    serializedData4.cleanup();
-                }
-                edit.commit();
-            } catch (Exception e) {
-                FileLog.m45e(e);
             }
         }
     }
@@ -309,7 +311,7 @@ public class UserConfig extends BaseController {
         long j;
         synchronized (this.sync) {
             TLRPC$User tLRPC$User = this.currentUser;
-            j = tLRPC$User != null ? tLRPC$User.f1633id : 0L;
+            j = tLRPC$User != null ? tLRPC$User.f1639id : 0L;
         }
         return j;
     }
@@ -520,6 +522,16 @@ public class UserConfig extends BaseController {
         edit.putBoolean("2pinnedDialogsLoaded" + i, z).commit();
     }
 
+    public void clearPinnedDialogsLoaded() {
+        SharedPreferences.Editor edit = getPreferences().edit();
+        for (String str : getPreferences().getAll().keySet()) {
+            if (str.startsWith("2pinnedDialogsLoaded")) {
+                edit.remove(str);
+            }
+        }
+        edit.apply();
+    }
+
     public int getTotalDialogsCount(int i) {
         SharedPreferences preferences = getPreferences();
         StringBuilder sb = new StringBuilder();
@@ -657,5 +669,10 @@ public class UserConfig extends BaseController {
 
     public void setGlobalTtl(int i) {
         this.globalTtl = i;
+    }
+
+    public void clearFilters() {
+        getPreferences().edit().remove("filtersLoaded").apply();
+        this.filtersLoaded = false;
     }
 }

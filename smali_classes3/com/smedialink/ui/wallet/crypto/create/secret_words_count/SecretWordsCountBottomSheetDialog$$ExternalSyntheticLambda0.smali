@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;
 
-    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;->$r8$lambda$TLaRiTeGeI2mh-lyxP4_fziBJ9c(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2, p3}, Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;->$r8$lambda$lUKDr0ufMX4fDKB85oGlfGhQg6Q(Lcom/smedialink/ui/wallet/crypto/create/secret_words_count/SecretWordsCountBottomSheetDialog;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

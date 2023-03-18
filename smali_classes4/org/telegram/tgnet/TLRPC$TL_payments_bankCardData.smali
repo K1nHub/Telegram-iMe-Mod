@@ -31,10 +31,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 23923
+    .line 24027
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 23927
+    .line 24031
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,7 +47,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;
     .locals 1
 
-    .line 23930
+    .line 24034
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -58,7 +58,7 @@
 
     return-object p0
 
-    .line 23932
+    .line 24036
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -84,13 +84,13 @@
 
     throw p0
 
-    .line 23937
+    .line 24041
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;-><init>()V
 
-    .line 23938
+    .line 24042
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -101,14 +101,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 23943
+    .line 24047
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->title:Ljava/lang/String;
 
-    .line 23944
+    .line 24048
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -123,7 +123,7 @@
 
     return-void
 
-    .line 23947
+    .line 24051
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -137,7 +137,7 @@
 
     aput-object v0, p2, v1
 
-    const-string v0, "wrong Vector magic, got %x"
+    const-string/jumbo v0, "wrong Vector magic, got %x"
 
     invoke-static {v0, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -147,7 +147,7 @@
 
     throw p1
 
-    .line 23951
+    .line 24055
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -156,7 +156,7 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 23953
+    .line 24057
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -169,7 +169,7 @@
 
     return-void
 
-    .line 23957
+    .line 24061
     :cond_2
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->open_urls:Ljava/util/ArrayList;
 
@@ -186,29 +186,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 23962
+    .line 24066
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 23963
+    .line 24067
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 23964
+    .line 24068
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 23965
+    .line 24069
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->open_urls:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 23966
+    .line 24070
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -216,7 +216,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 23968
+    .line 24072
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_payments_bankCardData;->open_urls:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

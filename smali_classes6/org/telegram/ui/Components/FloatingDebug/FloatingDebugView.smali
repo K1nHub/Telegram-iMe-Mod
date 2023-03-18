@@ -69,18 +69,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$8JjN16uJd-HfjWCK0zyHFjFgKdA(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;FFLandroid/view/Window;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+.method public static synthetic $r8$lambda$6ewQGBDbMwkMIf6YI3qf83sHyb8(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$showBigMenu$2(FFLandroid/view/Window;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$showFab$7(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9Z188-KpBVq8NBzg2sApuZK_wZc(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+.method public static synthetic $r8$lambda$8JjN16uJd-HfjWCK0zyHFjFgKdA(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;FFLandroid/view/Window;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$showFab$8(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$showBigMenu$2(FFLandroid/view/Window;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method
@@ -93,6 +93,22 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$UmD1ybYWuoH4S57W-dVPcCLHi48()V
+    .locals 0
+
+    invoke-static {}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$getBuiltInDebugItems$6()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$WHujEbmhskWZKfHUEubrxJFXoIA(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$getBuiltInDebugItems$5(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$crUGwUHHZheG5wlvLxau3jQ1pOk(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
     .locals 0
 
@@ -101,34 +117,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jGObr8ceXKIqmuYKPWY96l_J4z4(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$getBuiltInDebugItems$5()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$nFquc-d-VG2ev7Gp3dCQ0d_kb_M(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
-    .locals 0
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$getBuiltInDebugItems$6(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$nMq7iNm1GK6Bd16KFTefZoAAwTY(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$getBuiltInDebugItems$4()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ytsN5ArF8Cr9AVoudggbwxSK_3U()V
-    .locals 0
-
-    invoke-static {}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->lambda$getBuiltInDebugItems$7()V
 
     return-void
 .end method
@@ -364,9 +356,9 @@
     .line 289
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda8;
+    new-instance v0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
@@ -569,7 +561,7 @@
 
     const/16 v0, 0x10
 
-    .line 534
+    .line 527
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -600,7 +592,7 @@
 
     const/16 v0, 0x10
 
-    .line 538
+    .line 531
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -681,9 +673,9 @@
 
     move-result-object v2
 
-    new-instance v3, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda6;
+    new-instance v3, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda5;
 
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
+    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugController$DebugItem;-><init>(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
 
@@ -693,48 +685,21 @@
     :cond_1
     new-instance v1, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugController$DebugItem;
 
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->useLNavigation:Z
-
-    if-eqz v2, :cond_2
-
-    sget v2, Lorg/telegram/messenger/R$string;->AltNavigationDisable:I
-
-    goto :goto_1
-
-    :cond_2
-    sget v2, Lorg/telegram/messenger/R$string;->AltNavigationEnable:I
-
-    :goto_1
-    invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda5;
-
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
-
-    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugController$DebugItem;-><init>(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 499
-    new-instance v1, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugController$DebugItem;
-
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
     const-string v2, "Switch to day theme"
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_3
+    :cond_2
     const-string v2, "Switch to dark theme"
 
-    :goto_2
-    sget-object v3, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;->INSTANCE:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda7;
+    :goto_1
+    sget-object v3, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda6;
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugController$DebugItem;-><init>(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
 
@@ -781,45 +746,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$getBuiltInDebugItems$5()V
-    .locals 1
-
-    .line 493
-    sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->useLNavigation:Z
-
-    xor-int/lit8 v0, v0, 0x1
-
-    sput-boolean v0, Lorg/telegram/messenger/SharedConfig;->useLNavigation:Z
-
-    .line 494
-    invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
-
-    .line 495
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    instance-of v0, v0, Landroid/app/Activity;
-
-    if-eqz v0, :cond_0
-
-    .line 496
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->recreate()V
-
-    :cond_0
-    return-void
-.end method
-
-.method private static synthetic lambda$getBuiltInDebugItems$6(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
+.method private static synthetic lambda$getBuiltInDebugItems$5(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
     .locals 4
 
-    .line 527
+    .line 520
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -861,10 +791,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$getBuiltInDebugItems$7()V
+.method private static synthetic lambda$getBuiltInDebugItems$6()V
     .locals 6
 
-    .line 502
+    .line 495
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "themeconfig"
@@ -879,12 +809,12 @@
 
     const-string v2, "Blue"
 
-    .line 503
+    .line 496
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 504
+    .line 497
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v3
@@ -909,12 +839,12 @@
 
     const-string v4, "Dark Blue"
 
-    .line 507
+    .line 500
     invoke-interface {v0, v3, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 508
+    .line 501
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v3
@@ -934,20 +864,20 @@
     :cond_2
     move-object v0, v4
 
-    .line 511
+    .line 504
     :cond_3
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v3
 
-    .line 512
+    .line 505
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_5
 
-    .line 513
+    .line 506
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isDark()Z
 
     move-result v3
@@ -979,7 +909,7 @@
     :cond_6
     move-object v2, v1
 
-    .line 520
+    .line 513
     :goto_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
@@ -987,20 +917,20 @@
 
     if-nez v0, :cond_7
 
-    .line 521
+    .line 514
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
 
     goto :goto_1
 
-    .line 523
+    .line 516
     :cond_7
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
 
-    .line 526
+    .line 519
     :goto_1
     new-instance v1, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda3;
 
@@ -1334,14 +1264,14 @@
     return-void
 .end method
 
-.method private synthetic lambda$showFab$8(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+.method private synthetic lambda$showFab$7(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 1
 
     const/high16 p1, 0x447a0000    # 1000.0f
 
     div-float/2addr p2, p1
 
-    .line 565
+    .line 558
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     const/16 p3, 0x1c
@@ -1354,7 +1284,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 566
+    .line 559
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1365,17 +1295,17 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 567
+    .line 560
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 568
+    .line 561
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 569
+    .line 562
     iget-object p1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     const/4 p3, 0x0
@@ -1388,7 +1318,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 570
+    .line 563
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -1544,7 +1474,7 @@
 .method public dismiss(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 576
+    .line 569
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -1936,13 +1866,13 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 543
+    .line 536
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 545
+    .line 538
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 546
+    .line 539
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTranslationX()F
@@ -1957,7 +1887,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 547
+    .line 540
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getScaleX()F
@@ -1984,7 +1914,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 548
+    .line 541
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonBackground:Landroid/graphics/drawable/Drawable;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
@@ -2001,7 +1931,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 549
+    .line 542
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonBackground:Landroid/graphics/drawable/Drawable;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
@@ -2018,7 +1948,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
-    .line 550
+    .line 543
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getRight()I
 
     move-result v3
@@ -2029,15 +1959,15 @@
 
     move-result v4
 
-    .line 549
+    .line 542
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 551
+    .line 544
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 552
+    .line 545
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -2371,14 +2301,14 @@
 .method public showFab()V
     .locals 3
 
-    .line 556
+    .line 549
     iget-object v0, p0, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 558
+    .line 551
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v1, Landroidx/dynamicanimation/animation/FloatValueHolder;
@@ -2397,19 +2327,19 @@
 
     const v2, 0x443b8000    # 750.0f
 
-    .line 560
+    .line 553
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
     const/high16 v2, 0x3f400000    # 0.75f
 
-    .line 561
+    .line 554
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
-    .line 559
+    .line 552
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object v0
@@ -2418,14 +2348,14 @@
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/FloatingDebug/FloatingDebugView;)V
 
-    .line 562
+    .line 555
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object v0
 
     check-cast v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 572
+    .line 565
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     return-void

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1984
+    .line 1991
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/ChatListCell;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,10 +29,10 @@
 .method protected didSelectChatType(ZZ)V
     .locals 0
 
-    .line 1987
+    .line 1994
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setUseThreeLinesLayout(Z)V
 
-    .line 1988
+    .line 1995
     invoke-static {p2}, Lorg/telegram/messenger/SharedConfig;->setDialogsCompactModeEnabled(Z)V
 
     return-void

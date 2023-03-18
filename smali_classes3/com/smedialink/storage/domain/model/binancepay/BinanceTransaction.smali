@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Unsupported;,
+        Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Convert;,
         Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Pay;,
-        Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Convert;
+        Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Unsupported;
     }
 .end annotation
 

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;Landroid/content/Context;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 457
+    .line 459
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$5;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/GroupCreateFinalActivity$5;->val$paint:Landroid/graphics/Paint;
@@ -39,7 +39,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 460
+    .line 462
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$5;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$700(Lorg/telegram/ui/GroupCreateFinalActivity;)Lorg/telegram/ui/Components/BackupImageView;
@@ -76,7 +76,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 461
+    .line 463
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$5;->val$paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x42aa0000    # 85.0f
@@ -113,7 +113,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 462
+    .line 464
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0

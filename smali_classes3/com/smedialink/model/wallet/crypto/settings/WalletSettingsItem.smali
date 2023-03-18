@@ -7,9 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/model/wallet/crypto/settings/WalletSettingsItem$Blockchains;,
+        Lcom/smedialink/model/wallet/crypto/settings/WalletSettingsItem$PinCode;,
         Lcom/smedialink/model/wallet/crypto/settings/WalletSettingsItem$Privacy;,
-        Lcom/smedialink/model/wallet/crypto/settings/WalletSettingsItem$WalletConnect;,
-        Lcom/smedialink/model/wallet/crypto/settings/WalletSettingsItem$PinCode;
+        Lcom/smedialink/model/wallet/crypto/settings/WalletSettingsItem$WalletConnect;
     }
 .end annotation
 

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper$$ExternalSyntheticLambda1;->f$1:Landroid/app/Activity;
 
-    invoke-static {v0, v1}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->$r8$lambda$kccZGVQIcEQBqpsiie_gxE055VQ(Ljava/io/File;Landroid/app/Activity;)V
+    invoke-static {v0, v1}, Lcom/smedialink/utils/helper/wallet/BackupPdfHelper;->$r8$lambda$voDy8ANj8fFykbDImlOlMwkXYjA(Ljava/io/File;Landroid/app/Activity;)V
 
     return-void
 .end method

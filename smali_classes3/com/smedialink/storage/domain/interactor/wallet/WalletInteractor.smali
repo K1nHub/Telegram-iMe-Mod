@@ -169,10 +169,9 @@
 
     if-eqz p2, :cond_4
 
-    .line 64
+    .line 67
     iget-object p2, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;->cryptoPreferenceHelper:Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 67
     invoke-interface {p2}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object p5
@@ -309,7 +308,11 @@
 
     invoke-direct {p2}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getTokenBalance$$inlined$flatMapSuccess$1;-><init>()V
 
-    invoke-virtual {p1, p2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p3, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p3, p2}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p3}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -393,7 +396,11 @@
 
     invoke-direct {v3, v2, p0, p1, p2}, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor$getWalletBalance$$inlined$flatMapError$1;-><init>([Lcom/smedialink/storage/data/network/model/error/IErrorStatus;Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;ZLcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
-    invoke-virtual {v0, v3}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v3}, Lcom/smedialink/storage/domain/utils/extentions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -458,35 +465,31 @@
 
     const/4 v1, 0x1
 
-    if-nez p3, :cond_0
-
-    goto :goto_0
+    if-eqz p3, :cond_0
 
     .line 69
-    :cond_0
     invoke-virtual {p3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->isUnknown()Z
 
     move-result v2
 
-    if-ne v2, v1, :cond_1
+    if-ne v2, v1, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_1
-    :goto_0
+    :cond_0
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     move-object v6, v2
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_2
+    :cond_1
     move-object v6, p3
 
     .line 71
-    :goto_1
+    :goto_0
     iget-object v3, p0, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;->walletRepository:Lcom/smedialink/storage/domain/repository/wallet/WalletRepository;
 
     move v4, p1

@@ -10,18 +10,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$S298N9oY4kr8Acmx60Wwnr4s3TA(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
+.method public static synthetic $r8$lambda$NEUxdtbbyxZMP1_-HO9b0NglnJo(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->addSwipeToRefreshSupportIfNeeded$lambda-3(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->addSwipeToRefreshSupportIfNeeded$lambda$3(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$fvAWKfDjW-Qo6cZ9klnc1ZBQ8qE(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public static synthetic $r8$lambda$jYhDmkGxo-a0gWOJ0z7I2QytxAU(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->init$lambda-2$lambda-1$lambda-0(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->init$lambda$2$lambda$1$lambda$0(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p0
 
@@ -126,16 +126,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    invoke-interface {v0}, Lorg/fork/utils/TabbedViewPagerDelegate;->getSwipeRefreshLayout()Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_1
-    invoke-interface {v0}, Lorg/fork/utils/TabbedViewPagerDelegate;->getSwipeRefreshLayout()Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_0
     if-eqz v0, :cond_2
@@ -152,9 +152,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/material/appbar/AppBarLayout;->addOnOffsetChangedListener(Lcom/google/android/material/appbar/AppBarLayout$OnOffsetChangedListener;)V
 
-    .line 82
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 78
     iput-object v1, p0, Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;->onOffsetChangedListener:Lcom/google/android/material/appbar/AppBarLayout$OnOffsetChangedListener;
 
@@ -162,7 +159,7 @@
     return-void
 .end method
 
-.method private static final addSwipeToRefreshSupportIfNeeded$lambda-3(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
+.method private static final addSwipeToRefreshSupportIfNeeded$lambda$3(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
     .locals 0
 
     if-nez p2, :cond_0
@@ -181,7 +178,7 @@
     return-void
 .end method
 
-.method private static final init$lambda-2$lambda-1$lambda-0(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method private static final init$lambda$2$lambda$1$lambda$0(Lorg/fork/ui/view/CollapsableHeaderTabbedViewPager;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
     const-string p1, "this$0"

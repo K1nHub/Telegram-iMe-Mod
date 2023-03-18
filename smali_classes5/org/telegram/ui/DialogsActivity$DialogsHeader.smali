@@ -22,10 +22,10 @@
 .method public constructor <init>(Lorg/telegram/ui/DialogsActivity;I)V
     .locals 0
 
-    .line 13083
+    .line 13066
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Dialog;-><init>()V
 
-    .line 13084
+    .line 13067
     iput p2, p0, Lorg/telegram/ui/DialogsActivity$DialogsHeader;->headerType:I
 
     return-void

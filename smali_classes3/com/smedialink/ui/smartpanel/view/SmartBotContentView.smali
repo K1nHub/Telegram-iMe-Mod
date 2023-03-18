@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$Companion;,
-        Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$BotResponseType;
+        Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$BotResponseType;,
+        Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$Companion;
     }
 .end annotation
 
@@ -36,10 +36,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$jnwaOgfA9wVPZCIqxOmMyn1DLe0(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$Xd1DGVUa2v4ZYiKVaMr9TYVFFcA(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->_init_$lambda-1(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->_init_$lambda$1(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -104,7 +104,7 @@
     .line 41
     new-instance v0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$listViewLayoutManager$1;
 
-    invoke-direct {v0, p0, p1}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$listViewLayoutManager$1;-><init>(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Landroid/content/Context;)V
+    invoke-direct {v0, p1, p0}, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$listViewLayoutManager$1;-><init>(Landroid/content/Context;Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;)V
 
     iput-object v0, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->listViewLayoutManager:Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
 
@@ -210,7 +210,7 @@
     return-void
 .end method
 
-.method private static final _init_$lambda-1(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
+.method private static final _init_$lambda$1(Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;Landroid/view/View;I)V
     .locals 1
 
     const-string p2, "this$0"
@@ -224,7 +224,7 @@
 
     move-result p2
 
-    if-ge p3, p2, :cond_3
+    if-ge p3, p2, :cond_1
 
     .line 164
     iget-object p0, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->listViewAdapter:Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;
@@ -249,23 +249,17 @@
     const/4 p0, 0x0
 
     :goto_0
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_2
 
-    goto :goto_1
-
-    :cond_1
-    if-nez p1, :cond_2
-
-    goto :goto_1
+    if-eqz p1, :cond_2
 
     .line 165
-    :cond_2
     invoke-interface {p1, p0, p3}, Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;->onTextAnswerSelected(Lcom/smedialink/ui/smartpanel/model/content/TabBotAnswerItem;I)V
 
     goto :goto_1
 
     .line 167
-    :cond_3
+    :cond_1
     iget-object p2, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->listViewAdapter:Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;
 
     invoke-virtual {p2}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;->getMediaContent()Ljava/util/List;
@@ -281,16 +275,14 @@
 
     sub-int/2addr p3, v0
 
-    if-nez p1, :cond_4
-
-    goto :goto_1
+    if-eqz p1, :cond_2
 
     .line 169
-    :cond_4
     iget-object p0, p0, Lcom/smedialink/ui/smartpanel/view/SmartBotContentView;->gifContextProvider:Lcom/smedialink/ui/smartpanel/view/SmartBotContentView$gifContextProvider$1;
 
     invoke-interface {p1, p0, p2, p3}, Lcom/smedialink/ui/smartpanel/SmartBotsView$Listener;->onGifAnswerSelected(Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Ljava/util/List;I)V
 
+    :cond_2
     :goto_1
     return-void
 .end method

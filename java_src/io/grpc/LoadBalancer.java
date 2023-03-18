@@ -134,7 +134,7 @@ public abstract class LoadBalancer {
 
     /* loaded from: classes3.dex */
     public static final class PickResult {
-        private static final PickResult NO_RESULT = new PickResult(null, null, Status.f422OK, false);
+        private static final PickResult NO_RESULT = new PickResult(null, null, Status.f427OK, false);
         private final boolean drop;
         private final Status status;
         private final ClientStreamTracer.Factory streamTracerFactory;
@@ -148,7 +148,7 @@ public abstract class LoadBalancer {
         }
 
         public static PickResult withSubchannel(Subchannel subchannel, ClientStreamTracer.Factory factory) {
-            return new PickResult((Subchannel) Preconditions.checkNotNull(subchannel, "subchannel"), factory, Status.f422OK, false);
+            return new PickResult((Subchannel) Preconditions.checkNotNull(subchannel, "subchannel"), factory, Status.f427OK, false);
         }
 
         public static PickResult withSubchannel(Subchannel subchannel) {

@@ -1341,7 +1341,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "write byte error"
+    const-string/jumbo v0, "write byte error"
 
     .line 194
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -1543,7 +1543,7 @@
 
     if-eqz v0, :cond_6
 
-    const-string v0, "write byte array error"
+    const-string/jumbo v0, "write byte array error"
 
     .line 292
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -1715,7 +1715,7 @@
 
     if-eqz p2, :cond_6
 
-    const-string p2, "write byte array error"
+    const-string/jumbo p2, "write byte array error"
 
     .line 252
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -1973,7 +1973,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "write raw error"
+    const-string/jumbo v0, "write raw error"
 
     .line 160
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -2022,7 +2022,7 @@
 
     if-eqz p2, :cond_1
 
-    const-string p2, "write raw error"
+    const-string/jumbo p2, "write raw error"
 
     .line 175
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -2058,7 +2058,7 @@
 
     if-eqz p2, :cond_0
 
-    const-string p2, "write double error"
+    const-string/jumbo p2, "write double error"
 
     .line 303
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -2107,7 +2107,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "write int32 error"
+    const-string/jumbo v0, "write int32 error"
 
     .line 118
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -2156,7 +2156,7 @@
 
     if-eqz p2, :cond_1
 
-    const-string p2, "write int64 error"
+    const-string/jumbo p2, "write int64 error"
 
     .line 133
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -2179,7 +2179,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "write string null"
+    const-string/jumbo p1, "write string null"
 
     .line 203
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -2217,7 +2217,7 @@
 
     if-eqz v0, :cond_2
 
-    const-string v0, "write string error"
+    const-string/jumbo v0, "write string error"
 
     .line 212
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V

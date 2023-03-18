@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateActivity;)V
     .locals 0
 
-    .line 618
+    .line 622
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$6;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 625
+    .line 629
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result p2
@@ -55,7 +55,7 @@
 
     if-nez p2, :cond_1
 
-    .line 626
+    .line 630
     iget-object p2, p0, Lorg/telegram/ui/GroupCreateActivity$6;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/GroupCreateActivity;->access$000(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -78,7 +78,7 @@
 
     goto :goto_1
 
-    .line 627
+    .line 631
     :cond_1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -102,7 +102,7 @@
 
     if-nez p2, :cond_2
 
-    .line 628
+    .line 632
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$6;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$1900(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
@@ -135,12 +135,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/GroupCreateActivity$SpansContainer;->removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
-    .line 629
+    .line 633
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$6;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$2000(Lorg/telegram/ui/GroupCreateActivity;)V
 
-    .line 630
+    .line 634
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$6;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$2100(Lorg/telegram/ui/GroupCreateActivity;)V

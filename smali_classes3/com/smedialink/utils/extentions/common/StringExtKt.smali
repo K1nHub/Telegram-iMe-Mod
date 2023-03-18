@@ -5,19 +5,37 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStringExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StringExt.kt\ncom/smedialink/utils/extentions/common/StringExtKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,59:1\n1#2:60\n*E\n"
+    value = "SMAP\nStringExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StringExt.kt\ncom/smedialink/utils/extentions/common/StringExtKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,66:1\n1#2:67\n*E\n"
 .end annotation
 
 
 # direct methods
-.method public static final capitalizeOnlyFirstSymbol(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
+.method public static final addTwitterLinks(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
+    .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 64
+    new-instance v0, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v0, p0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    .line 65
+    invoke-static {v0}, Lorg/telegram/messenger/MessageObject;->addTwitterLinks(Landroid/text/Spannable;)V
+
+    return-object v0
+.end method
+
+.method public static final capitalizeOnlyFirstSymbol(Ljava/lang/String;)Ljava/lang/String;
+    .locals 5
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 61
     sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
@@ -60,6 +78,10 @@
 
     move-result-object v3
 
+    const-string v4, "null cannot be cast to non-null type java.lang.String"
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {v3, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
@@ -99,7 +121,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 16
     sget-object v0, Lcom/smedialink/utils/formatter/DateFormatter$DateType;->ISO:Lcom/smedialink/utils/formatter/DateFormatter$DateType;
 
     const/4 v1, 0x0
@@ -124,7 +146,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 13
+    .line 15
     sget-object p1, Lcom/smedialink/utils/formatter/DateFormatter$DateType;->ONLY_DATE:Lcom/smedialink/utils/formatter/DateFormatter$DateType;
 
     :cond_0
@@ -142,7 +164,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    .line 19
     sget-object v0, Lcom/smedialink/utils/formatter/DateFormatter$DateType;->ISO:Lcom/smedialink/utils/formatter/DateFormatter$DateType;
 
     const/4 v1, 0x0
@@ -167,7 +189,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 38
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -176,7 +198,7 @@
 
     goto :goto_0
 
-    .line 39
+    .line 41
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -239,7 +261,7 @@
 
     const/16 p1, 0xc
 
-    .line 35
+    .line 37
     :cond_0
     invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/common/StringExtKt;->shortened(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -261,7 +283,7 @@
 
     const/4 v2, 0x0
 
-    .line 22
+    .line 24
     invoke-static {p0, p1, v0, v1, v2}, Lkotlin/text/StringsKt;->contains$default(Ljava/lang/CharSequence;CZILjava/lang/Object;)Z
 
     move-result v1
@@ -276,12 +298,12 @@
 
     aput-char v3, v2, v0
 
-    .line 23
+    .line 25
     invoke-static {p0, v2}, Lkotlin/text/StringsKt;->trimEnd(Ljava/lang/String;[C)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 25
+    .line 27
     invoke-static {p0}, Lkotlin/text/StringsKt;->last(Ljava/lang/CharSequence;)C
 
     move-result v0
@@ -305,7 +327,7 @@
 
     const/16 p1, 0x2e
 
-    .line 21
+    .line 23
     :cond_0
     invoke-static {p0, p1}, Lcom/smedialink/utils/extentions/common/StringExtKt;->stripZeros(Ljava/lang/String;C)Ljava/lang/String;
 

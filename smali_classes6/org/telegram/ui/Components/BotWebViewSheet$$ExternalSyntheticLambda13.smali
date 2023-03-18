@@ -2,36 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/GenericProvider;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$3:I
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
+    iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/tgnet/TLObject;
+
+    iput p4, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$3:I
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    check-cast p1, Ljava/lang/Void;
+    iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$Vq8DJYIH0s0OyBcG6PtkI7fw2ro(Lorg/telegram/ui/Components/BotWebViewSheet;Ljava/lang/Void;)Ljava/lang/Boolean;
+    iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    move-result-object p1
+    iget v3, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda13;->f$3:I
 
-    return-object p1
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$yAv0OcxvWTSpoFFJyo7o7ujKcWc(Lorg/telegram/ui/Components/BotWebViewSheet;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;I)V
+
+    return-void
 .end method

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->$r8$lambda$QEp86qPfPH5ELksg6ofP-U8qzVM(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;->$r8$lambda$fNvDQ0Jgea6MxfakBzD7-Shhi4I(Lcom/smedialink/ui/catalog/details/ChannelDetailsBottomSheetDialog;I)V
 
     return-void
 .end method

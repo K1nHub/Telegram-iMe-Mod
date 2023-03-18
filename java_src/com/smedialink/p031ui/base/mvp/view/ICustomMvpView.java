@@ -1,6 +1,5 @@
 package com.smedialink.p031ui.base.mvp.view;
 
-import kotlin.jvm.internal.Intrinsics;
 import moxy.MvpDelegate;
 import moxy.MvpDelegateHolder;
 import moxy.MvpView;
@@ -21,25 +20,21 @@ public interface ICustomMvpView<T> extends MvpDelegateHolder, MvpView, KoinCompo
     /* loaded from: classes3.dex */
     public static final class DefaultImpls {
         public static <T> MvpDelegate<T> getMvpDelegate(ICustomMvpView<T> iCustomMvpView) {
-            Intrinsics.checkNotNullParameter(iCustomMvpView, "this");
             return iCustomMvpView.getMMvpDelegate();
         }
 
         public static <T> void onCreateMvpView(ICustomMvpView<T> iCustomMvpView) {
-            Intrinsics.checkNotNullParameter(iCustomMvpView, "this");
             MvpDelegate<T> mvpDelegate = iCustomMvpView.getMvpDelegate();
             if (mvpDelegate != null) {
                 mvpDelegate.onCreate();
             }
             MvpDelegate<T> mvpDelegate2 = iCustomMvpView.getMvpDelegate();
-            if (mvpDelegate2 == null) {
-                return;
+            if (mvpDelegate2 != null) {
+                mvpDelegate2.onAttach();
             }
-            mvpDelegate2.onAttach();
         }
 
         public static <T> void onDestroyMvpView(ICustomMvpView<T> iCustomMvpView) {
-            Intrinsics.checkNotNullParameter(iCustomMvpView, "this");
             MvpDelegate<T> mvpDelegate = iCustomMvpView.getMvpDelegate();
             if (mvpDelegate != null) {
                 mvpDelegate.onDetach();
@@ -49,14 +44,12 @@ public interface ICustomMvpView<T> extends MvpDelegateHolder, MvpView, KoinCompo
                 mvpDelegate2.onDestroyView();
             }
             MvpDelegate<T> mvpDelegate3 = iCustomMvpView.getMvpDelegate();
-            if (mvpDelegate3 == null) {
-                return;
+            if (mvpDelegate3 != null) {
+                mvpDelegate3.onDestroy();
             }
-            mvpDelegate3.onDestroy();
         }
 
         public static <T> Koin getKoin(ICustomMvpView<T> iCustomMvpView) {
-            Intrinsics.checkNotNullParameter(iCustomMvpView, "this");
             return KoinJavaComponent.getKoin();
         }
     }

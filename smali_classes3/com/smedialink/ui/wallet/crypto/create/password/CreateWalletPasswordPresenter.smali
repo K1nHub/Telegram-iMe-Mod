@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletPasswordPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletPasswordPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter\n+ 2 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,70:1\n16#2,3:71\n39#3,6:74\n*S KotlinDebug\n*F\n+ 1 CreateWalletPasswordPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter\n*L\n54#1:71,3\n55#1:74,6\n*E\n"
+    value = "SMAP\nCreateWalletPasswordPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletPasswordPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter\n+ 2 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,70:1\n16#2,3:71\n39#3,8:74\n*S KotlinDebug\n*F\n+ 1 CreateWalletPasswordPresenter.kt\ncom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter\n*L\n54#1:71,3\n55#1:74,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -157,7 +157,7 @@
 .end method
 
 .method public final subscribeOnRxEvents(Ljava/lang/Runnable;)V
-    .locals 3
+    .locals 4
 
     const-string v0, "onEventAction"
 
@@ -200,18 +200,29 @@
 
     invoke-direct {v1, p1}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter$subscribeOnRxEvents$$inlined$subscribeWithErrorHandle$default$1;-><init>(Ljava/lang/Runnable;)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter$subscribeOnRxEvents$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {p1, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter$subscribeOnRxEvents$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v2, 0x0
 
-    invoke-direct {p1, v2}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter$subscribeOnRxEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v2}, Lcom/smedialink/ui/wallet/crypto/create/password/CreateWalletPasswordPresenter$subscribeOnRxEvents$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1

@@ -94,44 +94,38 @@
 
     move-result-object v0
 
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
     const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    const/4 v2, 0x1
 
-    goto :goto_0
+    const/4 v3, 0x0
 
-    :cond_0
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/utils/extentions/common/StringExtKt;->shortened$default(Ljava/lang/String;IILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-static {v0, v2, v3, v1}, Lcom/smedialink/utils/extentions/common/StringExtKt;->shortened$default(Ljava/lang/String;IILjava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    :goto_0
-    if-nez v1, :cond_2
-
     .line 59
+    :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;->resourceManager:Lcom/smedialink/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->wallet_connect_message_sign_address_hidden:I
 
     invoke-interface {v0, v1}, Lcom/smedialink/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    :cond_2
-    return-object v1
+    :cond_1
+    return-object v0
 .end method
 
 

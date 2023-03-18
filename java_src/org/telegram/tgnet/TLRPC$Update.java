@@ -262,6 +262,9 @@ public abstract class TLRPC$Update extends TLObject {
             case -1020437742:
                 tLRPC$TL_updateTheme = new TLRPC$TL_updateDeleteChannelMessages();
                 break;
+            case -856651050:
+                tLRPC$TL_updateTheme = new TLRPC$TL_updateGroupInvitePrivacyForbidden();
+                break;
             case -761649164:
                 tLRPC$TL_updateTheme = new TLRPC$TL_updateChannelMessageForwards();
                 break;
@@ -407,12 +410,12 @@ public abstract class TLRPC$Update extends TLObject {
                     public int flags;
 
                     /* renamed from: id */
-                    public int f1627id;
+                    public int f1633id;
 
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1627id = abstractSerializedData2.readInt32(z2);
+                        this.f1633id = abstractSerializedData2.readInt32(z2);
                         if ((this.flags & 1) != 0) {
                             this.filter = TLRPC$DialogFilter.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
@@ -422,7 +425,7 @@ public abstract class TLRPC$Update extends TLObject {
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
                         abstractSerializedData2.writeInt32(constructor);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt32(this.f1627id);
+                        abstractSerializedData2.writeInt32(this.f1633id);
                         if ((this.flags & 1) != 0) {
                             this.filter.serializeToStream(abstractSerializedData2);
                         }

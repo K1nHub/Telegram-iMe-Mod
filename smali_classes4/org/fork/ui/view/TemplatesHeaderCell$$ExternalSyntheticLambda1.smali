@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/TemplatesHeaderCell$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->$r8$lambda$QD4v3xmT8UriC3Y6cD6SK_j6o00(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/view/TemplatesHeaderCell;->$r8$lambda$2PEeGDedBgXxhYxp3SRrwJoq35c(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;Landroid/view/View;)V
 
     return-void
 .end method

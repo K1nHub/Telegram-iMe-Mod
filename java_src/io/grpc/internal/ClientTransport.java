@@ -5,10 +5,10 @@ import io.grpc.InternalInstrumented;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ClientTransport extends InternalInstrumented<Object> {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface PingCallback {
         void onFailure(Throwable th);
 

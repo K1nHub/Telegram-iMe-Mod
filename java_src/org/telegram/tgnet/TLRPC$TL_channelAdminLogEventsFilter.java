@@ -1,4 +1,6 @@
 package org.telegram.tgnet;
+
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_channelAdminLogEventsFilter extends TLObject {
     public static int constructor = -368018716;
@@ -39,7 +41,7 @@ public class TLRPC$TL_channelAdminLogEventsFilter extends TLObject {
         this.edit = (readInt32 & 4096) != 0;
         this.delete = (readInt32 & 8192) != 0;
         this.group_call = (readInt32 & 16384) != 0;
-        this.invites = (readInt32 & 32768) != 0;
+        this.invites = (readInt32 & LiteMode.FLAG_CHAT_SCALE) != 0;
     }
 
     @Override // org.telegram.tgnet.TLObject
@@ -75,7 +77,7 @@ public class TLRPC$TL_channelAdminLogEventsFilter extends TLObject {
         this.flags = i14;
         int i15 = this.group_call ? i14 | 16384 : i14 & (-16385);
         this.flags = i15;
-        int i16 = this.invites ? i15 | 32768 : i15 & (-32769);
+        int i16 = this.invites ? i15 | LiteMode.FLAG_CHAT_SCALE : i15 & (-32769);
         this.flags = i16;
         abstractSerializedData.writeInt32(i16);
     }

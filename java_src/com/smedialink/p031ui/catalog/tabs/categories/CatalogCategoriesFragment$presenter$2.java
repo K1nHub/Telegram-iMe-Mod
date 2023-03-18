@@ -28,11 +28,11 @@ public final class CatalogCategoriesFragment$presenter$2 extends Lambda implemen
     /* compiled from: CatalogCategoriesFragment.kt */
     /* renamed from: com.smedialink.ui.catalog.tabs.categories.CatalogCategoriesFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C18021 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C18781 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ ChatType $chatType;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C18021(ChatType chatType) {
+        C18781(ChatType chatType) {
             super(0);
             this.$chatType = chatType;
         }
@@ -47,7 +47,7 @@ public final class CatalogCategoriesFragment$presenter$2 extends Lambda implemen
     @Override // kotlin.jvm.functions.Function0
     public final CatalogCategoriesPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1801xadaf5059(this.this$0, null, new C18021(this.$chatType)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1877xadaf5059(this.this$0, null, new C18781(this.$chatType)));
         return (CatalogCategoriesPresenter) lazy.getValue();
     }
 }

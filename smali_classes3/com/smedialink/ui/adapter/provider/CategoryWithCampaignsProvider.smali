@@ -356,16 +356,16 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onSaveInstanceState()Landroid/os/Parcelable;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->onSaveInstanceState()Landroid/os/Parcelable;
-
-    move-result-object p1
+    const/4 p1, 0x0
 
     :goto_0
     invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

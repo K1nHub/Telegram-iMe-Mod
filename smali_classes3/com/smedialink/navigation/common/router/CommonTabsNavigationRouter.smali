@@ -15,7 +15,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCommonTabsNavigationRouter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CommonTabsNavigationRouter.kt\ncom/smedialink/navigation/common/router/CommonTabsNavigationRouter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,33:1\n1547#2:34\n1618#2,3:35\n*S KotlinDebug\n*F\n+ 1 CommonTabsNavigationRouter.kt\ncom/smedialink/navigation/common/router/CommonTabsNavigationRouter\n*L\n17#1:34\n17#1:35,3\n*E\n"
+    value = "SMAP\nCommonTabsNavigationRouter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CommonTabsNavigationRouter.kt\ncom/smedialink/navigation/common/router/CommonTabsNavigationRouter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,33:1\n1549#2:34\n1620#2,3:35\n*S KotlinDebug\n*F\n+ 1 CommonTabsNavigationRouter.kt\ncom/smedialink/navigation/common/router/CommonTabsNavigationRouter\n*L\n17#1:34\n17#1:35,3\n*E\n"
 .end annotation
 
 
@@ -73,7 +73,7 @@
 
     move-result-object v1
 
-    .line 1547
+    .line 1549
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -84,7 +84,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -100,7 +100,7 @@
 
     move-result-object v3
 
-    .line 1619
+    .line 1621
     check-cast v3, Lcom/smedialink/model/common/NavigationTab;
 
     .line 18
@@ -130,14 +130,12 @@
     .line 20
     invoke-virtual {v3}, Lcom/smedialink/ui/base/mvp/MvpFragment;->onViewCreated()V
 
-    .line 21
-    sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 18
     invoke-static {v4, v3}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v3
 
+    .line 1621
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

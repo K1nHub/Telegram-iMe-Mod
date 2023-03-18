@@ -13,7 +13,7 @@ public final /* synthetic */ class DataUsage2Activity$ListView$$ExternalSyntheti
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
         int lambda$setup$2;
-        lambda$setup$2 = DataUsage2Activity.C5319ListView.lambda$setup$2((DataUsage2Activity.C5319ListView.Size) obj, (DataUsage2Activity.C5319ListView.Size) obj2);
+        lambda$setup$2 = DataUsage2Activity.C5456ListView.lambda$setup$2((DataUsage2Activity.C5456ListView.Size) obj, (DataUsage2Activity.C5456ListView.Size) obj2);
         return lambda$setup$2;
     }
 }

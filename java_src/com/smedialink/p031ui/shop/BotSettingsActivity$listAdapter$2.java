@@ -19,6 +19,6 @@ final class BotSettingsActivity$listAdapter$2 extends Lambda implements Function
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final BotSettingsActivity.ListAdapter invoke() {
-        return new BotSettingsActivity.ListAdapter(this.this$0);
+        return new BotSettingsActivity.ListAdapter();
     }
 }

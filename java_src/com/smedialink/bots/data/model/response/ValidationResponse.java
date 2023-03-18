@@ -35,7 +35,7 @@ public final class ValidationResponse {
         }
         if (obj instanceof ValidationResponse) {
             ValidationResponse validationResponse = (ValidationResponse) obj;
-            return Intrinsics.areEqual(this.tag, validationResponse.tag) && Intrinsics.areEqual(Float.valueOf(this.probability), Float.valueOf(validationResponse.probability));
+            return Intrinsics.areEqual(this.tag, validationResponse.tag) && Float.compare(this.probability, validationResponse.probability) == 0;
         }
         return false;
     }
@@ -46,7 +46,7 @@ public final class ValidationResponse {
     }
 
     public String toString() {
-        return "ValidationResponse(tag=" + ((Object) this.tag) + ", probability=" + this.probability + ')';
+        return "ValidationResponse(tag=" + this.tag + ", probability=" + this.probability + ')';
     }
 
     public ValidationResponse(String str, float f) {

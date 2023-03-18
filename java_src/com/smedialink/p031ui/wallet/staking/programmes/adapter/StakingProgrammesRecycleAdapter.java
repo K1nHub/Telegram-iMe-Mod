@@ -15,26 +15,32 @@ import com.smedialink.p031ui.adapter.provider.StakingProgrammeProvider;
 import com.smedialink.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: StakingProgrammesRecycleAdapter.kt */
 /* renamed from: com.smedialink.ui.wallet.staking.programmes.adapter.StakingProgrammesRecycleAdapter */
 /* loaded from: classes3.dex */
 public final class StakingProgrammesRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final FilterProvider filterProvider;
+    private final HeaderWithRightButtonProvider headerWithRightButtonProvider;
 
     public final FilterProvider getFilterProvider() {
         return this.filterProvider;
     }
 
+    public final HeaderWithRightButtonProvider getHeaderWithRightButtonProvider() {
+        return this.headerWithRightButtonProvider;
+    }
+
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public StakingProgrammesRecycleAdapter(GlobalStateProvider globalStateProvider, HeaderWithRightButtonProvider headerWithRightButtonProvider, StakingProgrammeProvider stakingProgrammeProvider, FilterProvider filterProvider) {
+    public StakingProgrammesRecycleAdapter(GlobalStateProvider globalStateProvider, StakingProgrammeProvider stakingProgrammeProvider, FilterProvider filterProvider, HeaderWithRightButtonProvider headerWithRightButtonProvider) {
         super(null, 1, null);
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
-        Intrinsics.checkNotNullParameter(headerWithRightButtonProvider, "headerWithRightButtonProvider");
         Intrinsics.checkNotNullParameter(stakingProgrammeProvider, "stakingProgrammeProvider");
         Intrinsics.checkNotNullParameter(filterProvider, "filterProvider");
+        Intrinsics.checkNotNullParameter(headerWithRightButtonProvider, "headerWithRightButtonProvider");
         this.filterProvider = filterProvider;
-        addChildClickViewIds(C3158R.C3161id.image_header_right_button, C3158R.C3161id.image_staking_filters_info);
+        this.headerWithRightButtonProvider = headerWithRightButtonProvider;
+        addChildClickViewIds(C3286R.C3289id.image_header_right_button, C3286R.C3289id.image_info);
         addItemProvider(BaseQuickAdapterExtKt.asItem(globalStateProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(headerWithRightButtonProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(filterProvider));

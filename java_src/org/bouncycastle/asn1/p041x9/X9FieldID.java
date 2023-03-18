@@ -12,7 +12,7 @@ import org.bouncycastle.asn1.DERSequence;
 public class X9FieldID extends ASN1Object implements X9ObjectIdentifiers {
 
     /* renamed from: id */
-    private ASN1ObjectIdentifier f1235id;
+    private ASN1ObjectIdentifier f1240id;
     private ASN1Primitive parameters;
 
     public X9FieldID(int i, int i2) {
@@ -20,7 +20,7 @@ public class X9FieldID extends ASN1Object implements X9ObjectIdentifiers {
     }
 
     public X9FieldID(int i, int i2, int i3, int i4) {
-        this.f1235id = X9ObjectIdentifiers.characteristic_two_field;
+        this.f1240id = X9ObjectIdentifiers.characteristic_two_field;
         ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
         aSN1EncodableVector.add(new ASN1Integer(i));
         if (i3 == 0) {
@@ -43,14 +43,14 @@ public class X9FieldID extends ASN1Object implements X9ObjectIdentifiers {
     }
 
     public X9FieldID(BigInteger bigInteger) {
-        this.f1235id = X9ObjectIdentifiers.prime_field;
+        this.f1240id = X9ObjectIdentifiers.prime_field;
         this.parameters = new ASN1Integer(bigInteger);
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
     public ASN1Primitive toASN1Primitive() {
         ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
-        aSN1EncodableVector.add(this.f1235id);
+        aSN1EncodableVector.add(this.f1240id);
         aSN1EncodableVector.add(this.parameters);
         return new DERSequence(aSN1EncodableVector);
     }

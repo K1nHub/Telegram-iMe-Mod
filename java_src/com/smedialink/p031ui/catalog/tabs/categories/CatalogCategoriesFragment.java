@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -162,7 +161,6 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
         CatalogCampaignsByCategoriesRecycleAdapter campaignsRecycleAdapter = getCampaignsRecycleAdapter();
         campaignsRecycleAdapter.setDiffCallback(new CampaignsByCategoriesDiffCallback());
         setupLoadMore(campaignsRecycleAdapter);
-        Unit unit = Unit.INSTANCE;
         recyclerView.setAdapter(campaignsRecycleAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
     }
@@ -173,14 +171,13 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
         loadMoreModule.setOnLoadMoreListener(new OnLoadMoreListener() { // from class: com.smedialink.ui.catalog.tabs.categories.CatalogCategoriesFragment$$ExternalSyntheticLambda3
             @Override // com.chad.library.adapter.base.listener.OnLoadMoreListener
             public final void onLoadMore() {
-                CatalogCategoriesFragment.m1429setupLoadMore$lambda5$lambda4(CatalogCategoriesFragment.this);
+                CatalogCategoriesFragment.setupLoadMore$lambda$5$lambda$4(CatalogCategoriesFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupLoadMore$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1429setupLoadMore$lambda5$lambda4(CatalogCategoriesFragment this$0) {
+    public static final void setupLoadMore$lambda$5$lambda$4(CatalogCategoriesFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().loadChannels(true);
     }
@@ -197,40 +194,38 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
         campaignsRecycleAdapter.getFilterProvider().setOnFilterClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.catalog.tabs.categories.CatalogCategoriesFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                CatalogCategoriesFragment.m1426setupListeners$lambda10$lambda8(CatalogCategoriesFragment.this, campaignsRecycleAdapter, baseQuickAdapter, view, i);
+                CatalogCategoriesFragment.setupListeners$lambda$10$lambda$8(CatalogCategoriesFragment.this, campaignsRecycleAdapter, baseQuickAdapter, view, i);
             }
         });
         campaignsRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.catalog.tabs.categories.CatalogCategoriesFragment$$ExternalSyntheticLambda2
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                CatalogCategoriesFragment.m1427setupListeners$lambda10$lambda9(CatalogCampaignsByCategoriesRecycleAdapter.this, this, baseQuickAdapter, view, i);
+                CatalogCategoriesFragment.setupListeners$lambda$10$lambda$9(CatalogCampaignsByCategoriesRecycleAdapter.this, this, baseQuickAdapter, view, i);
             }
         });
         getBinding().getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.catalog.tabs.categories.CatalogCategoriesFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                CatalogCategoriesFragment.m1428setupListeners$lambda12$lambda11(CatalogCategoriesFragment.this);
+                CatalogCategoriesFragment.setupListeners$lambda$12$lambda$11(CatalogCategoriesFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-10$lambda-8  reason: not valid java name */
-    public static final void m1426setupListeners$lambda10$lambda8(CatalogCategoriesFragment this$0, CatalogCampaignsByCategoriesRecycleAdapter this_with, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$10$lambda$8(CatalogCategoriesFragment this$0, CatalogCampaignsByCategoriesRecycleAdapter this_with, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         this$0.getPresenter().onCategorySelected(this_with.getFilterProvider().getFiltersRecycleAdapter().getItem(i).getId());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-10$lambda-9  reason: not valid java name */
-    public static final void m1427setupListeners$lambda10$lambda9(CatalogCampaignsByCategoriesRecycleAdapter this_with, CatalogCategoriesFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$10$lambda$9(CatalogCampaignsByCategoriesRecycleAdapter this_with, CatalogCategoriesFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         if (baseNode instanceof CampaignItem) {
             this$0.getPresenter().onChannelClick((CampaignItem) baseNode);
@@ -238,8 +233,7 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m1428setupListeners$lambda12$lambda11(CatalogCategoriesFragment this$0) {
+    public static final void setupListeners$lambda$12$lambda$11(CatalogCategoriesFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         CatalogCategoriesPresenter.reloadChannels$default(this$0.getPresenter(), false, false, 3, null);
     }

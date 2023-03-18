@@ -7,7 +7,6 @@ import com.smedialink.bots.data.model.network.Response;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
 import java.util.List;
-import java.util.Objects;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BotsDao.kt */
 /* loaded from: classes3.dex */
@@ -54,10 +53,8 @@ public abstract class BotsDao {
 
     public void saveRatings(Response<List<BotVoteInfo>> response) {
         Intrinsics.checkNotNullParameter(response, "response");
-        String status = response.getStatus();
-        Objects.requireNonNull(status, "null cannot be cast to non-null type java.lang.String");
-        String lowerCase = status.toLowerCase();
-        Intrinsics.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase()");
+        String lowerCase = response.getStatus().toLowerCase();
+        Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase()");
         if (Intrinsics.areEqual(lowerCase, "ok")) {
             for (BotVoteInfo botVoteInfo : response.getPayload()) {
                 saveOwnRating(botVoteInfo.getName(), Integer.parseInt(botVoteInfo.getRating()));

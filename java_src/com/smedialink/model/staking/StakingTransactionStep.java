@@ -3,7 +3,7 @@ package com.smedialink.model.staking;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: StakingTransactionStep.kt */
 /* loaded from: classes3.dex */
 public abstract class StakingTransactionStep {
@@ -32,7 +32,7 @@ public abstract class StakingTransactionStep {
         public static final Loading INSTANCE = new Loading();
 
         private Loading() {
-            super(C3158R.string.staking_action_button_loading, null);
+            super(C3286R.string.staking_action_button_loading, null);
         }
     }
 
@@ -42,7 +42,7 @@ public abstract class StakingTransactionStep {
         public static final RetryLoading INSTANCE = new RetryLoading();
 
         private RetryLoading() {
-            super(C3158R.string.staking_action_button_try_again, null);
+            super(C3286R.string.staking_action_button_try_again, null);
         }
     }
 
@@ -52,7 +52,7 @@ public abstract class StakingTransactionStep {
         public static final ApprovalProcessing INSTANCE = new ApprovalProcessing();
 
         private ApprovalProcessing() {
-            super(C3158R.string.wallet_swap_process_button_approving, null);
+            super(C3286R.string.wallet_swap_process_button_approving, null);
         }
     }
 
@@ -62,7 +62,7 @@ public abstract class StakingTransactionStep {
         public static final Prepare INSTANCE = new Prepare();
 
         private Prepare() {
-            super(C3158R.string.wallet_amount_button_calculate, null);
+            super(C3286R.string.wallet_amount_button_calculate, null);
         }
     }
 
@@ -104,7 +104,7 @@ public abstract class StakingTransactionStep {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ApprovalNeeded(String tokenTicker) {
-            super(C3158R.string.staking_approve_token, null);
+            super(C3286R.string.staking_approve_token, null);
             Intrinsics.checkNotNullParameter(tokenTicker, "tokenTicker");
             this.tokenTicker = tokenTicker;
         }
@@ -165,15 +165,15 @@ public abstract class StakingTransactionStep {
                 r2 = this;
                 int r0 = org.telegram.p048ui.ManageLinksActivity.STAKING_REPLENISH_SCREEN_TYPE
                 if (r3 != r0) goto L7
-                int r0 = org.telegram.messenger.C3158R.string.wallet_operation_deposit
+                int r0 = org.telegram.messenger.C3286R.string.wallet_operation_deposit
                 goto L10
             L7:
                 int r0 = org.telegram.p048ui.ManageLinksActivity.STAKING_PROFIT_SCREEN_TYPE
                 if (r3 != r0) goto Le
-                int r0 = org.telegram.messenger.C3158R.string.staking_profit_get
+                int r0 = org.telegram.messenger.C3286R.string.staking_profit_get
                 goto L10
             Le:
-                int r0 = org.telegram.messenger.C3158R.string.staking_details_withdraw
+                int r0 = org.telegram.messenger.C3286R.string.staking_details_withdraw
             L10:
                 r1 = 0
                 r2.<init>(r0, r1)

@@ -18,8 +18,6 @@ import com.smedialink.utils.extentions.delegate.ResettableLazy;
 import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
 import java.util.ArrayList;
-import java.util.Objects;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -28,11 +26,11 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.fork.controller.ToolsController;
 import org.fork.enums.SentMessageFont;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.RadioColorCell;
@@ -117,21 +115,21 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
 
     private final String getHint(int i) {
         if (i == this.sendPopupTranslateRow) {
-            return LocaleController.getInternalString(C3158R.string.settings_tools_send_popup_translate_hint);
+            return LocaleController.getInternalString(C3286R.string.settings_tools_send_popup_translate_hint);
         }
         if (i == this.messagesSilentSendingRow) {
-            return LocaleController.getInternalString(C3158R.string.settings_tools_silent_sending);
+            return LocaleController.getInternalString(C3286R.string.settings_tools_silent_sending);
         }
         if (i == this.combineMessagesRow) {
-            return LocaleController.getInternalString(C3158R.string.settings_tools_combine_messages_hint);
+            return LocaleController.getInternalString(C3286R.string.settings_tools_combine_messages_hint);
         }
         return null;
     }
 
     private final AlertDialog createChooseSentMessageFontDialog(Context context) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3158R.string.settings_tools_sent_message_font));
-        builder.setNegativeButton(LocaleController.getInternalString(C3158R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3286R.string.settings_tools_sent_message_font));
+        builder.setNegativeButton(LocaleController.getInternalString(C3286R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         SentMessageFont[] values = SentMessageFont.values();
@@ -146,10 +144,9 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.fragment.SettingsToolsMessageActivity$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SettingsToolsMessageActivity.m2076createChooseSentMessageFontDialog$lambda7$lambda6$lambda5(SettingsToolsMessageActivity.this, builder, view);
+                    SettingsToolsMessageActivity.createChooseSentMessageFontDialog$lambda$7$lambda$6$lambda$5(SettingsToolsMessageActivity.this, builder, view);
                 }
             });
-            Unit unit = Unit.INSTANCE;
             linearLayout.addView(radioColorCell);
         }
         AlertDialog create = builder.setView(linearLayout).create();
@@ -158,13 +155,12 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createChooseSentMessageFontDialog$lambda-7$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m2076createChooseSentMessageFontDialog$lambda7$lambda6$lambda5(SettingsToolsMessageActivity this$0, AlertDialog.Builder builder, View view) {
+    public static final void createChooseSentMessageFontDialog$lambda$7$lambda$6$lambda$5(SettingsToolsMessageActivity this$0, AlertDialog.Builder builder, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(builder, "$builder");
         Intrinsics.checkNotNullParameter(view, "view");
         Object tag = view.getTag();
-        Objects.requireNonNull(tag, "null cannot be cast to non-null type org.fork.enums.SentMessageFont");
+        Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type org.fork.enums.SentMessageFont");
         SentMessageFont sentMessageFont = (SentMessageFont) tag;
         if (sentMessageFont == this$0.getToolsController().getSelectedSentMessageFont()) {
             return;
@@ -178,8 +174,7 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
     private final void showHintDialog(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setMessage(str);
-        builder.setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), null);
-        Unit unit = Unit.INSTANCE;
+        builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -202,15 +197,14 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                SettingsToolsMessageActivity.m2077initListView$lambda12$lambda11(SettingsToolsMessageActivity.this, view, i, f, f2);
+                SettingsToolsMessageActivity.initListView$lambda$12$lambda$11(SettingsToolsMessageActivity.this, view, i, f, f2);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m2077initListView$lambda12$lambda11(final SettingsToolsMessageActivity this$0, View view, final int i, float f, float f2) {
+    public static final void initListView$lambda$12$lambda$11(final SettingsToolsMessageActivity this$0, View view, final int i, float f, float f2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
             String hint = this$0.getHint(i);
@@ -238,32 +232,31 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
             this$0.showDialog(this$0.createChooseSentMessageFontDialog(parentActivity), new DialogInterface.OnDismissListener() { // from class: org.fork.ui.fragment.SettingsToolsMessageActivity$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    SettingsToolsMessageActivity.m2078initListView$lambda12$lambda11$lambda10(SettingsToolsMessageActivity.this, i, dialogInterface);
+                    SettingsToolsMessageActivity.initListView$lambda$12$lambda$11$lambda$10(SettingsToolsMessageActivity.this, i, dialogInterface);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-12$lambda-11$lambda-10  reason: not valid java name */
-    public static final void m2078initListView$lambda12$lambda11$lambda10(SettingsToolsMessageActivity this$0, int i, DialogInterface dialogInterface) {
+    public static final void initListView$lambda$12$lambda$11$lambda$10(SettingsToolsMessageActivity this$0, int i, DialogInterface dialogInterface) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getListAdapter().notifyItemChanged(i);
     }
 
     private final void setupActionBar() {
         String internalString;
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        if (getPosition() == 0) {
-            internalString = LocaleController.getInternalString(C3158R.string.settings_tools_translator);
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        if (this.position == 0) {
+            internalString = LocaleController.getInternalString(C3286R.string.settings_tools_translator);
         } else {
-            internalString = LocaleController.getInternalString(C3158R.string.sending_settings_send);
+            internalString = LocaleController.getInternalString(C3286R.string.sending_settings_send);
         }
-        c3222ActionBar.setTitle(internalString);
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsMessageActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        c3351ActionBar.setTitle(internalString);
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SettingsToolsMessageActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsMessageActivity.this.finishFragment();
@@ -277,22 +270,18 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
     /* renamed from: org.fork.ui.fragment.SettingsToolsMessageActivity$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ SettingsToolsMessageActivity this$0;
-
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return true;
         }
 
-        public ListAdapter(SettingsToolsMessageActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
             updateRows();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == this.this$0.sentMessageTextFont ? IdFabric$ViewTypes.TEXT_SETTINGS : IdFabric$ViewTypes.TEXT_CHECK;
+            return i == SettingsToolsMessageActivity.this.sentMessageTextFont ? IdFabric$ViewTypes.TEXT_SETTINGS : IdFabric$ViewTypes.TEXT_CHECK;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -300,25 +289,21 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
             TextCell textCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.TEXT) {
-                TextCell textCell2 = new TextCell(this.this$0.getParentActivity());
+                TextCell textCell2 = new TextCell(SettingsToolsMessageActivity.this.getParentActivity());
                 textCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit = Unit.INSTANCE;
                 textCell = textCell2;
             } else if (i == IdFabric$ViewTypes.TEXT_SETTINGS) {
-                TextSettingsCell textSettingsCell = new TextSettingsCell(this.this$0.getContext());
+                TextSettingsCell textSettingsCell = new TextSettingsCell(SettingsToolsMessageActivity.this.getContext());
                 textSettingsCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit2 = Unit.INSTANCE;
                 textCell = textSettingsCell;
             } else if (i == IdFabric$ViewTypes.TEXT_CHECK) {
-                View textCheckCell = new TextCheckCell(this.this$0.getContext());
+                View textCheckCell = new TextCheckCell(SettingsToolsMessageActivity.this.getContext());
                 textCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit3 = Unit.INSTANCE;
                 textCell = textCheckCell;
             } else {
-                textCell = new ShadowSectionCell(this.this$0.getContext());
+                textCell = new ShadowSectionCell(SettingsToolsMessageActivity.this.getContext());
             }
             textCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit4 = Unit.INSTANCE;
             return new RecyclerListView.Holder(textCell);
         }
 
@@ -331,61 +316,61 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
-                textCheckCell.setDrawSwitchDivider(this.this$0.hasHint(i));
-                if (i == this.this$0.messageQuickTranslateRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.settings_tools_message_quick_translate), SharedConfig.isMessageQuickTranslateEnabled, z);
-                } else if (i == this.this$0.botHelpTranslateRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.settings_tools_bot_help_translate), SharedConfig.isBotHelpTranslateEnabled, z);
-                } else if (i == this.this$0.sendPopupTranslateRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.settings_tools_send_popup_translate), SharedConfig.isTranslateInSendPopupEnabled, z);
-                } else if (i == this.this$0.messagesSilentSendingRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getString("SendWithoutSound", C3158R.string.SendWithoutSound), this.this$0.getToolsController().isSilentSendingEnabled(), z);
-                } else if (i == this.this$0.combineMessagesRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.settings_tools_combine_messages), SharedConfig.isCombineMessagesEnabled, z);
+                textCheckCell.setDrawSwitchDivider(SettingsToolsMessageActivity.this.hasHint(i));
+                if (i == SettingsToolsMessageActivity.this.messageQuickTranslateRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_message_quick_translate), SharedConfig.isMessageQuickTranslateEnabled, z);
+                } else if (i == SettingsToolsMessageActivity.this.botHelpTranslateRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_bot_help_translate), SharedConfig.isBotHelpTranslateEnabled, z);
+                } else if (i == SettingsToolsMessageActivity.this.sendPopupTranslateRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_send_popup_translate), SharedConfig.isTranslateInSendPopupEnabled, z);
+                } else if (i == SettingsToolsMessageActivity.this.messagesSilentSendingRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getString("SendWithoutSound", C3286R.string.SendWithoutSound), SettingsToolsMessageActivity.this.getToolsController().isSilentSendingEnabled(), z);
+                } else if (i == SettingsToolsMessageActivity.this.combineMessagesRow) {
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_tools_combine_messages), SharedConfig.isCombineMessagesEnabled, z);
                 }
-            } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS && (view instanceof TextSettingsCell) && i == this.this$0.sentMessageTextFont) {
-                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3158R.string.settings_tools_sent_message_font), this.this$0.getToolsController().getSelectedSentMessageFont().getTitle(), z);
+            } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS && (view instanceof TextSettingsCell) && i == SettingsToolsMessageActivity.this.sentMessageTextFont) {
+                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3286R.string.settings_tools_sent_message_font), SettingsToolsMessageActivity.this.getToolsController().getSelectedSentMessageFont().getTitle(), z);
             }
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return SettingsToolsMessageActivity.this.rowCount;
         }
 
         private final void updateRows() {
-            this.this$0.messageQuickTranslateRow = -1;
-            this.this$0.botHelpTranslateRow = -1;
-            this.this$0.sendPopupTranslateRow = -1;
-            this.this$0.messagesSilentSendingRow = -1;
-            this.this$0.combineMessagesRow = -1;
-            this.this$0.sentMessageTextFont = -1;
-            this.this$0.rowCount = 0;
-            int position = this.this$0.getPosition();
+            SettingsToolsMessageActivity.this.messageQuickTranslateRow = -1;
+            SettingsToolsMessageActivity.this.botHelpTranslateRow = -1;
+            SettingsToolsMessageActivity.this.sendPopupTranslateRow = -1;
+            SettingsToolsMessageActivity.this.messagesSilentSendingRow = -1;
+            SettingsToolsMessageActivity.this.combineMessagesRow = -1;
+            SettingsToolsMessageActivity.this.sentMessageTextFont = -1;
+            SettingsToolsMessageActivity.this.rowCount = 0;
+            int position = SettingsToolsMessageActivity.this.getPosition();
             if (position == 0) {
-                SettingsToolsMessageActivity settingsToolsMessageActivity = this.this$0;
+                SettingsToolsMessageActivity settingsToolsMessageActivity = SettingsToolsMessageActivity.this;
                 int i = settingsToolsMessageActivity.rowCount;
                 settingsToolsMessageActivity.rowCount = i + 1;
                 settingsToolsMessageActivity.messageQuickTranslateRow = i;
-                SettingsToolsMessageActivity settingsToolsMessageActivity2 = this.this$0;
+                SettingsToolsMessageActivity settingsToolsMessageActivity2 = SettingsToolsMessageActivity.this;
                 int i2 = settingsToolsMessageActivity2.rowCount;
                 settingsToolsMessageActivity2.rowCount = i2 + 1;
                 settingsToolsMessageActivity2.botHelpTranslateRow = i2;
-                SettingsToolsMessageActivity settingsToolsMessageActivity3 = this.this$0;
+                SettingsToolsMessageActivity settingsToolsMessageActivity3 = SettingsToolsMessageActivity.this;
                 int i3 = settingsToolsMessageActivity3.rowCount;
                 settingsToolsMessageActivity3.rowCount = i3 + 1;
                 settingsToolsMessageActivity3.sendPopupTranslateRow = i3;
             } else if (position != 2) {
             } else {
-                SettingsToolsMessageActivity settingsToolsMessageActivity4 = this.this$0;
+                SettingsToolsMessageActivity settingsToolsMessageActivity4 = SettingsToolsMessageActivity.this;
                 int i4 = settingsToolsMessageActivity4.rowCount;
                 settingsToolsMessageActivity4.rowCount = i4 + 1;
                 settingsToolsMessageActivity4.messagesSilentSendingRow = i4;
-                SettingsToolsMessageActivity settingsToolsMessageActivity5 = this.this$0;
+                SettingsToolsMessageActivity settingsToolsMessageActivity5 = SettingsToolsMessageActivity.this;
                 int i5 = settingsToolsMessageActivity5.rowCount;
                 settingsToolsMessageActivity5.rowCount = i5 + 1;
                 settingsToolsMessageActivity5.combineMessagesRow = i5;
-                SettingsToolsMessageActivity settingsToolsMessageActivity6 = this.this$0;
+                SettingsToolsMessageActivity settingsToolsMessageActivity6 = SettingsToolsMessageActivity.this;
                 int i6 = settingsToolsMessageActivity6.rowCount;
                 settingsToolsMessageActivity6.rowCount = i6 + 1;
                 settingsToolsMessageActivity6.sentMessageTextFont = i6;

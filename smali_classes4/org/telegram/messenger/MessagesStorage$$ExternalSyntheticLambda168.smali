@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda168;->f$1:Ljava/util/HashMap;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$nPbmqdKvgH0lIH5Kq2KGyrt7vOA(Lorg/telegram/messenger/MessagesStorage;Ljava/util/HashMap;)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$pum5-hdskWuvn4UTtytF_G1iJDw(Lorg/telegram/messenger/MessagesStorage;Ljava/util/HashMap;)V
 
     return-void
 .end method

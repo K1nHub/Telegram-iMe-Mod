@@ -13,14 +13,14 @@ import org.bouncycastle.util.encoders.Hex;
 public class SecP160K1Curve extends ECCurve.AbstractFp {
 
     /* renamed from: q */
-    public static final BigInteger f1322q = SecP160R2Curve.f1327q;
+    public static final BigInteger f1327q = SecP160R2Curve.f1332q;
     protected SecP160K1Point infinity;
 
     public SecP160K1Curve() {
-        super(f1322q);
+        super(f1327q);
         this.infinity = new SecP160K1Point(this, null, null);
-        this.f1302a = fromBigInteger(ECConstants.ZERO);
-        this.f1303b = fromBigInteger(BigInteger.valueOf(7L));
+        this.f1307a = fromBigInteger(ECConstants.ZERO);
+        this.f1308b = fromBigInteger(BigInteger.valueOf(7L));
         this.order = new BigInteger(1, Hex.decode("0100000000000000000001B8FA16DFAB9ACA16B6B3"));
         this.cofactor = BigInteger.valueOf(1L);
         this.coord = 2;
@@ -37,9 +37,9 @@ public class SecP160K1Curve extends ECCurve.AbstractFp {
         int i3 = 0;
         for (int i4 = 0; i4 < i2; i4++) {
             ECPoint eCPoint = eCPointArr[i + i4];
-            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawXCoord()).f1330x, 0, iArr, i3);
+            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawXCoord()).f1335x, 0, iArr, i3);
             int i5 = i3 + 5;
-            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawYCoord()).f1330x, 0, iArr, i5);
+            Nat160.copy(((SecP160R2FieldElement) eCPoint.getRawYCoord()).f1335x, 0, iArr, i5);
             i3 = i5 + 5;
         }
         return new ECLookupTable() { // from class: org.bouncycastle.math.ec.custom.sec.SecP160K1Curve.1
@@ -87,7 +87,7 @@ public class SecP160K1Curve extends ECCurve.AbstractFp {
 
     @Override // org.bouncycastle.math.p043ec.ECCurve
     public int getFieldSize() {
-        return f1322q.bitLength();
+        return f1327q.bitLength();
     }
 
     @Override // org.bouncycastle.math.p043ec.ECCurve

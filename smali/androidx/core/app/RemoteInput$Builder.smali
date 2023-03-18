@@ -42,17 +42,17 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    .line 192
+    .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 179
+    .line 186
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Landroidx/core/app/RemoteInput$Builder;->mAllowedDataTypes:Ljava/util/Set;
 
-    .line 180
+    .line 187
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
@@ -61,22 +61,22 @@
 
     const/4 v0, 0x1
 
-    .line 183
+    .line 190
     iput-boolean v0, p0, Landroidx/core/app/RemoteInput$Builder;->mAllowFreeFormTextInput:Z
 
     const/4 v0, 0x0
 
-    .line 184
+    .line 191
     iput v0, p0, Landroidx/core/app/RemoteInput$Builder;->mEditChoicesBeforeSending:I
 
     if-eqz p1, :cond_0
 
-    .line 196
+    .line 203
     iput-object p1, p0, Landroidx/core/app/RemoteInput$Builder;->mResultKey:Ljava/lang/String;
 
     return-void
 
-    .line 194
+    .line 201
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -92,7 +92,7 @@
 .method public build()Landroidx/core/app/RemoteInput;
     .locals 9
 
-    .line 309
+    .line 316
     new-instance v8, Landroidx/core/app/RemoteInput;
 
     iget-object v1, p0, Landroidx/core/app/RemoteInput$Builder;->mResultKey:Ljava/lang/String;
@@ -119,7 +119,7 @@
 .method public setLabel(Ljava/lang/CharSequence;)Landroidx/core/app/RemoteInput$Builder;
     .locals 0
 
-    .line 207
+    .line 214
     iput-object p1, p0, Landroidx/core/app/RemoteInput$Builder;->mLabel:Ljava/lang/CharSequence;
 
     return-object p0

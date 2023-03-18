@@ -8,18 +8,18 @@ import org.bouncycastle.math.raw.Nat224;
 public class SecP224R1Field {
 
     /* renamed from: P */
-    static final int[] f1344P = {1, 0, 0, -1, -1, -1, -1};
+    static final int[] f1349P = {1, 0, 0, -1, -1, -1, -1};
     static final int[] PExt = {1, 0, 0, -2, -1, -1, 0, 2, 0, 0, -2, -1, -1, -1};
     private static final int[] PExtInv = {-1, -1, -1, 1, 0, 0, -1, -3, -1, -1, 1};
 
     public static void add(int[] iArr, int[] iArr2, int[] iArr3) {
-        if (Nat224.add(iArr, iArr2, iArr3) != 0 || (iArr3[6] == -1 && Nat224.gte(iArr3, f1344P))) {
+        if (Nat224.add(iArr, iArr2, iArr3) != 0 || (iArr3[6] == -1 && Nat224.gte(iArr3, f1349P))) {
             addPInvTo(iArr3);
         }
     }
 
     public static void addOne(int[] iArr, int[] iArr2) {
-        if (Nat.inc(7, iArr, iArr2) != 0 || (iArr2[6] == -1 && Nat224.gte(iArr2, f1344P))) {
+        if (Nat.inc(7, iArr, iArr2) != 0 || (iArr2[6] == -1 && Nat224.gte(iArr2, f1349P))) {
             addPInvTo(iArr2);
         }
     }
@@ -45,7 +45,7 @@ public class SecP224R1Field {
     public static int[] fromBigInteger(BigInteger bigInteger) {
         int[] fromBigInteger = Nat224.fromBigInteger(bigInteger);
         if (fromBigInteger[6] == -1) {
-            int[] iArr = f1344P;
+            int[] iArr = f1349P;
             if (Nat224.gte(fromBigInteger, iArr)) {
                 Nat224.subFrom(iArr, fromBigInteger);
             }
@@ -72,7 +72,7 @@ public class SecP224R1Field {
         if (Nat224.isZero(iArr)) {
             Nat224.zero(iArr2);
         } else {
-            Nat224.sub(f1344P, iArr, iArr2);
+            Nat224.sub(f1349P, iArr, iArr2);
         }
     }
 
@@ -111,7 +111,7 @@ public class SecP224R1Field {
             j18 += j22 >> 32;
         }
         iArr2[3] = (int) j18;
-        if (((j18 >> 32) == 0 || Nat.incAt(7, iArr2, 4) == 0) && !(iArr2[6] == -1 && Nat224.gte(iArr2, f1344P))) {
+        if (((j18 >> 32) == 0 || Nat.incAt(7, iArr2, 4) == 0) && !(iArr2[6] == -1 && Nat224.gte(iArr2, f1349P))) {
             return;
         }
         addPInvTo(iArr2);
@@ -137,7 +137,7 @@ public class SecP224R1Field {
         } else {
             j = 0;
         }
-        if ((j == 0 || Nat.incAt(7, iArr, 4) == 0) && !(iArr[6] == -1 && Nat224.gte(iArr, f1344P))) {
+        if ((j == 0 || Nat.incAt(7, iArr, 4) == 0) && !(iArr[6] == -1 && Nat224.gte(iArr, f1349P))) {
             return;
         }
         addPInvTo(iArr);
@@ -187,7 +187,7 @@ public class SecP224R1Field {
     }
 
     public static void twice(int[] iArr, int[] iArr2) {
-        if (Nat.shiftUpBit(7, iArr, 0, iArr2) != 0 || (iArr2[6] == -1 && Nat224.gte(iArr2, f1344P))) {
+        if (Nat.shiftUpBit(7, iArr, 0, iArr2) != 0 || (iArr2[6] == -1 && Nat224.gte(iArr2, f1349P))) {
             addPInvTo(iArr2);
         }
     }

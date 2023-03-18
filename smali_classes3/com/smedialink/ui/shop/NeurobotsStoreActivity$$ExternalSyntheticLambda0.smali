@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$UkjnxiKl9ScG8LKIkAKrpRYqUGY()V
+    invoke-static {}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->$r8$lambda$-g3yBb_B4LSBa2J2BPNL4KTrENc()V
 
     return-void
 .end method

@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.source.hls.playlist;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -625,7 +625,7 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser<HlsPlayli
         ArrayList arrayList7 = new ArrayList();
         ArrayList arrayList8 = new ArrayList();
         ArrayList arrayList9 = new ArrayList();
-        HlsMediaPlaylist.ServerControl serverControl = new HlsMediaPlaylist.ServerControl(C0474C.TIME_UNSET, false, C0474C.TIME_UNSET, C0474C.TIME_UNSET, false);
+        HlsMediaPlaylist.ServerControl serverControl = new HlsMediaPlaylist.ServerControl(C0468C.TIME_UNSET, false, C0468C.TIME_UNSET, C0468C.TIME_UNSET, false);
         TreeMap treeMap = new TreeMap();
         String str5 = "";
         boolean z2 = false;
@@ -641,13 +641,13 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser<HlsPlayli
         long j12 = 0;
         long j13 = 0;
         int i2 = 0;
-        long j14 = C0474C.TIME_UNSET;
+        long j14 = C0468C.TIME_UNSET;
         boolean z4 = false;
         boolean z5 = false;
         int i3 = 0;
         int i4 = 1;
-        long j15 = C0474C.TIME_UNSET;
-        long j16 = C0474C.TIME_UNSET;
+        long j15 = C0468C.TIME_UNSET;
+        long j16 = C0468C.TIME_UNSET;
         boolean z6 = false;
         DrmInitData drmInitData2 = null;
         DrmInitData drmInitData3 = null;
@@ -1114,7 +1114,7 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser<HlsPlayli
                 j23 = (j7 + arrayList16.size()) - (arrayList10.isEmpty() ? 1L : 0L);
             }
             int i16 = renditionReport.lastPartIndex;
-            if (i16 == -1 && j16 != C0474C.TIME_UNSET) {
+            if (i16 == -1 && j16 != C0468C.TIME_UNSET) {
                 i16 = (arrayList10.isEmpty() ? ((HlsMediaPlaylist.Segment) Iterables.getLast(arrayList16)).parts : arrayList10).size() - 1;
             }
             Uri uri = renditionReport.playlistUri;
@@ -1174,14 +1174,14 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser<HlsPlayli
         String parseOptionalStringAttr = parseOptionalStringAttr(str, REGEX_KEYFORMATVERSIONS, IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, map);
         if (KEYFORMAT_WIDEVINE_PSSH_BINARY.equals(str2)) {
             String parseStringAttr = parseStringAttr(str, REGEX_URI, map);
-            return new DrmInitData.SchemeData(C0474C.WIDEVINE_UUID, MimeTypes.VIDEO_MP4, Base64.decode(parseStringAttr.substring(parseStringAttr.indexOf(44)), 0));
+            return new DrmInitData.SchemeData(C0468C.WIDEVINE_UUID, MimeTypes.VIDEO_MP4, Base64.decode(parseStringAttr.substring(parseStringAttr.indexOf(44)), 0));
         } else if (KEYFORMAT_WIDEVINE_PSSH_JSON.equals(str2)) {
-            return new DrmInitData.SchemeData(C0474C.WIDEVINE_UUID, "hls", Util.getUtf8Bytes(str));
+            return new DrmInitData.SchemeData(C0468C.WIDEVINE_UUID, "hls", Util.getUtf8Bytes(str));
         } else {
             if (KEYFORMAT_PLAYREADY.equals(str2) && IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE.equals(parseOptionalStringAttr)) {
                 String parseStringAttr2 = parseStringAttr(str, REGEX_URI, map);
                 byte[] decode = Base64.decode(parseStringAttr2.substring(parseStringAttr2.indexOf(44)), 0);
-                UUID uuid = C0474C.PLAYREADY_UUID;
+                UUID uuid = C0468C.PLAYREADY_UUID;
                 return new DrmInitData.SchemeData(uuid, MimeTypes.VIDEO_MP4, PsshAtomUtil.buildPsshAtom(uuid, decode));
             }
             return null;
@@ -1190,7 +1190,7 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser<HlsPlayli
 
     private static HlsMediaPlaylist.ServerControl parseServerControl(String str) {
         double parseOptionalDoubleAttr = parseOptionalDoubleAttr(str, REGEX_CAN_SKIP_UNTIL, -9.223372036854776E18d);
-        long j = C0474C.TIME_UNSET;
+        long j = C0468C.TIME_UNSET;
         long j2 = parseOptionalDoubleAttr == -9.223372036854776E18d ? -9223372036854775807L : (long) (parseOptionalDoubleAttr * 1000000.0d);
         boolean parseOptionalBooleanAttribute = parseOptionalBooleanAttribute(str, REGEX_CAN_SKIP_DATE_RANGES, false);
         double parseOptionalDoubleAttr2 = parseOptionalDoubleAttr(str, REGEX_HOLD_BACK, -9.223372036854776E18d);
@@ -1203,7 +1203,7 @@ public final class HlsPlaylistParser implements ParsingLoadable.Parser<HlsPlayli
     }
 
     private static String parseEncryptionScheme(String str) {
-        return (METHOD_SAMPLE_AES_CENC.equals(str) || METHOD_SAMPLE_AES_CTR.equals(str)) ? C0474C.CENC_TYPE_cenc : C0474C.CENC_TYPE_cbcs;
+        return (METHOD_SAMPLE_AES_CENC.equals(str) || METHOD_SAMPLE_AES_CTR.equals(str)) ? C0468C.CENC_TYPE_cenc : C0468C.CENC_TYPE_cbcs;
     }
 
     private static int parseIntAttr(String str, Pattern pattern) throws ParserException {

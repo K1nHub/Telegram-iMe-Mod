@@ -259,21 +259,29 @@
 
     move-result-object v1
 
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-virtual {p1}, Lcom/smedialink/storage/data/network/model/response/kikliko/GifResponse;->getFile()Lcom/smedialink/storage/data/network/model/response/kikliko/GifFileResponse;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lcom/smedialink/storage/data/network/model/response/kikliko/GifFileResponse;->getMp4()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/smedialink/storage/data/network/model/response/kikliko/GifFileResponse;->getMp4()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Lorg/telegram/messenger/Utilities;->MD5(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/messenger/Utilities;->MD5(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v3, ".mp4"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->stringPlus(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 

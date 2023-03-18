@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;)V
     .locals 0
 
-    .line 359
+    .line 361
     iput-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$4;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 362
+    .line 364
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$4;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 363
+    .line 365
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$4;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->access$100(Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;)Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -53,7 +53,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 364
+    .line 366
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$4;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->access$100(Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;)Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -62,12 +62,12 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 365
+    .line 367
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$4;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;->access$102(Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    .line 367
+    .line 369
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay$4;->this$0:Lorg/telegram/ui/Components/Reactions/ChatSelectionReactionMenuOverlay;
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter$$ExternalSyntheticLambda1;->f$0:Lorg/fork/ui/view/ChatAttachAlertWalletLayout;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->$r8$lambda$lldQvJ9zOXDdCSQMCVtpD4dfdFg(Lorg/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2, p3}, Lorg/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->$r8$lambda$tB9TzelXS55t77ZIqPRU3PHrRqM(Lorg/fork/ui/view/ChatAttachAlertWalletLayout;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

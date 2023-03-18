@@ -19,8 +19,7 @@ public final class MusicActivity$musicCountComparator$2 extends Lambda implement
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-0  reason: not valid java name */
-    public static final int m2063invoke$lambda0(MusicActivity this$0, long j, long j2) {
+    public static final int invoke$lambda$0(MusicActivity this$0, long j, long j2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int intValue = ((Number) this$0.countsMap.get(j)).intValue();
         Object obj = this$0.countsMap.get(j2);
@@ -34,9 +33,9 @@ public final class MusicActivity$musicCountComparator$2 extends Lambda implement
         return new Comparator() { // from class: org.fork.ui.fragment.MusicActivity$musicCountComparator$2$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int m2063invoke$lambda0;
-                m2063invoke$lambda0 = MusicActivity$musicCountComparator$2.m2063invoke$lambda0(MusicActivity.this, ((Long) obj).longValue(), ((Long) obj2).longValue());
-                return m2063invoke$lambda0;
+                int invoke$lambda$0;
+                invoke$lambda$0 = MusicActivity$musicCountComparator$2.invoke$lambda$0(MusicActivity.this, ((Long) obj).longValue(), ((Long) obj2).longValue());
+                return invoke$lambda$0;
             }
         };
     }

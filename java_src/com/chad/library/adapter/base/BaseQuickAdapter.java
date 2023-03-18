@@ -290,14 +290,15 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
+        int i = 1;
         if (hasEmptyView()) {
             if (this.headerWithEmptyEnable && hasHeaderLayout()) {
-                r1 = 2;
+                i = 2;
             }
-            return (this.footerWithEmptyEnable && hasFooterLayout()) ? r1 + 1 : r1;
+            return (this.footerWithEmptyEnable && hasFooterLayout()) ? i + 1 : i;
         }
         BaseLoadMoreModule baseLoadMoreModule = this.mLoadMoreModule;
-        return getHeaderLayoutCount() + getDefItemCount() + getFooterLayoutCount() + ((baseLoadMoreModule == null || !baseLoadMoreModule.hasLoadMoreView()) ? 0 : 1);
+        return getHeaderLayoutCount() + getDefItemCount() + getFooterLayoutCount() + ((baseLoadMoreModule == null || !baseLoadMoreModule.hasLoadMoreView()) ? 0 : 0);
     }
 
     /* JADX WARN: Type inference failed for: r0v4, types: [boolean] */
@@ -344,10 +345,10 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
                     return;
                 case 268436002:
                     BaseLoadMoreModule baseLoadMoreModule2 = this.mLoadMoreModule;
-                    if (baseLoadMoreModule2 == null) {
+                    if (baseLoadMoreModule2 != null) {
+                        baseLoadMoreModule2.getLoadMoreView().convert(holder, i, baseLoadMoreModule2.getLoadMoreStatus());
                         return;
                     }
-                    baseLoadMoreModule2.getLoadMoreView().convert(holder, i, baseLoadMoreModule2.getLoadMoreStatus());
                     return;
                 default:
                     convert(holder, getItem(i - getHeaderLayoutCount()));
@@ -381,10 +382,10 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
                     return;
                 case 268436002:
                     BaseLoadMoreModule baseLoadMoreModule2 = this.mLoadMoreModule;
-                    if (baseLoadMoreModule2 == null) {
+                    if (baseLoadMoreModule2 != null) {
+                        baseLoadMoreModule2.getLoadMoreView().convert(holder, i, baseLoadMoreModule2.getLoadMoreStatus());
                         return;
                     }
-                    baseLoadMoreModule2.getLoadMoreView().convert(holder, i, baseLoadMoreModule2.getLoadMoreStatus());
                     return;
                 default:
                     convert(holder, getItem(i - getHeaderLayoutCount()), payloads);
@@ -470,12 +471,8 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
 
     public final void addChildClickViewIds(int... viewIds) {
         Intrinsics.checkNotNullParameter(viewIds, "viewIds");
-        int length = viewIds.length;
-        int i = 0;
-        while (i < length) {
-            int i2 = viewIds[i];
-            i++;
-            this.childClickViewIds.add(Integer.valueOf(i2));
+        for (int i : viewIds) {
+            this.childClickViewIds.add(Integer.valueOf(i));
         }
     }
 
@@ -490,7 +487,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.chad.library.adapter.base.BaseQuickAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BaseQuickAdapter.m891bindViewClickListener$lambda7$lambda6(BaseViewHolder.this, this, view);
+                    BaseQuickAdapter.bindViewClickListener$lambda$7$lambda$6(BaseViewHolder.this, this, view);
                 }
             });
         }
@@ -498,9 +495,9 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
             viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.chad.library.adapter.base.BaseQuickAdapter$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    boolean m892bindViewClickListener$lambda9$lambda8;
-                    m892bindViewClickListener$lambda9$lambda8 = BaseQuickAdapter.m892bindViewClickListener$lambda9$lambda8(BaseViewHolder.this, this, view);
-                    return m892bindViewClickListener$lambda9$lambda8;
+                    boolean bindViewClickListener$lambda$9$lambda$8;
+                    bindViewClickListener$lambda$9$lambda$8 = BaseQuickAdapter.bindViewClickListener$lambda$9$lambda$8(BaseViewHolder.this, this, view);
+                    return bindViewClickListener$lambda$9$lambda$8;
                 }
             });
         }
@@ -512,46 +509,46 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
                 Intrinsics.checkNotNullExpressionValue(id, "id");
                 View findViewById = view.findViewById(id.intValue());
                 if (findViewById != null) {
+                    Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById<View>(id)");
                     if (!findViewById.isClickable()) {
                         findViewById.setClickable(true);
                     }
                     findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.chad.library.adapter.base.BaseQuickAdapter$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            BaseQuickAdapter.m889bindViewClickListener$lambda12$lambda11$lambda10(BaseViewHolder.this, this, view2);
+                            BaseQuickAdapter.bindViewClickListener$lambda$12$lambda$11$lambda$10(BaseViewHolder.this, this, view2);
                         }
                     });
                 }
             }
         }
-        if (this.mOnItemChildLongClickListener == null) {
-            return;
-        }
-        Iterator<Integer> it2 = getChildLongClickViewIds().iterator();
-        while (it2.hasNext()) {
-            Integer id2 = it2.next();
-            View view2 = viewHolder.itemView;
-            Intrinsics.checkNotNullExpressionValue(id2, "id");
-            View findViewById2 = view2.findViewById(id2.intValue());
-            if (findViewById2 != null) {
-                if (!findViewById2.isLongClickable()) {
-                    findViewById2.setLongClickable(true);
-                }
-                findViewById2.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.chad.library.adapter.base.BaseQuickAdapter$$ExternalSyntheticLambda3
-                    @Override // android.view.View.OnLongClickListener
-                    public final boolean onLongClick(View view3) {
-                        boolean m890bindViewClickListener$lambda15$lambda14$lambda13;
-                        m890bindViewClickListener$lambda15$lambda14$lambda13 = BaseQuickAdapter.m890bindViewClickListener$lambda15$lambda14$lambda13(BaseViewHolder.this, this, view3);
-                        return m890bindViewClickListener$lambda15$lambda14$lambda13;
+        if (this.mOnItemChildLongClickListener != null) {
+            Iterator<Integer> it2 = getChildLongClickViewIds().iterator();
+            while (it2.hasNext()) {
+                Integer id2 = it2.next();
+                View view2 = viewHolder.itemView;
+                Intrinsics.checkNotNullExpressionValue(id2, "id");
+                View findViewById2 = view2.findViewById(id2.intValue());
+                if (findViewById2 != null) {
+                    Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById<View>(id)");
+                    if (!findViewById2.isLongClickable()) {
+                        findViewById2.setLongClickable(true);
                     }
-                });
+                    findViewById2.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.chad.library.adapter.base.BaseQuickAdapter$$ExternalSyntheticLambda3
+                        @Override // android.view.View.OnLongClickListener
+                        public final boolean onLongClick(View view3) {
+                            boolean bindViewClickListener$lambda$15$lambda$14$lambda$13;
+                            bindViewClickListener$lambda$15$lambda$14$lambda$13 = BaseQuickAdapter.bindViewClickListener$lambda$15$lambda$14$lambda$13(BaseViewHolder.this, this, view3);
+                            return bindViewClickListener$lambda$15$lambda$14$lambda$13;
+                        }
+                    });
+                }
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindViewClickListener$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m891bindViewClickListener$lambda7$lambda6(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
+    public static final void bindViewClickListener$lambda$7$lambda$6(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int adapterPosition = viewHolder.getAdapterPosition();
@@ -563,8 +560,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindViewClickListener$lambda-9$lambda-8  reason: not valid java name */
-    public static final boolean m892bindViewClickListener$lambda9$lambda8(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
+    public static final boolean bindViewClickListener$lambda$9$lambda$8(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int adapterPosition = viewHolder.getAdapterPosition();
@@ -576,8 +572,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindViewClickListener$lambda-12$lambda-11$lambda-10  reason: not valid java name */
-    public static final void m889bindViewClickListener$lambda12$lambda11$lambda10(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
+    public static final void bindViewClickListener$lambda$12$lambda$11$lambda$10(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int adapterPosition = viewHolder.getAdapterPosition();
@@ -589,8 +584,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: bindViewClickListener$lambda-15$lambda-14$lambda-13  reason: not valid java name */
-    public static final boolean m890bindViewClickListener$lambda15$lambda14$lambda13(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
+    public static final boolean bindViewClickListener$lambda$15$lambda$14$lambda$13(BaseViewHolder viewHolder, BaseQuickAdapter this$0, View v) {
         Intrinsics.checkNotNullParameter(viewHolder, "$viewHolder");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int adapterPosition = viewHolder.getAdapterPosition();
@@ -605,37 +599,35 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
     public void setOnItemClick(View v, int i) {
         Intrinsics.checkNotNullParameter(v, "v");
         OnItemClickListener onItemClickListener = this.mOnItemClickListener;
-        if (onItemClickListener == null) {
-            return;
+        if (onItemClickListener != null) {
+            onItemClickListener.onItemClick(this, v, i);
         }
-        onItemClickListener.onItemClick(this, v, i);
     }
 
     protected boolean setOnItemLongClick(View v, int i) {
         Intrinsics.checkNotNullParameter(v, "v");
         OnItemLongClickListener onItemLongClickListener = this.mOnItemLongClickListener;
-        if (onItemLongClickListener == null) {
-            return false;
+        if (onItemLongClickListener != null) {
+            return onItemLongClickListener.onItemLongClick(this, v, i);
         }
-        return onItemLongClickListener.onItemLongClick(this, v, i);
+        return false;
     }
 
     protected void setOnItemChildClick(View v, int i) {
         Intrinsics.checkNotNullParameter(v, "v");
         OnItemChildClickListener onItemChildClickListener = this.mOnItemChildClickListener;
-        if (onItemChildClickListener == null) {
-            return;
+        if (onItemChildClickListener != null) {
+            onItemChildClickListener.onItemChildClick(this, v, i);
         }
-        onItemChildClickListener.onItemChildClick(this, v, i);
     }
 
     protected boolean setOnItemChildLongClick(View v, int i) {
         Intrinsics.checkNotNullParameter(v, "v");
         OnItemChildLongClickListener onItemChildLongClickListener = this.mOnItemChildLongClickListener;
-        if (onItemChildLongClickListener == null) {
-            return false;
+        if (onItemChildLongClickListener != null) {
+            return onItemChildLongClickListener.onItemChildLongClick(this, v, i);
         }
-        return onItemChildLongClickListener.onItemChildLongClick(this, v, i);
+        return false;
     }
 
     protected int getDefItemCount() {
@@ -677,11 +669,7 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
             if (genericSuperclass instanceof ParameterizedType) {
                 Type[] types = ((ParameterizedType) genericSuperclass).getActualTypeArguments();
                 Intrinsics.checkNotNullExpressionValue(types, "types");
-                int i = 0;
-                int length = types.length;
-                while (i < length) {
-                    Type type = types[i];
-                    i++;
+                for (Type type : types) {
                     if (type instanceof Class) {
                         if (BaseViewHolder.class.isAssignableFrom((Class) type)) {
                             return (Class) type;
@@ -717,19 +705,15 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
                 Intrinsics.checkNotNullExpressionValue(declaredConstructor, "z.getDeclaredConstructor…aClass, View::class.java)");
                 declaredConstructor.setAccessible(true);
                 Object newInstance = declaredConstructor.newInstance(this, view);
-                if (newInstance != null) {
-                    return (VH) newInstance;
-                }
-                throw new NullPointerException("null cannot be cast to non-null type VH of com.chad.library.adapter.base.BaseQuickAdapter");
+                Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type VH of com.chad.library.adapter.base.BaseQuickAdapter");
+                return (VH) newInstance;
             }
             Constructor<?> declaredConstructor2 = cls.getDeclaredConstructor(View.class);
             Intrinsics.checkNotNullExpressionValue(declaredConstructor2, "z.getDeclaredConstructor(View::class.java)");
             declaredConstructor2.setAccessible(true);
             Object newInstance2 = declaredConstructor2.newInstance(view);
-            if (newInstance2 != null) {
-                return (VH) newInstance2;
-            }
-            throw new NullPointerException("null cannot be cast to non-null type VH of com.chad.library.adapter.base.BaseQuickAdapter");
+            Intrinsics.checkNotNull(newInstance2, "null cannot be cast to non-null type VH of com.chad.library.adapter.base.BaseQuickAdapter");
+            return (VH) newInstance2;
         } catch (IllegalAccessException e) {
             e.printStackTrace();
             return null;
@@ -847,10 +831,9 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
         this.mLastPosition = -1;
         notifyDataSetChanged();
         BaseLoadMoreModule baseLoadMoreModule2 = this.mLoadMoreModule;
-        if (baseLoadMoreModule2 == null) {
-            return;
+        if (baseLoadMoreModule2 != null) {
+            baseLoadMoreModule2.checkDisableLoadMoreIfNotFullPage();
         }
-        baseLoadMoreModule2.checkDisableLoadMoreIfNotFullPage();
     }
 
     public void setData(int i, T t) {
@@ -914,17 +897,16 @@ public abstract class BaseQuickAdapter<T, VH extends BaseViewHolder> extends Rec
     public void setDiffNewData(List<T> list, Runnable runnable) {
         if (hasEmptyView()) {
             setNewInstance(list);
-            if (runnable == null) {
+            if (runnable != null) {
+                runnable.run();
                 return;
             }
-            runnable.run();
             return;
         }
         BrvahAsyncDiffer<T> brvahAsyncDiffer = this.mDiffHelper;
-        if (brvahAsyncDiffer == null) {
-            return;
+        if (brvahAsyncDiffer != null) {
+            brvahAsyncDiffer.submitList(list, runnable);
         }
-        brvahAsyncDiffer.submitList(list, runnable);
     }
 
     public void setGridSpanSizeLookup(GridSpanSizeLookup gridSpanSizeLookup) {

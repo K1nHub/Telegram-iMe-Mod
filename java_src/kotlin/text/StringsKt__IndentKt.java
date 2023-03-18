@@ -63,6 +63,7 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
                 if (i != -1) {
                     int i5 = i;
                     if (StringsKt.startsWith$default(str2, marginPrefix, i, false, 4, null)) {
+                        Intrinsics.checkNotNull(str2, "null cannot be cast to non-null type java.lang.String");
                         str3 = str2.substring(i5 + marginPrefix.length());
                         Intrinsics.checkNotNullExpressionValue(str3, "this as java.lang.String).substring(startIndex)");
                     }

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletTutorialFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletTutorialFragment.kt\ncom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 5 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,205:1\n13#2,4:206\n56#3,6:210\n16#4,3:216\n39#5,6:219\n*S KotlinDebug\n*F\n+ 1 CreateWalletTutorialFragment.kt\ncom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment\n*L\n36#1:206,4\n39#1:210,6\n182#1:216,3\n183#1:219,6\n*E\n"
+    value = "SMAP\nCreateWalletTutorialFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletTutorialFragment.kt\ncom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 RxEventBus.kt\ncom/smedialink/storage/domain/utils/rx/RxEventBus\n+ 5 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,205:1\n13#2,4:206\n56#3,6:210\n16#4,3:216\n39#5,8:219\n*S KotlinDebug\n*F\n+ 1 CreateWalletTutorialFragment.kt\ncom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment\n*L\n36#1:206,4\n39#1:210,6\n182#1:216,3\n183#1:219,8\n*E\n"
 .end annotation
 
 
@@ -46,18 +46,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$BPB0yuv7A6dp0q1ijX7cLe2cHM8(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+.method public static synthetic $r8$lambda$GHDB9Vyk6KeFSSWsiosyU5CeDns(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->getThemeDescriptions$lambda$2(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$EU0sJzW0jhgZSvtbKWXthyCMt2c(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+.method public static synthetic $r8$lambda$JDXyhDNxy1LP5LAr0S9qoJlvs84(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->getThemeDescriptions$lambda-2(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
     return-void
 .end method
@@ -329,7 +329,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -346,7 +346,7 @@
     return-void
 .end method
 
-.method private static final getThemeDescriptions$lambda-2(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+.method private static final getThemeDescriptions$lambda$2(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -527,7 +527,7 @@
     .line 103
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
 
-    const-string v2, ""
+    const-string v2, "setupActionBar$lambda$3"
 
     .line 104
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -671,18 +671,29 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    new-instance v1, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v1, v3}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 192
@@ -734,7 +745,7 @@
 
     invoke-virtual {v0, v1}, Lcom/smedialink/ui/custom/WrapContentViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    const-string v1, ""
+    const-string v1, "setupViewPager$lambda$5"
 
     .line 142
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -864,9 +875,9 @@
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
     .line 79
-    new-instance v10, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda1;
+    new-instance v10, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda2;
 
-    invoke-direct {v10, v0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+    invoke-direct {v10, v0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
     const-string v11, "windowBackgroundWhite"
 
@@ -883,9 +894,9 @@
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     .line 79
-    new-instance v10, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda2;
+    new-instance v10, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda1;
 
-    invoke-direct {v10, v0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
+    invoke-direct {v10, v0}, Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/wallet/crypto/tutorial/CreateWalletTutorialFragment;)V
 
     const/4 v5, 0x0
 

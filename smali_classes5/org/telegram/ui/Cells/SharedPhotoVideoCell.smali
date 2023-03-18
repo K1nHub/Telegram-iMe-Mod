@@ -56,27 +56,27 @@
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 3
 
-    .line 268
+    .line 269
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 56
+    .line 57
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 63
+    .line 64
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->currentAccount:I
 
-    .line 269
+    .line 270
     iput p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->type:I
 
     const-string p2, "sharedMedia_photoPlaceholder"
 
-    .line 271
+    .line 272
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result p2
@@ -87,17 +87,17 @@
 
     new-array v0, p2, [Lorg/telegram/messenger/MessageObject;
 
-    .line 272
+    .line 273
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->messageObjects:[Lorg/telegram/messenger/MessageObject;
 
     new-array v0, p2, [Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
-    .line 273
+    .line 274
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     new-array v0, p2, [I
 
-    .line 274
+    .line 275
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->indeces:[I
 
     const/4 v0, 0x0
@@ -105,7 +105,7 @@
     :goto_0
     if-ge v0, p2, :cond_0
 
-    .line 276
+    .line 277
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     new-instance v2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
@@ -114,14 +114,14 @@
 
     aput-object v2, v1, v0
 
-    .line 277
+    .line 278
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v1, v1, v0
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 278
+    .line 279
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v1, v1, v0
@@ -130,7 +130,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 279
+    .line 280
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v1, v1, v0
@@ -141,7 +141,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 280
+    .line 281
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v1, v1, v0
@@ -152,7 +152,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 286
+    .line 287
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v1, v1, v0
@@ -174,7 +174,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Cells/SharedPhotoVideoCell;)I
     .locals 0
 
-    .line 47
+    .line 48
     iget p0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->currentAccount:I
 
     return p0
@@ -183,7 +183,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Cells/SharedPhotoVideoCell;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->backgroundPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -192,7 +192,7 @@
 .method public static getItemSize(I)I
     .locals 3
 
-    .line 424
+    .line 425
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -203,7 +203,7 @@
 
     const/16 v0, 0x1ea
 
-    .line 425
+    .line 426
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -222,7 +222,7 @@
 
     goto :goto_0
 
-    .line 427
+    .line 428
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -247,12 +247,12 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 3
 
-    .line 281
+    .line 282
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->delegate:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 282
+    .line 283
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -263,7 +263,7 @@
 
     move-result p1
 
-    .line 283
+    .line 284
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->delegate:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->indeces:[I
@@ -283,12 +283,12 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)Z
     .locals 3
 
-    .line 287
+    .line 288
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->delegate:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;
 
     if-eqz v0, :cond_0
 
-    .line 288
+    .line 289
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -299,7 +299,7 @@
 
     move-result p1
 
-    .line 289
+    .line 290
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->delegate:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->indeces:[I
@@ -327,7 +327,7 @@
 .method public getDelegate()Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;
     .locals 1
 
-    .line 66
+    .line 67
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->delegate:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;
 
     return-object v0
@@ -336,7 +336,7 @@
 .method public getImageView(I)Lorg/telegram/ui/Components/BackupImageView;
     .locals 1
 
-    .line 333
+    .line 334
     iget v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->itemsCount:I
 
     if-lt p1, v0, :cond_0
@@ -345,7 +345,7 @@
 
     return-object p1
 
-    .line 336
+    .line 337
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
@@ -361,7 +361,7 @@
 .method public getMessageObject(I)Lorg/telegram/messenger/MessageObject;
     .locals 1
 
-    .line 347
+    .line 348
     iget v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->itemsCount:I
 
     if-lt p1, v0, :cond_0
@@ -370,7 +370,7 @@
 
     return-object p1
 
-    .line 350
+    .line 351
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->messageObjects:[Lorg/telegram/messenger/MessageObject;
 
@@ -389,7 +389,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 305
+    .line 306
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v1, v1, v0
@@ -400,7 +400,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 308
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -410,7 +410,7 @@
 .method protected onAttachedToWindow()V
     .locals 0
 
-    .line 317
+    .line 318
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
     return-void
@@ -419,7 +419,7 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 312
+    .line 313
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
     return-void
@@ -428,7 +428,7 @@
 .method protected onMeasure(II)V
     .locals 8
 
-    .line 393
+    .line 394
     iget p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->type:I
 
     const/4 v0, 0x2
@@ -437,7 +437,7 @@
 
     if-ne p2, v1, :cond_0
 
-    .line 394
+    .line 395
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
@@ -460,7 +460,7 @@
 
     goto :goto_0
 
-    .line 396
+    .line 397
     :cond_0
     iget p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->itemsCount:I
 
@@ -468,7 +468,7 @@
 
     move-result p2
 
-    .line 399
+    .line 400
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->ignoreLayout:Z
 
@@ -476,13 +476,13 @@
 
     const/4 v3, 0x0
 
-    .line 400
+    .line 401
     :goto_1
     iget v4, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->itemsCount:I
 
     if-ge v3, v4, :cond_4
 
-    .line 401
+    .line 402
     iget-object v4, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v4, v4, v3
@@ -493,7 +493,7 @@
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 402
+    .line 403
     iget-boolean v5, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->isFirst:Z
 
     if-eqz v5, :cond_1
@@ -510,7 +510,7 @@
     :goto_2
     iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 403
+    .line 404
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -521,14 +521,14 @@
 
     iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 404
+    .line 405
     iget v5, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->itemsCount:I
 
     sub-int/2addr v5, v1
 
     if-ne v3, v5, :cond_3
 
-    .line 405
+    .line 406
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v5
@@ -537,7 +537,7 @@
 
     const/16 v5, 0x1ea
 
-    .line 406
+    .line 407
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -560,7 +560,7 @@
 
     goto :goto_3
 
-    .line 408
+    .line 409
     :cond_2
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -584,20 +584,20 @@
 
     goto :goto_3
 
-    .line 411
+    .line 412
     :cond_3
     iput p2, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 413
+    .line 414
     :goto_3
     iput p2, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v5, 0x33
 
-    .line 414
+    .line 415
     iput v5, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 415
+    .line 416
     iget-object v5, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v5, v5, v3
@@ -608,11 +608,11 @@
 
     goto :goto_1
 
-    .line 417
+    .line 418
     :cond_4
     iput-boolean v2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->ignoreLayout:Z
 
-    .line 419
+    .line 420
     iget-boolean v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->isFirst:Z
 
     if-eqz v1, :cond_5
@@ -641,14 +641,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 384
+    .line 385
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 387
+    .line 388
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
@@ -658,7 +658,7 @@
 .method public setChecked(IZZ)V
     .locals 1
 
-    .line 365
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object p1, v0, p1
@@ -671,7 +671,7 @@
 .method public setDelegate(Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;)V
     .locals 0
 
-    .line 321
+    .line 322
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->delegate:Lorg/telegram/ui/Cells/SharedPhotoVideoCell$SharedPhotoVideoCellDelegate;
 
     return-void
@@ -680,7 +680,7 @@
 .method public setIsFirst(Z)V
     .locals 0
 
-    .line 361
+    .line 362
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->isFirst:Z
 
     return-void
@@ -689,19 +689,19 @@
 .method public setItem(IILorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 369
+    .line 370
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->messageObjects:[Lorg/telegram/messenger/MessageObject;
 
     aput-object p3, v0, p1
 
-    .line 370
+    .line 371
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->indeces:[I
 
     aput p2, v0, p1
 
     if-eqz p3, :cond_0
 
-    .line 373
+    .line 374
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object p2, p2, p1
@@ -710,7 +710,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 374
+    .line 375
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object p1, p2, p1
@@ -719,7 +719,7 @@
 
     goto :goto_0
 
-    .line 376
+    .line 377
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
@@ -727,7 +727,7 @@
 
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->clearAnimation()V
 
-    .line 377
+    .line 378
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object p2, p2, p1
@@ -736,7 +736,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 378
+    .line 379
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->messageObjects:[Lorg/telegram/messenger/MessageObject;
 
     const/4 p3, 0x0
@@ -754,7 +754,7 @@
 
     const/4 v1, 0x0
 
-    .line 325
+    .line 326
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
@@ -762,12 +762,12 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 326
+    .line 327
     aget-object v2, v2, v1
 
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;->clearAnimation()V
 
-    .line 327
+    .line 328
     iget-object v2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v2, v2, v1
@@ -788,7 +788,7 @@
 
     goto :goto_0
 
-    .line 329
+    .line 330
     :cond_1
     iput p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->itemsCount:I
 
@@ -805,7 +805,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 298
+    .line 299
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->photoVideoViews:[Lorg/telegram/ui/Cells/SharedPhotoVideoCell$PhotoVideoView;
 
     aget-object v1, v1, v0

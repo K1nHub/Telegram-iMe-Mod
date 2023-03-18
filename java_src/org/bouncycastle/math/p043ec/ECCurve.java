@@ -14,10 +14,10 @@ import org.bouncycastle.util.Integers;
 public abstract class ECCurve {
 
     /* renamed from: a */
-    protected ECFieldElement f1302a;
+    protected ECFieldElement f1307a;
 
     /* renamed from: b */
-    protected ECFieldElement f1303b;
+    protected ECFieldElement f1308b;
     protected BigInteger cofactor;
     protected FiniteField field;
     protected BigInteger order;
@@ -30,12 +30,12 @@ public abstract class ECCurve {
     public static abstract class AbstractF2m extends ECCurve {
 
         /* renamed from: si */
-        private BigInteger[] f1304si;
+        private BigInteger[] f1309si;
 
         /* JADX INFO: Access modifiers changed from: protected */
         public AbstractF2m(int i, int i2, int i3, int i4) {
             super(buildField(i, i2, i3, i4));
-            this.f1304si = null;
+            this.f1309si = null;
         }
 
         private static FiniteField buildField(int i, int i2, int i3, int i4) {
@@ -98,14 +98,14 @@ public abstract class ECCurve {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public synchronized BigInteger[] getSi() {
-            if (this.f1304si == null) {
-                this.f1304si = Tnaf.getSi(this);
+            if (this.f1309si == null) {
+                this.f1309si = Tnaf.getSi(this);
             }
-            return this.f1304si;
+            return this.f1309si;
         }
 
         public boolean isKoblitz() {
-            return this.order != null && this.cofactor != null && this.f1303b.isOne() && (this.f1302a.isZero() || this.f1302a.isOne());
+            return this.order != null && this.cofactor != null && this.f1308b.isOne() && (this.f1307a.isZero() || this.f1307a.isOne());
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -145,7 +145,7 @@ public abstract class ECCurve {
         @Override // org.bouncycastle.math.p043ec.ECCurve
         protected ECPoint decompressPoint(int i, BigInteger bigInteger) {
             ECFieldElement fromBigInteger = fromBigInteger(bigInteger);
-            ECFieldElement sqrt = fromBigInteger.square().add(this.f1302a).multiply(fromBigInteger).add(this.f1303b).sqrt();
+            ECFieldElement sqrt = fromBigInteger.square().add(this.f1307a).multiply(fromBigInteger).add(this.f1308b).sqrt();
             if (sqrt != null) {
                 if (sqrt.testBitZero() != (i == 1)) {
                     sqrt = sqrt.negate();
@@ -350,11 +350,11 @@ public abstract class ECCurve {
     public abstract ECFieldElement fromBigInteger(BigInteger bigInteger);
 
     public ECFieldElement getA() {
-        return this.f1302a;
+        return this.f1307a;
     }
 
     public ECFieldElement getB() {
-        return this.f1303b;
+        return this.f1308b;
     }
 
     public BigInteger getCofactor() {

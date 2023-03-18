@@ -2,48 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;
+.implements Lorg/telegram/ui/Components/SharingLocationsAlert$SharingLocationsAlertDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/LocationController$SharingLocationInfo;
-
-.field public final synthetic f$1:J
+.field public final synthetic f$0:Lorg/telegram/ui/Components/FragmentContextView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/LocationController$SharingLocationInfo;J)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/messenger/LocationController$SharingLocationInfo;
-
-    iput-wide p2, p0, Lorg/telegram/ui/Components/FragmentContextView$$ExternalSyntheticLambda16;->f$1:J
+    iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectLocation(Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
-    .locals 8
+.method public final didSelectLocation(Lorg/telegram/messenger/LocationController$SharingLocationInfo;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/messenger/LocationController$SharingLocationInfo;
+    iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    iget-wide v1, p0, Lorg/telegram/ui/Components/FragmentContextView$$ExternalSyntheticLambda16;->f$1:J
-
-    move-object v3, p1
-
-    move v4, p2
-
-    move v5, p3
-
-    move v6, p4
-
-    move-object v7, p5
-
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/FragmentContextView;->$r8$lambda$slezsTAAbKCi5iP7QApUxAdiPpM(Lorg/telegram/messenger/LocationController$SharingLocationInfo;JLorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/FragmentContextView;->$r8$lambda$1iPHxrrUax0ePfffr0s4DpiwQZw(Lorg/telegram/ui/Components/FragmentContextView;Lorg/telegram/messenger/LocationController$SharingLocationInfo;)V
 
     return-void
 .end method

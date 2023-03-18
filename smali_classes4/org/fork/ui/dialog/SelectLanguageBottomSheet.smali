@@ -6,15 +6,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/dialog/SelectLanguageBottomSheet$RootView;,
-        Lorg/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;,
+        Lorg/fork/ui/dialog/SelectLanguageBottomSheet$Companion;,
         Lorg/fork/ui/dialog/SelectLanguageBottomSheet$EmptyView;,
-        Lorg/fork/ui/dialog/SelectLanguageBottomSheet$Companion;
+        Lorg/fork/ui/dialog/SelectLanguageBottomSheet$ListAdapter;,
+        Lorg/fork/ui/dialog/SelectLanguageBottomSheet$RootView;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,416:1\n296#2,2:417\n764#3:419\n855#3,2:420\n817#3:422\n845#3,2:423\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet\n*L\n134#1:417,2\n164#1:419\n164#1:420,2\n164#1:422\n164#1:423,2\n*E\n"
+    value = "SMAP\nSelectLanguageBottomSheet.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,416:1\n304#2,2:417\n766#3:419\n857#3,2:420\n819#3:422\n847#3,2:423\n*S KotlinDebug\n*F\n+ 1 SelectLanguageBottomSheet.kt\norg/fork/ui/dialog/SelectLanguageBottomSheet\n*L\n134#1:417,2\n164#1:419\n164#1:420,2\n164#1:422\n164#1:423,2\n*E\n"
 .end annotation
 
 
@@ -87,18 +87,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$xoQkRQqa2ltDHZXvb7O4qNbaa9U(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$MApafXOrva5IIGX2g0vmWCQsvDA(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->initCancelButton$lambda-3$lambda-2(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->initCancelButton$lambda$3$lambda$2(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yMsLc9ZCXigGl0q4tH9xJ_aIXjo(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$MHE6xnFRLxFoEL1qS2ouEezN-2g(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->setupListeners$lambda-7$lambda-6(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->setupListeners$lambda$7$lambda$6(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -341,9 +341,6 @@
     move-result-object p3
 
     invoke-virtual {p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 80
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 73
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -772,12 +769,12 @@
     .line 164
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->languages:Ljava/util/List;
 
-    .line 764
+    .line 766
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -811,19 +808,21 @@
 
     if-eqz v3, :cond_0
 
+    .line 857
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 164
     :cond_1
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->languages:Ljava/util/List;
 
-    .line 817
+    .line 819
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 845
+    .line 847
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -857,10 +856,12 @@
 
     if-nez v4, :cond_2
 
+    .line 847
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
+    .line 164
     :cond_3
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/List;
 
@@ -973,7 +974,7 @@
     return-object v0
 .end method
 
-.method private static final initCancelButton$lambda-3$lambda-2(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
+.method private static final initCancelButton$lambda$3$lambda$2(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "this$0"
@@ -1097,7 +1098,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 296
+    .line 304
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -1155,15 +1156,12 @@
     :cond_0
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     .line 208
-    :goto_0
+    :cond_1
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1185,12 +1183,12 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     const/4 v5, 0x0
 
-    :goto_1
+    :goto_0
     const/4 v6, 0x0
 
     aput v5, v1, v6
@@ -1217,9 +1215,6 @@
 
     .line 227
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
-
-    .line 228
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 208
     iput-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->shadowAnimation:Landroid/animation/AnimatorSet;
@@ -1290,7 +1285,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-7$lambda-6(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$7$lambda$6(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;I)V
     .locals 10
 
     const-string p1, "this$0"
@@ -1326,16 +1321,12 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->setSelectedLangCode(Ljava/lang/String;)V
+    iput-object p1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
 
     .line 149
-    iget-object p1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
+    iget-object p2, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->getSelectedLangCode()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p1, p2}, Lkotlin/collections/CollectionsKt;->contains(Ljava/lang/Iterable;Ljava/lang/Object;)Z
+    invoke-static {p2, p1}, Lkotlin/collections/CollectionsKt;->contains(Ljava/lang/Iterable;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -1355,9 +1346,7 @@
     .line 151
     iget-object p1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->lastSelectLanguages:Ljava/util/List;
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->getSelectedLangCode()Ljava/lang/String;
-
-    move-result-object p2
+    iget-object p2, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1373,9 +1362,7 @@
 
     const/4 p2, 0x0
 
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->getSelectedLangCode()Ljava/lang/String;
-
-    move-result-object v0
+    iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1421,13 +1408,9 @@
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     .line 159
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->getSelectLanguageDelegate()Lorg/fork/utils/Callbacks$Callback1;
+    iget-object p1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectLanguageDelegate:Lorg/fork/utils/Callbacks$Callback1;
 
-    move-result-object p1
-
-    invoke-virtual {p0}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->getSelectedLangCode()Ljava/lang/String;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
 
     invoke-interface {p1, p0}, Lorg/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
@@ -1551,39 +1534,4 @@
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->languages:Ljava/util/List;
 
     return-object v0
-.end method
-
-.method public final getSelectLanguageDelegate()Lorg/fork/utils/Callbacks$Callback1;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lorg/fork/utils/Callbacks$Callback1<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .line 51
-    iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectLanguageDelegate:Lorg/fork/utils/Callbacks$Callback1;
-
-    return-object v0
-.end method
-
-.method public final getSelectedLangCode()Ljava/lang/String;
-    .locals 1
-
-    .line 50
-    iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final setSelectedLangCode(Ljava/lang/String;)V
-    .locals 0
-
-    .line 50
-    iput-object p1, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->selectedLangCode:Ljava/lang/String;
-
-    return-void
 .end method

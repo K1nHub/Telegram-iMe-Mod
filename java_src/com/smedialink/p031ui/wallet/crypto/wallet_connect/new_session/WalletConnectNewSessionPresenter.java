@@ -60,7 +60,7 @@ public final class WalletConnectNewSessionPresenter extends BasePresenter<Wallet
         String name = wCSessionStoreItem.getRemotePeerMeta().getName();
         String url = wCSessionStoreItem.getRemotePeerMeta().getUrl();
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        String address = eVMWallet == null ? null : eVMWallet.getAddress();
+        String address = eVMWallet != null ? eVMWallet.getAddress() : null;
         walletConnectNewSessionView.setupScreenWithData(str, name, url, StringExtKt.shortened$default(address != null ? address : "", 0, 1, null), this.resourceManager.getString(this.cryptoPreferenceHelper.getNetworkType().getTitle()));
     }
 }

@@ -16,8 +16,14 @@ public final class TokenInfoExtKt {
 
         static {
             int[] iArr = new int[NetworkType.values().length];
-            iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 1;
-            iArr[NetworkType.POLYGON.ordinal()] = 2;
+            try {
+                iArr[NetworkType.BINANCE_SMART_CHAIN.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[NetworkType.POLYGON.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

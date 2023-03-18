@@ -37,7 +37,7 @@ public final class Timestamp extends GeneratedMessageLite<Timestamp, Builder> im
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<Timestamp, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C12121 c12121) {
+        /* synthetic */ Builder(C12051 c12051) {
             this();
         }
 
@@ -60,7 +60,7 @@ public final class Timestamp extends GeneratedMessageLite<Timestamp, Builder> im
 
     /* renamed from: com.google.protobuf.Timestamp$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C12121 {
+    static /* synthetic */ class C12051 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f227xa1df5c61;
@@ -101,7 +101,7 @@ public final class Timestamp extends GeneratedMessageLite<Timestamp, Builder> im
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C12121.f227xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C12051.f227xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new Timestamp();
             case 2:

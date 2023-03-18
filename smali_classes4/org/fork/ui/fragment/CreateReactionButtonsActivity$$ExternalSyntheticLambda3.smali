@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$$ExternalSyntheticLambda3;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$t9xVApi4BaNfeApWv-ngJsXdqXc(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$AFUzdKxBnE1VIJ9xYfpw_kvQrms(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method

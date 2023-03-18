@@ -96,16 +96,16 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_4
+    if-eqz p0, :cond_4
 
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
 
     goto :goto_2
 
     :cond_4
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p0
+    const/4 p0, 0x0
 
     .line 9
     :goto_2

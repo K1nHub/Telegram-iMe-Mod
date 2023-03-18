@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/CalendarActivity;)V
     .locals 0
 
-    .line 1272
+    .line 1271
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$8;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public didSetColor()V
     .locals 1
 
-    .line 1275
+    .line 1274
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$8;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$4000(Lorg/telegram/ui/CalendarActivity;)V

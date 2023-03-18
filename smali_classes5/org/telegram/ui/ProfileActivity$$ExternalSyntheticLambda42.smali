@@ -2,34 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
+.field public final synthetic f$0:Z
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$2:Landroid/app/Activity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method public synthetic constructor <init>(ZLorg/telegram/ui/ActionBar/AlertDialog;Landroid/app/Activity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iput-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$0:Z
+
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$2:Landroid/app/Activity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$0:Lorg/telegram/ui/ProfileActivity;
+    iget-boolean v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$0:Z
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$m5ThFS9NZm07vr1Z6kw3cJzFeKo(Lorg/telegram/ui/ProfileActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$1:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    move-result-object v0
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda42;->f$2:Landroid/app/Activity;
 
-    return-object v0
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$tJZWSb_ka5QDWy2W4QUHTGVKZ0M(ZLorg/telegram/ui/ActionBar/AlertDialog;Landroid/app/Activity;)V
+
+    return-void
 .end method

@@ -110,7 +110,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
     @Override // android.service.media.MediaBrowserService
     public void onLoadChildren(final String str, final MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
         if (passcode()) {
-            Toast.makeText(getApplicationContext(), LocaleController.getString(C3158R.string.EnterYourTelegramPasscode), 1).show();
+            Toast.makeText(getApplicationContext(), LocaleController.getString(C3286R.string.EnterYourTelegramPasscode), 1).show();
             stopSelf();
             result.detach();
         } else if (!this.chatsLoaded) {
@@ -159,7 +159,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                         byteBufferValue.reuse();
                         if (MessageObject.isMusicMessage(TLdeserialize)) {
                             long longValue2 = queryFinalized2.longValue(0);
-                            TLdeserialize.f1518id = queryFinalized2.intValue(2);
+                            TLdeserialize.f1523id = queryFinalized2.intValue(2);
                             TLdeserialize.dialog_id = longValue2;
                             ArrayList<MessageObject> arrayList3 = this.musicObjects.get(longValue2);
                             ArrayList<MediaSession.QueueItem> arrayList4 = this.musicQueues.get(longValue2);
@@ -185,7 +185,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getUsersInternal(TextUtils.join(",", arrayList), arrayList5);
                     for (int i = 0; i < arrayList5.size(); i++) {
                         TLRPC$User tLRPC$User = arrayList5.get(i);
-                        this.users.put(tLRPC$User.f1633id, tLRPC$User);
+                        this.users.put(tLRPC$User.f1639id, tLRPC$User);
                     }
                 }
                 if (!arrayList2.isEmpty()) {
@@ -193,7 +193,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
                     messagesStorage.getChatsInternal(TextUtils.join(",", arrayList2), arrayList6);
                     for (int i2 = 0; i2 < arrayList6.size(); i2++) {
                         TLRPC$Chat tLRPC$Chat = arrayList6.get(i2);
-                        this.chats.put(tLRPC$Chat.f1494id, tLRPC$Chat);
+                        this.chats.put(tLRPC$Chat.f1499id, tLRPC$Chat);
                     }
                 }
             }

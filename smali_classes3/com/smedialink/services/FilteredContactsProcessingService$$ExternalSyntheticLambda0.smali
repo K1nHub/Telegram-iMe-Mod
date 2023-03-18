@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/services/FilteredContactsProcessingService$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/services/FilteredContactsProcessingService;
 
-    invoke-static {v0}, Lcom/smedialink/services/FilteredContactsProcessingService;->$r8$lambda$PVN_A5a3AVDfcrVu5eMX7mRLHhc(Lcom/smedialink/services/FilteredContactsProcessingService;)V
+    invoke-static {v0}, Lcom/smedialink/services/FilteredContactsProcessingService;->$r8$lambda$JYy5E3yLXw0rSGkQNrdd9KZV4Jw(Lcom/smedialink/services/FilteredContactsProcessingService;)V
 
     return-void
 .end method

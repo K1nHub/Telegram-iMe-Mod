@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectFabsBottomSheet$$ExternalSyntheticLambda2;->f$0:Lorg/fork/ui/dialog/SelectFabsBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->$r8$lambda$qAh5xcNmwxXiqYhxp9_61_aenUw(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
+    invoke-static {v0, p1, p2}, Lorg/fork/ui/dialog/SelectFabsBottomSheet;->$r8$lambda$tRfnKgV2mYOivQtfzR7VJMTg3IM(Lorg/fork/ui/dialog/SelectFabsBottomSheet;Landroid/view/View;I)V
 
     return-void
 .end method

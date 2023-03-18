@@ -2,44 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/ContactsLoadingObserver$Callback;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:I
-
-.field public final synthetic f$2:Ljava/lang/Runnable;
+.field public final synthetic f$1:Landroid/content/Intent;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ILjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$1:I
-
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$2:Ljava/lang/Runnable;
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$1:Landroid/content/Intent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 3
+.method public final onResult(Z)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$1:I
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$1:Landroid/content/Intent;
 
-    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda89;->f$2:Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$DzL8TW-f31cJgM0YhhQjo4qAKYg(Lorg/telegram/ui/LaunchActivity;ILjava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$SK7vs1SOn1EvIdLWa06yg8FDuh4(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;Z)V
 
     return-void
 .end method

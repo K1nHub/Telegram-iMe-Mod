@@ -128,7 +128,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
         if (list.isEmpty()) {
             this.localStore.releaseTarget(targetId);
             this.remoteStore.stopListening(targetId);
-            removeAndCleanupTarget(targetId, Status.f422OK);
+            removeAndCleanupTarget(targetId, Status.f427OK);
         }
     }
 
@@ -310,7 +310,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.core.SyncEngine$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10111 {
+    public static /* synthetic */ class C10041 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$core$LimboDocumentChange$Type */
         static final /* synthetic */ int[] f168x84ba890d;
@@ -331,7 +331,7 @@ public class SyncEngine implements RemoteStore.RemoteStoreCallback {
 
     private void updateTrackedLimboDocuments(List<LimboDocumentChange> list, int i) {
         for (LimboDocumentChange limboDocumentChange : list) {
-            int i2 = C10111.f168x84ba890d[limboDocumentChange.getType().ordinal()];
+            int i2 = C10041.f168x84ba890d[limboDocumentChange.getType().ordinal()];
             if (i2 == 1) {
                 this.limboDocumentRefs.addReference(limboDocumentChange.getKey(), i);
                 trackLimboChange(limboDocumentChange);

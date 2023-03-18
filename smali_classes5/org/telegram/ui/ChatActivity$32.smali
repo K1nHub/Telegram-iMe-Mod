@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 8331
+    .line 8340
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$32;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/CounterView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,21 +35,21 @@
 .method public invalidate()V
     .locals 1
 
-    .line 8334
+    .line 8343
     invoke-virtual {p0}, Lorg/telegram/ui/Components/CounterView;->isInOutAnimation()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 8335
+    .line 8344
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$32;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 8337
+    .line 8346
     :cond_0
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 

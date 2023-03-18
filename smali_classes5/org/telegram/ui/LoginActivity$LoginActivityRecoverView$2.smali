@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 6641
+    .line 6652
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 6644
+    .line 6655
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15100(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Z
@@ -53,7 +53,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 6645
+    .line 6656
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15200(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Ljava/lang/Runnable;
@@ -62,7 +62,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 6646
+    .line 6657
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;->access$15200(Lorg/telegram/ui/LoginActivity$LoginActivityRecoverView;)Ljava/lang/Runnable;

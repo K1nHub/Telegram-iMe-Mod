@@ -35,7 +35,7 @@
 .method public final call()Ljava/lang/Object;
     .locals 1
 
-    invoke-static {}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->$r8$lambda$j-3tRoiRZIDgZJ9Y1NoAv3WhP_8()Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->$r8$lambda$D5PHxsYowR_SAr9qtw8WKMMBDmg()Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object v0
 

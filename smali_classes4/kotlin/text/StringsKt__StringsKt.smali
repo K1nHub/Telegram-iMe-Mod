@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1486:1\n79#1,22:1487\n113#1,5:1509\n130#1,5:1514\n79#1,22:1519\n107#1:1541\n79#1,22:1542\n113#1,5:1564\n124#1:1569\n113#1,5:1570\n130#1,5:1575\n141#1:1580\n130#1,5:1581\n79#1,22:1586\n113#1,5:1608\n130#1,5:1613\n12781#2,2:1618\n12781#2,2:1620\n286#3,2:1622\n286#3,2:1624\n1547#3:1627\n1618#3,3:1628\n1547#3:1631\n1618#3,3:1632\n1#4:1626\n*S KotlinDebug\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n*L\n107#1:1487,22\n124#1:1509,5\n141#1:1514,5\n146#1:1519,22\n151#1:1541\n151#1:1542,22\n156#1:1564,5\n161#1:1569\n161#1:1570,5\n166#1:1575,5\n171#1:1580\n171#1:1581,5\n176#1:1586,22\n187#1:1608,5\n198#1:1613,5\n940#1:1618,2\n964#1:1620,2\n1003#1:1622,2\n1009#1:1624,2\n1309#1:1627\n1309#1:1628,3\n1334#1:1631\n1334#1:1632,3\n*E\n"
+    value = "SMAP\nStrings.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1486:1\n79#1,22:1487\n113#1,5:1509\n130#1,5:1514\n79#1,22:1519\n107#1:1541\n79#1,22:1542\n113#1,5:1564\n124#1:1569\n113#1,5:1570\n130#1,5:1575\n141#1:1580\n130#1,5:1581\n79#1,22:1586\n113#1,5:1608\n130#1,5:1613\n12824#2,2:1618\n12824#2,2:1620\n288#3,2:1622\n288#3,2:1624\n1549#3:1627\n1620#3,3:1628\n1549#3:1631\n1620#3,3:1632\n1#4:1626\n*S KotlinDebug\n*F\n+ 1 Strings.kt\nkotlin/text/StringsKt__StringsKt\n*L\n107#1:1487,22\n124#1:1509,5\n141#1:1514,5\n146#1:1519,22\n151#1:1541\n151#1:1542,22\n156#1:1564,5\n161#1:1569\n161#1:1570,5\n166#1:1575,5\n171#1:1580\n171#1:1581,5\n176#1:1586,22\n187#1:1608,5\n198#1:1613,5\n940#1:1618,2\n964#1:1620,2\n1003#1:1622,2\n1009#1:1624,2\n1309#1:1627\n1309#1:1628,3\n1334#1:1631\n1334#1:1632,3\n*E\n"
 .end annotation
 
 
@@ -401,7 +401,7 @@
 
     if-gt v1, p2, :cond_f
 
-    .line 286
+    .line 288
     :cond_5
     :goto_3
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -495,7 +495,7 @@
 
     if-gt v1, p2, :cond_f
 
-    .line 286
+    .line 288
     :cond_b
     :goto_5
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1012,33 +1012,49 @@
 
     return p0
 
-    :cond_0
-    const/4 v1, 0x0
-
     .line 938
-    invoke-static {p2, v1}, Lkotlin/ranges/RangesKt;->coerceAtLeast(II)I
+    :cond_0
+    new-instance v1, Lkotlin/ranges/IntRange;
+
+    const/4 v2, 0x0
+
+    invoke-static {p2, v2}, Lkotlin/ranges/RangesKt;->coerceAtLeast(II)I
 
     move-result p2
 
     invoke-static {p0}, Lkotlin/text/StringsKt;->getLastIndex(Ljava/lang/CharSequence;)I
 
-    move-result v2
+    move-result v3
 
-    if-gt p2, v2, :cond_4
+    invoke-direct {v1, p2, v3}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {v1}, Lkotlin/ranges/IntProgression;->iterator()Lkotlin/collections/IntIterator;
+
+    move-result-object p2
+
+    :cond_1
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-virtual {p2}, Lkotlin/collections/IntIterator;->nextInt()I
+
+    move-result v1
 
     .line 939
-    :goto_0
-    invoke-interface {p0, p2}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
 
-    .line 12781
+    .line 12824
     array-length v4, p1
 
     const/4 v5, 0x0
 
-    :goto_1
-    if-ge v5, v4, :cond_2
+    :goto_0
+    if-ge v5, v4, :cond_3
 
     aget-char v6, p1, v5
 
@@ -1047,31 +1063,24 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/4 v3, 0x1
-
-    goto :goto_2
-
-    :cond_1
-    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
     :cond_2
-    const/4 v3, 0x0
-
-    :goto_2
-    if-eqz v3, :cond_3
-
-    return p2
-
-    :cond_3
-    if-eq p2, v2, :cond_4
-
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
+
+    :cond_3
+    const/4 v3, 0x0
+
+    :goto_1
+    if-eqz v3, :cond_1
+
+    return v1
 
     :cond_4
     const/4 p0, -0x1
@@ -1289,7 +1298,7 @@
 
     move-result v1
 
-    .line 12781
+    .line 12824
     array-length v2, p1
 
     const/4 v3, 0x0
@@ -1910,7 +1919,7 @@
 
     move-result-object p1
 
-    .line 1547
+    .line 1549
     new-instance p2, Ljava/util/ArrayList;
 
     const/16 p3, 0xa
@@ -1921,7 +1930,7 @@
 
     invoke-direct {p2, p3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1937,7 +1946,7 @@
 
     move-result-object p3
 
-    .line 1619
+    .line 1621
     check-cast p3, Lkotlin/ranges/IntRange;
 
     .line 1334
@@ -1945,6 +1954,7 @@
 
     move-result-object p3
 
+    .line 1621
     invoke-interface {p2, p3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -2034,7 +2044,7 @@
 
     move-result-object p1
 
-    .line 1547
+    .line 1549
     new-instance p2, Ljava/util/ArrayList;
 
     const/16 p3, 0xa
@@ -2045,7 +2055,7 @@
 
     invoke-direct {p2, p3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -2061,7 +2071,7 @@
 
     move-result-object p3
 
-    .line 1619
+    .line 1621
     check-cast p3, Lkotlin/ranges/IntRange;
 
     .line 1309
@@ -2069,6 +2079,7 @@
 
     move-result-object p3
 
+    .line 1621
     invoke-interface {p2, p3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1

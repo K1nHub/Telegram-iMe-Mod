@@ -10,6 +10,6 @@ public final /* synthetic */ class FirebaseExtKt$$ExternalSyntheticLambda0 imple
 
     @Override // com.google.android.gms.tasks.OnCanceledListener
     public final void onCanceled() {
-        FirebaseExtKt.m1393asObservableTask$lambda9$lambda8();
+        FirebaseExtKt.asObservableTask$lambda$9$lambda$8();
     }
 }

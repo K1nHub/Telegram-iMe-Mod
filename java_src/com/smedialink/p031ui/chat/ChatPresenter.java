@@ -6,14 +6,10 @@ import com.smedialink.manager.TelegramApi;
 import com.smedialink.manager.crypto.pay.BinancePayProcessManager;
 import com.smedialink.manager.crypto.pay.BinancePayProcessView;
 import com.smedialink.manager.multireply.MultiReplyInteractor;
-import com.smedialink.mapper.translation.TranslationUiMappingKt;
 import com.smedialink.model.dialog.DialogModel;
-import com.smedialink.model.translation.TranslationLanguageUiModel;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.common.AppConfiguration$Reaction;
-import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.data.utils.system.AndroidActivityHolder;
 import com.smedialink.storage.domain.gateway.TelegramGateway;
 import com.smedialink.storage.domain.interactor.crypto.donations.DonationsInteractor;
@@ -22,43 +18,36 @@ import com.smedialink.storage.domain.interactor.translate.TranslationInteractor;
 import com.smedialink.storage.domain.interactor.wallet.WalletSessionInteractor;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.translation.TranslationLanguage;
-import com.smedialink.storage.domain.model.wallet.SessionTokens;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import com.smedialink.utils.helper.reaction.ReactionHelper;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import java.io.File;
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
-import kotlin.collections.CollectionsKt___CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.fork.controller.DialogTranslationController;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$TL_messages_requestUrlAuth;
-import timber.log.Timber;
 /* compiled from: ChatPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.chat.ChatPresenter */
@@ -127,81 +116,22 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         MultiReplyInteractor multiReplyInteractor = this.multiReplyInteractor;
         Single<Result<CharSequence>> observeOn = multiReplyInteractor.buildMultiReplyMessage(multiReplyInteractor.prepareSelectedMessages(selectedMessages), chat).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "multiReplyInteractor\n   …(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((ChatView) ChatPresenter.this.getViewState()).onMultiReplyMessageBuilt((CharSequence) ((Result.Success) result).getData());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1896xb0a521b7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1897xb0a521b8((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    public final void processVoiceToText(final MessageObject messageObject, File file) {
+    public final void processVoiceToText(MessageObject messageObject, File file) {
         Intrinsics.checkNotNullParameter(messageObject, "messageObject");
         Intrinsics.checkNotNullParameter(file, "file");
         Observable<Result<String>> observeOn = this.googleServicesInteractor.getVoiceText(file, DialogTranslationController.Companion.getCurrentLocale()).timeout(1L, TimeUnit.MINUTES).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "googleServicesInteractor…(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((ChatView) ChatPresenter.this.getViewState()).onVoiceToTextCompleted(messageObject, (String) ((Result.Success) result).getData());
-                } else if (result instanceof Result.Error) {
-                    Result.Error error = (Result.Error) result;
-                    if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.ErrorStatus.UNAUTHORIZED) {
-                        ((ChatView) ChatPresenter.this.getViewState()).showAppUpdateDialog();
-                    } else {
-                        ErrorModel error2 = error.getError();
-                        resourceManager = ChatPresenter.this.resourceManager;
-                        ((ChatView) ChatPresenter.this.getViewState()).showToast(error2.getMessage(resourceManager));
-                    }
-                    ((ChatView) ChatPresenter.this.getViewState()).onVoiceToTextCompleted(messageObject, null);
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1903x79efd582(this, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1904x79efd583((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
-    public final void checkAndSendReaction(final Object data, final String str, final MessageObject messageObject) {
+    public final void checkAndSendReaction(Object data, String str, MessageObject messageObject) {
         Intrinsics.checkNotNullParameter(data, "data");
         int selectedAccountIndex = this.telegramGateway.getSelectedAccountIndex();
         if (ReactionHelper.checkReactionWork(selectedAccountIndex)) {
@@ -211,38 +141,9 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         String uuid = UUID.randomUUID().toString();
         Intrinsics.checkNotNullExpressionValue(uuid, "randomUUID().toString()");
         this.uuidReaction = uuid;
-        final String formatUuid = ReactionHelper.INSTANCE.formatUuid(uuid);
+        String formatUuid = ReactionHelper.INSTANCE.formatUuid(uuid);
         if (ReactionHelper.checkBlacklistReaction(selectedAccountIndex)) {
-            Observable<Boolean> unblockPeer = this.telegramApi.unblockPeer(AppConfiguration$Reaction.getBotId());
-            final BaseView baseView = (BaseView) getViewState();
-            Disposable subscribe = unblockPeer.subscribe(new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$checkAndSendReaction$$inlined$subscribeWithErrorHandle$default$1
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(T it) {
-                    Intrinsics.checkNotNullExpressionValue(it, "it");
-                    ((Boolean) it).booleanValue();
-                    ChatPresenter chatPresenter = ChatPresenter.this;
-                    Object obj = data;
-                    String str2 = str;
-                    if (str2 == null) {
-                        str2 = "";
-                    }
-                    chatPresenter.sendReactionMessage(obj, str2, formatUuid, messageObject);
-                }
-            }, new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$checkAndSendReaction$$inlined$subscribeWithErrorHandle$default$2
-                @Override // io.reactivex.functions.Consumer
-                public final void accept(Throwable th) {
-                    Timber.m4e(th);
-                    BaseView baseView2 = BaseView.this;
-                    if (baseView2 == null) {
-                        return;
-                    }
-                    String message = th.getMessage();
-                    if (message == null) {
-                        message = "";
-                    }
-                    baseView2.showToast(message);
-                }
-            });
+            Disposable subscribe = this.telegramApi.unblockPeer(AppConfiguration$Reaction.getBotId()).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1892xf214bff7(this, data, str, formatUuid, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1893xf214bff8((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
@@ -253,147 +154,49 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         sendReactionMessage(data, str, formatUuid, messageObject);
     }
 
-    public final void acceptTelegramAuthUrlAndGetTokens(final String url, final TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth) {
+    public final void acceptTelegramAuthUrlAndGetTokens(String url, TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth) {
         Intrinsics.checkNotNullParameter(url, "url");
-        Observable observeOn = Observable.just(Boolean.TRUE).flatMap(new Function() { // from class: com.smedialink.ui.chat.ChatPresenter$$ExternalSyntheticLambda1
+        Observable just = Observable.just(Boolean.TRUE);
+        final ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1 chatPresenter$acceptTelegramAuthUrlAndGetTokens$1 = new ChatPresenter$acceptTelegramAuthUrlAndGetTokens$1(tLRPC$TL_messages_requestUrlAuth, this, url);
+        Observable observeOn = just.flatMap(new Function() { // from class: com.smedialink.ui.chat.ChatPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                ObservableSource m1435acceptTelegramAuthUrlAndGetTokens$lambda4;
-                m1435acceptTelegramAuthUrlAndGetTokens$lambda4 = ChatPresenter.m1435acceptTelegramAuthUrlAndGetTokens$lambda4(TLRPC$TL_messages_requestUrlAuth.this, this, url, (Boolean) obj);
-                return m1435acceptTelegramAuthUrlAndGetTokens$lambda4;
+                ObservableSource acceptTelegramAuthUrlAndGetTokens$lambda$3;
+                acceptTelegramAuthUrlAndGetTokens$lambda$3 = ChatPresenter.acceptTelegramAuthUrlAndGetTokens$lambda$3(Function1.this, obj);
+                return acceptTelegramAuthUrlAndGetTokens$lambda$3;
             }
         }).observeOn(this.schedulersProvider.mo707ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "just(true)\n             …(schedulersProvider.ui())");
+        Intrinsics.checkNotNullExpressionValue(observeOn, "fun acceptTelegramAuthUr…     .autoDispose()\n    }");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$acceptTelegramAuthUrlAndGetTokens$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((ChatView) ChatPresenter.this.getViewState()).onSuccessGetAuthTokens((SessionTokens) ((Result.Success) result).getData());
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = ChatPresenter.this.resourceManager;
-                    ((ChatView) ChatPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$acceptTelegramAuthUrlAndGetTokens$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1889x5cfaf286(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1890x5cfaf287((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: acceptTelegramAuthUrlAndGetTokens$lambda-4  reason: not valid java name */
-    public static final ObservableSource m1435acceptTelegramAuthUrlAndGetTokens$lambda4(TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth, final ChatPresenter this$0, String url, Boolean it) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(url, "$url");
-        Intrinsics.checkNotNullParameter(it, "it");
-        if (tLRPC$TL_messages_requestUrlAuth != null) {
-            return this$0.telegramApi.acceptUrlAuth(url, tLRPC$TL_messages_requestUrlAuth).flatMap(new Function() { // from class: com.smedialink.ui.chat.ChatPresenter$$ExternalSyntheticLambda0
-                @Override // io.reactivex.functions.Function
-                public final Object apply(Object obj) {
-                    ObservableSource m1436acceptTelegramAuthUrlAndGetTokens$lambda4$lambda3;
-                    m1436acceptTelegramAuthUrlAndGetTokens$lambda4$lambda3 = ChatPresenter.m1436acceptTelegramAuthUrlAndGetTokens$lambda4$lambda3(ChatPresenter.this, (String) obj);
-                    return m1436acceptTelegramAuthUrlAndGetTokens$lambda4$lambda3;
-                }
-            });
-        }
-        return this$0.walletSessionInteractor.login(url);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: acceptTelegramAuthUrlAndGetTokens$lambda-4$lambda-3  reason: not valid java name */
-    public static final ObservableSource m1436acceptTelegramAuthUrlAndGetTokens$lambda4$lambda3(ChatPresenter this$0, String authUrl) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(authUrl, "authUrl");
-        return this$0.walletSessionInteractor.login(authUrl);
+    public static final ObservableSource acceptTelegramAuthUrlAndGetTokens$lambda$3(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (ObservableSource) tmp0.invoke(obj);
     }
 
     public final void loadTextTranslateLanguages() {
-        final String supportedLanguage = this.telegramGateway.getCurrentLocaleInformation().getSupportedLanguage();
+        String supportedLanguage = this.telegramGateway.getCurrentLocaleInformation().getSupportedLanguage();
         Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null);
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = withLoadingDialog$default.subscribe(new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$loadTextTranslateLanguages$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                int collectionSizeOrDefault;
-                List sortedWith;
-                List<TranslationLanguageUiModel> mutableList;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ChatView chatView = (ChatView) ChatPresenter.this.getViewState();
-                    Iterable<TranslationLanguage> iterable = (Iterable) ((Result.Success) result).getData();
-                    collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
-                    ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-                    for (TranslationLanguage translationLanguage : iterable) {
-                        arrayList.add(TranslationUiMappingKt.mapToUI(translationLanguage, supportedLanguage));
-                    }
-                    final Collator collator = Collator.getInstance(new Locale(supportedLanguage));
-                    Intrinsics.checkNotNullExpressionValue(collator, "getInstance(Locale(currentLanguage))");
-                    sortedWith = CollectionsKt___CollectionsKt.sortedWith(arrayList, new Comparator() { // from class: com.smedialink.ui.chat.ChatPresenter$loadTextTranslateLanguages$lambda-8$$inlined$compareBy$1
-                        @Override // java.util.Comparator
-                        public final int compare(T t, T t2) {
-                            return collator.compare(((TranslationLanguageUiModel) t).getDisplayLanguage(), ((TranslationLanguageUiModel) t2).getDisplayLanguage());
-                        }
-                    });
-                    mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) sortedWith);
-                    chatView.onLanguagesLoaded(mutableList);
-                } else if (result instanceof Result.Error) {
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = ChatPresenter.this.resourceManager;
-                    ((ChatView) ChatPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$loadTextTranslateLanguages$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1900x7ed9d4d7(this, supportedLanguage)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1901x7ed9d4d8((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     public final DialogModel getOldAuthButtonDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3158R.string.wallet_button_old_auth_dialog_title), this.resourceManager.getString(C3158R.string.wallet_button_old_auth_dialog_description), this.resourceManager.getString(C3158R.string.common_cancel), this.resourceManager.getString(C3158R.string.wallet_button_old_auth_dialog_action_btn));
+        return new DialogModel(this.resourceManager.getString(C3286R.string.wallet_button_old_auth_dialog_title), this.resourceManager.getString(C3286R.string.wallet_button_old_auth_dialog_description), this.resourceManager.getString(C3286R.string.common_cancel), this.resourceManager.getString(C3286R.string.wallet_button_old_auth_dialog_action_btn));
     }
 
     public final DialogModel getDownloadMediaFirstDialogModel() {
-        return new DialogModel(LocaleController.getString("AppName", C3158R.string.AppName), LocaleController.getString("PleaseDownload", C3158R.string.PleaseDownload), LocaleController.getString("OK", C3158R.string.OK), null, 8, null);
+        return new DialogModel(LocaleController.getString("AppName", C3286R.string.AppName), LocaleController.getString("PleaseDownload", C3286R.string.PleaseDownload), LocaleController.getString("OK", C3286R.string.OK), null, 8, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -407,7 +210,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
             TelegramConstants telegramConstants = TelegramConstants.INSTANCE;
             TLRPC$Chat tLRPC$Chat = this.chat;
             Intrinsics.checkNotNull(tLRPC$Chat);
-            checkIsDonationEnabled(telegramConstants.prepareChatIdForBotAPI(tLRPC$Chat.f1494id));
+            checkIsDonationEnabled(telegramConstants.prepareChatIdForBotAPI(tLRPC$Chat.f1499id));
             listenEvents();
         }
     }
@@ -427,31 +230,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
     public final void checkIsDonationEnabled(long j) {
         Observable<Result<Boolean>> observeOn = this.donationsInteractor.isDonationsEnabled(j).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
-        final BaseView baseView = (BaseView) getViewState();
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$checkIsDonationEnabled$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    ((ChatView) ChatPresenter.this.getViewState()).showDonationMenuItem(((Boolean) ((Result.Success) result).getData()).booleanValue());
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$checkIsDonationEnabled$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView2 = BaseView.this;
-                if (baseView2 == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView2.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1894xfa8e68f4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1895xfa8e68f5((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -460,40 +239,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.DonationAddressUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                TLRPC$Chat tLRPC$Chat;
-                TLRPC$Chat tLRPC$Chat2;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                long chatId = ((DomainRxEvents.DonationAddressUpdated) it).getChatId();
-                tLRPC$Chat = ChatPresenter.this.chat;
-                boolean z = false;
-                if (tLRPC$Chat != null && chatId == tLRPC$Chat.f1494id) {
-                    z = true;
-                }
-                if (z) {
-                    ChatPresenter chatPresenter = ChatPresenter.this;
-                    TelegramConstants telegramConstants = TelegramConstants.INSTANCE;
-                    tLRPC$Chat2 = chatPresenter.chat;
-                    chatPresenter.checkIsDonationEnabled(telegramConstants.prepareChatIdForBotAPI(tLRPC$Chat2.f1494id));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.chat.ChatPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1898xb2bce297(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1899xb2bce298(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -505,6 +251,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         ArrayList arrayListOf3;
         String str3;
         ArrayList arrayListOf4;
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type java.util.ArrayList<*>");
         Object firstOrNull = CollectionsKt.firstOrNull((ArrayList) obj);
         if (firstOrNull == null) {
             return;

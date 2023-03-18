@@ -40,45 +40,45 @@
 
 .field public static final donate_with_google:I = 0x7f09012c
 
-.field public static final googleMaterial2:I = 0x7f09016c
+.field public static final googleMaterial2:I = 0x7f090170
 
-.field public static final google_wallet_classic:I = 0x7f09016d
+.field public static final google_wallet_classic:I = 0x7f090171
 
-.field public static final google_wallet_grayscale:I = 0x7f09016e
+.field public static final google_wallet_grayscale:I = 0x7f090172
 
-.field public static final google_wallet_monochrome:I = 0x7f09016f
+.field public static final google_wallet_monochrome:I = 0x7f090173
 
-.field public static final grayscale:I = 0x7f090172
+.field public static final grayscale:I = 0x7f090176
 
-.field public static final holo_dark:I = 0x7f09017d
+.field public static final holo_dark:I = 0x7f090181
 
-.field public static final holo_light:I = 0x7f09017e
+.field public static final holo_light:I = 0x7f090182
 
-.field public static final light:I = 0x7f0901ef
+.field public static final light:I = 0x7f0901f1
 
-.field public static final logo_only:I = 0x7f090212
+.field public static final logo_only:I = 0x7f090214
 
-.field public static final match_parent:I = 0x7f090216
+.field public static final match_parent:I = 0x7f090218
 
-.field public static final material:I = 0x7f090217
+.field public static final material:I = 0x7f090219
 
-.field public static final monochrome:I = 0x7f09023c
+.field public static final monochrome:I = 0x7f09023e
 
-.field public static final none:I = 0x7f09026e
+.field public static final none:I = 0x7f090270
 
-.field public static final production:I = 0x7f0902af
+.field public static final production:I = 0x7f0902b1
 
-.field public static final sandbox:I = 0x7f0902e0
+.field public static final sandbox:I = 0x7f0902e3
 
-.field public static final selectionDetails:I = 0x7f0902fb
+.field public static final selectionDetails:I = 0x7f0902fe
 
-.field public static final slide:I = 0x7f09030f
+.field public static final slide:I = 0x7f090312
 
-.field public static final strict_sandbox:I = 0x7f090339
+.field public static final strict_sandbox:I = 0x7f09033c
 
-.field public static final test:I = 0x7f090350
+.field public static final test:I = 0x7f090353
 
-.field public static final wrap_content:I = 0x7f09045a
+.field public static final wrap_content:I = 0x7f090466
 
 
 # direct methods

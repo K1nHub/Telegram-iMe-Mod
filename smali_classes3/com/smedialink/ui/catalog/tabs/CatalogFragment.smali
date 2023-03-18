@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCatalogFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogFragment.kt\ncom/smedialink/ui/catalog/tabs/CatalogFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,198:1\n13#2,4:199\n56#3,6:203\n1849#4,2:209\n1849#4,2:211\n1849#4,2:213\n1849#4,2:215\n1849#4,2:217\n1849#4,2:219\n1547#4:221\n1618#4,3:222\n1849#4,2:225\n2478#4:227\n1#5:228\n*S KotlinDebug\n*F\n+ 1 CatalogFragment.kt\ncom/smedialink/ui/catalog/tabs/CatalogFragment\n*L\n39#1:199,4\n40#1:203,6\n49#1:209,2\n73#1:211,2\n83#1:213,2\n88#1:215,2\n93#1:217,2\n126#1:219,2\n131#1:221\n131#1:222,3\n147#1:225,2\n185#1:227\n185#1:228\n*E\n"
+    value = "SMAP\nCatalogFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CatalogFragment.kt\ncom/smedialink/ui/catalog/tabs/CatalogFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,198:1\n13#2,4:199\n56#3,6:203\n1855#4,2:209\n1855#4,2:211\n1855#4,2:213\n1855#4,2:215\n1855#4,2:217\n1855#4,2:219\n1549#4:221\n1620#4,3:222\n1855#4,2:225\n2634#4:227\n1#5:228\n*S KotlinDebug\n*F\n+ 1 CatalogFragment.kt\ncom/smedialink/ui/catalog/tabs/CatalogFragment\n*L\n39#1:199,4\n40#1:203,6\n49#1:209,2\n73#1:211,2\n83#1:213,2\n88#1:215,2\n93#1:217,2\n126#1:219,2\n131#1:221\n131#1:222,3\n147#1:225,2\n185#1:227\n185#1:228\n*E\n"
 .end annotation
 
 
@@ -515,7 +515,7 @@
 
     move-result-object v0
 
-    .line 2478
+    .line 2634
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -625,7 +625,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -636,7 +636,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -652,7 +652,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/model/catalog/CatalogNavigationTab;
 
     .line 131
@@ -660,6 +660,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -769,7 +770,7 @@
 
     move-result-object v1
 
-    .line 1849
+    .line 1855
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -812,7 +813,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -871,7 +872,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -939,7 +940,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1060,7 +1061,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1102,7 +1103,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1137,7 +1138,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

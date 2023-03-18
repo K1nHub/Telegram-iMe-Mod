@@ -35,9 +35,18 @@ public final class EnvironmentManager implements KoinComponent {
 
         static {
             int[] iArr = new int[Environment.values().length];
-            iArr[Environment.PRODUCTION.ordinal()] = 1;
-            iArr[Environment.STAGE.ordinal()] = 2;
-            iArr[Environment.DEVELOPMENT.ordinal()] = 3;
+            try {
+                iArr[Environment.PRODUCTION.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[Environment.STAGE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[Environment.DEVELOPMENT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -67,8 +76,7 @@ public final class EnvironmentManager implements KoinComponent {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: exitRunnable$lambda-0  reason: not valid java name */
-    public static final void m1294exitRunnable$lambda0() {
+    public static final void exitRunnable$lambda$0() {
         INSTANCE.getActionGateway().finishApplication();
     }
 

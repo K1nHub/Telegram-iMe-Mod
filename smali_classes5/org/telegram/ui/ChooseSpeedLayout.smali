@@ -12,6 +12,8 @@
 
 
 # instance fields
+.field slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
 .field speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
 .field speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -34,10 +36,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9y070vsvMEi84dCnYl08cceJ0KE(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$_Gv52FCaa4MrnpEfRcQDk3adsxk(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Ljava/lang/Float;Ljava/lang/Boolean;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout;->lambda$new$1(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ChooseSpeedLayout;->lambda$new$1(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Ljava/lang/Float;Ljava/lang/Boolean;)V
 
     return-void
 .end method
@@ -46,6 +48,14 @@
     .locals 0
 
     invoke-static {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout;->lambda$new$3(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$oJ18_6Jc5LP8WHp4Yd8w30l0XTA(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout;->lambda$new$6(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
 
     return-void
 .end method
@@ -67,243 +77,402 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/PopupSwipeBackLayout;Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
-    .locals 7
+    .locals 12
 
-    .line 17
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x5
 
-    new-array v0, v0, [Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    new-array v1, v0, [Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 16
-    iput-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    .line 33
+    iput-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 18
-    new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-    const/4 v1, 0x0
+    .line 35
+    new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, p1, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    const/4 v3, 0x0
 
-    iput-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+    invoke-direct {v1, p1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    const/4 p1, 0x1
+    iput-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 19
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setFitItems(Z)V
+    const/4 v4, 0x1
 
-    .line 21
-    iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+    .line 36
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setFitItems(Z)V
 
-    sget v3, Lorg/telegram/messenger/R$drawable;->msg_arrow_back:I
+    .line 38
+    iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    sget v4, Lorg/telegram/messenger/R$string;->Back:I
+    sget v5, Lorg/telegram/messenger/R$drawable;->msg_arrow_back:I
 
-    const-string v5, "Back"
+    sget v6, Lorg/telegram/messenger/R$string;->Back:I
 
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    const-string v7, "Back"
 
-    move-result-object v4
+    invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    invoke-static {v0, v3, v4, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    move-result-object v6
 
-    move-result-object v0
+    invoke-static {v1, v5, v6, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 22
-    new-instance v3, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda5;
+    move-result-object v1
 
-    invoke-direct {v3, p2}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)V
+    .line 39
+    new-instance v5, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda5;
 
-    invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-direct {v5, p2}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)V
+
+    invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const p2, -0x50506
 
-    .line 25
-    invoke-virtual {v0, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    .line 42
+    invoke-virtual {v1, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    const v3, 0xfffffff
+    const v5, 0xfffffff
 
-    .line 26
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
+    .line 43
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 28
-    iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+    .line 45
+    new-instance v1, Lorg/telegram/ui/ChooseSpeedLayout$1;
 
-    sget v4, Lorg/telegram/messenger/R$drawable;->msg_speed_0_2:I
+    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout$1;-><init>(Lorg/telegram/ui/ChooseSpeedLayout;Landroid/content/Context;)V
 
-    sget v5, Lorg/telegram/messenger/R$string;->SpeedVerySlow:I
+    const/16 v6, 0xc4
+
+    .line 51
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v7
+
+    invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
+
+    const v7, -0xe7e7e8
+
+    .line 52
+    invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    .line 53
+    iget-object v8, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    invoke-virtual {v8, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
+
+    .line 54
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 55
+    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v9, :cond_0
+
+    .line 56
+    iput v0, v8, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+    :cond_0
+    const/4 v9, -0x1
+
+    .line 58
+    iput v9, v8, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    const/16 v10, 0x8
+
+    .line 59
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    iput v11, v8, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 60
+    invoke-virtual {v1, v8}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 62
+    new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    invoke-direct {v1, p1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    iput-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    .line 63
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    invoke-virtual {v1, v8}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
+
+    .line 64
+    iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->setDrawShadow(Z)V
+
+    .line 65
+    iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    const v8, -0xddddde
+
+    invoke-virtual {v1, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->setBackgroundColor(I)V
+
+    .line 66
+    iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    invoke-virtual {v1, v9}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->setTextColor(I)V
+
+    .line 67
+    iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    new-instance v8, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda6;
+
+    invoke-direct {v8, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
+
+    invoke-virtual {v1, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider;->setOnValueChange(Lorg/telegram/messenger/Utilities$Callback2;)V
+
+    .line 71
+    iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    iget-object v8, p0, Lorg/telegram/ui/ChooseSpeedLayout;->slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    const/16 v11, 0x2c
+
+    invoke-static {v9, v11}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v11
+
+    invoke-virtual {v1, v8, v11}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;Landroid/widget/LinearLayout$LayoutParams;)V
+
+    .line 73
+    new-instance v1, Lorg/telegram/ui/ChooseSpeedLayout$2;
+
+    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout$2;-><init>(Lorg/telegram/ui/ChooseSpeedLayout;Landroid/content/Context;)V
+
+    .line 79
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p1
+
+    invoke-virtual {v1, p1}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
+
+    .line 80
+    invoke-virtual {v1, v7}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    .line 81
+    iget-object p1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
+
+    .line 82
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 83
+    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v6, :cond_1
+
+    .line 84
+    iput v0, p1, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+    .line 86
+    :cond_1
+    iput v9, p1, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 87
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    iput v0, p1, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 88
+    invoke-virtual {v1, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 90
+    iget-object p1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    sget v0, Lorg/telegram/messenger/R$drawable;->msg_speed_0_2:I
+
+    sget v1, Lorg/telegram/messenger/R$string;->SpeedVerySlow:I
 
     const-string v6, "SpeedVerySlow"
 
-    invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-static {v0, v4, v5, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-static {p1, v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    move-result-object v0
+    move-result-object p1
 
-    .line 29
-    invoke-virtual {v0, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    .line 91
+    invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 30
-    new-instance v4, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda2;
+    .line 92
+    new-instance v0, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda0;
 
-    invoke-direct {v4, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
+    invoke-direct {v0, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
 
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 33
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
+    .line 95
+    invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 34
-    iget-object v4, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    .line 96
+    iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    aput-object v0, v4, v1
+    aput-object p1, v0, v2
 
-    .line 36
-    iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+    .line 98
+    iget-object p1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    sget v4, Lorg/telegram/messenger/R$drawable;->msg_speed_slow:I
+    sget v0, Lorg/telegram/messenger/R$drawable;->msg_speed_slow:I
 
-    sget v5, Lorg/telegram/messenger/R$string;->SpeedSlow:I
+    sget v1, Lorg/telegram/messenger/R$string;->SpeedSlow:I
 
     const-string v6, "SpeedSlow"
 
-    invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-static {v0, v4, v5, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-static {p1, v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    move-result-object v0
+    move-result-object p1
 
-    .line 37
-    invoke-virtual {v0, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    .line 99
+    invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 38
-    new-instance v4, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda0;
+    .line 100
+    new-instance v0, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda2;
 
-    invoke-direct {v4, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
+    invoke-direct {v0, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
 
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 41
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
+    .line 103
+    invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 42
-    iget-object v4, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    .line 104
+    iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    aput-object v0, v4, p1
+    aput-object p1, v0, v4
 
-    .line 44
+    .line 106
     iget-object p1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_speed_normal:I
 
-    sget v4, Lorg/telegram/messenger/R$string;->SpeedNormal:I
+    sget v1, Lorg/telegram/messenger/R$string;->SpeedNormal:I
 
-    const-string v5, "SpeedNormal"
+    const-string v4, "SpeedNormal"
 
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-static {p1, v0, v4, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
-
-    move-result-object p1
-
-    .line 45
-    invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
-
-    .line 46
-    new-instance v0, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda3;
-
-    invoke-direct {v0, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 49
-    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
-
-    .line 50
-    iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
-
-    const/4 v4, 0x2
-
-    aput-object p1, v0, v4
-
-    .line 52
-    iget-object p1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-    sget v0, Lorg/telegram/messenger/R$drawable;->msg_speed_fast:I
-
-    sget v4, Lorg/telegram/messenger/R$string;->SpeedFast:I
-
-    const-string v5, "SpeedFast"
-
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {p1, v0, v4, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-static {p1, v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object p1
 
-    .line 53
+    .line 107
     invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 54
+    .line 108
     new-instance v0, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 57
-    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
+    .line 111
+    invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 58
+    .line 112
     iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    const/4 v4, 0x3
+    const/4 v1, 0x2
 
-    aput-object p1, v0, v4
+    aput-object p1, v0, v1
 
-    .line 60
+    .line 114
+    iget-object p1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+    sget v0, Lorg/telegram/messenger/R$drawable;->msg_speed_fast:I
+
+    sget v1, Lorg/telegram/messenger/R$string;->SpeedFast:I
+
+    const-string v4, "SpeedFast"
+
+    invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+
+    move-result-object p1
+
+    .line 115
+    invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+
+    .line 116
+    new-instance v0, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 119
+    invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
+
+    .line 120
+    iget-object v0, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+
+    const/4 v1, 0x3
+
+    aput-object p1, v0, v1
+
+    .line 122
     iget-object p1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedSwipeBackLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_speed_superfast:I
 
-    sget v4, Lorg/telegram/messenger/R$string;->SpeedVeryFast:I
+    sget v1, Lorg/telegram/messenger/R$string;->SpeedVeryFast:I
 
-    const-string v5, "SpeedVeryFast"
+    const-string v4, "SpeedVeryFast"
 
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-static {p1, v0, v4, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-static {p1, v0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object p1
 
-    .line 61
+    .line 123
     invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 62
-    new-instance p2, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda1;
+    .line 124
+    new-instance p2, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda3;
 
-    invoke-direct {p2, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
+    invoke-direct {p2, p3}, Lorg/telegram/ui/ChooseSpeedLayout$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ChooseSpeedLayout$Callback;)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 65
-    invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
+    .line 127
+    invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 66
+    .line 128
     iget-object p2, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 p3, 0x4
@@ -316,101 +485,143 @@
 .method private static synthetic lambda$new$0(Lorg/telegram/ui/Components/PopupSwipeBackLayout;Landroid/view/View;)V
     .locals 0
 
-    .line 23
+    .line 40
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->closeForeground()V
 
     return-void
 .end method
 
-.method private static synthetic lambda$new$1(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
-    .locals 0
+.method private static synthetic lambda$new$1(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Ljava/lang/Float;Ljava/lang/Boolean;)V
+    .locals 1
 
-    const/high16 p1, 0x3e800000    # 0.25f
+    .line 68
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    .line 31
-    invoke-interface {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(F)V
+    move-result p1
+
+    const v0, 0x40133333    # 2.3f
+
+    mul-float p1, p1, v0
+
+    const v0, 0x3e4ccccd    # 0.2f
+
+    add-float/2addr p1, v0
+
+    .line 69
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p2
+
+    const/4 v0, 0x0
+
+    invoke-interface {p0, p1, p2, v0}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(FZZ)V
 
     return-void
 .end method
 
 .method private static synthetic lambda$new$2(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
-    .locals 0
+    .locals 1
 
-    const/high16 p1, 0x3f000000    # 0.5f
+    const p1, 0x3e4ccccd    # 0.2f
 
-    .line 39
-    invoke-interface {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(F)V
+    const/4 v0, 0x1
+
+    .line 93
+    invoke-interface {p0, p1, v0, v0}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(FZZ)V
 
     return-void
 .end method
 
 .method private static synthetic lambda$new$3(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
-    .locals 0
+    .locals 1
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    const/high16 p1, 0x3f000000    # 0.5f
 
-    .line 47
-    invoke-interface {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(F)V
+    const/4 v0, 0x1
+
+    .line 101
+    invoke-interface {p0, p1, v0, v0}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(FZZ)V
 
     return-void
 .end method
 
 .method private static synthetic lambda$new$4(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
-    .locals 0
+    .locals 1
 
-    const/high16 p1, 0x3fc00000    # 1.5f
+    const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 55
-    invoke-interface {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(F)V
+    const/4 v0, 0x1
+
+    .line 109
+    invoke-interface {p0, p1, v0, v0}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(FZZ)V
 
     return-void
 .end method
 
 .method private static synthetic lambda$new$5(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
-    .locals 0
+    .locals 1
+
+    const/high16 p1, 0x3fc00000    # 1.5f
+
+    const/4 v0, 0x1
+
+    .line 117
+    invoke-interface {p0, p1, v0, v0}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(FZZ)V
+
+    return-void
+.end method
+
+.method private static synthetic lambda$new$6(Lorg/telegram/ui/ChooseSpeedLayout$Callback;Landroid/view/View;)V
+    .locals 1
 
     const/high16 p1, 0x40000000    # 2.0f
 
-    .line 63
-    invoke-interface {p0, p1}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(F)V
+    const/4 v0, 0x1
+
+    .line 125
+    invoke-interface {p0, p1, v0, v0}, Lorg/telegram/ui/ChooseSpeedLayout$Callback;->onSpeedSelected(FZZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public update(F)V
-    .locals 3
+.method public update(FZ)V
+    .locals 4
 
     const/4 v0, 0x0
 
-    .line 70
+    .line 132
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     array-length v1, v1
 
+    const/4 v2, 0x1
+
     if-ge v0, v1, :cond_6
 
-    const v1, 0x3a83126f    # 0.001f
+    if-eqz p2, :cond_5
 
     if-nez v0, :cond_0
 
-    const/high16 v2, 0x3e800000    # 0.25f
+    const v1, 0x3e4ccccd    # 0.2f
 
-    sub-float v2, p1, v2
+    sub-float v1, p1, v1
 
-    .line 71
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    .line 134
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
-    move-result v2
+    move-result v1
 
-    cmpg-float v2, v2, v1
+    const v3, 0x3c23d70a    # 0.01f
 
-    if-ltz v2, :cond_4
+    cmpg-float v1, v1, v3
+
+    if-ltz v1, :cond_4
 
     :cond_0
-    const/4 v2, 0x1
+    const v1, 0x3dcccccd    # 0.1f
 
     if-ne v0, v2, :cond_1
 
@@ -418,7 +629,7 @@
 
     sub-float v2, p1, v2
 
-    .line 72
+    .line 135
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
@@ -436,7 +647,7 @@
 
     sub-float v2, p1, v2
 
-    .line 73
+    .line 136
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
@@ -454,7 +665,7 @@
 
     sub-float v2, p1, v2
 
-    .line 74
+    .line 137
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
@@ -472,7 +683,7 @@
 
     sub-float v2, p1, v2
 
-    .line 75
+    .line 138
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
@@ -481,7 +692,7 @@
 
     if-gez v1, :cond_5
 
-    .line 76
+    .line 140
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -493,7 +704,7 @@
 
     goto :goto_1
 
-    .line 78
+    .line 142
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/ChooseSpeedLayout;->speedItems:[Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -508,6 +719,11 @@
 
     goto :goto_0
 
+    .line 146
     :cond_6
+    iget-object p2, p0, Lorg/telegram/ui/ChooseSpeedLayout;->slider:Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;
+
+    invoke-virtual {p2, p1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSlider$SpeedSlider;->setSpeed(FZ)V
+
     return-void
 .end method

@@ -310,16 +310,16 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_1
+    if-eqz v3, :cond_1
 
-    const/4 v3, 0x0
+    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
+
+    move-result-object v3
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v3}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
-
-    move-result-object v3
+    const/4 v3, 0x0
 
     .line 35
     :goto_0
@@ -363,7 +363,11 @@
 
     invoke-direct {v1, v0}, Lcom/smedialink/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl$cancel$$inlined$mapSuccess$1;-><init>(Lcom/smedialink/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance v0, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/storage/data/utils/extentions/FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 

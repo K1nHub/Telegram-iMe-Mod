@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextEmoji$5;)V
     .locals 0
 
-    .line 520
+    .line 519
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$5$1;->this$1:Lorg/telegram/ui/Components/EditTextEmoji$5;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
@@ -35,7 +35,7 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    .line 528
+    .line 527
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$5$1;->this$1:Lorg/telegram/ui/Components/EditTextEmoji$5;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EditTextEmoji$5;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -50,7 +50,7 @@
 .method public getCurrentAccount()I
     .locals 1
 
-    .line 523
+    .line 522
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return v0
@@ -59,28 +59,28 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 2
 
-    .line 533
+    .line 532
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji$5$1;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 534
+    .line 533
     :goto_0
     instance-of v1, v0, Landroid/content/ContextWrapper;
 
     if-eqz v1, :cond_1
 
-    .line 535
+    .line 534
     instance-of v1, v0, Landroid/app/Activity;
 
     if-eqz v1, :cond_0
 
-    .line 536
+    .line 535
     check-cast v0, Landroid/app/Activity;
 
     return-object v0
 
-    .line 538
+    .line 537
     :cond_0
     check-cast v0, Landroid/content/ContextWrapper;
 
@@ -99,7 +99,7 @@
 .method public getVisibleDialog()Landroid/app/Dialog;
     .locals 2
 
-    .line 545
+    .line 544
     new-instance v0, Lorg/telegram/ui/Components/EditTextEmoji$5$1$1;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji$5$1;->this$1:Lorg/telegram/ui/Components/EditTextEmoji$5;

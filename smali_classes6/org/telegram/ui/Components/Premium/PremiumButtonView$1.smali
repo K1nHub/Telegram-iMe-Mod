@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumButtonView;)V
     .locals 0
 
-    .line 176
+    .line 193
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView$1;->this$0:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 179
+    .line 196
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView$1;->this$0:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->access$002(Lorg/telegram/ui/Components/Premium/PremiumButtonView;F)F
 
-    .line 180
+    .line 197
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumButtonView$1;->this$0:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->access$100(Lorg/telegram/ui/Components/Premium/PremiumButtonView;)V

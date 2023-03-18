@@ -32,66 +32,90 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->DISABLED:Lcom/smedialink/bots/data/model/BotStatus;
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :try_start_0
+    sget-object v2, Lcom/smedialink/bots/data/model/BotStatus;->DISABLED:Lcom/smedialink/bots/data/model/BotStatus;
 
-    move-result v1
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v2, 0x1
+    move-result v2
 
-    aput v2, v0, v1
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->ENABLED:Lcom/smedialink/bots/data/model/BotStatus;
+    :catch_0
+    :try_start_1
+    sget-object v2, Lcom/smedialink/bots/data/model/BotStatus;->ENABLED:Lcom/smedialink/bots/data/model/BotStatus;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v2
 
     const/4 v3, 0x2
 
-    aput v3, v0, v1
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->PAID:Lcom/smedialink/bots/data/model/BotStatus;
+    :catch_1
+    :try_start_2
+    sget-object v2, Lcom/smedialink/bots/data/model/BotStatus;->PAID:Lcom/smedialink/bots/data/model/BotStatus;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v2
 
     const/4 v3, 0x3
 
-    aput v3, v0, v1
+    aput v3, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->AVAILABLE:Lcom/smedialink/bots/data/model/BotStatus;
+    :catch_2
+    :try_start_3
+    sget-object v2, Lcom/smedialink/bots/data/model/BotStatus;->AVAILABLE:Lcom/smedialink/bots/data/model/BotStatus;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v2
 
     const/4 v3, 0x4
 
-    aput v3, v0, v1
+    aput v3, v0, v2
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->UPDATE_AVAILABLE:Lcom/smedialink/bots/data/model/BotStatus;
+    :catch_3
+    :try_start_4
+    sget-object v2, Lcom/smedialink/bots/data/model/BotStatus;->UPDATE_AVAILABLE:Lcom/smedialink/bots/data/model/BotStatus;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v2
 
     const/4 v3, 0x5
 
-    aput v3, v0, v1
+    aput v3, v0, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    sget-object v1, Lcom/smedialink/bots/data/model/BotStatus;->DOWNLOADING:Lcom/smedialink/bots/data/model/BotStatus;
+    :catch_4
+    :try_start_5
+    sget-object v2, Lcom/smedialink/bots/data/model/BotStatus;->DOWNLOADING:Lcom/smedialink/bots/data/model/BotStatus;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v2
 
     const/4 v3, 0x6
 
-    aput v3, v0, v1
+    aput v3, v0, v2
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
+    :catch_5
     sput-object v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-static {}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;->values()[Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;
@@ -102,14 +126,18 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;->ALL:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;
+    :try_start_6
+    sget-object v2, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;->ALL:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v2
 
-    aput v2, v0, v1
+    aput v1, v0, v2
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
+    :catch_6
     sput-object v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$WhenMappings;->$EnumSwitchMapping$1:[I
 
     return-void

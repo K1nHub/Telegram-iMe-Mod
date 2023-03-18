@@ -5,7 +5,7 @@ import com.google.android.gms.internal.clearcut.zzcg;
 public final class zzap {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C6598zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C6742zza> implements zzdq {
         private static volatile zzdz<zza> zzbg;
         private static final zza zzes;
         private int zzbb;
@@ -19,12 +19,12 @@ public final class zzap {
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzap$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C6598zza extends zzcg.zza<zza, C6598zza> implements zzdq {
-            private C6598zza() {
+        public static final class C6742zza extends zzcg.zza<zza, C6742zza> implements zzdq {
+            private C6742zza() {
                 super(zza.zzes);
             }
 
-            /* synthetic */ C6598zza(zzaq zzaqVar) {
+            /* synthetic */ C6742zza(zzaq zzaqVar) {
                 this();
             }
         }
@@ -83,7 +83,7 @@ public final class zzap {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C6598zza(null);
+                    return new C6742zza(null);
                 case 3:
                     return zzcg.zza(zzes, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\b\u0000\u0000\u0000\u0001\f\u0000\u0002\f\u0001\u0003\f\u0002\u0004\f\u0003\u0005\f\u0004\u0006\f\u0005\u0007\f\u0006", new Object[]{"zzbb", "zzel", zzb.zzd(), "zzem", zzb.zzd(), "zzen", zzb.zzd(), "zzeo", zzb.zzd(), "zzep", zzb.zzd(), "zzeq", zzb.zzd(), "zzer", zzb.zzd()});
                 case 4:

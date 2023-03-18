@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateActivity;)V
     .locals 0
 
-    .line 775
+    .line 779
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$8;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 779
+    .line 783
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$8;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$000(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->hideActionMode()V
 
-    .line 780
+    .line 784
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity$8;->this$0:Lorg/telegram/ui/GroupCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateActivity;->access$000(Lorg/telegram/ui/GroupCreateActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;

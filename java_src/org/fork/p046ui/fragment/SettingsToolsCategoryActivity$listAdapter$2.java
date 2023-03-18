@@ -19,6 +19,6 @@ public final class SettingsToolsCategoryActivity$listAdapter$2 extends Lambda im
 
     @Override // kotlin.jvm.functions.Function0
     public final SettingsToolsCategoryActivity.ListAdapter invoke() {
-        return new SettingsToolsCategoryActivity.ListAdapter(this.this$0);
+        return new SettingsToolsCategoryActivity.ListAdapter();
     }
 }

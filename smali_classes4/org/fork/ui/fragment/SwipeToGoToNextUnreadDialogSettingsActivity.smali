@@ -42,10 +42,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-lij-gdDuFvuI5Zlv9Yb6TPwes8(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$_2aRlbEYS5S7bY0aqUGGrMRY2gM(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->initListView$lambda-8$lambda-7(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;->initListView$lambda$8$lambda$7(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method
@@ -396,7 +396,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-8$lambda-7(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$8$lambda$7(Lorg/fork/ui/fragment/SwipeToGoToNextUnreadDialogSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
     const-string p3, "this$0"
@@ -547,7 +547,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 97
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -709,7 +709,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -891,7 +891,7 @@
 
     const/4 v11, 0x0
 
-    const-string v14, "windowBackgroundWhite"
+    const-string/jumbo v14, "windowBackgroundWhite"
 
     move-object v7, v3
 
@@ -922,7 +922,7 @@
 
     const/4 v10, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -951,7 +951,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -984,7 +984,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1015,7 +1015,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -1216,7 +1216,7 @@
 
     const/4 v12, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v15, "windowBackgroundWhiteBlueHeader"
 
     move-object v7, v3
 

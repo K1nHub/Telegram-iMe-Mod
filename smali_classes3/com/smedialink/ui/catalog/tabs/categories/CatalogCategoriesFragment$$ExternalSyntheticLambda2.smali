@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment$$ExternalSyntheticLambda2;->f$1:Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;
 
-    invoke-static {v0, v1, p1, p2, p3}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->$r8$lambda$wHcVFv0iHZ7UyJM_2QYEKxgrWIw(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, v1, p1, p2, p3}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->$r8$lambda$ZgDfuMW-rXLh5Ji0o_45Ets9ewQ(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

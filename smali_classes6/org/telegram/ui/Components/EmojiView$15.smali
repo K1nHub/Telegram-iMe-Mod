@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 2477
+    .line 2478
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/EmojiView$GifLayoutManager;-><init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;Z)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public scrollToPositionWithOffset(II)V
     .locals 0
 
-    .line 2480
+    .line 2481
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
     return-void

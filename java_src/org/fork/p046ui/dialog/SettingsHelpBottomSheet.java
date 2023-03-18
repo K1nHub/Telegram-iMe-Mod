@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.fork.enums.DrawerSocialNetwork;
 import org.fork.p046ui.view.SocialNetworksRowView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p048ui.ActionBar.AlertDialog;
@@ -57,20 +57,20 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         lazy = LazyKt__LazyJVMKt.lazy(new SettingsHelpBottomSheet$rootView$2(this));
         this.rootView$delegate = lazy;
         Pair[] pairArr = new Pair[8];
-        pairArr[0] = TuplesKt.m100to(LocaleController.getInternalString(C3158R.string.settings_help_alert_support_item_title), new SettingsHelpBottomSheet$items$1(this));
-        pairArr[1] = TuplesKt.m100to(LocaleController.getInternalString(C3158R.string.settings_help_alert_group_item_title), new SettingsHelpBottomSheet$items$2(this));
-        pairArr[2] = TuplesKt.m100to(LocaleController.getInternalString(C3158R.string.settings_help_alert_lime_group_item_title), new SettingsHelpBottomSheet$items$3(this));
-        pairArr[3] = TuplesKt.m100to(LocaleController.getInternalString(C3158R.string.settings_help_alert_channel_item_title), new SettingsHelpBottomSheet$items$4(this));
-        pairArr[4] = TuplesKt.m100to(LocaleController.getInternalString(C3158R.string.settings_help_alert_faq_item_title), new SettingsHelpBottomSheet$items$5(this));
-        pairArr[5] = TuplesKt.m100to(LocaleController.getString("PrivacyPolicy", C3158R.string.PrivacyPolicy), new SettingsHelpBottomSheet$items$6(this));
+        pairArr[0] = TuplesKt.m100to(LocaleController.getInternalString(C3286R.string.settings_help_alert_support_item_title), new SettingsHelpBottomSheet$items$1(this));
+        pairArr[1] = TuplesKt.m100to(LocaleController.getInternalString(C3286R.string.settings_help_alert_group_item_title), new SettingsHelpBottomSheet$items$2(this));
+        pairArr[2] = TuplesKt.m100to(LocaleController.getInternalString(C3286R.string.settings_help_alert_lime_group_item_title), new SettingsHelpBottomSheet$items$3(this));
+        pairArr[3] = TuplesKt.m100to(LocaleController.getInternalString(C3286R.string.settings_help_alert_channel_item_title), new SettingsHelpBottomSheet$items$4(this));
+        pairArr[4] = TuplesKt.m100to(LocaleController.getInternalString(C3286R.string.settings_help_alert_faq_item_title), new SettingsHelpBottomSheet$items$5(this));
+        pairArr[5] = TuplesKt.m100to(LocaleController.getString("PrivacyPolicy", C3286R.string.PrivacyPolicy), new SettingsHelpBottomSheet$items$6(this));
         ScreenType screenType2 = ScreenType.COMMON_SETTINGS;
-        pairArr[6] = screenType == screenType2 ? TuplesKt.m100to(LocaleController.getString("AskAQuestion", C3158R.string.AskAQuestion), new SettingsHelpBottomSheet$items$7(this)) : null;
-        pairArr[7] = screenType == screenType2 ? TuplesKt.m100to(LocaleController.getString("TelegramFeatures", C3158R.string.TelegramFeatures), new SettingsHelpBottomSheet$items$8(this)) : null;
+        pairArr[6] = screenType == screenType2 ? TuplesKt.m100to(LocaleController.getString("AskAQuestion", C3286R.string.AskAQuestion), new SettingsHelpBottomSheet$items$7(this)) : null;
+        pairArr[7] = screenType == screenType2 ? TuplesKt.m100to(LocaleController.getString("TelegramFeatures", C3286R.string.TelegramFeatures), new SettingsHelpBottomSheet$items$8(this)) : null;
         listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(pairArr);
         this.items = listOfNotNull;
         setApplyBottomPadding(false);
         setCustomView(getRootView());
-        setTitle(LocaleController.getString("SettingsHelp", C3158R.string.SettingsHelp), true);
+        setTitle(LocaleController.getString("SettingsHelp", C3286R.string.SettingsHelp), true);
     }
 
     private final ScrollView getRootView() {
@@ -115,15 +115,14 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         bottomSheetCell.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.SettingsHelpBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SettingsHelpBottomSheet.m2011createBottomSheetCell$lambda4$lambda3(Pair.this, view);
+                SettingsHelpBottomSheet.createBottomSheetCell$lambda$4$lambda$3(Pair.this, view);
             }
         });
         return bottomSheetCell;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createBottomSheetCell$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m2011createBottomSheetCell$lambda4$lambda3(Pair item, View view) {
+    public static final void createBottomSheetCell$lambda$4$lambda$3(Pair item, View view) {
         Intrinsics.checkNotNullParameter(item, "$item");
         ((Function0) item.getSecond()).invoke();
     }
@@ -157,22 +156,21 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
     public final AlertDialog createSocialNetworkAlert(final DrawerSocialNetwork drawerSocialNetwork) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(LocaleController.getInternalString(drawerSocialNetwork.getTitleResId()));
-        String string = LocaleController.getString("Open", C3158R.string.Open);
+        String string = LocaleController.getString("Open", C3286R.string.Open);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Open\", R.string.Open)");
-        String string2 = LocaleController.getString("CopyLink", C3158R.string.CopyLink);
+        String string2 = LocaleController.getString("CopyLink", C3286R.string.CopyLink);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"CopyLink\", R.string.CopyLink)");
         builder.setItems(new CharSequence[]{string, string2}, new DialogInterface.OnClickListener() { // from class: org.fork.ui.dialog.SettingsHelpBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                SettingsHelpBottomSheet.m2012createSocialNetworkAlert$lambda7$lambda6(AlertDialog.Builder.this, drawerSocialNetwork, dialogInterface, i);
+                SettingsHelpBottomSheet.createSocialNetworkAlert$lambda$7$lambda$6(AlertDialog.Builder.this, drawerSocialNetwork, dialogInterface, i);
             }
         });
         return builder.create();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createSocialNetworkAlert$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m2012createSocialNetworkAlert$lambda7$lambda6(AlertDialog.Builder this_apply, DrawerSocialNetwork socialNetwork, DialogInterface dialogInterface, int i) {
+    public static final void createSocialNetworkAlert$lambda$7$lambda$6(AlertDialog.Builder this_apply, DrawerSocialNetwork socialNetwork, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         Intrinsics.checkNotNullParameter(socialNetwork, "$socialNetwork");
         if (i == 0) {
@@ -180,7 +178,7 @@ public final class SettingsHelpBottomSheet extends BottomSheet {
         } else if (i != 1) {
         } else {
             AndroidUtilities.addToClipboard(socialNetwork.url());
-            String string = LocaleController.getString("LinkCopied", C3158R.string.LinkCopied);
+            String string = LocaleController.getString("LinkCopied", C3286R.string.LinkCopied);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
             ContextExtKt.toast(string);
         }

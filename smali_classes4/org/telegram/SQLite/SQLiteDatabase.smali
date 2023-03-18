@@ -59,21 +59,19 @@
     .line 99
     iget-boolean v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->inTransaction:Z
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    .line 102
-    iput-boolean v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->inTransaction:Z
-
-    .line 103
-    iget-wide v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->sqliteHandle:J
-
-    invoke-virtual {p0, v0, v1}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction(J)V
-
-    return-void
+    if-eqz v0, :cond_1
 
     .line 100
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
+
+    if-nez v0, :cond_0
+
+    .line 103
+    invoke-virtual {p0}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction()V
+
+    goto :goto_0
+
+    .line 101
     :cond_0
     new-instance v0, Lorg/telegram/SQLite/SQLiteException;
 
@@ -82,6 +80,20 @@
     invoke-direct {v0, v1}, Lorg/telegram/SQLite/SQLiteException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    .line 106
+    iput-boolean v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->inTransaction:Z
+
+    .line 107
+    iget-wide v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->sqliteHandle:J
+
+    invoke-virtual {p0, v0, v1}, Lorg/telegram/SQLite/SQLiteDatabase;->beginTransaction(J)V
+
+    return-void
 .end method
 
 .method native beginTransaction(J)V
@@ -171,7 +183,7 @@
 .method public commitTransaction()V
     .locals 2
 
-    .line 107
+    .line 111
     iget-boolean v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->inTransaction:Z
 
     if-nez v0, :cond_0
@@ -181,10 +193,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 110
+    .line 114
     iput-boolean v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->inTransaction:Z
 
-    .line 111
+    .line 115
     iget-wide v0, p0, Lorg/telegram/SQLite/SQLiteDatabase;->sqliteHandle:J
 
     invoke-virtual {p0, v0, v1}, Lorg/telegram/SQLite/SQLiteDatabase;->commitTransaction(J)V

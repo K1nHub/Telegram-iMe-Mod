@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -58,11 +57,26 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
 
         static {
             int[] iArr = new int[ServicesCategory.values().length];
-            iArr[ServicesCategory.CHANNELS.ordinal()] = 1;
-            iArr[ServicesCategory.STAKING.ordinal()] = 2;
-            iArr[ServicesCategory.ADS.ordinal()] = 3;
-            iArr[ServicesCategory.NEUROBOTS.ordinal()] = 4;
-            iArr[ServicesCategory.PREMIUM.ordinal()] = 5;
+            try {
+                iArr[ServicesCategory.CHANNELS.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ServicesCategory.STAKING.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[ServicesCategory.ADS.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[ServicesCategory.NEUROBOTS.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[ServicesCategory.PREMIUM.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -115,7 +129,7 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletHomeServicesFragment.m1707getThemeDescriptions$lambda0(WalletHomeServicesFragment.this);
+                WalletHomeServicesFragment.getThemeDescriptions$lambda$0(WalletHomeServicesFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -127,8 +141,7 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-0  reason: not valid java name */
-    public static final void m1707getThemeDescriptions$lambda0(WalletHomeServicesFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(WalletHomeServicesFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getBalancesRecycleAdapter().notifyDataSetChanged();
     }
@@ -150,14 +163,13 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
         showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(this, BlockchainType.EVM, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHomeServicesFragment.m1709showRequiredWalletCreatedDialog$lambda2(WalletHomeServicesFragment.this);
+                WalletHomeServicesFragment.showRequiredWalletCreatedDialog$lambda$2(WalletHomeServicesFragment.this);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showRequiredWalletCreatedDialog$lambda-2  reason: not valid java name */
-    public static final void m1709showRequiredWalletCreatedDialog$lambda2(WalletHomeServicesFragment this$0) {
+    public static final void showRequiredWalletCreatedDialog$lambda$2(WalletHomeServicesFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.selectTab(0);
     }
@@ -175,17 +187,16 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
         getBalancesRecycleAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.services.WalletHomeServicesFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletHomeServicesFragment.m1708setupListeners$lambda5$lambda4(WalletHomeServicesFragment.this, baseQuickAdapter, view, i);
+                WalletHomeServicesFragment.setupListeners$lambda$5$lambda$4(WalletHomeServicesFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1708setupListeners$lambda5$lambda4(WalletHomeServicesFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$5$lambda$4(WalletHomeServicesFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this$0.getBalancesRecycleAdapter().getItem(i);
         if (baseNode instanceof ServicesBasicItem) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[((ServicesBasicItem) baseNode).getCategory().ordinal()];
@@ -205,14 +216,13 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
     }
 
     private final void setupWalletRecycleView() {
-        RecyclerView recyclerView = getBinding().recycleWalletHomeServicesDashboard;
+        RecyclerView setupWalletRecycleView$lambda$7 = getBinding().recycleWalletHomeServicesDashboard;
         BalancesRecycleAdapter balancesRecycleAdapter = getBalancesRecycleAdapter();
         balancesRecycleAdapter.setDiffCallback(new BalanceDiffCallback());
-        Unit unit = Unit.INSTANCE;
-        recyclerView.setAdapter(balancesRecycleAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
-        Intrinsics.checkNotNullExpressionValue(recyclerView, "");
-        RecycleViewExtKt.disableDefaultAnimation(recyclerView);
+        setupWalletRecycleView$lambda$7.setAdapter(balancesRecycleAdapter);
+        setupWalletRecycleView$lambda$7.setLayoutManager(new LinearLayoutManager(getParentActivity()));
+        Intrinsics.checkNotNullExpressionValue(setupWalletRecycleView$lambda$7, "setupWalletRecycleView$lambda$7");
+        RecycleViewExtKt.disableDefaultAnimation(setupWalletRecycleView$lambda$7);
     }
 
     /* compiled from: WalletHomeServicesFragment.kt */

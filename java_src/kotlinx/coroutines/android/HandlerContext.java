@@ -49,7 +49,8 @@ public final class HandlerContext extends HandlerDispatcher {
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
-    public void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    /* renamed from: dispatch */
+    public void mo1471dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         this.handler.post(runnable);
     }
 

@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lcom/smedialink/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog$$ExternalSyntheticLambda1;->f$3:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog;->$r8$lambda$duc07_CiAOs_LFd1m5giFwwbgjI(Lcom/smedialink/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog;->$r8$lambda$oqDTFZh5Q-qwNH4Vg6X8kRoRXFA(Lcom/smedialink/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method

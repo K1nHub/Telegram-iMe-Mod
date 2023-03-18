@@ -2,7 +2,7 @@ package org.webrtc;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -45,7 +45,7 @@ public class VideoFileRenderer implements VideoSink {
         this.outputFrameBuffer = ByteBuffer.allocateDirect(i3);
         FileOutputStream fileOutputStream = new FileOutputStream(str);
         this.videoOutFile = fileOutputStream;
-        fileOutputStream.write(("YUV4MPEG2 C420 W" + i + " H" + i2 + " Ip F30:1 A1:1\n").getBytes(Charset.forName(C0474C.ASCII_NAME)));
+        fileOutputStream.write(("YUV4MPEG2 C420 W" + i + " H" + i2 + " Ip F30:1 A1:1\n").getBytes(Charset.forName(C0468C.ASCII_NAME)));
         HandlerThread handlerThread = new HandlerThread("VideoFileRendererRenderThread");
         this.renderThread = handlerThread;
         handlerThread.start();
@@ -109,7 +109,7 @@ public class VideoFileRenderer implements VideoSink {
         YuvHelper.I420Rotate(i420Buffer.getDataY(), i420Buffer.getStrideY(), i420Buffer.getDataU(), i420Buffer.getStrideU(), i420Buffer.getDataV(), i420Buffer.getStrideV(), this.outputFrameBuffer, i420Buffer.getWidth(), i420Buffer.getHeight(), videoFrame.getRotation());
         i420Buffer.release();
         try {
-            this.videoOutFile.write("FRAME\n".getBytes(Charset.forName(C0474C.ASCII_NAME)));
+            this.videoOutFile.write("FRAME\n".getBytes(Charset.forName(C0468C.ASCII_NAME)));
             this.videoOutFile.write(this.outputFrameBuffer.array(), this.outputFrameBuffer.arrayOffset(), this.outputFrameSize);
             this.frameCount++;
         } catch (IOException e) {

@@ -187,9 +187,6 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/material/shape/MaterialShapeDrawable;->setCornerSize(F)V
 
-    .line 69
-    sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 66
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
@@ -205,7 +202,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$5$lambda$4"
 
     .line 72
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -250,7 +247,7 @@
     .line 42
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->imageNetworkIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v1, ""
+    const-string v1, "setupViewData$lambda$1$lambda$0"
 
     .line 43
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -319,7 +316,7 @@
 
     const/4 v4, 0x1
 
-    invoke-static {v1, p1, v2, v3, v4}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFrom(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
+    invoke-static {v1, p1, v2, v3, v4}, Lcom/smedialink/ui/smartpanel/extension/ImageViewExtKt;->loadFromWithPlaceholderResId(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
 
     .line 59
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;

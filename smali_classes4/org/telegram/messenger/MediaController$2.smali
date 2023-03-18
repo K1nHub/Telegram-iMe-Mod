@@ -243,7 +243,7 @@
     goto :goto_3
 
     :cond_4
-    const-string v1, "writing frame failed"
+    const-string/jumbo v1, "writing frame failed"
 
     .line 741
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V

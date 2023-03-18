@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/fork/ui/dialog/SelectedFilesBottomSheet$$ExternalSyntheticLambda0;->f$2:Lorg/fork/ui/dialog/SelectedFilesBottomSheet;
 
-    invoke-static {v0, v1, v2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->$r8$lambda$xyvyPz4O647ZfAYSgI60hXxk1rY(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
+    invoke-static {v0, v1, v2}, Lorg/fork/ui/dialog/SelectedFilesBottomSheet;->$r8$lambda$kHRk9tlZFSGOezdNKBWVEGGJrlc(Ljava/io/File;Lorg/fork/ui/dialog/SelectedFilesBottomSheet$FileItem;Lorg/fork/ui/dialog/SelectedFilesBottomSheet;)V
 
     return-void
 .end method

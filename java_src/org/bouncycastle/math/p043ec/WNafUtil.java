@@ -227,7 +227,7 @@ public abstract class WNafUtil {
                     Method dump skipped, instructions count: 260
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.bouncycastle.math.p043ec.WNafUtil.C29482.precompute(org.bouncycastle.math.ec.PreCompInfo):org.bouncycastle.math.ec.PreCompInfo");
+                throw new UnsupportedOperationException("Method not decompiled: org.bouncycastle.math.p043ec.WNafUtil.C30722.precompute(org.bouncycastle.math.ec.PreCompInfo):org.bouncycastle.math.ec.PreCompInfo");
             }
         });
     }

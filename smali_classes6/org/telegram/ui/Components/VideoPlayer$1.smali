@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/VideoPlayer;)V
     .locals 0
 
-    .line 188
+    .line 195
     iput-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$1;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -206,7 +206,7 @@
 .method public onPlayerStateChanged(ZI)V
     .locals 0
 
-    .line 192
+    .line 199
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$1;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/VideoPlayer;->access$000(Lorg/telegram/ui/Components/VideoPlayer;)Z
@@ -219,14 +219,14 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 193
+    .line 200
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$1;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/VideoPlayer;->access$002(Lorg/telegram/ui/Components/VideoPlayer;Z)Z
 
-    .line 194
+    .line 201
     iget-object p1, p0, Lorg/telegram/ui/Components/VideoPlayer$1;->this$0:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/VideoPlayer;->access$100(Lorg/telegram/ui/Components/VideoPlayer;)V

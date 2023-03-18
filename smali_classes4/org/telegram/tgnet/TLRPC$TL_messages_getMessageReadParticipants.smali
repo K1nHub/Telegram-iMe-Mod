@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static constructor:I = 0x2c6f97b7
+.field public static constructor:I = 0x31c1c44f
 
 
 # instance fields
@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 24665
+    .line 24772
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,14 +32,14 @@
 
 # virtual methods
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
-    .locals 5
+    .locals 4
 
-    .line 24672
+    .line 24779
     new-instance p2, Lorg/telegram/tgnet/TLRPC$Vector;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$Vector;-><init>()V
 
-    .line 24673
+    .line 24780
     invoke-virtual {p1, p3}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -47,43 +47,49 @@
     const/4 v1, 0x0
 
     :goto_0
-    if-ge v1, v0, :cond_0
+    if-ge v1, v0, :cond_1
 
-    .line 24675
-    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
+    .line 24782
+    invoke-virtual {p1, p3}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
-    invoke-virtual {p1, p3}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
+    move-result v2
 
-    move-result-wide v3
+    invoke-static {p1, v2, p3}, Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_readParticipantDate;
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v2
 
-    move-result-object v3
+    if-nez v2, :cond_0
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    return-object p2
+
+    .line 24786
+    :cond_0
+    iget-object v3, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     return-object p2
 .end method
 
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 24681
+    .line 24792
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReadParticipants;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 24682
+    .line 24793
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReadParticipants;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 24683
+    .line 24794
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_getMessageReadParticipants;->msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

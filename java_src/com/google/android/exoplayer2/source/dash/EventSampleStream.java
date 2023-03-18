@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.dash;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.decoder.DecoderInputBuffer;
@@ -18,7 +18,7 @@ final class EventSampleStream implements SampleStream {
     private boolean isFormatSentDownstream;
     private final Format upstreamFormat;
     private final EventMessageEncoder eventMessageEncoder = new EventMessageEncoder();
-    private long pendingSeekPositionUs = C0474C.TIME_UNSET;
+    private long pendingSeekPositionUs = C0468C.TIME_UNSET;
 
     @Override // com.google.android.exoplayer2.source.SampleStream
     public boolean isReady() {
@@ -48,9 +48,9 @@ final class EventSampleStream implements SampleStream {
         long[] jArr = eventStream.presentationTimesUs;
         this.eventTimesUs = jArr;
         long j2 = this.pendingSeekPositionUs;
-        if (j2 != C0474C.TIME_UNSET) {
+        if (j2 != C0468C.TIME_UNSET) {
             seekToUs(j2);
-        } else if (j != C0474C.TIME_UNSET) {
+        } else if (j != C0468C.TIME_UNSET) {
             this.currentIndex = Util.binarySearchCeil(jArr, j, false, false);
         }
     }
@@ -60,7 +60,7 @@ final class EventSampleStream implements SampleStream {
         int binarySearchCeil = Util.binarySearchCeil(this.eventTimesUs, j, true, false);
         this.currentIndex = binarySearchCeil;
         if (!((this.eventStreamAppendable && binarySearchCeil == this.eventTimesUs.length) ? false : false)) {
-            j = C0474C.TIME_UNSET;
+            j = C0468C.TIME_UNSET;
         }
         this.pendingSeekPositionUs = j;
     }

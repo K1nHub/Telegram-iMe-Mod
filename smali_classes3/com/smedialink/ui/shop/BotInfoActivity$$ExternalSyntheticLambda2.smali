@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/smedialink/ui/shop/BotInfoActivity;
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/smedialink/ui/shop/BotInfoActivity;)V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/shop/BotInfoActivity;
+    iput-object p1, p0, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -25,11 +25,9 @@
 .method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/shop/BotInfoActivity;
+    iget-object v0, p0, Lcom/smedialink/ui/shop/BotInfoActivity$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
-    check-cast p1, Lcom/smedialink/bots/domain/model/ShopItem;
-
-    invoke-static {v0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->$r8$lambda$o6ZiA0NyKH1TdpFGIrtcJSoB9pk(Lcom/smedialink/ui/shop/BotInfoActivity;Lcom/smedialink/bots/domain/model/ShopItem;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/shop/BotInfoActivity;->$r8$lambda$1APc2FB1OwtN3vvhI4HGkYAy4GA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -130,7 +130,7 @@ public final class ShopItem {
         }
         if (obj instanceof ShopItem) {
             ShopItem shopItem = (ShopItem) obj;
-            return Intrinsics.areEqual(this.botId, shopItem.botId) && Intrinsics.areEqual(this.sku, shopItem.sku) && Intrinsics.areEqual(this.avatar, shopItem.avatar) && this.language == shopItem.language && Intrinsics.areEqual(this.title, shopItem.title) && Intrinsics.areEqual(this.description, shopItem.description) && this.installs == shopItem.installs && this.priority == shopItem.priority && this.reviews == shopItem.reviews && Intrinsics.areEqual(Float.valueOf(this.rating), Float.valueOf(shopItem.rating)) && this.ownRating == shopItem.ownRating && this.phrases == shopItem.phrases && this.themes == shopItem.themes && Intrinsics.areEqual(this.created, shopItem.created) && Intrinsics.areEqual(this.updated, shopItem.updated) && Intrinsics.areEqual(this.tags, shopItem.tags) && Intrinsics.areEqual(this.price, shopItem.price) && Intrinsics.areEqual(this.downloadLink, shopItem.downloadLink) && this.type == shopItem.type && this.status == shopItem.status;
+            return Intrinsics.areEqual(this.botId, shopItem.botId) && Intrinsics.areEqual(this.sku, shopItem.sku) && Intrinsics.areEqual(this.avatar, shopItem.avatar) && this.language == shopItem.language && Intrinsics.areEqual(this.title, shopItem.title) && Intrinsics.areEqual(this.description, shopItem.description) && this.installs == shopItem.installs && this.priority == shopItem.priority && this.reviews == shopItem.reviews && Float.compare(this.rating, shopItem.rating) == 0 && this.ownRating == shopItem.ownRating && this.phrases == shopItem.phrases && this.themes == shopItem.themes && Intrinsics.areEqual(this.created, shopItem.created) && Intrinsics.areEqual(this.updated, shopItem.updated) && Intrinsics.areEqual(this.tags, shopItem.tags) && Intrinsics.areEqual(this.price, shopItem.price) && Intrinsics.areEqual(this.downloadLink, shopItem.downloadLink) && this.type == shopItem.type && this.status == shopItem.status;
         }
         return false;
     }
@@ -144,7 +144,7 @@ public final class ShopItem {
     }
 
     public String toString() {
-        return "ShopItem(botId=" + this.botId + ", sku=" + ((Object) this.sku) + ", avatar=" + this.avatar + ", language=" + this.language + ", title=" + this.title + ", description=" + this.description + ", installs=" + this.installs + ", priority=" + this.priority + ", reviews=" + this.reviews + ", rating=" + this.rating + ", ownRating=" + this.ownRating + ", phrases=" + this.phrases + ", themes=" + this.themes + ", created=" + this.created + ", updated=" + this.updated + ", tags=" + this.tags + ", price=" + ((Object) this.price) + ", downloadLink=" + this.downloadLink + ", type=" + this.type + ", status=" + this.status + ')';
+        return "ShopItem(botId=" + this.botId + ", sku=" + this.sku + ", avatar=" + this.avatar + ", language=" + this.language + ", title=" + this.title + ", description=" + this.description + ", installs=" + this.installs + ", priority=" + this.priority + ", reviews=" + this.reviews + ", rating=" + this.rating + ", ownRating=" + this.ownRating + ", phrases=" + this.phrases + ", themes=" + this.themes + ", created=" + this.created + ", updated=" + this.updated + ", tags=" + this.tags + ", price=" + this.price + ", downloadLink=" + this.downloadLink + ", type=" + this.type + ", status=" + this.status + ')';
     }
 
     public ShopItem(String botId, String str, String avatar, BotLanguage language, String title, String description, long j, long j2, long j3, float f, int i, long j4, long j5, String created, String updated, List<SmartTag> tags, String str2, String downloadLink, BotType type, BotStatus status) {
@@ -262,6 +262,6 @@ public final class ShopItem {
     }
 
     public final String getSearchField() {
-        return Intrinsics.stringPlus(this.title, this.description);
+        return this.title + this.description;
     }
 }

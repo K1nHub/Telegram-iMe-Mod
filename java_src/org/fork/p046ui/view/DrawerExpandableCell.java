@@ -13,10 +13,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.CubicBezierInterpolator;
@@ -59,7 +58,6 @@ public final class DrawerExpandableCell extends FrameLayout {
             Intrinsics.checkNotNull(drawable);
             Drawable mutate = drawable.mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuItemIcon"), PorterDuff.Mode.MULTIPLY));
-            Unit unit = Unit.INSTANCE;
             textView.setCompoundDrawablesWithIntrinsicBounds(mutate, (Drawable) null, (Drawable) null, (Drawable) null);
         } catch (Throwable th) {
             FileLog.m45e(th);
@@ -102,7 +100,7 @@ public final class DrawerExpandableCell extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuItemIcon"), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3158R.C3160drawable.msg_expand);
+        imageView.setImageResource(C3286R.C3288drawable.msg_expand);
         return imageView;
     }
 

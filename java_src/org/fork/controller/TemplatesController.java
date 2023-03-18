@@ -31,6 +31,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.comparisons.ComparisonsKt__ComparisonsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
@@ -76,8 +77,14 @@ public final class TemplatesController extends BaseController implements KoinCom
 
         static {
             int[] iArr = new int[TemplatesSortingType.values().length];
-            iArr[TemplatesSortingType.DATE.ordinal()] = 1;
-            iArr[TemplatesSortingType.NAME.ordinal()] = 2;
+            try {
+                iArr[TemplatesSortingType.DATE.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TemplatesSortingType.NAME.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -142,8 +149,8 @@ public final class TemplatesController extends BaseController implements KoinCom
             if (backup.getTemplates() != null && (!backup.getTemplates().isEmpty())) {
                 this.templates.clear();
                 TLRPC$TL_channels_getMessages tLRPC$TL_channels_getMessages = new TLRPC$TL_channels_getMessages();
-                tLRPC$TL_channels_getMessages.channel = getMessagesController().getInputChannel(getTemplatesChannelId());
-                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1536id;
+                tLRPC$TL_channels_getMessages.channel = getMessagesController().getInputChannel(this.templatesChannelId);
+                ArrayList<Integer> arrayList = tLRPC$TL_channels_getMessages.f1541id;
                 List<TemplateModel> templates = backup.getTemplates();
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(templates, 10);
                 ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault);
@@ -154,7 +161,7 @@ public final class TemplatesController extends BaseController implements KoinCom
                 getConnectionsManager().sendRequest(tLRPC$TL_channels_getMessages, new RequestDelegate() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda14
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                        TemplatesController.m1957restoreBackup$lambda8(Backup.this, this, tLObject, tLRPC$TL_error);
+                        TemplatesController.restoreBackup$lambda$8(Backup.this, this, tLObject, tLRPC$TL_error);
                     }
                 });
             }
@@ -163,8 +170,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: restoreBackup$lambda-8  reason: not valid java name */
-    public static final void m1957restoreBackup$lambda8(Backup backup, final TemplatesController this$0, TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+    public static final void restoreBackup$lambda$8(Backup backup, final TemplatesController this$0, TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         int collectionSizeOrDefault;
         Sequence asSequence;
         Sequence filterNot;
@@ -178,13 +184,13 @@ public final class TemplatesController extends BaseController implements KoinCom
             ArrayList<TLRPC$User> arrayList2 = tLRPC$messages_Messages.users;
             Intrinsics.checkNotNullExpressionValue(arrayList2, "response.users");
             for (TLRPC$User tLRPC$User : arrayList2) {
-                longSparseArray.put(tLRPC$User.f1633id, tLRPC$User);
+                longSparseArray.put(tLRPC$User.f1639id, tLRPC$User);
             }
             LongSparseArray longSparseArray2 = new LongSparseArray();
             ArrayList<TLRPC$Chat> arrayList3 = tLRPC$messages_Messages.chats;
             Intrinsics.checkNotNullExpressionValue(arrayList3, "response.chats");
             for (TLRPC$Chat tLRPC$Chat : arrayList3) {
-                longSparseArray2.put(tLRPC$Chat.f1494id, tLRPC$Chat);
+                longSparseArray2.put(tLRPC$Chat.f1499id, tLRPC$Chat);
             }
             ArrayList<TLRPC$Message> arrayList4 = tLRPC$messages_Messages.messages;
             Intrinsics.checkNotNullExpressionValue(arrayList4, "response.messages");
@@ -200,25 +206,24 @@ public final class TemplatesController extends BaseController implements KoinCom
                 arrayList5.add(obj);
             }
         }
-        Map<Long, TemplateModel> templates2 = this$0.getTemplates();
+        Map<Long, TemplateModel> map2 = this$0.templates;
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList5, 10);
         ArrayList arrayList6 = new ArrayList(collectionSizeOrDefault);
         for (TemplateModel templateModel : arrayList5) {
             arrayList6.add(TuplesKt.m100to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
-        MapsKt__MapsKt.putAll(templates2, arrayList6);
+        MapsKt__MapsKt.putAll(map2, arrayList6);
         this$0.getDao().restoreBackup(this$0.getUserConfig().clientUserId, arrayList5);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda3
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1958restoreBackup$lambda8$lambda7(TemplatesController.this);
+                TemplatesController.restoreBackup$lambda$8$lambda$7(TemplatesController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: restoreBackup$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m1958restoreBackup$lambda8$lambda7(TemplatesController this$0) {
+    public static final void restoreBackup$lambda$8$lambda$7(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
     }
@@ -303,14 +308,13 @@ public final class TemplatesController extends BaseController implements KoinCom
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1944addTemplate$lambda14(TemplatesController.this, templatesDb);
+                TemplatesController.addTemplate$lambda$14(TemplatesController.this, templatesDb);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: addTemplate$lambda-14  reason: not valid java name */
-    public static final void m1944addTemplate$lambda14(TemplatesController this$0, TemplatesDb template) {
+    public static final void addTemplate$lambda$14(TemplatesController this$0, TemplatesDb template) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(template, "$template");
         this$0.getDao().insert((TemplatesDao) template);
@@ -327,20 +331,19 @@ public final class TemplatesController extends BaseController implements KoinCom
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1951markAsSent$lambda15(TemplatesController.this, templateModel2, j);
+                TemplatesController.markAsSent$lambda$15(TemplatesController.this, templateModel2, j);
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1952markAsSent$lambda16(TemplatesController.this);
+                TemplatesController.markAsSent$lambda$16(TemplatesController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: markAsSent$lambda-15  reason: not valid java name */
-    public static final void m1951markAsSent$lambda15(TemplatesController this$0, TemplateModel newTemplate, long j) {
+    public static final void markAsSent$lambda$15(TemplatesController this$0, TemplateModel newTemplate, long j) {
         List<Long> listOf;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(newTemplate, "$newTemplate");
@@ -351,15 +354,13 @@ public final class TemplatesController extends BaseController implements KoinCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: markAsSent$lambda-16  reason: not valid java name */
-    public static final void m1952markAsSent$lambda16(TemplatesController this$0) {
+    public static final void markAsSent$lambda$16(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: convertToTemplate$lambda-20  reason: not valid java name */
-    public static final void m1947convertToTemplate$lambda20(TemplatesController this$0, List newTemplates) {
+    public static final void convertToTemplate$lambda$20(TemplatesController this$0, List newTemplates) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(newTemplates, "$newTemplates");
@@ -374,8 +375,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: convertToTemplate$lambda-21  reason: not valid java name */
-    public static final void m1948convertToTemplate$lambda21(TemplatesController this$0) {
+    public static final void convertToTemplate$lambda$21(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
     }
@@ -387,30 +387,29 @@ public final class TemplatesController extends BaseController implements KoinCom
         final ArrayList arrayList = new ArrayList();
         for (Number number : messageIds) {
             long intValue = number.intValue();
-            TemplateModel templateModel = getTemplates().get(Long.valueOf(intValue));
+            TemplateModel templateModel = this.templates.get(Long.valueOf(intValue));
             if (templateModel != null) {
                 copy = templateModel.copy((r20 & 1) != 0 ? templateModel.messageId : 0L, (r20 & 2) != 0 ? templateModel.groupId : 0L, (r20 & 4) != 0 ? templateModel.name : newName, (r20 & 8) != 0 ? templateModel.creationDate : 0L, (r20 & 16) != 0 ? templateModel.usageRating : 0, (r20 & 32) != 0 ? templateModel.sent : false);
-                getTemplates().put(Long.valueOf(intValue), copy);
+                this.templates.put(Long.valueOf(intValue), copy);
                 arrayList.add(copy);
             }
         }
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1955renameTemplate$lambda24(TemplatesController.this, arrayList);
+                TemplatesController.renameTemplate$lambda$24(TemplatesController.this, arrayList);
             }
         });
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1956renameTemplate$lambda25(TemplatesController.this);
+                TemplatesController.renameTemplate$lambda$25(TemplatesController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: renameTemplate$lambda-24  reason: not valid java name */
-    public static final void m1955renameTemplate$lambda24(TemplatesController this$0, List newTemplates) {
+    public static final void renameTemplate$lambda$24(TemplatesController this$0, List newTemplates) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(newTemplates, "$newTemplates");
@@ -425,8 +424,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: renameTemplate$lambda-25  reason: not valid java name */
-    public static final void m1956renameTemplate$lambda25(TemplatesController this$0) {
+    public static final void renameTemplate$lambda$25(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
     }
@@ -436,30 +434,29 @@ public final class TemplatesController extends BaseController implements KoinCom
         Intrinsics.checkNotNullParameter(messages, "messages");
         final ArrayList arrayList = new ArrayList();
         for (MessageObject messageObject : messages) {
-            TemplateModel templateModel = getTemplates().get(Long.valueOf(messageObject.getId()));
+            TemplateModel templateModel = this.templates.get(Long.valueOf(messageObject.getId()));
             if (templateModel != null) {
                 copy = templateModel.copy((r20 & 1) != 0 ? templateModel.messageId : 0L, (r20 & 2) != 0 ? templateModel.groupId : 0L, (r20 & 4) != 0 ? templateModel.name : null, (r20 & 8) != 0 ? templateModel.creationDate : 0L, (r20 & 16) != 0 ? templateModel.usageRating : templateModel.getUsageRating() + 1, (r20 & 32) != 0 ? templateModel.sent : false);
-                getTemplates().put(Long.valueOf(messageObject.getId()), copy);
+                this.templates.put(Long.valueOf(messageObject.getId()), copy);
                 arrayList.add(copy);
             }
         }
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda10
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1949incrementUsageRating$lambda28(TemplatesController.this, arrayList);
+                TemplatesController.incrementUsageRating$lambda$28(TemplatesController.this, arrayList);
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda2
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1950incrementUsageRating$lambda29(TemplatesController.this);
+                TemplatesController.incrementUsageRating$lambda$29(TemplatesController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: incrementUsageRating$lambda-28  reason: not valid java name */
-    public static final void m1949incrementUsageRating$lambda28(TemplatesController this$0, List newTemplates) {
+    public static final void incrementUsageRating$lambda$28(TemplatesController this$0, List newTemplates) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(newTemplates, "$newTemplates");
@@ -474,8 +471,7 @@ public final class TemplatesController extends BaseController implements KoinCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: incrementUsageRating$lambda-29  reason: not valid java name */
-    public static final void m1950incrementUsageRating$lambda29(TemplatesController this$0) {
+    public static final void incrementUsageRating$lambda$29(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
     }
@@ -485,42 +481,38 @@ public final class TemplatesController extends BaseController implements KoinCom
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1945clearAllTemplates$lambda30(TemplatesController.this);
+                TemplatesController.clearAllTemplates$lambda$30(TemplatesController.this);
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda1
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1946clearAllTemplates$lambda31(TemplatesController.this);
+                TemplatesController.clearAllTemplates$lambda$31(TemplatesController.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: clearAllTemplates$lambda-30  reason: not valid java name */
-    public static final void m1945clearAllTemplates$lambda30(TemplatesController this$0) {
+    public static final void clearAllTemplates$lambda$30(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getDao().clearAllTemplates(this$0.getUserConfig().clientUserId);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: clearAllTemplates$lambda-31  reason: not valid java name */
-    public static final void m1946clearAllTemplates$lambda31(TemplatesController this$0) {
+    public static final void clearAllTemplates$lambda$31(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: removeTemplates$lambda-33  reason: not valid java name */
-    public static final void m1953removeTemplates$lambda33(TemplatesController this$0, List messageIds) {
+    public static final void removeTemplates$lambda$33(TemplatesController this$0, List messageIds) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(messageIds, "$messageIds");
         this$0.getDao().removeTemplates(messageIds, this$0.getUserConfig().clientUserId);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: removeTemplates$lambda-34  reason: not valid java name */
-    public static final void m1954removeTemplates$lambda34(TemplatesController this$0) {
+    public static final void removeTemplates$lambda$34(TemplatesController this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotificationCenter().postNotificationName(NotificationCenter.templatesDidChanged, new Object[0]);
     }
@@ -573,14 +565,16 @@ public final class TemplatesController extends BaseController implements KoinCom
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final TemplatesController m1959getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new TemplatesController(i);
+        public static final TemplatesController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (TemplatesController) tmp0.invoke(obj);
         }
 
-        public final TemplatesController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(TemplatesController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.TemplatesController$Companion$$ExternalSyntheticLambda0
+        public final TemplatesController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = TemplatesController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final TemplatesController$Companion$getInstance$1 templatesController$Companion$getInstance$1 = new TemplatesController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.TemplatesController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -588,9 +582,9 @@ public final class TemplatesController extends BaseController implements KoinCom
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    TemplatesController m1959getInstance$lambda0;
-                    m1959getInstance$lambda0 = TemplatesController.Companion.m1959getInstance$lambda0(i, (Integer) obj);
-                    return m1959getInstance$lambda0;
+                    TemplatesController instance$lambda$0;
+                    instance$lambda$0 = TemplatesController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -598,7 +592,7 @@ public final class TemplatesController extends BaseController implements KoinCom
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (TemplatesController) computeIfAbsent;
         }
     }
@@ -620,16 +614,16 @@ public final class TemplatesController extends BaseController implements KoinCom
             arrayList2.add(TuplesKt.m100to(Long.valueOf(templateModel.getMessageId()), templateModel));
         }
         MapsKt__MapsKt.putAll(map, arrayList2);
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda11
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1947convertToTemplate$lambda20(TemplatesController.this, arrayList);
+                TemplatesController.convertToTemplate$lambda$20(TemplatesController.this, arrayList);
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda0
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1948convertToTemplate$lambda21(TemplatesController.this);
+                TemplatesController.convertToTemplate$lambda$21(TemplatesController.this);
             }
         });
     }
@@ -637,18 +631,18 @@ public final class TemplatesController extends BaseController implements KoinCom
     public final void removeTemplates(final List<Long> messageIds) {
         Intrinsics.checkNotNullParameter(messageIds, "messageIds");
         for (Number number : messageIds) {
-            getTemplates().remove(Long.valueOf(number.longValue()));
+            this.templates.remove(Long.valueOf(number.longValue()));
         }
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1953removeTemplates$lambda33(TemplatesController.this, messageIds);
+                TemplatesController.removeTemplates$lambda$33(TemplatesController.this, messageIds);
             }
         });
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.controller.TemplatesController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                TemplatesController.m1954removeTemplates$lambda34(TemplatesController.this);
+                TemplatesController.removeTemplates$lambda$34(TemplatesController.this);
             }
         });
     }

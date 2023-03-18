@@ -1175,7 +1175,7 @@
 
     const-string v12, "height"
 
-    const-string v13, "width"
+    const-string/jumbo v13, "width"
 
     const/4 v14, 0x0
 
@@ -1196,7 +1196,7 @@
     goto/16 :goto_f
 
     :pswitch_1
-    const-string v1, "x"
+    const-string/jumbo v1, "x"
 
     .line 1278
     invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
@@ -1211,7 +1211,7 @@
     move-result-object v1
 
     :cond_d
-    const-string v3, "y"
+    const-string/jumbo v3, "y"
 
     .line 1282
     invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
@@ -1734,28 +1734,28 @@
     goto/16 :goto_f
 
     :pswitch_3
-    const-string v1, "x1"
+    const-string/jumbo v1, "x1"
 
     .line 1327
     invoke-static {v1, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v1
 
-    const-string v3, "x2"
+    const-string/jumbo v3, "x2"
 
     .line 1328
     invoke-static {v3, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v3
 
-    const-string v4, "y1"
+    const-string/jumbo v4, "y1"
 
     .line 1329
     invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
 
     move-result-object v4
 
-    const-string v5, "y2"
+    const-string/jumbo v5, "y2"
 
     .line 1330
     invoke-static {v5, v2}, Lorg/telegram/messenger/SvgHelper;->access$700(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/Float;
@@ -1863,7 +1863,7 @@
     if-nez v3, :cond_1d
 
     :cond_1c
-    const-string v4, "viewBox"
+    const-string/jumbo v4, "viewBox"
 
     .line 1231
     invoke-static {v4, v2}, Lorg/telegram/messenger/SvgHelper;->access$200(Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljava/lang/String;

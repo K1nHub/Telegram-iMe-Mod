@@ -2,8 +2,9 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 import java.io.Serializable;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-final class NaturalOrdering extends Ordering<Comparable<?>> implements Serializable {
+public final class NaturalOrdering extends Ordering<Comparable<?>> implements Serializable {
     static final NaturalOrdering INSTANCE = new NaturalOrdering();
 
     public String toString() {

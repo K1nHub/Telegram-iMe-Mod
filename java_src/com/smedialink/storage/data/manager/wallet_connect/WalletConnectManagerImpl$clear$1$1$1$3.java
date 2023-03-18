@@ -14,8 +14,8 @@ final class WalletConnectManagerImpl$clear$1$1$1$3 extends Lambda implements Fun
         super(2);
     }
 
-    public final void invoke(long j, WCPeerMeta noName_1) {
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+    public final void invoke(long j, WCPeerMeta wCPeerMeta) {
+        Intrinsics.checkNotNullParameter(wCPeerMeta, "<anonymous parameter 1>");
     }
 
     @Override // kotlin.jvm.functions.Function2

@@ -5,7 +5,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.smedialink.utils.extentions.common.ViewExtKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -30,7 +29,6 @@ public class ChannelTagView extends AppCompatTextView {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(2.0f));
         gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), Theme.getColor("chats_actionBackground"));
-        Unit unit = Unit.INSTANCE;
         setBackground(gradientDrawable);
         setGravity(17);
         setTextSize(1, 10.0f);

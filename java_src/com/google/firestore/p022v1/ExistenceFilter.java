@@ -27,7 +27,7 @@ public final class ExistenceFilter extends GeneratedMessageLite<ExistenceFilter,
     /* renamed from: com.google.firestore.v1.ExistenceFilter$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<ExistenceFilter, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10621 c10621) {
+        /* synthetic */ Builder(C10551 c10551) {
             this();
         }
 
@@ -38,7 +38,7 @@ public final class ExistenceFilter extends GeneratedMessageLite<ExistenceFilter,
 
     /* renamed from: com.google.firestore.v1.ExistenceFilter$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10621 {
+    static /* synthetic */ class C10551 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f209xa1df5c61;
@@ -79,7 +79,7 @@ public final class ExistenceFilter extends GeneratedMessageLite<ExistenceFilter,
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10621.f209xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10551.f209xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new ExistenceFilter();
             case 2:

@@ -7,8 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/storage/domain/model/wallet/Hint$ChangeNetwork;,
-        Lcom/smedialink/storage/domain/model/wallet/Hint$StakingInfo;,
-        Lcom/smedialink/storage/domain/model/wallet/Hint$Companion;
+        Lcom/smedialink/storage/domain/model/wallet/Hint$Companion;,
+        Lcom/smedialink/storage/domain/model/wallet/Hint$StakingInfo;
     }
 .end annotation
 

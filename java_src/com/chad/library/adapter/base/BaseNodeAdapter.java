@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BaseNodeAdapter.kt */
@@ -104,7 +103,7 @@ public abstract class BaseNodeAdapter<T extends BaseNode> extends BaseProviderMu
                 if (Intrinsics.areEqual(bool, Boolean.TRUE) || ((BaseExpandNode) t).isExpanded()) {
                     List<BaseNode> childNode = t.getChildNode();
                     if (!((childNode == null || childNode.isEmpty()) ? true : true)) {
-                        Objects.requireNonNull(childNode, "null cannot be cast to non-null type kotlin.collections.Collection<T of com.chad.library.adapter.base.BaseNodeAdapter>");
+                        Intrinsics.checkNotNull(childNode, "null cannot be cast to non-null type kotlin.collections.Collection<T of com.chad.library.adapter.base.BaseNodeAdapter>");
                         arrayList.addAll(flatData(childNode, bool));
                     }
                 }
@@ -114,7 +113,7 @@ public abstract class BaseNodeAdapter<T extends BaseNode> extends BaseProviderMu
             } else {
                 List<BaseNode> childNode2 = t.getChildNode();
                 if (!((childNode2 == null || childNode2.isEmpty()) ? true : true)) {
-                    Objects.requireNonNull(childNode2, "null cannot be cast to non-null type kotlin.collections.Collection<T of com.chad.library.adapter.base.BaseNodeAdapter>");
+                    Intrinsics.checkNotNull(childNode2, "null cannot be cast to non-null type kotlin.collections.Collection<T of com.chad.library.adapter.base.BaseNodeAdapter>");
                     arrayList.addAll(flatData(childNode2, bool));
                 }
             }

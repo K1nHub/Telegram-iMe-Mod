@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletNotificationsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletNotificationsPresenter.kt\ncom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,138:1\n39#2,6:139\n39#2,6:145\n39#2,6:151\n39#2,6:157\n*S KotlinDebug\n*F\n+ 1 WalletNotificationsPresenter.kt\ncom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter\n*L\n38#1:139,6\n62#1:145,6\n89#1:151,6\n129#1:157,6\n*E\n"
+    value = "SMAP\nWalletNotificationsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletNotificationsPresenter.kt\ncom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter\n+ 2 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,142:1\n39#2,8:143\n39#2,8:151\n39#2,8:159\n39#2,8:167\n*S KotlinDebug\n*F\n+ 1 WalletNotificationsPresenter.kt\ncom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter\n*L\n38#1:143,8\n63#1:151,8\n91#1:159,8\n132#1:167,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -29,10 +29,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$7E4Ahpoz_Q3n1fIwC5cdklKlV2o(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
+.method public static synthetic $r8$lambda$fkRTRPV5XJMyb7k7rI5NeBUYhlA(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->loadNotification$lambda-4(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->loadNotification$lambda$4(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
 
     return-void
 .end method
@@ -76,21 +76,21 @@
 
     const/4 p1, 0x0
 
-    .line 82
+    .line 84
     :cond_0
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->loadNotification(Z)V
 
     return-void
 .end method
 
-.method private static final loadNotification$lambda-4(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
+.method private static final loadNotification$lambda$4(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
+    .line 90
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p0
@@ -107,15 +107,15 @@
 .method private final markNotificationAsRead(Ljava/lang/String;)V
     .locals 3
 
-    .line 126
+    .line 129
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->walletNotificationInteractor:Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;
 
-    .line 127
+    .line 130
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;->setNotificationsRead(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 128
+    .line 131
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -130,7 +130,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 129
+    .line 132
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -142,23 +142,34 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markNotificationAsRead$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 134
+    .line 138
     invoke-static {p0, p1, v0, v1, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -182,15 +193,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 60
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->walletNotificationInteractor:Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;
 
-    .line 60
+    .line 61
     invoke-virtual {v0, p1}, Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;->getNotifications(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 61
+    .line 62
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -205,7 +216,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 62
+    .line 63
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -217,23 +228,34 @@
 
     invoke-direct {v1, p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadMoreNotification$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
 
-    new-instance v2, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadMoreNotification$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance v2, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {v2, v0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadMoreNotification$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {v2, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {p1, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v1, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadMoreNotification$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadMoreNotification$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v0, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v0, v1}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {p1, v2, v0}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 79
+    .line 81
     invoke-static {p0, p1, v0, v1, v0}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -244,7 +266,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 83
+    .line 85
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
@@ -253,7 +275,7 @@
 
     invoke-interface {v0}, Lcom/smedialink/ui/base/mvp/LoadMoreView;->resetLoadMore()V
 
-    .line 85
+    .line 87
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->walletNotificationInteractor:Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;
 
@@ -261,12 +283,12 @@
 
     const/4 v2, 0x1
 
-    .line 86
+    .line 88
     invoke-static {v0, v1, v2, v1}, Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;->getNotifications$default(Lcom/smedialink/storage/domain/interactor/notification/PushNotificationInteractor;Ljava/lang/String;ILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 87
+    .line 89
     iget-object v3, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->schedulersProvider:Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v3}, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -277,7 +299,7 @@
 
     move-result-object v0
 
-    .line 88
+    .line 90
     new-instance v3, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
@@ -290,7 +312,7 @@
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 89
+    .line 91
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v3
@@ -302,19 +324,30 @@
 
     invoke-direct {v4, p0, p1}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadNotification$$inlined$subscribeWithErrorHandle$default$1;-><init>(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;Z)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadNotification$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v3}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadNotification$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v4}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v4, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v4, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadNotification$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v4, v3}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$loadNotification$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v3, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v3, v4}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 110
+    .line 113
     invoke-static {p0, p1, v1, v2, v1}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -391,21 +424,32 @@
 
     invoke-direct {v2, p1, p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markAllNotificationAsRead$$inlined$subscribeWithErrorHandle$default$1;-><init>(Ljava/util/List;Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;)V
 
-    new-instance p1, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markAllNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;
+    new-instance p1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 
-    invoke-direct {p1, v1}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markAllNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+    invoke-direct {p1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-virtual {v0, v2, p1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    new-instance v2, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markAllNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter$markAllNotificationAsRead$$inlined$subscribeWithErrorHandle$default$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;)V
+
+    .line 46
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v2}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
     const-string v0, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 55
+    .line 56
     invoke-static {p0, p1, v4, v0, v4}, Lcom/smedialink/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/smedialink/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -471,7 +515,7 @@
 
     const/4 v2, 0x0
 
-    .line 118
+    .line 121
     invoke-static {p0, v0, v1, v2}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->loadNotification$default(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;ZILjava/lang/Object;)V
 
     return-void

@@ -64,7 +64,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    .line 264
+    .line 265
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
@@ -87,7 +87,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 265
+    .line 266
     invoke-virtual {p3}, Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;->getType()Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage$WCSignType;
 
     move-result-object v0
@@ -104,7 +104,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 266
+    .line 267
     iget-object p3, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$4;->$this_with:Lcom/trustwallet/walletconnect/WCClient;
 
     const-string v0, "Method is unsupported"
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 267
+    .line 268
     :cond_0
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$4;->this$0:Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl;
 
@@ -121,10 +121,10 @@
 
     move-result-object v0
 
-    .line 269
+    .line 270
     iget-object v1, p0, Lcom/smedialink/storage/data/manager/wallet_connect/WalletConnectManagerImpl$setupClientListeners$1$4;->$sessionStoreItem:Lcom/trustwallet/walletconnect/WCSessionStoreItem;
 
-    .line 267
+    .line 268
     invoke-interface {v0, p1, p2, v1, p3}, Lcom/smedialink/storage/domain/manager/wallet_connect/WalletConnectEventsDelegate;->onEthSign(JLcom/trustwallet/walletconnect/WCSessionStoreItem;Lcom/trustwallet/walletconnect/models/ethereum/WCEthereumSignMessage;)V
 
     :goto_0

@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class SelectableToken implements Parcelable {
 
     /* renamed from: id */
-    private final String f282id;
+    private final String f284id;
     private final String name;
     private final String ticker;
 
@@ -18,13 +18,13 @@ public abstract class SelectableToken implements Parcelable {
     }
 
     private SelectableToken(String str, String str2, String str3) {
-        this.f282id = str;
+        this.f284id = str;
         this.ticker = str2;
         this.name = str3;
     }
 
     public String getId() {
-        return this.f282id;
+        return this.f284id;
     }
 
     public String getTicker() {
@@ -40,7 +40,7 @@ public abstract class SelectableToken implements Parcelable {
     public static abstract class WithLogoUrl extends SelectableToken {
 
         /* renamed from: id */
-        private final String f283id;
+        private final String f285id;
         private final String logoUrl;
         private final String name;
         private final String ticker;
@@ -51,7 +51,7 @@ public abstract class SelectableToken implements Parcelable {
 
         @Override // com.smedialink.model.wallet.select.SelectableToken
         public String getId() {
-            return this.f283id;
+            return this.f285id;
         }
 
         @Override // com.smedialink.model.wallet.select.SelectableToken
@@ -70,7 +70,7 @@ public abstract class SelectableToken implements Parcelable {
 
         private WithLogoUrl(String str, String str2, String str3, String str4) {
             super(str, str2, str3, null);
-            this.f283id = str;
+            this.f285id = str;
             this.ticker = str2;
             this.name = str3;
             this.logoUrl = str4;
@@ -82,7 +82,7 @@ public abstract class SelectableToken implements Parcelable {
             public static final Parcelable.Creator<Binance> CREATOR = new Creator();
 
             /* renamed from: id */
-            private final String f284id;
+            private final String f286id;
             private final String logoUrl;
             private final String name;
             private final String ticker;
@@ -171,7 +171,7 @@ public abstract class SelectableToken implements Parcelable {
             @Override // android.os.Parcelable
             public void writeToParcel(Parcel out, int i) {
                 Intrinsics.checkNotNullParameter(out, "out");
-                out.writeString(this.f284id);
+                out.writeString(this.f286id);
                 out.writeString(this.ticker);
                 out.writeString(this.name);
                 out.writeString(this.logoUrl);
@@ -179,7 +179,7 @@ public abstract class SelectableToken implements Parcelable {
 
             @Override // com.smedialink.model.wallet.select.SelectableToken.WithLogoUrl, com.smedialink.model.wallet.select.SelectableToken
             public String getId() {
-                return this.f284id;
+                return this.f286id;
             }
 
             @Override // com.smedialink.model.wallet.select.SelectableToken.WithLogoUrl, com.smedialink.model.wallet.select.SelectableToken
@@ -204,7 +204,7 @@ public abstract class SelectableToken implements Parcelable {
                 Intrinsics.checkNotNullParameter(ticker, "ticker");
                 Intrinsics.checkNotNullParameter(name, "name");
                 Intrinsics.checkNotNullParameter(logoUrl, "logoUrl");
-                this.f284id = id;
+                this.f286id = id;
                 this.ticker = ticker;
                 this.name = name;
                 this.logoUrl = logoUrl;
@@ -218,7 +218,7 @@ public abstract class SelectableToken implements Parcelable {
         public static final Parcelable.Creator<WithResLogo> CREATOR = new Creator();
 
         /* renamed from: id */
-        private final String f285id;
+        private final String f287id;
         private final int logoRes;
         private final String name;
         private final String ticker;
@@ -306,7 +306,7 @@ public abstract class SelectableToken implements Parcelable {
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel out, int i) {
             Intrinsics.checkNotNullParameter(out, "out");
-            out.writeString(this.f285id);
+            out.writeString(this.f287id);
             out.writeString(this.ticker);
             out.writeString(this.name);
             out.writeInt(this.logoRes);
@@ -314,7 +314,7 @@ public abstract class SelectableToken implements Parcelable {
 
         @Override // com.smedialink.model.wallet.select.SelectableToken
         public String getId() {
-            return this.f285id;
+            return this.f287id;
         }
 
         @Override // com.smedialink.model.wallet.select.SelectableToken
@@ -337,7 +337,7 @@ public abstract class SelectableToken implements Parcelable {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(ticker, "ticker");
             Intrinsics.checkNotNullParameter(name, "name");
-            this.f285id = id;
+            this.f287id = id;
             this.ticker = ticker;
             this.name = name;
             this.logoRes = i;

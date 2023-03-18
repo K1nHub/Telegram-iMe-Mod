@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,410:1\n127#2,5:411\n127#2,5:416\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n*L\n113#1:411,5\n114#1:416,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n127#2,5:434\n127#2,5:439\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/smedialink/di/module/PresenterModuleKt$presentationPresenterModule$1$2\n*L\n117#1:434,5\n118#1:439,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 113
+    .line 117
     move-object v6, p2
 
     check-cast v6, Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 113
+    .line 117
     move-object v5, p2
 
     check-cast v5, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 113
+    .line 117
     move-object v3, p2
 
     check-cast v3, Lcom/smedialink/storage/domain/manager/crypto/CryptoAccessManager;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 114
+    .line 118
     move-object v4, p2
 
     check-cast v4, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
@@ -149,7 +149,7 @@
 
     move-result-object p2
 
-    .line 114
+    .line 118
     move-object v2, p2
 
     check-cast v2, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;
@@ -165,12 +165,12 @@
 
     move-result-object p1
 
-    .line 114
+    .line 118
     move-object v7, p1
 
     check-cast v7, Lcom/smedialink/manager/crypto/recipient/CryptoRecipientManager;
 
-    .line 112
+    .line 116
     new-instance p1, Lcom/smedialink/ui/wallet/home/old/WalletAttachAlertPresenter;
 
     move-object v1, p1
@@ -183,7 +183,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 111
+    .line 115
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

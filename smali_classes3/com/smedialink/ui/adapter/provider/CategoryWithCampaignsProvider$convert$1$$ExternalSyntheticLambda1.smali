@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1$$ExternalSyntheticLambda1;->f$1:Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->$r8$lambda$lqqrNoWlcIXOiqEIIwNN-V8kGA0(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->$r8$lambda$UiNhMEt0taFknGE3ZeSZxbgojOw(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
 
     return-void
 .end method

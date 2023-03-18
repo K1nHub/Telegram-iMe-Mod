@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHolidaysBot.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HolidaysBot.kt\ncom/smedialink/bots/data/model/bot/HolidaysBot\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,32:1\n286#2,2:33\n*S KotlinDebug\n*F\n+ 1 HolidaysBot.kt\ncom/smedialink/bots/data/model/bot/HolidaysBot\n*L\n28#1:33,2\n*E\n"
+    value = "SMAP\nHolidaysBot.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HolidaysBot.kt\ncom/smedialink/bots/data/model/bot/HolidaysBot\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,32:1\n288#2,2:33\n*S KotlinDebug\n*F\n+ 1 HolidaysBot.kt\ncom/smedialink/bots/data/model/bot/HolidaysBot\n*L\n28#1:33,2\n*E\n"
 .end annotation
 
 
@@ -132,7 +132,7 @@
     .line 28
     iget-object p1, p0, Lcom/smedialink/bots/data/model/bot/HolidaysBot;->responseSource:Ljava/util/List;
 
-    .line 286
+    .line 288
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -177,12 +177,9 @@
     :goto_0
     check-cast p2, Lcom/smedialink/bots/data/model/Response;
 
-    if-nez p2, :cond_2
-
-    goto :goto_1
+    if-eqz p2, :cond_2
 
     .line 29
-    :cond_2
     new-instance v0, Lcom/smedialink/bots/data/model/Response;
 
     invoke-virtual {p0}, Lcom/smedialink/bots/data/model/bot/HolidaysBot;->getBotId()Ljava/lang/String;
@@ -209,6 +206,6 @@
 
     invoke-direct/range {v1 .. v8}, Lcom/smedialink/bots/data/model/Response;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    :goto_1
+    :cond_2
     return-object v0
 .end method

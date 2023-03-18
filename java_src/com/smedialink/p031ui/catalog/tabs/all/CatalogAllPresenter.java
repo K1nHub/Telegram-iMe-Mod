@@ -7,10 +7,8 @@ import com.smedialink.model.catalog.CampaignItem;
 import com.smedialink.model.catalog.CategoryWithCampaignsItem;
 import com.smedialink.p031ui.base.mvp.base.BasePresenter;
 import com.smedialink.p031ui.base.mvp.base.BaseView;
-import com.smedialink.storage.data.network.model.error.ErrorModel;
 import com.smedialink.storage.domain.interactor.catalog.CatalogInteractor;
 import com.smedialink.storage.domain.model.Result;
-import com.smedialink.storage.domain.model.catalog.Campaign;
 import com.smedialink.storage.domain.model.catalog.CampaignsCursored;
 import com.smedialink.storage.domain.model.catalog.CategoriesPreviewsCursored;
 import com.smedialink.storage.domain.model.catalog.CategoryPreview;
@@ -18,29 +16,29 @@ import com.smedialink.storage.domain.model.catalog.ChatType;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.p033rx.RxExtKt;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.observables.GroupedObservable;
 import io.reactivex.subjects.PublishSubject;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.MapsKt__MapsJVMKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
 import org.telegram.tgnet.TLRPC$Chat;
 import p034j$.util.Map;
-import timber.log.Timber;
 /* compiled from: CatalogAllPresenter.kt */
 @InjectViewState
 /* renamed from: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter */
@@ -85,61 +83,10 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
     public final void loadCategoriesPreviews() {
         String str = this.categoriesCursor;
-        final boolean z = str == null;
+        boolean z = str == null;
         Observable<Result<CategoriesPreviewsCursored>> observeOn = this.catalogInteractor.getCatalogPreview(this.chatType, str).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$loadCategoriesPreviews$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                List<T> mapNewDataToUiItems;
-                String str2;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    mapNewDataToUiItems = CatalogAllPresenter.this.mapNewDataToUiItems((CategoriesPreviewsCursored) ((Result.Success) result).getData());
-                    if (z) {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).showRefreshing(false);
-                        if (mapNewDataToUiItems.isEmpty()) {
-                            ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onEmptyState();
-                        } else {
-                            ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onCategoriesLoaded(mapNewDataToUiItems);
-                        }
-                    } else {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onLoadMoreItems(mapNewDataToUiItems);
-                    }
-                    str2 = CatalogAllPresenter.this.categoriesCursor;
-                    if (str2 == null) {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onLoadMoreComplete();
-                    }
-                } else if (result instanceof Result.Loading) {
-                    if (z) {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).showRefreshing(true);
-                    }
-                } else if (result instanceof Result.Error) {
-                    if (!z) {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onLoadMoreError();
-                    } else if (((Result.Error) result).getError().isNoConnectionStatus()) {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onNoInternetErrorState();
-                    } else {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onUnexpectedErrorState();
-                    }
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$loadCategoriesPreviews$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1871xc9c80334(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1872xc9c80335(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -153,37 +100,13 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
         }
     }
 
-    public final void onChannelClick(final CampaignItem campaign) {
+    public final void onChannelClick(CampaignItem campaign) {
         Intrinsics.checkNotNullParameter(campaign, "campaign");
         Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$onChannelClick$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ChatType chatType;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                CatalogAllView catalogAllView = (CatalogAllView) CatalogAllPresenter.this.getViewState();
-                CampaignItem campaignItem = campaign;
-                chatType = CatalogAllPresenter.this.chatType;
-                catalogAllView.openCampaignDetailsScreen(campaignItem, (TLRPC$Chat) it, chatType);
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$onChannelClick$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        }), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1875x8163b70b(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1876x8163b70c(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -194,108 +117,59 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
     }
 
     private final void subscribeToLoadMoreEvents() {
-        Disposable subscribe = Observable.merge(this.loadMoreChannelsSubject.hide().groupBy(CatalogAllPresenter$$ExternalSyntheticLambda2.INSTANCE).map(CatalogAllPresenter$$ExternalSyntheticLambda1.INSTANCE)).subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui()).subscribe(new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$$ExternalSyntheticLambda0
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Object obj) {
-                CatalogAllPresenter.m1424subscribeToLoadMoreEvents$lambda4(CatalogAllPresenter.this, (Pair) obj);
+        Observable<Pair<Long, String>> hide = this.loadMoreChannelsSubject.hide();
+        final CatalogAllPresenter$subscribeToLoadMoreEvents$1 catalogAllPresenter$subscribeToLoadMoreEvents$1 = CatalogAllPresenter$subscribeToLoadMoreEvents$1.INSTANCE;
+        Observable<GroupedObservable<K, Pair<Long, String>>> groupBy = hide.groupBy(new Function() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$$ExternalSyntheticLambda2
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                String subscribeToLoadMoreEvents$lambda$2;
+                subscribeToLoadMoreEvents$lambda$2 = CatalogAllPresenter.subscribeToLoadMoreEvents$lambda$2(Function1.this, obj);
+                return subscribeToLoadMoreEvents$lambda$2;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(subscribe, "merge(\n                 …ls(it.first, it.second) }");
+        final CatalogAllPresenter$subscribeToLoadMoreEvents$2 catalogAllPresenter$subscribeToLoadMoreEvents$2 = CatalogAllPresenter$subscribeToLoadMoreEvents$2.INSTANCE;
+        Observable observeOn = Observable.merge(groupBy.map(new Function() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$$ExternalSyntheticLambda1
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Observable subscribeToLoadMoreEvents$lambda$3;
+                subscribeToLoadMoreEvents$lambda$3 = CatalogAllPresenter.subscribeToLoadMoreEvents$lambda$3(Function1.this, obj);
+                return subscribeToLoadMoreEvents$lambda$3;
+            }
+        })).subscribeOn(this.schedulersProvider.mo708io()).observeOn(this.schedulersProvider.mo707ui());
+        final CatalogAllPresenter$subscribeToLoadMoreEvents$3 catalogAllPresenter$subscribeToLoadMoreEvents$3 = new CatalogAllPresenter$subscribeToLoadMoreEvents$3(this);
+        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                CatalogAllPresenter.subscribeToLoadMoreEvents$lambda$4(Function1.this, obj);
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(subscribe, "private fun subscribeToL…     .autoDispose()\n    }");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToLoadMoreEvents$lambda-2  reason: not valid java name */
-    public static final String m1422subscribeToLoadMoreEvents$lambda2(Pair it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        return (String) it.getSecond();
+    public static final String subscribeToLoadMoreEvents$lambda$2(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (String) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToLoadMoreEvents$lambda-3  reason: not valid java name */
-    public static final Observable m1423subscribeToLoadMoreEvents$lambda3(GroupedObservable it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        return it.debounce(500L, TimeUnit.MILLISECONDS);
+    public static final Observable subscribeToLoadMoreEvents$lambda$3(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Observable) tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: subscribeToLoadMoreEvents$lambda-4  reason: not valid java name */
-    public static final void m1424subscribeToLoadMoreEvents$lambda4(CatalogAllPresenter this$0, Pair pair) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.loadMoreChannels(((Number) pair.getFirst()).longValue(), (String) pair.getSecond());
+    public static final void subscribeToLoadMoreEvents$lambda$4(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
     }
 
-    private final void loadMoreChannels(final long j, String str) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void loadMoreChannels(long j, String str) {
         Observable<Result<CampaignsCursored>> observeOn = this.catalogInteractor.getCampaignsByCategoryId(j, this.chatType, str).observeOn(this.schedulersProvider.mo707ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$loadMoreChannels$$inlined$subscribeWithErrorHandle$default$1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(T it) {
-                ResourceManager resourceManager;
-                List list;
-                T t;
-                Map map;
-                boolean z;
-                Intrinsics.checkNotNullExpressionValue(it, "it");
-                Result result = (Result) it;
-                if (result instanceof Result.Success) {
-                    list = CatalogAllPresenter.this.categories;
-                    Iterator<T> it2 = list.iterator();
-                    while (true) {
-                        if (!it2.hasNext()) {
-                            t = null;
-                            break;
-                        }
-                        t = it2.next();
-                        if (((CategoryPreview) t).getCategory().getId() == j) {
-                            z = true;
-                            continue;
-                        } else {
-                            z = false;
-                            continue;
-                        }
-                        if (z) {
-                            break;
-                        }
-                    }
-                    CategoryPreview categoryPreview = (CategoryPreview) t;
-                    List<Campaign> items = categoryPreview != null ? categoryPreview.getItems() : null;
-                    if (items == null) {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onUnexpectedErrorState();
-                        return;
-                    }
-                    Result.Success success = (Result.Success) result;
-                    items.addAll(((CampaignsCursored) success.getData()).getItems());
-                    String nextCursor = ((CampaignsCursored) success.getData()).getMeta().getNextCursor();
-                    map = CatalogAllPresenter.this.categoriesChannelsCursors;
-                    map.put(Long.valueOf(j), nextCursor == null ? "" : nextCursor);
-                    if (nextCursor != null) {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onNestedLoadMoreItems(j, CatalogCampaignsUiMappingKt.mapToUi(items));
-                    } else {
-                        ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onNestedLoadMoreComplete(j);
-                    }
-                } else if (result instanceof Result.Error) {
-                    ((CatalogAllView) CatalogAllPresenter.this.getViewState()).onNestedLoadMoreError(j);
-                    ErrorModel error = ((Result.Error) result).getError();
-                    resourceManager = CatalogAllPresenter.this.resourceManager;
-                    ((CatalogAllView) CatalogAllPresenter.this.getViewState()).showToast(error.getMessage(resourceManager));
-                }
-            }
-        }, new Consumer() { // from class: com.smedialink.ui.catalog.tabs.all.CatalogAllPresenter$loadMoreChannels$$inlined$subscribeWithErrorHandle$default$2
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Throwable th) {
-                Timber.m4e(th);
-                BaseView baseView = BaseView.this;
-                if (baseView == null) {
-                    return;
-                }
-                String message = th.getMessage();
-                if (message == null) {
-                    message = "";
-                }
-                baseView.showToast(message);
-            }
-        });
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1873x585eb812(this, j)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1874x585eb813(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

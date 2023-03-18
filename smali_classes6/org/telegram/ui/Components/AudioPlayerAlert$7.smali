@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 586
+    .line 582
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$7;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AudioPlayerAlert$CoverContainer;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method protected onImageUpdated(Lorg/telegram/messenger/ImageReceiver;)V
     .locals 1
 
-    .line 608
+    .line 604
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$7;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$200(Lorg/telegram/ui/Components/AudioPlayerAlert;)Landroid/widget/FrameLayout;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 609
+    .line 605
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$7;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$4400(Lorg/telegram/ui/Components/AudioPlayerAlert;)Lorg/telegram/ui/Components/BackupImageView;
@@ -70,7 +70,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 5
 
-    .line 592
+    .line 588
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -79,7 +79,7 @@
 
     if-nez p1, :cond_0
 
-    .line 594
+    .line 590
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AudioPlayerAlert$CoverContainer;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object p1
@@ -90,12 +90,12 @@
 
     if-eqz p1, :cond_1
 
-    .line 595
+    .line 591
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$7;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     invoke-static {p1, v0, v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->access$300(Lorg/telegram/ui/Components/AudioPlayerAlert;ZZ)V
 
-    .line 596
+    .line 592
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -109,7 +109,7 @@
 
     if-eq p1, v1, :cond_1
 
-    .line 599
+    .line 595
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -124,7 +124,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 600
+    .line 596
     iget-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$7;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v1, 0x0

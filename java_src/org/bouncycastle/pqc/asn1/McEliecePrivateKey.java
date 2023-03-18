@@ -21,14 +21,14 @@ public class McEliecePrivateKey extends ASN1Object {
     private byte[] encSInv;
 
     /* renamed from: k */
-    private int f1379k;
+    private int f1384k;
 
     /* renamed from: n */
-    private int f1380n;
+    private int f1385n;
 
     public McEliecePrivateKey(int i, int i2, GF2mField gF2mField, PolynomialGF2mSmallM polynomialGF2mSmallM, Permutation permutation, Permutation permutation2, GF2Matrix gF2Matrix) {
-        this.f1380n = i;
-        this.f1379k = i2;
+        this.f1385n = i;
+        this.f1384k = i2;
         this.encField = gF2mField.getEncoded();
         this.encGp = polynomialGF2mSmallM.getEncoded();
         this.encSInv = gF2Matrix.getEncoded();
@@ -37,8 +37,8 @@ public class McEliecePrivateKey extends ASN1Object {
     }
 
     private McEliecePrivateKey(ASN1Sequence aSN1Sequence) {
-        this.f1380n = ((ASN1Integer) aSN1Sequence.getObjectAt(0)).getValue().intValue();
-        this.f1379k = ((ASN1Integer) aSN1Sequence.getObjectAt(1)).getValue().intValue();
+        this.f1385n = ((ASN1Integer) aSN1Sequence.getObjectAt(0)).getValue().intValue();
+        this.f1384k = ((ASN1Integer) aSN1Sequence.getObjectAt(1)).getValue().intValue();
         this.encField = ((ASN1OctetString) aSN1Sequence.getObjectAt(2)).getOctets();
         this.encGp = ((ASN1OctetString) aSN1Sequence.getObjectAt(3)).getOctets();
         this.encP1 = ((ASN1OctetString) aSN1Sequence.getObjectAt(4)).getOctets();
@@ -65,11 +65,11 @@ public class McEliecePrivateKey extends ASN1Object {
     }
 
     public int getK() {
-        return this.f1379k;
+        return this.f1384k;
     }
 
     public int getN() {
-        return this.f1380n;
+        return this.f1385n;
     }
 
     public Permutation getP1() {
@@ -87,8 +87,8 @@ public class McEliecePrivateKey extends ASN1Object {
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable
     public ASN1Primitive toASN1Primitive() {
         ASN1EncodableVector aSN1EncodableVector = new ASN1EncodableVector();
-        aSN1EncodableVector.add(new ASN1Integer(this.f1380n));
-        aSN1EncodableVector.add(new ASN1Integer(this.f1379k));
+        aSN1EncodableVector.add(new ASN1Integer(this.f1385n));
+        aSN1EncodableVector.add(new ASN1Integer(this.f1384k));
         aSN1EncodableVector.add(new DEROctetString(this.encField));
         aSN1EncodableVector.add(new DEROctetString(this.encGp));
         aSN1EncodableVector.add(new DEROctetString(this.encP1));

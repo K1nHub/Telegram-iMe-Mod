@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -101,11 +101,11 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
         ApplicationLoader.postInitApplication();
         requestWindowFeature(1);
         if (!SharedConfig.isVibrationEnabled) {
-            setTheme(C3158R.style.Theme_TMessages_NoHapticFeedback);
+            setTheme(C3286R.style.Theme_TMessages_NoHapticFeedback);
         } else {
-            setTheme(C3158R.style.Theme_TMessages);
+            setTheme(C3286R.style.Theme_TMessages);
         }
-        getWindow().setBackgroundDrawableResource(C3158R.C3160drawable.transparent);
+        getWindow().setBackgroundDrawableResource(C3286R.C3288drawable.transparent);
         if (SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture) {
             try {
                 getWindow().setFlags(8192, 8192);
@@ -161,7 +161,7 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
             newLayout.setRemoveActionBarExtraHeight(true);
             this.layersActionBarLayout.setBackgroundView(frameLayout);
             this.layersActionBarLayout.setUseAlphaAnimations(true);
-            this.layersActionBarLayout.getView().setBackgroundResource(C3158R.C3160drawable.boxshadow);
+            this.layersActionBarLayout.getView().setBackgroundResource(C3286R.C3288drawable.boxshadow);
             relativeLayout.addView(this.layersActionBarLayout.getView(), LayoutHelper.createRelative(530, AndroidUtilities.isSmallTablet() ? 528 : 700));
             this.layersActionBarLayout.setFragmentStack(layerFragmentsStack);
             this.layersActionBarLayout.setDelegate(this);
@@ -314,9 +314,9 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
                             this.layersActionBarLayout.showLastFragment();
                         }
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setTitle(LocaleController.getString("AppName", C3158R.string.AppName));
-                        builder.setMessage(LocaleController.getString("PleaseLoginPassport", C3158R.string.PleaseLoginPassport));
-                        builder.setPositiveButton(LocaleController.getString("OK", C3158R.string.OK), null);
+                        builder.setTitle(LocaleController.getString("AppName", C3286R.string.AppName));
+                        builder.setMessage(LocaleController.getString("PleaseLoginPassport", C3286R.string.PleaseLoginPassport));
+                        builder.setPositiveButton(LocaleController.getString("OK", C3286R.string.OK), null);
                         builder.show();
                         return true;
                     } else if (activatedAccountsCount >= 2) {
@@ -465,7 +465,7 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
         try {
             alertDialog.dismiss();
             if ("APP_VERSION_OUTDATED".equals(tLRPC$TL_error.text)) {
-                AlertDialog showUpdateAppAlert = AlertsCreator.showUpdateAppAlert(this, LocaleController.getString("UpdateAppAlert", C3158R.string.UpdateAppAlert), true);
+                AlertDialog showUpdateAppAlert = AlertsCreator.showUpdateAppAlert(this, LocaleController.getString("UpdateAppAlert", C3286R.string.UpdateAppAlert), true);
                 if (showUpdateAppAlert != null) {
                     showUpdateAppAlert.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ExternalActionActivity$$ExternalSyntheticLambda2
                         @Override // android.content.DialogInterface.OnDismissListener

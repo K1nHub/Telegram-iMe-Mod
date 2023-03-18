@@ -37,7 +37,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LruCache;
 import org.telegram.messenger.MessageObject;
@@ -47,7 +47,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BackDrawable;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.EmptyCell;
@@ -212,11 +212,11 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         getNotificationCenter().addObserver(this, NotificationCenter.messagesDidLoad);
         if (this.isMegagroup) {
             TLRPC$TL_stats_getMegagroupStats tLRPC$TL_stats_getMegagroupStats = new TLRPC$TL_stats_getMegagroupStats();
-            tLRPC$TL_stats_getMegagroupStats.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(this.chat.f1495id);
+            tLRPC$TL_stats_getMegagroupStats.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(this.chat.f1500id);
             tLRPC$TL_stats_getBroadcastStats = tLRPC$TL_stats_getMegagroupStats;
         } else {
             TLRPC$TL_stats_getBroadcastStats tLRPC$TL_stats_getBroadcastStats2 = new TLRPC$TL_stats_getBroadcastStats();
-            tLRPC$TL_stats_getBroadcastStats2.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(this.chat.f1495id);
+            tLRPC$TL_stats_getBroadcastStats2.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(this.chat.f1500id);
             tLRPC$TL_stats_getBroadcastStats = tLRPC$TL_stats_getBroadcastStats2;
         }
         getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tLRPC$TL_stats_getBroadcastStats, new RequestDelegate() { // from class: org.telegram.ui.StatisticActivity$$ExternalSyntheticLambda5
@@ -232,7 +232,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
     public /* synthetic */ void lambda$onFragmentCreate$2(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         if (tLObject instanceof TLRPC$TL_stats_broadcastStats) {
             TLRPC$TL_stats_broadcastStats tLRPC$TL_stats_broadcastStats = (TLRPC$TL_stats_broadcastStats) tLObject;
-            final ChartViewData[] chartViewDataArr = {createViewData(tLRPC$TL_stats_broadcastStats.iv_interactions_graph, LocaleController.getString("IVInteractionsChartTitle", C3158R.string.IVInteractionsChartTitle), 1), createViewData(tLRPC$TL_stats_broadcastStats.followers_graph, LocaleController.getString("FollowersChartTitle", C3158R.string.FollowersChartTitle), 0), createViewData(tLRPC$TL_stats_broadcastStats.top_hours_graph, LocaleController.getString("TopHoursChartTitle", C3158R.string.TopHoursChartTitle), 0), createViewData(tLRPC$TL_stats_broadcastStats.interactions_graph, LocaleController.getString("InteractionsChartTitle", C3158R.string.InteractionsChartTitle), 1), createViewData(tLRPC$TL_stats_broadcastStats.growth_graph, LocaleController.getString("GrowthChartTitle", C3158R.string.GrowthChartTitle), 0), createViewData(tLRPC$TL_stats_broadcastStats.views_by_source_graph, LocaleController.getString("ViewsBySourceChartTitle", C3158R.string.ViewsBySourceChartTitle), 2), createViewData(tLRPC$TL_stats_broadcastStats.new_followers_by_source_graph, LocaleController.getString("NewFollowersBySourceChartTitle", C3158R.string.NewFollowersBySourceChartTitle), 2), createViewData(tLRPC$TL_stats_broadcastStats.languages_graph, LocaleController.getString("LanguagesChartTitle", C3158R.string.LanguagesChartTitle), 4, true), createViewData(tLRPC$TL_stats_broadcastStats.mute_graph, LocaleController.getString("NotificationsChartTitle", C3158R.string.NotificationsChartTitle), 0)};
+            final ChartViewData[] chartViewDataArr = {createViewData(tLRPC$TL_stats_broadcastStats.iv_interactions_graph, LocaleController.getString("IVInteractionsChartTitle", C3286R.string.IVInteractionsChartTitle), 1), createViewData(tLRPC$TL_stats_broadcastStats.followers_graph, LocaleController.getString("FollowersChartTitle", C3286R.string.FollowersChartTitle), 0), createViewData(tLRPC$TL_stats_broadcastStats.top_hours_graph, LocaleController.getString("TopHoursChartTitle", C3286R.string.TopHoursChartTitle), 0), createViewData(tLRPC$TL_stats_broadcastStats.interactions_graph, LocaleController.getString("InteractionsChartTitle", C3286R.string.InteractionsChartTitle), 1), createViewData(tLRPC$TL_stats_broadcastStats.growth_graph, LocaleController.getString("GrowthChartTitle", C3286R.string.GrowthChartTitle), 0), createViewData(tLRPC$TL_stats_broadcastStats.views_by_source_graph, LocaleController.getString("ViewsBySourceChartTitle", C3286R.string.ViewsBySourceChartTitle), 2), createViewData(tLRPC$TL_stats_broadcastStats.new_followers_by_source_graph, LocaleController.getString("NewFollowersBySourceChartTitle", C3286R.string.NewFollowersBySourceChartTitle), 2), createViewData(tLRPC$TL_stats_broadcastStats.languages_graph, LocaleController.getString("LanguagesChartTitle", C3286R.string.LanguagesChartTitle), 4, true), createViewData(tLRPC$TL_stats_broadcastStats.mute_graph, LocaleController.getString("NotificationsChartTitle", C3286R.string.NotificationsChartTitle), 0)};
             if (chartViewDataArr[2] != null) {
                 chartViewDataArr[2].useHourFormat = true;
             }
@@ -248,7 +248,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 this.recentPostIdtoIndexMap.put(recentPostInfo.counters.msg_id, i);
             }
             if (this.recentPostsAll.size() > 0) {
-                getMessagesStorage().getMessages(-this.chat.f1495id, 0L, false, this.recentPostsAll.size(), this.recentPostsAll.get(0).counters.msg_id, 0, 0, this.classGuid, 0, false, 0, 0, true, false);
+                getMessagesStorage().getMessages(-this.chat.f1500id, 0L, false, this.recentPostsAll.size(), this.recentPostsAll.get(0).counters.msg_id, 0, 0, this.classGuid, 0, false, 0, 0, true, false);
             }
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.StatisticActivity$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
@@ -259,7 +259,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         }
         if (tLObject instanceof TLRPC$TL_stats_megagroupStats) {
             TLRPC$TL_stats_megagroupStats tLRPC$TL_stats_megagroupStats = (TLRPC$TL_stats_megagroupStats) tLObject;
-            final ChartViewData[] chartViewDataArr2 = {createViewData(tLRPC$TL_stats_megagroupStats.growth_graph, LocaleController.getString("GrowthChartTitle", C3158R.string.GrowthChartTitle), 0), createViewData(tLRPC$TL_stats_megagroupStats.members_graph, LocaleController.getString("GroupMembersChartTitle", C3158R.string.GroupMembersChartTitle), 0), createViewData(tLRPC$TL_stats_megagroupStats.new_members_by_source_graph, LocaleController.getString("NewMembersBySourceChartTitle", C3158R.string.NewMembersBySourceChartTitle), 2), createViewData(tLRPC$TL_stats_megagroupStats.languages_graph, LocaleController.getString("MembersLanguageChartTitle", C3158R.string.MembersLanguageChartTitle), 4, true), createViewData(tLRPC$TL_stats_megagroupStats.messages_graph, LocaleController.getString("MessagesChartTitle", C3158R.string.MessagesChartTitle), 2), createViewData(tLRPC$TL_stats_megagroupStats.actions_graph, LocaleController.getString("ActionsChartTitle", C3158R.string.ActionsChartTitle), 1), createViewData(tLRPC$TL_stats_megagroupStats.top_hours_graph, LocaleController.getString("TopHoursChartTitle", C3158R.string.TopHoursChartTitle), 0), createViewData(tLRPC$TL_stats_megagroupStats.weekdays_graph, LocaleController.getString("TopDaysOfWeekChartTitle", C3158R.string.TopDaysOfWeekChartTitle), 4)};
+            final ChartViewData[] chartViewDataArr2 = {createViewData(tLRPC$TL_stats_megagroupStats.growth_graph, LocaleController.getString("GrowthChartTitle", C3286R.string.GrowthChartTitle), 0), createViewData(tLRPC$TL_stats_megagroupStats.members_graph, LocaleController.getString("GroupMembersChartTitle", C3286R.string.GroupMembersChartTitle), 0), createViewData(tLRPC$TL_stats_megagroupStats.new_members_by_source_graph, LocaleController.getString("NewMembersBySourceChartTitle", C3286R.string.NewMembersBySourceChartTitle), 2), createViewData(tLRPC$TL_stats_megagroupStats.languages_graph, LocaleController.getString("MembersLanguageChartTitle", C3286R.string.MembersLanguageChartTitle), 4, true), createViewData(tLRPC$TL_stats_megagroupStats.messages_graph, LocaleController.getString("MessagesChartTitle", C3286R.string.MessagesChartTitle), 2), createViewData(tLRPC$TL_stats_megagroupStats.actions_graph, LocaleController.getString("ActionsChartTitle", C3286R.string.ActionsChartTitle), 1), createViewData(tLRPC$TL_stats_megagroupStats.top_hours_graph, LocaleController.getString("TopHoursChartTitle", C3286R.string.TopHoursChartTitle), 0), createViewData(tLRPC$TL_stats_megagroupStats.weekdays_graph, LocaleController.getString("TopDaysOfWeekChartTitle", C3286R.string.TopDaysOfWeekChartTitle), 4)};
             if (chartViewDataArr2[6] != null) {
                 chartViewDataArr2[6].useHourFormat = true;
             }
@@ -440,20 +440,20 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.imageView = rLottieImageView;
         rLottieImageView.setAutoRepeat(true);
-        this.imageView.setAnimation(C3158R.C3164raw.statistic_preload, 120, 120);
+        this.imageView.setAnimation(C3286R.C3291raw.statistic_preload, 120, 120);
         this.imageView.playAnimation();
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextColor(Theme.getColor("player_actionBarTitle"));
         textView.setTag("player_actionBarTitle");
-        textView.setText(LocaleController.getString("LoadingStats", C3158R.string.LoadingStats));
+        textView.setText(LocaleController.getString("LoadingStats", C3286R.string.LoadingStats));
         textView.setGravity(1);
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 15.0f);
         textView2.setTextColor(Theme.getColor("player_actionBarSubtitle"));
         textView2.setTag("player_actionBarSubtitle");
-        textView2.setText(LocaleController.getString("LoadingStatsDescription", C3158R.string.LoadingStatsDescription));
+        textView2.setText(LocaleController.getString("LoadingStatsDescription", C3286R.string.LoadingStatsDescription));
         textView2.setGravity(1);
         this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
@@ -501,13 +501,13 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         this.avatarContainer = chatAvatarContainer;
         chatAvatarContainer.setOccupyStatusBar(!AndroidUtilities.isTablet());
         this.actionBar.addView(this.avatarContainer, 0, LayoutHelper.createFrame(-2, -1, 51, !this.inPreviewMode ? 56 : 0, 0, 40, 0));
-        TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(this.chat.f1495id));
+        TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(this.chat.f1500id));
         this.avatarContainer.setChatAvatar(chat);
         this.avatarContainer.setTitle(chat.title);
-        this.avatarContainer.setSubtitle(LocaleController.getString("Statistics", C3158R.string.Statistics));
+        this.avatarContainer.setSubtitle(LocaleController.getString("Statistics", C3286R.string.Statistics));
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.StatisticActivity.6
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.StatisticActivity.6
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     StatisticActivity.this.finishFragment();
@@ -577,12 +577,12 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             ArrayList arrayList3 = new ArrayList();
-            arrayList.add(LocaleController.getString("ViewMessageStatistic", C3158R.string.ViewMessageStatistic));
+            arrayList.add(LocaleController.getString("ViewMessageStatistic", C3286R.string.ViewMessageStatistic));
             arrayList2.add(0);
-            arrayList3.add(Integer.valueOf(C3158R.C3160drawable.msg_stats));
-            arrayList.add(LocaleController.getString("ViewMessage", C3158R.string.ViewMessage));
+            arrayList3.add(Integer.valueOf(C3286R.C3288drawable.msg_stats));
+            arrayList.add(LocaleController.getString("ViewMessage", C3286R.string.ViewMessage));
             arrayList2.add(1);
-            arrayList3.add(Integer.valueOf(C3158R.C3160drawable.msg_msgbubble3));
+            arrayList3.add(Integer.valueOf(C3286R.C3288drawable.msg_msgbubble3));
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
             builder.setItems((CharSequence[]) arrayList.toArray(new CharSequence[arrayList2.size()]), AndroidUtilities.toIntArray(arrayList3), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.StatisticActivity$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
@@ -617,7 +617,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             presentFragment(new MessageStatisticActivity(messageObject));
         } else if (i == 1) {
             Bundle bundle = new Bundle();
-            bundle.putLong("chat_id", this.chat.f1495id);
+            bundle.putLong("chat_id", this.chat.f1500id);
             bundle.putInt("message_id", messageObject.getId());
             bundle.putBoolean("need_remove_previous_same_chat_activity", false);
             presentFragment(new ChatActivity(bundle), false);
@@ -637,10 +637,10 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 ChartData createChartData = createChartData(new JSONObject(((TLRPC$TL_statsGraph) tLRPC$StatsGraph).json.data), i, z);
                 chartViewData.chartData = createChartData;
                 chartViewData.zoomToken = ((TLRPC$TL_statsGraph) tLRPC$StatsGraph).zoom_token;
-                if (createChartData == null || (jArr2 = createChartData.f1665x) == null || jArr2.length < 2) {
+                if (createChartData == null || (jArr2 = createChartData.f1671x) == null || jArr2.length < 2) {
                     chartViewData.isEmpty = true;
                 }
-                if (i == 4 && createChartData != null && (jArr = createChartData.f1665x) != null && jArr.length > 0) {
+                if (i == 4 && createChartData != null && (jArr = createChartData.f1671x) != null && jArr.length > 0) {
                     long j = jArr[jArr.length - 1];
                     chartViewData.childChartData = new StackLinearChartData(createChartData, j);
                     chartViewData.activeZoom = j;
@@ -903,7 +903,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             } else if (itemViewType != 13) {
                 if (itemViewType != 14) {
                     if (itemViewType == 15) {
-                        ((ManageChatTextCell) viewHolder.itemView).setText(LocaleController.formatPluralString("ShowVotes", StatisticActivity.this.topMembersAll.size() - StatisticActivity.this.topMembersVisible.size(), new Object[0]), null, C3158R.C3160drawable.arrow_more, false);
+                        ((ManageChatTextCell) viewHolder.itemView).setText(LocaleController.formatPluralString("ShowVotes", StatisticActivity.this.topMembersAll.size() - StatisticActivity.this.topMembersVisible.size(), new Object[0]), null, C3286R.C3288drawable.arrow_more, false);
                         return;
                     }
                     return;
@@ -918,15 +918,15 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 ChartHeaderView chartHeaderView = (ChartHeaderView) viewHolder.itemView;
                 chartHeaderView.setDates(StatisticActivity.this.minDateOverview, StatisticActivity.this.maxDateOverview);
                 if (i == this.overviewHeaderCell) {
-                    chartHeaderView.setTitle(LocaleController.getString("StatisticOverview", C3158R.string.StatisticOverview));
+                    chartHeaderView.setTitle(LocaleController.getString("StatisticOverview", C3286R.string.StatisticOverview));
                 } else if (i == this.topAdminsHeaderCell) {
-                    chartHeaderView.setTitle(LocaleController.getString("TopAdmins", C3158R.string.TopAdmins));
+                    chartHeaderView.setTitle(LocaleController.getString("TopAdmins", C3286R.string.TopAdmins));
                 } else if (i == this.topInviterHeaderCell) {
-                    chartHeaderView.setTitle(LocaleController.getString("TopInviters", C3158R.string.TopInviters));
+                    chartHeaderView.setTitle(LocaleController.getString("TopInviters", C3286R.string.TopInviters));
                 } else if (i == this.topMembersHeaderCell) {
-                    chartHeaderView.setTitle(LocaleController.getString("TopMembers", C3158R.string.TopMembers));
+                    chartHeaderView.setTitle(LocaleController.getString("TopMembers", C3286R.string.TopMembers));
                 } else {
-                    chartHeaderView.setTitle(LocaleController.getString("RecentPosts", C3158R.string.RecentPosts));
+                    chartHeaderView.setTitle(LocaleController.getString("RecentPosts", C3286R.string.RecentPosts));
                 }
             }
         }
@@ -1331,7 +1331,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                     TLRPC$TL_stats_loadAsyncGraph tLRPC$TL_stats_loadAsyncGraph = new TLRPC$TL_stats_loadAsyncGraph();
                     tLRPC$TL_stats_loadAsyncGraph.token = this.data.zoomToken;
                     if (selectedDate != 0) {
-                        tLRPC$TL_stats_loadAsyncGraph.f1621x = selectedDate;
+                        tLRPC$TL_stats_loadAsyncGraph.f1627x = selectedDate;
                         tLRPC$TL_stats_loadAsyncGraph.flags |= 1;
                     }
                     StatisticActivity statisticActivity = StatisticActivity.this;
@@ -1585,7 +1585,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                         if (i3 >= chartData.lines.size()) {
                             z2 = false;
                             break;
-                        } else if (chartData.lines.get(i3).f1666id.equals(this.data.chartData.lines.get(i2).f1666id)) {
+                        } else if (chartData.lines.get(i3).f1672id.equals(this.data.chartData.lines.get(i2).f1672id)) {
                             boolean z3 = this.checkBoxes.get(i2).checkBox.checked;
                             ((LineViewData) this.zoomedChartView.lines.get(i3)).enabled = z3;
                             ((LineViewData) this.zoomedChartView.lines.get(i3)).alpha = z3 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
@@ -1656,7 +1656,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         }
 
         private void zoomOut(boolean z) {
-            if (this.data.chartData.f1665x == null) {
+            if (this.data.chartData.f1671x == null) {
                 return;
             }
             this.chartHeaderView.zoomOut(this.chartView, z);
@@ -1728,9 +1728,9 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             ChartPickerDelegate chartPickerDelegate = this.chartView.pickerDelegate;
             transitionParams.pickerEndOut = chartPickerDelegate.pickerEnd;
             transitionParams.pickerStartOut = chartPickerDelegate.pickerStart;
-            int binarySearch = Arrays.binarySearch(this.data.chartData.f1665x, j);
+            int binarySearch = Arrays.binarySearch(this.data.chartData.f1671x, j);
             if (binarySearch < 0) {
-                binarySearch = this.data.chartData.f1665x.length - 1;
+                binarySearch = this.data.chartData.f1671x.length - 1;
             }
             transitionParams.xPercentage = this.data.chartData.xPercentage[binarySearch];
             this.zoomedChartView.setVisibility(0);
@@ -1739,11 +1739,11 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             int i = Integer.MAX_VALUE;
             int i2 = 0;
             for (int i3 = 0; i3 < this.data.chartData.lines.size(); i3++) {
-                if (this.data.chartData.lines.get(i3).f1667y[binarySearch] > i2) {
-                    i2 = this.data.chartData.lines.get(i3).f1667y[binarySearch];
+                if (this.data.chartData.lines.get(i3).f1673y[binarySearch] > i2) {
+                    i2 = this.data.chartData.lines.get(i3).f1673y[binarySearch];
                 }
-                if (this.data.chartData.lines.get(i3).f1667y[binarySearch] < i) {
-                    i = this.data.chartData.lines.get(i3).f1667y[binarySearch];
+                if (this.data.chartData.lines.get(i3).f1673y[binarySearch] < i) {
+                    i = this.data.chartData.lines.get(i3).f1673y[binarySearch];
                 }
             }
             float f = i + (i2 - i);
@@ -1780,8 +1780,8 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             float f4 = chartPickerDelegate.pickerStart;
             float f5 = ((f2 / (f3 - f4)) * f4) - BaseChartView.HORIZONTAL_PADDING;
             RectF rectF = baseChartView.chartArea;
-            transitionParams.f1669pY = rectF.top + ((1.0f - f) * rectF.height());
-            transitionParams.f1668pX = (this.chartView.chartFullWidth * transitionParams.xPercentage) - f5;
+            transitionParams.f1675pY = rectF.top + ((1.0f - f) * rectF.height());
+            transitionParams.f1674pX = (this.chartView.chartFullWidth * transitionParams.xPercentage) - f5;
             transitionParams.progress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             this.zoomedChartView.invalidate();
             this.zoomedChartView.fillTransitionParams(transitionParams);
@@ -2109,7 +2109,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 int r2 = r8.graphType     // Catch: org.json.JSONException -> L3e
                 r3 = 4
                 if (r2 != r3) goto L3a
-                long[] r2 = r12.f1665x     // Catch: org.json.JSONException -> L3e
+                long[] r2 = r12.f1671x     // Catch: org.json.JSONException -> L3e
                 if (r2 == 0) goto L3a
                 int r3 = r2.length     // Catch: org.json.JSONException -> L3e
                 if (r3 <= 0) goto L3a
@@ -2202,19 +2202,19 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public void loadMessages() {
         TLRPC$TL_channels_getMessages tLRPC$TL_channels_getMessages = new TLRPC$TL_channels_getMessages();
-        tLRPC$TL_channels_getMessages.f1536id = new ArrayList<>();
+        tLRPC$TL_channels_getMessages.f1541id = new ArrayList<>();
         int size = this.recentPostsAll.size();
         int i = 0;
         for (int i2 = this.recentPostIdtoIndexMap.get(this.loadFromId); i2 < size; i2++) {
             if (this.recentPostsAll.get(i2).message == null) {
-                tLRPC$TL_channels_getMessages.f1536id.add(Integer.valueOf(this.recentPostsAll.get(i2).counters.msg_id));
+                tLRPC$TL_channels_getMessages.f1541id.add(Integer.valueOf(this.recentPostsAll.get(i2).counters.msg_id));
                 i++;
                 if (i > 50) {
                     break;
                 }
             }
         }
-        tLRPC$TL_channels_getMessages.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(this.chat.f1495id);
+        tLRPC$TL_channels_getMessages.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(this.chat.f1500id);
         this.messagesIsLoading = true;
         getConnectionsManager().sendRequest(tLRPC$TL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.StatisticActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
@@ -2280,7 +2280,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         if (view instanceof ChartCell) {
             ((ChartCell) view).recolor();
         } else if (view instanceof ShadowSectionCell) {
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(ApplicationLoader.applicationContext, C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"), 0, 0);
+            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(ApplicationLoader.applicationContext, C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"), 0, 0);
             combinedDrawable.setFullsize(true);
             view.setBackground(combinedDrawable);
         } else if (view instanceof ChartHeaderView) {
@@ -2645,7 +2645,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             double d2 = tLRPC$TL_statsAbsValueAndPrev.previous;
             int i = (int) (d - d2);
             float abs = d2 == 0.0d ? BitmapDescriptorFactory.HUE_RED : Math.abs((i / ((float) d2)) * 100.0f);
-            this.followersTitle = LocaleController.getString("FollowersChartTitle", C3158R.string.FollowersChartTitle);
+            this.followersTitle = LocaleController.getString("FollowersChartTitle", C3286R.string.FollowersChartTitle);
             this.followersPrimary = AndroidUtilities.formatWholeNumber((int) tLRPC$TL_stats_broadcastStats.followers.current, 0);
             if (i == 0 || abs == BitmapDescriptorFactory.HUE_RED) {
                 this.followersSecondary = "";
@@ -2679,7 +2679,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             double d4 = tLRPC$TL_statsAbsValueAndPrev2.previous;
             int i3 = (int) (d3 - d4);
             float abs2 = d4 == 0.0d ? BitmapDescriptorFactory.HUE_RED : Math.abs((i3 / ((float) d4)) * 100.0f);
-            this.sharesTitle = LocaleController.getString("SharesPerPost", C3158R.string.SharesPerPost);
+            this.sharesTitle = LocaleController.getString("SharesPerPost", C3286R.string.SharesPerPost);
             this.sharesPrimary = AndroidUtilities.formatWholeNumber((int) tLRPC$TL_stats_broadcastStats.shares_per_post.current, 0);
             if (i3 == 0 || abs2 == BitmapDescriptorFactory.HUE_RED) {
                 this.sharesSecondary = "";
@@ -2713,7 +2713,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             double d6 = tLRPC$TL_statsAbsValueAndPrev3.previous;
             int i5 = (int) (d5 - d6);
             float abs3 = d6 == 0.0d ? BitmapDescriptorFactory.HUE_RED : Math.abs((i5 / ((float) d6)) * 100.0f);
-            this.viewsTitle = LocaleController.getString("ViewsPerPost", C3158R.string.ViewsPerPost);
+            this.viewsTitle = LocaleController.getString("ViewsPerPost", C3286R.string.ViewsPerPost);
             this.viewsPrimary = AndroidUtilities.formatWholeNumber((int) tLRPC$TL_stats_broadcastStats.views_per_post.current, 0);
             if (i5 == 0 || abs3 == BitmapDescriptorFactory.HUE_RED) {
                 this.viewsSecondary = "";
@@ -2744,7 +2744,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             this.viewsUp = i5 >= 0;
             TLRPC$TL_statsPercentValue tLRPC$TL_statsPercentValue = tLRPC$TL_stats_broadcastStats.enabled_notifications;
             float f = (float) ((tLRPC$TL_statsPercentValue.part / tLRPC$TL_statsPercentValue.total) * 100.0d);
-            this.notificationsTitle = LocaleController.getString("EnabledNotifications", C3158R.string.EnabledNotifications);
+            this.notificationsTitle = LocaleController.getString("EnabledNotifications", C3286R.string.EnabledNotifications);
             int i7 = (int) f;
             if (f == i7) {
                 this.notificationsPrimary = String.format(Locale.ENGLISH, "%d%s", Integer.valueOf(i7), "%");
@@ -2780,7 +2780,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             double d2 = tLRPC$TL_statsAbsValueAndPrev.previous;
             int i = (int) (d - d2);
             float abs = d2 == 0.0d ? BitmapDescriptorFactory.HUE_RED : Math.abs((i / ((float) d2)) * 100.0f);
-            this.membersTitle = LocaleController.getString("MembersOverviewTitle", C3158R.string.MembersOverviewTitle);
+            this.membersTitle = LocaleController.getString("MembersOverviewTitle", C3286R.string.MembersOverviewTitle);
             this.membersPrimary = AndroidUtilities.formatWholeNumber((int) tLRPC$TL_stats_megagroupStats.members.current, 0);
             if (i == 0 || abs == BitmapDescriptorFactory.HUE_RED) {
                 this.membersSecondary = "";
@@ -2814,7 +2814,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             double d4 = tLRPC$TL_statsAbsValueAndPrev2.previous;
             int i3 = (int) (d3 - d4);
             float abs2 = d4 == 0.0d ? BitmapDescriptorFactory.HUE_RED : Math.abs((i3 / ((float) d4)) * 100.0f);
-            this.viewingMembersTitle = LocaleController.getString("ViewingMembers", C3158R.string.ViewingMembers);
+            this.viewingMembersTitle = LocaleController.getString("ViewingMembers", C3286R.string.ViewingMembers);
             this.viewingMembersPrimary = AndroidUtilities.formatWholeNumber((int) tLRPC$TL_stats_megagroupStats.viewers.current, 0);
             if (i3 == 0 || abs2 == BitmapDescriptorFactory.HUE_RED) {
                 this.viewingMembersSecondary = "";
@@ -2833,7 +2833,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             double d6 = tLRPC$TL_statsAbsValueAndPrev3.previous;
             int i4 = (int) (d5 - d6);
             float abs3 = d6 == 0.0d ? BitmapDescriptorFactory.HUE_RED : Math.abs((i4 / ((float) d6)) * 100.0f);
-            this.postingMembersTitle = LocaleController.getString("PostingMembers", C3158R.string.PostingMembers);
+            this.postingMembersTitle = LocaleController.getString("PostingMembers", C3286R.string.PostingMembers);
             this.postingMembersPrimary = AndroidUtilities.formatWholeNumber((int) tLRPC$TL_stats_megagroupStats.posters.current, 0);
             if (i4 == 0 || abs3 == BitmapDescriptorFactory.HUE_RED) {
                 this.postingMembersSecondary = "";
@@ -2852,7 +2852,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             double d8 = tLRPC$TL_statsAbsValueAndPrev4.previous;
             int i5 = (int) (d7 - d8);
             float abs4 = d8 == 0.0d ? BitmapDescriptorFactory.HUE_RED : Math.abs((i5 / ((float) d8)) * 100.0f);
-            this.messagesTitle = LocaleController.getString("MessagesOverview", C3158R.string.MessagesOverview);
+            this.messagesTitle = LocaleController.getString("MessagesOverview", C3286R.string.MessagesOverview);
             this.messagesPrimary = AndroidUtilities.formatWholeNumber((int) tLRPC$TL_stats_megagroupStats.messages.current, 0);
             if (i5 == 0 || abs4 == BitmapDescriptorFactory.HUE_RED) {
                 this.messagesSecondary = "";
@@ -2985,7 +2985,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 if (sb.length() > 0) {
                     sb.append(", ");
                 }
-                sb.append(LocaleController.formatString("CharactersPerMessage", C3158R.string.CharactersPerMessage, LocaleController.formatPluralString("Characters", tLRPC$TL_statsGroupTopPoster.avg_chars, new Object[0])));
+                sb.append(LocaleController.formatString("CharactersPerMessage", C3286R.string.CharactersPerMessage, LocaleController.formatPluralString("Characters", tLRPC$TL_statsGroupTopPoster.avg_chars, new Object[0])));
             }
             memberData.description = sb.toString();
             return memberData;
@@ -3035,7 +3035,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             Iterator<TLRPC$User> it = arrayList.iterator();
             while (it.hasNext()) {
                 TLRPC$User next = it.next();
-                if (next.f1633id == j) {
+                if (next.f1639id == j) {
                     return next;
                 }
             }
@@ -3044,7 +3044,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
 
         public void onClick(BaseFragment baseFragment) {
             Bundle bundle = new Bundle();
-            bundle.putLong("user_id", this.user.f1633id);
+            bundle.putLong("user_id", this.user.f1639id);
             MessagesController.getInstance(UserConfig.selectedAccount).putUser(this.user, false);
             baseFragment.presentFragment(new ProfileActivity(bundle));
         }
@@ -3078,7 +3078,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                     TLRPC$ChatParticipant tLRPC$ChatParticipant = tLRPC$ChatFull.participants.participants.get(i2);
                     long j = tLRPC$ChatParticipant.user_id;
                     ArrayList arrayList6 = arrayList5;
-                    if (j == this.user.f1633id && (tLRPC$ChatParticipant instanceof TLRPC$TL_chatChannelParticipant)) {
+                    if (j == this.user.f1639id && (tLRPC$ChatParticipant instanceof TLRPC$TL_chatChannelParticipant)) {
                         tLRPC$TL_chatChannelParticipant3 = (TLRPC$TL_chatChannelParticipant) tLRPC$ChatParticipant;
                     }
                     if (j == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && (tLRPC$ChatParticipant instanceof TLRPC$TL_chatChannelParticipant)) {
@@ -3090,12 +3090,12 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 arrayList = arrayList5;
                 tLRPC$TL_chatChannelParticipant = tLRPC$TL_chatChannelParticipant3;
             }
-            arrayList3.add(LocaleController.getString("StatisticOpenProfile", C3158R.string.StatisticOpenProfile));
+            arrayList3.add(LocaleController.getString("StatisticOpenProfile", C3286R.string.StatisticOpenProfile));
             ArrayList arrayList7 = arrayList;
-            arrayList7.add(Integer.valueOf(C3158R.C3160drawable.msg_openprofile));
+            arrayList7.add(Integer.valueOf(C3286R.C3288drawable.msg_openprofile));
             arrayList4.add(2);
-            arrayList3.add(LocaleController.getString("StatisticSearchUserHistory", C3158R.string.StatisticSearchUserHistory));
-            arrayList7.add(Integer.valueOf(C3158R.C3160drawable.msg_msgbubble3));
+            arrayList3.add(LocaleController.getString("StatisticSearchUserHistory", C3286R.string.StatisticSearchUserHistory));
+            arrayList7.add(Integer.valueOf(C3286R.C3288drawable.msg_msgbubble3));
             arrayList4.add(1);
             if (z && tLRPC$TL_chatChannelParticipant == null) {
                 if (alertDialogArr[0] == null) {
@@ -3103,7 +3103,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                     alertDialogArr[0].showDelayed(300L);
                 }
                 TLRPC$TL_channels_getParticipant tLRPC$TL_channels_getParticipant = new TLRPC$TL_channels_getParticipant();
-                tLRPC$TL_channels_getParticipant.channel = MessagesController.getInstance(UserConfig.selectedAccount).getInputChannel(tLRPC$ChatFull.f1495id);
+                tLRPC$TL_channels_getParticipant.channel = MessagesController.getInstance(UserConfig.selectedAccount).getInputChannel(tLRPC$ChatFull.f1500id);
                 tLRPC$TL_channels_getParticipant.participant = MessagesController.getInputPeer(this.user);
                 ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tLRPC$TL_channels_getParticipant, new RequestDelegate() { // from class: org.telegram.ui.StatisticActivity$MemberData$$ExternalSyntheticLambda4
                     @Override // org.telegram.tgnet.RequestDelegate
@@ -3117,7 +3117,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                     alertDialogArr[0].showDelayed(300L);
                 }
                 TLRPC$TL_channels_getParticipant tLRPC$TL_channels_getParticipant2 = new TLRPC$TL_channels_getParticipant();
-                tLRPC$TL_channels_getParticipant2.channel = MessagesController.getInstance(UserConfig.selectedAccount).getInputChannel(tLRPC$ChatFull.f1495id);
+                tLRPC$TL_channels_getParticipant2.channel = MessagesController.getInstance(UserConfig.selectedAccount).getInputChannel(tLRPC$ChatFull.f1500id);
                 tLRPC$TL_channels_getParticipant2.participant = MessagesController.getInstance(UserConfig.selectedAccount).getInputPeer(UserConfig.getInstance(UserConfig.selectedAccount).clientUserId);
                 ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tLRPC$TL_channels_getParticipant2, new RequestDelegate() { // from class: org.telegram.ui.StatisticActivity$MemberData$$ExternalSyntheticLambda3
                     @Override // org.telegram.tgnet.RequestDelegate
@@ -3140,14 +3140,14 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                     if (z3) {
                         z2 = tLRPC$ChannelParticipant.admin_rights == null;
                         if (z2) {
-                            i = C3158R.string.SetAsAdmin;
+                            i = C3286R.string.SetAsAdmin;
                             str = "SetAsAdmin";
                         } else {
-                            i = C3158R.string.EditAdminRights;
+                            i = C3286R.string.EditAdminRights;
                             str = "EditAdminRights";
                         }
                         arrayList3.add(LocaleController.getString(str, i));
-                        arrayList7.add(Integer.valueOf(z2 ? C3158R.C3160drawable.msg_admins : C3158R.C3160drawable.msg_permissions));
+                        arrayList7.add(Integer.valueOf(z2 ? C3286R.C3288drawable.msg_admins : C3286R.C3288drawable.msg_permissions));
                         arrayList4.add(0);
                         AlertDialog.Builder builder = new AlertDialog.Builder(statisticActivity.getParentActivity());
                         builder.setItems((CharSequence[]) arrayList3.toArray(new CharSequence[arrayList4.size()]), AndroidUtilities.toIntArray(arrayList7), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.StatisticActivity$MemberData$$ExternalSyntheticLambda0
@@ -3189,7 +3189,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             if (tLRPC$TL_error == null) {
                 TLRPC$TL_chatChannelParticipant tLRPC$TL_chatChannelParticipant = new TLRPC$TL_chatChannelParticipant();
                 tLRPC$TL_chatChannelParticipant.channelParticipant = ((TLRPC$TL_channels_channelParticipant) tLObject).participant;
-                tLRPC$TL_chatChannelParticipant.user_id = this.user.f1633id;
+                tLRPC$TL_chatChannelParticipant.user_id = this.user.f1639id;
                 tLRPC$ChatFull.participants.participants.add(0, tLRPC$TL_chatChannelParticipant);
                 onLongClick(tLRPC$ChatFull, statisticActivity, alertDialogArr);
                 return;
@@ -3227,8 +3227,8 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         public /* synthetic */ void lambda$onLongClick$4(ArrayList arrayList, TLRPC$ChatFull tLRPC$ChatFull, final TLRPC$TL_chatChannelParticipant tLRPC$TL_chatChannelParticipant, final boolean z, final StatisticActivity statisticActivity, DialogInterface dialogInterface, int i) {
             if (((Integer) arrayList.get(i)).intValue() == 0) {
                 final boolean[] zArr = new boolean[1];
-                long j = this.user.f1633id;
-                long j2 = tLRPC$ChatFull.f1495id;
+                long j = this.user.f1639id;
+                long j2 = tLRPC$ChatFull.f1500id;
                 TLRPC$ChannelParticipant tLRPC$ChannelParticipant = tLRPC$TL_chatChannelParticipant.channelParticipant;
                 ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, j2, tLRPC$ChannelParticipant.admin_rights, null, tLRPC$ChannelParticipant.banned_rights, tLRPC$ChannelParticipant.rank, 0, true, z, null) { // from class: org.telegram.ui.StatisticActivity.MemberData.1
                     @Override // org.telegram.p048ui.ActionBar.BaseFragment
@@ -3264,8 +3264,8 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 onClick(statisticActivity);
             } else {
                 Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", tLRPC$ChatFull.f1495id);
-                bundle.putLong("search_from_user_id", this.user.f1633id);
+                bundle.putLong("chat_id", tLRPC$ChatFull.f1500id);
+                bundle.putLong("search_from_user_id", this.user.f1639id);
                 statisticActivity.presentFragment(new ChatActivity(bundle));
             }
         }

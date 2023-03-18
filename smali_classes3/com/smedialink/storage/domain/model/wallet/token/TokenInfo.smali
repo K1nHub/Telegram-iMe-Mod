@@ -7,9 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Basic;,
+        Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;,
         Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Crypto;,
-        Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;,
-        Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
+        Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Fiat;
     }
 .end annotation
 

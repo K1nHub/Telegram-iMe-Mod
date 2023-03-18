@@ -391,9 +391,6 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 47
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     const/4 v0, 0x0
 
     .line 45

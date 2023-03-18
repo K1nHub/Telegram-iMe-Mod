@@ -19,7 +19,7 @@ public final class FilterSettingsMappingKt {
         set = CollectionsKt___CollectionsKt.toSet(filterSettingsDb.getFabs());
         Set<FilterFab> mapNamesToEnums = companion.mapNamesToEnums(set);
         String icon = filterSettingsDb.getIcon();
-        return new FilterSettingsModel(filterId, mapNamesToEnums, icon == null ? null : FilterIcon.valueOf(icon));
+        return new FilterSettingsModel(filterId, mapNamesToEnums, icon != null ? FilterIcon.valueOf(icon) : null);
     }
 
     public static final FilterSettingsDb mapToDb(FilterSettingsModel filterSettingsModel, long j) {
@@ -28,6 +28,6 @@ public final class FilterSettingsMappingKt {
         int filterId = filterSettingsModel.getFilterId();
         list = CollectionsKt___CollectionsKt.toList(FilterFab.Companion.mapEnumsToNames(filterSettingsModel.getFabs()));
         FilterIcon icon = filterSettingsModel.getIcon();
-        return new FilterSettingsDb(filterId, list, icon == null ? null : icon.name(), j);
+        return new FilterSettingsDb(filterId, list, icon != null ? icon.name() : null, j);
     }
 }

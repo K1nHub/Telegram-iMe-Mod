@@ -8,22 +8,26 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/LocaleController;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
 .field public final synthetic f$2:I
 
+.field public final synthetic f$3:Ljava/lang/Runnable;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController;ZI)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;ILjava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/messenger/LocaleController;
 
-    iput-boolean p2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$1:Z
+    iput-object p2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$1:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
     iput p3, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$2:I
+
+    iput-object p4, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$3:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -31,15 +35,21 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 3
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/messenger/LocaleController;
 
-    iget-boolean v1, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$1:Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
     iget v2, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$2:I
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$8bTIpQA1gQ6hDLmUp9gwG8HmU3s(Lorg/telegram/messenger/LocaleController;ZILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v3, p0, Lorg/telegram/messenger/LocaleController$$ExternalSyntheticLambda16;->f$3:Ljava/lang/Runnable;
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/LocaleController;->$r8$lambda$H5c1h_qqJaFVopudUlx6p4f5DiE(Lorg/telegram/messenger/LocaleController;Lorg/telegram/messenger/LocaleController$LocaleInfo;ILjava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

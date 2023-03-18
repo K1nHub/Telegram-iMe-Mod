@@ -1670,7 +1670,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v2, 0x21
+    const/16 v2, 0x1d
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1720,7 +1720,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v2, 0x28
+    const/16 v2, 0x2d
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 

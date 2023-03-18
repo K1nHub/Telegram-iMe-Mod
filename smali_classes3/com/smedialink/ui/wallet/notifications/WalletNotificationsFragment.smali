@@ -44,34 +44,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$B1PTMhu38kt5SY50SGHO1SdYzAs(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$9BOyDJ7Aqp0dMDMls3PdmdbWtJw(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->setupRecycleView$lambda-9$lambda-8$lambda-7(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$OJs5yz0cBiWChu2XI5zhECge3sI(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+.method public static synthetic $r8$lambda$P2zY0LQjUyR9e4hso47RKKpc2Gc(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->setupRecycleView$lambda$9$lambda$8$lambda$7(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WSfdrbAd9YXBkHmVFTrtCXO5jOg(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+.method public static synthetic $r8$lambda$cInNnMGgCo1JTnGu45dcB8-_bes(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->setupListeners$lambda-12$lambda-11(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->setupRecycleView$lambda$9$lambda$8$lambda$6$lambda$5(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$vPUdCmui2di9xMU7JC1DgTQVzWc(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+.method public static synthetic $r8$lambda$qNAqke-25p6awk5vxH9a_GirpFs(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->setupRecycleView$lambda-9$lambda-8$lambda-6$lambda-5(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->setupListeners$lambda$12$lambda$11(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
 
     return-void
 .end method
@@ -299,7 +299,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -359,7 +359,7 @@
 
     move-result-object v2
 
-    const-string v3, ""
+    const-string v3, "setupActionBar$lambda$3$lambda$2$lambda$1"
 
     .line 122
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -391,9 +391,6 @@
     move-result-object v4
 
     invoke-virtual {v2, v1, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
-
-    .line 125
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 121
     iput-object v2, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->optionsMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -493,7 +490,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-12$lambda-11(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+.method private static final setupListeners$lambda$12$lambda$11(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -572,7 +569,7 @@
     return-void
 .end method
 
-.method private static final setupRecycleView$lambda-9$lambda-8$lambda-6$lambda-5(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
+.method private static final setupRecycleView$lambda$9$lambda$8$lambda$6$lambda$5(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -594,12 +591,9 @@
 
     check-cast v0, Lcom/smedialink/model/wallet/notification/NotificationItem;
 
-    if-nez v0, :cond_0
-
-    goto :goto_0
+    if-eqz v0, :cond_0
 
     .line 145
-    :cond_0
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->getPresenter()Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;
 
     move-result-object p0
@@ -614,22 +608,22 @@
 
     invoke-virtual {p0, v0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsPresenter;->loadMoreNotification(Ljava/lang/String;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final setupRecycleView$lambda-9$lambda-8$lambda-7(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupRecycleView$lambda$9$lambda$8$lambda$7(Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -942,15 +936,12 @@
     .line 70
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->optionsMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-static {v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
 
     .line 71
-    :goto_0
+    :cond_0
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletNotificationsBinding;
 
     move-result-object v0
@@ -1087,15 +1078,12 @@
     :cond_0
     iget-object v0, p0, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->optionsMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
     invoke-static {v0}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
 
     .line 54
-    :goto_0
+    :cond_1
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/notifications/WalletNotificationsFragment;->getNotificationAdapter()Lcom/smedialink/ui/wallet/notifications/adapter/WalletNotificationsRecycleAdapter;
 
     move-result-object v0

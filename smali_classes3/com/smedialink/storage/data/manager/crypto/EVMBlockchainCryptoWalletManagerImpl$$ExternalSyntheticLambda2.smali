@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda2;->f$0:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->$r8$lambda$bfeU-BROvENhlWb8LPru73zh3Rg(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {v0}, Lcom/smedialink/storage/data/manager/crypto/EVMBlockchainCryptoWalletManagerImpl;->$r8$lambda$dDIxVmayYMPqcYHKRces6Ylq93w(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object v0
 

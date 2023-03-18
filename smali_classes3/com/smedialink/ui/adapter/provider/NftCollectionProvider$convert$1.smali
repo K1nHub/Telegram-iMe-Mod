@@ -108,36 +108,33 @@
 
     check-cast v0, Lcom/smedialink/model/wallet/home/nft/NftTokenItem;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/model/wallet/home/nft/NftTokenItem;->getToken()Lcom/smedialink/storage/domain/model/crypto/nft/avatar/NftToken;
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/nft/avatar/NftToken;->getImage()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_0
 
-    :cond_1
-    invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/crypto/nft/avatar/NftToken;->getImage()Ljava/lang/String;
-
-    move-result-object v1
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
-    if-nez v1, :cond_2
+    if-nez v0, :cond_1
 
-    const-string v1, ""
+    const-string v0, ""
 
-    :cond_2
-    const-string v0, "50_50"
+    :cond_1
+    const-string v1, "50_50"
 
     .line 43
-    invoke-virtual {p1, v1, v0, v1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v0, v1, v0, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

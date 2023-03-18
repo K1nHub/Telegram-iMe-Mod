@@ -1,6 +1,5 @@
 package com.smedialink.storage.data.repository.notification;
 
-import com.smedialink.storage.data.mapper.notification.NotificationMappingKt;
 import com.smedialink.storage.data.network.api.own.PushNotificationApi;
 import com.smedialink.storage.data.network.handlers.impl.ApiErrorHandler;
 import com.smedialink.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
@@ -8,20 +7,15 @@ import com.smedialink.storage.data.network.model.request.notification.DeleteToke
 import com.smedialink.storage.data.network.model.request.notification.GetNotificationsRequest;
 import com.smedialink.storage.data.network.model.request.notification.SaveTokenRequest;
 import com.smedialink.storage.data.network.model.request.notification.SetNotificationReadRequest;
-import com.smedialink.storage.data.network.model.response.base.ApiBaseResponse;
-import com.smedialink.storage.data.network.model.response.notification.IssuePushAllowanceTokenResponse;
-import com.smedialink.storage.data.network.model.response.notification.NotificationResponse;
-import com.smedialink.storage.data.utils.extentions.RxExtKt$handleError$1;
+import com.smedialink.storage.data.utils.extentions.FirebaseExtKt$sam$i$io_reactivex_functions_Function$0;
+import com.smedialink.storage.data.utils.extentions.RxExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.notification.Notification;
 import com.smedialink.storage.domain.repository.notification.PushNotificationRepository;
 import com.smedialink.storage.domain.storage.PreferenceHelper;
 import io.reactivex.Observable;
-import io.reactivex.functions.Function;
-import java.util.ArrayList;
 import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
-import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PushNotificationRepositoryImpl.kt */
 /* loaded from: classes3.dex */
@@ -44,25 +38,9 @@ public final class PushNotificationRepositoryImpl implements PushNotificationRep
 
     @Override // com.smedialink.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<String>> issuePushAllowanceToken() {
-        Observable<ApiBaseResponse<IssuePushAllowanceTokenResponse>> issuePushAllowanceToken = this.pushNotificationApi.issuePushAllowanceToken();
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = issuePushAllowanceToken.map(new Function() { // from class: com.smedialink.storage.data.repository.notification.PushNotificationRepositoryImpl$issuePushAllowanceToken$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                PreferenceHelper preferenceHelper;
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (!response.isSuccess()) {
-                    return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-                }
-                String token = ((IssuePushAllowanceTokenResponse) response.getPayload()).getToken();
-                preferenceHelper = this.preferenceHelper;
-                preferenceHelper.setPushAllowanceToken(token);
-                return Result.Companion.success(token);
-            }
-        });
+        Observable<R> map = this.pushNotificationApi.issuePushAllowanceToken().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1781x8c10a2ec(this.firebaseErrorHandler, this)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1780xd90b7335(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -75,70 +53,27 @@ public final class PushNotificationRepositoryImpl implements PushNotificationRep
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");
             return just;
         }
-        Observable<ApiBaseResponse<Object>> savePushToken = this.pushNotificationApi.savePushToken(new SaveTokenRequest(this.preferenceHelper.getPushToken(), accounts, null, 4, null));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = savePushToken.map(new Function() { // from class: com.smedialink.storage.data.repository.notification.PushNotificationRepositoryImpl$savePushToken$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(Boolean.TRUE);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.pushNotificationApi.savePushToken(new SaveTokenRequest(this.preferenceHelper.getPushToken(), accounts, null, 4, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1783xaad9f4fa(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1782x936c62e7(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.smedialink.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<Boolean>> deletePushToken() {
-        Observable<ApiBaseResponse<Object>> deletePushToken = this.pushNotificationApi.deletePushToken(new DeleteTokenRequest(this.preferenceHelper.getPushToken(), null, 2, null));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = deletePushToken.map(new Function() { // from class: com.smedialink.storage.data.repository.notification.PushNotificationRepositoryImpl$deletePushToken$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(Boolean.TRUE);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.pushNotificationApi.deletePushToken(new DeleteTokenRequest(this.preferenceHelper.getPushToken(), null, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1777x5e5e944c(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1776x507badd5(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.smedialink.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<List<Notification>>> getNotifications(String str) {
-        Observable<ApiBaseResponse<List<NotificationResponse>>> notifications = this.pushNotificationApi.getNotifications(new GetNotificationsRequest(str, 0, 2, null));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = notifications.map(new Function() { // from class: com.smedialink.storage.data.repository.notification.PushNotificationRepositoryImpl$getNotifications$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                int collectionSizeOrDefault;
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    Iterable<NotificationResponse> iterable = (Iterable) response.getPayload();
-                    collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
-                    ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-                    for (NotificationResponse notificationResponse : iterable) {
-                        arrayList.add(NotificationMappingKt.mapToDomain(notificationResponse));
-                    }
-                    return Result.Companion.success(arrayList);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.pushNotificationApi.getNotifications(new GetNotificationsRequest(str, 0, 2, null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1779xd49e5e34(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<Notification>>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<List<Notification>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1778xa23520ed(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -149,42 +84,18 @@ public final class PushNotificationRepositoryImpl implements PushNotificationRep
         Intrinsics.checkNotNullParameter(id, "id");
         PushNotificationApi pushNotificationApi = this.pushNotificationApi;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(id);
-        Observable<ApiBaseResponse<Object>> notificationsRead = pushNotificationApi.setNotificationsRead(new SetNotificationReadRequest(mutableListOf));
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = notificationsRead.map(new Function() { // from class: com.smedialink.storage.data.repository.notification.PushNotificationRepositoryImpl$setNotificationsRead$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(Boolean.TRUE);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = pushNotificationApi.setNotificationsRead(new SetNotificationReadRequest(mutableListOf)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1787xc597215e(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1786xd054c303(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
 
     @Override // com.smedialink.storage.domain.repository.notification.PushNotificationRepository
     public Observable<Result<Boolean>> setAllNotificationsRead() {
-        Observable<ApiBaseResponse<Object>> allNotificationsRead = this.pushNotificationApi.setAllNotificationsRead();
-        final FirebaseFunctionsErrorHandler firebaseFunctionsErrorHandler = this.firebaseErrorHandler;
-        Observable<R> map = allNotificationsRead.map(new Function() { // from class: com.smedialink.storage.data.repository.notification.PushNotificationRepositoryImpl$setAllNotificationsRead$$inlined$mapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lcom/smedialink/storage/domain/model/Result<TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final Result apply(ApiBaseResponse response) {
-                Intrinsics.checkNotNullParameter(response, "response");
-                if (response.isSuccess()) {
-                    return Result.Companion.success(Boolean.TRUE);
-                }
-                return Result.Companion.error$default(Result.Companion, FirebaseFunctionsErrorHandler.this.handleError((ApiBaseResponse<?>) response), null, 2, null);
-            }
-        });
+        Observable<R> map = this.pushNotificationApi.setAllNotificationsRead().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1785xa57737f7(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$handleError$1(this.errorHandler));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1784xec777f8a(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

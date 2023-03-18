@@ -9,12 +9,12 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/common/AppRxEvents$UpdateWalletScreen;,
+        Lcom/smedialink/common/AppRxEvents$BinanceAuthHandled;,
+        Lcom/smedialink/common/AppRxEvents$BinanceOpenAuthScreen;,
+        Lcom/smedialink/common/AppRxEvents$BinanceWalletScreenNeedUpdate;,
         Lcom/smedialink/common/AppRxEvents$HiddenBalanceSettingChanged;,
         Lcom/smedialink/common/AppRxEvents$SuccessEnterPinCode;,
-        Lcom/smedialink/common/AppRxEvents$BinanceWalletScreenNeedUpdate;,
-        Lcom/smedialink/common/AppRxEvents$BinanceOpenAuthScreen;,
-        Lcom/smedialink/common/AppRxEvents$BinanceAuthHandled;
+        Lcom/smedialink/common/AppRxEvents$UpdateWalletScreen;
     }
 .end annotation
 

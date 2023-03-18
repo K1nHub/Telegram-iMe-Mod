@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer$$ExternalSyntheticLambda1;->f$4:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;->$r8$lambda$eezhYJeBp9mI_Rs6E8hBioZtDHk(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;->$r8$lambda$ebJyULo6oMHu4k2PD2xG_AjaHLk(Lcom/chad/library/adapter/base/diff/BrvahAsyncDiffer;Ljava/util/List;Ljava/util/List;ILjava/lang/Runnable;)V
 
     return-void
 .end method

@@ -40,26 +40,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$O1EDr0EBWLGmV_BBDYiZ4nRFqFQ(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+.method public static synthetic $r8$lambda$_O8YjKu2Gd7znvU8trs_SRa1ozg(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->showDeleteWalletDialog$lambda-9(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$r4fqihz0848xIk-xAXHYhtfwlQA(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+.method public static synthetic $r8$lambda$bkC4gnRRdapWUiL9CDGcLqLXDIw(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->showDeleteWalletDialog$lambda$9(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$wQM2Qfakl8w3iDu6v5rO2h7Pi9Y(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+.method public static synthetic $r8$lambda$lo735W6JrduxD5PxgrEoJiQ6DQY(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->closeScreen$lambda-1(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;->closeScreen$lambda$1(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
 
     return-void
 .end method
@@ -207,7 +207,7 @@
     return-void
 .end method
 
-.method private static final closeScreen$lambda-1(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+.method private static final closeScreen$lambda$1(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -262,7 +262,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -364,14 +364,14 @@
     .line 98
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletEthAddressMismatchBinding;->buttonDelete:Landroidx/appcompat/widget/AppCompatButton;
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$7$lambda$6"
 
     .line 99
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string v2, "dialogTextRed2"
+    const-string v2, "dialogTextRed"
 
     .line 100
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -606,7 +606,7 @@
     return-void
 .end method
 
-.method private static final showDeleteWalletDialog$lambda-9(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
+.method private static final showDeleteWalletDialog$lambda$9(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
     .locals 4
 
     const-string v0, "this$0"
@@ -779,7 +779,7 @@
 
     invoke-direct {v10, v0}, Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/wallet/crypto/address_mismatch/AddressMismatchFragment;)V
 
-    const-string v11, "dialogTextRed2"
+    const-string v11, "dialogTextRed"
 
     move-object v4, v2
 

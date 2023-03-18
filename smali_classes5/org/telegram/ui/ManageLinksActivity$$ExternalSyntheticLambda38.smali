@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListener;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
 # instance fields
@@ -22,14 +22,20 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)Z
+.method public final didSetColor()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$QDg6XrzPoSJZG5sOB8CR-Q-ODLI(Lorg/telegram/ui/ManageLinksActivity;Landroid/view/View;I)Z
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$ihVi21yvmh0kSidS_2Ys1Yf9rKA(Lorg/telegram/ui/ManageLinksActivity;)V
 
-    move-result p1
+    return-void
+.end method
 
-    return p1
+.method public synthetic onAnimationProgress(F)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+
+    return-void
 .end method

@@ -24,7 +24,7 @@ public class LongSparseArray<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public LongSparseArray<E> m861clone() {
+    public LongSparseArray<E> m862clone() {
         try {
             LongSparseArray<E> longSparseArray = (LongSparseArray) super.clone();
             longSparseArray.mKeys = (long[]) this.mKeys.clone();
@@ -79,7 +79,7 @@ public class LongSparseArray<E> implements Cloneable {
     }
 
     /* renamed from: gc */
-    private void m856gc() {
+    private void m857gc() {
         int i = this.mSize;
         long[] jArr = this.mKeys;
         Object[] objArr = this.mValues;
@@ -116,7 +116,7 @@ public class LongSparseArray<E> implements Cloneable {
             }
         }
         if (this.mGarbage && i2 >= this.mKeys.length) {
-            m856gc();
+            m857gc();
             i = ~ContainerHelpers.binarySearch(this.mKeys, this.mSize, j);
         }
         int i3 = this.mSize;
@@ -146,7 +146,7 @@ public class LongSparseArray<E> implements Cloneable {
 
     public int size() {
         if (this.mGarbage) {
-            m856gc();
+            m857gc();
         }
         return this.mSize;
     }
@@ -157,28 +157,28 @@ public class LongSparseArray<E> implements Cloneable {
 
     public long keyAt(int i) {
         if (this.mGarbage) {
-            m856gc();
+            m857gc();
         }
         return this.mKeys[i];
     }
 
     public E valueAt(int i) {
         if (this.mGarbage) {
-            m856gc();
+            m857gc();
         }
         return (E) this.mValues[i];
     }
 
     public int indexOfKey(long j) {
         if (this.mGarbage) {
-            m856gc();
+            m857gc();
         }
         return ContainerHelpers.binarySearch(this.mKeys, this.mSize, j);
     }
 
     public int indexOfValue(E e) {
         if (this.mGarbage) {
-            m856gc();
+            m857gc();
         }
         for (int i = 0; i < this.mSize; i++) {
             if (this.mValues[i] == e) {
@@ -209,7 +209,7 @@ public class LongSparseArray<E> implements Cloneable {
             return;
         }
         if (this.mGarbage && i >= this.mKeys.length) {
-            m856gc();
+            m857gc();
         }
         int i2 = this.mSize;
         if (i2 >= this.mKeys.length) {

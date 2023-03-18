@@ -189,7 +189,11 @@
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$sendApprovalExecute$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;Ljava/lang/String;)V
 
-    invoke-virtual {p2, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v0}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p2, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -233,7 +237,11 @@
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$sendClaimExecute$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;Ljava/lang/String;)V
 
-    invoke-virtual {p2, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v0}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p2, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -277,7 +285,11 @@
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$sendDepositExecute$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;Ljava/lang/String;)V
 
-    invoke-virtual {p2, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v0}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p2, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -321,7 +333,11 @@
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$sendWithdrawExecute$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/i_staking/datasource/StakingDataSourceImpl;Ljava/lang/String;)V
 
-    invoke-virtual {p2, v0}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    new-instance p1, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {p1, v0}, Lcom/iMe/i_staking/datasource/StakingDataSourceImpl$inlined$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p2, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
@@ -374,16 +390,16 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/crypto/Wallet$EVM;->getCredentials()Lorg/web3j/crypto/Credentials;
-
-    move-result-object p1
+    const/4 p1, 0x0
 
     .line 87
     :goto_0

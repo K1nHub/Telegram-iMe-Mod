@@ -2,6 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import java.util.List;
+import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.ConnectionsManager;
 /* compiled from: com.google.android.gms:play-services-measurement@@19.0.2 */
 /* loaded from: classes.dex */
@@ -408,7 +409,7 @@ public final class zzfy extends zzjz<zzfy, zzfx> implements zzlh {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void zzaz(zzfy zzfyVar, long j) {
-        zzfyVar.zzf |= 32768;
+        zzfyVar.zzf |= LiteMode.FLAG_CHAT_SCALE;
         zzfyVar.zzy = 43042L;
     }
 
@@ -585,7 +586,7 @@ public final class zzfy extends zzjz<zzfy, zzfx> implements zzlh {
     }
 
     public final boolean zzbn() {
-        return (this.zzf & 32768) != 0;
+        return (this.zzf & LiteMode.FLAG_CHAT_SCALE) != 0;
     }
 
     public final int zzc() {

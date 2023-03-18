@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/ReactedUsersListView$OnCustomEmojiSelectedListener;
+.implements Lorg/telegram/ui/Components/ChatGreetingsView$Listener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final showCustomEmojiAlert(Lorg/telegram/ui/Components/ReactedUsersListView;Ljava/util/ArrayList;)V
+.method public final onGreetings(Lorg/telegram/tgnet/TLRPC$Document;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda323;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$oA1O7CCY4w9IZUswvKwba8o6hgw(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/ReactedUsersListView;Ljava/util/ArrayList;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$cKzcuqSDxQZMqQ9l4-nmWub4zww(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$Document;)V
 
     return-void
 .end method

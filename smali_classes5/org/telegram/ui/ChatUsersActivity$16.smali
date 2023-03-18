@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLObject;JZ)V
     .locals 0
 
-    .line 1611
+    .line 1565
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$16;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$16;->val$participant:Lorg/telegram/tgnet/TLObject;
@@ -50,7 +50,7 @@
 .method public didChangeOwner(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 1
 
-    .line 1632
+    .line 1586
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$16;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatUsersActivity;->access$2000(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLRPC$User;)V
@@ -61,26 +61,26 @@
 .method public didSetRights(ILorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;)V
     .locals 2
 
-    .line 1614
+    .line 1568
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$16;->val$participant:Lorg/telegram/tgnet/TLObject;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     if-eqz v1, :cond_0
 
-    .line 1615
+    .line 1569
     check-cast v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
-    .line 1616
+    .line 1570
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
-    .line 1617
+    .line 1571
     iput-object p3, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
-    .line 1618
+    .line 1572
     iput-object p4, v0, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
-    .line 1620
+    .line 1574
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$16;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
@@ -94,7 +94,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 1621
+    .line 1575
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$16;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$2100(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ChatUsersActivity$ChatUsersActivityDelegate;
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 1622
+    .line 1576
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$16;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
@@ -117,7 +117,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1623
+    .line 1577
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$16;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$2100(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ChatUsersActivity$ChatUsersActivityDelegate;
@@ -130,14 +130,14 @@
 
     invoke-interface {p1, p2, p3, p4}, Lorg/telegram/ui/ChatUsersActivity$ChatUsersActivityDelegate;->didAddParticipantToList(JLorg/telegram/tgnet/TLObject;)V
 
-    .line 1625
+    .line 1579
     :cond_2
     :goto_0
     iget-boolean p1, p0, Lorg/telegram/ui/ChatUsersActivity$16;->val$removeFragment:Z
 
     if-eqz p1, :cond_3
 
-    .line 1626
+    .line 1580
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$16;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V

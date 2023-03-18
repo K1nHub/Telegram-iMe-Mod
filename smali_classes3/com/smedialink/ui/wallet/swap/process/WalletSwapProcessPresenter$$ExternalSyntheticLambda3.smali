@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter$$ExternalSyntheticLambda3;->f$1:Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;
 
-    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;->$r8$lambda$k8fwTJ0uhSvnKS4HdDrKg3LXZOs(ZLcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;)V
+    invoke-static {v0, v1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;->$r8$lambda$yLepbqAibnORd1um9OdfQw4Eof0(ZLcom/smedialink/ui/wallet/swap/process/WalletSwapProcessPresenter;)V
 
     return-void
 .end method

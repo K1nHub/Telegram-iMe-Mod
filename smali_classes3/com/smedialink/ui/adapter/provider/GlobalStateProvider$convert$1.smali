@@ -89,9 +89,6 @@
     .line 29
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 30
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 28
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 

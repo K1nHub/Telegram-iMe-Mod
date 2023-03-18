@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAllChatsTabSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllChatsTabSettingsActivity.kt\norg/fork/ui/fragment/AllChatsTabSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n*L\n1#1,262:1\n1#2:263\n54#3,4:264\n*S KotlinDebug\n*F\n+ 1 AllChatsTabSettingsActivity.kt\norg/fork/ui/fragment/AllChatsTabSettingsActivity\n*L\n59#1:264,4\n*E\n"
+    value = "SMAP\nAllChatsTabSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllChatsTabSettingsActivity.kt\norg/fork/ui/fragment/AllChatsTabSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n*L\n1#1,262:1\n1#2:263\n55#3,4:264\n*S KotlinDebug\n*F\n+ 1 AllChatsTabSettingsActivity.kt\norg/fork/ui/fragment/AllChatsTabSettingsActivity\n*L\n59#1:264,4\n*E\n"
 .end annotation
 
 
@@ -38,26 +38,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$B_H8r3icdpo32xwl91kt0jhxvzM(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
+.method public static synthetic $r8$lambda$BCK89avRSnQb_NSESOt6CHlDc1M(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->getThemeDescriptions$lambda-3(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda$10$lambda$9$lambda$8(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$URuhSP3fwerpPAJ6AQQ3cgjjGec(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
+.method public static synthetic $r8$lambda$Ec5a6-cYYz-6Ujng-uU69kVYbgE(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda-10$lambda-9$lambda-8(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda$10$lambda$9(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$oPHNKQwDSiLvK36f_8x1YnIaNnw(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$aD_0DSfs-lDK49LnhdooOCDETeE(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->initListView$lambda-10$lambda-9(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;->getThemeDescriptions$lambda$3(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
 
     return-void
 .end method
@@ -265,7 +265,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-3(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
+.method private static final getThemeDescriptions$lambda$3(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;)V
     .locals 4
 
     const-string v0, "this$0"
@@ -277,59 +277,48 @@
 
     move-result-object p0
 
-    .line 54
+    .line 55
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    if-lez v0, :cond_3
-
     const/4 v1, 0x0
 
     :goto_0
-    add-int/lit8 v2, v1, 0x1
+    if-ge v1, v0, :cond_2
 
-    .line 55
+    .line 56
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v2
 
     const-string v3, "getChildAt(index)"
 
-    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 59
-    instance-of v3, v1, Lorg/fork/ui/view/FabsCell;
+    instance-of v3, v2, Lorg/fork/ui/view/FabsCell;
 
     if-eqz v3, :cond_0
 
-    check-cast v1, Lorg/fork/ui/view/FabsCell;
+    check-cast v2, Lorg/fork/ui/view/FabsCell;
 
     goto :goto_1
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     :goto_1
-    if-nez v1, :cond_1
+    if-eqz v2, :cond_1
 
-    goto :goto_2
+    invoke-virtual {v2}, Lorg/fork/ui/view/FabsCell;->updateColors()V
 
     :cond_1
-    invoke-virtual {v1}, Lorg/fork/ui/view/FabsCell;->updateColors()V
-
-    :goto_2
-    if-lt v2, v0, :cond_2
-
-    goto :goto_3
-
-    :cond_2
-    move v1, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_3
-    :goto_3
+    :cond_2
     return-void
 .end method
 
@@ -380,7 +369,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-10$lambda-9(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$10$lambda$9(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
@@ -539,7 +528,7 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-10$lambda-9$lambda-8(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
+.method private static final initListView$lambda$10$lambda$9$lambda$8(Lorg/fork/ui/fragment/AllChatsTabSettingsActivity;Ljava/util/Set;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -584,7 +573,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 105
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -867,7 +856,7 @@
 
     const/4 v7, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -1029,7 +1018,7 @@
 
     aput-object v6, v11, v5
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -1089,7 +1078,7 @@
 
     const/4 v10, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -1118,7 +1107,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -1151,7 +1140,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1182,7 +1171,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -1381,7 +1370,7 @@
 
     const/4 v12, 0x0
 
-    const-string v14, "windowBackgroundGrayShadow"
+    const-string/jumbo v14, "windowBackgroundGrayShadow"
 
     move-object v7, v3
 
@@ -1412,7 +1401,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteGrayText4"
+    const-string/jumbo v15, "windowBackgroundWhiteGrayText4"
 
     move-object v7, v3
 
@@ -1439,7 +1428,7 @@
 
     move-result-object v11
 
-    const-string v15, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v15, "windowBackgroundWhiteBlueHeader"
 
     move-object v7, v3
 
@@ -1468,7 +1457,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundGrayShadow"
+    const-string/jumbo v13, "windowBackgroundGrayShadow"
 
     move-object v6, v3
 

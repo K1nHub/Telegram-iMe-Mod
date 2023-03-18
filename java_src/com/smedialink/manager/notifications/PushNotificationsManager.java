@@ -15,7 +15,6 @@ import com.smedialink.common.AppRxEvents;
 import com.smedialink.manager.notifications.PushNotificationsManager;
 import com.smedialink.model.wallet.notification.NotificationInformation;
 import com.smedialink.model.wallet.notification.PushNotificationModel;
-import com.smedialink.p031ui.base.mvp.base.BaseView;
 import com.smedialink.storage.data.utils.extentions.GsonExtKt;
 import com.smedialink.storage.data.utils.extentions.RxExtKt;
 import com.smedialink.storage.domain.interactor.notification.PushNotificationInteractor;
@@ -23,16 +22,15 @@ import com.smedialink.storage.domain.model.Result;
 import com.smedialink.storage.domain.model.notification.NotificationType;
 import com.smedialink.storage.domain.storage.PreferenceHelper;
 import com.smedialink.storage.domain.utils.p030rx.RxEventBus;
+import com.smedialink.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.collections.IntIterator;
@@ -43,11 +41,11 @@ import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.fork.utils.UserUtils;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.LaunchActivity;
-import timber.log.Timber;
 /* compiled from: PushNotificationsManager.kt */
 /* loaded from: classes3.dex */
 public final class PushNotificationsManager {
@@ -64,19 +62,58 @@ public final class PushNotificationsManager {
 
         static {
             int[] iArr = new int[NotificationType.values().length];
-            iArr[NotificationType.CANCEL_TRANSACTION.ordinal()] = 1;
-            iArr[NotificationType.OUTGOING_CRYPTO_TRANSFER.ordinal()] = 2;
-            iArr[NotificationType.INCOMING_CRYPTO_TRANSFER.ordinal()] = 3;
-            iArr[NotificationType.OUTGOING_DONATION.ordinal()] = 4;
-            iArr[NotificationType.INCOMING_DONATION.ordinal()] = 5;
-            iArr[NotificationType.SIMPLEX_PAYMENT_REQUEST_EVENT.ordinal()] = 6;
-            iArr[NotificationType.REQUEST_BINANCE_PAY_TRANSACTION.ordinal()] = 7;
-            iArr[NotificationType.INCOMING_BINANCE_PAY_TRANSACTION.ordinal()] = 8;
-            iArr[NotificationType.APPROVE_CRYPTO.ordinal()] = 9;
-            iArr[NotificationType.STAKING_SAFE_WITHDRAWAL_STARTED.ordinal()] = 10;
-            iArr[NotificationType.STAKING_SAFE_WITHDRAWAL_FINISHED.ordinal()] = 11;
-            iArr[NotificationType.STAKING_STARTED.ordinal()] = 12;
-            iArr[NotificationType.STAKING_FINISHED.ordinal()] = 13;
+            try {
+                iArr[NotificationType.CANCEL_TRANSACTION.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[NotificationType.OUTGOING_CRYPTO_TRANSFER.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[NotificationType.INCOMING_CRYPTO_TRANSFER.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[NotificationType.OUTGOING_DONATION.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[NotificationType.INCOMING_DONATION.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[NotificationType.SIMPLEX_PAYMENT_REQUEST_EVENT.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[NotificationType.REQUEST_BINANCE_PAY_TRANSACTION.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[NotificationType.INCOMING_BINANCE_PAY_TRANSACTION.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
+            }
+            try {
+                iArr[NotificationType.APPROVE_CRYPTO.ordinal()] = 9;
+            } catch (NoSuchFieldError unused9) {
+            }
+            try {
+                iArr[NotificationType.STAKING_SAFE_WITHDRAWAL_STARTED.ordinal()] = 10;
+            } catch (NoSuchFieldError unused10) {
+            }
+            try {
+                iArr[NotificationType.STAKING_SAFE_WITHDRAWAL_FINISHED.ordinal()] = 11;
+            } catch (NoSuchFieldError unused11) {
+            }
+            try {
+                iArr[NotificationType.STAKING_STARTED.ordinal()] = 12;
+            } catch (NoSuchFieldError unused12) {
+            }
+            try {
+                iArr[NotificationType.STAKING_FINISHED.ordinal()] = 13;
+            } catch (NoSuchFieldError unused13) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -128,7 +165,7 @@ public final class PushNotificationsManager {
             arrayList.add(notificationInformation);
         }
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(arrayList);
-        final ArrayList<NotificationInformation> arrayList2 = new ArrayList();
+        ArrayList<NotificationInformation> arrayList2 = new ArrayList();
         for (Object obj : filterNotNull) {
             if (((NotificationInformation) obj).getPushAllowanceToken().length() > 0) {
                 arrayList2.add(obj);
@@ -162,39 +199,11 @@ public final class PushNotificationsManager {
                 Observable<Result<Boolean>> doFinally = this.notificationInteractor.savePushToken(arrayList3).doFinally(new Action() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$$ExternalSyntheticLambda0
                     @Override // io.reactivex.functions.Action
                     public final void run() {
-                        PushNotificationsManager.m1271sendPushToken$lambda6(PushNotificationsManager.this);
+                        PushNotificationsManager.sendPushToken$lambda$6(PushNotificationsManager.this);
                     }
                 });
                 Intrinsics.checkNotNullExpressionValue(doFinally, "notificationInteractor\n …{ subscriptions.clear() }");
-                Disposable subscribe = doFinally.subscribe(new Consumer() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$1
-                    @Override // io.reactivex.functions.Consumer
-                    public final void accept(T it3) {
-                        PreferenceHelper preferenceHelper4;
-                        Intrinsics.checkNotNullExpressionValue(it3, "it");
-                        if (((Result) it3) instanceof Result.Success) {
-                            for (NotificationInformation notificationInformation3 : arrayList2) {
-                                preferenceHelper4 = this.preferenceHelper;
-                                preferenceHelper4.setTempOneActionUserId(notificationInformation3.getUserId());
-                                preferenceHelper4.setPushTokenRegistered(true);
-                                preferenceHelper4.setTempOneActionUserId("");
-                            }
-                        }
-                    }
-                }, new Consumer() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$2
-                    @Override // io.reactivex.functions.Consumer
-                    public final void accept(Throwable th) {
-                        Timber.m4e(th);
-                        BaseView baseView = BaseView.this;
-                        if (baseView == null) {
-                            return;
-                        }
-                        String message = th.getMessage();
-                        if (message == null) {
-                            message = "";
-                        }
-                        baseView.showToast(message);
-                    }
-                });
+                Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1480x6e1faa35(arrayList2, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1481x6e1faa36(null)));
                 Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
                 RxExtKt.autoDispose(subscribe, this.subscriptions);
             }
@@ -202,8 +211,7 @@ public final class PushNotificationsManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: sendPushToken$lambda-6  reason: not valid java name */
-    public static final void m1271sendPushToken$lambda6(PushNotificationsManager this$0) {
+    public static final void sendPushToken$lambda$6(PushNotificationsManager this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.subscriptions.clear();
     }
@@ -241,10 +249,10 @@ public final class PushNotificationsManager {
 
     private final PushNotificationModel convertMapParamsToModel(Map<String, ? extends Object> map) {
         Object obj = map.get(SessionDescription.ATTR_TYPE);
-        Objects.requireNonNull(obj, "null cannot be cast to non-null type kotlin.String");
+        Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.String");
         String str = (String) obj;
         Object obj2 = map.get("userId");
-        Objects.requireNonNull(obj2, "null cannot be cast to non-null type kotlin.String");
+        Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.String");
         if (UserUtils.isUserActive(Long.parseLong((String) obj2))) {
             switch (WhenMappings.$EnumSwitchMapping$0[NotificationType.Companion.map(str).ordinal()]) {
                 case 1:
@@ -257,7 +265,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 3:
                     Gson globalGson3 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1477In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
+                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1487In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
                     }.getType());
                 case 4:
                     Gson globalGson4 = GsonExtKt.getGlobalGson();
@@ -265,7 +273,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 5:
                     Gson globalGson5 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1478In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
+                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1488In>() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
                     }.getType());
                 case 6:
                     Gson globalGson6 = GsonExtKt.getGlobalGson();
@@ -311,13 +319,13 @@ public final class PushNotificationsManager {
         Intrinsics.checkNotNullExpressionValue(from, "from(ApplicationLoader.applicationContext)");
         Intent intent = new Intent(ApplicationLoader.applicationContext, LaunchActivity.class);
         intent.setAction(pushNotificationModel.getAction());
-        intent.setFlags(32768);
+        intent.setFlags(LiteMode.FLAG_CHAT_SCALE);
         intent.putExtra("userId", pushNotificationModel.getUserId());
         PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent, 1107296256);
         if (Build.VERSION.SDK_INT >= 26 && from.getNotificationChannel("iMe Messenger") == null) {
-            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3158R.string.AppName), 3));
+            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3286R.string.AppName), 3));
         }
-        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3158R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3158R.C3160drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3158R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3158R.C3159color.fork_color)).setCategory("msg").build();
+        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3286R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3286R.C3288drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3286R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3286R.C3287color.fork_color)).setCategory("msg").build();
         Intrinsics.checkNotNullExpressionValue(build, "Builder(ApplicationLoade…\n                .build()");
         from.notify((int) System.currentTimeMillis(), build);
     }
@@ -337,37 +345,31 @@ public final class PushNotificationsManager {
             Intrinsics.checkNotNullParameter(intent, "intent");
             Intrinsics.checkNotNullParameter(activity, "activity");
             String action = intent.getAction();
-            Boolean bool = null;
             if (action != null) {
                 startsWith$default = StringsKt__StringsJVMKt.startsWith$default(action, PushNotificationModel.BASE_PUSH_ACTION, false, 2, null);
-                bool = Boolean.valueOf(startsWith$default);
-            }
-            if (bool == null) {
-                return false;
-            }
-            boolean booleanValue = bool.booleanValue();
-            if (booleanValue) {
-                long longExtra = intent.getLongExtra("userId", 0L);
-                String action2 = intent.getAction();
-                if (action2 != null && action2.hashCode() == -1002038047 && action2.equals(PushNotificationModel.ACTION_OPEN_WALLET)) {
-                    int selectedAccountPositionByUserId = UserUtils.getSelectedAccountPositionByUserId(longExtra);
-                    if (selectedAccountPositionByUserId != UserConfig.selectedAccount) {
-                        activity.switchToAccount(selectedAccountPositionByUserId, true);
-                    }
-                    activity.runDelayed(1000L, new Runnable() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$Companion$$ExternalSyntheticLambda0
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            PushNotificationsManager.Companion.m1273handlePushIntent$lambda1$lambda0(LaunchActivity.this);
+                if (startsWith$default) {
+                    long longExtra = intent.getLongExtra("userId", 0L);
+                    String action2 = intent.getAction();
+                    if (action2 != null && action2.hashCode() == -1002038047 && action2.equals(PushNotificationModel.ACTION_OPEN_WALLET)) {
+                        int selectedAccountPositionByUserId = UserUtils.getSelectedAccountPositionByUserId(longExtra);
+                        if (selectedAccountPositionByUserId != UserConfig.selectedAccount) {
+                            activity.switchToAccount(selectedAccountPositionByUserId, true);
                         }
-                    });
+                        activity.runDelayed(1000L, new Runnable() { // from class: com.smedialink.manager.notifications.PushNotificationsManager$Companion$$ExternalSyntheticLambda0
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                PushNotificationsManager.Companion.handlePushIntent$lambda$1$lambda$0(LaunchActivity.this);
+                            }
+                        });
+                    }
                 }
+                return startsWith$default;
             }
-            return booleanValue;
+            return false;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: handlePushIntent$lambda-1$lambda-0  reason: not valid java name */
-        public static final void m1273handlePushIntent$lambda1$lambda0(LaunchActivity this_with) {
+        public static final void handlePushIntent$lambda$1$lambda$0(LaunchActivity this_with) {
             Intrinsics.checkNotNullParameter(this_with, "$this_with");
             this_with.openWalletScreen();
         }

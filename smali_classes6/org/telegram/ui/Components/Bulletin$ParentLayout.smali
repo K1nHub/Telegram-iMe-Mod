@@ -44,24 +44,24 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Bulletin$Layout;)V
     .locals 3
 
-    .line 431
+    .line 432
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 421
+    .line 422
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->rect:Landroid/graphics/Rect;
 
-    .line 432
+    .line 433
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
-    .line 433
+    .line 434
     new-instance v0, Landroid/view/GestureDetector;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -78,10 +78,10 @@
 
     const/4 v1, 0x0
 
-    .line 493
+    .line 494
     invoke-virtual {v0, v1}, Landroid/view/GestureDetector;->setIsLongpressEnabled(Z)V
 
-    .line 494
+    .line 495
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     return-void
@@ -90,7 +90,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Components/Bulletin$ParentLayout;)Z
     .locals 0
 
-    .line 418
+    .line 419
     iget-boolean p0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->hideAnimationRunning:Z
 
     return p0
@@ -99,7 +99,7 @@
 .method static synthetic access$1302(Lorg/telegram/ui/Components/Bulletin$ParentLayout;Z)Z
     .locals 0
 
-    .line 418
+    .line 419
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->hideAnimationRunning:Z
 
     return p1
@@ -108,7 +108,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/Components/Bulletin$ParentLayout;)Z
     .locals 0
 
-    .line 418
+    .line 419
     iget-boolean p0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->needLeftAlphaAnimation:Z
 
     return p0
@@ -117,7 +117,7 @@
 .method static synthetic access$1402(Lorg/telegram/ui/Components/Bulletin$ParentLayout;Z)Z
     .locals 0
 
-    .line 418
+    .line 419
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->needLeftAlphaAnimation:Z
 
     return p1
@@ -126,7 +126,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Components/Bulletin$ParentLayout;)Z
     .locals 0
 
-    .line 418
+    .line 419
     iget-boolean p0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->needRightAlphaAnimation:Z
 
     return p0
@@ -135,7 +135,7 @@
 .method static synthetic access$1602(Lorg/telegram/ui/Components/Bulletin$ParentLayout;Z)Z
     .locals 0
 
-    .line 418
+    .line 419
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->needRightAlphaAnimation:Z
 
     return p1
@@ -144,7 +144,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Components/Bulletin$ParentLayout;)F
     .locals 0
 
-    .line 418
+    .line 419
     iget p0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
 
     return p0
@@ -153,7 +153,7 @@
 .method static synthetic access$1724(Lorg/telegram/ui/Components/Bulletin$ParentLayout;F)F
     .locals 1
 
-    .line 418
+    .line 419
     iget v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
 
     sub-float/2addr v0, p1
@@ -166,14 +166,14 @@
 .method private inLayoutHitRect(FF)Z
     .locals 2
 
-    .line 532
+    .line 533
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 533
+    .line 534
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->rect:Landroid/graphics/Rect;
 
     float-to-int p1, p1
@@ -190,7 +190,7 @@
 .method private synthetic lambda$onTouchEvent$0(F)V
     .locals 1
 
-    .line 515
+    .line 516
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTranslationX()F
@@ -201,7 +201,7 @@
 
     if-nez p1, :cond_0
 
-    .line 516
+    .line 517
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->onHide()V
 
     :cond_0
@@ -219,7 +219,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 8
 
-    .line 499
+    .line 500
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->pressed:Z
 
     const/4 v1, 0x0
@@ -245,14 +245,14 @@
     :cond_0
     return v1
 
-    .line 500
+    .line 501
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->gestureDetector:Landroid/view/GestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 501
+    .line 502
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result p1
@@ -261,7 +261,7 @@
 
     if-nez p1, :cond_2
 
-    .line 503
+    .line 504
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->pressed:Z
 
     if-nez p1, :cond_a
@@ -270,7 +270,7 @@
 
     if-nez p1, :cond_a
 
-    .line 504
+    .line 505
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -279,7 +279,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 505
+    .line 506
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationX()F
@@ -288,7 +288,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
 
-    .line 506
+    .line 507
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->pressed:Z
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->onPressedStateChanged(Z)V
@@ -302,18 +302,18 @@
 
     if-ne p1, v2, :cond_a
 
-    .line 509
+    .line 510
     :cond_3
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->pressed:Z
 
     if-eqz p1, :cond_a
 
-    .line 510
+    .line 511
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->hideAnimationRunning:Z
 
     if-nez p1, :cond_9
 
-    .line 511
+    .line 512
     iget p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
 
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
@@ -342,7 +342,7 @@
 
     if-lez p1, :cond_8
 
-    .line 512
+    .line 513
     iget p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
 
     invoke-static {p1}, Ljava/lang/Math;->signum(F)F
@@ -359,7 +359,7 @@
 
     mul-float p1, p1, v2
 
-    .line 513
+    .line 514
     iget v2, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->translationX:F
 
     cmpg-float v7, v2, v6
@@ -387,7 +387,7 @@
     :cond_6
     const/4 v2, 0x0
 
-    .line 514
+    .line 515
     :goto_1
     iget-object v7, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
@@ -426,12 +426,12 @@
 
     move-result-object p1
 
-    .line 518
+    .line 519
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_2
 
-    .line 520
+    .line 521
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
@@ -453,7 +453,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 523
+    .line 524
     :cond_9
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Bulletin$ParentLayout;->pressed:Z

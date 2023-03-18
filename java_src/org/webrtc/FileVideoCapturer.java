@@ -2,7 +2,7 @@ package org.webrtc;
 
 import android.content.Context;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -114,7 +114,7 @@ public class FileVideoCapturer implements VideoCapturer {
                         throw new RuntimeException("Error looping video");
                     }
                 }
-                String str = new String(allocate2.array(), Charset.forName(C0474C.ASCII_NAME));
+                String str = new String(allocate2.array(), Charset.forName(C0468C.ASCII_NAME));
                 if (!str.equals("FRAME\n")) {
                     throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
                 }

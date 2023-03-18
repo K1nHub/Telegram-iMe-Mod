@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Components/LinkActionView;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
-
-    iput-object p2, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/ui/Components/LinkActionView;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/ManageLinksActivity$ListAdapter;
 
-    iget-object v1, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/ui/Components/LinkActionView;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$6NpNtS3hOznaEyaAt9KteE0c84w(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Lorg/telegram/ui/Components/LinkActionView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ManageLinksActivity$ListAdapter;->$r8$lambda$vEZ7wmNsbf-bGtswMXCk4Vf9oG4(Lorg/telegram/ui/ManageLinksActivity$ListAdapter;Landroid/view/View;)V
 
     return-void
 .end method

@@ -30,19 +30,19 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 7128
+    .line 7118
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 7130
+    .line 7120
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$40;->paint:Landroid/graphics/Paint;
 
-    .line 7131
+    .line 7121
     new-instance p1, Landroid/graphics/Matrix;
 
     invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
@@ -57,26 +57,26 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 7137
+    .line 7127
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$40;->updateGradient:Landroid/graphics/LinearGradient;
 
     if-eqz v0, :cond_0
 
-    .line 7138
+    .line 7128
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$40;->paint:Landroid/graphics/Paint;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 7139
+    .line 7129
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$40;->paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$40;->updateGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 7140
+    .line 7130
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$40;->updateGradient:Landroid/graphics/LinearGradient;
 
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$40;->matrix:Landroid/graphics/Matrix;
@@ -87,7 +87,7 @@
 
     const/4 v4, 0x0
 
-    .line 7141
+    .line 7131
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -106,7 +106,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 7142
+    .line 7132
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadialProgress2;->setBackgroundGradientDrawable(Landroid/graphics/LinearGradient;)V
 
-    .line 7143
+    .line 7133
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$32600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -126,7 +126,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RadialProgress2;->draw(Landroid/graphics/Canvas;)V
 
-    .line 7145
+    .line 7135
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
@@ -136,22 +136,22 @@
 .method protected onMeasure(II)V
     .locals 9
 
-    .line 7150
+    .line 7140
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 7151
+    .line 7141
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 7152
+    .line 7142
     iget p2, p0, Lorg/telegram/ui/DialogsActivity$40;->lastGradientWidth:I
 
     const/4 v0, 0x2
 
     if-eq p2, p1, :cond_0
 
-    .line 7153
+    .line 7143
     new-instance p2, Landroid/graphics/LinearGradient;
 
     const/4 v2, 0x0
@@ -178,10 +178,10 @@
 
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$40;->updateGradient:Landroid/graphics/LinearGradient;
 
-    .line 7154
+    .line 7144
     iput p1, p0, Lorg/telegram/ui/DialogsActivity$40;->lastGradientWidth:I
 
-    .line 7156
+    .line 7146
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -201,7 +201,7 @@
 
     div-int/2addr p1, v0
 
-    .line 7157
+    .line 7147
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$32600(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -250,10 +250,10 @@
 .method public setTranslationY(F)V
     .locals 2
 
-    .line 7162
+    .line 7152
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 7163
+    .line 7153
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/16 v1, 0x30
@@ -268,7 +268,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$32802(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 7164
+    .line 7154
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$32800(Lorg/telegram/ui/DialogsActivity;)F
@@ -281,12 +281,12 @@
 
     if-gez p1, :cond_0
 
-    .line 7165
+    .line 7155
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$32802(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 7167
+    .line 7157
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -296,7 +296,7 @@
 
     if-nez p1, :cond_1
 
-    .line 7168
+    .line 7158
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23800(Lorg/telegram/ui/DialogsActivity;)V

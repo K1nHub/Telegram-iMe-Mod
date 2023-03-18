@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/fragment/CreateReactionButtonsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 710
     iput-object p1, p0, Lorg/fork/ui/fragment/CreateReactionButtonsActivity$TouchHelperCallback;->this$0:Lorg/fork/ui/fragment/CreateReactionButtonsActivity;
@@ -48,7 +44,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "viewHolder"
+    const-string/jumbo v0, "viewHolder"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -72,7 +68,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "viewHolder"
+    const-string/jumbo p1, "viewHolder"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -211,15 +207,15 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 v0, 0x0
+    .line 731
+    iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     goto :goto_0
 
-    .line 731
     :cond_0
-    iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    const/4 v0, 0x0
 
     :goto_0
     if-nez v0, :cond_1
@@ -242,7 +238,7 @@
 .method public onSwiped(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 0
 
-    const-string p2, "viewHolder"
+    const-string/jumbo p2, "viewHolder"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

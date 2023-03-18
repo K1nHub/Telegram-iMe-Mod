@@ -70,7 +70,7 @@
 
     const/4 v0, 0x0
 
-    .line 574
+    .line 576
     invoke-interface {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordVideo(IZIZ)V
 
     return-void

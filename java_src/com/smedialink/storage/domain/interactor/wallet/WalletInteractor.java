@@ -11,13 +11,10 @@ import com.smedialink.storage.domain.model.wallet.token.TokenCode;
 import com.smedialink.storage.domain.model.wallet.transaction.Transaction;
 import com.smedialink.storage.domain.repository.wallet.WalletRepository;
 import com.smedialink.storage.domain.storage.CryptoPreferenceHelper;
+import com.smedialink.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import com.smedialink.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.functions.Function;
 import java.util.List;
-import kotlin.collections.ArraysKt___ArraysKt;
-import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletInteractor.kt */
@@ -51,55 +48,9 @@ public final class WalletInteractor {
         return walletInteractor.getWalletBalance(z, networkType);
     }
 
-    public final Observable<Result<List<TokenBalance>>> getWalletBalance(final boolean z, final NetworkType networkType) {
+    public final Observable<Result<List<TokenBalance>>> getWalletBalance(boolean z, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<List<TokenBalance>>> walletBalance = this.walletRepository.getWalletBalance(z, networkType);
-        final IErrorStatus[] iErrorStatusArr = {FirebaseFunctionsErrorHandler.ErrorStatus.ERR_MONEY_ACCOUNT_NOT_EXIST};
-        Observable<R> flatMap = walletBalance.flatMap(new Function() { // from class: com.smedialink.storage.domain.interactor.wallet.WalletInteractor$getWalletBalance$$inlined$flatMapError$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-            @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                boolean contains;
-                WalletRepository walletRepository;
-                SchedulersProvider schedulersProvider;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (result instanceof Result.Success) {
-                    return Observable.just(result);
-                }
-                if (result instanceof Result.Error) {
-                    Result.Error error = (Result.Error) result;
-                    contains = ArraysKt___ArraysKt.contains(iErrorStatusArr, error.getError().getStatus());
-                    if (contains) {
-                        error.getError();
-                        walletRepository = this.walletRepository;
-                        Observable<Result<Boolean>> activateWallet = walletRepository.activateWallet();
-                        final WalletInteractor walletInteractor = this;
-                        final boolean z2 = z;
-                        final NetworkType networkType2 = networkType;
-                        Observable<R> flatMap2 = activateWallet.flatMap(new Function() { // from class: com.smedialink.storage.domain.interactor.wallet.WalletInteractor$getWalletBalance$1$1
-                            @Override // io.reactivex.functions.Function
-                            public final ObservableSource<? extends Result<List<TokenBalance>>> apply(Result<Boolean> it) {
-                                WalletRepository walletRepository2;
-                                SchedulersProvider schedulersProvider2;
-                                Intrinsics.checkNotNullParameter(it, "it");
-                                walletRepository2 = WalletInteractor.this.walletRepository;
-                                Observable<Result<List<TokenBalance>>> walletBalance2 = walletRepository2.getWalletBalance(z2, networkType2);
-                                schedulersProvider2 = WalletInteractor.this.schedulersProvider;
-                                return walletBalance2.subscribeOn(schedulersProvider2.mo708io());
-                            }
-                        });
-                        schedulersProvider = this.schedulersProvider;
-                        Observable<R> subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo708io());
-                        Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun getWalletBalance(for…(schedulersProvider.io())");
-                        return subscribeOn;
-                    }
-                    Observable just = Observable.just(Result.Companion.error$default(Result.Companion, error.getError(), null, 2, null));
-                    Intrinsics.checkNotNullExpressionValue(just, "just(Result.error<R>(result.error) as R)");
-                    return just;
-                }
-                return Observable.empty();
-            }
-        });
+        Observable<R> flatMap = this.walletRepository.getWalletBalance(z, networkType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new WalletInteractor$getWalletBalance$$inlined$flatMapError$1(new IErrorStatus[]{FirebaseFunctionsErrorHandler.ErrorStatus.ERR_MONEY_ACCOUNT_NOT_EXIST}, this, z, networkType)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "vararg errorStatus: IErr…e.empty()\n        }\n    }");
         Observable<Result<List<TokenBalance>>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
@@ -122,29 +73,7 @@ public final class WalletInteractor {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         WalletRepository walletRepository = this.walletRepository;
         listOf = CollectionsKt__CollectionsJVMKt.listOf(tokenCode);
-        Observable<R> flatMap = walletRepository.getTokensBalance(listOf, z, networkType).flatMap(new Function() { // from class: com.smedialink.storage.domain.interactor.wallet.WalletInteractor$getTokenBalance$$inlined$flatMapSuccess$1
-            /* JADX WARN: Incorrect types in method signature: (TT;)Lio/reactivex/ObservableSource<+TR;>; */
-            /* JADX WARN: Multi-variable type inference failed */
-            @Override // io.reactivex.functions.Function
-            public final ObservableSource apply(Result result) {
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    return result instanceof Result.Error ? Observable.just(Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null)) : Observable.empty();
-                }
-                Object data = result.getData();
-                Intrinsics.checkNotNull(data);
-                if (((List) data).isEmpty()) {
-                    Observable never = Observable.never();
-                    Intrinsics.checkNotNullExpressionValue(never, "never()");
-                    return never;
-                }
-                Object data2 = result.getData();
-                Intrinsics.checkNotNull(data2);
-                Observable just = Observable.just(Result.Companion.success(CollectionsKt.first((List<? extends Object>) data2)));
-                Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-                return just;
-            }
-        });
+        Observable<R> flatMap = walletRepository.getTokensBalance(listOf, z, networkType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new WalletInteractor$getTokenBalance$$inlined$flatMapSuccess$1()));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         Observable<Result<TokenBalance>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo708io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");

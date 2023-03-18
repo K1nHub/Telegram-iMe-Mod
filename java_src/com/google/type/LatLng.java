@@ -25,7 +25,7 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<LatLng, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C12221 c12221) {
+        /* synthetic */ Builder(C12151 c12151) {
             this();
         }
 
@@ -36,7 +36,7 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
 
     /* renamed from: com.google.type.LatLng$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C12221 {
+    static /* synthetic */ class C12151 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f229xa1df5c61;
@@ -77,7 +77,7 @@ public final class LatLng extends GeneratedMessageLite<LatLng, Builder> implemen
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C12221.f229xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C12151.f229xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new LatLng();
             case 2:

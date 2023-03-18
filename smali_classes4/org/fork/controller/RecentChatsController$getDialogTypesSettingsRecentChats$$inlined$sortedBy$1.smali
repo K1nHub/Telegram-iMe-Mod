@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 RecentChatsController.kt\norg/fork/controller/RecentChatsController\n*L\n1#1,320:1\n117#2:321\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 RecentChatsController.kt\norg/fork/controller/RecentChatsController\n*L\n1#1,328:1\n131#2:329\n*E\n"
 .end annotation
 
 
@@ -51,9 +51,9 @@
     .end annotation
 
     .line 102
-    check-cast p1, Lorg/fork/enums/DialogType;
+    check-cast p1, Lorg/fork/enums/RecentChatsDialogType;
 
-    .line 117
+    .line 131
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
@@ -62,8 +62,10 @@
 
     move-result-object p1
 
-    check-cast p2, Lorg/fork/enums/DialogType;
+    .line 102
+    check-cast p2, Lorg/fork/enums/RecentChatsDialogType;
 
+    .line 131
     invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
     move-result p2
@@ -72,6 +74,7 @@
 
     move-result-object p2
 
+    .line 102
     invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result p1

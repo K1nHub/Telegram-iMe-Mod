@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$TlfDK0T_z2uLmtISpRDXK9I_X5k(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;->$r8$lambda$OrqKpNN9o5zq6Yq_PC3GMzSar44(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     return-void
 .end method

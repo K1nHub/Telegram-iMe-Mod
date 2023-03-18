@@ -6,14 +6,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lorg/fork/ui/fragment/MultiPanelSettingsActivity$Companion;,
         Lorg/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;,
-        Lorg/fork/ui/fragment/MultiPanelSettingsActivity$TouchHelperCallback;,
-        Lorg/fork/ui/fragment/MultiPanelSettingsActivity$Companion;
+        Lorg/fork/ui/fragment/MultiPanelSettingsActivity$TouchHelperCallback;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMultiPanelSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelSettingsActivity.kt\norg/fork/ui/fragment/MultiPanelSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,404:1\n1#2:405\n357#3,7:406\n1720#4,3:413\n1849#4,2:416\n1177#4,2:418\n1251#4,2:420\n1547#4:422\n1618#4,3:423\n1254#4:426\n183#5,3:427\n*S KotlinDebug\n*F\n+ 1 MultiPanelSettingsActivity.kt\norg/fork/ui/fragment/MultiPanelSettingsActivity\n*L\n195#1:406,7\n199#1:413,3\n202#1:416,2\n209#1:418,2\n209#1:420,2\n210#1:422\n210#1:423,3\n209#1:426\n217#1:427,3\n*E\n"
+    value = "SMAP\nMultiPanelSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MultiPanelSettingsActivity.kt\norg/fork/ui/fragment/MultiPanelSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,404:1\n1#2:405\n361#3,7:406\n1726#4,3:413\n1855#4,2:416\n1179#4,2:418\n1253#4,2:420\n1549#4:422\n1620#4,3:423\n1256#4:426\n187#5,3:427\n*S KotlinDebug\n*F\n+ 1 MultiPanelSettingsActivity.kt\norg/fork/ui/fragment/MultiPanelSettingsActivity\n*L\n195#1:406,7\n199#1:413,3\n202#1:416,2\n209#1:418,2\n209#1:420,2\n210#1:422\n210#1:423,3\n209#1:426\n217#1:427,3\n*E\n"
 .end annotation
 
 
@@ -79,18 +79,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$UebE5Z7iA7phTYK0gaFPKaCOCY0(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$7W-02ZKjOzdZ2JkR3v1UvFd7fbM(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->getThemeDescriptions$lambda$2(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$opWIsuOY2ym9xT_ZGC9poY6XYMg(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
+.method public static synthetic $r8$lambda$yOoVCfTGNYsPMJjSOjZ0-R5HL4Y(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->getThemeDescriptions$lambda-2(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -590,7 +590,7 @@
 
     move-result-object v0
 
-    .line 183
+    .line 187
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v1
@@ -602,7 +602,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 188
     :cond_1
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -715,7 +715,7 @@
     :cond_0
     iget-object v1, p0, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->currentDialogType:Lorg/fork/enums/DialogType;
 
-    .line 357
+    .line 361
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -727,10 +727,10 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 360
+    .line 364
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 358
+    .line 362
     :cond_1
     check-cast v2, Ljava/util/List;
 
@@ -800,7 +800,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-2(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
+.method private static final getThemeDescriptions$lambda$2(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -880,7 +880,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
@@ -892,7 +892,7 @@
 
     if-eqz v0, :cond_3
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     .line 159
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -964,7 +964,7 @@
 
     invoke-virtual {p2, p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 176
     :cond_1
@@ -982,7 +982,7 @@
 
     iput-boolean p1, p0, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->newIsHideOnScrollEnabled:Z
 
-    goto :goto_2
+    goto :goto_1
 
     .line 180
     :cond_2
@@ -1006,7 +1006,7 @@
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 187
     :cond_3
@@ -1019,11 +1019,8 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_4
+    if-eqz p1, :cond_4
 
-    goto :goto_1
-
-    :cond_4
     invoke-virtual {p1}, Lorg/fork/models/MultiPanelButtonState;->isEnabled()Z
 
     move-result p2
@@ -1033,7 +1030,7 @@
     invoke-virtual {p1, p2}, Lorg/fork/models/MultiPanelButtonState;->setEnabled(Z)V
 
     .line 189
-    :goto_1
+    :cond_4
     invoke-direct {p0}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->getListAdapter()Lorg/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
     move-result-object p0
@@ -1041,7 +1038,7 @@
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     :cond_5
-    :goto_2
+    :goto_1
     return-void
 .end method
 
@@ -1057,7 +1054,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 148
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -1080,7 +1077,7 @@
 
     move-result-object v0
 
-    .line 1720
+    .line 1726
     instance-of v1, v0, Ljava/util/Collection;
 
     const/4 v2, 0x1
@@ -1095,7 +1092,7 @@
 
     goto :goto_0
 
-    .line 1721
+    .line 1727
     :cond_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1218,7 +1215,7 @@
 
     const/16 v1, 0xa
 
-    .line 1177
+    .line 1179
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
@@ -1233,12 +1230,12 @@
 
     move-result v2
 
-    .line 1178
+    .line 1180
     new-instance v3, Ljava/util/LinkedHashMap;
 
     invoke-direct {v3, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1251
+    .line 1253
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1254,7 +1251,7 @@
 
     move-result-object v2
 
-    .line 1252
+    .line 1254
     check-cast v2, Lkotlin/Pair;
 
     .line 210
@@ -1268,7 +1265,7 @@
 
     check-cast v2, Ljava/lang/Iterable;
 
-    .line 1547
+    .line 1549
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-static {v2, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -1277,7 +1274,7 @@
 
     invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1293,7 +1290,7 @@
 
     move-result-object v6
 
-    .line 1619
+    .line 1621
     check-cast v6, Lorg/fork/models/MultiPanelButtonState;
 
     .line 211
@@ -1313,6 +1310,7 @@
 
     invoke-direct {v7, v8, v9, v6}, Lorg/fork/models/MultiPanelButtonState;-><init>(Lorg/fork/enums/MultiPanelButton;ZI)V
 
+    .line 1621
     invoke-interface {v5, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -1328,6 +1326,7 @@
 
     move-result-object v2
 
+    .line 1254
     invoke-virtual {v2}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v4
@@ -1360,7 +1359,7 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1506,7 +1505,7 @@
 
     const/4 v7, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -1660,7 +1659,7 @@
 
     aput-object v7, v11, v2
 
-    const-string v15, "windowBackgroundGrayShadow"
+    const-string/jumbo v15, "windowBackgroundGrayShadow"
 
     move-object v8, v3
 
@@ -1693,7 +1692,7 @@
 
     aput-object v6, v11, v5
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -1726,7 +1725,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -1755,7 +1754,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -1788,7 +1787,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1819,7 +1818,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -2016,7 +2015,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v16, "windowBackgroundWhiteBlueHeader"
 
     move-object v8, v3
 
@@ -2043,7 +2042,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteGrayText4"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayText4"
 
     move-object v8, v3
 
@@ -2134,7 +2133,7 @@
 
     const/4 v11, 0x0
 
-    const-string v14, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v14, "windowBackgroundWhiteBlackText"
 
     move-object v6, v3
 
@@ -2163,7 +2162,7 @@
 
     move-result-object v10
 
-    const-string v14, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v14, "windowBackgroundWhiteGrayText2"
 
     move-object v6, v3
 

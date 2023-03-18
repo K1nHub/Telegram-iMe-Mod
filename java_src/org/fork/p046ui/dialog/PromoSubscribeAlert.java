@@ -11,18 +11,16 @@ import com.smedialink.common.TelegramPreferenceKeys;
 import com.smedialink.storage.data.utils.extentions.SharedPrefferencesExtKt;
 import com.smedialink.utils.extentions.common.ViewExtKt;
 import java.util.Locale;
-import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.TuplesKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$IntRef;
 import org.fork.enums.AppLaunchCountAction;
 import org.fork.enums.PromoSubscribeChat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p048ui.ActionBar.AlertDialog;
@@ -86,7 +84,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         lazy7 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$skipButton$2(this));
         this.skipButton$delegate = lazy7;
         setTopHeight(166);
-        setTopImage(C3158R.C3160drawable.fork_promo_subscribe_dialog_icon, Theme.getColor("windowBackgroundGray"));
+        setTopImage(C3286R.C3288drawable.fork_promo_subscribe_dialog_icon, Theme.getColor("windowBackgroundGray"));
         int m51dp = AndroidUtilities.m51dp(30.0f);
         setTopImagePaddings(0, m51dp, AndroidUtilities.m51dp(16.0f), m51dp);
         LinearLayout linearLayout = new LinearLayout(getContext());
@@ -96,7 +94,6 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         FrameLayout frameLayout = new FrameLayout(linearLayout.getContext());
         frameLayout.addView(getLoadingView());
         frameLayout.addView(getChatsView());
-        Unit unit = Unit.INSTANCE;
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, -2, 17, 22, 0, 22, 0));
         linearLayout.addView(getNotShowAgainCheckBoxContainer(), LayoutHelper.createLinear(-2, -2, 17, 0, 16, 0, 16));
         linearLayout.addView(getSkipButton(), LayoutHelper.createLinear(-1, 44, 17, 44, 0, 44, 10));
@@ -104,7 +101,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         setOnBackButtonListener(new DialogInterface.OnClickListener() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
-                PromoSubscribeAlert.m1992_init_$lambda2(PromoSubscribeAlert.this, dialogInterface, i2);
+                PromoSubscribeAlert._init_$lambda$2(PromoSubscribeAlert.this, dialogInterface, i2);
             }
         });
         resolvePromoUsernames();
@@ -139,8 +136,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: _init_$lambda-2  reason: not valid java name */
-    public static final void m1992_init_$lambda2(PromoSubscribeAlert this$0, DialogInterface dialogInterface, int i) {
+    public static final void _init_$lambda$2(PromoSubscribeAlert this$0, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.checkNotShowAgainCheckBox();
     }
@@ -148,7 +144,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initTitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3158R.string.dialog_promo_subscribe_title));
+        textView.setText(LocaleController.getInternalString(C3286R.string.dialog_promo_subscribe_title));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setTextColor(Theme.getColor("dialogTextBlack"));
@@ -159,7 +155,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSubtitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3158R.string.dialog_promo_subscribe_subtitle));
+        textView.setText(LocaleController.getInternalString(C3286R.string.dialog_promo_subscribe_subtitle));
         textView.setTextColor(Theme.getColor("dialogTextGray3"));
         textView.setTextSize(1, 14.0f);
         return textView;
@@ -175,7 +171,6 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
             flickerLoadingView.setIsSingleCell(true);
             flickerLoadingView.showDate(false);
             flickerLoadingView.setViewType(100);
-            Unit unit = Unit.INSTANCE;
             linearLayout.addView(flickerLoadingView);
         }
         return linearLayout;
@@ -191,28 +186,26 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
             profileSearchCell.setBackground(Theme.getSelectorDrawable(false));
             profileSearchCell.setTag(promoSubscribeChat);
             profileSearchCell.setPromoSubscribeIcon(promoSubscribeChat.getRightIconResId());
-            profileSearchCell.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda1
+            profileSearchCell.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PromoSubscribeAlert.m1993initChatsView$lambda11$lambda10$lambda9$lambda8(PromoSubscribeAlert.this, view);
+                    PromoSubscribeAlert.initChatsView$lambda$11$lambda$10$lambda$9$lambda$8(PromoSubscribeAlert.this, view);
                 }
             });
-            Unit unit = Unit.INSTANCE;
             linearLayout.addView(profileSearchCell);
         }
         return linearLayout;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initChatsView$lambda-11$lambda-10$lambda-9$lambda-8  reason: not valid java name */
-    public static final void m1993initChatsView$lambda11$lambda10$lambda9$lambda8(PromoSubscribeAlert this$0, View view) {
+    public static final void initChatsView$lambda$11$lambda$10$lambda$9$lambda$8(PromoSubscribeAlert this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.checkNotShowAgainCheckBox();
         this$0.getDismissRunnable().run();
         LaunchActivity launchActivity = this$0.activity;
         Object tag = view.getTag();
-        Objects.requireNonNull(tag, "null cannot be cast to non-null type org.fork.enums.PromoSubscribeChat");
-        launchActivity.lambda$runLinkRequest$80(new ChatActivity(BundleKt.bundleOf(TuplesKt.m100to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
+        Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type org.fork.enums.PromoSubscribeChat");
+        launchActivity.lambda$runLinkRequest$86(new ChatActivity(BundleKt.bundleOf(TuplesKt.m100to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -221,24 +214,22 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         linearLayout.setGravity(17);
         linearLayout.addView(getNotShowAgainCheckBox(), LayoutHelper.createLinear(18, 18));
         TextView textView = new TextView(linearLayout.getContext());
-        textView.setText(LocaleController.getInternalString(C3158R.string.common_not_show_again));
+        textView.setText(LocaleController.getInternalString(C3286R.string.common_not_show_again));
         textView.setGravity(19);
         textView.setTextColor(Theme.getColor("dialogTextBlack"));
         textView.setTextSize(1, 16.0f);
-        Unit unit = Unit.INSTANCE;
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 51, 17, 0, 0, 0));
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PromoSubscribeAlert.m1994initNotShowAgainCheckBoxContainer$lambda14$lambda13(PromoSubscribeAlert.this, view);
+                PromoSubscribeAlert.initNotShowAgainCheckBoxContainer$lambda$14$lambda$13(PromoSubscribeAlert.this, view);
             }
         });
         return linearLayout;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initNotShowAgainCheckBoxContainer$lambda-14$lambda-13  reason: not valid java name */
-    public static final void m1994initNotShowAgainCheckBoxContainer$lambda14$lambda13(PromoSubscribeAlert this$0, View view) {
+    public static final void initNotShowAgainCheckBoxContainer$lambda$14$lambda$13(PromoSubscribeAlert this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getNotShowAgainCheckBox().setChecked(!this$0.getNotShowAgainCheckBox().isChecked(), true);
     }
@@ -251,7 +242,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSkipButton() {
         TextView textView = new TextView(getContext());
-        String string = LocaleController.getString("Close", C3158R.string.Close);
+        String string = LocaleController.getString("Close", C3286R.string.Close);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Close\", R.string.Close)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -261,33 +252,32 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m51dp(6.0f), Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed")));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-        textView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda2
+        textView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PromoSubscribeAlert.m1995initSkipButton$lambda16$lambda15(PromoSubscribeAlert.this, view);
+                PromoSubscribeAlert.initSkipButton$lambda$16$lambda$15(PromoSubscribeAlert.this, view);
             }
         });
         return textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initSkipButton$lambda-16$lambda-15  reason: not valid java name */
-    public static final void m1995initSkipButton$lambda16$lambda15(PromoSubscribeAlert this$0, View view) {
+    public static final void initSkipButton$lambda$16$lambda$15(PromoSubscribeAlert this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.checkNotShowAgainCheckBox();
         this$0.getDismissRunnable().run();
     }
 
     private final void checkNotShowAgainCheckBox() {
-        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+        SharedPreferences checkNotShowAgainCheckBox$lambda$17 = MessagesController.getGlobalMainSettings();
         if (getNotShowAgainCheckBox().isChecked()) {
-            Intrinsics.checkNotNullExpressionValue(globalMainSettings, "");
-            SharedPrefferencesExtKt.putInt(globalMainSettings, AppLaunchCountAction.PROMO_SUBSCRIBE_DIALOG.getPrefKey(), 0);
+            Intrinsics.checkNotNullExpressionValue(checkNotShowAgainCheckBox$lambda$17, "checkNotShowAgainCheckBox$lambda$17");
+            SharedPrefferencesExtKt.putInt(checkNotShowAgainCheckBox$lambda$17, AppLaunchCountAction.PROMO_SUBSCRIBE_DIALOG.getPrefKey(), 0);
             return;
         }
-        int i = globalMainSettings.getInt(TelegramPreferenceKeys.Global.promoSubscribeDialogShowCountLeft(), TelegramPreferenceKeys.Global.Default.promoSubscribeDialogShowCountLeft());
-        Intrinsics.checkNotNullExpressionValue(globalMainSettings, "");
-        SharedPrefferencesExtKt.putInt(globalMainSettings, TelegramPreferenceKeys.Global.promoSubscribeDialogShowCountLeft(), i - 1);
+        int i = checkNotShowAgainCheckBox$lambda$17.getInt(TelegramPreferenceKeys.Global.promoSubscribeDialogShowCountLeft(), TelegramPreferenceKeys.Global.Default.promoSubscribeDialogShowCountLeft());
+        Intrinsics.checkNotNullExpressionValue(checkNotShowAgainCheckBox$lambda$17, "checkNotShowAgainCheckBox$lambda$17");
+        SharedPrefferencesExtKt.putInt(checkNotShowAgainCheckBox$lambda$17, TelegramPreferenceKeys.Global.promoSubscribeDialogShowCountLeft(), i - 1);
     }
 
     private final void resolvePromoUsernames() {
@@ -302,15 +292,14 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
             ConnectionsManager.getInstance(this.accountNum).sendRequest(tLRPC$TL_contacts_resolveUsername, new RequestDelegate() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda5
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    PromoSubscribeAlert.m1996resolvePromoUsernames$lambda20$lambda19(PromoSubscribeAlert.this, ref$IntRef, tLObject, tLRPC$TL_error);
+                    PromoSubscribeAlert.resolvePromoUsernames$lambda$20$lambda$19(PromoSubscribeAlert.this, ref$IntRef, tLObject, tLRPC$TL_error);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: resolvePromoUsernames$lambda-20$lambda-19  reason: not valid java name */
-    public static final void m1996resolvePromoUsernames$lambda20$lambda19(final PromoSubscribeAlert this$0, Ref$IntRef counter, TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+    public static final void resolvePromoUsernames$lambda$20$lambda$19(final PromoSubscribeAlert this$0, Ref$IntRef counter, TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(counter, "$counter");
         if (tLRPC$TL_error == null && (tLObject instanceof TLRPC$TL_contacts_resolvedPeer)) {
@@ -321,7 +310,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PromoSubscribeAlert.m1997resolvePromoUsernames$lambda20$lambda19$lambda18(PromoSubscribeAlert.this);
+                        PromoSubscribeAlert.resolvePromoUsernames$lambda$20$lambda$19$lambda$18(PromoSubscribeAlert.this);
                     }
                 });
             }
@@ -329,8 +318,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: resolvePromoUsernames$lambda-20$lambda-19$lambda-18  reason: not valid java name */
-    public static final void m1997resolvePromoUsernames$lambda20$lambda19$lambda18(PromoSubscribeAlert this$0) {
+    public static final void resolvePromoUsernames$lambda$20$lambda$19$lambda$18(PromoSubscribeAlert this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.endLoading();
     }
@@ -339,28 +327,25 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         ViewExtKt.gone(getLoadingView());
         LinearLayout chatsView = getChatsView();
         int childCount = chatsView.getChildCount();
-        if (childCount > 0) {
-            int i = 0;
-            while (true) {
-                int i2 = i + 1;
-                View childAt = chatsView.getChildAt(i);
-                Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(index)");
-                ProfileSearchCell profileSearchCell = (ProfileSearchCell) childAt;
-                Object tag = profileSearchCell.getTag();
-                Objects.requireNonNull(tag, "null cannot be cast to non-null type org.fork.enums.PromoSubscribeChat");
-                PromoSubscribeChat promoSubscribeChat = (PromoSubscribeChat) tag;
-                TLRPC$Chat chat = MessagesController.getInstance(this.accountNum).getChat(Long.valueOf(-promoSubscribeChat.getId()));
-                String internalString = LocaleController.getInternalString(promoSubscribeChat.getDescriptionResId());
-                Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(promo.descriptionResId)");
-                String lowerCase = internalString.toLowerCase(Locale.ROOT);
-                Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
-                profileSearchCell.setData(chat, null, null, lowerCase, false, false);
-                profileSearchCell.useSeparator = i < PromoSubscribeChat.values().length - 1;
-                if (i2 >= childCount) {
-                    break;
-                }
-                i = i2;
+        for (int i = 0; i < childCount; i++) {
+            View childAt = chatsView.getChildAt(i);
+            Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(index)");
+            Intrinsics.checkNotNull(childAt, "null cannot be cast to non-null type org.telegram.ui.Cells.ProfileSearchCell");
+            ProfileSearchCell profileSearchCell = (ProfileSearchCell) childAt;
+            Object tag = profileSearchCell.getTag();
+            Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type org.fork.enums.PromoSubscribeChat");
+            PromoSubscribeChat promoSubscribeChat = (PromoSubscribeChat) tag;
+            TLRPC$Chat chat = MessagesController.getInstance(this.accountNum).getChat(Long.valueOf(-promoSubscribeChat.getId()));
+            String internalString = LocaleController.getInternalString(promoSubscribeChat.getDescriptionResId());
+            Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(promo.descriptionResId)");
+            String lowerCase = internalString.toLowerCase(Locale.ROOT);
+            Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
+            profileSearchCell.setData(chat, null, null, lowerCase, false, false);
+            boolean z = true;
+            if (i >= PromoSubscribeChat.values().length - 1) {
+                z = false;
             }
+            profileSearchCell.useSeparator = z;
         }
         ViewExtKt.visible(getChatsView());
     }

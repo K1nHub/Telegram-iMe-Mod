@@ -214,7 +214,7 @@
     if-nez v1, :cond_0
 
     :try_start_0
-    const-string v4, "www.google.com"
+    const-string/jumbo v4, "www.google.com"
 
     goto :goto_1
 
@@ -228,7 +228,7 @@
 
     if-ne v1, v4, :cond_1
 
-    const-string v4, "www.google.ru"
+    const-string/jumbo v4, "www.google.ru"
 
     goto :goto_1
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotCommandsMenuView;)V
     .locals 0
 
-    .line 71
+    .line 73
     iput-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$1;->this$0:Lorg/telegram/ui/Components/BotCommandsMenuView;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/MenuDrawable;-><init>()V
@@ -35,10 +35,10 @@
 .method public invalidateSelf()V
     .locals 1
 
-    .line 74
+    .line 76
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
-    .line 75
+    .line 77
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$1;->this$0:Lorg/telegram/ui/Components/BotCommandsMenuView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V

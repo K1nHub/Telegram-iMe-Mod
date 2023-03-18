@@ -19,7 +19,7 @@ public final class ViewParentCompat {
         if (i2 == 0) {
             if (Build.VERSION.SDK_INT >= 21) {
                 try {
-                    return viewParent.onStartNestedScroll(view, view2, i);
+                    return Api21Impl.onStartNestedScroll(viewParent, view, view2, i);
                 } catch (AbstractMethodError e) {
                     Log.e("ViewParentCompat", "ViewParent " + viewParent + " does not implement interface method onStartNestedScroll", e);
                     return false;
@@ -39,7 +39,7 @@ public final class ViewParentCompat {
         } else if (i2 == 0) {
             if (Build.VERSION.SDK_INT >= 21) {
                 try {
-                    viewParent.onNestedScrollAccepted(view, view2, i);
+                    Api21Impl.onNestedScrollAccepted(viewParent, view, view2, i);
                 } catch (AbstractMethodError e) {
                     Log.e("ViewParentCompat", "ViewParent " + viewParent + " does not implement interface method onNestedScrollAccepted", e);
                 }
@@ -55,7 +55,7 @@ public final class ViewParentCompat {
         } else if (i == 0) {
             if (Build.VERSION.SDK_INT >= 21) {
                 try {
-                    viewParent.onStopNestedScroll(view);
+                    Api21Impl.onStopNestedScroll(viewParent, view);
                 } catch (AbstractMethodError e) {
                     Log.e("ViewParentCompat", "ViewParent " + viewParent + " does not implement interface method onStopNestedScroll", e);
                 }
@@ -77,7 +77,7 @@ public final class ViewParentCompat {
         } else if (i5 == 0) {
             if (Build.VERSION.SDK_INT >= 21) {
                 try {
-                    viewParent.onNestedScroll(view, i, i2, i3, i4);
+                    Api21Impl.onNestedScroll(viewParent, view, i, i2, i3, i4);
                 } catch (AbstractMethodError e) {
                     Log.e("ViewParentCompat", "ViewParent " + viewParent + " does not implement interface method onNestedScroll", e);
                 }
@@ -93,7 +93,7 @@ public final class ViewParentCompat {
         } else if (i3 == 0) {
             if (Build.VERSION.SDK_INT >= 21) {
                 try {
-                    viewParent.onNestedPreScroll(view, i, i2, iArr);
+                    Api21Impl.onNestedPreScroll(viewParent, view, i, i2, iArr);
                 } catch (AbstractMethodError e) {
                     Log.e("ViewParentCompat", "ViewParent " + viewParent + " does not implement interface method onNestedPreScroll", e);
                 }
@@ -106,7 +106,7 @@ public final class ViewParentCompat {
     public static boolean onNestedFling(ViewParent viewParent, View view, float f, float f2, boolean z) {
         if (Build.VERSION.SDK_INT >= 21) {
             try {
-                return viewParent.onNestedFling(view, f, f2, z);
+                return Api21Impl.onNestedFling(viewParent, view, f, f2, z);
             } catch (AbstractMethodError e) {
                 Log.e("ViewParentCompat", "ViewParent " + viewParent + " does not implement interface method onNestedFling", e);
                 return false;
@@ -121,7 +121,7 @@ public final class ViewParentCompat {
     public static boolean onNestedPreFling(ViewParent viewParent, View view, float f, float f2) {
         if (Build.VERSION.SDK_INT >= 21) {
             try {
-                return viewParent.onNestedPreFling(view, f, f2);
+                return Api21Impl.onNestedPreFling(viewParent, view, f, f2);
             } catch (AbstractMethodError e) {
                 Log.e("ViewParentCompat", "ViewParent " + viewParent + " does not implement interface method onNestedPreFling", e);
                 return false;
@@ -130,6 +130,37 @@ public final class ViewParentCompat {
             return ((NestedScrollingParent) viewParent).onNestedPreFling(view, f, f2);
         } else {
             return false;
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api21Impl {
+        static boolean onStartNestedScroll(ViewParent viewParent, View view, View view2, int i) {
+            return viewParent.onStartNestedScroll(view, view2, i);
+        }
+
+        static void onNestedScrollAccepted(ViewParent viewParent, View view, View view2, int i) {
+            viewParent.onNestedScrollAccepted(view, view2, i);
+        }
+
+        static void onStopNestedScroll(ViewParent viewParent, View view) {
+            viewParent.onStopNestedScroll(view);
+        }
+
+        static void onNestedScroll(ViewParent viewParent, View view, int i, int i2, int i3, int i4) {
+            viewParent.onNestedScroll(view, i, i2, i3, i4);
+        }
+
+        static void onNestedPreScroll(ViewParent viewParent, View view, int i, int i2, int[] iArr) {
+            viewParent.onNestedPreScroll(view, i, i2, iArr);
+        }
+
+        static boolean onNestedFling(ViewParent viewParent, View view, float f, float f2, boolean z) {
+            return viewParent.onNestedFling(view, f, f2, z);
+        }
+
+        static boolean onNestedPreFling(ViewParent viewParent, View view, float f, float f2) {
+            return viewParent.onNestedPreFling(view, f, f2);
         }
     }
 }

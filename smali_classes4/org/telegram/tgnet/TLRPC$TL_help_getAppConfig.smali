@@ -4,7 +4,11 @@
 
 
 # static fields
-.field public static constructor:I = -0x676ebef0
+.field public static constructor:I = 0x61e3f854
+
+
+# instance fields
+.field public hash:I
 
 
 # direct methods
@@ -17,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 52627
+    .line 52870
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -28,8 +32,8 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 52632
-    invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$JSONValue;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$JSONValue;
+    .line 52876
+    invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$help_AppConfig;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$help_AppConfig;
 
     move-result-object p1
 
@@ -39,8 +43,13 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 52636
+    .line 52880
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_help_getAppConfig;->constructor:I
+
+    invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
+
+    .line 52881
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_getAppConfig;->hash:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 

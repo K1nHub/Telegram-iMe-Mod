@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
     .locals 0
 
-    .line 206
+    .line 207
     iput-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$1;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     iput-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$1;->val$currentScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
@@ -39,15 +39,15 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 1
 
-    .line 209
+    .line 210
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
-    .line 210
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$1;->val$currentScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
-    .line 211
+    .line 212
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$1;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$100(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
@@ -62,15 +62,15 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 1
 
-    .line 215
+    .line 216
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 216
+    .line 217
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$1;->val$currentScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 217
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$1;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$100(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;

@@ -8,7 +8,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -38,14 +38,14 @@ public final class BinanceAccountProvider$convert$1 extends Lambda implements Fu
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         applyForView.setLongClickEnabled(false);
         applyForView.setSubMenuOpenSide(2);
-        applyForView.setIcon(C3158R.C3160drawable.ic_ab_other);
+        applyForView.setIcon(C3286R.C3288drawable.ic_ab_other);
         ViewExtKt.setCircleRippleBackground(applyForView);
         applyForView.removeAllSubItems();
         int i = IdFabric$Menu.RECEIVE;
-        int i2 = C3158R.C3160drawable.fork_ic_ask_transfer_24;
+        int i2 = C3286R.C3288drawable.fork_ic_ask_transfer_24;
         resourceManager = this.this$0.resourceManager;
-        applyForView.addSubItem(i, i2, resourceManager.getString(C3158R.string.wallet_binance_pay_action_receive));
-        applyForView.addSubItem(IdFabric$Menu.LOGOUT, C3158R.C3160drawable.msg_leave, LocaleController.getString("LogOut", C3158R.string.LogOut));
+        applyForView.addSubItem(i, i2, resourceManager.getString(C3286R.string.wallet_binance_pay_action_receive));
+        applyForView.addSubItem(IdFabric$Menu.LOGOUT, C3286R.C3288drawable.msg_leave, LocaleController.getString("LogOut", C3286R.string.LogOut));
         applyForView.redrawPopup(Theme.getColor("actionBarDefaultSubmenuBackground"));
         applyForView.setPopupItemsColor(Theme.getColor("actionBarDefaultSubmenuItem"), false);
         applyForView.setPopupItemsColor(Theme.getColor("actionBarDefaultSubmenuItemIcon"), true);
@@ -53,16 +53,15 @@ public final class BinanceAccountProvider$convert$1 extends Lambda implements Fu
         applyForView.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.adapter.provider.BinanceAccountProvider$convert$1$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BinanceAccountProvider$convert$1.m1396invoke$lambda0(ActionBarMenuItem.this, view);
+                BinanceAccountProvider$convert$1.invoke$lambda$0(ActionBarMenuItem.this, view);
             }
         });
         applyForView.setDelegate(this.this$0.getActionBarMenuItemDelegate());
-        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3158R.string.AccDescrMoreOptions));
+        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3286R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-0  reason: not valid java name */
-    public static final void m1396invoke$lambda0(ActionBarMenuItem this_applyForView, View view) {
+    public static final void invoke$lambda$0(ActionBarMenuItem this_applyForView, View view) {
         Intrinsics.checkNotNullParameter(this_applyForView, "$this_applyForView");
         this_applyForView.toggleSubMenu();
     }

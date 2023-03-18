@@ -3,19 +3,27 @@
 .source "ConfigurationCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/core/os/ConfigurationCompat$Api24Impl;
+    }
+.end annotation
+
+
 # direct methods
 .method public static getLocales(Landroid/content/res/Configuration;)Landroidx/core/os/LocaleListCompat;
     .locals 2
 
-    .line 41
+    .line 43
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
     if-lt v0, v1, :cond_0
 
-    .line 42
-    invoke-virtual {p0}, Landroid/content/res/Configuration;->getLocales()Landroid/os/LocaleList;
+    .line 44
+    invoke-static {p0}, Landroidx/core/os/ConfigurationCompat$Api24Impl;->getLocales(Landroid/content/res/Configuration;)Landroid/os/LocaleList;
 
     move-result-object p0
 
@@ -32,7 +40,7 @@
 
     const/4 v1, 0x0
 
-    .line 44
+    .line 46
     iget-object p0, p0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     aput-object p0, v0, v1

@@ -1112,7 +1112,7 @@
     :cond_0
     new-instance p1, Ljava/io/IOException;
 
-    const-string p2, "windowSizeIncrement was 0"
+    const-string/jumbo p2, "windowSizeIncrement was 0"
 
     invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

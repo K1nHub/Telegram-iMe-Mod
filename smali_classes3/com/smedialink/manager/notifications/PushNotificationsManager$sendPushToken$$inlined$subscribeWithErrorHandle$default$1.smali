@@ -1,9 +1,9 @@
 .class public final Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$1;
-.super Ljava/lang/Object;
+.super Lkotlin/jvm/internal/Lambda;
 .source "RxExt.kt"
 
 # interfaces
-.implements Lio/reactivex/functions/Consumer;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -18,16 +18,19 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;",
-        "Lio/reactivex/functions/Consumer;"
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Lcom/smedialink/storage/domain/model/Result<",
+        "+",
+        "Ljava/lang/Boolean;",
+        ">;",
+        "Lkotlin/Unit;",
+        ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 SharedPrefferencesExt.kt\ncom/smedialink/storage/data/utils/extentions/SharedPrefferencesExtKt\n*L\n1#1,111:1\n77#2,3:112\n80#2:116\n81#2:121\n84#2:123\n1849#3:115\n1850#3:122\n14#4,4:117\n*S KotlinDebug\n*F\n+ 1 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n*L\n79#1:115\n79#1:122\n80#1:117,4\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 SharedPrefferencesExt.kt\ncom/smedialink/storage/data/utils/extentions/SharedPrefferencesExtKt\n*L\n1#1,111:1\n77#2,3:112\n80#2:116\n81#2:121\n85#2:123\n1855#3:115\n1856#3:122\n14#4,4:117\n*S KotlinDebug\n*F\n+ 1 PushNotificationsManager.kt\ncom/smedialink/manager/notifications/PushNotificationsManager\n*L\n79#1:115\n79#1:122\n80#1:117,4\n*E\n"
 .end annotation
 
 
@@ -45,18 +48,35 @@
 
     iput-object p2, p0, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$1;->this$0:Lcom/smedialink/manager/notifications/PushNotificationsManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 44
+    invoke-virtual {p0, p1}, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$1;->invoke(Ljava/lang/Object;)V
+
+    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TT;)V"
+            "(",
+            "Lcom/smedialink/storage/domain/model/Result<",
+            "+",
+            "Ljava/lang/Boolean;",
+            ">;)V"
         }
     .end annotation
 
@@ -75,7 +95,7 @@
     .line 114
     iget-object p1, p0, Lcom/smedialink/manager/notifications/PushNotificationsManager$sendPushToken$$inlined$subscribeWithErrorHandle$default$1;->$notificationInformation$inlined:Ljava/util/List;
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1

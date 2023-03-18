@@ -20,7 +20,7 @@ public final class FeeUiMappingKt {
         Intrinsics.checkNotNullParameter(feeTokenInfo, "feeTokenInfo");
         GasPriceItem[] gasPriceItemArr = new GasPriceItem[3];
         GasPriceInfo low = transactionParams.getLow();
-        gasPriceItemArr[0] = low == null ? null : new GasPriceItem(TransactionSpeedLevel.LOW, feeTokenInfo, low);
+        gasPriceItemArr[0] = low != null ? new GasPriceItem(TransactionSpeedLevel.LOW, feeTokenInfo, low) : null;
         gasPriceItemArr[1] = new GasPriceItem(TransactionSpeedLevel.MEDIUM, feeTokenInfo, transactionParams.getMedium());
         GasPriceInfo fastest = transactionParams.getFastest();
         gasPriceItemArr[2] = fastest != null ? new GasPriceItem(TransactionSpeedLevel.FASTEST, feeTokenInfo, fastest) : null;

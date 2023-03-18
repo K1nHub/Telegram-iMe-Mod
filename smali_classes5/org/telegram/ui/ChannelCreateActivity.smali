@@ -853,7 +853,7 @@
     const/4 v2, 0x0
 
     .line 133
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)V
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)Z
 
     .line 134
     iget-object v2, p0, Lorg/telegram/ui/ChannelCreateActivity;->albumModeDelegate:Lorg/telegram/ui/ChannelCreateActivity$AlbumModeDelegate;

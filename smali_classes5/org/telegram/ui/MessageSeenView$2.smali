@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/MessageSeenView;)V
     .locals 0
 
-    .line 262
+    .line 306
     iput-object p1, p0, Lorg/telegram/ui/MessageSeenView$2;->this$0:Lorg/telegram/ui/MessageSeenView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,43 +35,33 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 0
 
-    .line 265
+    .line 309
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
 
-    const/4 p3, 0x4
+    .line 310
+    iget-object p3, p0, Lorg/telegram/ui/MessageSeenView$2;->this$0:Lorg/telegram/ui/MessageSeenView;
 
-    if-nez p2, :cond_0
+    iget-object p3, p3, Lorg/telegram/ui/MessageSeenView;->users:Ljava/util/ArrayList;
 
-    .line 267
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
-    move-result p4
+    move-result p3
 
-    iput p4, p1, Landroid/graphics/Rect;->top:I
+    add-int/lit8 p3, p3, -0x1
 
-    .line 269
-    :cond_0
-    iget-object p4, p0, Lorg/telegram/ui/MessageSeenView$2;->this$0:Lorg/telegram/ui/MessageSeenView;
+    if-ne p2, p3, :cond_0
 
-    iget-object p4, p4, Lorg/telegram/ui/MessageSeenView;->users:Ljava/util/ArrayList;
+    const/4 p2, 0x4
 
-    invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
-
-    move-result p4
-
-    add-int/lit8 p4, p4, -0x1
-
-    if-ne p2, p4, :cond_1
-
-    .line 270
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 311
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     iput p2, p1, Landroid/graphics/Rect;->bottom:I
 
-    :cond_1
+    :cond_0
     return-void
 .end method

@@ -3685,13 +3685,9 @@
 
     invoke-virtual {v5, v6, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    const-string v5, "wallet_blackBackground"
+    const/high16 v5, -0x1000000
 
     .line 513
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v5
-
     invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
     .line 514

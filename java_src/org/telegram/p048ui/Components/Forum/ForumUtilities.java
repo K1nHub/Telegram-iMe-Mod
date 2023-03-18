@@ -15,7 +15,7 @@ import android.text.style.ImageSpan;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -53,7 +53,7 @@ public class ForumUtilities {
         if (tLRPC$TL_forumTopic == null || backupImageView == null) {
             return;
         }
-        if (tLRPC$TL_forumTopic.f1547id == 1) {
+        if (tLRPC$TL_forumTopic.f1552id == 1) {
             backupImageView.setAnimatedEmojiDrawable(null);
             backupImageView.setImageDrawable(createGeneralTopicDrawable(backupImageView.getContext(), 0.75f, Theme.getColor("actionBarDefaultIcon", resourcesProvider)));
         } else if (tLRPC$TL_forumTopic.icon_emoji_id != 0) {
@@ -90,7 +90,7 @@ public class ForumUtilities {
         }
 
         public GeneralTopicDrawable(Context context, float f, int i) {
-            this.icon = context.getResources().getDrawable(C3158R.C3160drawable.msg_filled_general).mutate();
+            this.icon = context.getResources().getDrawable(C3286R.C3288drawable.msg_filled_general).mutate();
             this.scale = f;
             setColor(i);
         }
@@ -163,13 +163,13 @@ public class ForumUtilities {
         if (i != 0) {
             bundle.putInt("message_id", i);
         } else if (tLRPC$TL_forumTopic.read_inbox_max_id == 0) {
-            bundle.putInt("message_id", tLRPC$TL_forumTopic.f1547id);
+            bundle.putInt("message_id", tLRPC$TL_forumTopic.f1552id);
         }
         bundle.putInt("unread_count", tLRPC$TL_forumTopic.unread_count);
         bundle.putBoolean("historyPreloaded", false);
         ChatActivity chatActivity = new ChatActivity(bundle);
         TLRPC$Message tLRPC$Message = tLRPC$TL_forumTopic.topicStartMessage;
-        if (tLRPC$Message != null || (findTopic = baseFragment.getMessagesController().getTopicsController().findTopic(j, tLRPC$TL_forumTopic.f1547id)) == null) {
+        if (tLRPC$Message != null || (findTopic = baseFragment.getMessagesController().getTopicsController().findTopic(j, tLRPC$TL_forumTopic.f1552id)) == null) {
             tLRPC$TL_forumTopic2 = tLRPC$TL_forumTopic;
         } else {
             tLRPC$Message = findTopic.topicStartMessage;
@@ -180,7 +180,7 @@ public class ForumUtilities {
         }
         ArrayList<MessageObject> arrayList = new ArrayList<>();
         arrayList.add(new MessageObject(baseFragment.getCurrentAccount(), tLRPC$Message, false, false));
-        chatActivity.setThreadMessages(arrayList, chat, tLRPC$TL_forumTopic2.f1547id, tLRPC$TL_forumTopic2.read_inbox_max_id, tLRPC$TL_forumTopic2.read_outbox_max_id, tLRPC$TL_forumTopic2);
+        chatActivity.setThreadMessages(arrayList, chat, tLRPC$TL_forumTopic2.f1552id, tLRPC$TL_forumTopic2.read_inbox_max_id, tLRPC$TL_forumTopic2.read_outbox_max_id, tLRPC$TL_forumTopic2);
         if (i != 0) {
             chatActivity.highlightMessageId = i;
         }
@@ -195,7 +195,7 @@ public class ForumUtilities {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         if (tLRPC$ForumTopic instanceof TLRPC$TL_forumTopic) {
             TLRPC$TL_forumTopic tLRPC$TL_forumTopic = (TLRPC$TL_forumTopic) tLRPC$ForumTopic;
-            if (tLRPC$TL_forumTopic.f1547id == 1) {
+            if (tLRPC$TL_forumTopic.f1552id == 1) {
                 try {
                     GeneralTopicDrawable createGeneralTopicDrawable = createGeneralTopicDrawable(ApplicationLoader.applicationContext, 1.0f, paint == null ? Theme.getColor("chat_inMenu") : paint.getColor());
                     createGeneralTopicDrawable.setBounds(0, 0, paint == null ? AndroidUtilities.m50dp(14) : (int) paint.getTextSize(), paint == null ? AndroidUtilities.m50dp(14) : (int) paint.getTextSize());
@@ -211,7 +211,7 @@ public class ForumUtilities {
                 AnimatedEmojiSpan animatedEmojiSpan = new AnimatedEmojiSpan(tLRPC$TL_forumTopic.icon_emoji_id, 0.95f, paint == null ? null : paint.getFontMetricsInt());
                 spannableStringBuilder.setSpan(animatedEmojiSpan, 0, 1, 33);
                 animatedEmojiSpan.top = true;
-                animatedEmojiSpan.cacheType = 7;
+                animatedEmojiSpan.cacheType = 13;
             } else {
                 spannableStringBuilder.append((CharSequence) " ");
                 Drawable createTopicDrawable = createTopicDrawable(tLRPC$TL_forumTopic);
@@ -250,7 +250,7 @@ public class ForumUtilities {
         TLRPC$Chat chat = chatActivity.getMessagesController().getChat(Long.valueOf(-topicKey.dialogId));
         ArrayList<MessageObject> arrayList = new ArrayList<>();
         arrayList.add(new MessageObject(chatActivity.getCurrentAccount(), findTopic.topicStartMessage, false, false));
-        chatActivity.setThreadMessages(arrayList, chat, findTopic.f1547id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
+        chatActivity.setThreadMessages(arrayList, chat, findTopic.f1552id, findTopic.read_inbox_max_id, findTopic.read_outbox_max_id, findTopic);
     }
 
     public static CharSequence createActionTextWithTopic(TLRPC$TL_forumTopic tLRPC$TL_forumTopic, MessageObject messageObject) {
@@ -262,7 +262,7 @@ public class ForumUtilities {
         }
         TLRPC$MessageAction tLRPC$MessageAction = messageObject.messageOwner.action;
         if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionTopicCreate) {
-            return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(C3158R.string.TopicWasCreatedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null));
+            return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(C3286R.string.TopicWasCreatedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null));
         }
         if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionTopicEdit) {
             TLRPC$TL_messageActionTopicEdit tLRPC$TL_messageActionTopicEdit = (TLRPC$TL_messageActionTopicEdit) tLRPC$MessageAction;
@@ -281,22 +281,22 @@ public class ForumUtilities {
             }
             int i = tLRPC$TL_messageActionTopicEdit.flags;
             if ((i & 8) != 0) {
-                return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.hidden ? C3158R.string.TopicHidden2 : C3158R.string.TopicShown2), str);
+                return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.hidden ? C3286R.string.TopicHidden2 : C3286R.string.TopicShown2), str);
             } else if ((i & 4) != 0) {
-                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.closed ? C3158R.string.TopicWasClosedAction : C3158R.string.TopicWasReopenedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null)), str);
+                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.closed ? C3286R.string.TopicWasClosedAction : C3286R.string.TopicWasReopenedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null)), str);
             } else if ((i & 1) != 0 && (i & 2) != 0) {
                 TLRPC$TL_forumTopic tLRPC$TL_forumTopic2 = new TLRPC$TL_forumTopic();
                 tLRPC$TL_forumTopic2.icon_emoji_id = tLRPC$TL_messageActionTopicEdit.icon_emoji_id;
                 tLRPC$TL_forumTopic2.title = tLRPC$TL_messageActionTopicEdit.title;
-                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3158R.string.TopicWasRenamedToAction2), getTopicSpannedName(tLRPC$TL_forumTopic2, null)), str);
+                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3286R.string.TopicWasRenamedToAction2), getTopicSpannedName(tLRPC$TL_forumTopic2, null)), str);
             } else if ((i & 1) != 0) {
-                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3158R.string.TopicWasRenamedToAction), tLRPC$TL_messageActionTopicEdit.title), str);
+                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3286R.string.TopicWasRenamedToAction), tLRPC$TL_messageActionTopicEdit.title), str);
             } else {
                 if ((i & 2) != 0) {
                     TLRPC$TL_forumTopic tLRPC$TL_forumTopic3 = new TLRPC$TL_forumTopic();
                     tLRPC$TL_forumTopic3.icon_emoji_id = tLRPC$TL_messageActionTopicEdit.icon_emoji_id;
                     tLRPC$TL_forumTopic3.title = "";
-                    return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3158R.string.TopicWasIconChangedToAction), getTopicSpannedName(tLRPC$TL_forumTopic3, null)), str);
+                    return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3286R.string.TopicWasIconChangedToAction), getTopicSpannedName(tLRPC$TL_forumTopic3, null)), str);
                 }
             }
         }

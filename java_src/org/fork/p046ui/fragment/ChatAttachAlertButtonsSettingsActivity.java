@@ -17,7 +17,6 @@ import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -29,10 +28,10 @@ import org.fork.enums.ChatAttachAlertButton;
 import org.fork.enums.DialogType;
 import org.fork.p046ui.view.ChatAttachAlertButtonCell;
 import org.fork.p046ui.view.DialogTypeTopicsBar;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -68,8 +67,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: saveSuggestContacts$lambda-2  reason: not valid java name */
-    public static final void m2032saveSuggestContacts$lambda2(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+    public static final void saveSuggestContacts$lambda$2(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
     }
 
     @Override // com.smedialink.p031ui.base.mvp.MvpFragment
@@ -121,7 +119,6 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
         ConnectionsManager connectionsManager = getConnectionsManager();
         TLRPC$TL_contacts_toggleTopPeers tLRPC$TL_contacts_toggleTopPeers = new TLRPC$TL_contacts_toggleTopPeers();
         tLRPC$TL_contacts_toggleTopPeers.enabled = this.newSuggest;
-        Unit unit = Unit.INSTANCE;
         connectionsManager.sendRequest(tLRPC$TL_contacts_toggleTopPeers, ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda1.INSTANCE);
     }
 
@@ -144,8 +141,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-4  reason: not valid java name */
-    public static final void m2029getThemeDescriptions$lambda4(ChatAttachAlertButtonsSettingsActivity this$0) {
+    public static final void getThemeDescriptions$lambda$4(ChatAttachAlertButtonsSettingsActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         DialogTypeTopicsBar dialogTypeTopicsBar = this$0.topicsBar;
         if (dialogTypeTopicsBar == null) {
@@ -161,7 +157,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                ChatAttachAlertButtonsSettingsActivity.m2029getThemeDescriptions$lambda4(ChatAttachAlertButtonsSettingsActivity.this);
+                ChatAttachAlertButtonsSettingsActivity.getThemeDescriptions$lambda$4(ChatAttachAlertButtonsSettingsActivity.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -173,12 +169,12 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.settings_interface_chat_attach_alert_buttons));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.settings_interface_chat_attach_alert_buttons));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     ChatAttachAlertButtonsSettingsActivity.this.finishFragment();
@@ -204,22 +200,21 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                ChatAttachAlertButtonsSettingsActivity.m2030initListView$lambda12$lambda11(ChatAttachAlertButtonsSettingsActivity.this, view, i);
+                ChatAttachAlertButtonsSettingsActivity.initListView$lambda$12$lambda$11(ChatAttachAlertButtonsSettingsActivity.this, view, i);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-12$lambda-11  reason: not valid java name */
-    public static final void m2030initListView$lambda12$lambda11(final ChatAttachAlertButtonsSettingsActivity this$0, final View view, int i) {
+    public static final void initListView$lambda$12$lambda$11(final ChatAttachAlertButtonsSettingsActivity this$0, final View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof ChatAttachAlertButtonCell) {
             Intrinsics.checkNotNullExpressionValue(view, "view");
             ChatAttachAlertButtonCell chatAttachAlertButtonCell = (ChatAttachAlertButtonCell) view;
             chatAttachAlertButtonCell.setChecked(!chatAttachAlertButtonCell.isChecked());
-            ChatAttachAlertButton chatAttachAlertButton = this$0.getCurrentDialogType().getChatAttachAlertButtons().get(i - this$0.buttonsStartRow);
-            Set<ChatAttachAlertButton> set = this$0.getToolsController().getSelectedChatAttachAlertButtons().get(this$0.getCurrentDialogType());
+            ChatAttachAlertButton chatAttachAlertButton = this$0.currentDialogType.getChatAttachAlertButtons().get(i - this$0.buttonsStartRow);
+            Set<ChatAttachAlertButton> set = this$0.getToolsController().getSelectedChatAttachAlertButtons().get(this$0.currentDialogType);
             if (set == null) {
                 return;
             }
@@ -233,7 +228,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
                 AlertsCreator.showDisableSuggestionsAlert(this$0, new Runnable() { // from class: org.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatAttachAlertButtonsSettingsActivity.m2031initListView$lambda12$lambda11$lambda10(ChatAttachAlertButtonsSettingsActivity.this, view);
+                        ChatAttachAlertButtonsSettingsActivity.initListView$lambda$12$lambda$11$lambda$10(ChatAttachAlertButtonsSettingsActivity.this, view);
                     }
                 });
                 return;
@@ -244,8 +239,7 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-12$lambda-11$lambda-10  reason: not valid java name */
-    public static final void m2031initListView$lambda12$lambda11$lambda10(ChatAttachAlertButtonsSettingsActivity this$0, View view) {
+    public static final void initListView$lambda$12$lambda$11$lambda$10(ChatAttachAlertButtonsSettingsActivity this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.newSuggest = false;
         ((TextCheckCell) view).setChecked(false);
@@ -266,30 +260,26 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
     /* renamed from: org.fork.ui.fragment.ChatAttachAlertButtonsSettingsActivity$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ ChatAttachAlertButtonsSettingsActivity this$0;
-
-        public ListAdapter(ChatAttachAlertButtonsSettingsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
             updateRows();
         }
 
         public final void updateRows() {
-            this.this$0.rowCount = 0;
-            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity = this.this$0;
+            ChatAttachAlertButtonsSettingsActivity.this.rowCount = 0;
+            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity = ChatAttachAlertButtonsSettingsActivity.this;
             int i = chatAttachAlertButtonsSettingsActivity.rowCount;
             chatAttachAlertButtonsSettingsActivity.rowCount = i + 1;
             chatAttachAlertButtonsSettingsActivity.dialogTypeTopicsBarRow = i;
-            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity2 = this.this$0;
+            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity2 = ChatAttachAlertButtonsSettingsActivity.this;
             chatAttachAlertButtonsSettingsActivity2.buttonsStartRow = chatAttachAlertButtonsSettingsActivity2.rowCount;
-            this.this$0.rowCount += this.this$0.getCurrentDialogType().getChatAttachAlertButtons().size();
-            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity3 = this.this$0;
+            ChatAttachAlertButtonsSettingsActivity.this.rowCount += ChatAttachAlertButtonsSettingsActivity.this.getCurrentDialogType().getChatAttachAlertButtons().size();
+            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity3 = ChatAttachAlertButtonsSettingsActivity.this;
             chatAttachAlertButtonsSettingsActivity3.buttonsEndRow = chatAttachAlertButtonsSettingsActivity3.rowCount;
-            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity4 = this.this$0;
+            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity4 = ChatAttachAlertButtonsSettingsActivity.this;
             int i2 = chatAttachAlertButtonsSettingsActivity4.rowCount;
             chatAttachAlertButtonsSettingsActivity4.rowCount = i2 + 1;
             chatAttachAlertButtonsSettingsActivity4.buttonsSectionRow = i2;
-            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity5 = this.this$0;
+            ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity5 = ChatAttachAlertButtonsSettingsActivity.this;
             int i3 = chatAttachAlertButtonsSettingsActivity5.rowCount;
             chatAttachAlertButtonsSettingsActivity5.rowCount = i3 + 1;
             chatAttachAlertButtonsSettingsActivity5.enableBotsRow = i3;
@@ -297,18 +287,18 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return ChatAttachAlertButtonsSettingsActivity.this.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == this.this$0.dialogTypeTopicsBarRow ? IdFabric$ViewTypes.TOPICS_BAR : i == this.this$0.buttonsSectionRow ? IdFabric$ViewTypes.SHADOW_SECTION : i == this.this$0.enableBotsRow ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON;
+            return i == ChatAttachAlertButtonsSettingsActivity.this.dialogTypeTopicsBarRow ? IdFabric$ViewTypes.TOPICS_BAR : i == ChatAttachAlertButtonsSettingsActivity.this.buttonsSectionRow ? IdFabric$ViewTypes.SHADOW_SECTION : i == ChatAttachAlertButtonsSettingsActivity.this.enableBotsRow ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON;
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            return this.this$0.isClickableViewType(holder.getItemViewType());
+            return ChatAttachAlertButtonsSettingsActivity.this.isClickableViewType(holder.getItemViewType());
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -317,48 +307,44 @@ public final class ChatAttachAlertButtonsSettingsActivity extends MvpFragment {
             List list;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.TOPICS_BAR) {
-                Activity parentActivity = this.this$0.getParentActivity();
+                Activity parentActivity = ChatAttachAlertButtonsSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 list = ArraysKt___ArraysKt.toList(DialogType.values());
-                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, this.this$0.getCurrentDialogType(), new C3019xcb29bd9c(this.this$0, this));
-                this.this$0.topicsBar = dialogTypeTopicsBar2;
-                Unit unit = Unit.INSTANCE;
+                DialogTypeTopicsBar dialogTypeTopicsBar2 = new DialogTypeTopicsBar(parentActivity, list, ChatAttachAlertButtonsSettingsActivity.this.getCurrentDialogType(), new C3143xcb29bd9c(ChatAttachAlertButtonsSettingsActivity.this, this));
+                ChatAttachAlertButtonsSettingsActivity.this.topicsBar = dialogTypeTopicsBar2;
                 dialogTypeTopicsBar = dialogTypeTopicsBar2;
             } else if (i == IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON) {
-                Activity parentActivity2 = this.this$0.getParentActivity();
+                Activity parentActivity2 = ChatAttachAlertButtonsSettingsActivity.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity2, "parentActivity");
                 ChatAttachAlertButtonCell chatAttachAlertButtonCell = new ChatAttachAlertButtonCell(parentActivity2);
                 chatAttachAlertButtonCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit2 = Unit.INSTANCE;
                 dialogTypeTopicsBar = chatAttachAlertButtonCell;
             } else if (i == IdFabric$ViewTypes.SHADOW_SECTION) {
-                dialogTypeTopicsBar = new ShadowSectionCell(this.this$0.getParentActivity());
+                dialogTypeTopicsBar = new ShadowSectionCell(ChatAttachAlertButtonsSettingsActivity.this.getParentActivity());
             } else {
-                View textCheckCell = new TextCheckCell(this.this$0.getParentActivity());
+                View textCheckCell = new TextCheckCell(ChatAttachAlertButtonsSettingsActivity.this.getParentActivity());
                 textCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit3 = Unit.INSTANCE;
                 dialogTypeTopicsBar = textCheckCell;
             }
             dialogTypeTopicsBar.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit4 = Unit.INSTANCE;
             return new RecyclerListView.Holder(dialogTypeTopicsBar);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            boolean needDivider = this.this$0.needDivider(getItemViewType(i + 1));
+            boolean needDivider = ChatAttachAlertButtonsSettingsActivity.this.needDivider(getItemViewType(i + 1));
             int itemViewType = getItemViewType(i);
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.CHAT_ATTACH_ALERT_BUTTON && (view instanceof ChatAttachAlertButtonCell)) {
-                ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity = this.this$0;
+                ChatAttachAlertButtonsSettingsActivity chatAttachAlertButtonsSettingsActivity = ChatAttachAlertButtonsSettingsActivity.this;
                 ChatAttachAlertButtonCell chatAttachAlertButtonCell = (ChatAttachAlertButtonCell) view;
                 ChatAttachAlertButton chatAttachAlertButton = chatAttachAlertButtonsSettingsActivity.getCurrentDialogType().getChatAttachAlertButtons().get(i - chatAttachAlertButtonsSettingsActivity.buttonsStartRow);
                 Set<ChatAttachAlertButton> set = chatAttachAlertButtonsSettingsActivity.getToolsController().getSelectedChatAttachAlertButtons().get(chatAttachAlertButtonsSettingsActivity.getCurrentDialogType());
-                chatAttachAlertButtonCell.setButton(chatAttachAlertButton, set == null ? false : set.contains(chatAttachAlertButton), needDivider);
+                chatAttachAlertButtonCell.setButton(chatAttachAlertButton, set != null ? set.contains(chatAttachAlertButton) : false, needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3158R.string.chat_attach_alert_bot_buttons), this.this$0.newSuggest, needDivider);
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3286R.string.chat_attach_alert_bot_buttons), ChatAttachAlertButtonsSettingsActivity.this.newSuggest, needDivider);
             }
         }
     }

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactsInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsInteractor.kt\ncom/smedialink/domain/contacts/ContactsInteractor\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,75:1\n20#2:76\n20#2:77\n1547#3:78\n1618#3,3:79\n*S KotlinDebug\n*F\n+ 1 ContactsInteractor.kt\ncom/smedialink/domain/contacts/ContactsInteractor\n*L\n24#1:76\n27#1:77\n47#1:78\n47#1:79,3\n*E\n"
+    value = "SMAP\nContactsInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsInteractor.kt\ncom/smedialink/domain/contacts/ContactsInteractor\n+ 2 RxExt.kt\ncom/smedialink/storage/data/utils/extentions/RxExtKt\n*L\n1#1,75:1\n20#2:76\n20#2:77\n*S KotlinDebug\n*F\n+ 1 ContactsInteractor.kt\ncom/smedialink/domain/contacts/ContactsInteractor\n*L\n24#1:76\n27#1:77\n*E\n"
 .end annotation
 
 
@@ -20,20 +20,20 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$NY268qblnhH52ElGOXJOftHVKio(Lcom/smedialink/domain/contacts/ContactsInteractor;Ljava/util/List;)Ljava/util/List;
+.method public static synthetic $r8$lambda$QVMQeRjlZ_7zlDVuL2l7z1yc958(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/domain/contacts/ContactsInteractor;->deleteUsersById$lambda-1(Lcom/smedialink/domain/contacts/ContactsInteractor;Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/domain/contacts/ContactsInteractor;->deleteUsersById$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$OjiWnhm0HysRFIUgQbGcUluI01U(Lcom/smedialink/domain/contacts/ContactsInteractor;Ljava/util/List;)Lio/reactivex/CompletableSource;
+.method public static synthetic $r8$lambda$pXsBqV_1AYemN0r-huUpeSqEC7A(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/CompletableSource;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/domain/contacts/ContactsInteractor;->deleteUsersById$lambda-2(Lcom/smedialink/domain/contacts/ContactsInteractor;Ljava/util/List;)Lio/reactivex/CompletableSource;
+    invoke-static {p0, p1}, Lcom/smedialink/domain/contacts/ContactsInteractor;->deleteUsersById$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/CompletableSource;
 
     move-result-object p0
 
@@ -77,8 +77,28 @@
     return-void
 .end method
 
+.method public static final synthetic access$getTelegramApi$p(Lcom/smedialink/domain/contacts/ContactsInteractor;)Lcom/smedialink/manager/TelegramApi;
+    .locals 0
+
+    .line 12
+    iget-object p0, p0, Lcom/smedialink/domain/contacts/ContactsInteractor;->telegramApi:Lcom/smedialink/manager/TelegramApi;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$toUser(Lcom/smedialink/domain/contacts/ContactsInteractor;J)Lorg/telegram/tgnet/TLRPC$User;
+    .locals 0
+
+    .line 12
+    invoke-direct {p0, p1, p2}, Lcom/smedialink/domain/contacts/ContactsInteractor;->toUser(J)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method private final deleteUsersById(Lio/reactivex/Single;)Lio/reactivex/Completable;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,11 +111,15 @@
     .end annotation
 
     .line 47
-    new-instance v0, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda0;
+    new-instance v0, Lcom/smedialink/domain/contacts/ContactsInteractor$deleteUsersById$1;
 
-    invoke-direct {v0, p0}, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda0;-><init>(Lcom/smedialink/domain/contacts/ContactsInteractor;)V
+    invoke-direct {v0, p0}, Lcom/smedialink/domain/contacts/ContactsInteractor$deleteUsersById$1;-><init>(Lcom/smedialink/domain/contacts/ContactsInteractor;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Single;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Single;
+    new-instance v1, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda0;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Single;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Single;
 
     move-result-object p1
 
@@ -111,100 +135,55 @@
     move-result-object p1
 
     .line 49
-    new-instance v0, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda1;
+    new-instance v0, Lcom/smedialink/domain/contacts/ContactsInteractor$deleteUsersById$2;
 
-    invoke-direct {v0, p0}, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/domain/contacts/ContactsInteractor;)V
+    invoke-direct {v0, p0}, Lcom/smedialink/domain/contacts/ContactsInteractor$deleteUsersById$2;-><init>(Lcom/smedialink/domain/contacts/ContactsInteractor;)V
 
-    invoke-virtual {p1, v0}, Lio/reactivex/Single;->flatMapCompletable(Lio/reactivex/functions/Function;)Lio/reactivex/Completable;
+    new-instance v1, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/domain/contacts/ContactsInteractor$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Single;->flatMapCompletable(Lio/reactivex/functions/Function;)Lio/reactivex/Completable;
 
     move-result-object p1
 
-    const-string v0, "this\n                   \u2026Users(it.toArrayList()) }"
+    const-string v0, "private fun Single<List<\u2026Users(it.toArrayList()) }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 .end method
 
-.method private static final deleteUsersById$lambda-1(Lcom/smedialink/domain/contacts/ContactsInteractor;Ljava/util/List;)Ljava/util/List;
-    .locals 3
-
-    const-string v0, "this$0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "ids"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 1547
-    new-instance v0, Ljava/util/ArrayList;
-
-    const/16 v1, 0xa
-
-    invoke-static {p1, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
-
-    move-result v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 1618
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 1619
-    check-cast v1, Ljava/lang/Number;
-
-    invoke-virtual {v1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v1
-
-    .line 47
-    invoke-direct {p0, v1, v2}, Lcom/smedialink/domain/contacts/ContactsInteractor;->toUser(J)Lorg/telegram/tgnet/TLRPC$User;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    return-object v0
-.end method
-
-.method private static final deleteUsersById$lambda-2(Lcom/smedialink/domain/contacts/ContactsInteractor;Ljava/util/List;)Lio/reactivex/CompletableSource;
+.method private static final deleteUsersById$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
     .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "it"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 49
-    iget-object p0, p0, Lcom/smedialink/domain/contacts/ContactsInteractor;->telegramApi:Lcom/smedialink/manager/TelegramApi;
-
-    invoke-static {p1}, Lorg/fork/utils/CollectionsUtilsKt;->toArrayList(Ljava/util/List;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    invoke-interface {p0, p1}, Lcom/smedialink/manager/TelegramApi;->deleteUsers(Ljava/util/ArrayList;)Lio/reactivex/Completable;
+    .line 47
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Ljava/util/List;
+
+    return-object p0
+.end method
+
+.method private static final deleteUsersById$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/CompletableSource;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 49
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lio/reactivex/CompletableSource;
 
     return-object p0
 .end method

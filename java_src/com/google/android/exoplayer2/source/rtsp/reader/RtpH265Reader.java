@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -27,7 +27,7 @@ final class RtpH265Reader implements RtpPayloadReader {
     private TrackOutput trackOutput;
     private final ParsableByteArray fuScratchBuffer = new ParsableByteArray();
     private final ParsableByteArray nalStartCodeArray = new ParsableByteArray(NalUnitUtil.NAL_START_CODE);
-    private long firstReceivedTimestamp = C0474C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0468C.TIME_UNSET;
     private int previousSequenceNumber = -1;
 
     private static int getBufferFlagsFromNalType(int i) {
@@ -68,7 +68,7 @@ final class RtpH265Reader implements RtpPayloadReader {
             }
         }
         if (z) {
-            if (this.firstReceivedTimestamp == C0474C.TIME_UNSET) {
+            if (this.firstReceivedTimestamp == C0468C.TIME_UNSET) {
                 this.firstReceivedTimestamp = j;
             }
             this.trackOutput.sampleMetadata(RtpReaderUtils.toSampleTimeUs(this.startTimeOffsetUs, j, this.firstReceivedTimestamp, MEDIA_CLOCK_FREQUENCY), this.bufferFlags, this.fragmentedSampleSizeBytes, 0, null);

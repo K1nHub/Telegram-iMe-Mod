@@ -1,13 +1,13 @@
 package io.grpc.internal;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class CallTracer {
     private final TimeProvider timeProvider;
     private final LongCounter callsStarted = LongCounterFactory.create();
     private final LongCounter callsSucceeded = LongCounterFactory.create();
     private final LongCounter callsFailed = LongCounterFactory.create();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Factory {
         CallTracer create();
     }

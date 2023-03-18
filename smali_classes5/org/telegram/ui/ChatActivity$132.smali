@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/ChatActivity$132;
-.super Lorg/telegram/messenger/browser/Browser$Progress;
+.super Ljava/lang/Object;
 .source "ChatActivity.java"
+
+# interfaces
+.implements Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->makeProgressForBotButton(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/String;)Lorg/telegram/messenger/browser/Browser$Progress;
+    value = Lorg/telegram/ui/ChatActivity;->processLoadedDiscussionMessage(ZLorg/telegram/tgnet/TLRPC$TL_messages_discussionMessage;ZLorg/telegram/tgnet/TLRPC$messages_Messages;ILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/messenger/MessageObject;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,122 +20,101 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+.field final synthetic val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$url:Ljava/lang/String;
+.field final synthetic val$commentsClassGuid:I
+
+.field final synthetic val$openCommentsChat:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$5egLuCJuG_xE9XbyK8zsj0t1ApU(Lorg/telegram/ui/ChatActivity$132;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+.method public static synthetic $r8$lambda$r6WyF__VI-kcG7zmx327IZq4Nts(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$132;->lambda$end$0(Lorg/telegram/ui/Cells/ChatMessageCell;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity$132;->lambda$didReceivedNotification$0(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/String;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;ILjava/lang/Runnable;Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 30774
+    .line 30364
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$132;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iput p2, p0, Lorg/telegram/ui/ChatActivity$132;->val$commentsClassGuid:I
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$132;->val$url:Ljava/lang/String;
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$132;->val$openCommentsChat:Ljava/lang/Runnable;
 
-    invoke-direct {p0}, Lorg/telegram/messenger/browser/Browser$Progress;-><init>()V
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$132;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private synthetic lambda$end$0(Lorg/telegram/ui/Cells/ChatMessageCell;)V
-    .locals 1
+.method private static synthetic lambda$didReceivedNotification$0(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
+    .locals 0
 
-    .line 30788
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
+    .line 30370
+    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$47700(Lorg/telegram/ui/ChatActivity;)I
-
-    move-result v0
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result p1
-
-    if-ne v0, p1, :cond_0
-
-    .line 30789
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$48000(Lorg/telegram/ui/ChatActivity;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public end(Z)V
+.method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 3
 
-    if-nez p1, :cond_0
+    .line 30367
+    sget v0, Lorg/telegram/messenger/NotificationCenter;->messagesDidLoad:I
 
-    .line 30787
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$132;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+    if-ne p1, v0, :cond_0
 
-    new-instance v0, Lorg/telegram/ui/ChatActivity$132$$ExternalSyntheticLambda0;
+    const/16 v1, 0xa
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ChatActivity$132$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$132;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+    aget-object v1, p3, v1
 
-    const-wide/16 v1, 0xf0
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public init()V
-    .locals 2
-
-    .line 30777
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$132;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getId()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$47702(Lorg/telegram/ui/ChatActivity;I)I
+    iget v2, p0, Lorg/telegram/ui/ChatActivity$132;->val$commentsClassGuid:I
 
-    .line 30778
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
+    if-ne v1, v2, :cond_0
 
-    const/4 v1, 0x3
+    .line 30368
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$132;->val$openCommentsChat:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$47802(Lorg/telegram/ui/ChatActivity;I)I
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    .line 30779
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
+    .line 30369
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$132;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$132;->val$url:Ljava/lang/String;
+    new-instance v2, Lorg/telegram/ui/ChatActivity$132$$ExternalSyntheticLambda0;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48102(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v2, v1, p1, p2, p3}, Lorg/telegram/ui/ChatActivity$132$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity;II[Ljava/lang/Object;)V
 
-    .line 30781
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$132;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+    const-wide/16 p1, 0x32
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
+    invoke-static {v2, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
+    .line 30372
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$132;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$47600(Lorg/telegram/ui/ChatActivity;)I
+
+    move-result p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0, v0}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
+
+    :cond_0
     return-void
 .end method

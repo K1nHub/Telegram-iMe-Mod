@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 2243
+    .line 2244
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;-><init>()V
@@ -35,12 +35,12 @@
 .method public ignoreView(Landroid/view/View;Z)V
     .locals 1
 
-    .line 2259
+    .line 2260
     instance-of v0, p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;
 
     if-eqz v0, :cond_0
 
-    .line 2260
+    .line 2261
     check-cast p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;
 
     iput-boolean p2, p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->ignoring:Z
@@ -52,14 +52,14 @@
 .method public onEndAnimation()V
     .locals 2
 
-    .line 2253
+    .line 2254
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$7502(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 2254
+    .line 2255
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -74,7 +74,7 @@
 .method public onPreAnimation()V
     .locals 2
 
-    .line 2247
+    .line 2248
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -83,7 +83,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->updateEmojiDrawables()V
 
-    .line 2248
+    .line 2249
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x1

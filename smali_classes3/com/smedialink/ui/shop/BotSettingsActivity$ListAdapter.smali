@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lcom/smedialink/ui/shop/BotSettingsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 159
     iput-object p1, p0, Lcom/smedialink/ui/shop/BotSettingsActivity$ListAdapter;->this$0:Lcom/smedialink/ui/shop/BotSettingsActivity;
@@ -432,9 +428,6 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 180
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 181
@@ -459,9 +452,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setBackgroundColor(I)V
-
-    .line 183
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 
@@ -488,9 +478,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 187
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 177
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

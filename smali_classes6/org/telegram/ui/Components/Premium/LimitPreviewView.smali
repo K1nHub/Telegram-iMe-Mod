@@ -1102,7 +1102,7 @@
 .method public setBagePosition(F)V
     .locals 0
 
-    .line 279
+    .line 286
     iput p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->position:F
 
     return-void
@@ -1113,7 +1113,7 @@
 
     const/4 v0, 0x0
 
-    .line 291
+    .line 298
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->animationCanPlay:Z
 
     return-void
@@ -1164,7 +1164,7 @@
 .method public setParentViewForGradien(Landroid/view/ViewGroup;)V
     .locals 0
 
-    .line 283
+    .line 290
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->parentVideForGradient:Landroid/view/View;
 
     return-void
@@ -1173,14 +1173,14 @@
 .method public setPremiumLocked()V
     .locals 5
 
-    .line 300
+    .line 307
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitsContainer:Landroid/widget/LinearLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 301
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitIcon:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
 
     const/16 v1, 0x18
@@ -1207,7 +1207,7 @@
 
     const/4 v0, 0x1
 
-    .line 302
+    .line 309
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->premiumLocked:Z
 
     return-void
@@ -1216,23 +1216,27 @@
 .method public setStaticGradinet(Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;)V
     .locals 0
 
-    .line 287
+    .line 294
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->staticGradient:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     return-void
 .end method
 
 .method public setType(I)V
-    .locals 5
+    .locals 6
 
-    const/4 v0, 0x6
+    const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_2
+    const/4 v1, 0x0
+
+    const/4 v2, 0x6
+
+    if-ne p1, v2, :cond_2
 
     .line 268
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitIcon:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
 
-    const-string v0, "4 GB"
+    const-string v2, "4 GB"
 
     if-eqz p1, :cond_1
 
@@ -1241,60 +1245,102 @@
 
     invoke-direct {p1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    const-string v1, "d "
+    const-string v3, "d "
 
     .line 270
-    invoke-virtual {p1, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {p1, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
-    new-instance v2, Lorg/telegram/ui/Components/ColoredImageSpan;
+    new-instance v4, Lorg/telegram/ui/Components/ColoredImageSpan;
 
-    iget v3, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->icon:I
+    iget v5, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->icon:I
 
-    invoke-direct {v2, v3}, Lorg/telegram/ui/Components/ColoredImageSpan;-><init>(I)V
+    invoke-direct {v4, v5}, Lorg/telegram/ui/Components/ColoredImageSpan;-><init>(I)V
 
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v2, v4, v3, v4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v3, v4, v1, v0, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 271
-    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
+    invoke-virtual {v0}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    move-object v1, v0
+    move-object v0, v2
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "2 GB"
+    const-string v0, "2 GB"
 
     :goto_0
-    invoke-virtual {p1, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {p1, v0}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     .line 272
-    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitIcon:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitIcon:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
 
-    invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->setText(Ljava/lang/CharSequence;)V
 
     .line 274
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->premiumCount:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
 
     :cond_2
+    const/16 v2, 0xb
+
+    if-ne p1, v2, :cond_4
+
+    .line 276
+    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitIcon:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
+
+    if-eqz p1, :cond_3
+
+    .line 277
+    new-instance p1, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {p1}, Landroid/text/SpannableStringBuilder;-><init>()V
+
+    const-string v2, "d"
+
+    .line 278
+    invoke-virtual {p1, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    move-result-object v2
+
+    new-instance v3, Lorg/telegram/ui/Components/ColoredImageSpan;
+
+    iget v4, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->icon:I
+
+    invoke-direct {v3, v4}, Lorg/telegram/ui/Components/ColoredImageSpan;-><init>(I)V
+
+    invoke-virtual {v2, v3, v1, v0, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    .line 279
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitIcon:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 281
+    :cond_3
+    iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->premiumCount:Landroid/widget/TextView;
+
+    const-string v0, ""
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :cond_4
+    :goto_1
     return-void
 .end method
 
@@ -1303,10 +1349,10 @@
 
     const/4 v0, 0x1
 
-    .line 295
+    .line 302
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->animationCanPlay:Z
 
-    .line 296
+    .line 303
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 
     return-void

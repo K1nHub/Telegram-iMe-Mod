@@ -21,9 +21,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
-import org.telegram.PhoneFormat.C3078PhoneFormat;
+import org.telegram.PhoneFormat.C3204PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -37,7 +37,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.utils.PhotoUtilities;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.CheckBoxCell;
@@ -174,15 +174,15 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         String str;
         this.actionBar.setItemsBackgroundColor(Theme.getColor("avatar_actionBarSelectorBlue", this.resourcesProvider), false);
         this.actionBar.setItemsColor(Theme.getColor("actionBarDefaultIcon", this.resourcesProvider), false);
-        this.actionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         if (this.addContact) {
-            this.actionBar.setTitle(LocaleController.getString("NewContact", C3158R.string.NewContact));
+            this.actionBar.setTitle(LocaleController.getString("NewContact", C3286R.string.NewContact));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("EditContact", C3158R.string.EditContact));
+            this.actionBar.setTitle(LocaleController.getString("EditContact", C3286R.string.EditContact));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ContactAddActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ContactAddActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i != -1) {
                     if (i != 1 || ContactAddActivity.this.firstNameField.getText().length() == 0) {
@@ -206,7 +206,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
                 ContactAddActivity.this.finishFragment();
             }
         });
-        this.doneButton = this.actionBar.createMenu().addItem(1, LocaleController.getString("Done", C3158R.string.Done).toUpperCase());
+        this.doneButton = this.actionBar.createMenu().addItem(1, LocaleController.getString("Done", C3286R.string.Done).toUpperCase());
         this.fragmentView = new ScrollView(context);
         LinearLayout linearLayout = new LinearLayout(context);
         this.linearLayout = linearLayout;
@@ -283,7 +283,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         this.firstNameField.setGravity(LocaleController.isRTL ? 5 : 3);
         this.firstNameField.setInputType(49152);
         this.firstNameField.setImeOptions(5);
-        this.firstNameField.setHint(LocaleController.getString("FirstName", C3158R.string.FirstName));
+        this.firstNameField.setHint(LocaleController.getString("FirstName", C3286R.string.FirstName));
         this.firstNameField.setCursorColor(Theme.getColor("windowBackgroundWhiteBlackText", this.resourcesProvider));
         this.firstNameField.setCursorSize(AndroidUtilities.m50dp(20));
         this.firstNameField.setCursorWidth(1.5f);
@@ -326,7 +326,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         this.lastNameField.setGravity(LocaleController.isRTL ? 5 : 3);
         this.lastNameField.setInputType(49152);
         this.lastNameField.setImeOptions(6);
-        this.lastNameField.setHint(LocaleController.getString("LastName", C3158R.string.LastName));
+        this.lastNameField.setHint(LocaleController.getString("LastName", C3286R.string.LastName));
         this.lastNameField.setCursorColor(Theme.getColor("windowBackgroundWhiteBlackText", this.resourcesProvider));
         this.lastNameField.setCursorSize(AndroidUtilities.m50dp(20));
         this.lastNameField.setCursorWidth(1.5f);
@@ -343,7 +343,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         final TLRPC$User user = getMessagesController().getUser(Long.valueOf(this.user_id));
         if (user != null && this.firstNameFromCard == null && this.lastNameFromCard == null) {
             if (user.phone == null && (str = this.phone) != null) {
-                user.phone = C3078PhoneFormat.stripExceptNumbers(str);
+                user.phone = C3204PhoneFormat.stripExceptNumbers(str);
             }
             this.firstNameField.setText(user.first_name);
             EditTextBoldCursor editTextBoldCursor3 = this.firstNameField;
@@ -363,7 +363,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
                 CheckBoxCell checkBoxCell = new CheckBoxCell(getParentActivity(), 0);
                 this.checkBoxCell = checkBoxCell;
                 checkBoxCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
-                this.checkBoxCell.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceTags(LocaleController.getString("SharePhoneNumberWith", C3158R.string.SharePhoneNumberWith)), Emoji.replaceEmoji(UserObject.getFirstName(user), this.infoTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(12), false)), "", true, false);
+                this.checkBoxCell.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceTags(LocaleController.getString("SharePhoneNumberWith", C3286R.string.SharePhoneNumberWith)), Emoji.replaceEmoji(UserObject.getFirstName(user), this.infoTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(12), false)), "", true, false);
                 this.checkBoxCell.setPadding(AndroidUtilities.m50dp(7), 0, AndroidUtilities.m50dp(7), 0);
                 this.checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ContactAddActivity$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
@@ -375,12 +375,12 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             }
         } else {
             final TextCell textCell = new TextCell(context, this.resourcesProvider);
-            String formatString = LocaleController.formatString("SuggestUserPhoto", C3158R.string.SuggestUserPhoto, user.first_name);
-            int i = C3158R.C3160drawable.msg_addphoto;
+            String formatString = LocaleController.formatString("SuggestUserPhoto", C3286R.string.SuggestUserPhoto, user.first_name);
+            int i = C3286R.C3288drawable.msg_addphoto;
             textCell.setTextAndIcon(formatString, i, true);
             textCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
             textCell.setColors("windowBackgroundWhiteBlueIcon", "windowBackgroundWhiteBlueButton");
-            int i2 = C3158R.C3164raw.photo_suggest_icon;
+            int i2 = C3286R.C3291raw.photo_suggest_icon;
             final RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(50), false, null);
             textCell.imageView.setTranslationY((float) (-AndroidUtilities.m50dp(9)));
             textCell.imageView.setTranslationX((float) (-AndroidUtilities.m50dp(8)));
@@ -393,10 +393,10 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             });
             this.linearLayout.addView(textCell, LayoutHelper.createLinear(-1, -2, 0, 0, 18, 0, 0));
             final TextCell textCell2 = new TextCell(context, this.resourcesProvider);
-            textCell2.setTextAndIcon(LocaleController.formatString("UserSetPhoto", C3158R.string.UserSetPhoto, user.first_name), i, false);
+            textCell2.setTextAndIcon(LocaleController.formatString("UserSetPhoto", C3286R.string.UserSetPhoto, user.first_name), i, false);
             textCell2.setBackgroundDrawable(Theme.getSelectorDrawable(false));
             textCell2.setColors("windowBackgroundWhiteBlueIcon", "windowBackgroundWhiteBlueButton");
-            int i3 = C3158R.C3164raw.camera_outline;
+            int i3 = C3286R.C3291raw.camera_outline;
             final RLottieDrawable rLottieDrawable2 = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(50), false, null);
             textCell2.imageView.setTranslationY((float) (-AndroidUtilities.m50dp(9)));
             textCell2.imageView.setTranslationX((float) (-AndroidUtilities.m50dp(8)));
@@ -432,7 +432,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             }
             this.oldAvatarView.setForUserOrChat(user.photo, this.avatarDrawable);
             this.oldPhotoCell.addView(this.oldAvatarView, LayoutHelper.createFrame(30, 30, 16, 21, 0, 21, 0));
-            this.oldPhotoCell.setText(LocaleController.getString("ResetToOriginalPhoto", C3158R.string.ResetToOriginalPhoto), false);
+            this.oldPhotoCell.setText(LocaleController.getString("ResetToOriginalPhoto", C3286R.string.ResetToOriginalPhoto), false);
             this.oldPhotoCell.getImageView().setVisibility(0);
             this.oldPhotoCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
             this.oldPhotoCell.setColors("windowBackgroundWhiteBlueIcon", "windowBackgroundWhiteBlueButton");
@@ -537,7 +537,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$11(Context context, final TLRPC$User tLRPC$User, View view) {
-        AlertsCreator.createSimpleAlert(context, LocaleController.getString("ResetToOriginalPhotoTitle", C3158R.string.ResetToOriginalPhotoTitle), LocaleController.formatString("ResetToOriginalPhotoMessage", C3158R.string.ResetToOriginalPhotoMessage, tLRPC$User.first_name), LocaleController.getString("Reset", C3158R.string.Reset), new Runnable() { // from class: org.telegram.ui.ContactAddActivity$$ExternalSyntheticLambda12
+        AlertsCreator.createSimpleAlert(context, LocaleController.getString("ResetToOriginalPhotoTitle", C3286R.string.ResetToOriginalPhotoTitle), LocaleController.formatString("ResetToOriginalPhotoMessage", C3286R.string.ResetToOriginalPhotoMessage, tLRPC$User.first_name), LocaleController.getString("Reset", C3286R.string.Reset), new Runnable() { // from class: org.telegram.ui.ContactAddActivity$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 ContactAddActivity.this.lambda$createView$10(tLRPC$User);
@@ -559,7 +559,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         }
         TLRPC$Photo tLRPC$Photo = this.prevAvatar;
         if (tLRPC$Photo != null) {
-            user.photo.photo_id = tLRPC$Photo.f1523id;
+            user.photo.photo_id = tLRPC$Photo.f1528id;
             ArrayList<TLRPC$PhotoSize> arrayList = tLRPC$Photo.sizes;
             TLRPC$PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList, 100);
             TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(arrayList, 1000);
@@ -643,14 +643,14 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             return;
         }
         if (TextUtils.isEmpty(getPhone())) {
-            this.nameTextView.setText(LocaleController.getString("MobileHidden", C3158R.string.MobileHidden));
-            this.infoTextView.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceTags(LocaleController.getString("MobileHiddenExceptionInfo", C3158R.string.MobileHiddenExceptionInfo)), Emoji.replaceEmoji(UserObject.getFirstName(user), this.infoTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(12), false)));
+            this.nameTextView.setText(LocaleController.getString("MobileHidden", C3286R.string.MobileHidden));
+            this.infoTextView.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceTags(LocaleController.getString("MobileHiddenExceptionInfo", C3286R.string.MobileHiddenExceptionInfo)), Emoji.replaceEmoji(UserObject.getFirstName(user), this.infoTextView.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(12), false)));
         } else {
             TextView textView = this.nameTextView;
-            C3078PhoneFormat c3078PhoneFormat = C3078PhoneFormat.getInstance();
-            textView.setText(c3078PhoneFormat.format("+" + getPhone()));
+            C3204PhoneFormat c3204PhoneFormat = C3204PhoneFormat.getInstance();
+            textView.setText(c3204PhoneFormat.format("+" + getPhone()));
             if (this.needAddException) {
-                this.infoTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("MobileVisibleInfo", C3158R.string.MobileVisibleInfo, UserObject.getFirstName(user))));
+                this.infoTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("MobileVisibleInfo", C3286R.string.MobileVisibleInfo, UserObject.getFirstName(user))));
             }
         }
         this.onlineTextView.setText(LocaleController.formatUserStatus(this.currentAccount, user));
@@ -840,7 +840,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         tLRPC$TL_messageService.unread = true;
         tLRPC$TL_messageService.out = true;
         int newMessageId = getUserConfig().getNewMessageId();
-        tLRPC$TL_messageService.f1518id = newMessageId;
+        tLRPC$TL_messageService.f1523id = newMessageId;
         tLRPC$TL_messageService.local_id = newMessageId;
         TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
         tLRPC$TL_messageService.from_id = tLRPC$TL_peerUser;
@@ -946,9 +946,9 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             getNotificationCenter().postNotificationName(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_AVATAR));
             if (getParentActivity() != null) {
                 if (i == 2) {
-                    BulletinFactory.m27of(this).createUsersBulletin(arrayList2, AndroidUtilities.replaceTags(LocaleController.formatString("UserCustomPhotoSeted", C3158R.string.UserCustomPhotoSeted, user.first_name))).show();
+                    BulletinFactory.m27of(this).createUsersBulletin(arrayList2, AndroidUtilities.replaceTags(LocaleController.formatString("UserCustomPhotoSeted", C3286R.string.UserCustomPhotoSeted, user.first_name))).show();
                 } else {
-                    BulletinFactory.m27of(this).createUsersBulletin(arrayList2, AndroidUtilities.replaceTags(LocaleController.formatString("UserCustomPhotoSeted", C3158R.string.UserCustomPhotoSeted, user.first_name))).show();
+                    BulletinFactory.m27of(this).createUsersBulletin(arrayList2, AndroidUtilities.replaceTags(LocaleController.formatString("UserCustomPhotoSeted", C3286R.string.UserCustomPhotoSeted, user.first_name))).show();
                 }
             }
         }

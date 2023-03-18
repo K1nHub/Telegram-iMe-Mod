@@ -192,7 +192,7 @@
 
     const v6, 0xe1000
 
-    const-string v15, "video/avc"
+    const-string/jumbo v15, "video/avc"
 
     if-eqz p25, :cond_2d
 
@@ -2090,7 +2090,7 @@
 
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, "x"
+    const-string/jumbo v3, "x"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6890,7 +6890,7 @@
     :try_start_77
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, "x"
+    const-string/jumbo v5, "x"
 
     invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_77
@@ -7196,7 +7196,7 @@
 
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, "x"
+    const-string/jumbo v3, "x"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7496,7 +7496,7 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, "x"
+    const-string/jumbo v2, "x"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

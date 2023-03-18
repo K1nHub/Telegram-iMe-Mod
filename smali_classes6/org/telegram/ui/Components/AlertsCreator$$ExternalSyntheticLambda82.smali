@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda82;->f$1:Landroid/widget/LinearLayout;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$S__utMXoJcP3eAO5VrgI5ausgFk([ILandroid/widget/LinearLayout;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$QhbyxRXrDhqmmQCdgIYy55vX_Ww([ILandroid/widget/LinearLayout;Landroid/view/View;)V
 
     return-void
 .end method

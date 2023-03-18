@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda8;->f$0:Lorg/fork/utils/Callbacks$Callback;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->$r8$lambda$U_bHJeEYPoB_EazEwgDNHqyBWxg(Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/home/v2/details/WalletTokenDetailsFragment;->$r8$lambda$fe00IcbpZG3HT09JyY4sowiHAj8(Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method

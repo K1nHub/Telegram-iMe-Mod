@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter$$ExternalSyntheticLambda1;->f$3:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;->$r8$lambda$bcbR1VRyL5bYQiCp-GWKVb7f5_A(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Ljava/lang/String;Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;->$r8$lambda$5mYYj7IurVH9NQuE6RLxhkO8tK8(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Ljava/lang/String;Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$HintAdapter;Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;)V
 
     return-void
 .end method

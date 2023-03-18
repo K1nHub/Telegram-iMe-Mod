@@ -16,11 +16,7 @@
 
 # direct methods
 .method public static getCurrentBlockchainType(Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;)Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
-    .locals 1
-
-    const-string v0, "this"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     .line 47
     invoke-interface {p0}, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;->getNetworkType()Lcom/smedialink/storage/domain/model/crypto/NetworkType;

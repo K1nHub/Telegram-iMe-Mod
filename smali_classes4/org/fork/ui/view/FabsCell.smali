@@ -278,7 +278,7 @@
 
     move-result-object v0
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 

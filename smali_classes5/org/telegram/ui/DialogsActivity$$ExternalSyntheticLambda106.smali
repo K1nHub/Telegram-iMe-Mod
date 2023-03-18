@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda106;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    check-cast p1, Ljava/lang/Long;
+    check-cast p1, Ljava/util/EnumMap;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$Vtt1Lk9K5UaAH0qtIJsMNUvzRtE(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$eu-amicZIT2R-q_QPOE1aUgOpDQ(Lorg/telegram/ui/DialogsActivity;Ljava/util/EnumMap;)V
 
     return-void
 .end method

@@ -20,7 +20,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramCacheType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,75:1\n1547#2:76\n1618#2,3:77\n*S KotlinDebug\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType\n*L\n63#1:76\n63#1:77,3\n*E\n"
+    value = "SMAP\nTelegramCacheType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,75:1\n1549#2:76\n1620#2,3:77\n*S KotlinDebug\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType\n*L\n63#1:76\n63#1:77,3\n*E\n"
 .end annotation
 
 
@@ -491,7 +491,7 @@
     :cond_0
     iget-object v0, p0, Lorg/fork/enums/TelegramCacheType;->directoryTypes:Ljava/util/List;
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -502,7 +502,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -518,7 +518,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Ljava/lang/Number;
 
     invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
@@ -530,6 +530,7 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

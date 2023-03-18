@@ -10,6 +10,6 @@ public final /* synthetic */ class GoogleServicesHelper$$ExternalSyntheticLambda
 
     @Override // org.fork.utils.Callbacks$Callback
     public final void invoke() {
-        GoogleServicesHelper.m1847runWithActivationCheck$lambda0();
+        GoogleServicesHelper.runWithActivationCheck$lambda$0();
     }
 }

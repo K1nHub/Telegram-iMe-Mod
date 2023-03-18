@@ -24,10 +24,10 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 833
+    .line 831
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 834
+    .line 832
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
@@ -36,7 +36,7 @@
 
     const/4 v1, 0x1
 
-    .line 835
+    .line 833
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -51,7 +51,7 @@
 
     const/4 v2, 0x6
 
-    .line 836
+    .line 834
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    .line 837
+    .line 835
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
@@ -69,14 +69,14 @@
 
     const-string v3, "divider"
 
-    .line 838
+    .line 836
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v3
 
     invoke-virtual {v0, v1, v3}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
 
-    .line 839
+    .line 837
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -93,15 +93,15 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 844
+    .line 842
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 846
+    .line 844
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 847
+    .line 845
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iget v2, v0, Landroid/graphics/Rect;->top:I
@@ -116,18 +116,18 @@
 
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 848
+    .line 846
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer$PreviewForegroundDrawable;->topDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/GradientDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 849
+    .line 847
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 851
+    .line 849
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 852
+    .line 850
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iget v2, v0, Landroid/graphics/Rect;->top:I
@@ -144,12 +144,12 @@
 
     invoke-virtual {p1, v1, v2, v3, v0}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 853
+    .line 851
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer$PreviewForegroundDrawable;->bottomDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 854
+    .line 852
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -166,15 +166,15 @@
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
     .locals 1
 
-    .line 859
+    .line 857
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
 
-    .line 860
+    .line 858
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer$PreviewForegroundDrawable;->topDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 861
+    .line 859
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer$PreviewForegroundDrawable;->bottomDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setBounds(Landroid/graphics/Rect;)V
@@ -185,12 +185,12 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 866
+    .line 864
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer$PreviewForegroundDrawable;->topDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setAlpha(I)V
 
-    .line 867
+    .line 865
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer$PreviewForegroundDrawable;->bottomDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setAlpha(I)V

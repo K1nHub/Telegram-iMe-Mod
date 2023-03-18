@@ -22,10 +22,10 @@ public final class WalletLinkClickableManager$getUserIdAlertOptions$1 extends La
     public final Unit invoke() {
         WalletLinkClickableView walletLinkClickableView;
         walletLinkClickableView = this.this$0.viewState;
-        if (walletLinkClickableView == null) {
-            return null;
+        if (walletLinkClickableView != null) {
+            walletLinkClickableView.actionOpenProfileScreen(this.$userId);
+            return Unit.INSTANCE;
         }
-        walletLinkClickableView.actionOpenProfileScreen(this.$userId);
-        return Unit.INSTANCE;
+        return null;
     }
 }

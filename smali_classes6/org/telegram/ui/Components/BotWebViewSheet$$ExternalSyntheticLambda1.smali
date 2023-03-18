@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$04N7MDfN_2mazneSM4roUL9gbIw(Lorg/telegram/ui/Components/BotWebViewSheet;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$SZ1yzHzUNivtPy3wHBuzzASMWUI(Lorg/telegram/ui/Components/BotWebViewSheet;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

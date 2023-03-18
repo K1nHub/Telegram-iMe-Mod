@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBookmarksController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BookmarksController.kt\norg/fork/controller/BookmarksController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,91:1\n56#2,6:92\n657#3:98\n738#3,4:99\n511#4:103\n496#4,6:104\n357#4,7:110\n1849#5,2:117\n1547#5:119\n1618#5,3:120\n*S KotlinDebug\n*F\n+ 1 BookmarksController.kt\norg/fork/controller/BookmarksController\n*L\n18#1:92,6\n29#1:98\n29#1:99,4\n35#1:103\n35#1:104,6\n46#1:110,7\n70#1:117,2\n77#1:119\n77#1:120,3\n*E\n"
+    value = "SMAP\nBookmarksController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BookmarksController.kt\norg/fork/controller/BookmarksController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,91:1\n56#2,6:92\n658#3:98\n739#3,4:99\n515#4:103\n500#4,6:104\n361#4,7:110\n1855#5,2:117\n1549#5:119\n1620#5,3:120\n*S KotlinDebug\n*F\n+ 1 BookmarksController.kt\norg/fork/controller/BookmarksController\n*L\n18#1:92,6\n29#1:98\n29#1:99,4\n35#1:103\n35#1:104,6\n46#1:110,7\n70#1:117,2\n77#1:119\n77#1:120,3\n*E\n"
 .end annotation
 
 
@@ -49,34 +49,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$9qZ1T_2WB5tWOldr4lsBbzMmiTg(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+.method public static synthetic $r8$lambda$F1HsyI_lCttURJOz1yGHmFlxriY(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/BookmarksController;->bookmarkMessages$lambda-4(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/BookmarksController;->unbookmarkMessages$lambda$5(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ItgLl5bFTbf2eRVF817M_i1H8E8(Lorg/fork/controller/BookmarksController;)V
+.method public static synthetic $r8$lambda$FboZZxUbK6hmtRktTXX1v7epDp0(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/controller/BookmarksController;->setNewBookmarks$lambda-2(Lorg/fork/controller/BookmarksController;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/BookmarksController;->unbookmarkAllMessages$lambda$8(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$T18eYH3PgSRKbrKBZnZGwGkHbys(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$S5C1B6EcpFDOutUHSOVjyXQ_fx0(Lorg/fork/controller/BookmarksController;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/BookmarksController;->unbookmarkAllMessages$lambda-8(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
+    invoke-static {p0}, Lorg/fork/controller/BookmarksController;->setNewBookmarks$lambda$2(Lorg/fork/controller/BookmarksController;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$b-7-drpypDxygEDr1kW5JLFizOU(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+.method public static synthetic $r8$lambda$hbcfIYyOqmdPS7R77eGLO_ZcE0I(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/BookmarksController;->unbookmarkMessages$lambda-5(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/BookmarksController;->bookmarkMessages$lambda$4(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
 
     return-void
 .end method
@@ -150,7 +150,7 @@
     return-object v0
 .end method
 
-.method private static final bookmarkMessages$lambda-4(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+.method private static final bookmarkMessages$lambda$4(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -208,7 +208,7 @@
     return-object p0
 .end method
 
-.method private static final setNewBookmarks$lambda-2(Lorg/fork/controller/BookmarksController;)V
+.method private static final setNewBookmarks$lambda$2(Lorg/fork/controller/BookmarksController;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -226,9 +226,7 @@
 
     iget-wide v1, v1, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    invoke-virtual {p0}, Lorg/fork/controller/BookmarksController;->getBookmarks()Ljava/util/Map;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/controller/BookmarksController;->bookmarks:Ljava/util/Map;
 
     invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -243,7 +241,7 @@
     return-void
 .end method
 
-.method private static final unbookmarkAllMessages$lambda-8(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
+.method private static final unbookmarkAllMessages$lambda$8(Lorg/fork/controller/BookmarksController;Ljava/util/List;)V
     .locals 5
 
     const-string v0, "this$0"
@@ -259,7 +257,7 @@
 
     move-result-object v0
 
-    .line 1547
+    .line 1549
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -270,7 +268,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -286,7 +284,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
 
     .line 77
@@ -300,17 +298,19 @@
 
     move-result-object v2
 
+    .line 1621
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 77
     :cond_0
     invoke-interface {v0, v1}, Lcom/smedialink/storage/data/locale/db/dao/base/BaseDao;->insert(Ljava/util/List;)V
 
     return-void
 .end method
 
-.method private static final unbookmarkMessages$lambda-5(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+.method private static final unbookmarkMessages$lambda$5(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -365,7 +365,7 @@
 
     move-result-object v1
 
-    .line 357
+    .line 361
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -381,7 +381,7 @@
 
     invoke-direct {v2, v3, p1, p2}, Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;-><init>(Ljava/util/ArrayList;J)V
 
-    .line 360
+    .line 364
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 46
@@ -398,9 +398,9 @@
     .line 48
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance p2, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda1;
+    new-instance p2, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda2;
 
-    invoke-direct {p2, p0, v2}, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda1;-><init>(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+    invoke-direct {p2, p0, v2}, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda2;-><init>(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -460,20 +460,15 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;->getMessageIds()Ljava/util/ArrayList;
 
     move-result-object p1
 
-    :goto_0
     if-nez p1, :cond_1
 
+    :cond_0
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -512,12 +507,12 @@
 
     move-result-object v0
 
-    .line 657
+    .line 658
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 738
+    .line 739
     invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -533,7 +528,7 @@
 
     move-result-object v2
 
-    .line 739
+    .line 740
     check-cast v2, Lcom/smedialink/storage/data/locale/db/model/bookmarks/BookmarksDb;
 
     .line 29
@@ -553,6 +548,7 @@
 
     move-result-object v2
 
+    .line 740
     invoke-virtual {v2}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v3
@@ -599,12 +595,12 @@
 
     move-result-object p1
 
-    .line 511
+    .line 515
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 496
+    .line 500
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -646,7 +642,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 498
+    .line 502
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -738,7 +734,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -761,9 +757,7 @@
     move-result-wide v1
 
     .line 71
-    invoke-virtual {p0}, Lorg/fork/controller/BookmarksController;->getBookmarks()Ljava/util/Map;
-
-    move-result-object v3
+    iget-object v3, p0, Lorg/fork/controller/BookmarksController;->bookmarks:Ljava/util/Map;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -791,9 +785,7 @@
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 74
-    invoke-virtual {p0}, Lorg/fork/controller/BookmarksController;->getBookmarks()Ljava/util/Map;
-
-    move-result-object v3
+    iget-object v3, p0, Lorg/fork/controller/BookmarksController;->bookmarks:Ljava/util/Map;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -884,9 +876,9 @@
     :cond_1
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance p2, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda2;
+    new-instance p2, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda1;
 
-    invoke-direct {p2, p0, v0}, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda2;-><init>(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+    invoke-direct {p2, p0, v0}, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda1;-><init>(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 

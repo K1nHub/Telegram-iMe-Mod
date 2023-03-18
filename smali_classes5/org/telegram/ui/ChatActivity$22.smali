@@ -40,7 +40,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 7245
+    .line 7249
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/ChatListItemAnimator;-><init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -53,10 +53,10 @@
 
     const/4 v0, 0x0
 
-    .line 7297
+    .line 7301
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 7298
+    .line 7302
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$22200(Lorg/telegram/ui/ChatActivity;)I
@@ -67,7 +67,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 7299
+    .line 7303
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -82,12 +82,12 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 7300
+    .line 7304
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$22202(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 7302
+    .line 7306
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -95,7 +95,7 @@
 
     const-string v0, "chatItemAnimator enable notifications"
 
-    .line 7303
+    .line 7307
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_1
@@ -107,10 +107,10 @@
 
     const/4 v0, 0x0
 
-    .line 7278
+    .line 7282
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 7279
+    .line 7283
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$22200(Lorg/telegram/ui/ChatActivity;)I
@@ -121,7 +121,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 7280
+    .line 7284
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -136,12 +136,12 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 7281
+    .line 7285
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$22202(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 7283
+    .line 7287
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -149,7 +149,7 @@
 
     const-string v0, "chatItemAnimator enable notifications"
 
-    .line 7284
+    .line 7288
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_1
@@ -161,7 +161,7 @@
 .method public checkIsRunning()V
     .locals 5
 
-    .line 7251
+    .line 7255
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$22200(Lorg/telegram/ui/ChatActivity;)I
@@ -172,7 +172,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 7252
+    .line 7256
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -204,18 +204,18 @@
 .method public endAnimations()V
     .locals 1
 
-    .line 7292
+    .line 7296
     invoke-super {p0}, Landroidx/recyclerview/widget/ChatListItemAnimator;->endAnimations()V
 
-    .line 7293
+    .line 7297
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 7294
+    .line 7298
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 7296
+    .line 7300
     :cond_0
     new-instance v0, Lorg/telegram/ui/ChatActivity$22$$ExternalSyntheticLambda0;
 
@@ -231,23 +231,23 @@
 .method protected onAllAnimationsDone()V
     .locals 1
 
-    .line 7272
+    .line 7276
     invoke-super {p0}, Landroidx/recyclerview/widget/ChatListItemAnimator;->onAllAnimationsDone()V
 
-    .line 7273
+    .line 7277
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 7274
+    .line 7278
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v0, 0x0
 
-    .line 7275
+    .line 7279
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 7277
+    .line 7281
     :cond_0
     new-instance v0, Lorg/telegram/ui/ChatActivity$22$$ExternalSyntheticLambda1;
 
@@ -263,7 +263,7 @@
 .method public onAnimationStart()V
     .locals 5
 
-    .line 7258
+    .line 7262
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -288,20 +288,20 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$22202(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 7259
+    .line 7263
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 7260
+    .line 7264
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v0, 0x0
 
-    .line 7261
+    .line 7265
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 7263
+    .line 7267
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -309,10 +309,10 @@
 
     const-string v0, "chatItemAnimator disable notifications"
 
-    .line 7264
+    .line 7268
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 7266
+    .line 7270
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -324,7 +324,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->runDelayedAnimation()V
 
-    .line 7267
+    .line 7271
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$22;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;

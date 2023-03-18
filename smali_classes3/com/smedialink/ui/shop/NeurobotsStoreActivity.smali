@@ -9,14 +9,14 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;,
         Lcom/smedialink/ui/shop/NeurobotsStoreActivity$Companion;,
+        Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;,
         Lcom/smedialink/ui/shop/NeurobotsStoreActivity$WhenMappings;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNeurobotsStoreActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,405:1\n13601#2,3:406\n13601#2,3:410\n1#3:409\n764#4:413\n855#4,2:414\n1052#4:416\n*S KotlinDebug\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity\n*L\n112#1:406,3\n302#1:410,3\n322#1:413\n322#1:414,2\n324#1:416\n*E\n"
+    value = "SMAP\nNeurobotsStoreActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,405:1\n13644#2,3:406\n13644#2,3:410\n1#3:409\n766#4:413\n857#4,2:414\n*S KotlinDebug\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity\n*L\n112#1:406,3\n302#1:410,3\n322#1:413\n322#1:414,2\n*E\n"
 .end annotation
 
 
@@ -82,70 +82,70 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$2SiaKPZe_Tl0FSA8hBrB9VYbJic(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;Lorg/solovyev/android/checkout/Purchase;)V
+.method public static synthetic $r8$lambda$-g3yBb_B4LSBa2J2BPNL4KTrENc()V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->purchaseItem$lambda-17(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;Lorg/solovyev/android/checkout/Purchase;)V
+    invoke-static {}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->updateBotStatus$lambda$13()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5SoJry2fjWEILEUEmpS9lCZboqM(Ljava/util/List;)Ljava/util/List;
+.method public static synthetic $r8$lambda$0OF1PJDFbTRCWFNmdVTitU_no18(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda-10(Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$1TDAIJ9eVSHPpECKZxMJ_0e6yxM(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->purchaseItem$lambda$16(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$BImFEnfIyUnKjVvQ7JzRyUQO390(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$JyRiYcHKDYpwEhEsdEwSHF1a7oQ(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+.method public static synthetic $r8$lambda$Gdga3icoiYjXbII5uzAId0c4rbY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda-8(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$KF3skAjkxjH7MTMtlTWQDZGmpro(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->purchaseItem$lambda$17(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$N3m0qPyzosUcjnwGTJnm_B5BtB0(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda$8(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$UkjnxiKl9ScG8LKIkAKrpRYqUGY()V
+.method public static synthetic $r8$lambda$QyT0BuMsyCaIo-5EKaWikLAfQ9A(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->updateBotStatus$lambda-14()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$a4S3hwGnhOLFXJzZ7GJFsBwst30(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda-12(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ngtwGQsuO2JhjbiXNQULX7Ovayw(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;Ljava/util/List;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->listenForSearchResults$lambda-11(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$olvgy-i9VANZvW9pKMgadoCJY4o(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->purchaseItem$lambda-18(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$yeLwrOKiBCpVQ48fPbQee_If_C4(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->updateBotStatus$lambda-15(Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->updateBotStatus$lambda$14(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -311,6 +311,15 @@
     return-object p0
 .end method
 
+.method public static final synthetic access$getSearchResultsAdapter$p(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;
+    .locals 0
+
+    .line 50
+    iget-object p0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchResultsAdapter:Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;
+
+    return-object p0
+.end method
+
 .method public static final synthetic access$getSearchResultsList$p(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
@@ -345,6 +354,15 @@
     iget-object p0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->tabViews:Ljava/util/Map;
 
     return-object p0
+.end method
+
+.method public static final synthetic access$getUserId$p(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)J
+    .locals 2
+
+    .line 50
+    iget-wide v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->userId:J
+
+    return-wide v0
 .end method
 
 .method public static final synthetic access$listenForSearchResults(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
@@ -398,15 +416,12 @@
     .line 317
     iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchDisposable:Lio/reactivex/disposables/Disposable;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
     .line 319
-    :goto_0
+    :cond_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
 
     sget-object v1, Lcom/smedialink/bots/domain/model/BotLanguage;->Companion:Lcom/smedialink/bots/domain/model/BotLanguage$Companion;
@@ -505,10 +520,14 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;
-
     .line 324
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+    sget-object v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$2;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$2;
+
+    new-instance v2, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
@@ -531,13 +550,23 @@
     move-result-object v0
 
     .line 327
-    new-instance v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;
+    new-instance v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$3;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$3;-><init>(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
 
-    sget-object v2, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda4;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda4;
+    new-instance v2, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda4;
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda4;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$4;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$4;
+
+    .line 348
+    new-instance v3, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 327
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
@@ -552,243 +581,33 @@
     return-void
 .end method
 
-.method private static final listenForSearchResults$lambda-10(Ljava/util/List;)Ljava/util/List;
+.method private static final listenForSearchResults$lambda$10(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "it"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1052
-    new-instance v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$lambda-10$$inlined$sortedByDescending$1;
-
-    invoke-direct {v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$listenForSearchResults$lambda-10$$inlined$sortedByDescending$1;-><init>()V
-
-    invoke-static {p0, v0}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private static final listenForSearchResults$lambda-11(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;Ljava/util/List;)V
-    .locals 6
-
-    const-string v0, "this$0"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "items"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 328
-    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->baseViewsContainer:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
-    const-string v1, "baseViewsContainer"
-
-    const/4 v2, 0x0
-
-    if-nez v0, :cond_0
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    :cond_0
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
-
-    move-result v0
-
-    const/16 v3, 0x8
-
-    if-eq v0, v3, :cond_2
-
-    .line 329
-    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->baseViewsContainer:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
-    if-nez v0, :cond_1
-
-    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    :cond_1
-    invoke-virtual {v0, v3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->setVisibility(I)V
-
-    .line 332
-    :cond_2
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    const/4 v1, 0x0
-
-    const-string v4, "nothingFoundPlaceholder"
-
-    const-string v5, "searchResultsList"
-
-    if-eqz v0, :cond_a
-
-    .line 333
-    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->nothingFoundPlaceholder:Landroid/widget/TextView;
-
-    if-nez v0, :cond_3
-
-    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    :cond_3
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v0
-
-    if-eq v0, v3, :cond_5
-
-    .line 334
-    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->nothingFoundPlaceholder:Landroid/widget/TextView;
-
-    if-nez v0, :cond_4
-
-    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    :cond_4
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 336
-    :cond_5
-    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchResultsList:Lorg/telegram/ui/Components/RecyclerListView;
-
-    if-nez v0, :cond_6
-
-    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    :cond_6
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    .line 337
-    iget-object v0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchResultsList:Lorg/telegram/ui/Components/RecyclerListView;
-
-    if-nez v0, :cond_7
-
-    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    :cond_7
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
-
-    .line 339
-    :cond_8
-    iget-object p0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchResultsAdapter:Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;
-
-    if-nez p0, :cond_9
-
-    const-string p0, "searchResultsAdapter"
-
-    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_9
-    move-object v2, p0
-
-    :goto_0
-    invoke-virtual {v2, p1}, Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;->setContent(Ljava/util/List;)V
-
-    goto :goto_2
-
-    .line 341
-    :cond_a
-    iget-object p1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchResultsList:Lorg/telegram/ui/Components/RecyclerListView;
-
-    if-nez p1, :cond_b
-
-    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object p1, v2
-
-    :cond_b
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getVisibility()I
-
-    move-result p1
-
-    if-eq p1, v3, :cond_d
-
-    .line 342
-    iget-object p1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchResultsList:Lorg/telegram/ui/Components/RecyclerListView;
-
-    if-nez p1, :cond_c
-
-    invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object p1, v2
-
-    :cond_c
-    invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
-
-    .line 344
-    :cond_d
-    iget-object p1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->nothingFoundPlaceholder:Landroid/widget/TextView;
-
-    if-nez p1, :cond_e
-
-    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    move-object p1, v2
-
-    :cond_e
-    invoke-virtual {p1}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result p1
-
-    if-eqz p1, :cond_10
-
-    .line 345
-    iget-object p0, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->nothingFoundPlaceholder:Landroid/widget/TextView;
-
-    if-nez p0, :cond_f
-
-    invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_f
-    move-object v2, p0
-
-    :goto_1
-    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :cond_10
-    :goto_2
-    return-void
-.end method
-
-.method private static final listenForSearchResults$lambda-12(Ljava/lang/Throwable;)V
-    .locals 1
-
-    const-string v0, "t"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 349
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    .line 327
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final listenForSearchResults$lambda-8(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+.method private static final listenForSearchResults$lambda$11(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 348
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final listenForSearchResults$lambda$8(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
     .locals 6
 
     const-string v0, "items"
@@ -799,12 +618,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 764
+    .line 766
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -850,6 +669,7 @@
 
     if-eqz v2, :cond_0
 
+    .line 857
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -858,8 +678,25 @@
     return-object v0
 .end method
 
+.method private static final listenForSearchResults$lambda$9(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/util/List;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 324
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/List;
+
+    return-object p0
+.end method
+
 .method private final purchaseItem(Ljava/lang/String;)V
-    .locals 2
+    .locals 3
 
     .line 370
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->purchaseHelper:Lcom/smedialink/ui/shop/PurchaseHelper;
@@ -888,13 +725,23 @@
     move-result-object p1
 
     .line 374
-    new-instance v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda3;
+    new-instance v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$purchaseItem$1;
 
-    invoke-direct {v0, p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda3;-><init>(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
+    invoke-direct {v0, p0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$purchaseItem$1;-><init>(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;)V
 
-    sget-object v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda5;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda5;
+    new-instance v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda3;
 
-    invoke-virtual {p1, v0, v1}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$purchaseItem$2;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$purchaseItem$2;
+
+    .line 376
+    new-instance v2, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda5;
+
+    invoke-direct {v2, v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda5;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 374
+    invoke-virtual {p1, v1, v2}, Lio/reactivex/Single;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -906,40 +753,34 @@
     return-void
 .end method
 
-.method private static final purchaseItem$lambda-17(Lcom/smedialink/ui/shop/NeurobotsStoreActivity;Lorg/solovyev/android/checkout/Purchase;)V
-    .locals 3
+.method private static final purchaseItem$lambda$16(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
 
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 375
-    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
-
-    iget-object p1, p1, Lorg/solovyev/android/checkout/Purchase;->sku:Ljava/lang/String;
-
-    const-string v1, "purchase.sku"
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-wide v1, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->userId:J
-
-    invoke-virtual {v0, p1, v1, v2}, Lcom/smedialink/bots/usecase/AiBotsManager;->downloadPurchase(Ljava/lang/String;J)V
+    .line 374
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final purchaseItem$lambda-18(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final purchaseItem$lambda$17(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 376
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
 .method private final updateBotStatus(Ljava/lang/String;Lcom/smedialink/bots/data/model/BotStatus;)V
-    .locals 1
+    .locals 2
 
     .line 362
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
@@ -960,10 +801,14 @@
 
     sget-object p2, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda0;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda0;
 
-    sget-object v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda6;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda6;
-
     .line 365
-    invoke-virtual {p1, p2, v0}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    sget-object v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$updateBotStatus$2;->INSTANCE:Lcom/smedialink/ui/shop/NeurobotsStoreActivity$updateBotStatus$2;
+
+    new-instance v1, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda6;
+
+    invoke-direct {v1, v0}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity$$ExternalSyntheticLambda6;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, p2, v1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object p1
 
@@ -975,17 +820,21 @@
     return-void
 .end method
 
-.method private static final updateBotStatus$lambda-14()V
+.method private static final updateBotStatus$lambda$13()V
     .locals 0
 
     return-void
 .end method
 
-.method private static final updateBotStatus$lambda-15(Ljava/lang/Throwable;)V
-    .locals 0
+.method private static final updateBotStatus$lambda$14(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 365
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -1049,7 +898,7 @@
 
     move-result-object v9
 
-    .line 13602
+    .line 13645
     array-length v10, v9
 
     const/4 v1, 0x0
@@ -1068,12 +917,12 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 114
-    iget-object v2, v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->tabViews:Ljava/util/Map;
-
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
+
+    .line 114
+    iget-object v2, v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->tabViews:Ljava/util/Map;
 
     new-instance v3, Lcom/smedialink/ui/shop/view/GridBotsPageView;
 
@@ -1087,13 +936,13 @@
 
     goto :goto_1
 
-    .line 116
     :cond_0
-    iget-object v14, v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->tabViews:Ljava/util/Map;
-
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v15
+    move-result-object v14
+
+    .line 116
+    iget-object v15, v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->tabViews:Ljava/util/Map;
 
     new-instance v6, Lcom/smedialink/ui/shop/view/ListBotsPageView;
 
@@ -1115,7 +964,7 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/smedialink/ui/shop/view/ListBotsPageView;-><init>(Lcom/smedialink/ui/shop/NeurobotsStoreActivity$StoreTab;Lio/reactivex/disposables/CompositeDisposable;Lcom/smedialink/bots/domain/model/BotLanguage;Landroid/content/Context;I)V
 
-    invoke-interface {v14, v15, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v15, v14, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_1
     add-int/lit8 v12, v12, 0x1
@@ -1383,7 +1232,7 @@
 
     const-string v10, "null cannot be cast to non-null type com.google.android.material.appbar.AppBarLayout.LayoutParams"
 
-    invoke-static {v6, v10}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v6, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v6, Lcom/google/android/material/appbar/AppBarLayout$LayoutParams;
 
@@ -1447,7 +1296,7 @@
 
     const-string v5, "null cannot be cast to non-null type androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams"
 
-    invoke-static {v1, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v1, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;
 
@@ -1534,12 +1383,9 @@
 
     iput-object v1, v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    if-nez v1, :cond_16
-
-    goto :goto_2
+    if-eqz v1, :cond_16
 
     .line 185
-    :cond_16
     sget v5, Lorg/telegram/messenger/R$string;->Search:I
 
     const-string v6, "Search"
@@ -1550,23 +1396,21 @@
 
     invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSearchFieldHint(Ljava/lang/CharSequence;)V
 
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 186
-    :goto_2
+    :cond_16
     iget-object v1, v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/16 v5, 0x8
 
     if-nez v1, :cond_17
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_17
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 187
-    :goto_3
+    :goto_2
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v6, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
@@ -1613,8 +1457,6 @@
     invoke-direct {v1, v6}, Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;-><init>(I)V
 
     invoke-virtual {v1, v4}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->setHasStableIds(Z)V
-
-    sget-object v6, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     iput-object v1, v0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->searchResultsAdapter:Lcom/smedialink/ui/shop/view/adapter/BotsAdapter;
 
@@ -1821,12 +1663,12 @@
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_24
     move-object v3, v2
 
-    :goto_4
+    :goto_3
     const/high16 v2, -0x40000000    # -2.0f
 
     invoke-static {v11, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IF)Landroid/widget/FrameLayout$LayoutParams;
@@ -1861,12 +1703,12 @@
 
     const/4 v2, 0x0
 
-    if-ne p1, p2, :cond_5
+    if-ne p1, p2, :cond_4
 
     .line 276
     aget-object p1, p3, v2
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/smedialink/bots/domain/model/ShopItem;
 
@@ -1883,11 +1725,11 @@
 
     aget p2, p3, p2
 
-    if-eq p2, v1, :cond_4
+    if-eq p2, v1, :cond_3
 
     const/4 p3, 0x2
 
-    if-eq p2, p3, :cond_3
+    if-eq p2, p3, :cond_2
 
     const/4 p3, 0x3
 
@@ -1915,17 +1757,14 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    if-eqz p1, :cond_7
 
-    goto/16 :goto_2
-
-    :cond_2
     invoke-direct {p0, p1}, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->purchaseItem(Ljava/lang/String;)V
 
     goto/16 :goto_2
 
     .line 281
-    :cond_3
+    :cond_2
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getBotId()Ljava/lang/String;
 
     move-result-object p1
@@ -1937,7 +1776,7 @@
     goto/16 :goto_2
 
     .line 279
-    :cond_4
+    :cond_3
     invoke-virtual {p1}, Lcom/smedialink/bots/domain/model/ShopItem;->getBotId()Ljava/lang/String;
 
     move-result-object p1
@@ -1949,15 +1788,15 @@
     goto/16 :goto_2
 
     .line 291
-    :cond_5
+    :cond_4
     sget p2, Lorg/telegram/messenger/NotificationCenter;->botItemClicked:I
 
-    if-ne p1, p2, :cond_6
+    if-ne p1, p2, :cond_5
 
     .line 292
     aget-object p1, p3, v2
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lcom/smedialink/bots/domain/model/ShopItem;
 
@@ -1994,10 +1833,10 @@
     goto/16 :goto_2
 
     .line 299
-    :cond_6
+    :cond_5
     sget p2, Lorg/telegram/messenger/NotificationCenter;->botLanguageChanged:I
 
-    if-ne p1, p2, :cond_8
+    if-ne p1, p2, :cond_7
 
     .line 300
     sget-object p1, Lcom/smedialink/bots/domain/model/BotLanguage;->Companion:Lcom/smedialink/bots/domain/model/BotLanguage$Companion;
@@ -2053,13 +1892,13 @@
 
     move-result-object p2
 
-    .line 13602
+    .line 13645
     array-length p3, p2
 
     const/4 v0, 0x0
 
     :goto_0
-    if-ge v2, p3, :cond_8
+    if-ge v2, p3, :cond_7
 
     aget-object v3, p2, v2
 
@@ -2074,7 +1913,7 @@
 
     aget v3, v5, v3
 
-    if-ne v3, v1, :cond_7
+    if-ne v3, v1, :cond_6
 
     .line 304
     iget-object v3, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->tabViews:Ljava/util/Map;
@@ -2089,7 +1928,7 @@
 
     const-string v3, "null cannot be cast to non-null type com.smedialink.ui.shop.view.GridBotsPageView"
 
-    invoke-static {v0, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Lcom/smedialink/ui/shop/view/GridBotsPageView;
 
@@ -2102,7 +1941,7 @@
     goto :goto_1
 
     .line 307
-    :cond_7
+    :cond_6
     iget-object v3, p0, Lcom/smedialink/ui/shop/NeurobotsStoreActivity;->tabViews:Ljava/util/Map;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2115,7 +1954,7 @@
 
     const-string v3, "null cannot be cast to non-null type com.smedialink.ui.shop.view.ListBotsPageView"
 
-    invoke-static {v0, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Lcom/smedialink/ui/shop/view/ListBotsPageView;
 
@@ -2132,7 +1971,7 @@
 
     goto :goto_0
 
-    :cond_8
+    :cond_7
     :goto_2
     return-void
 .end method

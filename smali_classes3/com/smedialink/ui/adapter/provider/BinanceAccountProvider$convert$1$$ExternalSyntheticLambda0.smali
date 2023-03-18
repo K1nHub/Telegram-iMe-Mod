@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/adapter/provider/BinanceAccountProvider$convert$1$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/adapter/provider/BinanceAccountProvider$convert$1;->$r8$lambda$DygpQZsePnJ-f_3ux5tTcJiO7Ns(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/adapter/provider/BinanceAccountProvider$convert$1;->$r8$lambda$nGzTPoDQrLTFS0M5idSTyIeXP2M(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Landroid/view/View;)V
 
     return-void
 .end method

@@ -64,7 +64,7 @@
 .method constructor <init>(Lorg/telegram/ui/CalendarActivity$MonthView;Lorg/telegram/ui/CalendarActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 599
+    .line 598
     iput-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iput-object p3, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->val$context:Landroid/content/Context;
@@ -77,7 +77,7 @@
 .method private getDayAtCoord(FF)Lorg/telegram/ui/CalendarActivity$PeriodDay;
     .locals 13
 
-    .line 666
+    .line 665
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
@@ -88,11 +88,11 @@
 
     return-object v2
 
-    .line 670
+    .line 669
     :cond_0
     iget v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->startDayOfWeek:I
 
-    .line 672
+    .line 671
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -105,7 +105,7 @@
 
     const/16 v3, 0x34
 
-    .line 673
+    .line 672
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -114,7 +114,7 @@
 
     const/16 v4, 0x2c
 
-    .line 674
+    .line 673
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -127,7 +127,7 @@
 
     const/4 v8, 0x0
 
-    .line 675
+    .line 674
     :goto_0
     iget-object v9, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -153,7 +153,7 @@
 
     add-float/2addr v11, v10
 
-    .line 677
+    .line 676
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -188,7 +188,7 @@
 
     if-gtz v9, :cond_1
 
-    .line 680
+    .line 679
     iget-object v9, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v9, v9, Lorg/telegram/ui/CalendarActivity$MonthView;->messagesByDays:Landroid/util/SparseArray;
@@ -226,14 +226,14 @@
 .method private synthetic lambda$onLongPress$0(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/CalendarActivity$PeriodDay;)V
     .locals 1
 
-    .line 727
+    .line 726
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 728
+    .line 727
     check-cast p1, Lorg/telegram/ui/ChatActivity;
 
     iget p2, p2, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
@@ -246,7 +246,7 @@
 .method private synthetic lambda$onLongPress$1(Lorg/telegram/ui/CalendarActivity$PeriodDay;Landroid/view/View;)V
     .locals 2
 
-    .line 723
+    .line 722
     iget-object p2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p2, p2, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -277,7 +277,7 @@
 
     if-lt p2, v0, :cond_0
 
-    .line 724
+    .line 723
     iget-object p2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p2, p2, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -314,12 +314,12 @@
 
     check-cast p2, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 725
+    .line 724
     instance-of v0, p2, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 726
+    .line 725
     new-instance v0, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/CalendarActivity$MonthView$2;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/CalendarActivity$PeriodDay;)V
@@ -328,7 +328,7 @@
 
     invoke-static {v0, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 732
+    .line 731
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -342,7 +342,7 @@
 .method private synthetic lambda$onLongPress$2(Lorg/telegram/ui/CalendarActivity$PeriodDay;Landroid/view/View;)V
     .locals 0
 
-    .line 741
+    .line 740
     iget-object p2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p2, p2, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -355,7 +355,7 @@
 
     invoke-static {p2, p1}, Lorg/telegram/ui/CalendarActivity;->access$302(Lorg/telegram/ui/CalendarActivity;I)I
 
-    .line 742
+    .line 741
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -364,21 +364,21 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/CalendarActivity;->access$502(Lorg/telegram/ui/CalendarActivity;Z)Z
 
-    .line 743
+    .line 742
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$600(Lorg/telegram/ui/CalendarActivity;)V
 
-    .line 744
+    .line 743
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$700(Lorg/telegram/ui/CalendarActivity;)V
 
-    .line 745
+    .line 744
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -391,7 +391,7 @@
 .method private synthetic lambda$onLongPress$3(Landroid/view/View;)V
     .locals 8
 
-    .line 753
+    .line 752
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -412,7 +412,7 @@
 
     if-lt p1, v0, :cond_0
 
-    .line 754
+    .line 753
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -449,12 +449,12 @@
 
     check-cast p1, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 755
+    .line 754
     instance-of v0, p1, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 756
+    .line 755
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v1, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -493,7 +493,7 @@
 
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->createClearDaysDialogAlert(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 765
+    .line 764
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -507,7 +507,7 @@
 .method private synthetic lambda$onLongPress$4(Landroid/view/View;)V
     .locals 0
 
-    .line 782
+    .line 781
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -530,10 +530,10 @@
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 8
 
-    .line 697
+    .line 696
     invoke-super {p0, p1}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onLongPress(Landroid/view/MotionEvent;)V
 
-    .line 698
+    .line 697
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -546,7 +546,7 @@
 
     return-void
 
-    .line 701
+    .line 700
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -562,19 +562,19 @@
 
     if-eqz p1, :cond_3
 
-    .line 704
+    .line 703
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 706
+    .line 705
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 707
+    .line 706
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v2, v2, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -589,7 +589,7 @@
 
     if-lez v6, :cond_1
 
-    .line 708
+    .line 707
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v2, v2, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -604,7 +604,7 @@
 
     goto :goto_0
 
-    .line 710
+    .line 709
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -620,7 +620,7 @@
 
     invoke-virtual {v0, v4, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 712
+    .line 711
     :goto_0
     iget v2, p1, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
 
@@ -630,15 +630,15 @@
 
     const-string v2, "need_remove_previous_same_chat_activity"
 
-    .line 713
+    .line 712
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 714
+    .line 713
     new-instance v2, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 716
+    .line 715
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     iget-object v3, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
@@ -661,7 +661,7 @@
 
     invoke-direct {v0, v3, v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 717
+    .line 716
     iget-object v3, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v3, v3, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -674,7 +674,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundColor(I)V
 
-    .line 719
+    .line 718
     new-instance v3, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v4, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
@@ -689,7 +689,7 @@
 
     invoke-direct {v3, v4, v5, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 720
+    .line 719
     sget v4, Lorg/telegram/messenger/R$string;->JumpToDate:I
 
     const-string v6, "JumpToDate"
@@ -704,20 +704,20 @@
 
     const/16 v4, 0xa0
 
-    .line 721
+    .line 720
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
 
-    .line 722
+    .line 721
     new-instance v6, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda2;
 
     invoke-direct {v6, p0, p1}, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/CalendarActivity$MonthView$2;Lorg/telegram/ui/CalendarActivity$PeriodDay;)V
 
     invoke-virtual {v3, v6}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 734
+    .line 733
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 736
+    .line 735
     iget-object v3, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v3, v3, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -728,7 +728,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 737
+    .line 736
     new-instance v3, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v6, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
@@ -741,7 +741,7 @@
 
     invoke-direct {v3, v6, v1, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 738
+    .line 737
     sget v6, Lorg/telegram/messenger/R$string;->SelectThisDay:I
 
     const-string v7, "SelectThisDay"
@@ -754,20 +754,20 @@
 
     invoke-virtual {v3, v6, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 739
+    .line 738
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
 
-    .line 740
+    .line 739
     new-instance v6, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda3;
 
     invoke-direct {v6, p0, p1}, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/CalendarActivity$MonthView$2;Lorg/telegram/ui/CalendarActivity$PeriodDay;)V
 
     invoke-virtual {v3, v6}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 747
+    .line 746
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 749
+    .line 748
     new-instance p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v3, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
@@ -780,7 +780,7 @@
 
     invoke-direct {p1, v3, v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 750
+    .line 749
     sget v1, Lorg/telegram/messenger/R$string;->ClearHistory:I
 
     const-string v3, "ClearHistory"
@@ -793,24 +793,24 @@
 
     invoke-virtual {p1, v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 751
+    .line 750
     invoke-virtual {p1, v4}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
 
-    .line 752
+    .line 751
     new-instance v1, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/CalendarActivity$MonthView$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/CalendarActivity$MonthView$2;)V
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 767
+    .line 766
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 769
+    .line 768
     :cond_2
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setFitItems(Z)V
 
-    .line 772
+    .line 771
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -823,7 +823,7 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/CalendarActivity;->access$2002(Lorg/telegram/ui/CalendarActivity;Landroid/view/View;)Landroid/view/View;
 
-    .line 781
+    .line 780
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -838,7 +838,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 784
+    .line 783
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -851,7 +851,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 785
+    .line 784
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -862,7 +862,7 @@
 
     invoke-virtual {p1, v5}, Landroid/view/View;->setFitsSystemWindows(Z)V
 
-    .line 786
+    .line 785
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -871,7 +871,7 @@
 
     move-result-object p1
 
-    invoke-interface {p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getOverlayContainerView()Landroid/view/ViewGroup;
+    invoke-interface {p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getOverlayContainerView()Landroid/widget/FrameLayout;
 
     move-result-object p1
 
@@ -889,16 +889,16 @@
 
     move-result-object v3
 
-    invoke-virtual {p1, v1, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, v1, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 787
+    .line 786
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$2400(Lorg/telegram/ui/CalendarActivity;)V
 
-    .line 789
+    .line 788
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -912,7 +912,7 @@
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 610
+    .line 609
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -927,7 +927,7 @@
 
     return v1
 
-    .line 613
+    .line 612
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -947,7 +947,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 614
+    .line 613
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -962,7 +962,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 615
+    .line 614
     iget-object v2, v0, Lorg/telegram/ui/CalendarActivity$PeriodDay;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v2, :cond_1
@@ -975,7 +975,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 616
+    .line 615
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v2
@@ -984,14 +984,14 @@
 
     invoke-interface {v3, v2, v0}, Lorg/telegram/ui/CalendarActivity$Callback;->onDateSelected(II)V
 
-    .line 617
+    .line 616
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 620
+    .line 619
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -999,7 +999,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 621
+    .line 620
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CalendarActivity;->access$500(Lorg/telegram/ui/CalendarActivity;)Z
@@ -1008,7 +1008,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 622
+    .line 621
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -1023,7 +1023,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 624
+    .line 623
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1034,7 +1034,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 625
+    .line 624
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1045,7 +1045,7 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 626
+    .line 625
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1054,7 +1054,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/CalendarActivity;->access$1402(Lorg/telegram/ui/CalendarActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 628
+    .line 627
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1078,7 +1078,7 @@
 
     goto :goto_0
 
-    .line 645
+    .line 644
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1094,7 +1094,7 @@
 
     goto/16 :goto_1
 
-    .line 629
+    .line 628
     :cond_4
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
@@ -1121,7 +1121,7 @@
 
     if-ne v0, v2, :cond_5
 
-    .line 630
+    .line 629
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1134,7 +1134,7 @@
 
     goto :goto_1
 
-    .line 631
+    .line 630
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1148,7 +1148,7 @@
 
     if-ne v0, v2, :cond_6
 
-    .line 632
+    .line 631
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1161,7 +1161,7 @@
 
     goto :goto_1
 
-    .line 633
+    .line 632
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1175,7 +1175,7 @@
 
     if-ne v0, v2, :cond_7
 
-    .line 634
+    .line 633
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1188,7 +1188,7 @@
 
     goto :goto_1
 
-    .line 635
+    .line 634
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1208,7 +1208,7 @@
 
     if-ne v0, v2, :cond_9
 
-    .line 636
+    .line 635
     iget v0, p1, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I
 
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
@@ -1221,7 +1221,7 @@
 
     if-le v0, v2, :cond_8
 
-    .line 637
+    .line 636
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1232,7 +1232,7 @@
 
     goto :goto_1
 
-    .line 639
+    .line 638
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1244,7 +1244,7 @@
 
     goto :goto_1
 
-    .line 642
+    .line 641
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1258,7 +1258,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/CalendarActivity;->access$302(Lorg/telegram/ui/CalendarActivity;I)I
 
-    .line 648
+    .line 647
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
@@ -1266,7 +1266,7 @@
 
     invoke-static {p1}, Lorg/telegram/ui/CalendarActivity;->access$600(Lorg/telegram/ui/CalendarActivity;)V
 
-    .line 649
+    .line 648
     iget-object p1, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object p1, p1, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1275,7 +1275,7 @@
 
     goto :goto_2
 
-    .line 652
+    .line 651
     :cond_a
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -1291,7 +1291,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 653
+    .line 652
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1322,7 +1322,7 @@
 
     if-lt v0, v2, :cond_b
 
-    .line 654
+    .line 653
     iget-object v0, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v0, v0, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
@@ -1359,19 +1359,19 @@
 
     check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 655
+    .line 654
     instance-of v2, v0, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v2, :cond_b
 
-    .line 656
+    .line 655
     iget-object v2, p0, Lorg/telegram/ui/CalendarActivity$MonthView$2;->this$1:Lorg/telegram/ui/CalendarActivity$MonthView;
 
     iget-object v2, v2, Lorg/telegram/ui/CalendarActivity$MonthView;->this$0:Lorg/telegram/ui/CalendarActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 657
+    .line 656
     check-cast v0, Lorg/telegram/ui/ChatActivity;
 
     iget p1, p1, Lorg/telegram/ui/CalendarActivity$PeriodDay;->date:I

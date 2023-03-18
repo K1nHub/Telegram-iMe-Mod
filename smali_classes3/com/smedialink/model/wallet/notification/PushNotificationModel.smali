@@ -6,19 +6,19 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Unsupported;,
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Simplex;,
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Approve;,
         Lcom/smedialink/model/wallet/notification/PushNotificationModel$BinancePayRequestCreated;,
         Lcom/smedialink/model/wallet/notification/PushNotificationModel$BinancePayRequestStatusUpdated;,
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalStarted;,
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;,
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingStarted;,
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingFinished;,
         Lcom/smedialink/model/wallet/notification/PushNotificationModel$Cancel;,
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Approve;,
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Companion;,
         Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer;,
         Lcom/smedialink/model/wallet/notification/PushNotificationModel$Donation;,
-        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Companion;
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Simplex;,
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingFinished;,
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalFinished;,
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingSafeWithdrawalStarted;,
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$StakingStarted;,
+        Lcom/smedialink/model/wallet/notification/PushNotificationModel$Unsupported;
     }
 .end annotation
 

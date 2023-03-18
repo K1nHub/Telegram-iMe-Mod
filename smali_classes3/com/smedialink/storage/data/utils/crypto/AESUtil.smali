@@ -227,7 +227,7 @@
 
     const-string p3, "null cannot be cast to non-null type org.bouncycastle.crypto.params.KeyParameter"
 
-    invoke-static {p2, p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lorg/bouncycastle/crypto/params/KeyParameter;
 
@@ -312,12 +312,12 @@
 
     move-result-object p1
 
-    const-string p2, "raw"
+    new-instance p2, Ljava/lang/String;
+
+    const-string p3, "raw"
 
     .line 261
-    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance p2, Ljava/lang/String;
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p2, p1, v0}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
@@ -466,7 +466,7 @@
 
     const-string v5, "null cannot be cast to non-null type org.bouncycastle.crypto.params.KeyParameter"
 
-    invoke-static {v1, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v1, Lorg/bouncycastle/crypto/params/KeyParameter;
 
@@ -560,9 +560,9 @@
     .line 99
     invoke-static {v1, v4, v5, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 102
     new-instance v1, Ljava/lang/String;
 
+    .line 102
     invoke-direct {v1, v5, v3}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     .line 103

@@ -33,7 +33,7 @@
 
     iget-wide v1, p0, Lorg/fork/controller/RecentChatsController$$ExternalSyntheticLambda1;->f$1:J
 
-    invoke-static {v0, v1, v2}, Lorg/fork/controller/RecentChatsController;->$r8$lambda$Q8nfepIUzppEQJsENG1MF3AS5As(Lorg/fork/controller/RecentChatsController;J)V
+    invoke-static {v0, v1, v2}, Lorg/fork/controller/RecentChatsController;->$r8$lambda$2GS0yNSbDQleY6Ut3yOlg8qbjc0(Lorg/fork/controller/RecentChatsController;J)V
 
     return-void
 .end method

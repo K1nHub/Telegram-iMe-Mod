@@ -25,18 +25,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$35Q8C9joAPW3Mf4AIKNh7x4coYE(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
+.method public static synthetic $r8$lambda$LTdVffj-93A5L8FdE1K2od5LNqI(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->onBindViewHolder$lambda-8$lambda-7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->onBindViewHolder$lambda$8$lambda$7$lambda$6(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$3HnYK6dLF2IJRRFW25lxSZEG0gs(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
+.method public static synthetic $r8$lambda$jsCDIS94ompTD90HOeAG_CvhzH8(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->onBindViewHolder$lambda-8$lambda-7$lambda-6(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity$ListAdapter;->onBindViewHolder$lambda$8$lambda$7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
 
     return-void
 .end method
@@ -50,10 +50,6 @@
             ")V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "mContext"
 
@@ -72,7 +68,7 @@
     return-void
 .end method
 
-.method private static final onBindViewHolder$lambda-8$lambda-7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
+.method private static final onBindViewHolder$lambda$8$lambda$7(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/models/SortingTabState;I)V
     .locals 4
 
     const-string v0, "this$0"
@@ -113,7 +109,7 @@
     return-void
 .end method
 
-.method private static final onBindViewHolder$lambda-8$lambda-7$lambda-6(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
+.method private static final onBindViewHolder$lambda$8$lambda$7$lambda$6(Lorg/fork/models/SortingTabState;Lorg/fork/ui/fragment/SortingFilterSettingsActivity;ILjava/util/Set;)V
     .locals 1
 
     const-string v0, "$state"
@@ -375,7 +371,7 @@
 
     move-result v1
 
-    const-string v2, "windowBackgroundGrayShadow"
+    const-string/jumbo v2, "windowBackgroundGrayShadow"
 
     if-ne p2, v1, :cond_2
 
@@ -576,8 +572,6 @@
 
     invoke-static {p2, p1}, Lorg/fork/ui/fragment/SortingFilterSettingsActivity;->access$setTopicsBar$p(Lorg/fork/ui/fragment/SortingFilterSettingsActivity;Lorg/fork/ui/view/ArchiveSwitchTopicsBar;)V
 
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 220
@@ -596,9 +590,6 @@
 
     .line 221
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
-
-    .line 222
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 
@@ -624,7 +615,7 @@
 
     invoke-direct {p1, p2}, Lorg/fork/ui/view/SortingFilterCell;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "windowBackgroundWhite"
+    const-string/jumbo p2, "windowBackgroundWhite"
 
     .line 225
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -632,9 +623,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
-
-    .line 226
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 228
     :goto_0
@@ -647,9 +635,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 229
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 212
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

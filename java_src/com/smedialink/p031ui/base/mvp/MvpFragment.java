@@ -56,8 +56,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: postViewAction$lambda-0  reason: not valid java name */
-    public static final void m1407postViewAction$lambda0(Function0 tmp0) {
+    public static final void postViewAction$lambda$0(Function0 tmp0) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke();
     }
@@ -67,7 +66,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         getMvpBaseDelegate().getViewHandler().post(new Runnable() { // from class: com.smedialink.ui.base.mvp.MvpFragment$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MvpFragment.m1407postViewAction$lambda0(Function0.this);
+                MvpFragment.postViewAction$lambda$0(Function0.this);
             }
         });
     }
@@ -179,10 +178,9 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
     public void saveSelfArgs(Bundle bundle) {
         super.saveSelfArgs(bundle);
         MvpDelegate<MvpFragment> mvpDelegate = getMvpBaseDelegate().getMvpDelegate();
-        if (mvpDelegate == null) {
-            return;
+        if (mvpDelegate != null) {
+            mvpDelegate.onSaveInstanceState(bundle);
         }
-        mvpDelegate.onSaveInstanceState(bundle);
     }
 
     public void showAlertDialog(DialogModel dialogModel, Callbacks$Callback positiveAction, Callbacks$Callback cancelAction, boolean z) {
@@ -195,7 +193,6 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         AlertDialog createDialog = DialogUtils.createDialog(parentActivity, dialogModel, positiveAction, cancelAction);
         createDialog.setCanceledOnTouchOutside(z);
         createDialog.setCancelable(z);
-        Unit unit = Unit.INSTANCE;
         mvpBaseDelegate.showDialog(createDialog);
     }
 

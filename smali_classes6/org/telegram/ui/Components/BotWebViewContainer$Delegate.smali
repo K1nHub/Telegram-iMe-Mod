@@ -47,3 +47,16 @@
 
 .method public abstract onWebAppSetupClosingBehavior(Z)V
 .end method
+
+.method public abstract onWebAppSwitchInlineQuery(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Ljava/util/List;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/telegram/tgnet/TLRPC$User;",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+.end method

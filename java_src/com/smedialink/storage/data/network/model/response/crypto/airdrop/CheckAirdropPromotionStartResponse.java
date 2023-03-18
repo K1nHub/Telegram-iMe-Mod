@@ -58,7 +58,7 @@ public final class CheckAirdropPromotionStartResponse {
     }
 
     public String toString() {
-        return "CheckAirdropPromotionStartResponse(status=" + this.status + ", value=" + this.value + ", rightRequestId=" + ((Object) this.rightRequestId) + ')';
+        return "CheckAirdropPromotionStartResponse(status=" + this.status + ", value=" + this.value + ", rightRequestId=" + this.rightRequestId + ')';
     }
 
     public CheckAirdropPromotionStartResponse(String status, Integer num, String str) {

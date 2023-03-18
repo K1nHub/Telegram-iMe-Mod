@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/view/View;)V
     .locals 0
 
-    .line 1736
+    .line 1731
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ContactsActivity$15;->val$previousFabContainer:Landroid/view/View;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1739
+    .line 1734
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$2300(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -50,7 +50,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 1740
+    .line 1735
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$2300(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -59,24 +59,24 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 1741
+    .line 1736
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->val$previousFabContainer:Landroid/view/View;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1742
+    .line 1737
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->val$previousFabContainer:Landroid/view/View;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1743
+    .line 1738
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ContactsActivity;->access$2402(Lorg/telegram/ui/ContactsActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 1744
+    .line 1739
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;

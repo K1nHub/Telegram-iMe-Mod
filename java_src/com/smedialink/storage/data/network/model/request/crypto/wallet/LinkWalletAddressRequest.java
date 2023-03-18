@@ -67,7 +67,7 @@ public final class LinkWalletAddressRequest {
     }
 
     public String toString() {
-        return "LinkWalletAddressRequest(walletAddress=" + this.walletAddress + ", networkType=" + this.networkType + ", blockchainPlatform=" + this.blockchainPlatform + ", walletPublicKey=" + ((Object) this.walletPublicKey) + ')';
+        return "LinkWalletAddressRequest(walletAddress=" + this.walletAddress + ", networkType=" + this.networkType + ", blockchainPlatform=" + this.blockchainPlatform + ", walletPublicKey=" + this.walletPublicKey + ')';
     }
 
     public LinkWalletAddressRequest(String walletAddress, NetworkType networkType, String blockchainPlatform, String str) {

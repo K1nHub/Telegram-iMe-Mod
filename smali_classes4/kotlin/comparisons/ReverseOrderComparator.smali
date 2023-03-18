@@ -41,7 +41,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 315
+    .line 323
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -71,7 +71,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 316
+    .line 324
     invoke-interface {p2, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result p1
@@ -82,7 +82,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 315
+    .line 323
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -106,7 +106,7 @@
         }
     .end annotation
 
-    .line 318
+    .line 326
     sget-object v0, Lkotlin/comparisons/NaturalOrderComparator;->INSTANCE:Lkotlin/comparisons/NaturalOrderComparator;
 
     return-object v0

@@ -21,16 +21,15 @@ import java.util.Arrays;
 import java.util.List;
 import org.fork.p046ui.view.PinnedPlayerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.p048ui.ActionBar.BackDrawable;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
@@ -110,8 +109,8 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
         this.actionBar.setCastShadows(false);
         this.actionBar.setAddToContainer(false);
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.MediaActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.MediaActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     MediaActivity.this.finishFragment();
@@ -123,13 +122,13 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
         final SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.Components.MediaActivity.2
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                ((FrameLayout.LayoutParams) MediaActivity.this.sharedMediaLayout.getLayoutParams()).topMargin = C3222ActionBar.getCurrentActionBarHeight() + (((BaseFragment) MediaActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
+                ((FrameLayout.LayoutParams) MediaActivity.this.sharedMediaLayout.getLayoutParams()).topMargin = C3351ActionBar.getCurrentActionBarHeight() + (((BaseFragment) MediaActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
                 layoutParams.topMargin = ((BaseFragment) MediaActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0;
-                layoutParams.height = C3222ActionBar.getCurrentActionBarHeight();
-                ((FrameLayout.LayoutParams) MediaActivity.this.nameTextView.getLayoutParams()).topMargin = (((C3222ActionBar.getCurrentActionBarHeight() / 2) - AndroidUtilities.m50dp(22)) / 2) + AndroidUtilities.m50dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 5 : 4);
-                ((FrameLayout.LayoutParams) MediaActivity.this.mediaCounterTextView.getLayoutParams()).topMargin = ((C3222ActionBar.getCurrentActionBarHeight() / 2) + (((C3222ActionBar.getCurrentActionBarHeight() / 2) - AndroidUtilities.m50dp(19)) / 2)) - AndroidUtilities.m50dp(3);
-                ((FrameLayout.LayoutParams) MediaActivity.this.avatarImageView.getLayoutParams()).topMargin = (C3222ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m50dp(42)) / 2;
+                layoutParams.height = C3351ActionBar.getCurrentActionBarHeight();
+                ((FrameLayout.LayoutParams) MediaActivity.this.nameTextView.getLayoutParams()).topMargin = (((C3351ActionBar.getCurrentActionBarHeight() / 2) - AndroidUtilities.m50dp(22)) / 2) + AndroidUtilities.m50dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 5 : 4);
+                ((FrameLayout.LayoutParams) MediaActivity.this.mediaCounterTextView.getLayoutParams()).topMargin = ((C3351ActionBar.getCurrentActionBarHeight() / 2) + (((C3351ActionBar.getCurrentActionBarHeight() / 2) - AndroidUtilities.m50dp(19)) / 2)) - AndroidUtilities.m50dp(3);
+                ((FrameLayout.LayoutParams) MediaActivity.this.avatarImageView.getLayoutParams()).topMargin = (C3351ActionBar.getCurrentActionBarHeight() - AndroidUtilities.m50dp(42)) / 2;
                 super.onMeasure(i, i2);
             }
 
@@ -168,10 +167,10 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 if (getImageReceiver().hasNotThumb()) {
-                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrProfilePicture", C3158R.string.AccDescrProfilePicture));
+                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrProfilePicture", C3286R.string.AccDescrProfilePicture));
                     if (Build.VERSION.SDK_INT >= 21) {
-                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString("Open", C3158R.string.Open)));
-                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrOpenInPhotoViewer", C3158R.string.AccDescrOpenInPhotoViewer)));
+                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString("Open", C3286R.string.Open)));
+                        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrOpenInPhotoViewer", C3286R.string.AccDescrOpenInPhotoViewer)));
                         return;
                     }
                     return;
@@ -244,9 +243,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
 
             @Override // org.telegram.p048ui.Components.SharedMediaLayout
             protected void onSearchStateChanged(boolean z) {
-                if (SharedConfig.smoothKeyboard) {
-                    AndroidUtilities.removeAdjustResize(MediaActivity.this.getParentActivity(), ((BaseFragment) MediaActivity.this).classGuid);
-                }
+                AndroidUtilities.removeAdjustResize(MediaActivity.this.getParentActivity(), ((BaseFragment) MediaActivity.this).classGuid);
                 AndroidUtilities.updateViewVisibilityAnimated(frameLayout, !z, 0.95f, true);
             }
 
@@ -286,7 +283,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
                 TLRPC$User user2 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.dialogId));
                 if (user2 != null) {
                     if (user2.self) {
-                        this.nameTextView.setText(LocaleController.getString("SavedMessages", C3158R.string.SavedMessages));
+                        this.nameTextView.setText(LocaleController.getString("SavedMessages", C3286R.string.SavedMessages));
                         avatarDrawable.setAvatarType(1);
                         avatarDrawable.setScaleSize(0.8f);
                     } else {
@@ -308,7 +305,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
         }
         this.avatarImageView.setImage(ImageLocation.getForUserOrChat(tLObject, 1), "50_50", avatarDrawable, tLObject);
         if (TextUtils.isEmpty(this.nameTextView.getText())) {
-            this.nameTextView.setText(LocaleController.getString("SharedContentTitle", C3158R.string.SharedContentTitle));
+            this.nameTextView.setText(LocaleController.getString("SharedContentTitle", C3286R.string.SharedContentTitle));
         }
         if (this.sharedMediaLayout.isSearchItemVisible()) {
             r5 = 0;

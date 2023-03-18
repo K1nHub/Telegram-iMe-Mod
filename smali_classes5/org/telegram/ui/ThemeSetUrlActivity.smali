@@ -919,9 +919,9 @@
 .end method
 
 .method private synthetic lambda$createView$5(Landroid/content/Context;Landroid/view/View;)V
-    .locals 18
+    .locals 19
 
-    move-object/from16 v7, p0
+    move-object/from16 v8, p0
 
     move-object/from16 v2, p1
 
@@ -936,28 +936,28 @@
 
     .line 353
     :cond_0
-    new-instance v8, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    new-instance v9, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    invoke-direct {v8, v0, v9}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;Z)V
+    invoke-direct {v9, v0, v10}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;Z)V
 
     .line 354
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    invoke-virtual {v9, v10}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     .line 356
-    new-instance v10, Landroid/widget/LinearLayout;
+    new-instance v11, Landroid/widget/LinearLayout;
 
-    invoke-direct {v10, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x1
 
     .line 357
-    invoke-virtual {v10, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v11, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 359
     new-instance v1, Landroid/widget/TextView;
@@ -998,26 +998,26 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    const/4 v11, -0x1
+    const/4 v12, -0x1
 
-    const/4 v12, -0x2
+    const/4 v13, -0x2
 
-    const/16 v13, 0x33
+    const/16 v14, 0x33
 
-    const/16 v14, 0x16
+    const/16 v15, 0x16
 
-    const/16 v15, 0xc
+    const/16 v16, 0xc
 
-    const/16 v16, 0x16
+    const/16 v17, 0x16
 
-    const/16 v17, 0x4
+    const/16 v18, 0x4
 
     .line 364
-    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
-    invoke-virtual {v10, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 365
     sget-object v0, Lorg/telegram/ui/ThemeSetUrlActivity$$ExternalSyntheticLambda4;->INSTANCE:Lorg/telegram/ui/ThemeSetUrlActivity$$ExternalSyntheticLambda4;
@@ -1025,12 +1025,12 @@
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 366
-    invoke-virtual {v8, v10}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     .line 368
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v5, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     .line 369
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->themes:Ljava/util/ArrayList;
@@ -1054,19 +1054,19 @@
     check-cast v3, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     .line 371
-    iget-object v5, v3, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
+    iget-object v4, v3, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
 
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$TL_theme;->document:Lorg/telegram/tgnet/TLRPC$Document;
+    iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$TL_theme;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    if-nez v5, :cond_1
+    if-nez v4, :cond_1
 
     goto :goto_1
 
     .line 374
     :cond_1
-    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
@@ -1075,58 +1075,60 @@
 
     .line 376
     :cond_2
-    new-instance v11, Lorg/telegram/ui/ThemeSetUrlActivity$4;
+    new-instance v12, Lorg/telegram/ui/ThemeSetUrlActivity$4;
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v6, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    move-object v0, v11
+    move-object v0, v12
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
 
-    move-object v6, v8
+    move-object/from16 v3, p0
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/ThemeSetUrlActivity$4;-><init>(Lorg/telegram/ui/ThemeSetUrlActivity;Landroid/content/Context;ILjava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+    move-object v7, v9
 
-    const/4 v12, -0x1
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ThemeSetUrlActivity$4;-><init>(Lorg/telegram/ui/ThemeSetUrlActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ILjava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
 
-    const/16 v13, 0x94
+    const/4 v13, -0x1
 
-    const/4 v14, 0x0
+    const/16 v14, 0x94
 
-    const/4 v15, 0x7
+    const/4 v15, 0x0
 
-    const/16 v16, 0x0
+    const/16 v16, 0x7
 
-    const/16 v17, 0x1
+    const/16 v17, 0x0
+
+    const/16 v18, 0x1
 
     .line 382
-    invoke-static/range {v12 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v13 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
-    invoke-virtual {v10, v11, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v11, v12, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 383
-    iget-object v0, v7, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
-    invoke-virtual {v11, v0, v9}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->scrollToCurrentTheme(IZ)V
+    invoke-virtual {v12, v0, v10}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->scrollToCurrentTheme(IZ)V
 
     .line 384
-    invoke-virtual {v8}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
+    invoke-virtual {v9}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    invoke-virtual {v7, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+    invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
 .end method

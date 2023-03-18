@@ -29,7 +29,6 @@ import com.smedialink.utils.extentions.common.ViewExtKt;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt___ArraysKt;
@@ -43,7 +42,7 @@ import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.browser.Browser;
@@ -61,8 +60,8 @@ import org.telegram.p048ui.Components.StorageDiagramView;
 public final class DialogsFactoryKt {
     public static /* synthetic */ Dialog showSuccessAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3158R.string.common_ok);
-            Intrinsics.checkNotNullExpressionValue(charSequence3, "fun BaseFragment.showSuc… = buttonActionListener\n)");
+            charSequence3 = baseFragment.getParentActivity().getString(C3286R.string.common_ok);
+            Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         if ((i & 8) != 0) {
             callbacks$Callback = null;
@@ -80,8 +79,8 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog showErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3158R.string.common_ok);
-            Intrinsics.checkNotNullExpressionValue(charSequence3, "fun BaseFragment.showErr… = buttonActionListener\n)");
+            charSequence3 = baseFragment.getParentActivity().getString(C3286R.string.common_ok);
+            Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         if ((i & 8) != 0) {
             callbacks$Callback = null;
@@ -110,8 +109,8 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog showErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3158R.string.common_ok);
-            Intrinsics.checkNotNullExpressionValue(charSequence3, "fun BaseFragment.showErr…ctionListener\n        )\n)");
+            charSequence3 = baseFragment.getParentActivity().getString(C3286R.string.common_ok);
+            Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
         if ((i & 8) != 0) {
@@ -137,8 +136,8 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog createSuccessAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3158R.string.common_ok);
-            Intrinsics.checkNotNullExpressionValue(charSequence3, "fun BaseFragment.createS…(descriptionView, this)\n}");
+            charSequence3 = baseFragment.getParentActivity().getString(C3286R.string.common_ok);
+            Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
         if ((i & 8) != 0) {
@@ -157,8 +156,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(buttonText, "buttonText");
         Intrinsics.checkNotNullParameter(dialogApplyAction, "dialogApplyAction");
-        AlertDialog createDialog$default = createDialog$default(baseFragment, C3158R.C3160drawable.fork_ic_alert_success, 0, title, description, buttonText, callbacks$Callback, 2, null);
-        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3158R.C3161id.text_alert_description);
+        AlertDialog createDialog$default = createDialog$default(baseFragment, C3286R.C3288drawable.fork_ic_alert_success, 0, title, description, buttonText, callbacks$Callback, 2, null);
+        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3286R.C3289id.text_alert_description);
         Intrinsics.checkNotNullExpressionValue(descriptionView, "descriptionView");
         dialogApplyAction.invoke(descriptionView, createDialog$default);
         return createDialog$default;
@@ -166,8 +165,8 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog createErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3158R.string.common_ok);
-            Intrinsics.checkNotNullExpressionValue(charSequence3, "fun BaseFragment.createE…(descriptionView, this)\n}");
+            charSequence3 = baseFragment.getParentActivity().getString(C3286R.string.common_ok);
+            Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
         if ((i & 8) != 0) {
@@ -186,8 +185,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(buttonText, "buttonText");
         Intrinsics.checkNotNullParameter(dialogApplyAction, "dialogApplyAction");
-        AlertDialog createDialog$default = createDialog$default(baseFragment, C3158R.C3160drawable.fork_ic_alert_error, 0, title, description, buttonText, callbacks$Callback, 2, null);
-        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3158R.C3161id.text_alert_description);
+        AlertDialog createDialog$default = createDialog$default(baseFragment, C3286R.C3288drawable.fork_ic_alert_error, 0, title, description, buttonText, callbacks$Callback, 2, null);
+        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3286R.C3289id.text_alert_description);
         Intrinsics.checkNotNullExpressionValue(descriptionView, "descriptionView");
         dialogApplyAction.invoke(descriptionView, createDialog$default);
         return createDialog$default;
@@ -224,13 +223,12 @@ public final class DialogsFactoryKt {
     public static final void setBottomGravity(Dialog dialog) {
         Intrinsics.checkNotNullParameter(dialog, "<this>");
         Window window = dialog.getWindow();
-        if (window == null) {
-            return;
+        if (window != null) {
+            window.setGravity(80);
+            WindowManager.LayoutParams attributes = window.getAttributes();
+            attributes.y = AndroidUtilities.m51dp(16.0f);
+            window.setAttributes(attributes);
         }
-        window.setGravity(80);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.y = AndroidUtilities.m51dp(16.0f);
-        window.setAttributes(attributes);
     }
 
     public static final BottomSheet createOptionsBottomSheetDialog(BaseFragment baseFragment, String title, String[] items, DialogInterface.OnClickListener listener) {
@@ -238,17 +236,25 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(items, "items");
         Intrinsics.checkNotNullParameter(listener, "listener");
+        return createOptionsBottomSheetDialog(baseFragment, title, items, null, listener);
+    }
+
+    public static final BottomSheet createOptionsBottomSheetDialog(BaseFragment baseFragment, String title, String[] items, int[] iArr, DialogInterface.OnClickListener listener) {
+        Intrinsics.checkNotNullParameter(baseFragment, "<this>");
+        Intrinsics.checkNotNullParameter(title, "title");
+        Intrinsics.checkNotNullParameter(items, "items");
+        Intrinsics.checkNotNullParameter(listener, "listener");
         BottomSheet.Builder builder = new BottomSheet.Builder(baseFragment.getParentActivity());
-        builder.setTitle(title);
-        builder.setItems(items, listener);
+        builder.setTitle(title, true);
+        builder.setItems(items, iArr, listener);
         BottomSheet create = builder.create();
-        Intrinsics.checkNotNullExpressionValue(create, "Builder(parentActivity).…ems, listener)\n}.create()");
+        Intrinsics.checkNotNullExpressionValue(create, "Builder(parentActivity).…ons, listener)\n}.create()");
         return create;
     }
 
     public static /* synthetic */ BottomSheet createDiagramDialog$default(BaseFragment baseFragment, StatisticDiagramModel statisticDiagramModel, CharSequence charSequence, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
-            charSequence = LocaleController.getInternalString(C3158R.string.common_close);
+            charSequence = LocaleController.getInternalString(C3286R.string.common_close);
             Intrinsics.checkNotNullExpressionValue(charSequence, "getInternalString(R.string.common_close)");
         }
         if ((i & 4) != 0) {
@@ -288,7 +294,6 @@ public final class DialogsFactoryKt {
             StorageDiagramView.ClearViewData clearViewData = new StorageDiagramView.ClearViewData(storageDiagramView);
             clearViewData.setSizeAsDouble(Double.valueOf(diagramItem.getValue()));
             clearViewData.color = diagramItem.getColor();
-            Unit unit = Unit.INSTANCE;
             arrayList.add(clearViewData);
             CheckBoxCell checkBoxCell = new CheckBoxCell(baseFragment.getParentActivity(), 4, 21, null);
             checkBoxCell.setTag(Integer.valueOf(i));
@@ -306,15 +311,13 @@ public final class DialogsFactoryKt {
             linearLayout.addView(checkBoxCell, LayoutHelper.createLinear(-1, 50));
             i = i2;
         }
-        Object[] array = arrayList.toArray(new StorageDiagramView.ClearViewData[0]);
-        Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-        storageDiagramView.setData(null, (StorageDiagramView.ClearViewData[]) array);
+        storageDiagramView.setData(null, (StorageDiagramView.ClearViewData[]) arrayList.toArray(new StorageDiagramView.ClearViewData[0]));
         BottomSheet.BottomSheetCell bottomSheetCell = new BottomSheet.BottomSheetCell(baseFragment.getParentActivity(), 2);
         bottomSheetCell.setTextAndIcon(buttonText, 0);
         bottomSheetCell.getTextView().setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DialogsFactoryKt.m1825createDiagramDialog$lambda13$lambda12(DialogsFactoryKt$createDiagramDialog$cacheBottomSheet$1.this, buttonActionListener, view);
+                DialogsFactoryKt.createDiagramDialog$lambda$13$lambda$12(DialogsFactoryKt$createDiagramDialog$cacheBottomSheet$1.this, buttonActionListener, view);
             }
         });
         linearLayout.addView(bottomSheetCell, LayoutHelper.createLinear(-1, 50));
@@ -325,8 +328,7 @@ public final class DialogsFactoryKt {
         return r6;
     }
 
-    /* renamed from: createDiagramDialog$lambda-13$lambda-12 */
-    public static final void m1825createDiagramDialog$lambda13$lambda12(DialogsFactoryKt$createDiagramDialog$cacheBottomSheet$1 cacheBottomSheet, Function0 buttonActionListener, View view) {
+    public static final void createDiagramDialog$lambda$13$lambda$12(DialogsFactoryKt$createDiagramDialog$cacheBottomSheet$1 cacheBottomSheet, Function0 buttonActionListener, View view) {
         Intrinsics.checkNotNullParameter(cacheBottomSheet, "$cacheBottomSheet");
         Intrinsics.checkNotNullParameter(buttonActionListener, "$buttonActionListener");
         cacheBottomSheet.dismiss();
@@ -360,10 +362,9 @@ public final class DialogsFactoryKt {
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogsFactoryKt.m703xac56925a(Callbacks$Callback1.this, builder, view);
+                    DialogsFactoryKt.m703x416736b6(Callbacks$Callback1.this, builder, view);
                 }
             });
-            Unit unit = Unit.INSTANCE;
             linearLayout.addView(radioColorCell);
             i2 = i3;
         }
@@ -376,14 +377,14 @@ public final class DialogsFactoryKt {
         return create;
     }
 
-    /* renamed from: createSingleChooserDialog$lambda-20$lambda-19$lambda-18$lambda-17 */
-    public static final void m703xac56925a(Callbacks$Callback1 selectedListener, AlertDialog.Builder builder, View v) {
+    /* renamed from: createSingleChooserDialog$lambda$20$lambda$19$lambda$18$lambda$17 */
+    public static final void m703x416736b6(Callbacks$Callback1 selectedListener, AlertDialog.Builder builder, View v) {
         Intrinsics.checkNotNullParameter(selectedListener, "$selectedListener");
         Intrinsics.checkNotNullParameter(builder, "$builder");
         Intrinsics.checkNotNullParameter(v, "v");
         Object tag = v.getTag();
-        Objects.requireNonNull(tag, "null cannot be cast to non-null type kotlin.Int");
-        selectedListener.invoke(Integer.valueOf(((Integer) tag).intValue()));
+        Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type kotlin.Int");
+        selectedListener.invoke((Integer) tag);
         builder.getDismissRunnable().run();
     }
 
@@ -410,10 +411,9 @@ public final class DialogsFactoryKt {
             radioButtonCell.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogsFactoryKt.m702x6731d2a5(Function1.this, builder, view);
+                    DialogsFactoryKt.m702xfc427701(Function1.this, builder, view);
                 }
             });
-            Unit unit = Unit.INSTANCE;
             linearLayout.addView(radioButtonCell);
             i2 = i3;
         }
@@ -426,14 +426,14 @@ public final class DialogsFactoryKt {
         return create;
     }
 
-    /* renamed from: createTwoLineSingleChooserDialog$lambda-25$lambda-24$lambda-23$lambda-22 */
-    public static final void m702x6731d2a5(Function1 selectedListener, AlertDialog.Builder builder, View v) {
+    /* renamed from: createTwoLineSingleChooserDialog$lambda$25$lambda$24$lambda$23$lambda$22 */
+    public static final void m702xfc427701(Function1 selectedListener, AlertDialog.Builder builder, View v) {
         Intrinsics.checkNotNullParameter(selectedListener, "$selectedListener");
         Intrinsics.checkNotNullParameter(builder, "$builder");
         Intrinsics.checkNotNullParameter(v, "v");
         Object tag = v.getTag();
-        Objects.requireNonNull(tag, "null cannot be cast to non-null type kotlin.Int");
-        selectedListener.invoke(Integer.valueOf(((Integer) tag).intValue()));
+        Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type kotlin.Int");
+        selectedListener.invoke((Integer) tag);
         builder.getDismissRunnable().run();
     }
 
@@ -441,16 +441,15 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3158R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3158R.string.app_update_dialog_description), LocaleController.getInternalString(C3158R.string.common_cancel), LocaleController.getInternalString(C3158R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda8
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3286R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3286R.string.app_update_dialog_description), LocaleController.getInternalString(C3286R.string.common_cancel), LocaleController.getInternalString(C3286R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda8
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                DialogsFactoryKt.m1827createUpdateAppDialog$lambda27(BaseFragment.this);
+                DialogsFactoryKt.createUpdateAppDialog$lambda$27(BaseFragment.this);
             }
         }, null, 8, null);
     }
 
-    /* renamed from: createUpdateAppDialog$lambda-27 */
-    public static final void m1827createUpdateAppDialog$lambda27(BaseFragment this_createUpdateAppDialog) {
+    public static final void createUpdateAppDialog$lambda$27(BaseFragment this_createUpdateAppDialog) {
         Intrinsics.checkNotNullParameter(this_createUpdateAppDialog, "$this_createUpdateAppDialog");
         Browser.openUrl(this_createUpdateAppDialog.getParentActivity(), BuildVars.PLAYSTORE_APP_URL);
     }
@@ -468,7 +467,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(currentNetworkType, "currentNetworkType");
         Intrinsics.checkNotNullParameter(listener, "listener");
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3158R.string.wallet_network_type_dialog_title));
+        builder.setTitle(LocaleController.getInternalString(C3286R.string.wallet_network_type_dialog_title));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         for (final NetworkType networkType : availableNetworks) {
@@ -481,20 +480,20 @@ public final class DialogsFactoryKt {
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogsFactoryKt.m704x21d1f21(NetworkType.this, currentNetworkType, listener, builder, view);
+                    DialogsFactoryKt.m704x972dc37d(NetworkType.this, currentNetworkType, listener, builder, view);
                 }
             });
             linearLayout.addView(radioColorCell);
         }
         builder.setView(linearLayout);
-        builder.setPositiveButton(LocaleController.getString("Cancel", C3158R.string.Cancel), null);
+        builder.setPositiveButton(LocaleController.getString("Cancel", C3286R.string.Cancel), null);
         AlertDialog create = builder.create();
         Intrinsics.checkNotNullExpressionValue(create, "Builder(context).apply {…Cancel), null)\n}.create()");
         return create;
     }
 
-    /* renamed from: createSelectNetworkTypeDialog$lambda-32$lambda-31$lambda-30$lambda-29 */
-    public static final void m704x21d1f21(NetworkType networkType, NetworkType currentNetworkType, Callbacks$Callback1 listener, AlertDialog.Builder this_apply, View view) {
+    /* renamed from: createSelectNetworkTypeDialog$lambda$32$lambda$31$lambda$30$lambda$29 */
+    public static final void m704x972dc37d(NetworkType networkType, NetworkType currentNetworkType, Callbacks$Callback1 listener, AlertDialog.Builder this_apply, View view) {
         Intrinsics.checkNotNullParameter(networkType, "$networkType");
         Intrinsics.checkNotNullParameter(currentNetworkType, "$currentNetworkType");
         Intrinsics.checkNotNullParameter(listener, "$listener");
@@ -509,18 +508,17 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3158R.string.binance_not_verified_dialog_title), LocaleController.getInternalString(C3158R.string.binance_not_verified_dialog_description), LocaleController.getInternalString(C3158R.string.common_cancel), LocaleController.getInternalString(C3158R.string.binance_not_verified_dialog_positive_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda7
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3286R.string.binance_not_verified_dialog_title), LocaleController.getInternalString(C3286R.string.binance_not_verified_dialog_description), LocaleController.getInternalString(C3286R.string.common_cancel), LocaleController.getInternalString(C3286R.string.binance_not_verified_dialog_positive_btn)), new Callbacks$Callback() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda7
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                DialogsFactoryKt.m1824createBinanceVerificationRequiredDialog$lambda33(BaseFragment.this);
+                DialogsFactoryKt.createBinanceVerificationRequiredDialog$lambda$33(BaseFragment.this);
             }
         }, null, 8, null);
     }
 
-    /* renamed from: createBinanceVerificationRequiredDialog$lambda-33 */
-    public static final void m1824createBinanceVerificationRequiredDialog$lambda33(BaseFragment this_createBinanceVerificationRequiredDialog) {
+    public static final void createBinanceVerificationRequiredDialog$lambda$33(BaseFragment this_createBinanceVerificationRequiredDialog) {
         Intrinsics.checkNotNullParameter(this_createBinanceVerificationRequiredDialog, "$this_createBinanceVerificationRequiredDialog");
-        Browser.openUrl(this_createBinanceVerificationRequiredDialog.getParentActivity(), LocaleController.getInternalString(C3158R.string.wallet_binance_verify_profile_website));
+        Browser.openUrl(this_createBinanceVerificationRequiredDialog.getParentActivity(), LocaleController.getInternalString(C3286R.string.wallet_binance_verify_profile_website));
     }
 
     public static final AlertDialog createWalletCreatedRequiredDialog(BaseFragment baseFragment, Callbacks$Callback positiveAction) {
@@ -536,11 +534,11 @@ public final class DialogsFactoryKt {
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         if (blockchainType != null) {
-            internalString = blockchainType.name() + ' ' + ((Object) LocaleController.getInternalString(C3158R.string.wallet_crypto_wallet_not_created_dialog_title));
+            internalString = blockchainType.name() + ' ' + LocaleController.getInternalString(C3286R.string.wallet_crypto_wallet_not_created_dialog_title);
         } else {
-            internalString = LocaleController.getInternalString(C3158R.string.wallet_crypto_wallet_not_created_dialog_title);
+            internalString = LocaleController.getInternalString(C3286R.string.wallet_crypto_wallet_not_created_dialog_title);
         }
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(internalString, LocaleController.getInternalString(C3158R.string.wallet_crypto_wallet_not_created_dialog_description), LocaleController.getInternalString(C3158R.string.common_cancel), LocaleController.getInternalString(C3158R.string.common_ok)), positiveAction, null, 8, null);
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(internalString, LocaleController.getInternalString(C3286R.string.wallet_crypto_wallet_not_created_dialog_description), LocaleController.getInternalString(C3286R.string.common_cancel), LocaleController.getInternalString(C3286R.string.common_ok)), positiveAction, null, 8, null);
     }
 
     public static final AlertDialog createSelectTokensOrderTypeDialog(BaseFragment baseFragment, ResourceManager resourceManager, TokenOrderType selectedType, final Callbacks$Callback1<TokenOrderType> onSelected) {
@@ -549,19 +547,18 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Intrinsics.checkNotNullParameter(selectedType, "selectedType");
         Intrinsics.checkNotNullParameter(onSelected, "onSelected");
-        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3158R.string.choose_tokens_order_type_dialog_title), null, null, resourceManager.getString(C3158R.string.common_ok), 6, null);
+        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3286R.string.choose_tokens_order_type_dialog_title), null, null, resourceManager.getString(C3286R.string.common_ok), 6, null);
         List<String> titles = TokenOrderType.Companion.getTitles(resourceManager);
         indexOf = ArraysKt___ArraysKt.indexOf(TokenOrderType.values(), selectedType);
         return createSingleChooserDialog$default(baseFragment, dialogModel, null, null, titles, indexOf, new Callbacks$Callback1() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda4
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                DialogsFactoryKt.m1826createSelectTokensOrderTypeDialog$lambda34(Callbacks$Callback1.this, (Integer) obj);
+                DialogsFactoryKt.createSelectTokensOrderTypeDialog$lambda$34(Callbacks$Callback1.this, (Integer) obj);
             }
         }, 6, null);
     }
 
-    /* renamed from: createSelectTokensOrderTypeDialog$lambda-34 */
-    public static final void m1826createSelectTokensOrderTypeDialog$lambda34(Callbacks$Callback1 onSelected, Integer it) {
+    public static final void createSelectTokensOrderTypeDialog$lambda$34(Callbacks$Callback1 onSelected, Integer it) {
         Intrinsics.checkNotNullParameter(onSelected, "$onSelected");
         TokenOrderType[] values = TokenOrderType.values();
         Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -574,19 +571,18 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Intrinsics.checkNotNullParameter(selectedType, "selectedType");
         Intrinsics.checkNotNullParameter(onSelected, "onSelected");
-        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3158R.string.choose_tokens_order_type_dialog_title), null, resourceManager.getString(C3158R.string.common_cancel), null, 10, null);
+        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3286R.string.choose_tokens_order_type_dialog_title), null, resourceManager.getString(C3286R.string.common_cancel), null, 10, null);
         List<String> titles = StakingOrderType.Companion.getTitles(resourceManager);
         indexOf = ArraysKt___ArraysKt.indexOf(StakingOrderType.values(), selectedType);
         baseFragment.showDialog(createSingleChooserDialog$default(baseFragment, dialogModel, null, null, titles, indexOf, new Callbacks$Callback1() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda5
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                DialogsFactoryKt.m1829showSelectStakingOrderDialog$lambda35(Callbacks$Callback1.this, (Integer) obj);
+                DialogsFactoryKt.showSelectStakingOrderDialog$lambda$35(Callbacks$Callback1.this, (Integer) obj);
             }
         }, 6, null));
     }
 
-    /* renamed from: showSelectStakingOrderDialog$lambda-35 */
-    public static final void m1829showSelectStakingOrderDialog$lambda35(Callbacks$Callback1 onSelected, Integer it) {
+    public static final void showSelectStakingOrderDialog$lambda$35(Callbacks$Callback1 onSelected, Integer it) {
         Intrinsics.checkNotNullParameter(onSelected, "$onSelected");
         StakingOrderType[] values = StakingOrderType.values();
         Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -598,8 +594,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(onItemSelectedAction, "onItemSelectedAction");
         Context context = baseFragment.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        String internalString = LocaleController.getInternalString(C3158R.string.settings_tools_chat_profile_id_telegram);
-        String internalString2 = LocaleController.getInternalString(C3158R.string.settings_tools_chat_profile_id_telegram_description);
+        String internalString = LocaleController.getInternalString(C3286R.string.settings_tools_chat_profile_id_telegram);
+        String internalString2 = LocaleController.getInternalString(C3286R.string.settings_tools_chat_profile_id_telegram_description);
         ChatProfileTelegramIdMode[] values = ChatProfileTelegramIdMode.values();
         ArrayList arrayList = new ArrayList(values.length);
         int length = values.length;
@@ -607,16 +603,15 @@ public final class DialogsFactoryKt {
             ChatProfileTelegramIdMode chatProfileTelegramIdMode = values[i];
             arrayList.add(TuplesKt.m100to(LocaleController.getInternalString(chatProfileTelegramIdMode.getTextResId()), Boolean.valueOf(SharedConfig.selectedChatProfileTelegramIdMode == chatProfileTelegramIdMode)));
         }
-        baseFragment.showDialog(DialogUtils.createDialogWithRadioCellsList$default(context, new RadioCellsListDialogModel(internalString, internalString2, arrayList, LocaleController.getString("Cancel", C3158R.string.Cancel)), new Callbacks$Callback1() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda6
+        baseFragment.showDialog(DialogUtils.createDialogWithRadioCellsList$default(context, new RadioCellsListDialogModel(internalString, internalString2, arrayList, LocaleController.getString("Cancel", C3286R.string.Cancel)), new Callbacks$Callback1() { // from class: com.smedialink.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda6
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                DialogsFactoryKt.m1828showChatProfileTelegramIdDialog$lambda37(Callbacks$Callback.this, (Integer) obj);
+                DialogsFactoryKt.showChatProfileTelegramIdDialog$lambda$37(Callbacks$Callback.this, (Integer) obj);
             }
         }, null, 8, null));
     }
 
-    /* renamed from: showChatProfileTelegramIdDialog$lambda-37 */
-    public static final void m1828showChatProfileTelegramIdDialog$lambda37(Callbacks$Callback onItemSelectedAction, Integer position) {
+    public static final void showChatProfileTelegramIdDialog$lambda$37(Callbacks$Callback onItemSelectedAction, Integer position) {
         Intrinsics.checkNotNullParameter(onItemSelectedAction, "$onItemSelectedAction");
         ChatProfileTelegramIdMode[] values = ChatProfileTelegramIdMode.values();
         Intrinsics.checkNotNullExpressionValue(position, "position");
@@ -626,7 +621,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ BottomSheet createInfoBottomSheetDialog$default(BaseFragment baseFragment, String str, String str2, String str3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = LocaleController.getInternalString(C3158R.string.wallet_crypto_buy_information_dialog_title);
+            str = LocaleController.getInternalString(C3286R.string.wallet_crypto_buy_information_dialog_title);
             Intrinsics.checkNotNullExpressionValue(str, "getInternalString(R.stri…information_dialog_title)");
         }
         if ((i & 8) != 0) {
@@ -667,7 +662,7 @@ public final class DialogsFactoryKt {
         textView3.setGravity(17);
         textView3.setAllCaps(true);
         textView3.setText(buttonText);
-        ViewExtKt.safeThrottledClick$default(textView3, 0L, new C2206x81b1e32c(callbacks$Callback, create), 1, null);
+        ViewExtKt.safeThrottledClick$default(textView3, 0L, new C2330x81b1e32c(callbacks$Callback, create), 1, null);
         linearLayout.addView(textView3, LayoutHelper.createLinear(-1, -2));
         create.setCustomView(linearLayout);
         Intrinsics.checkNotNullExpressionValue(create, "bottomSheet.apply {\n    …mView(customLayout)\n    }");
@@ -681,6 +676,6 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(onReplenishClickAction, "onReplenishClickAction");
         Context context = baseFragment.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        baseFragment.showDialog(DialogUtils.createDialog$default(context, new DialogModel(resourceManager.getString(C3158R.string.staking_programme_level_required_title), resourceManager.getString(C3158R.string.staking_programme_level_required_description, minimalRank.name(), resourceManager.getString(minimalRank.getDescriptionResId())), LocaleController.getString("Cancel", C3158R.string.Cancel), resourceManager.getString(C3158R.string.wallet_common_error_not_enough_money_btn_txt)), onReplenishClickAction, null, 8, null));
+        baseFragment.showDialog(DialogUtils.createDialog$default(context, new DialogModel(resourceManager.getString(C3286R.string.staking_programme_level_required_title), resourceManager.getString(C3286R.string.staking_programme_level_required_description, minimalRank.name(), resourceManager.getString(minimalRank.getDescriptionResId())), LocaleController.getString("Cancel", C3286R.string.Cancel), resourceManager.getString(C3286R.string.wallet_common_error_not_enough_money_btn_txt)), onReplenishClickAction, null, 8, null));
     }
 }

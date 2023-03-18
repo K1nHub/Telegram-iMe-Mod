@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/fork/ui/dialog/ClearCacheBottomSheet$$ExternalSyntheticLambda2;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-static {v0, v1, v2}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->$r8$lambda$MUE_GMep39AAfEjfqu4UMLRO4AQ(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
+    invoke-static {v0, v1, v2}, Lorg/fork/ui/dialog/ClearCacheBottomSheet;->$r8$lambda$6qK9rP7vvbtb1Fcn707wb2Eiusw(Lorg/fork/ui/dialog/ClearCacheBottomSheet;Ljava/util/Map;Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
     return-void
 .end method

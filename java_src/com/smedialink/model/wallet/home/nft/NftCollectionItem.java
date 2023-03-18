@@ -71,8 +71,8 @@ public final class NftCollectionItem extends BaseExpandNode {
         if (this == obj) {
             return true;
         }
-        if (Intrinsics.areEqual(NftCollectionItem.class, obj == null ? null : obj.getClass())) {
-            Objects.requireNonNull(obj, "null cannot be cast to non-null type com.smedialink.model.wallet.home.nft.NftCollectionItem");
+        if (Intrinsics.areEqual(NftCollectionItem.class, obj != null ? obj.getClass() : null)) {
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type com.smedialink.model.wallet.home.nft.NftCollectionItem");
             NftCollectionItem nftCollectionItem = (NftCollectionItem) obj;
             return Intrinsics.areEqual(this.collection, nftCollectionItem.collection) && Intrinsics.areEqual(this.tokens, nftCollectionItem.tokens) && isExpanded() == nftCollectionItem.isExpanded();
         }

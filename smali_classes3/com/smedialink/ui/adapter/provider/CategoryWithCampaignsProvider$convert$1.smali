@@ -40,18 +40,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$lqqrNoWlcIXOiqEIIwNN-V8kGA0(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
+.method public static synthetic $r8$lambda$QdshuuCVNwR-E97NARgdUX2HY90(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke$lambda-5$lambda-4$lambda-3(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke$lambda$5$lambda$2(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$paRmUS9e84shW2pvfr9zqTxDIkM(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$UiNhMEt0taFknGE3ZeSZxbgojOw(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke$lambda-5$lambda-2(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke$lambda$5$lambda$4$lambda$3(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
 
     return-void
 .end method
@@ -72,7 +72,7 @@
     return-void
 .end method
 
-.method private static final invoke$lambda-1(Lkotlin/Lazy;)Lcom/smedialink/ui/catalog/tabs/all/adapter/CatalogAllChannelsRecycleAdapter;
+.method private static final invoke$lambda$1(Lkotlin/Lazy;)Lcom/smedialink/ui/catalog/tabs/all/adapter/CatalogAllChannelsRecycleAdapter;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -94,7 +94,7 @@
     return-object p0
 .end method
 
-.method private static final invoke$lambda-5$lambda-2(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final invoke$lambda$5$lambda$2(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -105,7 +105,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_1"
+    const-string v0, "<anonymous parameter 1>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -140,7 +140,7 @@
     return-void
 .end method
 
-.method private static final invoke$lambda-5$lambda-4$lambda-3(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
+.method private static final invoke$lambda$5$lambda$4$lambda$3(Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider;Lcom/smedialink/model/catalog/CategoryWithCampaignsItem;)V
     .locals 2
 
     const-string v0, "this$0"
@@ -236,9 +236,6 @@
 
     invoke-static {v0, v1}, Lcom/smedialink/utils/extentions/common/RecycleViewExtKt;->restoreScrollState(Landroidx/recyclerview/widget/LinearLayoutManager;Landroid/os/Parcelable;)V
 
-    .line 64
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 61
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
@@ -264,7 +261,7 @@
     move-result-object v0
 
     .line 66
-    invoke-static {v0}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke$lambda-1(Lkotlin/Lazy;)Lcom/smedialink/ui/catalog/tabs/all/adapter/CatalogAllChannelsRecycleAdapter;
+    invoke-static {v0}, Lcom/smedialink/ui/adapter/provider/CategoryWithCampaignsProvider$convert$1;->invoke$lambda$1(Lkotlin/Lazy;)Lcom/smedialink/ui/catalog/tabs/all/adapter/CatalogAllChannelsRecycleAdapter;
 
     move-result-object v0
 

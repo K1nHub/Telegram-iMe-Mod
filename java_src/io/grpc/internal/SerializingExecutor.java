@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SerializingExecutor implements Executor, Runnable {
     private final Executor executor;
     private final Queue<Runnable> runQueue = new ConcurrentLinkedQueue();
@@ -78,7 +78,7 @@ public final class SerializingExecutor implements Executor, Runnable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class AtomicHelper {
         public abstract boolean runStateCompareAndSet(SerializingExecutor serializingExecutor, int i, int i2);
 
@@ -89,7 +89,7 @@ public final class SerializingExecutor implements Executor, Runnable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FieldUpdaterAtomicHelper extends AtomicHelper {
         private final AtomicIntegerFieldUpdater<SerializingExecutor> runStateUpdater;
 
@@ -110,7 +110,7 @@ public final class SerializingExecutor implements Executor, Runnable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SynchronizedAtomicHelper extends AtomicHelper {
         private SynchronizedAtomicHelper() {
             super();

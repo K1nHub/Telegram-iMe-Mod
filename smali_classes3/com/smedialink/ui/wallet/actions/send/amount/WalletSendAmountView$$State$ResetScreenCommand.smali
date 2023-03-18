@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State;)V
     .locals 1
 
-    .line 434
+    .line 450
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string v0, "resetScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;)V
     .locals 0
 
-    .line 439
+    .line 455
     invoke-interface {p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;->resetScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 432
+    .line 448
     check-cast p1, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;
 
     invoke-virtual {p0, p1}, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView$$State$ResetScreenCommand;->apply(Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountView;)V

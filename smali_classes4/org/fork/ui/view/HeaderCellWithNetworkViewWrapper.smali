@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nHeaderCellWithNetworkViewWrapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HeaderCellWithNetworkViewWrapper.kt\norg/fork/ui/view/HeaderCellWithNetworkViewWrapper\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,61:1\n351#2:62\n351#2:63\n*S KotlinDebug\n*F\n+ 1 HeaderCellWithNetworkViewWrapper.kt\norg/fork/ui/view/HeaderCellWithNetworkViewWrapper\n*L\n29#1:62\n33#1:63\n*E\n"
+    value = "SMAP\nHeaderCellWithNetworkViewWrapper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HeaderCellWithNetworkViewWrapper.kt\norg/fork/ui/view/HeaderCellWithNetworkViewWrapper\n+ 2 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,61:1\n359#2:62\n359#2:63\n*S KotlinDebug\n*F\n+ 1 HeaderCellWithNetworkViewWrapper.kt\norg/fork/ui/view/HeaderCellWithNetworkViewWrapper\n*L\n29#1:62\n33#1:63\n*E\n"
 .end annotation
 
 
@@ -82,7 +82,7 @@
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 351
+    .line 359
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
@@ -99,14 +99,14 @@
     move-object v1, v2
 
     :goto_1
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_2
 
-    const/4 v1, 0x0
+    iget v1, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     goto :goto_2
 
     :cond_2
-    iget v1, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    const/4 v1, 0x0
 
     :goto_2
     int-to-float v1, v1
@@ -133,7 +133,7 @@
 
     const/4 v8, 0x0
 
-    goto :goto_5
+    goto :goto_4
 
     .line 33
     :cond_4
@@ -143,7 +143,7 @@
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 351
+    .line 359
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
@@ -157,14 +157,11 @@
     check-cast v2, Landroid/view/ViewGroup$MarginLayoutParams;
 
     :cond_5
-    if-nez v2, :cond_6
+    if-eqz v2, :cond_6
 
-    goto :goto_4
-
-    :cond_6
     iget v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    :goto_4
+    :cond_6
     int-to-float p1, v4
 
     .line 33
@@ -174,7 +171,7 @@
 
     move v8, p1
 
-    :goto_5
+    :goto_4
     const/4 v9, 0x0
 
     const/4 v3, -0x2
@@ -298,7 +295,7 @@
 
     move-result-object v1
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v2, "windowBackgroundWhiteBlueHeader"
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
@@ -306,7 +303,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    const-string v1, "windowBackgroundWhite"
+    const-string/jumbo v1, "windowBackgroundWhite"
 
     .line 43
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I

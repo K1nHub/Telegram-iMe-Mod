@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 ForkTopicsController.kt\norg/fork/controller/ForkTopicsController\n*L\n1#1,320:1\n191#2:321\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 ForkTopicsController.kt\norg/fork/controller/ForkTopicsController\n*L\n1#1,328:1\n191#2:329\n*E\n"
 .end annotation
 
 
@@ -62,8 +62,10 @@
 
     move-result-object p1
 
+    .line 102
     check-cast p2, Lcom/smedialink/storage/domain/model/topics/TopicModel;
 
+    .line 191
     invoke-virtual {p2}, Lcom/smedialink/storage/domain/model/topics/TopicModel;->getOrder()I
 
     move-result p2
@@ -72,6 +74,7 @@
 
     move-result-object p2
 
+    .line 102
     invoke-static {p1, p2}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result p1

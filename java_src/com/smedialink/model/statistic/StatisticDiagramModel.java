@@ -111,7 +111,7 @@ public final class StatisticDiagramModel {
             }
             if (obj instanceof DiagramItem) {
                 DiagramItem diagramItem = (DiagramItem) obj;
-                return Intrinsics.areEqual(this.name, diagramItem.name) && Intrinsics.areEqual(this.color, diagramItem.color) && Intrinsics.areEqual(Double.valueOf(this.value), Double.valueOf(diagramItem.value));
+                return Intrinsics.areEqual(this.name, diagramItem.name) && Intrinsics.areEqual(this.color, diagramItem.color) && Double.compare(this.value, diagramItem.value) == 0;
             }
             return false;
         }

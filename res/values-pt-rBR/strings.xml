@@ -4812,7 +4812,7 @@ Clique aqui para adicionar bot rapidamente."</string>
     <string name="chat_templates_list_header">Sem modelos</string>
     <string name="chat_templates_mode_attach">Adicionar menu</string>
     <string name="chat_templates_mode_hint">"Você sempre pode mudar isso em
-Ajustes > Interface > Modelos"</string>
+Configurações > Ferramentas > Bate-papos > Modelos"</string>
     <string name="chat_templates_mode_oval">Oval</string>
     <string name="choose_tokens_order_alphabet">Por ordem alfabética</string>
     <string name="choose_tokens_order_balance">Por saldo</string>
@@ -5343,6 +5343,7 @@ Você precisa estar nos contatos deles no Telegram para adicioná-los novamente,
     <string name="push_notification_wallet_simplex_payment">Solicitação de compra %1$s %2$s -> %3$s %4$s. Status: %5$s</string>
     <string name="push_notification_wallet_unsupported">Notificação não compatível</string>
     <string name="quick_reaction_settings_enable_item_hint">Ative esta opção para usar reações rápidas para mensagens de chat</string>
+    <string name="recent_chats_hint">Ative isso se quiser ter um acesso rápido aos seus bate-papos recentes com a capacidade de fixar uma quantidade ilimitada de bate-papos. O painel será mostrado acima da lista de bate-papo.</string>
     <string name="release_to_go_to_next_unread_bot">Solte para acessar o próximo bot não lido</string>
     <string name="release_to_go_to_next_unread_group">Solte para acessar o próximo grupo não lido</string>
     <string name="release_to_go_to_next_unread_personal_chat">Solte para acessar o próximo chat pessoal não lido</string>
@@ -5627,7 +5628,7 @@ Seu saldo será atualizado após a confirmação da transação na blockchain."<
     <string name="stickers_size_small">Pequeno</string>
     <string name="stickers_size_title">Tamanho do adesivo</string>
     <string name="swipe_to_next_unread_dialog_consider_archive">Considerar chats arquivados</string>
-    <string name="swipe_to_next_unread_dialog_hint">Ative esta opção para acessar os chats não lidos deslizando o dedo</string>
+    <string name="swipe_to_next_unread_dialog_hint">Ative isso se quiser rolar seus bate-papos sem voltar à sua lista de bate-papo. Quando chegar ao final de um chat, suba para ir para o próximo chat não lido.</string>
     <string name="swipe_to_next_unread_dialog_types">Tipos de diálogo</string>
     <string name="text_recognition_bottom_sheet_title">Foto → Texto</string>
     <string name="topic">Tópico</string>

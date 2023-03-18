@@ -26,16 +26,16 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 340
+    .line 351
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 341
+    .line 352
     iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$Fingerprint;->hash:Ljava/lang/String;
 
-    .line 342
+    .line 353
     iput-object p2, p0, Lorg/telegram/messenger/voip/Instance$Fingerprint;->setup:Ljava/lang/String;
 
-    .line 343
+    .line 354
     iput-object p3, p0, Lorg/telegram/messenger/voip/Instance$Fingerprint;->fingerprint:Ljava/lang/String;
 
     return-void
@@ -46,7 +46,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 348
+    .line 359
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

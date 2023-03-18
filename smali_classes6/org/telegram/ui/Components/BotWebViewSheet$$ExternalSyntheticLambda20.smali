@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/SimpleFloatPropertyCompat$Setter;
+.implements Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda20;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda20;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda20;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda20;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda20;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final set(Ljava/lang/Object;F)V
-    .locals 0
+.method public final onDismiss()V
+    .locals 1
 
-    check-cast p1, Lorg/telegram/ui/Components/BotWebViewSheet;
+    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$CPy87Zl1ZXcMFanswDb43SNMzW0(Lorg/telegram/ui/Components/BotWebViewSheet;F)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->$r8$lambda$2ua-QXgLF91gsCjgP1sPkmAHIxA(Lorg/telegram/ui/Components/BotWebViewSheet;)V
 
     return-void
 .end method

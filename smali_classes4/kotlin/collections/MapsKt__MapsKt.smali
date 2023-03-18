@@ -5,13 +5,13 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMaps.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,789:1\n388#1:799\n399#1:804\n496#1,6:809\n521#1,6:815\n1#2:790\n1236#3,4:791\n1236#3,4:795\n1236#3,4:800\n1236#3,4:805\n*S KotlinDebug\n*F\n+ 1 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n438#1:799\n453#1:804\n511#1:809,6\n536#1:815,6\n388#1:791,4\n399#1:795,4\n438#1:800,4\n453#1:805,4\n*E\n"
+    value = "SMAP\nMaps.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,793:1\n392#1:803\n403#1:808\n500#1,6:813\n525#1,6:819\n1#2:794\n1238#3,4:795\n1238#3,4:799\n1238#3,4:804\n1238#3,4:809\n*S KotlinDebug\n*F\n+ 1 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n442#1:803\n457#1:808\n515#1:813,6\n540#1:819,6\n392#1:795,4\n403#1:799,4\n442#1:804,4\n457#1:809,4\n*E\n"
 .end annotation
 
 
 # direct methods
 .method public static emptyMap()Ljava/util/Map;
-    .locals 1
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -26,6 +26,10 @@
 
     .line 40
     sget-object v0, Lkotlin/collections/EmptyMap;->INSTANCE:Lkotlin/collections/EmptyMap;
+
+    const-string v1, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.emptyMap, V of kotlin.collections.MapsKt__MapsKt.emptyMap>"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -172,7 +176,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 784
+    .line 788
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
     move-result v0
@@ -185,7 +189,7 @@
 
     goto :goto_0
 
-    .line 786
+    .line 790
     :cond_0
     invoke-static {p0}, Lkotlin/collections/MapsKt__MapsJVMKt;->toSingletonMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -193,7 +197,7 @@
 
     goto :goto_0
 
-    .line 785
+    .line 789
     :cond_1
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
 
@@ -229,7 +233,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 415
+    .line 419
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -255,7 +259,7 @@
 
     move-result-object v0
 
-    .line 416
+    .line 420
     invoke-interface {p0, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
@@ -288,7 +292,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 406
+    .line 410
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -306,7 +310,7 @@
 
     move-result-object v2
 
-    .line 407
+    .line 411
     invoke-interface {p0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v1, v1, 0x1
@@ -339,12 +343,12 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 546
+    .line 550
     instance-of v0, p0, Ljava/util/Collection;
 
     if-eqz v0, :cond_3
 
-    .line 547
+    .line 551
     move-object v0, p0
 
     check-cast v0, Ljava/util/Collection;
@@ -359,7 +363,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 550
+    .line 554
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-interface {v0}, Ljava/util/Collection;->size()I
@@ -378,7 +382,7 @@
 
     goto :goto_1
 
-    .line 549
+    .line 553
     :cond_0
     instance-of v0, p0, Ljava/util/List;
 
@@ -412,7 +416,7 @@
 
     goto :goto_1
 
-    .line 548
+    .line 552
     :cond_2
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
 
@@ -421,7 +425,7 @@
     :goto_1
     return-object p0
 
-    .line 553
+    .line 557
     :cond_3
     new-instance v0, Ljava/util/LinkedHashMap;
 
@@ -464,7 +468,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 560
+    .line 564
     invoke-static {p1, p0}, Lkotlin/collections/MapsKt;->putAll(Ljava/util/Map;Ljava/lang/Iterable;)V
 
     return-object p1
@@ -490,7 +494,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 600
+    .line 604
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
     move-result v0
@@ -501,14 +505,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 603
+    .line 607
     invoke-static {p0}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p0
 
     goto :goto_0
 
-    .line 602
+    .line 606
     :cond_0
     invoke-static {p0}, Lkotlin/collections/MapsKt__MapsJVMKt;->toSingletonMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -516,7 +520,7 @@
 
     goto :goto_0
 
-    .line 601
+    .line 605
     :cond_1
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
 
@@ -550,7 +554,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 578
+    .line 582
     invoke-static {p1, p0}, Lkotlin/collections/MapsKt__MapsKt;->putAll(Ljava/util/Map;[Lkotlin/Pair;)V
 
     return-object p1
@@ -576,7 +580,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 612
+    .line 616
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0, p0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V

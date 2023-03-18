@@ -9,7 +9,7 @@ public abstract class TLRPC$Page extends TLObject {
     public String url;
 
     /* renamed from: v2 */
-    public boolean f1519v2;
+    public boolean f1524v2;
     public int views;
     public ArrayList<TLRPC$PageBlock> blocks = new ArrayList<>();
     public ArrayList<TLRPC$Photo> photos = new ArrayList<>();

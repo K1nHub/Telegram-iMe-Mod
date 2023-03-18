@@ -11,13 +11,13 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSwapMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapMapping.kt\ncom/smedialink/storage/data/mapper/crypto/SwapMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,79:1\n1547#2:80\n1618#2,3:81\n1547#2:84\n1618#2,3:85\n*S KotlinDebug\n*F\n+ 1 SwapMapping.kt\ncom/smedialink/storage/data/mapper/crypto/SwapMappingKt\n*L\n15#1:80\n15#1:81,3\n19#1:84\n19#1:85,3\n*E\n"
+    value = "SMAP\nSwapMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SwapMapping.kt\ncom/smedialink/storage/data/mapper/crypto/SwapMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,79:1\n1549#2:80\n1620#2,3:81\n1549#2:84\n1620#2,3:85\n*S KotlinDebug\n*F\n+ 1 SwapMapping.kt\ncom/smedialink/storage/data/mapper/crypto/SwapMappingKt\n*L\n15#1:80\n15#1:81,3\n19#1:84\n19#1:85,3\n*E\n"
 .end annotation
 
 
 # direct methods
 .method public static final mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;)Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
-    .locals 18
+    .locals 17
 
     const-string v0, "<this>"
 
@@ -92,95 +92,88 @@
 
     move-result-object v11
 
+    new-instance v9, Ljava/math/BigDecimal;
+
     .line 71
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getAmountIn()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
+
+    invoke-direct {v9, v10}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
     new-instance v10, Ljava/math/BigDecimal;
-
-    invoke-direct {v10, v9}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
     .line 72
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getAmountOut()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v12
 
-    new-instance v12, Ljava/math/BigDecimal;
+    invoke-direct {v10, v12}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v12, v9}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    new-instance v12, Ljava/math/BigInteger;
 
     .line 73
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getAmountBound()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v13
 
-    new-instance v13, Ljava/math/BigInteger;
-
-    invoke-direct {v13, v9}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+    invoke-direct {v12, v13}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
 
     .line 74
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getExecutionPrice()Ljava/math/BigDecimal;
 
-    move-result-object v14
+    move-result-object v13
 
     .line 75
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getFeeTokenCode()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v14
 
-    invoke-virtual {v0, v9}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0, v14}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v0
 
     .line 76
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getValue()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v14
 
-    if-nez v9, :cond_1
+    if-eqz v14, :cond_1
 
-    const/4 v9, 0x0
+    invoke-static {v14}, Lkotlin/text/StringsKt;->toBigIntegerOrNull(Ljava/lang/String;)Ljava/math/BigInteger;
 
-    goto :goto_1
+    move-result-object v14
+
+    if-nez v14, :cond_2
 
     :cond_1
-    invoke-static {v9}, Lkotlin/text/StringsKt;->toBigIntegerOrNull(Ljava/lang/String;)Ljava/math/BigInteger;
-
-    move-result-object v9
-
-    :goto_1
-    if-nez v9, :cond_2
-
-    sget-object v9, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
-
-    :cond_2
-    move-object v15, v9
+    sget-object v14, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
 
     .line 77
+    :cond_2
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetQuoteToSwapResponse;->getCallData()Ljava/lang/String;
 
     move-result-object v1
 
     if-nez v1, :cond_3
 
-    move-object/from16 v16, v4
+    move-object v15, v4
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
-    move-object/from16 v16, v1
+    move-object v15, v1
 
     .line 63
-    :goto_2
-    new-instance v17, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
+    :goto_1
+    new-instance v16, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;
 
     const-string v1, "value?.toBigIntegerOrNull() ?: BigInteger.ZERO"
 
     .line 76
-    invoke-static {v15, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v14, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object/from16 v1, v17
+    move-object/from16 v1, v16
 
     move-object v4, v5
 
@@ -188,24 +181,20 @@
 
     move-object v7, v8
 
-    move-object v8, v10
+    move-object v8, v9
 
-    move-object v9, v12
+    move-object v9, v10
 
-    move-object v10, v13
+    move-object v10, v12
 
-    move-object v12, v14
+    move-object v12, v13
 
     move-object v13, v0
-
-    move-object v14, v15
-
-    move-object/from16 v15, v16
 
     .line 63
     invoke-direct/range {v1 .. v15}, Lcom/smedialink/storage/domain/model/crypto/swap/CryptoSwapMetadata;-><init>(Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/TransactionParams;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/swap/SwapMethod;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigInteger;Ljava/util/List;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/math/BigInteger;Ljava/lang/String;)V
 
-    return-object v17
+    return-object v16
 .end method
 
 .method public static final mapToDomain(Lcom/smedialink/storage/data/network/model/response/crypto/swap/AvailableSwapTokensResponse;)Ljava/util/List;
@@ -230,7 +219,7 @@
 
     move-result-object p0
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -241,7 +230,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -257,7 +246,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Ljava/lang/String;
 
     .line 15
@@ -267,6 +256,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -297,7 +287,7 @@
 
     move-result-object p0
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -308,7 +298,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -324,7 +314,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/data/network/model/response/crypto/swap/GetApproveTokensInfoResponse$CryptoTokenApprovalQuote;
 
     .line 20
@@ -543,7 +533,7 @@
     :goto_1
     move-object v1, v2
 
-    .line 20
+    .line 1621
     :goto_2
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 

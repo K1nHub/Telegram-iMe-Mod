@@ -16,7 +16,7 @@ final class SmartReplier$splitLemmas$words$2 extends Lambda implements Function1
     public final String invoke(String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         String lowerCase = it.toLowerCase();
-        Intrinsics.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase()");
+        Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase()");
         return lowerCase;
     }
 }

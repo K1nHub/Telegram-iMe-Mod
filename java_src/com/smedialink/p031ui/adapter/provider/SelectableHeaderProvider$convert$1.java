@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectableHeaderProvider.kt */
 /* renamed from: com.smedialink.ui.adapter.provider.SelectableHeaderProvider$convert$1 */
@@ -39,13 +39,13 @@ public final class SelectableHeaderProvider$convert$1 extends Lambda implements 
     /* compiled from: SelectableHeaderProvider.kt */
     /* renamed from: com.smedialink.ui.adapter.provider.SelectableHeaderProvider$convert$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C17811 extends Lambda implements Function1<View, Unit> {
+    public static final class C18571 extends Lambda implements Function1<View, Unit> {
         final /* synthetic */ BaseViewHolder $helper;
         final /* synthetic */ SelectableHeaderItem $item;
         final /* synthetic */ SelectableHeaderProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C17811(SelectableHeaderProvider selectableHeaderProvider, SelectableHeaderItem selectableHeaderItem, BaseViewHolder baseViewHolder) {
+        C18571(SelectableHeaderProvider selectableHeaderProvider, SelectableHeaderItem selectableHeaderItem, BaseViewHolder baseViewHolder) {
             super(1);
             this.this$0 = selectableHeaderProvider;
             this.$item = selectableHeaderItem;
@@ -84,25 +84,24 @@ public final class SelectableHeaderProvider$convert$1 extends Lambda implements 
                 resourceManager = selectableHeaderProvider.resourceManager;
                 arrayList.add(resourceManager.getString(intValue));
             }
-            this.this$0.popupWindow = PopupFactoryKt.createPopupWithOptions(this.$helper.getView(C3158R.C3161id.text_wallet_header), arrayList, new C17821(this.$helper, this.$item, this.this$0));
+            this.this$0.popupWindow = PopupFactoryKt.createPopupWithOptions(this.$helper.getView(C3286R.C3289id.text_wallet_header), arrayList, new C18581(this.$helper, this.$item, this.this$0));
             listPopupWindow3 = this.this$0.popupWindow;
-            if (listPopupWindow3 == null) {
-                return;
+            if (listPopupWindow3 != null) {
+                listPopupWindow3.show();
             }
-            listPopupWindow3.show();
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: SelectableHeaderProvider.kt */
         /* renamed from: com.smedialink.ui.adapter.provider.SelectableHeaderProvider$convert$1$1$1 */
         /* loaded from: classes3.dex */
-        public static final class C17821 extends Lambda implements Function2<Integer, String, Unit> {
+        public static final class C18581 extends Lambda implements Function2<Integer, String, Unit> {
             final /* synthetic */ BaseViewHolder $helper;
             final /* synthetic */ SelectableHeaderItem $item;
             final /* synthetic */ SelectableHeaderProvider this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C17821(BaseViewHolder baseViewHolder, SelectableHeaderItem selectableHeaderItem, SelectableHeaderProvider selectableHeaderProvider) {
+            C18581(BaseViewHolder baseViewHolder, SelectableHeaderItem selectableHeaderItem, SelectableHeaderProvider selectableHeaderProvider) {
                 super(2);
                 this.$helper = baseViewHolder;
                 this.$item = selectableHeaderItem;
@@ -117,7 +116,7 @@ public final class SelectableHeaderProvider$convert$1 extends Lambda implements 
 
             public final void invoke(int i, String value) {
                 Intrinsics.checkNotNullParameter(value, "value");
-                this.$helper.setText(C3158R.C3161id.text_wallet_header, value);
+                this.$helper.setText(C3286R.C3289id.text_wallet_header, value);
                 this.$item.getOnSelected().invoke(Integer.valueOf(i), value);
                 this.this$0.popupWindow = null;
             }
@@ -133,6 +132,6 @@ public final class SelectableHeaderProvider$convert$1 extends Lambda implements 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(LinearLayout applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-        ViewExtKt.safeThrottledClick$default(applyForView, 0L, new C17811(this.this$0, this.$item, this.$helper), 1, null);
+        ViewExtKt.safeThrottledClick$default(applyForView, 0L, new C18571(this.this$0, this.$item, this.$helper), 1, null);
     }
 }

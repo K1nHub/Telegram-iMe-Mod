@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda1;->f$1:Lcom/smedialink/storage/domain/model/music/PlaylistModel;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/MusicController;->$r8$lambda$5U_8B4uL0-PBD9cOau-V-47Ghtk(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/MusicController;->$r8$lambda$A1P3lZ3Ex8FvNc18YQw5b35OCV8(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
 
     return-void
 .end method

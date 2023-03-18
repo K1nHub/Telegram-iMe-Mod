@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/crypto/ton/TonConfigRepositoryImpl$$ExternalSyntheticLambda1;->f$0:Lcom/smedialink/storage/data/repository/crypto/ton/TonConfigRepositoryImpl;
 
-    invoke-static {v0}, Lcom/smedialink/storage/data/repository/crypto/ton/TonConfigRepositoryImpl;->$r8$lambda$SEeswyZTWX9Y4YmyP3MEJLnrdqU(Lcom/smedialink/storage/data/repository/crypto/ton/TonConfigRepositoryImpl;)Lokhttp3/Response;
+    invoke-static {v0}, Lcom/smedialink/storage/data/repository/crypto/ton/TonConfigRepositoryImpl;->$r8$lambda$jznyFxsoaEuowkiS5c-yVORUsnI(Lcom/smedialink/storage/data/repository/crypto/ton/TonConfigRepositoryImpl;)Lokhttp3/Response;
 
     move-result-object v0
 

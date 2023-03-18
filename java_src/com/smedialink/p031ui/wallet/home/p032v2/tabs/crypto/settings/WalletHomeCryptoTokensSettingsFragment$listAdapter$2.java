@@ -19,6 +19,6 @@ final class WalletHomeCryptoTokensSettingsFragment$listAdapter$2 extends Lambda 
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final WalletHomeCryptoTokensSettingsFragment.ListAdapter invoke() {
-        return new WalletHomeCryptoTokensSettingsFragment.ListAdapter(this.this$0);
+        return new WalletHomeCryptoTokensSettingsFragment.ListAdapter();
     }
 }

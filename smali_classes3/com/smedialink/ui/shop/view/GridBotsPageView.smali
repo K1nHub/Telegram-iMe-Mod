@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nGridBotsPageView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GridBotsPageView.kt\ncom/smedialink/ui/shop/view/GridBotsPageView\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,143:1\n1#2:144\n1849#3:145\n1052#3:146\n1850#3:147\n1849#3:148\n1547#3:149\n1618#3,3:150\n1849#3,2:153\n1850#3:155\n*S KotlinDebug\n*F\n+ 1 GridBotsPageView.kt\ncom/smedialink/ui/shop/view/GridBotsPageView\n*L\n110#1:145\n112#1:146\n110#1:147\n127#1:148\n128#1:149\n128#1:150,3\n128#1:153,2\n127#1:155\n*E\n"
+    value = "SMAP\nGridBotsPageView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GridBotsPageView.kt\ncom/smedialink/ui/shop/view/GridBotsPageView\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,143:1\n1#2:144\n1855#3:145\n1054#3:146\n1856#3:147\n1855#3:148\n1549#3:149\n1620#3,3:150\n1855#3,2:153\n1856#3:155\n*S KotlinDebug\n*F\n+ 1 GridBotsPageView.kt\ncom/smedialink/ui/shop/view/GridBotsPageView\n*L\n110#1:145\n112#1:146\n110#1:147\n127#1:148\n128#1:149\n128#1:150,3\n128#1:153,2\n127#1:155\n*E\n"
 .end annotation
 
 
@@ -26,36 +26,36 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$7En28y06klW8G7GoYaKF6hPp8To(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+.method public static synthetic $r8$lambda$9VAq3gaGCTsyXTvdX-5FgVBKwAI(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda-1(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$LUbOFl2fkRc2GCkIerl_RSSHHxQ(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda$1(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$IlX-ZqyfGqJL0J3RhoejSp18HNs(Lcom/smedialink/ui/shop/view/GridBotsPageView;Lio/reactivex/disposables/Disposable;)V
+.method public static synthetic $r8$lambda$UeKBvJGLmWmJ1XbRhrxQ2DLODoU(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda-2(Lcom/smedialink/ui/shop/view/GridBotsPageView;Lio/reactivex/disposables/Disposable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$QvHft634lh4KewV7UB2AchVyDYI(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$aXV9P5Ni7KdFtczTF6zqQySrIk4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda-3(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$WZLxbYhiDr7Mdsmk6CUVCe2Eadk(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-static {p0}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda-4(Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeToContent$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -99,8 +99,6 @@
     const/4 p3, 0x1
 
     invoke-virtual {p1, p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->setHasStableIds(Z)V
-
-    sget-object p4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     iput-object p1, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->recyclerAdapter:Lcom/smedialink/ui/shop/view/adapter/BotsCategoriesAdapter;
 
@@ -227,6 +225,33 @@
     return-void
 .end method
 
+.method public static final synthetic access$getProgress$p(Lcom/smedialink/ui/shop/view/GridBotsPageView;)Landroid/widget/ProgressBar;
+    .locals 0
+
+    .line 30
+    iget-object p0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->progress:Landroid/widget/ProgressBar;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getRecycler$p(Lcom/smedialink/ui/shop/view/GridBotsPageView;)Lorg/telegram/ui/Components/RecyclerListView;
+    .locals 0
+
+    .line 30
+    iget-object p0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->recycler:Lorg/telegram/ui/Components/RecyclerListView;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$getRecyclerAdapter$p(Lcom/smedialink/ui/shop/view/GridBotsPageView;)Lcom/smedialink/ui/shop/view/adapter/BotsCategoriesAdapter;
+    .locals 0
+
+    .line 30
+    iget-object p0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->recyclerAdapter:Lcom/smedialink/ui/shop/view/adapter/BotsCategoriesAdapter;
+
+    return-object p0
+.end method
+
 .method private final buildShopContent(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
@@ -249,7 +274,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -290,10 +315,10 @@
 
     move-result-object v2
 
-    .line 1052
-    new-instance v3, Lcom/smedialink/ui/shop/view/GridBotsPageView$buildShopContent$lambda-7$$inlined$sortedByDescending$1;
+    .line 1054
+    new-instance v3, Lcom/smedialink/ui/shop/view/GridBotsPageView$buildShopContent$lambda$7$$inlined$sortedByDescending$1;
 
-    invoke-direct {v3}, Lcom/smedialink/ui/shop/view/GridBotsPageView$buildShopContent$lambda-7$$inlined$sortedByDescending$1;-><init>()V
+    invoke-direct {v3}, Lcom/smedialink/ui/shop/view/GridBotsPageView$buildShopContent$lambda$7$$inlined$sortedByDescending$1;-><init>()V
 
     invoke-static {v2, v3}, Lkotlin/collections/CollectionsKt;->sortedWith(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
@@ -354,7 +379,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -377,7 +402,7 @@
 
     move-result-object v2
 
-    .line 1547
+    .line 1549
     new-instance v3, Ljava/util/ArrayList;
 
     const/16 v4, 0xa
@@ -388,7 +413,7 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -404,7 +429,7 @@
 
     move-result-object v4
 
-    .line 1619
+    .line 1621
     check-cast v4, Lcom/smedialink/bots/domain/model/SmartTag;
 
     .line 128
@@ -412,11 +437,12 @@
 
     move-result-object v4
 
+    .line 1621
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1849
+    .line 1855
     :cond_1
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -452,7 +478,7 @@
     return-object v0
 .end method
 
-.method private static final subscribeToContent$lambda-1(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+.method private static final subscribeToContent$lambda$1(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;Ljava/util/List;)Ljava/util/List;
     .locals 1
 
     const-string v0, "this$0"
@@ -475,92 +501,41 @@
     return-object p0
 .end method
 
-.method private static final subscribeToContent$lambda-2(Lcom/smedialink/ui/shop/view/GridBotsPageView;Lio/reactivex/disposables/Disposable;)V
+.method private static final subscribeToContent$lambda$2(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string p1, "this$0"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 89
-    iget-object p1, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->recycler:Lorg/telegram/ui/Components/RecyclerListView;
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
-
-    .line 90
-    iget-object p0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->progress:Landroid/widget/ProgressBar;
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method private static final subscribeToContent$lambda-3(Lcom/smedialink/ui/shop/view/GridBotsPageView;Ljava/util/List;)V
-    .locals 2
-
-    const-string v0, "this$0"
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 93
-    iget-object v0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->progress:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v0}, Landroid/widget/ProgressBar;->getVisibility()I
-
-    move-result v0
-
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_0
-
-    .line 94
-    iget-object v0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->progress:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 96
-    :cond_0
-    iget-object v0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->recycler:Lorg/telegram/ui/Components/RecyclerListView;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 97
-    iget-object v0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->recycler:Lorg/telegram/ui/Components/RecyclerListView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
-
-    .line 99
-    :cond_1
-    iget-object p0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->recyclerAdapter:Lcom/smedialink/ui/shop/view/adapter/BotsCategoriesAdapter;
-
-    const-string v0, "content"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0, p1}, Lcom/smedialink/ui/shop/view/adapter/BotsCategoriesAdapter;->setContent(Ljava/util/List;)V
+    .line 88
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final subscribeToContent$lambda-4(Ljava/lang/Throwable;)V
+.method private static final subscribeToContent$lambda$3(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
     .locals 1
 
-    const-string v0, "t"
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 92
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final subscribeToContent$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 100
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -585,14 +560,11 @@
     .line 140
     iget-object v0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeDisposable:Lio/reactivex/disposables/Disposable;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -615,15 +587,12 @@
     .line 78
     iget-object v0, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->subscribeDisposable:Lio/reactivex/disposables/Disposable;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {v0}, Lio/reactivex/disposables/Disposable;->dispose()V
 
     .line 81
-    :goto_0
+    :cond_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->smartBotsManager:Lcom/smedialink/bots/usecase/AiBotsManager;
 
     iget-object v1, p0, Lcom/smedialink/ui/shop/view/GridBotsPageView;->botLanguage:Lcom/smedialink/bots/domain/model/BotLanguage;
@@ -701,22 +670,36 @@
     move-result-object v0
 
     .line 88
-    new-instance v1, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda1;
+    new-instance v1, Lcom/smedialink/ui/shop/view/GridBotsPageView$subscribeToContent$2;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda1;-><init>(Lcom/smedialink/ui/shop/view/GridBotsPageView;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/view/GridBotsPageView$subscribeToContent$2;-><init>(Lcom/smedialink/ui/shop/view/GridBotsPageView;)V
 
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
+    new-instance v2, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda3;
+
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda3;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->doOnSubscribe(Lio/reactivex/functions/Consumer;)Lio/reactivex/Observable;
 
     move-result-object v0
 
     .line 92
-    new-instance v1, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda2;
+    new-instance v1, Lcom/smedialink/ui/shop/view/GridBotsPageView$subscribeToContent$3;
 
-    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda2;-><init>(Lcom/smedialink/ui/shop/view/GridBotsPageView;)V
+    invoke-direct {v1, p0}, Lcom/smedialink/ui/shop/view/GridBotsPageView$subscribeToContent$3;-><init>(Lcom/smedialink/ui/shop/view/GridBotsPageView;)V
 
-    sget-object v2, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda3;->INSTANCE:Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda3;
+    new-instance v2, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda1;
 
-    invoke-virtual {v0, v1, v2}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    invoke-direct {v2, v1}, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    sget-object v1, Lcom/smedialink/ui/shop/view/GridBotsPageView$subscribeToContent$4;->INSTANCE:Lcom/smedialink/ui/shop/view/GridBotsPageView$subscribeToContent$4;
+
+    .line 100
+    new-instance v3, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda2;
+
+    invoke-direct {v3, v1}, Lcom/smedialink/ui/shop/view/GridBotsPageView$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 92
+    invoke-virtual {v0, v2, v3}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 

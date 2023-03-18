@@ -3,7 +3,7 @@
 .source "ChatActivity.java"
 
 # interfaces
-.implements Lorg/telegram/ui/Components/PopupSwipeBackLayout$OnSwipeBackProgressListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
@@ -18,85 +18,150 @@
 
 
 # instance fields
-.field isEnter:Z
+.field private pos:[I
 
-.field final synthetic val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+.field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
+
+.field final synthetic val$rect:Landroid/graphics/Rect;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 28015
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$125;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    .line 28062
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$125;->val$rect:Landroid/graphics/Rect;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x1
+    const/4 p1, 0x2
 
-    .line 28017
-    iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$125;->isEnter:Z
+    new-array p1, p1, [I
+
+    .line 28064
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->pos:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onSwipeBackProgress(Lorg/telegram/ui/Components/PopupSwipeBackLayout;FF)V
-    .locals 2
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 7
 
-    const/4 p1, 0x0
+    .line 28068
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result p1
 
     const/4 v0, 0x0
 
-    cmpl-float v0, p2, v0
+    if-nez p1, :cond_0
 
-    if-nez v0, :cond_0
+    .line 28069
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 28021
-    iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$125;->isEnter:Z
+    iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->scrimPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    if-nez v0, :cond_0
+    if-eqz p1, :cond_1
 
-    .line 28022
-    iget-object p2, p0, Lorg/telegram/ui/ChatActivity$125;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    invoke-virtual {p1}, Landroid/widget/PopupWindow;->isShowing()Z
 
-    invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->startEnterAnimation(Z)V
+    move-result p1
 
-    const/4 p1, 0x1
+    if-eqz p1, :cond_1
 
-    .line 28023
-    iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$125;->isEnter:Z
+    .line 28070
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->scrimPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    invoke-virtual {p1}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object p1
+
+    .line 28071
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$125;->pos:[I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->getLocationInWindow([I)V
+
+    .line 28072
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$125;->val$rect:Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$125;->pos:[I
+
+    aget v3, v2, v0
+
+    const/4 v4, 0x1
+
+    aget v5, v2, v4
+
+    aget v2, v2, v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v6
+
+    add-int/2addr v2, v6
+
+    iget-object v6, p0, Lorg/telegram/ui/ChatActivity$125;->pos:[I
+
+    aget v4, v6, v4
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result p1
+
+    add-int/2addr v4, p1
+
+    invoke-virtual {v1, v3, v5, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 28073
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->val$rect:Landroid/graphics/Rect;
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p2
+
+    float-to-int p2, p2
+
+    invoke-virtual {p1, v1, p2}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    .line 28074
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
 
     goto :goto_0
 
+    .line 28077
     :cond_0
-    const/high16 v0, 0x3f800000    # 1.0f
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    cmpl-float p2, p2, v0
+    move-result p1
 
-    if-nez p2, :cond_1
+    const/4 p2, 0x4
 
-    .line 28024
-    iget-boolean p2, p0, Lorg/telegram/ui/ChatActivity$125;->isEnter:Z
+    if-ne p1, p2, :cond_1
 
-    if-eqz p2, :cond_1
+    .line 28078
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 28025
-    iget-object p2, p0, Lorg/telegram/ui/ChatActivity$125;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    sub-float v1, v0, p3
-
-    invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setAlpha(F)V
-
-    cmpl-float p2, p3, v0
-
-    if-nez p2, :cond_1
-
-    .line 28027
-    iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$125;->isEnter:Z
+    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
 
     :cond_1
     :goto_0
-    return-void
+    return v0
 .end method

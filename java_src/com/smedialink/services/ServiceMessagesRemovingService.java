@@ -15,7 +15,6 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
@@ -30,7 +29,7 @@ import org.fork.utils.CollectionsUtilsKt;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -83,8 +82,14 @@ public final class ServiceMessagesRemovingService extends Service implements Not
 
         static {
             int[] iArr = new int[State.values().length];
-            iArr[State.LOADING.ordinal()] = 1;
-            iArr[State.DELETING.ordinal()] = 2;
+            try {
+                iArr[State.LOADING.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[State.DELETING.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -125,39 +130,47 @@ public final class ServiceMessagesRemovingService extends Service implements Not
     public void didReceivedNotification(int i, int i2, Object... args) {
         Intrinsics.checkNotNullParameter(args, "args");
         if (i == NotificationCenter.messagesDidLoad) {
-            int intValue = ((Integer) args[10]).intValue();
+            Object obj = args[10];
+            Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
+            int intValue = ((Integer) obj).intValue();
             if (this.isLoadingMessages && intValue == this.classGuid) {
+                Object obj2 = args[2];
+                Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type kotlin.collections.List<*>");
                 ArrayList arrayList = new ArrayList();
-                for (Object obj : (List) args[2]) {
-                    if (obj instanceof MessageObject) {
-                        arrayList.add(obj);
+                for (Object obj3 : (List) obj2) {
+                    if (obj3 instanceof MessageObject) {
+                        arrayList.add(obj3);
                     }
                 }
                 onNewMessagesPartLoaded(arrayList);
             }
-        } else if (i != NotificationCenter.messagesDeleted) {
-            if (i == NotificationCenter.loadingMessagesFailed) {
-                int intValue2 = ((Integer) args[0]).intValue();
-                if (this.isLoadingMessages && intValue2 == this.classGuid) {
-                    stopServiceWithToast(C3158R.string.loading_messages_error);
-                }
-            } else if (i == NotificationCenter.didUpdateConnectionState) {
-                onConnectionStateChanged();
-            }
-        } else {
+        } else if (i == NotificationCenter.messagesDeleted) {
+            Object obj4 = args[0];
+            Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type kotlin.collections.List<*>");
             ArrayList arrayList2 = new ArrayList();
-            for (Object obj2 : (List) args[0]) {
-                if (obj2 instanceof Integer) {
-                    arrayList2.add(obj2);
+            for (Object obj5 : (List) obj4) {
+                if (obj5 instanceof Integer) {
+                    arrayList2.add(obj5);
                 }
             }
-            long longValue = ((Long) args[1]).longValue();
+            Object obj6 = args[1];
+            Intrinsics.checkNotNull(obj6, "null cannot be cast to non-null type kotlin.Long");
+            long longValue = ((Long) obj6).longValue();
             if (this.isLoadingMessages) {
                 return;
             }
             if ((longValue == this.chatId || longValue == this.migratedChatId || longValue == 0) && Intrinsics.areEqual(this.deletingServiceMessagesIds, arrayList2)) {
                 deleteNextServiceMessagesPart();
             }
+        } else if (i == NotificationCenter.loadingMessagesFailed) {
+            Object obj7 = args[0];
+            Intrinsics.checkNotNull(obj7, "null cannot be cast to non-null type kotlin.Int");
+            int intValue2 = ((Integer) obj7).intValue();
+            if (this.isLoadingMessages && intValue2 == this.classGuid) {
+                stopServiceWithToast(C3286R.string.loading_messages_error);
+            }
+        } else if (i == NotificationCenter.didUpdateConnectionState) {
+            onConnectionStateChanged();
         }
     }
 
@@ -220,7 +233,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ServiceMessagesRemovingChannel", C3158R.C3160drawable.msg_delete_filled, StopServiceMessagesRemovingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ServiceMessagesRemovingChannel", C3286R.C3288drawable.msg_delete_filled, StopServiceMessagesRemovingReceiver.class);
         }
     }
 
@@ -245,7 +258,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
             return;
         }
         CollectionsKt__MutableCollectionsKt.addAll(this.messages, list);
-        this.startLoadFromMessageId = ((MessageObject) CollectionsKt.last((List<? extends Object>) list)).messageOwner.f1518id;
+        this.startLoadFromMessageId = ((MessageObject) CollectionsKt.last((List<? extends Object>) list)).messageOwner.f1523id;
         if (list.size() == 1) {
             TLRPC$Message tLRPC$Message = ((MessageObject) CollectionsKt.first((List<? extends Object>) list)).messageOwner;
             TLRPC$MessageAction tLRPC$MessageAction = tLRPC$Message.action;
@@ -259,7 +272,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
                 takeLast = CollectionsKt___CollectionsKt.takeLast(this.messages, 3);
                 if (!(takeLast instanceof Collection) || !takeLast.isEmpty()) {
                     for (MessageObject messageObject : takeLast) {
-                        if (messageObject.messageOwner.f1518id == tLRPC$Message.f1518id) {
+                        if (messageObject.messageOwner.f1523id == tLRPC$Message.f1523id) {
                             z = true;
                             continue;
                         } else {
@@ -292,14 +305,13 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         runWithDelay(new Runnable() { // from class: com.smedialink.services.ServiceMessagesRemovingService$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ServiceMessagesRemovingService.m1293loadMessages$lambda3(ServiceMessagesRemovingService.this, j2);
+                ServiceMessagesRemovingService.loadMessages$lambda$3(ServiceMessagesRemovingService.this, j2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: loadMessages$lambda-3  reason: not valid java name */
-    public static final void m1293loadMessages$lambda3(ServiceMessagesRemovingService this$0, long j) {
+    public static final void loadMessages$lambda$3(ServiceMessagesRemovingService this$0, long j) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AccountInstance accountInstance = this$0.accountInstance;
         if (accountInstance == null) {
@@ -337,7 +349,6 @@ public final class ServiceMessagesRemovingService extends Service implements Not
             }
         }
         this.serviceMessagesCount = arrayList.size();
-        Unit unit = Unit.INSTANCE;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (MessageObject messageObject : arrayList) {
             Long valueOf = Long.valueOf(messageObject.getChatId());
@@ -346,7 +357,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
                 obj = new ArrayList();
                 linkedHashMap.put(valueOf, obj);
             }
-            ((List) obj).add(Integer.valueOf(messageObject.messageOwner.f1518id));
+            ((List) obj).add(Integer.valueOf(messageObject.messageOwner.f1523id));
         }
         mapCapacity = MapsKt__MapsJVMKt.mapCapacity(linkedHashMap.size());
         LinkedHashMap linkedHashMap2 = new LinkedHashMap(mapCapacity);
@@ -361,7 +372,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         if (list2 == null || list2.isEmpty()) {
             List<Integer> list3 = this.serviceMessagesIdsByChatsIds.get(Long.valueOf(this.migratedChatId));
             if ((list3 == null || list3.isEmpty()) ? true : true) {
-                stopServiceWithToast(C3158R.string.no_service_messages);
+                stopServiceWithToast(C3286R.string.no_service_messages);
                 return;
             }
         }
@@ -371,7 +382,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
     private final void deleteNextServiceMessagesPart() {
         updateNotification(true, State.DELETING);
         if (deleteChatMessagesPartIfExist(this.chatId) && deleteChatMessagesPartIfExist(this.migratedChatId)) {
-            stopServiceWithToast(C3158R.string.deleting_messages_success);
+            stopServiceWithToast(C3286R.string.deleting_messages_success);
         }
     }
 
@@ -387,7 +398,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
             Map<Long, List<Integer>> map = this.serviceMessagesIdsByChatsIds;
             Long valueOf = Long.valueOf(j);
             List<Integer> list2 = this.serviceMessagesIdsByChatsIds.get(Long.valueOf(j));
-            List<Integer> dropLast = list2 == null ? null : CollectionsKt___CollectionsKt.dropLast(list2, Math.min(size, 100));
+            List<Integer> dropLast = list2 != null ? CollectionsKt___CollectionsKt.dropLast(list2, Math.min(size, 100)) : null;
             if (dropLast == null) {
                 dropLast = CollectionsKt__CollectionsKt.emptyList();
             }
@@ -407,14 +418,13 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         runWithDelay(new Runnable() { // from class: com.smedialink.services.ServiceMessagesRemovingService$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ServiceMessagesRemovingService.m1292deleteMessages$lambda9(ServiceMessagesRemovingService.this, j);
+                ServiceMessagesRemovingService.deleteMessages$lambda$9(ServiceMessagesRemovingService.this, j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: deleteMessages$lambda-9  reason: not valid java name */
-    public static final void m1292deleteMessages$lambda9(ServiceMessagesRemovingService this$0, long j) {
+    public static final void deleteMessages$lambda$9(ServiceMessagesRemovingService this$0, long j) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AccountInstance accountInstance = this$0.accountInstance;
         if (accountInstance == null) {
@@ -442,20 +452,19 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         }
         int i = WhenMappings.$EnumSwitchMapping$0[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3158R.string.loading_messages, Integer.valueOf(this.messages.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3286R.string.loading_messages, Integer.valueOf(this.messages.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3158R.string.deleting_messages, Integer.valueOf(this.deletedMessagesCount), Integer.valueOf(this.serviceMessagesCount));
+            formatStringInternal = LocaleController.formatStringInternal(C3286R.string.deleting_messages, Integer.valueOf(this.deletedMessagesCount), Integer.valueOf(this.serviceMessagesCount));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3158R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3286R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
-        if (builder == null) {
-            return;
-        }
-        builder.setTicker(formatStringInternal);
-        builder.setContentText(formatStringInternal);
-        if (z) {
-            NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(this.notificationChannelId, builder.build());
+        if (builder != null) {
+            builder.setTicker(formatStringInternal);
+            builder.setContentText(formatStringInternal);
+            if (z) {
+                NotificationManagerCompat.from(ApplicationLoader.applicationContext).notify(this.notificationChannelId, builder.build());
+            }
         }
     }
 

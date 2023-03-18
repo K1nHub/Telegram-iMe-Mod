@@ -4,7 +4,7 @@ import io.grpc.Attributes;
 import io.grpc.Deadline;
 import io.grpc.DecompressorRegistry;
 import io.grpc.Status;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ClientStream extends Stream {
     void appendTimeoutInsight(InsightBuilder insightBuilder);
 

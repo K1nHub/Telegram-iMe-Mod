@@ -25,10 +25,10 @@
 .method constructor <init>(Landroidx/core/view/ContentInfoCompat$Compat;)V
     .locals 0
 
-    .line 149
+    .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 150
+    .line 152
     iput-object p1, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     return-void
@@ -45,7 +45,7 @@
 
     return-object p0
 
-    .line 143
+    .line 145
     :cond_0
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -79,7 +79,7 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 113
+    .line 114
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0
@@ -120,7 +120,7 @@
 .method public static toContentInfoCompat(Landroid/view/ContentInfo;)Landroidx/core/view/ContentInfoCompat;
     .locals 2
 
-    .line 165
+    .line 167
     new-instance v0, Landroidx/core/view/ContentInfoCompat;
 
     new-instance v1, Landroidx/core/view/ContentInfoCompat$Compat31Impl;
@@ -137,7 +137,7 @@
 .method public getClip()Landroid/content/ClipData;
     .locals 1
 
-    .line 194
+    .line 196
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getClip()Landroid/content/ClipData;
@@ -150,7 +150,7 @@
 .method public getFlags()I
     .locals 1
 
-    .line 211
+    .line 213
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getFlags()I
@@ -163,7 +163,7 @@
 .method public getSource()I
     .locals 1
 
-    .line 203
+    .line 205
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getSource()I
@@ -176,12 +176,16 @@
 .method public toContentInfo()Landroid/view/ContentInfo;
     .locals 1
 
-    .line 180
+    .line 182
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-interface {v0}, Landroidx/core/view/ContentInfoCompat$Compat;->getWrapped()Landroid/view/ContentInfo;
 
     move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    check-cast v0, Landroid/view/ContentInfo;
 
     return-object v0
 .end method
@@ -189,7 +193,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 186
+    .line 188
     iget-object v0, p0, Landroidx/core/view/ContentInfoCompat;->mCompat:Landroidx/core/view/ContentInfoCompat$Compat;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

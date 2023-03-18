@@ -2,40 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda16;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/TopicsFragment;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda16;
-
-    invoke-direct {v0}, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda16;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda16;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/TopicsFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 0
+.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$5zSG_oF_4P2yLkgPZlJrh-8LsBE()V
+    iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/TopicsFragment;
 
-    return-void
+    invoke-static {v0, p1}, Lorg/telegram/ui/TopicsFragment;->$r8$lambda$YUBesP6r-lXmj9Cf0fbHi1A9tXE(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+
+    move-result p1
+
+    return p1
 .end method

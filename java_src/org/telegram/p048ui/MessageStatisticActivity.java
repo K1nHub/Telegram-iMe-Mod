@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -218,7 +218,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == NotificationCenter.chatInfoDidLoad) {
             TLRPC$ChatFull tLRPC$ChatFull = (TLRPC$ChatFull) objArr[0];
-            if (this.chat == null && tLRPC$ChatFull.f1495id == this.chatId) {
+            if (this.chat == null && tLRPC$ChatFull.f1500id == this.chatId) {
                 TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(this.chatId));
                 if (chat != null) {
                     this.avatarContainer.setChatAvatar(chat);
@@ -263,7 +263,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
         } else {
             bundle.putLong("chat_id", -dialogId);
         }
-        bundle.putInt("message_id", tLRPC$Message.f1518id);
+        bundle.putInt("message_id", tLRPC$Message.f1523id);
         bundle.putBoolean("need_remove_previous_same_chat_activity", false);
         if (getMessagesController().checkCanOpenChat(bundle, this)) {
             presentFragment(new ChatActivity(bundle));
@@ -274,7 +274,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
     public /* synthetic */ void lambda$createView$1(View view) {
         if (getParentLayout().getFragmentStack().size() > 1) {
             BaseFragment baseFragment = getParentLayout().getFragmentStack().get(getParentLayout().getFragmentStack().size() - 2);
-            if ((baseFragment instanceof ChatActivity) && ((ChatActivity) baseFragment).getCurrentChat().f1494id == this.chatId) {
+            if ((baseFragment instanceof ChatActivity) && ((ChatActivity) baseFragment).getCurrentChat().f1499id == this.chatId) {
                 finishFragment();
                 return;
             }
@@ -293,7 +293,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
         }
         ActionBarMenu createMenu = this.actionBar.createMenu();
         createMenu.clearItems();
-        createMenu.addItem(0, C3158R.C3160drawable.ic_ab_other).addSubItem(1, C3158R.C3160drawable.msg_stats, LocaleController.getString("ViewChannelStats", C3158R.string.ViewChannelStats));
+        createMenu.addItem(0, C3286R.C3288drawable.ic_ab_other).addSubItem(1, C3286R.C3288drawable.msg_stats, LocaleController.getString("ViewChannelStats", C3286R.string.ViewChannelStats));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -320,7 +320,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
         if (!this.messages.isEmpty()) {
             ArrayList<TLRPC$Message> arrayList = this.messages;
             TLRPC$Message tLRPC$Message = arrayList.get(arrayList.size() - 1);
-            tLRPC$TL_stats_getMessagePublicForwards.offset_id = tLRPC$Message.f1518id;
+            tLRPC$TL_stats_getMessagePublicForwards.offset_id = tLRPC$Message.f1523id;
             tLRPC$TL_stats_getMessagePublicForwards.offset_peer = getMessagesController().getInputPeer(MessageObject.getDialogId(tLRPC$Message));
             tLRPC$TL_stats_getMessagePublicForwards.offset_rate = this.nextRate;
         } else {
@@ -407,17 +407,17 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
             updateRows();
             return;
         }
-        StatisticActivity.ChartViewData createViewData = StatisticActivity.createViewData(((TLRPC$TL_stats_messageStats) tLObject).views_graph, LocaleController.getString("InteractionsChartTitle", C3158R.string.InteractionsChartTitle), 1, false);
+        StatisticActivity.ChartViewData createViewData = StatisticActivity.createViewData(((TLRPC$TL_stats_messageStats) tLObject).views_graph, LocaleController.getString("InteractionsChartTitle", C3286R.string.InteractionsChartTitle), 1, false);
         this.interactionsViewData = createViewData;
-        if (createViewData != null && createViewData.chartData.f1665x.length <= 5) {
+        if (createViewData != null && createViewData.chartData.f1671x.length <= 5) {
             this.statsLoaded = false;
             final TLRPC$TL_stats_loadAsyncGraph tLRPC$TL_stats_loadAsyncGraph = new TLRPC$TL_stats_loadAsyncGraph();
             StatisticActivity.ChartViewData chartViewData = this.interactionsViewData;
             tLRPC$TL_stats_loadAsyncGraph.token = chartViewData.zoomToken;
-            long[] jArr = chartViewData.chartData.f1665x;
-            tLRPC$TL_stats_loadAsyncGraph.f1621x = jArr[jArr.length - 1];
+            long[] jArr = chartViewData.chartData.f1671x;
+            tLRPC$TL_stats_loadAsyncGraph.f1627x = jArr[jArr.length - 1];
             tLRPC$TL_stats_loadAsyncGraph.flags |= 1;
-            final String str = this.interactionsViewData.zoomToken + "_" + tLRPC$TL_stats_loadAsyncGraph.f1621x;
+            final String str = this.interactionsViewData.zoomToken + "_" + tLRPC$TL_stats_loadAsyncGraph.f1627x;
             ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tLRPC$TL_stats_loadAsyncGraph, new RequestDelegate() { // from class: org.telegram.ui.MessageStatisticActivity$$ExternalSyntheticLambda7
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC$TL_error tLRPC$TL_error2) {
@@ -472,7 +472,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
         this.childDataCache.put(str, chartData);
         StatisticActivity.ChartViewData chartViewData = this.interactionsViewData;
         chartViewData.childChartData = chartData;
-        chartViewData.activeZoom = tLRPC$TL_stats_loadAsyncGraph.f1621x;
+        chartViewData.activeZoom = tLRPC$TL_stats_loadAsyncGraph.f1627x;
         updateRows();
     }
 
@@ -512,12 +512,12 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.MessageStatisticActivity$ListAdapter$1 */
         /* loaded from: classes5.dex */
-        public class C58351 extends StatisticActivity.BaseChartCell {
+        public class C59771 extends StatisticActivity.BaseChartCell {
             @Override // org.telegram.p048ui.StatisticActivity.BaseChartCell
             public void loadData(StatisticActivity.ChartViewData chartViewData) {
             }
 
-            C58351(Context context, int i, BaseChartView.SharedUiComponents sharedUiComponents) {
+            C59771(Context context, int i, BaseChartView.SharedUiComponents sharedUiComponents) {
                 super(context, i, sharedUiComponents);
             }
 
@@ -547,7 +547,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
                         TLRPC$TL_stats_loadAsyncGraph tLRPC$TL_stats_loadAsyncGraph = new TLRPC$TL_stats_loadAsyncGraph();
                         tLRPC$TL_stats_loadAsyncGraph.token = this.data.zoomToken;
                         if (selectedDate != 0) {
-                            tLRPC$TL_stats_loadAsyncGraph.f1621x = selectedDate;
+                            tLRPC$TL_stats_loadAsyncGraph.f1627x = selectedDate;
                             tLRPC$TL_stats_loadAsyncGraph.flags |= 1;
                         }
                         MessageStatisticActivity messageStatisticActivity = MessageStatisticActivity.this;
@@ -558,7 +558,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
                         ConnectionsManager.getInstance(((BaseFragment) MessageStatisticActivity.this).currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(((BaseFragment) MessageStatisticActivity.this).currentAccount).sendRequest(tLRPC$TL_stats_loadAsyncGraph, new RequestDelegate() { // from class: org.telegram.ui.MessageStatisticActivity$ListAdapter$1$$ExternalSyntheticLambda1
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                                MessageStatisticActivity.ListAdapter.C58351.this.lambda$onZoomed$1(str, zoomCancelable, tLObject, tLRPC$TL_error);
+                                MessageStatisticActivity.ListAdapter.C59771.this.lambda$onZoomed$1(str, zoomCancelable, tLObject, tLRPC$TL_error);
                             }
                         }, null, null, 0, MessageStatisticActivity.this.chat.stats_dc, 1, true), ((BaseFragment) MessageStatisticActivity.this).classGuid);
                     }
@@ -580,7 +580,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MessageStatisticActivity$ListAdapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MessageStatisticActivity.ListAdapter.C58351.this.lambda$onZoomed$0(chartData, str, zoomCancelable);
+                        MessageStatisticActivity.ListAdapter.C59771.this.lambda$onZoomed$0(chartData, str, zoomCancelable);
                     }
                 });
             }
@@ -632,9 +632,9 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
                 headerCell2.setHeight(43);
                 headerCell = headerCell2;
             } else if (i == 4) {
-                View c58351 = new C58351(this.mContext, 1, MessageStatisticActivity.this.sharedUi = new BaseChartView.SharedUiComponents());
-                c58351.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                headerCell = c58351;
+                View c59771 = new C59771(this.mContext, 1, MessageStatisticActivity.this.sharedUi = new BaseChartView.SharedUiComponents());
+                c59771.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                headerCell = c59771;
             } else if (i == 5) {
                 View overviewCell = new OverviewCell(this.mContext);
                 overviewCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
@@ -736,11 +736,11 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
 
         public void setData() {
             this.primary[0].setText(AndroidUtilities.formatWholeNumber(MessageStatisticActivity.this.messageObject.messageOwner.views, 0));
-            this.title[0].setText(LocaleController.getString("StatisticViews", C3158R.string.StatisticViews));
+            this.title[0].setText(LocaleController.getString("StatisticViews", C3286R.string.StatisticViews));
             if (MessageStatisticActivity.this.publicChats > 0) {
                 this.cell[1].setVisibility(0);
                 this.primary[1].setText(AndroidUtilities.formatWholeNumber(MessageStatisticActivity.this.publicChats, 0));
-                this.title[1].setText(LocaleController.formatString("PublicShares", C3158R.string.PublicShares, new Object[0]));
+                this.title[1].setText(LocaleController.formatString("PublicShares", C3286R.string.PublicShares, new Object[0]));
             } else {
                 this.cell[1].setVisibility(8);
             }
@@ -748,7 +748,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
             if (i > 0) {
                 this.cell[2].setVisibility(0);
                 this.primary[2].setText(AndroidUtilities.formatWholeNumber(i, 0));
-                this.title[2].setText(LocaleController.formatString("PrivateShares", C3158R.string.PrivateShares, new Object[0]));
+                this.title[2].setText(LocaleController.formatString("PrivateShares", C3286R.string.PrivateShares, new Object[0]));
             } else {
                 this.cell[2].setVisibility(8);
             }
@@ -845,7 +845,7 @@ public class MessageStatisticActivity extends BaseFragment implements Notificati
             ((StatisticActivity.BaseChartCell) view).recolor();
             view.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
         } else if (view instanceof ShadowSectionCell) {
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(ApplicationLoader.applicationContext, C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"), 0, 0);
+            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(ApplicationLoader.applicationContext, C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"), 0, 0);
             combinedDrawable.setFullsize(true);
             view.setBackground(combinedDrawable);
         } else if (view instanceof ChartHeaderView) {

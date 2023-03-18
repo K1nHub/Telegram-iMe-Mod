@@ -743,7 +743,7 @@
 .method private checkVisibleRows()V
     .locals 9
 
-    .line 934
+    .line 938
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -757,47 +757,47 @@
     :goto_0
     if-ge v2, v0, :cond_5
 
-    .line 936
+    .line 940
     iget-object v3, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 937
+    .line 941
     instance-of v4, v3, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     if-eqz v4, :cond_4
 
-    .line 938
+    .line 942
     check-cast v3, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
-    .line 939
+    .line 943
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->getObject()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 941
+    .line 945
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$User;
 
     const-wide/16 v6, 0x0
 
     if-eqz v5, :cond_0
 
-    .line 942
+    .line 946
     check-cast v4, Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     goto :goto_1
 
-    .line 943
+    .line 947
     :cond_0
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v5, :cond_1
 
-    .line 944
+    .line 948
     check-cast v4, Lorg/telegram/tgnet/TLRPC$Chat;
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -814,7 +814,7 @@
 
     if-eqz v8, :cond_4
 
-    .line 949
+    .line 953
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->ignoreUsers:Landroidx/collection/LongSparseArray;
 
     const/4 v7, 0x1
@@ -827,15 +827,15 @@
 
     if-ltz v6, :cond_2
 
-    .line 950
+    .line 954
     invoke-virtual {v3, v7, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
 
-    .line 951
+    .line 955
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setCheckBoxEnabled(Z)V
 
     goto :goto_3
 
-    .line 953
+    .line 957
     :cond_2
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -855,7 +855,7 @@
     :goto_2
     invoke-virtual {v3, v4, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
 
-    .line 954
+    .line 958
     invoke-virtual {v3, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setCheckBoxEnabled(Z)V
 
     :cond_4
@@ -873,42 +873,42 @@
 
     const/4 v0, 0x0
 
-    .line 1079
+    .line 1083
     iput-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->searching:Z
 
-    .line 1080
+    .line 1084
     iput-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->searchWas:Z
 
-    .line 1081
+    .line 1085
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->itemDecoration:Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;->setSearching(Z)V
 
-    .line 1082
+    .line 1086
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->adapter:Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->setSearching(Z)V
 
-    .line 1083
+    .line 1087
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->adapter:Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->searchDialogs(Ljava/lang/String;)V
 
-    .line 1084
+    .line 1088
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setFastScrollVisible(Z)V
 
-    .line 1085
+    .line 1089
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1086
+    .line 1090
     invoke-direct {p0, v0}, Lorg/telegram/ui/GroupCreateActivity;->showItemsAnimated(I)V
 
     return-void
@@ -917,17 +917,17 @@
 .method private synthetic lambda$createView$0(Landroid/view/View;)V
     .locals 0
 
-    .line 563
+    .line 567
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->clearFocus()V
 
-    .line 564
+    .line 568
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 565
+    .line 569
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
@@ -944,7 +944,7 @@
 
     if-ne p2, p3, :cond_0
 
-    .line 617
+    .line 621
     invoke-direct {p0, p1}, Lorg/telegram/ui/GroupCreateActivity;->onDonePressed(Z)Z
 
     move-result p2
@@ -963,12 +963,12 @@
 .method private synthetic lambda$createView$2(Lorg/telegram/tgnet/TLRPC$User;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 741
+    .line 745
     iget-object p2, p0, Lorg/telegram/ui/GroupCreateActivity;->delegate2:Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;
 
     invoke-interface {p2, p1}, Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;->needAddBot(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 742
+    .line 746
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
@@ -977,7 +977,7 @@
 
     if-lez p1, :cond_0
 
-    .line 743
+    .line 747
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 p2, 0x0
@@ -999,7 +999,7 @@
 
     if-nez p3, :cond_1
 
-    .line 690
+    .line 694
     iget-object p3, p0, Lorg/telegram/ui/GroupCreateActivity;->adapter:Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;
 
     invoke-static {p3}, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->access$3900(Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;)I
@@ -1016,7 +1016,7 @@
 
     if-nez p3, :cond_1
 
-    .line 691
+    .line 695
     new-instance p2, Lorg/telegram/ui/Components/PermanentLinkBottomSheet;
 
     const/4 v6, 0x0
@@ -1049,31 +1049,31 @@
 
     iput-object p2, p0, Lorg/telegram/ui/GroupCreateActivity;->sharedLinkBottomSheet:Lorg/telegram/ui/Components/PermanentLinkBottomSheet;
 
-    .line 692
+    .line 696
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto/16 :goto_8
 
-    .line 693
+    .line 697
     :cond_1
     instance-of p1, p2, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     if-eqz p1, :cond_e
 
-    .line 694
+    .line 698
     check-cast p2, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
-    .line 695
+    .line 699
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->getObject()Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 697
+    .line 701
     instance-of p3, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz p3, :cond_2
 
-    .line 698
+    .line 702
     move-object v4, p1
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$User;
@@ -1082,13 +1082,13 @@
 
     goto :goto_1
 
-    .line 699
+    .line 703
     :cond_2
     instance-of v4, p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v4, :cond_e
 
-    .line 700
+    .line 704
     move-object v4, p1
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$Chat;
@@ -1097,7 +1097,7 @@
 
     neg-long v4, v4
 
-    .line 704
+    .line 708
     :goto_1
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->ignoreUsers:Landroidx/collection/LongSparseArray;
 
@@ -1111,7 +1111,7 @@
 
     return-void
 
-    .line 708
+    .line 712
     :cond_3
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -1128,7 +1128,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 709
+    .line 713
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p1, v4, v5}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -1137,14 +1137,14 @@
 
     check-cast p1, Lorg/telegram/ui/Components/GroupCreateSpan;
 
-    .line 710
+    .line 714
     iget-object p3, p0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/GroupCreateActivity$SpansContainer;->removeSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
     goto/16 :goto_5
 
-    .line 712
+    .line 716
     :cond_5
     iget v4, p0, Lorg/telegram/ui/GroupCreateActivity;->maxCount:I
 
@@ -1162,7 +1162,7 @@
 
     return-void
 
-    .line 715
+    .line 719
     :cond_6
     iget v4, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
 
@@ -1184,7 +1184,7 @@
 
     if-ne v4, v7, :cond_7
 
-    .line 716
+    .line 720
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1193,7 +1193,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 717
+    .line 721
     sget p2, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string p3, "AppName"
@@ -1204,7 +1204,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 718
+    .line 722
     sget p2, Lorg/telegram/messenger/R$string;->SoftUserLimitAlert:I
 
     const-string p3, "SoftUserLimitAlert"
@@ -1215,7 +1215,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 719
+    .line 723
     sget p2, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v5, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -1224,7 +1224,7 @@
 
     invoke-virtual {p1, p2, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 720
+    .line 724
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -1236,12 +1236,12 @@
     :cond_7
     if-eqz p3, :cond_b
 
-    .line 724
+    .line 728
     move-object p3, p1
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 725
+    .line 729
     iget-boolean v4, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
 
     if-eqz v4, :cond_a
@@ -1250,7 +1250,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 726
+    .line 730
     iget-wide v7, p0, Lorg/telegram/ui/GroupCreateActivity;->channelId:J
 
     cmp-long v4, v7, v1
@@ -1261,7 +1261,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 728
+    .line 732
     :try_start_0
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -1288,7 +1288,7 @@
     :catch_0
     move-exception p1
 
-    .line 730
+    .line 734
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2
@@ -1299,7 +1299,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 735
+    .line 739
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -1314,7 +1314,7 @@
 
     move-result-object p1
 
-    .line 736
+    .line 740
     new-instance p2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1323,14 +1323,14 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 737
+    .line 741
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->canAddAdmins(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p1
 
     if-eqz p1, :cond_9
 
-    .line 738
+    .line 742
     sget p1, Lorg/telegram/messenger/R$string;->AddBotAdminAlert:I
 
     const-string v0, "AddBotAdminAlert"
@@ -1341,7 +1341,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 739
+    .line 743
     sget p1, Lorg/telegram/messenger/R$string;->AddBotAsAdmin:I
 
     const-string v0, "AddBotAsAdmin"
@@ -1352,7 +1352,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 740
+    .line 744
     sget p1, Lorg/telegram/messenger/R$string;->AddAsAdmin:I
 
     const-string v0, "AddAsAdmin"
@@ -1367,7 +1367,7 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 746
+    .line 750
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p3, "Cancel"
@@ -1380,7 +1380,7 @@
 
     goto :goto_3
 
-    .line 748
+    .line 752
     :cond_9
     sget p1, Lorg/telegram/messenger/R$string;->CantAddBotAsAdmin:I
 
@@ -1392,7 +1392,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 749
+    .line 753
     sget p1, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v5, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -1401,7 +1401,7 @@
 
     invoke-virtual {p2, p1, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 751
+    .line 755
     :goto_3
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -1411,7 +1411,7 @@
 
     return-void
 
-    .line 755
+    .line 759
     :cond_a
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -1425,13 +1425,13 @@
 
     goto :goto_4
 
-    .line 757
+    .line 761
     :cond_b
     move-object p3, p1
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 758
+    .line 762
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -1442,7 +1442,7 @@
 
     invoke-virtual {v1, p3, v2}, Lorg/telegram/messenger/MessagesController;->putChat(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
 
-    .line 760
+    .line 764
     :goto_4
     new-instance p3, Lorg/telegram/ui/Components/GroupCreateSpan;
 
@@ -1454,19 +1454,19 @@
 
     invoke-direct {p3, v1, p1}, Lorg/telegram/ui/Components/GroupCreateSpan;-><init>(Landroid/content/Context;Ljava/lang/Object;)V
 
-    .line 761
+    .line 765
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/GroupCreateActivity$SpansContainer;->addSpan(Lorg/telegram/ui/Components/GroupCreateSpan;)V
 
-    .line 762
+    .line 766
     invoke-virtual {p3, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 764
+    .line 768
     :goto_5
     invoke-direct {p0}, Lorg/telegram/ui/GroupCreateActivity;->updateHint()V
 
-    .line 765
+    .line 769
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateActivity;->searching:Z
 
     if-nez p1, :cond_d
@@ -1480,19 +1480,19 @@
     :cond_c
     xor-int/lit8 p1, v0, 0x1
 
-    .line 768
+    .line 772
     invoke-virtual {p2, p1, v3}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
 
     goto :goto_7
 
-    .line 766
+    .line 770
     :cond_d
     :goto_6
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 770
+    .line 774
     :goto_7
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -1502,7 +1502,7 @@
 
     if-lez p1, :cond_e
 
-    .line 771
+    .line 775
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p1, v6}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
@@ -1519,7 +1519,7 @@
 
     const/4 p1, 0x1
 
-    .line 820
+    .line 824
     invoke-direct {p0, p1}, Lorg/telegram/ui/GroupCreateActivity;->onDonePressed(Z)Z
 
     return-void
@@ -1528,12 +1528,12 @@
 .method private synthetic lambda$getThemeDescriptions$7()V
     .locals 5
 
-    .line 1600
+    .line 1604
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz v0, :cond_1
 
-    .line 1601
+    .line 1605
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -1545,19 +1545,19 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 1603
+    .line 1607
     iget-object v3, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1604
+    .line 1608
     instance-of v4, v3, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     if-eqz v4, :cond_0
 
-    .line 1605
+    .line 1609
     check-cast v3, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->update(I)V
@@ -1576,7 +1576,7 @@
 
     const/4 p1, 0x0
 
-    .line 1022
+    .line 1026
     aget-object v0, p0, p1
 
     aget-object p0, p0, p1
@@ -1599,7 +1599,7 @@
 
     const/4 p2, 0x0
 
-    .line 1026
+    .line 1030
     aget-object p3, p1, p2
 
     if-eqz p3, :cond_0
@@ -1623,14 +1623,14 @@
 .method private onAddToGroupDone(I)V
     .locals 5
 
-    .line 962
+    .line 966
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 963
+    .line 967
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -1640,7 +1640,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 964
+    .line 968
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -1659,23 +1659,23 @@
 
     move-result-object v2
 
-    .line 965
+    .line 969
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 967
+    .line 971
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->delegate2:Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;
 
     if-eqz v1, :cond_1
 
-    .line 968
+    .line 972
     invoke-interface {v1, v0, p1}, Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;->didSelectUsers(Ljava/util/ArrayList;I)V
 
-    .line 970
+    .line 974
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -1685,7 +1685,7 @@
 .method private onDonePressed(Z)Z
     .locals 11
 
-    .line 974
+    .line 978
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
@@ -1702,6 +1702,10 @@
 
     if-eq v0, v1, :cond_0
 
+    iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
+
+    if-eqz v0, :cond_0
+
     return v2
 
     :cond_0
@@ -1711,12 +1715,12 @@
 
     if-eqz p1, :cond_e
 
-    .line 977
+    .line 981
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
 
     if-eqz p1, :cond_e
 
-    .line 978
+    .line 982
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -1725,7 +1729,7 @@
 
     return v2
 
-    .line 981
+    .line 985
     :cond_1
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -1735,7 +1739,7 @@
 
     invoke-direct {p1, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 982
+    .line 986
     iget-object v4, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v4}, Landroidx/collection/LongSparseArray;->size()I
@@ -1752,14 +1756,14 @@
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 983
+    .line 987
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     const/4 v5, 0x0
 
-    .line 984
+    .line 988
     :goto_0
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -1769,14 +1773,14 @@
 
     if-ge v5, v6, :cond_4
 
-    .line 985
+    .line 989
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v6, v5}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
     move-result-wide v6
 
-    .line 986
+    .line 990
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v8
@@ -1793,7 +1797,7 @@
 
     goto :goto_1
 
-    .line 990
+    .line 994
     :cond_2
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
 
@@ -1803,13 +1807,13 @@
 
     const-string v7, ", "
 
-    .line 991
+    .line 995
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_3
     const-string v7, "**"
 
-    .line 993
+    .line 997
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v8, v6, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
@@ -1829,7 +1833,7 @@
 
     goto :goto_0
 
-    .line 995
+    .line 999
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -1857,7 +1861,7 @@
 
     move-result-object v5
 
-    .line 996
+    .line 1000
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v6}, Landroidx/collection/LongSparseArray;->size()I
@@ -1870,7 +1874,7 @@
 
     if-le v6, v7, :cond_8
 
-    .line 997
+    .line 1001
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     iget-object v4, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
@@ -1907,7 +1911,7 @@
 
     new-array v4, v3, [Ljava/lang/Object;
 
-    .line 998
+    .line 1002
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v6}, Landroidx/collection/LongSparseArray;->size()I
@@ -1926,14 +1930,14 @@
 
     move-result-object v4
 
-    .line 999
+    .line 1003
     invoke-static {v1, v4}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I
 
     move-result v6
 
     if-ltz v6, :cond_7
 
-    .line 1001
+    .line 1005
     new-instance v7, Lorg/telegram/ui/Components/TypefaceSpan;
 
     const-string v9, "fonts/rmedium.ttf"
@@ -1954,13 +1958,13 @@
 
     invoke-virtual {v1, v7, v6, v4, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1003
+    .line 1007
     :cond_7
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     goto :goto_5
 
-    .line 1005
+    .line 1009
     :cond_8
     sget v6, Lorg/telegram/messenger/R$string;->AddMembersAlertNamesText:I
 
@@ -1995,14 +1999,14 @@
     :goto_5
     new-array v1, v3, [Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 1008
+    .line 1012
     invoke-static {v5}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v4
 
     if-nez v4, :cond_d
 
-    .line 1009
+    .line 1013
     new-instance v4, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2011,10 +2015,10 @@
 
     invoke-direct {v4, v5}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1010
+    .line 1014
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1011
+    .line 1015
     new-instance v5, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2025,7 +2029,7 @@
 
     aput-object v5, v1, v2
 
-    .line 1012
+    .line 1016
     aget-object v5, v1, v2
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -2034,12 +2038,12 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1013
+    .line 1017
     aget-object v5, v1, v2
 
     invoke-virtual {v5, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->setMultiline(Z)V
 
-    .line 1014
+    .line 1018
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5}, Landroidx/collection/LongSparseArray;->size()I
@@ -2048,7 +2052,7 @@
 
     if-ne v5, v3, :cond_a
 
-    .line 1015
+    .line 1019
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v5
@@ -2067,7 +2071,7 @@
 
     move-result-object v5
 
-    .line 1016
+    .line 1020
     aget-object v6, v1, v2
 
     sget v7, Lorg/telegram/messenger/R$string;->AddOneMemberForwardMessages:I
@@ -2094,7 +2098,7 @@
 
     goto :goto_6
 
-    .line 1018
+    .line 1022
     :cond_a
     aget-object v5, v1, v2
 
@@ -2108,7 +2112,7 @@
 
     invoke-virtual {v5, v6, v8, v3, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 1020
+    .line 1024
     :goto_6
     aget-object v5, v1, v2
 
@@ -2150,7 +2154,7 @@
     :goto_8
     invoke-virtual {v5, v6, v2, v7, v2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1021
+    .line 1025
     aget-object v5, v1, v2
 
     const/4 v6, -0x1
@@ -2163,7 +2167,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1022
+    .line 1026
     aget-object v2, v1, v2
 
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$$ExternalSyntheticLambda4;
@@ -2172,10 +2176,10 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1024
+    .line 1028
     invoke-virtual {p1, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1026
+    .line 1030
     :cond_d
     sget v2, Lorg/telegram/messenger/R$string;->Add:I
 
@@ -2191,7 +2195,7 @@
 
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1027
+    .line 1031
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -2202,7 +2206,7 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1028
+    .line 1032
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -2211,20 +2215,20 @@
 
     goto/16 :goto_d
 
-    .line 1030
+    .line 1034
     :cond_e
     iget p1, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
 
     if-ne p1, v1, :cond_11
 
-    .line 1031
+    .line 1035
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 1032
+    .line 1036
     :goto_9
     iget-object v4, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -2234,7 +2238,7 @@
 
     if-ge v1, v4, :cond_10
 
-    .line 1033
+    .line 1037
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v4
@@ -2263,7 +2267,7 @@
 
     if-eqz v4, :cond_f
 
-    .line 1035
+    .line 1039
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_f
@@ -2271,7 +2275,7 @@
 
     goto :goto_9
 
-    .line 1038
+    .line 1042
     :cond_10
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -2281,7 +2285,7 @@
 
     invoke-virtual {v1, v4, v5, p1, v0}, Lorg/telegram/messenger/MessagesController;->addUsersToChannel(JLjava/util/ArrayList;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 1039
+    .line 1043
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -2292,12 +2296,12 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1040
+    .line 1044
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1041
+    .line 1045
     iget-wide v0, p0, Lorg/telegram/ui/GroupCreateActivity;->chatId:J
 
     const-string v2, "chat_id"
@@ -2306,10 +2310,10 @@
 
     const-string v0, "just_created_chat"
 
-    .line 1042
+    .line 1046
     invoke-virtual {p1, v0, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 1043
+    .line 1047
     new-instance v0, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
@@ -2318,34 +2322,26 @@
 
     goto/16 :goto_d
 
-    .line 1045
+    .line 1049
     :cond_11
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
-    if-eqz p1, :cond_19
-
-    iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
-
-    invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
-
-    move-result p1
-
     if-nez p1, :cond_12
 
-    goto/16 :goto_e
+    return v2
 
-    .line 1048
+    .line 1052
     :cond_12
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
 
     if-eqz p1, :cond_13
 
-    .line 1049
+    .line 1053
     invoke-direct {p0, v2}, Lorg/telegram/ui/GroupCreateActivity;->onAddToGroupDone(I)V
 
     goto :goto_d
 
-    .line 1051
+    .line 1055
     :cond_13
     new-instance p1, Ljava/util/ArrayList;
 
@@ -2353,7 +2349,7 @@
 
     const/4 v0, 0x0
 
-    .line 1052
+    .line 1056
     :goto_a
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -2363,7 +2359,7 @@
 
     if-ge v0, v1, :cond_14
 
-    .line 1053
+    .line 1057
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v1, v0}, Landroidx/collection/LongSparseArray;->keyAt(I)J
@@ -2380,7 +2376,7 @@
 
     goto :goto_a
 
-    .line 1055
+    .line 1059
     :cond_14
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->isAlwaysShare:Z
 
@@ -2396,13 +2392,13 @@
 
     goto :goto_c
 
-    .line 1061
+    .line 1065
     :cond_15
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1063
+    .line 1067
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -2412,7 +2408,7 @@
     :goto_b
     if-ge v2, v1, :cond_16
 
-    .line 1065
+    .line 1069
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -2432,24 +2428,24 @@
     :cond_16
     const-string p1, "result"
 
-    .line 1067
+    .line 1071
     invoke-virtual {v0, p1, v4}, Landroid/os/Bundle;->putLongArray(Ljava/lang/String;[J)V
 
-    .line 1068
+    .line 1072
     iget p1, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
 
     const-string v1, "chatType"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1069
+    .line 1073
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateActivity;->forImport:Z
 
     const-string v1, "forImport"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 1070
+    .line 1074
     new-instance p1, Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/GroupCreateFinalActivity;-><init>(Landroid/os/Bundle;)V
@@ -2458,39 +2454,35 @@
 
     goto :goto_d
 
-    .line 1056
+    .line 1060
     :cond_17
     :goto_c
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->delegate:Lorg/telegram/ui/GroupCreateActivity$GroupCreateActivityDelegate;
 
     if-eqz v0, :cond_18
 
-    .line 1057
+    .line 1061
     invoke-interface {v0, p1}, Lorg/telegram/ui/GroupCreateActivity$GroupCreateActivityDelegate;->didSelectUsers(Ljava/util/ArrayList;)V
 
-    .line 1059
+    .line 1063
     :cond_18
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     :goto_d
     return v3
-
-    :cond_19
-    :goto_e
-    return v2
 .end method
 
 .method private showItemsAnimated(I)V
     .locals 2
 
-    .line 851
+    .line 855
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->isPaused:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 854
+    .line 858
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2510,14 +2502,14 @@
 .method private updateEditTextHint()V
     .locals 3
 
-    .line 834
+    .line 838
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 837
+    .line 841
     :cond_0
     iget v1, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
 
@@ -2525,7 +2517,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 838
+    .line 842
     sget v1, Lorg/telegram/messenger/R$string;->AddMutual:I
 
     const-string v2, "AddMutual"
@@ -2538,7 +2530,7 @@
 
     goto :goto_2
 
-    .line 840
+    .line 844
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
 
@@ -2561,7 +2553,7 @@
 
     goto :goto_1
 
-    .line 842
+    .line 846
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->isAlwaysShare:Z
 
@@ -2573,7 +2565,7 @@
 
     goto :goto_0
 
-    .line 845
+    .line 849
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -2589,7 +2581,7 @@
 
     goto :goto_2
 
-    .line 843
+    .line 847
     :cond_5
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2606,7 +2598,7 @@
 
     goto :goto_2
 
-    .line 841
+    .line 845
     :cond_6
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -2628,7 +2620,7 @@
 .method private updateHint()V
     .locals 11
 
-    .line 1090
+    .line 1094
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->isAlwaysShare:Z
 
     const/4 v1, 0x2
@@ -2647,14 +2639,14 @@
 
     if-nez v0, :cond_2
 
-    .line 1091
+    .line 1095
     iget v0, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
 
     const-string v4, "Members"
 
     if-ne v0, v1, :cond_0
 
-    .line 1092
+    .line 1096
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
@@ -2673,7 +2665,7 @@
 
     goto :goto_0
 
-    .line 1094
+    .line 1098
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -2683,7 +2675,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1095
+    .line 1099
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->MembersCountZero:I
@@ -2710,7 +2702,7 @@
 
     goto :goto_0
 
-    .line 1097
+    .line 1101
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->selectedContacts:Landroidx/collection/LongSparseArray;
 
@@ -2724,7 +2716,7 @@
 
     move-result-object v0
 
-    .line 1098
+    .line 1102
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-array v5, v1, [Ljava/lang/Object;
@@ -2755,14 +2747,18 @@
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 1102
+    .line 1106
     :cond_2
     :goto_0
     iget v0, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
 
     if-eq v0, v1, :cond_6
 
-    .line 1103
+    iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
+
+    if-eqz v0, :cond_6
+
+    .line 1107
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
     const-wide/16 v4, 0xb4
@@ -2779,15 +2775,15 @@
 
     if-eqz v0, :cond_4
 
-    .line 1104
+    .line 1108
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_3
 
-    .line 1105
+    .line 1109
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1107
+    .line 1111
     :cond_3
     new-instance v0, Landroid/animation/AnimatorSet;
 
@@ -2797,7 +2793,7 @@
 
     new-array v6, v6, [Landroid/animation/Animator;
 
-    .line 1108
+    .line 1112
     iget-object v7, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     sget-object v8, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -2822,7 +2818,7 @@
 
     aput v10, v9, v3
 
-    .line 1109
+    .line 1113
     invoke-static {v7, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v7
@@ -2837,17 +2833,17 @@
 
     aput v10, v2, v3
 
-    .line 1110
+    .line 1114
     invoke-static {v7, v8, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
     aput-object v2, v6, v1
 
-    .line 1108
+    .line 1112
     invoke-virtual {v0, v6}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1111
+    .line 1115
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lorg/telegram/ui/GroupCreateActivity$11;
@@ -2856,22 +2852,22 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1117
+    .line 1121
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1118
+    .line 1122
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1119
+    .line 1123
     iput-boolean v3, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
     goto :goto_1
 
-    .line 1120
+    .line 1124
     :cond_4
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
@@ -2885,15 +2881,15 @@
 
     if-nez v0, :cond_6
 
-    .line 1121
+    .line 1125
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_5
 
-    .line 1122
+    .line 1126
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1124
+    .line 1128
     :cond_5
     new-instance v0, Landroid/animation/AnimatorSet;
 
@@ -2901,12 +2897,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
-    .line 1125
+    .line 1129
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1126
+    .line 1130
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     new-array v6, v6, [Landroid/animation/Animator;
@@ -2935,7 +2931,7 @@
 
     aput v10, v9, v3
 
-    .line 1127
+    .line 1131
     invoke-static {v7, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v7
@@ -2950,27 +2946,27 @@
 
     aput v10, v9, v3
 
-    .line 1128
+    .line 1132
     invoke-static {v7, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
     aput-object v3, v6, v1
 
-    .line 1126
+    .line 1130
     invoke-virtual {v0, v6}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1129
+    .line 1133
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1130
+    .line 1134
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->currentDoneButtonAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1131
+    .line 1135
     iput-boolean v2, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
     :cond_6
@@ -3015,62 +3011,38 @@
 
     if-ne v2, v3, :cond_0
 
-    const/4 v2, 0x1
+    .line 416
+    iput-boolean v4, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
     goto :goto_0
 
+    .line 418
     :cond_0
-    const/4 v2, 0x0
+    iget-boolean v2, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
 
-    :goto_0
+    xor-int/2addr v2, v4
+
     iput-boolean v2, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
-    .line 417
+    .line 421
+    :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 418
+    .line 422
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 419
+    .line 423
     iget v2, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
 
     const-string v5, "ChannelAddSubscribers"
 
     if-ne v2, v3, :cond_1
-
-    .line 420
-    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    sget v6, Lorg/telegram/messenger/R$string;->ChannelAddSubscribers:I
-
-    invoke-static {v5, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
-
-    goto/16 :goto_2
-
-    .line 422
-    :cond_1
-    iget-boolean v6, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
-
-    if-eqz v6, :cond_3
-
-    .line 423
-    iget-wide v6, p0, Lorg/telegram/ui/GroupCreateActivity;->channelId:J
-
-    const-wide/16 v8, 0x0
-
-    cmp-long v2, v6, v8
-
-    if-eqz v2, :cond_2
 
     .line 424
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3086,6 +3058,34 @@
     goto/16 :goto_2
 
     .line 426
+    :cond_1
+    iget-boolean v6, p0, Lorg/telegram/ui/GroupCreateActivity;->addToGroup:Z
+
+    if-eqz v6, :cond_3
+
+    .line 427
+    iget-wide v6, p0, Lorg/telegram/ui/GroupCreateActivity;->channelId:J
+
+    const-wide/16 v8, 0x0
+
+    cmp-long v2, v6, v8
+
+    if-eqz v2, :cond_2
+
+    .line 428
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    sget v6, Lorg/telegram/messenger/R$string;->ChannelAddSubscribers:I
+
+    invoke-static {v5, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+
+    goto/16 :goto_2
+
+    .line 430
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -3101,18 +3101,18 @@
 
     goto/16 :goto_2
 
-    .line 428
+    .line 432
     :cond_3
     iget-boolean v5, p0, Lorg/telegram/ui/GroupCreateActivity;->isAlwaysShare:Z
 
     if-eqz v5, :cond_6
 
-    .line 429
+    .line 433
     iget v2, p0, Lorg/telegram/ui/GroupCreateActivity;->chatAddType:I
 
     if-ne v2, v3, :cond_4
 
-    .line 430
+    .line 434
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->FilterAlwaysShow:I
@@ -3130,7 +3130,7 @@
     :cond_4
     if-ne v2, v4, :cond_5
 
-    .line 432
+    .line 436
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->AlwaysAllow:I
@@ -3145,7 +3145,7 @@
 
     goto :goto_2
 
-    .line 434
+    .line 438
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -3161,18 +3161,18 @@
 
     goto :goto_2
 
-    .line 436
+    .line 440
     :cond_6
     iget-boolean v5, p0, Lorg/telegram/ui/GroupCreateActivity;->isNeverShare:Z
 
     if-eqz v5, :cond_9
 
-    .line 437
+    .line 441
     iget v2, p0, Lorg/telegram/ui/GroupCreateActivity;->chatAddType:I
 
     if-ne v2, v3, :cond_7
 
-    .line 438
+    .line 442
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->FilterNeverShow:I
@@ -3190,7 +3190,7 @@
     :cond_7
     if-ne v2, v4, :cond_8
 
-    .line 440
+    .line 444
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/messenger/R$string;->NeverAllow:I
@@ -3205,7 +3205,7 @@
 
     goto :goto_2
 
-    .line 442
+    .line 446
     :cond_8
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -3221,7 +3221,7 @@
 
     goto :goto_2
 
-    .line 445
+    .line 449
     :cond_9
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -3245,7 +3245,7 @@
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 449
+    .line 453
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -3255,43 +3255,43 @@
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 460
+    .line 464
     new-instance v2, Lorg/telegram/ui/GroupCreateActivity$2;
 
     invoke-direct {v2, p0, p1}, Lorg/telegram/ui/GroupCreateActivity$2;-><init>(Lorg/telegram/ui/GroupCreateActivity;Landroid/content/Context;)V
 
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    .line 537
+    .line 541
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 538
+    .line 542
     invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->setFocusableInTouchMode(Z)V
 
     const/high16 v5, 0x20000
 
-    .line 539
+    .line 543
     invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
-    .line 541
+    .line 545
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$3;
 
     invoke-direct {v5, p0, p1}, Lorg/telegram/ui/GroupCreateActivity$3;-><init>(Lorg/telegram/ui/GroupCreateActivity;Landroid/content/Context;)V
 
     iput-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->scrollView:Landroid/widget/ScrollView;
 
-    .line 554
+    .line 558
     invoke-virtual {v5, v0}, Landroid/widget/ScrollView;->setClipChildren(Z)V
 
-    .line 555
+    .line 559
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 556
+    .line 560
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v5, v0}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 557
+    .line 561
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->scrollView:Landroid/widget/ScrollView;
 
     const-string v6, "windowBackgroundWhite"
@@ -3302,19 +3302,19 @@
 
     invoke-static {v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->setScrollViewEdgeEffectColor(Landroid/widget/ScrollView;I)V
 
-    .line 558
+    .line 562
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 560
+    .line 564
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
 
     invoke-direct {v5, p0, p1}, Lorg/telegram/ui/GroupCreateActivity$SpansContainer;-><init>(Lorg/telegram/ui/GroupCreateActivity;Landroid/content/Context;)V
 
     iput-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
 
-    .line 561
+    .line 565
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->scrollView:Landroid/widget/ScrollView;
 
     const/4 v7, -0x1
@@ -3327,7 +3327,7 @@
 
     invoke-virtual {v6, v5, v7}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 562
+    .line 566
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
 
     new-instance v6, Lorg/telegram/ui/GroupCreateActivity$$ExternalSyntheticLambda2;
@@ -3336,7 +3336,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 568
+    .line 572
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$4;
 
     invoke-direct {v5, p0, p1}, Lorg/telegram/ui/GroupCreateActivity$4;-><init>(Lorg/telegram/ui/GroupCreateActivity;Landroid/content/Context;)V
@@ -3345,10 +3345,10 @@
 
     const/high16 v6, 0x41800000    # 16.0f
 
-    .line 584
+    .line 588
     invoke-virtual {v5, v4, v6}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 585
+    .line 589
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v6, "groupcreate_hintText"
@@ -3359,7 +3359,7 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setHintColor(I)V
 
-    .line 586
+    .line 590
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v6, "windowBackgroundWhiteBlackText"
@@ -3370,7 +3370,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 587
+    .line 591
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v6, "groupcreate_cursor"
@@ -3381,58 +3381,58 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 588
+    .line 592
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v6, 0x3fc00000    # 1.5f
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 589
+    .line 593
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v6, 0xa00b0
 
     invoke-virtual {v5, v6}, Landroid/widget/EditText;->setInputType(I)V
 
-    .line 590
+    .line 594
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v5, v4}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 591
+    .line 595
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v5, v1}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 592
+    .line 596
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setVerticalScrollBarEnabled(Z)V
 
-    .line 593
+    .line 597
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 594
+    .line 598
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0}, Landroid/widget/EditText;->setTextIsSelectable(Z)V
 
-    .line 595
+    .line 599
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v0, v0, v0, v0}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 596
+    .line 600
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v5, 0x10000006
 
     invoke-virtual {v1, v5}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 597
+    .line 601
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -3451,17 +3451,17 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 598
+    .line 602
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
 
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 599
+    .line 603
     invoke-direct {p0}, Lorg/telegram/ui/GroupCreateActivity;->updateEditTextHint()V
 
-    .line 600
+    .line 604
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$5;
@@ -3470,7 +3470,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/EditText;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
 
-    .line 617
+    .line 621
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$$ExternalSyntheticLambda5;
@@ -3479,7 +3479,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 618
+    .line 622
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$6;
@@ -3488,7 +3488,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/EditText;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 637
+    .line 641
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$7;
@@ -3497,35 +3497,35 @@
 
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 667
+    .line 671
     new-instance v1, Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-direct {v1, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;)V
 
     const/4 v5, 0x6
 
-    .line 668
+    .line 672
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 669
+    .line 673
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->showDate(Z)V
 
-    .line 671
+    .line 675
     new-instance v5, Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-direct {v5, p1, v1, v4}, Lorg/telegram/ui/Components/StickerEmptyView;-><init>(Landroid/content/Context;Landroid/view/View;I)V
 
     iput-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
-    .line 672
+    .line 676
     invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 673
+    .line 677
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v1, v4, v0}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
-    .line 674
+    .line 678
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
@@ -3540,34 +3540,34 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 676
+    .line 680
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 678
+    .line 682
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-direct {v1, p1, v4, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
-    .line 680
+    .line 684
     new-instance v5, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v5, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     iput-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 681
+    .line 685
     invoke-virtual {v5, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setFastScrollEnabled(I)V
 
-    .line 682
+    .line 686
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/RecyclerListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 683
+    .line 687
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v6, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;
@@ -3578,17 +3578,17 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 684
+    .line 688
     iget-object v5, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v5, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 685
+    .line 689
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 686
+    .line 690
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -3605,7 +3605,7 @@
     :goto_4
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setVerticalScrollbarPosition(I)V
 
-    .line 687
+    .line 691
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v5, Lorg/telegram/ui/Components/GroupCreateDividerItemDecoration;
@@ -3616,12 +3616,12 @@
 
     invoke-virtual {v1, v5}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 688
+    .line 692
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 689
+    .line 693
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$$ExternalSyntheticLambda7;
@@ -3630,7 +3630,7 @@
 
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 775
+    .line 779
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v5, Lorg/telegram/ui/GroupCreateActivity$8;
@@ -3639,26 +3639,26 @@
 
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 784
+    .line 788
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v4, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setAnimateEmptyView(ZI)V
 
-    .line 786
+    .line 790
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
-    .line 787
+    .line 791
     sget-object v5, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v1, v5}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     const/16 v1, 0x38
 
-    .line 789
+    .line 793
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -3679,14 +3679,14 @@
 
     move-result-object v5
 
-    .line 790
+    .line 794
     sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v7, 0x15
 
     if-ge v6, v7, :cond_d
 
-    .line 791
+    .line 795
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -3701,7 +3701,7 @@
 
     move-result-object p1
 
-    .line 792
+    .line 796
     new-instance v8, Landroid/graphics/PorterDuffColorFilter;
 
     const/high16 v9, -0x1000000
@@ -3712,12 +3712,12 @@
 
     invoke-virtual {p1, v8}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 793
+    .line 797
     new-instance v8, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-direct {v8, p1, v5, v0, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;II)V
 
-    .line 794
+    .line 798
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -3730,13 +3730,13 @@
 
     move-object v5, v8
 
-    .line 797
+    .line 801
     :cond_d
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v5}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 798
+    .line 802
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -3753,7 +3753,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 799
+    .line 803
     iget-boolean p1, p0, Lorg/telegram/ui/GroupCreateActivity;->isNeverShare:Z
 
     if-nez p1, :cond_f
@@ -3768,7 +3768,7 @@
 
     goto :goto_5
 
-    .line 802
+    .line 806
     :cond_e
     new-instance p1, Lorg/telegram/ui/ActionBar/BackDrawable;
 
@@ -3776,17 +3776,17 @@
 
     const/16 v1, 0xb4
 
-    .line 803
+    .line 807
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/BackDrawable;->setArrowRotation(I)V
 
-    .line 804
+    .line 808
     iget-object v1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_6
 
-    .line 800
+    .line 804
     :cond_f
     :goto_5
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
@@ -3800,7 +3800,7 @@
 
     if-lt v6, v7, :cond_10
 
-    .line 807
+    .line 811
     new-instance v1, Landroid/animation/StateListAnimator;
 
     invoke-direct {v1}, Landroid/animation/StateListAnimator;-><init>()V
@@ -3811,7 +3811,7 @@
 
     aput v6, v5, v0
 
-    .line 808
+    .line 812
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     new-array v7, v3, [F
@@ -3848,7 +3848,7 @@
 
     new-array v5, v0, [I
 
-    .line 809
+    .line 813
     iget-object v6, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     new-array v7, v3, [F
@@ -3879,12 +3879,12 @@
 
     invoke-virtual {v1, v5, v0}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
 
-    .line 810
+    .line 814
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setStateListAnimator(Landroid/animation/StateListAnimator;)V
 
-    .line 811
+    .line 815
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     new-instance v1, Lorg/telegram/ui/GroupCreateActivity$9;
@@ -3893,13 +3893,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 819
+    .line 823
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 820
+    .line 824
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     new-instance v1, Lorg/telegram/ui/GroupCreateActivity$$ExternalSyntheticLambda3;
@@ -3908,34 +3908,34 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 821
-    iget v0, p0, Lorg/telegram/ui/GroupCreateActivity;->chatType:I
+    .line 825
+    iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateActivity;->doneButtonVisible:Z
 
-    if-eq v0, v3, :cond_11
+    if-nez v0, :cond_11
 
-    .line 822
+    .line 826
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 823
+    .line 827
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 824
+    .line 828
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 825
+    .line 829
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 827
+    .line 831
     :cond_11
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->floatingButton:Landroid/widget/ImageView;
 
@@ -3949,10 +3949,10 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 829
+    .line 833
     invoke-direct {p0}, Lorg/telegram/ui/GroupCreateActivity;->updateHint()V
 
-    .line 830
+    .line 834
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
@@ -3961,35 +3961,35 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 2
 
-    .line 887
+    .line 891
     sget p2, Lorg/telegram/messenger/NotificationCenter;->contactsDidLoad:I
 
     if-ne p1, p2, :cond_0
 
-    .line 888
+    .line 892
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->adapter:Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;
 
     if-eqz p1, :cond_4
 
-    .line 889
+    .line 893
     invoke-virtual {p1}, Lorg/telegram/ui/GroupCreateActivity$GroupCreateAdapter;->notifyDataSetChanged()V
 
     goto :goto_1
 
-    .line 891
+    .line 895
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->updateInterfaces:I
 
     if-ne p1, p2, :cond_3
 
-    .line 892
+    .line 896
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p1, :cond_4
 
     const/4 p1, 0x0
 
-    .line 893
+    .line 897
     aget-object p2, p3, p1
 
     check-cast p2, Ljava/lang/Integer;
@@ -3998,14 +3998,14 @@
 
     move-result p2
 
-    .line 894
+    .line 898
     iget-object p3, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p3
 
-    .line 895
+    .line 899
     sget v0, Lorg/telegram/messenger/MessagesController;->UPDATE_MASK_AVATAR:I
 
     and-int/2addr v0, p2
@@ -4028,19 +4028,19 @@
     :goto_0
     if-ge p1, p3, :cond_4
 
-    .line 897
+    .line 901
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 898
+    .line 902
     instance-of v1, v0, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     if-eqz v1, :cond_2
 
-    .line 899
+    .line 903
     check-cast v0, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->update(I)V
@@ -4050,13 +4050,13 @@
 
     goto :goto_0
 
-    .line 904
+    .line 908
     :cond_3
     sget p2, Lorg/telegram/messenger/NotificationCenter;->chatDidCreated:I
 
     if-ne p1, p2, :cond_4
 
-    .line 905
+    .line 909
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     :cond_4
@@ -4069,7 +4069,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 930
+    .line 934
     iget v0, p0, Lorg/telegram/ui/GroupCreateActivity;->containerHeight:I
 
     return v0
@@ -4088,17 +4088,17 @@
 
     move-object/from16 v0, p0
 
-    .line 1597
+    .line 1601
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1599
+    .line 1603
     new-instance v10, Lorg/telegram/ui/GroupCreateActivity$$ExternalSyntheticLambda6;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/GroupCreateActivity$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/GroupCreateActivity;)V
 
-    .line 1611
+    .line 1615
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -4121,7 +4121,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1613
+    .line 1617
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4144,7 +4144,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1614
+    .line 1618
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4169,7 +4169,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1615
+    .line 1619
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4186,7 +4186,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1616
+    .line 1620
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4205,7 +4205,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1617
+    .line 1621
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -4220,7 +4220,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1619
+    .line 1623
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->scrollView:Landroid/widget/ScrollView;
@@ -4237,7 +4237,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1621
+    .line 1625
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4252,7 +4252,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1623
+    .line 1627
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4269,7 +4269,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1624
+    .line 1628
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4284,7 +4284,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1625
+    .line 1629
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4301,7 +4301,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1627
+    .line 1631
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4328,7 +4328,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1629
+    .line 1633
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
@@ -4347,7 +4347,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1630
+    .line 1634
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
@@ -4366,7 +4366,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1632
+    .line 1636
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4383,7 +4383,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1633
+    .line 1637
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4398,7 +4398,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1634
+    .line 1638
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4415,7 +4415,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1636
+    .line 1640
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4436,7 +4436,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1637
+    .line 1641
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4469,7 +4469,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1638
+    .line 1642
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4506,7 +4506,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1640
+    .line 1644
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4535,7 +4535,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1641
+    .line 1645
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4566,7 +4566,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1642
+    .line 1646
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4595,7 +4595,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1643
+    .line 1647
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4624,7 +4624,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1644
+    .line 1648
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4659,7 +4659,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1645
+    .line 1649
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4692,7 +4692,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1646
+    .line 1650
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4715,7 +4715,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1647
+    .line 1651
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v3, 0x0
@@ -4740,7 +4740,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1648
+    .line 1652
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundOrange"
@@ -4751,7 +4751,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1649
+    .line 1653
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundViolet"
@@ -4762,7 +4762,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1650
+    .line 1654
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundGreen"
@@ -4773,7 +4773,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1651
+    .line 1655
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundCyan"
@@ -4784,7 +4784,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1652
+    .line 1656
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundBlue"
@@ -4795,7 +4795,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1653
+    .line 1657
     new-instance v11, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundPink"
@@ -4806,7 +4806,7 @@
 
     invoke-virtual {v1, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1655
+    .line 1659
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
@@ -4833,7 +4833,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1656
+    .line 1660
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
@@ -4860,7 +4860,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1657
+    .line 1661
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
@@ -4883,7 +4883,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1658
+    .line 1662
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v6, v0, Lorg/telegram/ui/GroupCreateActivity;->spansContainer:Lorg/telegram/ui/GroupCreateActivity$SpansContainer;
@@ -4902,7 +4902,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1660
+    .line 1664
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
@@ -4925,7 +4925,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1661
+    .line 1665
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/GroupCreateActivity;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
@@ -4948,12 +4948,12 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1663
+    .line 1667
     iget-object v2, v0, Lorg/telegram/ui/GroupCreateActivity;->sharedLinkBottomSheet:Lorg/telegram/ui/Components/PermanentLinkBottomSheet;
 
     if-eqz v2, :cond_0
 
-    .line 1664
+    .line 1668
     invoke-virtual {v2}, Lorg/telegram/ui/Components/PermanentLinkBottomSheet;->getThemeDescriptions()Ljava/util/ArrayList;
 
     move-result-object v2
@@ -5099,10 +5099,10 @@
 .method public onResume()V
     .locals 2
 
-    .line 881
+    .line 885
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 882
+    .line 886
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -5119,15 +5119,15 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 919
+    .line 923
     iget v0, p0, Lorg/telegram/ui/GroupCreateActivity;->containerHeight:I
 
     sub-int/2addr v0, p1
 
-    .line 920
+    .line 924
     iput p1, p0, Lorg/telegram/ui/GroupCreateActivity;->containerHeight:I
 
-    .line 921
+    .line 925
     iget p1, p0, Lorg/telegram/ui/GroupCreateActivity;->maxSize:I
 
     iget v1, p0, Lorg/telegram/ui/GroupCreateActivity;->measuredContainerHeight:I
@@ -5136,7 +5136,7 @@
 
     move-result p1
 
-    .line 922
+    .line 926
     iget v1, p0, Lorg/telegram/ui/GroupCreateActivity;->maxSize:I
 
     iget v2, p0, Lorg/telegram/ui/GroupCreateActivity;->containerHeight:I
@@ -5145,7 +5145,7 @@
 
     move-result v1
 
-    .line 923
+    .line 927
     iget-object v2, p0, Lorg/telegram/ui/GroupCreateActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v2}, Landroid/widget/ScrollView;->getScrollY()I
@@ -5162,7 +5162,7 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/widget/ScrollView;->scrollTo(II)V
 
-    .line 924
+    .line 928
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sub-int/2addr v1, p1
@@ -5171,7 +5171,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 925
+    .line 929
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -5182,7 +5182,7 @@
 .method public setDelegate(Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;)V
     .locals 0
 
-    .line 1141
+    .line 1145
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->delegate2:Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;
 
     return-void
@@ -5191,7 +5191,7 @@
 .method public setDelegate(Lorg/telegram/ui/GroupCreateActivity$GroupCreateActivityDelegate;)V
     .locals 0
 
-    .line 1137
+    .line 1141
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->delegate:Lorg/telegram/ui/GroupCreateActivity$GroupCreateActivityDelegate;
 
     return-void
@@ -5208,7 +5208,7 @@
         }
     .end annotation
 
-    .line 910
+    .line 914
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->ignoreUsers:Landroidx/collection/LongSparseArray;
 
     return-void
@@ -5217,7 +5217,7 @@
 .method public setInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;)V
     .locals 0
 
-    .line 914
+    .line 918
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateActivity;->info:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     return-void

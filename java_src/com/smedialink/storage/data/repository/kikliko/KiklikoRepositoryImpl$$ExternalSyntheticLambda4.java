@@ -11,8 +11,8 @@ public final /* synthetic */ class KiklikoRepositoryImpl$$ExternalSyntheticLambd
 
     @Override // io.reactivex.functions.Function
     public final Object apply(Object obj) {
-        Result m1375view$lambda5;
-        m1375view$lambda5 = KiklikoRepositoryImpl.m1375view$lambda5(obj);
-        return m1375view$lambda5;
+        Result share$lambda$4;
+        share$lambda$4 = KiklikoRepositoryImpl.share$lambda$4(obj);
+        return share$lambda$4;
     }
 }

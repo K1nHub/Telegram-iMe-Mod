@@ -33,7 +33,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -41,7 +41,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.DividerCell;
@@ -103,22 +103,22 @@ public class CountrySelectActivity extends BaseFragment {
 
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
-        this.actionBar.setTitle(LocaleController.getString("ChooseCountry", C3158R.string.ChooseCountry));
+        this.actionBar.setTitle(LocaleController.getString("ChooseCountry", C3286R.string.ChooseCountry));
         this.actionBar.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
         this.actionBar.setItemsColor(Theme.getColor("windowBackgroundWhiteBlackText"), false);
         this.actionBar.setItemsBackgroundColor(Theme.getColor("actionBarWhiteSelector"), false);
         this.actionBar.setTitleColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CountrySelectActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CountrySelectActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CountrySelectActivity.this.finishFragment();
                 }
             }
         });
-        this.actionBar.createMenu().addItem(0, C3158R.C3160drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.CountrySelectActivity.2
+        this.actionBar.createMenu().addItem(0, C3286R.C3288drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.CountrySelectActivity.2
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 CountrySelectActivity.this.searching = true;
@@ -148,7 +148,7 @@ public class CountrySelectActivity extends BaseFragment {
                     CountrySelectActivity.this.searchWas = true;
                 }
             }
-        }).setSearchFieldHint(LocaleController.getString("Search", C3158R.string.Search));
+        }).setSearchFieldHint(LocaleController.getString("Search", C3286R.string.Search));
         this.actionBar.setSearchTextColor(Theme.getColor("windowBackgroundWhiteGrayText"), true);
         this.actionBar.setSearchTextColor(Theme.getColor("windowBackgroundWhiteBlackText"), false);
         this.actionBar.setSearchCursorColor(Theme.getColor("windowBackgroundWhiteBlackText"));
@@ -164,7 +164,7 @@ public class CountrySelectActivity extends BaseFragment {
         this.emptyView = emptyTextProgressView;
         emptyTextProgressView.showTextView();
         this.emptyView.setShowAtCenter(true);
-        this.emptyView.setText(LocaleController.getString("NoResult", C3158R.string.NoResult));
+        this.emptyView.setText(LocaleController.getString("NoResult", C3286R.string.NoResult));
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
@@ -583,23 +583,23 @@ public class CountrySelectActivity extends BaseFragment {
     public static TextSettingsCell createSettingsCell(Context context) {
         TextSettingsCell textSettingsCell = new TextSettingsCell(context);
         textSettingsCell.setPadding(AndroidUtilities.m50dp(LocaleController.isRTL ? 16 : 12), 0, AndroidUtilities.m50dp(LocaleController.isRTL ? 12 : 16), 0);
-        textSettingsCell.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC53074(textSettingsCell));
+        textSettingsCell.addOnAttachStateChangeListener(new View$OnAttachStateChangeListenerC54444(textSettingsCell));
         return textSettingsCell;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.CountrySelectActivity$4 */
     /* loaded from: classes5.dex */
-    public class View$OnAttachStateChangeListenerC53074 implements View.OnAttachStateChangeListener {
+    public class View$OnAttachStateChangeListenerC54444 implements View.OnAttachStateChangeListener {
         private NotificationCenter.NotificationCenterDelegate listener;
         final /* synthetic */ TextSettingsCell val$view;
 
-        View$OnAttachStateChangeListenerC53074(final TextSettingsCell textSettingsCell) {
+        View$OnAttachStateChangeListenerC54444(final TextSettingsCell textSettingsCell) {
             this.val$view = textSettingsCell;
             this.listener = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.ui.CountrySelectActivity$4$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
                 public final void didReceivedNotification(int i, int i2, Object[] objArr) {
-                    CountrySelectActivity.View$OnAttachStateChangeListenerC53074.lambda$$0(TextSettingsCell.this, i, i2, objArr);
+                    CountrySelectActivity.View$OnAttachStateChangeListenerC54444.lambda$$0(TextSettingsCell.this, i, i2, objArr);
                 }
             };
         }

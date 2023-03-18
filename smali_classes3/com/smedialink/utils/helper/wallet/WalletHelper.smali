@@ -23,50 +23,50 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1Ur9DmnvKX9rh1dAneC84pwU1Nk(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public static synthetic $r8$lambda$0JcHdzMmhvHFgO3VPd5-CW4zFLs()V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated$lambda-2$lambda-1(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$lambda$3()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$IWbgu1Y8owowfT-R6nD4CYeeyFQ(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public static synthetic $r8$lambda$8Ol66vr2SxvcMsf7f6Np8-Sn12Y()V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated$lambda-2$lambda-1$lambda-0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$lambda$4()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$STojUuMbJ5mtRapoVFfMk0B1nxQ(Lorg/telegram/ui/LaunchActivity;)V
+.method public static synthetic $r8$lambda$OGZIszV_JXwx1uTg80Nfsg76Av8(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->showAppUpdateDialog$lambda-6(Lorg/telegram/ui/LaunchActivity;)V
+    invoke-static {p0}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->showAppUpdateDialog$lambda$6(Lorg/telegram/ui/LaunchActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$X1V6hjCEkT12eJ0qfdxMez3zvCY()V
+.method public static synthetic $r8$lambda$VN3XjwT0G1agYIGz7plVCDi2jR4(Lorg/telegram/ui/LaunchActivity;Lorg/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$lambda-3()V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->showWalletAuthDialog$lambda$7(Lorg/telegram/ui/LaunchActivity;Lorg/fork/utils/Callbacks$Callback;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$pafWwrZ2f7P2ghraid2lYf6yacc()V
+.method public static synthetic $r8$lambda$WeN3mF-j58Iud2dqoQVwVKZUdKI(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    invoke-static {}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->safeRunWalletScreen$lambda-4()V
+    invoke-static {p0}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$tNQsAQeaQv8tAZD8lD1hTP0mRFw(Lorg/telegram/ui/LaunchActivity;Lorg/fork/utils/Callbacks$Callback;)V
+.method public static synthetic $r8$lambda$zQonbnRe0oaqd1jefNEuZx3_5nU(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->showWalletAuthDialog$lambda-7(Lorg/telegram/ui/LaunchActivity;Lorg/fork/utils/Callbacks$Callback;)V
+    invoke-static {p0, p1}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method
@@ -402,22 +402,19 @@
     return-void
 .end method
 
-.method private static final runWithCheckIsCryptoWalletCreated$lambda-2$lambda-1(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method private static final runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1(Lorg/fork/utils/Callbacks$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 7
 
     const-string v0, "$this_with"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
+    if-eqz p0, :cond_0
 
     .line 53
-    :cond_0
     invoke-interface {p0}, Lorg/fork/utils/Callbacks$Callback;->invoke()V
 
-    :goto_0
+    :cond_0
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -438,7 +435,7 @@
     return-void
 .end method
 
-.method private static final runWithCheckIsCryptoWalletCreated$lambda-2$lambda-1$lambda-0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method private static final runWithCheckIsCryptoWalletCreated$lambda$2$lambda$1$lambda$0(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 7
 
     const-string v0, "$this_with"
@@ -513,14 +510,11 @@
     const/4 p0, 0x0
 
     :goto_0
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     invoke-static {p0, p1, p2, p3}, Lcom/smedialink/utils/helper/wallet/WalletHelper;->safeRunWalletScreen(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Lorg/fork/utils/Callbacks$Callback;Lorg/fork/utils/Callbacks$Callback;)V
 
-    :goto_1
+    :cond_1
     return-void
 .end method
 
@@ -617,13 +611,13 @@
     return-void
 .end method
 
-.method private static final safeRunWalletScreen$lambda-3()V
+.method private static final safeRunWalletScreen$lambda$3()V
     .locals 0
 
     return-void
 .end method
 
-.method private static final safeRunWalletScreen$lambda-4()V
+.method private static final safeRunWalletScreen$lambda$4()V
     .locals 0
 
     return-void
@@ -689,7 +683,7 @@
     return-void
 .end method
 
-.method private static final showAppUpdateDialog$lambda-6(Lorg/telegram/ui/LaunchActivity;)V
+.method private static final showAppUpdateDialog$lambda$6(Lorg/telegram/ui/LaunchActivity;)V
     .locals 1
 
     const-string v0, "$activity"
@@ -757,7 +751,7 @@
     return-void
 .end method
 
-.method private static final showWalletAuthDialog$lambda-7(Lorg/telegram/ui/LaunchActivity;Lorg/fork/utils/Callbacks$Callback;)V
+.method private static final showWalletAuthDialog$lambda$7(Lorg/telegram/ui/LaunchActivity;Lorg/fork/utils/Callbacks$Callback;)V
     .locals 1
 
     const-string v0, "$activity"

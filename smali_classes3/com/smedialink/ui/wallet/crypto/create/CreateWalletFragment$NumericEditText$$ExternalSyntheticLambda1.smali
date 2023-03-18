@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText$$ExternalSyntheticLambda1;->f$1:Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;
 
-    invoke-static {v0, v1, p1, p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->$r8$lambda$p0mvzdD94_m3wcAgjf_3Xdq5ds0(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Landroid/view/View;Z)V
+    invoke-static {v0, v1, p1, p2}, Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;->$r8$lambda$4Z1F1Qz27epXAaeGKh5D_-tV-j0(Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment$NumericEditText;Lcom/smedialink/ui/wallet/crypto/create/CreateWalletFragment;Landroid/view/View;Z)V
 
     return-void
 .end method

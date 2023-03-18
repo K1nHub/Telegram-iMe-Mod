@@ -46,7 +46,6 @@ public final class BannerProvider$convert$1 extends Lambda implements Function1<
         linearLayoutManager.setInitialPrefetchItemCount(4);
         parcelable = bannerProvider.bannerScrollState;
         RecycleViewExtKt.restoreScrollState(linearLayoutManager, parcelable);
-        Unit unit = Unit.INSTANCE;
         applyForView.setLayoutManager(linearLayoutManager);
         BannersRecycleAdapter bannersRecycleAdapter = this.this$0.getBannersRecycleAdapter();
         BannerItem bannerItem = this.$item;

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;Landroid/content/Context;Landroidx/core/view/GestureDetectorCompat;)V
     .locals 0
 
-    .line 128
+    .line 132
     iput-object p1, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->this$0:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->val$backDetector:Landroidx/core/view/GestureDetectorCompat;
@@ -39,7 +39,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 132
+    .line 136
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -56,7 +56,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 133
+    .line 137
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->this$0:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
@@ -74,7 +74,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 134
+    .line 138
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->this$0:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
@@ -82,12 +82,12 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->access$002(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;Z)Z
 
-    .line 135
+    .line 139
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->this$0:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->access$102(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;Z)Z
 
-    .line 136
+    .line 140
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->this$0:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->access$200(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;)Ljava/lang/Runnable;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 137
+    .line 141
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->this$0:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->access$300(Lorg/telegram/ui/Components/CustomPhoneKeyboardView;)Ljava/lang/Runnable;
@@ -105,11 +105,11 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 140
+    .line 144
     :cond_2
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 141
+    .line 145
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$1;->val$backDetector:Landroidx/core/view/GestureDetectorCompat;
 
     invoke-virtual {v0, p1}, Landroidx/core/view/GestureDetectorCompat;->onTouchEvent(Landroid/view/MotionEvent;)Z

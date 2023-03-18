@@ -34,10 +34,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$7B-Nzhqqfv6CMLDjHiWpwKaIAIY(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$QYTq8V-6Y2OL-fJm18e8hL2au28(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/languages/LanguagesAdapter;->onBindViewHolder$lambda-1$lambda-0(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
+    invoke-static {p0, p1, p2}, Lcom/smedialink/ui/languages/LanguagesAdapter;->onBindViewHolder$lambda$1$lambda$0(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
 
     return-void
 .end method
@@ -64,7 +64,7 @@
     return-void
 .end method
 
-.method private static final onBindViewHolder$lambda-1$lambda-0(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
+.method private static final onBindViewHolder$lambda$1$lambda$0(Lcom/smedialink/ui/languages/LanguagesAdapter;Lcom/smedialink/ui/languages/LanguageViewModel;Landroid/view/View;)V
     .locals 0
 
     const-string p2, "this$0"

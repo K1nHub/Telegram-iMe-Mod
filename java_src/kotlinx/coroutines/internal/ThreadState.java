@@ -11,7 +11,7 @@ public final class ThreadState {
     private final ThreadContextElement<Object>[] elements;
 
     /* renamed from: i */
-    private int f1215i;
+    private int f1220i;
     private final Object[] values;
 
     public ThreadState(CoroutineContext coroutineContext, int i) {
@@ -22,10 +22,10 @@ public final class ThreadState {
 
     public final void append(ThreadContextElement<?> threadContextElement, Object obj) {
         Object[] objArr = this.values;
-        int i = this.f1215i;
+        int i = this.f1220i;
         objArr[i] = obj;
         ThreadContextElement<Object>[] threadContextElementArr = this.elements;
-        this.f1215i = i + 1;
+        this.f1220i = i + 1;
         threadContextElementArr[i] = threadContextElement;
     }
 

@@ -35,7 +35,7 @@
 
     check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {v0, v1, p1}, Lorg/fork/ui/fragment/MusicActivity;->$r8$lambda$yjuyRB3bQWtSkfGmuNykCb3nqM0(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
+    invoke-static {v0, v1, p1}, Lorg/fork/ui/fragment/MusicActivity;->$r8$lambda$s6owO9lX_lrblMAKxYHoM6D4IR8(Lorg/telegram/messenger/MessageObject;Lorg/fork/ui/fragment/MusicActivity;Ljava/lang/Boolean;)V
 
     return-void
 .end method

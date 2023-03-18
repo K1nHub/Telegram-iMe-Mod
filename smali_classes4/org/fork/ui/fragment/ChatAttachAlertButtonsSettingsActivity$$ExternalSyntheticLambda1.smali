@@ -35,7 +35,7 @@
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->$r8$lambda$woTG7c4-08XjsjGzP7JUDGdPJJ4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {p1, p2}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->$r8$lambda$IjSxCP5tsrfRZ2H4lJKruDA1BDk(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

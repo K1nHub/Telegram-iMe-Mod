@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/fork/utils/Callbacks$Callback1;
+.implements Lorg/fork/ui/fragment/CreateReactionButtonsActivity$ReactionDelegate;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final clearChat()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda259;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$ncAP_CtoitVhCKanCsYC-JyTwqQ(Lorg/telegram/ui/ChatActivity;Ljava/lang/Boolean;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$VX4dJdOJx-NXumokjEr45ID2gmA(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method

@@ -141,7 +141,7 @@ public final class TargetChange extends GeneratedMessageLite<TargetChange, Build
     /* renamed from: com.google.firestore.v1.TargetChange$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<TargetChange, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10741 c10741) {
+        /* synthetic */ Builder(C10671 c10671) {
             this();
         }
 
@@ -152,7 +152,7 @@ public final class TargetChange extends GeneratedMessageLite<TargetChange, Build
 
     /* renamed from: com.google.firestore.v1.TargetChange$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10741 {
+    static /* synthetic */ class C10671 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f217xa1df5c61;
@@ -193,7 +193,7 @@ public final class TargetChange extends GeneratedMessageLite<TargetChange, Build
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10741.f217xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10671.f217xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new TargetChange();
             case 2:

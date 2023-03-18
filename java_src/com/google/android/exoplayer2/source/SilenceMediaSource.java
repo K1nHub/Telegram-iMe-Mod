@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.MediaItem;
@@ -138,7 +138,7 @@ public final class SilenceMediaSource extends BaseMediaSource {
 
         @Override // com.google.android.exoplayer2.source.MediaPeriod
         public long readDiscontinuity() {
-            return C0474C.TIME_UNSET;
+            return C0468C.TIME_UNSET;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader

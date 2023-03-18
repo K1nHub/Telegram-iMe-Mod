@@ -10,11 +10,13 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Ljava/lang/Runnable;
+.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
+
+.field public final synthetic f$3:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLandroidx/collection/LongSparseArray;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +25,9 @@
 
     iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$1:J
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$2:Ljava/lang/Runnable;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$2:Landroidx/collection/LongSparseArray;
+
+    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$3:Z
 
     return-void
 .end method
@@ -31,15 +35,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$0:Lorg/telegram/messenger/MessagesController;
 
     iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$1:J
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$2:Ljava/lang/Runnable;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$2:Landroidx/collection/LongSparseArray;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$I20UvwI4PmDPle3OYmAXJYToeF4(Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;)V
+    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda84;->f$3:Z
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$WJQMf7A7H0ijhQRN41e4zoUR-GM(Lorg/telegram/messenger/MessagesController;JLandroidx/collection/LongSparseArray;Z)V
 
     return-void
 .end method

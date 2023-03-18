@@ -2,7 +2,7 @@ package com.smedialink.p031ui.custom;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: ImageHeaderView.kt */
 /* renamed from: com.smedialink.ui.custom.ImageHeaderView$networkIconCornerSize$2 */
 /* loaded from: classes3.dex */
@@ -19,6 +19,6 @@ final class ImageHeaderView$networkIconCornerSize$2 extends Lambda implements Fu
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Float invoke() {
-        return Float.valueOf(this.this$0.getResources().getDimension(C3158R.dimen.icon_size_medium) / 2);
+        return Float.valueOf(this.this$0.getResources().getDimension(C3286R.dimen.icon_size_medium) / 2);
     }
 }

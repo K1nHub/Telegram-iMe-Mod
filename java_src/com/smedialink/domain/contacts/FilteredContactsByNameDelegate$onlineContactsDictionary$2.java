@@ -26,11 +26,11 @@ public final class FilteredContactsByNameDelegate$onlineContactsDictionary$2 ext
     /* compiled from: FilteredContactsByNameDelegate.kt */
     /* renamed from: com.smedialink.domain.contacts.FilteredContactsByNameDelegate$onlineContactsDictionary$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C14471 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
+    public static final class C14551 extends Lambda implements Function1<TLRPC$TL_contact, Boolean> {
         final /* synthetic */ FilteredContactsByNameDelegate this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C14471(FilteredContactsByNameDelegate filteredContactsByNameDelegate) {
+        C14551(FilteredContactsByNameDelegate filteredContactsByNameDelegate) {
             super(1);
             this.this$0 = filteredContactsByNameDelegate;
         }
@@ -64,7 +64,7 @@ public final class FilteredContactsByNameDelegate$onlineContactsDictionary$2 ext
     public final HashMap<String, ArrayList<TLRPC$TL_contact>> invoke() {
         HashMap<String, ArrayList<TLRPC$TL_contact>> usersByPredicate;
         FilteredContactsByNameDelegate filteredContactsByNameDelegate = this.this$0;
-        usersByPredicate = filteredContactsByNameDelegate.getUsersByPredicate(new C14471(filteredContactsByNameDelegate));
+        usersByPredicate = filteredContactsByNameDelegate.getUsersByPredicate(new C14551(filteredContactsByNameDelegate));
         return usersByPredicate;
     }
 }

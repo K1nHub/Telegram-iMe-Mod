@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBotsDao.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotsDao.kt\ncom/smedialink/bots/data/database/BotsDao\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,125:1\n775#2:126\n786#2:127\n1858#2,2:128\n787#2,2:130\n1860#2:132\n789#2:133\n1849#2,2:134\n*S KotlinDebug\n*F\n+ 1 BotsDao.kt\ncom/smedialink/bots/data/database/BotsDao\n*L\n58#1:126\n58#1:127\n58#1:128,2\n58#1:130,2\n58#1:132\n58#1:133\n118#1:134,2\n*E\n"
+    value = "SMAP\nBotsDao.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotsDao.kt\ncom/smedialink/bots/data/database/BotsDao\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,125:1\n777#2:126\n788#2:127\n1864#2,2:128\n789#2,2:130\n1866#2:132\n791#2:133\n1855#2,2:134\n*S KotlinDebug\n*F\n+ 1 BotsDao.kt\ncom/smedialink/bots/data/database/BotsDao\n*L\n58#1:126\n58#1:127\n58#1:128,2\n58#1:130,2\n58#1:132\n58#1:133\n118#1:134,2\n*E\n"
 .end annotation
 
 
@@ -142,15 +142,11 @@
 
     move-result-object v0
 
-    const-string v1, "null cannot be cast to non-null type java.lang.String"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "(this as java.lang.String).toLowerCase()"
+    const-string v1, "this as java.lang.String).toLowerCase()"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -169,7 +165,7 @@
 
     check-cast p1, Ljava/lang/Iterable;
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1

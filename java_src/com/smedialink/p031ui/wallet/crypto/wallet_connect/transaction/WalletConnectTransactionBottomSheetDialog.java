@@ -22,7 +22,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectTransactionBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -148,25 +148,25 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3158R.string.wallet_connect_session_details_network), network, true);
-        binding.textFrom.setTextAndValue(getResourceManager().getString(C3158R.string.wallet_connect_transaction_from), from, true);
-        binding.textTo.setTextAndValue(getResourceManager().getString(C3158R.string.wallet_connect_transaction_to), to, true);
-        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3158R.string.wallet_connect_transaction_dapp), peerUrl, true);
+        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3286R.string.wallet_connect_session_details_network), network, true);
+        binding.textFrom.setTextAndValue(getResourceManager().getString(C3286R.string.wallet_connect_transaction_from), from, true);
+        binding.textTo.setTextAndValue(getResourceManager().getString(C3286R.string.wallet_connect_transaction_to), to, true);
+        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3286R.string.wallet_connect_transaction_dapp), peerUrl, true);
         binding.textTransactionAmount.setText(transactionAmount);
     }
 
     @Override // com.smedialink.p031ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView
     public void showFee(FeeView.ChooseFeeType feeType) {
         Intrinsics.checkNotNullParameter(feeType, "feeType");
-        FeeView feeView = getBinding().feeView;
-        Intrinsics.checkNotNullExpressionValue(feeView, "");
-        ViewExtKt.visible(feeView);
-        feeView.init(this.fragment, this, feeType);
+        FeeView showFee$lambda$1 = getBinding().feeView;
+        Intrinsics.checkNotNullExpressionValue(showFee$lambda$1, "showFee$lambda$1");
+        ViewExtKt.visible(showFee$lambda$1);
+        showFee$lambda$1.init(this.fragment, this, feeType);
     }
 
     @Override // com.smedialink.p031ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView
     public void onTransactionSuccess() {
-        showToast(getResourceManager().getString(C3158R.string.wallet_connect_transaction_success));
+        showToast(getResourceManager().getString(C3286R.string.wallet_connect_transaction_success));
         dismiss();
     }
 
@@ -179,27 +179,27 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
     private final void setupColors() {
         ForkContentWalletConnectTransactionBinding binding = getBinding();
         binding.buttonProcess.applyColors();
-        ActionBarMenuItem actionBarMenuItem = binding.buttonClose;
-        actionBarMenuItem.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
-        AppCompatTextView appCompatTextView = binding.textTitle;
-        appCompatTextView.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
-        AppCompatTextView appCompatTextView2 = binding.textTransactionAmount;
-        appCompatTextView2.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView2, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView2);
+        ActionBarMenuItem setupColors$lambda$5$lambda$2 = binding.buttonClose;
+        setupColors$lambda$5$lambda$2.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$2, "setupColors$lambda$5$lambda$2");
+        ViewExtKt.setCircleRippleBackground(setupColors$lambda$5$lambda$2);
+        AppCompatTextView setupColors$lambda$5$lambda$3 = binding.textTitle;
+        setupColors$lambda$5$lambda$3.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$3, "setupColors$lambda$5$lambda$3");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$3);
+        AppCompatTextView setupColors$lambda$5$lambda$4 = binding.textTransactionAmount;
+        setupColors$lambda$5$lambda$4.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$4);
     }
 
     private final void setupViews() {
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3158R.string.wallet_connect_transaction_title));
+        binding.textTitle.setText(getResourceManager().getString(C3286R.string.wallet_connect_transaction_title));
         binding.buttonProcess.setText(getResourceManager().getString(this.screenType.getButtonTextResId()));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3158R.C3160drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3286R.C3288drawable.ic_close_white);
     }
 
     private final void setupListeners() {
@@ -219,14 +219,13 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
         showDialog(DialogUtils.createDialog$default(context, getPresenter().getSendConfirmationDialogModel(), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletConnectTransactionBottomSheetDialog.m1621showTransactionConfirmationDialog$lambda9(WalletConnectTransactionBottomSheetDialog.this);
+                WalletConnectTransactionBottomSheetDialog.showTransactionConfirmationDialog$lambda$9(WalletConnectTransactionBottomSheetDialog.this);
             }
         }, null, 8, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showTransactionConfirmationDialog$lambda-9  reason: not valid java name */
-    public static final void m1621showTransactionConfirmationDialog$lambda9(WalletConnectTransactionBottomSheetDialog this$0) {
+    public static final void showTransactionConfirmationDialog$lambda$9(WalletConnectTransactionBottomSheetDialog this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         WalletFlowCoordinator walletFlowCoordinator = this$0.getWalletFlowCoordinator();
         INavigationLayout parentLayout = this$0.fragment.getParentLayout();

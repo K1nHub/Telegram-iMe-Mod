@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 46261
+    .line 46504
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 46276
+    .line 46519
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported_layer131;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 46273
+    .line 46516
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteEmpty_layer122;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 46267
+    .line 46510
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 46279
+    .line 46522
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported_layer122;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 46282
+    .line 46525
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatInvitePublicJoinRequests;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 46270
+    .line 46513
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported_layer133;
 
@@ -75,7 +75,7 @@
 
     goto :goto_1
 
-    .line 46286
+    .line 46529
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -105,7 +105,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 46289
+    .line 46532
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

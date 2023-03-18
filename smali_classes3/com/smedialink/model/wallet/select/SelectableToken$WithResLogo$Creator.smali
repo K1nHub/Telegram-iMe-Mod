@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/model/wallet/select/SelectableToken$WithResLogo;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
@@ -127,9 +127,9 @@ public class CustomEmojiReactionsWindow {
             }
         });
         this.containerView = new ContainerView(context);
-        C48422 c48422 = new C48422(baseFragment, context, false, null, 1, resourcesProvider, baseFragment, reactionsContainerLayout);
-        this.selectAnimatedEmojiDialog = c48422;
-        c48422.setOnLongPressedListener(new SelectAnimatedEmojiDialog.onLongPressedListener(this) { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow.3
+        C49792 c49792 = new C49792(baseFragment, context, false, null, 1, resourcesProvider, baseFragment, reactionsContainerLayout);
+        this.selectAnimatedEmojiDialog = c49792;
+        c49792.setOnLongPressedListener(new SelectAnimatedEmojiDialog.onLongPressedListener(this) { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow.3
             @Override // org.telegram.p048ui.SelectAnimatedEmojiDialog.onLongPressedListener
             public void onLongPressed(SelectAnimatedEmojiDialog.ImageViewEmoji imageViewEmoji) {
                 if (imageViewEmoji.isDefaultReaction) {
@@ -177,12 +177,12 @@ public class CustomEmojiReactionsWindow {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$2 */
     /* loaded from: classes6.dex */
-    public class C48422 extends SelectAnimatedEmojiDialog {
+    public class C49792 extends SelectAnimatedEmojiDialog {
         final /* synthetic */ BaseFragment val$baseFragment;
         final /* synthetic */ ReactionsContainerLayout val$reactionsContainerLayout;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C48422(BaseFragment baseFragment, Context context, boolean z, Integer num, int i, Theme.ResourcesProvider resourcesProvider, BaseFragment baseFragment2, ReactionsContainerLayout reactionsContainerLayout) {
+        C49792(BaseFragment baseFragment, Context context, boolean z, Integer num, int i, Theme.ResourcesProvider resourcesProvider, BaseFragment baseFragment2, ReactionsContainerLayout reactionsContainerLayout) {
             super(baseFragment, context, z, num, i, resourcesProvider);
             this.val$baseFragment = baseFragment2;
             this.val$reactionsContainerLayout = reactionsContainerLayout;
@@ -212,10 +212,10 @@ public class CustomEmojiReactionsWindow {
         protected void onEmojiSelected(View view, Long l, TLRPC$Document tLRPC$Document, Integer num) {
             if (!UserConfig.getInstance(this.val$baseFragment.getCurrentAccount()).isPremium()) {
                 CustomEmojiReactionsWindow.this.windowView.performHapticFeedback(3);
-                BulletinFactory.m28of(CustomEmojiReactionsWindow.this.windowView, null).createEmojiBulletin(tLRPC$Document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiReaction", C3158R.string.UnlockPremiumEmojiReaction)), LocaleController.getString("PremiumMore", C3158R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$2$$ExternalSyntheticLambda0
+                BulletinFactory.m28of(CustomEmojiReactionsWindow.this.windowView, null).createEmojiBulletin(tLRPC$Document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiReaction", C3286R.string.UnlockPremiumEmojiReaction)), LocaleController.getString("PremiumMore", C3286R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CustomEmojiReactionsWindow.C48422.this.lambda$onEmojiSelected$0();
+                        CustomEmojiReactionsWindow.C49792.this.lambda$onEmojiSelected$0();
                     }
                 }).show();
                 return;
@@ -309,7 +309,7 @@ public class CustomEmojiReactionsWindow {
         this.fromRect.offset((this.location[0] - iArr[0]) - this.containerView.getX(), (this.location[1] - iArr[1]) - this.containerView.getY());
         this.reactionsContainerLayout.setCustomEmojiEnterProgress(this.enterTransitionProgress);
         if (z) {
-            this.cascadeAnimation = SharedConfig.getDevicePerformanceClass() >= 2 && LiteMode.isEnabled(8);
+            this.cascadeAnimation = SharedConfig.getDevicePerformanceClass() >= 2 && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
             this.enterTransitionFinished = false;
         } else {
             this.cascadeAnimation = false;
@@ -592,7 +592,7 @@ public class CustomEmojiReactionsWindow {
             this.backgroundPaint = new Paint(1);
             this.radiusTmp = new int[4];
             this.transitionReactions = new HashMap<>();
-            this.shadow = ContextCompat.getDrawable(context, C3158R.C3160drawable.reactions_bubble_shadow).mutate();
+            this.shadow = ContextCompat.getDrawable(context, C3286R.C3288drawable.reactions_bubble_shadow).mutate();
             Rect rect = this.shadowPad;
             int m50dp = AndroidUtilities.m50dp(7);
             rect.bottom = m50dp;

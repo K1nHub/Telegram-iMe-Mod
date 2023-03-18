@@ -18,13 +18,12 @@ import java.util.List;
 import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.utils.Callbacks$Callback1;
 import org.fork.utils.Callbacks$Callback2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BottomSheet;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -163,15 +162,14 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                ChatLanguageSettingsBottomSheet.m1965initListView$lambda2$lambda1(ChatLanguageSettingsBottomSheet.this, view, i, f, f2);
+                ChatLanguageSettingsBottomSheet.initListView$lambda$2$lambda$1(ChatLanguageSettingsBottomSheet.this, view, i, f, f2);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m1965initListView$lambda2$lambda1(ChatLanguageSettingsBottomSheet this$0, View view, int i, float f, float f2) {
+    public static final void initListView$lambda$2$lambda$1(ChatLanguageSettingsBottomSheet this$0, View view, int i, float f, float f2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof NotificationsCheckCell) {
             NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
@@ -210,12 +208,12 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (z) {
-            String string = LocaleController.getString("Cancel", C3158R.string.Cancel);
+            String string = LocaleController.getString("Cancel", C3286R.string.Cancel);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
             upperCase = string.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         } else {
-            String string2 = LocaleController.getString("Save", C3158R.string.Save);
+            String string2 = LocaleController.getString("Save", C3286R.string.Save);
             Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
             upperCase = string2.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -226,15 +224,14 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.ChatLanguageSettingsBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatLanguageSettingsBottomSheet.m1964createBottomButton$lambda5$lambda4(z, this, view);
+                ChatLanguageSettingsBottomSheet.createBottomButton$lambda$5$lambda$4(z, this, view);
             }
         });
         return textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createBottomButton$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1964createBottomButton$lambda5$lambda4(boolean z, ChatLanguageSettingsBottomSheet this$0, View view) {
+    public static final void createBottomButton$lambda$5$lambda$4(boolean z, ChatLanguageSettingsBottomSheet this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (!z) {
             this$0.translationSettingsDelegate.invoke(this$0.getNewSettings(), Boolean.valueOf(this$0.isAutoTranslateEnabled));
@@ -246,7 +243,7 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         List mutableList;
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) this.textTranslateLanguages);
         if (i != this.textOut) {
-            String internalString = LocaleController.getInternalString(C3158R.string.language_settings_app_language);
+            String internalString = LocaleController.getInternalString(C3286R.string.language_settings_app_language);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ge_settings_app_language)");
             mutableList.add(0, new TranslationLanguageUiModel(null, internalString));
         }
@@ -255,17 +252,15 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         SelectLanguageBottomSheet selectLanguageBottomSheet = new SelectLanguageBottomSheet(context, mutableList, getLangCode(i), new Callbacks$Callback1() { // from class: org.fork.ui.dialog.ChatLanguageSettingsBottomSheet$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                ChatLanguageSettingsBottomSheet.m1966showLanguageSelector$lambda6(i, this, (String) obj);
+                ChatLanguageSettingsBottomSheet.showLanguageSelector$lambda$6(i, this, (String) obj);
             }
         });
         selectLanguageBottomSheet.show();
-        Unit unit = Unit.INSTANCE;
         this.languageSelector = selectLanguageBottomSheet;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showLanguageSelector$lambda-6  reason: not valid java name */
-    public static final void m1966showLanguageSelector$lambda6(int i, ChatLanguageSettingsBottomSheet this$0, String str) {
+    public static final void showLanguageSelector$lambda$6(int i, ChatLanguageSettingsBottomSheet this$0, String str) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (i == this$0.textIn) {
             this$0.getNewSettings().setInTextTranslateLangCode(str);
@@ -287,31 +282,27 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
     /* renamed from: org.fork.ui.dialog.ChatLanguageSettingsBottomSheet$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ ChatLanguageSettingsBottomSheet this$0;
-
-        public ListAdapter(ChatLanguageSettingsBottomSheet this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
             updateRows();
         }
 
         public final void updateRows() {
-            this.this$0.autoTranslateRow = -1;
-            this.this$0.rowCount = 0;
-            ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet = this.this$0;
+            ChatLanguageSettingsBottomSheet.this.autoTranslateRow = -1;
+            ChatLanguageSettingsBottomSheet.this.rowCount = 0;
+            ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet = ChatLanguageSettingsBottomSheet.this;
             int i = chatLanguageSettingsBottomSheet.rowCount;
             chatLanguageSettingsBottomSheet.rowCount = i + 1;
             chatLanguageSettingsBottomSheet.textHeader = i;
-            ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet2 = this.this$0;
+            ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet2 = ChatLanguageSettingsBottomSheet.this;
             int i2 = chatLanguageSettingsBottomSheet2.rowCount;
             chatLanguageSettingsBottomSheet2.rowCount = i2 + 1;
             chatLanguageSettingsBottomSheet2.textIn = i2;
-            ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet3 = this.this$0;
+            ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet3 = ChatLanguageSettingsBottomSheet.this;
             int i3 = chatLanguageSettingsBottomSheet3.rowCount;
             chatLanguageSettingsBottomSheet3.rowCount = i3 + 1;
             chatLanguageSettingsBottomSheet3.textOut = i3;
-            if (this.this$0.getParentFragment().getMessagesController().getTranslateController().isDialogTranslatable(this.this$0.getParentFragment().getDialogId()) && this.this$0.getParentFragment().getMessagesController().getTranslateController().isTranslateDialogHidden(this.this$0.getParentFragment().getDialogId())) {
-                ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet4 = this.this$0;
+            if (ChatLanguageSettingsBottomSheet.this.getParentFragment().getMessagesController().getTranslateController().isDialogTranslatable(ChatLanguageSettingsBottomSheet.this.getParentFragment().getDialogId()) && ChatLanguageSettingsBottomSheet.this.getParentFragment().getMessagesController().getTranslateController().isTranslateDialogHidden(ChatLanguageSettingsBottomSheet.this.getParentFragment().getDialogId())) {
+                ChatLanguageSettingsBottomSheet chatLanguageSettingsBottomSheet4 = ChatLanguageSettingsBottomSheet.this;
                 int i4 = chatLanguageSettingsBottomSheet4.rowCount;
                 chatLanguageSettingsBottomSheet4.rowCount = i4 + 1;
                 chatLanguageSettingsBottomSheet4.autoTranslateRow = i4;
@@ -326,12 +317,12 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return ChatLanguageSettingsBottomSheet.this.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == this.this$0.textHeader ? IdFabric$ViewTypes.HEADER : i == this.this$0.autoTranslateRow ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.NOTIFICATION_CHECK;
+            return i == ChatLanguageSettingsBottomSheet.this.textHeader ? IdFabric$ViewTypes.HEADER : i == ChatLanguageSettingsBottomSheet.this.autoTranslateRow ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.NOTIFICATION_CHECK;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -339,12 +330,11 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
             FrameLayout textCheckCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.HEADER) {
-                textCheckCell = new HeaderCell(this.this$0.getContext());
+                textCheckCell = new HeaderCell(ChatLanguageSettingsBottomSheet.this.getContext());
             } else {
-                textCheckCell = i == IdFabric$ViewTypes.TEXT_CHECK ? new TextCheckCell(this.this$0.getContext()) : new NotificationsCheckCell(this.this$0.getContext());
+                textCheckCell = i == IdFabric$ViewTypes.TEXT_CHECK ? new TextCheckCell(ChatLanguageSettingsBottomSheet.this.getContext()) : new NotificationsCheckCell(ChatLanguageSettingsBottomSheet.this.getContext());
             }
             textCheckCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit = Unit.INSTANCE;
             return new RecyclerListView.Holder(textCheckCell);
         }
 
@@ -357,21 +347,21 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3158R.string.language_settings_text_messages));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3286R.string.language_settings_text_messages));
                 return;
             }
             boolean z = false;
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3158R.string.ShowTranslateChatButton), this.this$0.isAutoTranslateEnabled, false);
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3286R.string.ShowTranslateChatButton), ChatLanguageSettingsBottomSheet.this.isAutoTranslateEnabled, false);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATION_CHECK && (view instanceof NotificationsCheckCell)) {
-                String langCode = this.this$0.getLangCode(i);
-                String internalString = LocaleController.getInternalString(i == this.this$0.textIn ? C3158R.string.language_settings_in_text_translate : C3158R.string.language_settings_out_text_translate);
+                String langCode = ChatLanguageSettingsBottomSheet.this.getLangCode(i);
+                String internalString = LocaleController.getInternalString(i == ChatLanguageSettingsBottomSheet.this.textIn ? C3286R.string.language_settings_in_text_translate : C3286R.string.language_settings_out_text_translate);
                 if (langCode == null) {
-                    formatStringInternal = LocaleController.getInternalString(C3158R.string.language_settings_app_language);
+                    formatStringInternal = LocaleController.getInternalString(C3286R.string.language_settings_app_language);
                 } else {
-                    int i2 = C3158R.string.language_settings_selected_language;
+                    int i2 = C3286R.string.language_settings_selected_language;
                     Object[] objArr = new Object[1];
-                    Iterator<T> it = this.this$0.getTextTranslateLanguages().iterator();
+                    Iterator<T> it = ChatLanguageSettingsBottomSheet.this.getTextTranslateLanguages().iterator();
                     while (true) {
                         if (!it.hasNext()) {
                             obj = null;
@@ -386,7 +376,7 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
                     objArr[0] = ((TranslationLanguageUiModel) obj).getDisplayLanguage();
                     formatStringInternal = LocaleController.formatStringInternal(i2, objArr);
                 }
-                ((NotificationsCheckCell) view).setTextAndValueAndCheck(internalString, formatStringInternal, i == this.this$0.textIn ? this.this$0.getNewSettings().isInTextTranslateEnabled() : this.this$0.getNewSettings().isOutTextTranslateEnabled(), (i == this.this$0.textOut && this.this$0.autoTranslateRow == -1) ? true : true);
+                ((NotificationsCheckCell) view).setTextAndValueAndCheck(internalString, formatStringInternal, i == ChatLanguageSettingsBottomSheet.this.textIn ? ChatLanguageSettingsBottomSheet.this.getNewSettings().isInTextTranslateEnabled() : ChatLanguageSettingsBottomSheet.this.getNewSettings().isOutTextTranslateEnabled(), (i == ChatLanguageSettingsBottomSheet.this.textOut && ChatLanguageSettingsBottomSheet.this.autoTranslateRow == -1) ? true : true);
             }
         }
     }

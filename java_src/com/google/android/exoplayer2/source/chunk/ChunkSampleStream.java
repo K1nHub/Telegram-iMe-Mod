@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.chunk;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.SeekParameters;
@@ -174,7 +174,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
             }
             BaseMediaChunk baseMediaChunk2 = this.mediaChunks.get(i2);
             int i3 = (baseMediaChunk2.startTimeUs > j ? 1 : (baseMediaChunk2.startTimeUs == j ? 0 : -1));
-            if (i3 == 0 && baseMediaChunk2.clippedStartTimeUs == C0474C.TIME_UNSET) {
+            if (i3 == 0 && baseMediaChunk2.clippedStartTimeUs == C0468C.TIME_UNSET) {
                 baseMediaChunk = baseMediaChunk2;
                 break;
             } else if (i3 > 0) {
@@ -353,7 +353,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         Chunk chunk = chunkHolder.chunk;
         chunkHolder.clear();
         if (z) {
-            this.pendingResetPositionUs = C0474C.TIME_UNSET;
+            this.pendingResetPositionUs = C0468C.TIME_UNSET;
             this.loadingFinished = true;
             return true;
         } else if (chunk == null) {
@@ -371,7 +371,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
                             sampleQueue.setStartTimeUs(this.pendingResetPositionUs);
                         }
                     }
-                    this.pendingResetPositionUs = C0474C.TIME_UNSET;
+                    this.pendingResetPositionUs = C0468C.TIME_UNSET;
                 }
                 baseMediaChunk.init(this.chunkOutput);
                 this.mediaChunks.add(baseMediaChunk);
@@ -477,7 +477,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     }
 
     boolean isPendingReset() {
-        return this.pendingResetPositionUs != C0474C.TIME_UNSET;
+        return this.pendingResetPositionUs != C0468C.TIME_UNSET;
     }
 
     private void discardDownstreamMediaChunks(int i) {

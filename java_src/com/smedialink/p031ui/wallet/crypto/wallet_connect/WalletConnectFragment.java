@@ -52,14 +52,14 @@ import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.databinding.ForkFragmentWalletConnectBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenu;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
@@ -152,14 +152,13 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
         showDialog(DialogsFactoryKt.createSelectNetworkTypeDialog(parentActivity, availableNetworks, networkType, new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.WalletConnectFragment$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                WalletConnectFragment.m1618showChooseNetworkDialog$lambda0(Function1.this, (NetworkType) obj);
+                WalletConnectFragment.showChooseNetworkDialog$lambda$0(Function1.this, (NetworkType) obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showChooseNetworkDialog$lambda-0  reason: not valid java name */
-    public static final void m1618showChooseNetworkDialog$lambda0(Function1 action, NetworkType selectedNetworkType) {
+    public static final void showChooseNetworkDialog$lambda$0(Function1 action, NetworkType selectedNetworkType) {
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullExpressionValue(selectedNetworkType, "selectedNetworkType");
         action.invoke(selectedNetworkType);
@@ -223,13 +222,13 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_connect_title));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.createMenu();
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_connect_title));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.createMenu();
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletConnectPresenter presenter;
                 if (i == -1) {
@@ -240,14 +239,14 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
                 }
             }
         });
-        ActionBarMenu createMenu = c3222ActionBar.createMenu();
+        ActionBarMenu createMenu = c3351ActionBar.createMenu();
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem addItemWithWidth = createMenu.addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
-        Intrinsics.checkNotNullExpressionValue(addItemWithWidth, "");
-        ViewExtKt.setPaddingHorizontal(addItemWithWidth, AndroidUtilities.m50dp(14));
-        addItemWithWidth.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
+        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = createMenu.addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2$lambda$1, "setupActionBar$lambda$3$lambda$2$lambda$1");
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$3$lambda$2$lambda$1, AndroidUtilities.m50dp(14));
+        setupActionBar$lambda$3$lambda$2$lambda$1.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
     private final void setupColors() {
@@ -257,10 +256,10 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
         binding.linearSessions.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
         binding.textDescription.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
         binding.buttonDisconnectAll.setColors("windowBackgroundWhiteRedText2", "windowBackgroundWhiteRedText2");
-        AppCompatTextView appCompatTextView = binding.textSessionsTitle;
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        com.smedialink.utils.extentions.common.ViewExtKt.withMediumTypeface(appCompatTextView);
-        appCompatTextView.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
+        AppCompatTextView setupColors$lambda$5$lambda$4 = binding.textSessionsTitle;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
+        com.smedialink.utils.extentions.common.ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$4);
+        setupColors$lambda$5$lambda$4.setTextColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
     }
 
     private final void setupListeners() {
@@ -277,17 +276,16 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
         getSessionsAdapter().setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.crypto.wallet_connect.WalletConnectFragment$$ExternalSyntheticLambda0
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletConnectFragment.m1617setupListeners$lambda7$lambda6(WalletConnectFragment.this, baseQuickAdapter, view, i);
+                WalletConnectFragment.setupListeners$lambda$7$lambda$6(WalletConnectFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-7$lambda-6  reason: not valid java name */
-    public static final void m1617setupListeners$lambda7$lambda6(WalletConnectFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$7$lambda$6(WalletConnectFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         this$0.onSessionItemClick(i);
     }
 
@@ -338,23 +336,22 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         repeat = StringsKt__StringsJVMKt.repeat(" ", 2);
         spannableStringBuilder.append((CharSequence) repeat);
-        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3158R.C3160drawable.msg_mini_qr);
+        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3286R.C3288drawable.msg_mini_qr);
         Intrinsics.checkNotNull(drawable);
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
         spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m50dp(8)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3158R.string.wallet_connect_new_connection));
-        Unit unit = Unit.INSTANCE;
+        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3286R.string.wallet_connect_new_connection));
         bigActionButton.setText(spannableStringBuilder);
         bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed")));
         RLottieImageView rLottieImageView = binding.imageHeader;
         updateAnimationColors();
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3158R.C3164raw.fork_wallet_connect, 300, 170, this.colors);
+        rLottieImageView.setAnimation(C3286R.C3291raw.fork_wallet_connect, 300, 170, this.colors);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textSessionsTitle.setText(getResourceManager().getString(C3158R.string.wallet_connect_active_sessions));
-        binding.textDescription.setText(getResourceManager().getString(C3158R.string.wallet_connect_description));
-        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3158R.string.wallet_connect_terminate_all), C3158R.C3160drawable.msg_block2, false);
+        binding.textSessionsTitle.setText(getResourceManager().getString(C3286R.string.wallet_connect_active_sessions));
+        binding.textDescription.setText(getResourceManager().getString(C3286R.string.wallet_connect_description));
+        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3286R.string.wallet_connect_terminate_all), C3286R.C3288drawable.msg_block2, false);
     }
 
     private final void openQRScan() {

@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/storage/domain/model/common/EnvironmentInformation;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

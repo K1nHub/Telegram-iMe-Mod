@@ -1,7 +1,6 @@
 package com.google.android.gms.internal.firebase_ml;
 
 import com.google.android.exoplayer2.extractor.p016ts.PsExtractor;
-import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 final class zzyb extends zzxw {
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0061, code lost:
@@ -179,7 +178,7 @@ final class zzyb extends zzxw {
                     }
                 } else {
                     long j10 = j4 + j;
-                    zzxs.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | LiteMode.FLAGS_CHAT));
+                    zzxs.zza(bArr, j4, (byte) ((charAt3 >>> '\f') | 480));
                     long j11 = j10 + j;
                     zzxs.zza(bArr, j10, (byte) (((charAt3 >>> 6) & 63) | 128));
                     zzxs.zza(bArr, j11, (byte) ((charAt3 & '?') | 128));

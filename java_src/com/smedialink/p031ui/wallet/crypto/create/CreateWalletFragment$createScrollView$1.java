@@ -18,7 +18,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.SimpleTextView;
 /* compiled from: CreateWalletFragment.kt */
 /* renamed from: com.smedialink.ui.wallet.crypto.create.CreateWalletFragment$createScrollView$1 */
@@ -46,11 +46,11 @@ public final class CreateWalletFragment$createScrollView$1 extends ScrollView {
     protected void onScrollChanged(int i, int i2, int i3, int i4) {
         TextView titleTextView;
         TextView titleTextView2;
-        C3222ActionBar c3222ActionBar;
+        C3351ActionBar c3351ActionBar;
         TextView titleTextView3;
         TextView titleTextView4;
         View actionBarBackground;
-        C3222ActionBar c3222ActionBar2;
+        C3351ActionBar c3351ActionBar2;
         super.onScrollChanged(i, i2, i3, i4);
         this.this$0.hideHint();
         titleTextView = this.this$0.getTitleTextView();
@@ -58,8 +58,8 @@ public final class CreateWalletFragment$createScrollView$1 extends ScrollView {
         int i5 = this.location[1];
         titleTextView2 = this.this$0.getTitleTextView();
         int measuredHeight = i5 + titleTextView2.getMeasuredHeight();
-        c3222ActionBar = ((BaseFragment) this.this$0).actionBar;
-        boolean z = measuredHeight < c3222ActionBar.getBottom();
+        c3351ActionBar = ((BaseFragment) this.this$0).actionBar;
+        boolean z = measuredHeight < c3351ActionBar.getBottom();
         titleTextView3 = this.this$0.getTitleTextView();
         if (z != (titleTextView3.getTag() == null)) {
             titleTextView4 = this.this$0.getTitleTextView();
@@ -79,15 +79,15 @@ public final class CreateWalletFragment$createScrollView$1 extends ScrollView {
             float[] fArr = new float[1];
             fArr[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
             animatorArr[0] = ObjectAnimator.ofFloat(actionBarBackground, property, fArr);
-            c3222ActionBar2 = ((BaseFragment) createWalletFragment).actionBar;
-            SimpleTextView titleTextView5 = c3222ActionBar2.getTitleTextView();
+            c3351ActionBar2 = ((BaseFragment) createWalletFragment).actionBar;
+            SimpleTextView titleTextView5 = c3351ActionBar2.getTitleTextView();
             Property property2 = ScrollView.ALPHA;
             float[] fArr2 = new float[1];
             fArr2[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
             animatorArr[1] = ObjectAnimator.ofFloat(titleTextView5, property2, fArr2);
             animatorSet2.playTogether(animatorArr);
             animatorSet2.setDuration(150L);
-            animatorSet2.addListener(new Animator.AnimatorListener() { // from class: com.smedialink.ui.wallet.crypto.create.CreateWalletFragment$createScrollView$1$onScrollChanged$lambda-1$$inlined$doOnEnd$1
+            animatorSet2.addListener(new Animator.AnimatorListener() { // from class: com.smedialink.ui.wallet.crypto.create.CreateWalletFragment$createScrollView$1$onScrollChanged$lambda$1$$inlined$doOnEnd$1
                 @Override // android.animation.Animator.AnimatorListener
                 public void onAnimationCancel(Animator animator) {
                     Intrinsics.checkNotNullParameter(animator, "animator");
@@ -114,7 +114,6 @@ public final class CreateWalletFragment$createScrollView$1 extends ScrollView {
                 }
             });
             animatorSet2.start();
-            Unit unit = Unit.INSTANCE;
             this.actionBarAnimator = animatorSet2;
         }
     }

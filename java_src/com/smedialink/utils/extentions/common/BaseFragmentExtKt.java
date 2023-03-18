@@ -20,7 +20,7 @@ public final class BaseFragmentExtKt {
         return from;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004e A[EDGE_INSN: B:26:0x004e->B:20:0x004e ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x004c A[EDGE_INSN: B:23:0x004c->B:18:0x004c ?: BREAK  , SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -34,44 +34,38 @@ public final class BaseFragmentExtKt {
             java.lang.String r0 = "condition"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
             org.telegram.ui.ActionBar.INavigationLayout r3 = r3.getParentLayout()
-            if (r3 != 0) goto L16
-            goto L56
-        L16:
+            if (r3 == 0) goto L53
             java.util.List r3 = r3.getFragmentStack()
-            if (r3 != 0) goto L1d
-            goto L56
-        L1d:
+            if (r3 == 0) goto L53
             java.util.Iterator r3 = r3.iterator()
-        L21:
+        L1f:
             boolean r0 = r3.hasNext()
-            if (r0 == 0) goto L4d
+            if (r0 == 0) goto L4b
             java.lang.Object r0 = r3.next()
             r1 = r0
             org.telegram.ui.ActionBar.BaseFragment r1 = (org.telegram.p048ui.ActionBar.BaseFragment) r1
             boolean r2 = r4.isInstance(r1)
-            if (r2 == 0) goto L49
+            if (r2 == 0) goto L47
             java.lang.Object r1 = r4.cast(r1)
             kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
             java.lang.Object r1 = r5.invoke(r1)
             java.lang.Boolean r1 = (java.lang.Boolean) r1
             boolean r1 = r1.booleanValue()
-            if (r1 == 0) goto L49
+            if (r1 == 0) goto L47
             r1 = 1
-            goto L4a
-        L49:
+            goto L48
+        L47:
             r1 = 0
-        L4a:
-            if (r1 == 0) goto L21
-            goto L4e
-        L4d:
+        L48:
+            if (r1 == 0) goto L1f
+            goto L4c
+        L4b:
             r0 = 0
-        L4e:
+        L4c:
             org.telegram.ui.ActionBar.BaseFragment r0 = (org.telegram.p048ui.ActionBar.BaseFragment) r0
-            if (r0 != 0) goto L53
-            goto L56
-        L53:
+            if (r0 == 0) goto L53
             r0.removeSelfFromStack()
-        L56:
+        L53:
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.smedialink.utils.extentions.common.BaseFragmentExtKt.removeFragmentFromStack(org.telegram.ui.ActionBar.BaseFragment, java.lang.Class, kotlin.jvm.functions.Function1):void");

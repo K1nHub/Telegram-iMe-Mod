@@ -11,8 +11,8 @@ public final /* synthetic */ class GlideHelper$$ExternalSyntheticLambda0 impleme
 
     @Override // com.bumptech.glide.load.model.Headers
     public final Map getHeaders() {
-        Map m1843loadBinanceImageAsBitmap$lambda0;
-        m1843loadBinanceImageAsBitmap$lambda0 = GlideHelper.m1843loadBinanceImageAsBitmap$lambda0();
-        return m1843loadBinanceImageAsBitmap$lambda0;
+        Map loadBinanceImageAsBitmap$lambda$0;
+        loadBinanceImageAsBitmap$lambda$0 = GlideHelper.loadBinanceImageAsBitmap$lambda$0();
+        return loadBinanceImageAsBitmap$lambda$0;
     }
 }

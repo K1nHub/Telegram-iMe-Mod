@@ -43,10 +43,10 @@ public final class AppReviewManager {
         if (isNeedRequestReview) {
             Task<ReviewInfo> requestReviewFlow = this.manager.requestReviewFlow();
             Intrinsics.checkNotNullExpressionValue(requestReviewFlow, "manager.requestReviewFlow()");
-            requestReviewFlow.addOnCompleteListener(new OnCompleteListener() { // from class: com.smedialink.storage.data.manager.review.AppReviewManager$$ExternalSyntheticLambda1
+            requestReviewFlow.addOnCompleteListener(new OnCompleteListener() { // from class: com.smedialink.storage.data.manager.review.AppReviewManager$$ExternalSyntheticLambda0
                 @Override // com.google.android.play.core.tasks.OnCompleteListener
                 public final void onComplete(Task task) {
-                    AppReviewManager.m1302startReview$lambda1(AppReviewManager.this, task);
+                    AppReviewManager.startReview$lambda$1(AppReviewManager.this, task);
                 }
             });
         }
@@ -54,8 +54,7 @@ public final class AppReviewManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: startReview$lambda-1  reason: not valid java name */
-    public static final void m1302startReview$lambda1(final AppReviewManager this$0, Task task) {
+    public static final void startReview$lambda$1(final AppReviewManager this$0, Task task) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(task, "task");
         if (task.isSuccessful()) {
@@ -68,10 +67,10 @@ public final class AppReviewManager {
                 Intrinsics.checkNotNull(activity);
                 Task<Void> launchReviewFlow = reviewManager.launchReviewFlow(activity, reviewInfo);
                 Intrinsics.checkNotNullExpressionValue(launchReviewFlow, "manager.launchReviewFlow(activity!!, reviewInfo)");
-                launchReviewFlow.addOnCompleteListener(new OnCompleteListener() { // from class: com.smedialink.storage.data.manager.review.AppReviewManager$$ExternalSyntheticLambda0
+                launchReviewFlow.addOnCompleteListener(new OnCompleteListener() { // from class: com.smedialink.storage.data.manager.review.AppReviewManager$$ExternalSyntheticLambda1
                     @Override // com.google.android.play.core.tasks.OnCompleteListener
                     public final void onComplete(Task task2) {
-                        AppReviewManager.m1303startReview$lambda1$lambda0(AppReviewManager.this, task2);
+                        AppReviewManager.startReview$lambda$1$lambda$0(AppReviewManager.this, task2);
                     }
                 });
                 return;
@@ -82,8 +81,7 @@ public final class AppReviewManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: startReview$lambda-1$lambda-0  reason: not valid java name */
-    public static final void m1303startReview$lambda1$lambda0(AppReviewManager this$0, Task task1) {
+    public static final void startReview$lambda$1$lambda$0(AppReviewManager this$0, Task task1) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(task1, "task1");
         this$0.updateReviewRequestCount(true);

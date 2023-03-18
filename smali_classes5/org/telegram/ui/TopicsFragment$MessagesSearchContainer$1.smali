@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 3183
+    .line 3184
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$1;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public finish()V
     .locals 2
 
-    .line 3198
+    .line 3199
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -47,7 +47,7 @@
 
     if-le v1, v0, :cond_0
 
-    .line 3199
+    .line 3200
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$1;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -61,7 +61,7 @@
 .method public move(F)V
     .locals 2
 
-    .line 3191
+    .line 3192
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -70,7 +70,7 @@
 
     if-le v1, v0, :cond_0
 
-    .line 3192
+    .line 3193
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$1;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
@@ -84,12 +84,12 @@
 .method public startChatPreview(Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 0
 
-    .line 3186
+    .line 3187
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$1;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/TopicsFragment;->access$7400(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/ui/Cells/DialogCell;)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/TopicsFragment;->access$7500(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/ui/Cells/DialogCell;)Z
 
     return-void
 .end method

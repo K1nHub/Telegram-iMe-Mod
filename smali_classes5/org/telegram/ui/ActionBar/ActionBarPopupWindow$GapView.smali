@@ -15,53 +15,61 @@
 
 
 # instance fields
-.field resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
 .field shadowDrawable:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public constructor <init>(Landroid/content/Context;II)V
     .locals 1
 
-    const-string v0, "actionBarDefaultSubmenuSeparator"
-
-    .line 1072
-    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)V
-    .locals 2
-
-    .line 1076
+    .line 1066
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1077
-    iput-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    .line 1079
+    .line 1067
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v1, "windowBackgroundGrayShadow"
-
-    invoke-static {p1, v0, v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1080
+    .line 1068
+    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 1
+
+    const-string v0, "actionBarDefaultSubmenuSeparator"
+
+    .line 1062
+    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)V
+    .locals 1
+
+    .line 1072
     invoke-static {p3, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result p1
+    move-result p3
 
-    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
+    const-string v0, "windowBackgroundGrayShadow"
+
+    invoke-static {v0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result p2
+
+    invoke-direct {p0, p1, p3, p2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;-><init>(Landroid/content/Context;II)V
 
     return-void
 .end method
@@ -71,15 +79,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 1089
+    .line 1081
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1090
+    .line 1082
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
 
-    .line 1091
+    .line 1083
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -92,7 +100,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1092
+    .line 1084
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -104,7 +112,7 @@
 .method public setColor(I)V
     .locals 0
 
-    .line 1084
+    .line 1076
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     return-void

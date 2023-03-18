@@ -533,7 +533,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.google.common.collect.AbstractMapBasedMultimap$KeySet$1 */
         /* loaded from: classes3.dex */
-        public class C09021 implements java.util.Iterator<K>, p034j$.util.Iterator {
+        public class C08951 implements java.util.Iterator<K>, p034j$.util.Iterator {
             Map.Entry<K, Collection<V>> entry;
             final /* synthetic */ java.util.Iterator val$entryIterator;
 
@@ -542,7 +542,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
                 Iterator.CC.$default$forEachRemaining(this, consumer);
             }
 
-            C09021(java.util.Iterator it) {
+            C08951(java.util.Iterator it) {
                 this.val$entryIterator = it;
             }
 
@@ -571,7 +571,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public java.util.Iterator<K> iterator() {
-            return new C09021(map().entrySet().iterator());
+            return new C08951(map().entrySet().iterator());
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -834,7 +834,7 @@ public abstract class AbstractMapBasedMultimap<K, V> extends AbstractMultimap<K,
         return new AbstractMapBasedMultimap<K, V>.Itr<Map.Entry<K, V>>(this) { // from class: com.google.common.collect.AbstractMapBasedMultimap.2
             @Override // com.google.common.collect.AbstractMapBasedMultimap.Itr
             /* bridge */ /* synthetic */ Object output(Object obj, Object obj2) {
-                return output((C09012) obj, obj2);
+                return output((C08942) obj, obj2);
             }
 
             @Override // com.google.common.collect.AbstractMapBasedMultimap.Itr

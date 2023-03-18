@@ -1,7 +1,6 @@
 package org.fork.enums;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.telegram.tgnet.TLRPC$MessageAction;
 import org.telegram.tgnet.TLRPC$TL_messageActionChatAddUser;
@@ -76,10 +75,10 @@ public enum ServiceMessageType {
 
     public final int getCode(boolean z) {
         Integer num = z ? this.channelCode : this.groupCode;
-        if (num == null) {
-            return 0;
+        if (num != null) {
+            return num.intValue();
         }
-        return num.intValue();
+        return 0;
     }
 
     /* compiled from: ServiceMessageType.kt */
@@ -121,9 +120,7 @@ public enum ServiceMessageType {
                     arrayList.add(serviceMessageType);
                 }
             }
-            Object[] array = arrayList.toArray(new ServiceMessageType[0]);
-            Objects.requireNonNull(array, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
-            return (ServiceMessageType[]) array;
+            return (ServiceMessageType[]) arrayList.toArray(new ServiceMessageType[0]);
         }
     }
 }

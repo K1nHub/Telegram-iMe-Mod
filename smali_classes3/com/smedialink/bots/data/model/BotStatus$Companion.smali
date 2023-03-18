@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBotStatus.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotStatus.kt\ncom/smedialink/bots/data/model/BotStatus$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,11:1\n1275#2,2:12\n*S KotlinDebug\n*F\n+ 1 BotStatus.kt\ncom/smedialink/bots/data/model/BotStatus$Companion\n*L\n8#1:12,2\n*E\n"
+    value = "SMAP\nBotStatus.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BotStatus.kt\ncom/smedialink/bots/data/model/BotStatus$Companion\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,11:1\n1282#2,2:12\n*S KotlinDebug\n*F\n+ 1 BotStatus.kt\ncom/smedialink/bots/data/model/BotStatus$Companion\n*L\n8#1:12,2\n*E\n"
 .end annotation
 
 
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    .line 1275
+    .line 1282
     array-length v1, v0
 
     const/4 v2, 0x0

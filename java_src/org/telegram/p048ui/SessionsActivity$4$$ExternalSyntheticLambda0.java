@@ -11,6 +11,6 @@ public final /* synthetic */ class SessionsActivity$4$$ExternalSyntheticLambda0 
 
     @Override // java.lang.Runnable
     public final void run() {
-        SessionsActivity.C63044.lambda$onSessionTerminated$0();
+        SessionsActivity.C64474.lambda$onSessionTerminated$0();
     }
 }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/InviteContactsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 332
+    .line 333
     iput-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 0
 
-    .line 371
+    .line 372
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p3
 
-    .line 372
+    .line 373
     iget-object p4, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/InviteContactsActivity;->access$1300(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -57,7 +57,7 @@
 
     if-ne p2, p4, :cond_1
 
-    .line 373
+    .line 374
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
@@ -84,7 +84,7 @@
 .method protected onLayout(ZIIII)V
     .locals 3
 
-    .line 360
+    .line 361
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1200(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/ScrollView;
@@ -115,7 +115,7 @@
 
     invoke-virtual {p1, v0, v0, p2, p4}, Landroid/widget/ScrollView;->layout(IIII)V
 
-    .line 361
+    .line 362
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1300(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -166,7 +166,7 @@
 
     invoke-virtual {p1, v0, p2, p4, v1}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    .line 362
+    .line 363
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1400(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -227,7 +227,7 @@
 
     sub-int/2addr p5, p3
 
-    .line 363
+    .line 364
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1000(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/TextView;
@@ -240,7 +240,7 @@
 
     sub-int p1, p5, p1
 
-    .line 364
+    .line 365
     iget-object p2, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/InviteContactsActivity;->access$1000(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/TextView;
@@ -271,7 +271,7 @@
 
     invoke-virtual {p2, v0, p1, p3, p4}, Landroid/widget/TextView;->layout(IIII)V
 
-    .line 365
+    .line 366
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1100(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/FrameLayout;
@@ -284,7 +284,7 @@
 
     sub-int/2addr p5, p1
 
-    .line 366
+    .line 367
     iget-object p1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/InviteContactsActivity;->access$1100(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/FrameLayout;
@@ -321,20 +321,20 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 335
+    .line 336
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 336
+    .line 337
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 337
+    .line 338
     invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 
-    .line 339
+    .line 340
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -348,7 +348,7 @@
     :cond_0
     const/16 v0, 0x38
 
-    .line 342
+    .line 343
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -359,12 +359,12 @@
     :goto_0
     const/16 v0, 0x90
 
-    .line 340
+    .line 341
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 346
+    .line 347
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
@@ -386,7 +386,7 @@
 
     invoke-virtual {v1, v3, v5}, Landroid/widget/TextView;->measure(II)V
 
-    .line 347
+    .line 348
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/InviteContactsActivity;->access$1100(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/FrameLayout;
@@ -409,7 +409,7 @@
 
     invoke-virtual {v1, v3, v5}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 348
+    .line 349
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/InviteContactsActivity;->access$1000(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/TextView;
@@ -422,7 +422,7 @@
 
     if-nez v1, :cond_2
 
-    .line 349
+    .line 350
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/InviteContactsActivity;->access$1000(Lorg/telegram/ui/InviteContactsActivity;)Landroid/widget/TextView;
@@ -435,7 +435,7 @@
 
     goto :goto_2
 
-    .line 351
+    .line 352
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
@@ -447,7 +447,7 @@
 
     move-result v1
 
-    .line 353
+    .line 354
     :goto_2
     iget-object v3, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
@@ -465,7 +465,7 @@
 
     invoke-virtual {v3, v5, v0}, Landroid/widget/ScrollView;->measure(II)V
 
-    .line 354
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/InviteContactsActivity;->access$1300(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -496,7 +496,7 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 355
+    .line 356
     iget-object v0, p0, Lorg/telegram/ui/InviteContactsActivity$2;->this$0:Lorg/telegram/ui/InviteContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/InviteContactsActivity;->access$1400(Lorg/telegram/ui/InviteContactsActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;

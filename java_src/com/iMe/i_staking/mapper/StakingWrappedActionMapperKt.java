@@ -20,8 +20,10 @@ public final class StakingWrappedActionMapperKt {
             if (stakingTransactionArgs == null) {
                 throw new Throwable();
             }
+            Intrinsics.checkNotNullExpressionValue(stakingTransactionArgs, "jwt.getClaim(TRANSACTION…     ?: throw Throwable()");
             StakingTransactionGas stakingTransactionGas = (StakingTransactionGas) jwt.getClaim("gas").asObject(StakingTransactionGas.class);
             if (stakingTransactionGas != null) {
+                Intrinsics.checkNotNullExpressionValue(stakingTransactionGas, "jwt.getClaim(GAS_KEY).as…     ?: throw Throwable()");
                 return TuplesKt.m100to(stakingWrappedActionResponse.getWrappedAction(), new StakingTransactionAction(stakingTransactionArgs, stakingTransactionGas));
             }
             throw new Throwable();

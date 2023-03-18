@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/dialog/SelectLanguageBottomSheet$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/dialog/SelectLanguageBottomSheet;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->$r8$lambda$xoQkRQqa2ltDHZXvb7O4qNbaa9U(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/dialog/SelectLanguageBottomSheet;->$r8$lambda$MApafXOrva5IIGX2g0vmWCQsvDA(Lorg/fork/ui/dialog/SelectLanguageBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method

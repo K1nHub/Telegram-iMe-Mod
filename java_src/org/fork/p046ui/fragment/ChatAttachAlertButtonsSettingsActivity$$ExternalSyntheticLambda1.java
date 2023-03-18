@@ -13,6 +13,6 @@ public final /* synthetic */ class ChatAttachAlertButtonsSettingsActivity$$Exter
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        ChatAttachAlertButtonsSettingsActivity.m2032saveSuggestContacts$lambda2(tLObject, tLRPC$TL_error);
+        ChatAttachAlertButtonsSettingsActivity.saveSuggestContacts$lambda$2(tLObject, tLRPC$TL_error);
     }
 }

@@ -9,7 +9,6 @@ public class FileLoaderPriorityQueue {
     private final int maxActiveOperationsCount;
     String name;
     ArrayList<FileLoadOperation> allOperations = new ArrayList<>();
-    ArrayList<FileLoadOperation> activeOperations = new ArrayList<>();
     private int PRIORITY_VALUE_MAX = ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES;
     private int PRIORITY_VALUE_NORMAL = 65536;
     private int PRIORITY_VALUE_LOW = 0;

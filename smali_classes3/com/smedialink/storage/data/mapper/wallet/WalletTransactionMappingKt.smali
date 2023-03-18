@@ -13,7 +13,7 @@
 
 # direct methods
 .method public static final mapToDomain(Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;)Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
-    .locals 22
+    .locals 21
 
     const-string v0, "<this>"
 
@@ -40,7 +40,7 @@
 
     aget v0, v0, v2
 
-    const-string v3, ""
+    const-string v2, ""
 
     packed-switch v0, :pswitch_data_0
 
@@ -49,7 +49,7 @@
 
     move-result-object v1
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     .line 189
     :pswitch_0
@@ -95,12 +95,12 @@
 
     move-result-object v4
 
+    new-instance v5, Ljava/math/BigDecimal;
+
     .line 197
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -114,9 +114,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getDirection()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v3
 
-    invoke-virtual {v0, v7}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object v7
 
@@ -125,18 +125,18 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getStatus()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-virtual {v0, v9}, Lcom/smedialink/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/base/Status;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/base/Status;
 
     move-result-object v10
+
+    new-instance v12, Ljava/math/BigDecimal;
 
     .line 202
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -145,9 +145,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeTokenCode()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-virtual {v0, v9}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v13
 
@@ -156,9 +156,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getProcessing()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-virtual {v0, v9}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
     move-result-object v11
 
@@ -167,14 +167,14 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTradeType()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v3
 
-    if-nez v9, :cond_2
+    if-nez v3, :cond_2
 
-    move-object v9, v3
+    move-object v3, v2
 
     :cond_2
-    invoke-virtual {v0, v9}, Lcom/smedialink/storage/domain/model/wallet/swap/TradeType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/swap/TradeType;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/wallet/swap/TradeType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/swap/TradeType;
 
     move-result-object v18
 
@@ -183,81 +183,72 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_3
 
-    const/4 v9, 0x0
+    new-instance v3, Ljava/math/BigDecimal;
+
+    invoke-direct {v3, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+
+    move-object v0, v3
 
     goto :goto_0
 
     :cond_3
+    sget-object v0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
+
+    .line 209
+    :goto_0
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getOutputAmount()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_4
+
     new-instance v9, Ljava/math/BigDecimal;
 
-    invoke-direct {v9, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v3}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    :goto_0
-    if-nez v9, :cond_4
-
-    sget-object v0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
+    move-object v14, v9
 
     goto :goto_1
 
     :cond_4
-    move-object v0, v9
+    sget-object v3, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
-    .line 209
+    move-object v14, v3
+
+    .line 210
     :goto_1
-    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getOutputAmount()Ljava/lang/String;
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxHash()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v3
 
-    if-nez v9, :cond_5
+    if-nez v3, :cond_5
 
-    const/4 v2, 0x0
+    move-object/from16 v19, v2
 
     goto :goto_2
 
     :cond_5
-    new-instance v2, Ljava/math/BigDecimal;
-
-    invoke-direct {v2, v9}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
-
-    :goto_2
-    if-nez v2, :cond_6
-
-    sget-object v2, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
-
-    .line 210
-    :cond_6
-    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxHash()Ljava/lang/String;
-
-    move-result-object v9
-
-    if-nez v9, :cond_7
-
-    move-object v14, v3
-
-    goto :goto_3
-
-    :cond_7
-    move-object v14, v9
+    move-object/from16 v19, v3
 
     .line 211
-    :goto_3
-    sget-object v9, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
+    :goto_2
+    sget-object v3, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getNetworkType()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_8
+    if-nez v1, :cond_6
 
-    goto :goto_4
+    goto :goto_3
 
-    :cond_8
-    move-object v3, v1
+    :cond_6
+    move-object v2, v1
 
-    :goto_4
-    invoke-virtual {v9, v3}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    :goto_3
+    invoke-virtual {v3, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v15
 
@@ -266,17 +257,21 @@
 
     move-object v3, v1
 
-    const-string v9, "inputAmount?.toBigDecimal() ?: BigDecimal.ZERO"
+    const-string v2, "inputAmount?.toBigDecimal() ?: BigDecimal.ZERO"
 
     .line 208
-    invoke-static {v0, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v9, "outputAmount?.toBigDecimal() ?: BigDecimal.ZERO"
+    const-string v2, "outputAmount?.toBigDecimal() ?: BigDecimal.ZERO"
 
     .line 209
-    invoke-static {v2, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v14, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object/from16 v9, v16
+
+    move-object v2, v14
+
+    move-object/from16 v14, v19
 
     move-object/from16 v19, v0
 
@@ -285,7 +280,7 @@
     .line 194
     invoke-direct/range {v3 .. v20}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Swap;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/domain/model/wallet/swap/TradeType;Ljava/math/BigDecimal;Ljava/math/BigDecimal;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     .line 173
     :pswitch_1
@@ -297,7 +292,7 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_9
+    if-nez v9, :cond_7
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/wallet/WalletTransactionMappingKt;->unsupportedTransaction(Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;)Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
@@ -306,17 +301,17 @@
     return-object v0
 
     .line 176
-    :cond_9
+    :cond_7
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
+
+    new-instance v5, Ljava/math/BigDecimal;
 
     .line 178
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -347,12 +342,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 183
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -385,7 +380,7 @@
 
     invoke-direct/range {v3 .. v13}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Refund;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     .line 150
     :pswitch_2
@@ -397,7 +392,7 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_a
+    if-nez v9, :cond_8
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/wallet/WalletTransactionMappingKt;->unsupportedTransaction(Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;)Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
@@ -406,17 +401,17 @@
     return-object v0
 
     .line 153
-    :cond_a
+    :cond_8
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
+
+    new-instance v5, Ljava/math/BigDecimal;
 
     .line 155
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -430,9 +425,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getDirection()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v3
 
-    invoke-virtual {v0, v7}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;
 
     move-result-object v7
 
@@ -441,18 +436,18 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getStatus()Ljava/lang/String;
 
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/base/Status;
+
     move-result-object v10
 
-    invoke-virtual {v0, v10}, Lcom/smedialink/storage/data/network/model/response/base/Status$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/data/network/model/response/base/Status;
-
-    move-result-object v10
+    new-instance v12, Ljava/math/BigDecimal;
 
     .line 160
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -461,9 +456,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeTokenCode()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v3
 
-    invoke-virtual {v0, v11}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v13
 
@@ -472,9 +467,9 @@
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getProcessing()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v3
 
-    invoke-virtual {v0, v11}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;
+    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
     move-result-object v11
 
@@ -483,117 +478,107 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_9
 
-    move-object/from16 v17, v3
+    move-object/from16 v17, v2
 
-    goto :goto_5
+    goto :goto_4
 
-    :cond_b
+    :cond_9
     move-object/from16 v17, v0
 
     .line 164
-    :goto_5
+    :goto_4
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxFromCryptoAddress()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_a
+
+    move-object/from16 v16, v2
+
+    goto :goto_5
+
+    :cond_a
+    move-object/from16 v16, v0
+
+    .line 165
+    :goto_5
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxHash()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_b
+
+    move-object v14, v2
+
+    goto :goto_6
+
+    :cond_b
+    move-object v14, v0
+
+    .line 166
+    :goto_6
+    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getSimplexOrderId()Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_c
 
-    move-object/from16 v16, v3
-
-    goto :goto_6
-
-    :cond_c
-    move-object/from16 v16, v0
-
-    .line 165
-    :goto_6
-    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxHash()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_d
-
-    move-object v14, v3
+    move-object/from16 v18, v2
 
     goto :goto_7
 
-    :cond_d
-    move-object v14, v0
-
-    .line 166
-    :goto_7
-    invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getSimplexOrderId()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_e
-
-    move-object/from16 v18, v3
-
-    goto :goto_8
-
-    :cond_e
+    :cond_c
     move-object/from16 v18, v0
 
     .line 167
-    :goto_8
+    :goto_7
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmountToSpent()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_f
+    if-eqz v0, :cond_d
 
-    const/4 v15, 0x0
+    new-instance v3, Ljava/math/BigDecimal;
 
-    goto :goto_9
+    invoke-direct {v3, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    :cond_f
-    new-instance v15, Ljava/math/BigDecimal;
+    move-object v0, v3
 
-    invoke-direct {v15, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    goto :goto_8
 
-    :goto_9
-    if-nez v15, :cond_10
-
+    :cond_d
     sget-object v0, Ljava/math/BigDecimal;->ZERO:Ljava/math/BigDecimal;
 
-    goto :goto_a
-
-    :cond_10
-    move-object v0, v15
-
     .line 168
-    :goto_a
-    new-instance v15, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;
+    :goto_8
+    new-instance v3, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getSpentCurrency()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v15
 
-    if-nez v19, :cond_11
+    if-nez v15, :cond_e
 
-    sget-object v19, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
+    sget-object v15, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;
 
-    invoke-virtual/range {v19 .. v19}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
+    invoke-virtual {v15}, Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v15
 
-    :cond_11
-    move-object/from16 v2, v19
-
+    :cond_e
     const/4 v1, 0x0
 
-    move-object/from16 v19, v3
+    move-object/from16 v19, v2
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    move-object/from16 v21, v14
+    move-object/from16 v20, v14
 
     const/4 v14, 0x0
 
-    invoke-direct {v15, v2, v1, v3, v14}, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;-><init>(Ljava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v3, v15, v1, v2, v14}, Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;-><init>(Ljava/lang/String;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 169
     sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
@@ -602,26 +587,19 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_12
+    if-nez v2, :cond_f
 
-    move-object/from16 v3, v19
+    move-object/from16 v2, v19
 
-    goto :goto_b
+    :cond_f
+    invoke-virtual {v1, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    :cond_12
-    move-object v3, v2
-
-    :goto_b
-    invoke-virtual {v1, v3}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
-
-    move-result-object v1
-
-    move-object v2, v15
-
-    move-object v15, v1
+    move-result-object v15
 
     .line 152
     new-instance v1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;
+
+    move-object v2, v3
 
     move-object v3, v1
 
@@ -630,7 +608,7 @@
     .line 167
     invoke-static {v0, v14}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-object/from16 v14, v21
+    move-object/from16 v14, v20
 
     move-object/from16 v19, v0
 
@@ -639,10 +617,10 @@
     .line 152
     invoke-direct/range {v3 .. v20}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$SimplexPurchase;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/FiatCode;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     :pswitch_3
-    move-object/from16 v19, v3
+    move-object/from16 v19, v2
 
     .line 132
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTokenCode()Ljava/lang/String;
@@ -653,7 +631,7 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_13
+    if-nez v9, :cond_10
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/wallet/WalletTransactionMappingKt;->unsupportedTransaction(Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;)Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
@@ -662,17 +640,17 @@
     return-object v0
 
     .line 135
-    :cond_13
+    :cond_10
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
+
+    new-instance v5, Ljava/math/BigDecimal;
 
     .line 137
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -703,12 +681,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 142
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -739,34 +717,34 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_11
 
     move-object/from16 v14, v19
 
-    goto :goto_c
+    goto :goto_9
 
-    :cond_14
+    :cond_11
     move-object v14, v0
 
     .line 146
-    :goto_c
+    :goto_9
     sget-object v0, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getNetworkType()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_12
 
-    move-object/from16 v3, v19
+    move-object/from16 v2, v19
 
-    goto :goto_d
+    goto :goto_a
 
-    :cond_15
-    move-object v3, v1
+    :cond_12
+    move-object v2, v1
 
-    :goto_d
-    invoke-virtual {v0, v3}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    :goto_a
+    invoke-virtual {v0, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v15
 
@@ -777,10 +755,10 @@
 
     invoke-direct/range {v3 .. v15}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     :pswitch_4
-    move-object/from16 v19, v3
+    move-object/from16 v19, v2
 
     .line 90
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTokenCode()Ljava/lang/String;
@@ -791,7 +769,7 @@
 
     move-result-object v9
 
-    if-nez v9, :cond_16
+    if-nez v9, :cond_13
 
     invoke-static/range {p0 .. p0}, Lcom/smedialink/storage/data/mapper/wallet/WalletTransactionMappingKt;->unsupportedTransaction(Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;)Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction;
 
@@ -800,7 +778,7 @@
     return-object v0
 
     .line 92
-    :cond_16
+    :cond_13
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -811,19 +789,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1a
 
     .line 94
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
 
+    new-instance v5, Ljava/math/BigDecimal;
+
     .line 96
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -854,12 +832,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 101
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -890,89 +868,84 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_14
 
     move-object/from16 v16, v19
 
-    goto :goto_e
+    goto :goto_b
 
-    :cond_17
+    :cond_14
     move-object/from16 v16, v0
 
     .line 105
-    :goto_e
+    :goto_b
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxFromCryptoAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_15
 
     move-object/from16 v15, v19
 
-    goto :goto_f
+    goto :goto_c
 
-    :cond_18
+    :cond_15
     move-object v15, v0
 
     .line 106
-    :goto_f
+    :goto_c
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxHash()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_16
 
     move-object/from16 v14, v19
 
-    goto :goto_10
+    goto :goto_d
 
-    :cond_19
+    :cond_16
     move-object v14, v0
 
     .line 107
-    :goto_10
+    :goto_d
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getReceiverAccountId()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_17
 
     move-object/from16 v0, v19
 
     .line 108
-    :cond_1a
+    :cond_17
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getSenderAccountId()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_18
 
     move-object/from16 v18, v19
 
-    goto :goto_11
+    goto :goto_e
 
-    :cond_1b
+    :cond_18
     move-object/from16 v18, v1
 
     .line 109
-    :goto_11
+    :goto_e
     sget-object v1, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getNetworkType()Ljava/lang/String;
 
     move-result-object v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_19
 
-    move-object/from16 v3, v19
+    move-object/from16 v2, v19
 
-    goto :goto_12
-
-    :cond_1c
-    move-object v3, v2
-
-    :goto_12
-    invoke-virtual {v1, v3}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
+    :cond_19
+    invoke-virtual {v1, v2}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v17
 
@@ -985,20 +958,20 @@
 
     invoke-direct/range {v3 .. v19}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Crypto$Donation;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/crypto/NetworkType;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     .line 113
-    :cond_1d
+    :cond_1a
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
+
+    new-instance v5, Ljava/math/BigDecimal;
 
     .line 115
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1029,12 +1002,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 120
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1065,60 +1038,60 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1b
 
     move-object/from16 v17, v19
 
-    goto :goto_13
+    goto :goto_f
 
-    :cond_1e
+    :cond_1b
     move-object/from16 v17, v0
 
     .line 124
-    :goto_13
+    :goto_f
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxFromCryptoAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1c
 
     move-object/from16 v16, v19
 
-    goto :goto_14
+    goto :goto_10
 
-    :cond_1f
+    :cond_1c
     move-object/from16 v16, v0
 
     .line 125
-    :goto_14
+    :goto_10
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getTxHash()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1d
 
     move-object/from16 v14, v19
 
-    goto :goto_15
+    goto :goto_11
 
-    :cond_20
+    :cond_1d
     move-object v14, v0
 
     .line 126
-    :goto_15
+    :goto_11
     sget-object v0, Lcom/smedialink/storage/domain/model/crypto/NetworkType;->Companion:Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getNetworkType()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_21
+    if-nez v1, :cond_1e
 
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getProcessing()Ljava/lang/String;
 
     move-result-object v1
 
-    :cond_21
+    :cond_1e
     invoke-virtual {v0, v1}, Lcom/smedialink/storage/domain/model/crypto/NetworkType$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
     move-result-object v15
@@ -1137,22 +1110,22 @@
 
     move-object v1, v0
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     :pswitch_5
-    move-object/from16 v19, v3
+    move-object/from16 v19, v2
 
     .line 76
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
 
+    new-instance v5, Ljava/math/BigDecimal;
+
     .line 78
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1194,12 +1167,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 83
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v1
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1228,24 +1201,24 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1f
 
     move-object/from16 v14, v19
 
-    goto :goto_16
+    goto :goto_12
 
-    :cond_22
+    :cond_1f
     move-object v14, v0
 
     .line 75
-    :goto_16
+    :goto_12
     new-instance v1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Transfer;
 
     move-object v3, v1
 
     invoke-direct/range {v3 .. v14}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Transfer;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     .line 62
     :pswitch_6
@@ -1253,12 +1226,12 @@
 
     move-result-object v4
 
+    new-instance v5, Ljava/math/BigDecimal;
+
     .line 64
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1300,12 +1273,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 69
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v1
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1336,7 +1309,7 @@
 
     invoke-direct/range {v3 .. v13}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Lottery;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     .line 48
     :pswitch_7
@@ -1344,12 +1317,12 @@
 
     move-result-object v4
 
+    new-instance v5, Ljava/math/BigDecimal;
+
     .line 50
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1391,12 +1364,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 55
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v1
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1427,22 +1400,22 @@
 
     invoke-direct/range {v3 .. v13}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Purchase;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
-    goto/16 :goto_18
+    goto/16 :goto_14
 
     :pswitch_8
-    move-object/from16 v19, v3
+    move-object/from16 v19, v2
 
     .line 33
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getId()Ljava/lang/String;
 
     move-result-object v4
 
+    new-instance v5, Ljava/math/BigDecimal;
+
     .line 35
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1484,12 +1457,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 40
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v1
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1518,24 +1491,24 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_20
 
     move-object/from16 v14, v19
 
-    goto :goto_17
+    goto :goto_13
 
-    :cond_23
+    :cond_20
     move-object v14, v0
 
     .line 32
-    :goto_17
+    :goto_13
     new-instance v1, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Referral;
 
     move-object v3, v1
 
     invoke-direct/range {v3 .. v14}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Referral;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
 
-    goto :goto_18
+    goto :goto_14
 
     .line 19
     :pswitch_9
@@ -1543,12 +1516,12 @@
 
     move-result-object v4
 
+    new-instance v5, Ljava/math/BigDecimal;
+
     .line 21
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v5, Ljava/math/BigDecimal;
 
     invoke-direct {v5, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1590,12 +1563,12 @@
 
     move-result-object v10
 
+    new-instance v12, Ljava/math/BigDecimal;
+
     .line 26
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v1
-
-    new-instance v12, Ljava/math/BigDecimal;
 
     invoke-direct {v12, v1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1626,10 +1599,8 @@
 
     invoke-direct/range {v3 .. v13}, Lcom/smedialink/storage/domain/model/wallet/transaction/Transaction$Registration;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionType;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;Lcom/smedialink/storage/data/network/model/response/base/Status;Lcom/smedialink/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/smedialink/storage/domain/model/wallet/token/TokenCode;)V
 
-    :goto_18
+    :goto_14
     return-object v1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1692,12 +1663,12 @@
 
     move-result-object v3
 
+    new-instance v2, Ljava/math/BigDecimal;
+
     .line 228
     invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getAmount()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v2, Ljava/math/BigDecimal;
 
     invoke-direct {v2, v0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
@@ -1739,12 +1710,12 @@
 
     move-result-object v7
 
+    new-instance v9, Ljava/math/BigDecimal;
+
     .line 233
     invoke-virtual {p0}, Lcom/smedialink/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->getFeeAmount()Ljava/lang/String;
 
     move-result-object v8
-
-    new-instance v9, Ljava/math/BigDecimal;
 
     invoke-direct {v9, v8}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 

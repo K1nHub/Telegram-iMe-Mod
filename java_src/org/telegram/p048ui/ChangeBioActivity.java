@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.AlertsCreator;
@@ -57,13 +57,13 @@ public class ChangeBioActivity extends BaseFragment {
     @Override // org.telegram.p048ui.ActionBar.BaseFragment
     public View createView(Context context) {
         String str;
-        this.actionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        int i = C3158R.string.UserBio;
-        c3222ActionBar.setTitle(LocaleController.getString("UserBio", i));
-        this.actionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeBioActivity.1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        int i = C3286R.string.UserBio;
+        c3351ActionBar.setTitle(LocaleController.getString("UserBio", i));
+        this.actionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeBioActivity.1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     ChangeBioActivity.this.finishFragment();
@@ -72,9 +72,9 @@ public class ChangeBioActivity extends BaseFragment {
                 }
             }
         });
-        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(1, C3158R.C3160drawable.ic_ab_done, AndroidUtilities.m50dp(56));
+        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(1, C3286R.C3288drawable.ic_ab_done, AndroidUtilities.m50dp(56));
         this.doneButton = addItemWithWidth;
-        addItemWithWidth.setContentDescription(LocaleController.getString("Done", C3158R.string.Done));
+        addItemWithWidth.setContentDescription(LocaleController.getString("Done", C3286R.string.Done));
         LinearLayout linearLayout = new LinearLayout(context);
         this.fragmentView = linearLayout;
         LinearLayout linearLayout2 = linearLayout;
@@ -163,7 +163,7 @@ public class ChangeBioActivity extends BaseFragment {
         this.helpTextView.setTextSize(1, 15.0f);
         this.helpTextView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText8"));
         this.helpTextView.setGravity(LocaleController.isRTL ? 5 : 3);
-        this.helpTextView.setText(AndroidUtilities.replaceTags(LocaleController.getString("UserBioInfo", C3158R.string.UserBioInfo)));
+        this.helpTextView.setText(AndroidUtilities.replaceTags(LocaleController.getString("UserBioInfo", C3286R.string.UserBioInfo)));
         linearLayout2.addView(this.helpTextView, LayoutHelper.createLinear(-2, -2, LocaleController.isRTL ? 5 : 3, 24, 10, 24, 0));
         TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(UserConfig.getInstance(this.currentAccount).getClientUserId());
         if (userFull != null && (str = userFull.about) != null) {
@@ -257,7 +257,7 @@ public class ChangeBioActivity extends BaseFragment {
             FileLog.m45e(e);
         }
         tLRPC$UserFull.about = str;
-        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(tLRPC$User.f1633id), tLRPC$UserFull);
+        NotificationCenter.getInstance(this.currentAccount).postNotificationName(NotificationCenter.userInfoDidLoad, Long.valueOf(tLRPC$User.f1639id), tLRPC$UserFull);
         finishFragment();
     }
 

@@ -149,7 +149,7 @@
 
     .line 19
     :cond_0
-    invoke-virtual {p0, v0}, Lorg/fork/controller/WalletFingerprintController;->setWalletPinCodeEncrypted(Ljava/lang/String;)V
+    iput-object v0, p0, Lorg/fork/controller/WalletFingerprintController;->walletPinCodeEncrypted:Ljava/lang/String;
 
     .line 21
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->walletFingerprintUnlockEnabled()Ljava/lang/String;
@@ -164,7 +164,7 @@
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Lorg/fork/controller/WalletFingerprintController;->setWalletFingerprintUnlockEnabled(Z)V
+    iput-boolean p1, p0, Lorg/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled:Z
 
     return-void
 .end method
@@ -190,9 +190,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/WalletFingerprintController;->getWalletPinCodeEncrypted()Ljava/lang/String;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/WalletFingerprintController;->walletPinCodeEncrypted:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
@@ -201,9 +199,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/WalletFingerprintController;->isWalletFingerprintUnlockEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 

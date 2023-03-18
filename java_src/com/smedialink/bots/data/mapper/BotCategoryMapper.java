@@ -15,19 +15,19 @@ public final class BotCategoryMapper {
 
     private final SmartBotCategory mapItem(BotsCategoryDbModel botsCategoryDbModel, String str) {
         String str2;
-        if (botsCategoryDbModel == null) {
-            return null;
-        }
-        String id = botsCategoryDbModel.getId();
-        if (Intrinsics.areEqual(str, "ru")) {
-            str2 = botsCategoryDbModel.getTitle();
-        } else {
-            str2 = botsCategoryDbModel.getLocales().get(str);
-            if (str2 == null && (str2 = botsCategoryDbModel.getLocales().get("en")) == null) {
+        if (botsCategoryDbModel != null) {
+            String id = botsCategoryDbModel.getId();
+            if (Intrinsics.areEqual(str, "ru")) {
                 str2 = botsCategoryDbModel.getTitle();
+            } else {
+                str2 = botsCategoryDbModel.getLocales().get(str);
+                if (str2 == null && (str2 = botsCategoryDbModel.getLocales().get("en")) == null) {
+                    str2 = botsCategoryDbModel.getTitle();
+                }
             }
+            return new SmartBotCategory(id, str2, botsCategoryDbModel.getPriority(), botsCategoryDbModel.getTags());
         }
-        return new SmartBotCategory(id, str2, botsCategoryDbModel.getPriority(), botsCategoryDbModel.getTags());
+        return null;
     }
 
     /* compiled from: BotCategoryMapper.kt */

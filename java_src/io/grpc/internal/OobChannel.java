@@ -14,7 +14,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class OobChannel extends ManagedChannel implements InternalInstrumented<Object> {
     private final String authority;
     private final CallTracer channelCallsTracer;

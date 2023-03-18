@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/PasscodeActivity;)V
     .locals 0
 
-    .line 1072
+    .line 1071
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/16 p1, 0x38
 
-    .line 1076
+    .line 1075
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0

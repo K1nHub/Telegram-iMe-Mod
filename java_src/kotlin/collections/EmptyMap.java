@@ -6,10 +6,9 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.markers.KMappedMarker;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Maps.kt */
 /* loaded from: classes4.dex */
-public final class EmptyMap implements Map, Serializable, KMappedMarker {
+final class EmptyMap implements Map, Serializable, KMappedMarker {
     public static final EmptyMap INSTANCE = new EmptyMap();
 
     @Override // java.util.Map

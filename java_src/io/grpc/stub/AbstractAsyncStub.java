@@ -5,7 +5,7 @@ import io.grpc.Channel;
 import io.grpc.stub.AbstractAsyncStub;
 import io.grpc.stub.AbstractStub;
 import io.grpc.stub.ClientCalls;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractAsyncStub<S extends AbstractAsyncStub<S>> extends AbstractStub<S> {
     /* JADX INFO: Access modifiers changed from: protected */
     public AbstractAsyncStub(Channel channel, CallOptions callOptions) {

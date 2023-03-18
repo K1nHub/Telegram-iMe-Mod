@@ -57,7 +57,7 @@ public final class DataForCryptoTransferResponse {
     }
 
     public String toString() {
-        return "DataForCryptoTransferResponse(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + ((Object) this.contractAddress) + ')';
+        return "DataForCryptoTransferResponse(transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ", contractAddress=" + this.contractAddress + ')';
     }
 
     public DataForCryptoTransferResponse(TransactionParamsResponse transactionParams, String feeTokenCode, String str) {

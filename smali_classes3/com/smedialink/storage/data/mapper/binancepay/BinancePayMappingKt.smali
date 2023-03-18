@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBinancePayMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinancePayMapping.kt\ncom/smedialink/storage/data/mapper/binancepay/BinancePayMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,132:1\n1547#2:133\n1618#2,3:134\n1547#2:137\n1618#2,2:138\n1547#2:140\n1618#2,3:141\n1620#2:144\n1547#2:145\n1618#2,3:146\n*S KotlinDebug\n*F\n+ 1 BinancePayMapping.kt\ncom/smedialink/storage/data/mapper/binancepay/BinancePayMappingKt\n*L\n36#1:133\n36#1:134,3\n89#1:137\n89#1:138,2\n98#1:140\n98#1:141,3\n89#1:144\n118#1:145\n118#1:146,3\n*E\n"
+    value = "SMAP\nBinancePayMapping.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BinancePayMapping.kt\ncom/smedialink/storage/data/mapper/binancepay/BinancePayMappingKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,132:1\n1549#2:133\n1620#2,3:134\n1549#2:137\n1620#2,2:138\n1549#2:140\n1620#2,3:141\n1622#2:144\n1549#2:145\n1620#2,3:146\n*S KotlinDebug\n*F\n+ 1 BinancePayMapping.kt\ncom/smedialink/storage/data/mapper/binancepay/BinancePayMappingKt\n*L\n36#1:133\n36#1:134,3\n89#1:137\n89#1:138,2\n98#1:140\n98#1:141,3\n89#1:144\n118#1:145\n118#1:146,3\n*E\n"
 .end annotation
 
 
@@ -257,7 +257,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Unsupported;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionType;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;Ljava/lang/String;)V
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     :cond_0
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -354,16 +354,16 @@
 
     const-wide/16 v15, 0x0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_2
 
-    move-wide/from16 v17, v15
+    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v17
 
     goto :goto_0
 
     :cond_2
-    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v17
+    move-wide/from16 v17, v15
 
     .line 70
     :goto_0
@@ -371,16 +371,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_3
 
-    goto :goto_1
-
-    :cond_3
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v15
 
-    :goto_1
+    :cond_3
     move-wide/from16 v19, v15
 
     .line 71
@@ -404,13 +401,13 @@
 
     move-object/from16 v21, v15
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     move-object/from16 v21, v16
 
     .line 73
-    :goto_2
+    :goto_1
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getInputAssetShortName()Ljava/lang/String;
 
     move-result-object v16
@@ -419,13 +416,13 @@
 
     move-object/from16 v22, v15
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_6
     move-object/from16 v22, v16
 
     .line 74
-    :goto_3
+    :goto_2
     invoke-virtual/range {p0 .. p0}, Lcom/smedialink/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;->getOutputAssetShortName()Ljava/lang/String;
 
     move-result-object v1
@@ -434,13 +431,13 @@
 
     move-object/from16 v23, v15
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     move-object/from16 v23, v1
 
     .line 56
-    :goto_4
+    :goto_3
     new-instance v24, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Convert;
 
     move-object/from16 v1, v24
@@ -461,7 +458,7 @@
 
     move-object/from16 v0, v24
 
-    goto :goto_5
+    goto :goto_4
 
     .line 42
     :cond_8
@@ -556,7 +553,7 @@
 
     invoke-direct/range {v25 .. v39}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTransaction$Pay;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionDirection;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionType;Lcom/smedialink/storage/domain/model/binancepay/BinanceTransactionStatus;Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_5
+    :goto_4
     return-object v0
 .end method
 
@@ -631,7 +628,7 @@
 
     move-result-object p0
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -642,7 +639,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -658,7 +655,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/data/network/model/response/binance/pay/BinancePayGetTransactionHistoryResponse$HistoryItem;
 
     .line 36
@@ -666,6 +663,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -692,7 +690,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -703,7 +701,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -719,7 +717,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/storage/data/network/model/response/binance/pay/BinancePayGetAvailablePaymentTokensResponse;
 
     .line 119
@@ -748,6 +746,7 @@
     .line 119
     invoke-direct {v2, v3, v4, v5, v1}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -774,7 +773,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -785,7 +784,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -801,7 +800,7 @@
 
     move-result-object v2
 
-    .line 1619
+    .line 1621
     check-cast v2, Lcom/smedialink/storage/data/network/model/response/binance/pay/BinanceTokenBalanceResponse;
 
     .line 91
@@ -856,7 +855,7 @@
 
     move-result-object v3
 
-    .line 1547
+    .line 1549
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-static {v3, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -865,7 +864,7 @@
 
     invoke-direct {v11, v12}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -881,7 +880,7 @@
 
     move-result-object v12
 
-    .line 1619
+    .line 1621
     check-cast v12, Ljava/lang/String;
 
     .line 98
@@ -891,6 +890,7 @@
 
     move-result-object v12
 
+    .line 1621
     invoke-interface {v11, v12}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
@@ -913,6 +913,7 @@
 
     invoke-direct/range {v3 .. v13}, Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Lcom/smedialink/storage/domain/model/binancepay/BinanceTokenBalanceInfo$Balance;Ljava/util/List;ZZ)V
 
+    .line 1621
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0

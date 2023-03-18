@@ -73,7 +73,7 @@ public final class DialogModel {
     }
 
     public String toString() {
-        return "DialogModel(title=" + ((Object) this.title) + ", message=" + ((Object) this.message) + ", negativeButtonText=" + ((Object) this.negativeButtonText) + ", positiveButtonText=" + ((Object) this.positiveButtonText) + ')';
+        return "DialogModel(title=" + this.title + ", message=" + this.message + ", negativeButtonText=" + this.negativeButtonText + ", positiveButtonText=" + this.positiveButtonText + ')';
     }
 
     public DialogModel(String str, String str2, String str3, String str4) {

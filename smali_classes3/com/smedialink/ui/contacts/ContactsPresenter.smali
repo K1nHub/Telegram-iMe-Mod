@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nContactsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsPresenter.kt\ncom/smedialink/ui/contacts/ContactsPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,80:1\n1547#2:81\n1618#2,3:82\n1849#2,2:92\n67#3,6:85\n72#3:91\n*S KotlinDebug\n*F\n+ 1 ContactsPresenter.kt\ncom/smedialink/ui/contacts/ContactsPresenter\n*L\n22#1:81\n22#1:82,3\n60#1:92,2\n24#1:85,6\n33#1:91\n*E\n"
+    value = "SMAP\nContactsPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ContactsPresenter.kt\ncom/smedialink/ui/contacts/ContactsPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/smedialink/utils/extentions/rx/RxExtKt\n*L\n1#1,80:1\n1549#2:81\n1620#2,3:82\n1855#2,2:96\n67#3,8:85\n72#3,3:93\n*S KotlinDebug\n*F\n+ 1 ContactsPresenter.kt\ncom/smedialink/ui/contacts/ContactsPresenter\n*L\n22#1:81\n22#1:82,3\n60#1:96,2\n24#1:85,8\n33#1:93,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -100,7 +100,7 @@
         }
     .end annotation
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -291,12 +291,19 @@
 
     invoke-direct {v3, v1, p0}, Lcom/smedialink/ui/contacts/ContactsPresenter$deleteSelectedContacts$$inlined$subscribeWithErrorHandle$2;-><init>(Lcom/smedialink/ui/base/mvp/base/BaseView;Lcom/smedialink/ui/contacts/ContactsPresenter;)V
 
-    invoke-virtual {v0, v2, v3}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
+    .line 74
+    new-instance v1, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+
+    invoke-direct {v1, v3}, Lcom/smedialink/utils/extentions/rx/RxExtKt$sam$i$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    .line 72
+    invoke-virtual {v0, v2, v1}, Lio/reactivex/Completable;->subscribe(Lio/reactivex/functions/Action;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v0
 
     const-string v1, "viewState: BaseView? = n\u2026  onError.invoke()\n    })"
 
+    .line 74
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x1

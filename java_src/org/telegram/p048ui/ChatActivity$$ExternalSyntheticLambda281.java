@@ -11,6 +11,6 @@ public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda281 impl
 
     @Override // org.fork.utils.Callbacks$Callback
     public final void invoke() {
-        ChatActivity.lambda$processBinancePayRequest$9();
+        ChatActivity.lambda$openDonationScreen$28();
     }
 }

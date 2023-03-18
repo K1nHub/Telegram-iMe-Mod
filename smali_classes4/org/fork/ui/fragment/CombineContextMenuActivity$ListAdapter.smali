@@ -35,10 +35,6 @@
         }
     .end annotation
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "mContext"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -362,8 +358,6 @@
 
     invoke-static {p2, p1}, Lorg/fork/ui/fragment/CombineContextMenuActivity;->access$setTopicsBar$p(Lorg/fork/ui/fragment/CombineContextMenuActivity;Lorg/fork/ui/view/MediaSwitchTopicsBar;)V
 
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 193
@@ -383,9 +377,6 @@
     .line 194
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 195
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 197
@@ -402,7 +393,7 @@
 
     invoke-direct {p1, p2, v0, v1}, Lorg/telegram/ui/Cells/TextCheckBoxCell;-><init>(Landroid/content/Context;ZZ)V
 
-    const-string p2, "windowBackgroundWhite"
+    const-string/jumbo p2, "windowBackgroundWhite"
 
     .line 198
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -410,9 +401,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 199
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 202
     :goto_0
@@ -425,9 +413,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 203
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 185
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

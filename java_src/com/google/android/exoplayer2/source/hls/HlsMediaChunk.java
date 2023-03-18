@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.hls;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -272,7 +272,7 @@ public final class HlsMediaChunk extends MediaChunk {
             this.extractor = createExtractor;
             if (createExtractor.isPackedAudioExtractor()) {
                 HlsSampleStreamWrapper hlsSampleStreamWrapper = this.output;
-                if (peekId3PrivTimestamp != C0474C.TIME_UNSET) {
+                if (peekId3PrivTimestamp != C0468C.TIME_UNSET) {
                     j = this.timestampAdjuster.adjustTsTimestamp(peekId3PrivTimestamp);
                 } else {
                     j = this.startTimeUs;
@@ -296,7 +296,7 @@ public final class HlsMediaChunk extends MediaChunk {
         } catch (EOFException unused) {
         }
         if (this.scratchId3Data.readUnsignedInt24() != 4801587) {
-            return C0474C.TIME_UNSET;
+            return C0468C.TIME_UNSET;
         }
         this.scratchId3Data.skipBytes(3);
         int readSynchSafeInt = this.scratchId3Data.readSynchSafeInt();
@@ -309,7 +309,7 @@ public final class HlsMediaChunk extends MediaChunk {
         extractorInput.peekFully(this.scratchId3Data.getData(), 10, readSynchSafeInt);
         Metadata decode = this.id3Decoder.decode(this.scratchId3Data.getData(), readSynchSafeInt);
         if (decode == null) {
-            return C0474C.TIME_UNSET;
+            return C0468C.TIME_UNSET;
         }
         int length = decode.length();
         for (int i2 = 0; i2 < length; i2++) {
@@ -324,7 +324,7 @@ public final class HlsMediaChunk extends MediaChunk {
                 }
             }
         }
-        return C0474C.TIME_UNSET;
+        return C0468C.TIME_UNSET;
     }
 
     private static byte[] getEncryptionIvArray(String str) {

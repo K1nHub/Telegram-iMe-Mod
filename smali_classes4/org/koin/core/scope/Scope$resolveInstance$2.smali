@@ -69,7 +69,7 @@
 .method public final invoke()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "| remove parameters from stack"
+    const-string/jumbo v0, "| remove parameters from stack"
 
     return-object v0
 .end method

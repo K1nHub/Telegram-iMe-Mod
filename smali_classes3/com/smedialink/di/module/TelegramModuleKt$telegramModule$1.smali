@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/di/module/TelegramModuleKt;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/di/module/TelegramModuleKt;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

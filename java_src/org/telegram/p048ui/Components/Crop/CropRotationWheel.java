@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.LayoutHelper;
@@ -69,7 +69,7 @@ public class CropRotationWheel extends FrameLayout {
         this.bluePaint.setAntiAlias(true);
         ImageView imageView = new ImageView(context);
         this.mirrorButton = imageView;
-        imageView.setImageResource(C3158R.C3160drawable.msg_photo_flip);
+        imageView.setImageResource(C3286R.C3288drawable.msg_photo_flip);
         this.mirrorButton.setBackgroundDrawable(Theme.createSelectorDrawable(1090519039));
         this.mirrorButton.setScaleType(ImageView.ScaleType.CENTER);
         this.mirrorButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda1
@@ -86,11 +86,11 @@ public class CropRotationWheel extends FrameLayout {
                 return lambda$new$1;
             }
         });
-        this.mirrorButton.setContentDescription(LocaleController.getString("AccDescrMirror", C3158R.string.AccDescrMirror));
+        this.mirrorButton.setContentDescription(LocaleController.getString("AccDescrMirror", C3286R.string.AccDescrMirror));
         addView(this.mirrorButton, LayoutHelper.createFrame(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.aspectRatioButton = imageView2;
-        imageView2.setImageResource(C3158R.C3160drawable.msg_photo_cropfix);
+        imageView2.setImageResource(C3286R.C3288drawable.msg_photo_cropfix);
         this.aspectRatioButton.setBackgroundDrawable(Theme.createSelectorDrawable(1090519039));
         this.aspectRatioButton.setScaleType(ImageView.ScaleType.CENTER);
         this.aspectRatioButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda0
@@ -100,11 +100,11 @@ public class CropRotationWheel extends FrameLayout {
             }
         });
         this.aspectRatioButton.setVisibility(8);
-        this.aspectRatioButton.setContentDescription(LocaleController.getString("AccDescrAspectRatio", C3158R.string.AccDescrAspectRatio));
+        this.aspectRatioButton.setContentDescription(LocaleController.getString("AccDescrAspectRatio", C3286R.string.AccDescrAspectRatio));
         addView(this.aspectRatioButton, LayoutHelper.createFrame(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.rotation90Button = imageView3;
-        imageView3.setImageResource(C3158R.C3160drawable.msg_photo_rotate);
+        imageView3.setImageResource(C3286R.C3288drawable.msg_photo_rotate);
         this.rotation90Button.setBackgroundDrawable(Theme.createSelectorDrawable(1090519039));
         this.rotation90Button.setScaleType(ImageView.ScaleType.CENTER);
         this.rotation90Button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropRotationWheel$$ExternalSyntheticLambda2
@@ -113,7 +113,7 @@ public class CropRotationWheel extends FrameLayout {
                 CropRotationWheel.this.lambda$new$3(view);
             }
         });
-        this.rotation90Button.setContentDescription(LocaleController.getString("AccDescrRotate", C3158R.string.AccDescrRotate));
+        this.rotation90Button.setContentDescription(LocaleController.getString("AccDescrRotate", C3286R.string.AccDescrRotate));
         addView(this.rotation90Button, LayoutHelper.createFrame(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.degreesTextPaint = textPaint;

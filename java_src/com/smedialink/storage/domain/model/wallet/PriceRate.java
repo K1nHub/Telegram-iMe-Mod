@@ -1,6 +1,4 @@
 package com.smedialink.storage.domain.model.wallet;
-
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PriceRate.kt */
 /* loaded from: classes3.dex */
 public final class PriceRate {
@@ -35,7 +33,7 @@ public final class PriceRate {
         }
         if (obj instanceof PriceRate) {
             PriceRate priceRate = (PriceRate) obj;
-            return Intrinsics.areEqual(Double.valueOf(this.rateToDollars), Double.valueOf(priceRate.rateToDollars)) && Intrinsics.areEqual(Float.valueOf(this.ratePercentageChange24h), Float.valueOf(priceRate.ratePercentageChange24h));
+            return Double.compare(this.rateToDollars, priceRate.rateToDollars) == 0 && Float.compare(this.ratePercentageChange24h, priceRate.ratePercentageChange24h) == 0;
         }
         return false;
     }

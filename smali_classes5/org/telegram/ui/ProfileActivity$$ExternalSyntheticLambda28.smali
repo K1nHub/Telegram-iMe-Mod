@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroidx/core/util/Consumer;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda28;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$P2cN25F3DrgZ2dg0vmqbnxCusx8(Lorg/telegram/ui/ProfileActivity;)V
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$User;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$CmCdUjZypS5f21ZuetsujAL8lS0(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$User;)V
 
     return-void
 .end method

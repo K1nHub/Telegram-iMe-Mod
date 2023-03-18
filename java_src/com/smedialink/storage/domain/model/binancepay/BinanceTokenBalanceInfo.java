@@ -212,7 +212,7 @@ public final class BinanceTokenBalanceInfo {
             }
             if (obj instanceof Balance) {
                 Balance balance = (Balance) obj;
-                return Intrinsics.areEqual(Double.valueOf(this.total), Double.valueOf(balance.total)) && Intrinsics.areEqual(Double.valueOf(this.free), Double.valueOf(balance.free)) && Intrinsics.areEqual(Double.valueOf(this.locked), Double.valueOf(balance.locked)) && Intrinsics.areEqual(Double.valueOf(this.freeze), Double.valueOf(balance.freeze)) && Intrinsics.areEqual(Double.valueOf(this.withdrawing), Double.valueOf(balance.withdrawing)) && Intrinsics.areEqual(Double.valueOf(this.btcValuation), Double.valueOf(balance.btcValuation)) && Intrinsics.areEqual(Double.valueOf(this.fiatValuation), Double.valueOf(balance.fiatValuation));
+                return Double.compare(this.total, balance.total) == 0 && Double.compare(this.free, balance.free) == 0 && Double.compare(this.locked, balance.locked) == 0 && Double.compare(this.freeze, balance.freeze) == 0 && Double.compare(this.withdrawing, balance.withdrawing) == 0 && Double.compare(this.btcValuation, balance.btcValuation) == 0 && Double.compare(this.fiatValuation, balance.fiatValuation) == 0;
             }
             return false;
         }

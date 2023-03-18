@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/ProfileActivity$46;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ProfileActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/AutoDeletePopupWrapper$Callback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ProfileActivity;->createAutoDeleteItem(Landroid/content/Context;)V
+    value = Lorg/telegram/ui/ProfileActivity;->onCustomTransitionAnimation(ZLjava/lang/Runnable;)Landroid/animation/AnimatorSet;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,61 +17,189 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
 
+.field final synthetic val$callback:Ljava/lang/Runnable;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 8826
+    .line 7537
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$46;->val$callback:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismiss()V
-    .locals 1
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 3
 
-    .line 8830
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+    .line 7540
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$4100(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$21500(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSubMenu()V
+    if-nez p1, :cond_0
 
-    return-void
-.end method
+    .line 7541
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->val$callback:Ljava/lang/Runnable;
 
-.method public setAutoDeleteHistory(II)V
-    .locals 1
-
-    .line 8835
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$21600(Lorg/telegram/ui/ProfileActivity;II)V
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
-.end method
 
-.method public showGlobalAutoDeleteScreen()V
-    .locals 2
+    .line 7544
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 8840
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v1, Lorg/telegram/ui/AutoDeleteMessagesActivity;
+    move-result-object p1
 
-    invoke-direct {v1}, Lorg/telegram/ui/AutoDeleteMessagesActivity;-><init>()V
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    const/4 v1, 0x0
 
-    .line 8841
-    invoke-virtual {p0}, Lorg/telegram/ui/ProfileActivity$46;->dismiss()V
+    invoke-virtual {p1, v0, v1}, Landroid/view/ViewGroup;->setLayerType(ILandroid/graphics/Paint;)V
 
+    .line 7545
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$21600(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 7546
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$21700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
+
+    move-result-object p1
+
+    .line 7547
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->clearItems()V
+
+    .line 7548
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1, v1}, Lorg/telegram/ui/ProfileActivity;->access$21602(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    .line 7550
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->val$callback:Ljava/lang/Runnable;
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    .line 7551
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$5800(Lorg/telegram/ui/ProfileActivity;)I
+
+    move-result p1
+
+    const/4 v2, 0x2
+
+    if-ne p1, v2, :cond_2
+
+    .line 7552
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, v2}, Lorg/telegram/ui/ProfileActivity;->access$5802(Lorg/telegram/ui/ProfileActivity;I)I
+
+    .line 7553
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
+
+    move-result-object p1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->setForegroundAlpha(F)V
+
+    .line 7554
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$500(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    const/16 v2, 0x8
+
+    invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
+
+    .line 7555
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$1800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/ProfileGalleryView;->resetCurrentItem()V
+
+    .line 7556
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$1800(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/ProfileGalleryView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 7558
+    :cond_2
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1, v1}, Lorg/telegram/ui/ProfileActivity;->access$15802(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;)Landroid/view/View;
+
+    .line 7559
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$12500(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 7560
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    iput-boolean v0, p1, Lorg/telegram/ui/ProfileActivity;->profileTransitionInProgress:Z
+
+    .line 7561
+    iput-object v1, p1, Lorg/telegram/ui/ProfileActivity;->previousTransitionFragment:Lorg/telegram/ui/Components/ChatActivityInterface;
+
+    .line 7563
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$21800(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    .line 7564
+    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$46;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$21900(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+
+    :cond_3
     return-void
 .end method

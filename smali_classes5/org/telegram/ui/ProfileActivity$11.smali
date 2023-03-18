@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ProfileActivity$11;
-.super Landroidx/recyclerview/widget/DefaultItemAnimator;
+.super Lorg/telegram/ui/Components/RecyclerListView;
 .source "ProfileActivity.java"
 
 
@@ -15,238 +15,525 @@
 
 
 # instance fields
-.field animationIndex:I
-
 .field final synthetic this$0:Lorg/telegram/ui/ProfileActivity;
+
+.field private velocityTracker:Landroid/view/VelocityTracker;
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-XG_XYdckhwy_RKOKQRrtH7xc7I(Lorg/telegram/ui/ProfileActivity$11;Landroid/animation/ValueAnimator;)V
+.method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ProfileActivity$11;->lambda$runPendingAnimations$1(Landroid/animation/ValueAnimator;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$w939qnvx6Ai4jFEMtxlx4Sa8Oa8(Lorg/telegram/ui/ProfileActivity$11;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/ProfileActivity$11;->lambda$onAllAnimationsDone$0()V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
-    .locals 0
-
-    .line 3232
+    .line 3320
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
-
-    const/4 p1, -0x1
-
-    .line 3234
-    iput p1, p0, Lorg/telegram/ui/ProfileActivity$11;->animationIndex:I
-
-    return-void
-.end method
-
-.method private synthetic lambda$onAllAnimationsDone$0()V
-    .locals 2
-
-    .line 3240
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    iget v1, p0, Lorg/telegram/ui/ProfileActivity$11;->animationIndex:I
-
-    invoke-virtual {v0, v1}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
-
-    return-void
-.end method
-
-.method private synthetic lambda$runPendingAnimations$1(Landroid/animation/ValueAnimator;)V
-    .locals 0
-
-    .line 3252
-    iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getAddAnimationDelay(JJJ)J
-    .locals 0
-
-    const-wide/16 p1, 0x0
-
-    return-wide p1
-.end method
-
-.method public getAddDuration()J
-    .locals 2
-
-    const-wide/16 v0, 0xdc
-
-    return-wide v0
-.end method
-
-.method protected getMoveAnimationDelay()J
-    .locals 2
-
-    const-wide/16 v0, 0x0
-
-    return-wide v0
-.end method
-
-.method public getMoveDuration()J
-    .locals 2
-
-    const-wide/16 v0, 0xdc
-
-    return-wide v0
-.end method
-
-.method public getRemoveDuration()J
-    .locals 2
-
-    const-wide/16 v0, 0xdc
-
-    return-wide v0
-.end method
-
-.method protected onAllAnimationsDone()V
+.method protected allowSelectChildAtPosition(Landroid/view/View;)Z
     .locals 1
 
-    .line 3238
-    invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->onAllAnimationsDone()V
+    .line 3331
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 3239
-    new-instance v0, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda1;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$2400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ProfileActivity$11;)V
+    move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    if-eq p1, v0, :cond_0
 
-    return-void
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method
 
-.method public runPendingAnimations()V
-    .locals 4
+.method protected canHighlightChildAt(Landroid/view/View;FF)Z
+    .locals 0
 
-    .line 3246
-    iget-object v0, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingRemovals:Ljava/util/ArrayList;
+    .line 3326
+    instance-of p1, p1, Lorg/telegram/ui/Cells/AboutLinkCell;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    xor-int/lit8 p1, p1, 0x1
+
+    return p1
+.end method
+
+.method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+    .locals 9
+
+    .line 3393
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->isRunning()Z
 
     move-result v0
 
-    xor-int/lit8 v0, v0, 0x1
+    if-eqz v0, :cond_2
 
-    .line 3247
-    iget-object v1, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingMoves:Ljava/util/ArrayList;
+    invoke-virtual {p2}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p2}, Landroid/view/View;->getTranslationY()F
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-eqz v0, :cond_2
+
+    .line 3394
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/ProfileActivity;->access$2500(Lorg/telegram/ui/ProfileActivity;)I
 
     move-result v1
 
-    xor-int/lit8 v1, v1, 0x1
+    if-ne v0, v1, :cond_0
 
-    .line 3248
-    iget-object v2, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingChanges:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v2
-
-    xor-int/lit8 v2, v2, 0x1
-
-    .line 3249
-    iget-object v3, p0, Landroidx/recyclerview/widget/DefaultItemAnimator;->mPendingAdditions:Ljava/util/ArrayList;
-
-    invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v3
-
-    xor-int/lit8 v3, v3, 0x1
-
-    if-nez v0, :cond_0
-
-    if-nez v1, :cond_0
-
-    if-nez v3, :cond_0
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    const/4 v0, 0x2
-
-    new-array v0, v0, [F
-
-    .line 3251
-    fill-array-data v0, :array_0
-
-    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v0
-
-    .line 3252
-    new-instance v1, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda0;
-
-    invoke-direct {v1, p0}, Lorg/telegram/ui/ProfileActivity$11$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$11;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    .line 3253
-    invoke-virtual {p0}, Lorg/telegram/ui/ProfileActivity$11;->getMoveDuration()J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    .line 3254
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
-
-    .line 3255
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    iget v1, p0, Lorg/telegram/ui/ProfileActivity$11;->animationIndex:I
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->setAnimationInProgress(I[I)I
+    invoke-virtual {p2}, Landroid/view/View;->getAlpha()F
 
     move-result v0
 
-    iput v0, p0, Lorg/telegram/ui/ProfileActivity$11;->animationIndex:I
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 3257
+    cmpl-float v0, v0, v1
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    const/high16 v1, 0x437f0000    # 255.0f
+
+    if-eqz v0, :cond_1
+
+    .line 3396
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$11600(Lorg/telegram/ui/ProfileActivity;)Landroid/graphics/Paint;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/ViewGroup;->getAlpha()F
+
+    move-result v3
+
+    mul-float v3, v3, v1
+
+    invoke-virtual {p2}, Landroid/view/View;->getAlpha()F
+
+    move-result v4
+
+    mul-float v3, v3, v4
+
+    float-to-int v3, v3
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 3398
     :cond_1
-    invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->runPendingAnimations()V
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getX()F
+
+    move-result v4
+
+    invoke-virtual {p2}, Landroid/view/View;->getY()F
+
+    move-result v5
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getX()F
+
+    move-result v2
+
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/ViewGroup;->getMeasuredWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    add-float v6, v2, v3
+
+    invoke-virtual {p2}, Landroid/view/View;->getY()F
+
+    move-result v2
+
+    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    add-float v7, v2, v3
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$11600(Lorg/telegram/ui/ProfileActivity;)Landroid/graphics/Paint;
+
+    move-result-object v8
+
+    move-object v3, p1
+
+    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    if-eqz v0, :cond_2
+
+    .line 3400
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11600(Lorg/telegram/ui/ProfileActivity;)Landroid/graphics/Paint;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getAlpha()F
+
+    move-result v2
+
+    mul-float v2, v2, v1
+
+    float-to-int v1, v2
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 3403
+    :cond_2
+    invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public hasOverlappingRendering()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public invalidate()V
+    .locals 1
+
+    .line 3346
+    invoke-super {p0}, Landroid/view/ViewGroup;->invalidate()V
+
+    .line 3347
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13700(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 3348
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13800(Lorg/telegram/ui/ProfileActivity;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 6
+
+    .line 3354
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x1
+
+    if-nez v0, :cond_1
+
+    .line 3356
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    if-nez v3, :cond_0
+
+    .line 3357
+    invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    goto :goto_0
+
+    .line 3359
+    :cond_0
+    invoke-virtual {v3}, Landroid/view/VelocityTracker;->clear()V
+
+    .line 3361
+    :goto_0
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    invoke-virtual {v3, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v3, 0x2
+
+    if-ne v0, v3, :cond_2
+
+    .line 3363
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    if-eqz v3, :cond_4
+
+    .line 3364
+    invoke-virtual {v3, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+
+    .line 3365
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    const/16 v4, 0x3e8
+
+    invoke-virtual {v3, v4}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
+
+    .line 3366
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
+
+    move-result v5
+
+    invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Landroid/view/VelocityTracker;->getYVelocity(I)F
+
+    move-result v4
+
+    invoke-static {v3, v4}, Lorg/telegram/ui/ProfileActivity;->access$13902(Lorg/telegram/ui/ProfileActivity;F)F
+
+    goto :goto_1
+
+    :cond_2
+    if-eq v0, v2, :cond_3
+
+    if-ne v0, v1, :cond_4
+
+    .line 3369
+    :cond_3
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    if-eqz v3, :cond_4
+
+    .line 3370
+    invoke-virtual {v3}, Landroid/view/VelocityTracker;->recycle()V
+
+    const/4 v3, 0x0
+
+    .line 3371
+    iput-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->velocityTracker:Landroid/view/VelocityTracker;
+
+    .line 3374
+    :cond_4
+    :goto_1
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    if-eq v0, v2, :cond_5
+
+    if-ne v0, v1, :cond_8
+
+    .line 3376
+    :cond_5
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$7500(Lorg/telegram/ui/ProfileActivity;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    .line 3377
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$8300(Lorg/telegram/ui/ProfileActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_8
+
+    .line 3379
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$4200(Lorg/telegram/ui/ProfileActivity;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    .line 3380
+    invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
+
+    move-result v2
+
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$14000(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/ActionBar;->getOccupyStatusBar()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6
+
+    sget v3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    goto :goto_2
+
+    :cond_6
+    const/4 v3, 0x0
+
+    :goto_2
+    add-int/2addr v2, v3
+
+    .line 3381
+    iget-object v3, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
+
+    move-result v0
+
+    iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v4}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/view/ViewGroup;->getMeasuredWidth()I
+
+    move-result v4
+
+    sub-int/2addr v0, v4
+
+    add-int/2addr v0, v2
+
+    sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    invoke-virtual {v3, v1, v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(IILandroid/view/animation/Interpolator;)V
+
+    goto :goto_3
+
+    .line 3383
+    :cond_7
+    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$11;->this$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v2}, Lorg/telegram/ui/ProfileActivity;->access$2200(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
+
+    move-result v0
+
+    const/16 v3, 0x58
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    sub-int/2addr v0, v3
+
+    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    invoke-virtual {v2, v1, v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollBy(IILandroid/view/animation/Interpolator;)V
+
+    :cond_8
+    :goto_3
+    return p1
+.end method
+
+.method protected requestChildOnScreen(Landroid/view/View;Landroid/view/View;)V
+    .locals 0
 
     return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
 .end method

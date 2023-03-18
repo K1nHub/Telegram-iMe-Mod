@@ -47,7 +47,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -227,8 +227,9 @@ public class Bulletin {
         }
     }
 
-    public void setDuration(int i) {
+    public Bulletin setDuration(int i) {
         this.duration = i;
+        return this;
     }
 
     public Bulletin show() {
@@ -261,7 +262,7 @@ public class Bulletin {
             };
             this.containerLayoutListener = onLayoutChangeListener;
             frameLayout.addOnLayoutChangeListener(onLayoutChangeListener);
-            this.layout.addOnLayoutChangeListener(new View$OnLayoutChangeListenerC40052(z));
+            this.layout.addOnLayoutChangeListener(new View$OnLayoutChangeListenerC41402(z));
             this.layout.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.Components.Bulletin.3
                 @Override // android.view.View.OnAttachStateChangeListener
                 public void onViewAttachedToWindow(View view) {
@@ -325,10 +326,10 @@ public class Bulletin {
 
     /* renamed from: org.telegram.ui.Components.Bulletin$2 */
     /* loaded from: classes6.dex */
-    public class View$OnLayoutChangeListenerC40052 implements View.OnLayoutChangeListener {
+    public class View$OnLayoutChangeListenerC41402 implements View.OnLayoutChangeListener {
         final /* synthetic */ boolean val$top;
 
-        View$OnLayoutChangeListenerC40052(boolean z) {
+        View$OnLayoutChangeListenerC41402(boolean z) {
             Bulletin.this = r1;
             this.val$top = z;
         }
@@ -365,14 +366,14 @@ public class Bulletin {
                     Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.Bulletin$2$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            Bulletin.View$OnLayoutChangeListenerC40052.this.lambda$onLayoutChange$0();
+                            Bulletin.View$OnLayoutChangeListenerC41402.this.lambda$onLayoutChange$0();
                         }
                     };
                     final boolean z = this.val$top;
                     transition.animateEnter(layout, runnable, runnable2, new Consumer() { // from class: org.telegram.ui.Components.Bulletin$2$$ExternalSyntheticLambda0
                         @Override // androidx.core.util.Consumer
                         public final void accept(Object obj) {
-                            Bulletin.View$OnLayoutChangeListenerC40052.this.lambda$onLayoutChange$1(z, (Float) obj);
+                            Bulletin.View$OnLayoutChangeListenerC41402.this.lambda$onLayoutChange$1(z, (Float) obj);
                         }
                     }, Bulletin.this.currentBottomOffset);
                     return;
@@ -566,7 +567,7 @@ public class Bulletin {
             super(layout.getContext());
             this.rect = new Rect();
             this.layout = layout;
-            GestureDetector gestureDetector = new GestureDetector(layout.getContext(), new C40141(layout));
+            GestureDetector gestureDetector = new GestureDetector(layout.getContext(), new C41491(layout));
             this.gestureDetector = gestureDetector;
             gestureDetector.setIsLongpressEnabled(false);
             addView(layout);
@@ -574,10 +575,10 @@ public class Bulletin {
 
         /* renamed from: org.telegram.ui.Components.Bulletin$ParentLayout$1 */
         /* loaded from: classes6.dex */
-        public class C40141 extends GestureDetector.SimpleOnGestureListener {
+        public class C41491 extends GestureDetector.SimpleOnGestureListener {
             final /* synthetic */ Layout val$layout;
 
-            C40141(Layout layout) {
+            C41491(Layout layout) {
                 ParentLayout.this = r1;
                 this.val$layout = layout;
             }
@@ -614,14 +615,14 @@ public class Bulletin {
                         springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$ParentLayout$1$$ExternalSyntheticLambda0
                             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f3, float f4) {
-                                Bulletin.ParentLayout.C40141.this.lambda$onFling$0(dynamicAnimation, z2, f3, f4);
+                                Bulletin.ParentLayout.C41491.this.lambda$onFling$0(dynamicAnimation, z2, f3, f4);
                             }
                         });
                         final Layout layout = this.val$layout;
                         springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.Bulletin$ParentLayout$1$$ExternalSyntheticLambda2
                             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
                             public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f3, float f4) {
-                                Bulletin.ParentLayout.C40141.lambda$onFling$1(Bulletin.Layout.this, dynamicAnimation, f3, f4);
+                                Bulletin.ParentLayout.C41491.lambda$onFling$1(Bulletin.Layout.this, dynamicAnimation, f3, f4);
                             }
                         });
                     }
@@ -634,7 +635,7 @@ public class Bulletin {
                         springAnimation2.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.Bulletin$ParentLayout$1$$ExternalSyntheticLambda1
                             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f3, float f4) {
-                                Bulletin.ParentLayout.C40141.this.lambda$onFling$2(dynamicAnimation, z2, f3, f4);
+                                Bulletin.ParentLayout.C41491.this.lambda$onFling$2(dynamicAnimation, z2, f3, f4);
                             }
                         });
                         springAnimation2.addUpdateListener(Bulletin$ParentLayout$1$$ExternalSyntheticLambda3.INSTANCE);
@@ -1345,6 +1346,7 @@ public class Bulletin {
     /* loaded from: classes6.dex */
     public static class TwoLineLayout extends ButtonLayout {
         public final BackupImageView imageView;
+        private final LinearLayout linearLayout;
         public final TextView subtitleTextView;
         public final TextView titleTextView;
 
@@ -1355,6 +1357,7 @@ public class Bulletin {
             this.imageView = backupImageView;
             addView(backupImageView, LayoutHelper.createFrameRelatively(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
             LinearLayout linearLayout = new LinearLayout(context);
+            this.linearLayout = linearLayout;
             linearLayout.setOrientation(1);
             addView(linearLayout, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
             TextView textView = new TextView(context);
@@ -1385,6 +1388,7 @@ public class Bulletin {
     /* loaded from: classes6.dex */
     public static class TwoLineLottieLayout extends ButtonLayout {
         public final RLottieImageView imageView;
+        private final LinearLayout linearLayout;
         public final LinkSpanDrawable.LinksTextView subtitleTextView;
         private final int textColor;
         public final LinkSpanDrawable.LinksTextView titleTextView;
@@ -1400,6 +1404,7 @@ public class Bulletin {
             int themedColor = getThemedColor("undo_infoColor");
             int themedColor2 = getThemedColor("undo_cancelColor");
             LinearLayout linearLayout = new LinearLayout(context);
+            this.linearLayout = linearLayout;
             linearLayout.setOrientation(1);
             addView(linearLayout, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
             LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
@@ -1702,7 +1707,7 @@ public class Bulletin {
                 this.undoTextView.setTextSize(1, 14.0f);
                 this.undoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.undoTextView.setTextColor(themedColor);
-                this.undoTextView.setText(LocaleController.getString("Undo", C3158R.string.Undo));
+                this.undoTextView.setText(LocaleController.getString("Undo", C3286R.string.Undo));
                 this.undoTextView.setGravity(16);
                 ViewHelper.setPaddingRelative(this.undoTextView, 12.0f, 8.0f, 12.0f, 8.0f);
                 addView(this.undoTextView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 16, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
@@ -1715,7 +1720,7 @@ public class Bulletin {
                     Bulletin.UndoButton.this.lambda$new$1(view);
                 }
             });
-            imageView.setImageResource(C3158R.C3160drawable.chats_undo);
+            imageView.setImageResource(C3286R.C3288drawable.chats_undo);
             imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
             imageView.setBackground(Theme.createSelectorDrawable((themedColor & 16777215) | 419430400));
             ViewHelper.setPaddingRelative(imageView, BitmapDescriptorFactory.HUE_RED, 12.0f, BitmapDescriptorFactory.HUE_RED, 12.0f);
@@ -1928,7 +1933,10 @@ public class Bulletin {
                 @Override // android.view.ViewGroup, android.view.ViewManager
                 public void removeView(View view) {
                     super.removeView(view);
-                    BulletinWindow.this.dismiss();
+                    try {
+                        BulletinWindow.this.dismiss();
+                    } catch (Exception unused) {
+                    }
                     Bulletin.removeDelegate(BulletinWindow.this.container);
                 }
             };
@@ -1985,7 +1993,7 @@ public class Bulletin {
             });
             try {
                 Window window = getWindow();
-                window.setWindowAnimations(C3158R.style.DialogNoAnimation);
+                window.setWindowAnimations(C3286R.style.DialogNoAnimation);
                 window.setBackgroundDrawable(null);
                 WindowManager.LayoutParams attributes = window.getAttributes();
                 attributes.width = -1;

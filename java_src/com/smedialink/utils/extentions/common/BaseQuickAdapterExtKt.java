@@ -62,6 +62,12 @@ public final class BaseQuickAdapterExtKt {
         return baseViewHolder;
     }
 
+    public static final BaseViewHolder setAutoSizedCircleRippleBackground(BaseViewHolder baseViewHolder, int i) {
+        Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
+        ViewExtKt.setAutoSizedCircleRippleBackground(baseViewHolder.getView(i));
+        return baseViewHolder;
+    }
+
     public static final BaseViewHolder setRippleForeground(BaseViewHolder baseViewHolder, int i, boolean z) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
         ViewExtKt.setRippleForeground(baseViewHolder.getView(i), z);
@@ -82,7 +88,6 @@ public final class BaseQuickAdapterExtKt {
         View view = baseViewHolder.getView(i);
         PaintDrawable paintDrawable = new PaintDrawable(Theme.getColor(color));
         paintDrawable.setCornerRadius(AndroidUtilities.m51dp(f));
-        Unit unit = Unit.INSTANCE;
         view.setBackground(paintDrawable);
         return baseViewHolder;
     }
@@ -149,7 +154,7 @@ public final class BaseQuickAdapterExtKt {
         AppCompatImageView appCompatImageView = (AppCompatImageView) baseViewHolder.getView(i);
         Context context = appCompatImageView.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFrom(appCompatImageView, url, context, num, z);
+        ImageViewExtKt.loadFromWithPlaceholderResId(appCompatImageView, url, context, num, z);
         return baseViewHolder;
     }
 

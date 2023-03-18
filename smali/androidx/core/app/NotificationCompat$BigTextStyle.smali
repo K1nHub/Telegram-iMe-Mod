@@ -22,7 +22,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 3277
+    .line 3369
     invoke-direct {p0}, Landroidx/core/app/NotificationCompat$Style;-><init>()V
 
     return-void
@@ -33,17 +33,17 @@
 .method public addCompatExtras(Landroid/os/Bundle;)V
     .locals 2
 
-    .line 3355
+    .line 3447
     invoke-super {p0, p1}, Landroidx/core/app/NotificationCompat$Style;->addCompatExtras(Landroid/os/Bundle;)V
 
-    .line 3358
+    .line 3450
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-ge v0, v1, :cond_0
 
-    .line 3361
+    .line 3453
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
 
     const-string v1, "android.bigText"
@@ -57,17 +57,17 @@
 .method public apply(Landroidx/core/app/NotificationBuilderWithBuilderAccessor;)V
     .locals 2
 
-    .line 3327
+    .line 3419
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_0
 
-    .line 3328
+    .line 3420
     new-instance v0, Landroid/app/Notification$BigTextStyle;
 
-    .line 3329
+    .line 3421
     invoke-interface {p1}, Landroidx/core/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
 
     move-result-object p1
@@ -76,24 +76,24 @@
 
     iget-object p1, p0, Landroidx/core/app/NotificationCompat$Style;->mBigContentTitle:Ljava/lang/CharSequence;
 
-    .line 3330
+    .line 3422
     invoke-virtual {v0, p1}, Landroid/app/Notification$BigTextStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
 
     move-result-object p1
 
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$BigTextStyle;->mBigText:Ljava/lang/CharSequence;
 
-    .line 3331
+    .line 3423
     invoke-virtual {p1, v0}, Landroid/app/Notification$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
 
     move-result-object p1
 
-    .line 3332
+    .line 3424
     iget-boolean v0, p0, Landroidx/core/app/NotificationCompat$Style;->mSummaryTextSet:Z
 
     if-eqz v0, :cond_0
 
-    .line 3333
+    .line 3425
     iget-object v0, p0, Landroidx/core/app/NotificationCompat$Style;->mSummaryText:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Landroid/app/Notification$BigTextStyle;->setSummaryText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
@@ -105,7 +105,7 @@
 .method public bigText(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$BigTextStyle;
     .locals 0
 
-    .line 3307
+    .line 3399
     invoke-static {p1}, Landroidx/core/app/NotificationCompat$Builder;->limitCharSequenceLength(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p1

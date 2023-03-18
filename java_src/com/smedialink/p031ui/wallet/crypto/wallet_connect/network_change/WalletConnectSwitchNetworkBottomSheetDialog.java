@@ -17,7 +17,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSwitchNetworkBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -134,8 +134,8 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(networkName, "networkName");
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3158R.string.wallet_connect_switch_network_title, name), url);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3158R.string.wallet_connect_session_details_network), networkName, i, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3286R.string.wallet_connect_switch_network_title, name), url);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3286R.string.wallet_connect_session_details_network), networkName, i, true);
     }
 
     @Override // android.app.Dialog
@@ -149,19 +149,19 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         binding.viewHeader.setupColors();
         binding.viewNetworkCell.setupColors();
         binding.buttonChangeNetwork.applyColors();
-        ActionBarMenuItem actionBarMenuItem = binding.buttonClose;
-        actionBarMenuItem.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
-        Intrinsics.checkNotNullExpressionValue(actionBarMenuItem, "");
-        ViewExtKt.setCircleRippleBackground(actionBarMenuItem);
+        ActionBarMenuItem setupColors$lambda$2$lambda$1 = binding.buttonClose;
+        setupColors$lambda$2$lambda$1.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$2$lambda$1, "setupColors$lambda$2$lambda$1");
+        ViewExtKt.setCircleRippleBackground(setupColors$lambda$2$lambda$1);
     }
 
     private final void setupViews() {
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
         binding.viewNetworkCell.setIconTinted(false);
-        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3158R.string.wallet_connect_switch_network));
+        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3286R.string.wallet_connect_switch_network));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3158R.C3160drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3286R.C3288drawable.ic_close_white);
     }
 
     private final void setupListeners() {

@@ -7,7 +7,7 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import com.smedialink.utils.extentions.common.StringExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: BlockchainWalletDetailsPresenter.kt */
 @InjectViewState
@@ -25,7 +25,7 @@ public final class BlockchainWalletDetailsPresenter extends BasePresenter<Blockc
     }
 
     public final void showResetWalletConfirmationDialog() {
-        ((BlockchainWalletDetailsView) getViewState()).showResetWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3158R.string.wallet_details_reset_title), this.resourceManager.getString(C3158R.string.wallet_details_reset_description), LocaleController.getString("Cancel", C3158R.string.Cancel), LocaleController.getString("Reset", C3158R.string.Reset)));
+        ((BlockchainWalletDetailsView) getViewState()).showResetWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3286R.string.wallet_details_reset_title), this.resourceManager.getString(C3286R.string.wallet_details_reset_description), LocaleController.getString("Cancel", C3286R.string.Cancel), LocaleController.getString("Reset", C3286R.string.Reset)));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -1,6 +1,6 @@
 package io.grpc.internal;
 
 import io.grpc.LoadBalancer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 abstract class AbstractSubchannel extends LoadBalancer.Subchannel {
 }

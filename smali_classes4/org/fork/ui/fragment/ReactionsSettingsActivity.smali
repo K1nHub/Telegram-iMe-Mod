@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nReactionsSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionsSettingsActivity.kt\norg/fork/ui/fragment/ReactionsSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,341:1\n1#2:342\n1557#3:343\n1588#3,4:344\n169#4,2:348\n*S KotlinDebug\n*F\n+ 1 ReactionsSettingsActivity.kt\norg/fork/ui/fragment/ReactionsSettingsActivity\n*L\n167#1:343\n167#1:344,4\n182#1:348,2\n*E\n"
+    value = "SMAP\nReactionsSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ReactionsSettingsActivity.kt\norg/fork/ui/fragment/ReactionsSettingsActivity\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,341:1\n1#2:342\n1559#3:343\n1590#3,4:344\n177#4,2:348\n*S KotlinDebug\n*F\n+ 1 ReactionsSettingsActivity.kt\norg/fork/ui/fragment/ReactionsSettingsActivity\n*L\n167#1:343\n167#1:344,4\n182#1:348,2\n*E\n"
 .end annotation
 
 
@@ -34,34 +34,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Fpyb6a2CH-XUkYoeqL0DKiupo0g(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$-xpFE48HGugUDXx-bvAXM3brnDU(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda-17$lambda-16(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$15$lambda$14(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$GuXt64wg0RtLa7jOyytUpPfife8(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
+.method public static synthetic $r8$lambda$RUNegJ1w5HbJwPIx87e6JTKqQ7M(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->initListView$lambda-6$lambda-5(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$12$lambda$10$lambda$9(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Y7X0Qa3dGhtwJVaJl8k9Omy5jhY(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$Wd3-4epMwLUWVl4KVBTzOO1iWgU(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda-15$lambda-14(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->initListView$lambda$6$lambda$5(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$mBrMS3RhU-KO7HQlry1e5oWMVxY(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$gOQsYk7EdK7coU46qQE_Cf75wc0(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda-12$lambda-10$lambda-9(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+    invoke-static {p0, p1, p2, p3}, Lorg/fork/ui/fragment/ReactionsSettingsActivity;->showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$17$lambda$16(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
 
     return-void
 .end method
@@ -332,7 +332,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-6$lambda-5(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
+.method private static final initListView$lambda$6$lambda$5(Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;IFF)V
     .locals 0
 
     const-string p4, "this$0"
@@ -521,7 +521,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 104
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -684,7 +684,7 @@
 
     move-result-object v7
 
-    .line 1557
+    .line 1559
     new-instance v8, Ljava/util/ArrayList;
 
     const/16 v9, 0xa
@@ -695,7 +695,7 @@
 
     invoke-direct {v8, v10}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1589
+    .line 1591
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
@@ -719,7 +719,7 @@
 
     if-gez v11, :cond_0
 
-    .line 1590
+    .line 1592
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
     :cond_0
@@ -791,7 +791,7 @@
 
     invoke-virtual {v6, v15, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 173
+    .line 1592
     invoke-interface {v8, v15}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move v11, v14
@@ -843,7 +843,7 @@
 
     move-result v5
 
-    .line 169
+    .line 177
     invoke-virtual {v2, v5, v5, v5, v5}, Landroid/view/View;->setPadding(IIII)V
 
     .line 184
@@ -1086,16 +1086,13 @@
     .line 215
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCanDismissWithSwipe(Z)V
 
-    .line 216
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 214
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
 .end method
 
-.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda-12$lambda-10$lambda-9(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
+.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$12$lambda$10$lambda$9(Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$this_apply"
@@ -1114,7 +1111,7 @@
     return-void
 .end method
 
-.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda-15$lambda-14(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
+.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$15$lambda$14(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
     const-string p1, "$builder"
@@ -1131,7 +1128,7 @@
     return-void
 .end method
 
-.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda-17$lambda-16(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
+.method private static final showChooseMessagePopupReactionsEnabledDialogTypesBottomSheet$lambda$17$lambda$16(Ljava/util/List;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Lorg/fork/ui/fragment/ReactionsSettingsActivity;Landroid/view/View;)V
     .locals 0
 
     const-string p3, "$cells"
@@ -1262,7 +1259,7 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -1450,7 +1447,7 @@
 
     const/4 v12, 0x0
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -1483,7 +1480,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -1512,7 +1509,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -1545,7 +1542,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1576,7 +1573,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -1773,7 +1770,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v16, "windowBackgroundWhiteBlueHeader"
 
     move-object v8, v3
 
@@ -1800,7 +1797,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -1823,13 +1820,13 @@
 
     aput-object v7, v11, v2
 
-    const-string v7, "valueTextView"
+    const-string/jumbo v7, "valueTextView"
 
     filled-new-array {v7}, [Ljava/lang/String;
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteGrayText2"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayText2"
 
     move-object v8, v3
 
@@ -1918,7 +1915,7 @@
 
     const/4 v13, 0x0
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -1945,7 +1942,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteValueText"
+    const-string/jumbo v16, "windowBackgroundWhiteValueText"
 
     move-object v8, v3
 

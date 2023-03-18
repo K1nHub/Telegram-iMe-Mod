@@ -116,22 +116,18 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         return destination;
     }
 
+    /* JADX WARN: Type inference failed for: r1v1, types: [kotlin.collections.IntIterator, java.util.Iterator] */
     public static float[] reversedArray(float[] fArr) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");
-        int i = 0;
         if (fArr.length == 0) {
             return fArr;
         }
         float[] fArr2 = new float[fArr.length];
         int lastIndex = getLastIndex(fArr);
-        if (lastIndex >= 0) {
-            while (true) {
-                fArr2[lastIndex - i] = fArr[i];
-                if (i == lastIndex) {
-                    break;
-                }
-                i++;
-            }
+        ?? it = new IntRange(0, lastIndex).iterator();
+        while (it.hasNext()) {
+            int nextInt = it.nextInt();
+            fArr2[lastIndex - nextInt] = fArr[nextInt];
         }
         return fArr2;
     }

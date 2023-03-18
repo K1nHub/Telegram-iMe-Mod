@@ -6,13 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;,
-        Lorg/fork/ui/view/SocialNetworksRowView$Companion;
+        Lorg/fork/ui/view/SocialNetworksRowView$Companion;,
+        Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSocialNetworksRowView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SocialNetworksRowView.kt\norg/fork/ui/view/SocialNetworksRowView\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,58:1\n13536#2,2:59\n*S KotlinDebug\n*F\n+ 1 SocialNetworksRowView.kt\norg/fork/ui/view/SocialNetworksRowView\n*L\n23#1:59,2\n*E\n"
+    value = "SMAP\nSocialNetworksRowView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SocialNetworksRowView.kt\norg/fork/ui/view/SocialNetworksRowView\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,58:1\n13579#2,2:59\n*S KotlinDebug\n*F\n+ 1 SocialNetworksRowView.kt\norg/fork/ui/view/SocialNetworksRowView\n*L\n23#1:59,2\n*E\n"
 .end annotation
 
 
@@ -21,22 +21,22 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Dg4Zv1RKyrk18I_tZw1TDkLGvco(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
+.method public static synthetic $r8$lambda$QwXMyirFC7U4lle5w3nTlt1Mymo(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/SocialNetworksRowView;->lambda-4$lambda-2$lambda-1(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/SocialNetworksRowView;->lambda$4$lambda$2$lambda$0(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$vcBqbBO3DXtdNAgkB4WOXBB-qFg(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/SocialNetworksRowView;->lambda$4$lambda$2$lambda$1(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
 
     move-result p0
 
     return p0
-.end method
-
-.method public static synthetic $r8$lambda$azPjwiN3KQENS7YlT_sErP3Qcfs(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/view/SocialNetworksRowView;->lambda-4$lambda-2$lambda-0(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)V
-
-    return-void
 .end method
 
 .method static constructor <clinit>()V
@@ -71,7 +71,7 @@
 
     move-result-object v1
 
-    .line 13536
+    .line 13579
     array-length v2, v1
 
     const/4 v3, 0x0
@@ -175,7 +175,7 @@
     return-void
 .end method
 
-.method private static final lambda-4$lambda-2$lambda-0(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)V
+.method private static final lambda$4$lambda$2$lambda$0(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)V
     .locals 0
 
     const-string p2, "this$0"
@@ -187,24 +187,19 @@
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 26
-    invoke-virtual {p0}, Lorg/fork/ui/view/SocialNetworksRowView;->getListener()Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;
+    iget-object p0, p0, Lorg/fork/ui/view/SocialNetworksRowView;->listener:Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;
 
-    move-result-object p0
+    if-eqz p0, :cond_0
 
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
     const/4 p2, 0x0
 
     invoke-interface {p0, p1, p2}, Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;->onSocialNetworkClick(Lorg/fork/enums/DrawerSocialNetwork;Z)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
-.method private static final lambda-4$lambda-2$lambda-1(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
+.method private static final lambda$4$lambda$2$lambda$1(Lorg/fork/ui/view/SocialNetworksRowView;Lorg/fork/enums/DrawerSocialNetwork;Landroid/view/View;)Z
     .locals 0
 
     const-string p2, "this$0"
@@ -216,20 +211,15 @@
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 28
-    invoke-virtual {p0}, Lorg/fork/ui/view/SocialNetworksRowView;->getListener()Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/view/SocialNetworksRowView;->listener:Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;
 
     const/4 p2, 0x1
 
-    if-nez p0, :cond_0
+    if-eqz p0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-interface {p0, p1, p2}, Lorg/fork/ui/view/SocialNetworksRowView$OnSocialNetworkClickListener;->onSocialNetworkClick(Lorg/fork/enums/DrawerSocialNetwork;Z)V
 
-    :goto_0
+    :cond_0
     return p2
 .end method
 

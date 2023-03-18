@@ -42,18 +42,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$I9__eqWoHn4_00sAkXUOPHf381w(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$AbVcez-Yu7Q1KJWJDGqAjnIPiKc(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;->setupListeners$lambda-4(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;->getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$aWcUMpiCS5MjX4WvNXreG7F8L9A(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
+.method public static synthetic $r8$lambda$xeAqCjx3Ra_uwji-xRbMPp6pf3k(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;->getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;->setupListeners$lambda$4(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -259,7 +259,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-0(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
+.method private static final getThemeDescriptions$lambda$0(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -361,18 +361,18 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-4(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$4(Lcom/smedialink/ui/wallet/settings/appearance/WalletAppearanceSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "$noName_1"
+    const-string p1, "<anonymous parameter 1>"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -20,7 +20,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramCacheType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,75:1\n1#2:76\n1741#3,3:77\n*S KotlinDebug\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType$Companion\n*L\n69#1:77,3\n*E\n"
+    value = "SMAP\nTelegramCacheType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,75:1\n1#2:76\n1747#3,3:77\n*S KotlinDebug\n*F\n+ 1 TelegramCacheType.kt\norg/fork/enums/TelegramCacheType$Companion\n*L\n69#1:77,3\n*E\n"
 .end annotation
 
 
@@ -75,7 +75,7 @@
 
     move-result-object v7
 
-    .line 1741
+    .line 1747
     instance-of v8, v7, Ljava/util/Collection;
 
     if-eqz v8, :cond_1
@@ -91,7 +91,7 @@
 
     goto :goto_2
 
-    .line 1742
+    .line 1748
     :cond_1
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -110,17 +110,17 @@
 
     check-cast v8, Ljava/io/File;
 
-    if-nez v8, :cond_3
-
-    move-object v8, v4
-
-    goto :goto_1
+    if-eqz v8, :cond_3
 
     .line 69
-    :cond_3
     invoke-virtual {v8}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v8
+
+    goto :goto_1
+
+    :cond_3
+    move-object v8, v4
 
     :goto_1
     invoke-virtual {p1}, Ljava/io/File;->getParent()Ljava/lang/String;

@@ -16,6 +16,7 @@ import java.util.NoSuchElementException;
 import kotlin.collections.CollectionsKt__CollectionsJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref$IntRef;
 import kotlin.jvm.internal.Reflection;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
@@ -59,63 +60,56 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
         }
         CryptoPreferenceHelper cryptoPreferenceHelper = (CryptoPreferenceHelper) rootScope.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null);
         cryptoPreferenceHelper.setTempOneActionUserId(String.valueOf(j));
-        int prefsVersion = cryptoPreferenceHelper.getPrefsVersion() + 1;
-        if (prefsVersion <= 8) {
-            while (true) {
-                int i = prefsVersion + 1;
-                switch (prefsVersion) {
-                    case 1:
-                        PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto = INSTANCE;
-                        listOf = CollectionsKt__CollectionsJVMKt.listOf(TokenCode.UFI);
-                        preferencesMigrationManager$Crypto.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf);
-                        break;
-                    case 2:
-                        PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto2 = INSTANCE;
-                        listOf2 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.DEGO, TokenCode.PRE, TokenCode.EQX, TokenCode.LSS, TokenCode.GAINS, TokenCode.UNN, TokenCode.DEXT, TokenCode.TOMOE, TokenCode.FLURRY, TokenCode.FRM, TokenCode.DOP});
-                        preferencesMigrationManager$Crypto2.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf2);
-                        break;
-                    case 3:
-                        PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto3 = INSTANCE;
-                        listOf3 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.GFX, TokenCode.D11, TokenCode.DVD, TokenCode.METIS, TokenCode.CTSI, TokenCode.SAITO, TokenCode.ZCX, TokenCode.CEEK, TokenCode.XEND, TokenCode.SHR, TokenCode.BOSON, TokenCode.KONO, TokenCode.KFT, TokenCode.OM, TokenCode.ROYA, TokenCode.CVR, TokenCode.SKILL, TokenCode.YAY, TokenCode.KABY, TokenCode.USDO, TokenCode.FUSE});
-                        preferencesMigrationManager$Crypto3.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf3);
-                        break;
-                    case 4:
-                        PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto4 = INSTANCE;
-                        listOf4 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.TON, TokenCode.SHIB});
-                        preferencesMigrationManager$Crypto4.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf4);
-                        break;
-                    case 5:
-                        cryptoPreferenceHelper.resetTokensSettings();
-                        break;
-                    case 6:
-                        String oldWalletPublicAddress = cryptoPreferenceHelper.getOldWalletPublicAddress();
-                        String oldWalletSeed = cryptoPreferenceHelper.getOldWalletSeed();
-                        cryptoPreferenceHelper.resetOldWalletData();
-                        PreferenceBlockchainMappedData<String> walletPublicAddresses = cryptoPreferenceHelper.getWalletPublicAddresses();
-                        BlockchainType blockchainType = BlockchainType.EVM;
-                        walletPublicAddresses.put(blockchainType, oldWalletPublicAddress);
-                        cryptoPreferenceHelper.getWalletSeeds().put(blockchainType, oldWalletSeed);
-                        cryptoPreferenceHelper.getWalletCreationDates().put(blockchainType, String.valueOf(DateExtKt.now()));
-                        PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto5 = INSTANCE;
-                        listOf5 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.INF, TokenCode.KOM});
-                        preferencesMigrationManager$Crypto5.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf5);
-                        break;
-                    case 7:
-                        PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto6 = INSTANCE;
-                        listOf6 = CollectionsKt__CollectionsJVMKt.listOf(TokenCode.FTM);
-                        preferencesMigrationManager$Crypto6.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf6);
-                        break;
-                    case 8:
-                        PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto7 = INSTANCE;
-                        listOf7 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.PPM, TokenCode.SIN});
-                        preferencesMigrationManager$Crypto7.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf7);
-                        break;
-                }
-                cryptoPreferenceHelper.setPrefsVersion(prefsVersion);
-                if (i <= 8) {
-                    prefsVersion = i;
-                }
+        for (int prefsVersion = cryptoPreferenceHelper.getPrefsVersion() + 1; prefsVersion < 9; prefsVersion++) {
+            switch (prefsVersion) {
+                case 1:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto = INSTANCE;
+                    listOf = CollectionsKt__CollectionsJVMKt.listOf(TokenCode.UFI);
+                    preferencesMigrationManager$Crypto.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf);
+                    break;
+                case 2:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto2 = INSTANCE;
+                    listOf2 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.DEGO, TokenCode.PRE, TokenCode.EQX, TokenCode.LSS, TokenCode.GAINS, TokenCode.UNN, TokenCode.DEXT, TokenCode.TOMOE, TokenCode.FLURRY, TokenCode.FRM, TokenCode.DOP});
+                    preferencesMigrationManager$Crypto2.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf2);
+                    break;
+                case 3:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto3 = INSTANCE;
+                    listOf3 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.GFX, TokenCode.D11, TokenCode.DVD, TokenCode.METIS, TokenCode.CTSI, TokenCode.SAITO, TokenCode.ZCX, TokenCode.CEEK, TokenCode.XEND, TokenCode.SHR, TokenCode.BOSON, TokenCode.KONO, TokenCode.KFT, TokenCode.OM, TokenCode.ROYA, TokenCode.CVR, TokenCode.SKILL, TokenCode.YAY, TokenCode.KABY, TokenCode.USDO, TokenCode.FUSE});
+                    preferencesMigrationManager$Crypto3.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf3);
+                    break;
+                case 4:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto4 = INSTANCE;
+                    listOf4 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.TON, TokenCode.SHIB});
+                    preferencesMigrationManager$Crypto4.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf4);
+                    break;
+                case 5:
+                    cryptoPreferenceHelper.resetTokensSettings();
+                    break;
+                case 6:
+                    String oldWalletPublicAddress = cryptoPreferenceHelper.getOldWalletPublicAddress();
+                    String oldWalletSeed = cryptoPreferenceHelper.getOldWalletSeed();
+                    cryptoPreferenceHelper.resetOldWalletData();
+                    PreferenceBlockchainMappedData<String> walletPublicAddresses = cryptoPreferenceHelper.getWalletPublicAddresses();
+                    BlockchainType blockchainType = BlockchainType.EVM;
+                    walletPublicAddresses.put(blockchainType, oldWalletPublicAddress);
+                    cryptoPreferenceHelper.getWalletSeeds().put(blockchainType, oldWalletSeed);
+                    cryptoPreferenceHelper.getWalletCreationDates().put(blockchainType, String.valueOf(DateExtKt.now()));
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto5 = INSTANCE;
+                    listOf5 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.INF, TokenCode.KOM});
+                    preferencesMigrationManager$Crypto5.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf5);
+                    break;
+                case 7:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto6 = INSTANCE;
+                    listOf6 = CollectionsKt__CollectionsJVMKt.listOf(TokenCode.FTM);
+                    preferencesMigrationManager$Crypto6.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf6);
+                    break;
+                case 8:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto7 = INSTANCE;
+                    listOf7 = CollectionsKt__CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.PPM, TokenCode.SIN});
+                    preferencesMigrationManager$Crypto7.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf7);
+                    break;
             }
+            cryptoPreferenceHelper.setPrefsVersion(prefsVersion);
         }
         cryptoPreferenceHelper.setTempOneActionUserId("");
     }
@@ -131,21 +125,23 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
         for (NetworkType networkType : arrayList) {
             WalletCryptoTokensSettingsMetadata tokensSettings = cryptoPreferenceHelper.getTokensSettings(networkType);
             if (!Intrinsics.areEqual(tokensSettings, WalletCryptoTokensSettingsMetadata.Companion.getDefaultTokensSettings(networkType))) {
+                Ref$IntRef ref$IntRef = new Ref$IntRef();
                 Iterator<T> it = tokensSettings.getStates().iterator();
                 if (!it.hasNext()) {
                     throw new NoSuchElementException();
                 }
-                int position = ((WalletCryptoTokensSettingsTokenState) it.next()).getPosition();
+                Integer valueOf = Integer.valueOf(((WalletCryptoTokensSettingsTokenState) it.next()).getPosition());
                 while (it.hasNext()) {
-                    int position2 = ((WalletCryptoTokensSettingsTokenState) it.next()).getPosition();
-                    if (position < position2) {
-                        position = position2;
+                    Integer valueOf2 = Integer.valueOf(((WalletCryptoTokensSettingsTokenState) it.next()).getPosition());
+                    if (valueOf.compareTo(valueOf2) < 0) {
+                        valueOf = valueOf2;
                     }
                 }
+                ref$IntRef.element = valueOf.intValue();
                 for (TokenCode tokenCode : list) {
                     if (TokenCode.Companion.getTokensByNetwork(networkType).contains(tokenCode)) {
-                        tokensSettings.getStates().add(new WalletCryptoTokensSettingsTokenState(tokenCode.getName(), position, true));
-                        position++;
+                        tokensSettings.getStates().add(new WalletCryptoTokensSettingsTokenState(tokenCode.getName(), ref$IntRef.element, true));
+                        ref$IntRef.element++;
                     }
                 }
                 cryptoPreferenceHelper.saveTokensSettings(tokensSettings, networkType);

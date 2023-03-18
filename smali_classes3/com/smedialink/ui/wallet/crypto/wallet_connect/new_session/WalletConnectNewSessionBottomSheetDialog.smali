@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletConnectNewSessionBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectNewSessionBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,148:1\n13#2,4:149\n56#3,6:153\n*S KotlinDebug\n*F\n+ 1 WalletConnectNewSessionBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog\n*L\n29#1:149,4\n32#1:153,6\n*E\n"
+    value = "SMAP\nWalletConnectNewSessionBottomSheetDialog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletConnectNewSessionBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,149:1\n13#2,4:150\n56#3,6:154\n*S KotlinDebug\n*F\n+ 1 WalletConnectNewSessionBottomSheetDialog.kt\ncom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog\n*L\n29#1:150,4\n32#1:154,6\n*E\n"
 .end annotation
 
 
@@ -230,14 +230,14 @@
 .method private final approveSession()V
     .locals 1
 
-    .line 127
+    .line 128
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getPresenter()Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionPresenter;->approveSession()V
 
-    .line 128
+    .line 129
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -315,14 +315,14 @@
 .method private final rejectSession()V
     .locals 1
 
-    .line 132
+    .line 133
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getPresenter()Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionPresenter;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionPresenter;->rejectSession()V
 
-    .line 133
+    .line 134
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -331,46 +331,46 @@
 .method private final setupColors()V
     .locals 6
 
-    .line 90
+    .line 91
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;
 
     move-result-object v0
 
-    .line 91
+    .line 92
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->viewHeader:Lcom/smedialink/ui/custom/ImageHeaderView;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/custom/ImageHeaderView;->setupColors()V
 
-    .line 92
+    .line 93
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->viewWalletCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/custom/DetailsIconCellView;->setupColors()V
 
-    .line 93
+    .line 94
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->viewNetworkCell:Lcom/smedialink/ui/custom/DetailsIconCellView;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/custom/DetailsIconCellView;->setupColors()V
 
-    .line 94
+    .line 95
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->buttonConnect:Lcom/smedialink/ui/custom/BigActionButton;
 
     invoke-virtual {v1}, Lcom/smedialink/ui/custom/ActionButton;->applyColors()V
 
-    .line 95
+    .line 96
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v2, "windowBackgroundWhiteGrayIcon"
 
-    .line 96
+    .line 97
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
 
-    const-string v2, ""
+    const-string v2, "setupColors$lambda$2$lambda$1"
 
-    .line 97
+    .line 98
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
@@ -379,7 +379,7 @@
 
     new-array v1, v1, [Landroid/widget/TextView;
 
-    .line 100
+    .line 101
     iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->textViewBalance:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string v3, "textViewBalance"
@@ -404,7 +404,7 @@
 
     invoke-static {v2, v1}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
 
-    .line 102
+    .line 103
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->imageViewBalance:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -421,7 +421,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 103
+    .line 104
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->imageTransactionsApproval:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -442,12 +442,12 @@
 .method private final setupListeners()V
     .locals 13
 
-    .line 120
+    .line 121
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;
 
     move-result-object v0
 
-    .line 121
+    .line 122
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->buttonConnect:Lcom/smedialink/ui/custom/BigActionButton;
 
     const-string v2, "buttonConnect"
@@ -466,7 +466,7 @@
 
     invoke-static/range {v1 .. v6}, Lcom/smedialink/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 122
+    .line 123
     iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->buttonClose:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v0, "buttonClose"
@@ -491,12 +491,12 @@
 .method private final setupViews()V
     .locals 4
 
-    .line 108
+    .line 109
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;
 
     move-result-object v0
 
-    .line 109
+    .line 110
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->textViewBalance:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -511,7 +511,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 110
+    .line 111
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->textTransactionsApproval:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -526,7 +526,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 111
+    .line 112
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;->buttonConnect:Lcom/smedialink/ui/custom/BigActionButton;
 
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getResourceManager()Lcom/smedialink/storage/domain/utils/system/ResourceManager;
@@ -541,7 +541,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 112
+    .line 113
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;
 
     move-result-object v0
@@ -550,10 +550,10 @@
 
     const/4 v1, 0x0
 
-    .line 113
+    .line 114
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setLongClickEnabled(Z)V
 
-    .line 114
+    .line 115
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_close_white:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
@@ -582,10 +582,10 @@
 .method public onBackPressed()V
     .locals 0
 
-    .line 81
+    .line 82
     invoke-direct {p0}, Lcom/smedialink/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionBottomSheetDialog;->rejectSession()V
 
-    .line 82
+    .line 83
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
     return-void

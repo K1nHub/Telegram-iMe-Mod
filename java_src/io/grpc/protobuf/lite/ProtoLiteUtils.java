@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ProtoLiteUtils {
     static volatile ExtensionRegistryLite globalRegistry = ExtensionRegistryLite.getEmptyRegistry();
 
@@ -38,7 +38,7 @@ public final class ProtoLiteUtils {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class MessageMarshaller<T extends MessageLite> implements MethodDescriptor.Marshaller {
         private static final ThreadLocal<Reference<byte[]>> bufs = new ThreadLocal<>();
         private final T defaultInstance;

@@ -32,26 +32,34 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;->SEND:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;
+    const/4 v1, 0x1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :try_start_0
+    sget-object v2, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;->SEND:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;
 
-    move-result v1
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v2, 0x1
+    move-result v2
 
-    aput v2, v0, v1
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v1, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;->PREPARE:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;
+    :catch_0
+    const/4 v2, 0x2
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :try_start_1
+    sget-object v3, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;->PREPARE:Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$SendScreenState;
 
-    move-result v1
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v3, 0x2
+    move-result v3
 
-    aput v3, v0, v1
+    aput v2, v0, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
+    :catch_1
     sput-object v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-static {}, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->values()[Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
@@ -62,22 +70,30 @@
 
     new-array v0, v0, [I
 
-    sget-object v1, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
+    :try_start_2
+    sget-object v3, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
-    move-result v1
+    move-result v3
 
-    aput v2, v0, v1
+    aput v1, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
+    :catch_2
+    :try_start_3
     sget-object v1, Lcom/smedialink/storage/domain/model/crypto/BlockchainType;->TON:Lcom/smedialink/storage/domain/model/crypto/BlockchainType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    aput v3, v0, v1
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
+    :catch_3
     sput-object v0, Lcom/smedialink/ui/wallet/actions/send/amount/WalletSendAmountPresenter$WhenMappings;->$EnumSwitchMapping$1:[I
 
     return-void

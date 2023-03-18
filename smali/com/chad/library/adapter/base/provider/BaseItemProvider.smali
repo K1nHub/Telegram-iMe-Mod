@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBaseItemProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseItemProvider.kt\ncom/chad/library/adapter/base/provider/BaseItemProvider\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,127:1\n13557#2,2:128\n13557#2,2:130\n*S KotlinDebug\n*F\n+ 1 BaseItemProvider.kt\ncom/chad/library/adapter/base/provider/BaseItemProvider\n*L\n111#1:128,2\n119#1:130,2\n*E\n"
+    value = "SMAP\nBaseItemProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseItemProvider.kt\ncom/chad/library/adapter/base/provider/BaseItemProvider\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,127:1\n13600#2,2:128\n13600#2,2:130\n*S KotlinDebug\n*F\n+ 1 BaseItemProvider.kt\ncom/chad/library/adapter/base/provider/BaseItemProvider\n*L\n111#1:128,2\n119#1:130,2\n*E\n"
 .end annotation
 
 
@@ -160,18 +160,18 @@
     .line 30
     iget-object v0, p0, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->weakAdapter:Ljava/lang/ref/WeakReference;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
     return-object v0

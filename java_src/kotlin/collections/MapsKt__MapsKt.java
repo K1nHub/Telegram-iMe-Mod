@@ -12,7 +12,9 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public class MapsKt__MapsKt extends MapsKt__MapsJVMKt {
     public static <K, V> Map<K, V> emptyMap() {
-        return EmptyMap.INSTANCE;
+        EmptyMap emptyMap = EmptyMap.INSTANCE;
+        Intrinsics.checkNotNull(emptyMap, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.emptyMap, V of kotlin.collections.MapsKt__MapsKt.emptyMap>");
+        return emptyMap;
     }
 
     public static <K, V> Map<K, V> mapOf(Pair<? extends K, ? extends V>... pairs) {

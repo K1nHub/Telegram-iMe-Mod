@@ -90,7 +90,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "x value invalid for SecP224K1FieldElement"
+    const-string/jumbo v0, "x value invalid for SecP224K1FieldElement"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

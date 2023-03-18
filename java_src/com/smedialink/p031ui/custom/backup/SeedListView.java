@@ -10,7 +10,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.core.view.ViewGroupKt;
 import java.util.List;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.sequences.Sequence;
@@ -60,7 +59,6 @@ public final class SeedListView extends FrameLayout {
         gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(9.0f));
         gradientDrawable.setColor(Theme.getColor("windowBackgroundWhite"));
         gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), Theme.getColor("chats_actionBackground"));
-        Unit unit = Unit.INSTANCE;
         linearLayout.setBackground(gradientDrawable);
         LinearLayout linearLayout2 = this.binding.linearSeedFirstPart;
         Intrinsics.checkNotNullExpressionValue(linearLayout2, "binding.linearSeedFirstPart");
@@ -84,6 +82,7 @@ public final class SeedListView extends FrameLayout {
     private final void applyColorForSeedWord(LinearLayout linearLayout) {
         Sequence<NumberBackupWordWrapper> filter;
         filter = SequencesKt___SequencesKt.filter(ViewGroupKt.getChildren(linearLayout), SeedListView$applyColorForSeedWord$$inlined$filterIsInstance$1.INSTANCE);
+        Intrinsics.checkNotNull(filter, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>");
         for (NumberBackupWordWrapper numberBackupWordWrapper : filter) {
             numberBackupWordWrapper.applyColors();
         }

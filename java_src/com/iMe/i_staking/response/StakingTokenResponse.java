@@ -56,7 +56,7 @@ public final class StakingTokenResponse {
     }
 
     public String toString() {
-        return "StakingTokenResponse(address=" + ((Object) this.address) + ", name=" + this.name + ", ticker=" + this.ticker + ')';
+        return "StakingTokenResponse(address=" + this.address + ", name=" + this.name + ", ticker=" + this.ticker + ')';
     }
 
     public StakingTokenResponse(String str, String name, String ticker) {

@@ -352,7 +352,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;->myEtherWalletAddress:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", tonWalletAddress="
 
@@ -360,7 +360,7 @@
 
     iget-object v1, p0, Lcom/smedialink/storage/data/network/model/response/crypto/wallet/CryptoWalletInfoResponse;->tonWalletAddress:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", isEtherWalletAddressOpened="
 

@@ -12,22 +12,22 @@ import org.bouncycastle.util.Arrays;
 public class X9ECPoint extends ASN1Object {
 
     /* renamed from: c */
-    private ECCurve f1232c;
+    private ECCurve f1237c;
     private final ASN1OctetString encoding;
 
     /* renamed from: p */
-    private ECPoint f1233p;
+    private ECPoint f1238p;
 
     public X9ECPoint(ECCurve eCCurve, byte[] bArr) {
-        this.f1232c = eCCurve;
+        this.f1237c = eCCurve;
         this.encoding = new DEROctetString(Arrays.clone(bArr));
     }
 
     public synchronized ECPoint getPoint() {
-        if (this.f1233p == null) {
-            this.f1233p = this.f1232c.decodePoint(this.encoding.getOctets()).normalize();
+        if (this.f1238p == null) {
+            this.f1238p = this.f1237c.decodePoint(this.encoding.getOctets()).normalize();
         }
-        return this.f1233p;
+        return this.f1238p;
     }
 
     @Override // org.bouncycastle.asn1.ASN1Object, org.bouncycastle.asn1.ASN1Encodable

@@ -7,7 +7,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 import java.util.zip.ZipException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GzipInflatingBuffer implements Closeable {
     private long expectedGzipTrailerIsize;
     private int gzipHeaderFlag;
@@ -26,7 +26,7 @@ public class GzipInflatingBuffer implements Closeable {
     private boolean isStalled = true;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum State {
         HEADER,
         HEADER_EXTRA_LEN,
@@ -53,12 +53,12 @@ public class GzipInflatingBuffer implements Closeable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class GzipMetadataReader {
         private GzipMetadataReader() {
         }
 
-        /* synthetic */ GzipMetadataReader(GzipInflatingBuffer gzipInflatingBuffer, C22901 c22901) {
+        /* synthetic */ GzipMetadataReader(GzipInflatingBuffer gzipInflatingBuffer, C24141 c24141) {
             this();
         }
 
@@ -183,7 +183,7 @@ public class GzipInflatingBuffer implements Closeable {
         while (z2) {
             int i4 = i2 - i3;
             if (i4 > 0) {
-                switch (C22901.$SwitchMap$io$grpc$internal$GzipInflatingBuffer$State[this.state.ordinal()]) {
+                switch (C24141.$SwitchMap$io$grpc$internal$GzipInflatingBuffer$State[this.state.ordinal()]) {
                     case 1:
                         z2 = processHeader();
                         break;
@@ -239,8 +239,8 @@ public class GzipInflatingBuffer implements Closeable {
     }
 
     /* renamed from: io.grpc.internal.GzipInflatingBuffer$1 */
-    /* loaded from: classes3.dex */
-    static /* synthetic */ class C22901 {
+    /* loaded from: classes4.dex */
+    static /* synthetic */ class C24141 {
         static final /* synthetic */ int[] $SwitchMap$io$grpc$internal$GzipInflatingBuffer$State;
 
         static {

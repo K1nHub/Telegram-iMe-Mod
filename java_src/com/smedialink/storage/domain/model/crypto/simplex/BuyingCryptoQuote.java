@@ -47,7 +47,7 @@ public final class BuyingCryptoQuote {
         }
         if (obj instanceof BuyingCryptoQuote) {
             BuyingCryptoQuote buyingCryptoQuote = (BuyingCryptoQuote) obj;
-            return Intrinsics.areEqual(this.quoteId, buyingCryptoQuote.quoteId) && Intrinsics.areEqual(Float.valueOf(this.cryptoMoneyAmount), Float.valueOf(buyingCryptoQuote.cryptoMoneyAmount)) && Intrinsics.areEqual(Float.valueOf(this.fiatMoneyAmount), Float.valueOf(buyingCryptoQuote.fiatMoneyAmount));
+            return Intrinsics.areEqual(this.quoteId, buyingCryptoQuote.quoteId) && Float.compare(this.cryptoMoneyAmount, buyingCryptoQuote.cryptoMoneyAmount) == 0 && Float.compare(this.fiatMoneyAmount, buyingCryptoQuote.fiatMoneyAmount) == 0;
         }
         return false;
     }

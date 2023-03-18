@@ -77,7 +77,7 @@ public final class FlacExtractor implements Extractor {
 
     public FlacExtractor(int i) {
         this.streamMarkerAndInfoBlock = new byte[42];
-        this.buffer = new ParsableByteArray(new byte[BUFFER_LENGTH], 0);
+        this.buffer = new ParsableByteArray(new byte[32768], 0);
         this.id3MetadataDisabled = (i & 1) != 0;
         this.sampleNumberHolder = new FlacFrameReader.SampleNumberHolder();
         this.state = 0;
@@ -185,8 +185,8 @@ public final class FlacExtractor implements Extractor {
             return 0;
         }
         int limit = this.buffer.limit();
-        if (limit < BUFFER_LENGTH) {
-            int read = extractorInput.read(this.buffer.getData(), limit, BUFFER_LENGTH - limit);
+        if (limit < 32768) {
+            int read = extractorInput.read(this.buffer.getData(), limit, 32768 - limit);
             z = read == -1;
             if (!z) {
                 this.buffer.setLimit(limit + read);

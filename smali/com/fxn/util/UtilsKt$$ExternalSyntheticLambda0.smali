@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/fxn/util/UtilsKt$$ExternalSyntheticLambda0;->f$1:Landroid/widget/ImageView;
 
-    invoke-static {v0, v1, p1}, Lcom/fxn/util/UtilsKt;->$r8$lambda$bPT2gzBaj_flnP0qTFdySaeg1c8(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, p1}, Lcom/fxn/util/UtilsKt;->$r8$lambda$_CcnyxInTLlLYxPdMoUUf7fE0Ps(Landroid/animation/ValueAnimator;Landroid/widget/ImageView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

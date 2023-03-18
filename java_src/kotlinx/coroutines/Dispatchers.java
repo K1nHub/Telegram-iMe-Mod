@@ -7,7 +7,7 @@ import kotlinx.coroutines.scheduling.DefaultScheduler;
 public final class Dispatchers {
 
     /* renamed from: IO */
-    private static final CoroutineDispatcher f1213IO;
+    private static final CoroutineDispatcher f1218IO;
     public static final Dispatchers INSTANCE = new Dispatchers();
     private static final CoroutineDispatcher Default = CoroutineContextKt.createDefaultDispatcher();
 
@@ -16,7 +16,7 @@ public final class Dispatchers {
 
     static {
         Unconfined unconfined = Unconfined.INSTANCE;
-        f1213IO = DefaultScheduler.INSTANCE.getIO();
+        f1218IO = DefaultScheduler.INSTANCE.getIO();
     }
 
     public static final CoroutineDispatcher getDefault() {
@@ -28,6 +28,6 @@ public final class Dispatchers {
     }
 
     public static final CoroutineDispatcher getIO() {
-        return f1213IO;
+        return f1218IO;
     }
 }

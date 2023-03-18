@@ -14,7 +14,7 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* renamed from: org.telegram.ui.Components.ShutterButton */
 /* loaded from: classes6.dex */
@@ -63,7 +63,7 @@ public class ShutterButton extends View {
                 ShutterButton.this.processRelease = false;
             }
         };
-        this.shadowDrawable = getResources().getDrawable(C3158R.C3160drawable.camera_btn);
+        this.shadowDrawable = getResources().getDrawable(C3286R.C3288drawable.camera_btn);
         Paint paint = new Paint(1);
         this.whitePaint = paint;
         paint.setStyle(Paint.Style.FILL);
@@ -211,8 +211,8 @@ public class ShutterButton extends View {
         accessibilityNodeInfo.setClickable(true);
         accessibilityNodeInfo.setLongClickable(true);
         if (Build.VERSION.SDK_INT >= 21) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("AccActionTakePicture", C3158R.string.AccActionTakePicture)));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), LocaleController.getString("AccActionRecordVideo", C3158R.string.AccActionRecordVideo)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("AccActionTakePicture", C3286R.string.AccActionTakePicture)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), LocaleController.getString("AccActionRecordVideo", C3286R.string.AccActionRecordVideo)));
         }
     }
 }

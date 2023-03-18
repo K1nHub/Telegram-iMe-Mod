@@ -12,8 +12,8 @@ public class TLRPC$TL_photoPathSize extends TLRPC$PhotoSize {
         this.type = abstractSerializedData.readString(z);
         byte[] readByteArray = abstractSerializedData.readByteArray(z);
         this.bytes = readByteArray;
-        this.f1524h = 50;
-        this.f1525w = 50;
+        this.f1529h = 50;
+        this.f1530w = 50;
         this.svgPath = SvgHelper.doPath(SvgHelper.decompress(readByteArray));
     }
 

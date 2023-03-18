@@ -44,10 +44,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 17851
+    .line 17955
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 17860
+    .line 17964
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -62,7 +62,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 6
 
-    .line 17878
+    .line 17982
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -84,7 +84,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 17879
+    .line 17983
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_flashcall:Z
 
@@ -99,7 +99,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 17880
+    .line 17984
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->current_number:Z
 
@@ -114,7 +114,7 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 17881
+    .line 17985
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_app_hash:Z
 
@@ -129,7 +129,7 @@
     :cond_3
     const/4 v1, 0x0
 
-    .line 17882
+    .line 17986
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_missed_call:Z
 
@@ -144,7 +144,7 @@
     :cond_4
     const/4 v1, 0x0
 
-    .line 17883
+    .line 17987
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_firebase:Z
 
@@ -152,7 +152,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 17885
+    .line 17989
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -165,7 +165,7 @@
 
     return-void
 
-    .line 17888
+    .line 17992
     :cond_5
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -177,7 +177,7 @@
 
     aput-object v0, p2, v2
 
-    const-string v0, "wrong Vector magic, got %x"
+    const-string/jumbo v0, "wrong Vector magic, got %x"
 
     invoke-static {v0, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -187,7 +187,7 @@
 
     throw p1
 
-    .line 17892
+    .line 17996
     :cond_6
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -198,7 +198,7 @@
     :goto_5
     if-ge v1, v0, :cond_8
 
-    .line 17894
+    .line 17998
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object v4
@@ -207,7 +207,7 @@
 
     return-void
 
-    .line 17898
+    .line 18002
     :cond_7
     iget-object v5, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->logout_tokens:Ljava/util/ArrayList;
 
@@ -217,7 +217,7 @@
 
     goto :goto_5
 
-    .line 17901
+    .line 18005
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
@@ -225,14 +225,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 17902
+    .line 18006
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->token:Ljava/lang/String;
 
-    .line 17904
+    .line 18008
     :cond_9
     iget p1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
@@ -251,12 +251,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 17908
+    .line 18012
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 17909
+    .line 18013
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_flashcall:Z
 
     if-eqz v0, :cond_0
@@ -275,7 +275,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
-    .line 17910
+    .line 18014
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->current_number:Z
 
     if-eqz v1, :cond_1
@@ -290,7 +290,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
-    .line 17911
+    .line 18015
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_app_hash:Z
 
     if-eqz v1, :cond_2
@@ -305,7 +305,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
-    .line 17912
+    .line 18016
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_missed_call:Z
 
     if-eqz v1, :cond_3
@@ -320,7 +320,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
-    .line 17913
+    .line 18017
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->allow_firebase:Z
 
     if-eqz v1, :cond_4
@@ -335,7 +335,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
-    .line 17914
+    .line 18018
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->app_sandbox:Z
 
     if-eqz v1, :cond_5
@@ -350,10 +350,10 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
-    .line 17915
+    .line 18019
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 17916
+    .line 18020
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
     and-int/lit8 v0, v0, 0x40
@@ -362,17 +362,17 @@
 
     const v0, 0x1cb5c415
 
-    .line 17917
+    .line 18021
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 17918
+    .line 18022
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->logout_tokens:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 17919
+    .line 18023
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -380,7 +380,7 @@
     :goto_6
     if-ge v1, v0, :cond_6
 
-    .line 17921
+    .line 18025
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->logout_tokens:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -395,7 +395,7 @@
 
     goto :goto_6
 
-    .line 17924
+    .line 18028
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->flags:I
 
@@ -403,7 +403,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 17925
+    .line 18029
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_codeSettings;->token:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMusicController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicController.kt\norg/fork/controller/MusicController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,94:1\n56#2,6:95\n511#3:101\n496#3,6:102\n357#3,7:113\n657#4:108\n738#4,4:109\n1547#5:120\n1618#5,3:121\n*S KotlinDebug\n*F\n+ 1 MusicController.kt\norg/fork/controller/MusicController\n*L\n19#1:95,6\n44#1:101\n44#1:102,6\n64#1:113,7\n52#1:108\n52#1:109,4\n65#1:120\n65#1:121,3\n*E\n"
+    value = "SMAP\nMusicController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MusicController.kt\norg/fork/controller/MusicController\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,94:1\n56#2,6:95\n515#3:101\n500#3,6:102\n361#3,7:113\n658#4:108\n739#4,4:109\n1549#5:120\n1620#5,3:121\n*S KotlinDebug\n*F\n+ 1 MusicController.kt\norg/fork/controller/MusicController\n*L\n19#1:95,6\n44#1:101\n44#1:102,6\n64#1:113,7\n52#1:108\n52#1:109,4\n65#1:120\n65#1:121,3\n*E\n"
 .end annotation
 
 
@@ -51,42 +51,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$5U_8B4uL0-PBD9cOau-V-47Ghtk(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
+.method public static synthetic $r8$lambda$A1P3lZ3Ex8FvNc18YQw5b35OCV8(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->addPlaylistMessage$lambda-7(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->addPlaylistMessage$lambda$7(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5h5fqyLNMnHOo4FWQGzKSv_yaDs(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$TsnrsUQBEct6HO8qsdPhCDAASYs(Lorg/fork/controller/MusicController;Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->removePlaylistMessage$lambda-10(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->addPlaylistMessage$lambda$8(Lorg/fork/controller/MusicController;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$7kF5Zcis2xZf3o-XkSfA2VXvwQY(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
+.method public static synthetic $r8$lambda$ZOkI2LBQJnBH852kr0_cffIgezU(Lorg/fork/controller/MusicController;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->removePlaylistMessage$lambda-9(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
+    invoke-static {p0}, Lorg/fork/controller/MusicController;->setNewPlaylists$lambda$4(Lorg/fork/controller/MusicController;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KQMRfy2snwgsQxyz-MZUtHEEL7c(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+.method public static synthetic $r8$lambda$_ShGjVaWnBXgUc1qSo5cI07iz7I(Lorg/fork/controller/MusicController;Ljava/util/List;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->addPlaylistMessage$lambda-8(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->removePlaylistMessage$lambda$10(Lorg/fork/controller/MusicController;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KhsjvfO6LFfcm9I46O53VsJDZ6U(Lorg/fork/controller/MusicController;)V
+.method public static synthetic $r8$lambda$fu6xrwwjh19zd8uU1w8-ev9wXzg(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/controller/MusicController;->setNewPlaylists$lambda-4(Lorg/fork/controller/MusicController;)V
+    invoke-static {p0, p1}, Lorg/fork/controller/MusicController;->removePlaylistMessage$lambda$9(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
 
     return-void
 .end method
@@ -167,7 +167,7 @@
     return-object v0
 .end method
 
-.method private static final addPlaylistMessage$lambda-7(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
+.method private static final addPlaylistMessage$lambda$7(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -198,7 +198,7 @@
     return-void
 .end method
 
-.method private static final addPlaylistMessage$lambda-8(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+.method private static final addPlaylistMessage$lambda$8(Lorg/fork/controller/MusicController;Ljava/util/List;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -262,7 +262,7 @@
     return-object p0
 .end method
 
-.method private static final removePlaylistMessage$lambda-10(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+.method private static final removePlaylistMessage$lambda$10(Lorg/fork/controller/MusicController;Ljava/util/List;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -299,7 +299,7 @@
     return-void
 .end method
 
-.method private static final removePlaylistMessage$lambda-9(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
+.method private static final removePlaylistMessage$lambda$9(Lorg/fork/controller/MusicController;Lcom/smedialink/storage/domain/model/music/PlaylistModel;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -330,7 +330,7 @@
     return-void
 .end method
 
-.method private static final setNewPlaylists$lambda-4(Lorg/fork/controller/MusicController;)V
+.method private static final setNewPlaylists$lambda$4(Lorg/fork/controller/MusicController;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -348,9 +348,7 @@
 
     iget-wide v1, v1, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    invoke-virtual {p0}, Lorg/fork/controller/MusicController;->getPlaylists()Ljava/util/Map;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/controller/MusicController;->playlists:Ljava/util/Map;
 
     invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -390,7 +388,7 @@
 
     move-result-object v1
 
-    .line 357
+    .line 361
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -406,7 +404,7 @@
 
     invoke-direct {v2, v3, p1, p2}, Lcom/smedialink/storage/domain/model/music/PlaylistModel;-><init>(Ljava/util/ArrayList;J)V
 
-    .line 360
+    .line 364
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 64
@@ -418,7 +416,7 @@
 
     move-result-object p1
 
-    .line 1547
+    .line 1549
     new-instance p2, Ljava/util/ArrayList;
 
     const/16 v0, 0xa
@@ -429,7 +427,7 @@
 
     invoke-direct {p2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -445,7 +443,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
     .line 65
@@ -457,10 +455,12 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {p2, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 65
     :cond_1
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
@@ -474,9 +474,9 @@
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     .line 69
-    new-instance p1, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda4;
+    new-instance p1, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda3;
 
-    invoke-direct {p1, p0, p3}, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda4;-><init>(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+    invoke-direct {p1, p0, p3}, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda3;-><init>(Lorg/fork/controller/MusicController;Ljava/util/List;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -518,20 +518,15 @@
 
     check-cast p1, Lcom/smedialink/storage/domain/model/music/PlaylistModel;
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p1}, Lcom/smedialink/storage/domain/model/music/PlaylistModel;->getMessageIds()Ljava/util/ArrayList;
 
     move-result-object p1
 
-    :goto_0
     if-nez p1, :cond_1
 
+    :cond_0
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -597,12 +592,12 @@
 
     move-result-object v0
 
-    .line 657
+    .line 658
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 738
+    .line 739
     invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -618,7 +613,7 @@
 
     move-result-object v2
 
-    .line 739
+    .line 740
     check-cast v2, Lcom/smedialink/storage/data/locale/db/model/music/PlaylistsDb;
 
     .line 52
@@ -638,6 +633,7 @@
 
     move-result-object v2
 
+    .line 740
     invoke-virtual {v2}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v3
@@ -737,9 +733,9 @@
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     .line 81
-    new-instance p1, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda3;
+    new-instance p1, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda4;
 
-    invoke-direct {p1, p0, p3}, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda3;-><init>(Lorg/fork/controller/MusicController;Ljava/util/List;)V
+    invoke-direct {p1, p0, p3}, Lorg/fork/controller/MusicController$$ExternalSyntheticLambda4;-><init>(Lorg/fork/controller/MusicController;Ljava/util/List;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -786,12 +782,12 @@
 
     move-result-object p1
 
-    .line 511
+    .line 515
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 496
+    .line 500
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -833,7 +829,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 498
+    .line 502
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -879,9 +875,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/MusicController;->getSelectedMusicTab()Lcom/smedialink/ui/music/MusicTab;
-
-    move-result-object v2
+    iget-object v2, p0, Lorg/fork/controller/MusicController;->selectedMusicTab:Lcom/smedialink/ui/music/MusicTab;
 
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 

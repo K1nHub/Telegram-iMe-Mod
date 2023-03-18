@@ -35,7 +35,7 @@
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->$r8$lambda$NQdOByQ2vqtA7zze4LeX78aTRN0(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {p1}, Lcom/smedialink/storage/data/repository/kikliko/KiklikoRepositoryImpl;->$r8$lambda$_EJ7c8PP4hHMs1ecLWwnp6LjeIk(Ljava/lang/Object;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object p1
 

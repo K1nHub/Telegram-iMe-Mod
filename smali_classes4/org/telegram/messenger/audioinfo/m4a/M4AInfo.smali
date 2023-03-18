@@ -171,7 +171,7 @@
     goto/16 :goto_0
 
     :sswitch_0
-    const-string v3, "\u00a9wrt"
+    const-string/jumbo v3, "\u00a9wrt"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -187,7 +187,7 @@
     goto/16 :goto_0
 
     :sswitch_1
-    const-string v3, "\u00a9nam"
+    const-string/jumbo v3, "\u00a9nam"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -203,7 +203,7 @@
     goto/16 :goto_0
 
     :sswitch_2
-    const-string v3, "\u00a9lyr"
+    const-string/jumbo v3, "\u00a9lyr"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -219,7 +219,7 @@
     goto/16 :goto_0
 
     :sswitch_3
-    const-string v3, "\u00a9grp"
+    const-string/jumbo v3, "\u00a9grp"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -235,7 +235,7 @@
     goto/16 :goto_0
 
     :sswitch_4
-    const-string v3, "\u00a9gen"
+    const-string/jumbo v3, "\u00a9gen"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -251,7 +251,7 @@
     goto/16 :goto_0
 
     :sswitch_5
-    const-string v3, "\u00a9day"
+    const-string/jumbo v3, "\u00a9day"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -267,7 +267,7 @@
     goto/16 :goto_0
 
     :sswitch_6
-    const-string v3, "\u00a9cpy"
+    const-string/jumbo v3, "\u00a9cpy"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -283,7 +283,7 @@
     goto/16 :goto_0
 
     :sswitch_7
-    const-string v3, "\u00a9com"
+    const-string/jumbo v3, "\u00a9com"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -299,7 +299,7 @@
     goto/16 :goto_0
 
     :sswitch_8
-    const-string v3, "\u00a9cmt"
+    const-string/jumbo v3, "\u00a9cmt"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -315,7 +315,7 @@
     goto/16 :goto_0
 
     :sswitch_9
-    const-string v3, "\u00a9alb"
+    const-string/jumbo v3, "\u00a9alb"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -331,7 +331,7 @@
     goto/16 :goto_0
 
     :sswitch_a
-    const-string v3, "\u00a9ART"
+    const-string/jumbo v3, "\u00a9ART"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -966,8 +966,6 @@
     :cond_1d
     :goto_3
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

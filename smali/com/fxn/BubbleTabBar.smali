@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBubbleTabBar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BubbleTabBar.kt\ncom/fxn/BubbleTabBar\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,233:1\n178#2,2:234\n178#2,2:236\n254#3,2:238\n1849#4,2:240\n*S KotlinDebug\n*F\n+ 1 BubbleTabBar.kt\ncom/fxn/BubbleTabBar\n*L\n48#1:234,2\n57#1:236,2\n61#1:238,2\n188#1:240,2\n*E\n"
+    value = "SMAP\nBubbleTabBar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BubbleTabBar.kt\ncom/fxn/BubbleTabBar\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,233:1\n179#2,2:234\n179#2,2:236\n254#3,2:238\n1855#4,2:240\n*S KotlinDebug\n*F\n+ 1 BubbleTabBar.kt\ncom/fxn/BubbleTabBar\n*L\n48#1:234,2\n57#1:236,2\n61#1:238,2\n188#1:240,2\n*E\n"
 .end annotation
 
 
@@ -66,10 +66,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$K488Q92z_iGZOZoruYDUzYQoXyI(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$WWN8MRXyZElxR19crdAQfkIuCjo(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/fxn/BubbleTabBar;->configureMenu$lambda-6$lambda-5$lambda-4(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/fxn/BubbleTabBar;->configureMenu$lambda$6$lambda$5$lambda$4(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
 
     return-void
 .end method
@@ -187,7 +187,7 @@
     .line 187
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -250,6 +250,10 @@
     goto :goto_2
 
     :cond_1
+    const-string v2, "badgeVisibleValues[id] ?: false"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
@@ -328,9 +332,6 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 224
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     .line 205
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
@@ -353,7 +354,7 @@
     return-void
 .end method
 
-.method private static final configureMenu$lambda-6$lambda-5$lambda-4(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
+.method private static final configureMenu$lambda$6$lambda$5$lambda$4(Lcom/fxn/BubbleTabBar;Landroid/view/View;)V
     .locals 5
 
     const-string v0, "this$0"
@@ -372,32 +373,31 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/fxn/BubbleTabBar;->oldBubble:Lcom/fxn/Bubble;
+
+    if-eqz v1, :cond_0
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
+    move-result v4
+
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getId()I
+
     move-result v1
 
-    iget-object v4, p0, Lcom/fxn/BubbleTabBar;->oldBubble:Lcom/fxn/Bubble;
+    if-ne v4, v1, :cond_0
 
-    if-nez v4, :cond_1
+    const/4 v1, 0x1
+
+    goto :goto_0
 
     :cond_0
     const/4 v1, 0x0
 
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v4}, Landroid/widget/FrameLayout;->getId()I
-
-    move-result v4
-
-    if-ne v1, v4, :cond_0
-
-    const/4 v1, 0x1
-
     :goto_0
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     .line 214
     iget-object v1, p0, Lcom/fxn/BubbleTabBar;->onBubbleClickListener:Lcom/fxn/OnBubbleClickListener;
@@ -414,16 +414,18 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     const/4 v1, 0x0
 
     :goto_1
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     .line 217
     iget-object v1, p0, Lcom/fxn/BubbleTabBar;->oldBubble:Lcom/fxn/Bubble;
 
-    if-eqz v1, :cond_3
+    const-string v4, "null cannot be cast to non-null type com.fxn.Bubble"
+
+    if-eqz v1, :cond_2
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
@@ -431,9 +433,11 @@
 
     move-result v1
 
-    if-eq v1, v0, :cond_3
+    if-eq v1, v0, :cond_2
 
     .line 218
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     move-object v0, p1
 
     check-cast v0, Lcom/fxn/Bubble;
@@ -454,12 +458,14 @@
     invoke-virtual {v0, v3}, Lcom/fxn/Bubble;->setSelected(Z)V
 
     .line 221
-    :cond_3
+    :cond_2
+    invoke-static {p1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Lcom/fxn/Bubble;
 
     iput-object p1, p0, Lcom/fxn/BubbleTabBar;->oldBubble:Lcom/fxn/Bubble;
 
-    :cond_4
+    :cond_3
     return-void
 .end method
 
@@ -848,14 +854,8 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_1
 
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_2
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getId()I
 
     move-result v1
@@ -864,8 +864,13 @@
 
     const/4 v1, 0x1
 
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
     :goto_0
-    if-nez v1, :cond_4
+    if-nez v1, :cond_3
 
     .line 93
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->isSelected()Z
@@ -879,38 +884,34 @@
     .line 94
     iget-object v1, p0, Lcom/fxn/BubbleTabBar;->oldBubble:Lcom/fxn/Bubble;
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_2
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     invoke-virtual {v1, v3}, Lcom/fxn/Bubble;->setSelected(Z)V
 
     goto :goto_1
 
     .line 96
-    :cond_4
+    :cond_3
     invoke-virtual {v0, v2}, Lcom/fxn/Bubble;->setSelected(Z)V
 
     .line 98
     :goto_1
     iput-object v0, p0, Lcom/fxn/BubbleTabBar;->oldBubble:Lcom/fxn/Bubble;
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_4
 
     .line 100
     iget-object p2, p0, Lcom/fxn/BubbleTabBar;->onBubbleClickListener:Lcom/fxn/OnBubbleClickListener;
 
-    if-nez p2, :cond_5
+    if-eqz p2, :cond_4
 
-    goto :goto_2
-
-    :cond_5
     invoke-interface {p2, p1}, Lcom/fxn/OnBubbleClickListener;->onBubbleClick(I)Z
 
     .line 103
-    :cond_6
-    :goto_2
+    :cond_4
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->invalidate()V
 
     return-void
@@ -940,7 +941,7 @@
 
     move-result-object v0
 
-    .line 178
+    .line 179
     invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1003,18 +1004,19 @@
 
     if-eq v0, p2, :cond_6
 
-    .line 60
-    iget-object v0, p0, Lcom/fxn/BubbleTabBar;->tabsVisible:Ljava/util/HashMap;
-
+    .line 59
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 60
+    iget-object v1, p0, Lcom/fxn/BubbleTabBar;->tabsVisible:Ljava/util/HashMap;
+
+    invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     if-nez v3, :cond_4
 
@@ -1028,7 +1030,7 @@
     :cond_5
     const/16 v2, 0x8
 
-    .line 254
+    .line 238
     :goto_2
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 

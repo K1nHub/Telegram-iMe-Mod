@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/BookmarksController$$ExternalSyntheticLambda1;->f$1:Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/BookmarksController;->$r8$lambda$9qZ1T_2WB5tWOldr4lsBbzMmiTg(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/BookmarksController;->$r8$lambda$F1HsyI_lCttURJOz1yGHmFlxriY(Lorg/fork/controller/BookmarksController;Lcom/smedialink/storage/domain/model/bookmarks/BookmarksModel;)V
 
     return-void
 .end method

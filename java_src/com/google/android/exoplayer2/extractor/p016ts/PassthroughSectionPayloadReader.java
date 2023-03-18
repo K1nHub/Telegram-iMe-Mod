@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p016ts;
 
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -34,7 +34,7 @@ public final class PassthroughSectionPayloadReader implements SectionPayloadRead
         assertInitialized();
         long lastAdjustedTimestampUs = this.timestampAdjuster.getLastAdjustedTimestampUs();
         long timestampOffsetUs = this.timestampAdjuster.getTimestampOffsetUs();
-        if (lastAdjustedTimestampUs == C0474C.TIME_UNSET || timestampOffsetUs == C0474C.TIME_UNSET) {
+        if (lastAdjustedTimestampUs == C0468C.TIME_UNSET || timestampOffsetUs == C0468C.TIME_UNSET) {
             return;
         }
         Format format = this.format;

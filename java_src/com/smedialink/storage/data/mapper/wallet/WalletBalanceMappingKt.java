@@ -36,7 +36,7 @@ public final class WalletBalanceMappingKt {
             TokenInfo map2 = TokenInfo.Companion.map(tokenBalanceResponse.getCoinCode());
             double rateToDollars = tokenBalanceResponse.getRateToDollars();
             Float ratePercentageChange24h = tokenBalanceResponse.getRatePercentageChange24h();
-            arrayList.add(new TokenBalance(map, total, totalInDollars, map2, new PriceRate(rateToDollars, ratePercentageChange24h == null ? BitmapDescriptorFactory.HUE_RED : ratePercentageChange24h.floatValue()), NetworkType.Companion.map(tokenBalanceResponse.getNetworkType())));
+            arrayList.add(new TokenBalance(map, total, totalInDollars, map2, new PriceRate(rateToDollars, ratePercentageChange24h != null ? ratePercentageChange24h.floatValue() : BitmapDescriptorFactory.HUE_RED), NetworkType.Companion.map(tokenBalanceResponse.getNetworkType())));
         }
         return arrayList;
     }

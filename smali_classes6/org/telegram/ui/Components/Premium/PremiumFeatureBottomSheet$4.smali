@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)V
     .locals 0
 
-    .line 207
+    .line 208
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
     .locals 0
 
-    .line 225
+    .line 226
     check-cast p3, Landroid/view/View;
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
@@ -46,7 +46,7 @@
 .method public getCount()I
     .locals 1
 
-    .line 210
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->premiumFeatures:Ljava/util/ArrayList;
@@ -61,7 +61,7 @@
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .locals 3
 
-    .line 216
+    .line 217
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -72,13 +72,13 @@
 
     invoke-direct {v0, v1, v2, p2}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;-><init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;I)V
 
-    .line 217
+    .line 218
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 218
+    .line 219
     iput p2, v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->position:I
 
-    .line 219
+    .line 220
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->premiumFeatures:Ljava/util/ArrayList;

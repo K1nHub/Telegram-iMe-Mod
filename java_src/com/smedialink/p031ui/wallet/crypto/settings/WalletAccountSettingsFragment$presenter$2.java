@@ -23,7 +23,7 @@ public final class WalletAccountSettingsFragment$presenter$2 extends Lambda impl
     @Override // kotlin.jvm.functions.Function0
     public final WalletAccountSettingsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1961x9695a877(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2076x9695a877(this.this$0, null, null));
         return (WalletAccountSettingsPresenter) lazy.getValue();
     }
 }

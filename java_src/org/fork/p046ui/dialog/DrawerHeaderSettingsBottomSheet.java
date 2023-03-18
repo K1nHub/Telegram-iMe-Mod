@@ -15,12 +15,11 @@ import com.smedialink.utils.extentions.common.ViewExtKt;
 import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.models.DrawerHeaderSettings;
 import org.fork.utils.Callbacks$Callback1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -203,15 +202,14 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                DrawerHeaderSettingsBottomSheet.m1984initListView$lambda6$lambda5(DrawerHeaderSettingsBottomSheet.this, recyclerListView, view, i, f, f2);
+                DrawerHeaderSettingsBottomSheet.initListView$lambda$6$lambda$5(DrawerHeaderSettingsBottomSheet.this, recyclerListView, view, i, f, f2);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-6$lambda-5  reason: not valid java name */
-    public static final void m1984initListView$lambda6$lambda5(final DrawerHeaderSettingsBottomSheet this$0, RecyclerListView this_apply, View view, final int i, float f, float f2) {
+    public static final void initListView$lambda$6$lambda$5(final DrawerHeaderSettingsBottomSheet this$0, RecyclerListView this_apply, View view, final int i, float f, float f2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         if (view instanceof NotificationsCheckCell) {
@@ -232,11 +230,10 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
             AlertDialog createDrawerAccountDataSelectDialog = AlertsCreator.createDrawerAccountDataSelectDialog(context, z, z ? newSettings.getTitle() : newSettings.getSubtitle(), new Callbacks$Callback1() { // from class: org.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda1
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
-                    DrawerHeaderSettingsBottomSheet.m1985initListView$lambda6$lambda5$lambda3(z, this$0, i, (DrawerAccountData) obj);
+                    DrawerHeaderSettingsBottomSheet.initListView$lambda$6$lambda$5$lambda$3(z, this$0, i, (DrawerAccountData) obj);
                 }
             });
             createDrawerAccountDataSelectDialog.show();
-            Unit unit = Unit.INSTANCE;
             this$0.accountDataSelector = createDrawerAccountDataSelectDialog;
         } else if (view instanceof TextCheckCell) {
             ((TextCheckCell) view).toggleCheckbox();
@@ -250,8 +247,7 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-6$lambda-5$lambda-3  reason: not valid java name */
-    public static final void m1985initListView$lambda6$lambda5$lambda3(boolean z, DrawerHeaderSettingsBottomSheet this$0, int i, DrawerAccountData selectedDrawerAccountData) {
+    public static final void initListView$lambda$6$lambda$5$lambda$3(boolean z, DrawerHeaderSettingsBottomSheet this$0, int i, DrawerAccountData selectedDrawerAccountData) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (z) {
             this$0.getNewSettings().setShowTitle(true);
@@ -292,9 +288,9 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (z) {
-            string = LocaleController.getString("Cancel", C3158R.string.Cancel);
+            string = LocaleController.getString("Cancel", C3286R.string.Cancel);
         } else {
-            string = LocaleController.getString("Save", C3158R.string.Save);
+            string = LocaleController.getString("Save", C3286R.string.Save);
         }
         Intrinsics.checkNotNullExpressionValue(string, "if (cancel) {\n          … R.string.Save)\n        }");
         String upperCase = string.toUpperCase(Locale.ROOT);
@@ -305,15 +301,14 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DrawerHeaderSettingsBottomSheet.m1983createBottomButton$lambda10$lambda9(z, this, view);
+                DrawerHeaderSettingsBottomSheet.createBottomButton$lambda$10$lambda$9(z, this, view);
             }
         });
         return textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: createBottomButton$lambda-10$lambda-9  reason: not valid java name */
-    public static final void m1983createBottomButton$lambda10$lambda9(boolean z, DrawerHeaderSettingsBottomSheet this$0, View view) {
+    public static final void createBottomButton$lambda$10$lambda$9(boolean z, DrawerHeaderSettingsBottomSheet this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (!z) {
             SharedConfig.setDrawerHeaderSettings(this$0.getNewSettings());
@@ -336,35 +331,31 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
     /* renamed from: org.fork.ui.dialog.DrawerHeaderSettingsBottomSheet$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ DrawerHeaderSettingsBottomSheet this$0;
-
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return true;
         }
 
-        public ListAdapter(DrawerHeaderSettingsBottomSheet this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
             updateRows();
         }
 
         public final void updateRows() {
-            this.this$0.rowCount = 0;
-            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet = this.this$0;
+            DrawerHeaderSettingsBottomSheet.this.rowCount = 0;
+            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet = DrawerHeaderSettingsBottomSheet.this;
             int i = drawerHeaderSettingsBottomSheet.rowCount;
             drawerHeaderSettingsBottomSheet.rowCount = i + 1;
             drawerHeaderSettingsBottomSheet.titleRow = i;
-            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet2 = this.this$0;
+            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet2 = DrawerHeaderSettingsBottomSheet.this;
             int i2 = drawerHeaderSettingsBottomSheet2.rowCount;
             drawerHeaderSettingsBottomSheet2.rowCount = i2 + 1;
             drawerHeaderSettingsBottomSheet2.subtitleRow = i2;
-            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet3 = this.this$0;
+            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet3 = DrawerHeaderSettingsBottomSheet.this;
             int i3 = drawerHeaderSettingsBottomSheet3.rowCount;
             drawerHeaderSettingsBottomSheet3.rowCount = i3 + 1;
             drawerHeaderSettingsBottomSheet3.avatarRow = i3;
-            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet4 = this.this$0;
+            DrawerHeaderSettingsBottomSheet drawerHeaderSettingsBottomSheet4 = DrawerHeaderSettingsBottomSheet.this;
             int i4 = drawerHeaderSettingsBottomSheet4.rowCount;
             drawerHeaderSettingsBottomSheet4.rowCount = i4 + 1;
             drawerHeaderSettingsBottomSheet4.archiveRow = i4;
@@ -372,13 +363,13 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return DrawerHeaderSettingsBottomSheet.this.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
             boolean z = true;
-            if (i != this.this$0.avatarRow && i != this.this$0.archiveRow) {
+            if (i != DrawerHeaderSettingsBottomSheet.this.avatarRow && i != DrawerHeaderSettingsBottomSheet.this.archiveRow) {
                 z = false;
             }
             return z ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.NOTIFICATION_CHECK;
@@ -387,9 +378,8 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             Intrinsics.checkNotNullParameter(parent, "parent");
-            FrameLayout textCheckCell = i == IdFabric$ViewTypes.TEXT_CHECK ? new TextCheckCell(this.this$0.getContext()) : new NotificationsCheckCell(this.this$0.getContext());
+            FrameLayout textCheckCell = i == IdFabric$ViewTypes.TEXT_CHECK ? new TextCheckCell(DrawerHeaderSettingsBottomSheet.this.getContext()) : new NotificationsCheckCell(DrawerHeaderSettingsBottomSheet.this.getContext());
             textCheckCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit = Unit.INSTANCE;
             return new RecyclerListView.Holder(textCheckCell);
         }
 
@@ -401,19 +391,19 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                z = i == this.this$0.avatarRow;
+                z = i == DrawerHeaderSettingsBottomSheet.this.avatarRow;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
-                String internalString = LocaleController.getInternalString(z ? C3158R.string.drawer_profile_cell_avatar : C3158R.string.drawer_profile_cell_archive);
-                DrawerHeaderSettings newSettings = this.this$0.getNewSettings();
+                String internalString = LocaleController.getInternalString(z ? C3286R.string.drawer_profile_cell_avatar : C3286R.string.drawer_profile_cell_archive);
+                DrawerHeaderSettings newSettings = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 textCheckCell.setTextAndCheck(internalString, z ? newSettings.isShowAvatar() : newSettings.isShowArchive(), true);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATION_CHECK && (view instanceof NotificationsCheckCell)) {
-                z = i == this.this$0.titleRow;
-                DrawerHeaderSettings newSettings2 = this.this$0.getNewSettings();
+                z = i == DrawerHeaderSettingsBottomSheet.this.titleRow;
+                DrawerHeaderSettings newSettings2 = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 DrawerAccountData title = z ? newSettings2.getTitle() : newSettings2.getSubtitle();
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
-                String internalString2 = LocaleController.getInternalString(z ? C3158R.string.drawer_profile_cell_alert_title : C3158R.string.drawer_profile_cell_alert_subtitle);
+                String internalString2 = LocaleController.getInternalString(z ? C3286R.string.drawer_profile_cell_alert_title : C3286R.string.drawer_profile_cell_alert_subtitle);
                 String title2 = title.getTitle();
-                DrawerHeaderSettings newSettings3 = this.this$0.getNewSettings();
+                DrawerHeaderSettings newSettings3 = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 notificationsCheckCell.setTextAndValueAndCheck(internalString2, title2, z ? newSettings3.isShowTitle() : newSettings3.isShowSubtitle(), true);
             }
         }

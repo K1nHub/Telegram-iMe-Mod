@@ -19,8 +19,7 @@ public final class DeleteServiceMessagesBottomSheet$bottomButtons$2 extends Lamb
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: invoke$lambda-0  reason: not valid java name */
-    public static final void m1980invoke$lambda0(DeleteServiceMessagesBottomSheet this$0) {
+    public static final void invoke$lambda$0(DeleteServiceMessagesBottomSheet this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.showPeriodSelectionDialog();
     }
@@ -32,7 +31,7 @@ public final class DeleteServiceMessagesBottomSheet$bottomButtons$2 extends Lamb
         bottomDialogButtons = deleteServiceMessagesBottomSheet.getBottomDialogButtons(new Runnable() { // from class: org.fork.ui.dialog.DeleteServiceMessagesBottomSheet$bottomButtons$2$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DeleteServiceMessagesBottomSheet$bottomButtons$2.m1980invoke$lambda0(DeleteServiceMessagesBottomSheet.this);
+                DeleteServiceMessagesBottomSheet$bottomButtons$2.invoke$lambda$0(DeleteServiceMessagesBottomSheet.this);
             }
         });
         return bottomDialogButtons;

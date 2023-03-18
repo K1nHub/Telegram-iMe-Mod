@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,75:1\n127#2,5:76\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$3\n*L\n34#1:76,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n127#2,5:78\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/smedialink/storage/domain/di/module/InteractorModuleKt$interactorModule$1$3\n*L\n35#1:78,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 34
+    .line 35
     check-cast p2, Lcom/smedialink/storage/domain/repository/wallet/WalletRepository;
 
     .line 131
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 34
+    .line 35
     check-cast v1, Lcom/smedialink/storage/domain/utils/rx/SchedulersProvider;
 
     .line 131
@@ -113,7 +113,7 @@
 
     move-result-object p1
 
-    .line 34
+    .line 35
     check-cast p1, Lcom/smedialink/storage/domain/storage/CryptoPreferenceHelper;
 
     new-instance v0, Lcom/smedialink/storage/domain/interactor/wallet/WalletInteractor;
@@ -126,7 +126,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 34
+    .line 35
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

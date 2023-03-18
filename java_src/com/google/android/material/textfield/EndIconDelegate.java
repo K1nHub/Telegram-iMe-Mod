@@ -2,9 +2,8 @@ package com.google.android.material.textfield;
 
 import android.content.Context;
 import com.google.android.material.internal.CheckableImageButton;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-public abstract class EndIconDelegate {
+abstract class EndIconDelegate {
     Context context;
     CheckableImageButton endIconView;
     TextInputLayout textInputLayout;

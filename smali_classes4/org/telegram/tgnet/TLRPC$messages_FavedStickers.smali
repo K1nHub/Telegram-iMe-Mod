@@ -31,17 +31,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 6262
+    .line 6287
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 6264
+    .line 6289
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_FavedStickers;->packs:Ljava/util/ArrayList;
 
-    .line 6265
+    .line 6290
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 6274
+    .line 6299
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_favedStickers;
 
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 6271
+    .line 6296
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_favedStickersNotModified;
 
@@ -87,7 +87,7 @@
 
     goto :goto_1
 
-    .line 6278
+    .line 6303
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -117,7 +117,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 6281
+    .line 6306
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

@@ -35,7 +35,7 @@
 .method public final getInterpolation(F)F
     .locals 0
 
-    invoke-static {p1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->$r8$lambda$tpb3KhErmeF9w2m2LqH23ThGWng(F)F
+    invoke-static {p1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->$r8$lambda$mjTIP16kUi8DkpDGR5Ozq4Lz3JM(F)F
 
     move-result p1
 

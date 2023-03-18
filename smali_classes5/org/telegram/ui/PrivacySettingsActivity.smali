@@ -2090,7 +2090,7 @@
 
     if-eqz p1, :cond_1
 
-    const-string p2, "dialogTextRed2"
+    const-string p2, "dialogTextRed"
 
     .line 603
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -2935,7 +2935,7 @@
     :cond_23
     iget p1, p0, Lorg/telegram/ui/PrivacySettingsActivity;->contactsDeleteRow:I
 
-    const-string v0, "dialogTextRed2"
+    const-string v0, "dialogTextRed"
 
     if-ne p3, p1, :cond_25
 

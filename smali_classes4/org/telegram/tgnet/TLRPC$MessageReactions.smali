@@ -35,17 +35,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 26192
+    .line 26334
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 26197
+    .line 26339
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessageReactions;->results:Ljava/util/ArrayList;
 
-    .line 26198
+    .line 26340
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 26207
+    .line 26349
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageReactions;
 
@@ -82,7 +82,7 @@
 
     goto :goto_0
 
-    .line 26204
+    .line 26346
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageReactionsOld;
 
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 26210
+    .line 26352
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageReactions_layer137;
 
@@ -103,7 +103,7 @@
 
     goto :goto_1
 
-    .line 26214
+    .line 26356
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -133,7 +133,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 26217
+    .line 26359
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messageReactions;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

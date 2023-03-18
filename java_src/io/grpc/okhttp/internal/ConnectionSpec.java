@@ -3,7 +3,7 @@ package io.grpc.okhttp.internal;
 import java.util.Arrays;
 import java.util.List;
 import javax.net.ssl.SSLSocket;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ConnectionSpec {
     private static final CipherSuite[] APPROVED_CIPHER_SUITES;
     public static final ConnectionSpec MODERN_TLS;
@@ -127,7 +127,7 @@ public final class ConnectionSpec {
         return "ConnectionSpec()";
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private String[] cipherSuites;
         private boolean supportsTlsExtensions;

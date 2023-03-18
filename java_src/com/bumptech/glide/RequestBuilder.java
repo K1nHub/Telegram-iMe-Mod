@@ -69,7 +69,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     public RequestBuilder<TranscodeType> addListener(RequestListener<TranscodeType> requestListener) {
         if (isAutoCloneEnabled()) {
-            return clone().addListener(requestListener);
+            return mo883clone().addListener(requestListener);
         }
         if (requestListener != null) {
             if (this.requestListeners == null) {
@@ -86,7 +86,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     private RequestBuilder<TranscodeType> loadGeneric(Object obj) {
         if (isAutoCloneEnabled()) {
-            return clone().loadGeneric(obj);
+            return mo883clone().loadGeneric(obj);
         }
         this.model = obj;
         this.isModelSet = true;
@@ -98,19 +98,20 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
     }
 
     @Override // com.bumptech.glide.request.BaseRequestOptions
-    public RequestBuilder<TranscodeType> clone() {
-        RequestBuilder<TranscodeType> requestBuilder = (RequestBuilder) super.m882clone();
-        requestBuilder.transitionOptions = (TransitionOptions<?, ? super TranscodeType>) requestBuilder.transitionOptions.m881clone();
+    /* renamed from: clone */
+    public RequestBuilder<TranscodeType> mo883clone() {
+        RequestBuilder<TranscodeType> requestBuilder = (RequestBuilder) super.mo883clone();
+        requestBuilder.transitionOptions = (TransitionOptions<?, ? super TranscodeType>) requestBuilder.transitionOptions.m884clone();
         if (requestBuilder.requestListeners != null) {
             requestBuilder.requestListeners = new ArrayList(requestBuilder.requestListeners);
         }
         RequestBuilder<TranscodeType> requestBuilder2 = requestBuilder.thumbnailBuilder;
         if (requestBuilder2 != null) {
-            requestBuilder.thumbnailBuilder = requestBuilder2.clone();
+            requestBuilder.thumbnailBuilder = requestBuilder2.mo883clone();
         }
         RequestBuilder<TranscodeType> requestBuilder3 = requestBuilder.errorBuilder;
         if (requestBuilder3 != null) {
-            requestBuilder.errorBuilder = requestBuilder3.clone();
+            requestBuilder.errorBuilder = requestBuilder3.mo883clone();
         }
         return requestBuilder;
     }
@@ -151,20 +152,20 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
         Util.assertMainThread();
         Preconditions.checkNotNull(imageView);
         if (!isTransformationSet() && isTransformationAllowed() && imageView.getScaleType() != null) {
-            switch (C03981.$SwitchMap$android$widget$ImageView$ScaleType[imageView.getScaleType().ordinal()]) {
+            switch (C03921.$SwitchMap$android$widget$ImageView$ScaleType[imageView.getScaleType().ordinal()]) {
                 case 1:
-                    requestBuilder = m882clone().optionalCenterCrop();
+                    requestBuilder = mo883clone().optionalCenterCrop();
                     break;
                 case 2:
-                    requestBuilder = m882clone().optionalCenterInside();
+                    requestBuilder = mo883clone().optionalCenterInside();
                     break;
                 case 3:
                 case 4:
                 case 5:
-                    requestBuilder = m882clone().optionalFitCenter();
+                    requestBuilder = mo883clone().optionalFitCenter();
                     break;
                 case 6:
-                    requestBuilder = m882clone().optionalCenterInside();
+                    requestBuilder = mo883clone().optionalCenterInside();
                     break;
             }
             return (ViewTarget) into(this.glideContext.buildImageViewTarget(imageView, this.transcodeClass), null, requestBuilder, Executors.mainThreadExecutor());
@@ -176,7 +177,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.RequestBuilder$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C03981 {
+    public static /* synthetic */ class C03921 {
         static final /* synthetic */ int[] $SwitchMap$android$widget$ImageView$ScaleType;
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$Priority;
 
@@ -237,7 +238,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
     }
 
     private Priority getThumbnailPriority(Priority priority) {
-        int i = C03981.$SwitchMap$com$bumptech$glide$Priority[priority.ordinal()];
+        int i = C03921.$SwitchMap$com$bumptech$glide$Priority[priority.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3 || i == 4) {
@@ -311,7 +312,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
             return thumbnailRequestCoordinator;
         } else if (this.thumbSizeMultiplier != null) {
             ThumbnailRequestCoordinator thumbnailRequestCoordinator2 = new ThumbnailRequestCoordinator(obj, requestCoordinator);
-            thumbnailRequestCoordinator2.setRequests(obtainRequest(obj, target, requestListener, baseRequestOptions, thumbnailRequestCoordinator2, transitionOptions, priority, i, i2, executor), obtainRequest(obj, target, requestListener, baseRequestOptions.m882clone().sizeMultiplier(this.thumbSizeMultiplier.floatValue()), thumbnailRequestCoordinator2, transitionOptions, getThumbnailPriority(priority), i, i2, executor));
+            thumbnailRequestCoordinator2.setRequests(obtainRequest(obj, target, requestListener, baseRequestOptions, thumbnailRequestCoordinator2, transitionOptions, priority, i, i2, executor), obtainRequest(obj, target, requestListener, baseRequestOptions.mo883clone().sizeMultiplier(this.thumbSizeMultiplier.floatValue()), thumbnailRequestCoordinator2, transitionOptions, getThumbnailPriority(priority), i, i2, executor));
             return thumbnailRequestCoordinator2;
         } else {
             return obtainRequest(obj, target, requestListener, baseRequestOptions, requestCoordinator, transitionOptions, priority, i, i2, executor);

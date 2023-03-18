@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/smedialink/model/staking/StakingDetailsItem;-><clinit>()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/smedialink/model/staking/StakingDetailsItem;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

@@ -3,7 +3,7 @@ package p034j$.time.temporal;
 import p034j$.time.Duration;
 /* renamed from: j$.time.temporal.ChronoUnit */
 /* loaded from: classes2.dex */
-public enum ChronoUnit implements InterfaceC2400l {
+public enum ChronoUnit implements InterfaceC2524l {
     NANOS("Nanos", Duration.m689b(1)),
     MICROS("Micros", Duration.m689b(1000)),
     MILLIS("Millis", Duration.m689b(1000000)),
@@ -23,22 +23,22 @@ public enum ChronoUnit implements InterfaceC2400l {
     
 
     /* renamed from: a */
-    private final String f514a;
+    private final String f519a;
 
     /* renamed from: b */
-    private final Duration f515b;
+    private final Duration f520b;
 
     ChronoUnit(String str, Duration duration) {
-        this.f514a = str;
-        this.f515b = duration;
+        this.f519a = str;
+        this.f520b = duration;
     }
 
     public Duration getDuration() {
-        return this.f515b;
+        return this.f520b;
     }
 
     @Override // java.lang.Enum
     public String toString() {
-        return this.f514a;
+        return this.f519a;
     }
 }

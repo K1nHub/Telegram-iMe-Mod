@@ -526,7 +526,7 @@
 
     sput-object v0, Lorg/telegram/messenger/ChatThemeController;->allChatThemes:Ljava/util/List;
 
-    const-string v0, "\u274c"
+    const-string/jumbo v0, "\u274c"
 
     .line 46
     invoke-static {v0}, Lorg/telegram/messenger/ChatThemeController;->preloadSticker(Ljava/lang/String;)V

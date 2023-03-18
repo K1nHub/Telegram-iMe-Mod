@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/utils/dialogs/DialogsFactoryKt$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-static {v0}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->$r8$lambda$KRhV9PvlQcfVgHfWKz-ROTGSaQA(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0}, Lcom/smedialink/utils/dialogs/DialogsFactoryKt;->$r8$lambda$gF8OnJwV9Ym19tJyNESM-_un0Gs(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

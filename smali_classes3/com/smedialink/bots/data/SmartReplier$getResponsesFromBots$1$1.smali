@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSmartReplier.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartReplier.kt\ncom/smedialink/bots/data/SmartReplier$getResponsesFromBots$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,149:1\n1849#2,2:150\n*S KotlinDebug\n*F\n+ 1 SmartReplier.kt\ncom/smedialink/bots/data/SmartReplier$getResponsesFromBots$1$1\n*L\n38#1:150,2\n*E\n"
+    value = "SMAP\nSmartReplier.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SmartReplier.kt\ncom/smedialink/bots/data/SmartReplier$getResponsesFromBots$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,149:1\n1855#2,2:150\n*S KotlinDebug\n*F\n+ 1 SmartReplier.kt\ncom/smedialink/bots/data/SmartReplier$getResponsesFromBots$1$1\n*L\n38#1:150,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
@@ -248,7 +248,6 @@
 
     goto :goto_1
 
-    .line 44
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -258,7 +257,6 @@
 
     throw p1
 
-    .line 37
     :cond_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
@@ -279,7 +277,7 @@
 
     iget-object v4, p0, Lcom/smedialink/bots/data/SmartReplier$getResponsesFromBots$1$1;->$detected:Ljava/util/List;
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -356,15 +354,12 @@
     :goto_1
     check-cast p1, Lcom/smedialink/bots/data/model/Response;
 
-    if-nez p1, :cond_3
-
-    goto :goto_2
+    if-eqz p1, :cond_3
 
     .line 40
-    :cond_3
     invoke-interface {v4, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :goto_2
+    :cond_3
     move-object p1, v0
 
     move-object v0, v1

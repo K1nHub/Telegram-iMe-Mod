@@ -5,52 +5,50 @@
 
 # direct methods
 .method public static checkRadix(I)I
-    .locals 4
+    .locals 5
 
-    const/4 v0, 0x0
+    .line 313
+    new-instance v0, Lkotlin/ranges/IntRange;
 
     const/4 v1, 0x2
 
-    if-gt v1, p0, :cond_0
+    const/16 v2, 0x24
 
-    const/16 v2, 0x25
+    invoke-direct {v0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-ge p0, v2, :cond_0
+    invoke-virtual {v0, p0}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    const/4 v0, 0x1
+    move-result v0
 
-    :cond_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     return p0
 
     .line 314
-    :cond_1
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "radix "
+    const-string v4, "radix "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p0, " was not in valid range "
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     new-instance p0, Lkotlin/ranges/IntRange;
 
-    const/16 v3, 0x24
+    invoke-direct {p0, v1, v2}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    invoke-direct {p0, v1, v3}, Lkotlin/ranges/IntRange;-><init>(II)V
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

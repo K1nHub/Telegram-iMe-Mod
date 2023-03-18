@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment$$ExternalSyntheticLambda2;->f$0:Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;
 
-    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->$r8$lambda$18owMG3llsKMconnRXwd7UrScQM(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
+    invoke-static {v0}, Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;->$r8$lambda$K9yS7KMc4cUnjcOZHIj2JoXj4w4(Lcom/smedialink/ui/wallet/crypto/buy/BuyCryptoProductFragment;)V
 
     return-void
 .end method

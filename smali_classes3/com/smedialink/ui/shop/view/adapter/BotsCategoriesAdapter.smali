@@ -98,7 +98,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     .line 29
     iget-object v0, p0, Lcom/smedialink/ui/shop/view/adapter/BotsCategoriesAdapter;->content:Ljava/util/List;
@@ -106,6 +106,10 @@
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
+
+    const-string v0, "null cannot be cast to non-null type com.smedialink.ui.shop.view.model.DisplayingBotsCategory"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lcom/smedialink/ui/shop/view/model/DisplayingBotsCategory;
 
@@ -121,11 +125,8 @@
     check-cast v1, Lcom/smedialink/ui/shop/view/custom/BotCategoryTitleView;
 
     :cond_0
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_3
 
-    goto :goto_0
-
-    :cond_1
     invoke-virtual {p2}, Lcom/smedialink/ui/shop/view/model/DisplayingBotsCategory;->getTitle()Ljava/lang/String;
 
     move-result-object p1
@@ -135,12 +136,16 @@
     goto :goto_0
 
     .line 32
-    :cond_2
+    :cond_1
     iget-object v0, p0, Lcom/smedialink/ui/shop/view/adapter/BotsCategoriesAdapter;->content:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
+
+    const-string v0, "null cannot be cast to non-null type com.smedialink.ui.shop.view.model.DisplayingBots"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p2, Lcom/smedialink/ui/shop/view/model/DisplayingBots;
 
@@ -149,24 +154,22 @@
 
     instance-of v0, p1, Lcom/smedialink/ui/shop/view/custom/BotsListView;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     move-object v1, p1
 
     check-cast v1, Lcom/smedialink/ui/shop/view/custom/BotsListView;
 
-    :cond_3
-    if-nez v1, :cond_4
+    :cond_2
+    if-eqz v1, :cond_3
 
-    goto :goto_0
-
-    :cond_4
     invoke-virtual {p2}, Lcom/smedialink/ui/shop/view/model/DisplayingBots;->getItems()Ljava/util/List;
 
     move-result-object p1
 
     invoke-virtual {v1, p1}, Lcom/smedialink/ui/shop/view/custom/BotsListView;->setContent(Ljava/util/List;)V
 
+    :cond_3
     :goto_0
     return-void
 .end method

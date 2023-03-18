@@ -30,7 +30,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
@@ -115,7 +115,7 @@ public class ActionBarPopupWindow extends PopupWindow {
         Rect rect;
         private final Theme.ResourcesProvider resourcesProvider;
         private ScrollView scrollView;
-        private boolean shownFromBottom;
+        public boolean shownFromBottom;
         private boolean startAnimationPending;
         public int subtractBackgroundHeight;
         public boolean swipeBackGravityRight;
@@ -133,7 +133,7 @@ public class ActionBarPopupWindow extends PopupWindow {
         }
 
         public ActionBarPopupWindowLayout(Context context, Theme.ResourcesProvider resourcesProvider) {
-            this(context, C3158R.C3160drawable.popup_fixed_alert2, resourcesProvider);
+            this(context, C3286R.C3288drawable.popup_fixed_alert2, resourcesProvider);
         }
 
         public ActionBarPopupWindowLayout(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
@@ -199,9 +199,9 @@ public class ActionBarPopupWindow extends PopupWindow {
                         for (int i7 = 0; i7 < childCount; i7++) {
                             View childAt = getChildAt(i7);
                             if (childAt.getVisibility() != 8) {
-                                Object tag = childAt.getTag(C3158R.C3161id.width_tag);
-                                Object tag2 = childAt.getTag(C3158R.C3161id.object_tag);
-                                Object tag3 = childAt.getTag(C3158R.C3161id.fit_width_tag);
+                                Object tag = childAt.getTag(C3286R.C3289id.width_tag);
+                                Object tag2 = childAt.getTag(C3286R.C3289id.object_tag);
+                                Object tag3 = childAt.getTag(C3286R.C3289id.fit_width_tag);
                                 if (tag != null) {
                                     childAt.getLayoutParams().width = -2;
                                 }
@@ -513,7 +513,7 @@ public class ActionBarPopupWindow extends PopupWindow {
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt2 = this.linearLayout.getChildAt(i2);
                 if (childAt2.getVisibility() == 0) {
-                    Object tag = childAt2.getTag(C3158R.C3161id.object_tag);
+                    Object tag = childAt2.getTag(C3286R.C3289id.object_tag);
                     if (childAt2 instanceof ActionBarMenuSubItem) {
                         ((ActionBarMenuSubItem) childAt2).updateSelectorBackground(childAt2 == view || z, childAt2 == view2);
                     }
@@ -672,10 +672,14 @@ public class ActionBarPopupWindow extends PopupWindow {
     }
 
     public void dimBehind() {
+        dimBehind(0.2f);
+    }
+
+    public void dimBehind(float f) {
         View rootView = getContentView().getRootView();
         WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
         layoutParams.flags |= 2;
-        layoutParams.dimAmount = 0.2f;
+        layoutParams.dimAmount = f;
         ((WindowManager) getContentView().getContext().getSystemService("window")).updateViewLayout(rootView, layoutParams);
     }
 
@@ -961,18 +965,20 @@ public class ActionBarPopupWindow extends PopupWindow {
     /* renamed from: org.telegram.ui.ActionBar.ActionBarPopupWindow$GapView */
     /* loaded from: classes5.dex */
     public static class GapView extends FrameLayout {
-        Theme.ResourcesProvider resourcesProvider;
         Drawable shadowDrawable;
 
         public GapView(Context context, Theme.ResourcesProvider resourcesProvider) {
             this(context, resourcesProvider, "actionBarDefaultSubmenuSeparator");
         }
 
-        public GapView(Context context, Theme.ResourcesProvider resourcesProvider, String str) {
+        public GapView(Context context, int i, int i2) {
             super(context);
-            this.resourcesProvider = resourcesProvider;
-            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow", resourcesProvider);
-            setBackgroundColor(Theme.getColor(str, resourcesProvider));
+            this.shadowDrawable = Theme.getThemedDrawable(getContext(), C3286R.C3288drawable.greydivider, i2);
+            setBackgroundColor(i);
+        }
+
+        public GapView(Context context, Theme.ResourcesProvider resourcesProvider, String str) {
+            this(context, Theme.getColor(str, resourcesProvider), Theme.getColor("windowBackgroundGrayShadow", resourcesProvider));
         }
 
         public void setColor(int i) {

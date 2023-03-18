@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/view/Window;)V
     .locals 0
 
-    .line 4612
+    .line 4564
     iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$window:Landroid/view/Window;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 4615
+    .line 4567
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->access$200()Ljava/util/HashMap;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 4616
+    .line 4568
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->access$200()Ljava/util/HashMap;
 
     move-result-object p1

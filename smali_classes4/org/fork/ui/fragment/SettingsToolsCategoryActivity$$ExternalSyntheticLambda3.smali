@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    invoke-static {v0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$BmRKT507N_86miY0h8W9YRgnh9g(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/fork/ui/fragment/SettingsToolsCategoryActivity;->$r8$lambda$XUw7KJDwHD23YiVVJDXVeFr7xJI(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
 
     return-void
 .end method

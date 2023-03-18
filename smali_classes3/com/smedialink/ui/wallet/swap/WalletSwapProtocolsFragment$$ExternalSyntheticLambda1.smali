@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment$$ExternalSyntheticLambda1;->f$2:Lcom/smedialink/storage/domain/model/crypto/NetworkType;
 
-    invoke-static {v0, v1, v2}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->$r8$lambda$gy7COGtiq2Rg7M0rqIGdI71szK8(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
+    invoke-static {v0, v1, v2}, Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;->$r8$lambda$yfV8IREzppDP6-GSNlJDh3NlwPo(Lcom/smedialink/ui/wallet/swap/WalletSwapProtocolsFragment;Lcom/smedialink/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/smedialink/storage/domain/model/crypto/NetworkType;)V
 
     return-void
 .end method

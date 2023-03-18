@@ -5,11 +5,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.os.Build;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 import java.lang.ref.WeakReference;
 /* loaded from: classes.dex */
 public final class ViewPropertyAnimatorCompat {
-    private WeakReference<View> mView;
+    private final WeakReference<View> mView;
     Runnable mStartAction = null;
     Runnable mEndAction = null;
     int mOldLayerType = -1;
@@ -181,13 +182,20 @@ public final class ViewPropertyAnimatorCompat {
     public ViewPropertyAnimatorCompat setUpdateListener(final ViewPropertyAnimatorUpdateListener viewPropertyAnimatorUpdateListener) {
         final View view = this.mView.get();
         if (view != null && Build.VERSION.SDK_INT >= 19) {
-            view.animate().setUpdateListener(viewPropertyAnimatorUpdateListener != null ? new ValueAnimator.AnimatorUpdateListener(this) { // from class: androidx.core.view.ViewPropertyAnimatorCompat.2
+            Api19Impl.setUpdateListener(view.animate(), viewPropertyAnimatorUpdateListener != null ? new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.core.view.ViewPropertyAnimatorCompat$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    viewPropertyAnimatorUpdateListener.onAnimationUpdate(view);
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    ViewPropertyAnimatorUpdateListener.this.onAnimationUpdate(view);
                 }
             } : null);
         }
         return this;
+    }
+
+    /* loaded from: classes.dex */
+    static class Api19Impl {
+        static ViewPropertyAnimator setUpdateListener(ViewPropertyAnimator viewPropertyAnimator, ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+            return viewPropertyAnimator.setUpdateListener(animatorUpdateListener);
+        }
     }
 }

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36992
+    .line 37124
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_poll;-><init>()V
 
     return-void
@@ -28,14 +28,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 36997
+    .line 37129
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->id:J
 
-    .line 36998
+    .line 37130
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -57,7 +57,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 36999
+    .line 37131
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Poll;->closed:Z
 
@@ -72,7 +72,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 37000
+    .line 37132
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Poll;->public_voters:Z
 
@@ -87,7 +87,7 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 37001
+    .line 37133
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Poll;->multiple_choice:Z
 
@@ -102,18 +102,18 @@
     :cond_3
     const/4 v0, 0x0
 
-    .line 37002
+    .line 37134
     :goto_3
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->quiz:Z
 
-    .line 37003
+    .line 37135
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->question:Ljava/lang/String;
 
-    .line 37004
+    .line 37136
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -126,7 +126,7 @@
 
     return-void
 
-    .line 37007
+    .line 37139
     :cond_4
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -138,7 +138,7 @@
 
     aput-object v0, p2, v2
 
-    const-string v0, "wrong Vector magic, got %x"
+    const-string/jumbo v0, "wrong Vector magic, got %x"
 
     invoke-static {v0, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -148,7 +148,7 @@
 
     throw p1
 
-    .line 37011
+    .line 37143
     :cond_5
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -157,7 +157,7 @@
     :goto_4
     if-ge v2, v0, :cond_7
 
-    .line 37013
+    .line 37145
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -170,7 +170,7 @@
 
     return-void
 
-    .line 37017
+    .line 37149
     :cond_6
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$Poll;->answers:Ljava/util/ArrayList;
 
@@ -180,7 +180,7 @@
 
     goto :goto_4
 
-    .line 37019
+    .line 37151
     :cond_7
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->flags:I
 
@@ -188,7 +188,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 37020
+    .line 37152
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -202,17 +202,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 37025
+    .line 37157
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_poll_toDelete;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37026
+    .line 37158
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 37027
+    .line 37159
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->closed:Z
 
     if-eqz v0, :cond_0
@@ -231,7 +231,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->flags:I
 
-    .line 37028
+    .line 37160
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Poll;->public_voters:Z
 
     if-eqz v1, :cond_1
@@ -246,7 +246,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->flags:I
 
-    .line 37029
+    .line 37161
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Poll;->multiple_choice:Z
 
     if-eqz v1, :cond_2
@@ -261,7 +261,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->flags:I
 
-    .line 37030
+    .line 37162
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$Poll;->quiz:Z
 
     if-eqz v1, :cond_3
@@ -276,27 +276,27 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->flags:I
 
-    .line 37031
+    .line 37163
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37032
+    .line 37164
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->question:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 37033
+    .line 37165
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 37034
+    .line 37166
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->answers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 37035
+    .line 37167
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -304,7 +304,7 @@
     :goto_4
     if-ge v1, v0, :cond_4
 
-    .line 37037
+    .line 37169
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$Poll;->answers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -319,7 +319,7 @@
 
     goto :goto_4
 
-    .line 37039
+    .line 37171
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->flags:I
 
@@ -327,7 +327,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 37040
+    .line 37172
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Poll;->close_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

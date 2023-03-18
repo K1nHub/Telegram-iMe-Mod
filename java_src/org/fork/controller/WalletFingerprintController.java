@@ -3,6 +3,7 @@ package org.fork.controller;
 import android.content.SharedPreferences;
 import com.smedialink.common.TelegramPreferenceKeys;
 import java.util.Objects;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.WalletFingerprintController;
@@ -51,14 +52,14 @@ public final class WalletFingerprintController extends BaseController {
         if (string == null) {
             string = TelegramPreferenceKeys.User.Default.walletPinCodeEncrypted();
         }
-        setWalletPinCodeEncrypted(string);
-        setWalletFingerprintUnlockEnabled(preferences.getBoolean(TelegramPreferenceKeys.User.walletFingerprintUnlockEnabled(), TelegramPreferenceKeys.User.Default.walletFingerprintUnlockEnabled()));
+        this.walletPinCodeEncrypted = string;
+        this.isWalletFingerprintUnlockEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.walletFingerprintUnlockEnabled(), TelegramPreferenceKeys.User.Default.walletFingerprintUnlockEnabled());
     }
 
     public final void saveConfig() {
         SharedPreferences.Editor edit = getUserConfig().getPreferencesPublic().edit();
-        edit.putString(TelegramPreferenceKeys.User.walletPinCodeEncrypted(), getWalletPinCodeEncrypted());
-        edit.putBoolean(TelegramPreferenceKeys.User.walletFingerprintUnlockEnabled(), isWalletFingerprintUnlockEnabled());
+        edit.putString(TelegramPreferenceKeys.User.walletPinCodeEncrypted(), this.walletPinCodeEncrypted);
+        edit.putBoolean(TelegramPreferenceKeys.User.walletFingerprintUnlockEnabled(), this.isWalletFingerprintUnlockEnabled);
         edit.apply();
     }
 
@@ -73,14 +74,16 @@ public final class WalletFingerprintController extends BaseController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* renamed from: getInstance$lambda-0  reason: not valid java name */
-        public static final WalletFingerprintController m1962getInstance$lambda0(int i, Integer it) {
-            Intrinsics.checkNotNullParameter(it, "it");
-            return new WalletFingerprintController(i);
+        public static final WalletFingerprintController getInstance$lambda$0(Function1 tmp0, Object obj) {
+            Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+            return (WalletFingerprintController) tmp0.invoke(obj);
         }
 
-        public final WalletFingerprintController getInstance(final int i) {
-            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(WalletFingerprintController.accountInstances, Integer.valueOf(i), new Function() { // from class: org.fork.controller.WalletFingerprintController$Companion$$ExternalSyntheticLambda0
+        public final WalletFingerprintController getInstance(int i) {
+            ConcurrentHashMap concurrentHashMap = WalletFingerprintController.accountInstances;
+            Integer valueOf = Integer.valueOf(i);
+            final WalletFingerprintController$Companion$getInstance$1 walletFingerprintController$Companion$getInstance$1 = new WalletFingerprintController$Companion$getInstance$1(i);
+            Object computeIfAbsent = ConcurrentMap$EL.computeIfAbsent(concurrentHashMap, valueOf, new Function() { // from class: org.fork.controller.WalletFingerprintController$Companion$$ExternalSyntheticLambda0
                 @Override // p034j$.util.function.Function
                 public /* synthetic */ Function andThen(Function function) {
                     return Objects.requireNonNull(function);
@@ -88,9 +91,9 @@ public final class WalletFingerprintController extends BaseController {
 
                 @Override // p034j$.util.function.Function
                 public final Object apply(Object obj) {
-                    WalletFingerprintController m1962getInstance$lambda0;
-                    m1962getInstance$lambda0 = WalletFingerprintController.Companion.m1962getInstance$lambda0(i, (Integer) obj);
-                    return m1962getInstance$lambda0;
+                    WalletFingerprintController instance$lambda$0;
+                    instance$lambda$0 = WalletFingerprintController.Companion.getInstance$lambda$0(Function1.this, obj);
+                    return instance$lambda$0;
                 }
 
                 @Override // p034j$.util.function.Function
@@ -98,7 +101,7 @@ public final class WalletFingerprintController extends BaseController {
                     return Objects.requireNonNull(function);
                 }
             });
-            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountInstances.compute…ontroller(accountIndex) }");
+            Intrinsics.checkNotNullExpressionValue(computeIfAbsent, "accountIndex: Int) = acc…ontroller(accountIndex) }");
             return (WalletFingerprintController) computeIfAbsent;
         }
     }

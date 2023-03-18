@@ -31,19 +31,19 @@
 .method constructor <init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
     .locals 0
 
-    .line 984
+    .line 989
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 985
+    .line 990
     iput-object p1, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->packageName:Ljava/lang/String;
 
-    .line 986
+    .line 991
     iput p2, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->id:I
 
-    .line 987
+    .line 992
     iput-object p3, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->tag:Ljava/lang/String;
 
-    .line 988
+    .line 993
     iput-object p4, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->notif:Landroid/app/Notification;
 
     return-void
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    .line 993
+    .line 998
     iget-object v0, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->packageName:Ljava/lang/String;
 
     iget v1, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->id:I
@@ -76,7 +76,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 999
+    .line 1004
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "NotifyTask["
@@ -85,7 +85,7 @@
 
     const-string v1, "packageName:"
 
-    .line 1000
+    .line 1005
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->packageName:Ljava/lang/String;
@@ -94,7 +94,7 @@
 
     const-string v1, ", id:"
 
-    .line 1001
+    .line 1006
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->id:I
@@ -103,7 +103,7 @@
 
     const-string v1, ", tag:"
 
-    .line 1002
+    .line 1007
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroidx/core/app/NotificationManagerCompat$NotifyTask;->tag:Ljava/lang/String;
@@ -112,10 +112,10 @@
 
     const-string v1, "]"
 
-    .line 1003
+    .line 1008
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1004
+    .line 1009
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0

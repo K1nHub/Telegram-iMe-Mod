@@ -117,7 +117,7 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
         if (!this.wallets.isEmpty()) {
             if (getLastLoggedInGuid().length() > 0) {
                 Wallet wallet = this.wallets.get(blockchainType);
-                if (Intrinsics.areEqual(wallet == null ? null : wallet.getGuid(), getLastLoggedInGuid())) {
+                if (Intrinsics.areEqual(wallet != null ? wallet.getGuid() : null, getLastLoggedInGuid())) {
                     if (this.walletPassword.length() > 0) {
                         return true;
                     }

@@ -6,16 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:[Z
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+
+.field public final synthetic f$1:Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
+
+.field public final synthetic f$2:Landroid/widget/FrameLayout;
 
 
 # direct methods
-.method public synthetic constructor <init>([Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;Landroid/widget/FrameLayout;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$0:[Z
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$1:Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$2:Landroid/widget/FrameLayout;
 
     return-void
 .end method
@@ -23,11 +31,15 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$0:[Z
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$u9TJoWiUmBW8n11MjEt-Nx0xT-I([ZLandroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$1:Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
+
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda112;->f$2:Landroid/widget/FrameLayout;
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Wwvf9a30JEOZ2MDTPJj_1yAmt4k(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;Landroid/widget/FrameLayout;Landroid/view/View;)V
 
     return-void
 .end method

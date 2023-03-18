@@ -8,7 +8,7 @@ import io.grpc.internal.ApplicationThreadDeframer;
 import io.grpc.internal.MessageDeframer;
 import io.grpc.internal.StreamListener;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class AbstractStream implements Stream {
     protected abstract Framer framer();
 
@@ -49,7 +49,7 @@ public abstract class AbstractStream implements Stream {
         transportState().onSendingBytes(i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class TransportState implements ApplicationThreadDeframer.TransportExecutor, MessageDeframer.Listener {
         private boolean allocated;
         private boolean deallocated;

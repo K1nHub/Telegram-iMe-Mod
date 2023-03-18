@@ -4,31 +4,30 @@ import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.EdgeEffect;
-import androidx.core.p010os.BuildCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 /* loaded from: classes.dex */
 public final class EdgeEffectCompat {
     public static EdgeEffect create(Context context, AttributeSet attributeSet) {
-        if (BuildCompat.isAtLeastS()) {
+        if (Build.VERSION.SDK_INT >= 31) {
             return Api31Impl.create(context, attributeSet);
         }
         return new EdgeEffect(context);
     }
 
     public static float getDistance(EdgeEffect edgeEffect) {
-        return BuildCompat.isAtLeastS() ? Api31Impl.getDistance(edgeEffect) : BitmapDescriptorFactory.HUE_RED;
+        return Build.VERSION.SDK_INT >= 31 ? Api31Impl.getDistance(edgeEffect) : BitmapDescriptorFactory.HUE_RED;
     }
 
     public static void onPull(EdgeEffect edgeEffect, float f, float f2) {
         if (Build.VERSION.SDK_INT >= 21) {
-            edgeEffect.onPull(f, f2);
+            Api21Impl.onPull(edgeEffect, f, f2);
         } else {
             edgeEffect.onPull(f);
         }
     }
 
     public static float onPullDistance(EdgeEffect edgeEffect, float f, float f2) {
-        if (BuildCompat.isAtLeastS()) {
+        if (Build.VERSION.SDK_INT >= 31) {
             return Api31Impl.onPullDistance(edgeEffect, f, f2);
         }
         onPull(edgeEffect, f, f2);
@@ -60,6 +59,14 @@ public final class EdgeEffectCompat {
             } catch (Throwable unused) {
                 return BitmapDescriptorFactory.HUE_RED;
             }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes.dex */
+    public static class Api21Impl {
+        static void onPull(EdgeEffect edgeEffect, float f, float f2) {
+            edgeEffect.onPull(f, f2);
         }
     }
 }

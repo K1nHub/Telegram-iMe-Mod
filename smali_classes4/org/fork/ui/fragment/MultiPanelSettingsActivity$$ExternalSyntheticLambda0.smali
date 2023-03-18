@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/ui/fragment/MultiPanelSettingsActivity$$ExternalSyntheticLambda0;->f$0:Lorg/fork/ui/fragment/MultiPanelSettingsActivity;
 
-    invoke-static {v0}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->$r8$lambda$opWIsuOY2ym9xT_ZGC9poY6XYMg(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
+    invoke-static {v0}, Lorg/fork/ui/fragment/MultiPanelSettingsActivity;->$r8$lambda$7W-02ZKjOzdZ2JkR3v1UvFd7fbM(Lorg/fork/ui/fragment/MultiPanelSettingsActivity;)V
 
     return-void
 .end method

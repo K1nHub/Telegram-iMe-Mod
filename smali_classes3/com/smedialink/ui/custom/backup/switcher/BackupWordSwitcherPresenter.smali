@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBackupWordSwitcherPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupWordSwitcherPresenter.kt\ncom/smedialink/ui/custom/backup/switcher/BackupWordSwitcherPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,52:1\n286#2,2:53\n531#2,6:55\n*S KotlinDebug\n*F\n+ 1 BackupWordSwitcherPresenter.kt\ncom/smedialink/ui/custom/backup/switcher/BackupWordSwitcherPresenter\n*L\n37#1:53,2\n38#1:55,6\n*E\n"
+    value = "SMAP\nBackupWordSwitcherPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BackupWordSwitcherPresenter.kt\ncom/smedialink/ui/custom/backup/switcher/BackupWordSwitcherPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,52:1\n288#2,2:53\n533#2,6:55\n*S KotlinDebug\n*F\n+ 1 BackupWordSwitcherPresenter.kt\ncom/smedialink/ui/custom/backup/switcher/BackupWordSwitcherPresenter\n*L\n37#1:53,2\n38#1:55,6\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -91,7 +91,7 @@
     .line 37
     iget-object v2, p0, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcherPresenter;->seed:Ljava/util/List;
 
-    .line 286
+    .line 288
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -131,7 +131,7 @@
     :cond_1
     move-object v3, v4
 
-    .line 287
+    .line 289
     :goto_0
     check-cast v3, Ljava/lang/String;
 
@@ -142,7 +142,7 @@
     .line 38
     iget-object v3, p0, Lcom/smedialink/ui/custom/backup/switcher/BackupWordSwitcherPresenter;->seed:Ljava/util/List;
 
-    .line 531
+    .line 533
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v6
@@ -151,7 +151,7 @@
 
     move-result-object v3
 
-    .line 532
+    .line 534
     :cond_2
     invoke-interface {v3}, Ljava/util/ListIterator;->hasPrevious()Z
 
@@ -159,12 +159,12 @@
 
     if-eqz v6, :cond_3
 
-    .line 533
+    .line 535
     invoke-interface {v3}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 534
+    .line 536
     move-object v7, v6
 
     check-cast v7, Ljava/lang/String;
@@ -182,7 +182,7 @@
 
     move-object v4, v6
 
-    .line 536
+    .line 538
     :cond_3
     check-cast v4, Ljava/lang/String;
 

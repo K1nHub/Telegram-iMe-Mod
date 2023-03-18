@@ -9,25 +9,25 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$ForceWalletLogout;,
         Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$AppUpdateRequired;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$BackupFlowStarted;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$BinanceExpiredSession;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$BinanceTokensSettingsChanged;,
         Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$CryptoEvent;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessSaveBackup;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessResetWallet;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessRestoreWallet;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$ForceWalletLogout;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$InterfaceSettingsChanged;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$NetworkUpdated;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$RefreshTransactions;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$StakingProgrammesRefresh;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$StakingTabRefreshStateChanged;,
         Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessCreateWallet;,
         Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessRecreateWalletByPassword;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$InterfaceSettingsChanged;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$BackupFlowStarted;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$NetworkUpdated;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$DonationAddressUpdated;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$StakingProgrammesRefresh;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$RefreshTransactions;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$StakingTabRefreshStateChanged;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$StakingOperationsReload;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$BinanceTokensSettingsChanged;,
-        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$BinanceExpiredSession;
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessResetWallet;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessRestoreWallet;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$SuccessSaveBackup;,
+        Lcom/smedialink/storage/domain/utils/rx/event/DomainRxEvents$TokensSettingsChanged;
     }
 .end annotation
 

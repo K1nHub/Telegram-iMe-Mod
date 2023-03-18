@@ -28,10 +28,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$RCgsAwxb9fCsWSMDIrxclr5dT88(Lcom/smedialink/common/AppLifecycleObserver;)V
+.method public static synthetic $r8$lambda$-YTNT9dgx_WfG9qZfbof91Es1Oc(Lcom/smedialink/common/AppLifecycleObserver;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/common/AppLifecycleObserver;->logoutWalletRunnable$lambda-0(Lcom/smedialink/common/AppLifecycleObserver;)V
+    invoke-static {p0}, Lcom/smedialink/common/AppLifecycleObserver;->logoutWalletRunnable$lambda$0(Lcom/smedialink/common/AppLifecycleObserver;)V
 
     return-void
 .end method
@@ -109,7 +109,7 @@
     return-object v0
 .end method
 
-.method private static final logoutWalletRunnable$lambda-0(Lcom/smedialink/common/AppLifecycleObserver;)V
+.method private static final logoutWalletRunnable$lambda$0(Lcom/smedialink/common/AppLifecycleObserver;)V
     .locals 1
 
     const-string v0, "this$0"

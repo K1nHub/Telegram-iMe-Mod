@@ -14,7 +14,6 @@ import com.fxn.parser.MenuParser;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -196,6 +195,7 @@ public final class BubbleTabBar extends LinearLayout {
     }
 
     private final void configureMenu(List<MenuItem> list) {
+        boolean booleanValue;
         removeAllViews();
         for (MenuItem menuItem : list) {
             if (menuItem.getId() == 0) {
@@ -208,7 +208,13 @@ public final class BubbleTabBar extends LinearLayout {
                 menuItem.getIconColor();
             }
             Boolean bool = this.badgeVisibleValues.get(Integer.valueOf(menuItem.getId()));
-            menuItem.setBadgeVisible(bool == null ? false : bool.booleanValue());
+            if (bool == null) {
+                booleanValue = false;
+            } else {
+                Intrinsics.checkNotNullExpressionValue(bool, "badgeVisibleValues[id] ?: false");
+                booleanValue = bool.booleanValue();
+            }
+            menuItem.setBadgeVisible(booleanValue);
             menuItem.setHorizontal_padding(this.horizontal_paddingParam);
             menuItem.setVertical_padding(this.vertical_paddingParam);
             menuItem.setIcon_size(this.icon_sizeParam);
@@ -226,10 +232,9 @@ public final class BubbleTabBar extends LinearLayout {
             bubble.setOnClickListener(new View.OnClickListener() { // from class: com.fxn.BubbleTabBar$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    BubbleTabBar.m903configureMenu$lambda6$lambda5$lambda4(BubbleTabBar.this, view);
+                    BubbleTabBar.configureMenu$lambda$6$lambda$5$lambda$4(BubbleTabBar.this, view);
                 }
             });
-            Unit unit = Unit.INSTANCE;
             addView(bubble);
         }
         invalidate();
@@ -238,12 +243,11 @@ public final class BubbleTabBar extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0033  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
-    /* renamed from: configureMenu$lambda-6$lambda-5$lambda-4  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static final void m903configureMenu$lambda6$lambda5$lambda4(com.fxn.BubbleTabBar r5, android.view.View r6) {
+    public static final void configureMenu$lambda$6$lambda$5$lambda$4(com.fxn.BubbleTabBar r5, android.view.View r6) {
         /*
             java.lang.String r0 = "this$0"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
@@ -252,16 +256,15 @@ public final class BubbleTabBar extends LinearLayout {
             r2 = 1
             r3 = 0
             if (r1 == 0) goto L30
-            int r1 = r6.getId()
-            com.fxn.Bubble r4 = r5.oldBubble
-            if (r4 != 0) goto L19
-        L17:
-            r1 = 0
-            goto L20
-        L19:
-            int r4 = r4.getId()
-            if (r1 != r4) goto L17
+            com.fxn.Bubble r1 = r5.oldBubble
+            if (r1 == 0) goto L1f
+            int r4 = r6.getId()
+            int r1 = r1.getId()
+            if (r4 != r1) goto L1f
             r1 = 1
+            goto L20
+        L1f:
+            r1 = 0
         L20:
             if (r1 != 0) goto L30
             com.fxn.OnBubbleClickListener r1 = r5.onBubbleClickListener
@@ -272,12 +275,14 @@ public final class BubbleTabBar extends LinearLayout {
         L30:
             r1 = 0
         L31:
-            if (r1 == 0) goto L57
+            if (r1 == 0) goto L5f
             com.fxn.Bubble r1 = r5.oldBubble
-            if (r1 == 0) goto L53
+            java.lang.String r4 = "null cannot be cast to non-null type com.fxn.Bubble"
+            if (r1 == 0) goto L58
             kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
             int r1 = r1.getId()
-            if (r1 == r0) goto L53
+            if (r1 == r0) goto L58
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r6, r4)
             r0 = r6
             com.fxn.Bubble r0 = (com.fxn.Bubble) r0
             boolean r1 = r0.isSelected()
@@ -286,12 +291,13 @@ public final class BubbleTabBar extends LinearLayout {
             com.fxn.Bubble r0 = r5.oldBubble
             kotlin.jvm.internal.Intrinsics.checkNotNull(r0)
             r0.setSelected(r3)
-        L53:
+        L58:
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r6, r4)
             com.fxn.Bubble r6 = (com.fxn.Bubble) r6
             r5.oldBubble = r6
-        L57:
+        L5f:
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.fxn.BubbleTabBar.m903configureMenu$lambda6$lambda5$lambda4(com.fxn.BubbleTabBar, android.view.View):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.fxn.BubbleTabBar.configureMenu$lambda$6$lambda$5$lambda$4(com.fxn.BubbleTabBar, android.view.View):void");
     }
 }

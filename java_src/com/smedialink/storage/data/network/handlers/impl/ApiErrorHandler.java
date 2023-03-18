@@ -56,7 +56,7 @@ public class ApiErrorHandler implements ErrorHandler<Throwable> {
     private final ErrorModel getHttpError(HttpException httpException) {
         try {
             Response<?> response = httpException.response();
-            return new ErrorModel(String.valueOf(response == null ? null : response.body()), Integer.valueOf(httpException.code()), ErrorStatus.BAD_RESPONSE, httpException);
+            return new ErrorModel(String.valueOf(response != null ? response.body() : null), Integer.valueOf(httpException.code()), ErrorStatus.BAD_RESPONSE, httpException);
         } catch (Throwable th) {
             th.printStackTrace();
             return new ErrorModel(th.getMessage(), ErrorStatus.NOT_DEFINED, httpException);

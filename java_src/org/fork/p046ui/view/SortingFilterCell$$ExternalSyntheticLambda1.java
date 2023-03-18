@@ -9,6 +9,6 @@ public final /* synthetic */ class SortingFilterCell$$ExternalSyntheticLambda1 i
 
     @Override // java.lang.Runnable
     public final void run() {
-        SortingFilterCell.m2117onFabsClick$lambda0();
+        SortingFilterCell.onFabsClick$lambda$0();
     }
 }

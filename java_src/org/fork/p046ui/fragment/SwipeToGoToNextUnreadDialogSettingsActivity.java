@@ -13,15 +13,14 @@ import com.smedialink.storage.data.utils.extentions.CollectionExtKt;
 import java.util.ArrayList;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.fork.controller.ToolsController;
 import org.fork.enums.DialogType;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.HeaderCell;
@@ -101,12 +100,12 @@ public final class SwipeToGoToNextUnreadDialogSettingsActivity extends BaseFragm
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.settings_interface_swipe_to_next_unread_dialog));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SwipeToGoToNextUnreadDialogSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.settings_interface_swipe_to_next_unread_dialog));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.SwipeToGoToNextUnreadDialogSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SwipeToGoToNextUnreadDialogSettingsActivity.this.finishFragment();
@@ -141,15 +140,14 @@ public final class SwipeToGoToNextUnreadDialogSettingsActivity extends BaseFragm
 
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListenerExtended
             public final void onItemClick(View view, int i, float f, float f2) {
-                SwipeToGoToNextUnreadDialogSettingsActivity.m2085initListView$lambda8$lambda7(SwipeToGoToNextUnreadDialogSettingsActivity.this, view, i, f, f2);
+                SwipeToGoToNextUnreadDialogSettingsActivity.initListView$lambda$8$lambda$7(SwipeToGoToNextUnreadDialogSettingsActivity.this, view, i, f, f2);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m2085initListView$lambda8$lambda7(SwipeToGoToNextUnreadDialogSettingsActivity this$0, View view, int i, float f, float f2) {
+    public static final void initListView$lambda$8$lambda$7(SwipeToGoToNextUnreadDialogSettingsActivity this$0, View view, int i, float f, float f2) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
             ((TextCheckCell) view).toggleCheckbox();
@@ -190,69 +188,65 @@ public final class SwipeToGoToNextUnreadDialogSettingsActivity extends BaseFragm
     /* renamed from: org.fork.ui.fragment.SwipeToGoToNextUnreadDialogSettingsActivity$ListAdapter */
     /* loaded from: classes4.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        final /* synthetic */ SwipeToGoToNextUnreadDialogSettingsActivity this$0;
-
-        public ListAdapter(SwipeToGoToNextUnreadDialogSettingsActivity this$0) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
-            this.this$0 = this$0;
+        public ListAdapter() {
             updateRows();
         }
 
         public final void updateRows() {
-            this.this$0.rowCount = 0;
-            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity = this.this$0;
+            SwipeToGoToNextUnreadDialogSettingsActivity.this.rowCount = 0;
+            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity = SwipeToGoToNextUnreadDialogSettingsActivity.this;
             int i = swipeToGoToNextUnreadDialogSettingsActivity.rowCount;
             swipeToGoToNextUnreadDialogSettingsActivity.rowCount = i + 1;
             swipeToGoToNextUnreadDialogSettingsActivity.enableRow = i;
-            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity2 = this.this$0;
+            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity2 = SwipeToGoToNextUnreadDialogSettingsActivity.this;
             int i2 = swipeToGoToNextUnreadDialogSettingsActivity2.rowCount;
             swipeToGoToNextUnreadDialogSettingsActivity2.rowCount = i2 + 1;
             swipeToGoToNextUnreadDialogSettingsActivity2.enableSectionRow = i2;
-            if (!this.this$0.getToolsController().isSwipeToGoToNextUnreadDialogEnabled()) {
-                this.this$0.considerArchiveRow = -1;
-                this.this$0.considerArchiveSectionRow = -1;
-                this.this$0.dialogTypesHeaderRow = -1;
-                this.this$0.dialogTypesStartRow = -1;
-                this.this$0.dialogTypesEndRow = -1;
+            if (!SwipeToGoToNextUnreadDialogSettingsActivity.this.getToolsController().isSwipeToGoToNextUnreadDialogEnabled()) {
+                SwipeToGoToNextUnreadDialogSettingsActivity.this.considerArchiveRow = -1;
+                SwipeToGoToNextUnreadDialogSettingsActivity.this.considerArchiveSectionRow = -1;
+                SwipeToGoToNextUnreadDialogSettingsActivity.this.dialogTypesHeaderRow = -1;
+                SwipeToGoToNextUnreadDialogSettingsActivity.this.dialogTypesStartRow = -1;
+                SwipeToGoToNextUnreadDialogSettingsActivity.this.dialogTypesEndRow = -1;
                 return;
             }
-            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity3 = this.this$0;
+            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity3 = SwipeToGoToNextUnreadDialogSettingsActivity.this;
             int i3 = swipeToGoToNextUnreadDialogSettingsActivity3.rowCount;
             swipeToGoToNextUnreadDialogSettingsActivity3.rowCount = i3 + 1;
             swipeToGoToNextUnreadDialogSettingsActivity3.considerArchiveRow = i3;
-            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity4 = this.this$0;
+            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity4 = SwipeToGoToNextUnreadDialogSettingsActivity.this;
             int i4 = swipeToGoToNextUnreadDialogSettingsActivity4.rowCount;
             swipeToGoToNextUnreadDialogSettingsActivity4.rowCount = i4 + 1;
             swipeToGoToNextUnreadDialogSettingsActivity4.considerArchiveSectionRow = i4;
-            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity5 = this.this$0;
+            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity5 = SwipeToGoToNextUnreadDialogSettingsActivity.this;
             int i5 = swipeToGoToNextUnreadDialogSettingsActivity5.rowCount;
             swipeToGoToNextUnreadDialogSettingsActivity5.rowCount = i5 + 1;
             swipeToGoToNextUnreadDialogSettingsActivity5.dialogTypesHeaderRow = i5;
-            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity6 = this.this$0;
+            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity6 = SwipeToGoToNextUnreadDialogSettingsActivity.this;
             swipeToGoToNextUnreadDialogSettingsActivity6.dialogTypesStartRow = swipeToGoToNextUnreadDialogSettingsActivity6.rowCount;
-            this.this$0.rowCount += this.this$0.getDialogTypes().length;
-            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity7 = this.this$0;
+            SwipeToGoToNextUnreadDialogSettingsActivity.this.rowCount += SwipeToGoToNextUnreadDialogSettingsActivity.this.getDialogTypes().length;
+            SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity7 = SwipeToGoToNextUnreadDialogSettingsActivity.this;
             swipeToGoToNextUnreadDialogSettingsActivity7.dialogTypesEndRow = swipeToGoToNextUnreadDialogSettingsActivity7.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
-            return this.this$0.rowCount;
+            return SwipeToGoToNextUnreadDialogSettingsActivity.this.rowCount;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
             boolean z = true;
-            if (i != this.this$0.enableSectionRow && i != this.this$0.considerArchiveSectionRow) {
+            if (i != SwipeToGoToNextUnreadDialogSettingsActivity.this.enableSectionRow && i != SwipeToGoToNextUnreadDialogSettingsActivity.this.considerArchiveSectionRow) {
                 z = false;
             }
-            return z ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : i == this.this$0.dialogTypesHeaderRow ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.TEXT_CHECK;
+            return z ? IdFabric$ViewTypes.TEXT_INFO_PRIVACY : i == SwipeToGoToNextUnreadDialogSettingsActivity.this.dialogTypesHeaderRow ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.TEXT_CHECK;
         }
 
         @Override // org.telegram.p048ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            return this.this$0.isClickableViewType(holder.getItemViewType());
+            return SwipeToGoToNextUnreadDialogSettingsActivity.this.isClickableViewType(holder.getItemViewType());
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -260,32 +254,30 @@ public final class SwipeToGoToNextUnreadDialogSettingsActivity extends BaseFragm
             FrameLayout headerCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
             if (i == IdFabric$ViewTypes.TEXT_CHECK) {
-                headerCell = new TextCheckCell(this.this$0.getParentActivity());
+                headerCell = new TextCheckCell(SwipeToGoToNextUnreadDialogSettingsActivity.this.getParentActivity());
             } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
-                headerCell = new TextInfoPrivacyCell(this.this$0.getParentActivity());
+                headerCell = new TextInfoPrivacyCell(SwipeToGoToNextUnreadDialogSettingsActivity.this.getParentActivity());
             } else {
-                headerCell = new HeaderCell(this.this$0.getParentActivity());
+                headerCell = new HeaderCell(SwipeToGoToNextUnreadDialogSettingsActivity.this.getParentActivity());
                 headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit = Unit.INSTANCE;
             }
             headerCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit2 = Unit.INSTANCE;
             return new RecyclerListView.Holder(headerCell);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            boolean needDivider = this.this$0.needDivider(getItemViewType(i + 1));
+            boolean needDivider = SwipeToGoToNextUnreadDialogSettingsActivity.this.needDivider(getItemViewType(i + 1));
             int itemViewType = getItemViewType(i);
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK && (view instanceof TextCheckCell)) {
-                SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity = this.this$0;
+                SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity = SwipeToGoToNextUnreadDialogSettingsActivity.this;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 if (i == swipeToGoToNextUnreadDialogSettingsActivity.enableRow) {
                     textCheckCell.setType(1);
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.settings_interface_swipe_to_next_unread_dialog), swipeToGoToNextUnreadDialogSettingsActivity.getToolsController().isSwipeToGoToNextUnreadDialogEnabled(), needDivider);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_swipe_to_next_unread_dialog), swipeToGoToNextUnreadDialogSettingsActivity.getToolsController().isSwipeToGoToNextUnreadDialogEnabled(), needDivider);
                     return;
                 }
                 textCheckCell.setType(0);
@@ -294,21 +286,21 @@ public final class SwipeToGoToNextUnreadDialogSettingsActivity extends BaseFragm
                     textCheckCell.setTextAndCheck(LocaleController.getInternalString(dialogType.getNameResId()), swipeToGoToNextUnreadDialogSettingsActivity.getToolsController().getSelectedDialogTypesForSwipeToGoToNextUnreadDialog().contains(dialogType), needDivider);
                     return;
                 }
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.swipe_to_next_unread_dialog_consider_archive), swipeToGoToNextUnreadDialogSettingsActivity.getToolsController().isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(), needDivider);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.swipe_to_next_unread_dialog_consider_archive), swipeToGoToNextUnreadDialogSettingsActivity.getToolsController().isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled(), needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
-                SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity2 = this.this$0;
+                SwipeToGoToNextUnreadDialogSettingsActivity swipeToGoToNextUnreadDialogSettingsActivity2 = SwipeToGoToNextUnreadDialogSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i == swipeToGoToNextUnreadDialogSettingsActivity2.enableSectionRow && !swipeToGoToNextUnreadDialogSettingsActivity2.getToolsController().isSwipeToGoToNextUnreadDialogEnabled()) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(swipeToGoToNextUnreadDialogSettingsActivity2.getParentActivity(), C3158R.C3160drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3158R.string.swipe_to_next_unread_dialog_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(swipeToGoToNextUnreadDialogSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3286R.string.swipe_to_next_unread_dialog_hint));
                     textInfoPrivacyCell.setFixedSize(0);
                     return;
                 }
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(swipeToGoToNextUnreadDialogSettingsActivity2.getParentActivity(), C3158R.C3160drawable.greydivider, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(swipeToGoToNextUnreadDialogSettingsActivity2.getParentActivity(), C3286R.C3288drawable.greydivider, "windowBackgroundGrayShadow"));
                 textInfoPrivacyCell.setText(null);
                 textInfoPrivacyCell.setFixedSize(12);
-            } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell) && i == this.this$0.dialogTypesHeaderRow) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3158R.string.swipe_to_next_unread_dialog_types));
+            } else if (itemViewType == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell) && i == SwipeToGoToNextUnreadDialogSettingsActivity.this.dialogTypesHeaderRow) {
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3286R.string.swipe_to_next_unread_dialog_types));
             }
         }
     }

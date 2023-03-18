@@ -37,9 +37,18 @@ public final class BinancePayMappingKt {
 
         static {
             int[] iArr = new int[BinanceTransactionType.values().length];
-            iArr[BinanceTransactionType.BINANCE_PAY_TRANSFER.ordinal()] = 1;
-            iArr[BinanceTransactionType.CONVERT_COINS.ordinal()] = 2;
-            iArr[BinanceTransactionType.UNKNOWN.ordinal()] = 3;
+            try {
+                iArr[BinanceTransactionType.BINANCE_PAY_TRANSFER.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[BinanceTransactionType.CONVERT_COINS.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[BinanceTransactionType.UNKNOWN.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -106,7 +115,7 @@ public final class BinancePayMappingKt {
             BinanceTransactionDirection map3 = BinanceTransactionDirection.Companion.map(historyItem.getDirection());
             String createdAt = historyItem.getCreatedAt();
             String inputAmount = historyItem.getInputAmount();
-            double parseDouble2 = inputAmount == null ? 0.0d : Double.parseDouble(inputAmount);
+            double parseDouble2 = inputAmount != null ? Double.parseDouble(inputAmount) : 0.0d;
             String outputAmount = historyItem.getOutputAmount();
             double parseDouble3 = outputAmount != null ? Double.parseDouble(outputAmount) : 0.0d;
             String inputAssetCode = historyItem.getInputAssetCode();

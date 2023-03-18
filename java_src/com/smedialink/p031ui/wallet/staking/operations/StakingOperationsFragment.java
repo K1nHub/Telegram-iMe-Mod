@@ -47,11 +47,11 @@ import org.fork.utils.TabbedFragmentPage;
 import org.fork.utils.TabbedViewPagerDelegate;
 import org.koin.p047mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentStakingOperationsBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.BaseFragment;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Components.LayoutHelper;
 import org.telegram.p048ui.Components.ViewPagerFixed;
@@ -229,14 +229,13 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         showDialog(DialogsFactoryKt.createSelectNetworkTypeDialog(parentActivity, availableNetworks, networkType, new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.staking.operations.StakingOperationsFragment$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
-                StakingOperationsFragment.m1736showChooseNetworkDialog$lambda8(Function1.this, (NetworkType) obj);
+                StakingOperationsFragment.showChooseNetworkDialog$lambda$8(Function1.this, (NetworkType) obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showChooseNetworkDialog$lambda-8  reason: not valid java name */
-    public static final void m1736showChooseNetworkDialog$lambda8(Function1 action, NetworkType selectedNetworkType) {
+    public static final void showChooseNetworkDialog$lambda$8(Function1 action, NetworkType selectedNetworkType) {
         Intrinsics.checkNotNullParameter(action, "$action");
         Intrinsics.checkNotNullExpressionValue(selectedNetworkType, "selectedNetworkType");
         action.invoke(selectedNetworkType);
@@ -281,13 +280,13 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setCastShadows(false);
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setTitle(getResourceManager().getString(C3158R.string.wallet_transactions_toolbar_title));
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.operations.StakingOperationsFragment$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setCastShadows(false);
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setTitle(getResourceManager().getString(C3286R.string.wallet_transactions_toolbar_title));
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: com.smedialink.ui.wallet.staking.operations.StakingOperationsFragment$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 StakingOperationsPresenter presenter;
                 if (i == -1) {
@@ -301,10 +300,10 @@ public final class StakingOperationsFragment extends WalletAuthFragment implemen
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem addItemWithWidth = c3222ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
-        Intrinsics.checkNotNullExpressionValue(addItemWithWidth, "");
-        ViewExtKt.setPaddingHorizontal(addItemWithWidth, AndroidUtilities.m50dp(14));
-        addItemWithWidth.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
+        ActionBarMenuItem setupActionBar$lambda$13$lambda$12 = c3351ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$13$lambda$12, "setupActionBar$lambda$13$lambda$12");
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$13$lambda$12, AndroidUtilities.m50dp(14));
+        setupActionBar$lambda$13$lambda$12.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
     /* compiled from: StakingOperationsFragment.kt */

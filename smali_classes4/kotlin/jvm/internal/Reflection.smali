@@ -69,7 +69,7 @@
 .method public static function(Lkotlin/jvm/internal/FunctionReference;)Lkotlin/reflect/KFunction;
     .locals 1
 
-    .line 89
+    .line 90
     sget-object v0, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
 
     invoke-virtual {v0, p0}, Lkotlin/jvm/internal/ReflectionFactory;->function(Lkotlin/jvm/internal/FunctionReference;)Lkotlin/reflect/KFunction;
@@ -82,7 +82,7 @@
 .method public static getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
     .locals 1
 
-    .line 59
+    .line 60
     sget-object v0, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
 
     invoke-virtual {v0, p0}, Lkotlin/jvm/internal/ReflectionFactory;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
@@ -110,7 +110,7 @@
 .method public static property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
     .locals 1
 
-    .line 103
+    .line 104
     sget-object v0, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
 
     invoke-virtual {v0, p0}, Lkotlin/jvm/internal/ReflectionFactory;->property1(Lkotlin/jvm/internal/PropertyReference1;)Lkotlin/reflect/KProperty1;
@@ -123,7 +123,7 @@
 .method public static renderLambdaToString(Lkotlin/jvm/internal/FunctionBase;)Ljava/lang/String;
     .locals 1
 
-    .line 83
+    .line 84
     sget-object v0, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
 
     invoke-virtual {v0, p0}, Lkotlin/jvm/internal/ReflectionFactory;->renderLambdaToString(Lkotlin/jvm/internal/FunctionBase;)Ljava/lang/String;
@@ -136,7 +136,7 @@
 .method public static renderLambdaToString(Lkotlin/jvm/internal/Lambda;)Ljava/lang/String;
     .locals 1
 
-    .line 78
+    .line 79
     sget-object v0, Lkotlin/jvm/internal/Reflection;->factory:Lkotlin/jvm/internal/ReflectionFactory;
 
     invoke-virtual {v0, p0}, Lkotlin/jvm/internal/ReflectionFactory;->renderLambdaToString(Lkotlin/jvm/internal/Lambda;)Ljava/lang/String;

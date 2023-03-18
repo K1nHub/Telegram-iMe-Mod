@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/fragment/SettingsToolsActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 92
     iput-object p1, p0, Lorg/fork/ui/fragment/SettingsToolsActivity$ListAdapter;->this$0:Lorg/fork/ui/fragment/SettingsToolsActivity;
@@ -80,6 +76,10 @@
 
     .line 106
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string v0, "null cannot be cast to non-null type org.telegram.ui.Cells.TextCell"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCell;
 
@@ -150,7 +150,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "windowBackgroundWhite"
+    const-string/jumbo p2, "windowBackgroundWhite"
 
     .line 100
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -158,9 +158,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 101
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 102
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;

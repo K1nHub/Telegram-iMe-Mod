@@ -36,10 +36,10 @@
 .method public constructor <init>()V
     .locals 7
 
-    .line 380
+    .line 376
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 381
+    .line 377
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -58,7 +58,7 @@
 
     const-string v6, "chat_outBubbleShadow"
 
-    .line 382
+    .line 378
     filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
 
     move-result-object v0
@@ -81,7 +81,7 @@
 .method public getColor(Ljava/lang/String;)Ljava/lang/Integer;
     .locals 1
 
-    .line 393
+    .line 389
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -106,7 +106,7 @@
 .method public getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
     .locals 1
 
-    .line 398
+    .line 394
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -151,12 +151,12 @@
 .method public saveColors(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 6
 
-    .line 402
+    .line 398
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 403
+    .line 399
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->keysToSave:[Ljava/lang/String;
 
     array-length v1, v0
@@ -168,7 +168,7 @@
 
     aget-object v3, v0, v2
 
-    .line 404
+    .line 400
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$StartColorsProvider;->colors:Ljava/util/HashMap;
 
     invoke-interface {p1, v3}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nSeedListView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SeedListView.kt\ncom/smedialink/ui/custom/backup/SeedListView\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,106:1\n472#2:107\n1290#2,2:108\n1849#3,2:110\n*S KotlinDebug\n*F\n+ 1 SeedListView.kt\ncom/smedialink/ui/custom/backup/SeedListView\n*L\n67#1:107\n68#1:108,2\n87#1:110,2\n*E\n"
+    value = "SMAP\nSeedListView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SeedListView.kt\ncom/smedialink/ui/custom/backup/SeedListView\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,106:1\n473#2:107\n1295#2,2:108\n1855#3,2:110\n*S KotlinDebug\n*F\n+ 1 SeedListView.kt\ncom/smedialink/ui/custom/backup/SeedListView\n*L\n67#1:107\n68#1:108,2\n87#1:110,2\n*E\n"
 .end annotation
 
 
@@ -120,14 +120,18 @@
 
     move-result-object p1
 
-    .line 472
+    .line 473
     sget-object v0, Lcom/smedialink/ui/custom/backup/SeedListView$applyColorForSeedWord$$inlined$filterIsInstance$1;->INSTANCE:Lcom/smedialink/ui/custom/backup/SeedListView$applyColorForSeedWord$$inlined$filterIsInstance$1;
 
     invoke-static {p1, v0}, Lkotlin/sequences/SequencesKt;->filter(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object p1
 
-    .line 1290
+    const-string v0, "null cannot be cast to non-null type kotlin.sequences.Sequence<R of kotlin.sequences.SequencesKt___SequencesKt.filterIsInstance>"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1295
     invoke-interface {p1}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -255,7 +259,7 @@
         }
     .end annotation
 
-    .line 1849
+    .line 1855
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -404,9 +408,6 @@
     move-result v3
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
-
-    .line 41
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 37
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V

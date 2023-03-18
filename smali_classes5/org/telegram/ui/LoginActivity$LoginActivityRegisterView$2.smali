@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 7376
+    .line 7387
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     iput-object p4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$2;->val$paint:Landroid/graphics/Paint;
@@ -39,7 +39,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 7379
+    .line 7390
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$2;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;->access$16000(Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView;)Lorg/telegram/ui/Components/BackupImageView;
@@ -60,7 +60,7 @@
 
     if-nez v0, :cond_0
 
-    .line 7380
+    .line 7391
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityRegisterView$2;->val$paint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x42aa0000    # 85.0f
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 7381
+    .line 7392
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0

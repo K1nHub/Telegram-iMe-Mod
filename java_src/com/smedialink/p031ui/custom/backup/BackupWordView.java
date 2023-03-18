@@ -58,10 +58,10 @@ public final class BackupWordView extends FrameLayout {
     public final void applyColors() {
         ForkContentBackupWordBinding forkContentBackupWordBinding = this.binding;
         forkContentBackupWordBinding.cardWord.setCardBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        AppCompatTextView appCompatTextView = forkContentBackupWordBinding.textWord;
-        appCompatTextView.setTextColor(Theme.getColor("chats_actionBackground"));
-        Intrinsics.checkNotNullExpressionValue(appCompatTextView, "");
-        ViewExtKt.withMediumTypeface(appCompatTextView);
+        AppCompatTextView applyColors$lambda$1$lambda$0 = forkContentBackupWordBinding.textWord;
+        applyColors$lambda$1$lambda$0.setTextColor(Theme.getColor("chats_actionBackground"));
+        Intrinsics.checkNotNullExpressionValue(applyColors$lambda$1$lambda$0, "applyColors$lambda$1$lambda$0");
+        ViewExtKt.withMediumTypeface(applyColors$lambda$1$lambda$0);
     }
 
     private final void setupView() {

@@ -23,9 +23,18 @@ public final class TransactionParams {
 
         static {
             int[] iArr = new int[TransactionSpeedLevel.values().length];
-            iArr[TransactionSpeedLevel.LOW.ordinal()] = 1;
-            iArr[TransactionSpeedLevel.MEDIUM.ordinal()] = 2;
-            iArr[TransactionSpeedLevel.FASTEST.ordinal()] = 3;
+            try {
+                iArr[TransactionSpeedLevel.LOW.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[TransactionSpeedLevel.MEDIUM.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[TransactionSpeedLevel.FASTEST.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }

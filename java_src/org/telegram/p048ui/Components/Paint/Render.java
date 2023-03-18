@@ -44,8 +44,8 @@ public class Render {
         double distanceTo = point.getDistanceTo(point2);
         Point substract = point2.substract(point);
         Point point3 = new Point(1.0d, 1.0d, 0.0d);
-        float atan2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : (float) Math.atan2(substract.f1721y, substract.f1720x);
-        float f = (float) ((((renderState.baseWeight * point2.f1722z) * renderState.scale) * 1.0d) / renderState.viewportScale);
+        float atan2 = Math.abs(renderState.angle) > BitmapDescriptorFactory.HUE_RED ? renderState.angle : (float) Math.atan2(substract.f1732y, substract.f1731x);
+        float f = (float) ((((renderState.baseWeight * point2.f1733z) * renderState.scale) * 1.0d) / renderState.viewportScale);
         double max = Math.max(1.0f, renderState.spacing * f);
         if (distanceTo > 0.0d) {
             point3 = substract.multiplyByScalar(1.0d / distanceTo);

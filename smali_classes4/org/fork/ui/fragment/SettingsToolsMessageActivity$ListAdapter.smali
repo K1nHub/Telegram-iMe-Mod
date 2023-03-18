@@ -20,16 +20,12 @@
 
 # direct methods
 .method public constructor <init>(Lorg/fork/ui/fragment/SettingsToolsMessageActivity;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 182
     iput-object p1, p0, Lorg/fork/ui/fragment/SettingsToolsMessageActivity$ListAdapter;->this$0:Lorg/fork/ui/fragment/SettingsToolsMessageActivity;
@@ -476,7 +472,7 @@
     .line 196
     sget p1, Lcom/smedialink/common/IdFabric$ViewTypes;->TEXT:I
 
-    const-string v0, "windowBackgroundWhite"
+    const-string/jumbo v0, "windowBackgroundWhite"
 
     if-ne p2, p1, :cond_0
 
@@ -496,9 +492,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 198
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 
@@ -525,9 +518,6 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 201
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
     goto :goto_0
 
     .line 202
@@ -552,9 +542,6 @@
     move-result p2
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setBackgroundColor(I)V
-
-    .line 204
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     goto :goto_0
 
@@ -581,9 +568,6 @@
     invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 208
-    sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 195
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;

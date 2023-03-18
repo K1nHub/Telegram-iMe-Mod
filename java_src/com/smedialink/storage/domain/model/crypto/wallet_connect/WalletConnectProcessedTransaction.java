@@ -11,7 +11,7 @@ public final class WalletConnectProcessedTransaction {
     private final String networkType;
 
     /* renamed from: to */
-    private final String f326to;
+    private final String f329to;
     private final TransactionParams transactionParams;
     private final String value;
 
@@ -24,7 +24,7 @@ public final class WalletConnectProcessedTransaction {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
         this.from = from;
-        this.f326to = to;
+        this.f329to = to;
         this.value = value;
         this.data = data;
         this.transactionParams = transactionParams;
@@ -37,7 +37,7 @@ public final class WalletConnectProcessedTransaction {
     }
 
     public final String getTo() {
-        return this.f326to;
+        return this.f329to;
     }
 
     public final String getValue() {

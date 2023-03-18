@@ -182,16 +182,13 @@
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_0
 
     .line 15
     iget-object v0, p0, Lcom/smedialink/model/translation/TranslationArgs;->translationSettings:Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->getInTextTranslateLangCode()Ljava/lang/String;
 
     move-result-object v2
@@ -199,18 +196,16 @@
     goto :goto_0
 
     .line 17
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/smedialink/model/translation/TranslationArgs;->translationSettings:Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_1
 
-    goto :goto_0
-
-    :cond_2
     invoke-virtual {v0}, Lcom/smedialink/storage/domain/model/dialogs/DialogTranslationSettings;->getOutTextTranslateLangCode()Ljava/lang/String;
 
     move-result-object v2
 
+    :cond_1
     :goto_0
     return-object v2
 .end method

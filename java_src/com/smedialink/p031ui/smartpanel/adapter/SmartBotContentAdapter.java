@@ -2,6 +2,7 @@ package com.smedialink.p031ui.smartpanel.adapter;
 
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +15,6 @@ import com.smedialink.p031ui.smartpanel.view.SmartBotContentView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
@@ -74,9 +74,18 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
 
         static {
             int[] iArr = new int[SmartPanelTabContent.Type.values().length];
-            iArr[SmartPanelTabContent.Type.ADVERT_BOT_ANSWER.ordinal()] = 1;
-            iArr[SmartPanelTabContent.Type.NORMAL_BOT_ANSWER.ordinal()] = 2;
-            iArr[SmartPanelTabContent.Type.NORMAL_BOT_LABEL.ordinal()] = 3;
+            try {
+                iArr[SmartPanelTabContent.Type.ADVERT_BOT_ANSWER.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[SmartPanelTabContent.Type.NORMAL_BOT_ANSWER.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[SmartPanelTabContent.Type.NORMAL_BOT_LABEL.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -140,16 +149,16 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
 
     public final long getGifBotId() {
         TLRPC$User tLRPC$User = this.foundContextBot;
-        if (tLRPC$User == null) {
-            return 0L;
+        if (tLRPC$User != null) {
+            return tLRPC$User.f1639id;
         }
-        return tLRPC$User.f1633id;
+        return 0L;
     }
 
     public final String getGifBotName() {
-        String str;
         TLRPC$User tLRPC$User = this.foundContextBot;
-        return (tLRPC$User == null || (str = tLRPC$User.username) == null) ? "" : str;
+        String str = tLRPC$User != null ? tLRPC$User.username : null;
+        return str == null ? "" : str;
     }
 
     public final List<SmartPanelTabContent> getTextContent() {
@@ -246,7 +255,9 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
         } else {
             SmartPanelTabContent smartPanelTabContent = this.items.get(i);
             if (smartPanelTabContent instanceof TabBotMediaAnswerItem) {
-                ((ContextLinkCell) holder.itemView).setLink(((TabBotMediaAnswerItem) smartPanelTabContent).getMedia(), this.foundContextBot, this.contextMedia, true, true);
+                View view = holder.itemView;
+                Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.telegram.ui.Cells.ContextLinkCell");
+                ((ContextLinkCell) view).setLink(((TabBotMediaAnswerItem) smartPanelTabContent).getMedia(), this.foundContextBot, this.contextMedia, true, true);
             }
         }
     }
@@ -305,22 +316,16 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
             this.searchingContextQuery = null;
             return;
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append((Object) str);
-        sb.append('_');
-        sb.append((Object) str2);
-        sb.append('_');
-        sb.append(tLRPC$User.f1633id);
-        final String sb2 = sb.toString();
+        final String str3 = str + '_' + str2 + '_' + tLRPC$User.f1639id;
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         RequestDelegate requestDelegate = new RequestDelegate() { // from class: com.smedialink.ui.smartpanel.adapter.SmartBotContentAdapter$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                SmartBotContentAdapter.m1535searchForGifResults$lambda3(SmartBotContentAdapter.this, str, z, tLRPC$User, str2, messagesStorage, sb2, tLObject, tLRPC$TL_error);
+                SmartBotContentAdapter.searchForGifResults$lambda$3(SmartBotContentAdapter.this, str, z, tLRPC$User, str2, messagesStorage, str3, tLObject, tLRPC$TL_error);
             }
         };
         if (z) {
-            messagesStorage.getBotCache(sb2, requestDelegate);
+            messagesStorage.getBotCache(str3, requestDelegate);
             return;
         }
         TLRPC$TL_messages_getInlineBotResults tLRPC$TL_messages_getInlineBotResults = new TLRPC$TL_messages_getInlineBotResults();
@@ -336,21 +341,19 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: searchForGifResults$lambda-3  reason: not valid java name */
-    public static final void m1535searchForGifResults$lambda3(final SmartBotContentAdapter this$0, final String str, final boolean z, final TLRPC$User tLRPC$User, final String str2, final MessagesStorage messagesStorage, final String key, final TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
+    public static final void searchForGifResults$lambda$3(final SmartBotContentAdapter this$0, final String str, final boolean z, final TLRPC$User tLRPC$User, final String str2, final MessagesStorage messagesStorage, final String key, final TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(key, "$key");
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.smedialink.ui.smartpanel.adapter.SmartBotContentAdapter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SmartBotContentAdapter.m1536searchForGifResults$lambda3$lambda2(SmartBotContentAdapter.this, str, z, tLObject, tLRPC$User, str2, messagesStorage, key);
+                SmartBotContentAdapter.searchForGifResults$lambda$3$lambda$2(SmartBotContentAdapter.this, str, z, tLObject, tLRPC$User, str2, messagesStorage, key);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: searchForGifResults$lambda-3$lambda-2  reason: not valid java name */
-    public static final void m1536searchForGifResults$lambda3$lambda2(SmartBotContentAdapter this$0, String str, boolean z, TLObject tLObject, TLRPC$User tLRPC$User, String str2, MessagesStorage messagesStorage, String key) {
+    public static final void searchForGifResults$lambda$3$lambda$2(SmartBotContentAdapter this$0, String str, boolean z, TLObject tLObject, TLRPC$User tLRPC$User, String str2, MessagesStorage messagesStorage, String key) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(key, "$key");
         String str3 = this$0.searchingContextQuery;
@@ -403,9 +406,8 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
         private final ForkBotsContentPageItemAdsBinding binding;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AdsViewHolder(SmartBotContentAdapter this$0, ForkBotsContentPageItemAdsBinding binding) {
+        public AdsViewHolder(SmartBotContentAdapter smartBotContentAdapter, ForkBotsContentPageItemAdsBinding binding) {
             super(binding.getRoot());
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(binding, "binding");
             this.binding = binding;
         }
@@ -423,9 +425,8 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
         private final ForkBotsContentPageItemNormalBinding binding;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public NormalViewHolder(SmartBotContentAdapter this$0, ForkBotsContentPageItemNormalBinding binding) {
+        public NormalViewHolder(SmartBotContentAdapter smartBotContentAdapter, ForkBotsContentPageItemNormalBinding binding) {
             super(binding.getRoot());
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(binding, "binding");
             this.binding = binding;
         }
@@ -437,7 +438,6 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
             gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(6.0f));
-            Unit unit = Unit.INSTANCE;
             linearLayout.setBackground(gradientDrawable);
             forkBotsContentPageItemNormalBinding.normalPhrase.setText(((TabBotAnswerItem) content).getPhrase());
             forkBotsContentPageItemNormalBinding.normalPhrase.setTextColor(-1);
@@ -452,9 +452,8 @@ public final class SmartBotContentAdapter extends RecyclerListView.SelectionAdap
         private final ForkBotsContentPageItemLabelBinding binding;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public BotNameViewHolder(SmartBotContentAdapter this$0, ForkBotsContentPageItemLabelBinding binding) {
+        public BotNameViewHolder(SmartBotContentAdapter smartBotContentAdapter, ForkBotsContentPageItemLabelBinding binding) {
             super(binding.getRoot());
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(binding, "binding");
             this.binding = binding;
         }

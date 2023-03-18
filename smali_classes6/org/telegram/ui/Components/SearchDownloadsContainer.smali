@@ -490,7 +490,7 @@
 .method private isEmptyDownloads()Z
     .locals 1
 
-    .line 340
+    .line 341
     iget v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
@@ -1220,15 +1220,15 @@
 .method private synthetic lambda$showSettingsDialog$6(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)V
     .locals 0
 
-    .line 662
+    .line 663
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 663
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz p1, :cond_0
 
-    .line 664
+    .line 665
     new-instance p2, Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p2}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
@@ -1242,10 +1242,10 @@
 .method private synthetic lambda$showSettingsDialog$7(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)V
     .locals 0
 
-    .line 668
+    .line 669
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 669
+    .line 670
     iget p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
@@ -1260,7 +1260,7 @@
 .method private synthetic lambda$update$4(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 1
 
-    .line 313
+    .line 314
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->lastQueryString:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1269,14 +1269,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 314
+    .line 315
     iget p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 315
+    .line 316
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->itemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;->showItemsAnimated(I)V
@@ -1284,20 +1284,20 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 317
+    .line 318
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->updateListInternal(ZLjava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 318
+    .line 319
     iget p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
     if-nez p2, :cond_1
 
-    .line 319
+    .line 320
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {p2, v0, p1}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
-    .line 321
+    .line 322
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
@@ -1312,14 +1312,14 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 322
+    .line 323
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 323
+    .line 324
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Landroid/widget/TextView;
@@ -1461,22 +1461,13 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_2
-
-    invoke-virtual {p3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
-
-    move-result-object v3
-
     invoke-static {v3}, Lorg/telegram/messenger/FileLoader;->getDocumentFileName(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
 
     move-result-object v3
 
+    if-eqz v3, :cond_2
+
+    .line 306
     invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
@@ -1487,7 +1478,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 306
+    .line 307
     new-instance v3, Lorg/telegram/messenger/MessageObject;
 
     iget v4, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
@@ -1502,7 +1493,7 @@
 
     invoke-direct {v3, v4, v5, v2, v2}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 307
+    .line 308
     invoke-virtual {p3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1513,12 +1504,12 @@
 
     iput-boolean v4, v3, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
-    .line 308
+    .line 309
     iget-object v4, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->searchQuery:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Lorg/telegram/messenger/MessageObject;->setQuery(Ljava/lang/String;)V
 
-    .line 309
+    .line 310
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -1526,7 +1517,7 @@
 
     goto :goto_1
 
-    .line 312
+    .line 313
     :cond_3
     new-instance p1, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda3;
 
@@ -1542,7 +1533,7 @@
 
     move-object/from16 v0, p0
 
-    .line 599
+    .line 600
     iget-object v1, v0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v1, :cond_2
@@ -1553,7 +1544,7 @@
 
     goto/16 :goto_0
 
-    .line 602
+    .line 603
     :cond_0
     new-instance v1, Lorg/telegram/ui/ActionBar/BottomSheet;
 
@@ -1563,24 +1554,24 @@
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
-    .line 603
+    .line 604
     iget-object v2, v0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v2
 
-    .line 604
+    .line 605
     new-instance v4, Landroid/widget/LinearLayout;
 
     invoke-direct {v4, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v5, 0x1
 
-    .line 605
+    .line 606
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 607
+    .line 608
     new-instance v6, Lorg/telegram/ui/Components/StickerImageView;
 
     iget v7, v0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
@@ -1589,10 +1580,10 @@
 
     const/16 v7, 0x9
 
-    .line 608
+    .line 609
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/StickerImageView;->setStickerNum(I)V
 
-    .line 609
+    .line 610
     invoke-virtual {v6}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v7
@@ -1613,24 +1604,24 @@
 
     const/4 v14, 0x0
 
-    .line 610
+    .line 611
     invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v7
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 612
+    .line 613
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 613
+    .line 614
     invoke-virtual {v6, v5}, Landroid/widget/TextView;->setGravity(I)V
 
     const-string v7, "dialogTextBlack"
 
-    .line 614
+    .line 615
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v7
@@ -1639,10 +1630,10 @@
 
     const/high16 v7, 0x41c00000    # 24.0f
 
-    .line 615
+    .line 616
     invoke-virtual {v6, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 616
+    .line 617
     sget v7, Lorg/telegram/messenger/R$string;->DownloadedFiles:I
 
     const-string v8, "DownloadedFiles"
@@ -1665,36 +1656,36 @@
 
     const/16 v13, 0x15
 
-    .line 617
+    .line 618
     invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v7
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 619
+    .line 620
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 620
+    .line 621
     invoke-virtual {v6, v5}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 v7, 0x41700000    # 15.0f
 
-    .line 621
+    .line 622
     invoke-virtual {v6, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v7, "dialogTextHint"
 
-    .line 622
+    .line 623
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v7
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 623
+    .line 624
     sget v7, Lorg/telegram/messenger/R$string;->DownloadedFilesMessage:I
 
     new-array v8, v3, [Ljava/lang/Object;
@@ -1715,21 +1706,21 @@
 
     const/16 v14, 0x10
 
-    .line 624
+    .line 625
     invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v7
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 627
+    .line 628
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/16 v7, 0x22
 
-    .line 628
+    .line 629
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -1742,24 +1733,24 @@
 
     const/16 v8, 0x11
 
-    .line 629
+    .line 630
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 v9, 0x41600000    # 14.0f
 
-    .line 630
+    .line 631
     invoke-virtual {v6, v5, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v10, "fonts/rmedium.ttf"
 
-    .line 631
+    .line 632
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v11
 
     invoke-virtual {v6, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 632
+    .line 633
     sget v11, Lorg/telegram/messenger/R$string;->ManageDeviceStorage:I
 
     const-string v12, "ManageDeviceStorage"
@@ -1772,7 +1763,7 @@
 
     const-string v11, "featuredStickers_buttonText"
 
-    .line 634
+    .line 635
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v11
@@ -1781,7 +1772,7 @@
 
     const/4 v11, 0x6
 
-    .line 635
+    .line 636
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
@@ -1824,19 +1815,19 @@
 
     const/16 v23, 0x10
 
-    .line 637
+    .line 638
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v12
 
     invoke-virtual {v4, v6, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 640
+    .line 641
     new-instance v12, Landroid/widget/TextView;
 
     invoke-direct {v12, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 641
+    .line 642
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -1847,20 +1838,20 @@
 
     invoke-virtual {v12, v14, v3, v7, v3}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 642
+    .line 643
     invoke-virtual {v12, v8}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 643
+    .line 644
     invoke-virtual {v12, v5, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 644
+    .line 645
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v7
 
     invoke-virtual {v12, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 645
+    .line 646
     sget v7, Lorg/telegram/messenger/R$string;->ClearDownloadsList:I
 
     const-string v8, "ClearDownloadsList"
@@ -1871,7 +1862,7 @@
 
     invoke-virtual {v12, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 647
+    .line 648
     invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
 
     move-result v7
@@ -1880,7 +1871,7 @@
 
     const/4 v7, 0x6
 
-    .line 648
+    .line 649
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -1913,46 +1904,33 @@
 
     const/16 v19, 0x10
 
-    .line 650
+    .line 651
     invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v4, v12, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 652
+    .line 653
     new-instance v3, Landroidx/core/widget/NestedScrollView;
 
     invoke-direct {v3, v2}, Landroidx/core/widget/NestedScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 653
+    .line 654
     invoke-virtual {v3, v4}, Landroidx/core/widget/NestedScrollView;->addView(Landroid/view/View;)V
 
-    .line 654
+    .line 655
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
-    .line 655
+    .line 656
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    .line 656
+    .line 657
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x17
 
     if-lt v2, v3, :cond_1
-
-    .line 657
-    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v2
-
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
-
-    move-result v3
-
-    xor-int/2addr v3, v5
-
-    invoke-static {v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;Z)V
 
     .line 658
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -1965,9 +1943,22 @@
 
     xor-int/2addr v3, v5
 
+    invoke-static {v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;Z)V
+
+    .line 659
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v2
+
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
+
+    move-result v3
+
+    xor-int/2addr v3, v5
+
     invoke-static {v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->setLightNavigationBar(Landroid/view/Window;Z)V
 
-    .line 661
+    .line 662
     :cond_1
     new-instance v2, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda0;
 
@@ -1975,7 +1966,7 @@
 
     invoke-virtual {v6, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 667
+    .line 668
     new-instance v2, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/Components/SearchDownloadsContainer$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/SearchDownloadsContainer;Lorg/telegram/ui/ActionBar/BottomSheet;)V
@@ -2003,45 +1994,45 @@
 
     if-eqz p1, :cond_3
 
-    .line 345
+    .line 346
     iget v3, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesHeader:I
 
-    .line 346
+    .line 347
     iget v5, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesStartRow:I
 
-    .line 347
+    .line 348
     iget v6, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesEndRow:I
 
-    .line 349
+    .line 350
     iget v4, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesHeader:I
 
-    .line 350
+    .line 351
     iget v8, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesStartRow:I
 
-    .line 351
+    .line 352
     iget v9, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesEndRow:I
 
-    .line 353
+    .line 354
     iget v2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
-    .line 355
+    .line 356
     new-instance v7, Ljava/util/ArrayList;
 
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-direct {v7, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 356
+    .line 357
     new-instance v10, Ljava/util/ArrayList;
 
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-direct {v10, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 358
+    .line 359
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->updateRows(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 359
+    .line 360
     new-instance p1, Lorg/telegram/ui/Components/SearchDownloadsContainer$3;
 
     move-object v0, p1
@@ -2056,12 +2047,12 @@
 
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->adapter:Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;
 
-    .line 404
+    .line 405
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->dispatchUpdatesTo(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     const/4 p1, 0x0
 
-    .line 405
+    .line 406
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2071,14 +2062,14 @@
 
     if-ge p1, p2, :cond_4
 
-    .line 406
+    .line 407
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p2, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p2
 
-    .line 407
+    .line 408
     iget-object p3, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
@@ -2087,7 +2078,7 @@
 
     if-ltz p3, :cond_2
 
-    .line 409
+    .line 410
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -2096,7 +2087,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 410
+    .line 411
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->shouldIgnore()Z
 
     move-result v1
@@ -2105,36 +2096,36 @@
 
     goto :goto_1
 
-    .line 413
+    .line 414
     :cond_0
     instance-of v1, p2, Lorg/telegram/ui/Cells/GraySectionCell;
 
     if-eqz v1, :cond_1
 
-    .line 414
+    .line 415
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->adapter:Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;
 
     invoke-virtual {p2, v0, p3}, Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 
     goto :goto_1
 
-    .line 415
+    .line 416
     :cond_1
     instance-of p3, p2, Lorg/telegram/ui/Components/SearchDownloadsContainer$Cell;
 
     if-eqz p3, :cond_2
 
-    .line 416
+    .line 417
     check-cast p2, Lorg/telegram/ui/Components/SearchDownloadsContainer$Cell;
 
-    .line 417
+    .line 418
     iget-object p3, p2, Lorg/telegram/ui/Components/SearchDownloadsContainer$Cell;->sharedDocumentCell:Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     const/4 v0, 0x1
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Cells/SharedDocumentCell;->updateFileExistIcon(Z)V
 
-    .line 418
+    .line 419
     iget-object p3, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->messageHashIdTmp:Lorg/telegram/ui/FilteredSearchView$MessageHashId;
 
     iget-object v1, p2, Lorg/telegram/ui/Components/SearchDownloadsContainer$Cell;->sharedDocumentCell:Lorg/telegram/ui/Cells/SharedDocumentCell;
@@ -2159,7 +2150,7 @@
 
     invoke-virtual {p3, v1, v2, v3}, Lorg/telegram/ui/FilteredSearchView$MessageHashId;->set(IJ)V
 
-    .line 419
+    .line 420
     iget-object p2, p2, Lorg/telegram/ui/Components/SearchDownloadsContainer$Cell;->sharedDocumentCell:Lorg/telegram/ui/Cells/SharedDocumentCell;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->uiCallback:Lorg/telegram/ui/FilteredSearchView$UiCallback;
@@ -2178,11 +2169,11 @@
 
     goto :goto_0
 
-    .line 424
+    .line 425
     :cond_3
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->updateRows(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 425
+    .line 426
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->adapter:Lorg/telegram/ui/Components/SearchDownloadsContainer$DownloadsAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -2205,12 +2196,12 @@
         }
     .end annotation
 
-    .line 430
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 431
+    .line 432
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -2229,7 +2220,7 @@
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 432
+    .line 433
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isRoundVideo()Z
 
     move-result v1
@@ -2242,20 +2233,20 @@
 
     if-nez v1, :cond_0
 
-    .line 433
+    .line 434
     iget-object v1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 437
+    .line 438
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 438
+    .line 439
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -2274,7 +2265,7 @@
 
     check-cast p2, Lorg/telegram/messenger/MessageObject;
 
-    .line 439
+    .line 440
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isRoundVideo()Z
 
     move-result v0
@@ -2287,7 +2278,7 @@
 
     if-nez v0, :cond_2
 
-    .line 440
+    .line 441
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -2297,33 +2288,33 @@
     :cond_3
     const/4 p1, 0x0
 
-    .line 444
+    .line 445
     iput p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
     const/4 p2, -0x1
 
-    .line 445
+    .line 446
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesHeader:I
 
-    .line 446
+    .line 447
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesStartRow:I
 
-    .line 447
+    .line 448
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesEndRow:I
 
-    .line 448
+    .line 449
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesHeader:I
 
-    .line 449
+    .line 450
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesStartRow:I
 
-    .line 450
+    .line 451
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesEndRow:I
 
-    .line 451
+    .line 452
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->hasCurrentDownload:Z
 
-    .line 453
+    .line 454
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -2332,7 +2323,7 @@
 
     if-nez p2, :cond_5
 
-    .line 454
+    .line 455
     iget p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
     add-int/lit8 v0, p2, 0x1
@@ -2341,10 +2332,10 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesHeader:I
 
-    .line 455
+    .line 456
     iput v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesStartRow:I
 
-    .line 456
+    .line 457
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -2355,10 +2346,10 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
-    .line 457
+    .line 458
     iput v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->downloadingFilesEndRow:I
 
-    .line 459
+    .line 460
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFiles:Ljava/util/ArrayList;
 
@@ -2368,7 +2359,7 @@
 
     if-ge p1, p2, :cond_5
 
-    .line 460
+    .line 461
     iget p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -2395,7 +2386,7 @@
 
     const/4 p1, 0x1
 
-    .line 461
+    .line 462
     iput-boolean p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->hasCurrentDownload:Z
 
     goto :goto_3
@@ -2405,7 +2396,7 @@
 
     goto :goto_2
 
-    .line 466
+    .line 467
     :cond_5
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentLoadingFiles:Ljava/util/ArrayList;
@@ -2416,7 +2407,7 @@
 
     if-nez p1, :cond_6
 
-    .line 467
+    .line 468
     iget p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
     add-int/lit8 p2, p1, 0x1
@@ -2425,10 +2416,10 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesHeader:I
 
-    .line 468
+    .line 469
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesStartRow:I
 
-    .line 469
+    .line 470
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentLoadingFiles:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -2439,7 +2430,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->rowCount:I
 
-    .line 470
+    .line 471
     iput p2, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentFilesEndRow:I
 
     :cond_6
@@ -2451,19 +2442,19 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 694
+    .line 695
     sget p2, Lorg/telegram/messenger/NotificationCenter;->onDownloadingFilesChanged:I
 
     if-ne p1, p2, :cond_1
 
-    .line 695
+    .line 696
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 696
+    .line 697
     iget p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
@@ -2475,7 +2466,7 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 698
+    .line 699
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->update(Z)V
 
     :cond_1
@@ -2485,10 +2476,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 676
+    .line 677
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 677
+    .line 678
     iget v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2499,14 +2490,14 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 678
+    .line 679
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 679
+    .line 680
     iget v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
@@ -2515,13 +2506,13 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/DownloadController;->clearUnviewedDownloads()V
 
-    .line 681
+    .line 682
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->checkFilesExist()V
 
     const/4 v0, 0x0
 
-    .line 682
+    .line 683
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->update(Z)V
 
     return-void
@@ -2530,10 +2521,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 687
+    .line 688
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 688
+    .line 689
     iget v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2550,12 +2541,12 @@
 .method public search(Ljava/lang/String;)V
     .locals 0
 
-    .line 476
+    .line 477
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->searchQuery:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 477
+    .line 478
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->update(Z)V
 
     return-void
@@ -2564,7 +2555,7 @@
 .method public setKeyboardHeight(IZ)V
     .locals 1
 
-    .line 725
+    .line 726
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/StickerEmptyView;->setKeyboardHeight(IZ)V
@@ -2575,7 +2566,7 @@
 .method public setUiCallback(Lorg/telegram/ui/FilteredSearchView$UiCallback;)V
     .locals 0
 
-    .line 721
+    .line 722
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->uiCallback:Lorg/telegram/ui/FilteredSearchView$UiCallback;
 
     return-void
@@ -2693,24 +2684,24 @@
     :goto_0
     invoke-virtual {v5, v6, v2, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;J)Z
 
-    .line 330
+    .line 331
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentLoadingFilesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 331
+    .line 332
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFilesTmp:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     if-nez v4, :cond_8
 
-    .line 333
+    .line 334
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
-    .line 334
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->currentLoadingFilesTmp:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SearchDownloadsContainer;->recentLoadingFilesTmp:Ljava/util/ArrayList;

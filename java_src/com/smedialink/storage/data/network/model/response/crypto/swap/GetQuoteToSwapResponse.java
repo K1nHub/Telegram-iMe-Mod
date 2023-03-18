@@ -114,7 +114,7 @@ public final class GetQuoteToSwapResponse {
     }
 
     public String toString() {
-        return "GetQuoteToSwapResponse(quoteId=" + this.quoteId + ", transactionParams=" + this.transactionParams + ", inputCryptoTokenCode=" + this.inputCryptoTokenCode + ", outputCryptoTokenCode=" + this.outputCryptoTokenCode + ", swapMethod=" + this.swapMethod + ", spenderContractAddress=" + this.spenderContractAddress + ", amountIn=" + this.amountIn + ", amountOut=" + this.amountOut + ", amountBound=" + this.amountBound + ", path=" + this.path + ", executionPrice=" + this.executionPrice + ", feeTokenCode=" + this.feeTokenCode + ", value=" + ((Object) this.value) + ", callData=" + ((Object) this.callData) + ')';
+        return "GetQuoteToSwapResponse(quoteId=" + this.quoteId + ", transactionParams=" + this.transactionParams + ", inputCryptoTokenCode=" + this.inputCryptoTokenCode + ", outputCryptoTokenCode=" + this.outputCryptoTokenCode + ", swapMethod=" + this.swapMethod + ", spenderContractAddress=" + this.spenderContractAddress + ", amountIn=" + this.amountIn + ", amountOut=" + this.amountOut + ", amountBound=" + this.amountBound + ", path=" + this.path + ", executionPrice=" + this.executionPrice + ", feeTokenCode=" + this.feeTokenCode + ", value=" + this.value + ", callData=" + this.callData + ')';
     }
 
     public GetQuoteToSwapResponse(String quoteId, TransactionParamsResponse transactionParams, String inputCryptoTokenCode, String outputCryptoTokenCode, String swapMethod, String spenderContractAddress, String amountIn, String amountOut, String amountBound, List<String> path, BigDecimal executionPrice, String feeTokenCode, String str, String str2) {

@@ -5,27 +5,29 @@
 .implements Lorg/telegram/tgnet/RequestDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+
+.field public final synthetic f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$2:Ljava/lang/String;
+
+.field public final synthetic f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$2:Ljava/lang/String;
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-void
 .end method
@@ -33,9 +35,21 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
+    .locals 6
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$It1jB6C_UNGItvQr-R5ch1wAujI(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$2:Ljava/lang/String;
+
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$3:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$kGJlMvg-2QKnQEaFHQZ135Vr7BA(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/String;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

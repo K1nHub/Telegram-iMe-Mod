@@ -1,6 +1,4 @@
 package org.telegram.tgnet;
-
-import org.telegram.messenger.SharedConfig;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_groupCall extends TLRPC$GroupCall {
     public static int constructor = -711498484;
@@ -17,10 +15,7 @@ public class TLRPC$TL_groupCall extends TLRPC$GroupCall {
         this.record_video_active = (readInt32 & 2048) != 0;
         this.rtmp_stream = (readInt32 & 4096) != 0;
         this.listeners_hidden = (readInt32 & 8192) != 0;
-        if (SharedConfig.forceRtmpStream) {
-            this.rtmp_stream = true;
-        }
-        this.f1509id = abstractSerializedData.readInt64(z);
+        this.f1514id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.participants_count = abstractSerializedData.readInt32(z);
         if ((this.flags & 8) != 0) {
@@ -62,7 +57,7 @@ public class TLRPC$TL_groupCall extends TLRPC$GroupCall {
         int i8 = this.listeners_hidden ? i7 | 8192 : i7 & (-8193);
         this.flags = i8;
         abstractSerializedData.writeInt32(i8);
-        abstractSerializedData.writeInt64(this.f1509id);
+        abstractSerializedData.writeInt64(this.f1514id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.participants_count);
         if ((this.flags & 8) != 0) {

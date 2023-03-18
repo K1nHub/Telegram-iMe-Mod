@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/bots/data/repository/BotsRepository$$ExternalSyntheticLambda11;->f$1:Ljava/lang/String;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$AGubt3QBy5ZIfHm_PP8fscEMDfs(Lcom/smedialink/bots/data/repository/BotsRepository;Ljava/lang/String;Lio/reactivex/SingleEmitter;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/bots/data/repository/BotsRepository;->$r8$lambda$sD2IDMlND9Iry_NUU0ujMzHdDIo(Lcom/smedialink/bots/data/repository/BotsRepository;Ljava/lang/String;Lio/reactivex/SingleEmitter;)V
 
     return-void
 .end method

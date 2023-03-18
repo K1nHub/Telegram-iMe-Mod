@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.Components.ColoredImageSpan;
@@ -29,20 +29,20 @@ public class UnlockPremiumView extends FrameLayout {
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         if (i == 0) {
-            textView.setText(LocaleController.getString("UnlockPremiumStickersDescription", C3158R.string.UnlockPremiumStickersDescription));
+            textView.setText(LocaleController.getString("UnlockPremiumStickersDescription", C3286R.string.UnlockPremiumStickersDescription));
         } else if (i == 1) {
-            textView.setText(LocaleController.getString("UnlockPremiumReactionsDescription", C3158R.string.UnlockPremiumReactionsDescription));
+            textView.setText(LocaleController.getString("UnlockPremiumReactionsDescription", C3286R.string.UnlockPremiumReactionsDescription));
         }
         linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, 0, 16, 17, 17, 16));
         PremiumButtonView premiumButtonView = new PremiumButtonView(context, false);
         this.premiumButtonView = premiumButtonView;
         if (i == 0) {
-            string = LocaleController.getString("UnlockPremiumStickers", C3158R.string.UnlockPremiumStickers);
+            string = LocaleController.getString("UnlockPremiumStickers", C3286R.string.UnlockPremiumStickers);
         } else {
-            string = LocaleController.getString("UnlockPremiumReactions", C3158R.string.UnlockPremiumReactions);
+            string = LocaleController.getString("UnlockPremiumReactions", C3286R.string.UnlockPremiumReactions);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d ").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3158R.C3160drawable.msg_premium_normal)), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "d ").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3286R.C3288drawable.msg_premium_normal)), 0, 1, 0);
         spannableStringBuilder.append((CharSequence) string);
         premiumButtonView.buttonTextView.setText(spannableStringBuilder);
         linearLayout.addView(premiumButtonView, LayoutHelper.createLinear(-1, 48, 0, 16, 0, 16, 16));

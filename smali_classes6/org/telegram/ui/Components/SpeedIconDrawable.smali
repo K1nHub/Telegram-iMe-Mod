@@ -15,17 +15,17 @@
 .method public constructor <init>(Z)V
     .locals 10
 
-    .line 39
+    .line 46
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 19
+    .line 26
     new-instance v0, Lorg/telegram/ui/Components/SpeedIconDrawable$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/SpeedIconDrawable$1;-><init>(Lorg/telegram/ui/Components/SpeedIconDrawable;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->callback:Landroid/graphics/drawable/Drawable$Callback;
 
-    .line 40
+    .line 47
     new-instance v8, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v1, 0x0
@@ -36,10 +36,10 @@
 
     iput-object v8, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 41
+    .line 48
     invoke-virtual {v8, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 42
+    .line 49
     sget-object v7, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const v2, 0x3e99999a    # 0.3f
@@ -52,12 +52,12 @@
 
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 43
+    .line 50
     invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 44
+    .line 51
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -66,7 +66,7 @@
 
     const/16 v0, 0xa
 
-    .line 45
+    .line 52
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -75,7 +75,7 @@
 
     invoke-virtual {v8, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 46
+    .line 53
     invoke-virtual {v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v0
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 47
+    .line 54
     invoke-virtual {v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v0
@@ -99,14 +99,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 50
+    .line 57
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->outlinePaint:Landroid/graphics/Paint;
 
-    .line 51
+    .line 58
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
@@ -116,11 +116,76 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 53
+    .line 60
     iput-object p1, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->outlinePaint:Landroid/graphics/Paint;
 
     :goto_0
     return-void
+.end method
+
+.method public static formatNumber(F)Ljava/lang/String;
+    .locals 4
+
+    const/high16 v0, 0x3e800000    # 0.25f
+
+    sub-float v0, p0, v0
+
+    .line 67
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    const/high16 v0, 0x41200000    # 10.0f
+
+    mul-float p0, p0, v0
+
+    .line 68
+    invoke-static {p0}, Ljava/lang/Math;->round(F)I
+
+    move-result p0
+
+    int-to-float p0, p0
+
+    div-float/2addr p0, v0
+
+    float-to-long v0, p0
+
+    long-to-float v2, v0
+
+    const-string v3, ""
+
+    cmpl-float v2, p0, v2
+
+    if-nez v2, :cond_0
+
+    .line 70
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 72
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
@@ -128,7 +193,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 75
+    .line 93
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->outlinePaint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x40000000    # 2.0f
@@ -137,17 +202,17 @@
 
     const v2, 0x3fcccccd    # 1.6f
 
-    .line 76
+    .line 94
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 77
+    .line 95
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 78
+    .line 96
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SpeedIconDrawable;->getIntrinsicWidth()I
 
     move-result v2
@@ -172,7 +237,7 @@
 
     sub-float/2addr v2, v4
 
-    .line 79
+    .line 97
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SpeedIconDrawable;->getIntrinsicHeight()I
 
     move-result v4
@@ -197,7 +262,7 @@
 
     add-float/2addr v4, v5
 
-    .line 80
+    .line 98
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SpeedIconDrawable;->getIntrinsicWidth()I
 
     move-result v5
@@ -220,7 +285,7 @@
 
     add-float/2addr v5, v6
 
-    .line 81
+    .line 99
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SpeedIconDrawable;->getIntrinsicHeight()I
 
     move-result v6
@@ -237,10 +302,10 @@
 
     div-float/2addr v6, v1
 
-    .line 77
+    .line 95
     invoke-virtual {v0, v2, v4, v5, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 83
+    .line 101
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
@@ -253,7 +318,7 @@
 
     invoke-virtual {p1, v0, v2, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 86
+    .line 104
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -269,7 +334,7 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setStrokeWidth(F)V
 
-    .line 87
+    .line 105
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v2, 0x0
@@ -316,7 +381,7 @@
 
     invoke-virtual {v0, v2, v3, v4, v1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 88
+    .line 106
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -329,7 +394,7 @@
 
     const/16 v0, 0x18
 
-    .line 98
+    .line 116
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -342,7 +407,7 @@
 
     const/16 v0, 0x18
 
-    .line 93
+    .line 111
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -361,17 +426,17 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 103
+    .line 121
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAlpha(I)V
 
-    .line 104
+    .line 122
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->outlinePaint:Landroid/graphics/Paint;
 
     if-eqz v0, :cond_0
 
-    .line 105
+    .line 123
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_0
@@ -381,17 +446,17 @@
 .method public setColor(I)V
     .locals 1
 
-    .line 110
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 111
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->outlinePaint:Landroid/graphics/Paint;
 
     if-eqz v0, :cond_0
 
-    .line 112
+    .line 130
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     :cond_0
@@ -405,71 +470,16 @@
 .end method
 
 .method public setValue(FZ)V
-    .locals 5
+    .locals 1
 
-    const/high16 v0, 0x41200000    # 10.0f
-
-    mul-float p1, p1, v0
-
-    .line 58
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
-
-    move-result p1
-
-    int-to-float p1, p1
-
-    div-float/2addr p1, v0
-
-    float-to-long v0, p1
-
-    long-to-float v2, v0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    cmpl-float v2, p1, v2
-
-    if-nez v2, :cond_0
-
-    new-array p1, v4, [Ljava/lang/Object;
-
-    .line 61
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    aput-object v0, p1, v3
-
-    const-string v0, "%d"
-
-    invoke-static {v0, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    new-array v0, v4, [Ljava/lang/Object;
-
-    .line 63
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    aput-object p1, v0, v3
-
-    const-string p1, "%s"
-
-    invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 65
-    :goto_0
+    .line 83
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/SpeedIconDrawable;->formatNumber(F)Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -481,9 +491,9 @@
 
     move-result-object p1
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_0
 
-    .line 66
+    .line 84
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getText()Ljava/lang/CharSequence;
@@ -494,22 +504,22 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
-    .line 67
-    :cond_1
+    .line 85
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->cancelAnimation()V
 
-    .line 68
+    .line 86
     iget-object v0, p0, Lorg/telegram/ui/Components/SpeedIconDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 69
+    .line 87
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
-    :cond_2
+    :cond_1
     return-void
 .end method

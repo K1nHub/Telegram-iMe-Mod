@@ -495,17 +495,17 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 246
-    iget-object v5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->amount:Ljava/lang/String;
+    new-instance v5, Ljava/math/BigDecimal;
 
-    new-instance v6, Ljava/math/BigDecimal;
+    iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->amount:Ljava/lang/String;
 
-    invoke-direct {v6, v5}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
+    sget-object v6, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     iget-object v7, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
 
-    invoke-virtual {v5, v7}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v6, v7}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
 
     move-result-object v7
 
@@ -513,16 +513,16 @@
 
     move-result v7
 
-    invoke-static {v6, v7}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v5, v7}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v1, v4
+    aput-object v5, v1, v4
 
     .line 247
-    iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
+    iget-object v5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
 
-    invoke-virtual {v5, v6}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v6, v5}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
 
     move-result-object v5
 
@@ -556,17 +556,17 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     .line 241
-    iget-object v5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->amount:Ljava/lang/String;
+    new-instance v5, Ljava/math/BigDecimal;
 
-    new-instance v6, Ljava/math/BigDecimal;
+    iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->amount:Ljava/lang/String;
 
-    invoke-direct {v6, v5}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    sget-object v5, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
+    sget-object v6, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     iget-object v7, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
 
-    invoke-virtual {v5, v7}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v6, v7}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
 
     move-result-object v7
 
@@ -574,16 +574,16 @@
 
     move-result v7
 
-    invoke-static {v6, v7}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
+    invoke-static {v5, v7}, Lcom/smedialink/utils/formatter/BalanceFormatter;->formatBalance(Ljava/lang/Number;I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v1, v4
+    aput-object v5, v1, v4
 
     .line 242
-    iget-object v6, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
+    iget-object v5, p0, Lcom/smedialink/model/wallet/notification/PushNotificationModel$CryptoTransfer$Out;->cryptoCode:Ljava/lang/String;
 
-    invoke-virtual {v5, v6}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
+    invoke-virtual {v6, v5}, Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo$Companion;->map(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/wallet/token/TokenInfo;
 
     move-result-object v5
 

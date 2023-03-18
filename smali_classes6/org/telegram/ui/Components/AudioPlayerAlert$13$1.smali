@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AudioPlayerAlert$13;)V
     .locals 0
 
-    .line 869
+    .line 882
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$13$1;->this$1:Lorg/telegram/ui/Components/AudioPlayerAlert$13;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 5
 
-    .line 872
+    .line 885
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$13$1;->this$1:Lorg/telegram/ui/Components/AudioPlayerAlert$13;
 
     iget v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$13;->pressedCount:I
@@ -53,14 +53,14 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 874
+    .line 887
     iget-object v0, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$13;->this$0:Lorg/telegram/ui/Components/AudioPlayerAlert;
 
     const/4 v1, -0x1
 
     iput v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingState:I
 
-    .line 875
+    .line 888
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v1
@@ -73,7 +73,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert;->rewindingProgress:F
 
-    .line 876
+    .line 889
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$13$1;->this$1:Lorg/telegram/ui/Components/AudioPlayerAlert$13;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -82,10 +82,10 @@
 
     iput-wide v1, v0, Lorg/telegram/ui/Components/AudioPlayerAlert$13;->lastTime:J
 
-    .line 877
+    .line 890
     invoke-static {p0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 878
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$13$1;->this$1:Lorg/telegram/ui/Components/AudioPlayerAlert$13;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$13;->access$5400(Lorg/telegram/ui/Components/AudioPlayerAlert$13;)Ljava/lang/Runnable;
@@ -101,7 +101,7 @@
 
     if-ne v1, v0, :cond_1
 
-    .line 880
+    .line 893
     invoke-static {p0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     :cond_1

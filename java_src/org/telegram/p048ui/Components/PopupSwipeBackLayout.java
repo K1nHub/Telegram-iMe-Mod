@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
+import org.telegram.p048ui.ActionBar.ActionBarMenuSlider;
 import org.telegram.p048ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p048ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.PopupSwipeBackLayout */
@@ -411,7 +412,7 @@ public class PopupSwipeBackLayout extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isDisallowedView(MotionEvent motionEvent, View view) {
         view.getHitRect(this.hitRect);
-        if (this.hitRect.contains((int) motionEvent.getX(), (int) motionEvent.getY()) && view.canScrollHorizontally(-1)) {
+        if (this.hitRect.contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (view.canScrollHorizontally(-1) || (view instanceof ActionBarMenuSlider))) {
             return true;
         }
         if (view instanceof ViewGroup) {

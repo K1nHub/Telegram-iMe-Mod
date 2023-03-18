@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/smedialink/ui/smartpanel/SmartBotsView$$ExternalSyntheticLambda3;->f$1:Lcom/smedialink/ui/smartpanel/SmartBotsView;
 
-    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->$r8$lambda$s5BVCv77xmx1hTS1i05tPXvzyIE(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lcom/smedialink/ui/smartpanel/SmartBotsView;->$r8$lambda$oSNFIQvUoA5gWTE7Og2kzdZHGkc(Lorg/telegram/messenger/databinding/ForkPanelViewBinding;Lcom/smedialink/ui/smartpanel/SmartBotsView;Landroid/view/View;)V
 
     return-void
 .end method

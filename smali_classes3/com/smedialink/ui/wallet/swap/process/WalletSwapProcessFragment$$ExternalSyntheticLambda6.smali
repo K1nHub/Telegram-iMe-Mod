@@ -29,7 +29,7 @@
 
     check-cast p1, Lcom/smedialink/model/wallet/select/SelectableToken;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$VU81mv4K6Pt8Nksgsu8BKG7q1lA(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/wallet/swap/process/WalletSwapProcessFragment;->$r8$lambda$aP6unOHNLawAclzK7a2LSBxVQIs(Lkotlin/jvm/functions/Function1;Lcom/smedialink/model/wallet/select/SelectableToken;)V
 
     return-void
 .end method

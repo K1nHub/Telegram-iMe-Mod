@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDonationBalanceView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationBalanceView.kt\ncom/smedialink/ui/custom/donation/DonationBalanceView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,80:1\n56#2,6:81\n4#3:87\n5#3,2:90\n2478#4:88\n1#5:89\n*S KotlinDebug\n*F\n+ 1 DonationBalanceView.kt\ncom/smedialink/ui/custom/donation/DonationBalanceView\n*L\n28#1:81,6\n52#1:87\n52#1:90,2\n52#1:88\n52#1:89\n*E\n"
+    value = "SMAP\nDonationBalanceView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationBalanceView.kt\ncom/smedialink/ui/custom/donation/DonationBalanceView\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 CollectionExt.kt\ncom/smedialink/utils/extentions/common/CollectionExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,80:1\n56#2,6:81\n4#3:87\n5#3,2:90\n2634#4:88\n1#5:89\n*S KotlinDebug\n*F\n+ 1 DonationBalanceView.kt\ncom/smedialink/ui/custom/donation/DonationBalanceView\n*L\n28#1:81,6\n52#1:87\n52#1:90,2\n52#1:88\n52#1:89\n*E\n"
 .end annotation
 
 
@@ -314,7 +314,7 @@
 
     move-result-object v1
 
-    .line 2478
+    .line 2634
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -333,7 +333,7 @@
     .line 5
     check-cast v2, Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v3, ""
+    const-string v3, "setupColors$lambda$2$lambda$1"
 
     .line 52
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

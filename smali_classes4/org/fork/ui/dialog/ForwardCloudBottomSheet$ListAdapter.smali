@@ -49,10 +49,6 @@
         }
     .end annotation
 
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
     const-string v0, "context"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -234,6 +230,10 @@
     .line 231
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
+    const-string p2, "null cannot be cast to non-null type org.telegram.ui.ActionBar.BottomSheet.BottomSheetCell"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast p1, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
     .line 232
@@ -303,7 +303,7 @@
 
     invoke-direct {v2, p2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    const-string p2, "windowBackgroundWhiteBlueText4"
+    const-string/jumbo p2, "windowBackgroundWhiteBlueText4"
 
     .line 240
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -339,6 +339,10 @@
     .line 244
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    const-string v0, "null cannot be cast to non-null type org.telegram.ui.Cells.ProfileSearchCell"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v2, p1
 

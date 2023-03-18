@@ -36,37 +36,28 @@
     :cond_0
     const-string v0, "android.support.v4.app.INotificationSideChannel"
 
-    .line 57
+    .line 50
     invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 58
+    .line 51
     instance-of v1, v0, Landroid/support/v4/app/INotificationSideChannel;
 
     if-eqz v1, :cond_1
 
-    .line 59
+    .line 52
     check-cast v0, Landroid/support/v4/app/INotificationSideChannel;
 
     return-object v0
 
-    .line 61
+    .line 54
     :cond_1
     new-instance v0, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;
 
     invoke-direct {v0, p0}, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;-><init>(Landroid/os/IBinder;)V
-
-    return-object v0
-.end method
-
-.method public static getDefaultImpl()Landroid/support/v4/app/INotificationSideChannel;
-    .locals 1
-
-    .line 224
-    sget-object v0, Landroid/support/v4/app/INotificationSideChannel$Stub$Proxy;->sDefaultImpl:Landroid/support/v4/app/INotificationSideChannel;
 
     return-object v0
 .end method

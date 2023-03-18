@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$ApproveInProgress;,
         Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$Idle;,
         Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$NeedApprove;,
-        Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$ApproveInProgress;,
         Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$PrepareSwap;,
         Lcom/smedialink/model/wallet/crypto/swap/SwapUiState$Swap;
     }

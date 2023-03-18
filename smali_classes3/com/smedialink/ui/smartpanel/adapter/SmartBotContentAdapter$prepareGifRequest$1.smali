@@ -28,18 +28,18 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$DktLsp2rJL9OPkfdhM7zbTeHBWc(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$NDaD_ap2YsY-doPJfaIg40t24WA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$prepareGifRequest$1;->run$lambda-1(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$prepareGifRequest$1;->run$lambda$1(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$EkFQCcGwS21YwuS6f072LOtrTYk(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;)V
+.method public static synthetic $r8$lambda$dMmRlXsHVsBM8tHoxf2ysaaPBWk(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$prepareGifRequest$1;->run$lambda-1$lambda-0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter$prepareGifRequest$1;->run$lambda$1$lambda$0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;)V
 
     return-void
 .end method
@@ -61,7 +61,7 @@
     return-void
 .end method
 
-.method private static final run$lambda-1(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private static final run$lambda$1(Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
     const-string v0, "this$0"
@@ -90,7 +90,7 @@
     return-void
 .end method
 
-.method private static final run$lambda-1$lambda-0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;)V
+.method private static final run$lambda$1$lambda$0(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;Lorg/telegram/messenger/MessagesStorage;Lcom/smedialink/ui/smartpanel/adapter/SmartBotContentAdapter;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -104,7 +104,7 @@
     const-string p0, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.TL_contacts_resolvedPeer"
 
     .line 182
-    invoke-static {p1, p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolvedPeer;
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ScrollSlidingTabStrip;)V
     .locals 0
 
-    .line 1136
+    .line 1099
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$6;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 7
 
-    .line 1139
+    .line 1102
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -59,7 +59,7 @@
 
     if-gez v6, :cond_1
 
-    .line 1142
+    .line 1105
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -91,7 +91,7 @@
 
     const/4 v0, 0x2
 
-    .line 1144
+    .line 1107
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -111,7 +111,7 @@
     :cond_2
     const/4 v0, 0x4
 
-    .line 1146
+    .line 1109
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 1149
+    .line 1112
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$6;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/HorizontalScrollView;->scrollBy(II)V
 
-    .line 1150
+    .line 1113
     iget-object v0, p0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip$6;->this$0:Lorg/telegram/ui/Components/ScrollSlidingTabStrip;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->scrollRunnable:Ljava/lang/Runnable;

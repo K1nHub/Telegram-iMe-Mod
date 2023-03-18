@@ -24,13 +24,13 @@
 .method public constructor <init>([BZ)V
     .locals 0
 
-    .line 270
+    .line 281
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 271
+    .line 282
     iput-object p1, p0, Lorg/telegram/messenger/voip/Instance$EncryptionKey;->value:[B
 
-    .line 272
+    .line 283
     iput-boolean p2, p0, Lorg/telegram/messenger/voip/Instance$EncryptionKey;->isOutgoing:Z
 
     return-void
@@ -41,7 +41,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 277
+    .line 288
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -52,7 +52,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/voip/Instance$EncryptionKey;->value:[B
 
-    .line 278
+    .line 289
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1

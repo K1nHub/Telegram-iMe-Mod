@@ -15,7 +15,7 @@ public class Person {
     String mUri;
 
     public static Person fromPersistableBundle(PersistableBundle persistableBundle) {
-        return new Builder().setName(persistableBundle.getString(AppMeasurementSdk.ConditionalUserProperty.NAME)).setUri(persistableBundle.getString("uri")).setKey(persistableBundle.getString("key")).setBot(persistableBundle.getBoolean("isBot")).setImportant(persistableBundle.getBoolean("isImportant")).build();
+        return Api22Impl.fromPersistableBundle(persistableBundle);
     }
 
     Person(Builder builder) {
@@ -40,18 +40,11 @@ public class Person {
     }
 
     public PersistableBundle toPersistableBundle() {
-        PersistableBundle persistableBundle = new PersistableBundle();
-        CharSequence charSequence = this.mName;
-        persistableBundle.putString(AppMeasurementSdk.ConditionalUserProperty.NAME, charSequence != null ? charSequence.toString() : null);
-        persistableBundle.putString("uri", this.mUri);
-        persistableBundle.putString("key", this.mKey);
-        persistableBundle.putBoolean("isBot", this.mIsBot);
-        persistableBundle.putBoolean("isImportant", this.mIsImportant);
-        return persistableBundle;
+        return Api22Impl.toPersistableBundle(this);
     }
 
     public android.app.Person toAndroidPerson() {
-        return new Person.Builder().setName(getName()).setIcon(getIcon() != null ? getIcon().toIcon() : null).setUri(getUri()).setKey(getKey()).setBot(isBot()).setImportant(isImportant()).build();
+        return Api28Impl.toAndroidPerson(this);
     }
 
     public CharSequence getName() {
@@ -130,6 +123,35 @@ public class Person {
 
         public Person build() {
             return new Person(this);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api22Impl {
+        static Person fromPersistableBundle(PersistableBundle persistableBundle) {
+            return new Builder().setName(persistableBundle.getString(AppMeasurementSdk.ConditionalUserProperty.NAME)).setUri(persistableBundle.getString("uri")).setKey(persistableBundle.getString("key")).setBot(persistableBundle.getBoolean("isBot")).setImportant(persistableBundle.getBoolean("isImportant")).build();
+        }
+
+        static PersistableBundle toPersistableBundle(Person person) {
+            PersistableBundle persistableBundle = new PersistableBundle();
+            CharSequence charSequence = person.mName;
+            persistableBundle.putString(AppMeasurementSdk.ConditionalUserProperty.NAME, charSequence != null ? charSequence.toString() : null);
+            persistableBundle.putString("uri", person.mUri);
+            persistableBundle.putString("key", person.mKey);
+            persistableBundle.putBoolean("isBot", person.mIsBot);
+            persistableBundle.putBoolean("isImportant", person.mIsImportant);
+            return persistableBundle;
+        }
+    }
+
+    /* loaded from: classes.dex */
+    static class Api28Impl {
+        static Person fromAndroidPerson(android.app.Person person) {
+            return new Builder().setName(person.getName()).setIcon(person.getIcon() != null ? IconCompat.createFromIcon(person.getIcon()) : null).setUri(person.getUri()).setKey(person.getKey()).setBot(person.isBot()).setImportant(person.isImportant()).build();
+        }
+
+        static android.app.Person toAndroidPerson(Person person) {
+            return new Person.Builder().setName(person.getName()).setIcon(person.getIcon() != null ? person.getIcon().toIcon() : null).setUri(person.getUri()).setKey(person.getKey()).setBot(person.isBot()).setImportant(person.isImportant()).build();
         }
     }
 }

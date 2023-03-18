@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lorg/fork/ui/view/SortingFilterCell;->$r8$lambda$jrQVoA9yu9fAFJF8k8hpyjR8sxE()V
+    invoke-static {}, Lorg/fork/ui/view/SortingFilterCell;->$r8$lambda$Bpx_kNXTiIq3EVupHJLjAN4GVvA()V
 
     return-void
 .end method

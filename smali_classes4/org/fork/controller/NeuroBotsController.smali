@@ -176,12 +176,12 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/NeuroBotsController;->setNeuroBotsEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsEnabled:Z
 
     const/4 v0, 0x0
 
     .line 23
-    invoke-virtual {p0, v0}, Lorg/fork/controller/NeuroBotsController;->setNeuroBotsEnabled(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsEnabled:Z
 
     .line 24
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isNeuroBotsAutoEnabledInPersonalChats()Ljava/lang/String;
@@ -196,7 +196,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/NeuroBotsController;->setNeuroBotsAutoEnabledInPersonalChats(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsAutoEnabledInPersonalChats:Z
 
     .line 25
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isNeuroBotsAutoEnabledInGroups()Ljava/lang/String;
@@ -211,7 +211,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lorg/fork/controller/NeuroBotsController;->setNeuroBotsAutoEnabledInGroups(Z)V
+    iput-boolean v0, p0, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsAutoEnabledInGroups:Z
 
     .line 26
     invoke-static {}, Lcom/smedialink/common/TelegramPreferenceKeys$User;->isShowOftenUsedNeuroBotsEnabled()Ljava/lang/String;
@@ -226,7 +226,7 @@
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Lorg/fork/controller/NeuroBotsController;->setShowOftenUsedNeuroBotsEnabled(Z)V
+    iput-boolean p1, p0, Lorg/fork/controller/NeuroBotsController;->isShowOftenUsedNeuroBotsEnabled:Z
 
     return-void
 .end method
@@ -252,9 +252,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -263,9 +261,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsAutoEnabledInPersonalChats()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsAutoEnabledInPersonalChats:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -274,9 +270,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsAutoEnabledInGroups()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/NeuroBotsController;->isNeuroBotsAutoEnabledInGroups:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -285,9 +279,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lorg/fork/controller/NeuroBotsController;->isShowOftenUsedNeuroBotsEnabled()Z
-
-    move-result v2
+    iget-boolean v2, p0, Lorg/fork/controller/NeuroBotsController;->isShowOftenUsedNeuroBotsEnabled:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 

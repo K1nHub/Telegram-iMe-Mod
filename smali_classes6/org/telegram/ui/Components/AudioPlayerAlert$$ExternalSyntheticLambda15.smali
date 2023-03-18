@@ -2,34 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/DialogsActivity$CustomForwardDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Ljava/util/ArrayList;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;->INSTANCE:Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;->f$0:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final buildForwardedMessages()Ljava/util/ArrayList;
-    .locals 1
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AudioPlayerAlert$$ExternalSyntheticLambda15;->f$0:Ljava/util/ArrayList;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$dIXC5yF5CStpk5LQMHZyanTkUN8(Landroid/view/View;I)V
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AudioPlayerAlert;->$r8$lambda$tuwysOdGTLe1SlaZX_nhFHsSIfg(Ljava/util/ArrayList;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

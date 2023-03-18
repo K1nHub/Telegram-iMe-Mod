@@ -1,7 +1,7 @@
 package com.smedialink.bots;
 /* loaded from: classes3.dex */
 public final class R$string {
-    public static final int bot_label_neuro = 2131827031;
-    public static final int bot_label_normal = 2131827032;
-    public static final int bot_title_recent = 2131827074;
+    public static final int bot_label_neuro = 2131761568;
+    public static final int bot_label_normal = 2131761569;
+    public static final int bot_title_recent = 2131761611;
 }

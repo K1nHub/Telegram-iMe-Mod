@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$8;)V
     .locals 0
 
-    .line 1317
+    .line 1321
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .method private synthetic lambda$onPreDraw$0()V
     .locals 2
 
-    .line 1324
+    .line 1328
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1325
+    .line 1329
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1326
+    .line 1330
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1327
+    .line 1331
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -100,7 +100,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1328
+    .line 1332
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -114,7 +114,7 @@
 .method private synthetic lambda$onPreDraw$1()V
     .locals 1
 
-    .line 1341
+    .line 1345
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -125,7 +125,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1342
+    .line 1346
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -141,7 +141,7 @@
 .method public onPreDraw()Z
     .locals 3
 
-    .line 1320
+    .line 1324
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -156,7 +156,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1321
+    .line 1325
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -167,7 +167,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1322
+    .line 1326
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -178,7 +178,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1323
+    .line 1327
     new-instance v0, Lorg/telegram/ui/PhotoViewer$8$1$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/PhotoViewer$8$1$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/PhotoViewer$8$1;)V
@@ -189,7 +189,7 @@
 
     goto :goto_0
 
-    .line 1332
+    .line 1336
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
@@ -203,7 +203,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1333
+    .line 1337
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -216,7 +216,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1334
+    .line 1338
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -227,7 +227,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1335
+    .line 1339
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -238,14 +238,14 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1336
+    .line 1340
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$4502(Lorg/telegram/ui/PhotoViewer;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 1340
+    .line 1344
     :cond_1
     :goto_0
     new-instance v0, Lorg/telegram/ui/PhotoViewer$8$1$$ExternalSyntheticLambda0;
@@ -254,7 +254,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1345
+    .line 1349
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$8$1;->this$1:Lorg/telegram/ui/PhotoViewer$8;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$8;->this$0:Lorg/telegram/ui/PhotoViewer;

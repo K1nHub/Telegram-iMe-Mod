@@ -150,7 +150,7 @@
     .line 56
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingSafeWithdrawalBinding;->imageHelp:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string v1, ""
+    const-string v1, "setupColors$lambda$3$lambda$2"
 
     .line 57
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

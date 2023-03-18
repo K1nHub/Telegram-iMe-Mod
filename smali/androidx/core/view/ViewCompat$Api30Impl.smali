@@ -18,7 +18,7 @@
 .method static getStateDescription(Landroid/view/View;)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 5091
+    .line 5096
     invoke-virtual {p0}, Landroid/view/View;->getStateDescription()Ljava/lang/CharSequence;
 
     move-result-object p0
@@ -29,7 +29,7 @@
 .method static setStateDescription(Landroid/view/View;Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 5086
+    .line 5091
     invoke-virtual {p0, p1}, Landroid/view/View;->setStateDescription(Ljava/lang/CharSequence;)V
 
     return-void

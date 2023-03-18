@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$$ExternalSyntheticLambda0;->f$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->$r8$lambda$b3_5dHOCtlOWbIrk3ofjuqK28_A(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->$r8$lambda$ytP8B4v5QuZtgxA6M94YZMGg7gM(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;Landroid/view/View;)V
 
     return-void
 .end method

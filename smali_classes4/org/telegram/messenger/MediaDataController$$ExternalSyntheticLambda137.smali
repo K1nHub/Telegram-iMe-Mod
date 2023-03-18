@@ -87,7 +87,7 @@
 
     iget-object v10, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda137;->f$10:Ljava/util/concurrent/CountDownLatch;
 
-    invoke-static/range {v0 .. v10}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$TD-VOT42_3kSnyoaquc9INvp8r4(Lorg/telegram/messenger/MediaDataController;[Ljava/lang/String;Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;ZLjava/lang/String;ZLjava/util/ArrayList;ZLjava/lang/Integer;ZLjava/util/concurrent/CountDownLatch;)V
+    invoke-static/range {v0 .. v10}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$M_5yydCJFjAwDaSbkGtlO-Q9gvs(Lorg/telegram/messenger/MediaDataController;[Ljava/lang/String;Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;ZLjava/lang/String;ZLjava/util/ArrayList;ZLjava/lang/Integer;ZLjava/util/concurrent/CountDownLatch;)V
 
     return-void
 .end method

@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.view.ViewCompat;
-import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
@@ -40,7 +39,6 @@ public final class CircleTokenView extends AppCompatImageView {
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setShape(1);
         gradientDrawable.setColor(i);
-        Unit unit = Unit.INSTANCE;
         setBackground(gradientDrawable);
         ViewCompat.setElevation(this, AndroidUtilities.m51dp(2.0f));
     }

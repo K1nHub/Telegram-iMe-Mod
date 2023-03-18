@@ -2877,7 +2877,7 @@
 
     const v4, 0x8b30
 
-    const-string v11, "varying highp vec2 texCoord;uniform sampler2D sourceImage;void main() {gl_FragColor = texture2D(sourceImage, texCoord);}"
+    const-string/jumbo v11, "varying highp vec2 texCoord;uniform sampler2D sourceImage;void main() {gl_FragColor = texture2D(sourceImage, texCoord);}"
 
     .line 588
     invoke-static {v4, v11}, Lorg/telegram/ui/Components/FilterShaders;->loadShader(ILjava/lang/String;)I

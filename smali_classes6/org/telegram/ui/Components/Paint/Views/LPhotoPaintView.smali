@@ -699,7 +699,7 @@
 
     iput-object v1, v6, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->openKeyboardRunnable:Ljava/lang/Runnable;
 
-    .line 3267
+    .line 3266
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;
 
     invoke-direct {v1, v6, v6, v12}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$21;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Z)V
@@ -3157,7 +3157,7 @@
 .method private bottomPanelTranslationY(FF)V
     .locals 7
 
-    .line 3010
+    .line 3009
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
@@ -3180,7 +3180,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 3011
+    .line 3010
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
     int-to-float v0, v0
@@ -3195,7 +3195,7 @@
 
     mul-float v0, v0, v1
 
-    .line 3012
+    .line 3011
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
     int-to-float v1, v1
@@ -3208,7 +3208,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->panTranslationProgress:F
 
-    .line 3013
+    .line 3012
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
@@ -3223,7 +3223,7 @@
     :goto_0
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->updatePanTransition(FF)V
 
-    .line 3014
+    .line 3013
     iget v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->scale:F
 
     iget v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->inputTransformX:F
@@ -3238,7 +3238,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setTransform(FFFFF)V
 
-    .line 3015
+    .line 3014
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -4658,24 +4658,20 @@
 .method private hideEmojiPopup(Z)V
     .locals 6
 
-    .line 2969
+    .line 2968
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 2970
+    .line 2969
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showEmojiPopup(I)V
 
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 2973
-    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->smoothKeyboard:Z
-
-    if-eqz p1, :cond_1
-
+    .line 2972
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz p1, :cond_1
@@ -4690,7 +4686,7 @@
 
     if-nez p1, :cond_1
 
-    .line 2974
+    .line 2973
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -4711,18 +4707,18 @@
 
     aput v2, v0, v3
 
-    .line 2975
+    .line 2974
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 2976
+    .line 2975
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelIgnoreOnce:Z
 
-    .line 2977
+    .line 2976
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelIgnoreOnce:Z
 
-    .line 2978
+    .line 2977
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -4733,17 +4729,17 @@
 
     invoke-virtual {v1, v5, v4}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->startPanTransition(II)V
 
-    .line 2979
+    .line 2978
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0, v2, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZI)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2986
+    .line 2985
     iput-boolean v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isAnimatePopupClosing:Z
 
-    .line 2987
+    .line 2986
     new-instance p1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;
 
     invoke-direct {p1, p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Z)V
@@ -4752,20 +4748,20 @@
 
     const-wide/16 v1, 0xfa
 
-    .line 2999
+    .line 2998
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3000
+    .line 2999
     sget-object p1, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3001
+    .line 3000
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 3003
+    .line 3002
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiView()V
 
@@ -4777,7 +4773,7 @@
 .method private hideEmojiView()V
     .locals 2
 
-    .line 3032
+    .line 3031
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
     if-nez v0, :cond_0
@@ -4794,7 +4790,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 3033
+    .line 3032
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
@@ -4802,7 +4798,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 3035
+    .line 3034
     iput v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
     return-void
@@ -5193,7 +5189,7 @@
 .method private synthetic lambda$hideEmojiPopup$42(ZILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2980
+    .line 2979
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p3
@@ -5204,7 +5200,7 @@
 
     move-result p3
 
-    .line 2981
+    .line 2980
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, p3}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
@@ -5221,7 +5217,7 @@
 
     sub-float/2addr v0, p3
 
-    .line 2983
+    .line 2982
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelTranslationY(FF)V
 
     :cond_0
@@ -6919,7 +6915,7 @@
 .method private synthetic lambda$showEmojiPopup$41(ZLandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2920
+    .line 2919
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -6930,7 +6926,7 @@
 
     move-result p2
 
-    .line 2921
+    .line 2920
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
@@ -6939,7 +6935,7 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 2923
+    .line 2922
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
     int-to-float v0, v0
@@ -7709,7 +7705,7 @@
 .method private onWindowSizeChanged()V
     .locals 0
 
-    .line 3039
+    .line 3038
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     return-void
@@ -9363,19 +9359,14 @@
     if-nez p1, :cond_e
 
     .line 2910
-    sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->smoothKeyboard:Z
-
-    if-eqz p1, :cond_e
-
-    .line 2911
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     if-eqz p1, :cond_8
 
-    .line 2912
+    .line 2911
     iput-boolean v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->translateBottomPanelAfterResize:Z
 
-    .line 2913
+    .line 2912
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -9395,7 +9386,7 @@
 
     new-array p1, p1, [F
 
-    .line 2917
+    .line 2916
     iget v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
     int-to-float v4, v4
@@ -9408,7 +9399,7 @@
 
     move-result-object p1
 
-    .line 2918
+    .line 2917
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -9421,14 +9412,14 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->startPanTransition(II)V
 
-    .line 2919
+    .line 2918
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Z)V
 
     invoke-virtual {p1, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2926
+    .line 2925
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$18;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$18;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Z)V
@@ -9437,20 +9428,20 @@
 
     const-wide/16 v0, 0xfa
 
-    .line 2936
+    .line 2935
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2937
+    .line 2936
     sget-object v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2938
+    .line 2937
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_4
 
-    .line 2943
+    .line 2942
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
@@ -9460,21 +9451,21 @@
 
     if-eqz v0, :cond_a
 
-    .line 2945
+    .line 2944
     sget-object v4, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;->SMILE:Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;->setState(Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;Z)V
 
-    .line 2947
+    .line 2946
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v0, :cond_c
 
-    .line 2949
+    .line 2948
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
-    .line 2950
+    .line 2949
     sget-boolean v3, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
 
     if-nez v3, :cond_b
@@ -9486,20 +9477,20 @@
     :cond_b
     const/16 v3, 0x8
 
-    .line 2951
+    .line 2950
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
     :cond_c
     if-nez p1, :cond_d
 
-    .line 2955
+    .line 2954
     iput v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
-    .line 2957
+    .line 2956
     :cond_d
     invoke-direct {p0, v2, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelTranslationY(FF)V
 
-    .line 2958
+    .line 2957
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -9512,25 +9503,25 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->startPanTransition(II)V
 
-    .line 2959
+    .line 2958
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, v2, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->updatePanTransition(FF)V
 
-    .line 2960
+    .line 2959
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->stopPanTransition()V
 
-    .line 2961
+    .line 2960
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->requestLayout()V
 
-    .line 2962
+    .line 2961
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
-    .line 2965
+    .line 2964
     :cond_e
     :goto_4
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updatePlusEmojiKeyboardButton()V
@@ -10194,43 +10185,43 @@
 .method private updatePlusEmojiKeyboardButton()V
     .locals 15
 
-    .line 3109
+    .line 3108
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     if-eqz v0, :cond_2
 
-    .line 3110
+    .line 3109
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     if-eqz v1, :cond_0
 
-    .line 3111
+    .line 3110
     sget v1, Lorg/telegram/messenger/R$drawable;->input_smile:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->animatePlusToIcon(I)V
 
     goto :goto_0
 
-    .line 3112
+    .line 3111
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
     if-eqz v1, :cond_1
 
-    .line 3113
+    .line 3112
     sget v1, Lorg/telegram/messenger/R$drawable;->input_keyboard:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->animatePlusToIcon(I)V
 
     goto :goto_0
 
-    .line 3115
+    .line 3114
     :cond_1
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_add:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->animatePlusToIcon(I)V
 
-    .line 3119
+    .line 3118
     :cond_2
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoAllButton:Landroid/widget/TextView;
@@ -10265,7 +10256,7 @@
 
     invoke-static/range {v2 .. v7}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
-    .line 3120
+    .line 3119
     iget-object v9, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoButton:Landroid/widget/ImageView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
@@ -10294,7 +10285,7 @@
 
     invoke-static/range {v9 .. v14}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
-    .line 3122
+    .line 3121
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->doneTextButton:Landroid/widget/TextView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
@@ -10327,7 +10318,7 @@
 
     invoke-static/range {v2 .. v7}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
-    .line 3123
+    .line 3122
     iget-object v9, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->cancelTextButton:Landroid/widget/TextView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
@@ -10368,7 +10359,7 @@
 .method public adjustPanLayoutHelperProgress()F
     .locals 1
 
-    .line 3307
+    .line 3306
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->panTranslationProgress:F
 
     return v0
@@ -10388,7 +10379,7 @@
 .method protected createEmojiView()V
     .locals 11
 
-    .line 3127
+    .line 3126
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v0, :cond_0
@@ -10399,15 +10390,15 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 3128
+    .line 3127
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
     const/4 v0, 0x0
 
-    .line 3129
+    .line 3128
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 3131
+    .line 3130
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -10415,7 +10406,7 @@
 
     return-void
 
-    .line 3134
+    .line 3133
     :cond_1
     new-instance v0, Lorg/telegram/ui/Components/EmojiView;
 
@@ -10447,29 +10438,29 @@
 
     const/4 v1, 0x1
 
-    .line 3135
+    .line 3134
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->allowEmojisForNonPremium(Z)V
 
-    .line 3136
+    .line 3135
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
-    .line 3137
+    .line 3136
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 3138
+    .line 3137
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setForseMultiwindowLayout(Z)V
 
-    .line 3140
+    .line 3139
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -10479,7 +10470,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setDelegate(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;)V
 
-    .line 3264
+    .line 3263
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
@@ -11929,7 +11920,7 @@
 .method public getEmojiPadding(Z)I
     .locals 2
 
-    .line 3020
+    .line 3019
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->translateBottomPanelAfterResize:Z
 
     if-eqz v0, :cond_0
@@ -11940,10 +11931,10 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 3021
+    .line 3020
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelTranslationY(FF)V
 
-    .line 3023
+    .line 3022
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
@@ -11959,7 +11950,7 @@
 
     return p1
 
-    .line 3026
+    .line 3025
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->adjustPanLayoutHelper:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
@@ -11973,12 +11964,12 @@
 
     if-nez p1, :cond_2
 
-    .line 3027
+    .line 3026
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
     return p1
 
-    .line 3028
+    .line 3027
     :cond_2
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
@@ -12550,18 +12541,18 @@
 
     const/4 v0, 0x0
 
-    .line 3312
+    .line 3311
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->destroyed:Z
 
-    .line 3313
+    .line 3312
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 3314
+    .line 3313
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->adjustPanLayoutHelper:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->setResizableView(Landroid/widget/FrameLayout;)V
 
-    .line 3315
+    .line 3314
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->adjustPanLayoutHelper:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onAttach()V
@@ -12695,13 +12686,13 @@
 
     const/4 v0, 0x1
 
-    .line 3320
+    .line 3319
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->destroyed:Z
 
-    .line 3321
+    .line 3320
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 3322
+    .line 3321
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->adjustPanLayoutHelper:Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onDetach()V
@@ -13366,41 +13357,26 @@
     .line 1379
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
 
-    .line 1381
-    sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->smoothKeyboard:Z
+    .line 1382
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->waitingForKeyboardOpen:Z
 
-    if-eqz v2, :cond_3
+    const/16 v3, 0x14
 
-    const/4 v2, 0x0
+    if-nez v2, :cond_3
 
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;->measureKeyboardHeight()I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 1382
-    :goto_1
-    iget-boolean v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->waitingForKeyboardOpen:Z
+    if-ltz v2, :cond_3
 
-    const/16 v4, 0x14
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
-    if-nez v3, :cond_4
+    if-nez v2, :cond_3
 
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isAnimatePopupClosing:Z
 
-    move-result v3
-
-    if-gt v2, v3, :cond_4
-
-    iget-boolean v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
-
-    if-nez v3, :cond_4
-
-    iget-boolean v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isAnimatePopupClosing:Z
-
-    if-nez v3, :cond_4
+    if-nez v2, :cond_3
 
     .line 1383
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
@@ -13412,29 +13388,29 @@
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
 
     .line 1388
-    :cond_4
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    :cond_3
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    if-gt v2, v0, :cond_5
+    if-ltz v0, :cond_4
 
-    goto :goto_2
+    goto :goto_1
 
     .line 1391
-    :cond_5
+    :cond_4
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiView()V
 
     .line 1394
-    :goto_2
+    :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     .line 1395
     invoke-virtual {p0, v0, p1, p2}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
-    :cond_6
+    :cond_5
     return-void
 .end method
 
@@ -13491,7 +13467,7 @@
 
     const/16 v0, 0x32
 
-    .line 3048
+    .line 3047
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -13514,10 +13490,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 3050
+    .line 3049
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeightLand:I
 
-    .line 3051
+    .line 3050
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -13538,11 +13514,11 @@
 
     goto :goto_0
 
-    .line 3053
+    .line 3052
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
-    .line 3054
+    .line 3053
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -13561,7 +13537,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 3058
+    .line 3057
     :cond_1
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
@@ -13570,7 +13546,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 3059
+    .line 3058
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeightLand:I
 
     goto :goto_1
@@ -13578,7 +13554,7 @@
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
-    .line 3061
+    .line 3060
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -13588,7 +13564,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 3062
+    .line 3061
     iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -13601,30 +13577,30 @@
 
     if-eq v2, v0, :cond_4
 
-    .line 3063
+    .line 3062
     :cond_3
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 3064
+    .line 3063
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 3065
+    .line 3064
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3067
+    .line 3066
     iget v0, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
-    .line 3068
+    .line 3067
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->requestLayout()V
 
-    .line 3069
+    .line 3068
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
-    .line 3073
+    .line 3072
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lastSizeChangeValue1:I
 
@@ -13634,22 +13610,22 @@
 
     if-ne v0, p2, :cond_5
 
-    .line 3074
+    .line 3073
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
     return-void
 
-    .line 3077
+    .line 3076
     :cond_5
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lastSizeChangeValue1:I
 
-    .line 3078
+    .line 3077
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lastSizeChangeValue2:Z
 
-    .line 3080
+    .line 3079
     iget-boolean p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
-    .line 3081
+    .line 3080
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
@@ -13658,14 +13634,14 @@
 
     if-eqz v1, :cond_7
 
-    .line 3082
+    .line 3081
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
 
     move-result-object v0
 
-    .line 3083
+    .line 3082
     invoke-virtual {v0}, Landroid/widget/EditText;->isFocused()Z
 
     move-result v0
@@ -13686,11 +13662,11 @@
 
     goto :goto_3
 
-    .line 3085
+    .line 3084
     :cond_7
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
-    .line 3087
+    .line 3086
     :goto_3
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
@@ -13700,10 +13676,10 @@
 
     if-eqz p1, :cond_8
 
-    .line 3088
+    .line 3087
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showEmojiPopup(I)V
 
-    .line 3090
+    .line 3089
     :cond_8
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
@@ -13719,16 +13695,16 @@
 
     if-nez p1, :cond_9
 
-    .line 3091
+    .line 3090
     iput v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
-    .line 3092
+    .line 3091
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->requestLayout()V
 
     :cond_9
     if-eqz p2, :cond_a
 
-    .line 3094
+    .line 3093
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     if-nez p1, :cond_a
@@ -13741,22 +13717,22 @@
 
     if-eqz p1, :cond_a
 
-    .line 3095
+    .line 3094
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->translateBottomPanelAfterResize:Z
 
     const/4 p1, 0x0
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 3096
+    .line 3095
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelTranslationY(FF)V
 
-    .line 3097
+    .line 3096
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->stopPanTransition()V
 
-    .line 3099
+    .line 3098
     :cond_a
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
@@ -13766,19 +13742,19 @@
 
     if-eqz p1, :cond_b
 
-    .line 3100
+    .line 3099
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->waitingForKeyboardOpen:Z
 
-    .line 3101
+    .line 3100
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3103
+    .line 3102
     :cond_b
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
-    .line 3105
+    .line 3104
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updatePlusEmojiKeyboardButton()V
 
     return-void

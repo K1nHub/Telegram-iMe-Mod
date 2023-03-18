@@ -42,7 +42,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)Z
 
     return-void
 .end method

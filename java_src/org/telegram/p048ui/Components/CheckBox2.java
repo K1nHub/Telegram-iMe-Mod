@@ -7,7 +7,6 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.CheckBox;
 import androidx.core.content.ContextCompat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
@@ -122,9 +121,9 @@ public class CheckBox2 extends View {
     @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(CheckBox.class.getName());
-        accessibilityNodeInfo.setChecked(isChecked());
+        accessibilityNodeInfo.setClassName("android.widget.Switch");
         accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(isChecked());
     }
 
     public void setIcon(int i) {

@@ -4,7 +4,7 @@ import com.smedialink.storage.domain.utils.system.ResourceManager;
 import java.util.Locale;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* compiled from: TranslationLanguageUiModel.kt */
 /* loaded from: classes3.dex */
 public final class TranslationLanguageUiModel {
@@ -52,7 +52,7 @@ public final class TranslationLanguageUiModel {
     }
 
     public String toString() {
-        return "TranslationLanguageUiModel(languageCode=" + ((Object) this.languageCode) + ", displayLanguage=" + this.displayLanguage + ')';
+        return "TranslationLanguageUiModel(languageCode=" + this.languageCode + ", displayLanguage=" + this.displayLanguage + ')';
     }
 
     public TranslationLanguageUiModel(String str, String displayLanguage) {
@@ -85,7 +85,7 @@ public final class TranslationLanguageUiModel {
 
         public final TranslationLanguageUiModel getAutoDetectionLanguage(ResourceManager resourceManager) {
             Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-            return new TranslationLanguageUiModel(null, resourceManager.getString(C3158R.string.translation_dialog_auto_language));
+            return new TranslationLanguageUiModel(null, resourceManager.getString(C3286R.string.translation_dialog_auto_language));
         }
 
         public final TranslationLanguageUiModel createByLangCode(String languageCode, String displayLangCode) {

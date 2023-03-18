@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBaseProviderMultiAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseProviderMultiAdapter.kt\ncom/chad/library/adapter/base/BaseProviderMultiAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,166:1\n1#2:167\n1849#3,2:168\n1849#3,2:170\n*S KotlinDebug\n*F\n+ 1 BaseProviderMultiAdapter.kt\ncom/chad/library/adapter/base/BaseProviderMultiAdapter\n*L\n130#1:168,2\n149#1:170,2\n*E\n"
+    value = "SMAP\nBaseProviderMultiAdapter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BaseProviderMultiAdapter.kt\ncom/chad/library/adapter/base/BaseProviderMultiAdapter\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,166:1\n1#2:167\n1855#3,2:168\n1855#3,2:170\n*S KotlinDebug\n*F\n+ 1 BaseProviderMultiAdapter.kt\ncom/chad/library/adapter/base/BaseProviderMultiAdapter\n*L\n130#1:168,2\n149#1:170,2\n*E\n"
 .end annotation
 
 
@@ -26,40 +26,40 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-CN5DVz23Tx0qfAN7oGoKeASNaE(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$0co8dsbINLlYm-R54c3NBHKzHuY(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)Z
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindClick$lambda-2(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$5vtJpszPzEMj4WMvi_na6cN37JY(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindChildClick$lambda-6$lambda-5$lambda-4(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$HnfWKrgGMw9BH70wigm3zFiJM7s(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)Z
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindChildClick$lambda-9$lambda-8$lambda-7(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)Z
+    invoke-static {p0, p1, p2, p3}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindChildClick$lambda$9$lambda$8$lambda$7(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$tMrkn_poQHTnvEPcBNWZvYlfUEQ(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)Z
+.method public static synthetic $r8$lambda$RH8YiKMISZS1SkKyFWT2HR198J8(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)Z
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindClick$lambda-3(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)Z
+    invoke-static {p0, p1, p2}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindClick$lambda$3(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)Z
 
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic $r8$lambda$bqX2yD-tTUL-swxNUpTUXkUijNg(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindChildClick$lambda$6$lambda$5$lambda$4(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$oJygQ2tYp8JynX5mVV16DjidByg(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;->bindClick$lambda$2(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
+
+    return-void
 .end method
 
 .method public constructor <init>()V
@@ -119,7 +119,7 @@
     return-void
 .end method
 
-.method private static final bindChildClick$lambda-6$lambda-5$lambda-4(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)V
+.method private static final bindChildClick$lambda$6$lambda$5$lambda$4(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)V
     .locals 2
 
     const-string v0, "$viewHolder"
@@ -171,7 +171,7 @@
     return-void
 .end method
 
-.method private static final bindChildClick$lambda-9$lambda-8$lambda-7(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)Z
+.method private static final bindChildClick$lambda$9$lambda$8$lambda$7(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;Landroid/view/View;)Z
     .locals 2
 
     const-string v0, "$viewHolder"
@@ -227,7 +227,7 @@
     return p0
 .end method
 
-.method private static final bindClick$lambda-2(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
+.method private static final bindClick$lambda$2(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)V
     .locals 3
 
     const-string v0, "$viewHolder"
@@ -291,7 +291,7 @@
     return-void
 .end method
 
-.method private static final bindClick$lambda-3(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)Z
+.method private static final bindClick$lambda$3(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Landroid/view/View;)Z
     .locals 3
 
     const-string v0, "$viewHolder"
@@ -416,7 +416,7 @@
 .end method
 
 .method protected bindChildClick(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;I)V
-    .locals 5
+    .locals 6
 
     const-string v0, "viewHolder"
 
@@ -428,6 +428,8 @@
     move-result-object v0
 
     const/4 v1, 0x1
+
+    const-string v2, "findViewById<View>(id)"
 
     if-nez v0, :cond_3
 
@@ -444,59 +446,59 @@
     :cond_0
     invoke-virtual {v0}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->getChildClickViewIds()Ljava/util/ArrayList;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 1849
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 1855
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Ljava/lang/Number;
-
-    invoke-virtual {v3}, Ljava/lang/Number;->intValue()I
-
-    move-result v3
-
-    .line 131
-    iget-object v4, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
-
-    invoke-virtual {v4, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    if-nez v3, :cond_1
-
-    goto :goto_0
-
-    .line 132
     :cond_1
-    invoke-virtual {v3}, Landroid/view/View;->isClickable()Z
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-nez v4, :cond_2
+    if-eqz v4, :cond_3
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Number;
+
+    invoke-virtual {v4}, Ljava/lang/Number;->intValue()I
+
+    move-result v4
+
+    .line 131
+    iget-object v5, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v5, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
+
+    invoke-static {v4, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 132
+    invoke-virtual {v4}, Landroid/view/View;->isClickable()Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
 
     .line 133
-    invoke-virtual {v3, v1}, Landroid/view/View;->setClickable(Z)V
+    invoke-virtual {v4, v1}, Landroid/view/View;->setClickable(Z)V
 
     .line 135
     :cond_2
-    new-instance v4, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda1;
+    new-instance v5, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda1;
 
-    invoke-direct {v4, p1, p0, v0}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda1;-><init>(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
+    invoke-direct {v5, p1, p0, v0}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda1;-><init>(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
 
-    invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
 
@@ -523,57 +525,57 @@
 
     move-result-object v0
 
-    .line 1849
+    .line 1855
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
+    :cond_5
     :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_7
+    if-eqz v3, :cond_7
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Ljava/lang/Number;
+    check-cast v3, Ljava/lang/Number;
 
-    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
-
-    move-result v2
-
-    .line 150
-    iget-object v3, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
-
-    invoke-virtual {v3, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    if-nez v2, :cond_5
-
-    goto :goto_1
-
-    .line 151
-    :cond_5
-    invoke-virtual {v2}, Landroid/view/View;->isLongClickable()Z
+    invoke-virtual {v3}, Ljava/lang/Number;->intValue()I
 
     move-result v3
 
-    if-nez v3, :cond_6
+    .line 150
+    iget-object v4, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v4, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_5
+
+    invoke-static {v3, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 151
+    invoke-virtual {v3}, Landroid/view/View;->isLongClickable()Z
+
+    move-result v4
+
+    if-nez v4, :cond_6
 
     .line 152
-    invoke-virtual {v2, v1}, Landroid/view/View;->setLongClickable(Z)V
+    invoke-virtual {v3, v1}, Landroid/view/View;->setLongClickable(Z)V
 
     .line 154
     :cond_6
-    new-instance v3, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda3;
+    new-instance v4, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda3;
 
-    invoke-direct {v3, p1, p0, p2}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda3;-><init>(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
+    invoke-direct {v4, p1, p0, p2}, Lcom/chad/library/adapter/base/BaseProviderMultiAdapter$$ExternalSyntheticLambda3;-><init>(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/chad/library/adapter/base/BaseProviderMultiAdapter;Lcom/chad/library/adapter/base/provider/BaseItemProvider;)V
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     goto :goto_1
 
@@ -857,14 +859,11 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0, p1}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->onViewAttachedToWindow(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -898,13 +897,10 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0, p1}, Lcom/chad/library/adapter/base/provider/BaseItemProvider;->onViewDetachedFromWindow(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method

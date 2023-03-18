@@ -16,7 +16,6 @@ import com.smedialink.utils.extentions.delegate.ResettableLazyDelegateKt;
 import com.smedialink.utils.extentions.delegate.ResettableLazyManager;
 import java.util.ArrayList;
 import java.util.Set;
-import kotlin.Unit;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -28,10 +27,10 @@ import org.fork.enums.MessagePopupItem;
 import org.fork.enums.PhotoViewerMenuItem;
 import org.fork.p046ui.view.MediaSwitchTopicsBar;
 import org.fork.p046ui.view.SortingFilterCell;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
 import org.telegram.p048ui.Cells.TextCheckBoxCell;
@@ -120,7 +119,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.fork.ui.fragment.CombineContextMenuActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                CombineContextMenuActivity.m2037getThemeDescriptions$lambda3(CombineContextMenuActivity.this);
+                CombineContextMenuActivity.getThemeDescriptions$lambda$3(CombineContextMenuActivity.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -132,8 +131,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-3  reason: not valid java name */
-    public static final void m2037getThemeDescriptions$lambda3(CombineContextMenuActivity this$0) {
+    public static final void getThemeDescriptions$lambda$3(CombineContextMenuActivity this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         MediaSwitchTopicsBar mediaSwitchTopicsBar = this$0.topicsBar;
         if (mediaSwitchTopicsBar == null) {
@@ -142,33 +140,24 @@ public final class CombineContextMenuActivity extends MvpFragment {
         }
         mediaSwitchTopicsBar.updateSelectedTopicAndColors();
         RecyclerListView listView = this$0.getListView();
-        int i = 0;
         int childCount = listView.getChildCount();
-        if (childCount <= 0) {
-            return;
-        }
-        while (true) {
-            int i2 = i + 1;
+        for (int i = 0; i < childCount; i++) {
             View childAt = listView.getChildAt(i);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
             SortingFilterCell sortingFilterCell = childAt instanceof SortingFilterCell ? (SortingFilterCell) childAt : null;
             if (sortingFilterCell != null) {
                 sortingFilterCell.updateColors();
             }
-            if (i2 >= childCount) {
-                return;
-            }
-            i = i2;
         }
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackButtonImage(C3158R.C3160drawable.ic_ab_back);
-        c3222ActionBar.setAllowOverlayTitle(true);
-        c3222ActionBar.setTitle(LocaleController.getInternalString(C3158R.string.settings_interface_message_context_menu));
-        c3222ActionBar.setActionBarMenuOnItemClick(new C3222ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.CombineContextMenuActivity$setupActionBar$1$1
-            @Override // org.telegram.p048ui.ActionBar.C3222ActionBar.ActionBarMenuOnItemClick
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackButtonImage(C3286R.C3288drawable.ic_ab_back);
+        c3351ActionBar.setAllowOverlayTitle(true);
+        c3351ActionBar.setTitle(LocaleController.getInternalString(C3286R.string.settings_interface_message_context_menu));
+        c3351ActionBar.setActionBarMenuOnItemClick(new C3351ActionBar.ActionBarMenuOnItemClick() { // from class: org.fork.ui.fragment.CombineContextMenuActivity$setupActionBar$1$1
+            @Override // org.telegram.p048ui.ActionBar.C3351ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CombineContextMenuActivity.this.finishFragment();
@@ -193,15 +182,14 @@ public final class CombineContextMenuActivity extends MvpFragment {
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.fork.ui.fragment.CombineContextMenuActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.p048ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                CombineContextMenuActivity.m2038initListView$lambda8$lambda7(CombineContextMenuActivity.this, view, i);
+                CombineContextMenuActivity.initListView$lambda$8$lambda$7(CombineContextMenuActivity.this, view, i);
             }
         });
         return recyclerListView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: initListView$lambda-8$lambda-7  reason: not valid java name */
-    public static final void m2038initListView$lambda8$lambda7(CombineContextMenuActivity this$0, View view, int i) {
+    public static final void initListView$lambda$8$lambda$7(CombineContextMenuActivity this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
             ((TextCheckCell) view).toggleCheckbox();
@@ -211,7 +199,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
         } else if (view instanceof TextCheckBoxCell) {
             TextCheckBoxCell textCheckBoxCell = (TextCheckBoxCell) view;
             textCheckBoxCell.setChecked(!textCheckBoxCell.isChecked());
-            if (this$0.getCurrentMessagesContextMenu()) {
+            if (this$0.currentMessagesContextMenu) {
                 Set<MessagePopupItem> selectedMessagePopupItems = this$0.getToolsController().getSelectedMessagePopupItems();
                 MessagePopupItem messagePopupItem = this$0.messagesPopupItems[i - this$0.tabsRowStart];
                 if (selectedMessagePopupItems.contains(messagePopupItem)) {
@@ -245,10 +233,9 @@ public final class CombineContextMenuActivity extends MvpFragment {
         private final Context mContext;
         final /* synthetic */ CombineContextMenuActivity this$0;
 
-        public ListAdapter(CombineContextMenuActivity this$0, Context mContext) {
-            Intrinsics.checkNotNullParameter(this$0, "this$0");
+        public ListAdapter(CombineContextMenuActivity combineContextMenuActivity, Context mContext) {
             Intrinsics.checkNotNullParameter(mContext, "mContext");
-            this.this$0 = this$0;
+            this.this$0 = combineContextMenuActivity;
             this.mContext = mContext;
             updateRows();
         }
@@ -298,21 +285,17 @@ public final class CombineContextMenuActivity extends MvpFragment {
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 MediaSwitchTopicsBar mediaSwitchTopicsBar = new MediaSwitchTopicsBar(parentActivity, this.this$0.getCurrentMessagesContextMenu(), new CombineContextMenuActivity$ListAdapter$onCreateViewHolder$1(this.this$0));
                 this.this$0.topicsBar = mediaSwitchTopicsBar;
-                Unit unit = Unit.INSTANCE;
                 textCheckBoxCell = mediaSwitchTopicsBar;
             } else if (i == IdFabric$ViewTypes.TEXT_CHECK) {
                 TextCheckCell textCheckCell = new TextCheckCell(this.mContext);
                 textCheckCell.setType(1);
-                Unit unit2 = Unit.INSTANCE;
                 textCheckBoxCell = textCheckCell;
             } else {
                 TextCheckBoxCell textCheckBoxCell2 = new TextCheckBoxCell(this.this$0.getParentActivity(), true, false);
                 textCheckBoxCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                Unit unit3 = Unit.INSTANCE;
                 textCheckBoxCell = textCheckBoxCell2;
             }
             textCheckBoxCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            Unit unit4 = Unit.INSTANCE;
             return new RecyclerListView.Holder(textCheckBoxCell);
         }
 
@@ -326,7 +309,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
             if ((view instanceof TextCheckCell) && itemViewType == IdFabric$ViewTypes.TEXT_CHECK) {
                 TextCheckCell textCheckCell = (TextCheckCell) view;
                 textCheckCell.setType(0);
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3158R.string.settings_interface_message_popup_aggregator), this.this$0.getToolsController().isMessagePopupAggregatorEnabled(), z);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3286R.string.settings_interface_message_popup_aggregator), this.this$0.getToolsController().isMessagePopupAggregatorEnabled(), z);
             } else if ((view instanceof TextCheckBoxCell) && itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX) {
                 if (this.this$0.getCurrentMessagesContextMenu()) {
                     MessagePopupItem messagePopupItem = this.this$0.messagesPopupItems[i - this.this$0.tabsRowStart];

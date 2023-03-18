@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 740
+    .line 739
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AlertDialog$3;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 5
 
-    .line 743
+    .line 742
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ScrollView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 744
+    .line 743
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/AlertDialog$3;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3700(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/graphics/drawable/BitmapDrawable;
@@ -63,7 +63,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 745
+    .line 744
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/AlertDialog$3;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3700(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/graphics/drawable/BitmapDrawable;
@@ -92,7 +92,7 @@
 
     invoke-virtual {p3, p4, v1, v2, v3}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 746
+    .line 745
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/AlertDialog$3;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3700(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/graphics/drawable/BitmapDrawable;
@@ -103,7 +103,7 @@
 
     invoke-virtual {p3, p1}, Landroid/graphics/drawable/BitmapDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 748
+    .line 747
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/AlertDialog$3;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -125,7 +125,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 749
+    .line 748
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/AlertDialog$3;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3700(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/graphics/drawable/BitmapDrawable;
@@ -166,7 +166,7 @@
 
     invoke-virtual {p3, p4, v2, v0, v3}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 750
+    .line 749
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/AlertDialog$3;->this$0:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/AlertDialog;->access$3700(Lorg/telegram/ui/ActionBar/AlertDialog;)[Landroid/graphics/drawable/BitmapDrawable;

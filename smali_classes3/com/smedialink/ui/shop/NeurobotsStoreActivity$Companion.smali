@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNeurobotsStoreActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,405:1\n1547#2:406\n1618#2,3:407\n*S KotlinDebug\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity$Companion\n*L\n63#1:406\n63#1:407,3\n*E\n"
+    value = "SMAP\nNeurobotsStoreActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,405:1\n1549#2:406\n1620#2,3:407\n*S KotlinDebug\n*F\n+ 1 NeurobotsStoreActivity.kt\ncom/smedialink/ui/shop/NeurobotsStoreActivity$Companion\n*L\n63#1:406\n63#1:407,3\n*E\n"
 .end annotation
 
 
@@ -139,7 +139,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1547
+    .line 1549
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -150,7 +150,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1618
+    .line 1620
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -166,7 +166,7 @@
 
     move-result-object v1
 
-    .line 1619
+    .line 1621
     check-cast v1, Lcom/smedialink/bots/domain/model/SmartTag;
 
     .line 63
@@ -174,6 +174,7 @@
 
     move-result-object v1
 
+    .line 1621
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -181,6 +182,7 @@
     :cond_0
     const-string p1, "popular"
 
+    .line 63
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result p1

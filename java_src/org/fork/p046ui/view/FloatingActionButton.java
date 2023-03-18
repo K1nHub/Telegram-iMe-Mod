@@ -13,7 +13,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p048ui.ActionBar.Theme;
@@ -36,7 +35,6 @@ public final class FloatingActionButton extends FrameLayout {
         Property property = FrameLayout.TRANSLATION_Z;
         stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(this, property, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(4)).setDuration(200L));
         stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this, property, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(2)).setDuration(200L));
-        Unit unit = Unit.INSTANCE;
         setStateListAnimator(stateListAnimator);
         setOutlineProvider(new ViewOutlineProvider() { // from class: org.fork.ui.view.FloatingActionButton.2
             @Override // android.view.ViewOutlineProvider

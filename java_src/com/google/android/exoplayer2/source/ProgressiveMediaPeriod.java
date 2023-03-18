@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.source;
 
 import android.net.Uri;
 import android.os.Handler;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.ParserException;
@@ -92,8 +92,8 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     private final Handler handler = Util.createHandlerForCurrentLooper();
     private TrackId[] sampleQueueTrackIds = new TrackId[0];
     private SampleQueue[] sampleQueues = new SampleQueue[0];
-    private long pendingResetPositionUs = C0474C.TIME_UNSET;
-    private long durationUs = C0474C.TIME_UNSET;
+    private long pendingResetPositionUs = C0468C.TIME_UNSET;
+    private long durationUs = C0468C.TIME_UNSET;
     private int dataType = 1;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -289,9 +289,9 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
                 this.notifyDiscontinuity = false;
                 return this.lastSeekPositionUs;
             }
-            return C0474C.TIME_UNSET;
+            return C0468C.TIME_UNSET;
         }
-        return C0474C.TIME_UNSET;
+        return C0468C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod, com.google.android.exoplayer2.source.SequenceableLoader
@@ -449,7 +449,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     @Override // com.google.android.exoplayer2.upstream.Loader.Callback
     public void onLoadCompleted(ExtractingLoadable extractingLoadable, long j, long j2) {
         SeekMap seekMap;
-        if (this.durationUs == C0474C.TIME_UNSET && (seekMap = this.seekMap) != null) {
+        if (this.durationUs == C0468C.TIME_UNSET && (seekMap = this.seekMap) != null) {
             boolean isSeekable = seekMap.isSeekable();
             long largestQueuedTimestampUs = getLargestQueuedTimestampUs(true);
             long j3 = largestQueuedTimestampUs == Long.MIN_VALUE ? 0L : largestQueuedTimestampUs + DEFAULT_LAST_SAMPLE_DURATION_US;
@@ -489,7 +489,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         StatsDataSource statsDataSource = extractingLoadable.dataSource;
         LoadEventInfo loadEventInfo = new LoadEventInfo(extractingLoadable.loadTaskId, extractingLoadable.dataSpec, statsDataSource.getLastOpenedUri(), statsDataSource.getLastResponseHeaders(), j, j2, statsDataSource.getBytesRead());
         long retryDelayMsFor = this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, new MediaLoadData(1, -1, null, 0, null, Util.usToMs(extractingLoadable.seekTimeUs), Util.usToMs(this.durationUs)), iOException, i));
-        if (retryDelayMsFor == C0474C.TIME_UNSET) {
+        if (retryDelayMsFor == C0468C.TIME_UNSET) {
             loadErrorAction = Loader.DONT_RETRY_FATAL;
         } else {
             int extractedSamplesCount = getExtractedSamplesCount();
@@ -581,9 +581,9 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setSeekMap */
     public void lambda$seekMap$1(SeekMap seekMap) {
-        this.seekMap = this.icyHeaders == null ? seekMap : new SeekMap.Unseekable(C0474C.TIME_UNSET);
+        this.seekMap = this.icyHeaders == null ? seekMap : new SeekMap.Unseekable(C0468C.TIME_UNSET);
         this.durationUs = seekMap.getDurationUs();
-        boolean z = !this.isLengthKnown && seekMap.getDurationUs() == C0474C.TIME_UNSET;
+        boolean z = !this.isLengthKnown && seekMap.getDurationUs() == C0468C.TIME_UNSET;
         this.isLive = z;
         this.dataType = z ? 7 : 1;
         this.listener.onSourceInfoRefreshed(this.durationUs, seekMap.isSeekable(), this.isLive);
@@ -642,16 +642,16 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         if (this.prepared) {
             Assertions.checkState(isPendingReset());
             long j = this.durationUs;
-            if (j != C0474C.TIME_UNSET && this.pendingResetPositionUs > j) {
+            if (j != C0468C.TIME_UNSET && this.pendingResetPositionUs > j) {
                 this.loadingFinished = true;
-                this.pendingResetPositionUs = C0474C.TIME_UNSET;
+                this.pendingResetPositionUs = C0468C.TIME_UNSET;
                 return;
             }
             extractingLoadable.setLoadPosition(((SeekMap) Assertions.checkNotNull(this.seekMap)).getSeekPoints(this.pendingResetPositionUs).first.position, this.pendingResetPositionUs);
             for (SampleQueue sampleQueue : this.sampleQueues) {
                 sampleQueue.setStartTimeUs(this.pendingResetPositionUs);
             }
-            this.pendingResetPositionUs = C0474C.TIME_UNSET;
+            this.pendingResetPositionUs = C0468C.TIME_UNSET;
         }
         this.extractedSamplesCountAtStartOfLoad = getExtractedSamplesCount();
         this.mediaSourceEventDispatcher.loadStarted(new LoadEventInfo(extractingLoadable.loadTaskId, extractingLoadable.dataSpec, this.loader.startLoading(extractingLoadable, this, this.loadErrorHandlingPolicy.getMinimumLoadableRetryCount(this.dataType))), 1, -1, null, 0, null, extractingLoadable.seekTimeUs, this.durationUs);
@@ -659,7 +659,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
 
     private boolean configureRetry(ExtractingLoadable extractingLoadable, int i) {
         SeekMap seekMap;
-        if (this.isLengthKnown || ((seekMap = this.seekMap) != null && seekMap.getDurationUs() != C0474C.TIME_UNSET)) {
+        if (this.isLengthKnown || ((seekMap = this.seekMap) != null && seekMap.getDurationUs() != C0468C.TIME_UNSET)) {
             this.extractedSamplesCountAtStartOfLoad = i;
             return true;
         }
@@ -707,7 +707,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     }
 
     private boolean isPendingReset() {
-        return this.pendingResetPositionUs != C0474C.TIME_UNSET;
+        return this.pendingResetPositionUs != C0468C.TIME_UNSET;
     }
 
     private void assertPrepared() {

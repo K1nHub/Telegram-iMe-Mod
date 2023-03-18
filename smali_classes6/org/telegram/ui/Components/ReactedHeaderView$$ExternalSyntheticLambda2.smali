@@ -14,11 +14,13 @@
 
 .field public final synthetic f$3:Ljava/util/List;
 
-.field public final synthetic f$4:Ljava/lang/Runnable;
+.field public final synthetic f$4:Ljava/util/List;
+
+.field public final synthetic f$5:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ReactedHeaderView;Lorg/telegram/tgnet/TLObject;Ljava/util/List;Ljava/util/List;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ReactedHeaderView;Lorg/telegram/tgnet/TLObject;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,7 +33,9 @@
 
     iput-object p4, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$3:Ljava/util/List;
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$4:Ljava/lang/Runnable;
+    iput-object p5, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$4:Ljava/util/List;
+
+    iput-object p6, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$5:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -39,7 +43,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$0:Lorg/telegram/ui/Components/ReactedHeaderView;
 
@@ -49,9 +53,11 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$3:Ljava/util/List;
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$4:Ljava/lang/Runnable;
+    iget-object v4, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$4:Ljava/util/List;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/ReactedHeaderView;->$r8$lambda$Gb_79sY5Bn_E-xG0D_VddvyU5OM(Lorg/telegram/ui/Components/ReactedHeaderView;Lorg/telegram/tgnet/TLObject;Ljava/util/List;Ljava/util/List;Ljava/lang/Runnable;)V
+    iget-object v5, p0, Lorg/telegram/ui/Components/ReactedHeaderView$$ExternalSyntheticLambda2;->f$5:Ljava/lang/Runnable;
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/ReactedHeaderView;->$r8$lambda$tBX2WudiHmne6gtdElpVWNii8e0(Lorg/telegram/ui/Components/ReactedHeaderView;Lorg/telegram/tgnet/TLObject;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/Runnable;)V
 
     return-void
 .end method

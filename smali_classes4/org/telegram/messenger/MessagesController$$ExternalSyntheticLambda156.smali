@@ -10,13 +10,13 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
+.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ZLorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +25,9 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$2:Z
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$3:Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$3:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     return-void
 .end method
@@ -41,11 +41,11 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$3:Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda156;->f$3:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$iIswrXFnNf0Lg2HHxNJVM2bYDCA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ZLorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$3bVSFRe9Bca7U790_oNdB5uWAoU(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
 
     return-void
 .end method

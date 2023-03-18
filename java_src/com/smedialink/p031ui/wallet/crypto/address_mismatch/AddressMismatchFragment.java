@@ -28,11 +28,11 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthAddressMismatchBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
-import org.telegram.p048ui.ActionBar.C3222ActionBar;
+import org.telegram.p048ui.ActionBar.C3351ActionBar;
 import org.telegram.p048ui.ActionBar.INavigationLayout;
 import org.telegram.p048ui.ActionBar.Theme;
 import org.telegram.p048ui.ActionBar.ThemeDescription;
@@ -96,20 +96,19 @@ public final class AddressMismatchFragment extends WalletAuthFragment implements
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getBinding().textTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "chat_messagePanelText"), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteGrayText2"), new ThemeDescription(getBinding().buttonDelete, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                AddressMismatchFragment.m1563getThemeDescriptions$lambda0(AddressMismatchFragment.this);
+                AddressMismatchFragment.getThemeDescriptions$lambda$0(AddressMismatchFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "dialogTextRed2"));
+        }, "dialogTextRed"));
         return arrayListOf;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-0  reason: not valid java name */
-    public static final void m1563getThemeDescriptions$lambda0(AddressMismatchFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(AddressMismatchFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getBinding().buttonBackup.applyColors();
     }
@@ -119,48 +118,47 @@ public final class AddressMismatchFragment extends WalletAuthFragment implements
         postViewActionDelayed(j, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda1
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                AddressMismatchFragment.m1562closeScreen$lambda1(AddressMismatchFragment.this);
+                AddressMismatchFragment.closeScreen$lambda$1(AddressMismatchFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: closeScreen$lambda-1  reason: not valid java name */
-    public static final void m1562closeScreen$lambda1(AddressMismatchFragment this$0) {
+    public static final void closeScreen$lambda$1(AddressMismatchFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.finishFragment();
     }
 
     private final void setupActionBar() {
-        C3222ActionBar c3222ActionBar = this.actionBar;
-        c3222ActionBar.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        c3222ActionBar.setCastShadows(false);
+        C3351ActionBar c3351ActionBar = this.actionBar;
+        c3351ActionBar.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        c3351ActionBar.setCastShadows(false);
     }
 
     private final void setupTexts() {
         ForkFragmentWalletEthAddressMismatchBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3158R.string.wallet_eth_address_mismatch_title));
-        binding.buttonDelete.setText(getResourceManager().getString(C3158R.string.wallet_eth_address_mismatch_btn_delete));
-        binding.buttonBackup.setText(getResourceManager().getString(C3158R.string.wallet_eth_address_mismatch_btn_backup));
+        binding.textTitle.setText(getResourceManager().getString(C3286R.string.wallet_eth_address_mismatch_title));
+        binding.buttonDelete.setText(getResourceManager().getString(C3286R.string.wallet_eth_address_mismatch_btn_delete));
+        binding.buttonBackup.setText(getResourceManager().getString(C3286R.string.wallet_eth_address_mismatch_btn_backup));
         AppCompatTextView appCompatTextView = binding.textDescription;
-        appCompatTextView.setText(getResourceManager().getString(C3158R.string.wallet_eth_address_mismatch_description));
+        appCompatTextView.setText(getResourceManager().getString(C3286R.string.wallet_eth_address_mismatch_description));
         appCompatTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     private final void setupImage() {
         RLottieImageView rLottieImageView = getBinding().imageLogo;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3158R.C3164raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3286R.C3291raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
     }
 
     private final void setupColors() {
         ForkFragmentWalletEthAddressMismatchBinding binding = getBinding();
         binding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        AppCompatButton appCompatButton = binding.buttonDelete;
-        Intrinsics.checkNotNullExpressionValue(appCompatButton, "");
-        ViewExtKt.withMediumTypeface(appCompatButton);
-        appCompatButton.setTextColor(Theme.getColor("dialogTextRed2"));
+        AppCompatButton setupColors$lambda$7$lambda$6 = binding.buttonDelete;
+        Intrinsics.checkNotNullExpressionValue(setupColors$lambda$7$lambda$6, "setupColors$lambda$7$lambda$6");
+        ViewExtKt.withMediumTypeface(setupColors$lambda$7$lambda$6);
+        setupColors$lambda$7$lambda$6.setTextColor(Theme.getColor("dialogTextRed"));
         binding.textTitle.setTextColor(Theme.getColor("chat_messagePanelText"));
         binding.textDescription.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
     }
@@ -190,7 +188,7 @@ public final class AddressMismatchFragment extends WalletAuthFragment implements
         AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, getPresenter().getDeleteWalletDialogModel(), new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda0
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                AddressMismatchFragment.m1564showDeleteWalletDialog$lambda9(AddressMismatchFragment.this);
+                AddressMismatchFragment.showDeleteWalletDialog$lambda$9(AddressMismatchFragment.this);
             }
         }, null, 8, null);
         showDialog(createDialog$default);
@@ -198,8 +196,7 @@ public final class AddressMismatchFragment extends WalletAuthFragment implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showDeleteWalletDialog$lambda-9  reason: not valid java name */
-    public static final void m1564showDeleteWalletDialog$lambda9(AddressMismatchFragment this$0) {
+    public static final void showDeleteWalletDialog$lambda$9(AddressMismatchFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AddressMismatchPresenter.deleteActiveEthWallet$default(this$0.getPresenter(), 0L, 1, null);
     }

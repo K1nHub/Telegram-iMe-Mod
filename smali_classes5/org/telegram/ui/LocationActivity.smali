@@ -5519,7 +5519,7 @@
 .method private synthetic lambda$getThemeDescriptions$46()V
     .locals 6
 
-    .line 2705
+    .line 2704
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapTypeButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v1, "location_actionIcon"
@@ -5530,7 +5530,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
 
-    .line 2706
+    .line 2705
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapTypeButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v1, "actionBarDefaultSubmenuBackground"
@@ -5541,7 +5541,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->redrawPopup(I)V
 
-    .line 2707
+    .line 2706
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapTypeButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v1, "actionBarDefaultSubmenuItemIcon"
@@ -5554,7 +5554,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 2708
+    .line 2707
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapTypeButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string v1, "actionBarDefaultSubmenuItem"
@@ -5567,7 +5567,7 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 2710
+    .line 2709
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -5584,32 +5584,32 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2711
+    .line 2710
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->shadow:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 2713
+    .line 2712
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->map:Lorg/telegram/messenger/IMapsProvider$IMap;
 
     if-eqz v0, :cond_1
 
-    .line 2714
+    .line 2713
     invoke-direct {p0}, Lorg/telegram/ui/LocationActivity;->isActiveThemeDark()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2715
+    .line 2714
     iget-boolean v0, p0, Lorg/telegram/ui/LocationActivity;->currentMapStyleDark:Z
 
     if-nez v0, :cond_1
 
-    .line 2716
+    .line 2715
     iput-boolean v2, p0, Lorg/telegram/ui/LocationActivity;->currentMapStyleDark:Z
 
-    .line 2717
+    .line 2716
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getMapsProvider()Lorg/telegram/messenger/IMapsProvider;
 
     move-result-object v0
@@ -5622,22 +5622,22 @@
 
     move-result-object v0
 
-    .line 2718
+    .line 2717
     iget-object v1, p0, Lorg/telegram/ui/LocationActivity;->map:Lorg/telegram/messenger/IMapsProvider$IMap;
 
     invoke-interface {v1, v0}, Lorg/telegram/messenger/IMapsProvider$IMap;->setMapStyle(Lorg/telegram/messenger/IMapsProvider$IMapStyleOptions;)V
 
-    .line 2719
+    .line 2718
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->proximityCircle:Lorg/telegram/messenger/IMapsProvider$ICircle;
 
     if-eqz v0, :cond_1
 
     const/4 v1, -0x1
 
-    .line 2720
+    .line 2719
     invoke-interface {v0, v1}, Lorg/telegram/messenger/IMapsProvider$ICircle;->setStrokeColor(I)V
 
-    .line 2721
+    .line 2720
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->proximityCircle:Lorg/telegram/messenger/IMapsProvider$ICircle;
 
     const v1, 0x20ffffff
@@ -5646,33 +5646,33 @@
 
     goto :goto_0
 
-    .line 2725
+    .line 2724
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/LocationActivity;->currentMapStyleDark:Z
 
     if-eqz v0, :cond_1
 
-    .line 2726
+    .line 2725
     iput-boolean v3, p0, Lorg/telegram/ui/LocationActivity;->currentMapStyleDark:Z
 
-    .line 2727
+    .line 2726
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->map:Lorg/telegram/messenger/IMapsProvider$IMap;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lorg/telegram/messenger/IMapsProvider$IMap;->setMapStyle(Lorg/telegram/messenger/IMapsProvider$IMapStyleOptions;)V
 
-    .line 2728
+    .line 2727
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->proximityCircle:Lorg/telegram/messenger/IMapsProvider$ICircle;
 
     if-eqz v0, :cond_1
 
     const/high16 v1, -0x1000000
 
-    .line 2729
+    .line 2728
     invoke-interface {v0, v1}, Lorg/telegram/messenger/IMapsProvider$ICircle;->setStrokeColor(I)V
 
-    .line 2730
+    .line 2729
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->proximityCircle:Lorg/telegram/messenger/IMapsProvider$ICircle;
 
     const/high16 v1, 0x20000000
@@ -5687,7 +5687,7 @@
 .method private synthetic lambda$onCheckGlScreenshot$43(Landroid/view/ViewGroup;Landroid/opengl/GLSurfaceView;)V
     .locals 0
 
-    .line 2607
+    .line 2606
     :try_start_0
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
     :try_end_0
@@ -5698,16 +5698,16 @@
     :catch_0
     move-exception p1
 
-    .line 2609
+    .line 2608
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     const/4 p1, 0x1
 
-    .line 2612
+    .line 2611
     iput-boolean p1, p0, Lorg/telegram/ui/LocationActivity;->hasScreenshot:Z
 
-    .line 2614
+    .line 2613
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -5716,7 +5716,7 @@
 .method private synthetic lambda$onCheckGlScreenshot$44(Landroid/graphics/Bitmap;Landroid/opengl/GLSurfaceView;)V
     .locals 2
 
-    .line 2595
+    .line 2594
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -5725,17 +5725,17 @@
 
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 2596
+    .line 2595
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 2598
+    .line 2597
     invoke-virtual {p2}, Landroid/opengl/GLSurfaceView;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    .line 2600
+    .line 2599
     :try_start_0
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
 
@@ -5750,10 +5750,10 @@
     :catch_0
     move-exception v0
 
-    .line 2602
+    .line 2601
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2605
+    .line 2604
     :goto_0
     new-instance v0, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda23;
 
@@ -5769,7 +5769,7 @@
 .method private synthetic lambda$onCheckGlScreenshot$45(Landroid/opengl/GLSurfaceView;)V
     .locals 11
 
-    .line 2580
+    .line 2579
     invoke-virtual {p1}, Landroid/opengl/GLSurfaceView;->getWidth()I
 
     move-result v0
@@ -5784,7 +5784,7 @@
 
     goto :goto_0
 
-    .line 2583
+    .line 2582
     :cond_0
     invoke-virtual {p1}, Landroid/opengl/GLSurfaceView;->getWidth()I
 
@@ -5806,7 +5806,7 @@
 
     const/4 v2, 0x0
 
-    .line 2584
+    .line 2583
     invoke-virtual {p1}, Landroid/opengl/GLSurfaceView;->getWidth()I
 
     move-result v3
@@ -5823,7 +5823,7 @@
 
     invoke-static/range {v1 .. v7}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
 
-    .line 2585
+    .line 2584
     invoke-virtual {p1}, Landroid/opengl/GLSurfaceView;->getWidth()I
 
     move-result v1
@@ -5838,10 +5838,10 @@
 
     move-result-object v1
 
-    .line 2586
+    .line 2585
     invoke-virtual {v1, v0}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V
 
-    .line 2588
+    .line 2587
     new-instance v9, Landroid/graphics/Matrix;
 
     invoke-direct {v9}, Landroid/graphics/Matrix;-><init>()V
@@ -5850,14 +5850,14 @@
 
     const/high16 v2, -0x40800000    # -1.0f
 
-    .line 2589
+    .line 2588
     invoke-virtual {v9, v0, v2}, Landroid/graphics/Matrix;->preScale(FF)Z
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    .line 2591
+    .line 2590
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
@@ -5874,10 +5874,10 @@
 
     move-result-object v0
 
-    .line 2592
+    .line 2591
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 2594
+    .line 2593
     new-instance v1, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda21;
 
     invoke-direct {v1, p0, v0, p1}, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/LocationActivity;Landroid/graphics/Bitmap;Landroid/opengl/GLSurfaceView;)V
@@ -7090,7 +7090,7 @@
 .method private onCheckGlScreenshot()Z
     .locals 2
 
-    .line 2577
+    .line 2576
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapView:Lorg/telegram/messenger/IMapsProvider$IMapView;
 
     if-eqz v0, :cond_0
@@ -7105,14 +7105,14 @@
 
     if-nez v0, :cond_0
 
-    .line 2578
+    .line 2577
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapView:Lorg/telegram/messenger/IMapsProvider$IMapView;
 
     invoke-interface {v0}, Lorg/telegram/messenger/IMapsProvider$IMapView;->getGlSurfaceView()Landroid/opengl/GLSurfaceView;
 
     move-result-object v0
 
-    .line 2579
+    .line 2578
     new-instance v1, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda22;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/LocationActivity;Landroid/opengl/GLSurfaceView;)V
@@ -13019,7 +13019,7 @@
     return-void
 .end method
 
-.method public finishFragment(Z)V
+.method public finishFragment(Z)Z
     .locals 1
 
     .line 2569
@@ -13029,13 +13029,17 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    const/4 p1, 0x0
 
-    .line 2573
+    return p1
+
+    .line 2572
     :cond_0
-    invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)V
+    invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment(Z)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
@@ -13051,12 +13055,12 @@
 
     move-object/from16 v0, p0
 
-    .line 2702
+    .line 2701
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2704
+    .line 2703
     new-instance v10, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda37;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/LocationActivity$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/LocationActivity;)V
@@ -13065,7 +13069,7 @@
 
     const/4 v2, 0x0
 
-    .line 2737
+    .line 2736
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
 
@@ -13075,7 +13079,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 2738
+    .line 2737
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13100,7 +13104,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2739
+    .line 2738
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13137,7 +13141,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2740
+    .line 2739
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13170,7 +13174,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2741
+    .line 2740
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13203,7 +13207,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2742
+    .line 2741
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13232,7 +13236,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2743
+    .line 2742
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13261,7 +13265,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2744
+    .line 2743
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13290,7 +13294,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2745
+    .line 2744
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13321,7 +13325,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2746
+    .line 2745
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13350,7 +13354,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2747
+    .line 2746
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13381,7 +13385,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2748
+    .line 2747
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13410,7 +13414,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2749
+    .line 2748
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13439,7 +13443,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2750
+    .line 2749
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13468,7 +13472,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2751
+    .line 2750
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13497,7 +13501,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2752
+    .line 2751
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13526,7 +13530,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2753
+    .line 2752
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
@@ -13559,7 +13563,7 @@
 
     goto/16 :goto_0
 
-    .line 2756
+    .line 2755
     :cond_0
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -13583,7 +13587,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2758
+    .line 2757
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13606,7 +13610,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2759
+    .line 2758
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -13631,7 +13635,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2760
+    .line 2759
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13648,7 +13652,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2761
+    .line 2760
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13667,7 +13671,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2762
+    .line 2761
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13682,7 +13686,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2763
+    .line 2762
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13699,7 +13703,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2764
+    .line 2763
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13714,7 +13718,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2765
+    .line 2764
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->searchItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -13751,7 +13755,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2766
+    .line 2765
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13774,7 +13778,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2767
+    .line 2766
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13789,7 +13793,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2768
+    .line 2767
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -13808,7 +13812,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2770
+    .line 2769
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -13831,7 +13835,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2772
+    .line 2771
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -13860,7 +13864,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2774
+    .line 2773
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->emptyImageView:Landroid/widget/ImageView;
@@ -13877,7 +13881,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2775
+    .line 2774
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->emptyTitleTextView:Landroid/widget/TextView;
@@ -13900,7 +13904,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2776
+    .line 2775
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->emptySubtitleTextView:Landroid/widget/TextView;
@@ -13915,7 +13919,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2777
+    .line 2776
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->shadow:Landroid/view/View;
@@ -13932,7 +13936,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2779
+    .line 2778
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->locationButton:Landroid/widget/ImageView;
@@ -13951,7 +13955,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2780
+    .line 2779
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->locationButton:Landroid/widget/ImageView;
@@ -13972,7 +13976,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2781
+    .line 2780
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->locationButton:Landroid/widget/ImageView;
@@ -13987,7 +13991,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2782
+    .line 2781
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->locationButton:Landroid/widget/ImageView;
@@ -14008,7 +14012,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2784
+    .line 2783
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->mapTypeButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14025,7 +14029,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2785
+    .line 2784
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/LocationActivity;->mapTypeButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14042,7 +14046,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2786
+    .line 2785
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->mapTypeButton:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14065,7 +14069,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2788
+    .line 2787
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->proximityButton:Landroid/widget/ImageView;
@@ -14082,7 +14086,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2789
+    .line 2788
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/LocationActivity;->proximityButton:Landroid/widget/ImageView;
@@ -14097,7 +14101,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2790
+    .line 2789
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->proximityButton:Landroid/widget/ImageView;
@@ -14118,7 +14122,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2792
+    .line 2791
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->searchAreaButton:Lorg/telegram/ui/LocationActivity$SearchButton;
@@ -14135,7 +14139,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2793
+    .line 2792
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->searchAreaButton:Lorg/telegram/ui/LocationActivity$SearchButton;
@@ -14154,7 +14158,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2794
+    .line 2793
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->searchAreaButton:Lorg/telegram/ui/LocationActivity$SearchButton;
@@ -14173,7 +14177,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2796
+    .line 2795
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v3, 0x0
@@ -14192,7 +14196,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2797
+    .line 2796
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v7, 0x0
@@ -14205,7 +14209,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2798
+    .line 2797
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundOrange"
@@ -14216,7 +14220,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2799
+    .line 2798
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundViolet"
@@ -14227,7 +14231,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2800
+    .line 2799
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundGreen"
@@ -14238,7 +14242,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2801
+    .line 2800
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundCyan"
@@ -14249,7 +14253,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2802
+    .line 2801
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundBlue"
@@ -14260,7 +14264,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2803
+    .line 2802
     new-instance v13, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const-string v9, "avatar_backgroundPink"
@@ -14271,7 +14275,7 @@
 
     invoke-virtual {v1, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2805
+    .line 2804
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v15, 0x0
@@ -14288,7 +14292,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2806
+    .line 2805
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v4, 0x0
@@ -14307,7 +14311,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2807
+    .line 2806
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     const/4 v14, 0x0
@@ -14324,7 +14328,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2809
+    .line 2808
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14361,7 +14365,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2810
+    .line 2809
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14394,7 +14398,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2811
+    .line 2810
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14433,7 +14437,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2812
+    .line 2811
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14468,7 +14472,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2813
+    .line 2812
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14499,7 +14503,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2814
+    .line 2813
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14528,7 +14532,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2815
+    .line 2814
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14557,7 +14561,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2817
+    .line 2816
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14586,7 +14590,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2818
+    .line 2817
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14617,7 +14621,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2819
+    .line 2818
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14648,7 +14652,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2821
+    .line 2820
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14675,7 +14679,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2822
+    .line 2821
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14704,7 +14708,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2824
+    .line 2823
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14735,7 +14739,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2826
+    .line 2825
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14764,7 +14768,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2827
+    .line 2826
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14797,7 +14801,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2828
+    .line 2827
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14826,7 +14830,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2830
+    .line 2829
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->searchListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14855,7 +14859,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2831
+    .line 2830
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->searchListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14880,7 +14884,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2832
+    .line 2831
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->searchListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14909,7 +14913,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2834
+    .line 2833
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14934,7 +14938,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2835
+    .line 2834
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14963,7 +14967,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2837
+    .line 2836
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -14990,7 +14994,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2838
+    .line 2837
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -15017,7 +15021,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2839
+    .line 2838
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -15042,7 +15046,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2841
+    .line 2840
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -15069,7 +15073,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2842
+    .line 2841
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -15096,7 +15100,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2843
+    .line 2842
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/LocationActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -15181,7 +15185,7 @@
 .method public onBecomeFullyHidden()V
     .locals 3
 
-    .line 2625
+    .line 2624
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->undoView:[Lorg/telegram/ui/Components/UndoView;
 
     const/4 v1, 0x0
@@ -15190,7 +15194,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 2626
+    .line 2625
     aget-object v0, v0, v1
 
     const/4 v2, 0x1
@@ -15447,10 +15451,10 @@
 .method public onLowMemory()V
     .locals 2
 
-    .line 2680
+    .line 2679
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onLowMemory()V
 
-    .line 2681
+    .line 2680
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapView:Lorg/telegram/messenger/IMapsProvider$IMapView;
 
     if-eqz v0, :cond_0
@@ -15459,7 +15463,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2682
+    .line 2681
     invoke-interface {v0}, Lorg/telegram/messenger/IMapsProvider$IMapView;->onLowMemory()V
 
     :cond_0
@@ -15527,7 +15531,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 2669
+    .line 2668
     iget p1, p0, Lorg/telegram/ui/LocationActivity;->askWithRadius:I
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/LocationActivity;->openShareLiveLocation(I)V
@@ -15539,10 +15543,10 @@
 .method public onResume()V
     .locals 3
 
-    .line 2632
+    .line 2631
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 2633
+    .line 2632
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -15551,7 +15555,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
-    .line 2634
+    .line 2633
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -15560,7 +15564,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->removeAdjustResize(Landroid/app/Activity;I)V
 
-    .line 2635
+    .line 2634
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->mapView:Lorg/telegram/messenger/IMapsProvider$IMapView;
 
     if-eqz v0, :cond_0
@@ -15569,7 +15573,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2637
+    .line 2636
     :try_start_0
     invoke-interface {v0}, Lorg/telegram/messenger/IMapsProvider$IMapView;->onResume()V
     :try_end_0
@@ -15580,22 +15584,22 @@
     :catchall_0
     move-exception v0
 
-    .line 2639
+    .line 2638
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
     :goto_0
     const/4 v0, 0x1
 
-    .line 2642
+    .line 2641
     iput-boolean v0, p0, Lorg/telegram/ui/LocationActivity;->onResumeCalled:Z
 
-    .line 2643
+    .line 2642
     iget-object v1, p0, Lorg/telegram/ui/LocationActivity;->map:Lorg/telegram/messenger/IMapsProvider$IMap;
 
     if-eqz v1, :cond_1
 
-    .line 2645
+    .line 2644
     :try_start_1
     invoke-interface {v1, v0}, Lorg/telegram/messenger/IMapsProvider$IMap;->setMyLocationEnabled(Z)V
     :try_end_1
@@ -15606,15 +15610,15 @@
     :catch_0
     move-exception v1
 
-    .line 2647
+    .line 2646
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2650
+    .line 2649
     :cond_1
     :goto_1
     invoke-direct {p0, v0}, Lorg/telegram/ui/LocationActivity;->fixLayoutInternal(Z)V
 
-    .line 2651
+    .line 2650
     iget-boolean v0, p0, Lorg/telegram/ui/LocationActivity;->checkPermission:Z
 
     if-eqz v0, :cond_2
@@ -15625,7 +15629,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 2652
+    .line 2651
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -15634,12 +15638,12 @@
 
     const/4 v1, 0x0
 
-    .line 2654
+    .line 2653
     iput-boolean v1, p0, Lorg/telegram/ui/LocationActivity;->checkPermission:Z
 
     const-string v1, "android.permission.ACCESS_COARSE_LOCATION"
 
-    .line 2655
+    .line 2654
     invoke-virtual {v0, v1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v2
@@ -15648,7 +15652,7 @@
 
     const-string v2, "android.permission.ACCESS_FINE_LOCATION"
 
-    .line 2656
+    .line 2655
     filled-new-array {v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
@@ -15657,16 +15661,16 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
 
-    .line 2660
+    .line 2659
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->markAsReadRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_3
 
-    .line 2661
+    .line 2660
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2662
+    .line 2661
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity;->markAsReadRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x1388
@@ -15871,7 +15875,7 @@
 .method public setDelegate(Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;)V
     .locals 0
 
-    .line 2687
+    .line 2686
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity;->delegate:Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;
 
     return-void

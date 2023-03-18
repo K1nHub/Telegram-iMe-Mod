@@ -12,7 +12,7 @@ import moxy.MvpDelegate;
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.smedialink.ui.base.mvp.MvpFragment$mvpBaseDelegate$2 */
 /* loaded from: classes3.dex */
-public final class MvpFragment$mvpBaseDelegate$2 extends Lambda implements Function0<C17851> {
+public final class MvpFragment$mvpBaseDelegate$2 extends Lambda implements Function0<C18611> {
     final /* synthetic */ MvpFragment this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -25,7 +25,7 @@ public final class MvpFragment$mvpBaseDelegate$2 extends Lambda implements Funct
     /* JADX WARN: Can't rename method to resolve collision */
     /* JADX WARN: Type inference failed for: r0v0, types: [com.smedialink.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1] */
     @Override // kotlin.jvm.functions.Function0
-    public final C17851 invoke() {
+    public final C18611 invoke() {
         return new MvpBaseDelegate<MvpFragment>() { // from class: com.smedialink.ui.base.mvp.MvpFragment$mvpBaseDelegate$2.1
             private final Lazy context$delegate;
 

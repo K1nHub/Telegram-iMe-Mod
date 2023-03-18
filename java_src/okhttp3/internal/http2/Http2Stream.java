@@ -26,7 +26,7 @@ public final class Http2Stream {
     private final ArrayDeque<Headers> headersQueue;
 
     /* renamed from: id */
-    private final int f1225id;
+    private final int f1230id;
     private long readBytesAcknowledged;
     private long readBytesTotal;
     private final StreamTimeout readTimeout;
@@ -42,7 +42,7 @@ public final class Http2Stream {
 
     public Http2Stream(int i, Http2Connection connection, boolean z, boolean z2, Headers headers) {
         Intrinsics.checkNotNullParameter(connection, "connection");
-        this.f1225id = i;
+        this.f1230id = i;
         this.connection = connection;
         this.writeBytesMaximum = connection.getPeerSettings().getInitialWindowSize();
         ArrayDeque<Headers> arrayDeque = new ArrayDeque<>();
@@ -62,7 +62,7 @@ public final class Http2Stream {
     }
 
     public final int getId() {
-        return this.f1225id;
+        return this.f1230id;
     }
 
     public final Http2Connection getConnection() {
@@ -134,7 +134,7 @@ public final class Http2Stream {
     }
 
     public final boolean isLocallyInitiated() {
-        return this.connection.getClient$okhttp() == ((this.f1225id & 1) == 1);
+        return this.connection.getClient$okhttp() == ((this.f1230id & 1) == 1);
     }
 
     public final synchronized Headers takeHeaders() throws IOException {
@@ -210,14 +210,14 @@ public final class Http2Stream {
     public final void close(ErrorCode rstStatusCode, IOException iOException) throws IOException {
         Intrinsics.checkNotNullParameter(rstStatusCode, "rstStatusCode");
         if (closeInternal(rstStatusCode, iOException)) {
-            this.connection.writeSynReset$okhttp(this.f1225id, rstStatusCode);
+            this.connection.writeSynReset$okhttp(this.f1230id, rstStatusCode);
         }
     }
 
     public final void closeLater(ErrorCode errorCode) {
         Intrinsics.checkNotNullParameter(errorCode, "errorCode");
         if (closeInternal(errorCode, null)) {
-            this.connection.writeSynResetLater$okhttp(this.f1225id, errorCode);
+            this.connection.writeSynResetLater$okhttp(this.f1230id, errorCode);
         }
     }
 
@@ -586,7 +586,7 @@ public final class Http2Stream {
                 this.errorException = iOException;
                 notifyAll();
                 Unit unit = Unit.INSTANCE;
-                this.connection.removeStream$okhttp(this.f1225id);
+                this.connection.removeStream$okhttp(this.f1230id);
                 return true;
             }
         }
@@ -615,7 +615,7 @@ public final class Http2Stream {
             } else if (isOpen) {
                 return;
             } else {
-                this.connection.removeStream$okhttp(this.f1225id);
+                this.connection.removeStream$okhttp(this.f1230id);
                 return;
             }
         }
@@ -703,7 +703,7 @@ public final class Http2Stream {
             monitor-exit(r2)
             if (r3 != 0) goto L6c
             okhttp3.internal.http2.Http2Connection r3 = r2.connection
-            int r4 = r2.f1225id
+            int r4 = r2.f1230id
             r3.removeStream$okhttp(r4)
         L6c:
             return

@@ -55,34 +55,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$K457iZqfdy-ckWC84bTzJXlQLv0(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$AJdvjSr5xr5jxDVg4La59GfMHgg(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda-12$lambda-11$lambda-10(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
+    invoke-static {p0}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getThemeDescriptions$lambda$4(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$s2fLBHSnksmuZEWtH6eEpZajPPU(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
+.method public static synthetic $r8$lambda$IjSxCP5tsrfRZ2H4lJKruDA1BDk(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getThemeDescriptions$lambda-4(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->saveSuggestContacts$lambda$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$woTG7c4-08XjsjGzP7JUDGdPJJ4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$Np4-TFSlppmz3YnFKiAn9dhaTdc(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->saveSuggestContacts$lambda-2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yV5GcPcO6_om55DVEJJdgnzvXHU(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$RhKiq8yBG6WfTh22ZIHfpGDhLw4(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->initListView$lambda$12$lambda$11$lambda$10(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
 
     return-void
 .end method
@@ -478,7 +478,7 @@
     return-object v0
 .end method
 
-.method private static final getThemeDescriptions$lambda-4(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
+.method private static final getThemeDescriptions$lambda$4(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -547,7 +547,7 @@
     return-object v0
 .end method
 
-.method private static final initListView$lambda-12$lambda-11(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
+.method private static final initListView$lambda$12$lambda$11(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;I)V
     .locals 2
 
     const-string v0, "this$0"
@@ -561,7 +561,7 @@
 
     if-eqz v0, :cond_2
 
-    const-string v0, "view"
+    const-string/jumbo v0, "view"
 
     .line 150
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -577,9 +577,7 @@
     invoke-virtual {p1, v0}, Lorg/fork/ui/view/ChatAttachAlertButtonCell;->setChecked(Z)V
 
     .line 151
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getCurrentDialogType()Lorg/fork/enums/DialogType;
-
-    move-result-object p1
+    iget-object p1, p0, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->currentDialogType:Lorg/fork/enums/DialogType;
 
     invoke-virtual {p1}, Lorg/fork/enums/DialogType;->getChatAttachAlertButtons()Ljava/util/List;
 
@@ -604,9 +602,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p0}, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->getCurrentDialogType()Lorg/fork/enums/DialogType;
-
-    move-result-object p0
+    iget-object p0, p0, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->currentDialogType:Lorg/fork/enums/DialogType;
 
     invoke-interface {p2, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -671,7 +667,7 @@
     return-void
 .end method
 
-.method private static final initListView$lambda-12$lambda-11$lambda-10(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
+.method private static final initListView$lambda$12$lambda$11$lambda$10(Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;Landroid/view/View;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -703,7 +699,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    const-string/jumbo v1, "windowBackgroundGray"
 
     .line 140
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
@@ -768,7 +764,7 @@
     return p1
 .end method
 
-.method private static final saveSuggestContacts$lambda-2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private static final saveSuggestContacts$lambda$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
     return-void
@@ -855,7 +851,7 @@
 
     const/4 v7, 0x0
 
-    const-string v9, "windowBackgroundGray"
+    const-string/jumbo v9, "windowBackgroundGray"
 
     move-object v2, v10
 
@@ -1009,7 +1005,7 @@
 
     aput-object v7, v11, v2
 
-    const-string v15, "windowBackgroundGrayShadow"
+    const-string/jumbo v15, "windowBackgroundGrayShadow"
 
     move-object v8, v3
 
@@ -1042,7 +1038,7 @@
 
     aput-object v6, v11, v5
 
-    const-string v15, "windowBackgroundWhite"
+    const-string/jumbo v15, "windowBackgroundWhite"
 
     move-object v8, v3
 
@@ -1075,7 +1071,7 @@
 
     const/4 v11, 0x0
 
-    const-string v13, "windowBackgroundChecked"
+    const-string/jumbo v13, "windowBackgroundChecked"
 
     move-object v6, v3
 
@@ -1104,7 +1100,7 @@
 
     aput-object v5, v9, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    const-string/jumbo v13, "windowBackgroundUnchecked"
 
     move-object v6, v3
 
@@ -1137,7 +1133,7 @@
 
     const/4 v13, 0x0
 
-    const-string v14, "windowBackgroundCheckText"
+    const-string/jumbo v14, "windowBackgroundCheckText"
 
     move-object v6, v3
 
@@ -1168,7 +1164,7 @@
 
     const/4 v14, 0x0
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v15, "windowBackgroundWhiteBlackText"
 
     move-object v7, v3
 
@@ -1230,7 +1226,7 @@
 
     const/4 v15, 0x0
 
-    const-string v16, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v16, "windowBackgroundWhiteBlackText"
 
     move-object v8, v3
 
@@ -1392,7 +1388,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteBlueHeader"
+    const-string/jumbo v16, "windowBackgroundWhiteBlueHeader"
 
     move-object v8, v3
 
@@ -1419,7 +1415,7 @@
 
     move-result-object v12
 
-    const-string v16, "windowBackgroundWhiteGrayText4"
+    const-string/jumbo v16, "windowBackgroundWhiteGrayText4"
 
     move-object v8, v3
 
@@ -1510,7 +1506,7 @@
 
     const/4 v11, 0x0
 
-    const-string v14, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v14, "windowBackgroundWhiteBlackText"
 
     move-object v6, v3
 
@@ -1687,8 +1683,6 @@
     iget-boolean v2, p0, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity;->newSuggest:Z
 
     iput-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_toggleTopPeers;->enabled:Z
-
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     sget-object v2, Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda1;->INSTANCE:Lorg/fork/ui/fragment/ChatAttachAlertButtonsSettingsActivity$$ExternalSyntheticLambda1;
 

@@ -18,6 +18,6 @@ final class SettingsToolsMessageActivity$listAdapter$2 extends Lambda implements
 
     @Override // kotlin.jvm.functions.Function0
     public final SettingsToolsMessageActivity.ListAdapter invoke() {
-        return new SettingsToolsMessageActivity.ListAdapter(this.this$0);
+        return new SettingsToolsMessageActivity.ListAdapter();
     }
 }

@@ -40,19 +40,19 @@ public final class BinancePayManagerImpl implements BinancePayManager {
     @Override // com.smedialink.storage.domain.manager.binancepay.BinancePayManager
     public String getAccessToken() {
         BinanceAuthTokens authTokens = this.cryptoPreferenceHelper.getBinanceAuthSession().getAuthTokens();
-        if (authTokens == null) {
-            return null;
+        if (authTokens != null) {
+            return authTokens.getAccessToken();
         }
-        return authTokens.getAccessToken();
+        return null;
     }
 
     @Override // com.smedialink.storage.domain.manager.binancepay.BinancePayManager
     public String getRefreshToken() {
         BinanceAuthTokens authTokens = this.cryptoPreferenceHelper.getBinanceAuthSession().getAuthTokens();
-        if (authTokens == null) {
-            return null;
+        if (authTokens != null) {
+            return authTokens.getRefreshToken();
         }
-        return authTokens.getRefreshToken();
+        return null;
     }
 
     public boolean isRefreshTokenValid() {

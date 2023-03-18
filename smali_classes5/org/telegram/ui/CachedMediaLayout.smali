@@ -146,9 +146,9 @@
     .line 102
     new-instance v10, Lorg/telegram/ui/CachedMediaLayout$Page;
 
-    sget v0, Lorg/telegram/messenger/R$string;->Chats:I
+    sget v0, Lorg/telegram/messenger/R$string;->FilterChats:I
 
-    const-string v1, "Chats"
+    const-string v1, "FilterChats"
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -208,9 +208,9 @@
 
     new-instance v10, Lorg/telegram/ui/CachedMediaLayout$Page;
 
-    sget v0, Lorg/telegram/messenger/R$string;->Files:I
+    sget v0, Lorg/telegram/messenger/R$string;->SharedFilesTab2:I
 
-    const-string v1, "Files"
+    const-string v1, "SharedFilesTab2"
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 

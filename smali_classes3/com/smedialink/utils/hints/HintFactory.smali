@@ -8,10 +8,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$kR3OFHOBYzlXOYylm4HQCuEZgsU(Lcom/smedialink/utils/hints/HintFactory;)V
+.method public static synthetic $r8$lambda$k6yVNhIeM6jRxxBLAcrSb3ppbkw(Lcom/smedialink/utils/hints/HintFactory;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/utils/hints/HintFactory;->createHintView$lambda-2$lambda-1(Lcom/smedialink/utils/hints/HintFactory;)V
+    invoke-static {p0}, Lcom/smedialink/utils/hints/HintFactory;->createHintView$lambda$2$lambda$1(Lcom/smedialink/utils/hints/HintFactory;)V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     return-object v0
 .end method
 
-.method private static final createHintView$lambda-2$lambda-1(Lcom/smedialink/utils/hints/HintFactory;)V
+.method private static final createHintView$lambda$2$lambda$1(Lcom/smedialink/utils/hints/HintFactory;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -74,14 +74,11 @@
     .line 22
     iget-object v0, p0, Lcom/smedialink/utils/hints/HintFactory;->hintView:Lorg/telegram/ui/Components/HintView;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/HintView;->hide()V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
@@ -103,15 +100,12 @@
     .line 30
     iget-object v0, p0, Lcom/smedialink/utils/hints/HintFactory;->hintView:Lorg/telegram/ui/Components/HintView;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/HintView;->hide()V
 
     .line 31
-    :goto_0
+    :cond_0
     invoke-interface {p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getView()Landroid/view/ViewGroup;
 
     move-result-object v0
@@ -176,9 +170,6 @@
     move-result p3
 
     invoke-virtual {v0, p2, p1, p3}, Lorg/telegram/ui/Components/HintView;->showForView(Landroid/view/View;ZZ)Z
-
-    .line 39
-    sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 31
     iput-object v0, p0, Lcom/smedialink/utils/hints/HintFactory;->hintView:Lorg/telegram/ui/Components/HintView;

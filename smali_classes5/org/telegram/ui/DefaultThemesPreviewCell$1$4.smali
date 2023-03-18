@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->onClick(Landroid/view/View;)V
+    value = Lorg/telegram/ui/DefaultThemesPreviewCell$1;->lambda$onClick$0(ILandroid/content/Context;IZLorg/telegram/ui/ActionBar/BaseFragment;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DefaultThemesPreviewCell$1;Landroid/view/Window;I)V
     .locals 0
 
-    .line 251
+    .line 252
     iput-object p2, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$4;->val$window:Landroid/view/Window;
 
     iput p3, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$4;->val$navBarNewColor:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 254
+    .line 255
     iget-object p1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$4;->val$window:Landroid/view/Window;
 
     iget v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$4;->val$navBarNewColor:I
@@ -48,7 +48,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->setNavigationBarColor(Landroid/view/Window;IZ)V
 
-    .line 255
+    .line 256
     iget-object p1, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$4;->val$window:Landroid/view/Window;
 
     iget v0, p0, Lorg/telegram/ui/DefaultThemesPreviewCell$1$4;->val$navBarNewColor:I

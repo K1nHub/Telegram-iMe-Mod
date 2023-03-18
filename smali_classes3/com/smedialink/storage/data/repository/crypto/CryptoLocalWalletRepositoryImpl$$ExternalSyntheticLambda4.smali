@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl$$ExternalSyntheticLambda4;->f$0:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->$r8$lambda$DTVQgAOCCzSTFRTjSf4hPovmndg(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
+    invoke-static {v0}, Lcom/smedialink/storage/data/repository/crypto/CryptoLocalWalletRepositoryImpl;->$r8$lambda$12c8sk5Lw_3zH4dJtugiBhT57-s(Ljava/lang/String;)Lcom/smedialink/storage/domain/model/Result;
 
     move-result-object v0
 

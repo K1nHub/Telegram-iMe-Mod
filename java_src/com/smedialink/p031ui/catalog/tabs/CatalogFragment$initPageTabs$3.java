@@ -4,8 +4,9 @@ import android.view.View;
 import com.smedialink.navigation.common.router.base.BaseNavigationRouter;
 import com.smedialink.navigation.common.router.base.NavigationRouter;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.smedialink.ui.catalog.tabs.CatalogFragment$initPageTabs$3 */
@@ -25,6 +26,7 @@ public final class CatalogFragment$initPageTabs$3 extends Lambda implements Func
     public final View invoke() {
         NavigationRouter navigationRouter;
         navigationRouter = this.this$0.getNavigationRouter();
-        return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3158R.C3161id.catalog_user_channels);
+        Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.smedialink.navigation.common.router.base.BaseNavigationRouter<com.smedialink.ui.catalog.tabs.CatalogTabFragment>");
+        return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3286R.C3289id.catalog_user_channels);
     }
 }

@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.p048ui.ActionBar.FloatingActionMode;
@@ -374,7 +374,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
                 Field field = mCursorDrawableResField;
                 if (field != null) {
-                    field.set(this, Integer.valueOf(C3158R.C3160drawable.field_carret_empty));
+                    field.set(this, Integer.valueOf(C3286R.C3288drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
@@ -459,7 +459,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
-        getContext().getResources().getDrawable(C3158R.C3160drawable.search_dark).getPadding(this.padding);
+        getContext().getResources().getDrawable(C3286R.C3288drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;
@@ -470,12 +470,15 @@ public class EditTextBoldCursor extends EditTextEffects {
         invalidate();
     }
 
-    public void setHintVisible(boolean z) {
+    public void setHintVisible(boolean z, boolean z2) {
         if (this.hintVisible == z) {
             return;
         }
         this.hintLastUpdateTime = System.currentTimeMillis();
         this.hintVisible = z;
+        if (!z2) {
+            this.hintAlpha = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        }
         invalidate();
     }
 

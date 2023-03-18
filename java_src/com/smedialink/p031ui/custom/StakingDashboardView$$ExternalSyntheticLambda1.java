@@ -11,6 +11,6 @@ public final /* synthetic */ class StakingDashboardView$$ExternalSyntheticLambda
 
     @Override // org.fork.utils.Callbacks$Callback
     public final void invoke() {
-        StakingDashboardView.m1443onHistoryClick$lambda1();
+        StakingDashboardView.onCalculatorClick$lambda$0();
     }
 }

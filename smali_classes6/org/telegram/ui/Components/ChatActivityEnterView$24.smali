@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$30(Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$31(Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;FLorg/telegram/ui/Components/SimpleAvatarView;)V
     .locals 0
 
-    .line 3458
+    .line 3477
     iput p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$24;->val$endY:F
 
     iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$24;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
@@ -38,7 +38,7 @@
 
     const/4 p1, 0x0
 
-    .line 3459
+    .line 3478
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$24;->performedHapticFeedback:Z
 
     return-void
@@ -49,7 +49,7 @@
 .method public onAnimationUpdate(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    .line 3463
+    .line 3482
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$24;->performedHapticFeedback:Z
 
     if-nez p1, :cond_0
@@ -62,10 +62,10 @@
 
     const/4 p1, 0x1
 
-    .line 3464
+    .line 3483
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$24;->performedHapticFeedback:Z
 
-    .line 3466
+    .line 3485
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$24;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 

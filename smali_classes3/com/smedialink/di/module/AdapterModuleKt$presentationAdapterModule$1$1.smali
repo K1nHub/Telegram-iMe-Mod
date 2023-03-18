@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n127#2,5:115\n127#2,5:120\n127#2,5:125\n127#2,5:130\n127#2,5:135\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n*L\n35#1:115,5\n36#1:120,5\n37#1:125,5\n38#1:130,5\n39#1:135,5\n*E\n"
+    value = "SMAP\nAdapterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,118:1\n127#2,5:119\n127#2,5:124\n127#2,5:129\n127#2,5:134\n127#2,5:139\n*S KotlinDebug\n*F\n+ 1 AdapterModule.kt\ncom/smedialink/di/module/AdapterModuleKt$presentationAdapterModule$1$1\n*L\n37#1:119,5\n38#1:124,5\n39#1:129,5\n40#1:134,5\n41#1:139,5\n*E\n"
 .end annotation
 
 
@@ -89,7 +89,7 @@
 
     move-result-object v1
 
-    .line 35
+    .line 37
     move-object v13, v1
 
     check-cast v13, Lcom/smedialink/ui/adapter/provider/BannerProvider;
@@ -105,7 +105,7 @@
 
     move-result-object v1
 
-    .line 35
+    .line 37
     move-object v4, v1
 
     check-cast v4, Lcom/smedialink/ui/adapter/provider/CreateAccountProvider;
@@ -121,7 +121,7 @@
 
     move-result-object v1
 
-    .line 35
+    .line 37
     move-object v14, v1
 
     check-cast v14, Lcom/smedialink/ui/adapter/provider/CryptoAccountProvider;
@@ -137,7 +137,7 @@
 
     move-result-object v1
 
-    .line 36
+    .line 38
     move-object v15, v1
 
     check-cast v15, Lcom/smedialink/ui/adapter/provider/HeaderWithNetworkSwitcherProvider;
@@ -153,7 +153,7 @@
 
     move-result-object v1
 
-    .line 36
+    .line 38
     move-object v5, v1
 
     check-cast v5, Lcom/smedialink/ui/adapter/provider/SelectableHeaderProvider;
@@ -169,7 +169,7 @@
 
     move-result-object v1
 
-    .line 37
+    .line 39
     move-object v6, v1
 
     check-cast v6, Lcom/smedialink/ui/adapter/provider/SelectTokenProvider;
@@ -185,7 +185,7 @@
 
     move-result-object v1
 
-    .line 37
+    .line 39
     move-object v8, v1
 
     check-cast v8, Lcom/smedialink/ui/adapter/provider/ServiceProvider;
@@ -201,7 +201,7 @@
 
     move-result-object v1
 
-    .line 37
+    .line 39
     move-object v9, v1
 
     check-cast v9, Lcom/smedialink/ui/adapter/provider/TokenBalanceProvider;
@@ -217,7 +217,7 @@
 
     move-result-object v1
 
-    .line 38
+    .line 40
     move-object v10, v1
 
     check-cast v10, Lcom/smedialink/ui/adapter/provider/TotalBalanceProvider;
@@ -233,7 +233,7 @@
 
     move-result-object v1
 
-    .line 38
+    .line 40
     move-object v7, v1
 
     check-cast v7, Lcom/smedialink/ui/adapter/provider/HeaderProvider;
@@ -249,7 +249,7 @@
 
     move-result-object v1
 
-    .line 38
+    .line 40
     move-object v12, v1
 
     check-cast v12, Lcom/smedialink/ui/adapter/provider/GlobalStateProvider;
@@ -265,7 +265,7 @@
 
     move-result-object v1
 
-    .line 39
+    .line 41
     move-object v11, v1
 
     check-cast v11, Lcom/smedialink/ui/adapter/provider/NftCollectionProvider;
@@ -281,12 +281,12 @@
 
     move-result-object v0
 
-    .line 39
+    .line 41
     move-object/from16 v16, v0
 
     check-cast v16, Lcom/smedialink/ui/adapter/provider/NftTokenProvider;
 
-    .line 34
+    .line 36
     new-instance v0, Lcom/smedialink/ui/wallet/home/v2/adapter/BalancesRecycleAdapter;
 
     move-object v3, v0
@@ -299,7 +299,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 33
+    .line 35
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -166,7 +166,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    const-string/jumbo v1, "windowBackgroundWhiteBlackText"
 
     .line 86
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I

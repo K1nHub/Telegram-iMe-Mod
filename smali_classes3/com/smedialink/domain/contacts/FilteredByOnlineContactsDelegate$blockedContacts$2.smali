@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFilteredByOnlineContactsDelegate.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,63:1\n764#2:64\n855#2,2:65\n*S KotlinDebug\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n*L\n31#1:64\n31#1:65,2\n*E\n"
+    value = "SMAP\nFilteredByOnlineContactsDelegate.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,63:1\n766#2:64\n857#2,2:65\n*S KotlinDebug\n*F\n+ 1 FilteredByOnlineContactsDelegate.kt\ncom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2\n*L\n31#1:64\n31#1:65,2\n*E\n"
 .end annotation
 
 
@@ -81,12 +81,12 @@
 
     iget-object v1, p0, Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate$blockedContacts$2;->this$0:Lcom/smedialink/domain/contacts/FilteredByOnlineContactsDelegate;
 
-    .line 764
+    .line 766
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 855
+    .line 857
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -134,10 +134,12 @@
     :goto_1
     if-eqz v4, :cond_0
 
+    .line 857
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
+    .line 31
     :cond_2
     invoke-static {v2}, Lorg/fork/utils/CollectionsUtilsKt;->toArrayList(Ljava/util/List;)Ljava/util/ArrayList;
 

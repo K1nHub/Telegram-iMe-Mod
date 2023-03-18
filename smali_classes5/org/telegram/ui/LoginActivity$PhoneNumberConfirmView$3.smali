@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)V
     .locals 0
 
-    .line 8307
+    .line 8318
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
 
-    .line 8310
+    .line 8321
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -46,7 +46,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 8311
+    .line 8322
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -59,7 +59,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 8314
+    .line 8325
     :cond_0
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -69,7 +69,7 @@
 
     if-lt p1, v0, :cond_1
 
-    .line 8315
+    .line 8326
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;->access$17900(Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;)Landroid/view/View;
@@ -108,7 +108,7 @@
 
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 8317
+    .line 8328
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView$3;->this$0:Lorg/telegram/ui/LoginActivity$PhoneNumberConfirmView;
 

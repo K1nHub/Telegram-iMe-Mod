@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/fork/controller/TemplatesController$$ExternalSyntheticLambda8;->f$1:Lcom/smedialink/storage/data/locale/db/model/templates/TemplatesDb;
 
-    invoke-static {v0, v1}, Lorg/fork/controller/TemplatesController;->$r8$lambda$Lkp4GJBoLyVb4-FUTWjOF0DVo-8(Lorg/fork/controller/TemplatesController;Lcom/smedialink/storage/data/locale/db/model/templates/TemplatesDb;)V
+    invoke-static {v0, v1}, Lorg/fork/controller/TemplatesController;->$r8$lambda$HSpQD8ZFMcgyQUHLhD5APwEEajo(Lorg/fork/controller/TemplatesController;Lcom/smedialink/storage/data/locale/db/model/templates/TemplatesDb;)V
 
     return-void
 .end method

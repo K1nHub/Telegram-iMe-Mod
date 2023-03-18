@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerSwitchableItem.kt */
 /* renamed from: com.smedialink.ui.drawer.DrawerSwitchableItem */
@@ -35,15 +35,42 @@ public enum DrawerSwitchableItem {
 
         static {
             int[] iArr = new int[DrawerSwitchableItem.values().length];
-            iArr[DrawerSwitchableItem.WALLET.ordinal()] = 1;
-            iArr[DrawerSwitchableItem.CATALOG.ordinal()] = 2;
-            iArr[DrawerSwitchableItem.MANAGEMENT.ordinal()] = 3;
-            iArr[DrawerSwitchableItem.MUSIC.ordinal()] = 4;
-            iArr[DrawerSwitchableItem.CONTACTS.ordinal()] = 5;
-            iArr[DrawerSwitchableItem.CALLS.ordinal()] = 6;
-            iArr[DrawerSwitchableItem.PEOPLE_NEARBY.ordinal()] = 7;
-            iArr[DrawerSwitchableItem.CLOUD.ordinal()] = 8;
-            iArr[DrawerSwitchableItem.ALBUMS.ordinal()] = 9;
+            try {
+                iArr[DrawerSwitchableItem.WALLET.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.CATALOG.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.MANAGEMENT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.MUSIC.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.CONTACTS.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.CALLS.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.PEOPLE_NEARBY.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.CLOUD.ordinal()] = 8;
+            } catch (NoSuchFieldError unused8) {
+            }
+            try {
+                iArr[DrawerSwitchableItem.ALBUMS.ordinal()] = 9;
+            } catch (NoSuchFieldError unused9) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -67,39 +94,39 @@ public enum DrawerSwitchableItem {
     public final String title() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3158R.string.drawer_wallet_item_title);
+                String internalString = LocaleController.getInternalString(C3286R.string.drawer_wallet_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…drawer_wallet_item_title)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3158R.string.drawer_catalog_item_title);
+                String internalString2 = LocaleController.getInternalString(C3286R.string.drawer_catalog_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…rawer_catalog_item_title)");
                 return internalString2;
             case 3:
-                String internalString3 = LocaleController.getInternalString(C3158R.string.management);
+                String internalString3 = LocaleController.getInternalString(C3286R.string.management);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.string.management)");
                 return internalString3;
             case 4:
-                String string = LocaleController.getString("AttachMusic", C3158R.string.AttachMusic);
+                String string = LocaleController.getString("AttachMusic", C3286R.string.AttachMusic);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
                 return string;
             case 5:
-                String string2 = LocaleController.getString("Contacts", C3158R.string.Contacts);
+                String string2 = LocaleController.getString("Contacts", C3286R.string.Contacts);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Contacts\", R.string.Contacts)");
                 return string2;
             case 6:
-                String string3 = LocaleController.getString("Calls", C3158R.string.Calls);
+                String string3 = LocaleController.getString("Calls", C3286R.string.Calls);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Calls\", R.string.Calls)");
                 return string3;
             case 7:
-                String string4 = LocaleController.getString("PeopleNearby", C3158R.string.PeopleNearby);
+                String string4 = LocaleController.getString("PeopleNearby", C3286R.string.PeopleNearby);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"PeopleNearby\", R.string.PeopleNearby)");
                 return string4;
             case 8:
-                String string5 = LocaleController.getString("SavedMessages", C3158R.string.SavedMessages);
+                String string5 = LocaleController.getString("SavedMessages", C3286R.string.SavedMessages);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"SavedMessages\", R.string.SavedMessages)");
                 return string5;
             case 9:
-                String internalString4 = LocaleController.getInternalString(C3158R.string.cloud_albums_toolbar_title);
+                String internalString4 = LocaleController.getInternalString(C3286R.string.cloud_albums_toolbar_title);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…oud_albums_toolbar_title)");
                 return internalString4;
             default:
@@ -115,13 +142,13 @@ public enum DrawerSwitchableItem {
                     if (i != 4) {
                         return 0;
                     }
-                    return C3158R.C3159color.drawer_music;
+                    return C3286R.C3287color.drawer_music;
                 }
-                return C3158R.C3159color.drawer_management;
+                return C3286R.C3287color.drawer_management;
             }
-            return C3158R.C3159color.drawer_catalog;
+            return C3286R.C3287color.drawer_catalog;
         }
-        return C3158R.C3159color.drawer_wallet;
+        return C3286R.C3287color.drawer_wallet;
     }
 
     /* compiled from: DrawerSwitchableItem.kt */
@@ -177,7 +204,7 @@ public enum DrawerSwitchableItem {
             Intrinsics.checkNotNullParameter(enums, "enums");
             ArrayList arrayList = new ArrayList();
             for (DrawerSwitchableItem drawerSwitchableItem : enums) {
-                String name = drawerSwitchableItem == null ? null : drawerSwitchableItem.name();
+                String name = drawerSwitchableItem != null ? drawerSwitchableItem.name() : null;
                 if (name != null) {
                     arrayList.add(name);
                 }

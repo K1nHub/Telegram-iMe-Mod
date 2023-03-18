@@ -19,10 +19,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$Irx7QomTLveBHwHTFkSdZ4Ei_AI(Landroid/content/Context;)V
+.method public static synthetic $r8$lambda$HRhL5Zu7R_hgk4jNb3DQamJkXVc(Landroid/content/Context;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/utils/helper/neurobot/SmartBotHelper;->showEnableSmartBotDialog$lambda-0(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/smedialink/utils/helper/neurobot/SmartBotHelper;->showEnableSmartBotDialog$lambda$0(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -208,7 +208,7 @@
     return-void
 .end method
 
-.method private static final showEnableSmartBotDialog$lambda-0(Landroid/content/Context;)V
+.method private static final showEnableSmartBotDialog$lambda$0(Landroid/content/Context;)V
     .locals 1
 
     const-string v0, "$context"
@@ -228,18 +228,15 @@
     const/4 p0, 0x0
 
     :goto_0
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_1
 
-    goto :goto_1
-
-    :cond_1
     new-instance v0, Lcom/smedialink/ui/shop/BotSettingsActivity;
 
     invoke-direct {v0}, Lcom/smedialink/ui/shop/BotSettingsActivity;-><init>()V
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/LaunchActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    :goto_1
+    :cond_1
     return-void
 .end method
 

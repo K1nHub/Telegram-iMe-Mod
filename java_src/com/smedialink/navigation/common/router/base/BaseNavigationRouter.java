@@ -33,7 +33,7 @@ public abstract class BaseNavigationRouter<T extends MvpFragment> implements Nav
 
     public final View getViewByFragmentId(int i) {
         T t = this.fragmentsStack.get(Integer.valueOf(i));
-        View fragmentView = t == null ? null : t.getFragmentView();
+        View fragmentView = t != null ? t.getFragmentView() : null;
         if (fragmentView == null) {
             show(i);
             T currentScreen = getCurrentScreen();
@@ -89,36 +89,36 @@ public abstract class BaseNavigationRouter<T extends MvpFragment> implements Nav
 
     @Override // com.smedialink.navigation.common.router.base.NavigationRouter
     public void show(int i) {
+        NavigationViewConfiguration viewConfiguration;
         List<? extends NavigationTab<T>> tabs;
         Object obj;
         boolean z;
         NavigationConfiguration<? extends NavigationTab<T>> navigationConfiguration = this.navigationConfiguration;
-        T t = null;
-        NavigationViewConfiguration viewConfiguration = navigationConfiguration == null ? null : navigationConfiguration.getViewConfiguration();
-        if (viewConfiguration == null) {
+        if (navigationConfiguration == null || (viewConfiguration = navigationConfiguration.getViewConfiguration()) == null) {
             throw new IllegalStateException("Incorrect navigation configuration passed".toString());
         }
-        T t2 = this.fragmentsStack.get(Integer.valueOf(i));
-        if (t2 != null) {
-            T t3 = this.currentActiveFragment;
-            if (t3 != null) {
-                t3.onPause();
+        T t = this.fragmentsStack.get(Integer.valueOf(i));
+        if (t != null) {
+            T t2 = this.currentActiveFragment;
+            if (t2 != null) {
+                t2.onPause();
             }
             if (this.isBottomNavigation) {
                 ViewGroup fragmentContainer = viewConfiguration.getFragmentContainer();
                 if (fragmentContainer != null) {
                     fragmentContainer.removeAllViews();
-                    recreateView(t2, viewConfiguration);
-                    fragmentContainer.addView(t2.getFragmentView());
+                    recreateView(t, viewConfiguration);
+                    fragmentContainer.addView(t.getFragmentView());
                 }
             } else {
-                recreateView(t2, viewConfiguration);
+                recreateView(t, viewConfiguration);
             }
-            t2.onResume();
-            this.currentActiveFragment = t2;
+            t.onResume();
+            this.currentActiveFragment = t;
             return;
         }
         NavigationConfiguration<? extends NavigationTab<T>> navigationConfiguration2 = this.navigationConfiguration;
+        T t3 = null;
         if (navigationConfiguration2 != null && (tabs = navigationConfiguration2.getTabs()) != null) {
             Iterator<T> it = tabs.iterator();
             while (true) {
@@ -140,10 +140,10 @@ public abstract class BaseNavigationRouter<T extends MvpFragment> implements Nav
             }
             NavigationTab navigationTab = (NavigationTab) obj;
             if (navigationTab != null) {
-                t = (T) navigationTab.getFragment();
+                t3 = (T) navigationTab.getFragment();
             }
         }
-        if (t != null) {
+        if (t3 != null) {
             T t4 = this.currentActiveFragment;
             if (t4 != null) {
                 t4.onPause();
@@ -152,18 +152,18 @@ public abstract class BaseNavigationRouter<T extends MvpFragment> implements Nav
                 ViewGroup fragmentContainer2 = viewConfiguration.getFragmentContainer();
                 if (fragmentContainer2 != null) {
                     fragmentContainer2.removeAllViews();
-                    recreateView(t, viewConfiguration);
-                    fragmentContainer2.addView(t.getFragmentView());
+                    recreateView(t3, viewConfiguration);
+                    fragmentContainer2.addView(t3.getFragmentView());
                 }
             } else {
-                t.setParentFragment(viewConfiguration.getParentFragment());
+                t3.setParentFragment(viewConfiguration.getParentFragment());
             }
-            t.onViewCreated();
+            t3.onViewCreated();
             if (this.currentActiveFragment != null) {
-                t.onResume();
+                t3.onResume();
             }
-            this.fragmentsStack.put(Integer.valueOf(i), t);
-            this.currentActiveFragment = t;
+            this.fragmentsStack.put(Integer.valueOf(i), t3);
+            this.currentActiveFragment = t3;
         }
     }
 

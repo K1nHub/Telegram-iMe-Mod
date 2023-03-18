@@ -14,7 +14,8 @@ import kotlinx.coroutines.internal.DispatchedContinuation;
 public abstract class CoroutineDispatcher extends AbstractCoroutineContextElement implements ContinuationInterceptor {
     public static final Key Key = new Key(null);
 
-    public abstract void dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    /* renamed from: dispatch */
+    public abstract void mo1471dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;
@@ -44,10 +45,10 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         /* compiled from: CoroutineDispatcher.kt */
         /* renamed from: kotlinx.coroutines.CoroutineDispatcher$Key$1 */
         /* loaded from: classes4.dex */
-        static final class C28971 extends Lambda implements Function1<CoroutineContext.Element, CoroutineDispatcher> {
-            public static final C28971 INSTANCE = new C28971();
+        static final class C30211 extends Lambda implements Function1<CoroutineContext.Element, CoroutineDispatcher> {
+            public static final C30211 INSTANCE = new C30211();
 
-            C28971() {
+            C30211() {
                 super(1);
             }
 
@@ -61,7 +62,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         }
 
         private Key() {
-            super(ContinuationInterceptor.Key, C28971.INSTANCE);
+            super(ContinuationInterceptor.Key, C30211.INSTANCE);
         }
     }
 

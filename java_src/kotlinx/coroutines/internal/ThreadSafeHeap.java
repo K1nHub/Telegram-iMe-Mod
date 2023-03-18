@@ -11,7 +11,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
     private volatile /* synthetic */ int _size = 0;
 
     /* renamed from: a */
-    private T[] f1214a;
+    private T[] f1219a;
 
     public final T peek() {
         T firstImpl;
@@ -61,7 +61,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
     }
 
     public final T firstImpl() {
-        T[] tArr = this.f1214a;
+        T[] tArr = this.f1219a;
         if (tArr == null) {
             return null;
         }
@@ -74,7 +74,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
                 throw new AssertionError();
             }
         }
-        T[] tArr = this.f1214a;
+        T[] tArr = this.f1219a;
         Intrinsics.checkNotNull(tArr);
         setSize(getSize() - 1);
         if (i < getSize()) {
@@ -122,7 +122,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
 
     private final void siftUpFrom(int i) {
         while (i > 0) {
-            T[] tArr = this.f1214a;
+            T[] tArr = this.f1219a;
             Intrinsics.checkNotNull(tArr);
             int i2 = (i - 1) / 2;
             T t = tArr[i2];
@@ -143,7 +143,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
             if (i2 >= getSize()) {
                 return;
             }
-            T[] tArr = this.f1214a;
+            T[] tArr = this.f1219a;
             Intrinsics.checkNotNull(tArr);
             int i3 = i2 + 1;
             if (i3 < getSize()) {
@@ -168,16 +168,16 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
     }
 
     private final T[] realloc() {
-        T[] tArr = this.f1214a;
+        T[] tArr = this.f1219a;
         if (tArr == null) {
             T[] tArr2 = (T[]) new ThreadSafeHeapNode[4];
-            this.f1214a = tArr2;
+            this.f1219a = tArr2;
             return tArr2;
         } else if (getSize() >= tArr.length) {
             Object[] copyOf = Arrays.copyOf(tArr, getSize() * 2);
             Intrinsics.checkNotNullExpressionValue(copyOf, "java.util.Arrays.copyOf(this, newSize)");
             T[] tArr3 = (T[]) ((ThreadSafeHeapNode[]) copyOf);
-            this.f1214a = tArr3;
+            this.f1219a = tArr3;
             return tArr3;
         } else {
             return tArr;
@@ -185,7 +185,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
     }
 
     private final void swap(int i, int i2) {
-        T[] tArr = this.f1214a;
+        T[] tArr = this.f1219a;
         Intrinsics.checkNotNull(tArr);
         T t = tArr[i2];
         Intrinsics.checkNotNull(t);

@@ -79,6 +79,7 @@ public final class CombinedContext implements CoroutineContext, Serializable {
             if (coroutineContext instanceof CombinedContext) {
                 combinedContext = (CombinedContext) coroutineContext;
             } else {
+                Intrinsics.checkNotNull(coroutineContext, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element");
                 return contains((CoroutineContext.Element) coroutineContext);
             }
         }

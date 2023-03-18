@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$BkquQVOLg-jqN9OVvXpdxWmubRo(Landroid/content/DialogInterface;I)V
+    invoke-static {p1, p2}, Lorg/fork/ui/fragment/CreateReactionButtonsActivity;->$r8$lambda$7etbeXamL2ElVZpy8-nVku-jd9s(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -28,7 +28,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkContentFeeBinding;
 import org.telegram.p048ui.ActionBar.AlertDialog;
 import org.telegram.p048ui.ActionBar.BaseFragment;
@@ -134,14 +134,13 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         forkContentFeeBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.FeeView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FeeView.m1438configureCustomFeeChooser$lambda2$lambda1(FeeView.ChooseFeeType.Custom.this, view);
+                FeeView.configureCustomFeeChooser$lambda$2$lambda$1(FeeView.ChooseFeeType.Custom.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: configureCustomFeeChooser$lambda-2$lambda-1  reason: not valid java name */
-    public static final void m1438configureCustomFeeChooser$lambda2$lambda1(ChooseFeeType.Custom type, View view) {
+    public static final void configureCustomFeeChooser$lambda$2$lambda$1(ChooseFeeType.Custom type, View view) {
         Intrinsics.checkNotNullParameter(type, "$type");
         type.getOnChooseFee().invoke();
     }
@@ -153,14 +152,13 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         forkContentFeeBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.smedialink.ui.custom.FeeView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FeeView.m1439configureDefaultFeeChooser$lambda4$lambda3(FeeView.this, r4, mapToUiFees, view);
+                FeeView.configureDefaultFeeChooser$lambda$4$lambda$3(FeeView.this, r4, mapToUiFees, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: configureDefaultFeeChooser$lambda-4$lambda-3  reason: not valid java name */
-    public static final void m1439configureDefaultFeeChooser$lambda4$lambda3(FeeView this$0, ChooseFeeType.Default type, List fees, View view) {
+    public static final void configureDefaultFeeChooser$lambda$4$lambda$3(FeeView this$0, ChooseFeeType.Default type, List fees, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(type, "$type");
         Intrinsics.checkNotNullParameter(fees, "$fees");
@@ -172,25 +170,24 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
         AppCompatTextView appCompatTextView = forkContentFeeBinding.textFeeValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3158R.string.wallet_swap_process_fee_price_value;
+        int i = C3286R.string.wallet_swap_process_fee_price_value;
         Float valueOf = Float.valueOf(gasPriceItem.getInfo().getFeeInDollars());
         TokenInfo.Fiat.USD usd = TokenInfo.Fiat.USD.INSTANCE;
         appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(gasPriceItem.getInfo().getFee()), gasPriceItem.getFeeTokenInfo().getDecimals()), getResourceManager().getString(gasPriceItem.getFeeTokenInfo().getShortName()), BalanceFormatter.formatBalance(valueOf, usd.getDecimals()), getResourceManager().getString(usd.getShortName())));
-        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3158R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
+        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3286R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
     }
 
     private final void showFeeDialog(DialogModel dialogModel, List<GasPriceItem> list, int i, Function1<? super GasPriceItem, Unit> function1) {
+        AlertDialog createTwoLineSingleChooserDialog$default;
         BaseFragment baseFragment;
         BaseFragment baseFragment2 = this.fragment;
-        AlertDialog createTwoLineSingleChooserDialog$default = baseFragment2 == null ? null : DialogsFactoryKt.createTwoLineSingleChooserDialog$default(baseFragment2, getResourceManager(), dialogModel, null, null, list, i, new FeeView$showFeeDialog$dialog$1(list, function1, this), 12, null);
-        if (createTwoLineSingleChooserDialog$default == null) {
+        if (baseFragment2 == null || (createTwoLineSingleChooserDialog$default = DialogsFactoryKt.createTwoLineSingleChooserDialog$default(baseFragment2, getResourceManager(), dialogModel, null, null, list, i, new FeeView$showFeeDialog$dialog$1(list, function1, this), 12, null)) == null) {
             return;
         }
         MvpBottomSheet mvpBottomSheet = this.mvpBottomSheet;
-        if ((mvpBottomSheet != null ? mvpBottomSheet.showDialog(createTwoLineSingleChooserDialog$default) : null) != null || (baseFragment = this.fragment) == null) {
-            return;
+        if ((mvpBottomSheet == null || mvpBottomSheet.showDialog(createTwoLineSingleChooserDialog$default) == null) && (baseFragment = this.fragment) != null) {
+            baseFragment.showDialog(createTwoLineSingleChooserDialog$default);
         }
-        baseFragment.showDialog(createTwoLineSingleChooserDialog$default);
     }
 
     private final void setupView() {
@@ -201,8 +198,8 @@ public final class FeeView extends FrameLayout implements KoinComponent {
 
     private final void setupTexts() {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
-        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3158R.string.wallet_swap_process_fee_price));
-        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3158R.string.wallet_swap_process_fee_duration));
+        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3286R.string.wallet_swap_process_fee_price));
+        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3286R.string.wallet_swap_process_fee_duration));
     }
 
     /* compiled from: FeeView.kt */

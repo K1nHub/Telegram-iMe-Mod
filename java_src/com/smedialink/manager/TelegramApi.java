@@ -3,6 +3,7 @@ package com.smedialink.manager;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$TL_exportedMessageLink;
@@ -21,6 +22,8 @@ public interface TelegramApi {
     Observable<TLRPC$messages_BotResults> getInlineBot(String str, long j, long j2);
 
     Observable<TLRPC$TL_exportedMessageLink> getMessageLinkPattern(MessageObject messageObject, TLRPC$Chat tLRPC$Chat);
+
+    Observable<List<TLRPC$User>> getUsersByIds(List<Long> list);
 
     Observable<TLRPC$Chat> subscribeToChannel(TLRPC$Chat tLRPC$Chat);
 

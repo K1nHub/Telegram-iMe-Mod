@@ -14,8 +14,8 @@ final class WalletConnectManagerImpl$clear$1$1$1$5 extends Lambda implements Fun
         super(2);
     }
 
-    public final void invoke(long j, WCEthereumTransaction noName_1) {
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+    public final void invoke(long j, WCEthereumTransaction wCEthereumTransaction) {
+        Intrinsics.checkNotNullParameter(wCEthereumTransaction, "<anonymous parameter 1>");
     }
 
     @Override // kotlin.jvm.functions.Function2

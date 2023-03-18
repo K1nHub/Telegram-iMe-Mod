@@ -14,11 +14,7 @@ public class CharsKt__CharJVMKt {
     }
 
     public static int checkRadix(int i) {
-        boolean z = false;
-        if (2 <= i && i < 37) {
-            z = true;
-        }
-        if (z) {
+        if (new IntRange(2, 36).contains(i)) {
             return i;
         }
         throw new IllegalArgumentException("radix " + i + " was not in valid range " + new IntRange(2, 36));

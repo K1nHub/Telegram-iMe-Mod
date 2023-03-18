@@ -22,10 +22,10 @@ public final class WalletLinkClickableManager$getAddressAlertOptions$1 extends L
     public final Unit invoke() {
         WalletLinkClickableView walletLinkClickableView;
         walletLinkClickableView = this.this$0.viewState;
-        if (walletLinkClickableView == null) {
-            return null;
+        if (walletLinkClickableView != null) {
+            walletLinkClickableView.actionCopyToClipboard(this.$address);
+            return Unit.INSTANCE;
         }
-        walletLinkClickableView.actionCopyToClipboard(this.$address);
-        return Unit.INSTANCE;
+        return null;
     }
 }

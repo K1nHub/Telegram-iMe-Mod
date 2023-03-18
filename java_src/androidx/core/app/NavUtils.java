@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 public final class NavUtils {
     public static boolean shouldUpRecreateTask(Activity activity, Intent intent) {
         if (Build.VERSION.SDK_INT >= 16) {
-            return activity.shouldUpRecreateTask(intent);
+            return Api16Impl.shouldUpRecreateTask(activity, intent);
         }
         String action = activity.getIntent().getAction();
         return (action == null || action.equals("android.intent.action.MAIN")) ? false : true;
@@ -22,7 +22,7 @@ public final class NavUtils {
 
     public static void navigateUpTo(Activity activity, Intent intent) {
         if (Build.VERSION.SDK_INT >= 16) {
-            activity.navigateUpTo(intent);
+            Api16Impl.navigateUpTo(activity, intent);
             return;
         }
         intent.addFlags(ConnectionsManager.FileTypeFile);
@@ -32,7 +32,7 @@ public final class NavUtils {
 
     public static Intent getParentActivityIntent(Activity activity) {
         Intent parentActivityIntent;
-        if (Build.VERSION.SDK_INT < 16 || (parentActivityIntent = activity.getParentActivityIntent()) == null) {
+        if (Build.VERSION.SDK_INT < 16 || (parentActivityIntent = Api16Impl.getParentActivityIntent(activity)) == null) {
             String parentActivityName = getParentActivityName(activity);
             if (parentActivityName == null) {
                 return null;
@@ -94,5 +94,20 @@ public final class NavUtils {
             return string;
         }
         return str;
+    }
+
+    /* loaded from: classes.dex */
+    static class Api16Impl {
+        static boolean shouldUpRecreateTask(Activity activity, Intent intent) {
+            return activity.shouldUpRecreateTask(intent);
+        }
+
+        static boolean navigateUpTo(Activity activity, Intent intent) {
+            return activity.navigateUpTo(intent);
+        }
+
+        static Intent getParentActivityIntent(Activity activity) {
+            return activity.getParentActivityIntent();
+        }
     }
 }

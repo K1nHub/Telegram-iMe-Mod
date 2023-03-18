@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/fork/controller/DialogTranslationController$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v0}, Lorg/fork/controller/DialogTranslationController;->$r8$lambda$lYzPPwVDPaFzgQPq2QNcVC0wJ5w(Lkotlin/jvm/functions/Function0;)V
+    invoke-static {v0}, Lorg/fork/controller/DialogTranslationController;->$r8$lambda$VTm2-MSzKwEUOBjBv7A2Q3pn0XE(Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method

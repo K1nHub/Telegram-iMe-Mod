@@ -2,34 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/ToIntFunction;
+.implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda254;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda254;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda254;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda254;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda254;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda254;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final applyAsInt(Ljava/lang/Object;)I
-    .locals 1
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda254;->f$0:Lorg/telegram/ui/ChatActivity;
+    check-cast p1, Ljava/lang/Integer;
 
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
+    check-cast p2, Ljava/lang/Integer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$xnx3Yk70ECSXGZJspyBu3iQCNm8(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$lpHSd0bd0m8Ac5kSWZDveuWP8Dc(Ljava/lang/Integer;Ljava/lang/Integer;)I
 
     move-result p1
 

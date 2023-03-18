@@ -427,7 +427,7 @@
     sget v14, Lorg/telegram/messenger/R$drawable;->msg_secret_ny:I
 
     .line 442
-    sget v15, Lorg/telegram/messenger/R$drawable;->msg_channel_ny:I
+    sget v15, Lorg/telegram/messenger/R$drawable;->fork_drawer_channel_ny:I
 
     .line 443
     sget v16, Lorg/telegram/messenger/R$drawable;->fork_drawer_albums_ny:I
@@ -476,7 +476,7 @@
     sget v13, Lorg/telegram/messenger/R$drawable;->fork_drawer_create_expandable_14:I
 
     .line 464
-    sget v15, Lorg/telegram/messenger/R$drawable;->msg_channel_14:I
+    sget v15, Lorg/telegram/messenger/R$drawable;->fork_drawer_channel_14:I
 
     .line 465
     sget v16, Lorg/telegram/messenger/R$drawable;->fork_drawer_albums_14:I
@@ -523,7 +523,7 @@
     sget v13, Lorg/telegram/messenger/R$drawable;->fork_drawer_create_expandable_hw:I
 
     .line 486
-    sget v15, Lorg/telegram/messenger/R$drawable;->msg_channel_hw:I
+    sget v15, Lorg/telegram/messenger/R$drawable;->fork_drawer_channel_hw:I
 
     .line 487
     sget v16, Lorg/telegram/messenger/R$drawable;->fork_drawer_albums_hw:I

@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/ChatActivity$131;
-.super Lorg/telegram/messenger/browser/Browser$Progress;
+.super Ljava/lang/Object;
 .source "ChatActivity.java"
+
+# interfaces
+.implements Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->makeProgressForLink(Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/text/style/CharacterStyle;)Lorg/telegram/messenger/browser/Browser$Progress;
+    value = Lorg/telegram/ui/ChatActivity;->openReportChat(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,122 +20,87 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
-.field final synthetic val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-.field final synthetic val$span:Landroid/text/style/CharacterStyle;
-
 
 # direct methods
-.method public static synthetic $r8$lambda$XOyjaPwEgk9gxFEDXNmuEubx3RY(Lorg/telegram/ui/ChatActivity$131;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ChatActivity$131;->lambda$end$0(Lorg/telegram/ui/Cells/ChatMessageCell;)V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/text/style/CharacterStyle;)V
-    .locals 0
-
-    .line 30746
+    .line 28831
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$131;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$131;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$131;->val$span:Landroid/text/style/CharacterStyle;
-
-    invoke-direct {p0}, Lorg/telegram/messenger/browser/Browser$Progress;-><init>()V
-
-    return-void
-.end method
-
-.method private synthetic lambda$end$0(Lorg/telegram/ui/Cells/ChatMessageCell;)V
-    .locals 1
-
-    .line 30760
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$131;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$47700(Lorg/telegram/ui/ChatActivity;)I
-
-    move-result v0
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result p1
-
-    if-ne v0, p1, :cond_0
-
-    .line 30761
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$131;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$48000(Lorg/telegram/ui/ChatActivity;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public end(Z)V
-    .locals 3
+.method public synthetic onCompleteForwardingEditing(Ljava/util/ArrayList;)V
+    .locals 0
 
-    if-nez p1, :cond_0
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onCompleteForwardingEditing(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/util/ArrayList;)V
 
-    .line 30759
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$131;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$131$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ChatActivity$131$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$131;Lorg/telegram/ui/Cells/ChatMessageCell;)V
-
-    const-wide/16 v1, 0xf0
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
-
-    :cond_0
     return-void
 .end method
 
-.method public init()V
-    .locals 2
+.method public onReport()V
+    .locals 5
 
-    .line 30749
+    .line 28834
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$131;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$131;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13600(Lorg/telegram/ui/ChatActivity;)V
 
-    invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$47702(Lorg/telegram/ui/ChatActivity;I)I
-
-    .line 30750
+    .line 28835
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$131;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/UndoView;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$47802(Lorg/telegram/ui/ChatActivity;I)I
+    move-result-object v0
 
-    .line 30751
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 28838
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$131;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$131;->val$span:Landroid/text/style/CharacterStyle;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$13700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/UndoView;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$47902(Lorg/telegram/ui/ChatActivity;Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;
+    move-result-object v0
 
-    .line 30753
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$131;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
+    const-wide/16 v1, 0x0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
+    const/16 v3, 0x4a
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public synthetic onUnpin(ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+    .locals 0
+
+    invoke-static/range {p0 .. p7}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onUnpin(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+
+    return-void
+.end method
+
+.method public synthetic openReplyMessage(I)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$openReplyMessage(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;I)V
+
+    return-void
+.end method
+
+.method public synthetic openSearch(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$openSearch(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/String;)V
 
     return-void
 .end method

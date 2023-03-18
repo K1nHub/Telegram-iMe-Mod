@@ -260,7 +260,7 @@
     .line 114
     new-instance p0, Ljava/lang/RuntimeException;
 
-    const-string p1, "wrong thread"
+    const-string/jumbo p1, "wrong thread"
 
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

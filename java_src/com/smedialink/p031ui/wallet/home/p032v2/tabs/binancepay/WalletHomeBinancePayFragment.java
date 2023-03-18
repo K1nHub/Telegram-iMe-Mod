@@ -57,7 +57,7 @@ import moxy.ktx.MoxyKtxDelegate;
 import org.fork.utils.Callbacks$Callback;
 import org.fork.utils.Callbacks$Callback1;
 import org.koin.p047mp.KoinPlatformTools;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinancePayBinding;
 import org.telegram.p048ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p048ui.ActionBar.AlertDialog;
@@ -134,7 +134,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda9
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
-                WalletHomeBinancePayFragment.m1658getThemeDescriptions$lambda0(WalletHomeBinancePayFragment.this);
+                WalletHomeBinancePayFragment.getThemeDescriptions$lambda$0(WalletHomeBinancePayFragment.this);
             }
 
             @Override // org.telegram.p048ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
@@ -146,8 +146,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getThemeDescriptions$lambda-0  reason: not valid java name */
-    public static final void m1658getThemeDescriptions$lambda0(WalletHomeBinancePayFragment this$0) {
+    public static final void getThemeDescriptions$lambda$0(WalletHomeBinancePayFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getBinancePayRecycleAdapter().notifyDataSetChanged();
         this$0.getBinding().getRoot().setColorSchemeColors(Theme.getColor("chats_actionBackground"));
@@ -175,17 +174,16 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(action, "action");
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        showDialog(DialogUtils.createDialog$default(parentActivity, model, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda7
+        showDialog(DialogUtils.createDialog$default(parentActivity, model, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda6
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHomeBinancePayFragment.m1667showLoginGuideDialog$lambda1(Function0.this);
+                WalletHomeBinancePayFragment.showLoginGuideDialog$lambda$1(Function0.this);
             }
         }, null, 8, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showLoginGuideDialog$lambda-1  reason: not valid java name */
-    public static final void m1667showLoginGuideDialog$lambda1(Function0 tmp0) {
+    public static final void showLoginGuideDialog$lambda$1(Function0 tmp0) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke();
     }
@@ -196,10 +194,10 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(action, "action");
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, model, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda6
+        AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, model, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda7
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHomeBinancePayFragment.m1666showConfirmLogOutDialog$lambda2(Function0.this);
+                WalletHomeBinancePayFragment.showConfirmLogOutDialog$lambda$2(Function0.this);
             }
         }, null, 8, null);
         showDialog(createDialog$default);
@@ -207,8 +205,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showConfirmLogOutDialog$lambda-2  reason: not valid java name */
-    public static final void m1666showConfirmLogOutDialog$lambda2(Function0 tmp0) {
+    public static final void showConfirmLogOutDialog$lambda$2(Function0 tmp0) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke();
     }
@@ -219,16 +216,14 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         actionIntroActivity.setQrLoginDelegate(new ActionIntroActivity.ActionIntroQRLoginDelegate() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda10
             @Override // org.telegram.p048ui.ActionIntroActivity.ActionIntroQRLoginDelegate
             public final void didFindQRCode(String str) {
-                WalletHomeBinancePayFragment.m1659openPayScreen$lambda5$lambda4(WalletHomeBinancePayFragment.this, str);
+                WalletHomeBinancePayFragment.openPayScreen$lambda$5$lambda$4(WalletHomeBinancePayFragment.this, str);
             }
         });
-        Unit unit = Unit.INSTANCE;
         presentFragment(actionIntroActivity);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: openPayScreen$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m1659openPayScreen$lambda5$lambda4(WalletHomeBinancePayFragment this$0, String qrText) {
+    public static final void openPayScreen$lambda$5$lambda$4(WalletHomeBinancePayFragment this$0, String qrText) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         WalletHomeBinancePayPresenter presenter = this$0.getPresenter();
         Activity parentActivity = this$0.getParentActivity();
@@ -268,14 +263,13 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         showDialog(DialogsFactoryKt.createWalletCreatedRequiredDialog(this, new Callbacks$Callback() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda5
             @Override // org.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletHomeBinancePayFragment.m1668showRequiredWalletCreatedDialog$lambda6(WalletHomeBinancePayFragment.this);
+                WalletHomeBinancePayFragment.showRequiredWalletCreatedDialog$lambda$6(WalletHomeBinancePayFragment.this);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: showRequiredWalletCreatedDialog$lambda-6  reason: not valid java name */
-    public static final void m1668showRequiredWalletCreatedDialog$lambda6(WalletHomeBinancePayFragment this$0) {
+    public static final void showRequiredWalletCreatedDialog$lambda$6(WalletHomeBinancePayFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.selectTab(0);
     }
@@ -342,54 +336,51 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         binancePayRecycleAdapter.getBinanceAccountProvider().setActionBarMenuItemDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda8
             @Override // org.telegram.p048ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
-                WalletHomeBinancePayFragment.m1664setupListeners$lambda14$lambda9(WalletHomeBinancePayFragment.this, i);
+                WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$9(WalletHomeBinancePayFragment.this, i);
             }
         });
         binancePayRecycleAdapter.getBannerProvider().setBannerOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda2
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletHomeBinancePayFragment.m1660setupListeners$lambda14$lambda10(WalletHomeBinancePayFragment.this, baseQuickAdapter, view, i);
+                WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$10(WalletHomeBinancePayFragment.this, baseQuickAdapter, view, i);
             }
         });
         binancePayRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda3
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletHomeBinancePayFragment.m1661setupListeners$lambda14$lambda11(WalletHomeBinancePayFragment.this, baseQuickAdapter, view, i);
+                WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$11(WalletHomeBinancePayFragment.this, baseQuickAdapter, view, i);
             }
         });
         binancePayRecycleAdapter.setOnItemChildClickListener(new OnItemChildClickListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda1
             @Override // com.chad.library.adapter.base.listener.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletHomeBinancePayFragment.m1662setupListeners$lambda14$lambda13(WalletHomeBinancePayFragment.this, baseQuickAdapter, view, i);
+                WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$13(WalletHomeBinancePayFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-14$lambda-9  reason: not valid java name */
-    public static final void m1664setupListeners$lambda14$lambda9(WalletHomeBinancePayFragment this$0, int i) {
+    public static final void setupListeners$lambda$14$lambda$9(WalletHomeBinancePayFragment this$0, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.onSubItemClick(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-14$lambda-10  reason: not valid java name */
-    public static final void m1660setupListeners$lambda14$lambda10(WalletHomeBinancePayFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$14$lambda$10(WalletHomeBinancePayFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         this$0.presentFragment(new ActionIntroActivity(108, null, null, null, this$0.getBinancePayRecycleAdapter().getBannerProvider().getBannersRecycleAdapter().getItem(i).getSlide(), null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-14$lambda-11  reason: not valid java name */
-    public static final void m1661setupListeners$lambda14$lambda11(WalletHomeBinancePayFragment this$0, BaseQuickAdapter noName_0, View noName_1, int i) {
+    public static final void setupListeners$lambda$14$lambda$11(WalletHomeBinancePayFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
-        Intrinsics.checkNotNullParameter(noName_1, "$noName_1");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
+        Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         if (baseNode instanceof CardButtonItem) {
-            if (((CardButtonItem) baseNode).getId() == C3158R.C3161id.binance_pay_link) {
+            if (((CardButtonItem) baseNode).getId() == C3286R.C3289id.binance_pay_link) {
                 this$0.getPresenter().startBinancePayLoginFlow();
             }
         } else if (baseNode instanceof BinanceBalanceItem) {
@@ -398,34 +389,32 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-14$lambda-13  reason: not valid java name */
-    public static final void m1662setupListeners$lambda14$lambda13(final WalletHomeBinancePayFragment this$0, BaseQuickAdapter noName_0, View view, int i) {
+    public static final void setupListeners$lambda$14$lambda$13(final WalletHomeBinancePayFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(noName_0, "$noName_0");
+        Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         int id = view.getId();
-        if (id == C3158R.C3161id.image_copy) {
+        if (id == C3286R.C3289id.image_copy) {
             if (baseNode instanceof BinanceAccountItem) {
                 ContextExtKt.copyToClipboard$default(((BinanceAccountItem) baseNode).getInfo().getId(), null, 2, null);
             }
-        } else if (id == C3158R.C3161id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3286R.C3289id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new WalletHomeCryptoTokensSettingsFragment.ScreenType.Binance(SelectableMappingKt.mapToSelectableBinanceTokenBalanceInfo(this$0.getPresenter().getBalances()))));
-        } else if (id == C3158R.C3161id.image_wallet_order_tokens) {
+        } else if (id == C3286R.C3289id.image_wallet_order_tokens) {
             this$0.showDialog(DialogsFactoryKt.createSelectTokensOrderTypeDialog(this$0, this$0.getResourceManager(), this$0.getPresenter().getSelectedTokensOrderType(), new Callbacks$Callback1() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda4
                 @Override // org.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
-                    WalletHomeBinancePayFragment.m1663setupListeners$lambda14$lambda13$lambda12(WalletHomeBinancePayFragment.this, (TokenOrderType) obj);
+                    WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$13$lambda$12(WalletHomeBinancePayFragment.this, (TokenOrderType) obj);
                 }
             }));
-        } else if (id == C3158R.C3161id.image_wallet_crypto_eye) {
+        } else if (id == C3286R.C3289id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupListeners$lambda-14$lambda-13$lambda-12  reason: not valid java name */
-    public static final void m1663setupListeners$lambda14$lambda13$lambda12(WalletHomeBinancePayFragment this$0, TokenOrderType it) {
+    public static final void setupListeners$lambda$14$lambda$13$lambda$12(WalletHomeBinancePayFragment this$0, TokenOrderType it) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         WalletHomeBinancePayPresenter presenter = this$0.getPresenter();
         Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -441,28 +430,26 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
     }
 
     private final void setupWalletRecycleView() {
-        RecyclerView recyclerView = getBinding().recycleWalletHomeBinancePayDashboard;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getParentActivity()));
+        RecyclerView setupWalletRecycleView$lambda$16 = getBinding().recycleWalletHomeBinancePayDashboard;
+        setupWalletRecycleView$lambda$16.setLayoutManager(new LinearLayoutManager(getParentActivity()));
         BinancePayRecycleAdapter binancePayRecycleAdapter = getBinancePayRecycleAdapter();
         binancePayRecycleAdapter.setDiffCallback(new BinancePayDiffCallback());
-        Unit unit = Unit.INSTANCE;
-        recyclerView.setAdapter(binancePayRecycleAdapter);
-        Intrinsics.checkNotNullExpressionValue(recyclerView, "");
-        RecycleViewExtKt.disableDefaultAnimation(recyclerView);
+        setupWalletRecycleView$lambda$16.setAdapter(binancePayRecycleAdapter);
+        Intrinsics.checkNotNullExpressionValue(setupWalletRecycleView$lambda$16, "setupWalletRecycleView$lambda$16");
+        RecycleViewExtKt.disableDefaultAnimation(setupWalletRecycleView$lambda$16);
     }
 
     private final void setupSwipeRefresh() {
         getBinding().getRoot().setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: com.smedialink.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                WalletHomeBinancePayFragment.m1665setupSwipeRefresh$lambda17(WalletHomeBinancePayFragment.this);
+                WalletHomeBinancePayFragment.setupSwipeRefresh$lambda$17(WalletHomeBinancePayFragment.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: setupSwipeRefresh$lambda-17  reason: not valid java name */
-    public static final void m1665setupSwipeRefresh$lambda17(WalletHomeBinancePayFragment this$0) {
+    public static final void setupSwipeRefresh$lambda$17(WalletHomeBinancePayFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getPresenter().loadScreenInfo();
     }

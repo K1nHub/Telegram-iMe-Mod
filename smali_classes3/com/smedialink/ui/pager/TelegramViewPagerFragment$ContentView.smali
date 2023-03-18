@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$ContentView\n+ 2 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n187#2,2:656\n190#2:659\n294#3:658\n252#3:660\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$ContentView\n*L\n376#1:656,2\n376#1:659\n377#1:658\n469#1:660\n*E\n"
+    value = "SMAP\nTelegramViewPagerFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$ContentView\n+ 2 ViewExt.kt\ncom/smedialink/utils/extentions/common/ViewExtKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,655:1\n191#2,2:656\n194#2:659\n302#3:658\n260#3:660\n*S KotlinDebug\n*F\n+ 1 TelegramViewPagerFragment.kt\ncom/smedialink/ui/pager/TelegramViewPagerFragment$ContentView\n*L\n376#1:656,2\n376#1:659\n377#1:658\n469#1:660\n*E\n"
 .end annotation
 
 
@@ -54,10 +54,6 @@
             ")V"
         }
     .end annotation
-
-    const-string v0, "this$0"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "context"
 
@@ -705,11 +701,8 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     iget-object p2, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ContentView;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
     .line 386
@@ -744,12 +737,12 @@
 
     invoke-virtual {p1, p3, p4, p5, v0}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    :goto_0
+    :cond_0
     return-void
 .end method
 
 .method protected onMeasure(II)V
-    .locals 12
+    .locals 11
 
     .line 366
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -815,8 +808,6 @@
 
     aget-object v6, v2, v5
 
-    add-int/lit8 v5, v5, 0x1
-
     .line 373
     invoke-virtual {v6}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -838,6 +829,8 @@
 
     invoke-virtual {v6, v4, v7, v4, v8}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
+    add-int/lit8 v5, v5, 0x1
+
     goto :goto_0
 
     .line 375
@@ -847,78 +840,70 @@
     .line 376
     iget-object v0, p0, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ContentView;->this$0:Lcom/smedialink/ui/pager/TelegramViewPagerFragment;
 
-    .line 187
+    .line 191
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
-    if-lez v2, :cond_4
-
     const/4 v3, 0x0
 
     :goto_1
-    add-int/lit8 v5, v3, 0x1
+    if-ge v3, v2, :cond_3
 
-    .line 188
+    .line 192
     invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v7
+    move-result-object v6
 
-    const-string v3, "getChildAt(i)"
+    const-string v5, "getChildAt(i)"
 
-    invoke-static {v7, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v6, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 294
-    invoke-virtual {v7}, Landroid/view/View;->getVisibility()I
+    .line 302
+    invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
 
-    move-result v3
+    move-result v5
 
-    const/16 v6, 0x8
+    const/16 v7, 0x8
 
-    if-ne v3, v6, :cond_1
+    if-ne v5, v7, :cond_1
 
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
     goto :goto_2
 
     :cond_1
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
     :goto_2
-    if-nez v3, :cond_2
+    if-nez v5, :cond_2
 
     .line 377
     invoke-static {v0}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment;->access$getActionBar$p$s1999807853(Lcom/smedialink/ui/pager/TelegramViewPagerFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
 
-    move-result-object v3
+    move-result-object v5
 
-    if-eq v7, v3, :cond_2
+    if-eq v6, v5, :cond_2
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    move-object v6, p0
+    move-object v5, p0
 
-    move v8, p1
+    move v7, p1
 
-    move v10, p2
+    move v9, p2
 
     .line 378
-    invoke-virtual/range {v6 .. v11}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
+    invoke-virtual/range {v5 .. v10}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     :cond_2
-    if-lt v5, v2, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v3, v5
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    :cond_4
-    :goto_3
+    :cond_3
     return-void
 .end method
 
@@ -1460,7 +1445,7 @@
 
     move-result-object v4
 
-    .line 252
+    .line 260
     invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
     move-result v4
@@ -2819,8 +2804,6 @@
 
     aget-object v1, p2, v0
 
-    add-int/lit8 v0, v0, 0x1
-
     .line 396
     invoke-virtual {v1}, Lcom/smedialink/ui/pager/TelegramViewPagerFragment$ViewPage;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2841,6 +2824,8 @@
     move-result v3
 
     invoke-virtual {v1, p4, v2, p4, v3}, Landroid/view/ViewGroup;->setPadding(IIII)V
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 

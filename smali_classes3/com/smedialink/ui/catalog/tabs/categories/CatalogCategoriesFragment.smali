@@ -42,34 +42,34 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$GfPj1Vu6SidD7dnk_8_IsyyvbqA(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
+.method public static synthetic $r8$lambda$KNhNf9e37bBwPAf5AOtVBzJbXvA(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupListeners$lambda-12$lambda-11(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
+    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupListeners$lambda$12$lambda$11(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$NBAQ2mZwjnFZRBbzfKLZYFy809k(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$WnSz9fLkiwO1sfoaMK4_hdNpjrc(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupListeners$lambda-10$lambda-8(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupLoadMore$lambda$5$lambda$4(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$wHcVFv0iHZ7UyJM_2QYEKxgrWIw(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$ZgDfuMW-rXLh5Ji0o_45Ets9ewQ(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupListeners$lambda-10$lambda-9(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupListeners$lambda$10$lambda$9(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ywGOPws4LhSPYnxsKS2MHIL-Qio(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
+.method public static synthetic $r8$lambda$sg0D464hOK9Zt_td4U6tgxeUyCM(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 0
 
-    invoke-static {p0}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupLoadMore$lambda-5$lambda-4(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupListeners$lambda$10$lambda$8(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -384,7 +384,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-10$lambda-8(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$10$lambda$8(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "this$0"
@@ -395,11 +395,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p2, "$noName_1"
+    const-string p2, "<anonymous parameter 1>"
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -431,7 +431,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-10$lambda-9(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+.method private static final setupListeners$lambda$10$lambda$9(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
     const-string v0, "$this_with"
@@ -442,11 +442,11 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$noName_0"
+    const-string v0, "<anonymous parameter 0>"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p2, "$noName_1"
+    const-string p2, "<anonymous parameter 1>"
 
     invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -474,7 +474,7 @@
     return-void
 .end method
 
-.method private static final setupListeners$lambda-12$lambda-11(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
+.method private static final setupListeners$lambda$12$lambda$11(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
     .locals 3
 
     const-string v0, "this$0"
@@ -520,7 +520,7 @@
     return-void
 .end method
 
-.method private static final setupLoadMore$lambda-5$lambda-4(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
+.method private static final setupLoadMore$lambda$5$lambda$4(Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;)V
     .locals 1
 
     const-string v0, "this$0"
@@ -563,9 +563,6 @@
 
     .line 111
     invoke-direct {p0, v1}, Lcom/smedialink/ui/catalog/tabs/categories/CatalogCategoriesFragment;->setupLoadMore(Lcom/smedialink/ui/catalog/tabs/categories/adapter/CatalogCampaignsByCategoriesRecycleAdapter;)V
-
-    .line 112
-    sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 109
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V

@@ -93,23 +93,21 @@
     .line 16
     iget-object v1, p0, Lcom/smedialink/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$special$$inlined$argument$1;->$defaultValue:Ljava/lang/Object;
 
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    if-eqz p1, :cond_1
 
     .line 25
-    :cond_0
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_0
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     move-object v1, p1
 
+    :cond_1
     :goto_0
     if-eqz v1, :cond_3
 

@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.smedialink.p031ui.custom.backup.BackupWordView;
-import org.telegram.messenger.C3158R;
+import org.telegram.messenger.C3286R;
 /* loaded from: classes4.dex */
 public final class ForkContentWordSwitcherBinding implements ViewBinding {
     public final ConstraintLayout constraintWords;
@@ -31,7 +31,7 @@ public final class ForkContentWordSwitcherBinding implements ViewBinding {
     }
 
     public static ForkContentWordSwitcherBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3158R.layout.fork_content_word_switcher, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3286R.layout.fork_content_word_switcher, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,19 +39,19 @@ public final class ForkContentWordSwitcherBinding implements ViewBinding {
     }
 
     public static ForkContentWordSwitcherBinding bind(View view) {
-        int i = C3158R.C3161id.constraint_words;
+        int i = C3286R.C3289id.constraint_words;
         ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
         if (constraintLayout != null) {
-            i = C3158R.C3161id.text_title;
+            i = C3286R.C3289id.text_title;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3158R.C3161id.view_backup_word_1;
+                i = C3286R.C3289id.view_backup_word_1;
                 BackupWordView backupWordView = (BackupWordView) ViewBindings.findChildViewById(view, i);
                 if (backupWordView != null) {
-                    i = C3158R.C3161id.view_backup_word_2;
+                    i = C3286R.C3289id.view_backup_word_2;
                     BackupWordView backupWordView2 = (BackupWordView) ViewBindings.findChildViewById(view, i);
                     if (backupWordView2 != null) {
-                        i = C3158R.C3161id.view_backup_word_3;
+                        i = C3286R.C3289id.view_backup_word_3;
                         BackupWordView backupWordView3 = (BackupWordView) ViewBindings.findChildViewById(view, i);
                         if (backupWordView3 != null) {
                             return new ForkContentWordSwitcherBinding((ConstraintLayout) view, constraintLayout, appCompatTextView, backupWordView, backupWordView2, backupWordView3);

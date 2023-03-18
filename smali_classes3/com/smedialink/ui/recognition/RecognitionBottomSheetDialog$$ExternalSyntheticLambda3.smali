@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog$$ExternalSyntheticLambda3;->f$0:Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;
 
-    invoke-static {v0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->$r8$lambda$jB_c-4fxQkUGIoecBj1sQii0YHM(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;->$r8$lambda$r53IIoA7yHuzjeMu7mo3lrBUEXE(Lcom/smedialink/ui/recognition/RecognitionBottomSheetDialog;Landroid/view/View;)V
 
     return-void
 .end method

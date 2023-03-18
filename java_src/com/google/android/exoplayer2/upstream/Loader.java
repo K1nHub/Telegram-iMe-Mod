@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0474C;
+import com.google.android.exoplayer2.C0468C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
@@ -27,10 +27,10 @@ public final class Loader implements LoaderErrorThrower {
     private LoadTask<? extends Loadable> currentTask;
     private final ExecutorService downloadExecutorService;
     private IOException fatalError;
-    public static final LoadErrorAction RETRY = createRetryAction(false, C0474C.TIME_UNSET);
-    public static final LoadErrorAction RETRY_RESET_ERROR_COUNT = createRetryAction(true, C0474C.TIME_UNSET);
-    public static final LoadErrorAction DONT_RETRY = new LoadErrorAction(2, C0474C.TIME_UNSET);
-    public static final LoadErrorAction DONT_RETRY_FATAL = new LoadErrorAction(3, C0474C.TIME_UNSET);
+    public static final LoadErrorAction RETRY = createRetryAction(false, C0468C.TIME_UNSET);
+    public static final LoadErrorAction RETRY_RESET_ERROR_COUNT = createRetryAction(true, C0468C.TIME_UNSET);
+    public static final LoadErrorAction DONT_RETRY = new LoadErrorAction(2, C0468C.TIME_UNSET);
+    public static final LoadErrorAction DONT_RETRY_FATAL = new LoadErrorAction(3, C0468C.TIME_UNSET);
 
     /* loaded from: classes.dex */
     public interface Callback<T extends Loadable> {
@@ -311,7 +311,7 @@ public final class Loader implements LoaderErrorThrower {
                             if (onLoadError.type == 1) {
                                 this.errorCount = 1;
                             }
-                            if (onLoadError.retryDelayMillis != C0474C.TIME_UNSET) {
+                            if (onLoadError.retryDelayMillis != C0468C.TIME_UNSET) {
                                 retryDelayMillis = onLoadError.retryDelayMillis;
                             } else {
                                 retryDelayMillis = getRetryDelayMillis();

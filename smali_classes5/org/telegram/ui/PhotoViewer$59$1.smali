@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$59;)V
     .locals 0
 
-    .line 10254
+    .line 10265
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 10257
+    .line 10268
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$59;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 10258
+    .line 10269
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$59;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -59,7 +59,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 10259
+    .line 10270
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$59;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 10261
+    .line 10272
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 10263
+    .line 10274
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 10264
+    .line 10275
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$59;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -109,7 +109,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 10265
+    .line 10276
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$59;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -142,7 +142,7 @@
     :goto_1
     invoke-virtual {p1, v2}, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->setVisibility(I)V
 
-    .line 10267
+    .line 10278
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
@@ -205,7 +205,7 @@
 
     if-le p1, v1, :cond_5
 
-    .line 10268
+    .line 10279
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
@@ -217,7 +217,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/CheckBox;->setVisibility(I)V
 
-    .line 10269
+    .line 10280
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$59$1;->this$1:Lorg/telegram/ui/PhotoViewer$59;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$59;->this$0:Lorg/telegram/ui/PhotoViewer;

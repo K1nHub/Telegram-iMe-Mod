@@ -19,6 +19,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.telegram.messenger.LiteMode;
 /* loaded from: classes.dex */
 public class AccessibilityNodeInfoCompat {
     private static int sClickableSpanId;
@@ -56,7 +57,7 @@ public class AccessibilityNodeInfoCompat {
                         return "ACTION_SCROLL_BACKWARD";
                     case 16384:
                         return "ACTION_COPY";
-                    case 32768:
+                    case LiteMode.FLAG_CHAT_SCALE /* 32768 */:
                         return "ACTION_PASTE";
                     case 65536:
                         return "ACTION_CUT";
@@ -70,8 +71,6 @@ public class AccessibilityNodeInfoCompat {
                         return "ACTION_SET_TEXT";
                     case 16908354:
                         return "ACTION_MOVE_WINDOW";
-                    case 16908372:
-                        return "ACTION_IME_ENTER";
                     default:
                         switch (i) {
                             case 16908342:
@@ -107,7 +106,18 @@ public class AccessibilityNodeInfoCompat {
                                     case 16908362:
                                         return "ACTION_PRESS_AND_HOLD";
                                     default:
-                                        return "ACTION_UNKNOWN";
+                                        switch (i) {
+                                            case 16908372:
+                                                return "ACTION_IME_ENTER";
+                                            case 16908373:
+                                                return "ACTION_DRAG_START";
+                                            case 16908374:
+                                                return "ACTION_DRAG_DROP";
+                                            case 16908375:
+                                                return "ACTION_DRAG_CANCEL";
+                                            default:
+                                                return "ACTION_UNKNOWN";
+                                        }
                                 }
                         }
                 }
@@ -149,7 +159,7 @@ public class AccessibilityNodeInfoCompat {
             ACTION_SCROLL_FORWARD = new AccessibilityActionCompat(4096, null);
             ACTION_SCROLL_BACKWARD = new AccessibilityActionCompat(8192, null);
             new AccessibilityActionCompat(16384, null);
-            new AccessibilityActionCompat(32768, null);
+            new AccessibilityActionCompat(LiteMode.FLAG_CHAT_SCALE, null);
             new AccessibilityActionCompat(65536, null);
             new AccessibilityActionCompat(131072, (CharSequence) null, AccessibilityViewCommand.SetSelectionArguments.class);
             ACTION_EXPAND = new AccessibilityActionCompat(262144, null);
@@ -174,6 +184,10 @@ public class AccessibilityNodeInfoCompat {
             new AccessibilityActionCompat(i >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_HIDE_TOOLTIP : null, 16908357, null, null, null);
             new AccessibilityActionCompat(i >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PRESS_AND_HOLD : null, 16908362, null, null, null);
             new AccessibilityActionCompat(i >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_IME_ENTER : null, 16908372, null, null, null);
+            new AccessibilityActionCompat(i >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_START : null, 16908373, null, null, null);
+            new AccessibilityActionCompat(i >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_DROP : null, 16908374, null, null, null);
+            new AccessibilityActionCompat(i >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_CANCEL : null, 16908375, null, null, null);
+            new AccessibilityActionCompat(i >= 33 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TEXT_SUGGESTIONS : null, 16908376, null, null, null);
         }
 
         public AccessibilityActionCompat(int i, CharSequence charSequence) {
@@ -407,6 +421,7 @@ public class AccessibilityNodeInfoCompat {
         }
     }
 
+    @Deprecated
     public int getActions() {
         return this.mInfo.getActions();
     }
@@ -698,6 +713,16 @@ public class AccessibilityNodeInfoCompat {
         }
     }
 
+    public String getUniqueId() {
+        if (BuildCompat.isAtLeastT()) {
+            return this.mInfo.getUniqueId();
+        }
+        if (Build.VERSION.SDK_INT >= 19) {
+            return this.mInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY");
+        }
+        return null;
+    }
+
     public void recycle() {
         this.mInfo.recycle();
     }
@@ -879,6 +904,8 @@ public class AccessibilityNodeInfoCompat {
         sb.append(getContentDescription());
         sb.append("; viewId: ");
         sb.append(getViewIdResourceName());
+        sb.append("; uniqueId: ");
+        sb.append(getUniqueId());
         sb.append("; checkable: ");
         sb.append(isCheckable());
         sb.append("; checked: ");

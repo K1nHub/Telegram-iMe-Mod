@@ -141,11 +141,11 @@
     .line 404
     iget-object v5, v0, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
 
-    const/16 v8, 0x2e
+    const/16 v8, 0x40
 
     if-eqz p2, :cond_0
 
-    const/16 v14, 0x2e
+    const/16 v14, 0x40
 
     goto :goto_0
 
@@ -208,7 +208,7 @@
 
     if-eqz p2, :cond_1
 
-    const/16 v14, 0x2e
+    const/16 v14, 0x40
 
     goto :goto_1
 
